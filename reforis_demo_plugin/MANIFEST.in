@@ -1,0 +1,2 @@
+recursive-include foris_demo_plugin/templates *
+recursive-include foris_demo_plugin/static *

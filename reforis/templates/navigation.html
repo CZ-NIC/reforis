@@ -1,0 +1,17 @@
+<nav id="sidebar">
+    <div id="sidebar-header">
+        <img class="card-img-top" src="/static/imgs/logo-turris.svg">
+        <p>reForis version 0.1</p>
+    </div>
+
+    <ul class="list-unstyled components">
+        <li {% if request.path.startswith('/wifi') %}class="active"{% endif %}>
+            <a href="/wifi">WiFi</a>
+        </li>
+        {% for plugin in plugins %}
+            <li {% if request.path.startswith(plugin.url_prefix) %}class="active"{% endif %}>
+                <a href="{{ plugin.url_prefix }}">{{ plugin.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</nav>

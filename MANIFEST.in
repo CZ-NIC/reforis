@@ -1,0 +1,2 @@
+recursive-include foris_wifi/templates *
+recursive-include foris_wifi/static *

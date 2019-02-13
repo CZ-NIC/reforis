@@ -1,0 +1,330 @@
+/*
+ * Copyright (C) 2018 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See /LICENSE for more information.
+ */
+
+
+html, body {
+    height: 100%;
+}
+
+.wrapper {
+    display: flex;
+    position: relative;
+    min-height: 100vh;
+}
+
+#sidebar {
+    flex: 2;
+    background: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative;
+    bottom: 0;
+    min-height: 100%;
+}
+
+#sidebar .fas {
+    color: gray;
+}
+
+
+#sidebar-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 1em;
+    background: #f2f2f2;
+    white-space: nowrap
+}
+
+#sidebar ul li a {
+    padding: .5rem 2rem;
+    font-size: 1.1em;
+    display: block;
+    color: #000;
+    white-space: nowrap
+}
+
+#sidebar ul li a:hover {
+    background: #cbe8f5;
+    text-decoration: none;
+}
+
+#sidebar ul li.active > a {
+    color: #fff;
+    background: #00a2e2;
+}
+
+#sidebar ul li.active .fas {
+    color: #fff;
+}
+
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 4em !important;
+    white-space: nowrap
+}
+
+/*Content*/
+#content {
+    display: flex;
+    flex: 5;
+    flex-direction: column;
+    padding: 2em;
+    height: 100%;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.top-bar a {
+    color: black;
+}
+
+#sidebar img {
+    height: 4em;
+}
+
+#content label, .form-label {
+    text-align: right;
+}
+
+.fas {
+    font-weight: 900;
+    margin-right: 5px;
+    width: 20px;
+    vertical-align: baseline;
+}
+
+/* Drop-down menus */
+
+.dropdown-menu.lang {
+    width: 150px;
+}
+
+.dropdown-toggle::after {
+    position: relative;
+    top: 3px;
+}
+
+
+.dropdown-item,
+.notif-item {
+    display: flex;
+    align-items: center;
+    word-break: normal;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    white-space: normal;
+    padding: 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+.dropdown-menu a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.dropdown-item:hover a {
+    color: black;
+}
+
+.dropdown-menu a {
+    color: #7b8a8b;
+}
+
+.dropdown-item:hover {
+    background: #cbe8f5;
+    color: black;
+}
+
+.dropdown-item p,
+.notif-item p {
+    margin: 0;
+}
+
+.dropdown-menu {
+    width: 350px;
+    left: -25px;
+    padding: 0;
+    top: -240px;
+    transition: all ease 0.3ms;
+}
+
+.dropdown-menu li i {
+    font-size: 25px;
+    padding-right: 20px;
+    width: 35px;
+}
+
+.dropdown-menu.active {
+    top: 100%;
+    transition: all ease 0.3ms;
+}
+
+/* Notifications */
+
+.all-notif {
+    border-bottom: none;
+    text-align: center;
+    display: block;
+    background: #00a2e2;
+    padding: 0;
+}
+
+.all-notif a {
+    color: #fff;
+    text-decoration: none;
+    width: 100%;
+    display: block;
+    padding: 15px;
+}
+
+.all-notif:hover {
+    background: #0092cd;
+    color: #fff;
+}
+
+.no-notif {
+    font-style: italic;
+}
+
+.no-notif:hover {
+    background: none;
+    color: #7b8a8b;
+    cursor: auto;
+}
+
+i.fas.fa-times {
+    width: 15px;
+    font-size: 15px;
+    padding: 0 5px;
+    position: absolute;
+    top: 8px;
+    right: 7px;
+    display: none;
+}
+
+.dropdown-item:hover i.fas.fa-times {
+    display: block;
+}
+
+i.fas.fa-times:hover {
+    color: #ac0000;
+}
+
+.fa-circle {
+    font-size: 8px;
+    color: #00a2e2;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    display: none;
+}
+
+.fa-bell {
+    font-size: 22px;
+}
+
+.active {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.notif-item i {
+    font-size: 35px;
+    padding-right: 20px;
+    width: 55px;
+}
+
+.notif-item:first-child {
+    border-top: 1px solid;
+}
+
+.day-notifications {
+    padding: 0;
+    margin: 0;
+    max-width: 800px;
+}
+
+.day-name {
+    margin: 0;
+    padding: 5px 10px;
+}
+
+.day-block {
+    margin-bottom: 30px;
+}
+
+#loadNotif {
+    max-width: 100px;
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+    }
+
+    #sidebar {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        flex: none;
+    }
+
+    #content {
+        flex: none;
+    }
+}
+
+.separator {
+    width: 100%;
+    height: 1px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #48a2e1;
+    border-color: #48a2e1;
+}
+
+.invalid-feedback {
+    display: block;
+}
+
+.form-control {
+    color: black;
+}
+
+.password-block {
+    width: 105%;
+    display: flex;
+    justify-content: baseline;
+}
+
+.password-block .form-group {
+    width: 100%;
+}
+
+.password-block i {
+    padding: 10px;
+    cursor: pointer;
+    width: 40px;
+    margin-left: -150px;
+}
+
+.password-block i:hover {
+    color: #48a2e1;
+}

@@ -1,0 +1,2 @@
+recursive-include foris/templates *
+recursive-include foris/static *
