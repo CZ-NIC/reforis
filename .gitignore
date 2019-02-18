@@ -79,8 +79,6 @@ coverage.xml
 
 ## Translations
 *.mo
-*.po
-*.pot
 
 ## Flask stuff:
 instance/
@@ -109,3 +107,8 @@ venv.bak/
 
 ## mypy
 .mypy_cache/
+
+
+
+/reforis/static/js/app.min.js
+/reforis/static/locale/

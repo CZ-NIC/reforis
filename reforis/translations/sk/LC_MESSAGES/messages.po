@@ -1,0 +1,53 @@
+# Slovak translations for PROJECT.
+# Copyright (C) 2019 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2019-02-22 20:49+0100\n"
+"PO-Revision-Date: 2019-02-19 13:35+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: sk\n"
+"Language-Team: sk <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: js/containers/Wifi.js:106
+msgid ""
+"If you want to use your router as a Wi-Fi access point, enable Wi-Fi here"
+" and fill in an SSID (the name of the access point) and a corresponding "
+"password. You can then set up your  mobile devices, using the QR code "
+"available within the form."
+msgstr ""
+
+#: js/containers/Wifi.js:112 js/containers/Wifi.js:113
+#: js/containers/Wifi.js:114
+#, python-format
+msgid "You have %d wifi module"
+msgid_plural "You have %d wifi modules"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: reforis/templates/top-bar.html:25
+msgid "Logout"
+msgstr ""
+
+#~ msgid "There are %1 in the %2"
+#~ msgstr ""
+
+#~ msgid "Some translated text here;"
+#~ msgstr ""
+
+#~ msgid "Here is one banana"
+#~ msgid_plural "Here are %1 bananas"
+#~ msgstr[0] ""
+#~ msgstr[1] ""
+#~ msgstr[2] ""
+
