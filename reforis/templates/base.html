@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename = 'css/custom.css') }}"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
-    {% include 'locale.html' %}
+    {% include 'includes/locale.html' %}
 
     <title>{% block title %}{% endblock %} - Foris</title>
 </head>
@@ -25,10 +25,10 @@
 <body>
 <div class="wrapper">
 
-    {% include "navigation.html" %}
+    {% include "includes/navigation.html" %}
 
     <div id="content">
-        {% include "top-bar.html" %}
+        {% include "includes/top-bar.html" %}
         {% if messages %}
             {% for message in messages %}
                 <div class="alert {% if message.success %}alert-success{% endif %} {% if message.warning %}alert-warning{% endif %} {% if message.danger %}alert-danger{% endif %} alert-dismissible fade show"

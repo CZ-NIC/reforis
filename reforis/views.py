@@ -20,4 +20,4 @@ def view():
 
 @base.route('/wifi/')
 def wifi():
-    return render_template('wifi/index.html')
+    return render_template('wifi.html')
