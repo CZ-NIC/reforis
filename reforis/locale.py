@@ -30,7 +30,6 @@ class TranslationsHelper(Translations):
         """
         messages = self._catalog
         del messages['']
-        print(messages)
         res = {}
         for message_id, message in messages.items():
             if isinstance(message_id, tuple):
