@@ -18,7 +18,6 @@
     "gettext.js": "^0.6.0",
     "immutability-helper": "^3.0.0",
     "react": "^16.7.0",
-    "react-bootstrap": "^1.0.0-beta.5",
     "react-dom": "^16.7.0"
   },
   "scripts": {
