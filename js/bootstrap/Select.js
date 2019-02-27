@@ -17,9 +17,7 @@ export default function Select({name, id, label, choices, value, onChange}) {
     return <div className="form-group row">
         <label className={"form-control-label col-sm-" + LABEL_SIZE} htmlFor={id}>{label}</label>
         <div className={"col-sm-" + FIELD_SIZE}>
-            <select className="form-control" id={id} name={name} value={value} onChange={onChange}>
-                {options}
-            </select>
+            <select className="form-control" id={id} name={name} value={value} onChange={onChange}>{options}</select>
         </div>
     </div>;
 }

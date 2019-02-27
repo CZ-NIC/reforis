@@ -8,7 +8,6 @@
 import React from 'react';
 import {LABEL_SIZE, FIELD_SIZE} from "./constants";
 
-
 export default function RadioSet({name, id, label, choices, value, onChange}) {
     const radios = choices.map((choice, key) => {
         return <Radio
@@ -24,9 +23,7 @@ export default function RadioSet({name, id, label, choices, value, onChange}) {
         <div className={"form-label col-sm-" + LABEL_SIZE}>
             <label className="form-label" htmlFor={id}>{label}</label>
         </div>
-        <div className={"col-sm-" + FIELD_SIZE}>
-            {radios}
-        </div>
+        <div className={"col-sm-" + FIELD_SIZE}>{radios}</div>
     </div>;
 }
 
@@ -41,9 +38,7 @@ function Radio({name, label, value, onChange, checked = false}) {
             value={value}
             onChange={onChange}
             checked={checked}/>
-        <label className="form-check-label" htmlFor={id}>
-            {label}
-        </label>
+        <label className="form-check-label" htmlFor={id}>{label}</label>
     </div>;
 }
 

@@ -7,11 +7,11 @@
 
 import React from 'react'
 
-import CheckBox from "./bootstrap/Checkbox";
-import TextInput from "./bootstrap/TextInput";
-import Password from "./bootstrap/Password";
-import RadioSet from "./bootstrap/RadioSet";
-import Select from "./bootstrap/Select";
+import CheckBox from "../bootstrap/Checkbox";
+import TextInput from "../bootstrap/TextInput";
+import Password from "../bootstrap/Password";
+import RadioSet from "../bootstrap/RadioSet";
+import Select from "../bootstrap/Select";
 
 
 class WifiForm extends React.Component {
@@ -44,7 +44,6 @@ class WifiForm extends React.Component {
         const guestWifiForm = this.props.guest_wifi.enabled ? (
             <div>
                 <TextInput
-                    id={"guest_ssid_" + this.props.id}
                     name="SSID"
                     label="SSID"
                     value={this.props.guest_wifi.SSID}
@@ -52,7 +51,6 @@ class WifiForm extends React.Component {
                 />
 
                 <Password
-                    id={"guest_password_" + this.props.id}
                     name="password"
                     label="Password"
                     value={this.props.guest_wifi.password}
@@ -64,7 +62,6 @@ class WifiForm extends React.Component {
         const wifiForm = this.props.enabled ? (
             <div>
                 <TextInput
-                    id={"ssid_" + this.props.id}
                     name="SSID"
                     label="SSID"
                     value={this.props.SSID}
@@ -72,7 +69,6 @@ class WifiForm extends React.Component {
                 />
 
                 <Password
-                    id={"password_" + this.props.id}
                     name="password"
                     label="Password"
                     value={this.props.password}
@@ -80,7 +76,6 @@ class WifiForm extends React.Component {
                 />
 
                 <CheckBox
-                    id={"hidden_" + this.props.id}
                     name={"hidden"}
                     label="Hide SSID"
                     checked={this.props.hidden}
@@ -88,8 +83,7 @@ class WifiForm extends React.Component {
                 />
 
                 <RadioSet
-                    id={"hwmode_" + this.props.id}
-                    name="hwmode"
+                    name={"hwmode_" + this.props.id}
                     label="GHz"
                     choices={hwmode_choices}
                     value={this.props.hwmode}
@@ -97,7 +91,6 @@ class WifiForm extends React.Component {
                 />
 
                 <Select
-                    id={"htmode_" + this.props.id}
                     name={"htmode"}
                     label="802.11n/ac mode"
                     choices={htmode_choices}
@@ -106,7 +99,6 @@ class WifiForm extends React.Component {
                 />
 
                 <Select
-                    id={"channel_" + this.props.id}
                     name={"channel"}
                     label="Channel"
                     choices={channel_choices}
@@ -115,7 +107,6 @@ class WifiForm extends React.Component {
                 />
 
                 <CheckBox
-                    id={"guest_wifi_enabled_" + this.props.id}
                     name="enabled"
                     label="Enable Guest Wifi"
                     checked={this.props.guest_wifi.enabled}
@@ -124,11 +115,11 @@ class WifiForm extends React.Component {
                 {guestWifiForm}
             </div>
         ) : null;
+
         return (
             <div>
                 <h3>WiFi {this.props.id + 1}</h3>
                 <CheckBox
-                    id={"wifi_enabled_" + this.props.id}
                     name={"enabled"}
                     label="Enable"
                     checked={this.props.enabled}

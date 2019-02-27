@@ -9,10 +9,9 @@ import React from 'react';
 
 export default function Button({icon, className, children, ...props}) {
     className = className ? 'btn ' + className : 'btn btn-primary';
-    if (icon) {
+
+    if (icon)
         icon = <span className={`fa fa-${icon}`}/>;
-    }
-    return <button className={className} {...props}>
-        {icon} {children}
-    </button>;
+
+    return <button className={className} {...props}> {icon} {children} </button>;
 }

@@ -1,8 +1,15 @@
+/*
+ * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See /LICENSE for more information.
+ */
+
 import React from 'react'
 import update from 'immutability-helper';
 
-import WifiForm from '../components/Wifi';
-import Button from "../components/bootstrap/Button";
+import WifiForm from "./Form";
+import Button from "../bootstrap/Button";
 
 class Wifi extends React.Component {
     constructor(props) {
@@ -23,11 +30,11 @@ class Wifi extends React.Component {
         else if (target.name === 'channel')
             value = parseInt(target.value);
 
-        this.updateDevice(
-            deviceId,
-            target.name,
-            value
-        );
+        // Delete postfix id from hwmode radios names because it's not needed here but in HTML it should have
+        // different names.
+        const name = target.name.startsWith('hwmode') ? 'hwmode' : target.name;
+
+        this.updateDevice(deviceId, name, value);
     };
 
     handleGuestWifiFormChange = (deviceId, target) => {
@@ -36,11 +43,7 @@ class Wifi extends React.Component {
             {[target.name]: {$set: target.type === 'checkbox' ? target.checked : target.value}}
         );
 
-        this.updateDevice(
-            deviceId,
-            'guest_wifi',
-            newGuestWifiState
-        );
+        this.updateDevice(deviceId, 'guest_wifi', newGuestWifiState);
     };
 
     updateDevice(deviceId, target, value) {
@@ -143,6 +146,7 @@ class Wifi extends React.Component {
             <div key={device.id}>
                 <WifiForm
                     {...device}
+
                     getChannelChoices={this.getChannelChoices}
                     getHtmodeChoices={this.getHtmodeChoices}
                     getHwmodeChoices={this.getHwmodeChoices}
@@ -162,10 +166,12 @@ class Wifi extends React.Component {
                 )}</p>
 
                 {/* TODO: delete this plural test.*/}
-                <p>{babel.format(
-                    ngettext("You have %d wifi module", "You have %d wifi modules", devices_count),
-                    devices_count
-                )}</p>
+                <p>
+                    {babel.format(
+                        ngettext("You have %d wifi module", "You have %d wifi modules", devices_count),
+                        devices_count
+                    )}
+                </p>
 
                 {forms}
                 <Button>Save</Button>

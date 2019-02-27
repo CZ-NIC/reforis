@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import {LABEL_SIZE, FIELD_SIZE} from "./constants";
+import {LABEL_SIZE} from "./constants";
 
 export default function CheckBox({name, id, label, onChange, checked = false}) {
     return <div className="form-group row">
