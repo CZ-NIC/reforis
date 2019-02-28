@@ -5,8 +5,7 @@
 
 import json
 
-from flask import Blueprint, render_template, current_app, request, jsonify
-from pprint import pprint
+from flask import Blueprint, current_app, request, jsonify
 
 from reforis.backend import ExceptionInBackend
 
@@ -24,7 +23,6 @@ def wifi():
     backend_data = current_app.backend.perform("wifi", "get_settings")
     if request.method == 'POST':
         data = request.json
-        pprint(data)
         res = ""
         try:
             res = current_app.backend.perform("wifi", "update_settings", data)
@@ -34,6 +32,5 @@ def wifi():
             extra = "%s" % json.dumps(e.query)
             trace = e.remote_stacktrace
             print("\nError: {}\nExtra: {}\nTrace: {}".format(error, extra, trace))
-
         return jsonify(res)
     return jsonify(backend_data)

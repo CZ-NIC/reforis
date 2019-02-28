@@ -2,21 +2,20 @@
 #
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
-
+from reforis.auth import register_login_required
 from .locale import TranslationsHelper
 
 
-# TODO: Put bus to config may be a better option.
-def create_app(config=None, bus='ubus'):
+def create_app(config='config.py'):
     from flask import Flask
     app = Flask(__name__)
-    app.config.from_object(config)
+    app.config.from_pyfile(config)
 
     from flask_babel import Babel
     babel = Babel(app)
 
     from .backend import Backend
-    app.backend = Backend(bus, '/var/run/ubus.sock')
+    app.backend = Backend(app.config['FORIS_BUS'], '/var/run/ubus.sock')
 
     @babel.localeselector
     def select_locale():
@@ -36,6 +35,8 @@ def create_app(config=None, bus='ubus'):
             babel.domain
         )
         return {'babel_catalog': translations.json_catalog}
+
+    register_login_required(app)
 
     from .views import base
     from .api import api

@@ -1,0 +1,39 @@
+{#TODO: clean this up#}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    {# Bootstrap #}
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/bootstrap.min.css') }}"/>
+
+    {# Custom CSS #}
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/custom.css') }}"/>
+
+    {% include 'includes/locale.html' %}
+
+    <title>Login - Foris</title>
+</head>
+<body>
+<div class="login">
+    <div class="justify-content-between">
+        <img src="{{ url_for('static', filename = 'imgs/logo-turris.svg') }}">
+        <h1>Login</h1>
+        <form action="" method="post">
+            <div class="form-group">
+                <input type="password" placeholder="Password" class="form-control" name="password">
+            </div>
+
+            <button class="btn btn-primary" type="submit">Login</button>
+        </form>
+        <div style="text-align: right">
+            {# TODO: #}
+            <a href="#">Go to LuCI</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

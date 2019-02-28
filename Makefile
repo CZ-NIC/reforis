@@ -11,9 +11,8 @@ FLASK=flask
 
 JS_DIR=./js
 
-export FLASK_ENV=development
 export FLASK_APP=reforis
-export FORIS_BUS=ubus
+export FLASK_ENV=development
 
 all:
 	@echo "make prepare-dev"
