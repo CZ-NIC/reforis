@@ -15,12 +15,27 @@ class ExceptionInBackend(Exception):
 
 class Backend(object):
     # TODO: get timeout from config
-    def __init__(self, name, path, timeout=30000):
+    def __init__(self, name, **kwargs):
         self.name = name
-        self.path = path
+        self.timeout = kwargs["timeout"]
 
-        from foris_client.buses.ubus import UbusSender
-        self._instance = UbusSender(path, default_timeout=timeout)
+        if name == "ubus":
+            from foris_client.buses.ubus import UbusSender
+            self.path = kwargs["path"]
+            self.path = kwargs["path"]
+            self._instance = UbusSender(self.path, default_timeout=self.timeout)
+
+        elif name == "mqtt":
+            from foris_client.buses.mqtt import MqttSender
+            self.host = kwargs["host"]
+            self.port = kwargs["port"]
+            self.credentials = _parse_credentials(kwargs["credentials_file"])
+            self.controller_id = kwargs["controller_id"]
+            self._instance = MqttSender(
+                self.host, self.port,
+                default_timeout=self.timeout,
+                credentials=self.credentials
+            )
 
     def __repr__(self):
         return "%s('%s')" % (type(self._instance).__name__, self.path)
@@ -35,7 +50,7 @@ class Backend(object):
         response = None
         # start_time = time.time()
         try:
-            response = self._instance.send(module, action, data)
+            response = self._instance.send(module, action, data, controller_id=self.controller_id)
         except ControllerError as e:
             # logger.error("Exception in backend occured.")
             if raise_exception_on_failure:
@@ -62,3 +77,9 @@ class Backend(object):
         #     # )
 
         return response
+
+
+def _parse_credentials(credentials_file):
+    with open(credentials_file, 'r') as f:
+        line = f.readline()[:-1]
+        return tuple(line.split(':'))

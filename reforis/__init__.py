@@ -17,8 +17,11 @@ def create_app(config='config.py'):
     from flask_babel import Babel
     babel = Babel(app)
 
+    bus = app.config['BUS']
+    bus_config = app.config['BUSES_CONF'][bus]
+
     from .backend import Backend
-    app.backend = Backend(app.config['FORIS_BUS'], '/var/run/ubus.sock')
+    app.backend = Backend(name=bus, **bus_config)
 
     @babel.localeselector
     def select_locale():
