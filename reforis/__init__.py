@@ -11,6 +11,9 @@ def create_app(config='config.py'):
     app = Flask(__name__)
     app.config.from_pyfile(config)
 
+    from flask_session import Session
+    Session(app)
+
     from flask_babel import Babel
     babel = Babel(app)
 

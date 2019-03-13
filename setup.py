@@ -41,6 +41,7 @@ setuptools.setup(
     install_requires=[
         'flask==1.0.2',
         'Flask-Babel==0.12.2',
+        'Flask-Session==0.3.1'
     ],
     classifiers=[
         'Framework :: Flask',
