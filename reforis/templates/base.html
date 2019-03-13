@@ -15,10 +15,15 @@
 
     {# Custom CSS #}
     <link rel="stylesheet" href="{{ url_for('static', filename = 'css/custom.css') }}"/>
-{# TODO: do you need this library? Download it as static or remove #}
-{#    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">#}
+    {# TODO: do you need this library? Download it as static or remove #}
+    {#    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">#}
+
+    {# Custom js#}
 
     {% include 'includes/locale.html' %}
+    {% include 'includes/constants.html' %}
+
+    <script src="{{ url_for('static', filename = 'js/websockets.js') }}"></script>
 
     <title>{% block title %}{% endblock %} - Foris</title>
 </head>

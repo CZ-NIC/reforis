@@ -34,6 +34,7 @@ def register_login_required(app):
         # Do not delete session when user closes the browser.
         session.permanent = True
 
+
         # User is logged in.
         if session.get('logged', False):
             return

@@ -12,6 +12,10 @@
     {# Custom CSS #}
     <link rel="stylesheet" href="{{ url_for('static', filename = 'css/custom.css') }}"/>
 
+    {# Custom JS #}
+    {% include 'includes/constants.html' %}
+    <script src="{{ url_for('static', filename = 'js/websockets.js') }}"></script>
+
     {% include 'includes/locale.html' %}
 
     <title>Login - Foris</title>

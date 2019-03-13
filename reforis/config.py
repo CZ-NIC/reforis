@@ -26,6 +26,5 @@ BUSES_CONF = {
     }
 }
 
-
 # WebSockets
 WS_PORT = 9081
