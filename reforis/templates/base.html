@@ -30,7 +30,6 @@
 
 <body>
 <div class="wrapper">
-
     {% include "includes/navigation.html" %}
 
     <div id="content">
@@ -49,7 +48,9 @@
         {% endif %}
         {% block content %}{% endblock %}
     </div>
-
 </div>
+
+{# Helpers #}
+{% include "includes/spinner.html" %}
 </body>
 </html>
