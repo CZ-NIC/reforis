@@ -9,7 +9,7 @@ import React from 'react';
 import {LABEL_SIZE, FIELD_SIZE} from "./constants";
 
 
-export default function Select({name, id, label, choices, value, onChange, ...props}) {
+export default function Select({name, id, label, choices, value, onChange, disabled, ...props}) {
     const options = choices.map((choice, key) => {
         return <option key={key} value={choice.value}>{choice.label}</option>;
     });
@@ -18,6 +18,7 @@ export default function Select({name, id, label, choices, value, onChange, ...pr
         <label className={"form-control-label col-sm-" + LABEL_SIZE} htmlFor={id}>{label}</label>
         <div className={"col-sm-" + FIELD_SIZE}>
             <select
+                disabled={disabled}
                 className="form-control"
                 id={id}
                 name={name}
