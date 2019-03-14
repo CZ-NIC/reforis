@@ -8,7 +8,7 @@
 import React from 'react';
 import {LABEL_SIZE, FIELD_SIZE} from "./constants";
 
-export default function RadioSet({name, id, label, choices, value, onChange}) {
+export default function RadioSet({name, id, label, choices, value, onChange, ...props}) {
     const radios = choices.map((choice, key) => {
         return <Radio
             key={key}
@@ -16,7 +16,9 @@ export default function RadioSet({name, id, label, choices, value, onChange}) {
             label={choice.label}
             value={choice.value}
             onChange={onChange}
-            checked={choice.value === value}/>;
+            checked={choice.value === value}
+            {...props}
+        />;
     });
 
     return <div id={id} className="form-group row">
@@ -27,7 +29,7 @@ export default function RadioSet({name, id, label, choices, value, onChange}) {
     </div>;
 }
 
-function Radio({name, label, value, onChange, checked = false}) {
+function Radio({name, label, value, onChange, checked = false,...props}) {
     let id = name + value;
     return <div className="form-check form-check-inline">
         <input
@@ -37,7 +39,9 @@ function Radio({name, label, value, onChange, checked = false}) {
             id={id}
             value={value}
             onChange={onChange}
-            checked={checked}/>
+            checked={checked}
+            {...props}
+        />
         <label className="form-check-label" htmlFor={id}>{label}</label>
     </div>;
 }

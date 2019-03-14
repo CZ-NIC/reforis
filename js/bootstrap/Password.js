@@ -9,7 +9,7 @@
 import React from 'react';
 import {LABEL_SIZE, FIELD_SIZE} from "./constants";
 
-export default function Password({name, id, label, onChange, value}) {
+export default function Password({name, id, label, onChange, value, ...props}) {
     return <div className="form-group row">
         <label className={"form-control-label col-sm-" + LABEL_SIZE} htmlFor={id}>{label}</label>
         <div className={"col-sm-" + FIELD_SIZE}>
@@ -20,6 +20,7 @@ export default function Password({name, id, label, onChange, value}) {
                 id={id}
                 onChange={onChange}
                 value={value}
+                {...props}
             />
         </div>
     </div>;

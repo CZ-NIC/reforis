@@ -7,11 +7,21 @@
 
 import React from 'react';
 
-export default function Button({icon, className, children, ...props}) {
-    className = className ? 'btn ' + className : 'btn btn-primary';
+const OFFSET = 8;
+const SIZE = 2;
+const SIZE_CLASS = 'offset-' + OFFSET + ' col-sm-' + SIZE + ' ';
 
-    if (icon)
-        icon = <span className={`fa fa-${icon}`}/>;
+export function Button({className, children, ...props}) {
+    className = className ? 'btn ' + SIZE_CLASS + className : 'btn btn-primary';
 
-    return <button className={className} {...props}> {icon} {children} </button>;
+    return <button className={className} {...props}> {children} </button>;
+}
+
+export function LoadingButton({className, children, ...props}) {
+    className = className ? 'disabled btn ' + SIZE_CLASS + className : 'disabled btn btn-primary';
+
+    return <button className={className} {...props}>
+        <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"> </span>
+        {children}
+    </button>;
 }

@@ -8,7 +8,7 @@
 import React from 'react';
 import {LABEL_SIZE} from "./constants";
 
-export default function CheckBox({name, id, label, onChange, checked = false}) {
+export default function CheckBox({name, id, label, onChange, checked,...props}) {
     return <div className="form-group row">
         <div className={"form-label col-sm-" + LABEL_SIZE}>
             <label className="form-label" htmlFor={id}>{label}</label>
@@ -19,7 +19,8 @@ export default function CheckBox({name, id, label, onChange, checked = false}) {
                 name={name}
                 id={id}
                 onChange={onChange}
-                defaultChecked={checked}
+                checked={checked}
+                {...props}
             />
         </div>
     </div>;
