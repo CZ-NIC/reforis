@@ -31,7 +31,7 @@ class WifiForm extends React.Component {
         return this.props.getHtmodeChoices(this.props.id)
     }
 
-    getHwmodeChoices(){
+    getHwmodeChoices() {
         return this.props.getHwmodeChoices(this.props.id)
 
     }
@@ -48,6 +48,7 @@ class WifiForm extends React.Component {
                     label="SSID"
                     value={this.props.guest_wifi.SSID}
                     onChange={this.onGuestWifiFormChange}
+                    disabled={this.props.disabled}
                 />
 
                 <Password
@@ -55,6 +56,7 @@ class WifiForm extends React.Component {
                     label="Password"
                     value={this.props.guest_wifi.password}
                     onChange={this.onGuestWifiFormChange}
+                    disabled={this.props.disabled}
                 />
             </div>
         ) : null;
@@ -66,6 +68,7 @@ class WifiForm extends React.Component {
                     label="SSID"
                     value={this.props.SSID}
                     onChange={this.onWifiFormChange}
+                    disabled={this.props.disabled}
                 />
 
                 <Password
@@ -73,6 +76,7 @@ class WifiForm extends React.Component {
                     label="Password"
                     value={this.props.password}
                     onChange={this.onWifiFormChange}
+                    disabled={this.props.disabled}
                 />
 
                 <CheckBox
@@ -80,6 +84,7 @@ class WifiForm extends React.Component {
                     label="Hide SSID"
                     checked={this.props.hidden}
                     onChange={this.onWifiFormChange}
+                    disabled={this.props.disabled}
                 />
 
                 <RadioSet
@@ -88,6 +93,7 @@ class WifiForm extends React.Component {
                     choices={hwmode_choices}
                     value={this.props.hwmode}
                     onChange={this.onWifiFormChange}
+                    disabled={this.props.disabled}
                 />
 
                 <Select
@@ -96,6 +102,7 @@ class WifiForm extends React.Component {
                     choices={htmode_choices}
                     value={this.props.htmode}
                     onChange={this.onWifiFormChange}
+                    disabled={this.props.disabled}
                 />
 
                 <Select
@@ -104,6 +111,7 @@ class WifiForm extends React.Component {
                     choices={channel_choices}
                     value={this.props.channel}
                     onChange={this.onWifiFormChange}
+                    disabled={this.props.disabled}
                 />
 
                 <CheckBox
@@ -111,6 +119,7 @@ class WifiForm extends React.Component {
                     label="Enable Guest Wifi"
                     checked={this.props.guest_wifi.enabled}
                     onChange={this.onGuestWifiFormChange}
+                    disabled={this.props.disabled}
                 />
                 {guestWifiForm}
             </div>
@@ -124,6 +133,7 @@ class WifiForm extends React.Component {
                     label="Enable"
                     checked={this.props.enabled}
                     onChange={this.onWifiFormChange}
+                    disabled={this.props.disabled}
                 />
                 {wifiForm}
             </div>

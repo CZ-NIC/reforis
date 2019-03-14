@@ -9,18 +9,53 @@ import React from 'react'
 import update from 'immutability-helper';
 
 import WifiForm from "./Form";
-import Button from "../bootstrap/Button";
+import {Button, LoadingButton} from "../bootstrap/Button";
 
 class Wifi extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {devices: []};
+        this.state = {
+            devices: [],
+            state: undefined
+        };
     }
 
     componentDidMount() {
+        this.loadSettings();
+        window.forisWS.subscribe('wifi');
+        window.forisWS.bind('wifi', 'update_settings',
+            msg => {
+                this.setState({state: 'update'});
+            }
+        );
+
+        window.forisWS.bind('maintain', 'network-restart',
+            (msg) => {
+                const remainsSec = msg.data.remains / 1000;
+                if (remainsSec === 0) {
+                    this.setState({state: 'ready'});
+                    this.loadSettings();
+                    return;
+                }
+
+                this.setState({
+                        remindsToNWRestart: remainsSec,
+                        state: 'network-restart'
+                    }
+                );
+            }
+        )
+    }
+
+    loadSettings() {
+        this.setState({state: 'load'});
         fetch('/api/wifi')
             .then(response => response.json())
-            .then(data => this.setState(data));
+            .then(data => {
+                this.setState(data);
+                this.setState({state: 'ready'});
+            });
+
     }
 
     handleWifiFormChange = (deviceId, target) => {
@@ -60,45 +95,45 @@ class Wifi extends React.Component {
 
     getChannelChoices = (deviceId) => {
         const device = this.state.devices[deviceId];
-        let channel_choices = [];
+        let channelChoices = [];
 
-        device.available_bands.forEach((available_band) => {
-            if (available_band.hwmode !== device.hwmode) return;
+        device.available_bands.forEach((availableBand) => {
+            if (availableBand.hwmode !== device.hwmode) return;
 
-            channel_choices = available_band.available_channels.map((available_channel) => {
-                let channel = available_channel.number;
+            channelChoices = availableBand.available_channels.map((availableChannel) => {
+                let channel = availableChannel.number;
                 return {label: channel, value: channel};
             })
         });
-        return channel_choices
+        return channelChoices
     };
 
     getHtmodeChoices = (deviceId) => {
         const device = this.state.devices[deviceId];
-        let htmode_choices = [];
+        let htmodeChoices = [];
 
-        device.available_bands.forEach((available_band) => {
-            if (available_band.hwmode !== device.hwmode)
+        device.available_bands.forEach((availableBand) => {
+            if (availableBand.hwmode !== device.hwmode)
                 return;
 
-            htmode_choices = available_band.available_htmodes.map((available_htmod) => {
+            htmodeChoices = availableBand.available_htmodes.map((availableHtmod) => {
                 return {
-                    key: available_htmod,
-                    label: available_htmod,
-                    value: available_htmod,
+                    key: availableHtmod,
+                    label: availableHtmod,
+                    value: availableHtmod,
                 };
             })
         });
-        return htmode_choices
+        return htmodeChoices
     };
 
     getHwmodeChoices = (deviceId) => {
         const device = this.state.devices[deviceId];
 
-        return device.available_bands.map((available_band) => {
+        return device.available_bands.map((availableBand) => {
             return {
-                label: available_band.hwmode,
-                value: available_band.hwmode,
+                label: availableBand.hwmode,
+                value: availableBand.hwmode,
             }
         });
     };
@@ -141,6 +176,7 @@ class Wifi extends React.Component {
         return data;
     }
 
+
     render() {
         const forms = this.state.devices.map((device) =>
             <div key={device.id}>
@@ -153,10 +189,36 @@ class Wifi extends React.Component {
 
                     onWifiFormChange={this.handleWifiFormChange}
                     onGuestWifiFormChange={this.handleGuestWifiFormChange}
+
+                    disabled={this.state.state !== 'ready'}
                 />
             </div>
         );
-        let devices_count = this.state.devices.length;
+        const devices_count = this.state.devices.length;
+
+        // TODO: better to make separated thing from it.
+        let submitButton;
+        switch (this.state.state) {
+            case 'update':
+                submitButton = <LoadingButton id="wifi-submit-button" className="btn-primary">
+                    Updating
+                </LoadingButton>;
+                break;
+            case 'load':
+                submitButton = <LoadingButton id="wifi-submit-button" className="btn-primary">
+                    Load settings
+                </LoadingButton>;
+                break;
+            case 'network-restart':
+                submitButton = <LoadingButton id="wifi-submit-button" className="btn-primary">
+                    Restarting after {this.state.remindsToNWRestart} sec.
+                </LoadingButton>;
+                break;
+
+            default:
+                submitButton = <Button id="wifi-submit-button" className="btn-primary">Save</Button>;
+        }
+
         return (
             <form onSubmit={this.handleSubmit}>
                 <p>{_(
@@ -174,7 +236,8 @@ class Wifi extends React.Component {
                 </p>
 
                 {forms}
-                <Button>Save</Button>
+
+                {submitButton}
             </form>
         );
     }

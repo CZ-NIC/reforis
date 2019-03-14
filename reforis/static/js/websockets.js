@@ -6,68 +6,69 @@
  */
 
 
-ForisWS = function () {
+function ForisWS() {
     const protocol = window.location.protocol === "http:" ? "ws" : "wss";
     const url = protocol + "://" + window.location.hostname + ":" + ForisConstants.WSPort;
-    let ws = new WebSocket(url);
 
-    // Module -> action
-    let callbacks = {
+    this.ws = new WebSocket(url);
+    this.callbacks = {  // callbacks[module][action]
         maintain: {
-            'network-restart': [
-                function (msg) {
-                    console.log(msg.kind);
-                    console.log(msg);
-                }
-            ]
+            'network-restart': []
         },
         router_notifications: {},
         updater: {},
     };
 
-    ws.onmessage = function (evt) {
+    this.ws.onmessage = (evt) => {
         console.log("Received Message: " + evt.data);
+        var data = JSON.parse(evt.data);
         try {
-            dispatch(JSON.parse(evt.data))
+            dispatch(data)
         } catch (e) {
-            if (e instanceof TypeError)
+            if (e instanceof TypeError) {
                 console.log("Callback for this message wasn't found:" + evt.data);
-            else throw e;
+            } else throw e;
         }
     };
 
-    ws.onopen = function () {
-        var output = JSON.stringify({"action": "subscribe", "params": Object.keys(callbacks)});
-        ws.send(output);
+    this.ws.onopen = () => {
+        var output = JSON.stringify({"action": "subscribe", "params": Object.keys(this.callbacks)});
+        this.ws.send(output);
+
         console.log("Connection open.");
     };
 
-    ws.onclose = function () {
+    this.ws.onclose = () => {
         console.log("Connection closed.");
     };
 
-
     this.bind = function (module, action, callback) {
-        callbacks[module] = callbacks[module] || {};
-        callbacks[module][action] = callbacks[module][action] || [];
-        callbacks[module][action].push(callback);
+        this.callbacks[module] = this.callbacks[module] || {};
+        this.callbacks[module][action] = this.callbacks[module][action] || [];
+        this.callbacks[module][action].push(callback);
         return this;
     };
 
-    this.send = function (event_name, event_data) {
-        var payload = JSON.stringify({event: event_name, data: event_data});
-        ws.send(payload);
+    this.subscribe = function (params) {
+        this.send("subscribe", params);
+        return this;
+    };
+
+    this.send = function (action, params) {
+        var payload = JSON.stringify({"action": action, "params": params});
+        this.ws.send(payload);
         return this;
     };
 
 
-    var dispatch = function (json) {
-        var chain = callbacks[json.module][json.action];
+    var dispatch = (json) => {
+        if (!json.module) return;
+        var chain = this.callbacks[json.module][json.action];
         if (typeof chain == 'undefined') return;
         for (var i = 0; i < chain.length; i++) {
-            chain[i](json.data)
+            chain[i](json)
         }
     }
-};
+}
 
-forisWS = ForisWS();
+forisWS = new ForisWS();
