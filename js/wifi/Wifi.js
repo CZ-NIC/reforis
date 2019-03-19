@@ -8,16 +8,23 @@
 import React from 'react'
 import update from 'immutability-helper';
 
-import WifiForm from "./Form";
-import {Button, LoadingButton} from "../bootstrap/Button";
+import WifiForm from './Form';
+import {Button} from '../bootstrap/Button';
 
 class Wifi extends React.Component {
+    static states = {
+        READY: 1,
+        UPDATE: 2,
+        NETWORK_RESTART: 3,
+        LOAD: 4,
+    };
+
     constructor(props) {
         super(props);
         this.state = {
             devices: [],
-            state: undefined
-        };
+            state: null,
+        }
     }
 
     componentDidMount() {
@@ -25,7 +32,7 @@ class Wifi extends React.Component {
         window.forisWS.subscribe('wifi');
         window.forisWS.bind('wifi', 'update_settings',
             msg => {
-                this.setState({state: 'update'});
+                this.setState({state: Wifi.states.UPDATE});
             }
         );
 
@@ -33,29 +40,30 @@ class Wifi extends React.Component {
             (msg) => {
                 const remainsSec = msg.data.remains / 1000;
                 if (remainsSec === 0) {
-                    this.setState({state: 'ready'});
+                    this.setState({state: Wifi.states.READY});
                     this.loadSettings();
                     return;
                 }
 
                 this.setState({
                         remindsToNWRestart: remainsSec,
-                        state: 'network-restart'
+                        state: Wifi.states.NETWORK_RESTART
                     }
                 );
             }
-        )
+        );
     }
 
     loadSettings() {
-        this.setState({state: 'load'});
+        this.setState({state: Wifi.states.LOAD});
         fetch('/api/wifi')
             .then(response => response.json())
             .then(data => {
-                this.setState(data);
-                this.setState({state: 'ready'});
+                this.setState(data, () => {
+                    this.validate()
+                });
+                this.setState({state: Wifi.states.READY});
             });
-
     }
 
     handleWifiFormChange = (deviceId, target) => {
@@ -145,6 +153,7 @@ class Wifi extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
+        this.setState({state: Wifi.states.UPDATE});
         const data = this.getPreparedDataToSubmit();
         fetch('/api/wifi', {
             headers: {
@@ -210,7 +219,31 @@ class Wifi extends React.Component {
 
 
     render() {
-        const forms = this.state.devices.map((device) =>
+        const devices_count = this.state.devices.length;
+        return (
+            <form onSubmit={this.handleSubmit}>
+                <p>{_(
+                    'If you want to use your router as a Wi-Fi access point, enable Wi-Fi here and fill in an SSID ' +
+                    '(the name of the access point) and a corresponding password. You can then set up your  mobile ' +
+                    'devices, using the QR code available within the form.'
+                )}</p>
+
+                {/* TODO: delete this plural test.*/}
+                <p>
+                    {babel.format(
+                        ngettext('You have %d wifi module', 'You have %d wifi modules', devices_count),
+                        devices_count
+                    )}
+                </p>
+
+                {this.getForms()}
+                {this.getSubmitButton()}
+            </form>
+        );
+    }
+
+    getForms() {
+        return this.state.devices.map((device) =>
             <div key={device.id}>
                 <WifiForm
                     {...device}
@@ -222,57 +255,40 @@ class Wifi extends React.Component {
                     onWifiFormChange={this.handleWifiFormChange}
                     onGuestWifiFormChange={this.handleGuestWifiFormChange}
 
-                    disabled={this.state.state !== 'ready'}
+                    disabled={this.state.state !== Wifi.states.READY}
                 />
             </div>
         );
-        const devices_count = this.state.devices.length;
+    }
 
-        // TODO: better to make separated thing from it.
-        let submitButton;
+    getSubmitButton() {
+        const disableSubmitButton = !this.isValid() || this.state.state !== Wifi.states.READY;
+        const loadingSubmitButton = this.state.state !== Wifi.states.READY;
+        let labelSubmitButton;
         switch (this.state.state) {
-            case 'update':
-                submitButton = <LoadingButton id="wifi-submit-button" className="btn-primary">
-                    Updating
-                </LoadingButton>;
+            case Wifi.states.UPDATE:
+                labelSubmitButton = 'Updating';
                 break;
-            case 'load':
-                submitButton = <LoadingButton id="wifi-submit-button" className="btn-primary">
-                    Load settings
-                </LoadingButton>;
+            case Wifi.states.LOAD:
+                labelSubmitButton = 'Load settings';
                 break;
-            case 'network-restart':
-                submitButton = <LoadingButton id="wifi-submit-button" className="btn-primary">
-                    Restarting after {this.state.remindsToNWRestart} sec.
-                </LoadingButton>;
+            case Wifi.states.NETWORK_RESTART:
+                labelSubmitButton = 'Restarting after ' + this.state.remindsToNWRestart + ' sec.';
                 break;
-
             default:
-                submitButton = <Button id="wifi-submit-button" className="btn-primary">Save</Button>;
+                labelSubmitButton = 'Save'
         }
 
-        return (
-            <form onSubmit={this.handleSubmit}>
-                <p>{_(
-                    "If you want to use your router as a Wi-Fi access point, enable Wi-Fi here and fill in an SSID " +
-                    "(the name of the access point) and a corresponding password. You can then set up your  mobile " +
-                    "devices, using the QR code available within the form."
-                )}</p>
-
-                {/* TODO: delete this plural test.*/}
-                <p>
-                    {babel.format(
-                        ngettext("You have %d wifi module", "You have %d wifi modules", devices_count),
-                        devices_count
-                    )}
-                </p>
-
-                {forms}
-
-                {submitButton}
-            </form>
-        );
+        return <Button
+            id='wifi-submit-button'
+            className='btn-primary'
+            loading={loadingSubmitButton}
+            disabled={disableSubmitButton}
+        >
+            {labelSubmitButton}
+        </Button>;
     }
+
 }
 
 

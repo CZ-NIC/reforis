@@ -9,19 +9,16 @@ import React from 'react';
 
 const OFFSET = 8;
 const SIZE = 2;
-const SIZE_CLASS = 'offset-' + OFFSET + ' col-sm-' + SIZE + ' ';
+const SIZE_CLASS = ' offset-' + OFFSET + ' col-sm-' + SIZE;
 
-export function Button({className, children, ...props}) {
-    className = className ? 'btn ' + SIZE_CLASS + className : 'btn btn-primary';
+export function Button({className, loading, children, ...props}) {
+    className = className ? 'btn ' + className : 'btn btn-primary ';
+    className += SIZE_CLASS;
 
-    return <button className={className} {...props}> {children} </button>;
-}
-
-export function LoadingButton({className, children, ...props}) {
-    className = className ? 'disabled btn ' + SIZE_CLASS + className : 'disabled btn btn-primary';
+    const span = loading ?
+        <span className='spinner-border spinner-border-sm' role='status' aria-hidden='true'/> : null;
 
     return <button className={className} {...props}>
-        <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"> </span>
-        {children}
+        {span} {span ? ' ' : null} {children}
     </button>;
 }
