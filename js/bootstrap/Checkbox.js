@@ -6,16 +6,16 @@
  */
 
 import React from 'react';
-import {LABEL_SIZE} from "./constants";
+import {LABEL_SIZE} from './constants';
 
 export default function CheckBox({name, id, label, onChange, checked,...props}) {
-    return <div className="form-group row">
-        <div className={"form-label col-sm-" + LABEL_SIZE}>
-            <label className="form-label" htmlFor={id}>{label}</label>
+    return <div className='form-group row'>
+        <div className={'form-label col-sm-' + LABEL_SIZE}>
+            <label className='form-label' htmlFor={id}>{label}</label>
         </div>
-        <div className={"form-check"}>
+        <div className={'form-check'}>
             <input
-                type="checkbox"
+                type='checkbox'
                 name={name}
                 id={id}
                 onChange={onChange}

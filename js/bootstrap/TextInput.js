@@ -6,22 +6,22 @@
  */
 
 import React from 'react';
-import {LABEL_SIZE, FIELD_SIZE} from "./constants";
+import {LABEL_SIZE, FIELD_SIZE} from './constants';
 
 export default function TextInput({name, id, label, onChange, value, error, ...props}) {
-    return <div className="form-group row">
-        <label className={"form-control-label col-sm-" + LABEL_SIZE} htmlFor={id}>{label}</label>
-        <div className={"col-sm-" + FIELD_SIZE}>
+    return <div className='form-group row'>
+        <label className={'form-control-label col-sm-' + LABEL_SIZE} htmlFor={id}>{label}</label>
+        <div className={'col-sm-' + FIELD_SIZE}>
             <input
-                className={"form-control " + (!error ? "" : "is-invalid")}
-                type="text"
+                className={'form-control ' + (!error ? '' : 'is-invalid')}
+                type='text'
                 name={name}
                 id={id}
                 onChange={onChange}
                 value={value}
                 {...props}
             />
-            <div className="invalid-feedback">{error}</div>
+            <div className='invalid-feedback'>{error}</div>
         </div>
     </div>;
 }

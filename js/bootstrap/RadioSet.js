@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import {LABEL_SIZE, FIELD_SIZE} from "./constants";
+import {LABEL_SIZE, FIELD_SIZE} from './constants';
 
 export default function RadioSet({name, id, label, choices, value, onChange, ...props}) {
     const radios = choices.map((choice, key) => {
@@ -21,20 +21,20 @@ export default function RadioSet({name, id, label, choices, value, onChange, ...
         />;
     });
 
-    return <div id={id} className="form-group row">
-        <div className={"form-label col-sm-" + LABEL_SIZE}>
-            <label className="form-label" htmlFor={id}>{label}</label>
+    return <div id={id} className='form-group row'>
+        <div className={'form-label col-sm-' + LABEL_SIZE}>
+            <label className='form-label' htmlFor={id}>{label}</label>
         </div>
-        <div className={"col-sm-" + FIELD_SIZE}>{radios}</div>
+        <div className={'col-sm-' + FIELD_SIZE}>{radios}</div>
     </div>;
 }
 
 function Radio({name, label, value, onChange, checked = false,...props}) {
     let id = name + value;
-    return <div className="form-check form-check-inline">
+    return <div className='form-check form-check-inline'>
         <input
-            className="form-check-input"
-            type="radio"
+            className='form-check-input'
+            type='radio'
             name={name}
             id={id}
             value={value}
@@ -42,7 +42,7 @@ function Radio({name, label, value, onChange, checked = false,...props}) {
             checked={checked}
             {...props}
         />
-        <label className="form-check-label" htmlFor={id}>{label}</label>
+        <label className='form-check-label' htmlFor={id}>{label}</label>
     </div>;
 }
 

@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import {LABEL_SIZE, FIELD_SIZE} from "./constants";
+import {LABEL_SIZE, FIELD_SIZE} from './constants';
 
 
 export default function Select({name, id, label, choices, value, onChange, disabled, ...props}) {
@@ -14,12 +14,12 @@ export default function Select({name, id, label, choices, value, onChange, disab
         return <option key={key} value={choice.value}>{choice.label}</option>;
     });
 
-    return <div className="form-group row">
-        <label className={"form-control-label col-sm-" + LABEL_SIZE} htmlFor={id}>{label}</label>
-        <div className={"col-sm-" + FIELD_SIZE}>
+    return <div className='form-group row'>
+        <label className={'form-control-label col-sm-' + LABEL_SIZE} htmlFor={id}>{label}</label>
+        <div className={'col-sm-' + FIELD_SIZE}>
             <select
                 disabled={disabled}
-                className="form-control"
+                className='form-control'
                 id={id}
                 name={name}
                 value={value}

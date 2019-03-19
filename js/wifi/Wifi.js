@@ -160,7 +160,7 @@ class Wifi extends React.Component {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
             },
-            method: "POST",
+            method: 'POST',
             body: JSON.stringify(data)
         })
             .then(response => response.json())
@@ -202,9 +202,9 @@ class Wifi extends React.Component {
 
         let errors = {};
         if (device.SSID.length > 32)
-            errors.SSID = _("SSID can't be longer than 32 symbols");
+            errors.SSID = _('SSID can\'t be longer than 32 symbols');
         if (device.password.length < 8)
-            errors.password = _("Password must contain at least 8 symbols");
+            errors.password = _('Password must contain at least 8 symbols');
         return errors;
     }
 
