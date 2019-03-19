@@ -82,9 +82,14 @@ class Wifi extends React.Component {
     };
 
     updateDevice(deviceId, target, value) {
-        const newDeviceState = update(
-            this.state.devices[deviceId],
+        const device = this.state.devices[deviceId];
+        let newDeviceState = update(
+            device,
             {[target]: {$set: value}}
+        );
+        newDeviceState = update(
+            newDeviceState,
+            {errors: {$set: Wifi.validateDevice(newDeviceState)}}
         );
 
         this.setState(update(
@@ -163,6 +168,7 @@ class Wifi extends React.Component {
 
         data.devices.forEach((device, idx) => {
             delete device['available_bands'];
+            delete device['errors'];
 
             if (!device.enabled) {
                 data.devices[idx] = {id: device.id, enabled: false};
@@ -174,6 +180,32 @@ class Wifi extends React.Component {
         });
 
         return data;
+    }
+
+    validate() {
+        this.state.devices.forEach((device) => {
+            this.updateDevice(device.id, 'errors', Wifi.validateDevice(device));
+        });
+    }
+
+    static validateDevice(device) {
+        if (!device.enabled) return {};
+
+        let errors = {};
+        if (device.SSID.length > 32)
+            errors.SSID = _("SSID can't be longer than 32 symbols");
+        if (device.password.length < 8)
+            errors.password = _("Password must contain at least 8 symbols");
+        return errors;
+    }
+
+    isValid() {
+        let valid = true;
+        this.state.devices.forEach((device) => {
+            if (typeof device.errors !== 'undefined' && Object.keys(device.errors).length !== 0)
+                valid = false;
+        });
+        return valid
     }
 
 

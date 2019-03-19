@@ -61,6 +61,8 @@ class WifiForm extends React.Component {
             </div>
         ) : null;
 
+
+        const errors = this.props.errors ? this.props.errors : {};
         const wifiForm = this.props.enabled ? (
             <div>
                 <TextInput
@@ -69,6 +71,8 @@ class WifiForm extends React.Component {
                     value={this.props.SSID}
                     onChange={this.onWifiFormChange}
                     disabled={this.props.disabled}
+                    error={errors.SSID}
+                    required
                 />
 
                 <Password
@@ -77,6 +81,8 @@ class WifiForm extends React.Component {
                     value={this.props.password}
                     onChange={this.onWifiFormChange}
                     disabled={this.props.disabled}
+                    error={errors.password}
+                    required
                 />
 
                 <CheckBox
