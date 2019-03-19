@@ -9,7 +9,7 @@ import React from 'react';
 import {LABEL_SIZE, FIELD_SIZE} from './constants';
 
 
-export default function Select({name, id, label, choices, value, onChange, disabled, ...props}) {
+export default function Select({name, id, label, choices, value, onChange, disabled, helpText, ...props}) {
     const options = choices.map((choice, key) => {
         return <option key={key} value={choice.value}>{choice.label}</option>;
     });
@@ -28,6 +28,7 @@ export default function Select({name, id, label, choices, value, onChange, disab
             >
                 {options}
             </select>
+            <small className="form-text text-muted">{helpText}</small>
         </div>
     </div>;
 }

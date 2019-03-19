@@ -13,6 +13,28 @@ import Password from '../bootstrap/Password';
 import RadioSet from '../bootstrap/RadioSet';
 import Select from '../bootstrap/Select';
 
+const HELP_TEXTS = {
+    password: _(`
+        WPA2 pre-shared key, that is required to connect to the network.
+    `),
+    hidden: _('If set, network is not visible when scanning for available networks.'),
+    hwmode: _(`
+        The 2.4 GHz band is more widely supported by clients, but tends to have more interference. The 5 GHz band is a
+        newer standard and may not be supported by all your devices. It usually has less interference, but the signal
+        does not carry so well indoors.`
+    ),
+    htmode: _(`
+        Change this to adjust 802.11n/ac mode of operation. 802.11n with 40 MHz wide channels can yield higher
+        throughput but can cause more interference in the network. If you don't know what to choose, use the default
+        option with 20 MHz wide channel.
+    `),
+    guest_wifi_enabled: _(`
+        Enables Wi-Fi for guests, which is separated from LAN network. Devices connected to this network are allowed to
+        access the internet, but aren't allowed to access other devices and the configuration interface of the router.
+        Parameters of the guest network can be set in the Guest network tab.
+        `),
+};
+
 
 class WifiForm extends React.PureComponent {
     onWifiFormChange = (event) => {
@@ -46,16 +68,20 @@ class WifiForm extends React.PureComponent {
                     name='SSID'
                     label='SSID'
                     value={this.props.guest_wifi.SSID}
-                    onChange={this.onGuestWifiFormChange}
                     disabled={this.props.disabled}
+
+                    onChange={this.onGuestWifiFormChange}
                 />
 
                 <Password
                     name='password'
                     label='Password'
                     value={this.props.guest_wifi.password}
-                    onChange={this.onGuestWifiFormChange}
+                    helpText={HELP_TEXTS.password}
                     disabled={this.props.disabled}
+                    required
+
+                    onChange={this.onGuestWifiFormChange}
                 />
             </div>
         ) : null;
@@ -68,28 +94,33 @@ class WifiForm extends React.PureComponent {
                     name='SSID'
                     label='SSID'
                     value={this.props.SSID}
-                    onChange={this.onWifiFormChange}
                     disabled={this.props.disabled}
                     error={errors.SSID}
                     required
+
+                    onChange={this.onWifiFormChange}
                 />
 
                 <Password
                     name='password'
                     label='Password'
                     value={this.props.password}
-                    onChange={this.onWifiFormChange}
-                    disabled={this.props.disabled}
                     error={errors.password}
+                    helpText={HELP_TEXTS.password}
+                    disabled={this.props.disabled}
                     required
+
+                    onChange={this.onWifiFormChange}
                 />
 
                 <CheckBox
                     name={'hidden'}
                     label='Hide SSID'
+                    helpText={HELP_TEXTS.hidden}
                     checked={this.props.hidden}
-                    onChange={this.onWifiFormChange}
                     disabled={this.props.disabled}
+
+                    onChange={this.onWifiFormChange}
                 />
 
                 <RadioSet
@@ -97,8 +128,10 @@ class WifiForm extends React.PureComponent {
                     label='GHz'
                     choices={hwmode_choices}
                     value={this.props.hwmode}
-                    onChange={this.onWifiFormChange}
                     disabled={this.props.disabled}
+                    helpText={HELP_TEXTS.hwmode}
+
+                    onChange={this.onWifiFormChange}
                 />
 
                 <Select
@@ -106,8 +139,10 @@ class WifiForm extends React.PureComponent {
                     label='802.11n/ac mode'
                     choices={htmode_choices}
                     value={this.props.htmode}
-                    onChange={this.onWifiFormChange}
                     disabled={this.props.disabled}
+                    helpText={HELP_TEXTS.htmode}
+
+                    onChange={this.onWifiFormChange}
                 />
 
                 <Select
@@ -115,16 +150,19 @@ class WifiForm extends React.PureComponent {
                     label='Channel'
                     choices={channel_choices}
                     value={this.props.channel}
-                    onChange={this.onWifiFormChange}
                     disabled={this.props.disabled}
+
+                    onChange={this.onWifiFormChange}
                 />
 
                 <CheckBox
                     name='enabled'
                     label='Enable Guest Wifi'
                     checked={this.props.guest_wifi.enabled}
-                    onChange={this.onGuestWifiFormChange}
                     disabled={this.props.disabled}
+                    helpText={HELP_TEXTS.guest_wifi_enabled}
+
+                    onChange={this.onGuestWifiFormChange}
                 />
                 {guestWifiForm}
             </div>
@@ -137,8 +175,9 @@ class WifiForm extends React.PureComponent {
                     name={'enabled'}
                     label='Enable'
                     checked={this.props.enabled}
-                    onChange={this.onWifiFormChange}
                     disabled={this.props.disabled}
+
+                    onChange={this.onWifiFormChange}
                 />
                 {wifiForm}
             </div>
