@@ -170,7 +170,7 @@ class WifiForm extends React.PureComponent {
 
         return (
             <div>
-                <h3>WiFi {this.props.id + 1}</h3>
+                <h3>Module {this.props.id + 1}</h3>
                 <CheckBox
                     name={'enabled'}
                     label='Enable'
