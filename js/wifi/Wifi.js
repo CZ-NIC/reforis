@@ -11,6 +11,20 @@ import update from 'immutability-helper';
 import WifiForm from './Form';
 import {Button} from '../bootstrap/Button';
 
+const HTMODES = {
+    NOHT: _('Disabled'),
+    HT20: _('802.11n - 20 MHz wide channel'),
+    HT40: _('802.11n - 40 MHz wide channel'),
+    VHT20: _('802.11ac - 20 MHz wide channel'),
+    VHT40: _('802.11ac - 40 MHz wide channel'),
+    VHT80: _("802.11ac - 80 MHz wide channel"),
+};
+
+const HWMODES = {
+    '11g': _('2.4'),
+    '11a': _('5')
+};
+
 class Wifi extends React.Component {
     static states = {
         READY: 1,
@@ -29,13 +43,13 @@ class Wifi extends React.Component {
 
     componentDidMount() {
         this.loadSettings();
-        window.forisWS.subscribe('wifi');
-        window.forisWS.bind('wifi', 'update_settings',
-            msg => {
-                this.setState({state: Wifi.states.UPDATE});
-            }
-        );
-
+        window.forisWS
+            .subscribe('wifi')
+            .bind('wifi', 'update_settings',
+                msg => {
+                    this.setState({state: Wifi.states.UPDATE});
+                }
+            );
         window.forisWS.bind('maintain', 'network-restart',
             (msg) => {
                 const remainsSec = msg.data.remains / 1000;
@@ -114,10 +128,17 @@ class Wifi extends React.Component {
             if (availableBand.hwmode !== device.hwmode) return;
 
             channelChoices = availableBand.available_channels.map((availableChannel) => {
-                let channel = availableChannel.number;
-                return {label: channel, value: channel};
+                return {
+                    label: `
+                        ${availableChannel.number}
+                        (${availableChannel.frequency} MHz ${availableChannel.radar ? ' ,DFS' : ''})
+                    `,
+                    value: availableChannel.number
+                };
             })
         });
+
+        channelChoices.unshift({label: _('auto'), value: 0});
         return channelChoices
     };
 
@@ -131,8 +152,7 @@ class Wifi extends React.Component {
 
             htmodeChoices = availableBand.available_htmodes.map((availableHtmod) => {
                 return {
-                    key: availableHtmod,
-                    label: availableHtmod,
+                    label: HTMODES[availableHtmod],
                     value: availableHtmod,
                 };
             })
@@ -145,7 +165,7 @@ class Wifi extends React.Component {
 
         return device.available_bands.map((availableBand) => {
             return {
-                label: availableBand.hwmode,
+                label: HWMODES[availableBand.hwmode],
                 value: availableBand.hwmode,
             }
         });
@@ -236,7 +256,7 @@ class Wifi extends React.Component {
                 {/* TODO: delete this plural test.*/}
                 <p>
                     {babel.format(
-                        ngettext('You have %d wifi module', 'You have %d wifi modules', devices_count),
+                        ngettext('You have %d wifi module', 'You have %d wifi modules.', devices_count),
                         devices_count
                     )}
                 </p>
