@@ -205,6 +205,11 @@ class Wifi extends React.Component {
             errors.SSID = _('SSID can\'t be longer than 32 symbols');
         if (device.password.length < 8)
             errors.password = _('Password must contain at least 8 symbols');
+
+        if (!device.guest_wifi.enabled) return errors;
+        if (device.guest_wifi.password.length < 8)
+            errors.guestWifiPassword = _('Password must contain at least 8 symbols');
+
         return errors;
     }
 

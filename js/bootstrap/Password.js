@@ -23,8 +23,8 @@ export default function Password({name, id, label, onChange, value, helpText, er
                 value={value}
                 {...props}
             />
-            <small className="form-text text-muted">{helpText}</small>
             <div className='invalid-feedback'>{error}</div>
+            <small className="form-text text-muted">{helpText}</small>
         </div>
     </div>;
 }

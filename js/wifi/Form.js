@@ -62,6 +62,8 @@ class WifiForm extends React.PureComponent {
         const htmode_choices = this.getHtmodeChoices();
         const hwmode_choices = this.getHwmodeChoices();
 
+        const errors = this.props.errors ? this.props.errors : {};
+
         const guestWifiForm = this.props.guest_wifi.enabled ? (
             <div>
                 <TextInput
@@ -79,6 +81,7 @@ class WifiForm extends React.PureComponent {
                     value={this.props.guest_wifi.password}
                     helpText={HELP_TEXTS.password}
                     disabled={this.props.disabled}
+                    error={errors.guestWifiPassword}
                     required
 
                     onChange={this.onGuestWifiFormChange}
@@ -86,8 +89,6 @@ class WifiForm extends React.PureComponent {
             </div>
         ) : null;
 
-
-        const errors = this.props.errors ? this.props.errors : {};
         const wifiForm = this.props.enabled ? (
             <div>
                 <TextInput
