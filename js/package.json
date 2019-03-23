@@ -2,10 +2,10 @@
   "name": "foris_wifi",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "./src/app.js",
   "dependencies": {
     "po2json": "^1.0.0-alpha",
-    "watchify": "^3.11.0"
+    "watchify": "^3.11.1"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -14,8 +14,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-plugin-react-transform": "^3.0.0",
     "babelify": "^10.0.0",
-    "bootstrap": "^4.3.0",
-    "gettext.js": "^0.6.0",
+    "gettext.js": "^0.7.0",
     "immutability-helper": "^3.0.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
