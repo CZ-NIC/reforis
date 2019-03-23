@@ -7,7 +7,7 @@
 
 import React from "react";
 
-export class NotificationsItem extends React.PureComponent {
+export class NotificationsDropdownItem extends React.PureComponent {
     getIcon() {
         let iconName = null;
         switch (this.props.severity) {

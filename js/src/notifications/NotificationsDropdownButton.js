@@ -10,7 +10,7 @@ import {ForisURLs} from "../constants";
 
 const SMALL_SCREEN = 699;
 
-export default class NotificationsButton extends React.PureComponent {
+export default class NotificationsDropdownButton extends React.PureComponent {
     redirectToNotificationCenter = (e) => {
         // We don't want to show dropdown on the small devices.
         // So just make redirect to notification center
