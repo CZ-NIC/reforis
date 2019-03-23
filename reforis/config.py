@@ -17,8 +17,6 @@ BUSES_CONF = {
         'port': 11883,
         'credentials_file': '/etc/fosquitto/credentials.plain',
         'timeout': 30000,
-        # TODO: Remove it from here
-        'controller_id': '0000000B00013C14'
     },
     'bus': {
         'path': '/var/run/ubus.sock',
