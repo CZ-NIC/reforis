@@ -43,7 +43,8 @@ run:
 
 run-js:
 	cd ${JS_DIR};\
-	npx watchify app.js -o ../reforis/static/js/app.min.js -t [ babelify --presets [ @babel/preset-env @babel/preset-react ] --plugins [ @babel/plugin-proposal-class-properties ] ]
+	npx watchify ./src/app.js -o ../reforis/static/js/app.min.js \
+	-t [ babelify --presets [ @babel/preset-env @babel/preset-react ] --plugins [ @babel/plugin-proposal-class-properties ] ]
 
 
 create-messages:

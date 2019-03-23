@@ -10,6 +10,7 @@ import update from 'immutability-helper';
 
 import WifiForm from './Form';
 import {Button} from '../bootstrap/Button';
+import {ForisAPI} from "../api/api";
 
 const HTMODES = {
     NOHT: _('Disabled'),
@@ -70,11 +71,10 @@ class Wifi extends React.Component {
 
     loadSettings() {
         this.setState({state: Wifi.states.LOAD});
-        fetch('/api/wifi')
-            .then(response => response.json())
+        ForisAPI.wifi.get()
             .then(data => {
                 this.setState(data, () => {
-                    this.validate()
+                    this.validate();
                 });
                 this.setState({state: Wifi.states.READY});
             });
@@ -175,16 +175,7 @@ class Wifi extends React.Component {
         e.preventDefault();
         this.setState({state: Wifi.states.UPDATE});
         const data = this.getPreparedDataToSubmit();
-        fetch('/api/wifi', {
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            method: 'POST',
-            body: JSON.stringify(data)
-        })
-            .then(response => response.json())
-            // Todo: better error processing
+        ForisAPI.wifi.post(data)
             .then(result => console.log(result));
     };
 

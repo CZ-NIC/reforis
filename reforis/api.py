@@ -7,6 +7,7 @@ import json
 
 from flask import Blueprint, current_app, request, jsonify
 
+from reforis import _get_locale_from_backend
 from reforis.backend import ExceptionInBackend
 
 api = Blueprint(
@@ -16,6 +17,29 @@ api = Blueprint(
     static_folder='static',
     url_prefix='/api'
 )
+
+
+# TODO: make some wrapper to catch backend exceptions...
+
+@api.route("/notifications", methods=['GET', 'POST'])
+def notifications():
+    backend_data = current_app.backend.perform("router_notifications", "list",
+                                               {'lang': _get_locale_from_backend(current_app)})
+    if request.method == 'POST':
+        data = request.json
+        res = ""
+        try:
+            print(data)
+            res = current_app.backend.perform("router_notifications", "mark_as_displayed", data)
+            print(res)
+        except ExceptionInBackend as e:
+            # TODO: logging...
+            error = "Remote Exception: %s" % e.remote_description
+            extra = "%s" % json.dumps(e.query)
+            trace = e.remote_stacktrace
+            print("\nError: {}\nExtra: {}\nTrace: {}".format(error, extra, trace))
+        return jsonify(res)
+    return jsonify(backend_data)
 
 
 @api.route("/wifi", methods=['GET', 'POST'])
