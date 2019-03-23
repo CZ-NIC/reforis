@@ -8,7 +8,7 @@
 import React from 'react'
 import update from 'immutability-helper';
 
-import WifiForm from './Form';
+import WifiForm from './WifiForm';
 import {Button} from '../bootstrap/Button';
 import {ForisAPI} from "../api/api";
 

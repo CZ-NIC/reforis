@@ -1,4 +1,4 @@
 <script src="{{ url_for('static', filename = 'js/babel.js') }}" type="text/javascript"></script>
 <script type="application/javascript">
-    babel.Translations.load({{ babel_catalog | safe }}).install();
+    ForisTranslations = babel.Translations.load({{ babel_catalog | safe }}).install();
 </script>

@@ -8,11 +8,11 @@
 import React from 'react';
 import {render} from 'react-dom';
 import Wifi from './wifi/Wifi';
-import NotificationsDropdown from './notifications/NotificationsDropdown';
+import Notifications from './notifications/Notifications';
 
 window.addEventListener('load', () => {
     const apps = [
-        {id: 'notifications_dropdown_container', component: NotificationsDropdown},
+        {id: 'notifications_dropdown_container', component: Notifications},
         {id: 'wifi_form_container', component: Wifi},
     ];
 
