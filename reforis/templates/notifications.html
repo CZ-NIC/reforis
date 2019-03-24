@@ -1,8 +1,19 @@
 {% extends 'base.html' %}
 
-{% block title %}WiFi{% endblock %}
+{# Hack to scroll to needed item. It's used in the NotificationCenterItem. #}
+{% block js %}
+    {% if notification_id != None %}
+        <script type="application/javascript">ForisNotificationID = "{{ notification_id }}";</script>
+    {% endif %}
+{% endblock %}
+
+{% block title %}
+    {% trans %}
+        Notifications
+    {% endtrans %}
+{% endblock %}
 
 {% block content %}
-    <h1>Wi-Fi</h1>
-    <div id="wifi_form_container"></div>
+    <h1>{% trans %} Notifications center {% endtrans %}</h1>
+    <div id="notifications_center_container"></div>
 {% endblock %}

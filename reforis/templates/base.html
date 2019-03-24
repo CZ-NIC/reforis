@@ -23,6 +23,7 @@
 
     <script src="{{ url_for('static', filename = 'js/websockets.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename = 'js/app.min.js') }}"></script>
+    {% block js %}{% endblock %}
 
     <title>{% block title %}{% endblock %} - Foris</title>
 </head>

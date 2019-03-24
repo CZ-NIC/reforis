@@ -401,3 +401,36 @@ a,
 .spinner-wrapper .spinner-text {
     margin: 1rem;
 }
+
+/*Notification center*/
+#notifications-center {
+    display: flex;
+    flex-direction: column;
+}
+
+#notifications-center .card-body {
+    white-space: pre-wrap;
+}
+
+#notifications-center .card {
+    margin-bottom: 1rem;
+}
+
+#notifications-center .bg-light {
+    background-color: #fbfbfb !important;
+}
+
+#notifications-center .close {
+    color: inherit;
+}
+
+#notifications-center #btn-dismiss-all {
+    margin-bottom: 1rem;
+}
+
+#notifications-center .card-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}

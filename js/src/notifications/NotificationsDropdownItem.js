@@ -6,30 +6,11 @@
  */
 
 import React from "react";
+import NotificationIcon from "./NotificationIcon";
+import {toLocaleDateString} from "./utils";
+import {ForisURLs} from "../constants";
 
 export class NotificationsDropdownItem extends React.PureComponent {
-    getIcon() {
-        let iconName = null;
-        switch (this.props.severity) {
-            case 'news':
-                iconName = 'newspaper';
-                break;
-            case 'restart':
-                iconName = 'power-off';
-                break;
-            case 'error':
-                iconName = 'exclamation-circle';
-                break;
-            case 'update':
-                iconName = 'sync';
-                break;
-            default:
-                return null;
-        }
-
-        return <i className={'fa fa-2x fa-' + iconName}/>
-    }
-
     getMessage() {
         const maxLength = 25;
         const message = this.props.message;
@@ -37,18 +18,6 @@ export class NotificationsDropdownItem extends React.PureComponent {
             return message.substring(0, maxLength) + '...';
         else
             return message;
-    }
-
-    getDate() {
-        const options = {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-            hour: 'numeric',
-            minute: 'numeric',
-            second: 'numeric'
-        };
-        return new Date(this.props.created_at).toLocaleDateString(ForisTranslations.locale, options);
     }
 
     getDivider() {
@@ -61,17 +30,16 @@ export class NotificationsDropdownItem extends React.PureComponent {
     };
 
     render() {
-        const icon = this.getIcon();
         const divider = this.getDivider();
         const message = this.getMessage();
-        const date = this.getDate();
+        const date = toLocaleDateString(this.props.created_at);
 
         return <React.Fragment>
             <div className="dropdown-item notification-item">
-                {icon}
+                <NotificationIcon severity={this.props.severity} className={'fa-2x'}/>
                 <div className="notifications-info">
-                    <small>{date}</small>
-                    <a href="#" className="notification-message">
+                    <small className="text-muted">{date}</small>
+                    <a href={`${ForisURLs.notifications}?id=${this.props.id}`} className="notification-message">
                         {message}
                     </a>
                 </div>

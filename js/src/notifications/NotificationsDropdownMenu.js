@@ -7,6 +7,7 @@
 
 import React from "react";
 import {NotificationsDropdownItem} from "./NotificationsDropdownItem";
+import {ForisURLs} from "../constants";
 
 export default class NotificationsDropdownMenu extends React.Component {
     getNotifications() {
@@ -33,7 +34,7 @@ export default class NotificationsDropdownMenu extends React.Component {
         const notifications = this.getNotifications();
         const footer = this.props.notifications.length !== 0 ?
             <NotificationsDropdownFooter
-                dismissAllHandler={this.props.dismissAllHandler} // TODO:
+                dismissAllHandler={this.props.dismissAllHandler}
             /> : null;
 
         return <div className="dropdown-menu">
@@ -49,9 +50,9 @@ function NotificationsDropdownHeader() {
     return <React.Fragment>
         <div id="notifications-header" className="dropdown-header">
             <h5>{_("Notifications")}</h5>
-            <button className="btn btn-link">
+            <a href={ForisURLs.notifications} className="btn btn-link">
                 <i className="fa fa-cog fa"/>
-            </button>
+            </a>
         </div>
         <div className="dropdown-divider dropdown-divider-top"/>
     </React.Fragment>;

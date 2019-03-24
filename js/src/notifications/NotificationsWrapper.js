@@ -26,6 +26,10 @@ export default function NotificationsWrapper(NotificationsComponent) {
                     this.loadNotifications();
                     this.setState({newNotification: true})
                 })
+                .bind('router_notifications', 'mark_as_displayed', msg => {
+                        this.loadNotifications();
+                    }
+                )
         }
 
         loadNotifications() {
@@ -66,7 +70,7 @@ export default function NotificationsWrapper(NotificationsComponent) {
         render() {
             return <NotificationsComponent
                 notifications={this.state.notifications}
-                newNotification={this.state.notifications}
+                newNotification={this.state.newNotification}
                 disableNewNotification={e => this.setState({newNotification: false})}
 
                 dismissHandler={this.dismissHandler}
