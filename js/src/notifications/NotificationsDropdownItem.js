@@ -38,9 +38,9 @@ export class NotificationsDropdownItem extends React.PureComponent {
             <div className="dropdown-item notification-item">
                 <NotificationIcon severity={this.props.severity} className={'fa-2x'}/>
                 <div className="notifications-info">
-                    <small className="text-muted">{date}</small>
                     <a href={`${ForisURLs.notifications}?id=${this.props.id}`} className="notification-message">
-                        {message}
+                        <small className="text-muted">{date}</small>
+                        <p>{message}</p>
                     </a>
                 </div>
                 <button className="btn btn-link" onClick={this.dismissHandler}>

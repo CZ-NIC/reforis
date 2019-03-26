@@ -303,12 +303,16 @@ a,
     color: #00a2e2;
 }
 
+#notifications-center .fa-newspaper,
+#notifications-center .fa-sync,
 .notification-item > .fa-newspaper,
 .notification-item > .fa-sync {
     color: #00a2e2;
     opacity: .8;
 }
 
+#notifications-center .fa-power-off,
+#notifications-center .fa-exclamation-circle,
 .notification-item > .fa-power-off,
 .notification-item > .fa-exclamation-circle {
     color: #e74c3c;
@@ -322,8 +326,13 @@ a,
 
 .notifications-info {
     flex-grow: 2;
+
+}
+
+.notification-message {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .notification-item .fa {
