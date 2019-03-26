@@ -1,12 +1,5 @@
 {% extends 'base.html' %}
 
-{# Hack to scroll to needed item. It's used in the NotificationCenterItem. #}
-{% block js %}
-    {% if notification_id != None %}
-        <script type="application/javascript">ForisNotificationID = "{{ notification_id }}";</script>
-    {% endif %}
-{% endblock %}
-
 {% block title %}
     {% trans %}
         Notifications

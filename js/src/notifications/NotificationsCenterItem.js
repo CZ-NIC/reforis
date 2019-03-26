@@ -22,11 +22,13 @@ export default class NotificationsCenterItem extends React.Component {
     }
 
     componentDidMount() {
-        // Hack to scroll to needed item. ForisNotificationID is defined in the notification center template.
-        if (window.ForisNotificationID === undefined)
-            return;
-        if (window.ForisNotificationID === this.props.notification.id)
+        if (NotificationsCenterItem.getIDFromURL() === this.props.notification.id)
             this.myRef.current.scrollIntoView({block: 'start', behavior: 'smooth'});
+    }
+
+    static getIDFromURL() {
+        const searchParams = new URLSearchParams(window.location.search);
+        return searchParams.get('id') || null;
     }
 
     render() {
@@ -49,4 +51,3 @@ export default class NotificationsCenterItem extends React.Component {
         </div>;
     }
 }
-

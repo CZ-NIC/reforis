@@ -42,8 +42,7 @@ def logout():
 
 @base.route('/notifications')
 def notifications():
-    notification_id = request.args.get('id')
-    return render_template('notifications.html', notification_id=notification_id)
+    return render_template('notifications.html')
 
 
 @base.route('/wifi')
