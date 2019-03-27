@@ -5,6 +5,7 @@
   "main": "./src/app.js",
   "dependencies": {
     "po2json": "^1.0.0-alpha",
+    "recompose": "^0.30.0",
     "watchify": "^3.11.1"
   },
   "devDependencies": {
