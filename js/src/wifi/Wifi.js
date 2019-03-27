@@ -10,7 +10,7 @@ import update from 'immutability-helper';
 
 import WifiForm from './WifiForm';
 import {Button} from '../bootstrap/Button';
-import {ForisAPI} from "../api/api";
+import {ForisSettingWrapper, STATES} from "../wrappers/Wrappers";
 
 const HTMODES = {
     NOHT: _('Disabled'),
@@ -26,60 +26,12 @@ const HWMODES = {
     '11a': _('5')
 };
 
-class Wifi extends React.Component {
-    static states = {
-        READY: 1,
-        UPDATE: 2,
-        NETWORK_RESTART: 3,
-        LOAD: 4,
-    };
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            devices: [],
-            state: null,
-        }
-    }
-
+class WifiBase extends React.Component {
     componentDidMount() {
-        this.loadSettings();
-        window.forisWS
-            .subscribe('wifi')
-            .bind('wifi', 'update_settings',
-                msg => {
-                    this.setState({state: Wifi.states.UPDATE});
-                }
-            );
-        window.forisWS.bind('maintain', 'network-restart',
-            (msg) => {
-                const remainsSec = msg.data.remains / 1000;
-                if (remainsSec === 0) {
-                    this.setState({state: Wifi.states.READY});
-                    this.loadSettings();
-                    return;
-                }
-
-                this.setState({
-                        remindsToNWRestart: remainsSec,
-                        state: Wifi.states.NETWORK_RESTART
-                    }
-                );
-            }
-        );
+        this.validate();
     }
 
-    loadSettings() {
-        this.setState({state: Wifi.states.LOAD});
-        ForisAPI.wifi.get()
-            .then(data => {
-                this.setState(data, () => {
-                    this.validate();
-                });
-                this.setState({state: Wifi.states.READY});
-            });
-    }
-
+    //TODO: There is something similar should be use in other forms, so good to extract to other HOC.
     handleWifiFormChange = (deviceId, target) => {
         let value = target.value;
         if (target.type === 'checkbox')
@@ -96,7 +48,7 @@ class Wifi extends React.Component {
 
     handleGuestWifiFormChange = (deviceId, target) => {
         const newGuestWifiState = update(
-            this.state.devices[deviceId].guest_wifi,
+            this.props.formData.devices[deviceId].guest_wifi,
             {[target.name]: {$set: target.type === 'checkbox' ? target.checked : target.value}}
         );
 
@@ -104,24 +56,25 @@ class Wifi extends React.Component {
     };
 
     updateDevice(deviceId, target, value) {
-        const device = this.state.devices[deviceId];
+        const device = this.props.formData.devices[deviceId];
         let newDeviceState = update(
             device,
             {[target]: {$set: value}}
         );
         newDeviceState = update(
             newDeviceState,
-            {errors: {$set: Wifi.validateDevice(newDeviceState)}}
+            {errors: {$set: WifiBase.validateDevice(newDeviceState)}}
         );
 
-        this.setState(update(
-            this.state,
-            {devices: {$splice: [[deviceId, 1, newDeviceState]]}}
-        ));
+        this.props.updateFormData((formData) =>
+            update(
+                formData,
+                {devices: {$splice: [[deviceId, 1, newDeviceState]]}}
+            ))
     }
 
     getChannelChoices = (deviceId) => {
-        const device = this.state.devices[deviceId];
+        const device = this.props.formData.devices[deviceId];
         let channelChoices = [];
 
         device.available_bands.forEach((availableBand) => {
@@ -143,7 +96,7 @@ class Wifi extends React.Component {
     };
 
     getHtmodeChoices = (deviceId) => {
-        const device = this.state.devices[deviceId];
+        const device = this.props.formData.devices[deviceId];
         let htmodeChoices = [];
 
         device.available_bands.forEach((availableBand) => {
@@ -161,7 +114,7 @@ class Wifi extends React.Component {
     };
 
     getHwmodeChoices = (deviceId) => {
-        const device = this.state.devices[deviceId];
+        const device = this.props.formData.devices[deviceId];
 
         return device.available_bands.map((availableBand) => {
             return {
@@ -173,16 +126,15 @@ class Wifi extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.setState({state: Wifi.states.UPDATE});
+        this.props.setFormState(STATES.UPDATE);
         const data = this.getPreparedDataToSubmit();
-        ForisAPI.wifi.post(data)
-            .then(result => console.log(result));
+        this.props.postSettings(data);
     };
 
     getPreparedDataToSubmit() {
         let data = {'devices': []};
 
-        this.state.devices.forEach((device, idx) => {
+        this.props.formData.devices.forEach((device, idx) => {
             data.devices[idx] = {...device};
         });
 
@@ -203,8 +155,10 @@ class Wifi extends React.Component {
     }
 
     validate() {
-        this.state.devices.forEach((device) => {
-            this.updateDevice(device.id, 'errors', Wifi.validateDevice(device));
+        if (!this.props.formData) return;
+
+        this.props.formData.devices.forEach((device) => {
+            this.updateDevice(device.id, 'errors', WifiBase.validateDevice(device));
         });
     }
 
@@ -225,8 +179,10 @@ class Wifi extends React.Component {
     }
 
     isValid() {
+        if (!this.props.formData) return;
+
         let valid = true;
-        this.state.devices.forEach((device) => {
+        this.props.formData.devices.forEach((device) => {
             if (typeof device.errors !== 'undefined' && Object.keys(device.errors).length !== 0)
                 valid = false;
         });
@@ -235,7 +191,6 @@ class Wifi extends React.Component {
 
 
     render() {
-        const devices_count = this.state.devices.length;
         return (
             <form onSubmit={this.handleSubmit}>
                 <p>{_(
@@ -244,14 +199,6 @@ class Wifi extends React.Component {
                     'devices, using the QR code available within the form.'
                 )}</p>
 
-                {/* TODO: delete this plural test.*/}
-                <p>
-                    {babel.format(
-                        ngettext('You have %d wifi module', 'You have %d wifi modules.', devices_count),
-                        devices_count
-                    )}
-                </p>
-
                 {this.getForms()}
                 {this.getSubmitButton()}
             </form>
@@ -259,7 +206,9 @@ class Wifi extends React.Component {
     }
 
     getForms() {
-        return this.state.devices.map((device) =>
+        if (!this.props.formData) return;
+
+        return this.props.formData.devices.map((device) =>
             <div key={device.id}>
                 <WifiForm
                     {...device}
@@ -271,25 +220,25 @@ class Wifi extends React.Component {
                     onWifiFormChange={this.handleWifiFormChange}
                     onGuestWifiFormChange={this.handleGuestWifiFormChange}
 
-                    disabled={this.state.state !== Wifi.states.READY}
+                    disabled={this.props.formState !== STATES.READY}
                 />
             </div>
         );
     }
 
     getSubmitButton() {
-        const disableSubmitButton = !this.isValid() || this.state.state !== Wifi.states.READY;
-        const loadingSubmitButton = this.state.state !== Wifi.states.READY;
+        const disableSubmitButton = !this.isValid() || this.props.formState !== STATES.READY;
+        const loadingSubmitButton = this.props.formState !== STATES.READY;
         let labelSubmitButton;
-        switch (this.state.state) {
-            case Wifi.states.UPDATE:
+        switch (this.props.formState) {
+            case STATES.UPDATE:
                 labelSubmitButton = 'Updating';
                 break;
-            case Wifi.states.LOAD:
+            case STATES.LOAD:
                 labelSubmitButton = 'Load settings';
                 break;
-            case Wifi.states.NETWORK_RESTART:
-                labelSubmitButton = 'Restarting after ' + this.state.remindsToNWRestart + ' sec.';
+            case STATES.NETWORK_RESTART:
+                labelSubmitButton = 'Restarting after ' + this.props.remindsToNWRestart + ' sec.';
                 break;
             default:
                 labelSubmitButton = 'Save'
@@ -307,5 +256,5 @@ class Wifi extends React.Component {
 
 }
 
-
+const Wifi = ForisSettingWrapper(WifiBase, 'wifi');
 export default Wifi;
