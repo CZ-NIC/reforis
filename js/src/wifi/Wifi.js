@@ -75,39 +75,33 @@ class WifiBase extends React.Component {
 
     getChannelChoices = (deviceId) => {
         const device = this.props.formData.devices[deviceId];
-        let channelChoices = [];
+        let channelChoices = {};
 
         device.available_bands.forEach((availableBand) => {
             if (availableBand.hwmode !== device.hwmode) return;
 
-            channelChoices = availableBand.available_channels.map((availableChannel) => {
-                return {
-                    label: `
+            availableBand.available_channels.forEach((availableChannel) => {
+                channelChoices[availableChannel.number.toString()] = `
                         ${availableChannel.number}
                         (${availableChannel.frequency} MHz ${availableChannel.radar ? ' ,DFS' : ''})
-                    `,
-                    value: availableChannel.number
-                };
+                    `;
             })
         });
 
-        channelChoices.unshift({label: _('auto'), value: 0});
+        channelChoices['0'] = _('auto');
         return channelChoices
     };
 
     getHtmodeChoices = (deviceId) => {
         const device = this.props.formData.devices[deviceId];
-        let htmodeChoices = [];
+        let htmodeChoices = {};
 
         device.available_bands.forEach((availableBand) => {
             if (availableBand.hwmode !== device.hwmode)
                 return;
 
-            htmodeChoices = availableBand.available_htmodes.map((availableHtmod) => {
-                return {
-                    label: HTMODES[availableHtmod],
-                    value: availableHtmod,
-                };
+            availableBand.available_htmodes.forEach((availableHtmod) => {
+                htmodeChoices[availableHtmod] = HTMODES[availableHtmod]
             })
         });
         return htmodeChoices

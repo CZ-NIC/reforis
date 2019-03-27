@@ -10,9 +10,11 @@ import {LABEL_SIZE, FIELD_SIZE} from './constants';
 
 
 export default function Select({name, id, label, choices, value, onChange, disabled, helpText, ...props}) {
-    const options = choices.map((choice, key) => {
-        return <option key={key} value={choice.value}>{choice.label}</option>;
-    });
+
+    let options = [];
+    for (let key in choices)
+        if (choices.hasOwnProperty(key))
+            options.push(<option key={key} value={key}>{choices[key]}</option>);
 
     return <div className='form-group row'>
         <label className={'form-control-label col-sm-' + LABEL_SIZE} htmlFor={id}>{label}</label>
