@@ -22,13 +22,7 @@ function ForisWS() {
     this.ws.onmessage = (evt) => {
         console.log('Received Message: ' + evt.data);
         const data = JSON.parse(evt.data);
-        try {
-            dispatch(data)
-        } catch (e) {
-            if (e instanceof TypeError) {
-                console.log('Callback for this message wasn\'t found:' + evt.data);
-            } else throw e;
-        }
+        dispatch(data)
     };
 
     this.ws.onopen = () => {
@@ -63,7 +57,15 @@ function ForisWS() {
     const dispatch = (json) => {
         if (!json.module) return;
 
-        const chain = this.callbacks[json.module][json.action];
+        let chain;
+        try {
+            chain = this.callbacks[json.module][json.action];
+        } catch (e) {
+            if (e instanceof TypeError) {
+                console.log('Callback for this message wasn\'t found:' + evt.data);
+            } else throw e;
+        }
+
         if (typeof chain == 'undefined') return;
 
         for (let i = 0; i < chain.length; i++)
