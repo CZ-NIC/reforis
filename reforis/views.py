@@ -48,3 +48,8 @@ def notifications():
 @base.route('/wifi')
 def wifi():
     return render_template('wifi.html')
+
+
+@base.route('/wan')
+def wan():
+    return render_template('wan.html')

@@ -23,39 +23,47 @@ api = Blueprint(
 
 @api.route("/notifications", methods=['GET', 'POST'])
 def notifications():
-    backend_data = current_app.backend.perform(
-        "router_notifications", "list",
-        {'lang': _get_locale_from_backend(current_app)}
-    )
-
-    if request.method == 'POST':
-        data = request.json
+    try:
         res = ""
-        try:
+        if request.method == 'GET':
+            res = current_app.backend.perform(
+                "router_notifications", "list",
+                {'lang': _get_locale_from_backend(current_app)}
+            )
+        elif request.method == 'POST':
+            data = request.json
             res = current_app.backend.perform("router_notifications", "mark_as_displayed", data)
-        except ExceptionInBackend as e:
-            # TODO: logging...
-            error = "Remote Exception: %s" % e.remote_description
-            extra = "%s" % json.dumps(e.query)
-            trace = e.remote_stacktrace
-            print("\nError: {}\nExtra: {}\nTrace: {}".format(error, extra, trace))
         return jsonify(res)
-    return jsonify(backend_data)
+    except ExceptionInBackend as e:
+            _process_backend_error(e)
 
 
 @api.route("/wifi", methods=['GET', 'POST'])
 def wifi():
-    backend_data = current_app.backend.perform("wifi", "get_settings")
-    if request.method == 'POST':
-        data = request.json
-        res = ""
-        try:
-            res = current_app.backend.perform("wifi", "update_settings", data)
-        except ExceptionInBackend as e:
-            # TODO: logging...
-            error = "Remote Exception: %s" % e.remote_description
-            extra = "%s" % json.dumps(e.query)
-            trace = e.remote_stacktrace
-            print("\nError: {}\nExtra: {}\nTrace: {}".format(error, extra, trace))
+    return _foris_controller_settings_call("wifi")
+
+
+@api.route("/wan", methods=['GET', 'POST'])
+def wan():
+    return _foris_controller_settings_call("wan")
+
+
+def _foris_controller_settings_call(module):
+    try:
+        res = ''
+        if request.method == 'GET':
+            res = current_app.backend.perform(module, "get_settings")
+        elif request.method == 'POST':
+            data = request.json
+            res = current_app.backend.perform(module, "update_settings", data)
         return jsonify(res)
-    return jsonify(backend_data)
+    except ExceptionInBackend as e:
+        _process_backend_error(e)
+
+
+def _process_backend_error(e):
+    # TODO: logging...
+    error = "Remote Exception: %s" % e.remote_description
+    extra = "%s" % json.dumps(e.query)
+    trace = e.remote_stacktrace
+    print("\nError: {}\nExtra: {}\nTrace: {}".format(error, extra, trace))

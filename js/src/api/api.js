@@ -8,6 +8,7 @@
 const API_URL = '/api';
 const ENDPOINTS = [
     {name: 'wifi', url: '/wifi', methods: ['get', 'post']},
+    {name: 'wan', url: '/wan', methods: ['get', 'post']},
     {name: 'notifications', url: '/notifications', methods: ['get', 'post']}
 ];
 
