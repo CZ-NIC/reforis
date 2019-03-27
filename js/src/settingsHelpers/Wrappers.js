@@ -8,6 +8,7 @@ import React from 'react';
 import {ForisAPI} from "../api/api";
 import {compose} from "recompose";
 
+//TODO: better naming for this state...
 export const STATES = {
     READY: 1,
     UPDATE: 2,
@@ -106,8 +107,7 @@ const withWSMaintainNetworkRestart = WrappedComponent => {
                     }
                     this.props.setFormState(STATES.NETWORK_RESTART);
 
-                    this.setState({remindsToNWRestart: remainsSec}
-                    );
+                    this.setState({remindsToNWRestart: remainsSec});
                 }
             );
         }
@@ -143,9 +143,9 @@ const withWSSetting = module => WrappedComponent => {
 export const ForisSettingWrapper = (WrappedComponent, module) => {
         return compose(
             withFormState,
+            withAPI(module),
             withWSMaintainNetworkRestart,
             withWSSetting(module),
-            withAPI(module),
         )(WrappedComponent);
     }
 ;

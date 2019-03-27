@@ -9,8 +9,8 @@ import React from 'react'
 import update from 'immutability-helper';
 
 import WifiForm from './WifiForm';
-import {Button} from '../bootstrap/Button';
-import {ForisSettingWrapper, STATES} from "../wrappers/Wrappers";
+import {ForisSettingWrapper, STATES} from "../settingsHelpers/Wrappers";
+import SettingsSubmitButton from "../settingsHelpers/SettingsSubmitButton";
 
 const HTMODES = {
     NOHT: _('Disabled'),
@@ -200,7 +200,11 @@ class WifiBase extends React.Component {
                 )}</p>
 
                 {this.getForms()}
-                {this.getSubmitButton()}
+                <SettingsSubmitButton
+                    disable={!this.isValid()}
+                    state={this.props.formState}
+                    remindsToNWRestart={this.props.remindsToNWRestart}
+                />
             </form>
         );
     }
@@ -225,35 +229,6 @@ class WifiBase extends React.Component {
             </div>
         );
     }
-
-    getSubmitButton() {
-        const disableSubmitButton = !this.isValid() || this.props.formState !== STATES.READY;
-        const loadingSubmitButton = this.props.formState !== STATES.READY;
-        let labelSubmitButton;
-        switch (this.props.formState) {
-            case STATES.UPDATE:
-                labelSubmitButton = 'Updating';
-                break;
-            case STATES.LOAD:
-                labelSubmitButton = 'Load settings';
-                break;
-            case STATES.NETWORK_RESTART:
-                labelSubmitButton = 'Restarting after ' + this.props.remindsToNWRestart + ' sec.';
-                break;
-            default:
-                labelSubmitButton = 'Save'
-        }
-
-        return <Button
-            id='wifi-submit-button'
-            className='btn-primary'
-            loading={loadingSubmitButton}
-            disabled={disableSubmitButton}
-        >
-            {labelSubmitButton}
-        </Button>;
-    }
-
 }
 
 const Wifi = ForisSettingWrapper(WifiBase, 'wifi');
