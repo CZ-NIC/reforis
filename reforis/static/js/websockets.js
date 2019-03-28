@@ -12,6 +12,13 @@ function ForisWS() {
 
     this.ws = new WebSocket(url);
 
+    this.ws.onerror = (event) => {
+        if (window.location.pathname !== '/login') {
+            console.error("WebSocket error observed, you aren't logged probably...");
+            window.location.replace('/login');
+        }
+    };
+
     // callbacks[module][action]
     this.callbacks = {
         maintain: {'network-restart': []},
