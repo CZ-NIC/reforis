@@ -36,15 +36,7 @@ const HELP_TEXTS = {
 };
 
 
-class WifiForm extends React.PureComponent {
-    onWifiFormChange = (event) => {
-        this.props.onWifiFormChange(this.props.id, event.target);
-    };
-
-    onGuestWifiFormChange = (event) => {
-        this.props.onGuestWifiFormChange(this.props.id, event.target);
-    };
-
+export default class WifiForm extends React.PureComponent {
     getChannelChoices() {
         return this.props.getChannelChoices(this.props.id);
     };
@@ -72,7 +64,9 @@ class WifiForm extends React.PureComponent {
                     value={this.props.guest_wifi.SSID}
                     disabled={this.props.disabled}
 
-                    onChange={this.onGuestWifiFormChange}
+                    onChange={this.props.changeFormData(
+                        value => ({devices: {[this.props.id]: {guest_wifi: {SSID: {$set: value}}}}})
+                    )}
                 />
 
                 <Password
@@ -84,7 +78,9 @@ class WifiForm extends React.PureComponent {
                     error={errors.guestWifiPassword}
                     required
 
-                    onChange={this.onGuestWifiFormChange}
+                    onChange={this.props.changeFormData(
+                        value => ({devices: {[this.props.id]: {guest_wifi: {password: {$set: value}}}}})
+                    )}
                 />
             </div>
         ) : null;
@@ -99,7 +95,9 @@ class WifiForm extends React.PureComponent {
                     error={errors.SSID}
                     required
 
-                    onChange={this.onWifiFormChange}
+                    onChange={this.props.changeFormData(
+                        value => ({devices: {[this.props.id]: {SSID: {$set: value}}}})
+                    )}
                 />
 
                 <Password
@@ -111,7 +109,9 @@ class WifiForm extends React.PureComponent {
                     disabled={this.props.disabled}
                     required
 
-                    onChange={this.onWifiFormChange}
+                    onChange={this.props.changeFormData(
+                        value => ({devices: {[this.props.id]: {password: {$set: value}}}})
+                    )}
                 />
 
                 <CheckBox
@@ -121,7 +121,9 @@ class WifiForm extends React.PureComponent {
                     checked={this.props.hidden}
                     disabled={this.props.disabled}
 
-                    onChange={this.onWifiFormChange}
+                    onChange={this.props.changeFormData(
+                        value => ({devices: {[this.props.id]: {hidden: {$set: value}}}})
+                    )}
                 />
 
                 <RadioSet
@@ -132,7 +134,9 @@ class WifiForm extends React.PureComponent {
                     disabled={this.props.disabled}
                     helpText={HELP_TEXTS.hwmode}
 
-                    onChange={this.onWifiFormChange}
+                    onChange={this.props.changeFormData(
+                        value => ({devices: {[this.props.id]: {hwmode: {$set: value}}}})
+                    )}
                 />
 
                 <Select
@@ -143,17 +147,22 @@ class WifiForm extends React.PureComponent {
                     disabled={this.props.disabled}
                     helpText={HELP_TEXTS.htmode}
 
-                    onChange={this.onWifiFormChange}
+                    onChange={this.props.changeFormData(
+                        value => ({devices: {[this.props.id]: {htmode: {$set: value}}}})
+                    )}
+
                 />
 
                 <Select
-                    name={'channel'}
+                    name='channel'
                     label='Channel'
                     choices={channel_choices}
                     value={this.props.channel}
                     disabled={this.props.disabled}
 
-                    onChange={this.onWifiFormChange}
+                    onChange={this.props.changeFormData(
+                        value => ({devices: {[this.props.id]: {channel: {$set: value}}}})
+                    )}
                 />
 
                 <CheckBox
@@ -163,7 +172,9 @@ class WifiForm extends React.PureComponent {
                     disabled={this.props.disabled}
                     helpText={HELP_TEXTS.guest_wifi_enabled}
 
-                    onChange={this.onGuestWifiFormChange}
+                    onChange={this.props.changeFormData(
+                        value => ({devices: {[this.props.id]: {guest_wifi: {enabled: {$set: value}}}}})
+                    )}
                 />
                 {guestWifiForm}
             </div>
@@ -178,12 +189,12 @@ class WifiForm extends React.PureComponent {
                     checked={this.props.enabled}
                     disabled={this.props.disabled}
 
-                    onChange={this.onWifiFormChange}
+                    onChange={this.props.changeFormData(
+                        value => ({devices: {[this.props.id]: {enabled: {$set: value}}}})
+                    )}
                 />
                 {wifiForm}
             </div>
         );
     }
 }
-
-export default WifiForm;

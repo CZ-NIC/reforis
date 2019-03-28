@@ -6,7 +6,6 @@
  */
 
 import React from 'react'
-import update from 'immutability-helper';
 
 import WifiForm from './WifiForm';
 import {ForisSettingWrapper, STATES} from "../settingsHelpers/Wrappers";
@@ -29,48 +28,6 @@ const HWMODES = {
 class WifiBase extends React.Component {
     componentDidMount() {
         this.validate();
-    }
-
-    //TODO: There is something similar should be use in other forms, so good to extract to other HOC.
-    handleWifiFormChange = (deviceId, target) => {
-        let value = target.value;
-        if (target.type === 'checkbox')
-            value = target.checked;
-        else if (target.name === 'channel')
-            value = parseInt(target.value);
-
-        // Delete postfix id from hwmode radios names because it's not needed here but in HTML it should have
-        // different names.
-        const name = target.name.startsWith('hwmode') ? 'hwmode' : target.name;
-
-        this.updateDevice(deviceId, name, value);
-    };
-
-    handleGuestWifiFormChange = (deviceId, target) => {
-        const newGuestWifiState = update(
-            this.props.formData.devices[deviceId].guest_wifi,
-            {[target.name]: {$set: target.type === 'checkbox' ? target.checked : target.value}}
-        );
-
-        this.updateDevice(deviceId, 'guest_wifi', newGuestWifiState);
-    };
-
-    updateDevice(deviceId, target, value) {
-        const device = this.props.formData.devices[deviceId];
-        let newDeviceState = update(
-            device,
-            {[target]: {$set: value}}
-        );
-        newDeviceState = update(
-            newDeviceState,
-            {errors: {$set: WifiBase.validateDevice(newDeviceState)}}
-        );
-
-        this.props.updateFormData((formData) =>
-            update(
-                formData,
-                {devices: {$splice: [[deviceId, 1, newDeviceState]]}}
-            ))
     }
 
     getChannelChoices = (deviceId) => {
@@ -209,8 +166,7 @@ class WifiBase extends React.Component {
                     getHtmodeChoices={this.getHtmodeChoices}
                     getHwmodeChoices={this.getHwmodeChoices}
 
-                    onWifiFormChange={this.handleWifiFormChange}
-                    onGuestWifiFormChange={this.handleGuestWifiFormChange}
+                    changeFormData={this.props.changeFormData}
 
                     disabled={this.props.formState !== STATES.READY}
                 />

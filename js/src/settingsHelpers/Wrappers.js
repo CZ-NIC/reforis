@@ -4,7 +4,11 @@
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
  */
+
 import React from 'react';
+import update from 'immutability-helper';
+
+
 import {ForisAPI} from "../api/api";
 import {compose} from "recompose";
 
@@ -68,9 +72,21 @@ const withAPI = module => WrappedComponent => {
                 .then(result => console.log(result));
         };
 
-        updateFormData = (updater) => {
-            const newFormData = updater(this.state.formData);
-            this.setState({formData: newFormData});
+        getChangedValue = (target) => {
+            let value = target.value;
+            if (target.type === 'checkbox')
+                value = target.checked;
+            else if (target.name === 'channel')
+                value = parseInt(target.value);
+            return value
+        };
+
+        // The data from the API and forms don't have the same structure. This function is made to tend to process data
+        // change flexibly from the children of the wrapped component. In this way component which uses this function
+        // can specify where to put changed data.
+        changeFormData = (updateRule) => (event) => {
+            const value = this.getChangedValue(event.target);
+            this.setState({formData: update(this.state.formData, updateRule(value))});
         };
 
         render() {
@@ -79,7 +95,7 @@ const withAPI = module => WrappedComponent => {
                 postSettings={this.postSettings}
 
                 formData={this.state.formData}
-                updateFormData={this.updateFormData}
+                changeFormData={this.changeFormData}
 
                 {...this.props}
             />
