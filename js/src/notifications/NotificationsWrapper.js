@@ -6,7 +6,7 @@
  */
 
 import React from "react";
-import {ForisAPI} from "../api/api";
+import ForisAPI from "../api/api";
 
 export default function NotificationsWrapper(NotificationsComponent) {
     class NotificationsBase extends React.Component {

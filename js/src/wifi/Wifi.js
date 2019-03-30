@@ -7,9 +7,8 @@
 
 import React from 'react'
 
+import withSettingsForm from "../settingsHelpers/withSettingsForm";
 import WifiForm from './WifiForm';
-import {ForisSettingWrapper, STATES} from "../settingsHelpers/Wrappers";
-import SettingsSubmitButton from "../settingsHelpers/SettingsSubmitButton";
 
 const HTMODES = {
     NOHT: _('Disabled'),
@@ -21,16 +20,12 @@ const HTMODES = {
 };
 
 const HWMODES = {
-    '11g': _('2.4'),
-    '11a': _('5')
+    '11g': '2.4',
+    '11a': '5'
 };
 
 class WifiBase extends React.Component {
-    componentDidMount() {
-        this.validate();
-    }
-
-    getChannelChoices = (deviceId) => {
+    getChannelChoices = deviceId => {
         const device = this.props.formData.devices[deviceId];
         let channelChoices = {};
 
@@ -49,7 +44,7 @@ class WifiBase extends React.Component {
         return channelChoices
     };
 
-    getHtmodeChoices = (deviceId) => {
+    getHtmodeChoices = deviceId => {
         const device = this.props.formData.devices[deviceId];
         let htmodeChoices = {};
 
@@ -64,7 +59,7 @@ class WifiBase extends React.Component {
         return htmodeChoices
     };
 
-    getHwmodeChoices = (deviceId) => {
+    getHwmodeChoices = deviceId => {
         const device = this.props.formData.devices[deviceId];
 
         return device.available_bands.map((availableBand) => {
@@ -75,105 +70,71 @@ class WifiBase extends React.Component {
         });
     };
 
-    handleSubmit = (e) => {
-        e.preventDefault();
-        this.props.setFormState(STATES.UPDATE);
-        const data = this.getPreparedDataToSubmit();
-        this.props.postSettings(data);
-    };
-
-    getPreparedDataToSubmit() {
-        let data = {'devices': []};
-
-        this.props.formData.devices.forEach((device, idx) => {
-            data.devices[idx] = {...device};
-        });
-
-        data.devices.forEach((device, idx) => {
-            delete device['available_bands'];
-            delete device['errors'];
-
-            if (!device.enabled) {
-                data.devices[idx] = {id: device.id, enabled: false};
-                return;
-            }
-
-            if (!device.guest_wifi.enabled)
-                data.devices[idx].guest_wifi = {enabled: false};
-        });
-
-        return data;
-    }
-
-    validate() {
-        if (!this.props.formData) return;
-
-        this.props.formData.devices.forEach((device) => {
-            this.updateDevice(device.id, 'errors', WifiBase.validateDevice(device));
-        });
-    }
-
-    static validateDevice(device) {
-        if (!device.enabled) return {};
-
-        let errors = {};
-        if (device.SSID.length > 32)
-            errors.SSID = _('SSID can\'t be longer than 32 symbols');
-        if (device.password.length < 8)
-            errors.password = _('Password must contain at least 8 symbols');
-
-        if (!device.guest_wifi.enabled) return errors;
-        if (device.guest_wifi.password.length < 8)
-            errors.guestWifiPassword = _('Password must contain at least 8 symbols');
-
-        return errors;
-    }
-
-    isValid() {
-        if (!this.props.formData) return;
-
-        let valid = true;
-        this.props.formData.devices.forEach((device) => {
-            if (typeof device.errors !== 'undefined' && Object.keys(device.errors).length !== 0)
-                valid = false;
-        });
-        return valid
-    }
-
-
     render() {
-        return (
-            <form onSubmit={this.handleSubmit}>
-                {this.getForms()}
-                <SettingsSubmitButton
-                    disable={!this.isValid()}
-                    state={this.props.formState}
-                    remindsToNWRestart={this.props.remindsToNWRestart}
-                />
-            </form>
-        );
-    }
+        return this.props.formData.devices.map(device =>
+            <WifiForm
+                key={device.id}
 
-    getForms() {
-        if (!this.props.formData) return;
+                {...device}
+                errors={this.props.formErrors ? this.props.formErrors[device.id] : {}}
 
-        return this.props.formData.devices.map((device) =>
-            <div key={device.id}>
-                <WifiForm
-                    {...device}
+                channelChoices={this.getChannelChoices(device.id)}
+                htmodeChoices={this.getHtmodeChoices(device.id)}
+                hwmodeChoices={this.getHwmodeChoices(device.id)}
 
-                    getChannelChoices={this.getChannelChoices}
-                    getHtmodeChoices={this.getHtmodeChoices}
-                    getHwmodeChoices={this.getHwmodeChoices}
+                changeFormData={this.props.changeFormData}
 
-                    changeFormData={this.props.changeFormData}
-
-                    disabled={this.props.formState !== STATES.READY}
-                />
-            </div>
+                disabled={this.props.formIsDisabled}
+            />
         );
     }
 }
 
-const Wifi = ForisSettingWrapper(WifiBase, 'wifi');
+const validator = formData => {
+    const errors = formData.devices.map(
+        (device) => {
+            if (!device.enabled) return {};
+
+            let errors = {};
+            if (device.SSID.length > 32)
+                errors.SSID = _("SSID can't be longer than 32 symbols");
+            if (device.SSID.length === 0)
+                errors.SSID = _("SSID can\'t be empty");
+
+            if (device.password.length < 8)
+                errors.password = _('Password must contain at least 8 symbols');
+
+            if (!device.guest_wifi.enabled) return errors;
+            if (device.guest_wifi.password.length < 8)
+                errors.guestWifiPassword = _('Password must contain at least 8 symbols');
+
+            return errors;
+        });
+    return JSON.stringify(errors) === '[{},{}]' ? null : errors
+};
+
+const prepDataToSubmit = formData => {
+    let data = {'devices': []};
+
+    formData.devices.forEach((device, idx) => {
+        data.devices[idx] = {...device};
+    });
+
+    data.devices.forEach((device, idx) => {
+        delete device['available_bands'];
+        delete device['errors'];
+
+        if (!device.enabled) {
+            data.devices[idx] = {id: device.id, enabled: false};
+            return;
+        }
+
+        if (!device.guest_wifi.enabled)
+            data.devices[idx].guest_wifi = {enabled: false};
+    });
+    return data;
+};
+
+const Wifi = withSettingsForm('wifi', prepDataToSubmit, validator)(WifiBase);
+
 export default Wifi;

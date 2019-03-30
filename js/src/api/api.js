@@ -50,4 +50,5 @@ const wrapFetch = function (url, method) {
     }
 };
 
-export const ForisAPI = new API(API_URL, ENDPOINTS);
+const ForisAPI = new API(API_URL, ENDPOINTS);
+export default ForisAPI;

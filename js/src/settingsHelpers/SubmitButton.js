@@ -6,22 +6,22 @@
  */
 
 import React from "react";
-import {Button} from "../bootstrap/Button";
-import {STATES} from "./Wrappers";
+import Button from "../bootstrap/Button";
+import {FORM_STATES} from "./withSettingsForm";
 
-export default function SettingsSubmitButton({disable, state, remindsToNWRestart}) {
-    const disableSubmitButton = disable || state !== STATES.READY;
-    const loadingSubmitButton = state !== STATES.READY;
+export default function SubmitButton({disable, state, remindsToNWRestart, ...props}) {
+    const disableSubmitButton = disable || state !== FORM_STATES.READY;
+    const loadingSubmitButton = state !== FORM_STATES.READY;
 
     let labelSubmitButton;
     switch (state) {
-        case STATES.UPDATE:
+        case FORM_STATES.UPDATE:
             labelSubmitButton = _('Updating');
             break;
-        case STATES.LOAD:
+        case FORM_STATES.LOAD:
             labelSubmitButton = _('Load settings');
             break;
-        case STATES.NETWORK_RESTART:
+        case FORM_STATES.NETWORK_RESTART:
             labelSubmitButton = babel.format(_('Restarting after %d sec.'), remindsToNWRestart);
             break;
         default:
@@ -33,6 +33,8 @@ export default function SettingsSubmitButton({disable, state, remindsToNWRestart
         className='btn-primary'
         loading={loadingSubmitButton}
         disabled={disableSubmitButton}
+
+        {...props}
     >
         {labelSubmitButton}
     </Button>;

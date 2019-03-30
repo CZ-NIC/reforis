@@ -11,6 +11,7 @@ import {LABEL_SIZE, FIELD_SIZE} from './constants';
 export default function RadioSet({name, id, label, choices, value, onChange, helpText, ...props}) {
     const radios = choices.map((choice, key) => {
         return <Radio
+            id={name ? `${name}-${key}` : null}
             key={key}
             name={name}
             label={choice.label}
@@ -32,8 +33,7 @@ export default function RadioSet({name, id, label, choices, value, onChange, hel
     </div>;
 }
 
-function Radio({name, label, value, onChange, checked = false, ...props}) {
-    let id = name + value;
+function Radio({name, id, label, value, onChange, checked = false, ...props}) {
     return <div className='form-check form-check-inline'>
         <input
             className='form-check-input'

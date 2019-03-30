@@ -11,7 +11,7 @@ const OFFSET = 8;
 const SIZE = 2;
 const SIZE_CLASS = ' offset-' + OFFSET + ' col-sm-' + SIZE;
 
-export function Button({className, loading, children, ...props}) {
+export default function Button({className, loading, children, ...props}) {
     className = className ? 'btn ' + className : 'btn btn-primary ';
     className += SIZE_CLASS;
 
