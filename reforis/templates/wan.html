@@ -12,6 +12,15 @@
         {% endtrans %}
     </p>
     <div id="wan_container"></div>
+
+    <h1>{% trans %}Connection test{% endtrans %}</h1>
+    <p>
+        {% trans %}
+            Here you can test you connection settings. Remember to click on the Save button before running the test.
+            Note that sometimes it takes a while before the connection is fully initialized. So it might be useful to
+            wait for a while before running this test.
+        {% endtrans %}
+    </p>
+    <div id="wan_connection_test_container"></div>
+
 {% endblock %}
-
-
