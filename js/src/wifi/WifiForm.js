@@ -96,7 +96,14 @@ export default function WifiForm(props) {
                     helpText={HELP_TEXTS.hwmode}
 
                     onChange={props.changeFormData(
-                        value => ({devices: {[props.id]: {hwmode: {$set: value}}}})
+                        value => ({
+                            devices: {
+                                [props.id]: {
+                                    hwmode: {$set: value},
+                                    channel: {$set: 0}
+                                }
+                            }
+                        })
                     )}
                 />
 

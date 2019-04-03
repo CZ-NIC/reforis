@@ -8,5 +8,5 @@
 import React from 'react';
 import Input from "./Input";
 
-const TextInput = Input('text');
-export default TextInput;
+const NumberInput = Input('number');
+export default NumberInput;

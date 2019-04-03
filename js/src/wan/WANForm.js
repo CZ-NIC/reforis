@@ -9,16 +9,16 @@ import React from "react";
 
 import Select from "../bootstrap/Select";
 import TextInput from "../bootstrap/TextInput";
-import {ERROR_MESSAGES, validateDomain, validateIPAddress} from "../settingsHelpers/validation";
+import {validateDomain, validateIPv4Address} from "../settingsHelpers/validation";
 
 const HELP_TEXTS = {
     dns: _('DNS server address is not required as the built-in DNS resolver is capable of working without it.')
 };
 
 const WAN_CHOICES = {
-    dhcp: 'DHCP (automatic configuration)',
-    static: 'Static IP address (manual configuration)',
-    pppoe: 'PPPoE (for DSL bridges, Modem Turris, etc.)',
+    dhcp: _('DHCP (automatic configuration)'),
+    static: _('Static IP address (manual configuration)'),
+    pppoe: _('PPPoE (for DSL bridges, Modem Turris, etc.)'),
 };
 
 export default class WANForm extends React.PureComponent {
@@ -74,7 +74,7 @@ export default class WANForm extends React.PureComponent {
                 )}
             />
             <TextInput
-                label={_('DNS server 1 (IPv4)')}
+                label={_('DNS server 1')}
                 value={props.formData.dns1 || ''}
                 disabled={props.disabled}
                 error={errors.dns1 || null}
@@ -85,7 +85,7 @@ export default class WANForm extends React.PureComponent {
                 )}
             />
             <TextInput
-                label={_('DNS server 2 (IPv4)')}
+                label={_('DNS server 2')}
                 value={props.formData.dns2 || ''}
                 disabled={props.disabled}
                 error={errors.dns2 || null}
@@ -123,7 +123,7 @@ export default class WANForm extends React.PureComponent {
         />
     </>;
 
-    static validateWAN = formData => {
+    static validate = formData => {
         let errors = {};
         switch (formData.wan_type) {
             case 'dhcp':
@@ -136,15 +136,12 @@ export default class WANForm extends React.PureComponent {
                 errors.wan_pppoe = WANForm.validatePPPOE(formData.wan_pppoe);
                 break;
         }
-        if (errors.wan_dhcp || errors.wan_static || errors.wan_pppoe)
-            return errors;
-        return null;
+        return errors['wan_' + formData.wan_type] ? errors : null;
     };
 
     static validateDHCP = wan_dhcp => {
-        if (!validateDomain(wan_dhcp.hostname))
-            return {hostname: ERROR_MESSAGES.domain};
-        return null;
+        const error = {hostname: validateDomain(wan_dhcp.hostname)};
+        return error.hostname ? error : null;
     };
 
 
@@ -152,8 +149,9 @@ export default class WANForm extends React.PureComponent {
         let errors = {};
         ['ip', 'netmask', 'gateway', 'dns1', 'dns2'].forEach(
             field => {
-                if (!validateIPAddress(wan_static[field]))
-                    errors[field] = ERROR_MESSAGES.ipAddress;
+                let error = validateIPv4Address(wan_static[field]);
+                if (error)
+                    errors[field] = error;
             }
         );
         ['ip', 'netmask', 'gateway'].forEach(
@@ -183,7 +181,6 @@ export default class WANForm extends React.PureComponent {
         return (
             <>
                 <Select
-                    name='wan_type'
                     label={_('IPv4 protocol')}
                     value={wanType}
                     choices={WAN_CHOICES}

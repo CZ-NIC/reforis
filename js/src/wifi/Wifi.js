@@ -113,28 +113,23 @@ const validator = formData => {
     return JSON.stringify(errors) === '[{},{}]' ? null : errors
 };
 
-const prepDataToSubmit = formData => {
-    let data = {'devices': []};
-
+function prepDataToSubmit(formData) {
     formData.devices.forEach((device, idx) => {
-        data.devices[idx] = {...device};
-    });
-
-    data.devices.forEach((device, idx) => {
         delete device['available_bands'];
-        delete device['errors'];
+
+        formData.devices[idx].channel = parseInt(device.channel);
 
         if (!device.enabled) {
-            data.devices[idx] = {id: device.id, enabled: false};
+            formData.devices[idx] = {id: device.id, enabled: false};
             return;
         }
 
         if (!device.guest_wifi.enabled)
-            data.devices[idx].guest_wifi = {enabled: false};
+            formData.devices[idx].guest_wifi = {enabled: false};
     });
-    return data;
-};
+    return formData;
+}
 
-const Wifi = withSettingsForm('wifi', prepDataToSubmit, validator)(WifiBase);
+const Wifi = withSettingsForm('wifi', null, prepDataToSubmit, validator)(WifiBase);
 
 export default Wifi;

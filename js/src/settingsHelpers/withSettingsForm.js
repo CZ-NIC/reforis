@@ -90,8 +90,8 @@ const withFormDataProcessing = WrappedComponent => {
             let value = target.value;
             if (target.type === 'checkbox')
                 value = target.checked;
-            else if (target.name === 'channel')
-                value = parseInt(target.value);
+            else if (target.type === 'number')
+                value = parseInt(value);
             return value
         };
 
@@ -108,7 +108,7 @@ const withFormDataProcessing = WrappedComponent => {
     return WithFormDataProcessing;
 };
 
-const withAPI = module => WrappedComponent => {
+const withAPI = (module, prepData) => WrappedComponent => {
     class WithAPI extends React.Component {
         componentDidMount() {
             this.getData();
@@ -118,10 +118,12 @@ const withAPI = module => WrappedComponent => {
             this.props.setFormState(FORM_STATES.LOAD, () =>
                 ForisAPI[module].get()
                     .then(data => {
-                        this.props.setFormData(data, () => {
-                            this.props.validateFormData();
-                            this.props.setFormState(FORM_STATES.READY)
-                        });
+                        this.props.setFormData(
+                            prepData ? prepData(data) : data,
+                            () => {
+                                this.props.validateFormData();
+                                this.props.setFormState(FORM_STATES.READY)
+                            });
                     })
             );
         };
@@ -212,7 +214,8 @@ const withFormSubmit = prepareData => WrappedComponent => {
     class WithFormSubmitButton extends React.Component {
 
         onSubmit = (e) => {
-            const preparedData = prepareData(this.props.formData);
+            let copiedFormData = JSON.parse(JSON.stringify(this.props.formData));
+            const preparedData = prepareData(copiedFormData);
             this.props.postData(preparedData);
             e.preventDefault();
         };
@@ -233,13 +236,13 @@ const withFormSubmit = prepareData => WrappedComponent => {
     return WithFormSubmitButton;
 };
 
-const withSettingsForm = (module, prepareDataToSubmit, validator) => {
+const withSettingsForm = (module, prepData, prepareDataToSubmit, validator) => {
     return compose(
         withFormData,
         withFormValidation(validator),
         withFormDataProcessing,
 
-        withAPI(module),
+        withAPI(module, prepData),
 
         withWSNetworkRestart,
         withWSUpdateSetting(module),
