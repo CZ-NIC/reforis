@@ -4,14 +4,27 @@
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
  */
-
 import React from 'react'
 
-import CheckBox from '../bootstrap/Checkbox';
 import TextInput from '../bootstrap/TextInput';
 import Password from '../bootstrap/Password';
+import CheckBox from '../bootstrap/Checkbox';
 import RadioSet from '../bootstrap/RadioSet';
 import Select from '../bootstrap/Select';
+
+const HTMODES = {
+    NOHT: _('Disabled'),
+    HT20: _('802.11n - 20 MHz wide channel'),
+    HT40: _('802.11n - 40 MHz wide channel'),
+    VHT20: _('802.11ac - 20 MHz wide channel'),
+    VHT40: _('802.11ac - 40 MHz wide channel'),
+    VHT80: _('802.11ac - 80 MHz wide channel'),
+};
+
+const HWMODES = {
+    '11g': '2.4',
+    '11a': '5'
+};
 
 const HELP_TEXTS = {
     password: _(`
@@ -35,70 +48,80 @@ const HELP_TEXTS = {
         `),
 };
 
-
 export default function WifiForm(props) {
-    const errors = props.errors ? props.errors : {};
+    return props.formData.devices.map(device =>
+        <DeviceForm
+            key={device.id}
+            formData={device}
+            errors={(props.formErrors || [])[device.id] || null}
+            setFormValue={props.setFormValue}
+            disabled={props.disabled}
+        />
+    )
+}
 
+function DeviceForm(props) {
+    const errors = props.errors ? props.errors : {};
     return <>
-        <h3>Module {props.id + 1}</h3>
+        <h3>Module {props.formData.id + 1}</h3>
         <CheckBox
             label='Enable'
-            checked={props.enabled}
+            checked={props.formData.enabled}
             disabled={props.disabled}
 
-            onChange={props.changeFormData(
-                value => ({devices: {[props.id]: {enabled: {$set: value}}}})
+            onChange={props.setFormValue(
+                value => ({devices: {[props.formData.id]: {enabled: {$set: value}}}})
             )}
         />
-        {props.enabled ?
+        {props.formData.enabled ?
             <>
                 <TextInput
                     label='SSID'
-                    value={props.SSID}
+                    value={props.formData.SSID}
                     disabled={props.disabled}
                     error={errors.SSID}
                     required
 
-                    onChange={props.changeFormData(
-                        value => ({devices: {[props.id]: {SSID: {$set: value}}}})
+                    onChange={props.setFormValue(
+                        value => ({devices: {[props.formData.id]: {SSID: {$set: value}}}})
                     )}
                 />
 
                 <Password
                     label='Password'
-                    value={props.password}
+                    value={props.formData.password}
                     error={errors.password}
                     helpText={HELP_TEXTS.password}
                     disabled={props.disabled}
                     required
 
-                    onChange={props.changeFormData(
-                        value => ({devices: {[props.id]: {password: {$set: value}}}})
+                    onChange={props.setFormValue(
+                        value => ({devices: {[props.formData.id]: {password: {$set: value}}}})
                     )}
                 />
 
                 <CheckBox
                     label='Hide SSID'
                     helpText={HELP_TEXTS.hidden}
-                    checked={props.hidden}
+                    checked={props.formData.hidden}
                     disabled={props.disabled}
 
-                    onChange={props.changeFormData(
-                        value => ({devices: {[props.id]: {hidden: {$set: value}}}})
+                    onChange={props.setFormValue(
+                        value => ({devices: {[props.formData.id]: {hidden: {$set: value}}}})
                     )}
                 />
 
                 <RadioSet
                     label='GHz'
-                    choices={props.hwmodeChoices}
-                    value={props.hwmode}
+                    choices={getHwmodeChoices(props.formData)}
+                    value={props.formData.hwmode}
                     disabled={props.disabled}
                     helpText={HELP_TEXTS.hwmode}
 
-                    onChange={props.changeFormData(
+                    onChange={props.setFormValue(
                         value => ({
                             devices: {
-                                [props.id]: {
+                                [props.formData.id]: {
                                     hwmode: {$set: value},
                                     channel: {$set: 0}
                                 }
@@ -109,32 +132,32 @@ export default function WifiForm(props) {
 
                 <Select
                     label='802.11n/ac mode'
-                    choices={props.htmodeChoices}
-                    value={props.htmode}
+                    choices={getHtmodeChoices(props.formData)}
+                    value={props.formData.htmode}
                     disabled={props.disabled}
                     helpText={HELP_TEXTS.htmode}
 
-                    onChange={props.changeFormData(
-                        value => ({devices: {[props.id]: {htmode: {$set: value}}}})
+                    onChange={props.setFormValue(
+                        value => ({devices: {[props.formData.id]: {htmode: {$set: value}}}})
                     )}
 
                 />
 
                 <Select
                     label='Channel'
-                    choices={props.channelChoices}
-                    value={props.channel}
+                    choices={getChannelChoices(props.formData)}
+                    value={props.formData.channel}
                     disabled={props.disabled}
 
-                    onChange={props.changeFormData(
-                        value => ({devices: {[props.id]: {channel: {$set: value}}}})
+                    onChange={props.setFormValue(
+                        value => ({devices: {[props.formData.id]: {channel: {$set: value}}}})
                     )}
                 />
 
                 <WifiGuestForm
-                    {...props.guest_wifi}
+                    formData={props.formData.guest_wifi}
                     disabled={props.disabled}
-                    changeFormData={props.changeFormData}
+                    setFormValue={props.setFormValue}
                 />
             </>
             : null}
@@ -142,43 +165,83 @@ export default function WifiForm(props) {
 }
 
 function WifiGuestForm(props) {
-
     return <>
         <CheckBox
             label='Enable Guest Wifi'
-            checked={props.enabled}
+            checked={props.formData.enabled}
             disabled={props.disabled}
             helpText={HELP_TEXTS.guest_wifi_enabled}
 
-            onChange={props.changeFormData(
-                value => ({devices: {[props.id]: {guest_wifi: {enabled: {$set: value}}}}})
+            onChange={props.setFormValue(
+                value => ({devices: {[props.formData.id]: {guest_wifi: {enabled: {$set: value}}}}})
             )}
         />
-        {props.enabled ?
+        {props.formData.enabled ?
             <>
                 <TextInput
                     label='SSID'
-                    value={props.SSID}
+                    value={props.formData.SSID}
                     disabled={props.disabled}
 
-                    onChange={props.changeFormData(
-                        value => ({devices: {[props.id]: {guest_wifi: {SSID: {$set: value}}}}})
+                    onChange={props.setFormValue(
+                        value => ({devices: {[props.formData.id]: {guest_wifi: {SSID: {$set: value}}}}})
                     )}
                 />
 
                 <Password
                     label='Password'
-                    value={props.guest_wifi.password}
+                    value={props.formData.guest_wifi.password}
                     helpText={HELP_TEXTS.password}
                     disabled={props.disabled}
                     error={errors.guestWifiPassword}
                     required
 
-                    onChange={props.changeFormData(
-                        value => ({devices: {[props.id]: {guest_wifi: {password: {$set: value}}}}})
+                    onChange={props.setFormValue(
+                        value => ({devices: {[props.formData.id]: {guest_wifi: {password: {$set: value}}}}})
                     )}
                 />
             </>
             : null}
     </>
+}
+
+function getChannelChoices(device) {
+    let channelChoices = {};
+
+    device.available_bands.forEach((availableBand) => {
+        if (availableBand.hwmode !== device.hwmode) return;
+
+        availableBand.available_channels.forEach((availableChannel) => {
+            channelChoices[availableChannel.number.toString()] = `
+                        ${availableChannel.number}
+                        (${availableChannel.frequency} MHz ${availableChannel.radar ? ' ,DFS' : ''})
+                    `;
+        })
+    });
+
+    channelChoices['0'] = _('auto');
+    return channelChoices
+}
+
+function getHtmodeChoices(device) {
+    let htmodeChoices = {};
+
+    device.available_bands.forEach((availableBand) => {
+        if (availableBand.hwmode !== device.hwmode)
+            return;
+
+        availableBand.available_htmodes.forEach((availableHtmod) => {
+            htmodeChoices[availableHtmod] = HTMODES[availableHtmod]
+        })
+    });
+    return htmodeChoices
+}
+
+function getHwmodeChoices(device) {
+    return device.available_bands.map((availableBand) => {
+        return {
+            label: HWMODES[availableBand.hwmode],
+            value: availableBand.hwmode,
+        }
+    });
 }

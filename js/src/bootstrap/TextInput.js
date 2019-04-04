@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import Input from "./Input";
+import Input from './Input';
 
 const TextInput = Input('text');
 export default TextInput;

@@ -7,7 +7,7 @@
 
 import React from 'react';
 import {render} from 'react-dom';
-import Wifi from './wifi/Wifi';
+import WiFi from './wifi/Wifi';
 import WAN from './wan/WAN';
 import NotificationsDropdown from './notifications/NotificationsDropdown';
 import NotificationsCenter from './notifications/NotificationsCenter';
@@ -17,7 +17,7 @@ window.addEventListener('load', () => {
         {id: 'notifications_dropdown_container', component: NotificationsDropdown},
         {id: 'notifications_center_container', component: NotificationsCenter},
 
-        {id: 'wifi_container', component: Wifi},
+        {id: 'wifi_container', component: WiFi},
         {id: 'wan_container', component: WAN},
     ];
 

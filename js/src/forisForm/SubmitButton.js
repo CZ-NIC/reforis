@@ -5,12 +5,12 @@
  * See /LICENSE for more information.
  */
 
-import React from "react";
-import Button from "../bootstrap/Button";
-import {FORM_STATES} from "./withSettingsForm";
+import React from 'react';
+import Button from '../bootstrap/Button';
+import {FORM_STATES} from './hooks';
 
-export default function SubmitButton({disable, state, remindsToNWRestart, ...props}) {
-    const disableSubmitButton = disable || state !== FORM_STATES.READY;
+export default function SubmitButton({disabled, state, remindsToNWRestart, ...props}) {
+    const disableSubmitButton = disabled || state !== FORM_STATES.READY;
     const loadingSubmitButton = state !== FORM_STATES.READY;
 
     let labelSubmitButton;

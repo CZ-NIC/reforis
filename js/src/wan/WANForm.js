@@ -5,11 +5,11 @@
  * See /LICENSE for more information.
  */
 
-import React from "react";
+import React from 'react';
 
-import Select from "../bootstrap/Select";
-import TextInput from "../bootstrap/TextInput";
-import {validateDomain, validateIPv4Address} from "../settingsHelpers/validation";
+import Select from '../bootstrap/Select';
+import TextInput from '../bootstrap/TextInput';
+import {validateDomain, validateIPv4Address} from '../forisForm/validation';
 
 const HELP_TEXTS = {
     dns: _('DNS server address is not required as the built-in DNS resolver is capable of working without it.')
@@ -21,92 +21,137 @@ const WAN_CHOICES = {
     pppoe: _('PPPoE (for DSL bridges, Modem Turris, etc.)'),
 };
 
-export default class WANForm extends React.PureComponent {
 
-    static dhcpForm = props =>
-        props.formData ?
-            <TextInput
-                label={_('DHCP hostname')}
-                value={props.formData.hostname || ''}
-                disabled={props.disabled}
-                error={(props.errors || {}).hostname || null}
+export default function WANForm(props) {
+    const formData = props.formData.wan_settings;
+    const formErrors = (props.formErrors || {}).wan_settings || {};
+    const wanType = props.formData.wan_settings.wan_type;
+    return <>
+        <h3>{_('WAN IPv4')}</h3>
+        <Select
+            label={_('IPv4 protocol')}
+            value={wanType}
+            choices={WAN_CHOICES}
+            disabled={props.disabled}
+            onChange={props.setFormValue(
+                value => ({wan_settings: {wan_type: {$set: value}}})
+            )}
+        />
+        {
+            wanType === 'dhcp' ?
+                <DHCPForm
+                    formData={formData.wan_dhcp}
+                    formErrors={formErrors.wan_dhcp}
+                    disabled={props.disabled}
 
-                onChange={props.changeFormData(
-                    value => ({wan_settings: {wan_dhcp: {hostname: {$set: value}}}})
-                )}
-            /> : null;
+                    setFormValue={props.setFormValue}
+                />
+                : wanType === 'static' ?
+                <StaticForm
+                    formData={formData.wan_static}
+                    formErrors={formErrors.wan_static}
+                    disabled={props.disabled}
 
-    static staticForm = props => {
-        if (!props.formData) return null;
-        const errors = (props.errors || {});
-        return <>
-            <TextInput
-                label={_('IP address')}
-                value={props.formData.ip || ''}
-                disabled={props.disabled}
-                error={errors.ip || null}
-                required
+                    setFormValue={props.setFormValue}
+                />
+                : wanType === 'pppoe' ?
+                    <PPPoEForm
+                        formData={formData.wan_pppoe}
+                        formErrors={formErrors.wan_pppoe}
+                        disabled={props.disabled}
 
-                onChange={props.changeFormData(
-                    value => ({wan_settings: {wan_static: {ip: {$set: value}}}})
-                )}
-            />
-            <TextInput
-                label={_('Network mask')}
-                value={props.formData.netmask || ''}
-                disabled={props.disabled}
-                error={errors.netmask || null}
-                required
+                        setFormValue={props.setFormValue}
+                    />
+                    : null
+        }
+    </>
 
-                onChange={props.changeFormData(
-                    value => ({wan_settings: {wan_static: {netmask: {$set: value}}}})
-                )}
-            />
-            <TextInput
-                label={_('Gateway')}
-                value={props.formData.gateway || ''}
-                disabled={props.disabled}
-                error={errors.gateway || null}
-                required
+}
 
-                onChange={props.changeFormData(
-                    value => ({wan_settings: {wan_static: {gateway: {$set: value}}}})
-                )}
-            />
-            <TextInput
-                label={_('DNS server 1')}
-                value={props.formData.dns1 || ''}
-                disabled={props.disabled}
-                error={errors.dns1 || null}
-                helpText={HELP_TEXTS.dns}
+function DHCPForm(props) {
+    return <TextInput
+        label={_('DHCP hostname')}
+        value={props.formData.hostname || ''}
+        disabled={props.disabled}
+        error={(props.formErrors || {}).hostname || null}
 
-                onChange={props.changeFormData(
-                    value => ({wan_settings: {wan_static: {dns1: {$set: value}}}})
-                )}
-            />
-            <TextInput
-                label={_('DNS server 2')}
-                value={props.formData.dns2 || ''}
-                disabled={props.disabled}
-                error={errors.dns2 || null}
-                helpText={HELP_TEXTS.dns}
+        onChange={props.setFormValue(
+            value => ({wan_settings: {wan_dhcp: {hostname: {$set: value}}}})
+        )}
+    />
+}
 
-                onChange={props.changeFormData(
-                    value => ({wan_settings: {wan_static: {dns2: {$set: value}}}})
-                )}
-            />
-        </>
-    };
+function StaticForm(props) {
+    const formErrors = (props.formErrors || {});
+    return <>
+        <TextInput
+            label={_('IP address')}
+            value={props.formData.ip || ''}
+            disabled={props.disabled}
+            error={formErrors.ip || null}
+            required
 
-    static pppoeForm = props => <>
+            onChange={props.setFormValue(
+                value => ({wan_settings: {wan_static: {ip: {$set: value}}}})
+            )}
+        />
+        <TextInput
+            label={_('Network mask')}
+            value={props.formData.netmask || ''}
+            disabled={props.disabled}
+            error={formErrors.netmask || null}
+            required
+
+            onChange={props.setFormValue(
+                value => ({wan_settings: {wan_static: {netmask: {$set: value}}}})
+            )}
+        />
+        <TextInput
+            label={_('Gateway')}
+            value={props.formData.gateway || ''}
+            disabled={props.disabled}
+            error={formErrors.gateway || null}
+            required
+
+            onChange={props.setFormValue(
+                value => ({wan_settings: {wan_static: {gateway: {$set: value}}}})
+            )}
+        />
+        <TextInput
+            label={_('DNS server 1')}
+            value={props.formData.dns1 || ''}
+            disabled={props.disabled}
+            error={formErrors.dns1 || null}
+            helpText={HELP_TEXTS.dns}
+
+            onChange={props.setFormValue(
+                value => ({wan_settings: {wan_static: {dns1: {$set: value}}}})
+            )}
+        />
+        <TextInput
+            label={_('DNS server 2')}
+            value={props.formData.dns2 || ''}
+            disabled={props.disabled}
+            error={formErrors.dns2 || null}
+            helpText={HELP_TEXTS.dns}
+
+            onChange={props.setFormValue(
+                value => ({wan_settings: {wan_static: {dns2: {$set: value}}}})
+            )}
+        />
+    </>
+}
+
+function PPPoEForm(props) {
+    return <>
         <TextInput
             label={_('PAP/CHAP username')}
             value={props.formData.username || ''}
             disabled={props.disabled}
-            error={(props.errors || {}).username || null}
+            error={(props.formErrors || {}).username || null}
             required
 
-            onChange={props.changeFormData(
+            onChange={props.setFormValue(
                 value => ({wan_settings: {wan_pppoe: {username: {$set: value}}}})
             )}
         />
@@ -114,109 +159,67 @@ export default class WANForm extends React.PureComponent {
             label={_('PAP/CHAP password')}
             value={props.formData.password || ''}
             disabled={props.disabled}
-            error={(props.errors || {}).password || null}
+            error={(props.formErrors || {}).password || null}
             required
 
-            onChange={props.changeFormData(
+            onChange={props.setFormValue(
                 value => ({wan_settings: {wan_pppoe: {password: {$set: value}}}})
             )}
         />
-    </>;
+    </>
 
-    static validate = formData => {
-        let errors = {};
-        switch (formData.wan_type) {
-            case 'dhcp':
-                errors.wan_dhcp = WANForm.validateDHCP(formData.wan_dhcp);
-                break;
-            case 'static':
-                errors.wan_static = WANForm.validateStatic(formData.wan_static);
-                break;
-            case 'pppoe':
-                errors.wan_pppoe = WANForm.validatePPPOE(formData.wan_pppoe);
-                break;
-        }
-        return errors['wan_' + formData.wan_type] ? errors : null;
-    };
-
-    static validateDHCP = wan_dhcp => {
-        const error = {hostname: validateDomain(wan_dhcp.hostname)};
-        return error.hostname ? error : null;
-    };
-
-
-    static validateStatic(wan_static) {
-        let errors = {};
-        ['ip', 'netmask', 'gateway', 'dns1', 'dns2'].forEach(
-            field => {
-                let error = validateIPv4Address(wan_static[field]);
-                if (error)
-                    errors[field] = error;
-            }
-        );
-        ['ip', 'netmask', 'gateway'].forEach(
-            field => {
-                if (!wan_static[field] || wan_static[field] === '')
-                    errors[field] = _('This field is required.');
-            }
-        );
-
-        return JSON.stringify(errors) !== '{}' ? errors : null;
-    }
-
-    static validatePPPOE(wan_pppoe) {
-        let errors = {};
-        ['username', 'password'].forEach(
-            field => {
-                if (!wan_pppoe[field] || wan_pppoe[field] === '')
-                    errors[field] = _('This field is required.');
-            }
-        );
-        return JSON.stringify(errors) !== '{}' ? errors : null;
-    }
-
-    render() {
-        const wanType = this.props.formData.wan_type;
-
-        return (
-            <>
-                <Select
-                    label={_('IPv4 protocol')}
-                    value={wanType}
-                    choices={WAN_CHOICES}
-                    disabled={this.props.disabled}
-                    onChange={this.props.changeFormData(
-                        value => ({wan_settings: {wan_type: {$set: value}}})
-                    )}
-                />
-                {
-                    wanType === 'dhcp' ?
-                        <WANForm.dhcpForm
-                            formData={this.props.formData.wan_dhcp}
-                            errors={this.props.errors.wan_dhcp}
-                            disabled={this.props.disabled}
-
-                            changeFormData={this.props.changeFormData}
-                        />
-                        : wanType === 'static' ?
-                        <WANForm.staticForm
-                            formData={this.props.formData.wan_static}
-                            errors={this.props.errors.wan_static}
-                            disabled={this.props.disabled}
-
-                            changeFormData={this.props.changeFormData}
-                        />
-                        : wanType === 'pppoe' ?
-                            <WANForm.pppoeForm
-                                formData={this.props.formData.wan_pppoe}
-                                errors={this.props.errors.wan_pppoe}
-                                disabled={this.props.disabled}
-
-                                changeFormData={this.props.changeFormData}
-                            />
-                            : null
-                }
-            </>
-        );
-    }
 }
+
+
+export function validateWANForm(formData) {
+    let errors = {};
+    switch (formData.wan_type) {
+        case 'dhcp':
+            errors.wan_dhcp = validateDHCPForm(formData.wan_dhcp);
+            break;
+        case 'static':
+            errors.wan_static = validateStaticForm(formData.wan_static);
+            break;
+        case 'pppoe':
+            errors.wan_pppoe = validatePPPoEForm(formData.wan_pppoe);
+            break;
+    }
+    return errors['wan_' + formData.wan_type] ? errors : null;
+}
+
+function validateDHCPForm(wan_dhcp) {
+    const error = {hostname: validateDomain(wan_dhcp.hostname)};
+    return error.hostname ? error : null;
+}
+
+
+function validateStaticForm(wan_static) {
+    let errors = {};
+    ['ip', 'netmask', 'gateway', 'dns1', 'dns2'].forEach(
+        field => {
+            let error = validateIPv4Address(wan_static[field]);
+            if (error)
+                errors[field] = error;
+        }
+    );
+    ['ip', 'netmask', 'gateway'].forEach(
+        field => {
+            if (!wan_static[field] || wan_static[field] === '')
+                errors[field] = _('This field is required.');
+        }
+    );
+
+    return JSON.stringify(errors) !== '{}' ? errors : null;
+}
+
+function validatePPPoEForm(wan_pppoe) {
+    let errors = {};
+    ['username', 'password'].forEach(
+        field => {
+            if (!wan_pppoe[field] || wan_pppoe[field] === '')
+                errors[field] = _('This field is required.');
+        }
+    );
+    return JSON.stringify(errors) !== '{}' ? errors : null;
+}
+

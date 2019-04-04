@@ -8,69 +8,43 @@
 import React from 'react';
 import update from 'immutability-helper';
 
-import withSettingsForm from "../settingsHelpers/withSettingsForm";
-import WANForm from "./WANForm";
-import WAN6Form from "./WAN6Form";
-import MACForm from "./MACForm";
+import ForisForm from '../forisForm/ForisForm';
+import WAN6Form, {validateWAN6Form} from './WAN6Form';
+import MACForm, {validateMACForm} from './MACForm';
+import WANForm, {validateWANForm} from './WANForm';
 
-class WANBase extends React.Component {
-    render() {
-        if (!this.props.formData)
-            return null;
-
-        return <>
-            <h3>{_('WAN IPv4')}</h3>
-            <WANForm
-                formData={this.props.formData.wan_settings}
-                errors={(this.props.formErrors || {}).wan_settings || {}}
-                disabled={this.props.formIsDisabled}
-
-
-                setFormData={this.props.setFormData}
-                changeFormData={this.props.changeFormData}
-            />
-
-            <h3>{_('WAN IPv6')}</h3>
-            <WAN6Form
-                formData={this.props.formData.wan6_settings}
-                last_seen_duid={this.props.formData.last_seen_duid}
-                errors={(this.props.formErrors || {}).wan6_settings || {}}
-                disabled={this.props.formIsDisabled}
-
-                setFormData={this.props.setFormData}
-                changeFormData={this.props.changeFormData}
-            />
-
-            <h3>{_('MAC')}</h3>
-            <MACForm
-                formData={this.props.formData.mac_settings}
-                errors={(this.props.formErrors || {}).mac_settings || {}}
-                disabled={this.props.formIsDisabled}
-
-                setFormData={this.props.setFormData}
-                changeFormData={this.props.changeFormData}
-            />
-        </>
-    }
+export default function WAN() {
+    return <>
+        <ForisForm
+            module='wan'
+            prepData={prepData}
+            prepDataToSubmit={prepDataToSubmit}
+            validator={validator}
+        >
+            <WANForm/>
+            <WAN6Form/>
+            <MACForm/>
+        </ForisForm>
+    </>
 }
 
-function prepData(data) {
+function prepData(formData) {
     // Create empty form fields if nothing has got from the server.
-    const wan6_6in4 = update((data.wan6_settings || {}).wan6_6in4 || {}, {
+    const wan6_6in4 = update((formData.wan6_settings || {}).wan6_6in4 || {}, {
         dynamic_ipv4: {
-            $set: ((data.wan6_settings || {}).wan6_6in4 || {}).dynamic_ipv4 || {enabled: false}
+            $set: ((formData.wan6_settings || {}).wan6_6in4 || {}).dynamic_ipv4 || {enabled: false}
         },
     });
-    return update(data, {
+    return update(formData, {
         wan_settings: {
-            wan_dhcp: {$set: data.wan_settings.wan_dhcp || {}},
-            wan_static: {$set: data.wan_settings.wan_static || {}},
-            wan_pppoe: {$set: data.wan_settings.wan_pppoe || {}}
+            wan_dhcp: {$set: formData.wan_settings.wan_dhcp || {}},
+            wan_static: {$set: formData.wan_settings.wan_static || {}},
+            wan_pppoe: {$set: formData.wan_settings.wan_pppoe || {}}
         },
         wan6_settings: {
-            wan6_dhcpv6: {$set: data.wan6_settings.wan6_dhcpv6 || {duid: ""}},
-            wan6_static: {$set: data.wan6_settings.wan6_static || {}},
-            wan6_6to4: {$set: data.wan6_settings.wan6_6to4 || {}},
+            wan6_dhcpv6: {$set: formData.wan6_settings.wan6_dhcpv6 || {duid: ""}},
+            wan6_static: {$set: formData.wan6_settings.wan6_static || {}},
+            wan6_6to4: {$set: formData.wan6_settings.wan6_6to4 || {}},
             wan6_6in4: {$set: wan6_6in4},
         }
     })
@@ -105,15 +79,11 @@ function deleteUnnecessarySettings(type, settings) {
 
 function validator(formData) {
     const errors = {
-        wan_settings: WANForm.validate(formData.wan_settings),
-        wan6_settings: WAN6Form.validate(formData.wan6_settings),
-        mac_settings: MACForm.validate(formData.mac_settings)
+        wan_settings: validateWANForm(formData.wan_settings),
+        wan6_settings: validateWAN6Form(formData.wan6_settings),
+        mac_settings: validateMACForm(formData.mac_settings),
     };
     if (errors.wan_settings || errors.wan6_settings || errors.mac_settings)
         return errors;
-    return {}
+    return null;
 }
-
-const WAN = withSettingsForm('wan', prepData, prepDataToSubmit, validator)(WANBase);
-
-export default WAN;

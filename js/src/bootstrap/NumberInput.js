@@ -6,7 +6,8 @@
  */
 
 import React from 'react';
-import Input from "./Input";
+
+import Input from './Input';
 
 const NumberInput = Input('number');
 export default NumberInput;

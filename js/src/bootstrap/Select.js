@@ -30,7 +30,7 @@ export default function Select({name, id, label, choices, value, onChange, disab
             >
                 {options}
             </select>
-            <small className="form-text text-muted">{helpText}</small>
+            <small className='form-text text-muted'>{helpText}</small>
         </div>
     </div>;
 }
