@@ -29,7 +29,6 @@ export default function SubmitButton({disabled, state, remindsToNWRestart, ...pr
     }
 
     return <Button
-        id='wifi-submit-button'
         className='btn-primary'
         loading={loadingSubmitButton}
         disabled={disableSubmitButton}

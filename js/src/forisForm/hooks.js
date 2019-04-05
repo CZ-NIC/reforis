@@ -5,10 +5,8 @@
  * See /LICENSE for more information.
  */
 
-import React, {useState, useEffect, useReducer} from 'react';
+import React, {useReducer} from 'react';
 import update from 'immutability-helper';
-
-import ForisAPI from '../api/api';
 
 export const FORM_STATES = {
     READY: 1,
@@ -104,48 +102,4 @@ export function useForm(prepData, validator) {
         setFormValue,
         dispatch,
     ]
-}
-
-export function useAPIGetData(endpoint) {
-    const [isReady, setIsReady] = useState(false);
-
-    function getData(callback) {
-        setIsReady(false);
-        ForisAPI[endpoint].get().then(data => {
-            callback(data);
-            setIsReady(true);
-        });
-    }
-
-    return [getData, isReady]
-}
-
-export function useAPIPostData(endpoint) {
-    function postData(data) {
-        ForisAPI[endpoint].post(data).then(
-            data => {
-                console.log(data) //TODO: remove
-            }
-        );
-    }
-    return postData
-}
-
-export function useWSNetworkRestart() {
-    const [remindsToNWRestart, setRemindsToNWRestart] = useState(0);
-    useEffect(() => {
-        window.forisWS.bind('maintain', 'network-restart',
-            (msg) => {
-                setRemindsToNWRestart(msg.data.remains / 1000);
-            });
-    }, []);
-    return remindsToNWRestart
-}
-
-export function useWSUpdateSettings(module, callback) {
-    useEffect(() => {
-        window.forisWS
-            .subscribe(module)
-            .bind(module, 'update_settings', () => callback());
-    }, []);
 }

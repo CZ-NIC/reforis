@@ -59,6 +59,19 @@ def wan():
         _process_backend_error(e)
 
 
+@api.route('connection-test', methods=['GET'])
+def connection_test():
+    try:
+        res = current_app.backend.perform(
+            'wan',
+            'connection_test_trigger',
+            data={'test_kinds': ['ipv4', 'ipv6']}
+        )
+        return jsonify(res)
+    except ExceptionInBackend as e:
+        _process_backend_error(e)
+
+
 def _foris_controller_settings_call(module):
     try:
         res = ''

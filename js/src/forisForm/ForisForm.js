@@ -7,8 +7,10 @@
 
 import React, {useEffect} from 'react';
 
+import {useAPIGetData, useAPIPostData} from '../api/hooks';
+import {useWS, useWSNetworkRestart} from '../webSockets/hooks';
+import {FORM_STATES, useForm} from './hooks';
 import SubmitButton from './SubmitButton';
-import {FORM_STATES, useAPIGetData, useAPIPostData, useForm, useWSNetworkRestart, useWSUpdateSettings} from './hooks';
 
 export default function ForisForm({prepData, prepDataToSubmit, validator, module, children}) {
     const [
@@ -33,7 +35,7 @@ export default function ForisForm({prepData, prepDataToSubmit, validator, module
             setFormState(FORM_STATES.LOAD);
     }, [isReady]);
 
-    useWSUpdateSettings(module, () => {
+    useWS(module, 'update_settings', () => {
         setFormState(FORM_STATES.UPDATE);
     });
 
@@ -73,7 +75,7 @@ export default function ForisForm({prepData, prepDataToSubmit, validator, module
         <SubmitButton
             disabled={!!formErrors}
             state={formState}
-            remindsToNWRestart={remindsToNWRestart}//TODO
+            remindsToNWRestart={remindsToNWRestart}
         />
     </form>
 }

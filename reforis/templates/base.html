@@ -31,22 +31,23 @@
 <body>
 <div class="wrapper">
     {% include "includes/navigation.html" %}
-
     <div id="content">
-        {% include "includes/top-bar.html" %}
-        {% if messages %}
-            {% for message in messages %}
-                <div class="alert {% if message.success %}alert-success{% endif %} {% if message.warning %}alert-warning{% endif %} {% if message.danger %}alert-danger{% endif %} alert-dismissible fade show"
-                     role="alert"
-                >
-                    {{ message.text }}
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            {% endfor %}
-        {% endif %}
-        {% block content %}{% endblock %}
+        <div class="col-lg-10 col-sm-12">
+            {% include "includes/top-bar.html" %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert {% if message.success %}alert-success{% endif %} {% if message.warning %}alert-warning{% endif %} {% if message.danger %}alert-danger{% endif %} alert-dismissible fade show"
+                         role="alert"
+                    >
+                        {{ message.text }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+            {% block content %}{% endblock %}
+        </div>
     </div>
 </div>
 

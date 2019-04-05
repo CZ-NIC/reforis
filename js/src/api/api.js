@@ -7,9 +7,10 @@
 
 const API_URL = '/api';
 const ENDPOINTS = [
+    {name: 'notifications', url: '/notifications', methods: ['get', 'post']},
     {name: 'wifi', url: '/wifi', methods: ['get', 'post']},
     {name: 'wan', url: '/wan', methods: ['get', 'post']},
-    {name: 'notifications', url: '/notifications', methods: ['get', 'post']}
+    {name: 'connectionTest', url: '/connection-test', methods: ['get']},
 ];
 
 class API {
@@ -33,8 +34,9 @@ const POST_HEADERS = {
 const wrapFetch = function (url, method) {
     switch (method) {
         case 'get':
-            return () => {
-                return fetch(url).then(response => response.json());
+            return (url_data) => {
+                return fetch(url + (url_data ? url_data : ''))
+                    .then(response => response.json());
             };
         case 'post':
             return (data) => {

@@ -6,19 +6,21 @@
  */
 
 import React from 'react';
+
 import {render} from 'react-dom';
 import WiFi from './wifi/Wifi';
 import WAN from './wan/WAN';
 import NotificationsDropdown from './notifications/NotificationsDropdown';
 import NotificationsCenter from './notifications/NotificationsCenter';
+import ConnectionTest from './connectionTest/ConnectionTest';
 
 window.addEventListener('load', () => {
     const apps = [
         {id: 'notifications_dropdown_container', component: NotificationsDropdown},
         {id: 'notifications_center_container', component: NotificationsCenter},
-
         {id: 'wifi_container', component: WiFi},
         {id: 'wan_container', component: WAN},
+        {id: 'wan_connection_test_container', component: ConnectionTest},
     ];
 
     for (let app of apps) {

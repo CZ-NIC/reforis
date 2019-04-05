@@ -8,12 +8,13 @@
 import React from 'react';
 
 const OFFSET = 8;
-const SIZE = 2;
-const SIZE_CLASS = ' offset-' + OFFSET + ' col-sm-' + SIZE;
+const SIZE = 4;
+const SIZE_CLASS = ' offset-lg-' + OFFSET + ' col-lg-' + SIZE;
+const SIZE_CLASS_SM = ' col-sm-12';
 
 export default function Button({className, loading, children, ...props}) {
     className = className ? 'btn ' + className : 'btn btn-primary ';
-    className += SIZE_CLASS;
+    className += SIZE_CLASS + SIZE_CLASS_SM;
 
     const span = loading ?
         <span className='spinner-border spinner-border-sm' role='status' aria-hidden='true'/> : null;
