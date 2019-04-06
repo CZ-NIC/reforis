@@ -8,7 +8,7 @@
 import React from 'react';
 
 const OFFSET = 8;
-const SIZE = 4;
+const SIZE = 3;
 const SIZE_CLASS = ' offset-lg-' + OFFSET + ' col-lg-' + SIZE;
 const SIZE_CLASS_SM = ' col-sm-12';
 

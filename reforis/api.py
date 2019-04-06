@@ -42,6 +42,11 @@ def wifi():
     return _foris_controller_settings_call('wifi')
 
 
+@api.route('/lan', methods=['GET', 'POST'])
+def lan():
+    return _foris_controller_settings_call('lan')
+
+
 @api.route('/wan', methods=['GET', 'POST'])
 def wan():
     try:

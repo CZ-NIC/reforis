@@ -65,7 +65,7 @@ function DeviceForm(props) {
     return <>
         <h3>Module {props.formData.id + 1}</h3>
         <CheckBox
-            label='Enable'
+            label={_('Enable')}
             checked={props.formData.enabled}
             disabled={props.disabled}
 

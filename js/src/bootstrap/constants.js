@@ -5,5 +5,5 @@
  * See /LICENSE for more information.
  */
 
-export const LABEL_SIZE = 3;
+export const LABEL_SIZE = 2;
 export const FIELD_SIZE = 9;

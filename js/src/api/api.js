@@ -10,6 +10,7 @@ const ENDPOINTS = [
     {name: 'notifications', url: '/notifications', methods: ['get', 'post']},
     {name: 'wifi', url: '/wifi', methods: ['get', 'post']},
     {name: 'wan', url: '/wan', methods: ['get', 'post']},
+    {name: 'lan', url: '/lan', methods: ['get', 'post']},
     {name: 'connectionTest', url: '/connection-test', methods: ['get']},
 ];
 

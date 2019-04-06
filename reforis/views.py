@@ -53,3 +53,8 @@ def wifi():
 @base.route('/wan')
 def wan():
     return render_template('wan.html')
+
+
+@base.route('/lan')
+def lan():
+    return render_template('lan.html')

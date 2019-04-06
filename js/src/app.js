@@ -10,6 +10,7 @@ import React from 'react';
 import {render} from 'react-dom';
 import WiFi from './wifi/Wifi';
 import WAN from './wan/WAN';
+import LAN from './lan/LAN';
 import NotificationsDropdown from './notifications/NotificationsDropdown';
 import NotificationsCenter from './notifications/NotificationsCenter';
 import ConnectionTest from './connectionTest/ConnectionTest';
@@ -21,6 +22,7 @@ window.addEventListener('load', () => {
         {id: 'wifi_container', component: WiFi},
         {id: 'wan_container', component: WAN},
         {id: 'wan_connection_test_container', component: ConnectionTest},
+        {id: 'lan_container', component: LAN},
     ];
 
     for (let app of apps) {

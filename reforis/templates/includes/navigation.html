@@ -11,6 +11,9 @@
         <li {% if request.path.startswith('/wan') %}class="active"{% endif %}>
             <a href="/wan">WAN</a>
         </li>
+        <li {% if request.path.startswith('/lan') %}class="active"{% endif %}>
+            <a href="/lan">LAN</a>
+        </li>
         {% for plugin in plugins %}
             <li {% if request.path.startswith(plugin.url_prefix) %}class="active"{% endif %}>
                 <a href="{{ plugin.url_prefix }}">{{ plugin.name }}</a>
