@@ -5,7 +5,7 @@
  * See /LICENSE for more information.
  */
 
-import React from "react";
+import React from 'react';
 
 export default function NotificationIcon({severity, className}) {
     let iconName = null;

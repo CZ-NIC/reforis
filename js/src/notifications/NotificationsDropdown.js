@@ -6,28 +6,25 @@
  */
 
 import React from 'react';
-import NotificationsDropdownButton from "./NotificationsDropdownButton";
-import NotificationsDropdownMenu from "./NotificationsDropdownMenu";
-import NotificationsWrapper from "./NotificationsWrapper";
+import NotificationsDropdownButton from './NotificationsDropdownButton';
+import NotificationsDropdownMenu from './NotificationsDropdownMenu';
+import useNotifications, {useNewNotification} from './hooks';
 
 
-class NotificationsDropdown extends React.Component {
-    render() {
-        return <div id='notifications' className="dropdown btn-group">
-            <NotificationsDropdownButton
-                notificationsCount={this.props.notifications.length}
-                newNotification={this.props.newNotification}
+export default function NotificationsDropdown() {
+    const [notifications, dismiss, dismissAll] = useNotifications();
+    const newNotification = useNewNotification();
 
-                disableNewNotification={this.props.disableNewNotification}
-            />
-            <NotificationsDropdownMenu
-                notifications={this.props.notifications}
+    return <div id='notifications' className='dropdown btn-group'>
+        <NotificationsDropdownButton
+            notificationsCount={notifications.length}
+            newNotification={newNotification}
+        />
+        <NotificationsDropdownMenu
+            notifications={notifications}
 
-                dismissHandler={this.props.dismissHandler}
-                dismissAllHandler={this.props.dismissAllHandler}
-            />
-        </div>
-    }
+            dismiss={dismiss}
+            dismissAll={dismissAll}
+        />
+    </div>
 }
-
-export default NotificationsWrapper(NotificationsDropdown);

@@ -5,13 +5,13 @@
  * See /LICENSE for more information.
  */
 
-import React from "react";
-import {ForisURLs} from "../constants";
+import React from 'react';
+import {ForisURLs} from '../constants';
 
 const SMALL_SCREEN = 699;
 
-export default class NotificationsDropdownButton extends React.PureComponent {
-    redirectToNotificationCenter = (e) => {
+export default function NotificationsDropdownButton({notificationsCount,newNotification}) {
+    function redirectToNotificationCenter(e) {
         // We don't want to show dropdown on the small devices.
         // So just make redirect to notification center
         if (window.outerWidth > SMALL_SCREEN)
@@ -19,41 +19,36 @@ export default class NotificationsDropdownButton extends React.PureComponent {
         e.preventDefault();
         e.stopPropagation();
         document.location = ForisURLs.notifications;
-    };
+    }
 
-    render() {
-        return <button
-            id="notifications-btn"
-            className="nav-item btn btn-link"
-            type="button"
-            onClick={this.redirectToNotificationCenter}
-        >
-            <span className="fa-stack">
-                <i className="fa fa-bell fa-stack-1x"/>
+    return <button
+        id='notifications-btn'
+        className='nav-item btn btn-link'
+        type='button'
+        onClick={redirectToNotificationCenter}
+    >
+            <span className='fa-stack'>
+                <i className='fa fa-bell fa-stack-1x'/>
                 {
-                    this.props.notificationsCount !== 0 ?
+                    notificationsCount !== 0 ?
                         <NotificationCounter
-                            notificationsCount={this.props.notificationsCount}
-                            newNotification={this.props.newNotification}
-
-                            disableNewNotification={this.props.disableNewNotification}
+                            notificationsCount={notificationsCount}
+                            newNotification={newNotification}
                         />
                         : null
                 }
             </span>
-        </button>
-    }
+    </button>
 }
 
-function NotificationCounter({notificationsCount, newNotification, disableNewNotification}) {
+function NotificationCounter({notificationsCount, newNotification}) {
     return <div
-        id="notifications-counter"
+        id='notifications-counter'
         className={newNotification ? 'jump' : ''}
-        onAnimationEnd={disableNewNotification}
     >
-        <i className="fa fa-circle fa-stack-1x"/>
-        <small className="circle-text fa-stack-1x">
-            {notificationsCount < 99 ? notificationsCount : "..."}
+        <i className='fa fa-circle fa-stack-1x'/>
+        <small className='circle-text fa-stack-1x'>
+            {notificationsCount < 99 ? notificationsCount : '...'}
         </small>
     </div>
 }

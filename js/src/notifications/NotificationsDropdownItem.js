@@ -5,49 +5,36 @@
  * See /LICENSE for more information.
  */
 
-import React from "react";
-import NotificationIcon from "./NotificationIcon";
-import {toLocaleDateString} from "./utils";
-import {ForisURLs} from "../constants";
+import React from 'react';
 
-export class NotificationsDropdownItem extends React.PureComponent {
-    getMessage() {
-        const maxLength = 25;
-        const message = this.props.message;
-        if (message.length > maxLength)
-            return message.substring(0, maxLength) + '...';
-        else
-            return message;
-    }
+import NotificationIcon from './NotificationIcon';
+import {toLocaleDateString} from './utils';
+import {ForisURLs} from '../constants';
 
-    getDivider() {
-        return this.props.divider ? <div className="dropdown-divider"/> : null;
-    }
+export default function NotificationsDropdownItem({notification, divider, dismiss}) {
+    const date = toLocaleDateString(notification.created_at);
 
-    dismissHandler = (e) => {
-        e.preventDefault();
-        this.props.dismissHandler(this.props.id);
-    };
-
-    render() {
-        const divider = this.getDivider();
-        const message = this.getMessage();
-        const date = toLocaleDateString(this.props.created_at);
-
-        return <React.Fragment>
-            <div className="dropdown-item notification-item">
-                <NotificationIcon severity={this.props.severity} className={'fa-2x'}/>
-                <div className="notifications-info">
-                    <a href={`${ForisURLs.notifications}?id=${this.props.id}`} className="notification-message">
-                        <small className="text-muted">{date}</small>
-                        <p>{message}</p>
-                    </a>
-                </div>
-                <button className="btn btn-link" onClick={this.dismissHandler}>
-                    <i className="fas fa-times"/>
-                </button>
+    return <React.Fragment>
+        <div className='dropdown-item notification-item'>
+            <NotificationIcon severity={notification.severity} className={'fa-2x'}/>
+            <div className='notifications-info'>
+                <a href={`${ForisURLs.notifications}?id=${notification.id}`} className='notification-message'>
+                    <small className='text-muted'>{date}</small>
+                    <p>{cutMessage(notification.msg)}</p>
+                </a>
             </div>
-            {divider}
-        </React.Fragment>;
-    }
+            <button className='btn btn-link' onClick={dismiss}>
+                <i className='fas fa-times'/>
+            </button>
+        </div>
+        {divider ? <div className='dropdown-divider'/> : null}
+    </React.Fragment>;
+}
+
+function cutMessage(message) {
+    const maxLength = 25;
+    if (message.length > maxLength)
+        return message.substring(0, maxLength) + '...';
+    else
+        return message;
 }
