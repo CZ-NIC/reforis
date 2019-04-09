@@ -27,8 +27,7 @@ def login():
 
     if request.method == 'POST':
         password = request.form['password']
-        res = login_to_foris(password)
-        if res:
+        if login_to_foris(password):
             return redirect(url_for('Foris.index'))
 
     return render_template('login.html')

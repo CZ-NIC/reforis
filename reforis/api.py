@@ -64,7 +64,7 @@ def wan():
         _process_backend_error(e)
 
 
-@api.route('connection-test', methods=['GET'])
+@api.route('/connection-test', methods=['GET'])
 def connection_test():
     try:
         res = current_app.backend.perform(

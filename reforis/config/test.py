@@ -1,0 +1,10 @@
+#  Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+#
+#  This is free software, licensed under the GNU General Public License v3.
+#  See /LICENSE for more information.
+
+from reforis.config.dev import *
+
+TESTING = True
+
+CONTROLLER_ID = 'test-controller_id'
