@@ -6,20 +6,26 @@
  */
 
 import React from 'react';
-import {LABEL_SIZE,FIELD_SIZE} from './constants';
+import PropTypes from 'prop-types';
+import {useUID} from 'react-uid';
 
-export default function CheckBox({name, id, label, onChange, checked, helpText, ...props}) {
+import {LABEL_SIZE, FIELD_SIZE} from './constants';
+
+CheckBox.propTypes = {
+    label: PropTypes.string.isRequired,
+    helpText: PropTypes.string,
+};
+
+export default function CheckBox({label, helpText, ...props}) {
+    const uid = useUID();
     return <div className='form-group row'>
         <div className={'form-label col-sm-' + LABEL_SIZE}>
-            <label className='form-label' htmlFor={id}>{label}</label>
+            <label className='form-label' htmlFor={uid}>{label}</label>
         </div>
         <div className={'form-check col-sm-' + FIELD_SIZE}>
             <input
                 type='checkbox'
-                name={name}
-                id={id}
-                onChange={onChange}
-                checked={checked}
+                id={uid}
                 {...props}
             />
             <small className="form-text text-muted">{helpText}</small>

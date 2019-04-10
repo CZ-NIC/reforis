@@ -6,20 +6,17 @@
  */
 
 import React from 'react';
-
-import Input from './Input';
 import PropTypes from 'prop-types';
 
-const NumberInput = Input('number');
+import Input from './Input';
 
-NumberInput.propTypes = {
+
+const PasswordInput = Input('password');
+
+PasswordInput.propTypes = {
     label: PropTypes.string.isRequired,
     error: PropTypes.string,
     helpText: PropTypes.string,
-    value: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
-    ]),
 };
 
-export default NumberInput;
+export default PasswordInput;

@@ -7,7 +7,7 @@
 import React from 'react'
 
 import TextInput from '../bootstrap/TextInput';
-import Password from '../bootstrap/Password';
+import PasswordInput from '../bootstrap/PasswordInput';
 import CheckBox from '../bootstrap/Checkbox';
 import RadioSet from '../bootstrap/RadioSet';
 import Select from '../bootstrap/Select';
@@ -62,15 +62,16 @@ export default function WifiForm(props) {
 
 function DeviceForm(props) {
     const errors = props.errors ? props.errors : {};
+    const deviceID = props.formData.id;
     return <>
-        <h3>Module {props.formData.id + 1}</h3>
+        <h3>Module {deviceID + 1}</h3>
         <CheckBox
             label={_('Enable')}
             checked={props.formData.enabled}
             disabled={props.disabled}
 
             onChange={props.setFormValue(
-                value => ({devices: {[props.formData.id]: {enabled: {$set: value}}}})
+                value => ({devices: {[deviceID]: {enabled: {$set: value}}}})
             )}
         />
         {props.formData.enabled ?
@@ -83,11 +84,11 @@ function DeviceForm(props) {
                     required
 
                     onChange={props.setFormValue(
-                        value => ({devices: {[props.formData.id]: {SSID: {$set: value}}}})
+                        value => ({devices: {[deviceID]: {SSID: {$set: value}}}})
                     )}
                 />
 
-                <Password
+                <PasswordInput
                     label='Password'
                     value={props.formData.password}
                     error={errors.password}
@@ -96,7 +97,7 @@ function DeviceForm(props) {
                     required
 
                     onChange={props.setFormValue(
-                        value => ({devices: {[props.formData.id]: {password: {$set: value}}}})
+                        value => ({devices: {[deviceID]: {password: {$set: value}}}})
                     )}
                 />
 
@@ -107,11 +108,12 @@ function DeviceForm(props) {
                     disabled={props.disabled}
 
                     onChange={props.setFormValue(
-                        value => ({devices: {[props.formData.id]: {hidden: {$set: value}}}})
+                        value => ({devices: {[deviceID]: {hidden: {$set: value}}}})
                     )}
                 />
 
                 <RadioSet
+                    name={`hwmode-${deviceID}`}
                     label='GHz'
                     choices={getHwmodeChoices(props.formData)}
                     value={props.formData.hwmode}
@@ -121,7 +123,7 @@ function DeviceForm(props) {
                     onChange={props.setFormValue(
                         value => ({
                             devices: {
-                                [props.formData.id]: {
+                                [deviceID]: {
                                     hwmode: {$set: value},
                                     channel: {$set: 0}
                                 }
@@ -138,7 +140,7 @@ function DeviceForm(props) {
                     helpText={HELP_TEXTS.htmode}
 
                     onChange={props.setFormValue(
-                        value => ({devices: {[props.formData.id]: {htmode: {$set: value}}}})
+                        value => ({devices: {[deviceID]: {htmode: {$set: value}}}})
                     )}
 
                 />
@@ -150,7 +152,7 @@ function DeviceForm(props) {
                     disabled={props.disabled}
 
                     onChange={props.setFormValue(
-                        value => ({devices: {[props.formData.id]: {channel: {$set: value}}}})
+                        value => ({devices: {[deviceID]: {channel: {$set: value}}}})
                     )}
                 />
 
@@ -188,7 +190,7 @@ function WifiGuestForm(props) {
                     )}
                 />
 
-                <Password
+                <PasswordInput
                     label='Password'
                     value={props.formData.guest_wifi.password}
                     helpText={HELP_TEXTS.password}

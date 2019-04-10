@@ -6,26 +6,35 @@
  */
 
 import React from 'react';
+import propTypes from 'prop-types';
+import {useUID} from 'react-uid';
+
 import {LABEL_SIZE, FIELD_SIZE} from './constants';
 
 
-export default function Select({name, id, label, choices, value, onChange, disabled, helpText, ...props}) {
+Select.propTypes = {
+    label: propTypes.string.isRequired,
+    choices: propTypes.object.isRequired,
+    value: propTypes.oneOfType([
+        propTypes.string,
+        propTypes.number,
+    ]).isRequired,
+    helpText: propTypes.string,
+};
 
-    let options = [];
-    for (let key in choices)
-        if (choices.hasOwnProperty(key))
-            options.push(<option key={key} value={key}>{choices[key]}</option>);
+export default function Select({label, choices, helpText, ...props}) {
+    const uid = useUID();
+
+    const options = Object.keys(choices).map(
+        key => <option key={key} value={key}>{choices[key]}</option>
+    );
 
     return <div className='form-group row'>
-        <label className={'form-control-label col-sm-' + LABEL_SIZE} htmlFor={id}>{label}</label>
+        <label className={'form-control-label col-sm-' + LABEL_SIZE} htmlFor={uid}>{label}</label>
         <div className={'col-sm-' + FIELD_SIZE}>
             <select
-                disabled={disabled}
                 className='form-control'
-                id={id}
-                name={name}
-                value={value}
-                onChange={onChange}
+                id={uid}
                 {...props}
             >
                 {options}

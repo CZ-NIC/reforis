@@ -6,11 +6,21 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const OFFSET = 8;
 const SIZE = 3;
 const SIZE_CLASS = ' offset-lg-' + OFFSET + ' col-lg-' + SIZE;
 const SIZE_CLASS_SM = ' col-sm-12';
+
+Button.propTypes = {
+    className: PropTypes.string,
+    loading: PropTypes.bool,
+    children: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.element,
+    ]).isRequired
+};
 
 export default function Button({className, loading, children, ...props}) {
     className = className ? 'btn ' + className : 'btn btn-primary ';

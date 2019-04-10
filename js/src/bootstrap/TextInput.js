@@ -6,7 +6,17 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import Input from './Input';
 
+
 const TextInput = Input('text');
+
+TextInput.propTypes = {
+    label: PropTypes.string.isRequired,
+    error: PropTypes.string,
+    helpText: PropTypes.string,
+};
+
 export default TextInput;
