@@ -7,7 +7,7 @@
 
 import React, {useEffect} from 'react';
 
-import {useAPIGetData, useAPIPostData} from '../api/hooks';
+import {useAPIGetData, useAPIPostData} from '../forisAPI/hooks';
 import {useWS, useWSNetworkRestart} from '../webSockets/hooks';
 import {FORM_STATES, useForm} from './hooks';
 import SubmitButton from './SubmitButton';

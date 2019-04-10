@@ -7,7 +7,7 @@
 
 import React, {useState} from 'react';
 import ConnectionTestButton from './ConnectionTestButton';
-import {useAPIGetData} from '../api/hooks';
+import {useAPIGetData} from '../forisAPI/hooks';
 import {useWS} from '../webSockets/hooks';
 
 export const TEST_STATES = {

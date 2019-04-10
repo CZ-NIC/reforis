@@ -7,7 +7,7 @@
 
 import React, {useState, useEffect} from 'react';
 import {useWS} from '../webSockets/hooks';
-import {useAPIGetData, useAPIPostData} from '../api/hooks';
+import {useAPIGetData, useAPIPostData} from '../forisAPI/hooks';
 
 export default function useNotifications() {
     const [notifications, setNotifications] = useState([]);
