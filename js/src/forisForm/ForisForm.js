@@ -5,60 +5,25 @@
  * See /LICENSE for more information.
  */
 
-import React, {useEffect} from 'react';
+import React from 'react';
 
-import {useAPIGetData, useAPIPostData} from '../forisAPI/hooks';
-import {useWS, useWSNetworkRestart} from '../webSockets/hooks';
-import {FORM_STATES, useForm} from './hooks';
+import {useForisForm} from './hooks';
 import SubmitButton from './SubmitButton';
 
-export default function ForisForm({prepData, prepDataToSubmit, validator, module, children}) {
+export default function ForisForm({module, prepData, prepDataToSubmit, validator, children}) {
     const [
         formData,
         formErrors,
-        setFormData,
-
         formState,
-        setFormState,
+        remindsToNWRestart,
         formIsDisabled,
 
-        setFormValue
-    ] = useForm(prepData, validator);
-
-    const [getData, isReady] = useAPIGetData(module);
-    const postData = useAPIPostData(module);
-    useEffect(() => getData(data => setFormData(data)), []);
-    useEffect(() => {
-        if (isReady)
-            setFormState(FORM_STATES.READY);
-        else
-            setFormState(FORM_STATES.LOAD);
-    }, [isReady]);
-
-    useWS(module, 'update_settings', () => {
-        setFormState(FORM_STATES.UPDATE);
-    });
-
-    const remindsToNWRestart = useWSNetworkRestart();
-    useEffect(() => {
-            if (remindsToNWRestart === 0) {
-                getData(data => setFormData(data));
-                return;
-            }
-            setFormState(FORM_STATES.NETWORK_RESTART);
-        },
-        [remindsToNWRestart]
-    );
+        setFormValue,
+        onSubmit,
+    ] = useForisForm(module, prepData, prepDataToSubmit, validator);
 
     if (JSON.stringify(formData) === '{}')
         return null;
-
-    function onSubmit(e) {
-        e.preventDefault();
-        setFormState(FORM_STATES.UPDATE);
-        const copiedFormData = JSON.parse(JSON.stringify(formData));
-        postData(prepDataToSubmit(copiedFormData))
-    }
 
     const childrenWithFormProps = React.Children.map(
         children, child =>

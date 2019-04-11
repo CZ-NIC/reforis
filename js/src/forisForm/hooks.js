@@ -5,101 +5,107 @@
  * See /LICENSE for more information.
  */
 
-import React, {useReducer} from 'react';
+import React, {useState, useEffect} from 'react';
 import update from 'immutability-helper';
 
+import {useAPIGetData, useAPIPostData} from '../forisAPI/hooks';
+import {useWS, useWSNetworkRestart} from '../webSockets/hooks';
+
 export const FORM_STATES = {
-    READY: 1,
-    UPDATE: 2,
-    NETWORK_RESTART: 3,
-    LOAD: 4,
+    READY: 0,
+    UPDATE: 1,
+    NETWORK_RESTART: 2,
+    LOAD: 3,
 };
 
-export const FORM_ACTIONS = {
-    setData: 1,
-    setState: 2,
-};
+function useForm(validator) {
+    const [formState, setFormState] = useState(FORM_STATES.LOAD);
+    const [formData, setFormData] = useState({});
+    const [formErrors, setFormErrors] = useState({});
 
-function formReducer(state, action) {
-    console.log(action); //TODO: remove
-    switch (action.type) {
-        case FORM_ACTIONS.setData: {
-            return {
-                data: action.data,
-                errors: action.errors,
-                state: FORM_STATES.READY,
-            };
-        }
-        case FORM_ACTIONS.setState:
-            return {
-                ...state,
-                state: action.state
-            };
-        default:
-            return state;
-    }
-}
-
-export function useForm(prepData, validator) {
-    const [state, dispatch] = useReducer(formReducer,
-        {
-            data: {},
-            errors: {},
-            state: FORM_STATES.LOAD
-        }
-    );
-
-    function getChangedValue(target) {
-        let value = target.value;
-        if (target.type === 'checkbox')
-            value = target.checked;
-        else if (target.type === 'number')
-            value = parseInt(value);
-        return value
-    }
+    useEffect(() => {
+        if (JSON.stringify(formData) !== '{}')
+            setFormErrors(validator(formData))
+    }, [formData]);
 
     function setFormValue(updateRule) {
         return event => {
             const value = getChangedValue(event.target);
-            const newData = update(state.data, updateRule(value));
-            dispatch({
-                type: FORM_ACTIONS.setData,
-                data: newData,
-                errors: validator(newData),
-            });
+            const newData = update(formData, updateRule(value));
+            setFormData(newData);
         };
     }
 
-    function setFormData(data) {
-        const newData = prepData(data);
-        dispatch({
-            type: FORM_ACTIONS.setData,
-            data: newData,
-            errors: validator(newData),
-        });
-    }
-
-    function setFormState(state) {
-        dispatch({
-            type: FORM_ACTIONS.setState,
-            state: state,
-        });
-    }
-
     function isDisabled() {
-        return state.state !== FORM_STATES.READY;
+        return formState !== FORM_STATES.READY;
     }
 
     return [
-        state.data,
-        state.errors,
+        formData,
+        formErrors,
         setFormData,
-
-        state.state,
+        formState,
         setFormState,
 
         isDisabled(),
         setFormValue,
-        dispatch,
+    ]
+}
+
+function getChangedValue(target) {
+    let value = target.value;
+    if (target.type === 'checkbox')
+        value = target.checked;
+    else if (target.type === 'number')
+        value = parseInt(value);
+    return value
+}
+
+export function useForisForm(module, prepData, prepDataToSubmit, validator) {
+    const [
+        formData,
+        formErrors,
+        setFormData,
+        formState,
+        setFormState,
+
+        formIsDisabled,
+        setFormValue
+    ] = useForm(validator);
+
+    const [getData, isReady] = useAPIGetData(module);
+    const postData = useAPIPostData(module);
+    useEffect(() => getData(data => setFormData(prepData(data))), []);
+    useEffect(() => setFormState(isReady ? FORM_STATES.READY : FORM_STATES.LOAD), [isReady,]);
+
+    const remindsToNWRestart = useWSNetworkRestart();
+    useWS(module, 'update_settings', () => setFormState(FORM_STATES.UPDATE));
+
+    useEffect(() => {
+            if (remindsToNWRestart === 0) {
+                getData(data => setFormData(prepData(data)));
+                return;
+            }
+            setFormState(FORM_STATES.NETWORK_RESTART);
+        },
+        [remindsToNWRestart]
+    );
+
+    function onSubmit(e) {
+        e.preventDefault();
+        setFormState(FORM_STATES.UPDATE);
+        const copiedFormData = JSON.parse(JSON.stringify(formData));
+        postData(prepDataToSubmit(copiedFormData))
+    }
+
+    return [
+        formData,
+        formErrors,
+        formState,
+        remindsToNWRestart,
+        formIsDisabled,
+
+        setFormValue,
+        onSubmit
     ]
 }
