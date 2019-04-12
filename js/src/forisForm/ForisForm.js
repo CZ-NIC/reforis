@@ -10,7 +10,7 @@ import React from 'react';
 import {useForisForm} from './hooks';
 import SubmitButton from './SubmitButton';
 
-export default function ForisForm({module, prepData, prepDataToSubmit, validator, children}) {
+export default function ForisForm({ws, module, prepData, prepDataToSubmit, validator, children}) {
     const [
         formData,
         formErrors,
@@ -20,7 +20,7 @@ export default function ForisForm({module, prepData, prepDataToSubmit, validator
 
         setFormValue,
         onSubmit,
-    ] = useForisForm(module, prepData, prepDataToSubmit, validator);
+    ] = useForisForm(ws, module, prepData, prepDataToSubmit, validator);
 
     if (JSON.stringify(formData) === '{}')
         return null;

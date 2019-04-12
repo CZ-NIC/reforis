@@ -9,7 +9,6 @@ import React, {useState, useEffect} from 'react';
 import update from 'immutability-helper';
 
 import {useAPIGetData, useAPIPostData} from '../forisAPI/hooks';
-import {useWS, useWSNetworkRestart} from '../webSockets/hooks';
 
 export const FORM_STATES = {
     READY: 0,
@@ -18,12 +17,13 @@ export const FORM_STATES = {
     LOAD: 3,
 };
 
-function useForm(validator) {
+export function useForm(validator) {
     const [formState, setFormState] = useState(FORM_STATES.LOAD);
     const [formData, setFormData] = useState({});
     const [formErrors, setFormErrors] = useState({});
 
     useEffect(() => {
+        // Do not validate if data isn't received yet.
         if (JSON.stringify(formData) !== '{}')
             setFormErrors(validator(formData))
     }, [formData]);
@@ -61,7 +61,26 @@ function getChangedValue(target) {
     return value
 }
 
-export function useForisForm(module, prepData, prepDataToSubmit, validator) {
+function useForisFormWS(ws, loadFormData, setFormState) {
+    const [remindsToNWRestart, setRemindsToNWRestart] = useState(0);
+    useEffect(() => {
+        ws.subscribe(module)
+            .bind(module, 'update_settings', () => setFormState(FORM_STATES.UPDATE));
+        ws.subscribe('maintain')
+            .bind('maintain', 'network-restart', msg => setRemindsToNWRestart(msg.data.remains / 1000));
+    }, []);
+    useEffect(() => {
+        if (remindsToNWRestart === 0) {
+            loadFormData();
+            return;
+        }
+        setFormState(FORM_STATES.NETWORK_RESTART);
+    }, [remindsToNWRestart]);
+
+    return remindsToNWRestart
+}
+
+export function useForisForm(ws, module, prepData, prepDataToSubmit, validator) {
     const [
         formData,
         formErrors,
@@ -72,25 +91,14 @@ export function useForisForm(module, prepData, prepDataToSubmit, validator) {
         formIsDisabled,
         setFormValue
     ] = useForm(validator);
-
     const [getData, isReady] = useAPIGetData(module);
-    const postData = useAPIPostData(module);
-    useEffect(() => getData(data => setFormData(prepData(data))), []);
+    const loadFormData = () =>  getData(data => setFormData(prepData(data)));
+    useEffect(() => loadFormData(), []);
     useEffect(() => setFormState(isReady ? FORM_STATES.READY : FORM_STATES.LOAD), [isReady,]);
 
-    const remindsToNWRestart = useWSNetworkRestart();
-    useWS(module, 'update_settings', () => setFormState(FORM_STATES.UPDATE));
+    const remindsToNWRestart = useForisFormWS(ws, loadFormData, setFormState);
 
-    useEffect(() => {
-            if (remindsToNWRestart === 0) {
-                getData(data => setFormData(prepData(data)));
-                return;
-            }
-            setFormState(FORM_STATES.NETWORK_RESTART);
-        },
-        [remindsToNWRestart]
-    );
-
+    const postData = useAPIPostData(module);
     function onSubmit(e) {
         e.preventDefault();
         setFormState(FORM_STATES.UPDATE);

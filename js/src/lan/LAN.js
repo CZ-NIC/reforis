@@ -12,8 +12,9 @@ import {validateManaged} from './LANManagedForm';
 import {validateUnmanaged} from './LANUnmanagedForm';
 import LANForm, {LAN_MODES} from './LANForm';
 
-export default function LAN() {
+export default function LAN({ws}) {
     return <ForisForm
+        ws={ws}
         module='lan'
         prepData={data => data}
         prepDataToSubmit={prepDataToSubmit}

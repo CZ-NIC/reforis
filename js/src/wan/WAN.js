@@ -13,9 +13,10 @@ import WAN6Form, {validateWAN6Form} from './WAN6Form';
 import MACForm, {validateMACForm} from './MACForm';
 import WANForm, {validateWANForm} from './WANForm';
 
-export default function WAN() {
+export default function WAN({ws}) {
     return <>
         <ForisForm
+            ws={ws}
             module='wan'
             prepData={prepData}
             prepDataToSubmit={prepDataToSubmit}

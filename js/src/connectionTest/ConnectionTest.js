@@ -5,10 +5,9 @@
  * See /LICENSE for more information.
  */
 
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import ConnectionTestButton from './ConnectionTestButton';
 import {useAPIGetData} from '../forisAPI/hooks';
-import {useWS} from '../webSockets/hooks';
 
 export const TEST_STATES = {
     NOT_RUNNING: 0,
@@ -16,7 +15,7 @@ export const TEST_STATES = {
     FINISHED: 2,
 };
 
-export default function ConnectionTest() {
+export default function ConnectionTest({ws}) {
     const [state, setState] = useState(TEST_STATES.NOT_RUNNING);
     const initialResults = {
         ipv6: null,
@@ -28,16 +27,15 @@ export default function ConnectionTest() {
     const [, setTestID] = useState(null);
     const [getData] = useAPIGetData('connectionTest');
 
-    useWS('wan', 'connection_test', msg => {
-        setTestResults(prevTestResults => ({
-            ...prevTestResults,
-            ...msg.data.data
-        }));
-    });
-    useWS('wan', 'connection_test_finished', msg => {
-        setTestResults(msg.data.data);
-        setState(TEST_STATES.FINISHED);
-    });
+    useEffect(() => {
+        const wsModule = 'wan';
+        ws.subscribe(wsModule)
+            .bind(wsModule, 'connection_test', msg => setTestResults(prevTestResults => ({...prevTestResults, ...msg.data.data})))
+            .bind(wsModule, 'connection_test_finished', msg => {
+                setTestResults(msg.data.data);
+                setState(TEST_STATES.FINISHED);
+            });
+    }, []);
 
     function onSubmit(e) {
         e.preventDefault();
@@ -47,7 +45,6 @@ export default function ConnectionTest() {
             setTestID(data.connection_test_id);
         });
     }
-
 
     return <form onSubmit={onSubmit}>
         {state !== TEST_STATES.NOT_RUNNING ? <TestResults {...testResults}/> : null}

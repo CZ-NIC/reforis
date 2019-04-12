@@ -6,14 +6,17 @@
  */
 
 import React from 'react';
-
 import {render} from 'react-dom';
+
 import WiFi from './wifi/Wifi';
 import WAN from './wan/WAN';
 import LAN from './lan/LAN';
 import NotificationsDropdown from './notifications/NotificationsDropdown';
 import NotificationsCenter from './notifications/NotificationsCenter';
 import ConnectionTest from './connectionTest/ConnectionTest';
+import webSockets from './webSockets';
+
+const ws = new webSockets();
 
 window.addEventListener('load', () => {
     const apps = [
@@ -28,6 +31,6 @@ window.addEventListener('load', () => {
     for (let app of apps) {
         const appElm = document.getElementById(app.id);
         if (!appElm) continue;
-        render(<app.component/>, appElm);
+        render(<app.component ws={ws}/>, appElm);
     }
 }, false);

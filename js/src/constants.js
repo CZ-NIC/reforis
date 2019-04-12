@@ -6,6 +6,5 @@
  */
 
 export const ForisURLs = {
-    wifi: '/wifi',
     notifications: '/notifications',
 };

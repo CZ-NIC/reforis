@@ -11,9 +11,9 @@ import NotificationsDropdownMenu from './NotificationsDropdownMenu';
 import useNotifications, {useNewNotification} from './hooks';
 
 
-export default function NotificationsDropdown() {
-    const [notifications, dismiss, dismissAll] = useNotifications();
-    const newNotification = useNewNotification();
+export default function NotificationsDropdown({ws}) {
+    const [notifications, dismiss, dismissAll] = useNotifications(ws);
+    const newNotification = useNewNotification(ws);
 
     return <div id='notifications' className='dropdown btn-group'>
         <NotificationsDropdownButton

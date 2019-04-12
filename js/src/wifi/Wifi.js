@@ -10,8 +10,9 @@ import React from 'react'
 import WifiForm from './WifiForm';
 import ForisForm from '../forisForm/ForisForm';
 
-export default function WiFi() {
+export default function WiFi({ws}) {
     return <ForisForm
+        ws={ws}
         module='wifi'
         prepData={data => data}
         prepDataToSubmit={prepDataToSubmit}
