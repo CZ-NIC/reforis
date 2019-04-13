@@ -7,18 +7,16 @@
 
 
 import API from '../utils';
-
-function mockFetch(data) {
-    return jest.fn().mockImplementation(() =>
-        Promise.resolve({
-            ok: true,
-            json: () => data
-        })
-    );
-}
+import mockFetch from '../../testUtils/mockFetch'
 
 describe('API utlis', () => {
-    it('Endpoints is defined correctly', () => {
+    const mockedFetch = mockFetch();
+
+    beforeEach(() => {
+        global.fetch = mockedFetch;
+    });
+
+    it('Endpoints is defined correctly.', () => {
         const testAPI = new API('/test-url', [
             {name: 'one', url: '/one', methods: ['get', 'post']},
             {name: 'two', url: '/two', methods: ['post']},
@@ -45,27 +43,20 @@ describe('API utlis', () => {
             {name: 'testEndpoint', url: '/test-endpoint', methods: ['get']},
         ]);
 
-        global.fetch = mockFetch();
-
         testAPI.testEndpoint.get();
-        expect(global.fetch).toHaveBeenCalledTimes(1);
-        expect(global.fetch).toHaveBeenCalledWith('/test-url/test-endpoint');
-
-
+        expect(mockedFetch).toHaveBeenCalledTimes(1);
+        expect(mockedFetch).toHaveBeenCalledWith('/test-url/test-endpoint');
     });
 
-    it('POST call', () => {
+    it('POST call.', () => {
         const testAPI = new API('/test-url', [
             {name: 'testEndpoint', url: '/test-endpoint', methods: ['post']},
         ]);
-
-        global.fetch = mockFetch();
-
         const postData = {testKey: 'testData'};
 
         testAPI.testEndpoint.post(postData);
-        expect(global.fetch).toHaveBeenCalledTimes(1);
-        expect(global.fetch).toHaveBeenCalledWith(
+        expect(mockedFetch).toHaveBeenCalledTimes(1);
+        expect(mockedFetch).toHaveBeenCalledWith(
             '/test-url/test-endpoint',
             {
                 "body": JSON.stringify(postData),
