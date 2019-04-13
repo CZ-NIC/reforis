@@ -1,0 +1,140 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
+<div
+  class="dropdown btn-group"
+  id="notifications"
+>
+  <button
+    class="nav-item btn btn-link"
+    id="notifications-btn"
+    type="button"
+  >
+    <span
+      class="fa-stack"
+    >
+      <i
+        class="fa fa-bell fa-stack-1x"
+      />
+      <div
+        class=""
+        id="notifications-counter"
+      >
+        <i
+          class="fa fa-circle fa-stack-1x"
+        />
+        <small
+          class="circle-text fa-stack-1x"
+        >
+          2
+        </small>
+      </div>
+    </span>
+  </button>
+  <div
+    class="dropdown-menu"
+  >
+    <div
+      class="dropdown-header"
+      id="notifications-header"
+    >
+      <h5>
+        Notifications
+      </h5>
+      <a
+        class="btn btn-link"
+        href="/notifications"
+      >
+        <i
+          class="fa fa-cog fa"
+        />
+      </a>
+    </div>
+    <div
+      class="dropdown-divider dropdown-divider-top"
+    />
+    <div
+      class="scrollable-menu"
+    >
+      <div
+        class="dropdown-item notification-item"
+      >
+        <i
+          class="fa fa-newspaper fa-2x"
+        />
+        <div
+          class="notifications-info"
+        >
+          <a
+            class="notification-message"
+            href="/notifications?id=123-123"
+          >
+            <small
+              class="text-muted"
+            >
+              February 1, 2000, 12:00:00 AM
+            </small>
+            <p>
+              Notification message.
+            </p>
+          </a>
+        </div>
+        <button
+          class="btn btn-link"
+        >
+          <i
+            class="fas fa-times"
+          />
+        </button>
+      </div>
+      <div
+        class="dropdown-divider"
+      />
+      <div
+        class="dropdown-item notification-item"
+      >
+        <i
+          class="fa fa-exclamation-circle fa-2x"
+        />
+        <div
+          class="notifications-info"
+        >
+          <a
+            class="notification-message"
+            href="/notifications?id=123-124"
+          >
+            <small
+              class="text-muted"
+            >
+              February 1, 2000, 12:00:00 AM
+            </small>
+            <p>
+              Second notification messa...
+            </p>
+          </a>
+        </div>
+        <button
+          class="btn btn-link"
+        >
+          <i
+            class="fas fa-times"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      class="dropdown-divider dropdown-divider-bottom"
+    />
+    <div
+      class="dropdown-footer"
+      id="notifications-footer"
+    >
+      <button
+        class="btn btn-link"
+      >
+        Dismiss all
+      </button>
+    </div>
+  </div>
+</div>
+`;

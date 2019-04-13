@@ -1,0 +1,2163 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<WAN/> Snapshot WAN IPv4 (pppoe). 1`] = `
+<form>
+  <h3>
+    WAN IPv4
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="49"
+    >
+      IPv4 protocol
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <select
+        class="form-control"
+        id="49"
+      >
+        <option
+          value="dhcp"
+        >
+          DHCP (automatic configuration)
+        </option>
+        <option
+          value="static"
+        >
+          Static IP address (manual configuration)
+        </option>
+        <option
+          value="pppoe"
+        >
+          PPPoE (for DSL bridges, Modem Turris, etc.)
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="66"
+    >
+      PAP/CHAP username
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control is-invalid"
+        id="66"
+        required=""
+        type="text"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      >
+        This field is required.
+      </div>
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="67"
+    >
+      PAP/CHAP password
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control is-invalid"
+        id="67"
+        required=""
+        type="text"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      >
+        This field is required.
+      </div>
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <h3>
+    WAN IPv6
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="51"
+    >
+      IPv6 protocol
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <select
+        class="form-control"
+        id="51"
+      >
+        <option
+          value="none"
+        >
+          Disable IPv6
+        </option>
+        <option
+          value="dhcpv6"
+        >
+          DHCPv6 (automatic configuration)
+        </option>
+        <option
+          value="static"
+        >
+          Static IP address (manual configuration)
+        </option>
+        <option
+          value="6to4"
+        >
+          6to4 (public IPv4 address required)
+        </option>
+        <option
+          value="6in4"
+        >
+          6in4 (public IPv4 address required)
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <h3>
+    MAC
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <div
+      class="form-label col-sm-2"
+    >
+      <label
+        class="form-label"
+        for="52"
+      >
+        Custom MAC address
+      </label>
+    </div>
+    <div
+      class="form-check col-sm-9"
+    >
+      <input
+        id="52"
+        type="checkbox"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        Useful in cases, when a specific MAC address is required by your internet service provider.
+      </small>
+    </div>
+  </div>
+  <button
+    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    disabled=""
+  >
+     
+     
+    Save
+  </button>
+</form>
+`;
+
+exports[`<WAN/> Snapshot WAN IPv4 (static). 1`] = `
+<form>
+  <h3>
+    WAN IPv4
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="17"
+    >
+      IPv4 protocol
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <select
+        class="form-control"
+        id="17"
+      >
+        <option
+          value="dhcp"
+        >
+          DHCP (automatic configuration)
+        </option>
+        <option
+          value="static"
+        >
+          Static IP address (manual configuration)
+        </option>
+        <option
+          value="pppoe"
+        >
+          PPPoE (for DSL bridges, Modem Turris, etc.)
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="34"
+    >
+      IP address
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control is-invalid"
+        id="34"
+        required=""
+        type="text"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      >
+        This field is required.
+      </div>
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="35"
+    >
+      Network mask
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control is-invalid"
+        id="35"
+        required=""
+        type="text"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      >
+        This field is required.
+      </div>
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="36"
+    >
+      Gateway
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control is-invalid"
+        id="36"
+        required=""
+        type="text"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      >
+        This field is required.
+      </div>
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="37"
+    >
+      DNS server 1
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control "
+        id="37"
+        type="text"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        DNS server address is not required as the built-in DNS resolver is capable of working without it.
+      </small>
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="38"
+    >
+      DNS server 2
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control "
+        id="38"
+        type="text"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        DNS server address is not required as the built-in DNS resolver is capable of working without it.
+      </small>
+    </div>
+  </div>
+  <h3>
+    WAN IPv6
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="19"
+    >
+      IPv6 protocol
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <select
+        class="form-control"
+        id="19"
+      >
+        <option
+          value="none"
+        >
+          Disable IPv6
+        </option>
+        <option
+          value="dhcpv6"
+        >
+          DHCPv6 (automatic configuration)
+        </option>
+        <option
+          value="static"
+        >
+          Static IP address (manual configuration)
+        </option>
+        <option
+          value="6to4"
+        >
+          6to4 (public IPv4 address required)
+        </option>
+        <option
+          value="6in4"
+        >
+          6in4 (public IPv4 address required)
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <h3>
+    MAC
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <div
+      class="form-label col-sm-2"
+    >
+      <label
+        class="form-label"
+        for="20"
+      >
+        Custom MAC address
+      </label>
+    </div>
+    <div
+      class="form-check col-sm-9"
+    >
+      <input
+        id="20"
+        type="checkbox"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        Useful in cases, when a specific MAC address is required by your internet service provider.
+      </small>
+    </div>
+  </div>
+  <button
+    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    disabled=""
+  >
+     
+     
+    Save
+  </button>
+</form>
+`;
+
+exports[`<WAN/> Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled. 1`] = `
+<form>
+  <h3>
+    WAN IPv4
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="188"
+    >
+      IPv4 protocol
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <select
+        class="form-control"
+        id="188"
+      >
+        <option
+          value="dhcp"
+        >
+          DHCP (automatic configuration)
+        </option>
+        <option
+          value="static"
+        >
+          Static IP address (manual configuration)
+        </option>
+        <option
+          value="pppoe"
+        >
+          PPPoE (for DSL bridges, Modem Turris, etc.)
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="189"
+    >
+      DHCP hostname
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control "
+        id="189"
+        type="text"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        Hostname which will be provided to DHCP server.
+      </small>
+    </div>
+  </div>
+  <h3>
+    WAN IPv6
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="190"
+    >
+      IPv6 protocol
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <select
+        class="form-control"
+        id="190"
+      >
+        <option
+          value="none"
+        >
+          Disable IPv6
+        </option>
+        <option
+          value="dhcpv6"
+        >
+          DHCPv6 (automatic configuration)
+        </option>
+        <option
+          value="static"
+        >
+          Static IP address (manual configuration)
+        </option>
+        <option
+          value="6to4"
+        >
+          6to4 (public IPv4 address required)
+        </option>
+        <option
+          value="6in4"
+        >
+          6in4 (public IPv4 address required)
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="207"
+    >
+      Provider IPv4
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control is-invalid"
+        id="207"
+        required=""
+        type="text"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      >
+        This field is required.
+      </div>
+      <small
+        class="form-text text-muted"
+      >
+        This address will be used as a endpoint of the tunnel on the provider's side.
+      </small>
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="208"
+    >
+      Routed IPv6 prefix
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control is-invalid"
+        id="208"
+        required=""
+        type="text"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      >
+        This field is required.
+      </div>
+      <small
+        class="form-text text-muted"
+      >
+        IPv6 addresses which will be routed to your network.
+      </small>
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="209"
+    >
+      MTU
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control is-invalid"
+        id="209"
+        max="1500"
+        min="1280"
+        required=""
+        type="number"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      >
+        This field is required.
+      </div>
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <div
+      class="form-label col-sm-2"
+    >
+      <label
+        class="form-label"
+        for="210"
+      >
+        Dynamic IPv4 handling
+      </label>
+    </div>
+    <div
+      class="form-check col-sm-9"
+    >
+      <input
+        id="210"
+        type="checkbox"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        Some tunnel providers allow you to have public dynamic IPv4. Note that you need to fill in some extra fields to make it work.
+      </small>
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="219"
+    >
+      Tunnel ID
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control is-invalid"
+        id="219"
+        required=""
+        type="text"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      >
+        This field is required.
+      </div>
+      <small
+        class="form-text text-muted"
+      >
+        ID of your tunnel which was assigned to you by the provider.
+      </small>
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="220"
+    >
+      Username
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control is-invalid"
+        id="220"
+        required=""
+        type="text"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      >
+        This field is required.
+      </div>
+      <small
+        class="form-text text-muted"
+      >
+        Username which will be used to provide credentials to your tunnel provider.
+      </small>
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="221"
+    >
+      Key
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control is-invalid"
+        id="221"
+        required=""
+        type="text"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      >
+        This field is required.
+      </div>
+      <small
+        class="form-text text-muted"
+      >
+        Key which will be used to provide credentials to your tunnel provider.
+      </small>
+    </div>
+  </div>
+  <h3>
+    MAC
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <div
+      class="form-label col-sm-2"
+    >
+      <label
+        class="form-label"
+        for="191"
+      >
+        Custom MAC address
+      </label>
+    </div>
+    <div
+      class="form-check col-sm-9"
+    >
+      <input
+        id="191"
+        type="checkbox"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        Useful in cases, when a specific MAC address is required by your internet service provider.
+      </small>
+    </div>
+  </div>
+  <button
+    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    disabled=""
+  >
+     
+     
+    Save
+  </button>
+</form>
+`;
+
+exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
+<form>
+  <h3>
+    WAN IPv4
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="156"
+    >
+      IPv4 protocol
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <select
+        class="form-control"
+        id="156"
+      >
+        <option
+          value="dhcp"
+        >
+          DHCP (automatic configuration)
+        </option>
+        <option
+          value="static"
+        >
+          Static IP address (manual configuration)
+        </option>
+        <option
+          value="pppoe"
+        >
+          PPPoE (for DSL bridges, Modem Turris, etc.)
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="157"
+    >
+      DHCP hostname
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control "
+        id="157"
+        type="text"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        Hostname which will be provided to DHCP server.
+      </small>
+    </div>
+  </div>
+  <h3>
+    WAN IPv6
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="158"
+    >
+      IPv6 protocol
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <select
+        class="form-control"
+        id="158"
+      >
+        <option
+          value="none"
+        >
+          Disable IPv6
+        </option>
+        <option
+          value="dhcpv6"
+        >
+          DHCPv6 (automatic configuration)
+        </option>
+        <option
+          value="static"
+        >
+          Static IP address (manual configuration)
+        </option>
+        <option
+          value="6to4"
+        >
+          6to4 (public IPv4 address required)
+        </option>
+        <option
+          value="6in4"
+        >
+          6in4 (public IPv4 address required)
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="175"
+    >
+      Provider IPv4
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control is-invalid"
+        id="175"
+        required=""
+        type="text"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      >
+        This field is required.
+      </div>
+      <small
+        class="form-text text-muted"
+      >
+        This address will be used as a endpoint of the tunnel on the provider's side.
+      </small>
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="176"
+    >
+      Routed IPv6 prefix
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control is-invalid"
+        id="176"
+        required=""
+        type="text"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      >
+        This field is required.
+      </div>
+      <small
+        class="form-text text-muted"
+      >
+        IPv6 addresses which will be routed to your network.
+      </small>
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="177"
+    >
+      MTU
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control is-invalid"
+        id="177"
+        max="1500"
+        min="1280"
+        required=""
+        type="number"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      >
+        This field is required.
+      </div>
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <div
+      class="form-label col-sm-2"
+    >
+      <label
+        class="form-label"
+        for="178"
+      >
+        Dynamic IPv4 handling
+      </label>
+    </div>
+    <div
+      class="form-check col-sm-9"
+    >
+      <input
+        id="178"
+        type="checkbox"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        Some tunnel providers allow you to have public dynamic IPv4. Note that you need to fill in some extra fields to make it work.
+      </small>
+    </div>
+  </div>
+  <h3>
+    MAC
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <div
+      class="form-label col-sm-2"
+    >
+      <label
+        class="form-label"
+        for="159"
+      >
+        Custom MAC address
+      </label>
+    </div>
+    <div
+      class="form-check col-sm-9"
+    >
+      <input
+        id="159"
+        type="checkbox"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        Useful in cases, when a specific MAC address is required by your internet service provider.
+      </small>
+    </div>
+  </div>
+  <button
+    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    disabled=""
+  >
+     
+     
+    Save
+  </button>
+</form>
+`;
+
+exports[`<WAN/> Snapshot WAN IPv6 (6to4). 1`] = `
+<form>
+  <h3>
+    WAN IPv4
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="130"
+    >
+      IPv4 protocol
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <select
+        class="form-control"
+        id="130"
+      >
+        <option
+          value="dhcp"
+        >
+          DHCP (automatic configuration)
+        </option>
+        <option
+          value="static"
+        >
+          Static IP address (manual configuration)
+        </option>
+        <option
+          value="pppoe"
+        >
+          PPPoE (for DSL bridges, Modem Turris, etc.)
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="131"
+    >
+      DHCP hostname
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control "
+        id="131"
+        type="text"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        Hostname which will be provided to DHCP server.
+      </small>
+    </div>
+  </div>
+  <h3>
+    WAN IPv6
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="132"
+    >
+      IPv6 protocol
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <select
+        class="form-control"
+        id="132"
+      >
+        <option
+          value="none"
+        >
+          Disable IPv6
+        </option>
+        <option
+          value="dhcpv6"
+        >
+          DHCPv6 (automatic configuration)
+        </option>
+        <option
+          value="static"
+        >
+          Static IP address (manual configuration)
+        </option>
+        <option
+          value="6to4"
+        >
+          6to4 (public IPv4 address required)
+        </option>
+        <option
+          value="6in4"
+        >
+          6in4 (public IPv4 address required)
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="149"
+    >
+      Public IPv4
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control is-invalid"
+        id="149"
+        required=""
+        type="text"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      >
+        Public IPv4 address is required.
+      </div>
+      <small
+        class="form-text text-muted"
+      >
+        In order to use 6to4 protocol, you might need to specify your public IPv4 address manually (e.g. when your WAN interface has a private address which is mapped to public IP).
+      </small>
+    </div>
+  </div>
+  <h3>
+    MAC
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <div
+      class="form-label col-sm-2"
+    >
+      <label
+        class="form-label"
+        for="133"
+      >
+        Custom MAC address
+      </label>
+    </div>
+    <div
+      class="form-check col-sm-9"
+    >
+      <input
+        id="133"
+        type="checkbox"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        Useful in cases, when a specific MAC address is required by your internet service provider.
+      </small>
+    </div>
+  </div>
+  <button
+    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    disabled=""
+  >
+     
+     
+    Save
+  </button>
+</form>
+`;
+
+exports[`<WAN/> Snapshot WAN IPv6 (dhcpv6). 1`] = `
+<form>
+  <h3>
+    WAN IPv4
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="75"
+    >
+      IPv4 protocol
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <select
+        class="form-control"
+        id="75"
+      >
+        <option
+          value="dhcp"
+        >
+          DHCP (automatic configuration)
+        </option>
+        <option
+          value="static"
+        >
+          Static IP address (manual configuration)
+        </option>
+        <option
+          value="pppoe"
+        >
+          PPPoE (for DSL bridges, Modem Turris, etc.)
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="76"
+    >
+      DHCP hostname
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control "
+        id="76"
+        type="text"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        Hostname which will be provided to DHCP server.
+      </small>
+    </div>
+  </div>
+  <h3>
+    WAN IPv6
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="77"
+    >
+      IPv6 protocol
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <select
+        class="form-control"
+        id="77"
+      >
+        <option
+          value="none"
+        >
+          Disable IPv6
+        </option>
+        <option
+          value="dhcpv6"
+        >
+          DHCPv6 (automatic configuration)
+        </option>
+        <option
+          value="static"
+        >
+          Static IP address (manual configuration)
+        </option>
+        <option
+          value="6to4"
+        >
+          6to4 (public IPv4 address required)
+        </option>
+        <option
+          value="6in4"
+        >
+          6in4 (public IPv4 address required)
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="94"
+    >
+      Custom DUID
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control "
+        id="94"
+        type="text"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        DUID which will be provided to the DHCPv6 server.
+      </small>
+    </div>
+  </div>
+  <h3>
+    MAC
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <div
+      class="form-label col-sm-2"
+    >
+      <label
+        class="form-label"
+        for="78"
+      >
+        Custom MAC address
+      </label>
+    </div>
+    <div
+      class="form-check col-sm-9"
+    >
+      <input
+        id="78"
+        type="checkbox"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        Useful in cases, when a specific MAC address is required by your internet service provider.
+      </small>
+    </div>
+  </div>
+  <button
+    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+  >
+     
+     
+    Save
+  </button>
+</form>
+`;
+
+exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
+<form>
+  <h3>
+    WAN IPv4
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="96"
+    >
+      IPv4 protocol
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <select
+        class="form-control"
+        id="96"
+      >
+        <option
+          value="dhcp"
+        >
+          DHCP (automatic configuration)
+        </option>
+        <option
+          value="static"
+        >
+          Static IP address (manual configuration)
+        </option>
+        <option
+          value="pppoe"
+        >
+          PPPoE (for DSL bridges, Modem Turris, etc.)
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="97"
+    >
+      DHCP hostname
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control "
+        id="97"
+        type="text"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        Hostname which will be provided to DHCP server.
+      </small>
+    </div>
+  </div>
+  <h3>
+    WAN IPv6
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="98"
+    >
+      IPv6 protocol
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <select
+        class="form-control"
+        id="98"
+      >
+        <option
+          value="none"
+        >
+          Disable IPv6
+        </option>
+        <option
+          value="dhcpv6"
+        >
+          DHCPv6 (automatic configuration)
+        </option>
+        <option
+          value="static"
+        >
+          Static IP address (manual configuration)
+        </option>
+        <option
+          value="6to4"
+        >
+          6to4 (public IPv4 address required)
+        </option>
+        <option
+          value="6in4"
+        >
+          6in4 (public IPv4 address required)
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="115"
+    >
+      Address
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control is-invalid"
+        id="115"
+        required=""
+        type="text"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      >
+        This field is required.
+      </div>
+      <small
+        class="form-text text-muted"
+      >
+        IPv6 address and prefix length for WAN interface e.g. 2001:db8:be13:37da::1/64
+      </small>
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="116"
+    >
+      Gateway
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control is-invalid"
+        id="116"
+        required=""
+        type="text"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      >
+        This field is required.
+      </div>
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="117"
+    >
+      Prefix
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control is-invalid"
+        id="117"
+        required=""
+        type="text"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      >
+        This field is required.
+      </div>
+      <small
+        class="form-text text-muted"
+      >
+        Address range for local network, e.g. 2001:db8:be13:37da::/64
+      </small>
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="118"
+    >
+      DNS server 1
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control "
+        id="118"
+        type="text"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        DNS server address is not required as the built-in DNS resolver is capable of working without it.
+      </small>
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="119"
+    >
+      DNS server 2
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control "
+        id="119"
+        type="text"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        DNS server address is not required as the built-in DNS resolver is capable of working without it.
+      </small>
+    </div>
+  </div>
+  <h3>
+    MAC
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <div
+      class="form-label col-sm-2"
+    >
+      <label
+        class="form-label"
+        for="99"
+      >
+        Custom MAC address
+      </label>
+    </div>
+    <div
+      class="form-check col-sm-9"
+    >
+      <input
+        id="99"
+        type="checkbox"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        Useful in cases, when a specific MAC address is required by your internet service provider.
+      </small>
+    </div>
+  </div>
+  <button
+    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    disabled=""
+  >
+     
+     
+    Save
+  </button>
+</form>
+`;
+
+exports[`<WAN/> Snapshot: MAC enabled 1`] = `
+<form>
+  <h3>
+    WAN IPv4
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="234"
+    >
+      IPv4 protocol
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <select
+        class="form-control"
+        id="234"
+      >
+        <option
+          value="dhcp"
+        >
+          DHCP (automatic configuration)
+        </option>
+        <option
+          value="static"
+        >
+          Static IP address (manual configuration)
+        </option>
+        <option
+          value="pppoe"
+        >
+          PPPoE (for DSL bridges, Modem Turris, etc.)
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="235"
+    >
+      DHCP hostname
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control "
+        id="235"
+        type="text"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        Hostname which will be provided to DHCP server.
+      </small>
+    </div>
+  </div>
+  <h3>
+    WAN IPv6
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="236"
+    >
+      IPv6 protocol
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <select
+        class="form-control"
+        id="236"
+      >
+        <option
+          value="none"
+        >
+          Disable IPv6
+        </option>
+        <option
+          value="dhcpv6"
+        >
+          DHCPv6 (automatic configuration)
+        </option>
+        <option
+          value="static"
+        >
+          Static IP address (manual configuration)
+        </option>
+        <option
+          value="6to4"
+        >
+          6to4 (public IPv4 address required)
+        </option>
+        <option
+          value="6in4"
+        >
+          6in4 (public IPv4 address required)
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <h3>
+    MAC
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <div
+      class="form-label col-sm-2"
+    >
+      <label
+        class="form-label"
+        for="237"
+      >
+        Custom MAC address
+      </label>
+    </div>
+    <div
+      class="form-check col-sm-9"
+    >
+      <input
+        id="237"
+        type="checkbox"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        Useful in cases, when a specific MAC address is required by your internet service provider.
+      </small>
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="254"
+    >
+      MAC address
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control is-invalid"
+        id="254"
+        required=""
+        type="text"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      >
+        This field is required.
+      </div>
+      <small
+        class="form-text text-muted"
+      >
+        Colon is used as a separator, for example 00:11:22:33:44:55
+      </small>
+    </div>
+  </div>
+  <button
+    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    disabled=""
+  >
+     
+     
+    Save
+  </button>
+</form>
+`;
+
+exports[`<WAN/> Snapshot: WAN IPv4 dhcp, WAN IPv6 dhcp, MAC disabled 1`] = `
+<form>
+  <h3>
+    WAN IPv4
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="1"
+    >
+      IPv4 protocol
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <select
+        class="form-control"
+        id="1"
+      >
+        <option
+          value="dhcp"
+        >
+          DHCP (automatic configuration)
+        </option>
+        <option
+          value="static"
+        >
+          Static IP address (manual configuration)
+        </option>
+        <option
+          value="pppoe"
+        >
+          PPPoE (for DSL bridges, Modem Turris, etc.)
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="2"
+    >
+      DHCP hostname
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control "
+        id="2"
+        type="text"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        Hostname which will be provided to DHCP server.
+      </small>
+    </div>
+  </div>
+  <h3>
+    WAN IPv6
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="3"
+    >
+      IPv6 protocol
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <select
+        class="form-control"
+        id="3"
+      >
+        <option
+          value="none"
+        >
+          Disable IPv6
+        </option>
+        <option
+          value="dhcpv6"
+        >
+          DHCPv6 (automatic configuration)
+        </option>
+        <option
+          value="static"
+        >
+          Static IP address (manual configuration)
+        </option>
+        <option
+          value="6to4"
+        >
+          6to4 (public IPv4 address required)
+        </option>
+        <option
+          value="6in4"
+        >
+          6in4 (public IPv4 address required)
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <h3>
+    MAC
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <div
+      class="form-label col-sm-2"
+    >
+      <label
+        class="form-label"
+        for="4"
+      >
+        Custom MAC address
+      </label>
+    </div>
+    <div
+      class="form-check col-sm-9"
+    >
+      <input
+        id="4"
+        type="checkbox"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        Useful in cases, when a specific MAC address is required by your internet service provider.
+      </small>
+    </div>
+  </div>
+  <button
+    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+  >
+     
+     
+    Save
+  </button>
+</form>
+`;

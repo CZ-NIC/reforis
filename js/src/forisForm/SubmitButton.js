@@ -30,7 +30,7 @@ export default function SubmitButton({disabled, state, remindsToNWRestart, ...pr
             labelSubmitButton = _('Load settings');
             break;
         case FORM_STATES.NETWORK_RESTART:
-            labelSubmitButton = babel.format(_('Restarting after %d sec.'), remindsToNWRestart);
+            labelSubmitButton = babel.format(_('Restarting after %d sec.'), remindsToNWRestart || 0);
             break;
         default:
             labelSubmitButton = _('Save');

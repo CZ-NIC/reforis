@@ -5,9 +5,11 @@
  * See /LICENSE for more information.
  */
 
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
+
 import ConnectionTestButton from './ConnectionTestButton';
 import {useAPIGetData} from '../forisAPI/hooks';
+import {ConnectionTestResults} from './ConnectionTestResult';
 
 export const TEST_STATES = {
     NOT_RUNNING: 0,
@@ -47,49 +49,7 @@ export default function ConnectionTest({ws}) {
     }
 
     return <form onSubmit={onSubmit}>
-        {state !== TEST_STATES.NOT_RUNNING ? <TestResults {...testResults}/> : null}
+        {state !== TEST_STATES.NOT_RUNNING ? <ConnectionTestResults {...testResults}/> : null}
         <ConnectionTestButton state={state}/>
     </form>
-}
-
-const TEST_TYPES = {
-    ipv4: _('IPv4 connectivity'),
-    ipv4_gateway: _('IPv4 gateway connectivity'),
-    ipv6: _('IPv6 connectivity'),
-    ipv6_gateway: _('IPv6 gateway connectivity'),
-};
-
-function TestResults(tests) {
-    return <table className='table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12'>
-        <tbody>
-        {Object.keys(tests).map(
-            test => {
-                const type = TEST_TYPES[test];
-                return type ? <TestResultItem key={type} type={type} result={tests[test]}/> : null;
-            }
-        )}
-
-        </tbody>
-    </table>;
-}
-
-function TestResultItem({type, result}) {
-    let icon = null;
-    switch (result) {
-        case true:
-            icon = <i className='fas fa-times text-danger'/>;
-            break;
-        case false:
-            icon = <i className='fas fa-check text-success'/>;
-            break;
-        default:
-            icon = <div className='spinner-border spinner-border-sm text-secondary' role='status'>
-                <span className='sr-only'/>
-            </div>;
-    }
-
-    return <tr>
-        <th scope='row'>{type}</th>
-        <td>{icon}</td>
-    </tr>
 }

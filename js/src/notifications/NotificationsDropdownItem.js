@@ -14,7 +14,7 @@ import {ForisURLs} from '../constants';
 export default function NotificationsDropdownItem({notification, divider, dismiss}) {
     const date = toLocaleDateString(notification.created_at);
 
-    return <React.Fragment>
+    return <>
         <div className='dropdown-item notification-item'>
             <NotificationIcon severity={notification.severity} className={'fa-2x'}/>
             <div className='notifications-info'>
@@ -28,7 +28,7 @@ export default function NotificationsDropdownItem({notification, divider, dismis
             </button>
         </div>
         {divider ? <div className='dropdown-divider'/> : null}
-    </React.Fragment>;
+    </>;
 }
 
 function cutMessage(message) {

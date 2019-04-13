@@ -1,0 +1,772 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LAN/> Snapshot managed with enabled DHCP. 1`] = `
+<form>
+  <h3>
+    LAN Settings
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="62"
+    >
+      LAN mode
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <select
+        class="form-control"
+        id="62"
+      >
+        <option
+          value="managed"
+        >
+          Router
+        </option>
+        <option
+          value="unmanaged"
+        >
+          Computer
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      >
+        Router mode means that this devices manages the LAN (acts as a router, can assing IP addresses, ...). Computer mode means that this device acts as a client in this network. It acts in a similar way as WAN, but it has opened ports for configuration interface and other services.
+      </small>
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="75"
+    >
+      Router IP address
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control "
+        id="75"
+        required=""
+        type="text"
+        value="192.168.1.4"
+      />
+      <div
+        class="invalid-feedback"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        Router's IP address in the inner network.
+      </small>
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="76"
+    >
+      Network mask
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control "
+        id="76"
+        required=""
+        type="text"
+        value="255.255.255.0"
+      />
+      <div
+        class="invalid-feedback"
+      />
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <div
+      class="form-label col-sm-2"
+    >
+      <label
+        class="form-label"
+        for="77"
+      >
+        Enable DHCP
+      </label>
+    </div>
+    <div
+      class="form-check col-sm-9"
+    >
+      <input
+        id="77"
+        type="checkbox"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        Enable this option to automatically assign IP addresses to the devices connected to the router.
+      </small>
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="82"
+    >
+      DHCP start
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control "
+        id="82"
+        min="1"
+        required=""
+        type="number"
+        value="123123"
+      />
+      <div
+        class="invalid-feedback"
+      />
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="83"
+    >
+      DHCP max leases
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control "
+        id="83"
+        min="1"
+        required=""
+        type="number"
+        value="150"
+      />
+      <div
+        class="invalid-feedback"
+      />
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="84"
+    >
+      Lease time (hours)
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control "
+        id="84"
+        min="120"
+        required=""
+        type="number"
+        value="43200"
+      />
+      <div
+        class="invalid-feedback"
+      />
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <button
+    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+  >
+     
+     
+    Save
+  </button>
+</form>
+`;
+
+exports[`<LAN/> Snapshot managed. 1`] = `
+<form>
+  <h3>
+    LAN Settings
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="46"
+    >
+      LAN mode
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <select
+        class="form-control"
+        id="46"
+      >
+        <option
+          value="managed"
+        >
+          Router
+        </option>
+        <option
+          value="unmanaged"
+        >
+          Computer
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      >
+        Router mode means that this devices manages the LAN (acts as a router, can assing IP addresses, ...). Computer mode means that this device acts as a client in this network. It acts in a similar way as WAN, but it has opened ports for configuration interface and other services.
+      </small>
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="59"
+    >
+      Router IP address
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control "
+        id="59"
+        required=""
+        type="text"
+        value="192.168.1.4"
+      />
+      <div
+        class="invalid-feedback"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        Router's IP address in the inner network.
+      </small>
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="60"
+    >
+      Network mask
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control "
+        id="60"
+        required=""
+        type="text"
+        value="255.255.255.0"
+      />
+      <div
+        class="invalid-feedback"
+      />
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <div
+      class="form-label col-sm-2"
+    >
+      <label
+        class="form-label"
+        for="61"
+      >
+        Enable DHCP
+      </label>
+    </div>
+    <div
+      class="form-check col-sm-9"
+    >
+      <input
+        id="61"
+        type="checkbox"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        Enable this option to automatically assign IP addresses to the devices connected to the router.
+      </small>
+    </div>
+  </div>
+  <button
+    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+  >
+     
+     
+    Save
+  </button>
+</form>
+`;
+
+exports[`<LAN/> Snapshot unmanaged (dhcp). 1`] = `
+<form>
+  <h3>
+    LAN Settings
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="1"
+    >
+      LAN mode
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <select
+        class="form-control"
+        id="1"
+      >
+        <option
+          value="managed"
+        >
+          Router
+        </option>
+        <option
+          value="unmanaged"
+        >
+          Computer
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      >
+        Router mode means that this devices manages the LAN (acts as a router, can assing IP addresses, ...). Computer mode means that this device acts as a client in this network. It acts in a similar way as WAN, but it has opened ports for configuration interface and other services.
+      </small>
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="2"
+    >
+      IPv4 protocol
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <select
+        class="form-control"
+        id="2"
+      >
+        <option
+          value="dhcp"
+        >
+          DHCP (automatic configuration)
+        </option>
+        <option
+          value="static"
+        >
+          Static IP address (manual configuration)
+        </option>
+        <option
+          value="none"
+        >
+          Don't connect this device to LAN
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="3"
+    >
+      DHCP hostname
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control "
+        id="3"
+        type="text"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        Hostname which will be provided to DHCP server.
+      </small>
+    </div>
+  </div>
+  <button
+    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+  >
+     
+     
+    Save
+  </button>
+</form>
+`;
+
+exports[`<LAN/> Snapshot unmanaged none. 1`] = `
+<form>
+  <h3>
+    LAN Settings
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="32"
+    >
+      LAN mode
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <select
+        class="form-control"
+        id="32"
+      >
+        <option
+          value="managed"
+        >
+          Router
+        </option>
+        <option
+          value="unmanaged"
+        >
+          Computer
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      >
+        Router mode means that this devices manages the LAN (acts as a router, can assing IP addresses, ...). Computer mode means that this device acts as a client in this network. It acts in a similar way as WAN, but it has opened ports for configuration interface and other services.
+      </small>
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="33"
+    >
+      IPv4 protocol
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <select
+        class="form-control"
+        id="33"
+      >
+        <option
+          value="dhcp"
+        >
+          DHCP (automatic configuration)
+        </option>
+        <option
+          value="static"
+        >
+          Static IP address (manual configuration)
+        </option>
+        <option
+          value="none"
+        >
+          Don't connect this device to LAN
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <button
+    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+  >
+     
+     
+    Save
+  </button>
+</form>
+`;
+
+exports[`<LAN/> Snapshot unmanaged static. 1`] = `
+<form>
+  <h3>
+    LAN Settings
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="13"
+    >
+      LAN mode
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <select
+        class="form-control"
+        id="13"
+      >
+        <option
+          value="managed"
+        >
+          Router
+        </option>
+        <option
+          value="unmanaged"
+        >
+          Computer
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      >
+        Router mode means that this devices manages the LAN (acts as a router, can assing IP addresses, ...). Computer mode means that this device acts as a client in this network. It acts in a similar way as WAN, but it has opened ports for configuration interface and other services.
+      </small>
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="14"
+    >
+      IPv4 protocol
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <select
+        class="form-control"
+        id="14"
+      >
+        <option
+          value="dhcp"
+        >
+          DHCP (automatic configuration)
+        </option>
+        <option
+          value="static"
+        >
+          Static IP address (manual configuration)
+        </option>
+        <option
+          value="none"
+        >
+          Don't connect this device to LAN
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="27"
+    >
+      IP address
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control "
+        id="27"
+        required=""
+        type="text"
+        value="192.168.1.4"
+      />
+      <div
+        class="invalid-feedback"
+      />
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="28"
+    >
+      Network mask
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control "
+        id="28"
+        required=""
+        type="text"
+        value="255.255.255.0"
+      />
+      <div
+        class="invalid-feedback"
+      />
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="29"
+    >
+      Gateway
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control "
+        id="29"
+        required=""
+        type="text"
+        value="192.168.1.4"
+      />
+      <div
+        class="invalid-feedback"
+      />
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="30"
+    >
+      DNS server 1
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control "
+        id="30"
+        type="text"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        DNS server address is not required as the built-in DNS resolver is capable of working without it.
+      </small>
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-2"
+      for="31"
+    >
+      DNS server 2
+    </label>
+    <div
+      class="col-sm-9"
+    >
+      <input
+        class="form-control "
+        id="31"
+        type="text"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        DNS server address is not required as the built-in DNS resolver is capable of working without it.
+      </small>
+    </div>
+  </div>
+  <button
+    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+  >
+     
+     
+    Save
+  </button>
+</form>
+`;

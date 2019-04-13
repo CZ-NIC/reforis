@@ -8,7 +8,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 
-import WiFi from './wifi/Wifi';
+import WiFi from './wifi/WiFi';
 import WAN from './wan/WAN';
 import LAN from './lan/LAN';
 import NotificationsDropdown from './notifications/NotificationsDropdown';

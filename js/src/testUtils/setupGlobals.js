@@ -10,3 +10,4 @@ window._ = str => str;
 window.babel = {
     format: (str, _) => str
 };
+window.ForisTranslations = {};

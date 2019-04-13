@@ -7,7 +7,7 @@
 
 import React from 'react'
 
-import WifiForm from './WifiForm';
+import WiFiForm from './WiFiForm';
 import ForisForm from '../forisForm/ForisForm';
 
 export default function WiFi({ws}) {
@@ -18,7 +18,7 @@ export default function WiFi({ws}) {
         prepDataToSubmit={prepDataToSubmit}
         validator={validator}
     >
-        <WifiForm/>
+        <WiFiForm/>
     </ForisForm>
 
 }
@@ -39,7 +39,10 @@ const validator = formData => {
 
             if (!device.guest_wifi.enabled) return errors;
             if (device.guest_wifi.password.length < 8)
-                errors.guestWifiPassword = _('Password must contain at least 8 symbols');
+                errors.guest_wifi = {
+                    password: _('Password must contain at least 8 symbols')
+                };
+
 
             return errors;
         });
