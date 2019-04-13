@@ -5,23 +5,22 @@
  * See /LICENSE for more information.
  */
 
-
-import renderer from 'react-test-renderer';
-import NumberInput from '../PasswordInput';
 import React from 'react';
+import {render} from 'react-testing-library'
+
+import NumberInput from '../PasswordInput';
 
 describe('<PasswordInput/>', () => {
     it('Render number input', () => {
-        const tree = renderer
-            .create(
-                <NumberInput
-                    label="Test label"
-                    checked
-                    helpText="Some help text"
-                    value={1123}
-                />
-            )
-            .toJSON();
-        expect(tree).toMatchSnapshot();
+        const {container} = render(
+            <NumberInput
+                label="Test label"
+                helpText="Some help text"
+                value={1123}
+                onChange={() => {
+                }}
+            />
+        );
+        expect(container.firstChild).toMatchSnapshot();
     });
 });

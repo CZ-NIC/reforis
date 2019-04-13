@@ -5,9 +5,10 @@
  * See /LICENSE for more information.
  */
 
-import renderer from 'react-test-renderer';
-import RadioSet from '../RadioSet';
 import React from 'react';
+import {render} from 'react-testing-library'
+
+import RadioSet from '../RadioSet';
 
 const TEST_CHOICES = [
     {label: 'label', value: 'value'},
@@ -17,17 +18,17 @@ const TEST_CHOICES = [
 
 describe('<RadioSet/>', () => {
     it('Render radio set', () => {
-        const tree = renderer
-            .create(
-                <RadioSet
-                    name={'test_name'}
-                    label='Radios set label'
-                    value='value'
-                    choices={TEST_CHOICES}
-                    helpText={'Some help text'}
-                />
-            )
-            .toJSON();
-        expect(tree).toMatchSnapshot();
+        const {container} = render(
+            <RadioSet
+                name={'test_name'}
+                label='Radios set label'
+                value='value'
+                choices={TEST_CHOICES}
+                helpText={'Some help text'}
+                onChange={() => {
+                }}
+            />
+        );
+        expect(container.firstChild).toMatchSnapshot();
     });
 });

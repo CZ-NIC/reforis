@@ -2,28 +2,28 @@
 
 exports[`<Checkbox/> Render checkbox 1`] = `
 <div
-  className="form-group row"
+  class="form-group row"
 >
   <div
-    className="form-label col-sm-2"
+    class="form-label col-sm-2"
   >
     <label
-      className="form-label"
-      htmlFor="1"
+      class="form-label"
+      for="1"
     >
       Test label
     </label>
   </div>
   <div
-    className="form-check col-sm-9"
+    class="form-check col-sm-9"
   >
     <input
-      checked={true}
+      checked=""
       id="1"
       type="checkbox"
     />
     <small
-      className="form-text text-muted"
+      class="form-text text-muted"
     >
       Some help text
     </small>
@@ -33,27 +33,27 @@ exports[`<Checkbox/> Render checkbox 1`] = `
 
 exports[`<Checkbox/> Render uncheked checkbox 1`] = `
 <div
-  className="form-group row"
+  class="form-group row"
 >
   <div
-    className="form-label col-sm-2"
+    class="form-label col-sm-2"
   >
     <label
-      className="form-label"
-      htmlFor="2"
+      class="form-label"
+      for="2"
     >
       Test label
     </label>
   </div>
   <div
-    className="form-check col-sm-9"
+    class="form-check col-sm-9"
   >
     <input
       id="2"
       type="checkbox"
     />
     <small
-      className="form-text text-muted"
+      class="form-text text-muted"
     >
       Some help text
     </small>

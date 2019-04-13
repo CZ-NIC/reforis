@@ -13,4 +13,5 @@ module.exports = {
     setupFiles: ['<rootDir>/src/testUtils/setupGlobals.js'],
     testPathIgnorePatterns: ['\\\\node_modules\\\\'],
     verbose: false,
+    setupFilesAfterEnv: ['react-testing-library/cleanup-after-each',]
 };

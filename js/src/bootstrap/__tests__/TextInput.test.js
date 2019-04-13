@@ -5,22 +5,22 @@
  * See /LICENSE for more information.
  */
 
-import renderer from 'react-test-renderer';
-import TextInput from '../TextInput';
 import React from 'react';
+import {render} from 'react-testing-library';
+
+import TextInput from '../TextInput';
 
 describe('<TextInput/>', () => {
     it('Render text input', () => {
-        const tree = renderer
-            .create(
-                <TextInput
-                    label="Test label"
-                    checked
-                    helpText="Some help text"
-                    value="Some text"
-                />
-            )
-            .toJSON();
-        expect(tree).toMatchSnapshot();
+        const {container} = render(
+            <TextInput
+                label="Test label"
+                helpText="Some help text"
+                value="Some text"
+                onChange={() => {
+                }}
+            />
+        );
+        expect(container.firstChild).toMatchSnapshot();
     });
 });

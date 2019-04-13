@@ -2,21 +2,20 @@
 
 exports[`<Select/> Render select 1`] = `
 <div
-  className="form-group row"
+  class="form-group row"
 >
   <label
-    className="form-control-label col-sm-2"
-    htmlFor="1"
+    class="form-control-label col-sm-2"
+    for="1"
   >
     Test label
   </label>
   <div
-    className="col-sm-9"
+    class="col-sm-9"
   >
     <select
-      className="form-control"
+      class="form-control"
       id="1"
-      value="value"
     >
       <option
         value="key1"
@@ -35,7 +34,7 @@ exports[`<Select/> Render select 1`] = `
       </option>
     </select>
     <small
-      className="form-text text-muted"
+      class="form-text text-muted"
     >
       Help text
     </small>

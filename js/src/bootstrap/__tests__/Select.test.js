@@ -5,9 +5,10 @@
  * See /LICENSE for more information.
  */
 
-import renderer from 'react-test-renderer';
-import Select from '../Select';
 import React from 'react';
+import {render} from 'react-testing-library';
+
+import Select from '../Select';
 
 const TEST_CHOICES = {
     key1: 'value1',
@@ -17,16 +18,16 @@ const TEST_CHOICES = {
 
 describe('<Select/>', () => {
     it('Render select', () => {
-        const tree = renderer.create(
+        const {container} = render(
             <Select
                 label='Test label'
                 value='value'
                 choices={TEST_CHOICES}
                 helpText={'Help text'}
+                onChange={() => {
+                }}
             />
-        )
-            .toJSON();
-        expect(tree).toMatchSnapshot();
+        );
+        expect(container.firstChild).toMatchSnapshot();
     });
-
 });

@@ -5,33 +5,31 @@
  * See /LICENSE for more information.
  */
 
-import renderer from 'react-test-renderer';
 import React from 'react';
+import {render} from 'react-testing-library'
+
 import Checkbox from '../Checkbox'
 
 describe('<Checkbox/>', () => {
     it('Render checkbox', () => {
-        const tree = renderer
-            .create(
-                <Checkbox
-                    label="Test label"
-                    checked
-                    helpText="Some help text"
-                />
-            )
-            .toJSON();
-        expect(tree).toMatchSnapshot();
+        const {container} = render(
+            <Checkbox
+                label="Test label"
+                checked
+                helpText="Some help text"
+                onChange={()=>{}}
+            />
+        );
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     it('Render uncheked checkbox', () => {
-        const tree = renderer
-            .create(
-                <Checkbox
-                    label="Test label"
-                    helpText="Some help text"
-                />
-            )
-            .toJSON();
-        expect(tree).toMatchSnapshot();
+        const {container} = render(
+            <Checkbox
+                label="Test label"
+                helpText="Some help text"
+            />
+        );
+        expect(container.firstChild).toMatchSnapshot();
     });
 });

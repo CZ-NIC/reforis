@@ -4,23 +4,23 @@
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
  */
-import renderer from 'react-test-renderer';
-import PasswordInput from '../PasswordInput';
+
 import React from 'react';
+import {render} from 'react-testing-library'
+
+import PasswordInput from '../PasswordInput';
 
 describe('<PasswordInput/>', () => {
     it('Render password input', () => {
-        const tree = renderer
-            .create(
-                <PasswordInput
-                    label="Test label"
-                    checked
-                    helpText="Some help text"
-                    value="Some password"
-                />
-            )
-            .toJSON();
-        expect(tree).toMatchSnapshot();
+        const {container} = render(
+            <PasswordInput
+                label="Test label"
+                helpText="Some help text"
+                value="Some password"
+                onChange={() => {
+                }}
+            />
+        );
+        expect(container.firstChild).toMatchSnapshot();
     });
-
 });
