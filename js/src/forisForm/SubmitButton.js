@@ -6,8 +6,16 @@
  */
 
 import React from 'react';
-import Button from '../bootstrap/Button';
+import propTypes from 'prop-types';
+
 import {FORM_STATES} from './hooks';
+import Button from '../bootstrap/Button';
+
+SubmitButton.propTypes = {
+    disabled: propTypes.bool,
+    state: propTypes.oneOf(Object.keys(FORM_STATES).map(key => FORM_STATES[key])),
+    remindsToNWRestart: propTypes.number,
+};
 
 export default function SubmitButton({disabled, state, remindsToNWRestart, ...props}) {
     const disableSubmitButton = disabled || state !== FORM_STATES.READY;

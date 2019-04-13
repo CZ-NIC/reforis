@@ -62,7 +62,8 @@ function getChangedValue(target) {
 }
 
 function useForisFormWS(ws, loadFormData, setFormState) {
-    const [remindsToNWRestart, setRemindsToNWRestart] = useState(0);
+    const [remindsToNWRestart, setRemindsToNWRestart] = useState(null);
+
     useEffect(() => {
         ws.subscribe(module)
             .bind(module, 'update_settings', () => setFormState(FORM_STATES.UPDATE));
@@ -92,13 +93,14 @@ export function useForisForm(ws, module, prepData, prepDataToSubmit, validator) 
         setFormValue
     ] = useForm(validator);
     const [getData, isReady] = useAPIGetData(module);
-    const loadFormData = () =>  getData(data => setFormData(prepData(data)));
+    const loadFormData = () => getData(data => setFormData(prepData(data)));
     useEffect(() => loadFormData(), []);
     useEffect(() => setFormState(isReady ? FORM_STATES.READY : FORM_STATES.LOAD), [isReady,]);
 
     const remindsToNWRestart = useForisFormWS(ws, loadFormData, setFormState);
 
     const postData = useAPIPostData(module);
+
     function onSubmit(e) {
         e.preventDefault();
         setFormState(FORM_STATES.UPDATE);
