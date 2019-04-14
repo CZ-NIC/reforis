@@ -6,13 +6,20 @@
  */
 
 import React, {useState, useEffect} from 'react';
-import {useWS} from '../webSockets/hooks';
-import {useAPIGetData, useAPIPostData} from '../api/hooks';
+import {useAPIGetData, useAPIPostData} from '../forisAPI/hooks';
 
-export default function useNotifications() {
+export default function useNotifications(ws) {
     const [notifications, setNotifications] = useState([]);
     const [getData, isReady] = useAPIGetData('notifications');
     const postData = useAPIPostData('notifications');
+
+    useEffect(() => {
+        getNotifications();
+        const wsModule = 'router_notifications';
+        ws.subscribe(wsModule)
+            .bind(wsModule, 'create', () => getNotifications())
+            .bind(wsModule, 'mark_as_displayed', () => getNotifications());
+    }, []);
 
     function getNotifications() {
         getData(data => {
@@ -22,10 +29,6 @@ export default function useNotifications() {
             setNotifications(nonDisplayedNotifications)
         })
     }
-
-    useEffect(() => getNotifications(), []);
-    useWS('router_notifications', 'create', () => getNotifications());
-    useWS('router_notifications', 'mark_as_displayed', () => getNotifications());
 
     function dismissNotification(notificationId) {
         postData({ids: [notificationId,]});
@@ -44,7 +47,7 @@ export default function useNotifications() {
 
 const NEW_NOTIFICATION_ANIMATION_DURATION = 1;
 
-export function useNewNotification() {
+export function useNewNotification(ws) {
     const [newNotification, setNewNotification] = useState(false);
     useEffect(() => {
         if (newNotification) {
@@ -54,11 +57,11 @@ export function useNewNotification() {
             );
         }
     }, [newNotification]);
-
-    useWS('router_notifications', 'create', () => {
-        setNewNotification(true);
-    });
-
+    useEffect(() => {
+        const wsModule = 'router_notifications';
+        ws.subscribe(wsModule)
+            .bind(wsModule, 'create', () => setNewNotification(true))
+    }, []);
 
     return newNotification
 }

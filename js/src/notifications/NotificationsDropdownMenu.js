@@ -6,8 +6,18 @@
  */
 
 import React from 'react';
-import NotificationsDropdownItem from './NotificationsDropdownItem';
+import propTypes from 'prop-types';
+
 import {ForisURLs} from '../constants';
+
+import NotificationsDropdownItem from './NotificationsDropdownItem';
+import {NOTIFICATION_PROP_TYPES} from './utils';
+
+NotificationsDropdownMenu.propTypes = {
+    notifications: propTypes.arrayOf(NOTIFICATION_PROP_TYPES),
+    dismiss: propTypes.func.isRequired,
+    dismissAll: propTypes.func.isRequired,
+};
 
 export default function NotificationsDropdownMenu({notifications, dismiss, dismissAll}) {
     function getNotifications() {
@@ -40,7 +50,7 @@ export default function NotificationsDropdownMenu({notifications, dismiss, dismi
 }
 
 function NotificationsDropdownHeader() {
-    return <React.Fragment>
+    return <>
         <div id='notifications-header' className='dropdown-header'>
             <h5>{_('Notifications')}</h5>
             <a href={ForisURLs.notifications} className='btn btn-link'>
@@ -48,11 +58,11 @@ function NotificationsDropdownHeader() {
             </a>
         </div>
         <div className='dropdown-divider dropdown-divider-top'/>
-    </React.Fragment>;
+    </>;
 }
 
 function NotificationsDropdownFooter({dismissAll}) {
-    return <React.Fragment>
+    return <>
         <div className='dropdown-divider dropdown-divider-bottom'/>
         <div id='notifications-footer' className='dropdown-footer'>
             <button
@@ -62,5 +72,5 @@ function NotificationsDropdownFooter({dismissAll}) {
                 {_('Dismiss all')}
             </button>
         </div>
-    </React.Fragment>
+    </>
 }

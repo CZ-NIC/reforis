@@ -6,14 +6,20 @@
  */
 
 import React from 'react';
+import propTypes from 'prop-types';
 
 import ForisForm from '../forisForm/ForisForm';
 import {validateManaged} from './LANManagedForm';
 import {validateUnmanaged} from './LANUnmanagedForm';
 import LANForm, {LAN_MODES} from './LANForm';
 
-export default function LAN() {
+LAN.propTypes = {
+    ws: propTypes.object.isRequired
+};
+
+export default function LAN({ws}) {
     return <ForisForm
+        ws={ws}
         module='lan'
         prepData={data => data}
         prepDataToSubmit={prepDataToSubmit}

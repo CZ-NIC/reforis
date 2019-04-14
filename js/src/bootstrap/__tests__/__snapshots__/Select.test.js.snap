@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Select/> Render select 1`] = `
+<div
+  class="form-group row"
+>
+  <label
+    class="form-control-label col-sm-2"
+    for="1"
+  >
+    Test label
+  </label>
+  <div
+    class="col-sm-9"
+  >
+    <select
+      class="form-control"
+      id="1"
+    >
+      <option
+        value="key1"
+      >
+        value1
+      </option>
+      <option
+        value="key2"
+      >
+        value2
+      </option>
+      <option
+        value="key3"
+      >
+        value3
+      </option>
+    </select>
+    <small
+      class="form-text text-muted"
+    >
+      Help text
+    </small>
+  </div>
+</div>
+`;

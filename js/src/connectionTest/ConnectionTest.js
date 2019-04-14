@@ -5,18 +5,19 @@
  * See /LICENSE for more information.
  */
 
-import React, {useState} from 'react';
-import ConnectionTestButton from './ConnectionTestButton';
-import {useAPIGetData} from '../api/hooks';
-import {useWS} from '../webSockets/hooks';
+import React, {useEffect, useState} from 'react';
+import propTypes from 'prop-types';
 
-export const TEST_STATES = {
-    NOT_RUNNING: 0,
-    RUNNING: 1,
-    FINISHED: 2,
+import ConnectionTestButton from './ConnectionTestButton';
+import {useAPIGetData} from '../forisAPI/hooks';
+import {ConnectionTestResults} from './ConnectionTestResult';
+import {TEST_STATES} from './testStates';
+
+ConnectionTest.propTypes = {
+    ws: propTypes.object.isRequired
 };
 
-export default function ConnectionTest() {
+export default function ConnectionTest({ws}) {
     const [state, setState] = useState(TEST_STATES.NOT_RUNNING);
     const initialResults = {
         ipv6: null,
@@ -28,16 +29,15 @@ export default function ConnectionTest() {
     const [, setTestID] = useState(null);
     const [getData] = useAPIGetData('connectionTest');
 
-    useWS('wan', 'connection_test', msg => {
-        setTestResults(prevTestResults => ({
-            ...prevTestResults,
-            ...msg.data.data
-        }));
-    });
-    useWS('wan', 'connection_test_finished', msg => {
-        setTestResults(msg.data.data);
-        setState(TEST_STATES.FINISHED);
-    });
+    useEffect(() => {
+        const wsModule = 'wan';
+        ws.subscribe(wsModule)
+            .bind(wsModule, 'connection_test', msg => setTestResults(prevTestResults => ({...prevTestResults, ...msg.data.data})))
+            .bind(wsModule, 'connection_test_finished', msg => {
+                setTestResults(msg.data.data);
+                setState(TEST_STATES.FINISHED);
+            });
+    }, []);
 
     function onSubmit(e) {
         e.preventDefault();
@@ -48,51 +48,8 @@ export default function ConnectionTest() {
         });
     }
 
-
     return <form onSubmit={onSubmit}>
-        {state !== TEST_STATES.NOT_RUNNING ? <TestResults {...testResults}/> : null}
+        {state !== TEST_STATES.NOT_RUNNING ? <ConnectionTestResults {...testResults}/> : null}
         <ConnectionTestButton state={state}/>
     </form>
-}
-
-const TEST_TYPES = {
-    ipv4: _('IPv4 connectivity'),
-    ipv4_gateway: _('IPv4 gateway connectivity'),
-    ipv6: _('IPv6 connectivity'),
-    ipv6_gateway: _('IPv6 gateway connectivity'),
-};
-
-function TestResults(tests) {
-    return <table className='table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12'>
-        <tbody>
-        {Object.keys(tests).map(
-            test => {
-                const type = TEST_TYPES[test];
-                return type ? <TestResultItem key={type} type={type} result={tests[test]}/> : null;
-            }
-        )}
-
-        </tbody>
-    </table>;
-}
-
-function TestResultItem({type, result}) {
-    let icon = null;
-    switch (result) {
-        case true:
-            icon = <i className='fas fa-times text-danger'/>;
-            break;
-        case false:
-            icon = <i className='fas fa-check text-success'/>;
-            break;
-        default:
-            icon = <div className='spinner-border spinner-border-sm text-secondary' role='status'>
-                <span className='sr-only'/>
-            </div>;
-    }
-
-    return <tr>
-        <th scope='row'>{type}</th>
-        <td>{icon}</td>
-    </tr>
 }

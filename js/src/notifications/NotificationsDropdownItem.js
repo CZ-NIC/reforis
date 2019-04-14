@@ -6,15 +6,23 @@
  */
 
 import React from 'react';
+import propTypes from 'prop-types';
+
+import {ForisURLs} from '../constants';
 
 import NotificationIcon from './NotificationIcon';
-import {toLocaleDateString} from './utils';
-import {ForisURLs} from '../constants';
+import {NOTIFICATION_PROP_TYPES, toLocaleDateString} from './utils';
+
+NotificationsDropdownItem.propTypes = {
+    notification: NOTIFICATION_PROP_TYPES,
+    divider: propTypes.bool.isRequired,
+    dismiss: propTypes.func.isRequired,
+};
 
 export default function NotificationsDropdownItem({notification, divider, dismiss}) {
     const date = toLocaleDateString(notification.created_at);
 
-    return <React.Fragment>
+    return <>
         <div className='dropdown-item notification-item'>
             <NotificationIcon severity={notification.severity} className={'fa-2x'}/>
             <div className='notifications-info'>
@@ -28,7 +36,7 @@ export default function NotificationsDropdownItem({notification, divider, dismis
             </button>
         </div>
         {divider ? <div className='dropdown-divider'/> : null}
-    </React.Fragment>;
+    </>;
 }
 
 function cutMessage(message) {

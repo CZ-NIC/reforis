@@ -6,9 +6,15 @@
  */
 
 import React, {useRef, useEffect} from 'react';
+import propTypes from 'prop-types';
 
+import {NOTIFICATION_PROP_TYPES, toLocaleDateString} from './utils';
 import NotificationIcon from './NotificationIcon';
-import {toLocaleDateString} from './utils';
+
+NotificationsCenterList.propTypes = {
+    notifications: propTypes.arrayOf(NOTIFICATION_PROP_TYPES),
+    dismiss: propTypes.func.isRequired
+};
 
 export default function NotificationsCenterList({notifications, dismiss}) {
     return notifications.map(

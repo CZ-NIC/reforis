@@ -6,11 +6,18 @@
  */
 
 import React from 'react';
+import propTypes from 'prop-types';
+
 import {ForisURLs} from '../constants';
 
 const SMALL_SCREEN = 699;
 
-export default function NotificationsDropdownButton({notificationsCount,newNotification}) {
+NotificationsDropdownButton.propTypes = {
+    notificationsCount: propTypes.number.isRequired,
+    newNotification: propTypes.bool.isRequired,
+};
+
+export default function NotificationsDropdownButton({notificationsCount, newNotification}) {
     function redirectToNotificationCenter(e) {
         // We don't want to show dropdown on the small devices.
         // So just make redirect to notification center
@@ -40,6 +47,11 @@ export default function NotificationsDropdownButton({notificationsCount,newNotif
             </span>
     </button>
 }
+
+NotificationCounter.propTypes = {
+    notificationsCount: propTypes.number.isRequired,
+    newNotification: propTypes.bool.isRequired,
+};
 
 function NotificationCounter({notificationsCount, newNotification}) {
     return <div

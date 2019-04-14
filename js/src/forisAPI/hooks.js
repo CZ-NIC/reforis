@@ -7,7 +7,7 @@
 
 import React, {useState} from 'react';
 
-import ForisAPI from "./api";
+import ForisAPI from "./forisAPI";
 
 export function useAPIGetData(endpoint) {
     const [isReady, setIsReady] = useState(false);

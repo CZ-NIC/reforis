@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> Render button correctly 1`] = `
+<button
+  class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
+>
+   
+   
+  Test Button
+</button>
+`;
+
+exports[`<Button /> Render button with custom classes 1`] = `
+<button
+  class="btn one two three offset-lg-8 col-lg-3 col-sm-12"
+>
+   
+   
+  Test Button
+</button>
+`;
+
+exports[`<Button /> Render button with spinner 1`] = `
+<button
+  class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
+>
+  <span
+    aria-hidden="true"
+    class="spinner-border spinner-border-sm"
+    role="status"
+  />
+   
+   
+   
+  Test Button
+</button>
+`;

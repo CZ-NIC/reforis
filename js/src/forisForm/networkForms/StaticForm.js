@@ -6,6 +6,7 @@
  */
 
 import React from 'react';
+import propTypes from 'prop-types';
 
 import TextInput from '../../bootstrap/TextInput';
 import {validateIPv4Address} from '../validation';
@@ -14,63 +15,82 @@ const HELP_TEXTS = {
     dns: _('DNS server address is not required as the built-in DNS resolver is capable of working without it.'),
 };
 
-export default function StaticForm(props) {
-    const formErrors = (props.formErrors || {});
+const FIELDS_PROP_TYPES = {
+    ip: propTypes.string,
+    netmask: propTypes.string,
+    gateway: propTypes.string,
+    dns1: propTypes.string,
+    dns2: propTypes.string,
+};
+
+StaticForm.propTypes = {
+    formData: propTypes.shape(FIELDS_PROP_TYPES).isRequired,
+    formErrors: propTypes.shape(FIELDS_PROP_TYPES),
+    setFormValue: propTypes.func.isRequired,
+    updateRule: propTypes.func.isRequired,
+};
+
+export default function StaticForm({formData, formErrors, updateRule, setFormValue, ...props}) {
     return <>
         <TextInput
             label={_('IP address')}
-            value={props.formData.ip || ''}
-            disabled={props.disabled}
+            value={formData.ip || ''}
             error={formErrors.ip || null}
             required
 
-            onChange={props.setFormValue(
-                value => props.updateRule({ip: {$set: value}})
+            onChange={setFormValue(
+                value => updateRule({ip: {$set: value}})
             )}
+
+            {...props}
         />
         <TextInput
             label={_('Network mask')}
-            value={props.formData.netmask || ''}
-            disabled={props.disabled}
+            value={formData.netmask || ''}
             error={formErrors.netmask || null}
             required
 
-            onChange={props.setFormValue(
-                value => props.updateRule({netmask: {$set: value}})
+            onChange={setFormValue(
+                value => updateRule({netmask: {$set: value}})
             )}
+
+            {...props}
         />
         <TextInput
             label={_('Gateway')}
-            value={props.formData.gateway || ''}
-            disabled={props.disabled}
+            value={formData.gateway || ''}
             error={formErrors.gateway || null}
             required
 
-            onChange={props.setFormValue(
-                value => props.updateRule({gateway: {$set: value}})
+            onChange={setFormValue(
+                value => updateRule({gateway: {$set: value}})
             )}
+
+            {...props}
         />
         <TextInput
             label={_('DNS server 1')}
-            value={props.formData.dns1 || ''}
-            disabled={props.disabled}
+            value={formData.dns1 || ''}
             error={formErrors.dns1 || null}
             helpText={HELP_TEXTS.dns}
 
-            onChange={props.setFormValue(
-                value => props.updateRule({dns1: {$set: value}})
+            onChange={setFormValue(
+                value => updateRule({dns1: {$set: value}})
             )}
+
+            {...props}
         />
         <TextInput
             label={_('DNS server 2')}
-            value={props.formData.dns2 || ''}
-            disabled={props.disabled}
+            value={formData.dns2 || ''}
             error={formErrors.dns2 || null}
             helpText={HELP_TEXTS.dns}
 
-            onChange={props.setFormValue(
-                value => props.updateRule({dns2: {$set: value}})
+            onChange={setFormValue(
+                value => updateRule({dns2: {$set: value}})
             )}
+
+            {...props}
         />
     </>
 }

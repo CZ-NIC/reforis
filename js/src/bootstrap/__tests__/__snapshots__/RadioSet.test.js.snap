@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RadioSet/> Render radio set 1`] = `
+<div
+  class="form-group row"
+  id="1"
+>
+  <div
+    class="form-label col-sm-2"
+  >
+    <label
+      class="form-label"
+      for="1"
+    >
+      Radios set label
+    </label>
+  </div>
+  <div
+    class="col-sm-9"
+  >
+    <div
+      class="form-check form-check-inline"
+    >
+      <input
+        checked=""
+        class="form-check-input"
+        id="test_name-0"
+        name="test_name"
+        type="radio"
+        value="value"
+      />
+      <label
+        class="form-check-label"
+        for="test_name-0"
+      >
+        label
+      </label>
+    </div>
+    <div
+      class="form-check form-check-inline"
+    >
+      <input
+        class="form-check-input"
+        id="test_name-1"
+        name="test_name"
+        type="radio"
+        value="another value"
+      />
+      <label
+        class="form-check-label"
+        for="test_name-1"
+      >
+        another label
+      </label>
+    </div>
+    <div
+      class="form-check form-check-inline"
+    >
+      <input
+        class="form-check-input"
+        id="test_name-2"
+        name="test_name"
+        type="radio"
+        value="another on value"
+      />
+      <label
+        class="form-check-label"
+        for="test_name-2"
+      >
+        another one  label
+      </label>
+    </div>
+    <small
+      class="form-text text-muted"
+    >
+      Some help text
+    </small>
+  </div>
+</div>
+`;

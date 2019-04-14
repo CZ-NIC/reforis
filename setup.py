@@ -41,8 +41,19 @@ setuptools.setup(
     install_requires=[
         'flask==1.0.2',
         'Flask-Babel==0.12.2',
-        'Flask-Session==0.3.1'
+        'Flask-Session==0.3.1',
     ],
+
+    # Do not use test_require or build_require, because then it's not installed and is
+    # able to be used only by setup.py util. We want to use it manually.
+    # Actually it could be all in dev-requirements.txt but it's good to have it here
+    # next to run dependencies and have it separated by purposes.
+    extras_require={
+        'devel': [
+            'pytest==3.7.1',
+        ],
+    },
+
     classifiers=[
         'Framework :: Flask',
         'Intended Audience :: End Users/Desktop',

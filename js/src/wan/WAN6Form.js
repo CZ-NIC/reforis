@@ -6,6 +6,7 @@
  */
 
 import React from 'react';
+import propTypes from 'prop-types';
 
 import Select from '../bootstrap/Select';
 import TextInput from '../bootstrap/TextInput';
@@ -58,11 +59,37 @@ const WAN6_CHOICES = {
     '6in4': _('6in4 (public IPv4 address required)'),
 };
 
-export default function WAN6Form(props) {
-    const wan6Type = props.formData.wan6_settings.wan6_type;
-    const formData = props.formData.wan6_settings;
-    const last_seen_duid = formData.last_seen_duid;
-    const errors = (props.formErrors || {}).wan6_settings || {};
+const FIELDS_PROP_TYPES = {
+    last_seen_duid: propTypes.string,
+    wan6_dhcpv6: propTypes.object,
+    wan6_static: propTypes.object,
+    wan6_6to4: propTypes.object,
+    wan6_6in4: propTypes.object,
+};
+
+WAN6Form.propTypes = {
+    formData: propTypes.shape({
+            wan6_settings: propTypes.shape({
+                wan6_type: propTypes.string.isRequired,
+                ...FIELDS_PROP_TYPES
+            })
+        }
+    ).isRequired,
+    formErrors: propTypes.shape(FIELDS_PROP_TYPES),
+    setFormValue: propTypes.func.isRequired,
+};
+
+WAN6Form.defaultProps = {
+    setFormValue: () => {
+    },
+    formData: {},
+};
+
+export default function WAN6Form({formData, formErrors, setFormValue, ...props}) {
+    const wan6Settings = formData.wan6_settings;
+    const wan6Type = wan6Settings.wan6_type;
+    const last_seen_duid = wan6Settings.last_seen_duid;
+    const errors = (formErrors || {}).wan6_settings || {};
 
     return <>
         <h3>{_('WAN IPv6')}</h3>
@@ -70,248 +97,335 @@ export default function WAN6Form(props) {
             label={_('IPv6 protocol')}
             value={wan6Type}
             choices={WAN6_CHOICES}
-            disabled={props.disabled}
-            onChange={props.setFormValue(
+
+            onChange={setFormValue(
                 value => ({wan6_settings: {wan6_type: {$set: value}}})
             )}
+
+            {...props}
         />
         {wan6Type === 'dhcpv6' ?
             <DHCPv6Form
-                formData={formData.wan6_dhcpv6}
-                errors={errors.wan6_dhcpv6}
-                disabled={props.disabled}
+                formData={wan6Settings.wan6_dhcpv6}
+                formErrors={errors.wan6_dhcpv6}
                 last_seen_duid={last_seen_duid}
 
-                setFormValue={props.setFormValue}
+                {...props}
+
+                setFormValue={setFormValue}
             />
             : wan6Type === 'static' ?
                 <StaticForm
-                    formData={formData.wan6_static}
-                    errors={errors.wan6_static}
-                    disabled={props.disabled}
+                    formData={wan6Settings.wan6_static}
+                    formErrors={errors.wan6_static}
 
-                    setFormValue={props.setFormValue}
+                    setFormValue={setFormValue}
+
+                    {...props}
                 />
                 : wan6Type === '6to4' ?
                     <_6to4Form
-                        formData={formData.wan6_6to4}
-                        errors={errors.wan6_6to4}
-                        disabled={props.disabled}
+                        formData={wan6Settings.wan6_6to4}
+                        formErrors={errors.wan6_6to4}
 
-                        setFormValue={props.setFormValue}
+                        setFormValue={setFormValue}
+
+                        {...props}
                     />
                     : wan6Type === '6in4' ?
                         <_6in4Form
-                            formData={formData.wan6_6in4}
-                            errors={errors.wan6_6in4}
-                            disabled={props.disabled}
+                            formData={wan6Settings.wan6_6in4}
+                            formErrors={errors.wan6_6in4}
 
-                            setFormValue={props.setFormValue}
+                            setFormValue={setFormValue}
+
+                            {...props}
                         />
                         : null}
     </>
 
 }
 
-function DHCPv6Form(props) {
-    const errors = (props.errors || {});
+DHCPv6Form.propTypes = {
+    last_seen_duid: propTypes.string,
+    formData: propTypes.shape({duid: propTypes.string}).isRequired,
+    formErrors: propTypes.shape({duid: propTypes.string}),
+    setFormValue: propTypes.func.isRequired,
+};
+
+DHCPv6Form.defaultProps = {
+    formErrors: {},
+};
+
+function DHCPv6Form({formData, last_seen_duid, formErrors, setFormValue, ...props}) {
     return <TextInput
         label={_('Custom DUID')}
-        value={props.formData.duid || ''}
-        disabled={props.disabled}
-        error={errors.duid || null}
+        value={formData.duid || ''}
+        error={formErrors.duid || null}
         helpText={HELP_TEXTS.dhcpv6.duid}
-        placeholder={props.last_seen_duid}
+        placeholder={last_seen_duid}
 
-        onChange={props.setFormValue(
+        onChange={setFormValue(
             value => ({wan6_settings: {wan6_dhcpv6: {duid: {$set: value}}}})
         )}
+
+        {...props}
     />
 }
 
-function StaticForm(props) {
-    const errors = (props.errors || {});
+const STATIC_FIELDS_PROPS_TYPES = {
+    ip: propTypes.string,
+    gateway: propTypes.string,
+    network: propTypes.string,
+    dns1: propTypes.string,
+    dns2: propTypes.string,
+};
+
+StaticForm.propTypes = {
+    formData: propTypes.shape(STATIC_FIELDS_PROPS_TYPES).isRequired,
+    formErrors: propTypes.shape(STATIC_FIELDS_PROPS_TYPES),
+    setFormValue: propTypes.func.isRequired,
+};
+
+StaticForm.defaultProps = {
+    formErrors: {},
+};
+
+function StaticForm({formData, formErrors, setFormValue, ...props}) {
     return <>
         <TextInput
             label={_('Address')}
-            value={props.formData.ip || ''}
+            value={formData.ip || ''}
             helpText={HELP_TEXTS.static.ip}
-            disabled={props.disabled}
-            error={errors.ip || null}
+            error={formErrors.ip || null}
             required
 
-            onChange={props.setFormValue(
+            onChange={setFormValue(
                 value => ({wan6_settings: {wan6_static: {ip: {$set: value}}}})
             )}
+
+            {...props}
         />
         <TextInput
             label={_('Gateway')}
-            value={props.formData.gateway || ''}
-            disabled={props.disabled}
-            error={errors.gateway || null}
+            value={formData.gateway || ''}
+            error={formErrors.gateway || null}
             required
 
-            onChange={props.setFormValue(
+            onChange={setFormValue(
                 value => ({wan6_settings: {wan6_static: {gateway: {$set: value}}}})
             )}
+
+            {...props}
         />
         <TextInput
             label={_('Prefix')}
-            value={props.formData.network || ''}
+            value={formData.network || ''}
             helpText={HELP_TEXTS.static.network}
-            disabled={props.disabled}
-            error={errors.network || null}
+            error={formErrors.network || null}
             required
 
-            onChange={props.setFormValue(
+            onChange={setFormValue(
                 value => ({wan6_settings: {wan6_static: {network: {$set: value}}}})
             )}
+
+            {...props}
         />
         <TextInput
             label={_('DNS server 1')}
-            value={props.formData.dns1 || ''}
-            disabled={props.disabled}
-            error={errors.dns1 || null}
+            value={formData.dns1 || ''}
+            error={formErrors.dns1 || null}
             helpText={HELP_TEXTS.static.dns}
 
-            onChange={props.setFormValue(
+            onChange={setFormValue(
                 value => ({wan6_settings: {wan6_static: {dns1: {$set: value}}}})
             )}
+
+            {...props}
         />
         <TextInput
             label={_('DNS server 2')}
-            value={props.formData.dns2 || ''}
-            disabled={props.disabled}
-            error={errors.dns2 || null}
+            value={formData.dns2 || ''}
+            error={formErrors.dns2 || null}
             helpText={HELP_TEXTS.static.dns}
 
-            onChange={props.setFormValue(
+            onChange={setFormValue(
                 value => ({wan6_settings: {wan6_static: {dns2: {$set: value}}}})
             )}
+
+            {...props}
         />
     </>
 }
 
-function _6to4Form(props) {
-    const errors = (props.errors || {});
+_6to4Form.propTypes = {
+    formData: propTypes.shape({ipv4_address: propTypes.string}).isRequired,
+    formErrors: propTypes.shape({ipv4_address: propTypes.string}),
+    setFormValue: propTypes.func.isRequired,
+};
 
+_6to4Form.defaultProps = {
+    formErrors: {},
+};
+
+function _6to4Form({formData, formErrors, setFormValue, ...props}) {
     return <TextInput
         label={_('Public IPv4')}
-        value={props.formData.ipv4_address || ''}
-        disabled={props.disabled}
+        value={formData.ipv4_address || ''}
         helpText={HELP_TEXTS['6to4'].ipv4_address}
-        error={errors.ipv4_address || null}
+        error={formErrors.ipv4_address || null}
         required
 
-        onChange={props.setFormValue(
+        onChange={setFormValue(
             value => ({wan6_settings: {wan6_6to4: {ipv4_address: {$set: value}}}})
         )}
+
+        {...props}
     />
 }
 
-function _6in4Form(props) {
-    const errors = (props.errors || {});
+const _6IN4_FIELDS_PROPS_TYPES = {
+    server_ipv4: propTypes.string,
+    ipv6_prefix: propTypes.string,
+    mtu: propTypes.string,
+    dns1: propTypes.string,
+    dns2: propTypes.string,
+    dynamic_ipv4: propTypes.shape({enabled: propTypes.bool}),
+};
 
+_6in4Form.propTypes = {
+    formData: propTypes.shape(_6IN4_FIELDS_PROPS_TYPES).isRequired,
+    formErrors: propTypes.shape(_6IN4_FIELDS_PROPS_TYPES),
+};
+
+_6in4Form.defaultProps = {
+    formErrors: {},
+};
+
+function _6in4Form({formData, formErrors, setFormValue, ...props}) {
     return <>
         <TextInput
             label={_('Provider IPv4')}
-            value={props.formData.server_ipv4 || ''}
-            disabled={props.disabled}
+            value={formData.server_ipv4 || ''}
             helpText={HELP_TEXTS['6in4'].server_ipv4}
-            error={errors.server_ipv4 || null}
+            error={formErrors.server_ipv4 || null}
             required
 
-            onChange={props.setFormValue(
+            onChange={setFormValue(
                 value => ({wan6_settings: {wan6_6in4: {server_ipv4: {$set: value}}}})
             )}
+
+            {...props}
         />
         <TextInput
             label={_('Routed IPv6 prefix')}
-            value={props.formData.ipv6_prefix || ''}
-            disabled={props.disabled}
+            value={formData.ipv6_prefix || ''}
             helpText={HELP_TEXTS['6in4'].ipv6_prefix}
-            error={errors.ipv6_prefix || null}
+            error={formErrors.ipv6_prefix || null}
             required
 
-            onChange={props.setFormValue(
+            onChange={setFormValue(
                 value => ({wan6_settings: {wan6_6in4: {ipv6_prefix: {$set: value}}}})
             )}
+
+            {...props}
         />
         <NumberInput
             label={_('MTU')}
-            value={props.formData.mtu || ''}
-            disabled={props.disabled}
-            error={errors.mtu || null}
+            value={formData.mtu || ''}
+            error={formErrors.mtu || null}
             min='1280'
             max='1500'
             required
 
-            onChange={props.setFormValue(
+            onChange={setFormValue(
                 value => ({wan6_settings: {wan6_6in4: {mtu: {$set: value}}}})
             )}
+
+            {...props}
         />
         <CheckBox
             label='Dynamic IPv4 handling'
-            checked={props.formData.dynamic_ipv4.enabled || false}
+            checked={formData.dynamic_ipv4.enabled || false}
             helpText={HELP_TEXTS['6in4'].dynamic_ipv4.enabled}
-            disabled={props.disabled}
 
-            onChange={props.setFormValue(
+            onChange={setFormValue(
                 value => ({wan6_settings: {wan6_6in4: {dynamic_ipv4: {enabled: {$set: value}}}}})
             )}
-        />
-        {props.formData.dynamic_ipv4.enabled ?
-            <DynamicIPv4Form
-                formData={props.formData.dynamic_ipv4}
-                errors={errors.dynamic_ipv4}
-                disabled={props.disabled}
 
-                setFormValue={props.setFormValue}
+            {...props}
+        />
+        {formData.dynamic_ipv4.enabled ?
+            <DynamicIPv4Form
+                formData={formData.dynamic_ipv4}
+                formErrors={formErrors.dynamic_ipv4}
+
+                setFormValue={setFormValue}
+
+                {...props}
             />
             : null
         }
     </>;
 }
 
-function DynamicIPv4Form(props) {
-    const errors = (props.errors || {});
+const _6IN4_DYNAMIC_IPv4_FIELDS_PROPS_TYPES = {
+    tunnel_id: propTypes.string,
+    username: propTypes.string,
+    password_or_key: propTypes.string,
+};
 
+DynamicIPv4Form.propTypes = {
+    formData: propTypes.shape(_6IN4_DYNAMIC_IPv4_FIELDS_PROPS_TYPES).isRequired,
+    formErrors: propTypes.shape(_6IN4_DYNAMIC_IPv4_FIELDS_PROPS_TYPES),
+    setFormValue: propTypes.func.isRequired,
+};
+
+
+DynamicIPv4Form.defaultProps = {
+    formErrors: {}
+};
+
+function DynamicIPv4Form({formData, formErrors, setFormValue, ...props}) {
     return <>
         <TextInput
             label={_('Tunnel ID')}
-            value={props.formData.tunnel_id || ''}
-            disabled={props.disabled}
+            value={formData.tunnel_id || ''}
             helpText={HELP_TEXTS['6in4'].dynamic_ipv4.tunnel_id}
-            error={errors.tunnel_id || null}
+            error={formErrors.tunnel_id || null}
             required
 
-            onChange={props.setFormValue(
+            onChange={setFormValue(
                 value => ({wan6_settings: {wan6_6in4: {dynamic_ipv4: {tunnel_id: {$set: value}}}}})
             )}
+
+            {...props}
         />
         <TextInput
             label={_('Username')}
-            value={props.formData.username || ''}
-            disabled={props.disabled}
+            value={formData.username || ''}
             helpText={HELP_TEXTS['6in4'].dynamic_ipv4.username}
-            error={errors.username || null}
+            error={formErrors.username || null}
             required
 
-            onChange={props.setFormValue(
+            onChange={setFormValue(
                 value => ({wan6_settings: {wan6_6in4: {dynamic_ipv4: {username: {$set: value}}}}})
             )}
+
+            {...props}
         />
         <TextInput
             label={_('Key')}
-            value={props.formData.password_or_key || ''}
-            disabled={props.disabled}
+            value={formData.password_or_key || ''}
             helpText={HELP_TEXTS['6in4'].dynamic_ipv4.password_or_key}
-            error={errors.password_or_key || null}
+            error={formErrors.password_or_key || null}
             required
 
-            onChange={props.setFormValue(
+            onChange={setFormValue(
                 value => ({wan6_settings: {wan6_6in4: {dynamic_ipv4: {password_or_key: {$set: value}}}}})
             )}
+
+            {...props}
         />
     </>;
 }

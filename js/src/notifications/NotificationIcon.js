@@ -6,6 +6,12 @@
  */
 
 import React from 'react';
+import propTypes from 'prop-types';
+
+NotificationIcon.propTypes = {
+    severity: propTypes.string.isRequired,
+    className: propTypes.string,
+};
 
 export default function NotificationIcon({severity, className}) {
     let iconName = null;

@@ -2,16 +2,15 @@
 #
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
-import uuid
 
 from reforis.auth import register_login_required
 from .locale import TranslationsHelper
 
 
-def create_app(config='config.py'):
+def create_app(config):
     from flask import Flask
     app = Flask(__name__)
-    app.config.from_pyfile(config)
+    app.config.from_pyfile(f'config/{config}.py')
 
     from flask_session import Session
     Session(app)
@@ -35,12 +34,18 @@ def set_backend(app):
     bus = app.config['BUS']
     bus_config = app.config['BUSES_CONF'][bus]
 
-    # TODO: only for dev. Delete it and put to config.
-    import subprocess
-    controller_id = subprocess.check_output(['crypto-wrapper', 'serial-number']).decode("utf-8")[:-1]
+    controller_id = app.config.get('CONTROLLER_ID', None)
+    if not controller_id:
+        controller_id = _get_controller_id()
 
     from .backend import Backend
     app.backend = Backend(name=bus, **bus_config, controller_id=controller_id)
+
+
+def _get_controller_id():
+    # TODO: only for dev. Delete it and put to config.
+    import subprocess
+    return subprocess.check_output(['crypto-wrapper', 'serial-number']).decode("utf-8")[:-1]
 
 
 def set_locale(app):

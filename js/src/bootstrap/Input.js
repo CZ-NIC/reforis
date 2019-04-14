@@ -6,22 +6,20 @@
  */
 
 import React from 'react';
+import {useUID} from 'react-uid';
+
 import {LABEL_SIZE, FIELD_SIZE} from './constants';
 
 
-const Input = type => ({name, id, label, onChange, value, placeholder, helpText, error, ...props}) => {
+const Input = type => ({label, helpText, error, ...props}) => {
+    const uid = useUID();
     return <div className='form-group row'>
-        <label className={'form-control-label col-sm-' + LABEL_SIZE} htmlFor={id}>{label}</label>
+        <label className={'form-control-label col-sm-' + LABEL_SIZE} htmlFor={uid}>{label}</label>
         <div className={'col-sm-' + FIELD_SIZE}>
             <input
                 className={'form-control ' + (!error ? '' : 'is-invalid')}
                 type={type}
-                name={name}
-                id={id}
-                onChange={onChange}
-                value={value}
-                placeholder={placeholder}
-
+                id={uid}
                 {...props}
             />
             <div className='invalid-feedback'>{error}</div>

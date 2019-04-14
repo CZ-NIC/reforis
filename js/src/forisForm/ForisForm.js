@@ -5,60 +5,35 @@
  * See /LICENSE for more information.
  */
 
-import React, {useEffect} from 'react';
+import React from 'react';
+import propTypes from 'prop-types';
 
-import {useAPIGetData, useAPIPostData} from '../api/hooks';
-import {useWS, useWSNetworkRestart} from '../webSockets/hooks';
-import {FORM_STATES, useForm} from './hooks';
+import {useForisForm} from './hooks';
 import SubmitButton from './SubmitButton';
 
-export default function ForisForm({prepData, prepDataToSubmit, validator, module, children}) {
+ForisForm.propTypes = {
+    ws: propTypes.object.isRequired,
+    module: propTypes.string.isRequired,
+    prepData: propTypes.func.isRequired,
+    prepDataToSubmit: propTypes.func.isRequired,
+    validator: propTypes.func.isRequired,
+    children: propTypes.node.isRequired,
+};
+
+export default function ForisForm({ws, module, prepData, prepDataToSubmit, validator, children}) {
     const [
         formData,
         formErrors,
-        setFormData,
-
         formState,
-        setFormState,
+        remindsToNWRestart,
         formIsDisabled,
 
-        setFormValue
-    ] = useForm(prepData, validator);
-
-    const [getData, isReady] = useAPIGetData(module);
-    const postData = useAPIPostData(module);
-    useEffect(() => getData(data => setFormData(data)), []);
-    useEffect(() => {
-        if (isReady)
-            setFormState(FORM_STATES.READY);
-        else
-            setFormState(FORM_STATES.LOAD);
-    }, [isReady]);
-
-    useWS(module, 'update_settings', () => {
-        setFormState(FORM_STATES.UPDATE);
-    });
-
-    const remindsToNWRestart = useWSNetworkRestart();
-    useEffect(() => {
-            if (remindsToNWRestart === 0) {
-                getData(data => setFormData(data));
-                return;
-            }
-            setFormState(FORM_STATES.NETWORK_RESTART);
-        },
-        [remindsToNWRestart]
-    );
+        setFormValue,
+        onSubmit,
+    ] = useForisForm(ws, module, prepData, prepDataToSubmit, validator);
 
     if (JSON.stringify(formData) === '{}')
         return null;
-
-    function onSubmit(e) {
-        e.preventDefault();
-        setFormState(FORM_STATES.UPDATE);
-        const copiedFormData = JSON.parse(JSON.stringify(formData));
-        postData(prepDataToSubmit(copiedFormData))
-    }
 
     const childrenWithFormProps = React.Children.map(
         children, child =>
@@ -73,9 +48,9 @@ export default function ForisForm({prepData, prepDataToSubmit, validator, module
     return <form onSubmit={onSubmit}>
         {childrenWithFormProps}
         <SubmitButton
-            disabled={!!formErrors}
             state={formState}
             remindsToNWRestart={remindsToNWRestart}
+            disabled={!!formErrors}
         />
     </form>
 }

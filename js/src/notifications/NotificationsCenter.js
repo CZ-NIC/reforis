@@ -7,12 +7,17 @@
 
 
 import React from 'react';
+import propTypes from 'prop-types';
 
 import useNotifications from './hooks';
 import NotificationsCenterList from './NotificationsCenterList';
 
-export default function NotificationsCenter() {
-    const [notifications, dismiss, dismissAll] = useNotifications();
+NotificationsCenter.propTypes = {
+    ws: propTypes.object.isRequired
+};
+
+export default function NotificationsCenter({ws}) {
+    const [notifications, dismiss, dismissAll] = useNotifications(ws);
 
     function getDismissAllButton() {
         return <button

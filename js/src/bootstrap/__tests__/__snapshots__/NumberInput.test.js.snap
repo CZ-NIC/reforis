@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PasswordInput/> Render number input 1`] = `
+<div
+  class="form-group row"
+>
+  <label
+    class="form-control-label col-sm-2"
+    for="1"
+  >
+    Test label
+  </label>
+  <div
+    class="col-sm-9"
+  >
+    <input
+      class="form-control "
+      id="1"
+      type="password"
+      value="1123"
+    />
+    <div
+      class="invalid-feedback"
+    />
+    <small
+      class="form-text text-muted"
+    >
+      Some help text
+    </small>
+  </div>
+</div>
+`;

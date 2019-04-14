@@ -7,15 +7,21 @@
 
 import React from 'react';
 import update from 'immutability-helper';
+import propTypes from 'prop-types';
 
 import ForisForm from '../forisForm/ForisForm';
 import WAN6Form, {validateWAN6Form} from './WAN6Form';
 import MACForm, {validateMACForm} from './MACForm';
 import WANForm, {validateWANForm} from './WANForm';
 
-export default function WAN() {
+WAN.propTypes = {
+    ws: propTypes.object.isRequired
+};
+
+export default function WAN({ws}) {
     return <>
         <ForisForm
+            ws={ws}
             module='wan'
             prepData={prepData}
             prepDataToSubmit={prepDataToSubmit}
