@@ -6,6 +6,7 @@
  */
 
 import React from 'react';
+import propTypes from 'prop-types';
 
 import Select from '../bootstrap/Select';
 import DHCPForm, {validateDHCPForm} from '../forisForm/networkForms/DHCPForm';
@@ -23,36 +24,52 @@ const LAN_TYPE_CHOICES = {
     none: _("Don't connect this device to LAN"),
 };
 
-export default function LANUnmanagedForm(props) {
-    const formErrors = (props.formErrors || {});
-    const lanType = props.formData.lan_type;
+LANUnmanagedForm.propTypes = {
+    formData: propTypes.shape({
+        lan_dhcp: propTypes.object,
+        lan_static: propTypes.object,
+    }).isRequired,
+    formErrors: propTypes.shape({
+        lan_dhcp: propTypes.object,
+        lan_static: propTypes.object,
+    }),
+    setFormValue: propTypes.func.isRequired,
+};
+
+export default function LANUnmanagedForm({formData, formErrors, setFormValue, ...props}) {
+    const errors = (formErrors || {});
+    const lanType = formData.lan_type;
     return <>
         <Select
             label={_('IPv4 protocol')}
             value={lanType}
             choices={LAN_TYPE_CHOICES}
-            disabled={props.disabled}
-            onChange={props.setFormValue(
+
+            onChange={setFormValue(
                 value => ({mode_unmanaged: {lan_type: {$set: value}}})
             )}
+
+            {...props}
         />
         {lanType === LAN_TYPES.dhcp ?
             <DHCPForm
-                formData={props.formData.lan_dhcp}
-                formErrors={formErrors.lan_dhcp}
-                disabled={props.disabled}
-                updateRule={value => ({mode_unmanaged: {lan_dhcp: value}})}
+                formData={formData.lan_dhcp}
+                formErrors={errors.lan_dhcp || {}}
 
-                setFormValue={props.setFormValue}
+                updateRule={value => ({mode_unmanaged: {lan_dhcp: value}})}
+                setFormValue={setFormValue}
+
+                {...props}
             />
             : lanType === LAN_TYPES.static ?
                 <StaticForm
-                    formData={props.formData.lan_static}
-                    formErrors={formErrors.lan_static}
-                    disabled={props.disabled}
-                    updateRule={value => ({mode_unmanaged: {lan_static: value}})}
+                    formData={formData.lan_static || {}}
+                    formErrors={errors.lan_static || {}}
 
-                    setFormValue={props.setFormValue}
+                    updateRule={value => ({mode_unmanaged: {lan_static: value}})}
+                    setFormValue={setFormValue}
+
+                    {...props}
                 />
                 : null}
     </>

@@ -6,6 +6,7 @@
  */
 
 import React from 'react';
+import propTypes from 'prop-types';
 
 import CheckBox from '../bootstrap/Checkbox';
 import TextInput from '../bootstrap/TextInput';
@@ -16,34 +17,56 @@ const HELP_TEXTS = {
     custom_mac: _('Colon is used as a separator, for example 00:11:22:33:44:55'),
 };
 
-export default function MACForm(props) {
-    const formData = props.formData.mac_settings;
-    const errors = (props.formErrors || {}).mac_settings || {};
+MACForm.propTypes = {
+    formData: propTypes.shape({
+            mac_settings: propTypes.shape({
+                custom_mac_enabled: propTypes.bool.isRequired,
+                custom_mac: propTypes.string,
+            })
+        }
+    ).isRequired,
+    formErrors: propTypes.shape({
+        custom_mac: propTypes.string,
+    }),
+    setFormValue: propTypes.func.isRequired,
+};
+
+MACForm.defaultProps = {
+    setFormValue: () => {
+    },
+    formData: {},
+};
+
+export default function MACForm({formData, formErrors, setFormValue, ...props}) {
+    const macSettings = formData.mac_settings;
+    const errors = (formErrors || {}).mac_settings || {};
     return (
         <>
             <h3>{_('MAC')}</h3>
             <CheckBox
                 label={_('Custom MAC address')}
-                checked={formData.custom_mac_enabled}
+                checked={macSettings.custom_mac_enabled}
                 helpText={HELP_TEXTS.custom_mac_enabled}
-                disabled={props.disabled}
 
-                onChange={props.setFormValue(
+                onChange={setFormValue(
                     value => ({mac_settings: {custom_mac_enabled: {$set: value}}})
                 )}
+
+                {...props}
             />
-            {formData.custom_mac_enabled ?
+            {macSettings.custom_mac_enabled ?
                 <TextInput
                     label={_('MAC address')}
-                    value={formData.custom_mac || ''}
+                    value={macSettings.custom_mac || ''}
                     helpText={HELP_TEXTS.custom_mac}
                     error={errors.custom_mac}
-                    disabled={props.disabled}
-
                     required
-                    onChange={props.setFormValue(
+
+                    onChange={setFormValue(
                         value => ({mac_settings: {custom_mac: {$set: value}}})
                     )}
+
+                    {...props}
                 />
                 : null}
         </>

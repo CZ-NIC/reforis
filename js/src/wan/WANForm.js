@@ -11,87 +11,129 @@ import Select from '../bootstrap/Select';
 import TextInput from '../bootstrap/TextInput';
 import DHCPForm, {validateDHCPForm} from '../forisForm/networkForms/DHCPForm';
 import StaticForm, {validateStaticForm} from '../forisForm/networkForms/StaticForm';
+import propTypes from 'prop-types';
 
 const WAN_TYPES = {
     dhcp: 'dhcp',
     static: 'static',
     pppoe: 'pppoe',
 };
+
 const WAN_TYPE_CHOICES = {
     dhcp: _('DHCP (automatic configuration)'),
     static: _('Static IP address (manual configuration)'),
     pppoe: _('PPPoE (for DSL bridges, Modem Turris, etc.)'),
 };
 
-export default function WANForm(props) {
-    const formData = props.formData.wan_settings;
-    const formErrors = (props.formErrors || {}).wan_settings || {};
-    const wanType = props.formData.wan_settings.wan_type;
+const FIELDS_PROP_TYPES = {
+    wan_static: propTypes.object,
+    wan_dhcp: propTypes.object,
+    wan_pppoe: propTypes.object,
+};
+
+WANForm.propTypes = {
+    formData: propTypes.shape({
+            wan_settings: propTypes.shape({
+                wan_type: propTypes.string.isRequired,
+                ...FIELDS_PROP_TYPES
+            })
+        }
+    ).isRequired,
+    formErrors: propTypes.shape(FIELDS_PROP_TYPES),
+    setFormValue: propTypes.func.isRequired,
+};
+
+WANForm.defaultProps = {
+    setFormValue: () => {
+    },
+    formData: {},
+};
+
+export default function WANForm({formData, formErrors, setFormValue, ...props}) {
+    const wanSettings = formData.wan_settings;
+    const errors = (formErrors || {}).wan_settings || {};
+    const wanType = wanSettings.wan_type;
     return <>
         <h3>{_('WAN IPv4')}</h3>
         <Select
             label={_('IPv4 protocol')}
             value={wanType}
             choices={WAN_TYPE_CHOICES}
-            disabled={props.disabled}
-            onChange={props.setFormValue(
+
+            onChange={setFormValue(
                 value => ({wan_settings: {wan_type: {$set: value}}})
             )}
+
+            {...props}
         />
         {wanType === WAN_TYPES.dhcp ?
             <DHCPForm
-                formData={formData.wan_dhcp}
-                formErrors={formErrors.wan_dhcp}
-                disabled={props.disabled}
-                updateRule={value => ({wan_settings: {wan_dhcp: value}})}
+                formData={wanSettings.wan_dhcp}
+                formErrors={errors.wan_dhcp}
 
-                setFormValue={props.setFormValue}
+                updateRule={value => ({wan_settings: {wan_dhcp: value}})}
+                setFormValue={setFormValue}
+
+                {...props}
             />
             : wanType === WAN_TYPES.static ?
                 <StaticForm
-                    formData={formData.wan_static}
-                    formErrors={formErrors.wan_static}
-                    disabled={props.disabled}
-                    updateRule={value => ({wan_settings: {wan_static: value}})}
+                    formData={wanSettings.wan_static}
+                    formErrors={errors.wan_static || {}}
 
-                    setFormValue={props.setFormValue}
+                    updateRule={value => ({wan_settings: {wan_static: value}})}
+                    setFormValue={setFormValue}
+
+                    {...props}
                 />
                 : wanType === WAN_TYPES.pppoe ?
                     <PPPoEForm
-                        formData={formData.wan_pppoe}
-                        formErrors={formErrors.wan_pppoe}
-                        disabled={props.disabled}
+                        formData={wanSettings.wan_pppoe}
+                        formErrors={errors.wan_pppoe}
 
-                        setFormValue={props.setFormValue}
+                        setFormValue={setFormValue}
+
+                        {...props}
                     />
                     : null}
     </>
 
 }
 
-function PPPoEForm(props) {
+PPPoEForm.propTypes = {
+    username: propTypes.string,
+    password: propTypes.string,
+};
+
+PPPoEForm.defaultProps = {
+    formErrors: {},
+};
+
+function PPPoEForm({formData, formErrors, setFormValue, ...props}) {
     return <>
         <TextInput
             label={_('PAP/CHAP username')}
-            value={props.formData.username || ''}
-            disabled={props.disabled}
-            error={(props.formErrors || {}).username || null}
+            value={formData.username || ''}
+            error={(formErrors || {}).username || null}
             required
 
-            onChange={props.setFormValue(
+            onChange={setFormValue(
                 value => ({wan_settings: {wan_pppoe: {username: {$set: value}}}})
             )}
+
+            {...props}
         />
         <TextInput
             label={_('PAP/CHAP password')}
-            value={props.formData.password || ''}
-            disabled={props.disabled}
-            error={(props.formErrors || {}).password || null}
+            value={formData.password || ''}
+            error={(formErrors || {}).password || null}
             required
 
-            onChange={props.setFormValue(
+            onChange={setFormValue(
                 value => ({wan_settings: {wan_pppoe: {password: {$set: value}}}})
             )}
+
+            {...props}
         />
     </>
 

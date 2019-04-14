@@ -6,8 +6,18 @@
  */
 
 import React from 'react';
-import NotificationsDropdownItem from './NotificationsDropdownItem';
+import propTypes from 'prop-types';
+
 import {ForisURLs} from '../constants';
+
+import NotificationsDropdownItem from './NotificationsDropdownItem';
+import {NOTIFICATION_PROP_TYPES} from './utils';
+
+NotificationsDropdownMenu.propTypes = {
+    notifications: propTypes.arrayOf(NOTIFICATION_PROP_TYPES),
+    dismiss: propTypes.func.isRequired,
+    dismissAll: propTypes.func.isRequired,
+};
 
 export default function NotificationsDropdownMenu({notifications, dismiss, dismissAll}) {
     function getNotifications() {

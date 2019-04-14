@@ -6,10 +6,15 @@
  */
 
 import React from 'react';
+import propTypes from 'prop-types';
+
 import NotificationsDropdownButton from './NotificationsDropdownButton';
 import NotificationsDropdownMenu from './NotificationsDropdownMenu';
 import useNotifications, {useNewNotification} from './hooks';
 
+NotificationsDropdown.propTypes = {
+    ws: propTypes.object.isRequired
+};
 
 export default function NotificationsDropdown({ws}) {
     const [notifications, dismiss, dismissAll] = useNotifications(ws);

@@ -6,24 +6,38 @@
  */
 
 import React from 'react';
+import propTypes from 'prop-types';
 
 import TextInput from '../../bootstrap/TextInput';
 import {validateDomain} from '../validation';
 
 const HELP_TEXTS = {
-    dhcp_hostname: _('Hostname which will be provided to DHCP server.'),
+    hostname: _('Hostname which will be provided to DHCP server.'),
 };
 
-export default function DHCPForm(props) {
+DHCPForm.propTypes = {
+    formData: propTypes.shape({
+        hostname: propTypes.string,
+    }).isRequired,
+    formErrors: propTypes.shape({
+        hostname: propTypes.string
+    }),
+    setFormValue: propTypes.func.isRequired,
+    updateRule: propTypes.func.isRequired,
+};
+
+export default function DHCPForm({formData, formErrors, setFormValue, updateRule, ...props}) {
     return <TextInput
         label={_('DHCP hostname')}
-        value={props.formData.hostname || ''}
-        disabled={props.disabled}
-        error={(props.formErrors || {}).hostname || null}
-        helpText={HELP_TEXTS.dhcp_hostname}
-        onChange={props.setFormValue(
-            value => props.updateRule({hostname: {$set: value}})
+        value={formData.hostname || ''}
+        error={(formErrors || {}).hostname || null}
+        helpText={HELP_TEXTS.hostname}
+
+        onChange={setFormValue(
+            value => updateRule({hostname: {$set: value}})
         )}
+
+        {...props}
     />
 }
 

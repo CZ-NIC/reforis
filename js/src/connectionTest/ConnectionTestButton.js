@@ -6,8 +6,14 @@
  */
 
 import React from 'react';
+import propTypes from 'prop-types';
+
 import Button from '../bootstrap/Button';
-import {TEST_STATES} from "./ConnectionTest";
+import {TEST_STATES} from './testStates';
+
+ConnectionTestButton.propTypes = {
+    state: propTypes.oneOf(Object.keys(TEST_STATES).map(key => TEST_STATES[key])).isRequired,
+};
 
 export default function ConnectionTestButton({state, ...props}) {
     const isRunning = state === TEST_STATES.RUNNING;

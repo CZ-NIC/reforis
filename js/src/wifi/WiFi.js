@@ -6,9 +6,14 @@
  */
 
 import React from 'react'
+import propTypes from 'prop-types';
 
 import WiFiForm from './WiFiForm';
 import ForisForm from '../forisForm/ForisForm';
+
+WiFi.propTypes = {
+    ws: propTypes.object.isRequired
+};
 
 export default function WiFi({ws}) {
     return <ForisForm
@@ -20,7 +25,6 @@ export default function WiFi({ws}) {
     >
         <WiFiForm/>
     </ForisForm>
-
 }
 
 const validator = formData => {
@@ -38,11 +42,15 @@ const validator = formData => {
                 errors.password = _('Password must contain at least 8 symbols');
 
             if (!device.guest_wifi.enabled) return errors;
-            if (device.guest_wifi.password.length < 8)
-                errors.guest_wifi = {
-                    password: _('Password must contain at least 8 symbols')
-                };
 
+            errors.guest_wifi = {};
+            if (device.guest_wifi.SSID.length > 32)
+                errors.guest_wifi.SSID = _("SSID can't be longer than 32 symbols");
+            if (device.guest_wifi.SSID.length === 0)
+                errors.guest_wifi.SSID = _("SSID can't be empty");
+
+            if (device.guest_wifi.password.length < 8)
+                errors.guest_wifi.password = _('Password must contain at least 8 symbols')
 
             return errors;
         });

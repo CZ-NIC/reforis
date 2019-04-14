@@ -6,12 +6,22 @@
  */
 
 import React from 'react';
+import propTypes from 'prop-types';
 
 const TEST_TYPES = {
     ipv4: _('IPv4 connectivity'),
     ipv4_gateway: _('IPv4 gateway connectivity'),
     ipv6: _('IPv6 connectivity'),
     ipv6_gateway: _('IPv6 gateway connectivity'),
+};
+
+ConnectionTestResults.propTypes = {
+    dns: propTypes.bool,
+    dnssec: propTypes.bool,
+    ipv4: propTypes.bool,
+    ipv4_gateway: propTypes.bool,
+    ipv6: propTypes.bool,
+    ipv6_gateway: propTypes.bool,
 };
 
 export function ConnectionTestResults(tests) {
@@ -27,6 +37,11 @@ export function ConnectionTestResults(tests) {
         </tbody>
     </table>;
 }
+
+ConnectionTestResultItem.propTypes = {
+    type: propTypes.string.isRequired,
+    result: propTypes.bool,
+};
 
 function ConnectionTestResultItem({type, result}) {
     let icon = null;

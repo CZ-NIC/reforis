@@ -6,9 +6,19 @@
  */
 
 import React from 'react';
+import propTypes from 'prop-types';
 
 import {useForisForm} from './hooks';
 import SubmitButton from './SubmitButton';
+
+ForisForm.propTypes = {
+    ws: propTypes.object.isRequired,
+    module: propTypes.string.isRequired,
+    prepData: propTypes.func.isRequired,
+    prepDataToSubmit: propTypes.func.isRequired,
+    validator: propTypes.func.isRequired,
+    children: propTypes.node.isRequired,
+};
 
 export default function ForisForm({ws, module, prepData, prepDataToSubmit, validator, children}) {
     const [
@@ -38,9 +48,9 @@ export default function ForisForm({ws, module, prepData, prepDataToSubmit, valid
     return <form onSubmit={onSubmit}>
         {childrenWithFormProps}
         <SubmitButton
-            disabled={!!formErrors}
             state={formState}
             remindsToNWRestart={remindsToNWRestart}
+            disabled={!!formErrors}
         />
     </form>
 }

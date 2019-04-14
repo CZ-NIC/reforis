@@ -12,42 +12,60 @@ import TextInput from '../bootstrap/TextInput';
 import PasswordInput from '../bootstrap/PasswordInput';
 
 import {HELP_TEXTS} from './WiFiForm';
+import propTypes from 'prop-types';
 
-export function WifiGuestForm(props) {
+WifiGuestForm.propTypes = {
+    formData: propTypes.shape({
+        id: propTypes.number.isRequired,
+        SSID: propTypes.string.isRequired,
+        password: propTypes.string.isRequired,
+    }),
+    formErrors: propTypes.shape({
+        SSID: propTypes.string,
+        password: propTypes.string,
+    }),
+    setFormValue: propTypes.func.isRequired,
+};
+
+export function WifiGuestForm({formData, formErrors, setFormValue, ...props}) {
     return <>
         <CheckBox
             label='Enable Guest Wifi'
-            checked={props.formData.enabled}
-            disabled={props.disabled}
+            checked={formData.enabled}
             helpText={HELP_TEXTS.guest_wifi_enabled}
 
-            onChange={props.setFormValue(
-                value => ({devices: {[props.formData.id]: {guest_wifi: {enabled: {$set: value}}}}})
+            onChange={setFormValue(
+                value => ({devices: {[formData.id]: {guest_wifi: {enabled: {$set: value}}}}})
             )}
+
+            {...props}
         />
-        {props.formData.enabled ?
+        {formData.enabled ?
             <>
                 <TextInput
                     label='SSID'
-                    value={props.formData.SSID}
-                    disabled={props.disabled}
+                    value={formData.SSID}
+                    error={formErrors.SSID}
 
-                    onChange={props.setFormValue(
-                        value => ({devices: {[props.formData.id]: {guest_wifi: {SSID: {$set: value}}}}})
+                    onChange={setFormValue(
+                        value => ({devices: {[formData.id]: {guest_wifi: {SSID: {$set: value}}}}})
                     )}
+
+                    {...props}
                 />
 
                 <PasswordInput
                     label='Password'
-                    value={props.formData.password}
+                    value={formData.password}
                     helpText={HELP_TEXTS.password}
-                    disabled={props.disabled}
-                    error={props.errors.password}
+                    error={formErrors.password}
                     required
 
-                    onChange={props.setFormValue(
-                        value => ({devices: {[props.formData.id]: {guest_wifi: {password: {$set: value}}}}})
+                    onChange={setFormValue(
+                        value => ({devices: {[formData.id]: {guest_wifi: {password: {$set: value}}}}})
                     )}
+
+                    {...props}
                 />
             </>
             : null}

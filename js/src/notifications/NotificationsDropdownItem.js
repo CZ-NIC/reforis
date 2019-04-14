@@ -6,10 +6,18 @@
  */
 
 import React from 'react';
+import propTypes from 'prop-types';
+
+import {ForisURLs} from '../constants';
 
 import NotificationIcon from './NotificationIcon';
-import {toLocaleDateString} from './utils';
-import {ForisURLs} from '../constants';
+import {NOTIFICATION_PROP_TYPES, toLocaleDateString} from './utils';
+
+NotificationsDropdownItem.propTypes = {
+    notification: NOTIFICATION_PROP_TYPES,
+    divider: propTypes.bool.isRequired,
+    dismiss: propTypes.func.isRequired,
+};
 
 export default function NotificationsDropdownItem({notification, divider, dismiss}) {
     const date = toLocaleDateString(notification.created_at);

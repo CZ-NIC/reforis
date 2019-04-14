@@ -6,11 +6,16 @@
  */
 
 import React from 'react';
+import propTypes from 'prop-types';
 
 import ForisForm from '../forisForm/ForisForm';
 import {validateManaged} from './LANManagedForm';
 import {validateUnmanaged} from './LANUnmanagedForm';
 import LANForm, {LAN_MODES} from './LANForm';
+
+LAN.propTypes = {
+    ws: propTypes.object.isRequired
+};
 
 export default function LAN({ws}) {
     return <ForisForm

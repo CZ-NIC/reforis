@@ -6,15 +6,15 @@
  */
 
 import React, {useEffect, useState} from 'react';
+import propTypes from 'prop-types';
 
 import ConnectionTestButton from './ConnectionTestButton';
 import {useAPIGetData} from '../forisAPI/hooks';
 import {ConnectionTestResults} from './ConnectionTestResult';
+import {TEST_STATES} from './testStates';
 
-export const TEST_STATES = {
-    NOT_RUNNING: 0,
-    RUNNING: 1,
-    FINISHED: 2,
+ConnectionTest.propTypes = {
+    ws: propTypes.object.isRequired
 };
 
 export default function ConnectionTest({ws}) {
