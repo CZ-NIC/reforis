@@ -30,6 +30,10 @@
                 {{ dropdown_item('LAN','/lan') }}
                 {{ dropdown_item('Wi-Fi','/wifi') }}
             </ul>
+
+        </li>
+        <li {% if request.path.startswith('/administration') %}class="active"{% endif %}>
+            <a href="/administration">{% trans %}Administration{% endtrans %}</a>
         </li>
 
 

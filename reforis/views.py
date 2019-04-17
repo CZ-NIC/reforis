@@ -57,3 +57,8 @@ def wan():
 @base.route('/lan')
 def lan():
     return render_template('lan.html')
+
+
+@base.route('/administration')
+def administration():
+    return render_template('administration.html')
