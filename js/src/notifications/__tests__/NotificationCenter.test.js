@@ -5,11 +5,12 @@
  * See /LICENSE for more information.
  */
 import React from 'react';
-import {render, waitForElement, getByText} from 'react-testing-library';
+import {render, waitForElement, getByText, act} from 'react-testing-library';
 
 import {mockedWS} from '../../testUtils/mockWS';
-import {notificationsEmailSettingsFixure, notificationsFixture} from './__fixtures__/notifications';
+import {notificationsFixture} from './__fixtures__/notifications';
 import NotificationsCenter from '../NotificationsCenter/NotificationsCenter';
+import {notificationsEmailSettingsFixure} from './__fixtures__/notificationsEmailSettings';
 
 function mockFetch() {
     return jest.fn((url) => {

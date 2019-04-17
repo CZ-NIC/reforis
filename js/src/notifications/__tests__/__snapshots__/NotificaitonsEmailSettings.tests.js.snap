@@ -1,0 +1,657 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NotificationsDropdown/> Disabled 1`] = `
+<form>
+  <h3>
+    Email notifications settings
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <div
+      class="form-label col-sm-3"
+    >
+      <label
+        class="form-label"
+        for="45"
+      >
+        Enable email notifications
+      </label>
+    </div>
+    <div
+      class="form-check col-sm-8"
+    >
+      <input
+        checked=""
+        id="45"
+        type="checkbox"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        If you set SMTP provider to "Turris", the servers provided to members of the Turris project would be used. These servers do not require any additional settings. If you want to set your own SMTP server, please select "Custom" and enter required settings.
+      </small>
+    </div>
+  </div>
+  <button
+    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+  >
+     
+     
+    Save
+  </button>
+</form>
+`;
+
+exports[`<NotificationsDropdown/> Enabled, smtp_type:custom 1`] = `
+<form>
+  <h3>
+    Email notifications settings
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <div
+      class="form-label col-sm-3"
+    >
+      <label
+        class="form-label"
+        for="1"
+      >
+        Enable email notifications
+      </label>
+    </div>
+    <div
+      class="form-check col-sm-8"
+    >
+      <input
+        checked=""
+        disabled=""
+        id="1"
+        type="checkbox"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        If you set SMTP provider to "Turris", the servers provided to members of the Turris project would be used. These servers do not require any additional settings. If you want to set your own SMTP server, please select "Custom" and enter required settings.
+      </small>
+    </div>
+  </div>
+  <div
+    class="form-group row"
+    id="2"
+  >
+    <div
+      class="form-label col-sm-3"
+    >
+      <label
+        class="form-label"
+        for="2"
+      >
+        SMTP provider
+      </label>
+    </div>
+    <div
+      class="col-sm-8"
+    >
+      <div
+        class="form-check form-check-inline"
+      >
+        <input
+          class="form-check-input"
+          disabled=""
+          id="smtp_provider-0"
+          name="smtp_provider"
+          type="radio"
+          value="turris"
+        />
+        <label
+          class="form-check-label"
+          for="smtp_provider-0"
+        >
+          Turris
+        </label>
+      </div>
+      <div
+        class="form-check form-check-inline"
+      >
+        <input
+          checked=""
+          class="form-check-input"
+          disabled=""
+          id="smtp_provider-1"
+          name="smtp_provider"
+          type="radio"
+          value="custom"
+        />
+        <label
+          class="form-check-label"
+          for="smtp_provider-1"
+        >
+          Custom
+        </label>
+      </div>
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-3"
+      for="3"
+    >
+      Recipient's email
+    </label>
+    <div
+      class="col-sm-8"
+    >
+      <input
+        class="form-control "
+        disabled=""
+        id="3"
+        required=""
+        type="text"
+        value="some@example.com"
+      />
+      <div
+        class="invalid-feedback"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        Email address of recipient. Separate multiple addresses by comma.
+      </small>
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-3"
+      for="4"
+    >
+      Importance
+    </label>
+    <div
+      class="col-sm-8"
+    >
+      <select
+        class="form-control"
+        disabled=""
+        id="4"
+      >
+        <option
+          value="1"
+        >
+          Reboot is required
+        </option>
+        <option
+          value="2"
+        >
+          Reboot or attention is required
+        </option>
+        <option
+          value="3"
+        >
+          Reboot or attention is required or update was installed
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <div
+      class="form-label col-sm-3"
+    >
+      <label
+        class="form-label"
+        for="5"
+      >
+        Send news
+      </label>
+    </div>
+    <div
+      class="form-check col-sm-8"
+    >
+      <input
+        checked=""
+        disabled=""
+        id="5"
+        type="checkbox"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        Send emails about new features.
+      </small>
+    </div>
+  </div>
+  <h4>
+    SMTP settings
+  </h4>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-3"
+      for="6"
+    >
+      Sender address (From)
+    </label>
+    <div
+      class="col-sm-8"
+    >
+      <input
+        class="form-control "
+        disabled=""
+        id="6"
+        placeholder="router@example.com"
+        required=""
+        type="email"
+        value="router@example.com"
+      />
+      <div
+        class="invalid-feedback"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        This is the address notifications are send from.
+      </small>
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-3"
+      for="7"
+    >
+      Server address
+    </label>
+    <div
+      class="col-sm-8"
+    >
+      <input
+        class="form-control "
+        disabled=""
+        id="7"
+        placeholder="example.com"
+        required=""
+        type="text"
+        value="example.com"
+      />
+      <div
+        class="invalid-feedback"
+      />
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-3"
+      for="8"
+    >
+      Server port
+    </label>
+    <div
+      class="col-sm-8"
+    >
+      <input
+        class="form-control "
+        disabled=""
+        id="8"
+        max="65535"
+        min="1"
+        type="number"
+        value="465"
+      />
+      <div
+        class="invalid-feedback"
+      />
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-3"
+      for="9"
+    >
+      Security
+    </label>
+    <div
+      class="col-sm-8"
+    >
+      <select
+        class="form-control"
+        disabled=""
+        id="9"
+      >
+        <option
+          value="none"
+        >
+          None
+        </option>
+        <option
+          value="ssl"
+        >
+          SSL
+        </option>
+        <option
+          value="starttls"
+        >
+          STARTTLS
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-3"
+      for="10"
+    >
+      User
+    </label>
+    <div
+      class="col-sm-8"
+    >
+      <input
+        class="form-control "
+        disabled=""
+        id="10"
+        type="text"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      />
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-3"
+      for="11"
+    >
+      Password
+    </label>
+    <div
+      class="col-sm-8"
+    >
+      <input
+        class="form-control "
+        disabled=""
+        id="11"
+        type="password"
+        value="test_password"
+      />
+      <div
+        class="invalid-feedback"
+      />
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <button
+    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    disabled=""
+  >
+    <span
+      aria-hidden="true"
+      class="spinner-border spinner-border-sm"
+      role="status"
+    />
+     
+     
+     
+    Restarting after %d sec.
+  </button>
+</form>
+`;
+
+exports[`<NotificationsDropdown/> Enabled,smtp_type:turris 1`] = `
+<form>
+  <h3>
+    Email notifications settings
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <div
+      class="form-label col-sm-3"
+    >
+      <label
+        class="form-label"
+        for="79"
+      >
+        Enable email notifications
+      </label>
+    </div>
+    <div
+      class="form-check col-sm-8"
+    >
+      <input
+        checked=""
+        id="79"
+        type="checkbox"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        If you set SMTP provider to "Turris", the servers provided to members of the Turris project would be used. These servers do not require any additional settings. If you want to set your own SMTP server, please select "Custom" and enter required settings.
+      </small>
+    </div>
+  </div>
+  <div
+    class="form-group row"
+    id="80"
+  >
+    <div
+      class="form-label col-sm-3"
+    >
+      <label
+        class="form-label"
+        for="80"
+      >
+        SMTP provider
+      </label>
+    </div>
+    <div
+      class="col-sm-8"
+    >
+      <div
+        class="form-check form-check-inline"
+      >
+        <input
+          class="form-check-input"
+          id="smtp_provider-0"
+          name="smtp_provider"
+          type="radio"
+          value="turris"
+        />
+        <label
+          class="form-check-label"
+          for="smtp_provider-0"
+        >
+          Turris
+        </label>
+      </div>
+      <div
+        class="form-check form-check-inline"
+      >
+        <input
+          checked=""
+          class="form-check-input"
+          id="smtp_provider-1"
+          name="smtp_provider"
+          type="radio"
+          value="custom"
+        />
+        <label
+          class="form-check-label"
+          for="smtp_provider-1"
+        >
+          Custom
+        </label>
+      </div>
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-3"
+      for="81"
+    >
+      Recipient's email
+    </label>
+    <div
+      class="col-sm-8"
+    >
+      <input
+        class="form-control "
+        id="81"
+        required=""
+        type="text"
+        value="some@example.com"
+      />
+      <div
+        class="invalid-feedback"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        Email address of recipient. Separate multiple addresses by comma.
+      </small>
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-3"
+      for="82"
+    >
+      Importance
+    </label>
+    <div
+      class="col-sm-8"
+    >
+      <select
+        class="form-control"
+        id="82"
+      >
+        <option
+          value="1"
+        >
+          Reboot is required
+        </option>
+        <option
+          value="2"
+        >
+          Reboot or attention is required
+        </option>
+        <option
+          value="3"
+        >
+          Reboot or attention is required or update was installed
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      />
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <div
+      class="form-label col-sm-3"
+    >
+      <label
+        class="form-label"
+        for="83"
+      >
+        Send news
+      </label>
+    </div>
+    <div
+      class="form-check col-sm-8"
+    >
+      <input
+        checked=""
+        id="83"
+        type="checkbox"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        Send emails about new features.
+      </small>
+    </div>
+  </div>
+  <div
+    class="form-group row"
+  >
+    <label
+      class="form-control-label col-sm-3"
+      for="117"
+    >
+      Sender's name
+    </label>
+    <div
+      class="col-sm-8"
+    >
+      <input
+        class="form-control "
+        id="117"
+        type="text"
+        value="turris"
+      />
+      <div
+        class="invalid-feedback"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        Name of the sender - will be used as a part of the sender's email address before the "at" sign.
+      </small>
+    </div>
+  </div>
+  <button
+    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+  >
+     
+     
+    Save
+  </button>
+</form>
+`;
