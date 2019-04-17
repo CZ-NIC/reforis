@@ -9,13 +9,13 @@ exports[`<LAN/> Snapshot managed with enabled DHCP. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="62"
     >
       LAN mode
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <select
         class="form-control"
@@ -43,13 +43,13 @@ exports[`<LAN/> Snapshot managed with enabled DHCP. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="75"
     >
       Router IP address
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control "
@@ -72,13 +72,13 @@ exports[`<LAN/> Snapshot managed with enabled DHCP. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="76"
     >
       Network mask
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control "
@@ -99,7 +99,7 @@ exports[`<LAN/> Snapshot managed with enabled DHCP. 1`] = `
     class="form-group row"
   >
     <div
-      class="form-label col-sm-2"
+      class="form-label col-sm-3"
     >
       <label
         class="form-label"
@@ -109,7 +109,7 @@ exports[`<LAN/> Snapshot managed with enabled DHCP. 1`] = `
       </label>
     </div>
     <div
-      class="form-check col-sm-9"
+      class="form-check col-sm-8"
     >
       <input
         id="77"
@@ -126,13 +126,13 @@ exports[`<LAN/> Snapshot managed with enabled DHCP. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="82"
     >
       DHCP start
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control "
@@ -154,13 +154,13 @@ exports[`<LAN/> Snapshot managed with enabled DHCP. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="83"
     >
       DHCP max leases
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control "
@@ -182,13 +182,13 @@ exports[`<LAN/> Snapshot managed with enabled DHCP. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="84"
     >
       Lease time (hours)
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control "
@@ -225,13 +225,13 @@ exports[`<LAN/> Snapshot managed. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="46"
     >
       LAN mode
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <select
         class="form-control"
@@ -259,13 +259,13 @@ exports[`<LAN/> Snapshot managed. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="59"
     >
       Router IP address
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control "
@@ -288,13 +288,13 @@ exports[`<LAN/> Snapshot managed. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="60"
     >
       Network mask
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control "
@@ -315,7 +315,7 @@ exports[`<LAN/> Snapshot managed. 1`] = `
     class="form-group row"
   >
     <div
-      class="form-label col-sm-2"
+      class="form-label col-sm-3"
     >
       <label
         class="form-label"
@@ -325,7 +325,7 @@ exports[`<LAN/> Snapshot managed. 1`] = `
       </label>
     </div>
     <div
-      class="form-check col-sm-9"
+      class="form-check col-sm-8"
     >
       <input
         id="61"
@@ -357,13 +357,13 @@ exports[`<LAN/> Snapshot unmanaged (dhcp). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="1"
     >
       LAN mode
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <select
         class="form-control"
@@ -391,13 +391,13 @@ exports[`<LAN/> Snapshot unmanaged (dhcp). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="2"
     >
       IPv4 protocol
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <select
         class="form-control"
@@ -428,13 +428,13 @@ exports[`<LAN/> Snapshot unmanaged (dhcp). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="3"
     >
       DHCP hostname
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control "
@@ -471,13 +471,13 @@ exports[`<LAN/> Snapshot unmanaged none. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="32"
     >
       LAN mode
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <select
         class="form-control"
@@ -505,13 +505,13 @@ exports[`<LAN/> Snapshot unmanaged none. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="33"
     >
       IPv4 protocol
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <select
         class="form-control"
@@ -557,13 +557,13 @@ exports[`<LAN/> Snapshot unmanaged static. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="13"
     >
       LAN mode
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <select
         class="form-control"
@@ -591,13 +591,13 @@ exports[`<LAN/> Snapshot unmanaged static. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="14"
     >
       IPv4 protocol
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <select
         class="form-control"
@@ -628,13 +628,13 @@ exports[`<LAN/> Snapshot unmanaged static. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="27"
     >
       IP address
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control "
@@ -655,13 +655,13 @@ exports[`<LAN/> Snapshot unmanaged static. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="28"
     >
       Network mask
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control "
@@ -682,13 +682,13 @@ exports[`<LAN/> Snapshot unmanaged static. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="29"
     >
       Gateway
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control "
@@ -709,13 +709,13 @@ exports[`<LAN/> Snapshot unmanaged static. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="30"
     >
       DNS server 1
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control "
@@ -737,13 +737,13 @@ exports[`<LAN/> Snapshot unmanaged static. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="31"
     >
       DNS server 2
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control "

@@ -10,7 +10,7 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
     class="form-group row"
   >
     <div
-      class="form-label col-sm-2"
+      class="form-label col-sm-3"
     >
       <label
         class="form-label"
@@ -20,7 +20,7 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
       </label>
     </div>
     <div
-      class="form-check col-sm-9"
+      class="form-check col-sm-8"
     >
       <input
         id="26"
@@ -35,13 +35,13 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="35"
     >
       SSID
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control "
@@ -62,13 +62,13 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="36"
     >
       Password
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control "
@@ -93,7 +93,7 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
     class="form-group row"
   >
     <div
-      class="form-label col-sm-2"
+      class="form-label col-sm-3"
     >
       <label
         class="form-label"
@@ -103,7 +103,7 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
       </label>
     </div>
     <div
-      class="form-check col-sm-9"
+      class="form-check col-sm-8"
     >
       <input
         id="37"
@@ -121,7 +121,7 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
     id="38"
   >
     <div
-      class="form-label col-sm-2"
+      class="form-label col-sm-3"
     >
       <label
         class="form-label"
@@ -131,7 +131,7 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
       </label>
     </div>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <div
         class="form-check form-check-inline"
@@ -182,13 +182,13 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="39"
     >
       802.11n/ac mode
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <select
         class="form-control"
@@ -240,13 +240,13 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="40"
     >
       Channel
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <select
         class="form-control"
@@ -355,7 +355,7 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
     class="form-group row"
   >
     <div
-      class="form-label col-sm-2"
+      class="form-label col-sm-3"
     >
       <label
         class="form-label"
@@ -365,7 +365,7 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
       </label>
     </div>
     <div
-      class="form-check col-sm-9"
+      class="form-check col-sm-8"
     >
       <input
         id="41"
@@ -390,7 +390,7 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
     class="form-group row"
   >
     <div
-      class="form-label col-sm-2"
+      class="form-label col-sm-3"
     >
       <label
         class="form-label"
@@ -400,7 +400,7 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
       </label>
     </div>
     <div
-      class="form-check col-sm-9"
+      class="form-check col-sm-8"
     >
       <input
         id="27"
@@ -431,7 +431,7 @@ exports[`<WiFi/> Snapshot both modules disabled. 1`] = `
     class="form-group row"
   >
     <div
-      class="form-label col-sm-2"
+      class="form-label col-sm-3"
     >
       <label
         class="form-label"
@@ -441,7 +441,7 @@ exports[`<WiFi/> Snapshot both modules disabled. 1`] = `
       </label>
     </div>
     <div
-      class="form-check col-sm-9"
+      class="form-check col-sm-8"
     >
       <input
         id="1"
@@ -460,7 +460,7 @@ exports[`<WiFi/> Snapshot both modules disabled. 1`] = `
     class="form-group row"
   >
     <div
-      class="form-label col-sm-2"
+      class="form-label col-sm-3"
     >
       <label
         class="form-label"
@@ -470,7 +470,7 @@ exports[`<WiFi/> Snapshot both modules disabled. 1`] = `
       </label>
     </div>
     <div
-      class="form-check col-sm-9"
+      class="form-check col-sm-8"
     >
       <input
         id="2"
@@ -501,7 +501,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
     class="form-group row"
   >
     <div
-      class="form-label col-sm-2"
+      class="form-label col-sm-3"
     >
       <label
         class="form-label"
@@ -511,7 +511,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
       </label>
     </div>
     <div
-      class="form-check col-sm-9"
+      class="form-check col-sm-8"
     >
       <input
         id="52"
@@ -526,13 +526,13 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="61"
     >
       SSID
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control "
@@ -553,13 +553,13 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="62"
     >
       Password
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control "
@@ -584,7 +584,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
     class="form-group row"
   >
     <div
-      class="form-label col-sm-2"
+      class="form-label col-sm-3"
     >
       <label
         class="form-label"
@@ -594,7 +594,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
       </label>
     </div>
     <div
-      class="form-check col-sm-9"
+      class="form-check col-sm-8"
     >
       <input
         id="63"
@@ -612,7 +612,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
     id="64"
   >
     <div
-      class="form-label col-sm-2"
+      class="form-label col-sm-3"
     >
       <label
         class="form-label"
@@ -622,7 +622,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
       </label>
     </div>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <div
         class="form-check form-check-inline"
@@ -673,13 +673,13 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="65"
     >
       802.11n/ac mode
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <select
         class="form-control"
@@ -731,13 +731,13 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="66"
     >
       Channel
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <select
         class="form-control"
@@ -958,7 +958,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
     class="form-group row"
   >
     <div
-      class="form-label col-sm-2"
+      class="form-label col-sm-3"
     >
       <label
         class="form-label"
@@ -968,7 +968,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
       </label>
     </div>
     <div
-      class="form-check col-sm-9"
+      class="form-check col-sm-8"
     >
       <input
         id="67"
@@ -989,13 +989,13 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="77"
     >
       SSID
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control "
@@ -1015,13 +1015,13 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="78"
     >
       Password
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control is-invalid"
@@ -1052,7 +1052,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
     class="form-group row"
   >
     <div
-      class="form-label col-sm-2"
+      class="form-label col-sm-3"
     >
       <label
         class="form-label"
@@ -1062,7 +1062,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
       </label>
     </div>
     <div
-      class="form-check col-sm-9"
+      class="form-check col-sm-8"
     >
       <input
         id="53"
@@ -1094,7 +1094,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
     class="form-group row"
   >
     <div
-      class="form-label col-sm-2"
+      class="form-label col-sm-3"
     >
       <label
         class="form-label"
@@ -1104,7 +1104,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
       </label>
     </div>
     <div
-      class="form-check col-sm-9"
+      class="form-check col-sm-8"
     >
       <input
         id="9"
@@ -1119,13 +1119,13 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="18"
     >
       SSID
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control "
@@ -1146,13 +1146,13 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="19"
     >
       Password
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control "
@@ -1177,7 +1177,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
     class="form-group row"
   >
     <div
-      class="form-label col-sm-2"
+      class="form-label col-sm-3"
     >
       <label
         class="form-label"
@@ -1187,7 +1187,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
       </label>
     </div>
     <div
-      class="form-check col-sm-9"
+      class="form-check col-sm-8"
     >
       <input
         id="20"
@@ -1205,7 +1205,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
     id="21"
   >
     <div
-      class="form-label col-sm-2"
+      class="form-label col-sm-3"
     >
       <label
         class="form-label"
@@ -1215,7 +1215,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
       </label>
     </div>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <div
         class="form-check form-check-inline"
@@ -1266,13 +1266,13 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="22"
     >
       802.11n/ac mode
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <select
         class="form-control"
@@ -1324,13 +1324,13 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="23"
     >
       Channel
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <select
         class="form-control"
@@ -1551,7 +1551,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
     class="form-group row"
   >
     <div
-      class="form-label col-sm-2"
+      class="form-label col-sm-3"
     >
       <label
         class="form-label"
@@ -1561,7 +1561,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
       </label>
     </div>
     <div
-      class="form-check col-sm-9"
+      class="form-check col-sm-8"
     >
       <input
         id="24"
@@ -1586,7 +1586,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
     class="form-group row"
   >
     <div
-      class="form-label col-sm-2"
+      class="form-label col-sm-3"
     >
       <label
         class="form-label"
@@ -1596,7 +1596,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
       </label>
     </div>
     <div
-      class="form-check col-sm-9"
+      class="form-check col-sm-8"
     >
       <input
         id="10"

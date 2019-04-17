@@ -6,7 +6,7 @@ exports[`<RadioSet/> Render radio set 1`] = `
   id="1"
 >
   <div
-    class="form-label col-sm-2"
+    class="form-label col-sm-3"
   >
     <label
       class="form-label"
@@ -16,7 +16,7 @@ exports[`<RadioSet/> Render radio set 1`] = `
     </label>
   </div>
   <div
-    class="col-sm-9"
+    class="col-sm-8"
   >
     <div
       class="form-check form-check-inline"

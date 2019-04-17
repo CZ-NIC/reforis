@@ -5,13 +5,13 @@ exports[`<PasswordInput/> Render number input 1`] = `
   class="form-group row"
 >
   <label
-    class="form-control-label col-sm-2"
+    class="form-control-label col-sm-3"
     for="1"
   >
     Test label
   </label>
   <div
-    class="col-sm-9"
+    class="col-sm-8"
   >
     <input
       class="form-control "

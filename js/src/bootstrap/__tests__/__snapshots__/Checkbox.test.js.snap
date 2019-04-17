@@ -5,7 +5,7 @@ exports[`<Checkbox/> Render checkbox 1`] = `
   class="form-group row"
 >
   <div
-    class="form-label col-sm-2"
+    class="form-label col-sm-3"
   >
     <label
       class="form-label"
@@ -15,7 +15,7 @@ exports[`<Checkbox/> Render checkbox 1`] = `
     </label>
   </div>
   <div
-    class="form-check col-sm-9"
+    class="form-check col-sm-8"
   >
     <input
       checked=""
@@ -36,7 +36,7 @@ exports[`<Checkbox/> Render uncheked checkbox 1`] = `
   class="form-group row"
 >
   <div
-    class="form-label col-sm-2"
+    class="form-label col-sm-3"
   >
     <label
       class="form-label"
@@ -46,7 +46,7 @@ exports[`<Checkbox/> Render uncheked checkbox 1`] = `
     </label>
   </div>
   <div
-    class="form-check col-sm-9"
+    class="form-check col-sm-8"
   >
     <input
       id="2"
