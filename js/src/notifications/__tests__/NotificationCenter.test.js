@@ -37,9 +37,7 @@ describe('<NotificationCenter/>', () => {
         const mockWebSockets = new mockedWS();
         global.fetch = mockFetch();
         const {container} = render(<NotificationsCenter ws={mockWebSockets}/>);
-        // console.log(container);
         await waitForElement(() => getByText(container, 'Email notifications settings'));
-        console.log(container);
         NotificationCenterContainer = container;
     });
 

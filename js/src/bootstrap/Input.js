@@ -11,17 +11,20 @@ import {useUID} from 'react-uid';
 import {LABEL_SIZE, FIELD_SIZE} from './constants';
 
 
-const Input = type => ({label, helpText, error, ...props}) => {
+const Input = type => ({label, helpText, error, children, ...props}) => {
     const uid = useUID();
     return <div className='form-group row'>
         <label className={'form-control-label col-sm-' + LABEL_SIZE} htmlFor={uid}>{label}</label>
         <div className={'col-sm-' + FIELD_SIZE}>
-            <input
-                className={'form-control ' + (!error ? '' : 'is-invalid')}
-                type={type}
-                id={uid}
-                {...props}
-            />
+            <div className='input-group'>
+                <input
+                    className={'form-control ' + (!error ? '' : 'is-invalid')}
+                    type={type}
+                    id={uid}
+                    {...props}
+                />
+                {children}
+            </div>
             <div className='invalid-feedback'>{error}</div>
             <small className="form-text text-muted">{helpText}</small>
         </div>

@@ -7,10 +7,10 @@
 
 import React from 'react';
 import {render} from 'react-testing-library'
+import NumberInput from '../NumberInput';
 
-import NumberInput from '../PasswordInput';
 
-describe('<PasswordInput/>', () => {
+describe('<NumberInput/>', () => {
     it('Render number input', () => {
         const {container} = render(
             <NumberInput
