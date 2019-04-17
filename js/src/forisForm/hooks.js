@@ -56,12 +56,14 @@ function getChangedValue(target) {
     let value = target.value;
     if (target.type === 'checkbox')
         value = target.checked;
-    else if (target.type === 'number')
-        value = parseInt(value);
+    else if (target.type === 'number') {
+        const parsedValue = parseInt(value);
+        value = isNaN(parsedValue) ? value : parsedValue;
+    }
     return value
 }
 
-function useForisFormWS(ws, loadFormData, setFormState) {
+function useForisFormWS(ws, module, loadFormData, setFormState) {
     const [remindsToNWRestart, setRemindsToNWRestart] = useState(null);
 
     useEffect(() => {
@@ -81,7 +83,7 @@ function useForisFormWS(ws, loadFormData, setFormState) {
     return remindsToNWRestart
 }
 
-export function useForisForm(ws, module, prepData, prepDataToSubmit, validator) {
+export function useForisForm(ws, module, prepData, prepDataToSubmit, validator, anotherWSLogic) {
     const [
         formData,
         formErrors,
@@ -97,9 +99,16 @@ export function useForisForm(ws, module, prepData, prepDataToSubmit, validator) 
     useEffect(() => loadFormData(), []);
     useEffect(() => setFormState(isReady ? FORM_STATES.READY : FORM_STATES.LOAD), [isReady,]);
 
-    const remindsToNWRestart = useForisFormWS(ws, loadFormData, setFormState);
+    const remindsToNWRestart = useForisFormWS(ws, module, loadFormData, setFormState);
 
     const postData = useAPIPostData(module);
+
+    // It's useful when the module has different update logic (see notifications email setting.)
+    // If there will be more module with the same logic then it can be split into a few hooks.
+    useEffect(() => {
+        if (anotherWSLogic)
+            anotherWSLogic(setFormState, loadFormData)
+    }, []);
 
     function onSubmit(e) {
         e.preventDefault();
