@@ -9,13 +9,13 @@ exports[`<WAN/> Snapshot WAN IPv4 (pppoe). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="49"
     >
       IPv4 protocol
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <select
         class="form-control"
@@ -46,13 +46,13 @@ exports[`<WAN/> Snapshot WAN IPv4 (pppoe). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="66"
     >
       PAP/CHAP username
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control is-invalid"
@@ -75,13 +75,13 @@ exports[`<WAN/> Snapshot WAN IPv4 (pppoe). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="67"
     >
       PAP/CHAP password
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control is-invalid"
@@ -107,13 +107,13 @@ exports[`<WAN/> Snapshot WAN IPv4 (pppoe). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="51"
     >
       IPv6 protocol
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <select
         class="form-control"
@@ -157,7 +157,7 @@ exports[`<WAN/> Snapshot WAN IPv4 (pppoe). 1`] = `
     class="form-group row"
   >
     <div
-      class="form-label col-sm-2"
+      class="form-label col-sm-3"
     >
       <label
         class="form-label"
@@ -167,7 +167,7 @@ exports[`<WAN/> Snapshot WAN IPv4 (pppoe). 1`] = `
       </label>
     </div>
     <div
-      class="form-check col-sm-9"
+      class="form-check col-sm-8"
     >
       <input
         id="52"
@@ -200,13 +200,13 @@ exports[`<WAN/> Snapshot WAN IPv4 (static). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="17"
     >
       IPv4 protocol
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <select
         class="form-control"
@@ -237,13 +237,13 @@ exports[`<WAN/> Snapshot WAN IPv4 (static). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="34"
     >
       IP address
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control is-invalid"
@@ -266,13 +266,13 @@ exports[`<WAN/> Snapshot WAN IPv4 (static). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="35"
     >
       Network mask
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control is-invalid"
@@ -295,13 +295,13 @@ exports[`<WAN/> Snapshot WAN IPv4 (static). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="36"
     >
       Gateway
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control is-invalid"
@@ -324,13 +324,13 @@ exports[`<WAN/> Snapshot WAN IPv4 (static). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="37"
     >
       DNS server 1
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control "
@@ -352,13 +352,13 @@ exports[`<WAN/> Snapshot WAN IPv4 (static). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="38"
     >
       DNS server 2
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control "
@@ -383,13 +383,13 @@ exports[`<WAN/> Snapshot WAN IPv4 (static). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="19"
     >
       IPv6 protocol
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <select
         class="form-control"
@@ -433,7 +433,7 @@ exports[`<WAN/> Snapshot WAN IPv4 (static). 1`] = `
     class="form-group row"
   >
     <div
-      class="form-label col-sm-2"
+      class="form-label col-sm-3"
     >
       <label
         class="form-label"
@@ -443,7 +443,7 @@ exports[`<WAN/> Snapshot WAN IPv4 (static). 1`] = `
       </label>
     </div>
     <div
-      class="form-check col-sm-9"
+      class="form-check col-sm-8"
     >
       <input
         id="20"
@@ -476,13 +476,13 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="188"
     >
       IPv4 protocol
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <select
         class="form-control"
@@ -513,13 +513,13 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="189"
     >
       DHCP hostname
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control "
@@ -544,13 +544,13 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="190"
     >
       IPv6 protocol
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <select
         class="form-control"
@@ -591,13 +591,13 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="207"
     >
       Provider IPv4
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control is-invalid"
@@ -622,13 +622,13 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="208"
     >
       Routed IPv6 prefix
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control is-invalid"
@@ -653,13 +653,13 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="209"
     >
       MTU
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control is-invalid"
@@ -684,7 +684,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled. 1`] = `
     class="form-group row"
   >
     <div
-      class="form-label col-sm-2"
+      class="form-label col-sm-3"
     >
       <label
         class="form-label"
@@ -694,7 +694,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled. 1`] = `
       </label>
     </div>
     <div
-      class="form-check col-sm-9"
+      class="form-check col-sm-8"
     >
       <input
         id="210"
@@ -711,13 +711,13 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="219"
     >
       Tunnel ID
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control is-invalid"
@@ -742,13 +742,13 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="220"
     >
       Username
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control is-invalid"
@@ -773,13 +773,13 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled. 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="221"
     >
       Key
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control is-invalid"
@@ -807,7 +807,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled. 1`] = `
     class="form-group row"
   >
     <div
-      class="form-label col-sm-2"
+      class="form-label col-sm-3"
     >
       <label
         class="form-label"
@@ -817,7 +817,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled. 1`] = `
       </label>
     </div>
     <div
-      class="form-check col-sm-9"
+      class="form-check col-sm-8"
     >
       <input
         id="191"
@@ -850,13 +850,13 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="156"
     >
       IPv4 protocol
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <select
         class="form-control"
@@ -887,13 +887,13 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="157"
     >
       DHCP hostname
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control "
@@ -918,13 +918,13 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="158"
     >
       IPv6 protocol
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <select
         class="form-control"
@@ -965,13 +965,13 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="175"
     >
       Provider IPv4
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control is-invalid"
@@ -996,13 +996,13 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="176"
     >
       Routed IPv6 prefix
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control is-invalid"
@@ -1027,13 +1027,13 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="177"
     >
       MTU
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control is-invalid"
@@ -1058,7 +1058,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
     class="form-group row"
   >
     <div
-      class="form-label col-sm-2"
+      class="form-label col-sm-3"
     >
       <label
         class="form-label"
@@ -1068,7 +1068,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
       </label>
     </div>
     <div
-      class="form-check col-sm-9"
+      class="form-check col-sm-8"
     >
       <input
         id="178"
@@ -1088,7 +1088,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
     class="form-group row"
   >
     <div
-      class="form-label col-sm-2"
+      class="form-label col-sm-3"
     >
       <label
         class="form-label"
@@ -1098,7 +1098,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
       </label>
     </div>
     <div
-      class="form-check col-sm-9"
+      class="form-check col-sm-8"
     >
       <input
         id="159"
@@ -1131,13 +1131,13 @@ exports[`<WAN/> Snapshot WAN IPv6 (6to4). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="130"
     >
       IPv4 protocol
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <select
         class="form-control"
@@ -1168,13 +1168,13 @@ exports[`<WAN/> Snapshot WAN IPv6 (6to4). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="131"
     >
       DHCP hostname
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control "
@@ -1199,13 +1199,13 @@ exports[`<WAN/> Snapshot WAN IPv6 (6to4). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="132"
     >
       IPv6 protocol
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <select
         class="form-control"
@@ -1246,13 +1246,13 @@ exports[`<WAN/> Snapshot WAN IPv6 (6to4). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="149"
     >
       Public IPv4
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control is-invalid"
@@ -1280,7 +1280,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6to4). 1`] = `
     class="form-group row"
   >
     <div
-      class="form-label col-sm-2"
+      class="form-label col-sm-3"
     >
       <label
         class="form-label"
@@ -1290,7 +1290,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6to4). 1`] = `
       </label>
     </div>
     <div
-      class="form-check col-sm-9"
+      class="form-check col-sm-8"
     >
       <input
         id="133"
@@ -1323,13 +1323,13 @@ exports[`<WAN/> Snapshot WAN IPv6 (dhcpv6). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="75"
     >
       IPv4 protocol
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <select
         class="form-control"
@@ -1360,13 +1360,13 @@ exports[`<WAN/> Snapshot WAN IPv6 (dhcpv6). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="76"
     >
       DHCP hostname
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control "
@@ -1391,13 +1391,13 @@ exports[`<WAN/> Snapshot WAN IPv6 (dhcpv6). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="77"
     >
       IPv6 protocol
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <select
         class="form-control"
@@ -1438,13 +1438,13 @@ exports[`<WAN/> Snapshot WAN IPv6 (dhcpv6). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="94"
     >
       Custom DUID
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control "
@@ -1469,7 +1469,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (dhcpv6). 1`] = `
     class="form-group row"
   >
     <div
-      class="form-label col-sm-2"
+      class="form-label col-sm-3"
     >
       <label
         class="form-label"
@@ -1479,7 +1479,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (dhcpv6). 1`] = `
       </label>
     </div>
     <div
-      class="form-check col-sm-9"
+      class="form-check col-sm-8"
     >
       <input
         id="78"
@@ -1511,13 +1511,13 @@ exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="96"
     >
       IPv4 protocol
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <select
         class="form-control"
@@ -1548,13 +1548,13 @@ exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="97"
     >
       DHCP hostname
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control "
@@ -1579,13 +1579,13 @@ exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="98"
     >
       IPv6 protocol
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <select
         class="form-control"
@@ -1626,13 +1626,13 @@ exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="115"
     >
       Address
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control is-invalid"
@@ -1657,13 +1657,13 @@ exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="116"
     >
       Gateway
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control is-invalid"
@@ -1686,13 +1686,13 @@ exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="117"
     >
       Prefix
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control is-invalid"
@@ -1717,13 +1717,13 @@ exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="118"
     >
       DNS server 1
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control "
@@ -1745,13 +1745,13 @@ exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="119"
     >
       DNS server 2
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control "
@@ -1776,7 +1776,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
     class="form-group row"
   >
     <div
-      class="form-label col-sm-2"
+      class="form-label col-sm-3"
     >
       <label
         class="form-label"
@@ -1786,7 +1786,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
       </label>
     </div>
     <div
-      class="form-check col-sm-9"
+      class="form-check col-sm-8"
     >
       <input
         id="99"
@@ -1819,13 +1819,13 @@ exports[`<WAN/> Snapshot: MAC enabled 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="234"
     >
       IPv4 protocol
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <select
         class="form-control"
@@ -1856,13 +1856,13 @@ exports[`<WAN/> Snapshot: MAC enabled 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="235"
     >
       DHCP hostname
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control "
@@ -1887,13 +1887,13 @@ exports[`<WAN/> Snapshot: MAC enabled 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="236"
     >
       IPv6 protocol
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <select
         class="form-control"
@@ -1937,7 +1937,7 @@ exports[`<WAN/> Snapshot: MAC enabled 1`] = `
     class="form-group row"
   >
     <div
-      class="form-label col-sm-2"
+      class="form-label col-sm-3"
     >
       <label
         class="form-label"
@@ -1947,7 +1947,7 @@ exports[`<WAN/> Snapshot: MAC enabled 1`] = `
       </label>
     </div>
     <div
-      class="form-check col-sm-9"
+      class="form-check col-sm-8"
     >
       <input
         id="237"
@@ -1964,13 +1964,13 @@ exports[`<WAN/> Snapshot: MAC enabled 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="254"
     >
       MAC address
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control is-invalid"
@@ -2011,13 +2011,13 @@ exports[`<WAN/> Snapshot: WAN IPv4 dhcp, WAN IPv6 dhcp, MAC disabled 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="1"
     >
       IPv4 protocol
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <select
         class="form-control"
@@ -2048,13 +2048,13 @@ exports[`<WAN/> Snapshot: WAN IPv4 dhcp, WAN IPv6 dhcp, MAC disabled 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="2"
     >
       DHCP hostname
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <input
         class="form-control "
@@ -2079,13 +2079,13 @@ exports[`<WAN/> Snapshot: WAN IPv4 dhcp, WAN IPv6 dhcp, MAC disabled 1`] = `
     class="form-group row"
   >
     <label
-      class="form-control-label col-sm-2"
+      class="form-control-label col-sm-3"
       for="3"
     >
       IPv6 protocol
     </label>
     <div
-      class="col-sm-9"
+      class="col-sm-8"
     >
       <select
         class="form-control"
@@ -2129,7 +2129,7 @@ exports[`<WAN/> Snapshot: WAN IPv4 dhcp, WAN IPv6 dhcp, MAC disabled 1`] = `
     class="form-group row"
   >
     <div
-      class="form-label col-sm-2"
+      class="form-label col-sm-3"
     >
       <label
         class="form-label"
@@ -2139,7 +2139,7 @@ exports[`<WAN/> Snapshot: WAN IPv4 dhcp, WAN IPv6 dhcp, MAC disabled 1`] = `
       </label>
     </div>
     <div
-      class="form-check col-sm-9"
+      class="form-check col-sm-8"
     >
       <input
         id="4"

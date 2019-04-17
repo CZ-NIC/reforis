@@ -5,13 +5,12 @@
  * See /LICENSE for more information.
  */
 import React from 'react';
-import {render, waitForElement, getByText, queryByText, fireEvent, act} from 'react-testing-library';
+import {render, waitForElement, getByText, getByLabelText, queryByText, fireEvent, act} from 'react-testing-library';
 
 import mockFetch from '../../testUtils/mockFetch';
 import {mockedWS} from '../../testUtils/mockWS';
 import {notificationsFixture} from './__fixtures__/notifications';
-
-import NotificationsCenter from '../NotificationsCenter';
+import NotificationsDropdown from '../NotificationsDropdown/NotificationsDropdown';
 
 
 describe('useNotifications hook.', () => {
@@ -23,7 +22,7 @@ describe('useNotifications hook.', () => {
         global.fetch = mockedFetch;
         mockWebSockets = new mockedWS();
 
-        const {container} = render(<NotificationsCenter ws={mockWebSockets}/>);
+        const {container} = render(<NotificationsDropdown ws={mockWebSockets}/>);
         //Waiting for element is rendered.
         await waitForElement(() => getByText(container, 'Notifications'));
         notificationsContainer = container
@@ -39,19 +38,19 @@ describe('useNotifications hook.', () => {
     });
 
     it("Don't show displayed notifications.", async () => {
-        const HTMLnotificationMessage = queryByText(notificationsContainer, 'Displayed notification message.');
+        const HTMLnotificationMessage = queryByText(notificationsContainer, 'Displayed notification me...');
         expect(HTMLnotificationMessage).toBeNull();
     });
 
     it("Dismiss notification.", async () => {
         expect(mockedFetch).toHaveBeenCalledTimes(1);
         act(() => {
-            fireEvent.click(getByText(notificationsContainer, '×'));
+            fireEvent.click(notificationsContainer.querySelector('[class="fas fa-times"]'));
         });
         expect(mockedFetch).toHaveBeenCalledTimes(2);
         let HTMLnotificationMessage = queryByText(notificationsContainer, 'Notification message.');
         expect(HTMLnotificationMessage).toBeNull();
-        HTMLnotificationMessage = queryByText(notificationsContainer, 'Second notification message.');
+        HTMLnotificationMessage = queryByText(notificationsContainer, 'Second notification messa...');
         expect(HTMLnotificationMessage).not.toBeNull();
     });
 
@@ -63,7 +62,7 @@ describe('useNotifications hook.', () => {
         expect(mockedFetch).toHaveBeenCalledTimes(2);
         let HTMLnotificationMessage = queryByText(notificationsContainer, 'Notification message.');
         expect(HTMLnotificationMessage).toBeNull();
-        HTMLnotificationMessage = queryByText(notificationsContainer, 'Second notification message.');
+        HTMLnotificationMessage = queryByText(notificationsContainer, 'Second notification messa...');
         expect(HTMLnotificationMessage).toBeNull();
     });
 });

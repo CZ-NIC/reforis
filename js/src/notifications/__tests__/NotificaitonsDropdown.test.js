@@ -11,8 +11,8 @@ import {render} from 'react-testing-library';
 import mockFetch from '../../testUtils/mockFetch';
 import {mockedWS} from '../../testUtils/mockWS';
 import {notificationsFixture} from './__fixtures__/notifications';
+import NotificationsDropdown from '../NotificationsDropdown/NotificationsDropdown';
 
-import NotificationsDropdown from '../NotificationsDropdown';
 
 
 describe('<NotificationsDropdown/>', () => {

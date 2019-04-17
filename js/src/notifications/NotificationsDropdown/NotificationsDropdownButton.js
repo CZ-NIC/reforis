@@ -8,7 +8,8 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-import {ForisURLs} from '../constants';
+import {ForisURLs} from '../../constants';
+
 
 const SMALL_SCREEN = 699;
 

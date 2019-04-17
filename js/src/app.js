@@ -8,11 +8,11 @@
 import React from 'react';
 import {render} from 'react-dom';
 
+import NotificationsDropdown from './notifications/NotificationsDropdown/NotificationsDropdown';
+import NotificationsCenter from './notifications/NotificationsCenter/NotificationsCenter';
 import WiFi from './wifi/WiFi';
 import WAN from './wan/WAN';
 import LAN from './lan/LAN';
-import NotificationsDropdown from './notifications/NotificationsDropdown';
-import NotificationsCenter from './notifications/NotificationsCenter';
 import ConnectionTest from './connectionTest/ConnectionTest';
 import webSockets from './webSockets';
 

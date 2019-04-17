@@ -20,7 +20,7 @@ ForisForm.propTypes = {
     children: propTypes.node.isRequired,
 };
 
-export default function ForisForm({ws, module, prepData, prepDataToSubmit, validator, children}) {
+export default function ForisForm({ws, module, prepData, prepDataToSubmit, validator, anotherWSLogic, children}) {
     const [
         formData,
         formErrors,
@@ -30,7 +30,7 @@ export default function ForisForm({ws, module, prepData, prepDataToSubmit, valid
 
         setFormValue,
         onSubmit,
-    ] = useForisForm(ws, module, prepData, prepDataToSubmit, validator);
+    ] = useForisForm(ws, module, prepData, prepDataToSubmit, validator, anotherWSLogic);
 
     if (JSON.stringify(formData) === '{}')
         return null;

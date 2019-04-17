@@ -6,7 +6,7 @@
 .PHONY: all install run run-js test test-web clean
 
 SHELL=/bin/bash
-PYTHON=python3.7
+PYTHON=python3.6
 FLASK=flask
 
 VENV_NAME?=venv
@@ -44,6 +44,10 @@ install-js: js/package.json
 
 run:
 	${FLASK} run --host="0.0.0.0" --port=81
+
+run-ws:
+	foris-ws  --host "0.0.0.0" --port 9081 -a filesystem -d mqtt --mqtt-host localhost --mqtt-port 11883 \
+	--mqtt-passwd-file '/etc/fosquitto/credentials.plain';
 
 watch-js:
 	cd ${JS_DIR};\

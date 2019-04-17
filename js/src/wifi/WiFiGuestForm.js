@@ -30,7 +30,7 @@ WifiGuestForm.propTypes = {
 export function WifiGuestForm({formData, formErrors, setFormValue, ...props}) {
     return <>
         <CheckBox
-            label='Enable Guest Wifi'
+            label={_('Enable Guest Wifi')}
             checked={formData.enabled}
             helpText={HELP_TEXTS.guest_wifi_enabled}
 
@@ -55,7 +55,7 @@ export function WifiGuestForm({formData, formErrors, setFormValue, ...props}) {
                 />
 
                 <PasswordInput
-                    label='Password'
+                    label={_('Password')}
                     value={formData.password}
                     helpText={HELP_TEXTS.password}
                     error={formErrors.password}

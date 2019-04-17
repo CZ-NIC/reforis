@@ -9,8 +9,10 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-import useNotifications from './hooks';
+import useNotifications from '../hooks';
 import NotificationsCenterList from './NotificationsCenterList';
+import NotificationsEmailSettings from './NotificationsEmailSettings/NotificationsEmailSettings';
+
 
 NotificationsCenter.propTypes = {
     ws: propTypes.object.isRequired
@@ -31,12 +33,12 @@ export default function NotificationsCenter({ws}) {
     }
 
     return <div id='notifications-center'>
-        <h3>{_('Settings')}</h3>
+        <NotificationsEmailSettings ws={ws}/>
+
         <h3>{_('Notifications')}</h3>
         {
             notifications.length !== 0 ?
-                getDismissAllButton() :
-                <p className='text-muted text-center'>{_('No notifications')}</p>
+                getDismissAllButton() : <p className='text-muted text-center'>{_('No notifications')}</p>
         }
 
         <NotificationsCenterList

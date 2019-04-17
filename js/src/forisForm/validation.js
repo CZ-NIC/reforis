@@ -12,6 +12,7 @@ export const ERROR_MESSAGES = {
     domain: _('This is not a valid domain name.'),
     DUID: _('This is not a valid DUID.'),
     MAC: _('This is not a valid MAC address.'),
+    MultipleEmails: _("Doesn't contain a list of emails separated by commas."),
 };
 
 const REs = {
@@ -21,6 +22,7 @@ const REs = {
     domain: /^([a-zA-Z0-9-]{1,63}\.?)*$/,
     DUID: /^([0-9a-fA-F]{2}){4}([0-9a-fA-F]{2})*$/,
     MAC: /^([a-fA-F0-9]{2}:){5}[a-fA-F0-9]{2}$/,
+    MultipleEmails: /^([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+ *)( *, *[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+ *)*$/,
 };
 
 
@@ -36,4 +38,5 @@ module.exports = {
     validateDomain: createValidator('domain'),
     validateDUID: createValidator('DUID'),
     validateMAC: createValidator('MAC'),
+    validateMultipleEmails: createValidator('MultipleEmails'),
 };
