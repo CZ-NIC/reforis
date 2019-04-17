@@ -37,6 +37,20 @@ def notifications():
         _process_backend_error(e)
 
 
+@api.route('/notifications-settings', methods=['GET', 'POST'])
+def notifications_settings():
+    try:
+        res = ''
+        if request.method == 'GET':
+            res = current_app.backend.perform('router_notifications', 'get_settings')
+        elif request.method == 'POST':
+            data = request.json
+            res = current_app.backend.perform('router_notifications', 'update_email_settings', data)
+        return jsonify(res)
+    except ExceptionInBackend as e:
+        _process_backend_error(e)
+
+
 @api.route('/wifi', methods=['GET', 'POST'])
 def wifi():
     return _foris_controller_settings_call('wifi')
