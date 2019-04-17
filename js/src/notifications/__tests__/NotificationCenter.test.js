@@ -5,22 +5,41 @@
  * See /LICENSE for more information.
  */
 import React from 'react';
-import {render} from 'react-testing-library';
+import {render, waitForElement, getByText} from 'react-testing-library';
 
-import mockFetch from '../../testUtils/mockFetch';
 import {mockedWS} from '../../testUtils/mockWS';
-import {notificationsFixture} from './__fixtures__/notifications';
+import {notificationsEmailSettingsFixure, notificationsFixture} from './__fixtures__/notifications';
+import NotificationsCenter from '../NotificationsCenter/NotificationsCenter';
 
-import NotificationsCenter from '../NotificationsCenter';
+function mockFetch() {
+    return jest.fn((url) => {
+            return new Promise((resolve, reject) => {
+                resolve({
+                    ok: true,
+                    json: () => {
+                        if (url === '/api/notifications'){
+                            return notificationsFixture();
+                        }
+                        else if (url === '/api/notifications-settings'){
+                            return notificationsEmailSettingsFixure()
+                        }
+                    },
+                });
+            })
+        }
+    );
+}
 
 describe('<NotificationCenter/>', () => {
     let NotificationCenterContainer;
-
-    beforeEach(() => {
+    beforeEach(async () => {
         const mockWebSockets = new mockedWS();
-        global.fetch = mockFetch(notificationsFixture());
+        global.fetch = mockFetch();
         const {container} = render(<NotificationsCenter ws={mockWebSockets}/>);
-        NotificationCenterContainer = container
+        // console.log(container);
+        await waitForElement(() => getByText(container, 'Email notifications settings'));
+        console.log(container);
+        NotificationCenterContainer = container;
     });
 
     it('Test with snapshot.', () => {

@@ -50,6 +50,7 @@ NotificationsEmailSettingsForm.defaultProps = {
 
 export default function NotificationsEmailSettingsForm({formData, formErrors, setFormValue, ...props}) {
     return <>
+        <h3>{_('Email notifications settings')}</h3>
         <CheckBox
             label={_('Enable email notifications')}
             checked={formData.enabled}

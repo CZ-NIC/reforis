@@ -33,7 +33,6 @@ export default function NotificationsCenter({ws}) {
     }
 
     return <div id='notifications-center'>
-        <h3>{_('Email notifications settings')}</h3>
         <NotificationsEmailSettings ws={ws}/>
 
         <h3>{_('Notifications')}</h3>
