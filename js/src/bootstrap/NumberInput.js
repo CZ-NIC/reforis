@@ -10,7 +10,7 @@ import React from 'react';
 import Input from './Input';
 import PropTypes from 'prop-types';
 
-const NumberInput = Input('number');
+const NumberInput = ({...props}) => <Input type="number" {...props}/>;
 
 NumberInput.propTypes = {
     label: PropTypes.string.isRequired,

@@ -132,6 +132,7 @@ function DeviceForm({formData, formErrors, setFormValue, ...props}) {
                 />
 
                 <PasswordInput
+                    withEye={true}
                     label='Password'
                     value={formData.password}
                     error={formErrors.password}

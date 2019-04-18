@@ -11,7 +11,8 @@ import PropTypes from 'prop-types';
 import Input from './Input';
 
 
-const TextInput = Input('text');
+const TextInput = ({...props}) => <Input type="text" {...props}/>;
+
 
 TextInput.propTypes = {
     label: PropTypes.string.isRequired,

@@ -364,7 +364,7 @@ exports[`<NotificationCenter/> Test with snapshot. 1`] = `
     >
       <label
         class="form-control-label col-sm-3"
-        for="66"
+        for="11"
       >
         Password
       </label>
@@ -377,20 +377,20 @@ exports[`<NotificationCenter/> Test with snapshot. 1`] = `
           <input
             autocomplete="new-password"
             class="form-control "
-            id="66"
+            id="11"
             type="password"
             value="test_password"
           />
           <div
             class="input-group-append"
           >
-            <button
+            <a
               class="input-group-text"
             >
               <i
                 class="fa fa-eye"
               />
-            </button>
+            </a>
           </div>
         </div>
         <div

@@ -17,19 +17,23 @@ PasswordInput.propTypes = {
     helpText: PropTypes.string,
 };
 
-export default function PasswordInput(props) {
+export default function PasswordInput({withEye, ...props}) {
     const [isHidden, setHidden] = useState(true);
-
-    const InputField = isHidden ? Input('password') : Input('text');
-    return <InputField
+    return <Input
+        type={withEye ? isHidden ? 'password' : 'text' : 'password'}
         autoComplete={isHidden ? 'new-password' : null}
         {...props}
     >
-        <div className="input-group-append">
-            <button className="input-group-text" onClick={() => setHidden(isHidden => !isHidden)}>
-                <i className={'fa ' + (isHidden ? 'fa-eye' : 'fa-eye-slash')}/>
-            </button>
-        </div>
-    </InputField>
+        {withEye ?
+            <div className="input-group-append">
+                <a className="input-group-text" onClick={e => {
+                    e.preventDefault();
+                    setHidden(isHidden => !isHidden);
+                }}>
+                    <i className={'fa ' + (isHidden ? 'fa-eye' : 'fa-eye-slash')}/>
+                </a>
+            </div>
+            : null}
+    </Input>
 }
 
