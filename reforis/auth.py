@@ -11,16 +11,25 @@ from flask import session, redirect, current_app, request
 
 
 def login_to_foris(password):
-    encoded_password = base64.b64encode(password.encode('utf-8')).decode('utf-8')
-    res = current_app.backend.perform('password', 'check', {'password': encoded_password})
-
-    # consider unset password as successful auth maybe set some session variable in this case
-    if res['status'] in ('unset', 'good'):
+    if check_password(password):
         session['logged'] = True
         return True
 
     logout_from_foris()
     return False
+
+
+def check_password(password):
+    decoded_password = _decode_password_to_base64(password)
+    res = current_app.backend.perform('password', 'check', {'password': decoded_password})
+
+    # consider unset password as successful auth maybe set some session variable in this case
+    if res['status'] in ('unset', 'good'):
+        return True
+
+
+def _decode_password_to_base64(password):
+    return base64.b64encode(password.encode('utf-8')).decode('utf-8')
 
 
 def logout_from_foris():
@@ -38,6 +47,7 @@ def register_login_required(app):
         if session.get('logged', False):
             return
 
+        # TODO:
         # Static files are not protected. (Can happen only at dev env.)
         if request.endpoint == 'static':
             return

@@ -16,11 +16,11 @@ export default class API {
         this.url = url;
         for (let endpoint of endpoints) {
             this[endpoint.name] = {};
-            this.bindEnpoint(endpoint);
+            this.bindEndpoint(endpoint);
         }
     }
 
-    bindEnpoint(endpoint) {
+    bindEndpoint(endpoint) {
         const url = `${this.url}${endpoint.url}`;
         for (let method of endpoint.methods) {
             let functionToBind;

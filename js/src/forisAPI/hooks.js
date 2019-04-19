@@ -24,10 +24,12 @@ export function useAPIGetData(endpoint) {
 }
 
 export function useAPIPostData(endpoint) {
-    function postData(data) {
+    function postData(data, callback) {
         ForisAPI[endpoint].post(data).then(
             data => {
-                console.log(data) //TODO: remove
+                console.log(data); //TODO: remove
+                if (callback)
+                    callback(data);
             }
         );
     }

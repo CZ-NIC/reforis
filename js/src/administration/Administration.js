@@ -8,8 +8,8 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-import Password from './Password';
-import RegionAndTime from './RegionAndTime';
+import Password from './Password/Password';
+import RegionAndTime from './RegionAndTime/RegionAndTime';
 import Reboot from './Reboot';
 
 Administration.propTypes = {
@@ -17,9 +17,10 @@ Administration.propTypes = {
 };
 
 export default function Administration({ws}) {
+
     return <>
-        <Password ws={ws}/>
-        <RegionAndTime ws={ws}/>
-        <Reboot ws={ws}/>
+        <Password/>
+        <RegionAndTime/>
+        {/*<Reboot ws={ws}/>*/}
     </>
 }

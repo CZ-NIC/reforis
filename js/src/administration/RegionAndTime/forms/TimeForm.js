@@ -5,7 +5,3 @@
  * See /LICENSE for more information.
  */
 
-export const ForisURLs = {
-    notifications: '/notifications',
-    luci: '/cgi-bin/luci',
-};
