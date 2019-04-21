@@ -15,9 +15,9 @@
 
     {# Custom CSS #}
     <link rel="stylesheet" href="{{ url_for('static', filename = 'css/custom.css') }}"/>
+    {% block css %}{% endblock %}
 
     {# Custom js#}
-
     {% include 'includes/locale.html' %}
     {% include 'includes/constants.html' %}
 

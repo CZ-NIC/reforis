@@ -1,5 +1,15 @@
 {% extends 'base.html' %}
 
+{% block js %}
+    <script type="text/javascript">
+        ForisTranslations.load({{ babel_tzinfo_catalog | safe }});
+    </script>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/react-datatime.css') }}"/>
+{% endblock %}
+
 {% block title %}
     {% trans %}Administration{% endtrans %}
 {% endblock %}

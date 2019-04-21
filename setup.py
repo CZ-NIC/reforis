@@ -51,6 +51,8 @@ setuptools.setup(
     extras_require={
         'devel': [
             'pytest==3.7.1',
+            'l18n==2018.5',
+            'pycountry==18.12.8',
         ],
     },
 
