@@ -52,7 +52,6 @@ export default function RootPasswordForm({formData, formState, formErrors, setFo
         <SubmitButton
             state={formState}
             disabled={!!formErrors.newRootPassword}
-            onSubmit={postRootPassword}
         />
     </form>
 }

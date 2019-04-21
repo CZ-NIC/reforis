@@ -2,7 +2,7 @@
 #
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
-import base64
+
 import json
 from flask import Blueprint, current_app, request, jsonify
 
@@ -147,6 +147,15 @@ def password():
 @api.route('/region-and-time', methods=['GET', 'POST'])
 def region_and_time():
     return _foris_controller_settings_call('time')
+
+
+@api.route('/time', methods=['GET'])
+def time():
+    try:
+        res = current_app.backend.perform('time', 'get_router_time')
+        return jsonify(res)
+    except ExceptionInBackend as e:
+        _process_backend_error(e)
 
 
 def _foris_controller_settings_call(module):

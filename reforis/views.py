@@ -4,8 +4,10 @@
 #  See /LICENSE for more information.
 
 
-from flask import Blueprint, render_template, request, redirect, url_for, session
+from flask import Blueprint, current_app, redirect, render_template, request, session, url_for
+from flask_babel import get_locale
 
+from reforis import TranslationsHelper
 from reforis.auth import login_to_foris, logout_from_foris
 
 base = Blueprint(
@@ -61,4 +63,11 @@ def lan():
 
 @base.route('/administration')
 def administration():
-    return render_template('administration.html')
+    babel = current_app.extensions['babel']
+    translations = TranslationsHelper.load(
+        # There is only one directory with translations in Foris so it's OK.
+        next(babel.translation_directories),
+        [get_locale()],
+        'tzinfo'
+    )
+    return render_template('administration.html', babel_tzinfo_catalog=translations.json_catalog)

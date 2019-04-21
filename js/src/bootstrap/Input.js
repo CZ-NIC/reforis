@@ -13,17 +13,16 @@ import {LABEL_SIZE, FIELD_SIZE} from './constants';
 
 export default function Input({type, label, helpText, error, children, ...props}) {
     const uid = useUID();
-
     return <div className='form-group row'>
         <label className={'form-control-label col-sm-' + LABEL_SIZE} htmlFor={uid}>{label}</label>
         <div className={'col-sm-' + FIELD_SIZE}>
             <div className='input-group'>
                 <input
-                    className={'form-control ' + (!error ? '' : 'is-invalid')}
                     type={type}
                     id={uid}
 
                     {...props}
+                    className={'form-control ' + (error ? 'is-invalid' : '')}
                 />
                 {children}
             </div>
