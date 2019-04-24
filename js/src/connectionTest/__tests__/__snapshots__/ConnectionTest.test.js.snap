@@ -77,7 +77,7 @@ exports[`<ConnectionTest/> Snapshot after connection test. 1`] = `
     </tbody>
   </table>
   <button
-    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    class="btn btn-primary"
     disabled=""
   >
     <span
@@ -96,7 +96,7 @@ exports[`<ConnectionTest/> Snapshot after connection test. 1`] = `
 exports[`<ConnectionTest/> Snapshot before connection test. 1`] = `
 <form>
   <button
-    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    class="btn btn-primary"
   >
      
      

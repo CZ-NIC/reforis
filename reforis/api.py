@@ -11,7 +11,7 @@ from reforis.auth import check_password, _decode_password_to_base64
 from reforis.backend import ExceptionInBackend
 
 api = Blueprint(
-    'api',
+    'ForisAPI',
     __name__,
     template_folder='templates',
     static_folder='static',
@@ -156,6 +156,20 @@ def time():
         return jsonify(res)
     except ExceptionInBackend as e:
         _process_backend_error(e)
+
+
+@api.route('/reboot', methods=['GET'])
+def reboot():
+    try:
+        res = current_app.backend.perform('maintain', 'reboot')
+        return jsonify(res)
+    except ExceptionInBackend as e:
+        _process_backend_error(e)
+
+
+@api.route('/health-check', methods=['GET'])
+def health_check():
+    return jsonify(True)
 
 
 def _foris_controller_settings_call(module):

@@ -383,13 +383,9 @@ a,
 }
 
 /*Spinner*/
-
-.spinner-wrapper {
-    display: none;
-}
-
 .spinner-background {
-    background-color: rgba(2, 2, 2, .3);
+    background-color: rgba(2, 2, 2, .5);
+    color: rgb(230, 230, 230);
     position: fixed;
     width: 100%;
     height: 100%;

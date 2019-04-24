@@ -2,7 +2,7 @@
 
 exports[`<Button /> Render button correctly 1`] = `
 <button
-  class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
+  class="btn btn-primary "
 >
    
    
@@ -12,7 +12,7 @@ exports[`<Button /> Render button correctly 1`] = `
 
 exports[`<Button /> Render button with custom classes 1`] = `
 <button
-  class="btn one two three offset-lg-8 col-lg-3 col-sm-12"
+  class="btn one two three"
 >
    
    
@@ -22,7 +22,7 @@ exports[`<Button /> Render button with custom classes 1`] = `
 
 exports[`<Button /> Render button with spinner 1`] = `
 <button
-  class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
+  class="btn btn-primary "
 >
   <span
     aria-hidden="true"

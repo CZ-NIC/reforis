@@ -9,8 +9,8 @@ import React from 'react';
 import propTypes from 'prop-types';
 
 import Select from '../bootstrap/Select';
-import DHCPForm, {validateDHCPForm} from '../forisForm/networkForms/DHCPForm';
-import StaticForm, {validateStaticForm} from '../forisForm/networkForms/StaticForm';
+import DHCPForm, {validateDHCPForm} from '../forisCommonComponents/networkForms/DHCPForm';
+import StaticForm, {validateStaticForm} from '../forisCommonComponents/networkForms/StaticForm';
 
 const LAN_TYPES = {
     dhcp: 'dhcp',

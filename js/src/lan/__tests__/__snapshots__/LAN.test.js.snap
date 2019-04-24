@@ -227,7 +227,7 @@ exports[`<LAN/> Snapshot managed with enabled DHCP. 1`] = `
     </div>
   </div>
   <button
-    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
   >
      
      
@@ -367,7 +367,7 @@ exports[`<LAN/> Snapshot managed. 1`] = `
     </div>
   </div>
   <button
-    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
   >
      
      
@@ -485,7 +485,7 @@ exports[`<LAN/> Snapshot unmanaged (dhcp). 1`] = `
     </div>
   </div>
   <button
-    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
   >
      
      
@@ -571,7 +571,7 @@ exports[`<LAN/> Snapshot unmanaged none. 1`] = `
     </div>
   </div>
   <button
-    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
   >
      
      
@@ -814,7 +814,7 @@ exports[`<LAN/> Snapshot unmanaged static. 1`] = `
     </div>
   </div>
   <button
-    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
   >
      
      

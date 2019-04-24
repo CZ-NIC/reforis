@@ -5,6 +5,7 @@
 #
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
+
 import base64
 
 from flask import session, redirect, current_app, request
@@ -47,19 +48,18 @@ def register_login_required(app):
         if session.get('logged', False):
             return
 
-        # TODO:
-        # Static files are not protected. (Can happen only at dev env.)
-        if request.endpoint == 'static':
+        not_protected_endpoints = [
+            # TODO: Static files are not protected. (Can happen only at dev env.)
+            'static',
+            'Foris.login',
+            'ForisAPI.health_check',
+        ]
+        if request.endpoint in not_protected_endpoints:
             return
-
-        view = current_app.view_functions.get(request.endpoint)
 
         # Not found page is not protected.
+        view = current_app.view_functions.get(request.endpoint)
         if not view:
-            return
-
-        # Login view is not protected.
-        if request.endpoint == 'Foris.login':
             return
 
         return redirect('/login')

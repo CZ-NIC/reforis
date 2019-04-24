@@ -45,7 +45,7 @@ describe('API utlis', () => {
 
         testAPI.testEndpoint.get();
         expect(mockedFetch).toHaveBeenCalledTimes(1);
-        expect(mockedFetch).toHaveBeenCalledWith('/test-url/test-endpoint');
+        expect(mockedFetch).toHaveBeenCalledWith('/test-url/test-endpoint', null);
     });
 
     it('POST call.', () => {

@@ -6,21 +6,15 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
 
 import Password from './Password/Password';
 import RegionAndTime from './RegionAndTime/RegionAndTime';
 import Reboot from './Reboot';
 
-Administration.propTypes = {
-    ws: propTypes.object.isRequired
-};
-
-export default function Administration({ws}) {
-
+export default function Administration() {
     return <>
         <Password/>
         <RegionAndTime/>
-        {/*<Reboot ws={ws}/>*/}
+        <Reboot/>
     </>
 }

@@ -189,7 +189,7 @@ exports[`<WAN/> Snapshot WAN IPv4 (pppoe). 1`] = `
     </div>
   </div>
   <button
-    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
     disabled=""
   >
      
@@ -485,7 +485,7 @@ exports[`<WAN/> Snapshot WAN IPv4 (static). 1`] = `
     </div>
   </div>
   <button
-    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
     disabled=""
   >
      
@@ -887,7 +887,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled. 1`] = `
     </div>
   </div>
   <button
-    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
     disabled=""
   >
      
@@ -1184,7 +1184,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
     </div>
   </div>
   <button
-    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
     disabled=""
   >
      
@@ -1384,7 +1384,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6to4). 1`] = `
     </div>
   </div>
   <button
-    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
     disabled=""
   >
      
@@ -1581,7 +1581,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (dhcpv6). 1`] = `
     </div>
   </div>
   <button
-    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
   >
      
      
@@ -1912,7 +1912,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
     </div>
   </div>
   <button
-    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
     disabled=""
   >
      
@@ -2112,7 +2112,7 @@ exports[`<WAN/> Snapshot: MAC enabled 1`] = `
     </div>
   </div>
   <button
-    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
     disabled=""
   >
      
@@ -2277,7 +2277,7 @@ exports[`<WAN/> Snapshot: WAN IPv4 dhcp, WAN IPv6 dhcp, MAC disabled 1`] = `
     </div>
   </div>
   <button
-    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
   >
      
      

@@ -37,9 +37,9 @@ export default function SubmitButton({disabled, state, remindsToNWRestart, ...pr
     }
 
     return <Button
-        className='btn-primary'
         loading={loadingSubmitButton}
         disabled={disableSubmitButton}
+        forisFormSize
 
         {...props}
     >

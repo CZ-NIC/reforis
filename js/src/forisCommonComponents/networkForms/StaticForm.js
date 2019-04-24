@@ -9,7 +9,7 @@ import React from 'react';
 import propTypes from 'prop-types';
 
 import TextInput from '../../bootstrap/TextInput';
-import {validateIPv4Address} from '../validation';
+import {validateIPv4Address} from '../../forisForm/validation';
 
 const HELP_TEXTS = {
     dns: _('DNS server address is not required as the built-in DNS resolver is capable of working without it.'),
