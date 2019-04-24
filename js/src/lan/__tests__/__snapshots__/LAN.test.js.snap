@@ -51,13 +51,17 @@ exports[`<LAN/> Snapshot managed with enabled DHCP. 1`] = `
     <div
       class="col-sm-8"
     >
-      <input
-        class="form-control "
-        id="75"
-        required=""
-        type="text"
-        value="192.168.1.4"
-      />
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control "
+          id="75"
+          required=""
+          type="text"
+          value="192.168.1.4"
+        />
+      </div>
       <div
         class="invalid-feedback"
       />
@@ -80,13 +84,17 @@ exports[`<LAN/> Snapshot managed with enabled DHCP. 1`] = `
     <div
       class="col-sm-8"
     >
-      <input
-        class="form-control "
-        id="76"
-        required=""
-        type="text"
-        value="255.255.255.0"
-      />
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control "
+          id="76"
+          required=""
+          type="text"
+          value="255.255.255.0"
+        />
+      </div>
       <div
         class="invalid-feedback"
       />
@@ -134,14 +142,18 @@ exports[`<LAN/> Snapshot managed with enabled DHCP. 1`] = `
     <div
       class="col-sm-8"
     >
-      <input
-        class="form-control "
-        id="82"
-        min="1"
-        required=""
-        type="number"
-        value="123123"
-      />
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control "
+          id="82"
+          min="1"
+          required=""
+          type="number"
+          value="123123"
+        />
+      </div>
       <div
         class="invalid-feedback"
       />
@@ -162,14 +174,18 @@ exports[`<LAN/> Snapshot managed with enabled DHCP. 1`] = `
     <div
       class="col-sm-8"
     >
-      <input
-        class="form-control "
-        id="83"
-        min="1"
-        required=""
-        type="number"
-        value="150"
-      />
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control "
+          id="83"
+          min="1"
+          required=""
+          type="number"
+          value="150"
+        />
+      </div>
       <div
         class="invalid-feedback"
       />
@@ -190,14 +206,18 @@ exports[`<LAN/> Snapshot managed with enabled DHCP. 1`] = `
     <div
       class="col-sm-8"
     >
-      <input
-        class="form-control "
-        id="84"
-        min="120"
-        required=""
-        type="number"
-        value="43200"
-      />
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control "
+          id="84"
+          min="120"
+          required=""
+          type="number"
+          value="43200"
+        />
+      </div>
       <div
         class="invalid-feedback"
       />
@@ -207,7 +227,7 @@ exports[`<LAN/> Snapshot managed with enabled DHCP. 1`] = `
     </div>
   </div>
   <button
-    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
   >
      
      
@@ -267,13 +287,17 @@ exports[`<LAN/> Snapshot managed. 1`] = `
     <div
       class="col-sm-8"
     >
-      <input
-        class="form-control "
-        id="59"
-        required=""
-        type="text"
-        value="192.168.1.4"
-      />
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control "
+          id="59"
+          required=""
+          type="text"
+          value="192.168.1.4"
+        />
+      </div>
       <div
         class="invalid-feedback"
       />
@@ -296,13 +320,17 @@ exports[`<LAN/> Snapshot managed. 1`] = `
     <div
       class="col-sm-8"
     >
-      <input
-        class="form-control "
-        id="60"
-        required=""
-        type="text"
-        value="255.255.255.0"
-      />
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control "
+          id="60"
+          required=""
+          type="text"
+          value="255.255.255.0"
+        />
+      </div>
       <div
         class="invalid-feedback"
       />
@@ -339,7 +367,7 @@ exports[`<LAN/> Snapshot managed. 1`] = `
     </div>
   </div>
   <button
-    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
   >
      
      
@@ -436,12 +464,16 @@ exports[`<LAN/> Snapshot unmanaged (dhcp). 1`] = `
     <div
       class="col-sm-8"
     >
-      <input
-        class="form-control "
-        id="3"
-        type="text"
-        value=""
-      />
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control "
+          id="3"
+          type="text"
+          value=""
+        />
+      </div>
       <div
         class="invalid-feedback"
       />
@@ -453,7 +485,7 @@ exports[`<LAN/> Snapshot unmanaged (dhcp). 1`] = `
     </div>
   </div>
   <button
-    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
   >
      
      
@@ -539,7 +571,7 @@ exports[`<LAN/> Snapshot unmanaged none. 1`] = `
     </div>
   </div>
   <button
-    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
   >
      
      
@@ -636,13 +668,17 @@ exports[`<LAN/> Snapshot unmanaged static. 1`] = `
     <div
       class="col-sm-8"
     >
-      <input
-        class="form-control "
-        id="27"
-        required=""
-        type="text"
-        value="192.168.1.4"
-      />
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control "
+          id="27"
+          required=""
+          type="text"
+          value="192.168.1.4"
+        />
+      </div>
       <div
         class="invalid-feedback"
       />
@@ -663,13 +699,17 @@ exports[`<LAN/> Snapshot unmanaged static. 1`] = `
     <div
       class="col-sm-8"
     >
-      <input
-        class="form-control "
-        id="28"
-        required=""
-        type="text"
-        value="255.255.255.0"
-      />
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control "
+          id="28"
+          required=""
+          type="text"
+          value="255.255.255.0"
+        />
+      </div>
       <div
         class="invalid-feedback"
       />
@@ -690,13 +730,17 @@ exports[`<LAN/> Snapshot unmanaged static. 1`] = `
     <div
       class="col-sm-8"
     >
-      <input
-        class="form-control "
-        id="29"
-        required=""
-        type="text"
-        value="192.168.1.4"
-      />
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control "
+          id="29"
+          required=""
+          type="text"
+          value="192.168.1.4"
+        />
+      </div>
       <div
         class="invalid-feedback"
       />
@@ -717,12 +761,16 @@ exports[`<LAN/> Snapshot unmanaged static. 1`] = `
     <div
       class="col-sm-8"
     >
-      <input
-        class="form-control "
-        id="30"
-        type="text"
-        value=""
-      />
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control "
+          id="30"
+          type="text"
+          value=""
+        />
+      </div>
       <div
         class="invalid-feedback"
       />
@@ -745,12 +793,16 @@ exports[`<LAN/> Snapshot unmanaged static. 1`] = `
     <div
       class="col-sm-8"
     >
-      <input
-        class="form-control "
-        id="31"
-        type="text"
-        value=""
-      />
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control "
+          id="31"
+          type="text"
+          value=""
+        />
+      </div>
       <div
         class="invalid-feedback"
       />
@@ -762,7 +814,7 @@ exports[`<LAN/> Snapshot unmanaged static. 1`] = `
     </div>
   </div>
   <button
-    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
   >
      
      

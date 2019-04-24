@@ -55,6 +55,7 @@ export function WifiGuestForm({formData, formErrors, setFormValue, ...props}) {
                 />
 
                 <PasswordInput
+                    withEye={true}
                     label={_('Password')}
                     value={formData.password}
                     helpText={HELP_TEXTS.password}

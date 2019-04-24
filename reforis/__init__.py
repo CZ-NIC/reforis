@@ -59,11 +59,12 @@ def set_locale(app):
 
     @app.context_processor
     def add_translations_catalog_to_ctx():
+        from flask_babel import get_locale
         # TODO: catch exception here
         translations = TranslationsHelper.load(
             # There is only one directory with translations in Foris so it's OK.
             next(babel.translation_directories),
-            [_get_locale_from_backend(app)],
+            [get_locale()],
             babel.domain
         )
         return {'babel_catalog': translations.json_catalog}

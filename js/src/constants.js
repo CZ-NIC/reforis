@@ -5,6 +5,11 @@
  * See /LICENSE for more information.
  */
 
+// TODO:
+export const ForisProtocol = 'http';
+export const ForisPort = 81;
+
 export const ForisURLs = {
     notifications: '/notifications',
+    luci: '/cgi-bin/luci',
 };

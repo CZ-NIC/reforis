@@ -7,15 +7,39 @@ import json
 from flask import Blueprint, current_app, request, jsonify
 
 from reforis import _get_locale_from_backend
+from reforis.auth import check_password, _decode_password_to_base64
 from reforis.backend import ExceptionInBackend
 
 api = Blueprint(
-    'api',
+    'ForisAPI',
     __name__,
     template_folder='templates',
     static_folder='static',
     url_prefix='/api'
 )
+
+
+class InvalidUsage(Exception):
+    status_code = 400
+
+    def __init__(self, error, status_code=None, payload=None):
+        Exception.__init__(self)
+        self.error = error
+        if status_code is not None:
+            self.status_code = status_code
+        self.payload = payload
+
+    def to_dict(self):
+        rv = dict(self.payload or ())
+        rv['error'] = self.error
+        return rv
+
+
+@api.errorhandler(InvalidUsage)
+def handle_invalid_usage(error):
+    response = jsonify(error.to_dict())
+    response.status_code = error.status_code
+    return response
 
 
 # TODO: make some wrapper to catch backend exceptions...
@@ -89,6 +113,63 @@ def connection_test():
         return jsonify(res)
     except ExceptionInBackend as e:
         _process_backend_error(e)
+
+
+@api.route('/password', methods=['GET', 'POST'])
+def password():
+    try:
+        res = ''
+        if request.method == 'GET':
+            res = {'password_set': current_app.backend.perform('web', 'get_data')['password_ready']}
+        elif request.method == 'POST':
+            data = request.json
+            res = {}
+            if not data.get('foris_current_password', False) or not check_password(data['foris_current_password']):
+                raise InvalidUsage('Wrong current password')
+
+            if data.get('foris_password', False):
+                new_password = _decode_password_to_base64(data['foris_password'])
+                res['foris_password'] = current_app.backend.perform('password', 'set', {
+                    'password': new_password,
+                    'type': 'foris'
+                })
+            if data.get('root_password', False):
+                new_password = _decode_password_to_base64(data['root_password'])
+                res['root_password'] = current_app.backend.perform('password', 'set', {
+                    'password': new_password,
+                    'type': 'foris'
+                })
+        return jsonify(res)
+    except ExceptionInBackend as e:
+        _process_backend_error(e)
+
+
+@api.route('/region-and-time', methods=['GET', 'POST'])
+def region_and_time():
+    return _foris_controller_settings_call('time')
+
+
+@api.route('/time', methods=['GET'])
+def time():
+    try:
+        res = current_app.backend.perform('time', 'get_router_time')
+        return jsonify(res)
+    except ExceptionInBackend as e:
+        _process_backend_error(e)
+
+
+@api.route('/reboot', methods=['GET'])
+def reboot():
+    try:
+        res = current_app.backend.perform('maintain', 'reboot')
+        return jsonify(res)
+    except ExceptionInBackend as e:
+        _process_backend_error(e)
+
+
+@api.route('/health-check', methods=['GET'])
+def health_check():
+    return jsonify(True)
 
 
 def _foris_controller_settings_call(module):

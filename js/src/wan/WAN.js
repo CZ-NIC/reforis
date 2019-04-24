@@ -19,19 +19,17 @@ WAN.propTypes = {
 };
 
 export default function WAN({ws}) {
-    return <>
-        <ForisForm
-            ws={ws}
-            module='wan'
-            prepData={prepData}
-            prepDataToSubmit={prepDataToSubmit}
-            validator={validator}
-        >
-            <WANForm/>
-            <WAN6Form/>
-            <MACForm/>
-        </ForisForm>
-    </>
+    return <ForisForm
+        ws={ws}
+        module='wan'
+        prepData={prepData}
+        prepDataToSubmit={prepDataToSubmit}
+        validator={validator}
+    >
+        <WANForm/>
+        <WAN6Form/>
+        <MACForm/>
+    </ForisForm>
 }
 
 function prepData(formData) {

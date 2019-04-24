@@ -5,7 +5,7 @@
  * See /LICENSE for more information.
  */
 import React from 'react';
-import {render, waitForElement, getByText, act} from 'react-testing-library';
+import {render} from 'react-testing-library';
 
 import {mockedWS} from '../../testUtils/mockWS';
 import {notificationsFixture} from './__fixtures__/notifications';
@@ -18,10 +18,9 @@ function mockFetch() {
                 resolve({
                     ok: true,
                     json: () => {
-                        if (url === '/api/notifications'){
+                        if (url === '/api/notifications') {
                             return notificationsFixture();
-                        }
-                        else if (url === '/api/notifications-settings'){
+                        } else if (url === '/api/notifications-settings') {
                             return notificationsEmailSettingsFixure()
                         }
                     },
@@ -33,13 +32,10 @@ function mockFetch() {
 
 describe('<NotificationCenter/>', () => {
     let NotificationCenterContainer;
-    beforeEach(async () => {
+    beforeEach(() => {
         const mockWebSockets = new mockedWS();
         global.fetch = mockFetch();
         const {container} = render(<NotificationsCenter ws={mockWebSockets}/>);
-        // console.log(container);
-        await waitForElement(() => getByText(container, 'Email notifications settings'));
-        console.log(container);
         NotificationCenterContainer = container;
     });
 

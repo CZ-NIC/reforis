@@ -5,7 +5,7 @@
  * See /LICENSE for more information.
  */
 import React from 'react';
-import {render, waitForElement, getByText, getByLabelText, queryByText, fireEvent, act} from 'react-testing-library';
+import {render, getByText, queryByText, fireEvent, act} from 'react-testing-library';
 
 import mockFetch from '../../testUtils/mockFetch';
 import {mockedWS} from '../../testUtils/mockWS';
@@ -23,26 +23,24 @@ describe('useNotifications hook.', () => {
         mockWebSockets = new mockedWS();
 
         const {container} = render(<NotificationsDropdown ws={mockWebSockets}/>);
-        //Waiting for element is rendered.
-        await waitForElement(() => getByText(container, 'Notifications'));
         notificationsContainer = container
     });
 
-    it('Fetch notifications.', async () => {
+    it('Fetch notifications.', () => {
         expect(mockedFetch).toHaveBeenCalledTimes(1);
     });
 
-    it('Render notifications.', async () => {
+    it('Render notifications.', () => {
         const HTMLnotificationMessage = queryByText(notificationsContainer, 'Notification message.');
         expect(HTMLnotificationMessage).not.toBeNull();
     });
 
-    it("Don't show displayed notifications.", async () => {
+    it("Don't show displayed notifications.", () => {
         const HTMLnotificationMessage = queryByText(notificationsContainer, 'Displayed notification me...');
         expect(HTMLnotificationMessage).toBeNull();
     });
 
-    it("Dismiss notification.", async () => {
+    it("Dismiss notification.", () => {
         expect(mockedFetch).toHaveBeenCalledTimes(1);
         act(() => {
             fireEvent.click(notificationsContainer.querySelector('[class="fas fa-times"]'));
@@ -54,7 +52,7 @@ describe('useNotifications hook.', () => {
         expect(HTMLnotificationMessage).not.toBeNull();
     });
 
-    it("Dismiss all notification.", async () => {
+    it("Dismiss all notification.", () => {
         expect(mockedFetch).toHaveBeenCalledTimes(1);
         act(() => {
             fireEvent.click(getByText(notificationsContainer, 'Dismiss all'));

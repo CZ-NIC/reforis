@@ -22,9 +22,10 @@ Button.propTypes = {
     ]).isRequired
 };
 
-export default function Button({className, loading, children, ...props}) {
+export default function Button({className, loading, children, forisFormSize, ...props}) {
     className = className ? 'btn ' + className : 'btn btn-primary ';
-    className += SIZE_CLASS + SIZE_CLASS_SM;
+    if (forisFormSize)
+        className += SIZE_CLASS + SIZE_CLASS_SM;
 
     const span = loading ?
         <span className='spinner-border spinner-border-sm' role='status' aria-hidden='true'/> : null;

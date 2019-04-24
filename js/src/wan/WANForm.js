@@ -9,8 +9,8 @@ import React from 'react';
 
 import Select from '../bootstrap/Select';
 import TextInput from '../bootstrap/TextInput';
-import DHCPForm, {validateDHCPForm} from '../forisForm/networkForms/DHCPForm';
-import StaticForm, {validateStaticForm} from '../forisForm/networkForms/StaticForm';
+import DHCPForm, {validateDHCPForm} from '../forisCommonComponents/networkForms/DHCPForm';
+import StaticForm, {validateStaticForm} from '../forisCommonComponents/networkForms/StaticForm';
 import propTypes from 'prop-types';
 
 const WAN_TYPES = {

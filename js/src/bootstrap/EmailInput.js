@@ -10,7 +10,8 @@ import React from 'react';
 import Input from './Input';
 import PropTypes from 'prop-types';
 
-const EmailInput = Input('email');
+const EmailInput = ({...props}) => <Input type="email" {...props}/>;
+
 
 EmailInput.propTypes = {
     label: PropTypes.string.isRequired,

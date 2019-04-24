@@ -12,6 +12,7 @@ import {ForisURLs} from '../../constants';
 
 import NotificationIcon from '../NotificationIcon';
 import {NOTIFICATION_PROP_TYPES, toLocaleDateString} from '../utils';
+import RebootButton from '../../forisCommonComponents/Reboot/RebootButton';
 
 
 NotificationsDropdownItem.propTypes = {

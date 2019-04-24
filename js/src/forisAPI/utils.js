@@ -10,30 +10,41 @@ const POST_HEADERS = {
     'Content-Type': 'application/json',
 };
 
+const FETCH_TIMEOUT = 5000;
+
+export function fetchWithTimeout(url, options = null, timeout = FETCH_TIMEOUT) {
+    return Promise.race([
+        fetch(url, options),
+        new Promise((_, reject) =>
+            setTimeout(() => reject(new Error('timeout')), timeout)
+        )
+    ]);
+}
+
 
 export default class API {
     constructor(url, endpoints) {
         this.url = url;
         for (let endpoint of endpoints) {
             this[endpoint.name] = {};
-            this.bindEnpoint(endpoint);
+            this.bindEndpoint(endpoint);
         }
     }
 
-    bindEnpoint(endpoint) {
+    bindEndpoint(endpoint) {
         const url = `${this.url}${endpoint.url}`;
         for (let method of endpoint.methods) {
             let functionToBind;
             switch (method) {
                 case 'get':
                     functionToBind = (url_data) => {
-                        return fetch(url + (url_data ? url_data : ''))
+                        return fetchWithTimeout(url + (url_data ? url_data : ''))
                             .then(response => response.json());
                     };
                     break;
                 case 'post':
                     functionToBind = (data) => {
-                        return fetch(
+                        return fetchWithTimeout(
                             url,
                             {
                                 headers: POST_HEADERS,

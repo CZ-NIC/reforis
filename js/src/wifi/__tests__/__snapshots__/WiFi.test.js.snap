@@ -43,13 +43,17 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
     <div
       class="col-sm-8"
     >
-      <input
-        class="form-control "
-        id="35"
-        required=""
-        type="text"
-        value="TestSSID1"
-      />
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control "
+          id="35"
+          required=""
+          type="text"
+          value="TestSSID1"
+        />
+      </div>
       <div
         class="invalid-feedback"
       />
@@ -70,13 +74,29 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
     <div
       class="col-sm-8"
     >
-      <input
-        class="form-control "
-        id="36"
-        required=""
-        type="password"
-        value="TestPass"
-      />
+      <div
+        class="input-group"
+      >
+        <input
+          autocomplete="new-password"
+          class="form-control "
+          id="36"
+          required=""
+          type="password"
+          value="TestPass"
+        />
+        <div
+          class="input-group-append"
+        >
+          <a
+            class="input-group-text"
+          >
+            <i
+              class="fa fa-eye"
+            />
+          </a>
+        </div>
+      </div>
       <div
         class="invalid-feedback"
       />
@@ -412,7 +432,7 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
     </div>
   </div>
   <button
-    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
   >
      
      
@@ -482,7 +502,7 @@ exports[`<WiFi/> Snapshot both modules disabled. 1`] = `
     </div>
   </div>
   <button
-    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
   >
      
      
@@ -534,13 +554,17 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
     <div
       class="col-sm-8"
     >
-      <input
-        class="form-control "
-        id="61"
-        required=""
-        type="text"
-        value="TestSSID1"
-      />
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control "
+          id="61"
+          required=""
+          type="text"
+          value="TestSSID1"
+        />
+      </div>
       <div
         class="invalid-feedback"
       />
@@ -561,13 +585,29 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
     <div
       class="col-sm-8"
     >
-      <input
-        class="form-control "
-        id="62"
-        required=""
-        type="password"
-        value="TestPass"
-      />
+      <div
+        class="input-group"
+      >
+        <input
+          autocomplete="new-password"
+          class="form-control "
+          id="62"
+          required=""
+          type="password"
+          value="TestPass"
+        />
+        <div
+          class="input-group-append"
+        >
+          <a
+            class="input-group-text"
+          >
+            <i
+              class="fa fa-eye"
+            />
+          </a>
+        </div>
+      </div>
       <div
         class="invalid-feedback"
       />
@@ -997,12 +1037,16 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
     <div
       class="col-sm-8"
     >
-      <input
-        class="form-control "
-        id="77"
-        type="text"
-        value="TestGuestSSID"
-      />
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control "
+          id="77"
+          type="text"
+          value="TestGuestSSID"
+        />
+      </div>
       <div
         class="invalid-feedback"
       />
@@ -1023,13 +1067,29 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
     <div
       class="col-sm-8"
     >
-      <input
-        class="form-control is-invalid"
-        id="78"
-        required=""
-        type="password"
-        value=""
-      />
+      <div
+        class="input-group"
+      >
+        <input
+          autocomplete="new-password"
+          class="form-control is-invalid"
+          id="78"
+          required=""
+          type="password"
+          value=""
+        />
+        <div
+          class="input-group-append"
+        >
+          <a
+            class="input-group-text"
+          >
+            <i
+              class="fa fa-eye"
+            />
+          </a>
+        </div>
+      </div>
       <div
         class="invalid-feedback"
       >
@@ -1074,7 +1134,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
     </div>
   </div>
   <button
-    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
     disabled=""
   >
      
@@ -1127,13 +1187,17 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
     <div
       class="col-sm-8"
     >
-      <input
-        class="form-control "
-        id="18"
-        required=""
-        type="text"
-        value="TestSSID1"
-      />
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control "
+          id="18"
+          required=""
+          type="text"
+          value="TestSSID1"
+        />
+      </div>
       <div
         class="invalid-feedback"
       />
@@ -1154,13 +1218,29 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
     <div
       class="col-sm-8"
     >
-      <input
-        class="form-control "
-        id="19"
-        required=""
-        type="password"
-        value="TestPass"
-      />
+      <div
+        class="input-group"
+      >
+        <input
+          autocomplete="new-password"
+          class="form-control "
+          id="19"
+          required=""
+          type="password"
+          value="TestPass"
+        />
+        <div
+          class="input-group-append"
+        >
+          <a
+            class="input-group-text"
+          >
+            <i
+              class="fa fa-eye"
+            />
+          </a>
+        </div>
+      </div>
       <div
         class="invalid-feedback"
       />
@@ -1608,7 +1688,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
     </div>
   </div>
   <button
-    class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
   >
      
      

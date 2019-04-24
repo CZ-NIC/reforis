@@ -104,8 +104,8 @@ export default function SMTPCustomForm({formData, formErrors, setFormValue, ...p
         />
         <PasswordInput
             label={_('Password')}
+            withEye={true}
             value={formData.password || ''}
-
             onChange={setFormValue(value => ({smtp_custom: {password: {$set: value}}}))}
 
             {...props}

@@ -11,11 +11,11 @@ import ForisAPI from "./forisAPI";
 
 export function useAPIGetData(endpoint) {
     const [isReady, setIsReady] = useState(false);
-
-    function getData(callback) {
+    function getData(callback = ()=>{}) {
         setIsReady(false);
         ForisAPI[endpoint].get().then(data => {
-            callback(data);
+            if (callback)
+                callback(data);
             setIsReady(true);
         });
     }
@@ -24,10 +24,11 @@ export function useAPIGetData(endpoint) {
 }
 
 export function useAPIPostData(endpoint) {
-    function postData(data) {
+    function postData(data, callback=()=>{}) {
         ForisAPI[endpoint].post(data).then(
             data => {
-                console.log(data) //TODO: remove
+                console.log(data); //TODO: remove
+                callback(data);
             }
         );
     }

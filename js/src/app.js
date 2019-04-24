@@ -8,13 +8,15 @@
 import React from 'react';
 import {render} from 'react-dom';
 
+import webSockets from './webSockets';
 import NotificationsDropdown from './notifications/NotificationsDropdown/NotificationsDropdown';
 import NotificationsCenter from './notifications/NotificationsCenter/NotificationsCenter';
 import WiFi from './wifi/WiFi';
 import WAN from './wan/WAN';
 import LAN from './lan/LAN';
 import ConnectionTest from './connectionTest/ConnectionTest';
-import webSockets from './webSockets';
+import Administration from './administration/Administration';
+import RebootHandler from './forisCommonComponents/Reboot/RebootHandler';
 
 const ws = new webSockets();
 
@@ -26,6 +28,8 @@ window.addEventListener('load', () => {
         {id: 'wan_container', component: WAN},
         {id: 'wan_connection_test_container', component: ConnectionTest},
         {id: 'lan_container', component: LAN},
+        {id: 'administration_container', component: Administration},
+        {id: 'reboot_handler_container', component: RebootHandler},
     ];
 
     for (let app of apps) {

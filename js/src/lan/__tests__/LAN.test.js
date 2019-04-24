@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import {render, waitForElement, act, fireEvent, getByText, getByLabelText, getByValue} from 'react-testing-library';
+import {render, act, wait, getByText, fireEvent, getByLabelText, getByValue} from 'react-testing-library';
 
 import {mockedWS} from '../../testUtils/mockWS';
 import mockFetch from '../../testUtils/mockFetch';
@@ -21,7 +21,7 @@ describe('<LAN/>', () => {
         const mockWebSockets = new mockedWS();
         global.fetch = mockFetch(lanSettingsFixture());
         const {container} = render(<LAN ws={mockWebSockets}/>);
-        await waitForElement(() => getByText(container, 'LAN Settings'));
+        await wait(() => getByText(container, 'Save'));
         lanContainer = container
     });
 
