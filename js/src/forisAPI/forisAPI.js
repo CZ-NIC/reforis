@@ -19,6 +19,8 @@ const ENDPOINTS = [
     {name: 'password', url: '/password', methods: ['get', 'post']},
     {name: 'regionAndTime', url: '/region-and-time', methods: ['get', 'post']},
     {name: 'time', url: '/time', methods: ['get']},
+    {name: 'updates', url: '/updates', methods: ['get', 'post']},
+    {name: 'packages', url: '/packages', methods: ['get', 'post']},
     {name: 'reboot', url: '/reboot', methods: ['get']},
     {name: 'healthCheck', url: '/health-check', methods: ['get']},
 ];

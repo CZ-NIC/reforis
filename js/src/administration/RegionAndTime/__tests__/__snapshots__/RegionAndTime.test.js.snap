@@ -746,7 +746,7 @@ exports[`<RegionAndTime/> Snapshot 1`] = `
                   23
                 </td>
                 <td
-                  class="rdtDay rdtActive rdtToday"
+                  class="rdtDay rdtActive"
                   data-value="24"
                 >
                   24
@@ -758,7 +758,7 @@ exports[`<RegionAndTime/> Snapshot 1`] = `
                   25
                 </td>
                 <td
-                  class="rdtDay"
+                  class="rdtDay rdtToday"
                   data-value="26"
                 >
                   26

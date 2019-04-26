@@ -33,7 +33,7 @@ export default function NotificationsEmailSettings({ws}) {
             prepData={prepData}
             prepDataToSubmit={prepDataToSubmit}
             validator={validator}
-            anotherWSLogic={notificationsEmailSettingWSLogic}
+            otherWSLogic={notificationsEmailSettingWSLogic}
         >
             <NotificationsEmailSettingsForm/>
         </ForisForm>

@@ -22,11 +22,11 @@ export default function RebootButton({forisFormSize}) {
             disabled={clicked}
 
             onClick={() => {
-                setClicked(true);
                 const res = confirm(_('Are you sure you want to restart the router?'));
-                if (res)
-                    triggerReboot(() => {
-                    });
+                if (res){
+                    setClicked(true);
+                    triggerReboot();
+                }
             }}
         >
             {_('Reboot')}

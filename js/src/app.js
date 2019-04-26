@@ -17,6 +17,8 @@ import LAN from './lan/LAN';
 import ConnectionTest from './connectionTest/ConnectionTest';
 import Administration from './administration/Administration';
 import RebootHandler from './forisCommonComponents/Reboot/RebootHandler';
+import Updates from './updates/Updates';
+import Packages from './packages/Packages';
 
 const ws = new webSockets();
 
@@ -28,6 +30,8 @@ window.addEventListener('load', () => {
         {id: 'wan_container', component: WAN},
         {id: 'wan_connection_test_container', component: ConnectionTest},
         {id: 'lan_container', component: LAN},
+        {id: 'updates_container', component: Updates},
+        {id: 'packages_container', component: Packages},
         {id: 'administration_container', component: Administration},
         {id: 'reboot_handler_container', component: RebootHandler},
     ];

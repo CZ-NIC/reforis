@@ -15,11 +15,14 @@ import Input from './Input';
 DataTimeInput.propTypes = {
     label: PropTypes.string.isRequired,
     error: PropTypes.string,
-    value: PropTypes.objectOf(moment),
+    value: PropTypes.oneOfType([PropTypes.objectOf(moment), PropTypes.string]),
     helpText: PropTypes.string,
 };
 
-export default function DataTimeInput({value, onChange, isValidDate, children, ...props}) {
+const DEFAULT_DATE_FORMAT = 'YYYY-MM-DD';
+const DEFAULT_TIME_FORMAT = 'HH:mm:ss';
+
+export default function DataTimeInput({value, onChange, isValidDate, dateFormat, timeFormat, children, ...props}) {
     function renderInput(datetimeProps) {
         return <Input
             {...props}
@@ -31,12 +34,12 @@ export default function DataTimeInput({value, onChange, isValidDate, children, .
 
     return <Datetime
         locale={ForisTranslations.locale}
+        dateFormat={dateFormat !== undefined ? dateFormat : DEFAULT_DATE_FORMAT}
+        timeFormat={timeFormat !== undefined ? timeFormat : DEFAULT_TIME_FORMAT}
         value={value}
         onChange={onChange}
         isValidDate={isValidDate}
         renderInput={renderInput}
-        dateFormat="YYYY-MM-DD"
-        timeFormat="HH:mm:ss"
     />;
 }
 

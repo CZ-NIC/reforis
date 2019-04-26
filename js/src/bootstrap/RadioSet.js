@@ -14,7 +14,7 @@ import {LABEL_SIZE, FIELD_SIZE} from './constants';
 
 RadioSet.propTypes = {
     name: propTypes.string.isRequired,
-    label: propTypes.string.isRequired,
+    label: propTypes.string,
     choices: propTypes.arrayOf(propTypes.shape({
         label: propTypes.string.isRequired,
         value: propTypes.oneOfType([propTypes.string, propTypes.number]).isRequired,
@@ -32,7 +32,9 @@ export default function RadioSet({name, label, choices, value, helpText, ...prop
             name={name}
             label={choice.label}
             value={choice.value}
+            helpText={choice.helpText}
             checked={choice.value === value}
+
             {...props}
         />;
     });
@@ -53,16 +55,20 @@ Radio.propTypes = {
     id: propTypes.string.isRequired,
 };
 
-function Radio({label, id, ...props}) {
-    return <div className='form-check form-check-inline'>
-        <input
-            id={id}
-            className='form-check-input'
-            type='radio'
-            {...props}
-        />
-        <label className='form-check-label' htmlFor={id}>{label}</label>
-    </div>;
+function Radio({label, id, helpText, ...props}) {
+    return <>
+        <div className='form-check form-check-inline'>
+            <input
+                id={id}
+                className='form-check-input'
+                type='radio'
+
+                {...props}
+            />
+            <label className='form-check-label' htmlFor={id}>{label}</label>
+        </div>
+        {helpText ? <small className="form-text text-muted">{helpText}</small> : null}
+    </>
 }
 
 

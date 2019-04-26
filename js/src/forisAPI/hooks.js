@@ -14,8 +14,7 @@ export function useAPIGetData(endpoint) {
     function getData(callback = ()=>{}) {
         setIsReady(false);
         ForisAPI[endpoint].get().then(data => {
-            if (callback)
-                callback(data);
+            callback(data);
             setIsReady(true);
         });
     }
@@ -24,7 +23,7 @@ export function useAPIGetData(endpoint) {
 }
 
 export function useAPIPostData(endpoint) {
-    function postData(data, callback=()=>{}) {
+    function postData(data, callback = ()=>{}) {
         ForisAPI[endpoint].post(data).then(
             data => {
                 console.log(data); //TODO: remove

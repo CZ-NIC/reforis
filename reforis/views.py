@@ -71,3 +71,13 @@ def administration():
         'tzinfo'
     )
     return render_template('administration.html', babel_tzinfo_catalog=translations.json_catalog)
+
+
+@base.route('/updates')
+def updates():
+    return render_template('updates.html')
+
+
+@base.route('/packages')
+def packages():
+    return render_template('packages.html')

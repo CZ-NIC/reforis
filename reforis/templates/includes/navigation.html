@@ -32,10 +32,18 @@
             </ul>
 
         </li>
+
         <li {% if request.path.startswith('/administration') %}class="active"{% endif %}>
             <a href="/administration">{% trans %}Administration{% endtrans %}</a>
         </li>
 
+        <li {% if request.path.startswith('/updates') %}class="active"{% endif %}>
+            <a href="/updates">{% trans %}Updates{% endtrans %}</a>
+        </li>
+
+        <li {% if request.path.startswith('/packages') %}class="active"{% endif %}>
+            <a href="/packages">{% trans %}Packages{% endtrans %}</a>
+        </li>
 
         {% for plugin in plugins %}
             <li {% if request.path.startswith(plugin.url_prefix) %}class="active"{% endif %}>

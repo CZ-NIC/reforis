@@ -66,7 +66,10 @@ def notifications_settings():
     try:
         res = ''
         if request.method == 'GET':
-            res = current_app.backend.perform('router_notifications', 'get_settings')
+            res = current_app.backend.perform(
+                'router_notifications',
+                'get_settings',
+            )
         elif request.method == 'POST':
             data = request.json
             res = current_app.backend.perform('router_notifications', 'update_email_settings', data)
@@ -110,6 +113,71 @@ def connection_test():
             'connection_test_trigger',
             data={'test_kinds': ['ipv4', 'ipv6']}
         )
+        return jsonify(res)
+    except ExceptionInBackend as e:
+        _process_backend_error(e)
+
+
+@api.route('/updates', methods=['GET', 'POST'])
+def updates():
+    try:
+        updater_settings = current_app.backend.perform(
+            'updater',
+            'get_settings',
+            {'lang': _get_locale_from_backend(current_app)}
+        )
+        del updater_settings['approval']
+
+        res = None
+        if request.method == 'GET':
+            res = {
+                **updater_settings,
+                'reboots': current_app.backend.perform('router_notifications', 'get_settings')['reboots'],
+            }
+            del res['user_lists']
+            del res['languages']
+        elif request.method == 'POST':
+            # TODO: Here is a problem.
+            # If one of the valid and one is invalid then valid one will set with error status code.
+            data = request.json
+            res_reboots = current_app.backend.perform('router_notifications', 'update_reboot_settings', data['reboots'])
+            del data['reboots']
+
+            if data['enabled']:
+                data['user_lists'] = [
+                    {'name': package['name']} for package in updater_settings['user_lists'] if package['enabled']
+                ]
+                data['languages'] = [
+                    language['code'] for language in updater_settings['languages'] if language['enabled']
+                ]
+
+            res_updater = current_app.backend.perform('updater', 'update_settings', data)
+            res = {'result': res_reboots and res_updater}
+        return jsonify(res)
+    except ExceptionInBackend as e:
+        _process_backend_error(e)
+
+
+@api.route('/packages', methods=['GET', 'POST'])
+def packages():
+    try:
+        updater_settings = current_app.backend.perform(
+            'updater',
+            'get_settings',
+            {'lang': _get_locale_from_backend(current_app)}
+        )
+        del updater_settings['approval']
+        res = {}
+        if request.method == 'GET':
+            res = updater_settings
+            del res['approval_settings']
+        elif request.method == 'POST':
+            data = request.json
+            if not updater_settings['enabled']:
+                raise InvalidUsage('You can\'t set packages with disabled automatic updates.')
+            data['enabled'] = True
+            data['approval_settings'] = updater_settings['approval_settings']
+            res = current_app.backend.perform('updater', 'update_settings', data)
         return jsonify(res)
     except ExceptionInBackend as e:
         _process_backend_error(e)

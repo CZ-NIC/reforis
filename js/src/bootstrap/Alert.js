@@ -15,7 +15,7 @@ Alert.propTypes = {
 
 export default function Alert({type, message, onDismiss}) {
     return <div className={`alert alert-dismissible alert-${type}`}>
-        <button type="button" className="close" onClick={onDismiss}>&times;</button>
+        {onDismiss ? <button type="button" className="close" onClick={onDismiss}>&times;</button> : false}
         {message}
     </div>
 }
