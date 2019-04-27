@@ -61,6 +61,11 @@ def lan():
     return render_template('lan.html')
 
 
+@base.route('/dns')
+def dns():
+    return render_template('dns.html')
+
+
 @base.route('/administration')
 def administration():
     babel = current_app.extensions['babel']

@@ -105,6 +105,11 @@ def wan():
         _process_backend_error(e)
 
 
+@api.route('/dns', methods=['GET', 'POST'])
+def dns():
+    return _foris_controller_settings_call('dns')
+
+
 @api.route('/connection-test', methods=['GET'])
 def connection_test():
     try:

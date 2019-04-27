@@ -15,6 +15,7 @@ const ENDPOINTS = [
     {name: 'wifi', url: '/wifi', methods: ['get', 'post']},
     {name: 'wan', url: '/wan', methods: ['get', 'post']},
     {name: 'lan', url: '/lan', methods: ['get', 'post']},
+    {name: 'dns', url: '/dns', methods: ['get', 'post']},
     {name: 'connectionTest', url: '/connection-test', methods: ['get']},
     {name: 'password', url: '/password', methods: ['get', 'post']},
     {name: 'regionAndTime', url: '/region-and-time', methods: ['get', 'post']},
