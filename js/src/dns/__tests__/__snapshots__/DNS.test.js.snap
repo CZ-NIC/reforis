@@ -1,0 +1,366 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DNS/> Test with snapshot DHCP. 1`] = `
+<div>
+  <form>
+    <div
+      class="form-group row"
+    >
+      <div
+        class="form-label col-sm-3"
+      >
+        <label
+          class="form-label"
+          for="26"
+        >
+          Use forwarding
+        </label>
+      </div>
+      <div
+        class="form-check col-sm-8"
+      >
+        <input
+          id="26"
+          type="checkbox"
+        />
+        <small
+          class="form-text text-muted"
+        />
+      </div>
+    </div>
+    <div
+      class="form-group row"
+    >
+      <div
+        class="form-label col-sm-3"
+      >
+        <label
+          class="form-label"
+          for="27"
+        >
+          Enable DNSSEC
+        </label>
+      </div>
+      <div
+        class="form-check col-sm-8"
+      >
+        <input
+          checked=""
+          id="27"
+          type="checkbox"
+        />
+        <small
+          class="form-text text-muted"
+        />
+      </div>
+    </div>
+    <div
+      class="form-group row"
+    >
+      <div
+        class="form-label col-sm-3"
+      >
+        <label
+          class="form-label"
+          for="28"
+        >
+          Enable DHCP clients in DNS
+        </label>
+      </div>
+      <div
+        class="form-check col-sm-8"
+      >
+        <input
+          id="28"
+          type="checkbox"
+        />
+        <small
+          class="form-text text-muted"
+        >
+          This will enable your DNS resolver to place DHCP client's names among the local DNS records.
+        </small>
+      </div>
+    </div>
+    <div
+      class="form-group row"
+    >
+      <label
+        class="form-control-label col-sm-3"
+        for="38"
+      >
+        Domain of DHCP clients in DNS
+      </label>
+      <div
+        class="col-sm-8"
+      >
+        <div
+          class="input-group"
+        >
+          <input
+            class="form-control "
+            id="38"
+            type="text"
+            value="lan"
+          />
+        </div>
+        <div
+          class="invalid-feedback"
+        />
+        <small
+          class="form-text text-muted"
+        >
+          This domain will be used as suffix. E.g. The result for client "android-123" and domain "my.lan" will be "android-123.my.lan".
+        </small>
+      </div>
+    </div>
+    <button
+      class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
+    >
+       
+       
+      Save
+    </button>
+  </form>
+</div>
+`;
+
+exports[`<DNS/> Test with snapshot forwarding. 1`] = `
+<div>
+  <form>
+    <div
+      class="form-group row"
+    >
+      <div
+        class="form-label col-sm-3"
+      >
+        <label
+          class="form-label"
+          for="13"
+        >
+          Use forwarding
+        </label>
+      </div>
+      <div
+        class="form-check col-sm-8"
+      >
+        <input
+          id="13"
+          type="checkbox"
+        />
+        <small
+          class="form-text text-muted"
+        />
+      </div>
+    </div>
+    <div
+      class="form-group row"
+    >
+      <label
+        class="form-control-label col-sm-3"
+        for="23"
+      >
+        DNS Forwarder
+      </label>
+      <div
+        class="col-sm-8"
+      >
+        <select
+          class="form-control"
+          id="23"
+        >
+          <option
+            value=""
+          >
+            Use provider's DNS resolver
+          </option>
+          <option
+            value="99_cloudflare"
+          >
+            Cloudflare (TLS)
+          </option>
+          <option
+            value="99_quad9"
+          >
+            Quad9 (TLS)
+          </option>
+          <option
+            value="00_odvr-cznic"
+          >
+            CZ.NIC (TLS)
+          </option>
+          <option
+            value="99_google"
+          >
+            Google
+          </option>
+        </select>
+        <small
+          class="form-text text-muted"
+        />
+      </div>
+    </div>
+    <div
+      class="form-group row"
+    >
+      <div
+        class="form-label col-sm-3"
+      >
+        <label
+          class="form-label"
+          for="14"
+        >
+          Enable DNSSEC
+        </label>
+      </div>
+      <div
+        class="form-check col-sm-8"
+      >
+        <input
+          checked=""
+          id="14"
+          type="checkbox"
+        />
+        <small
+          class="form-text text-muted"
+        />
+      </div>
+    </div>
+    <div
+      class="form-group row"
+    >
+      <div
+        class="form-label col-sm-3"
+      >
+        <label
+          class="form-label"
+          for="15"
+        >
+          Enable DHCP clients in DNS
+        </label>
+      </div>
+      <div
+        class="form-check col-sm-8"
+      >
+        <input
+          id="15"
+          type="checkbox"
+        />
+        <small
+          class="form-text text-muted"
+        >
+          This will enable your DNS resolver to place DHCP client's names among the local DNS records.
+        </small>
+      </div>
+    </div>
+    <button
+      class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
+    >
+       
+       
+      Save
+    </button>
+  </form>
+</div>
+`;
+
+exports[`<DNS/> Test with snapshot. 1`] = `
+<div>
+  <form>
+    <div
+      class="form-group row"
+    >
+      <div
+        class="form-label col-sm-3"
+      >
+        <label
+          class="form-label"
+          for="1"
+        >
+          Use forwarding
+        </label>
+      </div>
+      <div
+        class="form-check col-sm-8"
+      >
+        <input
+          disabled=""
+          id="1"
+          type="checkbox"
+        />
+        <small
+          class="form-text text-muted"
+        />
+      </div>
+    </div>
+    <div
+      class="form-group row"
+    >
+      <div
+        class="form-label col-sm-3"
+      >
+        <label
+          class="form-label"
+          for="2"
+        >
+          Enable DNSSEC
+        </label>
+      </div>
+      <div
+        class="form-check col-sm-8"
+      >
+        <input
+          checked=""
+          disabled=""
+          id="2"
+          type="checkbox"
+        />
+        <small
+          class="form-text text-muted"
+        />
+      </div>
+    </div>
+    <div
+      class="form-group row"
+    >
+      <div
+        class="form-label col-sm-3"
+      >
+        <label
+          class="form-label"
+          for="3"
+        >
+          Enable DHCP clients in DNS
+        </label>
+      </div>
+      <div
+        class="form-check col-sm-8"
+      >
+        <input
+          disabled=""
+          id="3"
+          type="checkbox"
+        />
+        <small
+          class="form-text text-muted"
+        >
+          This will enable your DNS resolver to place DHCP client's names among the local DNS records.
+        </small>
+      </div>
+    </div>
+    <button
+      class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
+      disabled=""
+    >
+      <span
+        aria-hidden="true"
+        class="spinner-border spinner-border-sm"
+        role="status"
+      />
+       
+       
+       
+      Restarting after %d sec.
+    </button>
+  </form>
+</div>
+`;
