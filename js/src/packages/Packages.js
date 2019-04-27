@@ -25,10 +25,11 @@ export default function Packages() {
 
         formIsDisabled,
         setFormValue
-    ] = useForm(()=>{});
+    ] = useForm(() => {
+    });
 
     const [getData, isReady] = useAPIGetData('packages');
-    const loadFormData = () => getData(data => setFormData(data));
+    const loadFormData = () => getData(data => setFormData(prepData(data)));
     useEffect(() => loadFormData(), []);
     useEffect(() => setFormState(isReady ? FORM_STATES.READY : FORM_STATES.LOAD), [isReady,]);
 
@@ -69,12 +70,19 @@ export default function Packages() {
     </form>
 }
 
-function prepDataToSubmit(formDate) {
-    const packages = formDate.user_lists
+function prepData(formData) {
+    formData.user_lists = formData.user_lists
+        .filter(_package => !_package.hidden);
+    return formData
+}
+
+
+function prepDataToSubmit(formData) {
+    const packages = formData.user_lists
         .filter(_package => _package.enabled)
         .map(_package => _package.name);
 
-    const languages = formDate.languages
+    const languages = formData.languages
         .filter(language => language.enabled)
         .map(language => language.code);
 
