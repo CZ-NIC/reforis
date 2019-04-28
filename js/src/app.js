@@ -8,7 +8,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 
-import webSockets from './webSockets';
+import WebSockets from './common/WebSockets';
 import NotificationsDropdown from './notifications/NotificationsDropdown/NotificationsDropdown';
 import NotificationsCenter from './notifications/NotificationsCenter/NotificationsCenter';
 
@@ -19,11 +19,11 @@ import DNS from './dns/DNS';
 import ConnectionTest from './connectionTest/ConnectionTest';
 
 import Administration from './administration/Administration';
-import RebootHandler from './forisCommonComponents/Reboot/RebootHandler';
 import Updates from './updates/Updates';
 import Packages from './packages/Packages';
+import RouterStateHandler from './routerStateHandler/RouterStateHandler';
 
-const ws = new webSockets();
+const ws = new WebSockets();
 
 window.addEventListener('load', () => {
     const apps = [
@@ -37,7 +37,7 @@ window.addEventListener('load', () => {
         {id: 'updates_container', component: Updates},
         {id: 'packages_container', component: Packages},
         {id: 'administration_container', component: Administration},
-        {id: 'reboot_handler_container', component: RebootHandler},
+        {id: 'router_state_handler_container', component: RouterStateHandler},
     ];
 
     for (let app of apps) {
