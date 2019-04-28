@@ -5,22 +5,14 @@
  * See /LICENSE for more information.
  */
 
+import axios from 'axios';
+
 const POST_HEADERS = {
     'Accept': 'application/json',
     'Content-Type': 'application/json',
 };
 
-const FETCH_TIMEOUT = 5000;
-
-export function fetchWithTimeout(url, options = null, timeout = FETCH_TIMEOUT) {
-    return Promise.race([
-        fetch(url, options),
-        new Promise((_, reject) =>
-            setTimeout(() => reject(new Error('timeout')), timeout)
-        )
-    ]);
-}
-
+const TIMEOUT = 5000;
 
 export default class API {
     constructor(url, endpoints) {
@@ -38,20 +30,19 @@ export default class API {
             switch (method) {
                 case 'get':
                     functionToBind = (url_data) => {
-                        return fetchWithTimeout(url + (url_data ? url_data : ''))
-                            .then(response => response.json());
+                        return axios.get(url + (url_data ? url_data : ''), {
+                            timeout: TIMEOUT
+                        })
+                            .then(response => response.data);
                     };
                     break;
                 case 'post':
                     functionToBind = (data) => {
-                        return fetchWithTimeout(
-                            url,
-                            {
-                                headers: POST_HEADERS,
-                                method: 'POST',
-                                body: JSON.stringify(data)
-                            }
-                        ).then(response => response.json())
+                        return axios.post(url, data, {
+                            headers: POST_HEADERS,
+                            timeout: TIMEOUT,
+                        })
+                            .then(response => response.data)
                     };
                     break;
             }

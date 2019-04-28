@@ -5,7 +5,7 @@
  * See /LICENSE for more information.
  */
 
-import API from './utils';
+import API from './APIUtils';
 
 const API_URL = '/api';
 const ENDPOINTS = [
@@ -26,5 +26,4 @@ const ENDPOINTS = [
     {name: 'healthCheck', url: '/health-check', methods: ['get']},
 ];
 
-const ForisAPI = new API(API_URL, ENDPOINTS);
-export default ForisAPI;
+export default new API(API_URL, ENDPOINTS);

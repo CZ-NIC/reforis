@@ -6,7 +6,7 @@
  */
 
 
-import API from '../utils';
+import API from '../APIUtils';
 import mockFetch from '../../testUtils/mockFetch'
 
 describe('API utlis', () => {

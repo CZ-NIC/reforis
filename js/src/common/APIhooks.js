@@ -7,13 +7,13 @@
 
 import React, {useState} from 'react';
 
-import ForisAPI from "./forisAPI";
+import API from "./API";
 
 export function useAPIGetData(endpoint) {
     const [isReady, setIsReady] = useState(false);
     function getData(callback = ()=>{}) {
         setIsReady(false);
-        ForisAPI[endpoint].get().then(data => {
+        API[endpoint].get().then(data => {
             callback(data);
             setIsReady(true);
         });
@@ -24,7 +24,7 @@ export function useAPIGetData(endpoint) {
 
 export function useAPIPostData(endpoint) {
     function postData(data, callback = ()=>{}) {
-        ForisAPI[endpoint].post(data).then(
+        API[endpoint].post(data).then(
             data => {
                 console.log(data); //TODO: remove
                 callback(data);
