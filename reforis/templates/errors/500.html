@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {% trans %}Server error{% endtrans %}
+{% endblock %}
+
+{% block content %}
+    <h1>{% trans %}500 -- Server error{% endtrans %}</h1>
+    <h3>{% trans %}Error:{% endtrans %}</h3>
+    <p>{{ error }}</p>
+    {% if extra %}
+        <h3>{% trans %}Extra:{% endtrans %}</h3>
+        <p>{{ extra }}</p>
+    {% endif %}
+    {% if trace %}
+        <h3>{% trans %}Trace:{% endtrans %}</h3>
+        <p>{{ trace }}</p>
+    {% endif %}
+{% endblock %}

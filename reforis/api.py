@@ -3,12 +3,10 @@
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
 
-import json
 from flask import Blueprint, current_app, request, jsonify
 
 from reforis import _get_locale_from_backend
 from reforis.auth import check_password, _decode_password_to_base64
-from reforis.backend import ExceptionInBackend
 
 api = Blueprint(
     'ForisAPI',
@@ -42,40 +40,32 @@ def handle_invalid_usage(error):
     return response
 
 
-# TODO: make some wrapper to catch backend exceptions...
-
 @api.route('/notifications', methods=['GET', 'POST'])
 def notifications():
-    try:
-        res = ''
-        if request.method == 'GET':
-            res = current_app.backend.perform(
-                'router_notifications', 'list',
-                {'lang': _get_locale_from_backend(current_app)}
-            )
-        elif request.method == 'POST':
-            data = request.json
-            res = current_app.backend.perform('router_notifications', 'mark_as_displayed', data)
-        return jsonify(res)
-    except ExceptionInBackend as e:
-        _process_backend_error(e)
+    res = ''
+    if request.method == 'GET':
+        res = current_app.backend.perform(
+            'router_notifications', 'list',
+            {'lang': _get_locale_from_backend(current_app)}
+        )
+    elif request.method == 'POST':
+        data = request.json
+        res = current_app.backend.perform('router_notifications', 'mark_as_displayed', data)
+    return jsonify(res)
 
 
 @api.route('/notifications-settings', methods=['GET', 'POST'])
 def notifications_settings():
-    try:
-        res = ''
-        if request.method == 'GET':
-            res = current_app.backend.perform(
-                'router_notifications',
-                'get_settings',
-            )
-        elif request.method == 'POST':
-            data = request.json
-            res = current_app.backend.perform('router_notifications', 'update_email_settings', data)
-        return jsonify(res)
-    except ExceptionInBackend as e:
-        _process_backend_error(e)
+    res = ''
+    if request.method == 'GET':
+        res = current_app.backend.perform(
+            'router_notifications',
+            'get_settings',
+        )
+    elif request.method == 'POST':
+        data = request.json
+        res = current_app.backend.perform('router_notifications', 'update_email_settings', data)
+    return jsonify(res)
 
 
 @api.route('/wifi', methods=['GET', 'POST'])
@@ -90,32 +80,21 @@ def lan():
 
 @api.route('/wan', methods=['GET', 'POST'])
 def wan():
-    try:
-        res = ''
-        if request.method == 'GET':
-            res = {
-                **current_app.backend.perform('wan', 'get_settings'),
-                **current_app.backend.perform('wan', 'get_wan_status')
-            }
-        elif request.method == 'POST':
-            data = request.json
-            res = current_app.backend.perform('wan', 'update_settings', data)
-        return jsonify(res)
-    except ExceptionInBackend as e:
-        _process_backend_error(e)
+    res = ''
+    if request.method == 'GET':
+        res = {
+            **current_app.backend.perform('wan', 'get_settings'),
+            **current_app.backend.perform('wan', 'get_wan_status')
+        }
+    elif request.method == 'POST':
+        data = request.json
+        res = current_app.backend.perform('wan', 'update_settings', data)
+    return jsonify(res)
 
 
 @api.route('/connection-test', methods=['GET'])
 def connection_test():
-    try:
-        res = current_app.backend.perform(
-            'wan',
-            'connection_test_trigger',
-            data={'test_kinds': ['ipv4', 'ipv6']}
-        )
-        return jsonify(res)
-    except ExceptionInBackend as e:
-        _process_backend_error(e)
+    return jsonify(current_app.backend.perform('wan', 'connection_test_trigger', data={'test_kinds': ['ipv4', 'ipv6']}))
 
 
 @api.route('/dns', methods=['GET', 'POST'])
@@ -125,109 +104,92 @@ def dns():
 
 @api.route('/dns-test', methods=['GET'])
 def dns_test():
-    try:
-        res = current_app.backend.perform(
-            'wan',
-            'connection_test_trigger',
-            data={'test_kinds': ['dns']}
-        )
-        return jsonify(res)
-    except ExceptionInBackend as e:
-        _process_backend_error(e)
+    return jsonify(current_app.backend.perform('wan', 'connection_test_trigger', data={'test_kinds': ['dns']}))
 
 
 @api.route('/updates', methods=['GET', 'POST'])
 def updates():
-    try:
-        updater_settings = current_app.backend.perform(
-            'updater',
-            'get_settings',
-            {'lang': _get_locale_from_backend(current_app)}
-        )
-        del updater_settings['approval']
+    updater_settings = current_app.backend.perform(
+        'updater',
+        'get_settings',
+        {'lang': _get_locale_from_backend(current_app)}
+    )
+    del updater_settings['approval']
 
-        res = None
-        if request.method == 'GET':
-            res = {
-                **updater_settings,
-                'reboots': current_app.backend.perform('router_notifications', 'get_settings')['reboots'],
-            }
-            del res['user_lists']
-            del res['languages']
-        elif request.method == 'POST':
-            # TODO: Here is a problem.
-            # If one of the valid and one is invalid then valid one will set with error status code.
-            data = request.json
-            res_reboots = current_app.backend.perform('router_notifications', 'update_reboot_settings', data['reboots'])
-            del data['reboots']
+    res = None
+    if request.method == 'GET':
+        res = {
+            **updater_settings,
+            'reboots': current_app.backend.perform('router_notifications', 'get_settings')['reboots'],
+        }
+        del res['user_lists']
+        del res['languages']
+    elif request.method == 'POST':
+        # TODO: Here is a problem.
+        # If one of the valid and one is invalid then valid one will set with error status code.
+        data = request.json
+        res_reboots = current_app.backend.perform('router_notifications', 'update_reboot_settings', data['reboots'])
+        del data['reboots']
 
-            if data['enabled']:
-                data['user_lists'] = [
-                    package['name'] for package in updater_settings['user_lists'] if package['enabled']
-                ]
-                data['languages'] = [
-                    language['code'] for language in updater_settings['languages'] if language['enabled']
-                ]
+        if data['enabled']:
+            data['user_lists'] = [
+                package['name'] for package in updater_settings['user_lists'] if package['enabled']
+            ]
+            data['languages'] = [
+                language['code'] for language in updater_settings['languages'] if language['enabled']
+            ]
 
-            res_updater = current_app.backend.perform('updater', 'update_settings', data)
-            res = {'result': res_reboots and res_updater}
-        return jsonify(res)
-    except ExceptionInBackend as e:
-        _process_backend_error(e)
+        res_updater = current_app.backend.perform('updater', 'update_settings', data)
+        res = {'result': res_reboots and res_updater}
+    return jsonify(res)
 
 
 @api.route('/packages', methods=['GET', 'POST'])
 def packages():
-    try:
-        updater_settings = current_app.backend.perform(
-            'updater',
-            'get_settings',
-            {'lang': _get_locale_from_backend(current_app)}
-        )
-        del updater_settings['approval']
-        res = {}
-        if request.method == 'GET':
-            res = updater_settings
-            del res['approval_settings']
-        elif request.method == 'POST':
-            data = request.json
-            if not updater_settings['enabled']:
-                raise InvalidUsage('You can\'t set packages with disabled automatic updates.')
-            data['enabled'] = True
-            data['approval_settings'] = updater_settings['approval_settings']
-            res = current_app.backend.perform('updater', 'update_settings', data)
-        return jsonify(res)
-    except ExceptionInBackend as e:
-        _process_backend_error(e)
+    updater_settings = current_app.backend.perform(
+        'updater',
+        'get_settings',
+        {'lang': _get_locale_from_backend(current_app)}
+    )
+    del updater_settings['approval']
+    res = {}
+    if request.method == 'GET':
+        res = updater_settings
+        del res['approval_settings']
+    elif request.method == 'POST':
+        data = request.json
+        if not updater_settings['enabled']:
+            raise InvalidUsage('You can\'t set packages with disabled automatic updates.')
+        data['enabled'] = True
+        data['approval_settings'] = updater_settings['approval_settings']
+        res = current_app.backend.perform('updater', 'update_settings', data)
+    return jsonify(res)
 
 
 @api.route('/password', methods=['GET', 'POST'])
 def password():
-    try:
-        res = ''
-        if request.method == 'GET':
-            res = {'password_set': current_app.backend.perform('web', 'get_data')['password_ready']}
-        elif request.method == 'POST':
-            data = request.json
-            res = {}
-            if not data.get('foris_current_password', False) or not check_password(data['foris_current_password']):
-                raise InvalidUsage('Wrong current password')
+    res = ''
+    if request.method == 'GET':
+        res = {'password_set': current_app.backend.perform('web', 'get_data')['password_ready']}
+    elif request.method == 'POST':
+        data = request.json
+        res = {}
+        if not data.get('foris_current_password', False) or not check_password(data['foris_current_password']):
+            raise InvalidUsage('Wrong current password')
 
-            if data.get('foris_password', False):
-                new_password = _decode_password_to_base64(data['foris_password'])
-                res['foris_password'] = current_app.backend.perform('password', 'set', {
-                    'password': new_password,
-                    'type': 'foris'
-                })
-            if data.get('root_password', False):
-                new_password = _decode_password_to_base64(data['root_password'])
-                res['root_password'] = current_app.backend.perform('password', 'set', {
-                    'password': new_password,
-                    'type': 'foris'
-                })
-        return jsonify(res)
-    except ExceptionInBackend as e:
-        _process_backend_error(e)
+        if data.get('foris_password', False):
+            new_password = _decode_password_to_base64(data['foris_password'])
+            res['foris_password'] = current_app.backend.perform('password', 'set', {
+                'password': new_password,
+                'type': 'foris'
+            })
+        if data.get('root_password', False):
+            new_password = _decode_password_to_base64(data['root_password'])
+            res['root_password'] = current_app.backend.perform('password', 'set', {
+                'password': new_password,
+                'type': 'foris'
+            })
+    return jsonify(res)
 
 
 @api.route('/region-and-time', methods=['GET', 'POST'])
@@ -237,20 +199,12 @@ def region_and_time():
 
 @api.route('/time', methods=['GET'])
 def time():
-    try:
-        res = current_app.backend.perform('time', 'get_router_time')
-        return jsonify(res)
-    except ExceptionInBackend as e:
-        _process_backend_error(e)
+    return jsonify(current_app.backend.perform('time', 'get_router_time'))
 
 
 @api.route('/reboot', methods=['GET'])
 def reboot():
-    try:
-        res = current_app.backend.perform('maintain', 'reboot')
-        return jsonify(res)
-    except ExceptionInBackend as e:
-        _process_backend_error(e)
+    return jsonify(current_app.backend.perform('maintain', 'reboot'))
 
 
 @api.route('/health-check', methods=['GET'])
@@ -259,21 +213,10 @@ def health_check():
 
 
 def _foris_controller_settings_call(module):
-    try:
-        res = ''
-        if request.method == 'GET':
-            res = current_app.backend.perform(module, 'get_settings')
-        elif request.method == 'POST':
-            data = request.json
-            res = current_app.backend.perform(module, 'update_settings', data)
-        return jsonify(res)
-    except ExceptionInBackend as e:
-        _process_backend_error(e)
-
-
-def _process_backend_error(e):
-    # TODO: logging...
-    error = 'Remote Exception: %s' % e.remote_description
-    extra = '%s' % json.dumps(e.query)
-    trace = e.remote_stacktrace
-    print('\nError: {}\nExtra: {}\nTrace: {}'.format(error, extra, trace))
+    res = ''
+    if request.method == 'GET':
+        res = current_app.backend.perform(module, 'get_settings')
+    elif request.method == 'POST':
+        data = request.json
+        res = current_app.backend.perform(module, 'update_settings', data)
+    return jsonify(res)

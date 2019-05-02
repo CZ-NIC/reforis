@@ -2,8 +2,12 @@
 #
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
+import json
+
+from flask import render_template
 
 from reforis.auth import register_login_required
+from reforis.backend import ExceptionInBackend
 from .locale import TranslationsHelper
 
 
@@ -20,14 +24,35 @@ def create_app(config):
 
     register_login_required(app)
 
-    from .views import base
+    from .views import views
     from .api import api
-    app.register_blueprint(base)
+    app.register_blueprint(views)
     app.register_blueprint(api)
 
     load_plugins(app)
 
+    app.register_error_handler(404, not_found_error)
+    app.register_error_handler(500, internal_error)
+    app.register_error_handler(ExceptionInBackend, foris_controller_error)
+
     return app
+
+
+def not_found_error(error):
+    return render_template('errors/404.html'), 404
+
+
+def internal_error(error):
+    return render_template('errors/500.html', error=error), 500
+
+
+def foris_controller_error(e):
+    error = {
+        'error': 'Remote Exception: %s' % e.remote_description,
+        'extra': '%s' % json.dumps(e.query),
+        'trace': e.remote_stacktrace,
+    }
+    return render_template('errors/500.html', **error), 500
 
 
 def set_backend(app):
