@@ -3,6 +3,9 @@
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
 
+import time
+
+from flask import current_app
 from foris_client.buses.base import ControllerError
 
 
@@ -14,7 +17,6 @@ class ExceptionInBackend(Exception):
 
 
 class Backend(object):
-    # TODO: get timeout from config
     def __init__(self, name, **kwargs):
         self.name = name
         self.timeout = kwargs["timeout"]
@@ -48,11 +50,11 @@ class Backend(object):
         :raises ExceptionInBackend: When command failed and raise_exception_on_failure is True
         """
         response = None
-        # start_time = time.time()
+        start_time = time.time()
         try:
             response = self._instance.send(module, action, data, controller_id=self.controller_id)
         except ControllerError as e:
-            # logger.error("Exception in backend occured.")
+            current_app.logger.error("Exception in backend occured.")
             if raise_exception_on_failure:
                 error = e.errors[0]  # right now we are dealing only with the first error
                 msg = {"module": module, "action": action, "kind": "request"}
@@ -60,21 +62,17 @@ class Backend(object):
                     msg["data"] = data
                 raise ExceptionInBackend(msg, error["stacktrace"], error["description"])
 
-        # TODO: Clean this and make logging
-        # except RuntimeError as e:
-        #     # This may occure when e.g. calling function is not present in backend
-        #     # logger.error("RuntimeError occured during the communication with backend.")
-        #     if raise_exception_on_failure:
-        #         raise e
-        # except Exception as e:
-        #     # logger.error("Exception occured during the communication with backend. (%s)", e)
-        #     raise e
-        # finally:
-        #     pass
-        #     # logger.debug(
-        #     #     "Query took %f: %s.%s - %s",
-        #     #     time.time() - start_time, module, action, data
-        #     # )
+        except RuntimeError as e:
+            # This may occure when e.g. calling function is not present in backend
+            # logger.error("RuntimeError occured during the communication with backend.")
+            if raise_exception_on_failure:
+                raise e
+        except Exception as e:
+            current_app.logger.error("Exception occured during the communication with backend. (%s)", e)
+            raise e
+        finally:
+            pass
+            current_app.logger.debug("Query took %f: %s.%s - %s", time.time() - start_time, module, action, data)
 
         return response
 

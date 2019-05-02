@@ -95,16 +95,8 @@ def set_locale(app):
         return {'babel_catalog': translations.json_catalog}
 
 
-# TODO: Delete this function if it's not needed
-def set_notifications(app):
-    @app.context_processor
-    def add_notifications_to_ctx():
-        return app.backend.perform('router_notifications', 'list', {'lang': _get_locale_from_backend(app)})
-
-
-# TODO: Put it to utils
-# TODO: cache it somehow?
 def _get_locale_from_backend(app):
+    # TODO: better to cache.
     return app.backend.perform('web', 'get_data')['language']
 
 
