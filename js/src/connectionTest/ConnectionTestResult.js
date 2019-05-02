@@ -13,18 +13,20 @@ const TEST_TYPES = {
     ipv4_gateway: _('IPv4 gateway connectivity'),
     ipv6: _('IPv6 connectivity'),
     ipv6_gateway: _('IPv6 gateway connectivity'),
+    dns: 'DNS',
+    dnssec: 'DNSSEC',
 };
 
 ConnectionTestResults.propTypes = {
-    dns: propTypes.bool,
-    dnssec: propTypes.bool,
     ipv4: propTypes.bool,
     ipv4_gateway: propTypes.bool,
     ipv6: propTypes.bool,
     ipv6_gateway: propTypes.bool,
+    dns: propTypes.bool,
+    dnssec: propTypes.bool,
 };
 
-export function ConnectionTestResults(tests) {
+export function ConnectionTestResults({...tests}) {
     return <table className='table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12'>
         <tbody>
         {Object.keys(tests).map(
@@ -47,10 +49,10 @@ function ConnectionTestResultItem({type, result}) {
     let icon = null;
     switch (result) {
         case true:
-            icon = <i className='fas fa-times text-danger'/>;
+            icon = <i className='fas fa-check text-success'/>;
             break;
         case false:
-            icon = <i className='fas fa-check text-success'/>;
+            icon = <i className='fas fa-times text-danger'/>;
             break;
         default:
             icon = <div className='spinner-border spinner-border-sm text-secondary' role='status'>

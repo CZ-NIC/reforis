@@ -7,7 +7,7 @@
 
 import React from 'react';
 
-import RebootButton from '../forisCommonComponents/Reboot/RebootButton';
+import RebootButton from '../common/RebootButton';
 
 export default function Reboot() {
     return <>

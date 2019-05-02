@@ -6,12 +6,14 @@
  */
 
 import React, {useState, useEffect} from 'react';
-import {useAPIGetData, useAPIPostData} from '../forisAPI/hooks';
+
+import {useAPIGetData, useAPIPostData} from '../common/APIhooks';
+import {APIEndpoints} from '../common/API';
 
 export default function useNotifications(ws) {
     const [notifications, setNotifications] = useState([]);
-    const [getData, isReady] = useAPIGetData('notifications');
-    const postData = useAPIPostData('notifications');
+    const [getData] = useAPIGetData(APIEndpoints.notifications);
+    const postData = useAPIPostData(APIEndpoints.notifications);
 
     useEffect(() => {
         getNotifications();

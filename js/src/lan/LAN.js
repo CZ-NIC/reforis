@@ -8,10 +8,12 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-import ForisForm from '../forisForm/ForisForm';
+import ForisForm from '../formContainer/ForisForm';
+import LANForm, {LAN_MODES} from './LANForm';
+
 import {validateManaged} from './LANManagedForm';
 import {validateUnmanaged} from './LANUnmanagedForm';
-import LANForm, {LAN_MODES} from './LANForm';
+import {APIEndpoints} from '../common/API';
 
 LAN.propTypes = {
     ws: propTypes.object.isRequired
@@ -20,8 +22,10 @@ LAN.propTypes = {
 export default function LAN({ws}) {
     return <ForisForm
         ws={ws}
-        module='lan'
-        prepData={data => data}
+        forisConfig={{
+            endpoint: APIEndpoints.lan,
+            wsModule: 'lan',
+        }}
         prepDataToSubmit={prepDataToSubmit}
         validator={validator}
     >
@@ -56,6 +60,6 @@ function validator(formData) {
         errors.mode_managed = validateManaged(formData.mode_managed);
     else if (formData.mode === LAN_MODES.unmanaged)
         errors.mode_unmanaged = validateUnmanaged(formData.mode_unmanaged);
-
+    console.log(errors);
     return errors[`mode_${formData.mode}`] ? errors : null;
 }

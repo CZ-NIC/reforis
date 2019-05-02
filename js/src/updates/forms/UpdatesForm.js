@@ -7,7 +7,7 @@
 
 import React from 'react';
 
-import CheckBox from '../../bootstrap/Checkbox';
+import CheckBox from '../../common/bootstrap/Checkbox';
 import RestartAfterUpdateForm from './RestartAfterUpdateForm';
 import UpdateApprovalsForm from './UpdateApprovalsForm';
 
@@ -16,7 +16,6 @@ UpdatesForm.defaultProps = {
 };
 
 export default function UpdatesForm({formData, formErrors, setFormValue, ...props}) {
-
     return <>
         <CheckBox
             label={_('Enable automatic updates (recommended)')}

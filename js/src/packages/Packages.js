@@ -5,69 +5,39 @@
  * See /LICENSE for more information.
  */
 
-import React, {useEffect} from 'react';
+import React from 'react';
+import propTypes from 'prop-types';
 
-import {FORM_STATES, useForm} from '../forisForm/hooks';
-import {useAPIGetData, useAPIPostData} from '../forisAPI/hooks';
-import SubmitButton from '../forisForm/SubmitButton';
-import Alert from '../bootstrap/Alert';
+import {APIEndpoints} from '../common/API';
+import Alert from '../common/bootstrap/Alert';
+import ForisForm from '../formContainer/ForisForm';
 
-import LanguageForm from './forms/LanguageForm';
-import PackagesForm from './forms/PackagesForm';
+import LanguageForm from './LanguageForm';
+import PackagesForm from './PackagesForm';
 
 export default function Packages() {
-    const [
-        formData,
-        ,
-        setFormData,
-        formState,
-        setFormState,
+    return <ForisForm
+        forisConfig={{endpoint: APIEndpoints.packages}}
+        prepData={prepData}
+        prepDataToSubmit={prepDataToSubmit}
+        // Disable form if updater is disabled
+        disableIf={formData => !formData.enabled}
+    >
+        <DisabledUpdaterAlert/>
+        <PackagesForm/>
+        <LanguageForm/>
+    </ForisForm>
+}
 
-        formIsDisabled,
-        setFormValue
-    ] = useForm(() => {
-    });
+DisabledUpdaterAlert.propTypes = {
+    formData: propTypes.shape({enabled: propTypes.bool.isRequired})
+};
 
-    const [getData, isReady] = useAPIGetData('packages');
-    const loadFormData = () => getData(data => setFormData(prepData(data)));
-    useEffect(() => loadFormData(), []);
-    useEffect(() => setFormState(isReady ? FORM_STATES.READY : FORM_STATES.LOAD), [isReady,]);
-
-    const postData = useAPIPostData('packages');
-
-    function onSubmitHandler(e) {
-        e.preventDefault();
-        setFormState(FORM_STATES.UPDATE);
-        const copiedFormData = JSON.parse(JSON.stringify(formData));
-        postData(prepDataToSubmit(copiedFormData), () => {
-            loadFormData();
-        });
-    }
-
-    if (!isReady)
-        return null;
-
-    return <form onSubmit={onSubmitHandler}>
-        {!formData.enabled ?
-            <Alert
-                type='warning'
-                message={_('Please enable automatic updates to manage packages and languages.')}
-            />
-            : null}
-        <div className={!formData.enabled ? 'text-muted' : null}>
-            <PackagesForm
-                formData={formData.user_lists}
-                setFormValue={setFormValue}
-                disabled={formIsDisabled || !formData.enabled}
-            />
-            <LanguageForm
-                formData={formData.languages}
-                setFormValue={setFormValue}
-                disabled={formIsDisabled || !formData.enabled}
-            />
-            <SubmitButton state={formState} disabled={!formData.enabled}/>
-        </div>
-    </form>
+function DisabledUpdaterAlert({formData}) {
+    return formData.enabled ? null : <Alert
+        type='warning'
+        message={_('Please enable automatic updates to manage packages and languages.')}
+    />
 }
 
 function prepData(formData) {
@@ -75,7 +45,6 @@ function prepData(formData) {
         .filter(_package => !_package.hidden);
     return formData
 }
-
 
 function prepDataToSubmit(formData) {
     const packages = formData.user_lists

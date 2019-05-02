@@ -6,6 +6,7 @@
 
 from flask import Blueprint, current_app, redirect, render_template, request, session, url_for
 from flask_babel import get_locale
+from flask_babel import gettext as _
 
 from reforis import TranslationsHelper
 from reforis.auth import login_to_foris, logout_from_foris
@@ -24,6 +25,7 @@ def index():
 
 @base.route('/login', methods=['GET', 'POST'])
 def login():
+    error_message = None
     if session.get('logged', False):
         return redirect(url_for('Foris.index'))
 
@@ -31,8 +33,9 @@ def login():
         password = request.form['password']
         if login_to_foris(password):
             return redirect(url_for('Foris.index'))
-
-    return render_template('login.html')
+        else:
+            error_message = _('Wrong password.')
+    return render_template('login.html', error_message=error_message)
 
 
 @base.route('/logout')

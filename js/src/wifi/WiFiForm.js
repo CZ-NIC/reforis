@@ -8,11 +8,11 @@
 import React from 'react'
 import propTypes from 'prop-types';
 
-import TextInput from '../bootstrap/TextInput';
-import PasswordInput from '../bootstrap/PasswordInput';
-import CheckBox from '../bootstrap/Checkbox';
-import RadioSet from '../bootstrap/RadioSet';
-import Select from '../bootstrap/Select';
+import TextInput from '../common/bootstrap/TextInput';
+import PasswordInput from '../common/bootstrap/PasswordInput';
+import CheckBox from '../common/bootstrap/Checkbox';
+import RadioSet from '../common/bootstrap/RadioSet';
+import Select from '../common/bootstrap/Select';
 import {WifiGuestForm} from './WiFiGuestForm';
 
 const HTMODES = {

@@ -8,10 +8,10 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-import TextInput from '../bootstrap/TextInput';
-import CheckBox from '../bootstrap/Checkbox';
-import NumberInput from '../bootstrap/NumberInput';
-import {validateIPv4Address} from '../forisForm/validation';
+import TextInput from '../common/bootstrap/TextInput';
+import CheckBox from '../common/bootstrap/Checkbox';
+import NumberInput from '../common/bootstrap/NumberInput';
+import {validateIPv4Address} from '../common/validations';
 
 const HELP_TEXTS = {
     router_ip: _("Router's IP address in the inner network."),
@@ -29,6 +29,10 @@ LANManagedForm.propTypes = {
         mode_unmanaged: propTypes.object,
     }),
     setFormValue: propTypes.func.isRequired,
+};
+
+LANManagedForm.defaultProps = {
+    formData: {},
 };
 
 export default function LANManagedForm({formData, formErrors, setFormValue, ...props}) {
@@ -97,6 +101,7 @@ LANManagedDHCPForm.propTypes = {
 };
 
 LANManagedDHCPForm.defaultProps = {
+    formData: {},
     formErrors: {},
 };
 
@@ -104,8 +109,8 @@ function LANManagedDHCPForm({formData, formErrors, setFormValue, ...props}) {
     return <>
         <NumberInput
             label={_('DHCP start')}
-            value={formData.start || ''}
-            error={formErrors.start || null}
+            value={formData.start}
+            error={formErrors.start}
             min='1'
             required
 
@@ -117,8 +122,8 @@ function LANManagedDHCPForm({formData, formErrors, setFormValue, ...props}) {
         />
         <NumberInput
             label={_('DHCP max leases')}
-            value={formData.limit || ''}
-            error={formErrors.limit || null}
+            value={formData.limit}
+            error={formErrors.limit}
             min='1'
             required
 
@@ -130,8 +135,8 @@ function LANManagedDHCPForm({formData, formErrors, setFormValue, ...props}) {
         />
         <NumberInput
             label={_('Lease time (hours)')}
-            value={formData.lease_time || ''}
-            error={formErrors.lease_time || null}
+            value={formData.lease_time}
+            error={formErrors.lease_time}
             min='120'
             required
 

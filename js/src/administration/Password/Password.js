@@ -7,18 +7,20 @@
 
 import React, {useState, useEffect} from 'react';
 
-import {useAPIGetData, useAPIPostData} from '../../forisAPI/hooks';
-import {FORM_STATES, useForm} from '../../forisForm/hooks';
-import Alert from '../../bootstrap/Alert';
-import CurrentForisPasswordForm from './forms/CurrentForisPasswordForm';
-import ForisPasswordForm from './forms/ForisPasswordForm';
-import RootPasswordForm from './forms/RootPasswordForm';
+import {useAPIGetData, useAPIPostData} from '../../common/APIhooks';
+import {APIEndpoints} from '../../common/API';
+import {FORM_STATES, useForm} from '../../formContainer/hooks';
+import Alert from '../../common/bootstrap/Alert';
+
+import CurrentForisPasswordForm from './CurrentForisPasswordForm';
+import ForisPasswordForm from './ForisPasswordForm';
+import RootPasswordForm from './RootPasswordForm';
 import validator from './validator';
 
 
 function usePasswordIsSet() {
     const [isSet, setIsSet] = useState(null);
-    const [getData, isReady] = useAPIGetData('password');
+    const [getData, isReady] = useAPIGetData(APIEndpoints.password);
     useEffect(() => {
         getData(data => setIsSet(data['password_set']))
     }, []);
@@ -51,20 +53,7 @@ export default function Password() {
 
     const [alert, setAlert] = useState(null);
 
-    function processRequestResult(res) {
-        if (res.error) {
-            setAlert({type: 'danger', message: res.error});
-            setFormData(data => ({...data, currentForisPassword: ''}))
-        } else {
-            setAlert({
-                type: 'success',
-                message: _('Password was successfully changed')
-            });
-            setFormData(initialFormData)
-        }
-    }
-
-    const postData = useAPIPostData('password');
+    const postData = useAPIPostData(APIEndpoints.password);
 
     function postForisPassword(e) {
         e.preventDefault();
@@ -74,29 +63,40 @@ export default function Password() {
         };
         if (formData.sameForRoot)
             data['root_password'] = formData.newForisPassword;
-        postData(data, res => {
-            processRequestResult(res)
-        })
+        postPasswordData(data)
     }
 
     function postRootPassword(e) {
         e.preventDefault();
-        postData({
+        const data = {
             foris_current_password: formData.currentForisPassword,
             root_password: formData.newRootPassword
-        }, res => {
-            processRequestResult(res)
-        })
+        };
+        postPasswordData(data);
     }
 
-    function onAlertDismiss() {
-        setAlert(null);
+    function postPasswordData(data) {
+        postData(data, () => processResultSuccess(), error => processResultFail(error.response.data))
     }
+
+    function processResultSuccess() {
+        setAlert({
+            type: 'success',
+            message: _('Password was successfully changed')
+        });
+        setFormData(initialFormData)
+    }
+
+    function processResultFail(res) {
+        setAlert({type: 'danger', message: res.error});
+        setFormData(data => ({...data, currentForisPassword: ''}))
+    }
+
     if (!isReady)
         return null;
 
     return <>
-        {alert ? <Alert type={alert.type} message={alert.message} onDismiss={onAlertDismiss}/> : null}
+        {alert ? <Alert type={alert.type} message={alert.message} onDismiss={() => setAlert(null)}/> : null}
         <h3>{_('Password settings')}</h3>
         {passwordIsSet ?
             <CurrentForisPasswordForm

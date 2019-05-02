@@ -6,22 +6,44 @@
  */
 
 import React from 'react';
+import propTypes from 'prop-types';
 
-import {validateDomain} from '../forisForm/validation';
-import ForisForm from '../forisForm/ForisForm';
+import {validateDomain} from '../common/validations';
+import ForisForm from '../formContainer/ForisForm';
 
+import {APIEndpoints} from '../common/API';
 import DNSForm from './DNSForm';
+import ConnectionTest from '../connectionTest/ConnectionTest';
+
+DNS.propTypes = {
+    ws: propTypes.object.isRequired
+};
 
 export default function DNS({ws}) {
-    return <ForisForm
-        ws={ws}
-        module='dns'
-        validator={validator}
-        prepData={formData => formData}
-        prepDataToSubmit={prepDataToSubmit}
-    >
-        <DNSForm/>
-    </ForisForm>
+    return <>
+        <ForisForm
+            ws={ws}
+            forisConfig={{
+                endpoint: APIEndpoints.dns,
+                wsModule: 'dns',
+            }}
+            validator={validator}
+            prepDataToSubmit={prepDataToSubmit}
+        >
+            <DNSForm/>
+        </ForisForm>
+
+        <h1>{_('Connection test')}</h1>
+        <p
+            dangerouslySetInnerHTML={{
+                __html: _(`
+Here you can test your internet connection. This test is also useful when you need to check that your DNS resolving 
+works as expected. Remember to click on the <b>Save button</b> if you changed your forwarder setting.
+        `)
+            }}
+        />
+        <ConnectionTest ws={ws} type='dns'/>
+    </>
 }
 
 function validator(formData) {

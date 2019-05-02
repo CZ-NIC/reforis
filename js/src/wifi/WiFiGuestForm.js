@@ -7,9 +7,9 @@
 
 import React from 'react';
 
-import CheckBox from '../bootstrap/Checkbox';
-import TextInput from '../bootstrap/TextInput';
-import PasswordInput from '../bootstrap/PasswordInput';
+import CheckBox from '../common/bootstrap/Checkbox';
+import TextInput from '../common/bootstrap/TextInput';
+import PasswordInput from '../common/bootstrap/PasswordInput';
 
 import {HELP_TEXTS} from './WiFiForm';
 import propTypes from 'prop-types';

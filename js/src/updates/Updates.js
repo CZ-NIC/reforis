@@ -5,61 +5,24 @@
  * See /LICENSE for more information.
  */
 
-import React, {useEffect} from 'react'
+import React from 'react'
 import moment from 'moment';
 
-import {useForm} from '../forisForm/hooks';
-import {useAPIGetData, useAPIPostData} from '../forisAPI/hooks';
-import SubmitButton from '../forisForm/SubmitButton';
-
 import UpdatesForm from './forms/UpdatesForm';
-
-const FORM_STATES = {
-    READY: 0,
-    UPDATE: 1,
-    LOAD: 2,
-};
+import ForisForm from '../formContainer/ForisForm';
+import {APIEndpoints} from '../common/API';
 
 export default function Updates() {
-    const [
-        formData,
-        formErrors,
-        setFormData,
-        formState,
-        setFormState,
-
-        formIsDisabled,
-        setFormValue
-    ] = useForm(validator);
-
-    const [getData, isReady] = useAPIGetData('updates');
-    const loadFormData = () => getData(data => setFormData(prepData(data)));
-    useEffect(() => loadFormData(), []);
-    useEffect(() => setFormState(isReady ? FORM_STATES.READY : FORM_STATES.LOAD), [isReady,]);
-
-    const postData = useAPIPostData('updates');
-
-    function onSubmitHandler(e) {
-        e.preventDefault();
-        setFormState(FORM_STATES.UPDATE);
-        const copiedFormData = JSON.parse(JSON.stringify(formData));
-        postData(prepDataToSubmit(copiedFormData), () => {
-            loadFormData();
-        });
-    }
-
-    if (!isReady)
-        return null;
-
-    return <form onSubmit={onSubmitHandler}>
-        <UpdatesForm
-            formData={formData}
-            formErrors={formErrors}
-            setFormValue={setFormValue}
-            disabled={formIsDisabled}
-        />
-        <SubmitButton state={formState}/>
-    </form>
+    return <ForisForm
+        forisConfig={{
+            endpoint: APIEndpoints.updates
+        }}
+        prepData={prepData}
+        prepDataToSubmit={prepDataToSubmit}
+        validator={validator}
+    >
+        <UpdatesForm/>
+    </ForisForm>
 }
 
 

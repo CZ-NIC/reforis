@@ -9,27 +9,47 @@ import React from 'react';
 import update from 'immutability-helper';
 import propTypes from 'prop-types';
 
-import ForisForm from '../forisForm/ForisForm';
+import ForisForm from '../formContainer/ForisForm';
+import {APIEndpoints} from '../common/API';
+
 import WAN6Form, {validateWAN6Form} from './WAN6Form';
 import MACForm, {validateMACForm} from './MACForm';
 import WANForm, {validateWANForm} from './WANForm';
+import ConnectionTest from '../connectionTest/ConnectionTest';
 
 WAN.propTypes = {
     ws: propTypes.object.isRequired
 };
 
 export default function WAN({ws}) {
-    return <ForisForm
-        ws={ws}
-        module='wan'
-        prepData={prepData}
-        prepDataToSubmit={prepDataToSubmit}
-        validator={validator}
-    >
-        <WANForm/>
-        <WAN6Form/>
-        <MACForm/>
-    </ForisForm>
+    return <>
+        <ForisForm
+            ws={ws}
+            forisConfig={{
+                endpoint: APIEndpoints.wan,
+                wsModule: 'wan'
+            }}
+            prepData={prepData}
+            prepDataToSubmit={prepDataToSubmit}
+            validator={validator}
+        >
+            <WANForm/>
+            <WAN6Form/>
+            <MACForm/>
+        </ForisForm>
+
+        <h1>{_('Connection test')}</h1>
+        <p
+            dangerouslySetInnerHTML={{
+                __html: _(`
+Here you can test you connection settings. Remember to click on the <b>Save button</b> before running the test.
+Note that sometimes it takes a while before the connection is fully initialized. So it might be useful to
+wait for a while before running this test.
+        `)
+            }}
+        />
+        <ConnectionTest ws={ws} type='wan'/>
+    </>
 }
 
 function prepData(formData) {

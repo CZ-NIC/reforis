@@ -8,20 +8,23 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-import Select from '../bootstrap/Select';
+import Select from '../common/bootstrap/Select';
 import LANManagedForm from './LANManagedForm';
 import LANUnmanagedForm from './LANUnmanagedForm';
 
 const HELP_TEXTS = {
-    mode: _('Router mode means that this devices manages the LAN (acts as a router, can assing IP addresses, ...). ' +
-        'Computer mode means that this device acts as a client in this network. It acts in a similar way as WAN, but ' +
-        'it has opened ports for configuration interface and other services.'),
+    mode: _(`
+Router mode means that this devices manages the LAN (acts as a router, can assing IP addresses, ...).
+Computer mode means that this device acts as a client in this network. It acts in a similar way as WAN, but
+it has opened ports for configuration interface and other services.
+        `),
 };
 
 export const LAN_MODES = {
     managed: 'managed',
     unmanaged: 'unmanaged',
 };
+
 const LAN_MOD_CHOICES = {
     managed: _('Router'),
     unmanaged: _('Computer'),
@@ -38,11 +41,7 @@ LANForm.propTypes = {
         mode_managed: propTypes.object,
         mode_unmanaged: propTypes.object,
     }),
-    setFormValue: propTypes.func.isRequired,
-};
-
-LANForm.defaultProps = {
-    setFormValue: () => {},
+    setFormValue: propTypes.func,
 };
 
 export default function LANForm({formData, formErrors, setFormValue, ...props}) {

@@ -8,11 +8,11 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-import Select from '../../../../bootstrap/Select';
-import TextInput from '../../../../bootstrap/TextInput';
-import NumberInput from '../../../../bootstrap/NumberInput';
-import PasswordInput from '../../../../bootstrap/PasswordInput';
-import EmailInput from '../../../../bootstrap/EmailInput';
+import Select from '../../../../common/bootstrap/Select';
+import TextInput from '../../../../common/bootstrap/TextInput';
+import NumberInput from '../../../../common/bootstrap/NumberInput';
+import PasswordInput from '../../../../common/bootstrap/PasswordInput';
+import EmailInput from '../../../../common/bootstrap/EmailInput';
 
 import HELP_TEXTS from '../helpTexts';
 

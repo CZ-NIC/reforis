@@ -7,33 +7,24 @@
 
 import React from 'react';
 
-import {FORM_STATES} from '../../../forisForm/hooks';
-import ForisForm from '../../../forisForm/ForisForm';
+import ForisForm from '../../../formContainer/ForisForm';
+import {APIEndpoints} from '../../../common/API';
 
 import NotificationsEmailSettingsForm from './forms/NotificationsEmailSettingsForm';
 import validator from './validator';
 
 export default function NotificationsEmailSettings({ws}) {
-    const module = 'router_notifications';
-
-    // The notifications email setting has different WS notifications action, moreover it should be updated after
-    // getting update_email_settings notification.
-    function notificationsEmailSettingWSLogic(setFormState, loadData) {
-        ws.subscribe(module)
-            .bind(module, 'update_email_settings', () => {
-                setFormState(FORM_STATES.UPDATE);
-                loadData()
-            });
-    }
-
     return <>
         <ForisForm
             ws={ws}
-            module={module}
+            forisConfig={{
+                endpoint: APIEndpoints.notificationsSettings,
+                wsModule: 'router_notifications',
+                wsAction: 'update_email_settings',
+            }}
             prepData={prepData}
             prepDataToSubmit={prepDataToSubmit}
             validator={validator}
-            otherWSLogic={notificationsEmailSettingWSLogic}
         >
             <NotificationsEmailSettingsForm/>
         </ForisForm>

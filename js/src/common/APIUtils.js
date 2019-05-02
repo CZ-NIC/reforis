@@ -17,9 +17,9 @@ const TIMEOUT = 5000;
 export default class API {
     constructor(url, endpoints) {
         this.url = url;
-        for (let endpoint of endpoints) {
-            this[endpoint.name] = {};
-            this.bindEndpoint(endpoint);
+        for (let endpoint of Object.keys(endpoints)) {
+            this[endpoint] = {};
+            this.bindEndpoint(endpoints[endpoint]);
         }
     }
 

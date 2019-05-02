@@ -8,7 +8,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-import TextInput from '../../../../bootstrap/TextInput';
+import TextInput from '../../../../common/bootstrap/TextInput';
 
 import HELP_TEXTS from '../helpTexts';
 

@@ -7,13 +7,15 @@
 
 import React, {useState} from 'react';
 
-import API from "./API";
+import API from './API';
 
 export function useAPIGetData(endpoint) {
     const [isReady, setIsReady] = useState(false);
-    function getData(callback = ()=>{}) {
+
+    function getData(callback = () => {
+    }) {
         setIsReady(false);
-        API[endpoint].get().then(data => {
+        API[endpoint.name].get().then(data => {
             callback(data);
             setIsReady(true);
         });
@@ -23,13 +25,17 @@ export function useAPIGetData(endpoint) {
 }
 
 export function useAPIPostData(endpoint) {
-    function postData(data, callback = ()=>{}) {
-        API[endpoint].post(data).then(
-            data => {
-                console.log(data); //TODO: remove
-                callback(data);
-            }
-        );
+    function postData(
+        data,
+        callbackSuccess = () => {},
+        callbackFail = () => {},
+    ) {
+        API[endpoint.name].post(data).then(
+            data =>
+                callbackSuccess(data)
+        ).catch(
+            data => callbackFail(data)
+        )
     }
 
     return postData

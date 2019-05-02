@@ -105,11 +105,6 @@ def wan():
         _process_backend_error(e)
 
 
-@api.route('/dns', methods=['GET', 'POST'])
-def dns():
-    return _foris_controller_settings_call('dns')
-
-
 @api.route('/connection-test', methods=['GET'])
 def connection_test():
     try:
@@ -117,6 +112,24 @@ def connection_test():
             'wan',
             'connection_test_trigger',
             data={'test_kinds': ['ipv4', 'ipv6']}
+        )
+        return jsonify(res)
+    except ExceptionInBackend as e:
+        _process_backend_error(e)
+
+
+@api.route('/dns', methods=['GET', 'POST'])
+def dns():
+    return _foris_controller_settings_call('dns')
+
+
+@api.route('/dns-test', methods=['GET'])
+def dns_test():
+    try:
+        res = current_app.backend.perform(
+            'wan',
+            'connection_test_trigger',
+            data={'test_kinds': ['dns']}
         )
         return jsonify(res)
     except ExceptionInBackend as e:
@@ -150,7 +163,7 @@ def updates():
 
             if data['enabled']:
                 data['user_lists'] = [
-                    {'name': package['name']} for package in updater_settings['user_lists'] if package['enabled']
+                    package['name'] for package in updater_settings['user_lists'] if package['enabled']
                 ]
                 data['languages'] = [
                     language['code'] for language in updater_settings['languages'] if language['enabled']

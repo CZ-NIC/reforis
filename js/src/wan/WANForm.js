@@ -7,10 +7,10 @@
 
 import React from 'react';
 
-import Select from '../bootstrap/Select';
-import TextInput from '../bootstrap/TextInput';
-import DHCPForm, {validateDHCPForm} from '../forisCommonComponents/networkForms/DHCPForm';
-import StaticForm, {validateStaticForm} from '../forisCommonComponents/networkForms/StaticForm';
+import Select from '../common/bootstrap/Select';
+import TextInput from '../common/bootstrap/TextInput';
+import DHCPForm, {validateDHCPForm} from '../common/networkForms/DHCPForm';
+import StaticForm, {validateStaticForm} from '../common/networkForms/StaticForm';
 import propTypes from 'prop-types';
 
 const WAN_TYPES = {

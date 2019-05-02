@@ -8,11 +8,11 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-import {ForisURLs} from '../../constants';
+import {ForisURLs} from '../../common/constants';
 
 import NotificationIcon from '../NotificationIcon';
 import {NOTIFICATION_PROP_TYPES, toLocaleDateString} from '../utils';
-import RebootButton from '../../forisCommonComponents/Reboot/RebootButton';
+import RebootButton from '../../common/RebootButton';
 
 
 NotificationsDropdownItem.propTypes = {

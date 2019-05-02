@@ -8,7 +8,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-import {ForisURLs} from '../../constants';
+import {ForisURLs} from '../../common/constants';
 
 import {NOTIFICATION_PROP_TYPES} from '../utils';
 import NotificationsDropdownItem from './NotificationsDropdownItem';

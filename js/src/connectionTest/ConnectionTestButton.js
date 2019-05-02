@@ -8,7 +8,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-import Button from '../bootstrap/Button';
+import Button from '../common/bootstrap/Button';
 import {TEST_STATES} from './testStates';
 
 ConnectionTestButton.propTypes = {
@@ -33,6 +33,7 @@ export default function ConnectionTestButton({state, ...props}) {
         className='btn-primary'
         loading={isRunning}
         disabled={isRunning}
+        forisFormSize
 
         {...props}
     >

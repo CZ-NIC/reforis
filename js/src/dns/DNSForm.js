@@ -6,9 +6,9 @@
  */
 
 import React from 'react';
-import CheckBox from '../bootstrap/Checkbox';
-import Select from '../bootstrap/Select';
-import TextInput from '../bootstrap/TextInput';
+import CheckBox from '../common/bootstrap/Checkbox';
+import Select from '../common/bootstrap/Select';
+import TextInput from '../common/bootstrap/TextInput';
 
 const HELP_TEXTS = {
     dns_from_dhcp_enabled: _('This will enable your DNS resolver to place DHCP client\'s names among the local DNS records.'),

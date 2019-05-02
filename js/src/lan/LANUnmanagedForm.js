@@ -8,9 +8,9 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-import Select from '../bootstrap/Select';
-import DHCPForm, {validateDHCPForm} from '../forisCommonComponents/networkForms/DHCPForm';
-import StaticForm, {validateStaticForm} from '../forisCommonComponents/networkForms/StaticForm';
+import Select from '../common/bootstrap/Select';
+import DHCPForm, {validateDHCPForm} from '../common/networkForms/DHCPForm';
+import StaticForm, {validateStaticForm} from '../common/networkForms/StaticForm';
 
 const LAN_TYPES = {
     dhcp: 'dhcp',
@@ -36,8 +36,12 @@ LANUnmanagedForm.propTypes = {
     setFormValue: propTypes.func.isRequired,
 };
 
+LANUnmanagedForm.defaultProps = {
+    formData: {},
+    formErrors: {},
+};
+
 export default function LANUnmanagedForm({formData, formErrors, setFormValue, ...props}) {
-    const errors = (formErrors || {});
     const lanType = formData.lan_type;
     return <>
         <Select
@@ -54,7 +58,7 @@ export default function LANUnmanagedForm({formData, formErrors, setFormValue, ..
         {lanType === LAN_TYPES.dhcp ?
             <DHCPForm
                 formData={formData.lan_dhcp}
-                formErrors={errors.lan_dhcp || {}}
+                formErrors={formErrors.lan_dhcp}
 
                 updateRule={value => ({mode_unmanaged: {lan_dhcp: value}})}
                 setFormValue={setFormValue}
@@ -63,8 +67,8 @@ export default function LANUnmanagedForm({formData, formErrors, setFormValue, ..
             />
             : lanType === LAN_TYPES.static ?
                 <StaticForm
-                    formData={formData.lan_static || {}}
-                    formErrors={errors.lan_static || {}}
+                    formData={formData.lan_static}
+                    formErrors={formErrors.lan_static}
 
                     updateRule={value => ({mode_unmanaged: {lan_static: value}})}
                     setFormValue={setFormValue}
@@ -82,5 +86,5 @@ export function validateUnmanaged(formData) {
     else if (formData.lan_type === LAN_TYPES.static)
         errors.lan_static = validateStaticForm(formData.lan_static);
 
-    return errors[`lan_${formData.lan_type}`] ? errors : null;
+    return errors[`lan_${formData.lan_type}`] ? errors : undefined;
 }
