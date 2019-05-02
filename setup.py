@@ -33,7 +33,7 @@ setuptools.setup(
     packages=setuptools.find_packages(exclude=['tests']),
     include_package_data=True,
 
-    description='',  # TODO
+    description='The reForis, redisgned Foris router configuration web interface.',
     long_description='',
     author='Bogdan Bodnar',
 

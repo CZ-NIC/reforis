@@ -5,14 +5,14 @@
 
 from flask import Blueprint, render_template
 
-demo_plugin = Blueprint(
-    'Demo plugin',
+diagnostics = Blueprint(
+    'Diagnostics',
     __name__,
     template_folder='templates',
-    url_prefix='/demo_plugin'
+    url_prefix='/diagnostics'
 )
 
 
-@demo_plugin.route('/')
+@diagnostics.route('/')
 def view():
-    return render_template('demo_plugin/index.html')
+    return render_template('diagnostics/index.html')

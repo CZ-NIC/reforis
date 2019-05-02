@@ -8,13 +8,12 @@
 import setuptools
 
 setuptools.setup(
-    name='reforis_demo_plugin',
+    name='reforis_diagnostics',
     version='1.0',
     packages=setuptools.find_packages(exclude=['tests']),
     include_package_data=True,
 
-    # TODO
-    description='',
+    description='The reforis diagnostics plugin',
     long_description='',
     author='Bogdan Bodnar',
 
@@ -26,7 +25,7 @@ setuptools.setup(
         'Bootstrap-Flask==1.0.8',
     ],
     entry_points={
-        'foris.plugins': 'demo_plugin = reforis_demo_plugin:demo_plugin'
+        'foris.plugins': 'diagnostics = diagnostics:diagnostics'
     },
     classifiers=[
         'Framework :: Flask',

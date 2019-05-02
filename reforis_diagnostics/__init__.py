@@ -3,4 +3,4 @@
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
 
-from .reforis_demo_plugin import demo_plugin
+from .diagnostics import demo_plugin
