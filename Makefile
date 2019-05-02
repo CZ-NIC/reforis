@@ -58,8 +58,8 @@ venv: $(VENV_NAME)/bin/activate
 $(VENV_NAME)/bin/activate: setup.py
 	test -d $(VENV_NAME) || virtualenv -p $(DEV_PYTHON) $(VENV_NAME)
 	# Some problem in latest version of setuptools during extracting translations.
-	$(DEV_PYTHON) -m pip install -U pip setuptools==39.1.0
-	$(DEV_PYTHON) -m pip install -e .[devel]
+	$(VENV_BIN)/$(DEV_PYTHON) -m pip install -U pip setuptools==39.1.0
+	$(VENV_BIN)/$(DEV_PYTHON) -m pip install -e .[devel]
 	touch $(VENV_NAME)/bin/activate
 
 install: setup.py reforis_demo_plugin/setup.py

@@ -7,7 +7,6 @@ import json
 from flask import render_template
 
 from reforis.auth import register_login_required
-from reforis.backend import ExceptionInBackend
 from .locale import TranslationsHelper
 
 
@@ -33,6 +32,7 @@ def create_app(config):
 
     app.register_error_handler(404, not_found_error)
     app.register_error_handler(500, internal_error)
+    from reforis.backend import ExceptionInBackend
     app.register_error_handler(ExceptionInBackend, foris_controller_error)
 
     return app
