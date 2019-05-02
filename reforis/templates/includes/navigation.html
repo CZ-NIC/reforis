@@ -1,12 +1,12 @@
-{% macro dropdown_item(name, url) -%}
-    <li {% if request.path.startswith(url) %}class="active"{% endif %}>
-        <a class='text-center' href="{{ url }}">
+{% macro dropdown_item(name, endpoint) -%}
+    <li {% if request.url_rule.endpoint == endpoint %}class="active"{% endif %}>
+        <a class='text-center' href="{{ url_for(endpoint) }}">
             <small>{{ name }}</small>
         </a>
     </li>
 {%- endmacro %}
 
-{% set dropdown_is_active = request.path in ['/wifi' ,'/wan','/lan' ] %}
+{% set netowrk_dropdown_is_active = request.url_rule.endpoint in ['Foris.wan', 'Foris.lan', 'Foris.wifi', 'Foris.dns'] %}
 
 <nav id="sidebar">
     <div id="sidebar-header">
@@ -15,7 +15,7 @@
     </div>
 
     <ul id='' class="list-unstyled components">
-        <li{% if dropdown_is_active %} class="active" {% endif %}>
+        <li{% if netowrk_dropdown_is_active %} class="active" {% endif %}>
             <a href="#network-settings-submenu"
                class="dropdown-toggle"
                data-toggle="collapse"
@@ -23,31 +23,35 @@
                 {% trans %}Network settings{% endtrans %}
             </a>
             <ul
-                    class="collapse list-unstyled {% if dropdown_is_active %} show {% endif %}"
+                    class="collapse list-unstyled {% if netowrk_dropdown_is_active %} show {% endif %}"
                     id="network-settings-submenu"
             >
-                {{ dropdown_item('WAN','/wan') }}
-                {{ dropdown_item('LAN','/lan') }}
-                {{ dropdown_item('Wi-Fi','/wifi') }}
-                {{ dropdown_item('DNS','/dns') }}
+                {{ dropdown_item('WAN','Foris.wan') }}
+                {{ dropdown_item('LAN','Foris.lan') }}
+                {{ dropdown_item('Wi-Fi','Foris.wifi') }}
+                {{ dropdown_item('DNS','Foris.dns') }}
             </ul>
 
         </li>
 
-        <li {% if request.path.startswith('/administration') %}class="active"{% endif %}>
-            <a href="/administration">{% trans %}Administration{% endtrans %}</a>
+        <li {% if request.url_rule.endpoint == 'Foris.administration' %}class="active"{% endif %}>
+            <a href="{{ url_for('Foris.administration') }}">{% trans %}Administration{% endtrans %}</a>
         </li>
 
-        <li {% if request.path.startswith('/updates') %}class="active"{% endif %}>
-            <a href="/updates">{% trans %}Updates{% endtrans %}</a>
+        <li {% if request.url_rule.endpoint == 'Foris.updates' %}class="active"{% endif %}>
+            <a href="{{ url_for('Foris.updates') }}">{% trans %}Updates{% endtrans %}</a>
         </li>
 
-        <li {% if request.path.startswith('/packages') %}class="active"{% endif %}>
-            <a href="/packages">{% trans %}Packages{% endtrans %}</a>
+        <li {% if request.url_rule.endpoint == 'Foris.packages' %}class="active"{% endif %}>
+            <a href="{{ url_for('Foris.packages') }}">{% trans %}Packages{% endtrans %}</a>
+        </li>
+
+        <li>
+            <a href="/cgi-bin/luci">{% trans %}Advanced administration{% endtrans %}</a>
         </li>
 
         {% for plugin in plugins %}
-            <li {% if request.path.startswith(plugin.url_prefix) %}class="active"{% endif %}>
+            <li {% if request.url_rule.endpoint == plugin.url_prefix %}class="active"{% endif %}>
                 <a href="{{ plugin.url_prefix }}">{{ plugin.name }}</a>
             </li>
         {% endfor %}
