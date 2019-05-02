@@ -35,7 +35,11 @@ exports[`<LAN/> Snapshot managed with enabled DHCP. 1`] = `
       <small
         class="form-text text-muted"
       >
-        Router mode means that this devices manages the LAN (acts as a router, can assing IP addresses, ...). Computer mode means that this device acts as a client in this network. It acts in a similar way as WAN, but it has opened ports for configuration interface and other services.
+        
+Router mode means that this devices manages the LAN (acts as a router, can assing IP addresses, ...).
+Computer mode means that this device acts as a client in this network. It acts in a similar way as WAN, but
+it has opened ports for configuration interface and other services.
+        
       </small>
     </div>
   </div>
@@ -271,7 +275,11 @@ exports[`<LAN/> Snapshot managed. 1`] = `
       <small
         class="form-text text-muted"
       >
-        Router mode means that this devices manages the LAN (acts as a router, can assing IP addresses, ...). Computer mode means that this device acts as a client in this network. It acts in a similar way as WAN, but it has opened ports for configuration interface and other services.
+        
+Router mode means that this devices manages the LAN (acts as a router, can assing IP addresses, ...).
+Computer mode means that this device acts as a client in this network. It acts in a similar way as WAN, but
+it has opened ports for configuration interface and other services.
+        
       </small>
     </div>
   </div>
@@ -411,7 +419,11 @@ exports[`<LAN/> Snapshot unmanaged (dhcp). 1`] = `
       <small
         class="form-text text-muted"
       >
-        Router mode means that this devices manages the LAN (acts as a router, can assing IP addresses, ...). Computer mode means that this device acts as a client in this network. It acts in a similar way as WAN, but it has opened ports for configuration interface and other services.
+        
+Router mode means that this devices manages the LAN (acts as a router, can assing IP addresses, ...).
+Computer mode means that this device acts as a client in this network. It acts in a similar way as WAN, but
+it has opened ports for configuration interface and other services.
+        
       </small>
     </div>
   </div>
@@ -529,7 +541,11 @@ exports[`<LAN/> Snapshot unmanaged none. 1`] = `
       <small
         class="form-text text-muted"
       >
-        Router mode means that this devices manages the LAN (acts as a router, can assing IP addresses, ...). Computer mode means that this device acts as a client in this network. It acts in a similar way as WAN, but it has opened ports for configuration interface and other services.
+        
+Router mode means that this devices manages the LAN (acts as a router, can assing IP addresses, ...).
+Computer mode means that this device acts as a client in this network. It acts in a similar way as WAN, but
+it has opened ports for configuration interface and other services.
+        
       </small>
     </div>
   </div>
@@ -615,7 +631,11 @@ exports[`<LAN/> Snapshot unmanaged static. 1`] = `
       <small
         class="form-text text-muted"
       >
-        Router mode means that this devices manages the LAN (acts as a router, can assing IP addresses, ...). Computer mode means that this device acts as a client in this network. It acts in a similar way as WAN, but it has opened ports for configuration interface and other services.
+        
+Router mode means that this devices manages the LAN (acts as a router, can assing IP addresses, ...).
+Computer mode means that this device acts as a client in this network. It acts in a similar way as WAN, but
+it has opened ports for configuration interface and other services.
+        
       </small>
     </div>
   </div>

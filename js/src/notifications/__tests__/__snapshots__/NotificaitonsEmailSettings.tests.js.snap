@@ -465,7 +465,7 @@ exports[`<NotificationsDropdown/> Enabled, smtp_type:custom 1`] = `
      
      
      
-    Restarting after %d sec.
+    Load settings
   </button>
 </form>
 `;

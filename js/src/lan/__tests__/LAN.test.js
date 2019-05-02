@@ -9,7 +9,7 @@ import React from 'react';
 import {render, act, wait, getByText, fireEvent, getByLabelText, getByValue} from 'react-testing-library';
 
 import {mockedWS} from '../../testUtils/mockWS';
-import mockFetch from '../../testUtils/mockFetch';
+import mockAxios from 'jest-mock-axios';
 import {lanSettingsFixture} from './__fixtures__/lanSettings';
 
 import LAN from '../LAN';
@@ -19,8 +19,8 @@ describe('<LAN/>', () => {
 
     beforeEach(async () => {
         const mockWebSockets = new mockedWS();
-        global.fetch = mockFetch(lanSettingsFixture());
         const {container} = render(<LAN ws={mockWebSockets}/>);
+        mockAxios.mockResponse({data: lanSettingsFixture()});
         await wait(() => getByText(container, 'Save'));
         lanContainer = container
     });

@@ -23,7 +23,6 @@ export default function WiFi({ws}) {
             endpoint: APIEndpoints.wifi,
             wsModule: 'wifi',
         }}
-        prepData={data => data}
         prepDataToSubmit={prepDataToSubmit}
         validator={validator}
     >

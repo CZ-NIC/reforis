@@ -6,38 +6,40 @@
  */
 
 import React from 'react';
-import {render, act, fireEvent, getByLabelText} from 'react-testing-library';
+import {render, act, fireEvent, getByLabelText, wait} from 'react-testing-library';
 
 import {dnsFixture} from './__fixtures__/dns';
-import mockFetch from '../../testUtils/mockFetch';
-import DNS from '../DNS';
 import {mockedWS} from '../../testUtils/mockWS';
+import mockAxios from 'jest-mock-axios';
+
+import DNS from '../DNS';
 
 
 describe('<DNS/>', () => {
-    let updatesContainer;
-    beforeEach(() => {
+    let dnsContainer;
+    beforeEach(async () => {
         const mockWebSockets = new mockedWS();
-        global.fetch = mockFetch(dnsFixture());
         const {container} = render(<DNS ws={mockWebSockets}/>);
-        updatesContainer = container;
+        mockAxios.mockResponse({data: dnsFixture()});
+        await wait(() => getByLabelText(container, 'Use forwarding'));
+        dnsContainer = container;
     });
 
     it('Test with snapshot.', () => {
-        expect(updatesContainer).toMatchSnapshot()
+        expect(dnsContainer).toMatchSnapshot()
     });
 
     it('Test with snapshot forwarding.', () => {
         act(() => {
-            fireEvent.click(getByLabelText(updatesContainer, 'Use forwarding'));
+            fireEvent.click(getByLabelText(dnsContainer, 'Use forwarding'));
         });
-        expect(updatesContainer).toMatchSnapshot()
+        expect(dnsContainer).toMatchSnapshot()
     });
 
     it('Test with snapshot DHCP.', () => {
         act(() => {
-            fireEvent.click(getByLabelText(updatesContainer, 'Enable DHCP clients in DNS'));
+            fireEvent.click(getByLabelText(dnsContainer, 'Enable DHCP clients in DNS'));
         });
-        expect(updatesContainer).toMatchSnapshot()
+        expect(dnsContainer).toMatchSnapshot()
     });
 });

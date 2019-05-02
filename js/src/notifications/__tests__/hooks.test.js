@@ -5,34 +5,34 @@
  * See /LICENSE for more information.
  */
 import React from 'react';
-import {render, getByText, queryByText, fireEvent, act} from 'react-testing-library';
+import {render, getByText, queryByText, fireEvent, act, wait} from 'react-testing-library';
 
-import mockFetch from '../../testUtils/mockFetch';
 import {mockedWS} from '../../testUtils/mockWS';
+import mockAxios from 'jest-mock-axios';
+
 import {notificationsFixture} from './__fixtures__/notifications';
 import NotificationsDropdown from '../NotificationsDropdown/NotificationsDropdown';
 
 
 describe('useNotifications hook.', () => {
-    let mockedFetch;
     let mockWebSockets;
     let notificationsContainer;
     beforeEach(async () => {
-        mockedFetch = mockFetch(notificationsFixture());
-        global.fetch = mockedFetch;
         mockWebSockets = new mockedWS();
-
         const {container} = render(<NotificationsDropdown ws={mockWebSockets}/>);
-        notificationsContainer = container
+        mockAxios.mockResponse({data: notificationsFixture()});
+        await wait(() => getByText(container, 'Notifications'));
+        notificationsContainer = container;
     });
 
     it('Fetch notifications.', () => {
-        expect(mockedFetch).toHaveBeenCalledTimes(1);
+        expect(mockAxios.get).toHaveBeenCalledTimes(1);
+        expect(mockAxios.get).toHaveBeenCalledWith('/api/notifications', expect.anything());
     });
 
     it('Render notifications.', () => {
-        const HTMLnotificationMessage = queryByText(notificationsContainer, 'Notification message.');
-        expect(HTMLnotificationMessage).not.toBeNull();
+        const HTMLNotificationMessage = queryByText(notificationsContainer, 'Notification message.');
+        expect(HTMLNotificationMessage).not.toBeNull();
     });
 
     it("Don't show displayed notifications.", () => {
@@ -41,11 +41,11 @@ describe('useNotifications hook.', () => {
     });
 
     it("Dismiss notification.", () => {
-        expect(mockedFetch).toHaveBeenCalledTimes(1);
+        expect(mockAxios.post).toHaveBeenCalledTimes(0);
         act(() => {
             fireEvent.click(notificationsContainer.querySelector('[class="fas fa-times"]'));
         });
-        expect(mockedFetch).toHaveBeenCalledTimes(2);
+        expect(mockAxios.post).toHaveBeenCalledTimes(1);
         let HTMLnotificationMessage = queryByText(notificationsContainer, 'Notification message.');
         expect(HTMLnotificationMessage).toBeNull();
         HTMLnotificationMessage = queryByText(notificationsContainer, 'Second notification messa...');
@@ -53,11 +53,11 @@ describe('useNotifications hook.', () => {
     });
 
     it("Dismiss all notification.", () => {
-        expect(mockedFetch).toHaveBeenCalledTimes(1);
+        expect(mockAxios.post).toHaveBeenCalledTimes(0);
         act(() => {
             fireEvent.click(getByText(notificationsContainer, 'Dismiss all'));
         });
-        expect(mockedFetch).toHaveBeenCalledTimes(2);
+        expect(mockAxios.post).toHaveBeenCalledTimes(1);
         let HTMLnotificationMessage = queryByText(notificationsContainer, 'Notification message.');
         expect(HTMLnotificationMessage).toBeNull();
         HTMLnotificationMessage = queryByText(notificationsContainer, 'Second notification messa...');

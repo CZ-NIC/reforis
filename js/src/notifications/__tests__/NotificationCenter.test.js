@@ -11,31 +11,16 @@ import {mockedWS} from '../../testUtils/mockWS';
 import {notificationsFixture} from './__fixtures__/notifications';
 import NotificationsCenter from '../NotificationsCenter/NotificationsCenter';
 import {notificationsEmailSettingsFixure} from './__fixtures__/notificationsEmailSettings';
-
-function mockFetch() {
-    return jest.fn((url) => {
-            return new Promise((resolve, reject) => {
-                resolve({
-                    ok: true,
-                    json: () => {
-                        if (url === '/api/notifications') {
-                            return notificationsFixture();
-                        } else if (url === '/api/notifications-settings') {
-                            return notificationsEmailSettingsFixure()
-                        }
-                    },
-                });
-            })
-        }
-    );
-}
+import mockAxios from 'jest-mock-axios';
 
 describe('<NotificationCenter/>', () => {
     let NotificationCenterContainer;
     beforeEach(() => {
         const mockWebSockets = new mockedWS();
-        global.fetch = mockFetch();
         const {container} = render(<NotificationsCenter ws={mockWebSockets}/>);
+        mockAxios.mockResponse({data: notificationsEmailSettingsFixure()});
+        mockAxios.mockResponse({data: notificationsFixture()});
+
         NotificationCenterContainer = container;
     });
 

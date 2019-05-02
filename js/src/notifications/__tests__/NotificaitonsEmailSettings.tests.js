@@ -6,10 +6,11 @@
  */
 
 import React from 'react';
-import {act, render, getByLabelText, fireEvent} from 'react-testing-library';
 
-import mockFetch from '../../testUtils/mockFetch';
+import {act, render, getByLabelText, fireEvent} from 'react-testing-library';
 import {mockedWS} from '../../testUtils/mockWS';
+import mockAxios from 'jest-mock-axios';
+
 import NotificationsEmailSettings from '../NotificationsCenter/NotificationsEmailSettings/NotificationsEmailSettings';
 import {notificationsEmailSettingsFixure} from './__fixtures__/notificationsEmailSettings';
 
@@ -19,8 +20,8 @@ describe('<NotificationsDropdown/>', () => {
 
     beforeEach(() => {
         const mockWebSockets = new mockedWS();
-        global.fetch = mockFetch(notificationsEmailSettingsFixure());
         const {container} = render(<NotificationsEmailSettings ws={mockWebSockets}/>);
+        mockAxios.mockResponse({data: notificationsEmailSettingsFixure()});
         NotificationCenterContainer = container
     });
 

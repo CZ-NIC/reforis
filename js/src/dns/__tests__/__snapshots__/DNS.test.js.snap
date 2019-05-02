@@ -11,7 +11,7 @@ exports[`<DNS/> Test with snapshot DHCP. 1`] = `
       >
         <label
           class="form-label"
-          for="26"
+          for="29"
         >
           Use forwarding
         </label>
@@ -20,7 +20,7 @@ exports[`<DNS/> Test with snapshot DHCP. 1`] = `
         class="form-check col-sm-8"
       >
         <input
-          id="26"
+          id="29"
           type="checkbox"
         />
         <small
@@ -36,7 +36,7 @@ exports[`<DNS/> Test with snapshot DHCP. 1`] = `
       >
         <label
           class="form-label"
-          for="27"
+          for="30"
         >
           Enable DNSSEC
         </label>
@@ -46,7 +46,7 @@ exports[`<DNS/> Test with snapshot DHCP. 1`] = `
       >
         <input
           checked=""
-          id="27"
+          id="30"
           type="checkbox"
         />
         <small
@@ -62,7 +62,7 @@ exports[`<DNS/> Test with snapshot DHCP. 1`] = `
       >
         <label
           class="form-label"
-          for="28"
+          for="31"
         >
           Enable DHCP clients in DNS
         </label>
@@ -71,7 +71,7 @@ exports[`<DNS/> Test with snapshot DHCP. 1`] = `
         class="form-check col-sm-8"
       >
         <input
-          id="28"
+          id="31"
           type="checkbox"
         />
         <small
@@ -86,7 +86,7 @@ exports[`<DNS/> Test with snapshot DHCP. 1`] = `
     >
       <label
         class="form-control-label col-sm-3"
-        for="38"
+        for="44"
       >
         Domain of DHCP clients in DNS
       </label>
@@ -98,7 +98,7 @@ exports[`<DNS/> Test with snapshot DHCP. 1`] = `
         >
           <input
             class="form-control "
-            id="38"
+            id="44"
             type="text"
             value="lan"
           />
@@ -119,6 +119,28 @@ exports[`<DNS/> Test with snapshot DHCP. 1`] = `
        
        
       Save
+    </button>
+  </form>
+  <h1>
+    Connection test
+  </h1>
+  <p>
+    
+Here you can test your internet connection. This test is also useful when you need to check that your DNS resolving 
+works as expected. Remember to click on the 
+    <b>
+      Save button
+    </b>
+     if you changed your forwarder setting.
+        
+  </p>
+  <form>
+    <button
+      class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    >
+       
+       
+      Test connection
     </button>
   </form>
 </div>
@@ -157,7 +179,7 @@ exports[`<DNS/> Test with snapshot forwarding. 1`] = `
     >
       <label
         class="form-control-label col-sm-3"
-        for="23"
+        for="26"
       >
         DNS Forwarder
       </label>
@@ -166,7 +188,7 @@ exports[`<DNS/> Test with snapshot forwarding. 1`] = `
       >
         <select
           class="form-control"
-          id="23"
+          id="26"
         >
           <option
             value=""
@@ -260,6 +282,28 @@ exports[`<DNS/> Test with snapshot forwarding. 1`] = `
       Save
     </button>
   </form>
+  <h1>
+    Connection test
+  </h1>
+  <p>
+    
+Here you can test your internet connection. This test is also useful when you need to check that your DNS resolving 
+works as expected. Remember to click on the 
+    <b>
+      Save button
+    </b>
+     if you changed your forwarder setting.
+        
+  </p>
+  <form>
+    <button
+      class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    >
+       
+       
+      Test connection
+    </button>
+  </form>
 </div>
 `;
 
@@ -283,7 +327,6 @@ exports[`<DNS/> Test with snapshot. 1`] = `
         class="form-check col-sm-8"
       >
         <input
-          disabled=""
           id="1"
           type="checkbox"
         />
@@ -310,7 +353,6 @@ exports[`<DNS/> Test with snapshot. 1`] = `
       >
         <input
           checked=""
-          disabled=""
           id="2"
           type="checkbox"
         />
@@ -336,7 +378,6 @@ exports[`<DNS/> Test with snapshot. 1`] = `
         class="form-check col-sm-8"
       >
         <input
-          disabled=""
           id="3"
           type="checkbox"
         />
@@ -349,17 +390,32 @@ exports[`<DNS/> Test with snapshot. 1`] = `
     </div>
     <button
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
-      disabled=""
     >
-      <span
-        aria-hidden="true"
-        class="spinner-border spinner-border-sm"
-        role="status"
-      />
        
        
+      Save
+    </button>
+  </form>
+  <h1>
+    Connection test
+  </h1>
+  <p>
+    
+Here you can test your internet connection. This test is also useful when you need to check that your DNS resolving 
+works as expected. Remember to click on the 
+    <b>
+      Save button
+    </b>
+     if you changed your forwarder setting.
+        
+  </p>
+  <form>
+    <button
+      class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+    >
        
-      Restarting after %d sec.
+       
+      Test connection
     </button>
   </form>
 </div>

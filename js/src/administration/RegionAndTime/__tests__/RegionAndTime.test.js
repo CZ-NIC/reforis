@@ -6,23 +6,27 @@
  */
 
 import React from 'react';
-import {getByText, render, wait} from 'react-testing-library'
 
+import {render, wait, getByText} from 'react-testing-library'
+import mockAxios from 'jest-mock-axios';
 import {regionAndTime} from './__fixtures__/regionAndTime';
-import mockFetch from '../../../testUtils/mockFetch';
+
 import RegionAndTime from '../RegionAndTime';
+import {APIEndpoints} from '../../../common/API';
 
 describe('<RegionAndTime/>', () => {
     let regionAndTimeContainer;
 
     beforeEach(async () => {
-        global.fetch = mockFetch(regionAndTime());
         const {container} = render(<RegionAndTime/>);
-        await wait(() => getByText(container, 'Region and time'));
+        mockAxios.mockResponse({data: regionAndTime()});
+        await wait(() => getByText(container, 'Region settings'));
         regionAndTimeContainer = container;
     });
 
-    it('Snapshot', async () => {
+    it('Snapshot', () => {
+        expect(mockAxios.get).toHaveBeenCalledTimes(1);
+        expect(mockAxios.get).toHaveBeenCalledWith(`/api${APIEndpoints.regionAndTime.url}`, expect.anything(),);
         expect(regionAndTimeContainer).toMatchSnapshot();
     });
 });

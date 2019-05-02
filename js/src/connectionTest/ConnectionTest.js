@@ -73,7 +73,6 @@ function filterResults(results, type) {
         .filter(test => TESTS_TYPES[type].indexOf(test) !== -1)
         .reduce((res, test) => {
             res[test] = results[test];
-            console.log(res);
             return res
         }, {});
 }

@@ -13,7 +13,7 @@ import Button from '../common/bootstrap/Button';
 
 SubmitButton.propTypes = {
     disabled: propTypes.bool,
-    state: propTypes.oneOf(Object.keys(FORM_STATES).map(key => FORM_STATES[key])).isRequired,
+    state: propTypes.oneOf(Object.keys(FORM_STATES).map(key => FORM_STATES[key])),
     remindsToNWRestart: propTypes.number,
 };
 

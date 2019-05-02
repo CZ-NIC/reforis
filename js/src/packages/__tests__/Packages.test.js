@@ -9,15 +9,14 @@ import React from 'react';
 import {render, queryByText} from 'react-testing-library';
 
 import {packagesFixture} from './__fixtures__/packages';
-import mockFetch from '../../testUtils/mockFetch';
 import Packages from '../Packages';
-
+import mockAxios from 'jest-mock-axios';
 
 describe('<Packages/>', () => {
     let packagesContainer;
     beforeEach(() => {
-        global.fetch = mockFetch(packagesFixture());
         const {container} = render(<Packages/>);
+        mockAxios.mockResponse({data: packagesFixture()});
         packagesContainer = container;
     });
 
@@ -25,7 +24,7 @@ describe('<Packages/>', () => {
         expect(packagesContainer.firstChild).toMatchSnapshot()
     });
     it('Test hidden.', () => {
-        const HTMLHiddenPackageMessage = queryByText(packagesContainer , 'Hidden package msg');
-        expect(HTMLHiddenPackageMessage ).toBeNull();
+        const HTMLHiddenPackageMessage = queryByText(packagesContainer, 'Hidden package msg');
+        expect(HTMLHiddenPackageMessage).toBeNull();
     })
 });

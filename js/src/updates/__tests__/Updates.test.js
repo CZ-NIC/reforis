@@ -9,15 +9,15 @@ import React from 'react';
 import {render, act, fireEvent, getByLabelText} from 'react-testing-library';
 
 import {updatesFixture} from './__fixtures__/updates';
-import mockFetch from '../../testUtils/mockFetch';
 import Updates from '../Updates';
+import mockAxios from 'jest-mock-axios';
 
 
 describe('<Updates/>', () => {
     let updatesContainer;
     beforeEach(() => {
-        global.fetch = mockFetch(updatesFixture());
         const {container} = render(<Updates/>);
+        mockAxios.mockResponse({data: updatesFixture()});
         updatesContainer = container;
     });
 

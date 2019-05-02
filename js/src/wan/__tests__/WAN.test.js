@@ -9,8 +9,8 @@ import React from 'react';
 import {render, waitForElement, act, fireEvent, getByText, getByLabelText, getByValue} from 'react-testing-library';
 
 import {mockedWS} from '../../testUtils/mockWS';
-import mockFetch from '../../testUtils/mockFetch';
 import {wanSettingsFixture} from './__fixtures__/wanSettings';
+import mockAxios from 'jest-mock-axios';
 
 import WAN from '../WAN';
 
@@ -19,8 +19,8 @@ describe('<WAN/>', () => {
 
     beforeEach(async () => {
         const mockWebSockets = new mockedWS();
-        global.fetch = mockFetch(wanSettingsFixture());
         const {container} = render(<WAN ws={mockWebSockets}/>);
+        mockAxios.mockResponse({data: wanSettingsFixture()});
         await waitForElement(() => getByText(container, 'WAN IPv4'));
         wanContainer = container
     });

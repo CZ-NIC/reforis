@@ -6,11 +6,11 @@
  */
 
 import React from 'react';
-import {render, waitForElement, act, fireEvent, getByText, getByLabelText, getByValue} from 'react-testing-library';
+import {render, waitForElement, act, fireEvent, getByText, getByLabelText} from 'react-testing-library';
 
 import {mockedWS} from '../../testUtils/mockWS';
-import mockFetch from '../../testUtils/mockFetch';
 import {wifiSettingsFixture} from './__fixtures__/wifiSettings';
+import mockAxios from 'jest-mock-axios';
 
 import WiFi from '../WiFi';
 
@@ -19,8 +19,8 @@ describe('<WiFi/>', () => {
 
     beforeEach(async () => {
         const mockWebSockets = new mockedWS();
-        global.fetch = mockFetch(wifiSettingsFixture());
         const {container} = render(<WiFi ws={mockWebSockets}/>);
+        mockAxios.mockResponse({data: wifiSettingsFixture()});
         await waitForElement(() => getByText(container, 'Module 1'));
         wifiContainer = container
     });

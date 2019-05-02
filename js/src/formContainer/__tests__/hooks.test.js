@@ -6,45 +6,45 @@
  */
 
 import React from 'react';
-import {render, waitForElement, act, fireEvent} from 'react-testing-library'
 
-import {mockedWS} from '../../testUtils/mockWS';
+import {render, waitForElement, act, fireEvent} from 'react-testing-library'
+import mockAxios from 'jest-mock-axios';
 
 import ForisForm from '../ForisForm';
-import mockFetch from '../../testUtils/mockFetch';
+import {APIEndpoints} from '../../common/API';
 
 // It's possible to unittest each hooks via react-hooks-testing-library.
 // But it's better and easier to test it by test components which uses this hooks...
 
-const TestForm = (props) => {
+const TestForm = ({formData, setFormValue}) => {
     return <input
         data-testid="test-input"
-        onChange={props.setFormValue(value => ({field: {$set: value}}))}
-        value={props.formData.field}
+        value={formData.field}
+        onChange={setFormValue(value => ({field: {$set: value}}))}
     >
     </input>
 };
 
-let mockedFetch;
 let mockValidator;
 let mockPrepData;
 let mockPrepDataToSubmit;
 let mockWebSockets;
 let input;
-const Child = jest.fn((props) => <TestForm {...props}/>);
 let form;
+const Child = jest.fn((props) => <TestForm {...props}/>);
 
 beforeEach(async () => {
-    mockedFetch = mockFetch({field: 'fetchedData'});
-    global.fetch = mockedFetch;
-    mockWebSockets = new mockedWS();
-    mockPrepData = jest.fn(data => ({...data, preparedField: 'preparedData'}));
+    mockPrepData = jest.fn(() => ({field: 'preparedData'}));
     mockPrepDataToSubmit = jest.fn(data => ({field: 'preparedDataToSubmit'}));
     mockValidator = jest.fn(data => data.field === 'badValue' ? {field: 'Error!'} : {});
     const {getByTestId, container} = render(
         <ForisForm
             ws={mockWebSockets}
-            module='wan' // Just some module which exists...
+            // Just some module which exists...
+            forisConfig={{
+                endpoint: APIEndpoints.wan,
+                wsModule: 'wan'
+            }}
             prepData={mockPrepData}
             prepDataToSubmit={mockPrepDataToSubmit}
             validator={mockValidator}
@@ -52,6 +52,8 @@ beforeEach(async () => {
             <Child/>
         </ForisForm>
     );
+    mockAxios.mockResponse({field: 'fetchedData'});
+
     input = await waitForElement(() =>
         getByTestId('test-input')
     );
@@ -93,21 +95,22 @@ describe('useForm hook.', () => {
 
 describe('useForisForm hook.', () => {
     it('Fetch data.', () => {
-        expect(mockedFetch).toHaveBeenCalledTimes(1);
-        expect(Child.mock.calls[0][0].formData).toMatchObject({field: "fetchedData"});
+        expect(mockAxios.get).toHaveBeenCalledWith('/api/wan', expect.anything());
+        expect(mockPrepData).toHaveBeenCalledTimes(1);
+        expect(Child.mock.calls[0][0].formData).toMatchObject({field: "preparedData"});
     });
-    it('Submit.', async () => {
-        expect(mockedFetch).toHaveBeenCalledTimes(1);
+    it('Submit.', () => {
+        expect(mockAxios.get).toHaveBeenCalledTimes(1);
         expect(mockPrepDataToSubmit).toHaveBeenCalledTimes(0);
-        await act(async () => {
-            await fireEvent.submit(form);
+        act(() => {
+            fireEvent.submit(form);
         });
         expect(mockPrepDataToSubmit).toHaveBeenCalledTimes(1);
-        expect(mockedFetch).toHaveBeenCalledTimes(2);
-        expect(mockedFetch.mock.calls[1]).toMatchObject(["/api/wan", {
-            body: "{\"field\":\"preparedDataToSubmit\"}",
-            headers: {"Accept": "application/json", "Content-Type": "application/json"},
-            method: "POST"
-        }]);
+        expect(mockAxios.post).toHaveBeenCalledTimes(1);
+        expect(mockAxios.post).toHaveBeenCalledWith(
+            '/api/wan',
+            {"field": "preparedDataToSubmit"},
+            expect.anything(),
+        );
     });
 });

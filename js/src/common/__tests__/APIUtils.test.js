@@ -7,21 +7,15 @@
 
 
 import API from '../APIUtils';
-import mockFetch from '../../testUtils/mockFetch'
+import mockAxios from 'jest-mock-axios';
 
 describe('API utlis', () => {
-    const mockedFetch = mockFetch();
-
-    beforeEach(() => {
-        global.fetch = mockedFetch;
-    });
-
     it('Endpoints is defined correctly.', () => {
-        const testAPI = new API('/test-url', [
-            {name: 'one', url: '/one', methods: ['get', 'post']},
-            {name: 'two', url: '/two', methods: ['post']},
-            {name: 'three', url: '/three', methods: ['get']},
-        ]);
+        const testAPI = new API('/test-url', {
+            one: {name: 'one', url: '/one', methods: ['get', 'post']},
+            two: {name: 'two', url: '/two', methods: ['post']},
+            three: {name: 'three', url: '/three', methods: ['get']},
+        });
         const expected = {
             one: {
                 'get': expect.any(Function),
@@ -39,33 +33,27 @@ describe('API utlis', () => {
     });
 
     it('GET call', () => {
-        const testAPI = new API('/test-url', [
-            {name: 'testEndpoint', url: '/test-endpoint', methods: ['get']},
-        ]);
+        const testAPI = new API('/test-url', {
+            testEndpoint: {name: 'testEndpoint', url: '/test-endpoint', methods: ['get']},
+        });
 
         testAPI.testEndpoint.get();
-        expect(mockedFetch).toHaveBeenCalledTimes(1);
-        expect(mockedFetch).toHaveBeenCalledWith('/test-url/test-endpoint', null);
+        expect(mockAxios.get).toHaveBeenCalledTimes(1);
+        expect(mockAxios.get).toHaveBeenCalledWith('/test-url/test-endpoint', expect.anything());
     });
 
     it('POST call.', () => {
-        const testAPI = new API('/test-url', [
-            {name: 'testEndpoint', url: '/test-endpoint', methods: ['post']},
-        ]);
+        const testAPI = new API('/test-url', {
+            testEndpoint: {name: 'testEndpoint', url: '/test-endpoint', methods: ['post']},
+        });
         const postData = {testKey: 'testData'};
 
         testAPI.testEndpoint.post(postData);
-        expect(mockedFetch).toHaveBeenCalledTimes(1);
-        expect(mockedFetch).toHaveBeenCalledWith(
+        expect(mockAxios.post).toHaveBeenCalledTimes(1);
+        expect(mockAxios.post).toHaveBeenCalledWith(
             '/test-url/test-endpoint',
-            {
-                "body": JSON.stringify(postData),
-                "headers": {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json',
-                },
-                "method": "POST",
-            },
+            postData,
+            expect.anything(),
         );
     });
 });

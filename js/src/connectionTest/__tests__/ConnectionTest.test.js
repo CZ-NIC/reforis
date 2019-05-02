@@ -9,7 +9,6 @@ import React from 'react';
 import {act, render, waitForElement, getByText, fireEvent} from 'react-testing-library';
 
 import {mockedWS} from '../../testUtils/mockWS';
-import mockFetch from '../../testUtils/mockFetch';
 
 import ConnectionTest from '../ConnectionTest';
 
@@ -18,15 +17,7 @@ describe('<ConnectionTest/>', () => {
 
     beforeEach(async () => {
         const mockWebSockets = new mockedWS();
-        global.fetch = mockFetch({
-            "ipv6": true,
-            "ipv6_gateway": false,
-            "ipv4": true,
-            "ipv4_gateway": false,
-            "dns": true,
-            "dnssec": false
-        });
-        const {container} = render(<ConnectionTest ws={mockWebSockets}/>);
+        const {container} = render(<ConnectionTest ws={mockWebSockets} type='wan' />);
         await waitForElement(() => getByText(container, 'Test connection'));
         connectionTestContainer = container
     });

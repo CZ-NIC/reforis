@@ -60,6 +60,5 @@ function validator(formData) {
         errors.mode_managed = validateManaged(formData.mode_managed);
     else if (formData.mode === LAN_MODES.unmanaged)
         errors.mode_unmanaged = validateUnmanaged(formData.mode_unmanaged);
-    console.log(errors);
     return errors[`mode_${formData.mode}`] ? errors : null;
 }

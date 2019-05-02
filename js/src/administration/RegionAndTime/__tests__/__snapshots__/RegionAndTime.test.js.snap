@@ -2,13 +2,13 @@
 
 exports[`<RegionAndTime/> Snapshot 1`] = `
 <div>
+  <h3>
+    Region and time
+  </h3>
+  <p>
+    It is important for your device to have the correct time set. If your device's time is delayed, the procedure of SSL certificate verification might not work correctly.
+  </p>
   <form>
-    <h3>
-      Region and time
-    </h3>
-    <p>
-      It is important for your device to have the correct time set. If your device's time is delayed, the procedure of SSL certificate verification might not work correctly.
-    </p>
     <h4>
       Region settings
     </h4>
@@ -764,7 +764,7 @@ exports[`<RegionAndTime/> Snapshot 1`] = `
                   26
                 </td>
                 <td
-                  class="rdtDay rdtToday"
+                  class="rdtDay"
                   data-value="27"
                 >
                   27
@@ -796,7 +796,7 @@ exports[`<RegionAndTime/> Snapshot 1`] = `
                   1
                 </td>
                 <td
-                  class="rdtDay rdtNew"
+                  class="rdtDay rdtNew rdtToday"
                   data-value="2"
                 >
                   2

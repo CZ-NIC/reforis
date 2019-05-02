@@ -6,20 +6,22 @@
  */
 
 import React from 'react';
-import {act, fireEvent, getByText, getByLabelText, render, wait} from 'react-testing-library'
-import mockFetch from '../../../testUtils/mockFetch';
+
+import {render, wait, act, fireEvent, getByText, getByLabelText} from 'react-testing-library'
+import mockAxios from 'jest-mock-axios';
+
 import Password from '../Password';
 
 describe('<Password/>', () => {
     let passwordContainer;
 
     beforeEach(async () => {
-        global.fetch = mockFetch({password_set: true});
         const {container} = render(<Password/>);
+        mockAxios.mockResponse({data: {password_set: true}});
         await wait(() => getByText(container, 'Advanced administration (root) password'));
         passwordContainer = container;
     });
-    it('Snapshot', async () => {
+    it('Snapshot', () => {
         expect(passwordContainer).toMatchSnapshot();
     });
     it('Snapshot: same password for root', () => {
