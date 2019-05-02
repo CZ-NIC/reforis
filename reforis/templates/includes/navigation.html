@@ -50,6 +50,10 @@
             <a href="/cgi-bin/luci">{% trans %}Advanced administration{% endtrans %}</a>
         </li>
 
+        <li>
+            <a href="{{ url_for('Foris.about') }}">{% trans %}About{% endtrans %}</a>
+        </li>
+
         {% for plugin in plugins %}
             <li {% if request.url_rule.endpoint == plugin.url_prefix %}class="active"{% endif %}>
                 <a href="{{ plugin.url_prefix }}">{{ plugin.name }}</a>

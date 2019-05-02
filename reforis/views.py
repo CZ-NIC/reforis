@@ -7,23 +7,22 @@
 from flask import Blueprint, current_app, redirect, render_template, request, session, url_for
 from flask_babel import get_locale
 from flask_babel import gettext as _
-
 from reforis import TranslationsHelper
 from reforis.auth import login_to_foris, logout_from_foris
 
-base = Blueprint(
+views = Blueprint(
     'Foris',
     __name__,
     template_folder='templates',
 )
 
 
-@base.route('/')
+@views.route('/', methods=['GET'])
 def index():
     return render_template('base.html')
 
 
-@base.route('/login', methods=['GET', 'POST'])
+@views.route('/login', methods=['GET', 'POST'])
 def login():
     error_message = None
     if session.get('logged', False):
@@ -38,38 +37,38 @@ def login():
     return render_template('login.html', error_message=error_message)
 
 
-@base.route('/logout')
+@views.route('/logout', methods=['GET'])
 def logout():
     logout_from_foris()
     return redirect(url_for('Foris.login'))
 
 
-@base.route('/notifications')
+@views.route('/notifications', methods=['GET'])
 def notifications():
     return render_template('notifications.html')
 
 
-@base.route('/wifi')
+@views.route('/wifi', methods=['GET'])
 def wifi():
     return render_template('wifi.html')
 
 
-@base.route('/wan')
+@views.route('/wan', methods=['GET'])
 def wan():
     return render_template('wan.html')
 
 
-@base.route('/lan')
+@views.route('/lan', methods=['GET'])
 def lan():
     return render_template('lan.html')
 
 
-@base.route('/dns')
+@views.route('/dns', methods=['GET'])
 def dns():
     return render_template('dns.html')
 
 
-@base.route('/administration')
+@views.route('/administration', methods=['GET'])
 def administration():
     babel = current_app.extensions['babel']
     translations = TranslationsHelper.load(
@@ -81,11 +80,16 @@ def administration():
     return render_template('administration.html', babel_tzinfo_catalog=translations.json_catalog)
 
 
-@base.route('/updates')
+@views.route('/updates', methods=['GET'])
 def updates():
     return render_template('updates.html')
 
 
-@base.route('/packages')
+@views.route('/packages', methods=['GET'])
 def packages():
     return render_template('packages.html')
+
+
+@views.route('/about', methods=['GET'])
+def about():
+    return render_template('about.html', **current_app.backend.perform('about', 'get'))
