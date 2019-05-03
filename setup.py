@@ -16,24 +16,24 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 class NPMInstall(build_py):
     def run(self):
         build_py.run(self)
-        npm_install_and_build()
+        npm_install_and_build(self.build_lib)
 
 
-def npm_install_and_build():
+def npm_install_and_build(path):
     os.system('cd {}/js; npm install --save-dev'.format(BASE_DIR))
+    build_dir = os.path.join(BASE_DIR, path, 'reforis')
     os.system(
-        'cd {}/js; npx browserify app.js -o ../reforis/static/js/app.min.js -t [ babelify --presets [ @babel/preset-env @babel/preset-react ] --plugins [ @babel/plugin-proposal-class-properties ] ]'.format(
-            BASE_DIR)
+        f'cd {BASE_DIR}/js; npx browserify ./src/app.js -o {build_dir}/static/js/app.min.js -t [ babelify --presets [ @babel/preset-env @babel/preset-react ] --plugins [ @babel/plugin-proposal-class-properties ] ]'
     )
 
 
 setuptools.setup(
     name='reforis',
-    version='1.0',
+    version='0.2',
     packages=setuptools.find_packages(exclude=['tests']),
     include_package_data=True,
 
-    description='The reForis, redisgned Foris router configuration web interface.',
+    description='The reForis, redesigned Foris router configuration web interface.',
     long_description='',
     author='Bogdan Bodnar',
 
@@ -69,5 +69,8 @@ setuptools.setup(
     zip_safe=False,
     cmdclass={
         'build_py': NPMInstall
+    },
+    package_data={
+        "": ["static/js/app.min.js"],
     }
 )
