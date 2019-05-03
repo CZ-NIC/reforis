@@ -19,20 +19,20 @@ views = Blueprint(
 
 
 @views.route('/', methods=['GET'])
-def index():
-    return render_template('base.html')
+def overview():
+    return render_template('overview.html')
 
 
 @views.route('/login', methods=['GET', 'POST'])
 def login():
     error_message = None
     if session.get('logged', False):
-        return redirect(url_for('Foris.index'))
+        return redirect(url_for('Foris.overview'))
 
     if request.method == 'POST':
         password = request.form['password']
         if login_to_foris(password):
-            return redirect(url_for('Foris.index'))
+            return redirect(url_for('Foris.overview'))
         else:
             error_message = _('Wrong password.')
     return render_template('login.html', error_message=error_message)

@@ -70,6 +70,11 @@ export const APIEndpoints = {
         url: '/updates',
         methods: ['get', 'post']
     },
+    approvals: {
+        name: 'approvals',
+        url: '/approvals',
+        methods: ['get', 'post']
+    },
     packages: {
         name: 'packages',
         url: '/packages',

@@ -9,6 +9,8 @@ import React from 'react';
 import {render} from 'react-dom';
 
 import WebSockets from './common/WebSockets';
+
+import Overview from './overview/Overview';
 import NotificationsDropdown from './notifications/NotificationsDropdown/NotificationsDropdown';
 import NotificationsCenter from './notifications/NotificationsCenter/NotificationsCenter';
 
@@ -26,6 +28,7 @@ const ws = new WebSockets();
 
 window.addEventListener('load', () => {
     const apps = [
+        {id: 'overview_container', component: Overview},
         {id: 'notifications_dropdown_container', component: NotificationsDropdown},
         {id: 'notifications_center_container', component: NotificationsCenter},
         {id: 'wifi_container', component: WiFi},

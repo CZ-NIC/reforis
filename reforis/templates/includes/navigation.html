@@ -15,6 +15,10 @@
     </div>
 
     <ul id='' class="list-unstyled components">
+        <li {% if request.url_rule.endpoint == 'Foris.overview' %}class="active"{% endif %}>
+            <a href="{{ url_for('Foris.overview') }}">{% trans %}Overview{% endtrans %}</a>
+        </li>
+
         <li{% if netowrk_dropdown_is_active %} class="active" {% endif %}>
             <a href="#network-settings-submenu"
                class="dropdown-toggle"

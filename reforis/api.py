@@ -144,6 +144,21 @@ def updates():
     return jsonify(res)
 
 
+@api.route('/approvals', methods=['GET', 'POST'])
+def approvals():
+    res = None
+    if request.method == 'GET':
+        res = current_app.backend.perform(
+            'updater', 'get_settings', {'lang': _get_locale_from_backend(current_app)}
+        )['approval']
+
+    elif request.method == 'POST':
+        data = request.json
+        res = current_app.backend.perform('updater', 'resolve_approval', data)
+
+    return jsonify(res)
+
+
 @api.route('/packages', methods=['GET', 'POST'])
 def packages():
     updater_settings = current_app.backend.perform(
