@@ -2,6 +2,8 @@
 #
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
+import pkg_resources
+
 import json
 
 from flask import render_template
@@ -34,6 +36,14 @@ def create_app(config):
     app.register_error_handler(500, internal_error)
     from reforis.backend import ExceptionInBackend
     app.register_error_handler(ExceptionInBackend, foris_controller_error)
+
+    @app.context_processor
+    def add_version_to_ctx():
+        try:
+            version = pkg_resources.get_distribution("reforis").version
+        except pkg_resources.DistributionNotFound:
+            version = "?"
+        return {'version': version}
 
     return app
 
