@@ -39,11 +39,16 @@ exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
       id="notifications-header"
     >
       <h5>
-        Notifications
+        <a
+          class="btn btn-link"
+          href="/notifications"
+        >
+          Notifications
+        </a>
       </h5>
       <a
         class="btn btn-link"
-        href="/notifications"
+        href="/notifications-settings"
       >
         <i
           class="fa fa-cog fa"

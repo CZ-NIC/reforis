@@ -2,12 +2,6 @@
 
 exports[`<RegionAndTime/> Snapshot 1`] = `
 <div>
-  <h3>
-    Region and time
-  </h3>
-  <p>
-    It is important for your device to have the correct time set. If your device's time is delayed, the procedure of SSL certificate verification might not work correctly.
-  </p>
   <form>
     <h4>
       Region settings
@@ -796,7 +790,7 @@ exports[`<RegionAndTime/> Snapshot 1`] = `
                   1
                 </td>
                 <td
-                  class="rdtDay rdtNew rdtToday"
+                  class="rdtDay rdtNew"
                   data-value="2"
                 >
                   2
@@ -808,7 +802,7 @@ exports[`<RegionAndTime/> Snapshot 1`] = `
                   3
                 </td>
                 <td
-                  class="rdtDay rdtNew"
+                  class="rdtDay rdtNew rdtToday"
                   data-value="4"
                 >
                   4

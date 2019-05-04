@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Notifications/> Test with snapshot. 1`] = `
+<div
+  id="notifications-center"
+>
+  <button
+    class="btn btn-outline-danger float-right"
+    id="btn-dismiss-all"
+    type="button"
+  >
+    Dismiss all
+  </button>
+  <div
+    class="card bg-light border-info sm-10"
+  >
+    <div
+      class="card-header"
+    >
+      <i
+        class="fa fa-newspaper fa-2x"
+      />
+      <p
+        class="text-muted"
+      >
+        February 1, 2000, 12:00:00 AM
+      </p>
+      <button
+        class="close"
+        type="button"
+      >
+        ×
+      </button>
+    </div>
+    <div
+      class="card-body"
+    >
+      <p
+        class="card-text"
+      >
+        Notification message.
+      </p>
+    </div>
+  </div>
+  <div
+    class="card bg-light border-danger sm-10"
+  >
+    <div
+      class="card-header"
+    >
+      <i
+        class="fa fa-exclamation-circle fa-2x"
+      />
+      <p
+        class="text-muted"
+      >
+        February 1, 2000, 12:00:00 AM
+      </p>
+      <button
+        class="close"
+        type="button"
+      >
+        ×
+      </button>
+    </div>
+    <div
+      class="card-body"
+    >
+      <p
+        class="card-text"
+      >
+        Second notification message.
+      </p>
+    </div>
+  </div>
+</div>
+`;

@@ -7,18 +7,17 @@
 import React from 'react';
 import {render} from 'react-testing-library';
 
+import mockAxios from 'jest-mock-axios';
 import {mockedWS} from '../../testUtils/mockWS';
 import {notificationsFixture} from './__fixtures__/notifications';
-import Notifications from '../Notifications/Notifications';
-import {notificationsEmailSettingsFixure} from './__fixtures__/notificationsEmailSettings';
-import mockAxios from 'jest-mock-axios';
 
-describe('<NotificationCenter/>', () => {
+import Notifications from '../Notifications/Notifications';
+
+describe('<Notifications/>', () => {
     let NotificationCenterContainer;
     beforeEach(() => {
         const mockWebSockets = new mockedWS();
         const {container} = render(<Notifications ws={mockWebSockets}/>);
-        mockAxios.mockResponse({data: notificationsEmailSettingsFixure()});
         mockAxios.mockResponse({data: notificationsFixture()});
 
         NotificationCenterContainer = container;

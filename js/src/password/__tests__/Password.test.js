@@ -7,8 +7,8 @@
 
 import React from 'react';
 
-import {render, wait, act, fireEvent, getByText, getByLabelText} from 'react-testing-library/typings'
-import mockAxios from 'jest-mock-axios/dist/lib/index';
+import {render, wait, act, fireEvent, getByText, getByLabelText} from 'react-testing-library'
+import mockAxios from 'jest-mock-axios';
 
 import Password from '../Password';
 

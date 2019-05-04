@@ -11,8 +11,6 @@ import propTypes from 'prop-types';
 
 import useNotifications from '../hooks';
 import NotificationsList from './NotificationsList';
-import NotificationsSettings from '../../notificationsSettings/NotificationsSettings';
-
 
 Notifications.propTypes = {
     ws: propTypes.object.isRequired

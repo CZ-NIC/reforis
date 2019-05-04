@@ -5,7 +5,7 @@
  * See /LICENSE for more information.
  */
 
-export function notificationsEmailSettingsFixure() {
+export default function notificationsSettingsFixture() {
     return {
         emails: {
             common: {
