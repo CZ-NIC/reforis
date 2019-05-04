@@ -8,6 +8,7 @@
 
 {% set network_dropdown_is_active = request.url_rule.endpoint in ['Foris.wan', 'Foris.lan', 'Foris.wifi', 'Foris.dns'] %}
 {% set administration_dropdown_is_active = request.url_rule.endpoint in ['Foris.password', 'Foris.reboot', 'Foris.region_and_time','Foris.notifications_settings'] %}
+{% set plugins_dropdown_is_active = request.path[:-1] in plugins_urls %}
 
 <nav id="sidebar">
     <div id="sidebar-header">
@@ -16,8 +17,12 @@
     </div>
 
     <ul id='' class="list-unstyled components">
+
         <li {% if request.url_rule.endpoint == 'Foris.overview' %}class="active"{% endif %}>
-            <a href="{{ url_for('Foris.overview') }}">{% trans %}Overview{% endtrans %}</a>
+            <a href="{{ url_for('Foris.overview') }}">
+                <i class="fas fa-list"></i>&nbsp;
+                {% trans %}Overview{% endtrans %}
+            </a>
         </li>
 
         <li{% if network_dropdown_is_active %} class="active" {% endif %}>
@@ -25,6 +30,7 @@
                class="dropdown-toggle"
                data-toggle="collapse"
             >
+                <i class="fas fa-network-wired"></i>&nbsp;
                 {% trans %}Network settings{% endtrans %}
             </a>
             <ul
@@ -43,6 +49,7 @@
                class="dropdown-toggle"
                data-toggle="collapse"
             >
+                <i class="fas fa-user-cog"></i>&nbsp;
                 {% trans %}Administration{% endtrans %}
             </a>
             <ul
@@ -57,25 +64,55 @@
 
         </li>
         <li {% if request.url_rule.endpoint == 'Foris.updates' %}class="active"{% endif %}>
-            <a href="{{ url_for('Foris.updates') }}">{% trans %}Updates{% endtrans %}</a>
+            <a href="{{ url_for('Foris.updates') }}">
+                <i class="fas fa-sync"></i>&nbsp;
+                {% trans %}Updates{% endtrans %}
+            </a>
         </li>
 
         <li {% if request.url_rule.endpoint == 'Foris.packages' %}class="active"{% endif %}>
-            <a href="{{ url_for('Foris.packages') }}">{% trans %}Packages{% endtrans %}</a>
+            <a href="{{ url_for('Foris.packages') }}">
+                <i class="fas fa-box"></i>&nbsp;
+                {% trans %}Packages{% endtrans %}
+            </a>
         </li>
 
         <li>
-            <a href="/cgi-bin/luci">{% trans %}Advanced administration{% endtrans %}</a>
+            <a href="/cgi-bin/luci">
+                <i class="fas fa-cog"></i>&nbsp;
+                {% trans %}Advanced administration{% endtrans %}
+            </a>
         </li>
 
         <li {% if request.url_rule.endpoint == 'Foris.about' %}class="active"{% endif %}>
-            <a href="{{ url_for('Foris.about') }}">{% trans %}About{% endtrans %}</a>
+            <a href="{{ url_for('Foris.about') }}">
+                <i class="fas fa-info-circle"></i>&nbsp;
+                {% trans %}About{% endtrans %}
+            </a>
         </li>
 
-        {% for plugin in plugins %}
-            <li {% if request.path.startswith(plugin.url_prefix) %}class="active"{% endif %}>
-                <a href="{{ plugin.url_prefix }}">{{ plugin.name }}</a>
-            </li>
-        {% endfor %}
+        <li{% if plugins_dropdown_is_active %} class="active"{% endif %}>
+            <a href="#plugins-settings-submenu"
+               class="dropdown-toggle"
+               data-toggle="collapse"
+            >
+                <i class="fas fa-puzzle-piece"></i>&nbsp;
+                {% trans %}Plugins{% endtrans %}
+            </a>
+            <ul
+                    class="collapse list-unstyled {% if plugins_dropdown_is_active %} show {% endif %}"
+                    id="plugins-settings-submenu"
+            >
+                {% for plugin in plugins %}
+                    <li {% if request.path.startswith(plugin.url_prefix) %}class="active"{% endif %}>
+                        <a class='text-center' href="{{ plugin.url_prefix }}">
+                            <small>{{ plugin.name }}</small>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+
+        </li>
+
     </ul>
 </nav>
