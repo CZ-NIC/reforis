@@ -6,7 +6,8 @@
     </li>
 {%- endmacro %}
 
-{% set netowrk_dropdown_is_active = request.url_rule.endpoint in ['Foris.wan', 'Foris.lan', 'Foris.wifi', 'Foris.dns'] %}
+{% set network_dropdown_is_active = request.url_rule.endpoint in ['Foris.wan', 'Foris.lan', 'Foris.wifi', 'Foris.dns'] %}
+{% set administration_dropdown_is_active = request.url_rule.endpoint in ['Foris.password', 'Foris.reboot', 'Foris.region_and_time','Foris.notifications_settings'] %}
 
 <nav id="sidebar">
     <div id="sidebar-header">
@@ -19,7 +20,7 @@
             <a href="{{ url_for('Foris.overview') }}">{% trans %}Overview{% endtrans %}</a>
         </li>
 
-        <li{% if netowrk_dropdown_is_active %} class="active" {% endif %}>
+        <li{% if network_dropdown_is_active %} class="active" {% endif %}>
             <a href="#network-settings-submenu"
                class="dropdown-toggle"
                data-toggle="collapse"
@@ -27,7 +28,7 @@
                 {% trans %}Network settings{% endtrans %}
             </a>
             <ul
-                    class="collapse list-unstyled {% if netowrk_dropdown_is_active %} show {% endif %}"
+                    class="collapse list-unstyled {% if network_dropdown_is_active %} show {% endif %}"
                     id="network-settings-submenu"
             >
                 {{ dropdown_item('WAN','Foris.wan') }}
@@ -36,12 +37,25 @@
                 {{ dropdown_item('DNS','Foris.dns') }}
             </ul>
 
-        </li>
 
-        <li {% if request.url_rule.endpoint == 'Foris.administration' %}class="active"{% endif %}>
-            <a href="{{ url_for('Foris.administration') }}">{% trans %}Administration{% endtrans %}</a>
-        </li>
+        <li{% if administration_dropdown_is_active %} class="active" {% endif %}>
+            <a href="#administration-settings-submenu"
+               class="dropdown-toggle"
+               data-toggle="collapse"
+            >
+                {% trans %}Administration{% endtrans %}
+            </a>
+            <ul
+                    class="collapse list-unstyled {% if administration_dropdown_is_active %} show {% endif %}"
+                    id="administration-settings-submenu"
+            >
+                {{ dropdown_item(gettext('Password'),'Foris.password') }}
+                {{ dropdown_item(gettext('Region and time'),'Foris.region_and_time') }}
+                {{ dropdown_item(gettext('Notifications settings'),'Foris.notifications_settings') }}
+                {{ dropdown_item(gettext('Reboot'),'Foris.reboot') }}
+            </ul>
 
+        </li>
         <li {% if request.url_rule.endpoint == 'Foris.updates' %}class="active"{% endif %}>
             <a href="{{ url_for('Foris.updates') }}">{% trans %}Updates{% endtrans %}</a>
         </li>
@@ -54,12 +68,12 @@
             <a href="/cgi-bin/luci">{% trans %}Advanced administration{% endtrans %}</a>
         </li>
 
-        <li>
+        <li {% if request.url_rule.endpoint == 'Foris.about' %}class="active"{% endif %}>
             <a href="{{ url_for('Foris.about') }}">{% trans %}About{% endtrans %}</a>
         </li>
 
         {% for plugin in plugins %}
-            <li {% if request.url_rule.endpoint == plugin.url_prefix %}class="active"{% endif %}>
+            <li {% if request.path.startswith(plugin.url_prefix) %}class="active"{% endif %}>
                 <a href="{{ plugin.url_prefix }}">{{ plugin.name }}</a>
             </li>
         {% endfor %}

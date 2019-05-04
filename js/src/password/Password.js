@@ -7,10 +7,10 @@
 
 import React, {useState, useEffect} from 'react';
 
-import {useAPIGetData, useAPIPostData} from '../../common/APIhooks';
-import {APIEndpoints} from '../../common/API';
-import {FORM_STATES, useForm} from '../../formContainer/hooks';
-import Alert from '../../common/bootstrap/Alert';
+import {useAPIGetData, useAPIPostData} from '../common/APIhooks';
+import {APIEndpoints} from '../common/API';
+import {FORM_STATES, useForm} from '../formContainer/hooks';
+import Alert from '../common/bootstrap/Alert';
 
 import CurrentForisPasswordForm from './CurrentForisPasswordForm';
 import ForisPasswordForm from './ForisPasswordForm';

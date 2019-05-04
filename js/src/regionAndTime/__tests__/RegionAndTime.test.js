@@ -7,12 +7,12 @@
 
 import React from 'react';
 
-import {render, wait, getByText} from 'react-testing-library'
-import mockAxios from 'jest-mock-axios';
+import {render, wait, getByText} from 'react-testing-library/typings'
+import mockAxios from 'jest-mock-axios/dist/lib/index';
 import {regionAndTime} from './__fixtures__/regionAndTime';
 
 import RegionAndTime from '../RegionAndTime';
-import {APIEndpoints} from '../../../common/API';
+import {APIEndpoints} from '../../common/API';
 
 describe('<RegionAndTime/>', () => {
     let regionAndTimeContainer;

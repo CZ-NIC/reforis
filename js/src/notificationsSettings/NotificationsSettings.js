@@ -7,13 +7,13 @@
 
 import React from 'react';
 
-import ForisForm from '../../../formContainer/ForisForm';
-import {APIEndpoints} from '../../../common/API';
+import ForisForm from '../formContainer/ForisForm';
+import {APIEndpoints} from '../common/API';
 
 import NotificationsEmailSettingsForm from './forms/NotificationsEmailSettingsForm';
 import validator from './validator';
 
-export default function NotificationsEmailSettings({ws}) {
+export default function NotificationsSettings({ws}) {
     return <>
         <ForisForm
             ws={ws}

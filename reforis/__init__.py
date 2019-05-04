@@ -25,8 +25,8 @@ def create_app(config):
 
     register_login_required(app)
 
-    from .views import views
     from .api import api
+    from .views import views
     app.register_blueprint(views)
     app.register_blueprint(api)
 

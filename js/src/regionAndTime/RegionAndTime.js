@@ -11,26 +11,21 @@ import moment from 'moment';
 
 import RegionForm from './RegionForm';
 import TimeForm from './TimeForm';
-import ForisForm from '../../formContainer/ForisForm';
 
-import {APIEndpoints} from '../../common/API';
+import {APIEndpoints} from '../common/API';
+import ForisForm from '../formContainer/ForisForm';
 
 export default function RegionAndTime() {
-    return <>
-        <h3>{_('Region and time')}</h3>
-        <p>{_('It is important for your device to have the correct time set. If your device\'s time is delayed, the ' +
-            'procedure of SSL certificate verification might not work correctly.')}</p>
-        <ForisForm
-            forisConfig={{
-                endpoint: APIEndpoints.regionAndTime
-            }}
-            prepDataToSubmit={prepDataToSubmit}
-            validator={validator}
-        >
-            <RegionForm/>
-            <TimeForm/>
-        </ForisForm>
-    </>
+    return <ForisForm
+        forisConfig={{
+            endpoint: APIEndpoints.regionAndTime
+        }}
+        prepDataToSubmit={prepDataToSubmit}
+        validator={validator}
+    >
+        <RegionForm/>
+        <TimeForm/>
+    </ForisForm>
 }
 
 function validator(formData) {

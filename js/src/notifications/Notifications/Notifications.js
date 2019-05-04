@@ -10,15 +10,15 @@ import React from 'react';
 import propTypes from 'prop-types';
 
 import useNotifications from '../hooks';
-import NotificationsCenterList from './NotificationsCenterList';
-import NotificationsEmailSettings from './NotificationsEmailSettings/NotificationsEmailSettings';
+import NotificationsList from './NotificationsList';
+import NotificationsSettings from '../../notificationsSettings/NotificationsSettings';
 
 
-NotificationsCenter.propTypes = {
+Notifications.propTypes = {
     ws: propTypes.object.isRequired
 };
 
-export default function NotificationsCenter({ws}) {
+export default function Notifications({ws}) {
     const [notifications, dismiss, dismissAll] = useNotifications(ws);
 
     function getDismissAllButton() {
@@ -33,15 +33,12 @@ export default function NotificationsCenter({ws}) {
     }
 
     return <div id='notifications-center'>
-        <NotificationsEmailSettings ws={ws}/>
-
-        <h3>{_('Notifications')}</h3>
         {
             notifications.length !== 0 ?
                 getDismissAllButton() : <p className='text-muted text-center'>{_('No notifications')}</p>
         }
 
-        <NotificationsCenterList
+        <NotificationsList
             notifications={notifications}
             dismiss={dismiss}
         />

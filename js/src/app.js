@@ -11,34 +11,51 @@ import {render} from 'react-dom';
 import WebSockets from './common/WebSockets';
 
 import Overview from './overview/Overview';
+import RouterStateHandler from './routerStateHandler/RouterStateHandler';
+
 import NotificationsDropdown from './notifications/NotificationsDropdown/NotificationsDropdown';
-import NotificationsCenter from './notifications/NotificationsCenter/NotificationsCenter';
+import Notifications from './notifications/Notifications/Notifications';
 
 import WiFi from './wifi/WiFi';
 import WAN from './wan/WAN';
 import LAN from './lan/LAN';
 import DNS from './dns/DNS';
 
-import Administration from './administration/Administration';
+import Password from './password/Password';
+import RegionAndTime from './regionAndTime/RegionAndTime';
+import NotificationsSettings from './notificationsSettings/NotificationsSettings';
+import Reboot from './reboot/Reboot';
+
 import Updates from './updates/Updates';
 import Packages from './packages/Packages';
-import RouterStateHandler from './routerStateHandler/RouterStateHandler';
 
 const ws = new WebSockets();
 
 window.addEventListener('load', () => {
     const apps = [
         {id: 'overview_container', component: Overview},
+        {id: 'router_state_handler_container', component: RouterStateHandler},
+
+        //Notifications
         {id: 'notifications_dropdown_container', component: NotificationsDropdown},
-        {id: 'notifications_center_container', component: NotificationsCenter},
+        {id: 'notifications_container', component: Notifications},
+
+        // Network settings
         {id: 'wifi_container', component: WiFi},
         {id: 'wan_container', component: WAN},
         {id: 'lan_container', component: LAN},
         {id: 'dns_container', component: DNS},
+
+        // Administration
+        {id: 'password_container', component: Password},
+        {id: 'region_and_time_container', component: RegionAndTime},
+        {id: 'notifications_settings_container', component: NotificationsSettings},
+        {id: 'reboot_container', component: Reboot},
+
+        // Updater
         {id: 'updates_container', component: Updates},
         {id: 'packages_container', component: Packages},
-        {id: 'administration_container', component: Administration},
-        {id: 'router_state_handler_container', component: RouterStateHandler},
+
     ];
 
     for (let app of apps) {

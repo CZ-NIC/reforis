@@ -7,11 +7,11 @@
 
 import React from 'react';
 
-import PasswordInput from '../../common/bootstrap/PasswordInput';
-import CheckBox from '../../common/bootstrap/Checkbox';
-import SubmitButton from '../../formContainer/SubmitButton';
+import PasswordInput from '../common/bootstrap/PasswordInput';
+import CheckBox from '../common/bootstrap/Checkbox';
+import SubmitButton from '../formContainer/SubmitButton';
 import propTypes from 'prop-types';
-import {FORM_STATES} from '../../formContainer/hooks';
+import {FORM_STATES} from '../formContainer/hooks';
 
 ForisPasswordForm.propTypes = {
     formData: propTypes.shape(

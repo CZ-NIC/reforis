@@ -8,8 +8,8 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-import Select from '../../common/bootstrap/Select';
-import {TIMEZONES, COUNTRIES} from '../../utils/timezones';
+import Select from '../common/bootstrap/Select';
+import {TIMEZONES, COUNTRIES} from '../utils/timezones';
 
 RegionForm.propTypes = {
     formData: propTypes.shape({

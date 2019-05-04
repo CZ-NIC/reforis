@@ -9,10 +9,10 @@ import React, {useState} from 'react';
 import propTypes from 'prop-types';
 import moment from 'moment/moment';
 
-import Select from '../../common/bootstrap/Select';
-import DataTimeInput from '../../common/bootstrap/DataTimeInput';
-import {useAPIGetData} from '../../common/APIhooks';
-import {APIEndpoints} from '../../common/API';
+import Select from '../common/bootstrap/Select';
+import DataTimeInput from '../common/bootstrap/DataTimeInput';
+import {useAPIGetData} from '../common/APIhooks';
+import {APIEndpoints} from '../common/API';
 
 
 const TIME_SETTING_TYPE_CHOICES = {

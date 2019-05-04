@@ -11,10 +11,14 @@
 {% endblock %}
 
 {% block title %}
-    {% trans %}Administration{% endtrans %}
+    {% trans %}Region and time{% endtrans %}
 {% endblock %}
 
 {% block content %}
-    <h1>{% trans %} Administration {% endtrans %}</h1>
-    <div id="administration_container"></div>
+    <h1>{% trans %}Region and time{% endtrans %}</h1>
+    <p>{% trans %}
+        It is important for your device to have the correct time set. If your device's time is delayed, the
+        procedure of SSL certificate verification might not work correctly.
+    {% endtrans %}</p>
+    <div id="region_and_time_container"></div>
 {% endblock %}

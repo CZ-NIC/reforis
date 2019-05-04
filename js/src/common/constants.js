@@ -7,5 +7,6 @@
 
 export const ForisURLs = {
     notifications: '/notifications',
+    notificationsSettings: '/notifications-settings',
     luci: '/cgi-bin/luci',
 };

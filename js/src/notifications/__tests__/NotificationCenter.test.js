@@ -9,7 +9,7 @@ import {render} from 'react-testing-library';
 
 import {mockedWS} from '../../testUtils/mockWS';
 import {notificationsFixture} from './__fixtures__/notifications';
-import NotificationsCenter from '../NotificationsCenter/NotificationsCenter';
+import Notifications from '../Notifications/Notifications';
 import {notificationsEmailSettingsFixure} from './__fixtures__/notificationsEmailSettings';
 import mockAxios from 'jest-mock-axios';
 
@@ -17,7 +17,7 @@ describe('<NotificationCenter/>', () => {
     let NotificationCenterContainer;
     beforeEach(() => {
         const mockWebSockets = new mockedWS();
-        const {container} = render(<NotificationsCenter ws={mockWebSockets}/>);
+        const {container} = render(<Notifications ws={mockWebSockets}/>);
         mockAxios.mockResponse({data: notificationsEmailSettingsFixure()});
         mockAxios.mockResponse({data: notificationsFixture()});
 

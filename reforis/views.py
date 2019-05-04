@@ -51,26 +51,31 @@ def notifications():
 
 @views.route('/wifi', methods=['GET'])
 def wifi():
-    return render_template('wifi.html')
+    return render_template('network_settings/wifi.html')
 
 
 @views.route('/wan', methods=['GET'])
 def wan():
-    return render_template('wan.html')
+    return render_template('network_settings/wan.html')
 
 
 @views.route('/lan', methods=['GET'])
 def lan():
-    return render_template('lan.html')
+    return render_template('network_settings/lan.html')
 
 
 @views.route('/dns', methods=['GET'])
 def dns():
-    return render_template('dns.html')
+    return render_template('network_settings/dns.html')
 
 
-@views.route('/administration', methods=['GET'])
-def administration():
+@views.route('/password', methods=['GET'])
+def password():
+    return render_template('administration/password.html')
+
+
+@views.route('/region-and-time', methods=['GET'])
+def region_and_time():
     babel = current_app.extensions['babel']
     translations = TranslationsHelper.load(
         # There is only one directory with translations in Foris so it's OK.
@@ -78,7 +83,17 @@ def administration():
         [get_locale()],
         'tzinfo'
     )
-    return render_template('administration.html', babel_tzinfo_catalog=translations.json_catalog)
+    return render_template('administration/region_and_time.html', babel_tzinfo_catalog=translations.json_catalog)
+
+
+@views.route('/notifications-settings', methods=['GET'])
+def notifications_settings():
+    return render_template('administration/notifications_settings.html')
+
+
+@views.route('/reboot', methods=['GET'])
+def reboot():
+    return render_template('administration/reboot.html')
 
 
 @views.route('/updates', methods=['GET'])

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {% trans %}Device reboot{% endtrans %}
+{% endblock %}
+
+{% block content %}
+    <h1>{% trans %}Device reboot{% endtrans %}</h1>
+    <p>{% trans %}
+        If you need to reboot the device, click on the following button. The reboot process takes
+        approximately 30 seconds, you will be required to log in again after the reboot.
+    {% endtrans %}</p>
+    <div id="reboot_container"></div>
+{% endblock %}

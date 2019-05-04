@@ -13,12 +13,12 @@ import NotificationIcon from '../NotificationIcon';
 import RebootButton from '../../common/RebootButton';
 
 
-NotificationsCenterList.propTypes = {
+NotificationsList.propTypes = {
     notifications: propTypes.arrayOf(NOTIFICATION_PROP_TYPES),
     dismiss: propTypes.func.isRequired
 };
 
-export default function NotificationsCenterList({notifications, dismiss}) {
+export default function NotificationsList({notifications, dismiss}) {
     return notifications.map(
         notification => {
             return <NotificationsCenterItem
