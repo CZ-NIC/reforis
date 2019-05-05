@@ -49,10 +49,10 @@ export default function UpdateApprovals() {
             onClick={postHandler('deny')}
         >
             {_('Deny')}
-        </Button> : null
+        </Button>
         <Button
             style={buttonMargin}
-            className={"btn btn-primary col-sm-12 col-lg-4 offset-lg-2 col-lg-3 offset-lg-8"}
+            className={"btn btn-primary col-sm-12 col-lg-4 offset-lg-2 col-lg-3"}
             onClick={postHandler('grant')}
         >
             {_('Install now')}
