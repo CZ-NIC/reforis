@@ -29,14 +29,18 @@ RegionForm.defaultProps = {
 
 export default function RegionForm({formData, formErrors, setFormValue, ...props}) {
     function getRegionChoices() {
-        return Object.keys(TIMEZONES).reduce((obj, key) => {
+        return Object.keys(TIMEZONES)
+            .sort()
+            .reduce((obj, key) => {
             obj[key] = _(key);
             return obj;
         }, {})
     }
 
     function getCountryChoices() {
-        return Object.keys(TIMEZONES[formData.region]).reduce((obj, country_code) => {
+        return Object.keys(TIMEZONES[formData.region])
+            .sort()
+            .reduce((obj, country_code) => {
             obj[country_code] = _(COUNTRIES[country_code]);
             return obj;
         }, {})
@@ -45,7 +49,9 @@ export default function RegionForm({formData, formErrors, setFormValue, ...props
     function getCityChoices() {
         const countries = TIMEZONES[formData.region];
         const cities = countries[formData.country] || countries[Object.keys(countries)[0]];
-        return Object.keys(cities).reduce((obj, city) => {
+        return Object.keys(cities)
+            .sort()
+            .reduce((obj, city) => {
             obj[city] = _(city);
             return obj;
         }, {})
