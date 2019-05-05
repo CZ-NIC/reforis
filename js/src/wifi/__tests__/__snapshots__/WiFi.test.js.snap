@@ -14,7 +14,7 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
     >
       <label
         class="form-label"
-        for="26"
+        for="30"
       >
         Enable
       </label>
@@ -23,7 +23,7 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
       class="form-check col-sm-8"
     >
       <input
-        id="26"
+        id="30"
         type="checkbox"
       />
       <small
@@ -36,7 +36,7 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
   >
     <label
       class="form-control-label col-sm-3"
-      for="35"
+      for="41"
     >
       SSID
     </label>
@@ -48,7 +48,7 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
       >
         <input
           class="form-control "
-          id="35"
+          id="41"
           required=""
           type="text"
           value="TestSSID1"
@@ -67,7 +67,7 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
   >
     <label
       class="form-control-label col-sm-3"
-      for="36"
+      for="42"
     >
       Password
     </label>
@@ -80,7 +80,7 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
         <input
           autocomplete="new-password"
           class="form-control "
-          id="36"
+          id="42"
           required=""
           type="password"
           value="TestPass"
@@ -117,7 +117,7 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
     >
       <label
         class="form-label"
-        for="37"
+        for="43"
       >
         Hide SSID
       </label>
@@ -126,7 +126,7 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
       class="form-check col-sm-8"
     >
       <input
-        id="37"
+        id="43"
         type="checkbox"
       />
       <small
@@ -138,14 +138,14 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
   </div>
   <div
     class="form-group row"
-    id="38"
+    id="44"
   >
     <div
       class="form-label col-sm-3"
     >
       <label
         class="form-label"
-        for="38"
+        for="44"
       >
         GHz
       </label>
@@ -203,7 +203,7 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
   >
     <label
       class="form-control-label col-sm-3"
-      for="39"
+      for="45"
     >
       802.11n/ac mode
     </label>
@@ -212,7 +212,7 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
     >
       <select
         class="form-control"
-        id="39"
+        id="45"
       >
         <option
           value="NOHT"
@@ -261,7 +261,7 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
   >
     <label
       class="form-control-label col-sm-3"
-      for="40"
+      for="46"
     >
       Channel
     </label>
@@ -270,7 +270,7 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
     >
       <select
         class="form-control"
-        id="40"
+        id="46"
       >
         <option
           value="0"
@@ -379,7 +379,7 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
     >
       <label
         class="form-label"
-        for="41"
+        for="47"
       >
         Enable Guest Wifi
       </label>
@@ -388,7 +388,7 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
       class="form-check col-sm-8"
     >
       <input
-        id="41"
+        id="47"
         type="checkbox"
       />
       <small
@@ -414,7 +414,7 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
     >
       <label
         class="form-label"
-        for="27"
+        for="31"
       >
         Enable
       </label>
@@ -423,7 +423,7 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
       class="form-check col-sm-8"
     >
       <input
-        id="27"
+        id="31"
         type="checkbox"
       />
       <small
@@ -525,7 +525,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
     >
       <label
         class="form-label"
-        for="52"
+        for="58"
       >
         Enable
       </label>
@@ -534,7 +534,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
       class="form-check col-sm-8"
     >
       <input
-        id="52"
+        id="58"
         type="checkbox"
       />
       <small
@@ -547,7 +547,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
   >
     <label
       class="form-control-label col-sm-3"
-      for="61"
+      for="69"
     >
       SSID
     </label>
@@ -559,7 +559,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
       >
         <input
           class="form-control "
-          id="61"
+          id="69"
           required=""
           type="text"
           value="TestSSID1"
@@ -578,7 +578,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
   >
     <label
       class="form-control-label col-sm-3"
-      for="62"
+      for="70"
     >
       Password
     </label>
@@ -591,7 +591,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
         <input
           autocomplete="new-password"
           class="form-control "
-          id="62"
+          id="70"
           required=""
           type="password"
           value="TestPass"
@@ -628,7 +628,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
     >
       <label
         class="form-label"
-        for="63"
+        for="71"
       >
         Hide SSID
       </label>
@@ -637,7 +637,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
       class="form-check col-sm-8"
     >
       <input
-        id="63"
+        id="71"
         type="checkbox"
       />
       <small
@@ -649,14 +649,14 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
   </div>
   <div
     class="form-group row"
-    id="64"
+    id="72"
   >
     <div
       class="form-label col-sm-3"
     >
       <label
         class="form-label"
-        for="64"
+        for="72"
       >
         GHz
       </label>
@@ -714,7 +714,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
   >
     <label
       class="form-control-label col-sm-3"
-      for="65"
+      for="73"
     >
       802.11n/ac mode
     </label>
@@ -723,7 +723,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
     >
       <select
         class="form-control"
-        id="65"
+        id="73"
       >
         <option
           value="NOHT"
@@ -772,7 +772,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
   >
     <label
       class="form-control-label col-sm-3"
-      for="66"
+      for="74"
     >
       Channel
     </label>
@@ -781,7 +781,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
     >
       <select
         class="form-control"
-        id="66"
+        id="74"
       >
         <option
           value="0"
@@ -1002,7 +1002,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
     >
       <label
         class="form-label"
-        for="67"
+        for="75"
       >
         Enable Guest Wifi
       </label>
@@ -1011,7 +1011,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
       class="form-check col-sm-8"
     >
       <input
-        id="67"
+        id="75"
         type="checkbox"
       />
       <small
@@ -1030,7 +1030,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
   >
     <label
       class="form-control-label col-sm-3"
-      for="77"
+      for="85"
     >
       SSID
     </label>
@@ -1042,7 +1042,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
       >
         <input
           class="form-control "
-          id="77"
+          id="85"
           type="text"
           value="TestGuestSSID"
         />
@@ -1060,7 +1060,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
   >
     <label
       class="form-control-label col-sm-3"
-      for="78"
+      for="86"
     >
       Password
     </label>
@@ -1073,7 +1073,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
         <input
           autocomplete="new-password"
           class="form-control is-invalid"
-          id="78"
+          id="86"
           required=""
           type="password"
           value=""
@@ -1116,7 +1116,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
     >
       <label
         class="form-label"
-        for="53"
+        for="59"
       >
         Enable
       </label>
@@ -1125,7 +1125,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
       class="form-check col-sm-8"
     >
       <input
-        id="53"
+        id="59"
         type="checkbox"
       />
       <small
@@ -1158,7 +1158,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
     >
       <label
         class="form-label"
-        for="9"
+        for="11"
       >
         Enable
       </label>
@@ -1167,7 +1167,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
       class="form-check col-sm-8"
     >
       <input
-        id="9"
+        id="11"
         type="checkbox"
       />
       <small
@@ -1180,7 +1180,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
   >
     <label
       class="form-control-label col-sm-3"
-      for="18"
+      for="22"
     >
       SSID
     </label>
@@ -1192,7 +1192,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
       >
         <input
           class="form-control "
-          id="18"
+          id="22"
           required=""
           type="text"
           value="TestSSID1"
@@ -1211,7 +1211,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
   >
     <label
       class="form-control-label col-sm-3"
-      for="19"
+      for="23"
     >
       Password
     </label>
@@ -1224,7 +1224,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
         <input
           autocomplete="new-password"
           class="form-control "
-          id="19"
+          id="23"
           required=""
           type="password"
           value="TestPass"
@@ -1261,7 +1261,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
     >
       <label
         class="form-label"
-        for="20"
+        for="24"
       >
         Hide SSID
       </label>
@@ -1270,7 +1270,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
       class="form-check col-sm-8"
     >
       <input
-        id="20"
+        id="24"
         type="checkbox"
       />
       <small
@@ -1282,14 +1282,14 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
   </div>
   <div
     class="form-group row"
-    id="21"
+    id="25"
   >
     <div
       class="form-label col-sm-3"
     >
       <label
         class="form-label"
-        for="21"
+        for="25"
       >
         GHz
       </label>
@@ -1347,7 +1347,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
   >
     <label
       class="form-control-label col-sm-3"
-      for="22"
+      for="26"
     >
       802.11n/ac mode
     </label>
@@ -1356,7 +1356,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
     >
       <select
         class="form-control"
-        id="22"
+        id="26"
       >
         <option
           value="NOHT"
@@ -1405,7 +1405,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
   >
     <label
       class="form-control-label col-sm-3"
-      for="23"
+      for="27"
     >
       Channel
     </label>
@@ -1414,7 +1414,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
     >
       <select
         class="form-control"
-        id="23"
+        id="27"
       >
         <option
           value="0"
@@ -1635,7 +1635,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
     >
       <label
         class="form-label"
-        for="24"
+        for="28"
       >
         Enable Guest Wifi
       </label>
@@ -1644,7 +1644,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
       class="form-check col-sm-8"
     >
       <input
-        id="24"
+        id="28"
         type="checkbox"
       />
       <small
@@ -1670,7 +1670,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
     >
       <label
         class="form-label"
-        for="10"
+        for="12"
       >
         Enable
       </label>
@@ -1679,7 +1679,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
       class="form-check col-sm-8"
     >
       <input
-        id="10"
+        id="12"
         type="checkbox"
       />
       <small

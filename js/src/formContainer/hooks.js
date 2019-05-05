@@ -74,7 +74,12 @@ export function useForisForm(ws, forisConfig, prepData, prepDataToSubmit, valida
         setFormValue
     ] = useForm(validator);
     const [getData, isReady] = useAPIGetData(forisConfig.endpoint);
-    const loadFormData = () => getData(data => setFormData(prepData(data)));
+    const [initialFormData, setInitialFormData] = useState();
+    const loadFormData = () => getData(data => {
+        const preparedData = prepData(data);
+        setFormData(preparedData);
+        setInitialFormData(preparedData);
+    });
     useEffect(() => loadFormData(), []);
     useEffect(() => setFormState(isReady ? FORM_STATES.READY : FORM_STATES.LOAD), [isReady,]);
     useEffect(() => {
@@ -98,6 +103,20 @@ export function useForisForm(ws, forisConfig, prepData, prepDataToSubmit, valida
         const copiedFormData = JSON.parse(JSON.stringify(formData));
         postData(prepDataToSubmit(copiedFormData), () => loadFormData());
     }
+
+    useEffect(() => {
+        window.onbeforeunload = e => {
+            if (JSON.stringify(formData) === JSON.stringify(initialFormData))
+                return;
+
+            const message = _('Changes you made may not be saved.'),
+                event = e || window.event;
+            if (event)
+                event.returnValue = message;
+
+            return message;
+        };
+    });
 
     return [
         formData,

@@ -13,7 +13,7 @@ exports[`<NotificationsDropdown/> Disabled 1`] = `
     >
       <label
         class="form-label"
-        for="45"
+        for="56"
       >
         Enable email notifications
       </label>
@@ -23,7 +23,7 @@ exports[`<NotificationsDropdown/> Disabled 1`] = `
     >
       <input
         checked=""
-        id="45"
+        id="56"
         type="checkbox"
       />
       <small
@@ -483,7 +483,7 @@ exports[`<NotificationsDropdown/> Enabled,smtp_type:turris 1`] = `
     >
       <label
         class="form-label"
-        for="79"
+        for="101"
       >
         Enable email notifications
       </label>
@@ -493,7 +493,7 @@ exports[`<NotificationsDropdown/> Enabled,smtp_type:turris 1`] = `
     >
       <input
         checked=""
-        id="79"
+        id="101"
         type="checkbox"
       />
       <small
@@ -505,14 +505,14 @@ exports[`<NotificationsDropdown/> Enabled,smtp_type:turris 1`] = `
   </div>
   <div
     class="form-group row"
-    id="80"
+    id="102"
   >
     <div
       class="form-label col-sm-3"
     >
       <label
         class="form-label"
-        for="80"
+        for="102"
       >
         SMTP provider
       </label>
@@ -565,7 +565,7 @@ exports[`<NotificationsDropdown/> Enabled,smtp_type:turris 1`] = `
   >
     <label
       class="form-control-label col-sm-3"
-      for="81"
+      for="103"
     >
       Recipient's email
     </label>
@@ -577,7 +577,7 @@ exports[`<NotificationsDropdown/> Enabled,smtp_type:turris 1`] = `
       >
         <input
           class="form-control "
-          id="81"
+          id="103"
           required=""
           type="text"
           value="some@example.com"
@@ -598,7 +598,7 @@ exports[`<NotificationsDropdown/> Enabled,smtp_type:turris 1`] = `
   >
     <label
       class="form-control-label col-sm-3"
-      for="82"
+      for="104"
     >
       Importance
     </label>
@@ -607,7 +607,7 @@ exports[`<NotificationsDropdown/> Enabled,smtp_type:turris 1`] = `
     >
       <select
         class="form-control"
-        id="82"
+        id="104"
       >
         <option
           value="1"
@@ -638,7 +638,7 @@ exports[`<NotificationsDropdown/> Enabled,smtp_type:turris 1`] = `
     >
       <label
         class="form-label"
-        for="83"
+        for="105"
       >
         Send news
       </label>
@@ -648,7 +648,7 @@ exports[`<NotificationsDropdown/> Enabled,smtp_type:turris 1`] = `
     >
       <input
         checked=""
-        id="83"
+        id="105"
         type="checkbox"
       />
       <small
@@ -663,7 +663,7 @@ exports[`<NotificationsDropdown/> Enabled,smtp_type:turris 1`] = `
   >
     <label
       class="form-control-label col-sm-3"
-      for="117"
+      for="150"
     >
       Sender's name
     </label>
@@ -675,7 +675,7 @@ exports[`<NotificationsDropdown/> Enabled,smtp_type:turris 1`] = `
       >
         <input
           class="form-control "
-          id="117"
+          id="150"
           type="text"
           value="turris"
         />

@@ -10,7 +10,7 @@ exports[`<LAN/> Snapshot managed with enabled DHCP. 1`] = `
   >
     <label
       class="form-control-label col-sm-3"
-      for="62"
+      for="74"
     >
       LAN mode
     </label>
@@ -19,7 +19,7 @@ exports[`<LAN/> Snapshot managed with enabled DHCP. 1`] = `
     >
       <select
         class="form-control"
-        id="62"
+        id="74"
       >
         <option
           value="managed"
@@ -48,7 +48,7 @@ it has opened ports for configuration interface and other services.
   >
     <label
       class="form-control-label col-sm-3"
-      for="75"
+      for="90"
     >
       Router IP address
     </label>
@@ -60,7 +60,7 @@ it has opened ports for configuration interface and other services.
       >
         <input
           class="form-control "
-          id="75"
+          id="90"
           required=""
           type="text"
           value="192.168.1.4"
@@ -81,7 +81,7 @@ it has opened ports for configuration interface and other services.
   >
     <label
       class="form-control-label col-sm-3"
-      for="76"
+      for="91"
     >
       Network mask
     </label>
@@ -93,7 +93,7 @@ it has opened ports for configuration interface and other services.
       >
         <input
           class="form-control "
-          id="76"
+          id="91"
           required=""
           type="text"
           value="255.255.255.0"
@@ -115,7 +115,7 @@ it has opened ports for configuration interface and other services.
     >
       <label
         class="form-label"
-        for="77"
+        for="92"
       >
         Enable DHCP
       </label>
@@ -124,7 +124,7 @@ it has opened ports for configuration interface and other services.
       class="form-check col-sm-8"
     >
       <input
-        id="77"
+        id="92"
         type="checkbox"
       />
       <small
@@ -139,7 +139,7 @@ it has opened ports for configuration interface and other services.
   >
     <label
       class="form-control-label col-sm-3"
-      for="82"
+      for="97"
     >
       DHCP start
     </label>
@@ -151,7 +151,7 @@ it has opened ports for configuration interface and other services.
       >
         <input
           class="form-control "
-          id="82"
+          id="97"
           min="1"
           required=""
           type="number"
@@ -171,7 +171,7 @@ it has opened ports for configuration interface and other services.
   >
     <label
       class="form-control-label col-sm-3"
-      for="83"
+      for="98"
     >
       DHCP max leases
     </label>
@@ -183,7 +183,7 @@ it has opened ports for configuration interface and other services.
       >
         <input
           class="form-control "
-          id="83"
+          id="98"
           min="1"
           required=""
           type="number"
@@ -203,7 +203,7 @@ it has opened ports for configuration interface and other services.
   >
     <label
       class="form-control-label col-sm-3"
-      for="84"
+      for="99"
     >
       Lease time (hours)
     </label>
@@ -215,7 +215,7 @@ it has opened ports for configuration interface and other services.
       >
         <input
           class="form-control "
-          id="84"
+          id="99"
           min="120"
           required=""
           type="number"
@@ -250,7 +250,7 @@ exports[`<LAN/> Snapshot managed. 1`] = `
   >
     <label
       class="form-control-label col-sm-3"
-      for="46"
+      for="55"
     >
       LAN mode
     </label>
@@ -259,7 +259,7 @@ exports[`<LAN/> Snapshot managed. 1`] = `
     >
       <select
         class="form-control"
-        id="46"
+        id="55"
       >
         <option
           value="managed"
@@ -288,7 +288,7 @@ it has opened ports for configuration interface and other services.
   >
     <label
       class="form-control-label col-sm-3"
-      for="59"
+      for="71"
     >
       Router IP address
     </label>
@@ -300,7 +300,7 @@ it has opened ports for configuration interface and other services.
       >
         <input
           class="form-control "
-          id="59"
+          id="71"
           required=""
           type="text"
           value="192.168.1.4"
@@ -321,7 +321,7 @@ it has opened ports for configuration interface and other services.
   >
     <label
       class="form-control-label col-sm-3"
-      for="60"
+      for="72"
     >
       Network mask
     </label>
@@ -333,7 +333,7 @@ it has opened ports for configuration interface and other services.
       >
         <input
           class="form-control "
-          id="60"
+          id="72"
           required=""
           type="text"
           value="255.255.255.0"
@@ -355,7 +355,7 @@ it has opened ports for configuration interface and other services.
     >
       <label
         class="form-label"
-        for="61"
+        for="73"
       >
         Enable DHCP
       </label>
@@ -364,7 +364,7 @@ it has opened ports for configuration interface and other services.
       class="form-check col-sm-8"
     >
       <input
-        id="61"
+        id="73"
         type="checkbox"
       />
       <small
@@ -516,7 +516,7 @@ exports[`<LAN/> Snapshot unmanaged none. 1`] = `
   >
     <label
       class="form-control-label col-sm-3"
-      for="32"
+      for="38"
     >
       LAN mode
     </label>
@@ -525,7 +525,7 @@ exports[`<LAN/> Snapshot unmanaged none. 1`] = `
     >
       <select
         class="form-control"
-        id="32"
+        id="38"
       >
         <option
           value="managed"
@@ -554,7 +554,7 @@ it has opened ports for configuration interface and other services.
   >
     <label
       class="form-control-label col-sm-3"
-      for="33"
+      for="39"
     >
       IPv4 protocol
     </label>
@@ -563,7 +563,7 @@ it has opened ports for configuration interface and other services.
     >
       <select
         class="form-control"
-        id="33"
+        id="39"
       >
         <option
           value="dhcp"
@@ -606,7 +606,7 @@ exports[`<LAN/> Snapshot unmanaged static. 1`] = `
   >
     <label
       class="form-control-label col-sm-3"
-      for="13"
+      for="16"
     >
       LAN mode
     </label>
@@ -615,7 +615,7 @@ exports[`<LAN/> Snapshot unmanaged static. 1`] = `
     >
       <select
         class="form-control"
-        id="13"
+        id="16"
       >
         <option
           value="managed"
@@ -644,7 +644,7 @@ it has opened ports for configuration interface and other services.
   >
     <label
       class="form-control-label col-sm-3"
-      for="14"
+      for="17"
     >
       IPv4 protocol
     </label>
@@ -653,7 +653,7 @@ it has opened ports for configuration interface and other services.
     >
       <select
         class="form-control"
-        id="14"
+        id="17"
       >
         <option
           value="dhcp"
@@ -681,7 +681,7 @@ it has opened ports for configuration interface and other services.
   >
     <label
       class="form-control-label col-sm-3"
-      for="27"
+      for="33"
     >
       IP address
     </label>
@@ -693,7 +693,7 @@ it has opened ports for configuration interface and other services.
       >
         <input
           class="form-control "
-          id="27"
+          id="33"
           required=""
           type="text"
           value="192.168.1.4"
@@ -712,7 +712,7 @@ it has opened ports for configuration interface and other services.
   >
     <label
       class="form-control-label col-sm-3"
-      for="28"
+      for="34"
     >
       Network mask
     </label>
@@ -724,7 +724,7 @@ it has opened ports for configuration interface and other services.
       >
         <input
           class="form-control "
-          id="28"
+          id="34"
           required=""
           type="text"
           value="255.255.255.0"
@@ -743,7 +743,7 @@ it has opened ports for configuration interface and other services.
   >
     <label
       class="form-control-label col-sm-3"
-      for="29"
+      for="35"
     >
       Gateway
     </label>
@@ -755,7 +755,7 @@ it has opened ports for configuration interface and other services.
       >
         <input
           class="form-control "
-          id="29"
+          id="35"
           required=""
           type="text"
           value="192.168.1.4"
@@ -774,7 +774,7 @@ it has opened ports for configuration interface and other services.
   >
     <label
       class="form-control-label col-sm-3"
-      for="30"
+      for="36"
     >
       DNS server 1
     </label>
@@ -786,7 +786,7 @@ it has opened ports for configuration interface and other services.
       >
         <input
           class="form-control "
-          id="30"
+          id="36"
           type="text"
           value=""
         />
@@ -806,7 +806,7 @@ it has opened ports for configuration interface and other services.
   >
     <label
       class="form-control-label col-sm-3"
-      for="31"
+      for="37"
     >
       DNS server 2
     </label>
@@ -818,7 +818,7 @@ it has opened ports for configuration interface and other services.
       >
         <input
           class="form-control "
-          id="31"
+          id="37"
           type="text"
           value=""
         />

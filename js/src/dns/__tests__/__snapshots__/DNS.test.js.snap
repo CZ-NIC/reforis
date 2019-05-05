@@ -11,7 +11,7 @@ exports[`<DNS/> Test with snapshot DHCP. 1`] = `
       >
         <label
           class="form-label"
-          for="29"
+          for="35"
         >
           Use forwarding
         </label>
@@ -20,7 +20,7 @@ exports[`<DNS/> Test with snapshot DHCP. 1`] = `
         class="form-check col-sm-8"
       >
         <input
-          id="29"
+          id="35"
           type="checkbox"
         />
         <small
@@ -36,7 +36,7 @@ exports[`<DNS/> Test with snapshot DHCP. 1`] = `
       >
         <label
           class="form-label"
-          for="30"
+          for="36"
         >
           Enable DNSSEC
         </label>
@@ -46,7 +46,7 @@ exports[`<DNS/> Test with snapshot DHCP. 1`] = `
       >
         <input
           checked=""
-          id="30"
+          id="36"
           type="checkbox"
         />
         <small
@@ -62,7 +62,7 @@ exports[`<DNS/> Test with snapshot DHCP. 1`] = `
       >
         <label
           class="form-label"
-          for="31"
+          for="37"
         >
           Enable DHCP clients in DNS
         </label>
@@ -71,7 +71,7 @@ exports[`<DNS/> Test with snapshot DHCP. 1`] = `
         class="form-check col-sm-8"
       >
         <input
-          id="31"
+          id="37"
           type="checkbox"
         />
         <small
@@ -86,7 +86,7 @@ exports[`<DNS/> Test with snapshot DHCP. 1`] = `
     >
       <label
         class="form-control-label col-sm-3"
-        for="44"
+        for="53"
       >
         Domain of DHCP clients in DNS
       </label>
@@ -98,7 +98,7 @@ exports[`<DNS/> Test with snapshot DHCP. 1`] = `
         >
           <input
             class="form-control "
-            id="44"
+            id="53"
             type="text"
             value="lan"
           />
@@ -157,7 +157,7 @@ exports[`<DNS/> Test with snapshot forwarding. 1`] = `
       >
         <label
           class="form-label"
-          for="13"
+          for="16"
         >
           Use forwarding
         </label>
@@ -166,7 +166,7 @@ exports[`<DNS/> Test with snapshot forwarding. 1`] = `
         class="form-check col-sm-8"
       >
         <input
-          id="13"
+          id="16"
           type="checkbox"
         />
         <small
@@ -179,7 +179,7 @@ exports[`<DNS/> Test with snapshot forwarding. 1`] = `
     >
       <label
         class="form-control-label col-sm-3"
-        for="26"
+        for="32"
       >
         DNS Forwarder
       </label>
@@ -188,7 +188,7 @@ exports[`<DNS/> Test with snapshot forwarding. 1`] = `
       >
         <select
           class="form-control"
-          id="26"
+          id="32"
         >
           <option
             value=""
@@ -229,7 +229,7 @@ exports[`<DNS/> Test with snapshot forwarding. 1`] = `
       >
         <label
           class="form-label"
-          for="14"
+          for="17"
         >
           Enable DNSSEC
         </label>
@@ -239,7 +239,7 @@ exports[`<DNS/> Test with snapshot forwarding. 1`] = `
       >
         <input
           checked=""
-          id="14"
+          id="17"
           type="checkbox"
         />
         <small
@@ -255,7 +255,7 @@ exports[`<DNS/> Test with snapshot forwarding. 1`] = `
       >
         <label
           class="form-label"
-          for="15"
+          for="18"
         >
           Enable DHCP clients in DNS
         </label>
@@ -264,7 +264,7 @@ exports[`<DNS/> Test with snapshot forwarding. 1`] = `
         class="form-check col-sm-8"
       >
         <input
-          id="15"
+          id="18"
           type="checkbox"
         />
         <small

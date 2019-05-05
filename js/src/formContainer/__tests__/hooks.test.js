@@ -63,12 +63,12 @@ beforeEach(async () => {
 describe('useForm hook.', () => {
     it('Validation on changing.', () => {
         expect(mockValidator).toHaveBeenCalledTimes(1);
-        expect(Child).toHaveBeenCalledTimes(4);
+        expect(Child).toHaveBeenCalledTimes(5);
         expect(Child.mock.calls[3][0].formErrors).toMatchObject({});
         act(() => {
             fireEvent.change(input, {target: {value: 'badValue', type: 'text'}})
         });
-        expect(Child).toHaveBeenCalledTimes(6);
+        expect(Child).toHaveBeenCalledTimes(7);
         expect(mockValidator).toHaveBeenCalledTimes(2);
         expect(Child.mock.calls[5][0].formErrors).toMatchObject({field: "Error!"});
     });
