@@ -98,209 +98,9 @@ exports[`<RegionAndTime/> Snapshot 1`] = `
           id="2"
         >
           <option
-            value="NL"
-          >
-            Netherlands
-          </option>
-          <option
             value="AD"
           >
             Andorra
-          </option>
-          <option
-            value="GR"
-          >
-            Greece
-          </option>
-          <option
-            value="RS"
-          >
-            Serbia
-          </option>
-          <option
-            value="DE"
-          >
-            Germany
-          </option>
-          <option
-            value="SK"
-          >
-            Slovakia
-          </option>
-          <option
-            value="BE"
-          >
-            Belgium
-          </option>
-          <option
-            value="RO"
-          >
-            Romania
-          </option>
-          <option
-            value="HU"
-          >
-            Hungary
-          </option>
-          <option
-            value="MD"
-          >
-            Moldova
-          </option>
-          <option
-            value="DK"
-          >
-            Denmark
-          </option>
-          <option
-            value="IE"
-          >
-            Ireland
-          </option>
-          <option
-            value="GI"
-          >
-            Gibraltar
-          </option>
-          <option
-            value="GG"
-          >
-            Guernsey
-          </option>
-          <option
-            value="FI"
-          >
-            Finland
-          </option>
-          <option
-            value="IM"
-          >
-            Isle of Man
-          </option>
-          <option
-            value="TR"
-          >
-            Turkey
-          </option>
-          <option
-            value="JE"
-          >
-            Jersey
-          </option>
-          <option
-            value="RU"
-          >
-            Russia
-          </option>
-          <option
-            value="UA"
-          >
-            Ukraine
-          </option>
-          <option
-            value="PT"
-          >
-            Portugal
-          </option>
-          <option
-            value="SI"
-          >
-            Slovenia
-          </option>
-          <option
-            value="GB"
-          >
-            United Kingdom
-          </option>
-          <option
-            value="LU"
-          >
-            Luxembourg
-          </option>
-          <option
-            value="ES"
-          >
-            Spain
-          </option>
-          <option
-            value="MT"
-          >
-            Malta
-          </option>
-          <option
-            value="AX"
-          >
-            Åland Islands
-          </option>
-          <option
-            value="BY"
-          >
-            Belarus
-          </option>
-          <option
-            value="MC"
-          >
-            Monaco
-          </option>
-          <option
-            value="NO"
-          >
-            Norway
-          </option>
-          <option
-            value="FR"
-          >
-            France
-          </option>
-          <option
-            value="ME"
-          >
-            Montenegro
-          </option>
-          <option
-            value="CZ"
-          >
-            Czech Republic
-          </option>
-          <option
-            value="LV"
-          >
-            Latvia
-          </option>
-          <option
-            value="IT"
-          >
-            Italy
-          </option>
-          <option
-            value="SM"
-          >
-            San Marino
-          </option>
-          <option
-            value="BA"
-          >
-            Bosnia & Herzegovina
-          </option>
-          <option
-            value="MK"
-          >
-            Macedonia
-          </option>
-          <option
-            value="BG"
-          >
-            Bulgaria
-          </option>
-          <option
-            value="SE"
-          >
-            Sweden
-          </option>
-          <option
-            value="EE"
-          >
-            Estonia
           </option>
           <option
             value="AL"
@@ -308,29 +108,94 @@ exports[`<RegionAndTime/> Snapshot 1`] = `
             Albania
           </option>
           <option
-            value="LI"
-          >
-            Liechtenstein
-          </option>
-          <option
-            value="VA"
-          >
-            Vatican City
-          </option>
-          <option
             value="AT"
           >
             Austria
           </option>
           <option
-            value="LT"
+            value="AX"
           >
-            Lithuania
+            Åland Islands
           </option>
           <option
-            value="PL"
+            value="BA"
           >
-            Poland
+            Bosnia & Herzegovina
+          </option>
+          <option
+            value="BE"
+          >
+            Belgium
+          </option>
+          <option
+            value="BG"
+          >
+            Bulgaria
+          </option>
+          <option
+            value="BY"
+          >
+            Belarus
+          </option>
+          <option
+            value="CH"
+          >
+            Switzerland
+          </option>
+          <option
+            value="CZ"
+          >
+            Czech Republic
+          </option>
+          <option
+            value="DE"
+          >
+            Germany
+          </option>
+          <option
+            value="DK"
+          >
+            Denmark
+          </option>
+          <option
+            value="EE"
+          >
+            Estonia
+          </option>
+          <option
+            value="ES"
+          >
+            Spain
+          </option>
+          <option
+            value="FI"
+          >
+            Finland
+          </option>
+          <option
+            value="FR"
+          >
+            France
+          </option>
+          <option
+            value="GB"
+          >
+            United Kingdom
+          </option>
+          <option
+            value="GG"
+          >
+            Guernsey
+          </option>
+          <option
+            value="GI"
+          >
+            Gibraltar
+          </option>
+          <option
+            value="GR"
+          >
+            Greece
           </option>
           <option
             value="HR"
@@ -338,9 +203,144 @@ exports[`<RegionAndTime/> Snapshot 1`] = `
             Croatia
           </option>
           <option
-            value="CH"
+            value="HU"
           >
-            Switzerland
+            Hungary
+          </option>
+          <option
+            value="IE"
+          >
+            Ireland
+          </option>
+          <option
+            value="IM"
+          >
+            Isle of Man
+          </option>
+          <option
+            value="IT"
+          >
+            Italy
+          </option>
+          <option
+            value="JE"
+          >
+            Jersey
+          </option>
+          <option
+            value="LI"
+          >
+            Liechtenstein
+          </option>
+          <option
+            value="LT"
+          >
+            Lithuania
+          </option>
+          <option
+            value="LU"
+          >
+            Luxembourg
+          </option>
+          <option
+            value="LV"
+          >
+            Latvia
+          </option>
+          <option
+            value="MC"
+          >
+            Monaco
+          </option>
+          <option
+            value="MD"
+          >
+            Moldova
+          </option>
+          <option
+            value="ME"
+          >
+            Montenegro
+          </option>
+          <option
+            value="MK"
+          >
+            Macedonia
+          </option>
+          <option
+            value="MT"
+          >
+            Malta
+          </option>
+          <option
+            value="NL"
+          >
+            Netherlands
+          </option>
+          <option
+            value="NO"
+          >
+            Norway
+          </option>
+          <option
+            value="PL"
+          >
+            Poland
+          </option>
+          <option
+            value="PT"
+          >
+            Portugal
+          </option>
+          <option
+            value="RO"
+          >
+            Romania
+          </option>
+          <option
+            value="RS"
+          >
+            Serbia
+          </option>
+          <option
+            value="RU"
+          >
+            Russia
+          </option>
+          <option
+            value="SE"
+          >
+            Sweden
+          </option>
+          <option
+            value="SI"
+          >
+            Slovenia
+          </option>
+          <option
+            value="SK"
+          >
+            Slovakia
+          </option>
+          <option
+            value="SM"
+          >
+            San Marino
+          </option>
+          <option
+            value="TR"
+          >
+            Turkey
+          </option>
+          <option
+            value="UA"
+          >
+            Ukraine
+          </option>
+          <option
+            value="VA"
+          >
+            Vatican City
           </option>
         </select>
         <small
@@ -802,7 +802,7 @@ exports[`<RegionAndTime/> Snapshot 1`] = `
                   3
                 </td>
                 <td
-                  class="rdtDay rdtNew rdtToday"
+                  class="rdtDay rdtNew"
                   data-value="4"
                 >
                   4
@@ -810,7 +810,7 @@ exports[`<RegionAndTime/> Snapshot 1`] = `
               </tr>
               <tr>
                 <td
-                  class="rdtDay rdtNew"
+                  class="rdtDay rdtNew rdtToday"
                   data-value="5"
                 >
                   5
