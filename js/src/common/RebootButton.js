@@ -6,31 +6,56 @@
  */
 
 import React, {useState} from 'react';
+import propTypes from 'prop-types';
 
 import {useAPIGetData} from './APIhooks';
-import Button from './bootstrap/Button';
 import {APIEndpoints} from './API';
+import {Modal, ModalBody, ModalFooter, ModalHeader} from './bootstrap/Modal';
+import Button from './bootstrap/Button';
+
+
+RebootButton.propTypes = {
+    forisFormSize: propTypes.bool.isRequired,
+};
 
 export default function RebootButton({forisFormSize}) {
     const [clicked, setClicked] = useState(false);
     const [triggerReboot] = useAPIGetData(APIEndpoints.reboot);
+    const [modalShown, setModalShown] = useState(false);
+
+    function rebootHandler() {
+        setClicked(true);
+        triggerReboot();
+        setModalShown(false)
+    }
 
     return <>
+        <RebootModal shown={modalShown} setShown={setModalShown} callback={rebootHandler}/>
         <Button
             forisFormSize={forisFormSize}
             className={'btn-danger'}
             loading={clicked}
             disabled={clicked}
-
-            onClick={() => {
-                const res = confirm(_('Are you sure you want to restart the router?'));
-                if (res){
-                    setClicked(true);
-                    triggerReboot();
-                }
-            }}
+            onClick={() => setModalShown(true)}
         >
             {_('Reboot')}
         </Button>
     </>
+}
+
+RebootModal.propTypes = {
+    shown: propTypes.bool.isRequired,
+    setShown: propTypes.func.isRequired,
+    callback: propTypes.func.isRequired,
+};
+
+function RebootModal({shown, setShown, callback}) {
+    return <Modal shown={shown}>
+        <ModalHeader setShown={setShown} title={_('Warning!')}/>
+        <ModalBody message={_('Are you sure you want to restart the router?')}/>
+        <ModalFooter>
+            <Button onClick={() => setShown(false)}>{_('Cancel')}</Button>
+            <Button className='btn-danger' onClick={() => callback()}>{_('Confirm reboot')}</Button>
+        </ModalFooter>
+    </Modal>
 }

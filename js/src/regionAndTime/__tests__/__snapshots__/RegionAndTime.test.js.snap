@@ -810,7 +810,7 @@ exports[`<RegionAndTime/> Snapshot 1`] = `
               </tr>
               <tr>
                 <td
-                  class="rdtDay rdtNew rdtToday"
+                  class="rdtDay rdtNew"
                   data-value="5"
                 >
                   5
