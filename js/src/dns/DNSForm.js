@@ -5,36 +5,58 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
+import React, {useState} from 'react';
+import propTypes from 'prop-types';
+
 import CheckBox from '../common/bootstrap/Checkbox';
 import Select from '../common/bootstrap/Select';
 import TextInput from '../common/bootstrap/TextInput';
+import DNSSECDisableModal from './DNSSECDisableModal';
 
 const HELP_TEXTS = {
     dns_from_dhcp_enabled: _('This will enable your DNS resolver to place DHCP client\'s names among the local DNS records.'),
     dns_from_dhcp_domain: _('This domain will be used as suffix. E.g. The result for client "android-123" and domain "my.lan" will be "android-123.my.lan".')
 };
 
-const DNSSEC_DISABLE_MESSAGE = _(`
-DNSSEC is a security technology that protects the DNS communication against attacks on the DNS infrastructure.
-We strongly recommend keeping DNSSEC validation enabled unless you know that you will be connecting your device in the
-network where DNSSEC is broken. 
-
-Do you still want to continue and stay unprotected?
-`);
-
 DNSForm.defaultProps = {
     formErrors: {}
 };
 
+DNSForm.propTypes = {
+    formData: propTypes.shape({
+        forwarding_enabled: propTypes.bool.isRequired,
+        forwarder: propTypes.string,
+        dnssec_enabled: propTypes.bool.isRequired,
+        dns_from_dhcp_enabled: propTypes.bool.isRequired,
+        dns_from_dhcp_domain: propTypes.string,
+
+    }),
+    formErrors: propTypes.shape({
+        dns_from_dhcp_domain: propTypes.string
+    }),
+    setFormValue: propTypes.func,
+};
+
 export default function DNSForm({formData, formErrors, setFormValue, ...props}) {
+    const [DNSSECModalShown, setDNSSECModalShown] = useState(false);
+
     function changeDNSSECHandler(event) {
-        if (!event.target.checked && !confirm(DNSSEC_DISABLE_MESSAGE))
-            return;
-        setFormValue(value => ({dnssec_enabled: {$set: value}}))(event)
+        if (event.target.checked)
+            setFormValue(value => ({dnssec_enabled: {$set: value}}))(event);
+        else
+            setDNSSECModalShown(true);
     }
 
     return <>
+        <DNSSECDisableModal
+            shown={DNSSECModalShown}
+            setShown={setDNSSECModalShown}
+            callback={() => {
+                setFormValue(value => ({dnssec_enabled: {$set: value}}))
+                ({target: {name: 'dnssec_enabled', value: false}});
+                setDNSSECModalShown(false);
+            }}
+        />
         <CheckBox
             label={_('Use forwarding')}
             checked={formData.forwarding_enabled}

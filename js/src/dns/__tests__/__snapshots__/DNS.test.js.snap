@@ -4,6 +4,70 @@ exports[`<DNS/> Test with snapshot DHCP. 1`] = `
 <div>
   <form>
     <div
+      class="modal fade "
+      role="dialog"
+    >
+      <div
+        class="modal-dialog"
+        role="document"
+      >
+        <div
+          class="modal-content"
+        >
+          <div
+            class="modal-header"
+          >
+            <h5
+              class="modal-title"
+            >
+              Warning!
+            </h5>
+            <button
+              class="close"
+              type="button"
+            >
+              <span
+                aria-hidden="true"
+              >
+                ×
+              </span>
+            </button>
+          </div>
+          <div
+            class="modal-body"
+          >
+            <p>
+              
+DNSSEC is a security technology that protects the DNS communication against attacks on the DNS infrastructure.
+We strongly recommend keeping DNSSEC validation enabled unless you know that you will be connecting your device in the
+network where DNSSEC is broken. 
+
+Do you still want to continue and stay unprotected?
+
+            </p>
+          </div>
+          <div
+            class="modal-footer"
+          >
+            <button
+              class="btn btn-primary "
+            >
+               
+               
+              Cancel
+            </button>
+            <button
+              class="btn btn-danger"
+            >
+               
+               
+              Disable DNSSEC
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
       class="form-group row"
     >
       <div
@@ -149,6 +213,70 @@ works as expected. Remember to click on the
 exports[`<DNS/> Test with snapshot forwarding. 1`] = `
 <div>
   <form>
+    <div
+      class="modal fade "
+      role="dialog"
+    >
+      <div
+        class="modal-dialog"
+        role="document"
+      >
+        <div
+          class="modal-content"
+        >
+          <div
+            class="modal-header"
+          >
+            <h5
+              class="modal-title"
+            >
+              Warning!
+            </h5>
+            <button
+              class="close"
+              type="button"
+            >
+              <span
+                aria-hidden="true"
+              >
+                ×
+              </span>
+            </button>
+          </div>
+          <div
+            class="modal-body"
+          >
+            <p>
+              
+DNSSEC is a security technology that protects the DNS communication against attacks on the DNS infrastructure.
+We strongly recommend keeping DNSSEC validation enabled unless you know that you will be connecting your device in the
+network where DNSSEC is broken. 
+
+Do you still want to continue and stay unprotected?
+
+            </p>
+          </div>
+          <div
+            class="modal-footer"
+          >
+            <button
+              class="btn btn-primary "
+            >
+               
+               
+              Cancel
+            </button>
+            <button
+              class="btn btn-danger"
+            >
+               
+               
+              Disable DNSSEC
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     <div
       class="form-group row"
     >
@@ -310,6 +438,70 @@ works as expected. Remember to click on the
 exports[`<DNS/> Test with snapshot. 1`] = `
 <div>
   <form>
+    <div
+      class="modal fade "
+      role="dialog"
+    >
+      <div
+        class="modal-dialog"
+        role="document"
+      >
+        <div
+          class="modal-content"
+        >
+          <div
+            class="modal-header"
+          >
+            <h5
+              class="modal-title"
+            >
+              Warning!
+            </h5>
+            <button
+              class="close"
+              type="button"
+            >
+              <span
+                aria-hidden="true"
+              >
+                ×
+              </span>
+            </button>
+          </div>
+          <div
+            class="modal-body"
+          >
+            <p>
+              
+DNSSEC is a security technology that protects the DNS communication against attacks on the DNS infrastructure.
+We strongly recommend keeping DNSSEC validation enabled unless you know that you will be connecting your device in the
+network where DNSSEC is broken. 
+
+Do you still want to continue and stay unprotected?
+
+            </p>
+          </div>
+          <div
+            class="modal-footer"
+          >
+            <button
+              class="btn btn-primary "
+            >
+               
+               
+              Cancel
+            </button>
+            <button
+              class="btn btn-danger"
+            >
+               
+               
+              Disable DNSSEC
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     <div
       class="form-group row"
     >
