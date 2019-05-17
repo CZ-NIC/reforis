@@ -439,3 +439,21 @@ a,
     align-items: center;
     justify-content: space-between;
 }
+
+/* Modal */
+
+@keyframes modalFade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal.show {
+    display: block;
+    animation-name: modalFade;
+    animation-duration: .3s;
+    background: rgba(0, 0, 0, 0.2);
+}
