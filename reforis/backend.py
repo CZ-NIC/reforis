@@ -54,7 +54,7 @@ class Backend(object):
         try:
             response = self._instance.send(module, action, data, controller_id=self.controller_id)
         except ControllerError as e:
-            current_app.logger.error("Exception in backend occured.")
+            current_app.logger.error("Exception in backend occured. (%s)", e)
             if raise_exception_on_failure:
                 error = e.errors[0]  # right now we are dealing only with the first error
                 msg = {"module": module, "action": action, "kind": "request"}
@@ -64,7 +64,7 @@ class Backend(object):
 
         except RuntimeError as e:
             # This may occure when e.g. calling function is not present in backend
-            # logger.error("RuntimeError occured during the communication with backend.")
+            current_app.logger.error("RuntimeError occured during the communication with backend. (%s)", e)
             if raise_exception_on_failure:
                 raise e
         except Exception as e:
