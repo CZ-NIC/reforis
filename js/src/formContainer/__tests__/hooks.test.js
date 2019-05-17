@@ -14,15 +14,17 @@ import ForisForm from '../ForisForm';
 import {APIEndpoints} from '../../common/API';
 
 // It's possible to unittest each hooks via react-hooks-testing-library.
-// But it's better and easier to test it by test components which uses this hooks...
+// But it's better and easier to test it by test components which uses this hooks.
 
-const TestForm = ({formData, setFormValue}) => {
-    return <input
-        data-testid="test-input"
-        value={formData.field}
-        onChange={setFormValue(value => ({field: {$set: value}}))}
-    >
-    </input>
+const TestForm = ({formData, formErrors, setFormValue}) => {
+    return <>
+        <input
+            data-testid='test-input'
+            value={formData.field}
+            onChange={setFormValue(value => ({field: {$set: value}}))}
+        />
+        <p>{formErrors.field}</p>
+    </>
 };
 
 let mockValidator;
@@ -35,8 +37,8 @@ const Child = jest.fn((props) => <TestForm {...props}/>);
 
 beforeEach(async () => {
     mockPrepData = jest.fn(() => ({field: 'preparedData'}));
-    mockPrepDataToSubmit = jest.fn(data => ({field: 'preparedDataToSubmit'}));
-    mockValidator = jest.fn(data => data.field === 'badValue' ? {field: 'Error!'} : {});
+    mockPrepDataToSubmit = jest.fn(() => ({field: 'preparedDataToSubmit'}));
+    mockValidator = jest.fn(data => data.field === 'invalidValue' ? {field: 'Error'} : {});
     const {getByTestId, container} = render(
         <ForisForm
             ws={mockWebSockets}
@@ -63,14 +65,16 @@ beforeEach(async () => {
 describe('useForm hook.', () => {
     it('Validation on changing.', () => {
         expect(mockValidator).toHaveBeenCalledTimes(1);
+        // React rerender component with each hook so we have 5 calls here.
         expect(Child).toHaveBeenCalledTimes(5);
         expect(Child.mock.calls[3][0].formErrors).toMatchObject({});
         act(() => {
-            fireEvent.change(input, {target: {value: 'badValue', type: 'text'}})
+            fireEvent.change(input, {target: {value: 'invalidValue', type: 'text'}})
         });
+        // It's called two times because it performs the validation after it changes value.
         expect(Child).toHaveBeenCalledTimes(7);
         expect(mockValidator).toHaveBeenCalledTimes(2);
-        expect(Child.mock.calls[5][0].formErrors).toMatchObject({field: "Error!"});
+        expect(Child.mock.calls[6][0].formErrors).toMatchObject({field: 'Error'});
     });
 
     it('Update text value.', () => {
@@ -83,7 +87,7 @@ describe('useForm hook.', () => {
         act(() => {
             fireEvent.change(input, {target: {value: 123, type: 'number'}})
         });
-        expect(input.value).toBe("123");
+        expect(input.value).toBe('123');
     });
     it('Update checkbox value.', () => {
         act(() => {
@@ -97,7 +101,7 @@ describe('useForisForm hook.', () => {
     it('Fetch data.', () => {
         expect(mockAxios.get).toHaveBeenCalledWith('/api/wan', expect.anything());
         expect(mockPrepData).toHaveBeenCalledTimes(1);
-        expect(Child.mock.calls[0][0].formData).toMatchObject({field: "preparedData"});
+        expect(Child.mock.calls[0][0].formData).toMatchObject({field: 'preparedData'});
     });
     it('Submit.', () => {
         expect(mockAxios.get).toHaveBeenCalledTimes(1);
@@ -109,7 +113,7 @@ describe('useForisForm hook.', () => {
         expect(mockAxios.post).toHaveBeenCalledTimes(1);
         expect(mockAxios.post).toHaveBeenCalledWith(
             '/api/wan',
-            {"field": "preparedDataToSubmit"},
+            {'field': 'preparedDataToSubmit'},
             expect.anything(),
         );
     });
