@@ -28,10 +28,19 @@ ForisForm.defaultProps = {
     prepData: data => data,
     prepDataToSubmit: data => data,
     validator: () => undefined,
-    disableIf: () => false,
+    disable: () => false,
 };
 
-export default function ForisForm({ws, forisConfig, prepData, prepDataToSubmit, validator, disableIf, children}) {
+export default function ForisForm({
+                                      ws,
+                                      forisConfig,
+                                      prepData,
+                                      prepDataToSubmit,
+                                      validator,
+                                      disable,
+                                      onSubmitOverridden,
+                                      children
+                                  }) {
     const [
         formData,
         formErrors,
@@ -43,7 +52,7 @@ export default function ForisForm({ws, forisConfig, prepData, prepDataToSubmit, 
     ] = useForisForm(ws, forisConfig, prepData, prepDataToSubmit, validator);
 
     const [disabled, setDisabled] = useState(false);
-    useEffect(() => setDisabled(disableIf(formData)), [formData]);
+    useEffect(() => setDisabled(disable(formData)), [formData]);
 
     const childrenWithFormProps = JSON.stringify(formData) !== '{}' ? React.Children.map(
         children, child =>
@@ -57,7 +66,7 @@ export default function ForisForm({ws, forisConfig, prepData, prepDataToSubmit, 
     ) : null;
 
     return <form
-        onSubmit={onSubmit}
+        onSubmit={onSubmitOverridden ? onSubmitOverridden(formData, setFormValue, onSubmit) : onSubmit}
         className={disabled ? 'text-muted' : null}
     >
         {childrenWithFormProps}

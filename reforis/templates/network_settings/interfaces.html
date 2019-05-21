@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}DNS{% endblock %}
+
+{% block content %}
+    <h1>{% trans %}Network interfaces{% endtrans %}</h1>
+    <p>
+        {% trans %}
+            Here you can configure the settings of the network interfaces on your device. You can switch the physical
+            network interfaces among networks. If you are unsure what to set here use the default settings.
+
+            <h4>WAN</h4>
+            It acts as an external network connection. Firewall rules should be applied here. It can only contain a
+            single interface.
+
+            <h4>LAN</h4>
+            It acts as a local network connection. LAN should contain devices which are under your control and you
+            trust them. These devices can see each other and can access this web interface. It is recommended that the
+            LAN should contain at least one interface otherwise you might not be able to configure this device in an
+            easy way.
+
+            <h4>Guest network</h4>
+            It acts as a local network connection. Unlike LAN the devices in the guest network can't access
+            the configuration interface of this device and are only able to access WAN (internet). This network should
+            be used for devices which you don't fully trust. Note that you can also limit download/upload speed of the
+            devices connected to the guest network.
+        {% endtrans %}
+    </p>
+    <div id="interfaces_container"></div>
+{% endblock %}

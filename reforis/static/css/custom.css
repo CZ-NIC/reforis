@@ -440,8 +440,62 @@ a,
     justify-content: space-between;
 }
 
-/* Modal */
+/* Interfaces (scroll) */
+.network .scrollable {
+    display: flex;
+    overflow-x: auto;
+}
 
+.network ::-webkit-scrollbar {
+    height: 5px;
+}
+
+.network ::-webkit-scrollbar-thumb {
+    background: #95a5a6;
+    border-radius: 0.2em;
+}
+
+.network ::-webkit-scrollbar-thumb:hover {
+    background: #4e5a5b;
+}
+
+.network .interface {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+    align-items: center
+}
+
+@keyframes interfaceSelectedFade {
+    from {
+        text-shadow: none;
+    }
+    to {
+        text-shadow: 0 0 0.5rem #00a2e2;
+    }
+}
+
+.network .interface-selected i {
+    animation-name: interfaceSelectedFade;
+    animation-duration: .3s;
+    text-shadow: 0 0 0.5rem #00a2e2;
+}
+
+@keyframes interfaceSelectedSlashFade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.network .interface-selected .fa-inverse {
+    display: none;
+}
+
+
+/* Modal */
 @keyframes modalFade {
     from {
         opacity: 0;

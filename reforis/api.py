@@ -92,6 +92,20 @@ def wan():
     return jsonify(res)
 
 
+@api.route('/interfaces', methods=['GET', 'POST'])
+def interfaces():
+    module = 'networks'
+    res = ''
+    if request.method == 'GET':
+        settings = current_app.backend.perform(module, 'get_settings')
+        del settings['device']
+        res = settings
+    elif request.method == 'POST':
+        data = request.json
+        res = current_app.backend.perform(module, 'update_settings', data)
+    return jsonify(res)
+
+
 @api.route('/connection-test', methods=['GET'])
 def connection_test():
     return jsonify(current_app.backend.perform('wan', 'connection_test_trigger', data={'test_kinds': ['ipv4', 'ipv6']}))

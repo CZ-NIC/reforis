@@ -41,13 +41,14 @@ export function ModalHeader({setShown, title}) {
 }
 
 ModalBody.propTypes = {
-    message: propTypes.string.isRequired,
+    children: propTypes.oneOfType([
+        propTypes.arrayOf(propTypes.node),
+        propTypes.node
+    ]).isRequired
 };
 
-export function ModalBody({message}) {
-    return <div className="modal-body">
-        <p>{message}</p>
-    </div>
+export function ModalBody({children}) {
+    return <div className="modal-body">{children}</div>
 }
 
 ModalFooter.propTypes = {

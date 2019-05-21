@@ -20,6 +20,7 @@ import WiFi from './wifi/WiFi';
 import WAN from './wan/WAN';
 import LAN from './lan/LAN';
 import DNS from './dns/DNS';
+import Interfaces from './interfaces/Interfaces';
 
 import Password from './password/Password';
 import RegionAndTime from './regionAndTime/RegionAndTime';
@@ -41,6 +42,7 @@ window.addEventListener('load', () => {
         {id: 'notifications_container', component: Notifications},
 
         // Network settings
+        {id: 'interfaces_container', component: Interfaces},
         {id: 'wifi_container', component: WiFi},
         {id: 'wan_container', component: WAN},
         {id: 'lan_container', component: LAN},

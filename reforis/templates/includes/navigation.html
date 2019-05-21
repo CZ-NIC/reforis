@@ -6,7 +6,7 @@
     </li>
 {%- endmacro %}
 
-{% set network_dropdown_is_active = request.url_rule.endpoint in ['Foris.wan', 'Foris.lan', 'Foris.wifi', 'Foris.dns'] %}
+{% set network_dropdown_is_active = request.url_rule.endpoint in ['Foris.wan', 'Foris.lan', 'Foris.wifi', 'Foris.dns', 'Foris.interfaces'] %}
 {% set administration_dropdown_is_active = request.url_rule.endpoint in ['Foris.password', 'Foris.reboot', 'Foris.region_and_time','Foris.notifications_settings'] %}
 {% set plugins_dropdown_is_active = request.path[:-1] in plugins_urls %}
 
@@ -16,8 +16,7 @@
         <p>reForis version {{ version }}</p>
     </div>
 
-    <ul id='' class="list-unstyled components">
-
+    <ul class="list-unstyled">
         <li {% if request.url_rule.endpoint == 'Foris.overview' %}class="active"{% endif %}>
             <a href="{{ url_for('Foris.overview') }}">
                 <i class="fas fa-list"></i>&nbsp;
@@ -41,6 +40,7 @@
                 {{ dropdown_item('LAN','Foris.lan') }}
                 {{ dropdown_item('Wi-Fi','Foris.wifi') }}
                 {{ dropdown_item('DNS','Foris.dns') }}
+                {{ dropdown_item(gettext('Interfaces'),'Foris.interfaces') }}
             </ul>
 
 

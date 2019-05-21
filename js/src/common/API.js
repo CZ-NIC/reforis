@@ -50,6 +50,11 @@ export const APIEndpoints = {
         url: '/dns-test',
         methods: ['get']
     },
+    interfaces: {
+        name: 'interfaces',
+        url: '/interfaces',
+        methods: ['get', 'post']
+    },
     password: {
         name: 'password',
         url: '/password',

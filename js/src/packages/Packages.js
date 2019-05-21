@@ -21,7 +21,7 @@ export default function Packages() {
         prepData={prepData}
         prepDataToSubmit={prepDataToSubmit}
         // Disable form if updater is disabled
-        disableIf={formData => !formData.enabled}
+        disable={formData => !formData.enabled}
     >
         <DisabledUpdaterAlert/>
         <PackagesForm/>

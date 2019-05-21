@@ -69,6 +69,11 @@ def dns():
     return render_template('network_settings/dns.html')
 
 
+@views.route('/interfaces', methods=['GET'])
+def interfaces():
+    return render_template('network_settings/interfaces.html')
+
+
 @views.route('/password', methods=['GET'])
 def password():
     return render_template('administration/password.html')
