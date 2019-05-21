@@ -25,16 +25,15 @@ export default function Interfaces() {
     const [openPortsModalShown, setOpenPortsModalShown] = useState(false);
     const [keepPortsClosedConfirmModalShown, setKeepPortsClosedConfirmShown] = useState(false);
 
-
     function onSubmit(formData, setFormValue, submit) {
         function setOpenPorts(value) {
             setFormValue(() => (
                 {
                     firewall: {
                         $set: {
-                            "http_on_wan": value,
-                            "https_on_wan": value,
-                            "ssh_on_wan": value
+                            http_on_wan: value,
+                            https_on_wan: value,
+                            ssh_on_wan: value
                         }
                     }
                 }

@@ -5,14 +5,23 @@
  * See /LICENSE for more information.
  */
 
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 import {NETWORKS_CHOICES, NETWORKS_TYPES} from './Interfaces';
 import Network from './Network';
 import SelectedInterface from './SelectedInterface';
+import Alert from '../common/bootstrap/Alert';
 
 export default function InterfacesForm({formData, formErrors, setFormValue, ...props}) {
     const [selectedID, setSelectedID] = useState(null);
+
+    const [openPortAlertShown, setOpenPortAlertShown] = useState(false);
+
+    useEffect(() => {
+        const firewall = formData.firewall;
+        if (firewall.http_on_wan || firewall.https_on_wan || firewall.ssh_on_wan)
+            setOpenPortAlertShown(true);
+    }, [formData]);
 
     function getInterfaceById(id) {
         if (!selectedID)
@@ -38,6 +47,7 @@ export default function InterfacesForm({formData, formErrors, setFormValue, ...p
     }
 
     return <>
+        {openPortAlertShown ? <OpenPortAlert onDissmiss={() => setOpenPortAlertShown(false)}/> : null}
         <h3>{NETWORKS_CHOICES.wan}</h3>
         <Network interfaces={formData.networks.wan} selected={selectedID} setSelected={setSelectedID} {...props}/>
         <h3>{NETWORKS_CHOICES.lan}</h3>
@@ -56,4 +66,12 @@ export default function InterfacesForm({formData, formErrors, setFormValue, ...p
             />
             : null}
     </>
+}
+
+function OpenPortAlert({onDismiss}) {
+    return <Alert
+        type='warning'
+        message={_('Ports are open on your WAN interface. It\'s better to reconfigure your interface settings to avoid security issues. ')}
+        onDismiss={onDismiss}
+    />
 }
