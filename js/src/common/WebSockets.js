@@ -7,19 +7,20 @@
 
 const PROTOCOL = window.location.protocol === 'http:' ? 'ws' : 'wss';
 const URL = PROTOCOL + '://' + window.location.hostname + ':' + ForisConstants.WSPort;
+const WAITING_FOR_CONNECTION_TIMEOUT = 500;
 
 export default class WebSockets {
     constructor() {
         this.ws = new WebSocket(URL);
-        this.ws.onerror = (event) => {
+        this.ws.onerror = e => {
             if (window.location.pathname !== '/login') {
                 console.error("WebSocket error observed, you aren't logged probably.");
                 window.location.replace('/login');
             }
         };
-        this.ws.onmessage = (evt) => {
-            console.log('Received Message: ' + evt.data);
-            const data = JSON.parse(evt.data);
+        this.ws.onmessage = e => {
+            console.log('Received Message: ' + e.data);
+            const data = JSON.parse(e.data);
             this.dispatch(data)
         };
         this.ws.onopen = () => {
@@ -33,6 +34,17 @@ export default class WebSockets {
         this.callbacks = {};
     }
 
+    waitForConnection(callback) {
+        if (this.ws.readyState === 1) {
+            callback();
+        } else {
+            const that = this;
+            setTimeout(function () {
+                that.waitForConnection(callback, interval);
+            }, WAITING_FOR_CONNECTION_TIMEOUT);
+        }
+    };
+
     bind(module, action, callback) {
         this.callbacks[module] = this.callbacks[module] || {};
         this.callbacks[module][action] = this.callbacks[module][action] || [];
@@ -41,13 +53,17 @@ export default class WebSockets {
     };
 
     subscribe(params) {
-        this.send('subscribe', params);
+        this.waitForConnection(() => {
+            this.send('subscribe', params);
+        });
         return this;
     };
 
     send(action, params) {
         const payload = JSON.stringify({action: action, params: params});
-        this.ws.send(payload);
+        this.waitForConnection(() => {
+            this.ws.send(payload);
+        });
         return this;
     };
 
