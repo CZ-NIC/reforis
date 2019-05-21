@@ -34,18 +34,20 @@
     <div id="content">
         <div class="col-lg-10 col-sm-12">
             {% include "includes/top-bar.html" %}
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="alert {% if message.success %}alert-success{% endif %} {% if message.warning %}alert-warning{% endif %} {% if message.danger %}alert-danger{% endif %} alert-dismissible fade show"
-                         role="alert"
-                    >
-                        {{ message.text }}
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                {% endfor %}
-            {% endif %}
+            <div id="alert_container">
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert {% if message.success %}alert-success{% endif %} {% if message.warning %}alert-warning{% endif %} {% if message.danger %}alert-danger{% endif %} alert-dismissible fade show"
+                             role="alert"
+                        >
+                            {{ message.text }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
             {% block content %}{% endblock %}
         </div>
     </div>

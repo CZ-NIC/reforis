@@ -8,8 +8,9 @@
 import React, {useState, useEffect} from 'react';
 import propTypes from 'prop-types';
 
-import {useForisForm} from './hooks';
+import {POST_DATA_STATUSES, useForisForm} from './hooks';
 import SubmitButton from './SubmitButton';
+import {FailAlert, SuccessAlert} from './alerts';
 
 ForisForm.propTypes = {
     ws: propTypes.object,
@@ -48,6 +49,9 @@ export default function ForisForm({
         formIsDisabled,
 
         setFormValue,
+        postDataStatus,
+        resetPostDataStatus,
+
         onSubmit,
     ] = useForisForm(ws, forisConfig, prepData, prepDataToSubmit, validator);
 
@@ -65,14 +69,23 @@ export default function ForisForm({
             })
     ) : null;
 
-    return <form
-        onSubmit={onSubmitOverridden ? onSubmitOverridden(formData, setFormValue, onSubmit) : onSubmit}
-        className={disabled ? 'text-muted' : null}
-    >
-        {childrenWithFormProps}
-        <SubmitButton
-            state={formState}
-            disabled={!!formErrors || disabled}
-        />
-    </form>
+    return <>
+        {
+            postDataStatus === POST_DATA_STATUSES.success ?
+                <SuccessAlert onDismiss={resetPostDataStatus}/>
+                : postDataStatus === POST_DATA_STATUSES.fail ?
+                <FailAlert onDismiss={resetPostDataStatus}/>
+                : null
+        }
+        <form
+            onSubmit={onSubmitOverridden ? onSubmitOverridden(formData, setFormValue, onSubmit) : onSubmit}
+            className={disabled ? 'text-muted' : null}
+        >
+            {childrenWithFormProps}
+            <SubmitButton
+                state={formState}
+                disabled={!!formErrors || disabled}
+            />
+        </form>
+    </>
 }

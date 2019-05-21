@@ -62,6 +62,11 @@ function getChangedValue(target) {
     return value
 }
 
+export const POST_DATA_STATUSES = {
+    fail: 'fail',
+    success: 'success',
+};
+
 export function useForisForm(ws, forisConfig, prepData, prepDataToSubmit, validator) {
     const [
         formData,
@@ -75,6 +80,7 @@ export function useForisForm(ws, forisConfig, prepData, prepDataToSubmit, valida
     ] = useForm(validator);
     const [getData, isReady] = useAPIGetData(forisConfig.endpoint);
     const [initialFormData, setInitialFormData] = useState();
+
     const loadFormData = () => getData(data => {
         const preparedData = prepData(data);
         setFormData(preparedData);
@@ -82,6 +88,7 @@ export function useForisForm(ws, forisConfig, prepData, prepDataToSubmit, valida
     });
     useEffect(() => loadFormData(), []);
     useEffect(() => setFormState(isReady ? FORM_STATES.READY : FORM_STATES.LOAD), [isReady,]);
+
     useEffect(() => {
         if (!ws)
             return;
@@ -96,12 +103,18 @@ export function useForisForm(ws, forisConfig, prepData, prepDataToSubmit, valida
     }, []);
 
     const postData = useAPIPostData(forisConfig.endpoint);
+    const [postDataStatus, setPostDataStatus] = useState(null);
 
     function onSubmit(e) {
         e.preventDefault();
         setFormState(FORM_STATES.UPDATE);
         const copiedFormData = JSON.parse(JSON.stringify(formData));
-        postData(prepDataToSubmit(copiedFormData), () => loadFormData());
+        postData(prepDataToSubmit(copiedFormData), () => {
+            setPostDataStatus(POST_DATA_STATUSES.success);
+            loadFormData();
+        }, () => {
+            setPostDataStatus(POST_DATA_STATUSES.fail);
+        });
     }
 
     useEffect(() => {
@@ -123,8 +136,11 @@ export function useForisForm(ws, forisConfig, prepData, prepDataToSubmit, valida
         formErrors,
         formState,
         formIsDisabled,
-
         setFormValue,
+
+        postDataStatus,
+        () => setPostDataStatus(null),
+
         onSubmit
     ]
 }
