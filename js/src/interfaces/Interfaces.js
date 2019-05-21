@@ -54,7 +54,7 @@ export default function Interfaces() {
                 submit(e);
             } else if (keepPortsClosedConfirmModalShown) {
                 setOpenPorts(false);
-                keepPortsClosedConfirmModalShown(false);
+                setKeepPortsClosedConfirmShown(false);
                 submit(e);
             } else
                 setOpenPortsModalShown(true);
