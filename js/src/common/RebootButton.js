@@ -52,10 +52,10 @@ RebootModal.propTypes = {
 function RebootModal({shown, setShown, callback}) {
     return <Modal shown={shown}>
         <ModalHeader setShown={setShown} title={_('Warning!')}/>
-        <ModalBody message={_('Are you sure you want to restart the router?')}/>
+        <ModalBody><p>{_('Are you sure you want to restart the router?')}</p></ModalBody>
         <ModalFooter>
             <Button onClick={() => setShown(false)}>{_('Cancel')}</Button>
-            <Button className='btn-danger' onClick={() => callback()}>{_('Confirm reboot')}</Button>
+            <Button className='btn-danger' onClick={callback}>{_('Confirm reboot')}</Button>
         </ModalFooter>
     </Modal>
 }

@@ -27,7 +27,7 @@ DNSSECDisableModal.propTypes = {
 export default function DNSSECDisableModal({shown, setShown, callback}) {
     return <Modal shown={shown}>
         <ModalHeader setShown={setShown} title={_('Warning!')}/>
-        <ModalBody message={DNSSEC_DISABLE_MESSAGE}/>
+        <ModalBody><p>{DNSSEC_DISABLE_MESSAGE}</p></ModalBody>
         <ModalFooter>
             <Button onClick={
                 e => {
