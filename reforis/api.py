@@ -123,17 +123,17 @@ def dns_test():
 
 @api.route('/updates', methods=['GET', 'POST'])
 def updates():
-    updater_settings = current_app.backend.perform(
+    settings = current_app.backend.perform(
         'updater',
         'get_settings',
         {'lang': _get_locale_from_backend(current_app)}
     )
-    del updater_settings['approval']
+    del settings['approval']
 
     res = None
     if request.method == 'GET':
         res = {
-            **updater_settings,
+            **settings,
             'reboots': current_app.backend.perform('router_notifications', 'get_settings')['reboots'],
         }
         del res['user_lists']
@@ -147,10 +147,10 @@ def updates():
 
         if data['enabled']:
             data['user_lists'] = [
-                package['name'] for package in updater_settings['user_lists'] if package['enabled']
+                package['name'] for package in settings['user_lists'] if package['enabled']
             ]
             data['languages'] = [
-                language['code'] for language in updater_settings['languages'] if language['enabled']
+                language['code'] for language in settings['languages'] if language['enabled']
             ]
 
         res_updater = current_app.backend.perform('updater', 'update_settings', data)
