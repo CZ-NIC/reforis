@@ -6,10 +6,16 @@
  */
 
 import React from 'react';
+import propType from 'prop-types';
 
 import {Modal, ModalBody, ModalFooter, ModalHeader} from '../common/bootstrap/Modal';
 import Button from '../common/bootstrap/Button';
 
+OpenPortsModals.propTypes = {
+    shown: propType.bool.isRequired,
+    setShown: propType.func.isRequired,
+    onKeepPortsClosed: propType.func.isRequired,
+};
 
 export function OpenPortsModals({shown, setShown, onKeepPortsClosed}) {
     const message = _(`
@@ -30,8 +36,12 @@ interface of our device?
     </Modal>
 }
 
+KeepPortsClosedConfirmModal.propTypes = {
+    shown: propType.bool.isRequired,
+    setShown: propType.func.isRequired,
+};
 
-export function ConfirmModal({shown, setShown}) {
+export function KeepPortsClosedConfirmModal({shown, setShown}) {
     const message = _(`
 In the setup you provided it is <strong>not possible to access the administration interface</strong> of your device.
 This means that the only way to configure your device will be via serial cabel or you need to a perform factory reset.

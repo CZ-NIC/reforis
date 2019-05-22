@@ -6,15 +6,36 @@
  */
 
 import React, {useState, useEffect} from 'react';
+import propTypes from 'prop-types';
 
+import Alert from '../common/bootstrap/Alert';
 import {NETWORKS_CHOICES, NETWORKS_TYPES} from './Interfaces';
 import Network from './Network';
 import SelectedInterface from './SelectedInterface';
-import Alert from '../common/bootstrap/Alert';
 
-export default function InterfacesForm({formData, formErrors, setFormValue, ...props}) {
+InterfacesForm.propTypes = {
+    formData: propTypes.shape({
+        networks: propTypes.shape({
+            guest: propTypes.arrayOf(propTypes.object).isRequired,
+            lan: propTypes.arrayOf(propTypes.object).isRequired,
+            none: propTypes.arrayOf(propTypes.object).isRequired,
+            wan: propTypes.arrayOf(propTypes.object).isRequired,
+        }).isRequired,
+        firewall: propTypes.shape({
+            http_on_wan: propTypes.bool.isRequired,
+            https_on_wan: propTypes.bool.isRequired,
+            ssh_on_wan: propTypes.bool.isRequired,
+        }),
+    }),
+    setFormValue: propTypes.func.isRequired,
+};
+
+InterfacesForm.defaultProps = {
+    setFormValue: () => {},
+};
+
+export default function InterfacesForm({formData, setFormValue, ...props}) {
     const [selectedID, setSelectedID] = useState(null);
-
     const [openPortAlertShown, setOpenPortAlertShown] = useState(false);
 
     useEffect(() => {
@@ -32,7 +53,6 @@ export default function InterfacesForm({formData, formErrors, setFormValue, ...p
             if (interfaceIdx !== -1) return [formData.networks[network][interfaceIdx], network, interfaceIdx];
         }
     }
-
     const [selectedInterface, selectedInterfaceNetwork, selectedInterfaceIdx] = getInterfaceById(selectedID);
 
     function handleNetworkChange(e) {
@@ -47,7 +67,7 @@ export default function InterfacesForm({formData, formErrors, setFormValue, ...p
     }
 
     return <>
-        {openPortAlertShown ? <OpenPortAlert onDissmiss={() => setOpenPortAlertShown(false)}/> : null}
+        {openPortAlertShown ? <OpenPortAlert onDismiss={() => setOpenPortAlertShown(false)}/> : null}
         <h3>{NETWORKS_CHOICES.wan}</h3>
         <Network interfaces={formData.networks.wan} selected={selectedID} setSelected={setSelectedID} {...props}/>
         <h3>{NETWORKS_CHOICES.lan}</h3>
@@ -67,6 +87,10 @@ export default function InterfacesForm({formData, formErrors, setFormValue, ...p
             : null}
     </>
 }
+
+OpenPortAlert.propTypes = {
+    onDismiss: propTypes.func.isRequired
+};
 
 function OpenPortAlert({onDismiss}) {
     return <Alert

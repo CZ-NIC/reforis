@@ -6,8 +6,15 @@
  */
 
 import React from 'react';
+import propType from 'prop-types';
 
 import Interface from './Interface';
+
+Network.propTypes = {
+    interfaces: propType.arrayOf(propType.object).isRequired,
+    selected: propType.string,
+    setSelected: propType.func.isRequired,
+};
 
 export default function Network({interfaces, selected, setSelected}) {
     return <div className="network mb-3">

@@ -6,6 +6,27 @@
  */
 
 import React from 'react';
+import propTypes from 'prop-types';
+
+export const INTERFACE_TYPES = {
+    eth: 'eth',
+    wifi: 'wifi',
+    wwan: 'wwan',
+};
+
+export const INTERFACE_STATES = {
+    up: 'up',
+    down: 'down',
+};
+
+Interface.propTypes = {
+    type: propTypes.oneOf(Object.keys(INTERFACE_TYPES)).isRequired,
+    slot: propTypes.string.isRequired,
+    state: propTypes.oneOf(Object.keys(INTERFACE_STATES)).isRequired,
+    configurable: propTypes.bool.isRequired,
+    isSelected: propTypes.bool.isRequired,
+    onClick: propTypes.func.isRequired,
+};
 
 export default function Interface({type, slot, state, configurable, isSelected, onClick}) {
     return <div className={'interface ' + (isSelected ? 'interface-selected' : '')} onClick={onClick}>
@@ -14,16 +35,27 @@ export default function Interface({type, slot, state, configurable, isSelected, 
     </div>
 }
 
+InterfaceIcon.propTypes = {
+    type: propTypes.oneOf(Object.keys(INTERFACE_TYPES)).isRequired,
+    configurable: propTypes.bool.isRequired,
+};
+
+
 function InterfaceIcon({type, configurable, ...props}) {
     return <div style={!configurable ? {color: 'gray'} : null}>
-        {type === 'eth' ?
+        {type === INTERFACE_TYPES.eth ?
             <EthInterfaceIcon {...props}/> :
-            type === 'wifi' ?
+            type === INTERFACE_TYPES.wifi ?
                 <WiFiInterfaceIcon {...props}/> :
-                type === 'wwan' ?
+                type === INTERFACE_TYPES.wwan ?
                     <WWANInterfaceIcon {...props}/> : null}
     </div>
 }
+
+
+EthInterfaceIcon.propTypes = {
+    state: propTypes.oneOf(Object.keys(INTERFACE_STATES)).isRequired,
+};
 
 function EthInterfaceIcon({state}) {
     return <span className="fa-stack fa-2x">
@@ -31,6 +63,11 @@ function EthInterfaceIcon({state}) {
          <i className="fas fa-ethernet fa-stack-1x" style={state === 'down' ? {color: 'lightgrey'} : null}/>
     </span>
 }
+
+WiFiInterfaceIcon.propTypes = {
+    state: propTypes.oneOf(Object.keys(INTERFACE_STATES)).isRequired,
+};
+
 
 function WiFiInterfaceIcon({state}) {
     return <span className="fa-stack fa-2x">
@@ -43,6 +80,10 @@ function WiFiInterfaceIcon({state}) {
             : null}
     </span>
 }
+
+WWANInterfaceIcon.propTypes = {
+    state: propTypes.oneOf(Object.keys(INTERFACE_STATES)).isRequired,
+};
 
 function WWANInterfaceIcon({state}) {
     return <span className="fa-stack fa-2x">

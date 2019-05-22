@@ -6,9 +6,27 @@
  */
 
 import React, {useEffect, useRef} from 'react';
+import propTypes from 'prop-types';
 
 import Select from '../common/bootstrap/Select';
 import {NETWORKS_CHOICES} from './Interfaces';
+import {INTERFACE_STATES, INTERFACE_TYPES} from './Interface';
+
+const BUSES = ['eth', 'pci', 'usb', 'sdio', 'sfp'];
+
+SelectedInterface.propTypes = {
+    id: propTypes.string.isRequired,
+    type: propTypes.oneOf(Object.keys(INTERFACE_TYPES)).isRequired,
+    state: propTypes.oneOf(Object.keys(INTERFACE_STATES)).isRequired,
+    bus: propTypes.oneOf(BUSES).isRequired,
+    slot: propTypes.string.isRequired,
+    module_id: propTypes.number.isRequired,
+    link_speed: propTypes.number.isRequired,
+    network: propTypes.oneOf(['wan', 'lan', 'guest', 'none']).isRequired,
+    configurable: propTypes.bool.isRequired,
+    WANIsEmpty: propTypes.bool.isRequired,
+    onNetworkChange: propTypes.func.isRequired,
+};
 
 export default function SelectedInterface({
                                               id,

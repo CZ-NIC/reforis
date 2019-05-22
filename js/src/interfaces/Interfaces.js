@@ -10,7 +10,7 @@ import React, {useState} from 'react';
 import ForisForm from '../formContainer/ForisForm';
 import {APIEndpoints} from '../common/API';
 import InterfacesForm from './InterfacesForm';
-import {ConfirmModal, OpenPortsModals} from './modals';
+import {OpenPortsModals, KeepPortsClosedConfirmModal} from './modals';
 
 export const NETWORKS_CHOICES = {
     wan: _('WAN'),
@@ -80,7 +80,7 @@ export default function Interfaces() {
             setShown={setOpenPortsModalShown}
             onKeepPortsClosed={keepPortsClosedHandler}
         />
-        <ConfirmModal
+        <KeepPortsClosedConfirmModal
             shown={keepPortsClosedConfirmModalShown}
             setShown={setKeepPortsClosedConfirmShown}
         />
