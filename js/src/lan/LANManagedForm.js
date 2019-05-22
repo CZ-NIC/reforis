@@ -10,12 +10,12 @@ import propTypes from 'prop-types';
 
 import TextInput from '../common/bootstrap/TextInput';
 import CheckBox from '../common/bootstrap/Checkbox';
-import NumberInput from '../common/bootstrap/NumberInput';
 import {validateIPv4Address} from '../common/validations';
+import DHCPServerForm, {HELP_TEXT as DHCP_HELP_TEXT} from '../common/networkForms/DHCPServerForm';
 
 const HELP_TEXTS = {
     router_ip: _("Router's IP address in the inner network."),
-    dhcp: _('Enable this option to automatically assign IP addresses to the devices connected to the router.')
+    dhcp: DHCP_HELP_TEXT,
 };
 
 LANManagedForm.propTypes = {
@@ -75,9 +75,10 @@ export default function LANManagedForm({formData, formErrors, setFormValue, ...p
             {...props}
         />
         {formData.dhcp.enabled ?
-            <LANManagedDHCPForm
+            <DHCPServerForm
                 formData={formData.dhcp}
-                formErrors={errors.dhcp}
+
+                updateRule={value => ({mode_managed: {dhcp: value}})}
                 setFormValue={setFormValue}
 
                 {...props}
@@ -86,74 +87,11 @@ export default function LANManagedForm({formData, formErrors, setFormValue, ...p
     </>
 }
 
-LANManagedDHCPForm.propTypes = {
-    formData: propTypes.shape({
-        start: propTypes.number,
-        limit: propTypes.number,
-        lease_time: propTypes.number,
-    }).isRequired,
-    formErrors: propTypes.shape({
-        start: propTypes.number,
-        limit: propTypes.number,
-        lease_time: propTypes.number,
-    }),
-    setFormValue: propTypes.func.isRequired,
-};
-
-LANManagedDHCPForm.defaultProps = {
-    formData: {},
-    formErrors: {},
-};
-
-function LANManagedDHCPForm({formData, formErrors, setFormValue, ...props}) {
-    return <>
-        <NumberInput
-            label={_('DHCP start')}
-            value={formData.start}
-            error={formErrors.start}
-            min='1'
-            required
-
-            onChange={setFormValue(
-                value => ({mode_managed: {dhcp: {start: {$set: value}}}})
-            )}
-
-            {...props}
-        />
-        <NumberInput
-            label={_('DHCP max leases')}
-            value={formData.limit}
-            error={formErrors.limit}
-            min='1'
-            required
-
-            onChange={setFormValue(
-                value => ({mode_managed: {dhcp: {limit: {$set: value}}}})
-            )}
-
-            {...props}
-        />
-        <NumberInput
-            label={_('Lease time (hours)')}
-            value={formData.lease_time}
-            error={formErrors.lease_time}
-            min='120'
-            required
-
-            onChange={setFormValue(
-                value => ({mode_managed: {dhcp: {lease_time: {$set: value}}}})
-            )}
-
-            {...props}
-        />
-    </>
-}
 
 export function validateManaged(formData) {
     const errors = {
         router_ip: validateIPv4Address(formData.router_ip) || undefined,
         netmask: validateIPv4Address(formData.netmask) || undefined,
-        // TODO: DHCP
     };
     return JSON.stringify(errors) !== '{}' ? errors : null;
 }
