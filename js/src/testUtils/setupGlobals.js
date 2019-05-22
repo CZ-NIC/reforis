@@ -11,3 +11,4 @@ window.babel = {
     format: (str, _) => str
 };
 window.ForisTranslations = {};
+window.HTMLElement.prototype.scrollIntoView = () => {};

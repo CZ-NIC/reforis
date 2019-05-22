@@ -55,5 +55,4 @@ describe('<LAN/>', () => {
         });
         expect(lanContainer.firstChild).toMatchSnapshot();
     });
-
 });

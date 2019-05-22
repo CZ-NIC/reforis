@@ -1,0 +1,1227 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Interfaces/> Snapshot after interface moving. 1`] = `
+<div>
+  <form>
+    <div
+      class="modal fade "
+      role="dialog"
+    >
+      <div
+        class="modal-dialog"
+        role="document"
+      >
+        <div
+          class="modal-content"
+        >
+          <div
+            class="modal-header"
+          >
+            <h5
+              class="modal-title"
+            >
+              Warning!
+            </h5>
+            <button
+              class="close"
+              type="button"
+            >
+              <span
+                aria-hidden="true"
+              >
+                ×
+              </span>
+            </button>
+          </div>
+          <div
+            class="modal-body"
+          >
+            <p>
+              
+You don't have any interface assigned to the LAN network.
+              <br />
+              
+Do you want to 
+              <strong>
+                open ports 22, 80 and 443 on WAN network
+              </strong>
+               in order to be able to access the configuration
+interface of our device?                
+    
+            </p>
+          </div>
+          <div
+            class="modal-footer"
+          >
+            <button
+              class="btn btn-danger"
+            >
+               
+               
+              Keep closed
+            </button>
+            <button
+              class="btn btn-primary "
+            >
+               
+               
+              Open ports
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade "
+      role="dialog"
+    >
+      <div
+        class="modal-dialog"
+        role="document"
+      >
+        <div
+          class="modal-content"
+        >
+          <div
+            class="modal-header"
+          >
+            <h5
+              class="modal-title"
+            >
+              Warning!
+            </h5>
+            <button
+              class="close"
+              type="button"
+            >
+              <span
+                aria-hidden="true"
+              >
+                ×
+              </span>
+            </button>
+          </div>
+          <div
+            class="modal-body"
+          >
+            <p>
+              
+In the setup you provided it is 
+              <strong>
+                not possible to access the administration interface
+              </strong>
+               of your device.
+This means that the only way to configure your device will be via serial cabel or you need to a perform factory reset.
+
+              <br />
+              <br />
+               
+
+              <p>
+                <strong>
+                  Is this really what you want?
+                </strong>
+              </p>
+                         
+
+            </p>
+          </div>
+          <div
+            class="modal-footer"
+          >
+            <button
+              class="btn btn-primary "
+            >
+               
+               
+              Reconsider
+            </button>
+            <button
+              class="btn btn-danger"
+            >
+               
+               
+              I'm an expert
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h3>
+      WAN
+    </h3>
+    <div
+      class="network mb-3"
+    >
+      <div
+        class="scrollable"
+      >
+        <div
+          class="interface "
+        >
+          <div>
+            <span
+              class="fa-stack fa-2x"
+            >
+              <i
+                class="far fa-square fa-stack-2x"
+              />
+              <i
+                class="fas fa-ethernet fa-stack-1x"
+              />
+            </span>
+          </div>
+          <h5>
+            WAN
+          </h5>
+        </div>
+      </div>
+    </div>
+    <h3>
+      LAN
+    </h3>
+    <div
+      class="network mb-3"
+    >
+      <div
+        class="scrollable"
+      >
+        <div
+          class="interface "
+        >
+          <div>
+            <span
+              class="fa-stack fa-2x"
+            >
+              <i
+                class="far fa-square fa-stack-2x"
+              />
+              <i
+                class="fas fa-ethernet fa-stack-1x"
+                style="color: lightgrey;"
+              />
+            </span>
+          </div>
+          <h5>
+            LAN3
+          </h5>
+        </div>
+        <div
+          class="interface interface-selected"
+        >
+          <div>
+            <span
+              class="fa-stack fa-2x"
+            >
+              <i
+                class="far fa-square fa-stack-2x"
+              />
+              <i
+                class="fas fa-ethernet fa-stack-1x"
+                style="color: lightgrey;"
+              />
+            </span>
+          </div>
+          <h5>
+            LAN1
+          </h5>
+        </div>
+      </div>
+    </div>
+    <h3>
+      Guest Network
+    </h3>
+    <div
+      class="network mb-3"
+    >
+      <div
+        class="scrollable"
+      >
+        <div
+          class="interface "
+        >
+          <div>
+            <span
+              class="fa-stack fa-2x"
+            >
+              <i
+                class="far fa-square fa-stack-2x"
+              />
+              <i
+                class="fas fa-ethernet fa-stack-1x"
+                style="color: lightgrey;"
+              />
+            </span>
+          </div>
+          <h5>
+            LAN4
+          </h5>
+        </div>
+      </div>
+    </div>
+    <h3>
+      Unassigned
+    </h3>
+    <div
+      class="network mb-3"
+    >
+      <div
+        class="scrollable"
+      >
+        <div
+          class="interface "
+        >
+          <div>
+            <span
+              class="fa-stack fa-2x"
+            >
+              <i
+                class="far fa-square fa-stack-2x"
+              />
+              <i
+                class="fas fa-ethernet fa-stack-1x"
+                style="color: lightgrey;"
+              />
+            </span>
+          </div>
+          <h5>
+            LAN0
+          </h5>
+        </div>
+        <div
+          class="interface "
+        >
+          <div>
+            <span
+              class="fa-stack fa-2x"
+            >
+              <i
+                class="far fa-square fa-stack-2x"
+              />
+              <i
+                class="fas fa-ethernet fa-stack-1x"
+                style="color: lightgrey;"
+              />
+            </span>
+          </div>
+          <h5>
+            LAN2
+          </h5>
+        </div>
+        <div
+          class="interface "
+        >
+          <div
+            style="color: gray;"
+          >
+            <span
+              class="fa-stack fa-2x"
+            >
+              <i
+                class="fas fa-wifi fa-stack-1x"
+              />
+              <i
+                class="fas fa-slash fa-stack-1x fa-inverse"
+              />
+              <i
+                class="fas fa-slash fa-stack-1x"
+                style="bottom: 0.3rem;"
+              />
+            </span>
+          </div>
+          <h5>
+            1
+          </h5>
+        </div>
+      </div>
+    </div>
+    <h1>
+      LAN1
+    </h1>
+    <div
+      class="form-group row"
+    >
+      <label
+        class="form-control-label col-sm-3"
+        for="2"
+      >
+        Network
+      </label>
+      <div
+        class="col-sm-8"
+      >
+        <select
+          class="form-control"
+          id="2"
+        >
+          <option
+            value="lan"
+          >
+            LAN
+          </option>
+          <option
+            value="guest"
+          >
+            Guest Network
+          </option>
+          <option
+            value="none"
+          >
+            Unassigned
+          </option>
+        </select>
+        <small
+          class="form-text text-muted"
+        />
+      </div>
+    </div>
+    <table
+      class="table table-hover"
+    >
+      <tbody>
+        <tr>
+          <th>
+            Type
+          </th>
+          <td>
+            eth
+          </td>
+        </tr>
+        <tr>
+          <th>
+            State
+          </th>
+          <td>
+            down
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Bus
+          </th>
+          <td>
+            eth
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Slot
+          </th>
+          <td>
+            LAN1
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Module ID
+          </th>
+          <td>
+            0
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Link speed
+          </th>
+          <td>
+            0
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button
+      class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
+    >
+       
+       
+      Save
+    </button>
+  </form>
+</div>
+`;
+
+exports[`<Interfaces/> Snapshot select interface. 1`] = `
+<div>
+  <form>
+    <div
+      class="modal fade "
+      role="dialog"
+    >
+      <div
+        class="modal-dialog"
+        role="document"
+      >
+        <div
+          class="modal-content"
+        >
+          <div
+            class="modal-header"
+          >
+            <h5
+              class="modal-title"
+            >
+              Warning!
+            </h5>
+            <button
+              class="close"
+              type="button"
+            >
+              <span
+                aria-hidden="true"
+              >
+                ×
+              </span>
+            </button>
+          </div>
+          <div
+            class="modal-body"
+          >
+            <p>
+              
+You don't have any interface assigned to the LAN network.
+              <br />
+              
+Do you want to 
+              <strong>
+                open ports 22, 80 and 443 on WAN network
+              </strong>
+               in order to be able to access the configuration
+interface of our device?                
+    
+            </p>
+          </div>
+          <div
+            class="modal-footer"
+          >
+            <button
+              class="btn btn-danger"
+            >
+               
+               
+              Keep closed
+            </button>
+            <button
+              class="btn btn-primary "
+            >
+               
+               
+              Open ports
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade "
+      role="dialog"
+    >
+      <div
+        class="modal-dialog"
+        role="document"
+      >
+        <div
+          class="modal-content"
+        >
+          <div
+            class="modal-header"
+          >
+            <h5
+              class="modal-title"
+            >
+              Warning!
+            </h5>
+            <button
+              class="close"
+              type="button"
+            >
+              <span
+                aria-hidden="true"
+              >
+                ×
+              </span>
+            </button>
+          </div>
+          <div
+            class="modal-body"
+          >
+            <p>
+              
+In the setup you provided it is 
+              <strong>
+                not possible to access the administration interface
+              </strong>
+               of your device.
+This means that the only way to configure your device will be via serial cabel or you need to a perform factory reset.
+
+              <br />
+              <br />
+               
+
+              <p>
+                <strong>
+                  Is this really what you want?
+                </strong>
+              </p>
+                         
+
+            </p>
+          </div>
+          <div
+            class="modal-footer"
+          >
+            <button
+              class="btn btn-primary "
+            >
+               
+               
+              Reconsider
+            </button>
+            <button
+              class="btn btn-danger"
+            >
+               
+               
+              I'm an expert
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h3>
+      WAN
+    </h3>
+    <div
+      class="network mb-3"
+    >
+      <div
+        class="scrollable"
+      >
+        <div
+          class="interface "
+        >
+          <div>
+            <span
+              class="fa-stack fa-2x"
+            >
+              <i
+                class="far fa-square fa-stack-2x"
+              />
+              <i
+                class="fas fa-ethernet fa-stack-1x"
+              />
+            </span>
+          </div>
+          <h5>
+            WAN
+          </h5>
+        </div>
+      </div>
+    </div>
+    <h3>
+      LAN
+    </h3>
+    <div
+      class="network mb-3"
+    >
+      <div
+        class="scrollable"
+      >
+        <div
+          class="interface "
+        >
+          <div>
+            <span
+              class="fa-stack fa-2x"
+            >
+              <i
+                class="far fa-square fa-stack-2x"
+              />
+              <i
+                class="fas fa-ethernet fa-stack-1x"
+                style="color: lightgrey;"
+              />
+            </span>
+          </div>
+          <h5>
+            LAN3
+          </h5>
+        </div>
+      </div>
+    </div>
+    <h3>
+      Guest Network
+    </h3>
+    <div
+      class="network mb-3"
+    >
+      <div
+        class="scrollable"
+      >
+        <div
+          class="interface interface-selected"
+        >
+          <div>
+            <span
+              class="fa-stack fa-2x"
+            >
+              <i
+                class="far fa-square fa-stack-2x"
+              />
+              <i
+                class="fas fa-ethernet fa-stack-1x"
+                style="color: lightgrey;"
+              />
+            </span>
+          </div>
+          <h5>
+            LAN1
+          </h5>
+        </div>
+        <div
+          class="interface "
+        >
+          <div>
+            <span
+              class="fa-stack fa-2x"
+            >
+              <i
+                class="far fa-square fa-stack-2x"
+              />
+              <i
+                class="fas fa-ethernet fa-stack-1x"
+                style="color: lightgrey;"
+              />
+            </span>
+          </div>
+          <h5>
+            LAN4
+          </h5>
+        </div>
+      </div>
+    </div>
+    <h3>
+      Unassigned
+    </h3>
+    <div
+      class="network mb-3"
+    >
+      <div
+        class="scrollable"
+      >
+        <div
+          class="interface "
+        >
+          <div>
+            <span
+              class="fa-stack fa-2x"
+            >
+              <i
+                class="far fa-square fa-stack-2x"
+              />
+              <i
+                class="fas fa-ethernet fa-stack-1x"
+                style="color: lightgrey;"
+              />
+            </span>
+          </div>
+          <h5>
+            LAN0
+          </h5>
+        </div>
+        <div
+          class="interface "
+        >
+          <div>
+            <span
+              class="fa-stack fa-2x"
+            >
+              <i
+                class="far fa-square fa-stack-2x"
+              />
+              <i
+                class="fas fa-ethernet fa-stack-1x"
+                style="color: lightgrey;"
+              />
+            </span>
+          </div>
+          <h5>
+            LAN2
+          </h5>
+        </div>
+        <div
+          class="interface "
+        >
+          <div
+            style="color: gray;"
+          >
+            <span
+              class="fa-stack fa-2x"
+            >
+              <i
+                class="fas fa-wifi fa-stack-1x"
+              />
+              <i
+                class="fas fa-slash fa-stack-1x fa-inverse"
+              />
+              <i
+                class="fas fa-slash fa-stack-1x"
+                style="bottom: 0.3rem;"
+              />
+            </span>
+          </div>
+          <h5>
+            1
+          </h5>
+        </div>
+      </div>
+    </div>
+    <h1>
+      LAN1
+    </h1>
+    <div
+      class="form-group row"
+    >
+      <label
+        class="form-control-label col-sm-3"
+        for="1"
+      >
+        Network
+      </label>
+      <div
+        class="col-sm-8"
+      >
+        <select
+          class="form-control"
+          id="1"
+        >
+          <option
+            value="lan"
+          >
+            LAN
+          </option>
+          <option
+            value="guest"
+          >
+            Guest Network
+          </option>
+          <option
+            value="none"
+          >
+            Unassigned
+          </option>
+        </select>
+        <small
+          class="form-text text-muted"
+        />
+      </div>
+    </div>
+    <table
+      class="table table-hover"
+    >
+      <tbody>
+        <tr>
+          <th>
+            Type
+          </th>
+          <td>
+            eth
+          </td>
+        </tr>
+        <tr>
+          <th>
+            State
+          </th>
+          <td>
+            down
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Bus
+          </th>
+          <td>
+            eth
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Slot
+          </th>
+          <td>
+            LAN1
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Module ID
+          </th>
+          <td>
+            0
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Link speed
+          </th>
+          <td>
+            0
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button
+      class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
+    >
+       
+       
+      Save
+    </button>
+  </form>
+</div>
+`;
+
+exports[`<Interfaces/> Snapshot. 1`] = `
+<div>
+  <form>
+    <div
+      class="modal fade "
+      role="dialog"
+    >
+      <div
+        class="modal-dialog"
+        role="document"
+      >
+        <div
+          class="modal-content"
+        >
+          <div
+            class="modal-header"
+          >
+            <h5
+              class="modal-title"
+            >
+              Warning!
+            </h5>
+            <button
+              class="close"
+              type="button"
+            >
+              <span
+                aria-hidden="true"
+              >
+                ×
+              </span>
+            </button>
+          </div>
+          <div
+            class="modal-body"
+          >
+            <p>
+              
+You don't have any interface assigned to the LAN network.
+              <br />
+              
+Do you want to 
+              <strong>
+                open ports 22, 80 and 443 on WAN network
+              </strong>
+               in order to be able to access the configuration
+interface of our device?                
+    
+            </p>
+          </div>
+          <div
+            class="modal-footer"
+          >
+            <button
+              class="btn btn-danger"
+            >
+               
+               
+              Keep closed
+            </button>
+            <button
+              class="btn btn-primary "
+            >
+               
+               
+              Open ports
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade "
+      role="dialog"
+    >
+      <div
+        class="modal-dialog"
+        role="document"
+      >
+        <div
+          class="modal-content"
+        >
+          <div
+            class="modal-header"
+          >
+            <h5
+              class="modal-title"
+            >
+              Warning!
+            </h5>
+            <button
+              class="close"
+              type="button"
+            >
+              <span
+                aria-hidden="true"
+              >
+                ×
+              </span>
+            </button>
+          </div>
+          <div
+            class="modal-body"
+          >
+            <p>
+              
+In the setup you provided it is 
+              <strong>
+                not possible to access the administration interface
+              </strong>
+               of your device.
+This means that the only way to configure your device will be via serial cabel or you need to a perform factory reset.
+
+              <br />
+              <br />
+               
+
+              <p>
+                <strong>
+                  Is this really what you want?
+                </strong>
+              </p>
+                         
+
+            </p>
+          </div>
+          <div
+            class="modal-footer"
+          >
+            <button
+              class="btn btn-primary "
+            >
+               
+               
+              Reconsider
+            </button>
+            <button
+              class="btn btn-danger"
+            >
+               
+               
+              I'm an expert
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h3>
+      WAN
+    </h3>
+    <div
+      class="network mb-3"
+    >
+      <div
+        class="scrollable"
+      >
+        <div
+          class="interface "
+        >
+          <div>
+            <span
+              class="fa-stack fa-2x"
+            >
+              <i
+                class="far fa-square fa-stack-2x"
+              />
+              <i
+                class="fas fa-ethernet fa-stack-1x"
+              />
+            </span>
+          </div>
+          <h5>
+            WAN
+          </h5>
+        </div>
+      </div>
+    </div>
+    <h3>
+      LAN
+    </h3>
+    <div
+      class="network mb-3"
+    >
+      <div
+        class="scrollable"
+      >
+        <div
+          class="interface "
+        >
+          <div>
+            <span
+              class="fa-stack fa-2x"
+            >
+              <i
+                class="far fa-square fa-stack-2x"
+              />
+              <i
+                class="fas fa-ethernet fa-stack-1x"
+                style="color: lightgrey;"
+              />
+            </span>
+          </div>
+          <h5>
+            LAN3
+          </h5>
+        </div>
+      </div>
+    </div>
+    <h3>
+      Guest Network
+    </h3>
+    <div
+      class="network mb-3"
+    >
+      <div
+        class="scrollable"
+      >
+        <div
+          class="interface "
+        >
+          <div>
+            <span
+              class="fa-stack fa-2x"
+            >
+              <i
+                class="far fa-square fa-stack-2x"
+              />
+              <i
+                class="fas fa-ethernet fa-stack-1x"
+                style="color: lightgrey;"
+              />
+            </span>
+          </div>
+          <h5>
+            LAN1
+          </h5>
+        </div>
+        <div
+          class="interface "
+        >
+          <div>
+            <span
+              class="fa-stack fa-2x"
+            >
+              <i
+                class="far fa-square fa-stack-2x"
+              />
+              <i
+                class="fas fa-ethernet fa-stack-1x"
+                style="color: lightgrey;"
+              />
+            </span>
+          </div>
+          <h5>
+            LAN4
+          </h5>
+        </div>
+      </div>
+    </div>
+    <h3>
+      Unassigned
+    </h3>
+    <div
+      class="network mb-3"
+    >
+      <div
+        class="scrollable"
+      >
+        <div
+          class="interface "
+        >
+          <div>
+            <span
+              class="fa-stack fa-2x"
+            >
+              <i
+                class="far fa-square fa-stack-2x"
+              />
+              <i
+                class="fas fa-ethernet fa-stack-1x"
+                style="color: lightgrey;"
+              />
+            </span>
+          </div>
+          <h5>
+            LAN0
+          </h5>
+        </div>
+        <div
+          class="interface "
+        >
+          <div>
+            <span
+              class="fa-stack fa-2x"
+            >
+              <i
+                class="far fa-square fa-stack-2x"
+              />
+              <i
+                class="fas fa-ethernet fa-stack-1x"
+                style="color: lightgrey;"
+              />
+            </span>
+          </div>
+          <h5>
+            LAN2
+          </h5>
+        </div>
+        <div
+          class="interface "
+        >
+          <div
+            style="color: gray;"
+          >
+            <span
+              class="fa-stack fa-2x"
+            >
+              <i
+                class="fas fa-wifi fa-stack-1x"
+              />
+              <i
+                class="fas fa-slash fa-stack-1x fa-inverse"
+              />
+              <i
+                class="fas fa-slash fa-stack-1x"
+                style="bottom: 0.3rem;"
+              />
+            </span>
+          </div>
+          <h5>
+            1
+          </h5>
+        </div>
+      </div>
+    </div>
+    <button
+      class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
+    >
+       
+       
+      Save
+    </button>
+  </form>
+</div>
+`;
