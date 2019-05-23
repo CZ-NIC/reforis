@@ -12,6 +12,7 @@ import ForisForm from '../formContainer/ForisForm';
 import GuestNetworkForm from './GuestNetworkForm';
 import {APIEndpoints} from '../common/API';
 import {validateIPv4Address} from '../common/validations';
+import GuestNetworkDHCPClientsList from './GuestNetworkDHCPClientsList';
 
 GuestNetwork.propTypes = {
     ws: propTypes.object.isRequired
@@ -29,6 +30,7 @@ export default function GuestNetwork({ws}) {
         validator={validator}
     >
         <GuestNetworkForm/>
+        <GuestNetworkDHCPClientsList/>
     </ForisForm>
 }
 
