@@ -9,8 +9,8 @@ import React from 'react';
 import propTypes from 'prop-types';
 
 import Select from '../common/bootstrap/Select';
-import DHCPClientForm, {validateDHCPForm} from '../common/networkForms/DHCPClientForm';
-import StaticForm, {validateStaticForm} from '../common/networkForms/StaticForm';
+import DHCPClientForm, {validateDHCPForm} from '../common/network/DHCPClientForm';
+import StaticIPForm, {validateStaticForm} from '../common/network/StaticIPForm';
 
 const LAN_TYPES = {
     dhcp: 'dhcp',
@@ -66,7 +66,7 @@ export default function LANUnmanagedForm({formData, formErrors, setFormValue, ..
                 {...props}
             />
             : lanType === LAN_TYPES.static ?
-                <StaticForm
+                <StaticIPForm
                     formData={formData.lan_static}
                     formErrors={formErrors.lan_static}
 

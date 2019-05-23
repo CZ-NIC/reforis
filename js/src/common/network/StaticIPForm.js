@@ -23,19 +23,19 @@ const FIELDS_PROP_TYPES = {
     dns2: propTypes.string,
 };
 
-StaticForm.propTypes = {
+StaticIPForm.propTypes = {
     formData: propTypes.shape(FIELDS_PROP_TYPES).isRequired,
     formErrors: propTypes.shape(FIELDS_PROP_TYPES),
     setFormValue: propTypes.func.isRequired,
     updateRule: propTypes.func.isRequired,
 };
 
-StaticForm.defaultProps = {
+StaticIPForm.defaultProps = {
     formData: {},
     formErrors: {},
 };
 
-export default function StaticForm({formData, formErrors, updateRule, setFormValue, ...props}) {
+export default function StaticIPForm({formData, formErrors, updateRule, setFormValue, ...props}) {
     return <>
         <TextInput
             label={_('IP address')}

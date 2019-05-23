@@ -9,8 +9,8 @@ import React from 'react';
 
 import Select from '../common/bootstrap/Select';
 import TextInput from '../common/bootstrap/TextInput';
-import DHCPClientForm, {validateDHCPForm} from '../common/networkForms/DHCPClientForm';
-import StaticForm, {validateStaticForm} from '../common/networkForms/StaticForm';
+import DHCPClientForm, {validateDHCPForm} from '../common/network/DHCPClientForm';
+import StaticIPForm, {validateStaticForm} from '../common/network/StaticIPForm';
 import propTypes from 'prop-types';
 
 const WAN_TYPES = {
@@ -77,7 +77,7 @@ export default function WANForm({formData, formErrors, setFormValue, ...props}) 
                 {...props}
             />
             : wanType === WAN_TYPES.static ?
-                <StaticForm
+                <StaticIPForm
                     formData={wanSettings.wan_static}
                     formErrors={errors.wan_static || {}}
 

@@ -8,7 +8,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-import DHCPServerForm, {HELP_TEXT as DHCP_HELP_TEXT} from '../common/networkForms/DHCPServerForm';
+import DHCPServerForm, {HELP_TEXT as DHCP_HELP_TEXT} from '../common/network/DHCPServerForm';
 import CheckBox from '../common/bootstrap/Checkbox';
 import TextInput from '../common/bootstrap/TextInput';
 import NumberInput from '../common/bootstrap/NumberInput';
