@@ -1,0 +1,693 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GuestNetwork/> Snapshot disabled. 1`] = `
+<div>
+  <form>
+    <div
+      class="form-group row"
+    >
+      <div
+        class="form-label col-sm-3"
+      >
+        <label
+          class="form-label"
+          for="1"
+        >
+          Enable
+        </label>
+      </div>
+      <div
+        class="form-check col-sm-8"
+      >
+        <input
+          id="1"
+          type="checkbox"
+        />
+        <small
+          class="form-text text-muted"
+        />
+      </div>
+    </div>
+    <button
+      class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
+    >
+       
+       
+      Save
+    </button>
+  </form>
+</div>
+`;
+
+exports[`<GuestNetwork/> Snapshot enabled DHCP. 1`] = `
+<div>
+  <form>
+    <div
+      class="form-group row"
+    >
+      <div
+        class="form-label col-sm-3"
+      >
+        <label
+          class="form-label"
+          for="16"
+        >
+          Enable
+        </label>
+      </div>
+      <div
+        class="form-check col-sm-8"
+      >
+        <input
+          id="16"
+          type="checkbox"
+        />
+        <small
+          class="form-text text-muted"
+        />
+      </div>
+    </div>
+    <div
+      class="form-group row"
+    >
+      <label
+        class="form-control-label col-sm-3"
+        for="22"
+      >
+        Router IP address
+      </label>
+      <div
+        class="col-sm-8"
+      >
+        <div
+          class="input-group"
+        >
+          <input
+            class="form-control "
+            id="22"
+            required=""
+            type="text"
+            value="10.111.222.1"
+          />
+        </div>
+        <div
+          class="invalid-feedback"
+        />
+        <small
+          class="form-text text-muted"
+        >
+          Router's IP address in the guest inner network.
+        </small>
+      </div>
+    </div>
+    <div
+      class="form-group row"
+    >
+      <label
+        class="form-control-label col-sm-3"
+        for="23"
+      >
+        Network mask
+      </label>
+      <div
+        class="col-sm-8"
+      >
+        <div
+          class="input-group"
+        >
+          <input
+            class="form-control "
+            id="23"
+            required=""
+            type="text"
+            value="255.255.255.0"
+          />
+        </div>
+        <div
+          class="invalid-feedback"
+        />
+        <small
+          class="form-text text-muted"
+        />
+      </div>
+    </div>
+    <div
+      class="form-group row"
+    >
+      <div
+        class="form-label col-sm-3"
+      >
+        <label
+          class="form-label"
+          for="24"
+        >
+          Enable DHCP
+        </label>
+      </div>
+      <div
+        class="form-check col-sm-8"
+      >
+        <input
+          id="24"
+          type="checkbox"
+        />
+        <small
+          class="form-text text-muted"
+        >
+          Enable this option to automatically assign IP addresses to the devices connected to the router.
+        </small>
+      </div>
+    </div>
+    <div
+      class="form-group row"
+    >
+      <label
+        class="form-control-label col-sm-3"
+        for="30"
+      >
+        DHCP start
+      </label>
+      <div
+        class="col-sm-8"
+      >
+        <div
+          class="input-group"
+        >
+          <input
+            class="form-control "
+            id="30"
+            min="1"
+            required=""
+            type="number"
+            value="100"
+          />
+        </div>
+        <div
+          class="invalid-feedback"
+        />
+        <small
+          class="form-text text-muted"
+        />
+      </div>
+    </div>
+    <div
+      class="form-group row"
+    >
+      <label
+        class="form-control-label col-sm-3"
+        for="31"
+      >
+        DHCP max leases
+      </label>
+      <div
+        class="col-sm-8"
+      >
+        <div
+          class="input-group"
+        >
+          <input
+            class="form-control "
+            id="31"
+            min="1"
+            required=""
+            type="number"
+            value="150"
+          />
+        </div>
+        <div
+          class="invalid-feedback"
+        />
+        <small
+          class="form-text text-muted"
+        />
+      </div>
+    </div>
+    <div
+      class="form-group row"
+    >
+      <label
+        class="form-control-label col-sm-3"
+        for="32"
+      >
+        Lease time (hours)
+      </label>
+      <div
+        class="col-sm-8"
+      >
+        <div
+          class="input-group"
+        >
+          <input
+            class="form-control "
+            id="32"
+            min="120"
+            required=""
+            type="number"
+            value="3600"
+          />
+        </div>
+        <div
+          class="invalid-feedback"
+        />
+        <small
+          class="form-text text-muted"
+        />
+      </div>
+    </div>
+    <div
+      class="form-group row"
+    >
+      <div
+        class="form-label col-sm-3"
+      >
+        <label
+          class="form-label"
+          for="25"
+        >
+          Enable QoS
+        </label>
+      </div>
+      <div
+        class="form-check col-sm-8"
+      >
+        <input
+          id="25"
+          type="checkbox"
+        />
+        <small
+          class="form-text text-muted"
+        >
+          This option enables you to set a bandwidth limit for the guest network, so that your main network doesn't get slowed-down by it.
+        </small>
+      </div>
+    </div>
+    <button
+      class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
+    >
+       
+       
+      Save
+    </button>
+  </form>
+</div>
+`;
+
+exports[`<GuestNetwork/> Snapshot enabled QoS. 1`] = `
+<div>
+  <form>
+    <div
+      class="form-group row"
+    >
+      <div
+        class="form-label col-sm-3"
+      >
+        <label
+          class="form-label"
+          for="34"
+        >
+          Enable
+        </label>
+      </div>
+      <div
+        class="form-check col-sm-8"
+      >
+        <input
+          id="34"
+          type="checkbox"
+        />
+        <small
+          class="form-text text-muted"
+        />
+      </div>
+    </div>
+    <div
+      class="form-group row"
+    >
+      <label
+        class="form-control-label col-sm-3"
+        for="40"
+      >
+        Router IP address
+      </label>
+      <div
+        class="col-sm-8"
+      >
+        <div
+          class="input-group"
+        >
+          <input
+            class="form-control "
+            id="40"
+            required=""
+            type="text"
+            value="10.111.222.1"
+          />
+        </div>
+        <div
+          class="invalid-feedback"
+        />
+        <small
+          class="form-text text-muted"
+        >
+          Router's IP address in the guest inner network.
+        </small>
+      </div>
+    </div>
+    <div
+      class="form-group row"
+    >
+      <label
+        class="form-control-label col-sm-3"
+        for="41"
+      >
+        Network mask
+      </label>
+      <div
+        class="col-sm-8"
+      >
+        <div
+          class="input-group"
+        >
+          <input
+            class="form-control "
+            id="41"
+            required=""
+            type="text"
+            value="255.255.255.0"
+          />
+        </div>
+        <div
+          class="invalid-feedback"
+        />
+        <small
+          class="form-text text-muted"
+        />
+      </div>
+    </div>
+    <div
+      class="form-group row"
+    >
+      <div
+        class="form-label col-sm-3"
+      >
+        <label
+          class="form-label"
+          for="42"
+        >
+          Enable DHCP
+        </label>
+      </div>
+      <div
+        class="form-check col-sm-8"
+      >
+        <input
+          id="42"
+          type="checkbox"
+        />
+        <small
+          class="form-text text-muted"
+        >
+          Enable this option to automatically assign IP addresses to the devices connected to the router.
+        </small>
+      </div>
+    </div>
+    <div
+      class="form-group row"
+    >
+      <div
+        class="form-label col-sm-3"
+      >
+        <label
+          class="form-label"
+          for="43"
+        >
+          Enable QoS
+        </label>
+      </div>
+      <div
+        class="form-check col-sm-8"
+      >
+        <input
+          id="43"
+          type="checkbox"
+        />
+        <small
+          class="form-text text-muted"
+        >
+          This option enables you to set a bandwidth limit for the guest network, so that your main network doesn't get slowed-down by it.
+        </small>
+      </div>
+    </div>
+    <div
+      class="form-group row"
+    >
+      <label
+        class="form-control-label col-sm-3"
+        for="49"
+      >
+        Download
+      </label>
+      <div
+        class="col-sm-8"
+      >
+        <div
+          class="input-group"
+        >
+          <input
+            class="form-control "
+            id="49"
+            min="1"
+            required=""
+            type="number"
+            value="1023"
+          />
+          <div
+            class="input-group-append"
+          >
+            <p
+              class="input-group-text"
+            >
+              kb/s
+            </p>
+          </div>
+        </div>
+        <div
+          class="invalid-feedback"
+        />
+        <small
+          class="form-text text-muted"
+        >
+          Download speed in guest network (in kilobits per second).
+        </small>
+      </div>
+    </div>
+    <div
+      class="form-group row"
+    >
+      <label
+        class="form-control-label col-sm-3"
+        for="50"
+      >
+        Upload
+      </label>
+      <div
+        class="col-sm-8"
+      >
+        <div
+          class="input-group"
+        >
+          <input
+            class="form-control "
+            id="50"
+            min="1"
+            required=""
+            type="number"
+            value="1025"
+          />
+          <div
+            class="input-group-append"
+          >
+            <p
+              class="input-group-text"
+            >
+              kb/s
+            </p>
+          </div>
+        </div>
+        <div
+          class="invalid-feedback"
+        />
+        <small
+          class="form-text text-muted"
+        >
+          Upload speed in guest network (in kilobits per second).
+        </small>
+      </div>
+    </div>
+    <button
+      class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
+    >
+       
+       
+      Save
+    </button>
+  </form>
+</div>
+`;
+
+exports[`<GuestNetwork/> Snapshot enabled. 1`] = `
+<div>
+  <form>
+    <div
+      class="form-group row"
+    >
+      <div
+        class="form-label col-sm-3"
+      >
+        <label
+          class="form-label"
+          for="6"
+        >
+          Enable
+        </label>
+      </div>
+      <div
+        class="form-check col-sm-8"
+      >
+        <input
+          id="6"
+          type="checkbox"
+        />
+        <small
+          class="form-text text-muted"
+        />
+      </div>
+    </div>
+    <div
+      class="form-group row"
+    >
+      <label
+        class="form-control-label col-sm-3"
+        for="12"
+      >
+        Router IP address
+      </label>
+      <div
+        class="col-sm-8"
+      >
+        <div
+          class="input-group"
+        >
+          <input
+            class="form-control "
+            id="12"
+            required=""
+            type="text"
+            value="10.111.222.1"
+          />
+        </div>
+        <div
+          class="invalid-feedback"
+        />
+        <small
+          class="form-text text-muted"
+        >
+          Router's IP address in the guest inner network.
+        </small>
+      </div>
+    </div>
+    <div
+      class="form-group row"
+    >
+      <label
+        class="form-control-label col-sm-3"
+        for="13"
+      >
+        Network mask
+      </label>
+      <div
+        class="col-sm-8"
+      >
+        <div
+          class="input-group"
+        >
+          <input
+            class="form-control "
+            id="13"
+            required=""
+            type="text"
+            value="255.255.255.0"
+          />
+        </div>
+        <div
+          class="invalid-feedback"
+        />
+        <small
+          class="form-text text-muted"
+        />
+      </div>
+    </div>
+    <div
+      class="form-group row"
+    >
+      <div
+        class="form-label col-sm-3"
+      >
+        <label
+          class="form-label"
+          for="14"
+        >
+          Enable DHCP
+        </label>
+      </div>
+      <div
+        class="form-check col-sm-8"
+      >
+        <input
+          id="14"
+          type="checkbox"
+        />
+        <small
+          class="form-text text-muted"
+        >
+          Enable this option to automatically assign IP addresses to the devices connected to the router.
+        </small>
+      </div>
+    </div>
+    <div
+      class="form-group row"
+    >
+      <div
+        class="form-label col-sm-3"
+      >
+        <label
+          class="form-label"
+          for="15"
+        >
+          Enable QoS
+        </label>
+      </div>
+      <div
+        class="form-check col-sm-8"
+      >
+        <input
+          id="15"
+          type="checkbox"
+        />
+        <small
+          class="form-text text-muted"
+        >
+          This option enables you to set a bandwidth limit for the guest network, so that your main network doesn't get slowed-down by it.
+        </small>
+      </div>
+    </div>
+    <button
+      class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
+    >
+       
+       
+      Save
+    </button>
+  </form>
+</div>
+`;
