@@ -6,7 +6,7 @@
     </li>
 {%- endmacro %}
 
-{% set network_dropdown_is_active = request.url_rule.endpoint in ['Foris.wan', 'Foris.lan', 'Foris.wifi', 'Foris.dns', 'Foris.interfaces'] %}
+{% set network_dropdown_is_active = request.url_rule.endpoint in ['Foris.wan', 'Foris.lan', 'Foris.wifi', 'Foris.dns', 'Foris.interfaces', 'Foris.guest_network'] %}
 {% set administration_dropdown_is_active = request.url_rule.endpoint in ['Foris.password', 'Foris.reboot', 'Foris.region_and_time','Foris.notifications_settings'] %}
 {% set plugins_dropdown_is_active = request.path[:-1] in plugins_urls %}
 
@@ -41,6 +41,7 @@
                 {{ dropdown_item('Wi-Fi','Foris.wifi') }}
                 {{ dropdown_item('DNS','Foris.dns') }}
                 {{ dropdown_item(gettext('Interfaces'),'Foris.interfaces') }}
+                {{ dropdown_item(gettext('Guest network'),'Foris.guest_network') }}
             </ul>
 
 

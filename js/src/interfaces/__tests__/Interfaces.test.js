@@ -43,5 +43,4 @@ describe('<Interfaces/>', () => {
         });
         expect(interfacesContainer).toMatchSnapshot();
     });
-
 });

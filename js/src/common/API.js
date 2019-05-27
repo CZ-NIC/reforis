@@ -55,6 +55,11 @@ export const APIEndpoints = {
         url: '/interfaces',
         methods: ['get', 'post']
     },
+    guestNetwork: {
+        name: 'guestNetwork',
+        url: '/guest-network',
+        methods: ['get', 'post']
+    },
     password: {
         name: 'password',
         url: '/password',

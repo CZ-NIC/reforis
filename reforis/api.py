@@ -106,6 +106,11 @@ def interfaces():
     return jsonify(res)
 
 
+@api.route('/guest-network', methods=['GET', 'POST'])
+def guest_network():
+    return _foris_controller_settings_call('guest')
+
+
 @api.route('/connection-test', methods=['GET'])
 def connection_test():
     return jsonify(current_app.backend.perform('wan', 'connection_test_trigger', data={'test_kinds': ['ipv4', 'ipv6']}))

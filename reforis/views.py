@@ -74,6 +74,11 @@ def interfaces():
     return render_template('network_settings/interfaces.html')
 
 
+@views.route('/guest-network', methods=['GET'])
+def guest_network():
+    return render_template('network_settings/guest_network.html')
+
+
 @views.route('/password', methods=['GET'])
 def password():
     return render_template('administration/password.html')

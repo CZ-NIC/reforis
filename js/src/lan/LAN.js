@@ -14,6 +14,7 @@ import LANForm, {LAN_MODES} from './LANForm';
 import {validateManaged} from './LANManagedForm';
 import {validateUnmanaged} from './LANUnmanagedForm';
 import {APIEndpoints} from '../common/API';
+import LAN_DHCP_ClientsList from './LAN_DHCP_ClientsList';
 
 LAN.propTypes = {
     ws: propTypes.object.isRequired
@@ -30,6 +31,7 @@ export default function LAN({ws}) {
         validator={validator}
     >
         <LANForm/>
+        <LAN_DHCP_ClientsList/>
     </ForisForm>
 }
 

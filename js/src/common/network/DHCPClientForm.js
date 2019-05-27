@@ -15,7 +15,7 @@ const HELP_TEXTS = {
     hostname: _('Hostname which will be provided to DHCP server.'),
 };
 
-DHCPForm.propTypes = {
+DHCPClientForm.propTypes = {
     formData: propTypes.shape({
         hostname: propTypes.string,
     }).isRequired,
@@ -26,7 +26,7 @@ DHCPForm.propTypes = {
     updateRule: propTypes.func.isRequired,
 };
 
-export default function DHCPForm({formData, formErrors, setFormValue, updateRule, ...props}) {
+export default function DHCPClientForm({formData, formErrors, setFormValue, updateRule, ...props}) {
     return <TextInput
         label={_('DHCP hostname')}
         value={formData.hostname || ''}
