@@ -86,7 +86,6 @@ watch-js:
 lint: lint-js lint-web
 lint-js:
 	cd js; npm run lint
-	cd js; npm run lint-react
 lint-web: venv
 	$(VENV_BIN)/$(DEV_PYTHON) -m pylint --rcfile=pylintrc reforis
 	$(VENV_BIN)/$(DEV_PYTHON) -m pycodestyle --config=pycodestyle reforis

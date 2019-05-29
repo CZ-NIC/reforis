@@ -8,7 +8,7 @@ from flask import Blueprint, current_app, request, jsonify
 from reforis import _get_locale_from_backend
 from reforis.auth import check_password, _decode_password_to_base64
 
-api = Blueprint(
+api = Blueprint(  # pylint: disable=invalid-name
     'ForisAPI',
     __name__,
     template_folder='templates',
@@ -28,6 +28,7 @@ class InvalidUsage(Exception):
         self.payload = payload
 
     def to_dict(self):
+        # pylint: disable=invalid-name
         rv = dict(self.payload or ())
         rv['error'] = self.error
         return rv
@@ -128,11 +129,7 @@ def dns_test():
 
 @api.route('/updates', methods=['GET', 'POST'])
 def updates():
-    settings = current_app.backend.perform(
-        'updater',
-        'get_settings',
-        {'lang': _get_locale_from_backend(current_app)}
-    )
+    settings = current_app.backend.perform('updater', 'get_settings', {'lang': _get_locale_from_backend(current_app)})
     del settings['approval']
 
     res = None
@@ -144,8 +141,10 @@ def updates():
         del res['user_lists']
         del res['languages']
     elif request.method == 'POST':
-        # TODO: Here is a problem.
-        # If one of the valid and one is invalid then valid one will set with error status code.
+        # pylint: disable=fixme
+        # TODO: If router_notifications is saved without errors and updater setting is saved with an error then user got
+        # the error message even router_notifications are saved. It's probably better to make some rollback in case of
+        # error here.
         data = request.json
         res_reboots = current_app.backend.perform('router_notifications', 'update_reboot_settings', data['reboots'])
         del data['reboots']

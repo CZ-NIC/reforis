@@ -9,10 +9,16 @@ import pytest
 @pytest.mark.parametrize(
     'endpoint, post_is_allowed', [
         ('notifications', True),
-        ('wifi', True),
+        ('notifications-settings', True),
         ('wan', True),
         ('lan', True),
+        ('wifi', True),
+        ('dns', True),
+        ('guest-network', True),
         ('connection-test', False),
+        ('dns-test', False),
+        ('region-and-time', True),
+        ('reboot', False),
     ]
 )
 def test_api_endpoints_exist(client, endpoint, post_is_allowed):

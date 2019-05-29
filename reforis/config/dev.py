@@ -3,6 +3,8 @@
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
 
+# pylint: disable=wildcard-import,unused-wildcard-import
+
 from reforis.config.prod import *
 
 DEBUG = False
