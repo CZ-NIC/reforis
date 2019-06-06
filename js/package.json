@@ -10,7 +10,7 @@
   "description": "Turris routers web configuration interface.",
   "main": "./src/app.js",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.19.0",
     "gettext.js": "^0.7.0",
     "immutability-helper": "^3.0.0",
     "moment": "^2.24.0",
