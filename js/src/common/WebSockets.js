@@ -87,4 +87,8 @@ export default class WebSockets {
         for (let i = 0; i < chain.length; i++)
             chain[i](json)
     }
+
+    close() {
+        this.ws.close();
+    }
 }

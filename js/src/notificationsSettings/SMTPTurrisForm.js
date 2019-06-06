@@ -29,7 +29,7 @@ SMTPTurrisForm.defaultProps = {
 export default function SMTPTurrisForm({formData, formErrors, setFormValue, ...props}) {
     return <>
         <TextInput
-            label={_("Sender\'s name")}
+            label={_("Sender's name")}
             value={formData.sender_name || ''}
             error={formErrors.sender_name}
             helpText={HELP_TEXTS.smtp_turris.sender_name}

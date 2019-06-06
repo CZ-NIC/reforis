@@ -48,7 +48,7 @@ function NotificationsCenterItem({notification, dismiss}) {
     useEffect(() => {
         if (getIDFromURL() === notification.id)
             myRef.current.scrollIntoView({block: 'start', behavior: 'smooth'});
-    }, []);
+    }, [notification.id]);
 
 
     return <div ref={myRef} className={`card bg-light ${BORDER_TYPES[notification.severity]} sm-10`}>

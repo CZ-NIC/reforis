@@ -28,6 +28,7 @@ export default function NotificationIcon({severity, className}) {
         case 'update':
             iconName = 'sync';
             break;
+        default:
     }
 
     return <i className={`fa fa-${iconName} ${className}`}/>;

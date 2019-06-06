@@ -26,7 +26,7 @@ describe('<RegionAndTime/>', () => {
 
     it('Snapshot', () => {
         expect(mockAxios.get).toHaveBeenCalledTimes(1);
-        expect(mockAxios.get).toHaveBeenCalledWith(`/api${API_URLs.regionAndTime.url}`, expect.anything(),);
+        expect(mockAxios.get).toHaveBeenCalledWith(`/api${API_URLs.regionAndTime}`, expect.anything(),);
         expect(regionAndTimeContainer).toMatchSnapshot();
     });
 });
