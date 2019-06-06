@@ -10,7 +10,7 @@ import propTypes from 'prop-types';
 
 import ForisForm from '../formContainer/ForisForm';
 import GuestNetworkForm from './GuestNetworkForm';
-import {APIEndpoints} from '../common/API';
+import API_URLs from '../common/API';
 import {validateIPv4Address} from '../common/validations';
 import GuestNetworkDHCPClientsList from './GuestNetworkDHCPClientsList';
 
@@ -22,7 +22,7 @@ export default function GuestNetwork({ws}) {
     return <ForisForm
         ws={ws}
         forisConfig={{
-            endpoint: APIEndpoints.guestNetwork,
+            endpoint: API_URLs.guestNetwork,
             wsModule: 'guest'
         }}
         prepData={prepData}

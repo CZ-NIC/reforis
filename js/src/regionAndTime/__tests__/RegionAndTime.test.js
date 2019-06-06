@@ -12,7 +12,7 @@ import mockAxios from 'jest-mock-axios';
 import {regionAndTime} from './__fixtures__/regionAndTime';
 
 import RegionAndTime from '../RegionAndTime';
-import {APIEndpoints} from '../../common/API';
+import API_URLs from '../../common/API';
 
 describe('<RegionAndTime/>', () => {
     let regionAndTimeContainer;
@@ -26,7 +26,7 @@ describe('<RegionAndTime/>', () => {
 
     it('Snapshot', () => {
         expect(mockAxios.get).toHaveBeenCalledTimes(1);
-        expect(mockAxios.get).toHaveBeenCalledWith(`/api${APIEndpoints.regionAndTime.url}`, expect.anything(),);
+        expect(mockAxios.get).toHaveBeenCalledWith(`/api${API_URLs.regionAndTime.url}`, expect.anything(),);
         expect(regionAndTimeContainer).toMatchSnapshot();
     });
 });

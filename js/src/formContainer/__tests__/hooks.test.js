@@ -11,7 +11,7 @@ import {render, waitForElement, act, fireEvent} from 'react-testing-library'
 import mockAxios from 'jest-mock-axios';
 
 import ForisForm from '../ForisForm';
-import {APIEndpoints} from '../../common/API';
+import API_URLs from '../../common/API';
 
 // It's possible to unittest each hooks via react-hooks-testing-library.
 // But it's better and easier to test it by test components which uses this hooks.
@@ -44,7 +44,7 @@ beforeEach(async () => {
             ws={mockWebSockets}
             // Just some module which exists...
             forisConfig={{
-                endpoint: APIEndpoints.wan,
+                endpoint: API_URLs.wan,
                 wsModule: 'wan'
             }}
             prepData={mockPrepData}

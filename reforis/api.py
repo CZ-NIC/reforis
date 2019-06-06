@@ -3,10 +3,11 @@
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
 
-from flask import Blueprint, current_app, request, jsonify
+from flask import Blueprint, current_app, jsonify, request
+from flask_babel import gettext as _
 
 from reforis import _get_locale_from_backend
-from reforis.auth import check_password, _decode_password_to_base64
+from reforis.auth import _decode_password_to_base64, check_password
 
 api = Blueprint(  # pylint: disable=invalid-name
     'ForisAPI',
@@ -192,7 +193,7 @@ def packages():
     elif request.method == 'POST':
         data = request.json
         if not updater_settings['enabled']:
-            raise InvalidUsage('You can\'t set packages with disabled automatic updates.')
+            raise InvalidUsage(_("You can't set packages with disabled automatic updates."))
         data['enabled'] = True
         data['approval_settings'] = updater_settings['approval_settings']
         res = current_app.backend.perform('updater', 'update_settings', data)
@@ -208,7 +209,7 @@ def password():
         data = request.json
         res = {}
         if not data.get('foris_current_password', False) or not check_password(data['foris_current_password']):
-            raise InvalidUsage('Wrong current password')
+            raise InvalidUsage(_('Wrong current password.'))
 
         if data.get('foris_password', False):
             new_password = _decode_password_to_base64(data['foris_password'])

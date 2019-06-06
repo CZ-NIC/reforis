@@ -5,15 +5,17 @@
  * See /LICENSE for more information.
  */
 
-import React, {useState} from 'react';
+import React, {useEffect} from 'react';
 import propTypes from 'prop-types';
 import moment from 'moment/moment';
 
 import Select from '../common/bootstrap/Select';
 import DataTimeInput from '../common/bootstrap/DataTimeInput';
-import {useAPIGetData} from '../common/APIhooks';
-import {APIEndpoints} from '../common/API';
+import {useAPIGet} from '../common/APIhooks';
+import API_URLs from '../common/API';
 
+// Foris backend ignore value after "."...
+const TIME_FORMAT = 'YYYY-MM-DDTHH:mm:ss.0';
 
 const TIME_SETTING_TYPE_CHOICES = {
     ntp: _('Via ntp'),
@@ -49,19 +51,31 @@ TimeForm.defaultProps = {
 };
 
 export default function TimeForm({formData, formErrors, setFormValue, ...props}) {
-    const [getTimeData, timeDataIsReady] = useAPIGetData(APIEndpoints.time);
-    const [timeWasUpdated, setTimeWasUpdated] = useState(false);
-
-    function updateTime() {
-        getTimeData(data => setFormValue(
-            value => ({time_settings: {time: {$set: value}}})
-            )({target: {value: moment(data.time).isValid() ? moment(data.time) : data.time}})
-        );
-        setTimeWasUpdated(true);
-    }
+    const [updateTimeState, updateTime] = useAPIGet(API_URLs.time);
+    useEffect(() => {
+        if (updateTimeState.data) {
+            const time = updateTimeState.data.time;
+            const momentumTime = moment(time).isValid() ? moment(time).format(TIME_FORMAT) : time;
+            setFormValue(
+                value => ({time_settings: {time: {$set: value}}})
+            )({target: {value: momentumTime}})
+        }
+    }, [setFormValue, updateTimeState.data]);
 
     const data = formData.time_settings;
     const errors = formErrors.time_settings || {};
+
+    function onDataTimeChangeHandler(value) {
+        // Dirty hack to get DataTime library work
+        if (typeof value === 'string')
+            return setFormValue(
+                value => ({time_settings: {time: {$set: value}}})
+            )({target: {value: value}});
+        return setFormValue(
+            value => ({time_settings: {time: {$set: value}}})
+        )({target: {value: value.format(TIME_FORMAT)}})
+    }
+
     return <>
         <h4>{_('Time settings')}</h4>
         <p>{_('Time should be up-to-date otherwise DNS and other services might not work properly.')}</p>
@@ -82,27 +96,16 @@ export default function TimeForm({formData, formErrors, setFormValue, ...props})
             value={moment(data.time).isValid() ? moment(data.time) : data.time}
             error={errors.time}
 
-            onChange={
-                value => {
-                    if (typeof value === 'string')
-                        return setFormValue(
-                            value => ({time_settings: {time: {$set: value}}})
-                        )({target: {value: value}});
-                    return setFormValue(
-                        value => ({time_settings: {time: {$set: value}}})
-                        // Foris backend ignore value after "."...
-                    )({target: {value: value.format("YYYY-MM-DDTHH:mm:ss.0")}})
-                }
-            }
+            onChange={onDataTimeChangeHandler}
 
             {...props}
 
-            disabled={data.how_to_set_time !== 'manual' || (timeWasUpdated && !timeDataIsReady)}
+            disabled={data.how_to_set_time !== 'manual' || updateTimeState.isLoading}
         >
             <div className="input-group-append">
-                <a className="input-group-text" onClick={updateTime}>
+                <button className="input-group-text" onClick={updateTime}>
                     <i className="fa fa-sync-alt"/>
-                </a>
+                </button>
             </div>
         </DataTimeInput>
     </>

@@ -10,7 +10,7 @@ import propTypes from 'prop-types';
 
 import WiFiForm from './WiFiForm';
 import ForisForm from '../formContainer/ForisForm';
-import {APIEndpoints} from '../common/API';
+import API_URLs from '../common/API';
 
 WiFi.propTypes = {
     ws: propTypes.object.isRequired
@@ -20,7 +20,7 @@ export default function WiFi({ws}) {
     return <ForisForm
         ws={ws}
         forisConfig={{
-            endpoint: APIEndpoints.wifi,
+            endpoint: API_URLs.wifi,
             wsModule: 'wifi',
         }}
         prepDataToSubmit={prepDataToSubmit}

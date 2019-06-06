@@ -5,49 +5,55 @@
  * See /LICENSE for more information.
  */
 
-import React, {useState, useEffect} from 'react';
+import {useEffect, useState} from 'react';
 
-import {useAPIGetData, useAPIPostData} from '../common/APIhooks';
-import {APIEndpoints} from '../common/API';
+import API_URLs from '../common/API';
+import {useWSForisModule} from '../common/WebSocketsHooks';
+import {useAPIGet, useAPIPost} from '../common/APIhooks';
+
+const WS_MODULE = 'router_notifications';
 
 export default function useNotifications(ws) {
     const [notifications, setNotifications] = useState([]);
-    const [getData] = useAPIGetData(APIEndpoints.notifications);
-    const postData = useAPIPostData(APIEndpoints.notifications);
+    const [getState, get] = useAPIGet(API_URLs.notifications);
 
     useEffect(() => {
-        getNotifications();
-        const wsModule = 'router_notifications';
-        ws.subscribe(wsModule)
-            .bind(wsModule, 'create', () => getNotifications())
-            .bind(wsModule, 'mark_as_displayed', () => getNotifications());
-    }, []);
+        get();
+    }, [get]);
+    useEffect(() => {
+        if (getState.data) {
+            const nonDisplayedNotifications = getState.data.notifications
+                .filter(notification => !notification.displayed);
+            setNotifications(nonDisplayedNotifications);
+        }
+    }, [getState]);
 
-    function getNotifications() {
-        getData(data => {
-            const nonDisplayedNotifications = data.notifications.filter(
-                notification => !notification.displayed
-            );
-            setNotifications(nonDisplayedNotifications)
-        })
-    }
+
+    const [WSCreateData] = useWSForisModule(ws, WS_MODULE, 'create');
+    const [WSMarkAsDisplayedData] = useWSForisModule(ws, WS_MODULE, 'mark_as_displayed');
+    useEffect(() => {
+        if (WSCreateData || WSMarkAsDisplayedData)
+            get();
+    }, [WSCreateData, WSMarkAsDisplayedData, get]);
+
+    const [, post] = useAPIPost(API_URLs.notifications);
 
     function dismissNotification(notificationId) {
-        postData({ids: [notificationId,]});
+        post({ids: [notificationId,]});
         setNotifications(notifications => notifications.filter(
             notification => notification.id !== notificationId
         ));
     }
 
     function dismissAll() {
-        postData({ids: notifications.map(notification => notification.id)});
+        post({ids: notifications.map(notification => notification.id)});
         setNotifications([]);
     }
 
     return [notifications, dismissNotification, dismissAll]
 }
 
-const NEW_NOTIFICATION_ANIMATION_DURATION = 1;
+const NEW_NOTIFICATION_ANIMATION_DURATION = 1; // Sec.
 
 export function useNewNotification(ws) {
     const [newNotification, setNewNotification] = useState(false);
@@ -59,11 +65,13 @@ export function useNewNotification(ws) {
             );
         }
     }, [newNotification]);
+
+    const [WSCreateData] = useWSForisModule(ws, WS_MODULE, 'create');
+
     useEffect(() => {
-        const wsModule = 'router_notifications';
-        ws.subscribe(wsModule)
-            .bind(wsModule, 'create', () => setNewNotification(true))
-    }, []);
+        if (WSCreateData)
+            setNewNotification(true)
+    }, [WSCreateData]);
 
     return newNotification
 }

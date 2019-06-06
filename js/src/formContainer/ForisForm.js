@@ -5,17 +5,20 @@
  * See /LICENSE for more information.
  */
 
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import propTypes from 'prop-types';
 
-import {POST_DATA_STATUSES, useForisForm} from './hooks';
-import SubmitButton from './SubmitButton';
+import Spinner from '../common/bootstrap/Spinner';
+import {useAPIPost} from '../common/APIhooks';
+
+import {useForisModule, useForm} from './hooks';
+import SubmitButton, {STATES as SUBMIT_BUTTON_STATES} from './SubmitButton';
 import {FailAlert, SuccessAlert} from './alerts';
 
 ForisForm.propTypes = {
     ws: propTypes.object,
     forisConfig: propTypes.shape({
-        endpoint: propTypes.shape({name: propTypes.string.isRequired}).isRequired,
+        endpoint: propTypes.string.isRequired,
         wsModule: propTypes.string,
         wsAction: propTypes.string,
     }).isRequired,
@@ -29,7 +32,6 @@ ForisForm.defaultProps = {
     prepData: data => data,
     prepDataToSubmit: data => data,
     validator: () => undefined,
-    disable: () => false,
 };
 
 export default function ForisForm({
@@ -38,53 +40,72 @@ export default function ForisForm({
                                       prepData,
                                       prepDataToSubmit,
                                       validator,
-                                      disable,
+                                      disabled,
                                       onSubmitOverridden,
                                       children
                                   }) {
-    const [
-        formData,
-        formErrors,
-        formState,
-        formIsDisabled,
+    const [formState, onFormChangeHandler, resetFormData] = useForm(validator, prepData);
 
-        setFormValue,
-        postDataStatus,
-        resetPostDataStatus,
+    const [forisModuleState] = useForisModule(ws, forisConfig);
+    useEffect(() => {
+        if (forisModuleState.data) {
+            resetFormData(forisModuleState.data)
+        }
+    }, [forisModuleState.data, resetFormData, prepData]);
 
-        onSubmit,
-    ] = useForisForm(ws, forisConfig, prepData, prepDataToSubmit, validator);
+    const [postState, post] = useAPIPost(forisConfig.endpoint);
 
-    const [disabled, setDisabled] = useState(false);
-    useEffect(() => setDisabled(disable(formData)), [formData]);
+    function onSubmitHandler(e) {
+        e.preventDefault();
+        resetFormData();
+        const copiedFormData = JSON.parse(JSON.stringify(formState.data));
+        const preparedData = prepDataToSubmit(copiedFormData);
+        post(preparedData);
+    }
 
-    const childrenWithFormProps = JSON.stringify(formData) !== '{}' ? React.Children.map(
-        children, child =>
+    function getSubmitButtonState() {
+        if (postState.isSending)
+            return SUBMIT_BUTTON_STATES.SAVING;
+        else if (forisModuleState.isLoading)
+            return SUBMIT_BUTTON_STATES.LOAD;
+        return SUBMIT_BUTTON_STATES.READY;
+    }
+
+    const [alertIsDismissed, setAlertIsDismissed] = useState(false);
+
+    if (!formState.data)
+        return <Spinner className='row justify-content-center'/>;
+
+    const formIsDisabled = disabled || forisModuleState.isLoading || postState.isSending;
+    const submitButtonIsDisabled = disabled || !!formState.errors;
+
+    const childrenWithFormProps =
+        React.Children.map(children, child =>
             React.cloneElement(child, {
-                formData: formData,
-                formErrors: formErrors,
-                disabled: formIsDisabled || disabled,
-
-                setFormValue: setFormValue,
+                formData: formState.data,
+                formErrors: formState.errors,
+                setFormValue: onFormChangeHandler,
+                disabled: formIsDisabled,
             })
-    ) : null;
+        );
+
+    const onSubmit = onSubmitOverridden ?
+        onSubmitOverridden(formState.data, onFormChangeHandler, onSubmitHandler) : onSubmitHandler;
 
     return <>
-        {
-            postDataStatus === POST_DATA_STATUSES.success ?
-                <SuccessAlert onDismiss={resetPostDataStatus}/>
-                : postDataStatus === POST_DATA_STATUSES.fail ?
-                <FailAlert onDismiss={resetPostDataStatus}/>
+        {!alertIsDismissed ?
+            postState.isSuccess ?
+                <SuccessAlert onDismiss={() => setAlertIsDismissed(true)}/>
+                : postState.isError ?
+                <FailAlert onDismiss={() => setAlertIsDismissed(true)}/>
                 : null
+            : null
         }
-        <form
-            onSubmit={onSubmitOverridden ? onSubmitOverridden(formData, setFormValue, onSubmit) : onSubmit}
-            className={disabled ? 'text-muted' : null}
-        >
+        <form onSubmit={onSubmit}>
             {childrenWithFormProps}
             <SubmitButton
-                state={formState}
-                disabled={!!formErrors || disabled}
+                state={getSubmitButtonState()}
+                disabled={submitButtonIsDisabled}
             />
         </form>
     </>

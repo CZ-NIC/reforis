@@ -9,7 +9,7 @@ import React from 'react';
 import propTypes from 'prop-types';
 
 import Button from '../common/bootstrap/Button';
-import {TEST_STATES} from './testStates';
+import {TEST_STATES} from './hooks';
 
 ConnectionTestButton.propTypes = {
     state: propTypes.oneOf(Object.keys(TEST_STATES).map(key => TEST_STATES[key])).isRequired,

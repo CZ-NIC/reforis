@@ -8,29 +8,31 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-import {FORM_STATES} from './hooks';
 import Button from '../common/bootstrap/Button';
+
+export const STATES = {
+    READY: 1,
+    SAVING: 2,
+    LOAD: 3,
+};
 
 SubmitButton.propTypes = {
     disabled: propTypes.bool,
-    state: propTypes.oneOf(Object.keys(FORM_STATES).map(key => FORM_STATES[key])),
+    state: propTypes.oneOf(Object.keys(STATES).map(key => STATES[key])),
     remindsToNWRestart: propTypes.number,
 };
 
 export default function SubmitButton({disabled, state, remindsToNWRestart, ...props}) {
-    const disableSubmitButton = disabled || state !== FORM_STATES.READY;
-    const loadingSubmitButton = state !== FORM_STATES.READY;
+    const disableSubmitButton = disabled || state !== STATES.READY;
+    const loadingSubmitButton = state !== STATES.READY;
 
     let labelSubmitButton;
     switch (state) {
-        case FORM_STATES.UPDATE:
+        case STATES.SAVING:
             labelSubmitButton = _('Updating');
             break;
-        case FORM_STATES.LOAD:
+        case STATES.LOAD:
             labelSubmitButton = _('Load settings');
-            break;
-        case FORM_STATES.NETWORK_RESTART:
-            labelSubmitButton = babel.format(_('Restarting after %d sec.'), remindsToNWRestart || 0);
             break;
         default:
             labelSubmitButton = _('Save');

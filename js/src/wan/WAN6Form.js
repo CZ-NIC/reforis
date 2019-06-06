@@ -124,6 +124,7 @@ export default function WAN6Form({formData, formErrors, setFormValue, ...props})
                     {...props}
                 />
                 : wan6Type === '6to4' ?
+                    // eslint-disable-next-line react/jsx-pascal-case
                     <_6to4Form
                         formData={wan6Settings.wan6_6to4}
                         formErrors={errors.wan6_6to4}
@@ -133,6 +134,7 @@ export default function WAN6Form({formData, formErrors, setFormValue, ...props})
                         {...props}
                     />
                     : wan6Type === '6in4' ?
+                        // eslint-disable-next-line react/jsx-pascal-case
                         <_6in4Form
                             formData={wan6Settings.wan6_6in4}
                             formErrors={errors.wan6_6in4}
@@ -445,6 +447,7 @@ export function validateWAN6Form(formData) {
         case '6in4':
             errors.wan6_6in4 = validate6in4Form(formData.wan6_6in4);
             break;
+        default:
     }
     return errors['wan6_' + formData.wan6_type] ? errors : null;
 }

@@ -8,17 +8,16 @@
 import React from 'react';
 import moment from 'moment';
 
-
 import RegionForm from './RegionForm';
 import TimeForm from './TimeForm';
 
-import {APIEndpoints} from '../common/API';
+import API_URLs from '../common/API';
 import ForisForm from '../formContainer/ForisForm';
 
 export default function RegionAndTime() {
     return <ForisForm
         forisConfig={{
-            endpoint: APIEndpoints.regionAndTime
+            endpoint: API_URLs.regionAndTime
         }}
         prepDataToSubmit={prepDataToSubmit}
         validator={validator}

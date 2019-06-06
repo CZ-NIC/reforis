@@ -6,6 +6,7 @@
  */
 
 import {useEffect, useState} from 'react';
+
 import {tryReconnect, waitForDown} from './utils';
 
 export function useNetworkRestart(ws) {

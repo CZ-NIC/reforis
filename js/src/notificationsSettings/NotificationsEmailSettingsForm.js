@@ -8,10 +8,10 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-import CheckBox from '../../common/bootstrap/Checkbox';
-import RadioSet from '../../common/bootstrap/RadioSet';
+import CheckBox from '../common/bootstrap/Checkbox';
+import RadioSet from '../common/bootstrap/RadioSet';
 
-import HELP_TEXTS from '../helpTexts';
+import HELP_TEXTS from './helpTexts';
 import CommonForm from './CommonForm';
 import SMTPTurrisForm from './SMTPTurrisForm';
 import SMTPCustomForm from './SMTPCustomForm';

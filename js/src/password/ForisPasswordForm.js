@@ -6,26 +6,26 @@
  */
 
 import React from 'react';
+import propTypes from 'prop-types';
 
 import PasswordInput from '../common/bootstrap/PasswordInput';
 import CheckBox from '../common/bootstrap/Checkbox';
-import SubmitButton from '../formContainer/SubmitButton';
-import propTypes from 'prop-types';
-import {FORM_STATES} from '../formContainer/hooks';
+import SubmitButton, {STATES as SUBMIT_BUTTON_STATES} from '../formContainer/SubmitButton';
+
 
 ForisPasswordForm.propTypes = {
     formData: propTypes.shape(
         {newForisPassword: propTypes.string}
     ).isRequired,
-    formState: propTypes.oneOf(
-        Object.keys(FORM_STATES).map(key => FORM_STATES[key])
+    submitButtonState: propTypes.oneOf(
+        Object.keys(SUBMIT_BUTTON_STATES).map(key => SUBMIT_BUTTON_STATES[key])
     ).isRequired,
     formErrors: propTypes.shape({}),
     setFormValue: propTypes.func.isRequired,
-    postRootPassword: propTypes.func.isRequired,
+    postForisPassword: propTypes.func.isRequired,
 };
 
-export default function ForisPasswordForm({formData, formState, formErrors, setFormValue, postForisPassword, ...props}) {
+export default function ForisPasswordForm({formData, formErrors, setFormValue, submitButtonState, postForisPassword, ...props}) {
     return <form onSubmit={postForisPassword}>
         <h4>{_('Foris password')}</h4>
         <p>{_('Set your password for this administration interface.')}</p>
@@ -58,7 +58,7 @@ export default function ForisPasswordForm({formData, formState, formErrors, setF
             {...props}
         />
         <SubmitButton
-            state={formState}
+            state={submitButtonState}
             disabled={!!formErrors.newForisPassword}
         />
     </form>

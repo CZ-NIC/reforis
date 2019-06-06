@@ -26,12 +26,12 @@ export default function PasswordInput({withEye, ...props}) {
     >
         {withEye ?
             <div className="input-group-append">
-                <a className="input-group-text" onClick={e => {
+                <button className="input-group-text" onClick={e => {
                     e.preventDefault();
                     setHidden(isHidden => !isHidden);
                 }}>
                     <i className={'fa ' + (isHidden ? 'fa-eye' : 'fa-eye-slash')}/>
-                </a>
+                </button>
             </div>
             : null}
     </Input>

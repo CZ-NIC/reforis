@@ -35,13 +35,6 @@ const ws = new WebSockets();
 
 window.addEventListener('load', () => {
     const apps = [
-        {id: 'overview_container', component: Overview},
-        {id: 'router_state_handler_container', component: RouterStateHandler},
-
-        //Notifications
-        {id: 'notifications_dropdown_container', component: NotificationsDropdown},
-        {id: 'notifications_container', component: Notifications},
-
         // Network settings
         {id: 'wifi_container', component: WiFi},
         {id: 'wan_container', component: WAN},
@@ -60,6 +53,12 @@ window.addEventListener('load', () => {
         {id: 'updates_container', component: Updates},
         {id: 'packages_container', component: Packages},
 
+        {id: 'router_state_handler_container', component: RouterStateHandler},
+
+        {id: 'notifications_dropdown_container', component: NotificationsDropdown},
+        {id: 'notifications_container', component: Notifications},
+
+        {id: 'overview_container', component: Overview},
     ];
 
     for (let app of apps) {

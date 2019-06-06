@@ -10,7 +10,7 @@ import update from 'immutability-helper';
 import propTypes from 'prop-types';
 
 import ForisForm from '../formContainer/ForisForm';
-import {APIEndpoints} from '../common/API';
+import API_URLs from '../common/API';
 
 import WAN6Form, {validateWAN6Form} from './WAN6Form';
 import MACForm, {validateMACForm} from './MACForm';
@@ -26,7 +26,7 @@ export default function WAN({ws}) {
         <ForisForm
             ws={ws}
             forisConfig={{
-                endpoint: APIEndpoints.wan,
+                endpoint: API_URLs.wan,
                 wsModule: 'wan'
             }}
             prepData={prepData}

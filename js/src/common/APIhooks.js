@@ -5,38 +5,119 @@
  * See /LICENSE for more information.
  */
 
-import React, {useState} from 'react';
+import {useCallback, useReducer} from 'react';
+import axios from 'axios';
 
-import API from './API';
+const POST_HEADERS = {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json',
+};
 
-export function useAPIGetData(endpoint) {
-    const [isReady, setIsReady] = useState(false);
+export const TIMEOUT = 5000;
 
-    function getData(callback = () => {
-    }) {
-        setIsReady(false);
-        API[endpoint.name].get().then(data => {
-            callback(data);
-            setIsReady(true);
-        });
-    }
+const API_ACTIONS = {
+    INIT: 1,
+    SUCCESS: 2,
+    FAILURE: 3,
+};
 
-    return [getData, isReady]
+export function useAPIGet(url) {
+    const [state, dispatch] = useReducer(APIGetReducer, {
+        isLoading: false,
+        isError: false,
+        data: null,
+    });
+
+    const get = useCallback(async () => {
+        dispatch({type: API_ACTIONS.INIT});
+        try {
+            const result = await axios.get(url, {
+                timeout: TIMEOUT
+            });
+            dispatch({type: API_ACTIONS.SUCCESS, payload: result.data});
+        } catch (error) {
+            dispatch({type: API_ACTIONS.FAILURE});
+        }
+    }, [url]);
+
+    return [state, get];
 }
 
-export function useAPIPostData(endpoint) {
-    function postData(
-        data,
-        callbackSuccess = () => {},
-        callbackFail = () => {},
-    ) {
-        API[endpoint.name].post(data).then(
-            data =>
-                callbackSuccess(data)
-        ).catch(
-            data => callbackFail(data)
-        )
+const APIGetReducer = (state, action) => {
+    switch (action.type) {
+        case API_ACTIONS.INIT:
+            return {
+                ...state,
+                isLoading: true,
+                isError: false
+            };
+        case API_ACTIONS.SUCCESS:
+            return {
+                ...state,
+                isLoading: false,
+                isError: false,
+                data: action.payload,
+            };
+        case API_ACTIONS.FAILURE:
+            return {
+                ...state,
+                isLoading: false,
+                isError: true,
+            };
+        default:
+            throw new Error();
     }
+};
 
-    return postData
+export function useAPIPost(url) {
+    const [state, dispatch] = useReducer(APIPostReducer, {
+        isSending: false,
+        isError: false,
+        isSuccess: false,
+        data: null,
+    });
+
+    const post = async (data) => {
+        dispatch({type: API_ACTIONS.INIT});
+        try {
+            const result = await axios.post(url, data, {
+                timeout: TIMEOUT,
+                headers: POST_HEADERS,
+            });
+            dispatch({type: API_ACTIONS.SUCCESS, payload: result.data});
+        } catch (error) {
+            dispatch({type: API_ACTIONS.FAILURE, payload: error.response.data});
+        }
+    };
+    return [state, post];
 }
+
+const APIPostReducer = (state, action) => {
+    switch (action.type) {
+        case API_ACTIONS.INIT:
+            return {
+                ...state,
+                isSending: true,
+                isError: false,
+                isSuccess: false,
+            };
+        case API_ACTIONS.SUCCESS:
+            return {
+                ...state,
+                isSending: false,
+                isError: false,
+                isSuccess: true,
+                data: action.payload
+            };
+        case API_ACTIONS.FAILURE:
+            return {
+                ...state,
+                isSending: false,
+                isError: true,
+                isSuccess: false,
+                data: action.payload,
+            };
+        default:
+            throw new Error();
+    }
+};

@@ -10,22 +10,21 @@ import propTypes from 'prop-types'
 
 import {ForisURLs} from '../common/constants';
 import PasswordInput from '../common/bootstrap/PasswordInput';
-import SubmitButton from '../formContainer/SubmitButton';
-import {FORM_STATES} from '../formContainer/hooks';
+import SubmitButton, {STATES as SUBMIT_BUTTON_STATES} from '../formContainer/SubmitButton';
 
 RootPasswordForm.propTypes = {
     formData: propTypes.shape(
         {newRootPassword: propTypes.string}
     ).isRequired,
-    formState: propTypes.oneOf(
-        Object.keys(FORM_STATES).map(key => FORM_STATES[key])
+    submitButtonState: propTypes.oneOf(
+        Object.keys(SUBMIT_BUTTON_STATES).map(key => SUBMIT_BUTTON_STATES[key])
     ).isRequired,
     formErrors: propTypes.shape({}),
     setFormValue: propTypes.func.isRequired,
     postRootPassword: propTypes.func.isRequired,
 };
 
-export default function RootPasswordForm({formData, formState, formErrors, setFormValue, postRootPassword,...props}) {
+export default function RootPasswordForm({formData, formErrors, setFormValue, submitButtonState, postRootPassword, ...props}) {
     return <form onSubmit={postRootPassword}>
         <h4>{_('Advanced administration (root) password')}</h4>
         <p
@@ -50,7 +49,7 @@ export default function RootPasswordForm({formData, formState, formErrors, setFo
             {...props}
         />
         <SubmitButton
-            state={formState}
+            state={submitButtonState}
             disabled={!!formErrors.newRootPassword}
         />
     </form>
