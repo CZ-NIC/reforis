@@ -11,7 +11,7 @@ DEBUG = False
 
 SECRET_KEY = 'dev_secret_key'
 
-SESSION_PERMANENT = False
+SESSION_PERMANENT = True
 
 # WebSockets
 WS_PORT = 9081
