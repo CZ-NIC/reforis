@@ -9,7 +9,7 @@ import React from 'react';
 import propTypes from 'prop-types';
 import {useUID} from 'react-uid/dist/es5/index';
 
-import {LABEL_SIZE, FIELD_SIZE} from './constants';
+import {FIELD_SIZE, LABEL_SIZE} from './constants';
 
 
 RadioSet.propTypes = {
@@ -45,7 +45,7 @@ export default function RadioSet({name, label, choices, value, helpText, ...prop
         </div>
         <div className={'col-sm-' + FIELD_SIZE}>
             {radios}
-            <small className="form-text text-muted">{helpText}</small>
+            {helpText ? <small className="form-text text-muted">{helpText}</small> : null}
         </div>
     </div>;
 }
@@ -70,5 +70,3 @@ function Radio({label, id, helpText, ...props}) {
         {helpText ? <small className="form-text text-muted">{helpText}</small> : null}
     </>
 }
-
-

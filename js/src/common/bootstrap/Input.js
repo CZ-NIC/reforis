@@ -8,7 +8,7 @@
 import React from 'react';
 import {useUID} from 'react-uid/dist/es5/index';
 
-import {LABEL_SIZE, FIELD_SIZE} from './constants';
+import {FIELD_SIZE, LABEL_SIZE} from './constants';
 
 
 export default function Input({type, label, helpText, error, children, ...props}) {
@@ -26,8 +26,8 @@ export default function Input({type, label, helpText, error, children, ...props}
                 />
                 {children}
             </div>
-            <div className='invalid-feedback'>{error}</div>
-            <small className="form-text text-muted">{helpText}</small>
+            {error ? <div className='invalid-feedback'>{error}</div> : null}
+            {helpText ? <small className="form-text text-muted">{helpText}</small> : null}
         </div>
     </div>;
 };

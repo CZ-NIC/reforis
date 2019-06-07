@@ -36,4 +36,3 @@ export default function PasswordInput({withEye, ...props}) {
             : null}
     </Input>
 }
-
