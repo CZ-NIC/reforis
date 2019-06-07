@@ -6,28 +6,45 @@
  */
 
 import React from 'react';
-import {render} from 'react-testing-library';
 
 import Select from '../Select';
+import {fireEvent, getByDisplayValue, getByText, render} from '@testing-library/react';
 
 const TEST_CHOICES = {
-    key1: 'value1',
-    key2: 'value2',
-    key3: 'value3',
+    '1': 'one',
+    '2': 'two',
+    '3': 'three',
 };
 
 describe('<Select/>', () => {
-    it('Render select', () => {
+    var selectContainer;
+    const onChangeHandler = jest.fn();
+    beforeEach(() => {
         const {container} = render(
             <Select
                 label='Test label'
-                value='value'
+                value='1'
                 choices={TEST_CHOICES}
-                helpText={'Help text'}
-                onChange={() => {
-                }}
+                helpText='Help text'
+
+                onChange={onChangeHandler}
             />
         );
-        expect(container.firstChild).toMatchSnapshot();
+        selectContainer = container;
     });
+
+    it('Test with snapshot.', () => {
+        expect(selectContainer).toMatchSnapshot();
+    });
+
+    it('Test onChange handling.', () => {
+        const select = getByDisplayValue(selectContainer, 'one');
+        expect(select.value).toBe('1');
+        fireEvent.change(select, {target: {value: '2'}});
+
+        const option = getByText(selectContainer, 'two');
+        expect(onChangeHandler).toBeCalled();
+
+        expect(option.value).toBe('2');
+    })
 });

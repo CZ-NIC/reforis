@@ -23,9 +23,6 @@ exports[`<NumberInput/> Render number input 1`] = `
         value="1123"
       />
     </div>
-    <div
-      class="invalid-feedback"
-    />
     <small
       class="form-text text-muted"
     >

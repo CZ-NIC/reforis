@@ -1,43 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Select/> Render select 1`] = `
-<div
-  class="form-group row"
->
-  <label
-    class="form-control-label col-sm-3"
-    for="1"
-  >
-    Test label
-  </label>
+exports[`<Select/> Test with snapshot. 1`] = `
+<div>
   <div
-    class="col-sm-8"
+    class="form-group row"
   >
-    <select
-      class="form-control"
-      id="1"
+    <label
+      class="form-control-label col-sm-3"
+      for="1"
     >
-      <option
-        value="key1"
-      >
-        value1
-      </option>
-      <option
-        value="key2"
-      >
-        value2
-      </option>
-      <option
-        value="key3"
-      >
-        value3
-      </option>
-    </select>
-    <small
-      class="form-text text-muted"
+      Test label
+    </label>
+    <div
+      class="col-sm-8"
     >
-      Help text
-    </small>
+      <select
+        class="form-control"
+        id="1"
+      >
+        <option
+          value="1"
+        >
+          one
+        </option>
+        <option
+          value="2"
+        >
+          two
+        </option>
+        <option
+          value="3"
+        >
+          three
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      >
+        Help text
+      </small>
+    </div>
   </div>
 </div>
 `;

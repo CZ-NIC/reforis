@@ -23,9 +23,6 @@ exports[`<TextInput/> Render text input 1`] = `
         value="Some text"
       />
     </div>
-    <div
-      class="invalid-feedback"
-    />
     <small
       class="form-text text-muted"
     >
