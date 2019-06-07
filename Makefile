@@ -3,7 +3,7 @@
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
 
-.PHONY: all prepare-dev venv install install-reforis install-diagnostics run run-js lint lint-js lint-web test test-web clean
+.PHONY: all prepare-dev venv install install-reforis install-diagnostics run run-js lint lint-js lint-web test test-web test-js-update-snapshots clean
 
 SHELL=/bin/bash
 
@@ -95,6 +95,9 @@ test-js:
 	cd js; npm test
 test-web: venv
 	$(VENV_BIN)/$(DEV_PYTHON) -m pytest -vv tests
+
+test-js-update-snapshots:
+	cd js; npm test -- -u
 
 create-messages:
 	pybabel extract -F babel.cfg -o ./reforis/translations/messages.pot .
