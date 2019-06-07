@@ -33,11 +33,9 @@ export function useForm(validator, prepData) {
 
     const onFormChangeHandler = useCallback(updateRule =>
         event => {
-            if (event.persist)
-                event.persist();
             dispatch({
                 type: FORM_ACTIONS.updateValue,
-                event: event,
+                value: getChangedValue(event.target),
                 updateRule: updateRule,
                 validator: validator,
             })
@@ -58,8 +56,7 @@ const FORM_ACTIONS = {
 function formReducer(state, action) {
     switch (action.type) {
         case FORM_ACTIONS.updateValue:
-            const value = getChangedValue(action.event.target);
-            const newData = update(state.data, action.updateRule(value));
+            const newData = update(state.data, action.updateRule(action.value));
             const errors = action.validator(newData);
             return {
                 ...state,

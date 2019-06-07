@@ -33,7 +33,7 @@ let mockPrepDataToSubmit;
 let mockWebSockets;
 let input;
 let form;
-const Child = jest.fn((props) => <TestForm {...props}/>);
+const Child = jest.fn(props => <TestForm {...props}/>);
 
 beforeEach(async () => {
     mockPrepData = jest.fn(() => ({field: 'preparedData'}));
