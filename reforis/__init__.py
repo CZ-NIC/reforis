@@ -2,13 +2,14 @@
 #
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
-import pkg_resources
+
+# pylint: disable=unused-variable,unused-argument
 
 import json
-
+import pkg_resources
 from flask import render_template
 
-from reforis.auth import register_login_required
+from .auth import register_login_required
 from .locale import TranslationsHelper
 
 
@@ -69,18 +70,13 @@ def set_backend(app):
     bus = app.config['BUS']
     bus_config = app.config['BUSES_CONF'][bus]
 
-    controller_id = app.config.get('CONTROLLER_ID', None)
-    if not controller_id:
-        controller_id = _get_controller_id()
-
-    from .backend import Backend
-    app.backend = Backend(name=bus, **bus_config, controller_id=controller_id)
-
-
-def _get_controller_id():
-    # TODO: only for dev. Delete it and put to config.
-    import subprocess
-    return subprocess.check_output(['crypto-wrapper', 'serial-number']).decode("utf-8")[:-1]
+    if bus == 'mqtt':
+        from reforis.backend import MQTTBackend
+        controller_id = bus_config.get('CONTROLLER_ID')
+        app.backend = MQTTBackend(**bus_config, controller_id=controller_id)
+    if bus == 'ubus':
+        from reforis.backend import UBusBackend
+        app.backend = UBusBackend(**bus_config)
 
 
 def set_locale(app):
@@ -89,13 +85,11 @@ def set_locale(app):
 
     @babel.localeselector
     def get_locale():
-        # TODO: catch exception here
         return _get_locale_from_backend(app)
 
     @app.context_processor
     def add_translations_catalog_to_ctx():
         from flask_babel import get_locale
-        # TODO: catch exception here
         locale = get_locale()
         translations = TranslationsHelper.load(
             # There is only one directory with translations in Foris so it's OK.
@@ -107,6 +101,7 @@ def set_locale(app):
 
 
 def _get_locale_from_backend(app):
+    # pylint: disable=fixme
     # TODO: better to cache.
     return app.backend.perform('web', 'get_data')['language']
 

@@ -3,7 +3,10 @@
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
 
+# pylint: disable=import-error
+
 import time
+from abc import ABC, abstractmethod
 
 from flask import current_app
 from foris_client.buses.base import ControllerError
@@ -11,33 +14,20 @@ from foris_client.buses.base import ControllerError
 
 class ExceptionInBackend(Exception):
     def __init__(self, query, remote_stacktrace, remote_description):
+        super().__init__()
         self.query = query
         self.remote_stacktrace = remote_stacktrace
         self.remote_description = remote_description
 
 
-class Backend(object):
-    def __init__(self, name, **kwargs):
-        self.name = name
-        self.timeout = kwargs["timeout"]
+class Backend(ABC):
+    @abstractmethod
+    def __init__(self):
+        ...
 
-        if name == "ubus":
-            from foris_client.buses.ubus import UbusSender
-            self.path = kwargs["path"]
-            self.path = kwargs["path"]
-            self._instance = UbusSender(self.path, default_timeout=self.timeout)
-
-        elif name == "mqtt":
-            from foris_client.buses.mqtt import MqttSender
-            self.host = kwargs["host"]
-            self.port = kwargs["port"]
-            self.credentials = _parse_credentials(kwargs["credentials_file"])
-            self.controller_id = kwargs["controller_id"]
-            self._instance = MqttSender(
-                self.host, self.port,
-                default_timeout=self.timeout,
-                credentials=self.credentials
-            )
+    @abstractmethod
+    def _send(self, module, action, data):
+        ...
 
     def __repr__(self):
         return "%s('%s')" % (type(self._instance).__name__, self.path)
@@ -52,7 +42,7 @@ class Backend(object):
         response = None
         start_time = time.time()
         try:
-            response = self._instance.send(module, action, data, controller_id=self.controller_id)
+            response = self._send(module, action, data)
         except ControllerError as e:
             current_app.logger.error("Exception in backend occured. (%s)", e)
             if raise_exception_on_failure:
@@ -71,13 +61,40 @@ class Backend(object):
             current_app.logger.error("Exception occured during the communication with backend. (%s)", e)
             raise e
         finally:
-            pass
             current_app.logger.debug("Query took %f: %s.%s - %s", time.time() - start_time, module, action, data)
 
         return response
 
 
-def _parse_credentials(credentials_file):
-    with open(credentials_file, 'r') as f:
-        line = f.readline()[:-1]
-        return tuple(line.split(':'))
+class UBusBackend(Backend):
+    def __init__(self, timeout, path):
+        super().__init__()
+        from foris_client.buses.ubus import UbusSender
+        self.path = path
+        self._instance = UbusSender(path, default_timeout=timeout)
+
+    def _send(self, module, action, data):
+        return self._instance.send(module, action, data)
+
+
+class MQTTBackend(Backend):
+    def __init__(self, timeout, host, port, credentials_file, controller_id):  # pylint: disable=too-many-arguments
+        super().__init__()
+        from foris_client.buses.mqtt import MqttSender
+        self.controller_id = controller_id
+
+        credentials = self._parse_credentials(credentials_file)
+        self._instance = MqttSender(
+            host, port,
+            default_timeout=timeout,
+            credentials=credentials
+        )
+
+    def _send(self, module, action, data):
+        return self._instance.send(module, action, data, controller_id=self.controller_id)
+
+    @staticmethod
+    def _parse_credentials(filepath):
+        with open(filepath, 'r') as file:
+            line = file.readline()[:-1]
+            return tuple(line.split(':'))

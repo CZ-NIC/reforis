@@ -6,6 +6,7 @@
  */
 
 import {useEffect, useState} from 'react';
+
 import {tryReconnect, waitForDown} from './utils';
 
 export function useNetworkRestart(ws) {
@@ -37,15 +38,15 @@ function useRouterState(ws, action, reconnectUrlPath) {
                 setRemainsSec(remainsSec);
                 setState(remainsSec === 0 ? STATES.IN_PROCESS : STATES.TRIGGERED);
             })
-    }, []);
+    }, [action, ws]);
     useEffect(() => {
         if (state === STATES.IN_PROCESS) {
-            ws.ws.close();
+            ws.close();
             waitForDown(() => setState(STATES.DONE));
         } else if (state === STATES.DONE) {
             tryReconnect(ips, reconnectUrlPath);
         }
-    }, [state]);
+    }, [ips, reconnectUrlPath, state, ws]);
 
     return [state, remainsSec];
 }

@@ -5,101 +5,39 @@
  * See /LICENSE for more information.
  */
 
-import API from './APIUtils';
+const API_URL_PREFIX = '/api';
 
-const API_URL = '/api';
+const API_URLs = new Proxy({
+        notifications: '/notifications',
+        notificationsSettings: '/notifications-settings',
 
-export const APIEndpoints = {
-    notifications: {
-        name: 'notifications',
-        url: '/notifications',
-        methods: ['get', 'post']
-    },
-    notificationsSettings: {
-        name: 'notificationsSettings',
-        url: '/notifications-settings',
-        methods: ['get', 'post']
-    },
-    wifi: {
-        name: 'wifi',
-        url: '/wifi',
-        methods: ['get', 'post']
-    },
-    wan: {
-        name: 'wan',
-        url: '/wan',
-        methods: ['get', 'post']
-    },
-    connectionTest: {
-        name: 'connectionTest',
-        url: '/connection-test',
-        methods: ['get']
-    },
-    lan: {
-        name: 'lan',
-        url: '/lan',
-        methods: ['get', 'post']
-    },
-    dns: {
-        name: 'dns',
-        url: '/dns',
-        methods: ['get', 'post']
-    },
-    dnsTest: {
-        name: 'dnsTest',
-        url: '/dns-test',
-        methods: ['get']
-    },
-    interfaces: {
-        name: 'interfaces',
-        url: '/interfaces',
-        methods: ['get', 'post']
-    },
-    guestNetwork: {
-        name: 'guestNetwork',
-        url: '/guest-network',
-        methods: ['get', 'post']
-    },
-    password: {
-        name: 'password',
-        url: '/password',
-        methods: ['get', 'post']
-    },
-    regionAndTime: {
-        name: 'regionAndTime',
-        url: '/region-and-time',
-        methods: ['get', 'post']
-    },
-    time: {
-        name: 'time',
-        url: '/time',
-        methods: ['get']
-    },
-    updates: {
-        name: 'updates',
-        url: '/updates',
-        methods: ['get', 'post']
-    },
-    approvals: {
-        name: 'approvals',
-        url: '/approvals',
-        methods: ['get', 'post']
-    },
-    packages: {
-        name: 'packages',
-        url: '/packages',
-        methods: ['get', 'post']
-    },
-    reboot: {
-        name: 'reboot',
-        url: '/reboot',
-        methods: ['get']
-    },
-    healthCheck: {
-        name: 'healthCheck',
-        url: '/health-check',
-        methods: ['get']
-    },
-};
+        // Network
+        wifi: '/wifi',
+        wan: '/wan',
+        lan: '/lan',
+        dns: '/dns',
+        interfaces: '/interfaces',
+        guestNetwork: '/guest-network',
 
-export default new API(API_URL, APIEndpoints);
+        connectionTest: '/connection-test',
+        dnsTest: '/dns-test',
+
+        // Administration
+        password: '/password',
+        regionAndTime: '/region-and-time',
+        time: '/time',
+        approvals: '/approvals',
+        updates: '/updates',
+        packages: '/packages',
+        reboot: '/reboot',
+
+        healthCheck: '/health-check',
+    },
+    {
+        get: (target, name) => {
+            return `${API_URL_PREFIX}${target[name]}`
+        }
+    }
+);
+
+export default API_URLs;

@@ -8,9 +8,10 @@
 import React, {useState} from 'react';
 
 import ForisForm from '../formContainer/ForisForm';
-import {APIEndpoints} from '../common/API';
+import API_URLs from '../common/API';
+
 import InterfacesForm from './InterfacesForm';
-import {OpenPortsModals, KeepPortsClosedConfirmModal} from './modals';
+import {KeepPortsClosedConfirmModal, OpenPortsModals} from './modals';
 
 export const NETWORKS_CHOICES = {
     wan: _('WAN'),
@@ -21,7 +22,7 @@ export const NETWORKS_CHOICES = {
 
 export const NETWORKS_TYPES = ['wan', 'lan', 'guest', 'none'];
 
-export default function Interfaces() {
+export default function Interfaces({ws}) {
     const [openPortsModalShown, setOpenPortsModalShown] = useState(false);
     const [keepPortsClosedConfirmModalShown, setKeepPortsClosedConfirmShown] = useState(false);
 
@@ -68,8 +69,9 @@ export default function Interfaces() {
     }
 
     return <ForisForm
+        ws={ws}
         forisConfig={{
-            endpoint: APIEndpoints.interfaces,
+            endpoint: API_URLs.interfaces,
             wsModule: 'networks',
         }}
         prepDataToSubmit={prepDataToSubmit}

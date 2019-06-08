@@ -6,9 +6,9 @@
  */
 
 import React from 'react';
-import {render, act, wait, getByText, fireEvent, getByLabelText} from 'react-testing-library';
+import {act, fireEvent, getByLabelText, getByText, render, wait} from 'customTestRender';
 
-import {mockedWS} from '../../testUtils/mockWS';
+import {mockedWS} from 'mockWS';
 import mockAxios from 'jest-mock-axios';
 import Interfaces from '../Interfaces';
 import {interfacesFixture} from './__fixtures__/interfaces';
@@ -36,11 +36,9 @@ describe('<Interfaces/>', () => {
         expect(interfacesContainer).toMatchSnapshot();
     });
 
-    it('Snapshot after interface moving.', async () => {
-        await act(async () => {
-            await fireEvent.click(getByText(interfacesContainer, 'LAN1'));
-            fireEvent.change(getByLabelText(interfacesContainer, 'Network'),{target: {value: 'lan'}});
-        });
+    it('Snapshot after interface moving.', () => {
+        fireEvent.click(getByText(interfacesContainer, 'LAN1'));
+        fireEvent.change(getByLabelText(interfacesContainer, 'Network'), {target: {value: 'lan'}});
         expect(interfacesContainer).toMatchSnapshot();
     });
 });

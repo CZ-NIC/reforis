@@ -28,8 +28,13 @@ export default function LAN_DHCP_ClientsList({formData}) {
     if (formData.mode !== LAN_MODES.managed || !formData.mode_managed.dhcp.enabled)
         return null;
 
+    function insertAfter(newNode, referenceNode) {
+        referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+    }
     const container = document.createElement('div');
-    document.getElementById('lan_container').appendChild(container);
+    const lanContainer = document.getElementById('lan_container');
+    insertAfter(container, lanContainer);
+
     return ReactDOM.createPortal(
         <DHCPClientsList clients={formData.mode_managed.dhcp.clients}/>,
         container,

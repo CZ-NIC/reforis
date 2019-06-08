@@ -76,9 +76,6 @@ exports[`<RegionAndTime/> Snapshot 1`] = `
             Pacific
           </option>
         </select>
-        <small
-          class="form-text text-muted"
-        />
       </div>
     </div>
     <div
@@ -343,9 +340,6 @@ exports[`<RegionAndTime/> Snapshot 1`] = `
             Vatican City
           </option>
         </select>
-        <small
-          class="form-text text-muted"
-        />
       </div>
     </div>
     <div
@@ -370,9 +364,6 @@ exports[`<RegionAndTime/> Snapshot 1`] = `
             Prague
           </option>
         </select>
-        <small
-          class="form-text text-muted"
-        />
       </div>
     </div>
     <h4>
@@ -408,9 +399,6 @@ exports[`<RegionAndTime/> Snapshot 1`] = `
             Manually
           </option>
         </select>
-        <small
-          class="form-text text-muted"
-        />
       </div>
     </div>
     <table
@@ -500,21 +488,15 @@ exports[`<RegionAndTime/> Snapshot 1`] = `
               <div
                 class="input-group-append"
               >
-                <a
+                <button
                   class="input-group-text"
                 >
                   <i
                     class="fa fa-sync-alt"
                   />
-                </a>
+                </button>
               </div>
             </div>
-            <div
-              class="invalid-feedback"
-            />
-            <small
-              class="form-text text-muted"
-            />
           </div>
         </div>
       </div>

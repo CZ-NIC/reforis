@@ -5,9 +5,9 @@
  * See /LICENSE for more information.
  */
 import React from 'react';
-import {render, getByText, queryByText, fireEvent, act, wait} from 'react-testing-library';
+import {render, getByText, queryByText, fireEvent, act, wait} from 'customTestRender';
 
-import {mockedWS} from '../../testUtils/mockWS';
+import {mockedWS} from 'mockWS';
 import mockAxios from 'jest-mock-axios';
 
 import {notificationsFixture} from './__fixtures__/notifications';

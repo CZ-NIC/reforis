@@ -6,8 +6,9 @@
  */
 
 import React from 'react';
+
 import {STATES, useNetworkRestart} from './hooks';
-import Spinner from '../common/Spinner';
+import Spinner from '../common/bootstrap/Spinner';
 
 export default function NetworkRestartHandler({ws}) {
     const [rebootState, remains] = useNetworkRestart(ws);
@@ -26,9 +27,10 @@ export default function NetworkRestartHandler({ws}) {
         case STATES.DONE:
             message = _('Reconnecting');
             break;
+        default:
     }
 
-    return <Spinner>
+    return <Spinner fullScreen={true}>
         <h3>{message}</h3>
     </Spinner>
 }

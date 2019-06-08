@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import {render} from 'react-testing-library'
+import {render} from 'customTestRender';
 import NumberInput from '../NumberInput';
 
 

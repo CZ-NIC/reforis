@@ -9,7 +9,7 @@ import React from 'react';
 import propTypes from 'prop-types';
 import {useUID} from 'react-uid/dist/es5/index';
 
-import {LABEL_SIZE, FIELD_SIZE} from './constants';
+import {FIELD_SIZE, LABEL_SIZE} from './constants';
 
 
 Select.propTypes = {
@@ -39,7 +39,7 @@ export default function Select({label, choices, helpText, ...props}) {
             >
                 {options}
             </select>
-            <small className='form-text text-muted'>{helpText}</small>
+            {helpText ? <small className="form-text text-muted">{helpText}</small> : null}
         </div>
     </div>;
 }

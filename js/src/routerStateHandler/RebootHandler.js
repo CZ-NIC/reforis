@@ -7,7 +7,7 @@
 
 import React from 'react';
 
-import Spinner from '../common/Spinner';
+import Spinner from '../common/bootstrap/Spinner';
 import {STATES, useReboot} from './hooks';
 
 export default function RebootHandler({ws}) {
@@ -27,9 +27,10 @@ export default function RebootHandler({ws}) {
         case STATES.DONE:
             message = _('Reconnecting');
             break;
+        default:
     }
 
-    return <Spinner>
+    return <Spinner fullScreen={true}>
         <h3>{message}</h3>
     </Spinner>
 }

@@ -9,7 +9,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {useUID} from 'react-uid/dist/es5/index';
 
-import {LABEL_SIZE, FIELD_SIZE} from './constants';
+import {FIELD_SIZE, LABEL_SIZE} from './constants';
 
 CheckBox.propTypes = {
     label: PropTypes.string.isRequired,
@@ -28,7 +28,7 @@ export default function CheckBox({label, helpText, ...props}) {
                 id={uid}
                 {...props}
             />
-            <small className="form-text text-muted">{helpText}</small>
+            {helpText ? <small className="form-text text-muted">{helpText}</small> : null}
         </div>
     </div>;
 }

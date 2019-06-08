@@ -44,8 +44,7 @@ WANForm.propTypes = {
 };
 
 WANForm.defaultProps = {
-    setFormValue: () => {
-    },
+    setFormValue: () => {},
     formData: {},
 };
 
@@ -152,6 +151,7 @@ export function validateWANForm(formData) {
         case WAN_TYPES.pppoe:
             errors.wan_pppoe = validatePPPoEForm(formData.wan_pppoe);
             break;
+        default:
     }
     return errors[`wan_${formData.wan_type}`] ? errors : null;
 }

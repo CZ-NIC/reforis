@@ -8,11 +8,11 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-import TextInput from '../../common/bootstrap/TextInput';
-import Select from '../../common/bootstrap/Select';
-import CheckBox from '../../common/bootstrap/Checkbox';
+import TextInput from '../common/bootstrap/TextInput';
+import Select from '../common/bootstrap/Select';
+import CheckBox from '../common/bootstrap/Checkbox';
 
-import HELP_TEXTS from '../helpTexts';
+import HELP_TEXTS from './helpTexts';
 
 export const SEVERITY_OPTIONS = {
     // '0': _?,

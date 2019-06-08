@@ -11,10 +11,22 @@ import pytest
 
 @pytest.mark.parametrize(
     'module', [
+        '',  # Overview
         'notifications',
-        'wifi',
+        'notifications-settings',
         'wan',
         'lan',
+        'wifi',
+        'dns',
+        'interfaces',
+        'guest-network',
+        'password',
+        'region-and-time',
+        'notifications-settings',
+        'reboot',
+        'updates',
+        'packages',
+        'about',
     ]
 )
 def test_view_exist(client, module):

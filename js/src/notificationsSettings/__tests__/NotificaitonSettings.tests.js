@@ -7,22 +7,25 @@
 
 import React from 'react';
 
-import {act, render, getByLabelText, fireEvent} from 'react-testing-library';
-import {mockedWS} from '../../testUtils/mockWS';
+import {fireEvent, getByLabelText, render, wait} from 'customTestRender';
+import {mockedWS} from 'mockWS';
 import mockAxios from 'jest-mock-axios';
 import notificationsSettings from './__fixtures__/notificationsSettings';
 
 import NotificationsSettings from '../NotificationsSettings';
 
+const ENABLE_CHECKBOX_LABEL = 'Enable email notifications';
 
-describe('<NotificationsDropdown/>', () => {
+describe('<NotificationsSettings/>', () => {
     let NotificationCenterContainer;
 
-    beforeEach(() => {
+    beforeEach(async () => {
         const mockWebSockets = new mockedWS();
         const {container} = render(<NotificationsSettings ws={mockWebSockets}/>);
         mockAxios.mockResponse({data: notificationsSettings()});
-        NotificationCenterContainer = container
+        NotificationCenterContainer = container;
+        await wait(() => getByLabelText(container, ENABLE_CHECKBOX_LABEL));
+
     });
 
     it('Enabled, smtp_type:custom', () => {
@@ -30,16 +33,12 @@ describe('<NotificationsDropdown/>', () => {
     });
 
     it('Disabled', () => {
-        act(() => {
-            fireEvent.click(getByLabelText(NotificationCenterContainer, 'Enable email notifications'));
-        });
+        fireEvent.click(getByLabelText(NotificationCenterContainer, ENABLE_CHECKBOX_LABEL));
         expect(NotificationCenterContainer.firstChild).toMatchSnapshot()
     });
 
     it('Enabled,smtp_type:turris', () => {
-        act(() => {
-            fireEvent.click(getByLabelText(NotificationCenterContainer, 'Turris'));
-        });
+        fireEvent.click(getByLabelText(NotificationCenterContainer, 'Turris'));
         expect(NotificationCenterContainer.firstChild).toMatchSnapshot()
     })
 });

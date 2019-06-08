@@ -6,14 +6,14 @@
  */
 
 import React from 'react';
-import {render, act, wait, getByText, fireEvent, getByLabelText, getByValue} from 'react-testing-library';
+import {fireEvent, getByLabelText, getByText, render, wait} from 'customTestRender';
 
-import {mockedWS} from '../../testUtils/mockWS';
+import {mockedWS} from 'mockWS';
 import mockAxios from 'jest-mock-axios';
 import {lanSettingsFixture} from './__fixtures__/lanSettings';
 
 import LAN from '../LAN';
-import {createPortalContainer} from '../../testUtils/utils';
+import {createPortalContainer} from 'portal';
 
 describe('<LAN/>', () => {
     let lanContainer;
@@ -31,30 +31,22 @@ describe('<LAN/>', () => {
         expect(lanContainer.firstChild).toMatchSnapshot();
     });
     it('Snapshot unmanaged static.', () => {
-        act(() => {
-            fireEvent.change(getByValue(lanContainer, 'dhcp').parentElement, {target: {value: 'static'}});
-        });
+        fireEvent.change(getByLabelText(lanContainer, 'IPv4 protocol'), {target: {value: 'static'}});
         expect(lanContainer.firstChild).toMatchSnapshot();
     });
     it('Snapshot unmanaged none.', () => {
-        act(() => {
-            fireEvent.change(getByValue(lanContainer, 'dhcp').parentElement, {target: {value: 'none'}});
-        });
+        fireEvent.change(getByLabelText(lanContainer, 'IPv4 protocol'), {target: {value: 'none'}});
         expect(lanContainer.firstChild).toMatchSnapshot();
     });
 
     it('Snapshot managed.', () => {
-        act(() => {
-            fireEvent.change(getByValue(lanContainer, 'unmanaged').parentElement, {target: {value: 'managed'}});
-        });
+        fireEvent.change(getByLabelText(lanContainer, 'LAN mode'), {target: {value: 'managed'}});
         expect(lanContainer.firstChild).toMatchSnapshot();
     });
 
-    it('Snapshot managed with enabled DHCP.', async () => {
-        await act(async () => {
-            await fireEvent.change(getByValue(lanContainer, 'unmanaged').parentElement, {target: {value: 'managed'}});
-            fireEvent.click(getByLabelText(lanContainer, 'Enable DHCP'));
-        });
+    it('Snapshot managed with enabled DHCP.', () => {
+        fireEvent.change(getByLabelText(lanContainer, 'LAN mode'), {target: {value: 'managed'}});
+        fireEvent.click(getByLabelText(lanContainer, 'Enable DHCP'));
         expect(lanContainer.firstChild).toMatchSnapshot();
     });
 });

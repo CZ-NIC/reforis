@@ -6,30 +6,38 @@
  */
 
 import React from 'react';
-import {act, render, waitForElement, getByText, fireEvent} from 'react-testing-library';
+import {fireEvent, render, waitForElement} from 'customTestRender';
+import mockAxios from 'jest-mock-axios';
 
-import {mockedWS} from '../../testUtils/mockWS';
+import {mockedWS} from 'mockWS';
 
 import ConnectionTest from '../ConnectionTest';
 
 describe('<ConnectionTest/>', () => {
-    let connectionTestContainer;
-
-    beforeEach(async () => {
-        const mockWebSockets = new mockedWS();
-        const {container} = render(<ConnectionTest ws={mockWebSockets} type='wan' />);
-        await waitForElement(() => getByText(container, 'Test connection'));
-        connectionTestContainer = container
-    });
+    const mockWebSockets = new mockedWS();
 
     it('Snapshot before connection test.', () => {
-        expect(connectionTestContainer.firstChild).toMatchSnapshot()
+        const {asFragment} = render(<ConnectionTest ws={mockWebSockets} type='wan'/>);
+        expect(asFragment()).toMatchSnapshot()
     });
 
-    it('Snapshot after connection test.', () => {
-        act(() => {
-            fireEvent.click(getByText(connectionTestContainer, 'Test connection'));
-        });
-        expect(connectionTestContainer.firstChild).toMatchSnapshot()
+    it('Snapshot after trigger WAN connection test.', async () => {
+        const {asFragment, getByText} = render(<ConnectionTest ws={mockWebSockets} type='wan'/>);
+        fireEvent.click(getByText('Test connection'));
+        mockAxios.mockResponse({data: {test_id: "test-id"}});
+        await waitForElement(() => getByText('IPv6 connectivity'));
+
+        expect(mockAxios.get).toBeCalled();
+        expect(asFragment()).toMatchSnapshot()
+    });
+
+    it('Snapshot after trigger DNS connection test.', async () => {
+        const {asFragment, getByText} = render(<ConnectionTest ws={mockWebSockets} type='dns'/>);
+        fireEvent.click(getByText('Test connection'));
+        mockAxios.mockResponse({data: {test_id: "test-id"}});
+        await waitForElement(() => getByText(/DNSSEC/));
+
+        expect(mockAxios.get).toBeCalled();
+        expect(asFragment()).toMatchSnapshot()
     })
 });

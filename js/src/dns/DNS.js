@@ -11,7 +11,7 @@ import propTypes from 'prop-types';
 import {validateDomain} from '../common/validations';
 import ForisForm from '../formContainer/ForisForm';
 
-import {APIEndpoints} from '../common/API';
+import API_URLs from '../common/API';
 import DNSForm from './DNSForm';
 import ConnectionTest from '../connectionTest/ConnectionTest';
 
@@ -24,7 +24,7 @@ export default function DNS({ws}) {
         <ForisForm
             ws={ws}
             forisConfig={{
-                endpoint: APIEndpoints.dns,
+                endpoint: API_URLs.dns,
                 wsModule: 'dns',
             }}
             validator={validator}

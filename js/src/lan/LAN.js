@@ -13,8 +13,8 @@ import LANForm, {LAN_MODES} from './LANForm';
 
 import {validateManaged} from './LANManagedForm';
 import {validateUnmanaged} from './LANUnmanagedForm';
-import {APIEndpoints} from '../common/API';
 import LAN_DHCP_ClientsList from './LAN_DHCP_ClientsList';
+import API_URLs from '../common/API';
 
 LAN.propTypes = {
     ws: propTypes.object.isRequired
@@ -24,13 +24,14 @@ export default function LAN({ws}) {
     return <ForisForm
         ws={ws}
         forisConfig={{
-            endpoint: APIEndpoints.lan,
+            endpoint: API_URLs.lan,
             wsModule: 'lan',
         }}
         prepDataToSubmit={prepDataToSubmit}
         validator={validator}
     >
         <LANForm/>
+        {/* eslint-disable-next-line react/jsx-pascal-case */}
         <LAN_DHCP_ClientsList/>
     </ForisForm>
 }

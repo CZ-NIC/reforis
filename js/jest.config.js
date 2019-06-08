@@ -7,11 +7,17 @@
 
 // https://jestjs.io/docs/en/configuration.html
 module.exports = {
+    moduleDirectories: [
+        'node_modules',
+        '<rootDir>/src/testUtils',
+    ],
     clearMocks: true,
     collectCoverageFrom: ['src/**/*.{js,jsx}'],
     coverageDirectory: 'coverage',
-    setupFiles: ['<rootDir>/src/testUtils/setupGlobals.js'],
     testPathIgnorePatterns: ['/node_modules/', '/__fixtures__/'],
     verbose: false,
-    setupFilesAfterEnv: ['react-testing-library/cleanup-after-each', './src/testUtils/cleanupAfterEach']
+    setupFilesAfterEnv: [
+        '@testing-library/react/cleanup-after-each',
+        '<rootDir>/src/testUtils/setupTest',
+    ],
 };

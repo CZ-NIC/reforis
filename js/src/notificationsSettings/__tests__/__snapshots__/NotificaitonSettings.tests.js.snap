@@ -1,49 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<NotificationsDropdown/> Disabled 1`] = `
-<form>
-  <h3>
-    Email notifications settings
-  </h3>
-  <div
-    class="form-group row"
-  >
-    <div
-      class="form-label col-sm-3"
-    >
-      <label
-        class="form-label"
-        for="56"
-      >
-        Enable email notifications
-      </label>
-    </div>
-    <div
-      class="form-check col-sm-8"
-    >
-      <input
-        checked=""
-        id="56"
-        type="checkbox"
-      />
-      <small
-        class="form-text text-muted"
-      >
-        If you set SMTP provider to "Turris", the servers provided to members of the Turris project would be used. These servers do not require any additional settings. If you want to set your own SMTP server, please select "Custom" and enter required settings.
-      </small>
-    </div>
-  </div>
-  <button
-    class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
-  >
-     
-     
-    Save
-  </button>
-</form>
-`;
-
-exports[`<NotificationsDropdown/> Enabled, smtp_type:custom 1`] = `
+exports[`<NotificationsSettings/> Disabled 1`] = `
 <form>
   <h3>
     Email notifications settings
@@ -66,7 +23,49 @@ exports[`<NotificationsDropdown/> Enabled, smtp_type:custom 1`] = `
     >
       <input
         checked=""
-        disabled=""
+        id="1"
+        type="checkbox"
+      />
+      <small
+        class="form-text text-muted"
+      >
+        If you set SMTP provider to "Turris", the servers provided to members of the Turris project would be used. These servers do not require any additional settings. If you want to set your own SMTP server, please select "Custom" and enter required settings.
+      </small>
+    </div>
+  </div>
+  <button
+    class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
+  >
+     
+     
+    Save
+  </button>
+</form>
+`;
+
+exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
+<form>
+  <h3>
+    Email notifications settings
+  </h3>
+  <div
+    class="form-group row"
+  >
+    <div
+      class="form-label col-sm-3"
+    >
+      <label
+        class="form-label"
+        for="1"
+      >
+        Enable email notifications
+      </label>
+    </div>
+    <div
+      class="form-check col-sm-8"
+    >
+      <input
+        checked=""
         id="1"
         type="checkbox"
       />
@@ -99,7 +98,6 @@ exports[`<NotificationsDropdown/> Enabled, smtp_type:custom 1`] = `
       >
         <input
           class="form-check-input"
-          disabled=""
           id="smtp_provider-0"
           name="smtp_provider"
           type="radio"
@@ -118,7 +116,6 @@ exports[`<NotificationsDropdown/> Enabled, smtp_type:custom 1`] = `
         <input
           checked=""
           class="form-check-input"
-          disabled=""
           id="smtp_provider-1"
           name="smtp_provider"
           type="radio"
@@ -131,9 +128,6 @@ exports[`<NotificationsDropdown/> Enabled, smtp_type:custom 1`] = `
           Custom
         </label>
       </div>
-      <small
-        class="form-text text-muted"
-      />
     </div>
   </div>
   <div
@@ -153,16 +147,12 @@ exports[`<NotificationsDropdown/> Enabled, smtp_type:custom 1`] = `
       >
         <input
           class="form-control "
-          disabled=""
           id="3"
           required=""
           type="text"
           value="some@example.com"
         />
       </div>
-      <div
-        class="invalid-feedback"
-      />
       <small
         class="form-text text-muted"
       >
@@ -184,7 +174,6 @@ exports[`<NotificationsDropdown/> Enabled, smtp_type:custom 1`] = `
     >
       <select
         class="form-control"
-        disabled=""
         id="4"
       >
         <option
@@ -203,9 +192,6 @@ exports[`<NotificationsDropdown/> Enabled, smtp_type:custom 1`] = `
           Reboot or attention is required or update was installed
         </option>
       </select>
-      <small
-        class="form-text text-muted"
-      />
     </div>
   </div>
   <div
@@ -226,7 +212,6 @@ exports[`<NotificationsDropdown/> Enabled, smtp_type:custom 1`] = `
     >
       <input
         checked=""
-        disabled=""
         id="5"
         type="checkbox"
       />
@@ -257,7 +242,6 @@ exports[`<NotificationsDropdown/> Enabled, smtp_type:custom 1`] = `
       >
         <input
           class="form-control "
-          disabled=""
           id="6"
           placeholder="router@example.com"
           required=""
@@ -265,9 +249,6 @@ exports[`<NotificationsDropdown/> Enabled, smtp_type:custom 1`] = `
           value="router@example.com"
         />
       </div>
-      <div
-        class="invalid-feedback"
-      />
       <small
         class="form-text text-muted"
       >
@@ -292,7 +273,6 @@ exports[`<NotificationsDropdown/> Enabled, smtp_type:custom 1`] = `
       >
         <input
           class="form-control "
-          disabled=""
           id="7"
           placeholder="example.com"
           required=""
@@ -300,12 +280,6 @@ exports[`<NotificationsDropdown/> Enabled, smtp_type:custom 1`] = `
           value="example.com"
         />
       </div>
-      <div
-        class="invalid-feedback"
-      />
-      <small
-        class="form-text text-muted"
-      />
     </div>
   </div>
   <div
@@ -325,7 +299,6 @@ exports[`<NotificationsDropdown/> Enabled, smtp_type:custom 1`] = `
       >
         <input
           class="form-control "
-          disabled=""
           id="8"
           max="65535"
           min="1"
@@ -333,12 +306,6 @@ exports[`<NotificationsDropdown/> Enabled, smtp_type:custom 1`] = `
           value="465"
         />
       </div>
-      <div
-        class="invalid-feedback"
-      />
-      <small
-        class="form-text text-muted"
-      />
     </div>
   </div>
   <div
@@ -355,7 +322,6 @@ exports[`<NotificationsDropdown/> Enabled, smtp_type:custom 1`] = `
     >
       <select
         class="form-control"
-        disabled=""
         id="9"
       >
         <option
@@ -374,9 +340,6 @@ exports[`<NotificationsDropdown/> Enabled, smtp_type:custom 1`] = `
           STARTTLS
         </option>
       </select>
-      <small
-        class="form-text text-muted"
-      />
     </div>
   </div>
   <div
@@ -396,18 +359,11 @@ exports[`<NotificationsDropdown/> Enabled, smtp_type:custom 1`] = `
       >
         <input
           class="form-control "
-          disabled=""
           id="10"
           type="text"
           value=""
         />
       </div>
-      <div
-        class="invalid-feedback"
-      />
-      <small
-        class="form-text text-muted"
-      />
     </div>
   </div>
   <div
@@ -428,7 +384,6 @@ exports[`<NotificationsDropdown/> Enabled, smtp_type:custom 1`] = `
         <input
           autocomplete="new-password"
           class="form-control "
-          disabled=""
           id="11"
           type="password"
           value="test_password"
@@ -436,41 +391,28 @@ exports[`<NotificationsDropdown/> Enabled, smtp_type:custom 1`] = `
         <div
           class="input-group-append"
         >
-          <a
+          <button
             class="input-group-text"
           >
             <i
               class="fa fa-eye"
             />
-          </a>
+          </button>
         </div>
       </div>
-      <div
-        class="invalid-feedback"
-      />
-      <small
-        class="form-text text-muted"
-      />
     </div>
   </div>
   <button
     class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
-    disabled=""
   >
-    <span
-      aria-hidden="true"
-      class="spinner-border spinner-border-sm"
-      role="status"
-    />
      
      
-     
-    Load settings
+    Save
   </button>
 </form>
 `;
 
-exports[`<NotificationsDropdown/> Enabled,smtp_type:turris 1`] = `
+exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
 <form>
   <h3>
     Email notifications settings
@@ -483,7 +425,7 @@ exports[`<NotificationsDropdown/> Enabled,smtp_type:turris 1`] = `
     >
       <label
         class="form-label"
-        for="101"
+        for="1"
       >
         Enable email notifications
       </label>
@@ -493,7 +435,7 @@ exports[`<NotificationsDropdown/> Enabled,smtp_type:turris 1`] = `
     >
       <input
         checked=""
-        id="101"
+        id="1"
         type="checkbox"
       />
       <small
@@ -505,14 +447,14 @@ exports[`<NotificationsDropdown/> Enabled,smtp_type:turris 1`] = `
   </div>
   <div
     class="form-group row"
-    id="102"
+    id="2"
   >
     <div
       class="form-label col-sm-3"
     >
       <label
         class="form-label"
-        for="102"
+        for="2"
       >
         SMTP provider
       </label>
@@ -555,9 +497,6 @@ exports[`<NotificationsDropdown/> Enabled,smtp_type:turris 1`] = `
           Custom
         </label>
       </div>
-      <small
-        class="form-text text-muted"
-      />
     </div>
   </div>
   <div
@@ -565,7 +504,7 @@ exports[`<NotificationsDropdown/> Enabled,smtp_type:turris 1`] = `
   >
     <label
       class="form-control-label col-sm-3"
-      for="103"
+      for="3"
     >
       Recipient's email
     </label>
@@ -577,15 +516,12 @@ exports[`<NotificationsDropdown/> Enabled,smtp_type:turris 1`] = `
       >
         <input
           class="form-control "
-          id="103"
+          id="3"
           required=""
           type="text"
           value="some@example.com"
         />
       </div>
-      <div
-        class="invalid-feedback"
-      />
       <small
         class="form-text text-muted"
       >
@@ -598,7 +534,7 @@ exports[`<NotificationsDropdown/> Enabled,smtp_type:turris 1`] = `
   >
     <label
       class="form-control-label col-sm-3"
-      for="104"
+      for="4"
     >
       Importance
     </label>
@@ -607,7 +543,7 @@ exports[`<NotificationsDropdown/> Enabled,smtp_type:turris 1`] = `
     >
       <select
         class="form-control"
-        id="104"
+        id="4"
       >
         <option
           value="1"
@@ -625,9 +561,6 @@ exports[`<NotificationsDropdown/> Enabled,smtp_type:turris 1`] = `
           Reboot or attention is required or update was installed
         </option>
       </select>
-      <small
-        class="form-text text-muted"
-      />
     </div>
   </div>
   <div
@@ -638,7 +571,7 @@ exports[`<NotificationsDropdown/> Enabled,smtp_type:turris 1`] = `
     >
       <label
         class="form-label"
-        for="105"
+        for="5"
       >
         Send news
       </label>
@@ -648,7 +581,7 @@ exports[`<NotificationsDropdown/> Enabled,smtp_type:turris 1`] = `
     >
       <input
         checked=""
-        id="105"
+        id="5"
         type="checkbox"
       />
       <small
@@ -663,7 +596,7 @@ exports[`<NotificationsDropdown/> Enabled,smtp_type:turris 1`] = `
   >
     <label
       class="form-control-label col-sm-3"
-      for="150"
+      for="17"
     >
       Sender's name
     </label>
@@ -675,14 +608,11 @@ exports[`<NotificationsDropdown/> Enabled,smtp_type:turris 1`] = `
       >
         <input
           class="form-control "
-          id="150"
+          id="17"
           type="text"
           value="turris"
         />
       </div>
-      <div
-        class="invalid-feedback"
-      />
       <small
         class="form-text text-muted"
       >

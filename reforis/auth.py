@@ -25,8 +25,7 @@ def check_password(password):
     res = current_app.backend.perform('password', 'check', {'password': decoded_password})
 
     # consider unset password as successful auth maybe set some session variable in this case
-    if res['status'] in ('unset', 'good'):
-        return True
+    return res['status'] in ('unset', 'good')
 
 
 def _decode_password_to_base64(password):
@@ -49,7 +48,6 @@ def register_login_required(app):
             return
 
         not_protected_endpoints = [
-            # TODO: Static files are not protected. (Can happen only at dev env.)
             'static',
             'Foris.login',
             'ForisAPI.health_check',

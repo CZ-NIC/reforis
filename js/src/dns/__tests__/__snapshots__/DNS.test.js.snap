@@ -75,7 +75,7 @@ Do you still want to continue and stay unprotected?
       >
         <label
           class="form-label"
-          for="35"
+          for="1"
         >
           Use forwarding
         </label>
@@ -84,11 +84,8 @@ Do you still want to continue and stay unprotected?
         class="form-check col-sm-8"
       >
         <input
-          id="35"
+          id="1"
           type="checkbox"
-        />
-        <small
-          class="form-text text-muted"
         />
       </div>
     </div>
@@ -100,7 +97,7 @@ Do you still want to continue and stay unprotected?
       >
         <label
           class="form-label"
-          for="36"
+          for="2"
         >
           Enable DNSSEC
         </label>
@@ -110,11 +107,8 @@ Do you still want to continue and stay unprotected?
       >
         <input
           checked=""
-          id="36"
+          id="2"
           type="checkbox"
-        />
-        <small
-          class="form-text text-muted"
         />
       </div>
     </div>
@@ -126,7 +120,7 @@ Do you still want to continue and stay unprotected?
       >
         <label
           class="form-label"
-          for="37"
+          for="3"
         >
           Enable DHCP clients in DNS
         </label>
@@ -135,7 +129,7 @@ Do you still want to continue and stay unprotected?
         class="form-check col-sm-8"
       >
         <input
-          id="37"
+          id="3"
           type="checkbox"
         />
         <small
@@ -150,7 +144,7 @@ Do you still want to continue and stay unprotected?
     >
       <label
         class="form-control-label col-sm-3"
-        for="53"
+        for="7"
       >
         Domain of DHCP clients in DNS
       </label>
@@ -162,14 +156,11 @@ Do you still want to continue and stay unprotected?
         >
           <input
             class="form-control "
-            id="53"
+            id="7"
             type="text"
             value="lan"
           />
         </div>
-        <div
-          class="invalid-feedback"
-        />
         <small
           class="form-text text-muted"
         >
@@ -285,7 +276,7 @@ Do you still want to continue and stay unprotected?
       >
         <label
           class="form-label"
-          for="16"
+          for="1"
         >
           Use forwarding
         </label>
@@ -294,11 +285,8 @@ Do you still want to continue and stay unprotected?
         class="form-check col-sm-8"
       >
         <input
-          id="16"
+          id="1"
           type="checkbox"
-        />
-        <small
-          class="form-text text-muted"
         />
       </div>
     </div>
@@ -307,7 +295,7 @@ Do you still want to continue and stay unprotected?
     >
       <label
         class="form-control-label col-sm-3"
-        for="32"
+        for="5"
       >
         DNS Forwarder
       </label>
@@ -316,7 +304,7 @@ Do you still want to continue and stay unprotected?
       >
         <select
           class="form-control"
-          id="32"
+          id="5"
         >
           <option
             value=""
@@ -344,9 +332,6 @@ Do you still want to continue and stay unprotected?
             Google
           </option>
         </select>
-        <small
-          class="form-text text-muted"
-        />
       </div>
     </div>
     <div
@@ -357,7 +342,7 @@ Do you still want to continue and stay unprotected?
       >
         <label
           class="form-label"
-          for="17"
+          for="2"
         >
           Enable DNSSEC
         </label>
@@ -367,11 +352,8 @@ Do you still want to continue and stay unprotected?
       >
         <input
           checked=""
-          id="17"
+          id="2"
           type="checkbox"
-        />
-        <small
-          class="form-text text-muted"
         />
       </div>
     </div>
@@ -383,7 +365,7 @@ Do you still want to continue and stay unprotected?
       >
         <label
           class="form-label"
-          for="18"
+          for="3"
         >
           Enable DHCP clients in DNS
         </label>
@@ -392,7 +374,7 @@ Do you still want to continue and stay unprotected?
         class="form-check col-sm-8"
       >
         <input
-          id="18"
+          id="3"
           type="checkbox"
         />
         <small
@@ -522,9 +504,6 @@ Do you still want to continue and stay unprotected?
           id="1"
           type="checkbox"
         />
-        <small
-          class="form-text text-muted"
-        />
       </div>
     </div>
     <div
@@ -547,9 +526,6 @@ Do you still want to continue and stay unprotected?
           checked=""
           id="2"
           type="checkbox"
-        />
-        <small
-          class="form-text text-muted"
         />
       </div>
     </div>

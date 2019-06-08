@@ -7,6 +7,15 @@
 
 import mockAxios from 'jest-mock-axios';
 
+// Setup axios cleanup
 global.afterEach(() => {
     mockAxios.reset();
 });
+
+// Mock babel (gettext)
+window._ = str => str;
+window.babel = {format: (str, _) => str};
+window.ForisTranslations = {};
+
+// Mock scrollIntoView
+window.HTMLElement.prototype.scrollIntoView = () => {};

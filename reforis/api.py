@@ -3,12 +3,13 @@
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
 
-from flask import Blueprint, current_app, request, jsonify
+from flask import Blueprint, current_app, jsonify, request
+from flask_babel import gettext as _
 
 from reforis import _get_locale_from_backend
-from reforis.auth import check_password, _decode_password_to_base64
+from reforis.auth import _decode_password_to_base64, check_password
 
-api = Blueprint(
+api = Blueprint(  # pylint: disable=invalid-name
     'ForisAPI',
     __name__,
     template_folder='templates',
@@ -28,6 +29,7 @@ class InvalidUsage(Exception):
         self.payload = payload
 
     def to_dict(self):
+        # pylint: disable=invalid-name
         rv = dict(self.payload or ())
         rv['error'] = self.error
         return rv
@@ -128,11 +130,7 @@ def dns_test():
 
 @api.route('/updates', methods=['GET', 'POST'])
 def updates():
-    settings = current_app.backend.perform(
-        'updater',
-        'get_settings',
-        {'lang': _get_locale_from_backend(current_app)}
-    )
+    settings = current_app.backend.perform('updater', 'get_settings', {'lang': _get_locale_from_backend(current_app)})
     del settings['approval']
 
     res = None
@@ -144,8 +142,10 @@ def updates():
         del res['user_lists']
         del res['languages']
     elif request.method == 'POST':
-        # TODO: Here is a problem.
-        # If one of the valid and one is invalid then valid one will set with error status code.
+        # pylint: disable=fixme
+        # TODO: If router_notifications is saved without errors and updater setting is saved with an error then user got
+        # the error message even router_notifications are saved. It's probably better to make some rollback in case of
+        # error here.
         data = request.json
         res_reboots = current_app.backend.perform('router_notifications', 'update_reboot_settings', data['reboots'])
         del data['reboots']
@@ -193,7 +193,7 @@ def packages():
     elif request.method == 'POST':
         data = request.json
         if not updater_settings['enabled']:
-            raise InvalidUsage('You can\'t set packages with disabled automatic updates.')
+            raise InvalidUsage(_("You can't set packages with disabled automatic updates."))
         data['enabled'] = True
         data['approval_settings'] = updater_settings['approval_settings']
         res = current_app.backend.perform('updater', 'update_settings', data)
@@ -209,7 +209,7 @@ def password():
         data = request.json
         res = {}
         if not data.get('foris_current_password', False) or not check_password(data['foris_current_password']):
-            raise InvalidUsage('Wrong current password')
+            raise InvalidUsage(_('Wrong current password.'))
 
         if data.get('foris_password', False):
             new_password = _decode_password_to_base64(data['foris_password'])

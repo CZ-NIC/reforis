@@ -6,6 +6,7 @@
  */
 
 export const ForisURLs = {
+    login: '/login',
     notifications: '/notifications',
     notificationsSettings: '/notifications-settings',
     luci: '/cgi-bin/luci',

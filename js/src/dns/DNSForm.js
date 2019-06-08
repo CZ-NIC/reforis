@@ -52,8 +52,12 @@ export default function DNSForm({formData, formErrors, setFormValue, ...props}) 
             shown={DNSSECModalShown}
             setShown={setDNSSECModalShown}
             callback={() => {
-                setFormValue(value => ({dnssec_enabled: {$set: value}}))
-                ({target: {name: 'dnssec_enabled', value: false}});
+                setFormValue(value => ({dnssec_enabled: {$set: value}}))({
+                    target: {
+                        name: 'dnssec_enabled',
+                        value: false
+                    }
+                });
                 setDNSSECModalShown(false);
             }}
         />
@@ -110,7 +114,7 @@ export default function DNSForm({formData, formErrors, setFormValue, ...props}) 
 function getForwardersChoices(available_forwarders) {
     return available_forwarders.reduce(
         (choices, forwarder) => {
-            choices [forwarder.name] = forwarder.name === '' ? _('Use provider\'s DNS resolver') : forwarder.description;
+            choices[forwarder.name] = forwarder.name === '' ? _('Use provider\'s DNS resolver') : forwarder.description;
             return choices;
         }, {})
 }

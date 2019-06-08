@@ -47,7 +47,7 @@ def request_ctx():
 @surrogate('foris_client.buses.mqtt.MqttSender')
 @surrogate('foris_client.buses.base.ControllerError')
 @mock.patch('foris_client.buses.mqtt.MqttSender', MockMqttSender)
-@mock.patch('reforis.backend._parse_credentials', mock.Mock)
+@mock.patch('reforis.backend.MQTTBackend._parse_credentials', mock.Mock)
 def _stubbed_app():
     # The foris client may not existed on the testing environment
     # so we surrogate this module to avoid ImportError during testing.

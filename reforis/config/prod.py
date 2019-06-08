@@ -8,7 +8,6 @@ DEBUG = True
 SESSION_TYPE = 'filesystem'
 SESSION_PERMANENT = False
 SESSION_FILE_DIR = '/tmp/foris-sessions'
-SESSION_FILE_THRESHOLD = 10
 
 BUS = 'mqtt'
 BUSES_CONF = {
@@ -18,7 +17,7 @@ BUSES_CONF = {
         'credentials_file': '/etc/fosquitto/credentials.plain',
         'timeout': 30000,
     },
-    'bus': {
+    'ubus': {
         'path': '/var/run/ubus.sock',
         'timeout': 30000
     }
@@ -51,4 +50,3 @@ LOGGING = {
         },
     }
 }
-

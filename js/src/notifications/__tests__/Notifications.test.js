@@ -5,21 +5,23 @@
  * See /LICENSE for more information.
  */
 import React from 'react';
-import {render} from 'react-testing-library';
+import {render, wait} from 'customTestRender';
 
 import mockAxios from 'jest-mock-axios';
-import {mockedWS} from '../../testUtils/mockWS';
+import {mockedWS} from 'mockWS';
 import {notificationsFixture} from './__fixtures__/notifications';
 
 import Notifications from '../Notifications/Notifications';
 
 describe('<Notifications/>', () => {
     let NotificationCenterContainer;
-    beforeEach(() => {
+    beforeEach(async () => {
         const mockWebSockets = new mockedWS();
-        const {container} = render(<Notifications ws={mockWebSockets}/>);
+        const {container, getByText} = render(<Notifications ws={mockWebSockets}/>);
         mockAxios.mockResponse({data: notificationsFixture()});
-
+        await wait(() => {
+            getByText('Notification message.')
+        });
         NotificationCenterContainer = container;
     });
 

@@ -42,4 +42,3 @@ export default function DataTimeInput({value, onChange, isValidDate, dateFormat,
         renderInput={renderInput}
     />;
 }
-

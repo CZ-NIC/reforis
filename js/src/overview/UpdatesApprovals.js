@@ -5,35 +5,39 @@
  * See /LICENSE for more information.
  */
 
-import React, {useState, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import propTypes from 'prop-types';
 import moment from 'moment';
 
-import {useAPIGetData, useAPIPostData} from '../common/APIhooks';
-import {APIEndpoints} from '../common/API';
+import {useAPIGet, useAPIPost} from '../common/APIhooks';
+import API_URLs from '../common/API';
 import Button from '../common/bootstrap/Button';
+import Spinner from '../common/bootstrap/Spinner';
 
 export default function UpdateApprovals() {
-    const [getData, isReady] = useAPIGetData(APIEndpoints.approvals);
-    const [approval, setApproval] = useState(false);
+    const [getState, get] = useAPIGet(API_URLs.approvals);
+    const approval = getState.data;
     useEffect(() => {
-        getData(data => setApproval(data))
-    }, []);
+        get();
+    }, [get]);
 
 
-    const postData = useAPIPostData(APIEndpoints.approvals);
+    const [postState, post] = useAPIPost(API_URLs.approvals);
+    useEffect(() => {
+        get();
+    }, [get, postState.data]);
 
     function postHandler(solution) {
         return e => {
             e.preventDefault();
-            postData(
-                {hash: approval.hash, solution: solution},
-                () => getData()
-            )
+            post({hash: approval.hash, solution: solution});
         }
     }
 
-    if (!isReady || !approval || !approval.present || approval.status !== 'asked')
+    if (getState.isLoading || postState.isSending)
+        return <Spinner className='row justify-content-center'/>;
+
+    if (!approval || !approval.present || approval.status !== 'asked')
         return null;
 
     const buttonMargin = {

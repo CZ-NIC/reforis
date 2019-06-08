@@ -8,7 +8,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-import {APIEndpoints} from '../common/API';
+import API_URLs from '../common/API';
 import Alert from '../common/bootstrap/Alert';
 import ForisForm from '../formContainer/ForisForm';
 
@@ -17,24 +17,45 @@ import PackagesForm from './PackagesForm';
 
 export default function Packages() {
     return <ForisForm
-        forisConfig={{endpoint: APIEndpoints.packages}}
+        forisConfig={{endpoint: API_URLs.packages}}
         prepData={prepData}
         prepDataToSubmit={prepDataToSubmit}
-        // Disable form if updater is disabled
-        disable={formData => !formData.enabled}
+        validator={validator}
     >
-        <DisabledUpdaterAlert/>
-        <PackagesForm/>
-        <LanguageForm/>
+        <DisableIfUpdaterIsDisabled>
+            <PackagesForm/>
+            <LanguageForm/>
+        </DisableIfUpdaterIsDisabled>
     </ForisForm>
+}
+
+export function DisableIfUpdaterIsDisabled({children, ...props}) {
+    const isDisabled = !props.formData.enabled;
+    const childrenWithFormProps =
+        React.Children.map(children, child =>
+            React.cloneElement(child, {
+                ...props,
+                disabled: isDisabled,
+            })
+        );
+
+    if (!isDisabled)
+        return childrenWithFormProps;
+
+    return <>
+        <DisabledUpdaterAlert/>
+        <div className='text-muted'>
+            {childrenWithFormProps}
+        </div>
+    </>
 }
 
 DisabledUpdaterAlert.propTypes = {
     formData: propTypes.shape({enabled: propTypes.bool.isRequired})
 };
 
-function DisabledUpdaterAlert({formData}) {
-    return formData.enabled ? null : <Alert
+function DisabledUpdaterAlert() {
+    return <Alert
         type='warning'
         message={_('Please enable automatic updates to manage packages and languages.')}
     />
@@ -56,4 +77,11 @@ function prepDataToSubmit(formData) {
         .map(language => language.code);
 
     return {languages: languages, user_lists: packages}
+}
+
+// Hack to disable submit button
+function validator(formData) {
+    if (!formData.enabled)
+        return {enabled: true};
+    return null;
 }

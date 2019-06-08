@@ -10,12 +10,12 @@ import moment from 'moment';
 
 import UpdatesForm from './forms/UpdatesForm';
 import ForisForm from '../formContainer/ForisForm';
-import {APIEndpoints} from '../common/API';
+import API_URLs from '../common/API';
 
 export default function Updates() {
     return <ForisForm
         forisConfig={{
-            endpoint: APIEndpoints.updates
+            endpoint: API_URLs.updates
         }}
         prepData={prepData}
         prepDataToSubmit={prepDataToSubmit}

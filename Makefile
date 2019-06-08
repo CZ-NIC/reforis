@@ -3,7 +3,7 @@
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
 
-.PHONY: all prepare-dev venv install install-reforis install-diagnostics run run-js test test-web clean
+.PHONY: all prepare-dev venv install install-reforis install-diagnostics run run-js lint lint-js lint-web test test-web test-js-update-snapshots clean
 
 SHELL=/bin/bash
 
@@ -83,11 +83,21 @@ watch-js:
 	npx watchify ./src/app.js -o ../reforis/static/js/app.min.js \
 	-t [ babelify --presets [ @babel/preset-env @babel/preset-react ] --plugins [ @babel/plugin-proposal-class-properties ] ]
 
+lint: lint-js lint-web
+lint-js:
+	cd js; npm run lint
+lint-web: venv
+	$(VENV_BIN)/$(DEV_PYTHON) -m pylint --rcfile=pylintrc reforis
+	$(VENV_BIN)/$(DEV_PYTHON) -m pycodestyle --config=pycodestyle reforis
+
 test: test-js test-web
 test-js:
 	cd js; npm test
 test-web: venv
 	$(VENV_BIN)/$(DEV_PYTHON) -m pytest -vv tests
+
+test-js-update-snapshots:
+	cd js; npm test -- -u
 
 create-messages:
 	pybabel extract -F babel.cfg -o ./reforis/translations/messages.pot .

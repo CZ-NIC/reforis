@@ -6,9 +6,9 @@
  */
 
 import React from 'react';
-import {render} from 'react-testing-library';
+import {render, wait} from 'customTestRender';
 
-import {mockedWS} from '../../testUtils/mockWS';
+import {mockedWS} from 'mockWS';
 import mockAxios from 'jest-mock-axios';
 import {notificationsFixture} from './__fixtures__/notifications';
 
@@ -18,11 +18,14 @@ import NotificationsDropdown from '../NotificationsDropdown/NotificationsDropdow
 describe('<NotificationsDropdown/>', () => {
     let notificationCenterContainer;
 
-    beforeEach(() => {
+    beforeEach(async () => {
         const mockWebSockets = new mockedWS();
-        const {container} = render(<NotificationsDropdown ws={mockWebSockets}/>);
+        const {container, getByText} = render(<NotificationsDropdown ws={mockWebSockets}/>);
         mockAxios.mockResponse({data: notificationsFixture()});
         notificationCenterContainer = container
+        await wait(() => {
+            getByText('Notification message.')
+        });
     });
 
     it('Test with snapshot', () => {

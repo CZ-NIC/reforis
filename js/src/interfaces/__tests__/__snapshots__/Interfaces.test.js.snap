@@ -343,7 +343,7 @@ This means that the only way to configure your device will be via serial cabel o
     >
       <label
         class="form-control-label col-sm-3"
-        for="2"
+        for="1"
       >
         Network
       </label>
@@ -352,7 +352,7 @@ This means that the only way to configure your device will be via serial cabel o
       >
         <select
           class="form-control"
-          id="2"
+          id="1"
         >
           <option
             value="lan"
@@ -370,9 +370,6 @@ This means that the only way to configure your device will be via serial cabel o
             Unassigned
           </option>
         </select>
-        <small
-          class="form-text text-muted"
-        />
       </div>
     </div>
     <table
@@ -810,9 +807,6 @@ This means that the only way to configure your device will be via serial cabel o
             Unassigned
           </option>
         </select>
-        <small
-          class="form-text text-muted"
-        />
       </div>
     </div>
     <table

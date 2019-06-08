@@ -26,7 +26,7 @@ ConnectionTestResults.propTypes = {
     dnssec: propTypes.bool,
 };
 
-export function ConnectionTestResults({...tests}) {
+export default function ConnectionTestResults({...tests}) {
     return <table className='table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12'>
         <tbody>
         {Object.keys(tests).map(

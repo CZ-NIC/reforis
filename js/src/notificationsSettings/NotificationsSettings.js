@@ -8,9 +8,9 @@
 import React from 'react';
 
 import ForisForm from '../formContainer/ForisForm';
-import {APIEndpoints} from '../common/API';
+import API_URLs from '../common/API';
 
-import NotificationsEmailSettingsForm from './forms/NotificationsEmailSettingsForm';
+import NotificationsEmailSettingsForm from './NotificationsEmailSettingsForm';
 import validator from './validator';
 
 export default function NotificationsSettings({ws}) {
@@ -18,7 +18,7 @@ export default function NotificationsSettings({ws}) {
         <ForisForm
             ws={ws}
             forisConfig={{
-                endpoint: APIEndpoints.notificationsSettings,
+                endpoint: API_URLs.notificationsSettings,
                 wsModule: 'router_notifications',
                 wsAction: 'update_email_settings',
             }}
@@ -47,4 +47,3 @@ function prepDataToSubmit(formData) {
         delete formData.smtp_turris;
     return formData
 }
-

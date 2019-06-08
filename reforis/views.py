@@ -11,7 +11,7 @@ from flask_babel import gettext as _
 from reforis import TranslationsHelper
 from reforis.auth import login_to_foris, logout_from_foris
 
-views = Blueprint(
+views = Blueprint(  # pylint: disable=invalid-name
     'Foris',
     __name__,
     template_folder='templates',
@@ -33,8 +33,7 @@ def login():
         password = request.form['password']
         if login_to_foris(password):
             return redirect(url_for('Foris.overview'))
-        else:
-            error_message = _('Wrong password.')
+        error_message = _('Wrong password.')
     return render_template('login.html', error_message=error_message)
 
 

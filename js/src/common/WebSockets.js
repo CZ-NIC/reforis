@@ -5,6 +5,8 @@
  * See /LICENSE for more information.
  */
 
+import {ForisURLs} from './constants';
+
 const PROTOCOL = window.location.protocol === 'http:' ? 'ws' : 'wss';
 const URL = PROTOCOL + '://' + window.location.hostname + ':' + ForisConstants.WSPort;
 const WAITING_FOR_CONNECTION_TIMEOUT = 500;
@@ -13,21 +15,22 @@ export default class WebSockets {
     constructor() {
         this.ws = new WebSocket(URL);
         this.ws.onerror = e => {
-            if (window.location.pathname !== '/login') {
-                console.error("WebSocket error observed, you aren't logged probably.");
-                window.location.replace('/login');
+            if (window.location.pathname !== ForisURLs.login) {
+                console.error("WS: Error observed, you aren't logged probably.");
+                window.location.replace(ForisURLs.login);
             }
+            console.log(`WS: Error: ${e.data}`);
         };
         this.ws.onmessage = e => {
-            console.log('Received Message: ' + e.data);
+            console.log(`WS: Received Message: ${e.data}`);
             const data = JSON.parse(e.data);
             this.dispatch(data)
         };
         this.ws.onopen = () => {
-            console.log('WS connection open.');
+            console.log('WS: Connection open.');
         };
         this.ws.onclose = () => {
-            console.log('WS connection closed.');
+            console.log('WS: Connection closed.');
         };
 
         // callbacks[module][action]
@@ -40,7 +43,7 @@ export default class WebSockets {
         } else {
             const that = this;
             setTimeout(function () {
-                that.waitForConnection(callback, interval);
+                that.waitForConnection(callback);
             }, WAITING_FOR_CONNECTION_TIMEOUT);
         }
     };
@@ -83,5 +86,9 @@ export default class WebSockets {
 
         for (let i = 0; i < chain.length; i++)
             chain[i](json)
+    }
+
+    close() {
+        this.ws.close();
     }
 }

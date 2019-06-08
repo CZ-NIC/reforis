@@ -3,13 +3,15 @@
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
 
+# pylint: disable=wildcard-import,unused-wildcard-import
+
 from reforis.config.prod import *
 
 DEBUG = False
 
 SECRET_KEY = 'dev_secret_key'
 
-SESSION_PERMANENT = False
+SESSION_PERMANENT = True
 
 # WebSockets
 WS_PORT = 9081

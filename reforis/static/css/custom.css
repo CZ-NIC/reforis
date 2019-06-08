@@ -391,7 +391,13 @@ a,
 }
 
 /*Spinner*/
-.spinner-background {
+.spinner-wrapper .spinner-border {
+    width: 4rem;
+    height: 4rem;
+    color: #00a2e2;
+}
+
+.spinner-fs-background {
     background-color: rgba(2, 2, 2, .5);
     color: rgb(230, 230, 230);
     position: fixed;
@@ -401,17 +407,16 @@ a,
 
     display: flex;
     align-items: center;
-
     justify-content: center;
     flex-direction: column;
 }
 
-.spinner-wrapper .spinner-border {
+.spinner-fs-wrapper .spinner-border {
     width: 6rem;
     height: 6rem;
 }
 
-.spinner-wrapper .spinner-text {
+.spinner-fs-wrapper .spinner-text {
     margin: 1rem;
 }
 
