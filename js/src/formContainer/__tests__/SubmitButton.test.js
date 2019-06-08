@@ -6,26 +6,21 @@
  */
 
 import React from 'react';
-import {render} from 'react-testing-library'
+import {render} from 'customTestRender';
 
-import SubmitButton from '../SubmitButton';
-import {FORM_STATES} from '../hooks';
+import SubmitButton, {STATES} from '../SubmitButton';
 
 describe('<SubmitButton/>', () => {
     it('Render ready', () => {
-        const {container} = render(<SubmitButton state={FORM_STATES.READY}/>);
+        const {container} = render(<SubmitButton state={STATES.READY}/>);
+        expect(container).toMatchSnapshot();
+    });
+    it('Render saving', () => {
+        const {container} = render(<SubmitButton state={STATES.SAVING}/>);
         expect(container).toMatchSnapshot();
     });
     it('Render load', () => {
-        const {container} = render(<SubmitButton state={FORM_STATES.LOAD}/>);
-        expect(container).toMatchSnapshot();
-    });
-    it('Render update', () => {
-        const {container} = render(<SubmitButton state={FORM_STATES.UPDATE}/>);
-        expect(container).toMatchSnapshot();
-    });
-    it('Render update', () => {
-        const {container} = render(<SubmitButton state={FORM_STATES.NETWORK_RESTART} remindsToNWRestart={1234}/>);
+        const {container} = render(<SubmitButton state={STATES.LOAD}/>);
         expect(container).toMatchSnapshot();
     });
 });

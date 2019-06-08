@@ -6,46 +6,50 @@
  */
 
 import React from 'react';
-import {render, waitForElement, act, fireEvent, getByText, getByLabelText} from 'react-testing-library';
+import {fireEvent, render, wait} from 'customTestRender';
 
-import {mockedWS} from '../../testUtils/mockWS';
+import {mockedWS} from 'mockWS';
 import {wifiSettingsFixture} from './__fixtures__/wifiSettings';
 import mockAxios from 'jest-mock-axios';
 
 import WiFi from '../WiFi';
+import diffSnapshot from "snapshot-diff";
 
 describe('<WiFi/>', () => {
-    let wifiContainer;
+    let firstRender;
+    let getAllByText;
+    let asFragment;
 
     beforeEach(async () => {
         const mockWebSockets = new mockedWS();
-        const {container} = render(<WiFi ws={mockWebSockets}/>);
+        const renderRes = render(<WiFi ws={mockWebSockets}/>);
+        asFragment = renderRes.asFragment;
+        getAllByText = renderRes.getAllByText;
         mockAxios.mockResponse({data: wifiSettingsFixture()});
-        await waitForElement(() => getByText(container, 'Module 1'));
-        wifiContainer = container
+        await wait(() => renderRes.getByText('Module 1'));
+        firstRender = renderRes.asFragment()
     });
 
     it('Snapshot both modules disabled.', () => {
-        expect(wifiContainer.firstChild).toMatchSnapshot();
+        expect(firstRender).toMatchSnapshot();
     });
+
     it('Snapshot one module enabled.', () => {
-        act(() => {
-            fireEvent.click(getByLabelText(wifiContainer, 'Enable'));
-        });
-        expect(wifiContainer.firstChild).toMatchSnapshot();
+        fireEvent.click(getAllByText('Enable')[0]);
+        expect(diffSnapshot(firstRender, asFragment())).toMatchSnapshot();
     });
-    it('Snapshot 2.4 GHz', async () => {
-        await act(async () => {
-            await fireEvent.click(getByLabelText(wifiContainer, 'Enable'));
-            fireEvent.click(getByLabelText(wifiContainer, '2.4'));
-        });
-        expect(wifiContainer.firstChild).toMatchSnapshot();
+
+    it('Snapshot 2.4 GHz', () => {
+        fireEvent.click(getAllByText('Enable')[0]);
+        const enabledRender = asFragment();
+        fireEvent.click(getAllByText('2.4')[0]);
+        expect(diffSnapshot(enabledRender, asFragment())).toMatchSnapshot();
     });
-    it('Snapshot guest network.', async () => {
-        await act(async () => {
-            await fireEvent.click(getByLabelText(wifiContainer, 'Enable'));
-            fireEvent.click(getByLabelText(wifiContainer, 'Enable Guest Wifi'));
-        });
-        expect(wifiContainer.firstChild).toMatchSnapshot();
+
+    it('Snapshot guest network.', () => {
+        fireEvent.click(getAllByText('Enable')[0]);
+        const enabledRender = asFragment();
+        fireEvent.click(getAllByText('Enable Guest Wifi')[0]);
+        expect(diffSnapshot(enabledRender, asFragment())).toMatchSnapshot();
     });
 });

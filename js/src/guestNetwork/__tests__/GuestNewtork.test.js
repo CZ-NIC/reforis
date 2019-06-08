@@ -6,13 +6,13 @@
  */
 
 import React from 'react';
-import {render, act, wait, fireEvent, getByLabelText} from 'react-testing-library';
+import {fireEvent, getByLabelText, render, wait} from 'customTestRender';
 
-import {mockedWS} from '../../testUtils/mockWS';
+import {mockedWS} from 'mockWS';
 import mockAxios from 'jest-mock-axios';
 import GuestNetwork from '../GuestNetwork';
 import guestNetworkFixture from './__fixtures__/guestNetwork';
-import {createPortalContainer} from '../../testUtils/utils';
+import {createPortalContainer} from 'portal';
 
 
 describe('<GuestNetwork/>', () => {
@@ -33,25 +33,19 @@ describe('<GuestNetwork/>', () => {
     });
 
     it('Snapshot enabled.', () => {
-        act(() => {
-            fireEvent.click(getByLabelText(guestNetworkContainer, 'Enable'));
-        });
+        fireEvent.click(getByLabelText(guestNetworkContainer, 'Enable'));
         expect(guestNetworkContainer).toMatchSnapshot();
     });
 
-    it('Snapshot enabled DHCP.', async () => {
-        await act(async () => {
-            await fireEvent.click(getByLabelText(guestNetworkContainer, 'Enable'));
-            fireEvent.click(getByLabelText(guestNetworkContainer, 'Enable DHCP'));
-        });
+    it('Snapshot enabled DHCP.', () => {
+        fireEvent.click(getByLabelText(guestNetworkContainer, 'Enable'));
+        fireEvent.click(getByLabelText(guestNetworkContainer, 'Enable DHCP'));
         expect(guestNetworkContainer).toMatchSnapshot();
     });
 
-    it('Snapshot enabled QoS.', async () => {
-        await act(async () => {
-            await fireEvent.click(getByLabelText(guestNetworkContainer, 'Enable'));
-            fireEvent.click(getByLabelText(guestNetworkContainer, 'Enable QoS'));
-        });
+    it('Snapshot enabled QoS.', () => {
+        fireEvent.click(getByLabelText(guestNetworkContainer, 'Enable'));
+        fireEvent.click(getByLabelText(guestNetworkContainer, 'Enable QoS'));
         expect(guestNetworkContainer).toMatchSnapshot();
     });
 });

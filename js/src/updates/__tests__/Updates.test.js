@@ -6,37 +6,43 @@
  */
 
 import React from 'react';
-import {render, act, fireEvent, getByLabelText} from 'react-testing-library';
+import {fireEvent, render, waitForElement} from 'customTestRender';
 
 import {updatesFixture} from './__fixtures__/updates';
 import Updates from '../Updates';
 import mockAxios from 'jest-mock-axios';
+import diffSnapshot from "snapshot-diff";
 
+const ENABLE_CHECKBOX_LABEL = 'Enable automatic updates (recommended)';
 
 describe('<Updates/>', () => {
-    let updatesContainer;
-    beforeEach(() => {
-        const {container} = render(<Updates/>);
+    let firstRender;
+    let getByLabelText;
+    let asFragment;
+
+    beforeEach(async () => {
+        const renderRes = render(<Updates/>);
         mockAxios.mockResponse({data: updatesFixture()});
-        updatesContainer = container;
+        asFragment = renderRes.asFragment;
+        getByLabelText = renderRes.getByLabelText;
+
+        await waitForElement(() => renderRes.getByLabelText(ENABLE_CHECKBOX_LABEL));
+        firstRender = renderRes.asFragment();
     });
 
     it('Test with snapshot disabled.', () => {
-        expect(updatesContainer.firstChild).toMatchSnapshot()
+        expect(firstRender).toMatchSnapshot()
     });
 
     it('Test with snapshot enabled.', () => {
-        act(() => {
-            fireEvent.click(getByLabelText(updatesContainer, 'Enable automatic updates (recommended)'));
-        });
-        expect(updatesContainer.firstChild).toMatchSnapshot()
+        fireEvent.click(getByLabelText(ENABLE_CHECKBOX_LABEL));
+        expect(diffSnapshot(firstRender, asFragment())).toMatchSnapshot();
     });
 
-    it('Test with snapshot delayed.', () => {
-        act(() => {
-            fireEvent.click(getByLabelText(updatesContainer, 'Enable automatic updates (recommended)'));
-            fireEvent.click(getByLabelText(updatesContainer, 'Delayed updates'));
-        });
-        expect(updatesContainer.firstChild).toMatchSnapshot()
+    it('Test with snapshot enabled, delayed.', () => {
+        fireEvent.click(getByLabelText(ENABLE_CHECKBOX_LABEL));
+        const enabledRender = asFragment();
+        fireEvent.click(getByLabelText('Delayed updates'));
+        expect(diffSnapshot(enabledRender, asFragment())).toMatchSnapshot();
     });
 });

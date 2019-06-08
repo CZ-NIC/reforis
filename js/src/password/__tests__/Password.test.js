@@ -7,7 +7,7 @@
 
 import React from 'react';
 
-import {render, wait, act, fireEvent, getByText, getByLabelText} from 'react-testing-library'
+import {fireEvent, getByLabelText, getByText, render, wait} from 'customTestRender';
 import mockAxios from 'jest-mock-axios';
 
 import Password from '../Password';
@@ -25,9 +25,7 @@ describe('<Password/>', () => {
         expect(passwordContainer).toMatchSnapshot();
     });
     it('Snapshot: same password for root', () => {
-        act(() => {
-            fireEvent.click(getByLabelText(passwordContainer, 'Use same password for advanced administration (root)'))
-        });
+        fireEvent.click(getByLabelText(passwordContainer, 'Use same password for advanced administration (root)'));
         expect(passwordContainer).toMatchSnapshot();
     });
 });

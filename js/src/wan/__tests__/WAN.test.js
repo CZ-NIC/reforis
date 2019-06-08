@@ -6,9 +6,9 @@
  */
 
 import React from 'react';
-import {fireEvent, render, waitForElement} from '@testing-library/react';
+import {fireEvent, render, waitForElement} from 'customTestRender';
 import diffSnapshot from 'snapshot-diff';
-import {mockedWS} from '../../testUtils/mockWS';
+import {mockedWS} from 'mockWS';
 import {wanSettingsFixture} from './__fixtures__/wanSettings';
 import mockAxios from 'jest-mock-axios';
 
@@ -65,7 +65,7 @@ describe('<WAN/>', () => {
         expect(diffSnapshot(firstRender, asFragment())).toMatchSnapshot();
     });
 
-    it('Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled.', async () => {
+    it('Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled.', () => {
         fireEvent.change(getByLabelText('IPv6 protocol'), {target: {value: '6in4'}});
         firstRender = asFragment();
 

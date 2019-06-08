@@ -6,10 +6,10 @@
  */
 
 import React from 'react';
-import {render, act, fireEvent, getByLabelText, wait} from 'react-testing-library';
+import {render, fireEvent, getByLabelText, wait} from 'customTestRender';
 
 import {dnsFixture} from './__fixtures__/dns';
-import {mockedWS} from '../../testUtils/mockWS';
+import {mockedWS} from 'mockWS';
 import mockAxios from 'jest-mock-axios';
 
 import DNS from '../DNS';
@@ -30,16 +30,12 @@ describe('<DNS/>', () => {
     });
 
     it('Test with snapshot forwarding.', () => {
-        act(() => {
-            fireEvent.click(getByLabelText(dnsContainer, 'Use forwarding'));
-        });
+        fireEvent.click(getByLabelText(dnsContainer, 'Use forwarding'));
         expect(dnsContainer).toMatchSnapshot()
     });
 
     it('Test with snapshot DHCP.', () => {
-        act(() => {
-            fireEvent.click(getByLabelText(dnsContainer, 'Enable DHCP clients in DNS'));
-        });
+        fireEvent.click(getByLabelText(dnsContainer, 'Enable DHCP clients in DNS'));
         expect(dnsContainer).toMatchSnapshot()
     });
 });

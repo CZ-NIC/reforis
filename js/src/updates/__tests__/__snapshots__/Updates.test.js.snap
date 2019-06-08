@@ -1,760 +1,322 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Updates/> Test with snapshot delayed. 1`] = `
-<form>
-  <div
-    class="form-group row"
-  >
+exports[`<Updates/> Test with snapshot disabled. 1`] = `
+<DocumentFragment>
+  <form>
     <div
-      class="form-label col-sm-3"
+      class="form-group row"
+    >
+      <div
+        class="form-label col-sm-3"
+      >
+        <label
+          class="form-label"
+          for="1"
+        >
+          Enable automatic updates (recommended)
+        </label>
+      </div>
+      <div
+        class="form-check col-sm-8"
+      >
+        <input
+          id="1"
+          type="checkbox"
+        />
+      </div>
+    </div>
+    <h4>
+      Automatic restarts after software update
+    </h4>
+    <div
+      class="form-group row"
     >
       <label
-        class="form-label"
-        for="32"
+        class="form-control-label col-sm-3"
+        for="2"
       >
-        Enable automatic updates (recommended)
+        Delay (days)
       </label>
-    </div>
-    <div
-      class="form-check col-sm-8"
-    >
-      <input
-        id="32"
-        type="checkbox"
-      />
-      <small
-        class="form-text text-muted"
-      />
-    </div>
-  </div>
-  <h4>
-    Update approvals
-  </h4>
-  <p>
-    Update approvals can be useful when you want to make sure that updates won't harm your specific
-            configuration. You can e.g. install updates when you're prepared for a possible rollback to a previous
-            snapshot and deny the questionable update temporarily. It isn't possible to decline the update forever an
-            it will be offered to you again together with the next package installation.
-  </p>
-  <div
-    class="form-group row"
-    id="45"
-  >
-    <div
-      class="form-label col-sm-3"
-    >
-      <label
-        class="form-label"
-        for="45"
-      />
-    </div>
-    <div
-      class="col-sm-8"
-    >
       <div
-        class="form-check form-check-inline"
+        class="col-sm-8"
       >
-        <input
-          class="form-check-input"
-          id="approvals-0"
-          name="approvals"
-          type="radio"
-          value="off"
-        />
-        <label
-          class="form-check-label"
-          for="approvals-0"
-        >
-          Automatic installation
-        </label>
-      </div>
-      <small
-        class="form-text text-muted"
-      >
-        Updates will be installed without user's intervention.
-      </small>
-      <div
-        class="form-check form-check-inline"
-      >
-        <input
-          class="form-check-input"
-          id="approvals-1"
-          name="approvals"
-          type="radio"
-          value="delayed"
-        />
-        <label
-          class="form-check-label"
-          for="approvals-1"
-        >
-          Delayed updates
-        </label>
-      </div>
-      <small
-        class="form-text text-muted"
-      >
-        Updates will be installed with an adjustable delay. You can also approve them manually.
-      </small>
-      <div
-        class="form-check form-check-inline"
-      >
-        <input
-          checked=""
-          class="form-check-input"
-          id="approvals-2"
-          name="approvals"
-          type="radio"
-          value="on"
-        />
-        <label
-          class="form-check-label"
-          for="approvals-2"
-        >
-          Update approval needed
-        </label>
-      </div>
-      <small
-        class="form-text text-muted"
-      >
-        You have to approve the updates, otherwise they won't be installed.
-      </small>
-      <small
-        class="form-text text-muted"
-      />
-    </div>
-  </div>
-  <div
-    class="form-group row"
-  >
-    <label
-      class="form-control-label col-sm-3"
-      for="50"
-    >
-      Delayed updates (hours)
-    </label>
-    <div
-      class="col-sm-8"
-    >
-      <div
-        class="input-group"
-      >
-        <input
-          class="form-control "
-          id="50"
-          max="168"
-          min="1"
-          type="number"
-          value="1"
-        />
-      </div>
-      <div
-        class="invalid-feedback"
-      />
-      <small
-        class="form-text text-muted"
-      />
-    </div>
-  </div>
-  <h4>
-    Automatic restarts after software update
-  </h4>
-  <div
-    class="form-group row"
-  >
-    <label
-      class="form-control-label col-sm-3"
-      for="33"
-    >
-      Delay (days)
-    </label>
-    <div
-      class="col-sm-8"
-    >
-      <div
-        class="input-group"
-      >
-        <input
-          class="form-control "
-          id="33"
-          max="10"
-          min="0"
-          type="number"
-          value="4"
-        />
-      </div>
-      <div
-        class="invalid-feedback"
-      />
-      <small
-        class="form-text text-muted"
-      >
-        Number of days that must pass between receiving the request for restart and the automatic restart itself.
-      </small>
-    </div>
-  </div>
-  <div
-    class="rdt"
-  >
-    <div>
-      <div
-        class="form-group row"
-      >
-        <label
-          class="form-control-label col-sm-3"
-          for="34"
-        >
-          Reboot time
-        </label>
         <div
-          class="col-sm-8"
+          class="input-group"
         >
-          <div
-            class="input-group"
-          >
-            <input
-              class="form-control "
-              id="34"
-              type="text"
-              value="04:30"
-            />
-          </div>
-          <div
-            class="invalid-feedback"
+          <input
+            class="form-control "
+            id="2"
+            max="10"
+            min="0"
+            type="number"
+            value="4"
           />
-          <small
-            class="form-text text-muted"
+        </div>
+        <small
+          class="form-text text-muted"
+        >
+          Number of days that must pass between receiving the request for restart and the automatic restart itself.
+        </small>
+      </div>
+    </div>
+    <div
+      class="rdt"
+    >
+      <div>
+        <div
+          class="form-group row"
+        >
+          <label
+            class="form-control-label col-sm-3"
+            for="3"
           >
-            Time of day of automatic reboot in HH:MM format.
-          </small>
+            Reboot time
+          </label>
+          <div
+            class="col-sm-8"
+          >
+            <div
+              class="input-group"
+            >
+              <input
+                class="form-control "
+                id="3"
+                type="text"
+                value="04:30"
+              />
+            </div>
+            <small
+              class="form-text text-muted"
+            >
+              Time of day of automatic reboot in HH:MM format.
+            </small>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rdtPicker"
+      >
+        <div
+          class="rdtTime"
+        >
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <div
+                    class="rdtCounters"
+                  >
+                    <div
+                      class="rdtCounter"
+                    >
+                      <span
+                        class="rdtBtn"
+                      >
+                        ▲
+                      </span>
+                      <div
+                        class="rdtCount"
+                      >
+                        4
+                      </div>
+                      <span
+                        class="rdtBtn"
+                      >
+                        ▼
+                      </span>
+                    </div>
+                    <div
+                      class="rdtCounterSeparator"
+                    >
+                      :
+                    </div>
+                    <div
+                      class="rdtCounter"
+                    >
+                      <span
+                        class="rdtBtn"
+                      >
+                        ▲
+                      </span>
+                      <div
+                        class="rdtCount"
+                      >
+                        30
+                      </div>
+                      <span
+                        class="rdtBtn"
+                      >
+                        ▼
+                      </span>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
-    <div
-      class="rdtPicker"
+    <button
+      class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
     >
-      <div
-        class="rdtTime"
-      >
-        <table>
-          <tbody>
-            <tr>
-              <td>
-                <div
-                  class="rdtCounters"
-                >
-                  <div
-                    class="rdtCounter"
-                  >
-                    <span
-                      class="rdtBtn"
-                    >
-                      ▲
-                    </span>
-                    <div
-                      class="rdtCount"
-                    >
-                      4
-                    </div>
-                    <span
-                      class="rdtBtn"
-                    >
-                      ▼
-                    </span>
-                  </div>
-                  <div
-                    class="rdtCounterSeparator"
-                  >
-                    :
-                  </div>
-                  <div
-                    class="rdtCounter"
-                  >
-                    <span
-                      class="rdtBtn"
-                    >
-                      ▲
-                    </span>
-                    <div
-                      class="rdtCount"
-                    >
-                      30
-                    </div>
-                    <span
-                      class="rdtBtn"
-                    >
-                      ▼
-                    </span>
-                  </div>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-  <button
-    class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
-  >
-     
-     
-    Save
-  </button>
-</form>
+        Save
+    </button>
+  </form>
+</DocumentFragment>
 `;
 
-exports[`<Updates/> Test with snapshot disabled. 1`] = `
-<form>
-  <div
-    class="form-group row"
-  >
-    <div
-      class="form-label col-sm-3"
-    >
-      <label
-        class="form-label"
-        for="1"
-      >
-        Enable automatic updates (recommended)
-      </label>
-    </div>
-    <div
-      class="form-check col-sm-8"
-    >
-      <input
-        disabled=""
-        id="1"
-        type="checkbox"
-      />
-      <small
-        class="form-text text-muted"
-      />
-    </div>
-  </div>
-  <h4>
-    Automatic restarts after software update
-  </h4>
-  <div
-    class="form-group row"
-  >
-    <label
-      class="form-control-label col-sm-3"
-      for="2"
-    >
-      Delay (days)
-    </label>
-    <div
-      class="col-sm-8"
-    >
-      <div
-        class="input-group"
-      >
-        <input
-          class="form-control "
-          disabled=""
-          id="2"
-          max="10"
-          min="0"
-          type="number"
-          value="4"
-        />
-      </div>
-      <div
-        class="invalid-feedback"
-      />
-      <small
-        class="form-text text-muted"
-      >
-        Number of days that must pass between receiving the request for restart and the automatic restart itself.
-      </small>
-    </div>
-  </div>
-  <div
-    class="rdt"
-  >
-    <div>
-      <div
-        class="form-group row"
-      >
-        <label
-          class="form-control-label col-sm-3"
-          for="3"
-        >
-          Reboot time
-        </label>
-        <div
-          class="col-sm-8"
-        >
-          <div
-            class="input-group"
+exports[`<Updates/> Test with snapshot enabled, delayed. 1`] = `
+"Snapshot Diff:
+- First value
++ Second value
+
+@@ -113,10 +113,36 @@
           >
-            <input
-              class="form-control "
-              disabled=""
-              id="3"
-              type="text"
-              value="04:30"
-            />
-          </div>
-          <div
-            class="invalid-feedback"
-          />
-          <small
-            class="form-text text-muted"
-          >
-            Time of day of automatic reboot in HH:MM format.
+            You have to approve the updates, otherwise they won't be installed.
           </small>
         </div>
       </div>
-    </div>
-    <div
-      class="rdtPicker"
-    >
++     <div
++       class=\\"form-group row\\"
++     >
++       <label
++         class=\\"form-control-label col-sm-3\\"
++         for=\\"10\\"
++       >
++         Delayed updates (hours)
++       </label>
++       <div
++         class=\\"col-sm-8\\"
++       >
++         <div
++           class=\\"input-group\\"
++         >
++           <input
++             class=\\"form-control \\"
++             id=\\"10\\"
++             max=\\"168\\"
++             min=\\"1\\"
++             type=\\"number\\"
++             value=\\"1\\"
++           />
++         </div>
++       </div>
++     </div>
+      <h4>
+        Automatic restarts after software update
+      </h4>
       <div
-        class="rdtTime"
-      >
-        <table>
-          <tbody>
-            <tr>
-              <td>
-                <div
-                  class="rdtCounters"
-                >
-                  <div
-                    class="rdtCounter"
-                  >
-                    <span
-                      class="rdtBtn"
-                    >
-                      ▲
-                    </span>
-                    <div
-                      class="rdtCount"
-                    >
-                      4
-                    </div>
-                    <span
-                      class="rdtBtn"
-                    >
-                      ▼
-                    </span>
-                  </div>
-                  <div
-                    class="rdtCounterSeparator"
-                  >
-                    :
-                  </div>
-                  <div
-                    class="rdtCounter"
-                  >
-                    <span
-                      class="rdtBtn"
-                    >
-                      ▲
-                    </span>
-                    <div
-                      class="rdtCount"
-                    >
-                      30
-                    </div>
-                    <span
-                      class="rdtBtn"
-                    >
-                      ▼
-                    </span>
-                  </div>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-  <button
-    class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
-    disabled=""
-  >
-    <span
-      aria-hidden="true"
-      class="spinner-border spinner-border-sm"
-      role="status"
-    />
-     
-     
-     
-    Load settings
-  </button>
-</form>
+        class=\\"form-group row\\""
 `;
 
 exports[`<Updates/> Test with snapshot enabled. 1`] = `
-<form>
-  <div
-    class="form-group row"
-  >
-    <div
-      class="form-label col-sm-3"
-    >
-      <label
-        class="form-label"
-        for="16"
-      >
-        Enable automatic updates (recommended)
-      </label>
-    </div>
-    <div
-      class="form-check col-sm-8"
-    >
-      <input
-        id="16"
-        type="checkbox"
-      />
-      <small
-        class="form-text text-muted"
-      />
-    </div>
-  </div>
-  <h4>
-    Update approvals
-  </h4>
-  <p>
-    Update approvals can be useful when you want to make sure that updates won't harm your specific
-            configuration. You can e.g. install updates when you're prepared for a possible rollback to a previous
-            snapshot and deny the questionable update temporarily. It isn't possible to decline the update forever an
-            it will be offered to you again together with the next package installation.
-  </p>
-  <div
-    class="form-group row"
-    id="29"
-  >
-    <div
-      class="form-label col-sm-3"
-    >
-      <label
-        class="form-label"
-        for="29"
-      />
-    </div>
-    <div
-      class="col-sm-8"
-    >
-      <div
-        class="form-check form-check-inline"
-      >
-        <input
-          class="form-check-input"
-          id="approvals-0"
-          name="approvals"
-          type="radio"
-          value="off"
-        />
-        <label
-          class="form-check-label"
-          for="approvals-0"
-        >
-          Automatic installation
-        </label>
-      </div>
-      <small
-        class="form-text text-muted"
-      >
-        Updates will be installed without user's intervention.
-      </small>
-      <div
-        class="form-check form-check-inline"
-      >
-        <input
-          class="form-check-input"
-          id="approvals-1"
-          name="approvals"
-          type="radio"
-          value="delayed"
-        />
-        <label
-          class="form-check-label"
-          for="approvals-1"
-        >
-          Delayed updates
-        </label>
-      </div>
-      <small
-        class="form-text text-muted"
-      >
-        Updates will be installed with an adjustable delay. You can also approve them manually.
-      </small>
-      <div
-        class="form-check form-check-inline"
-      >
-        <input
-          checked=""
-          class="form-check-input"
-          id="approvals-2"
-          name="approvals"
-          type="radio"
-          value="on"
-        />
-        <label
-          class="form-check-label"
-          for="approvals-2"
-        >
-          Update approval needed
-        </label>
-      </div>
-      <small
-        class="form-text text-muted"
-      >
-        You have to approve the updates, otherwise they won't be installed.
-      </small>
-      <small
-        class="form-text text-muted"
-      />
-    </div>
-  </div>
-  <h4>
-    Automatic restarts after software update
-  </h4>
-  <div
-    class="form-group row"
-  >
-    <label
-      class="form-control-label col-sm-3"
-      for="17"
-    >
-      Delay (days)
-    </label>
-    <div
-      class="col-sm-8"
-    >
-      <div
-        class="input-group"
-      >
-        <input
-          class="form-control "
-          id="17"
-          max="10"
-          min="0"
-          type="number"
-          value="4"
-        />
-      </div>
-      <div
-        class="invalid-feedback"
-      />
-      <small
-        class="form-text text-muted"
-      >
-        Number of days that must pass between receiving the request for restart and the automatic restart itself.
-      </small>
-    </div>
-  </div>
-  <div
-    class="rdt"
-  >
-    <div>
-      <div
-        class="form-group row"
-      >
-        <label
-          class="form-control-label col-sm-3"
-          for="18"
-        >
-          Reboot time
-        </label>
-        <div
-          class="col-sm-8"
-        >
-          <div
-            class="input-group"
-          >
-            <input
-              class="form-control "
-              id="18"
-              type="text"
-              value="04:30"
-            />
-          </div>
-          <div
-            class="invalid-feedback"
+"Snapshot Diff:
+- First value
++ Second value
+
+@@ -21,10 +21,103 @@
+            type=\\"checkbox\\"
           />
-          <small
-            class="form-text text-muted"
-          >
-            Time of day of automatic reboot in HH:MM format.
-          </small>
         </div>
       </div>
-    </div>
-    <div
-      class="rdtPicker"
-    >
+      <h4>
++       Update approvals
++     </h4>
++     <p>
++       Update approvals can be useful when you want to make sure that updates won't harm your specific
++             configuration. You can e.g. install updates when you're prepared for a possible rollback to a previous
++             snapshot and deny the questionable update temporarily. It isn't possible to decline the update forever an
++             it will be offered to you again together with the next package installation.
++     </p>
++     <div
++       class=\\"form-group row\\"
++       id=\\"5\\"
++     >
++       <div
++         class=\\"form-label col-sm-3\\"
++       >
++         <label
++           class=\\"form-label\\"
++           for=\\"5\\"
++         />
++       </div>
++       <div
++         class=\\"col-sm-8\\"
++       >
++         <div
++           class=\\"form-check form-check-inline\\"
++         >
++           <input
++             class=\\"form-check-input\\"
++             id=\\"approvals-0\\"
++             name=\\"approvals\\"
++             type=\\"radio\\"
++             value=\\"off\\"
++           />
++           <label
++             class=\\"form-check-label\\"
++             for=\\"approvals-0\\"
++           >
++             Automatic installation
++           </label>
++         </div>
++         <small
++           class=\\"form-text text-muted\\"
++         >
++           Updates will be installed without user's intervention.
++         </small>
++         <div
++           class=\\"form-check form-check-inline\\"
++         >
++           <input
++             class=\\"form-check-input\\"
++             id=\\"approvals-1\\"
++             name=\\"approvals\\"
++             type=\\"radio\\"
++             value=\\"delayed\\"
++           />
++           <label
++             class=\\"form-check-label\\"
++             for=\\"approvals-1\\"
++           >
++             Delayed updates
++           </label>
++         </div>
++         <small
++           class=\\"form-text text-muted\\"
++         >
++           Updates will be installed with an adjustable delay. You can also approve them manually.
++         </small>
++         <div
++           class=\\"form-check form-check-inline\\"
++         >
++           <input
++             checked=\\"\\"
++             class=\\"form-check-input\\"
++             id=\\"approvals-2\\"
++             name=\\"approvals\\"
++             type=\\"radio\\"
++             value=\\"on\\"
++           />
++           <label
++             class=\\"form-check-label\\"
++             for=\\"approvals-2\\"
++           >
++             Update approval needed
++           </label>
++         </div>
++         <small
++           class=\\"form-text text-muted\\"
++         >
++           You have to approve the updates, otherwise they won't be installed.
++         </small>
++       </div>
++     </div>
++     <h4>
+        Automatic restarts after software update
+      </h4>
       <div
-        class="rdtTime"
-      >
-        <table>
-          <tbody>
-            <tr>
-              <td>
-                <div
-                  class="rdtCounters"
-                >
-                  <div
-                    class="rdtCounter"
-                  >
-                    <span
-                      class="rdtBtn"
-                    >
-                      ▲
-                    </span>
-                    <div
-                      class="rdtCount"
-                    >
-                      4
-                    </div>
-                    <span
-                      class="rdtBtn"
-                    >
-                      ▼
-                    </span>
-                  </div>
-                  <div
-                    class="rdtCounterSeparator"
-                  >
-                    :
-                  </div>
-                  <div
-                    class="rdtCounter"
-                  >
-                    <span
-                      class="rdtBtn"
-                    >
-                      ▲
-                    </span>
-                    <div
-                      class="rdtCount"
-                    >
-                      30
-                    </div>
-                    <span
-                      class="rdtBtn"
-                    >
-                      ▼
-                    </span>
-                  </div>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-  <button
-    class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
-  >
-     
-     
-    Save
-  </button>
-</form>
+        class=\\"form-group row\\"
+      >"
 `;

@@ -8,7 +8,7 @@
 import React from 'react';
 
 import Select from '../Select';
-import {fireEvent, getByDisplayValue, getByText, render} from '@testing-library/react';
+import {fireEvent, getByDisplayValue, getByText, render} from 'customTestRender';
 
 const TEST_CHOICES = {
     '1': 'one',

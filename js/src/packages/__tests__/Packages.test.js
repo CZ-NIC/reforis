@@ -6,25 +6,41 @@
  */
 
 import React from 'react';
-import {render, queryByText} from 'react-testing-library';
-
-import {packagesFixture} from './__fixtures__/packages';
-import Packages from '../Packages';
+import {cleanup, render, wait} from 'customTestRender';
 import mockAxios from 'jest-mock-axios';
 
+import packagesFixture from './__fixtures__/packages';
+import Packages from '../Packages';
+import diffSnapshot from "snapshot-diff";
+
 describe('<Packages/>', () => {
-    let packagesContainer;
-    beforeEach(() => {
-        const {container} = render(<Packages/>);
-        mockAxios.mockResponse({data: packagesFixture()});
-        packagesContainer = container;
+    let firstRender;
+    let queryByText;
+
+    beforeEach(async () => {
+        const renderRes = render(<Packages/>);
+        queryByText = renderRes.queryByText;
+        mockAxios.mockResponse({data: packagesFixture(true)});
+        await wait(() => renderRes.getByLabelText('Enabled package title'));
+        firstRender = renderRes.asFragment();
     });
 
-    it('Test with snapshot.', () => {
-        expect(packagesContainer.firstChild).toMatchSnapshot()
+    it('Updates enabled', () => {
+        expect(firstRender).toMatchSnapshot()
     });
+
+    it('Updates disabled', async () => {
+        cleanup();
+        const {getByLabelText, asFragment} = render(<Packages/>);
+        mockAxios.mockResponse({data: packagesFixture(false)});
+        await wait(() => getByLabelText('Enabled package title'));
+
+        expect(diffSnapshot(firstRender, asFragment())).toMatchSnapshot();
+    });
+
+
     it('Test hidden.', () => {
-        const HTMLHiddenPackageMessage = queryByText(packagesContainer, 'Hidden package msg');
+        const HTMLHiddenPackageMessage = queryByText('Hidden package msg');
         expect(HTMLHiddenPackageMessage).toBeNull();
     })
 });

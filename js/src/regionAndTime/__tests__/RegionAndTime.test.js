@@ -7,7 +7,7 @@
 
 import React from 'react';
 
-import {render, wait, getByText} from 'react-testing-library'
+import {getByText, render, wait} from 'customTestRender';
 import mockAxios from 'jest-mock-axios';
 import {regionAndTime} from './__fixtures__/regionAndTime';
 
@@ -26,7 +26,7 @@ describe('<RegionAndTime/>', () => {
 
     it('Snapshot', () => {
         expect(mockAxios.get).toHaveBeenCalledTimes(1);
-        expect(mockAxios.get).toHaveBeenCalledWith(`/api${API_URLs.regionAndTime}`, expect.anything(),);
+        expect(mockAxios.get).toHaveBeenCalledWith(API_URLs.regionAndTime, expect.anything(),);
         expect(regionAndTimeContainer).toMatchSnapshot();
     });
 });

@@ -5,9 +5,9 @@
  * See /LICENSE for more information.
  */
 
-export function packagesFixture() {
+export default function packagesFixture(UpdatesEnabled = true) {
     return {
-        enabled: false,
+        enabled: UpdatesEnabled,
         languages:
             [
                 {
