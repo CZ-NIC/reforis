@@ -7,6 +7,10 @@
 
 // https://jestjs.io/docs/en/configuration.html
 module.exports = {
+    moduleDirectories: [
+        'node_modules',
+        '<rootDir>/src/testUtils',
+    ],
     clearMocks: true,
     collectCoverageFrom: ['src/**/*.{js,jsx}'],
     coverageDirectory: 'coverage',
