@@ -20,4 +20,7 @@ module.exports = {
         '@testing-library/react/cleanup-after-each',
         '<rootDir>/src/testUtils/setupTest',
     ],
+    globals: {
+        TZ: 'utc',
+    },
 };

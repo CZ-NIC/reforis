@@ -47,6 +47,7 @@ all:
 	@echo "    Remove python artifacts and virtualenv."
 
 prepare-dev:
+	which npm || curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 	which npm || sudo apt install -y nodejs
 	cd js; npm install
 
