@@ -40,6 +40,7 @@ setuptools.setup(
     # All versions are fixed just for case. Once in while try to check for new versions.
     install_requires=[
         'flask==1.0.2',
+        'Babel==2.7.0',
         'Flask-Babel==0.12.2',
         'Flask-Session==0.3.1',
     ],

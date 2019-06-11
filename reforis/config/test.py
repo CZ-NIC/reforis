@@ -8,5 +8,3 @@
 from reforis.config.dev import *
 
 TESTING = True
-
-CONTROLLER_ID = 'test-controller_id'

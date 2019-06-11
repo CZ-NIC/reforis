@@ -10,6 +10,7 @@ test:
   stage: test
   script:
     - make prepare-dev
+    - make compile-messages
     - make test
 
 lint:

@@ -100,14 +100,14 @@ test-web: venv
 test-js-update-snapshots:
 	cd js; npm test -- -u
 
-create-messages:
-	pybabel extract -F babel.cfg -o ./reforis/translations/messages.pot .
-update-messages:
-	pybabel update -i ./reforis/translations/messages.pot -d ./reforis/translations
-	pybabel update -i ./reforis/translations/tzinfo.pot -d ./reforis/translations -D tzinfo
-compile-messages:
-	pybabel compile -f -d ./reforis/translations
-	pybabel compile -f -d ./reforis/translations -D tzinfo
+create-messages: venv
+	$(VENV_BIN)/pybabel extract -F babel.cfg -o ./reforis/translations/messages.pot .
+update-messages: venv
+	$(VENV_BIN)/pybabel update -i ./reforis/translations/messages.pot -d ./reforis/translations
+	$(VENV_BIN)/pybabel update -i ./reforis/translations/tzinfo.pot -d ./reforis/translations -D tzinfo
+compile-messages: venv
+	$(VENV_BIN)/pybabel compile -f -d ./reforis/translations
+	$(VENV_BIN)/pybabel compile -f -d ./reforis/translations -D tzinfo
 
 make_timzezones:
 	$(VENV_BIN)/$(DEV_PYTHON) ./scripts/make_timezones.py ./js/src/utils/timezones.js
