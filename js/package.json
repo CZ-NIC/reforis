@@ -42,6 +42,7 @@
     "eslint-plugin-react-hooks": "^1.6.0",
     "jest": "^24.8.0",
     "jest-mock-axios": "^3.0.0",
+    "moment-timezone": "^0.5.25",
     "snapshot-diff": "^0.5.1",
     "watchify": "^3.11.1"
   },

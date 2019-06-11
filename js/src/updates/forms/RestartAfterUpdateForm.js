@@ -23,6 +23,7 @@ RestartAfterUpdateForm.defaultProps = {
 };
 
 export default function RestartAfterUpdateForm({formData, formErrors, setFormValue, ...props}) {
+    const rebootTime = moment(formData.time, 'HH:mm');
     return <>
         <h4>{_('Automatic restarts after software update')}</h4>
         <NumberInput
@@ -39,7 +40,7 @@ export default function RestartAfterUpdateForm({formData, formErrors, setFormVal
         />
         <DataTimeInput
             label={_('Reboot time')}
-            value={moment(formData.time).isValid() ? moment(formData.time) : formData.time}
+            value={rebootTime.isValid() ? rebootTime : formData.time}
             error={formErrors.time}
             timeFormat={TIME_FORMAT}
             dateFormat={false}
@@ -53,7 +54,7 @@ export default function RestartAfterUpdateForm({formData, formErrors, setFormVal
                         )({target: {value: value}});
                     return setFormValue(
                         value => ({reboots: {time: {$set: value}}})
-                    )({target: {value: value.format("HH:mm")}})
+                    )({target: {value: value.format('HH:mm')}})
                 }
             }
 

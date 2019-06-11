@@ -34,7 +34,7 @@ exports[`<DHCPClientsList/> Test with snapshot. 1`] = `
         class="text-center"
       >
         <td>
-          2018-10-12 15:16
+          2018-10-12 13:16
         </td>
         <td>
           192.168.1.1
@@ -55,7 +55,7 @@ exports[`<DHCPClientsList/> Test with snapshot. 1`] = `
         class="text-center"
       >
         <td>
-          2018-10-12 15:16
+          2018-10-12 13:16
         </td>
         <td>
           192.168.2.1
