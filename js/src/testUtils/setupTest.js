@@ -6,6 +6,7 @@
  */
 
 import mockAxios from 'jest-mock-axios';
+import moment from 'moment-timezone';
 
 // Setup axios cleanup
 global.afterEach(() => {
@@ -18,4 +19,10 @@ window.babel = {format: (str, _) => str};
 window.ForisTranslations = {};
 
 // Mock scrollIntoView
-window.HTMLElement.prototype.scrollIntoView = () => {};
+window.HTMLElement.prototype.scrollIntoView = () => {
+};
+
+jest.doMock('moment', () => {
+    moment.tz.setDefault('UTC');
+    return moment;
+});
