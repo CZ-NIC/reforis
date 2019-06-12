@@ -34,9 +34,9 @@ export default function Spinner({fullScreen, children, className, ...props}) {
     </div>
 }
 
-function SpinnerElement({children}) {
+export function SpinnerElement({small, children}) {
     return <>
-        <div className="spinner-border" role="status">
+        <div className={'spinner-border ' + (small ? 'spinner-border-sm' : '')} role="status">
             <span className="sr-only"/>
         </div>
         <div className="spinner-text">{children}</div>
