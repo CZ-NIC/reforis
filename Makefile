@@ -3,7 +3,7 @@
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
 
-.PHONY: all prepare-dev venv install install-reforis install-diagnostics run run-js lint lint-js lint-web test test-web test-js-update-snapshots clean
+.PHONY: all prepare-dev venv install install-reforis install-diagnostics run run-js run-ws watch-js compile-js lint-js lint-web test test-web test-js-update-snapshots clean
 
 SHELL=/bin/bash
 
@@ -80,9 +80,9 @@ run-ws:
 	--mqtt-passwd-file '/etc/fosquitto/credentials.plain';
 
 watch-js:
-	cd $(JS_DIR);\
-	npx watchify ./src/app.js -o ../reforis/static/js/app.min.js \
-	-t [ babelify --presets [ @babel/preset-env @babel/preset-react ] --plugins [ @babel/plugin-proposal-class-properties ] ]
+	cd $(JS_DIR); npm run-script watch
+compile-js:
+	cd $(JS_DIR); npm run-script build
 
 lint: lint-js lint-web
 lint-js:
