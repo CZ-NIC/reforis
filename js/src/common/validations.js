@@ -31,12 +31,20 @@ const createValidator = fieldType => value => {
         return REs[fieldType].test(value) ? undefined : ERROR_MESSAGES[fieldType]
 };
 
-module.exports = {
-    validateIPv4Address: createValidator('IPv4'),
-    validateIPv6Address: createValidator('IPv6'),
-    validateIPv6Prefix: createValidator('IPv6Prefix'),
-    validateDomain: createValidator('domain'),
-    validateDUID: createValidator('DUID'),
-    validateMAC: createValidator('MAC'),
-    validateMultipleEmails: createValidator('MultipleEmails'),
-};
+const validateIPv4Address = createValidator('IPv4');
+const validateIPv6Address = createValidator('IPv6');
+const validateIPv6Prefix = createValidator('IPv6Prefix');
+const validateDomain = createValidator('domain');
+const validateDUID = createValidator('DUID');
+const validateMAC = createValidator('MAC');
+const validateMultipleEmails = createValidator('MultipleEmails');
+
+export {
+    validateIPv4Address,
+    validateIPv6Address,
+    validateIPv6Prefix,
+    validateDomain,
+    validateDUID,
+    validateMAC,
+    validateMultipleEmails,
+}
