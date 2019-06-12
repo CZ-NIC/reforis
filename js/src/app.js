@@ -30,6 +30,7 @@ import Reboot from './reboot/Reboot';
 
 import Updates from './updates/Updates';
 import Packages from './packages/Packages';
+import LanguagesDropdown from './languagesDropdown/LanguagesDropdown';
 
 const ws = new WebSockets();
 
@@ -53,11 +54,13 @@ window.addEventListener('load', () => {
         {id: 'updates_container', component: Updates},
         {id: 'packages_container', component: Packages},
 
-        {id: 'router_state_handler_container', component: RouterStateHandler},
-
+        // Top bar
         {id: 'notifications_dropdown_container', component: NotificationsDropdown},
-        {id: 'notifications_container', component: Notifications},
+        {id: 'languages_dropdown_container', component: LanguagesDropdown},
 
+        // Other
+        {id: 'router_state_handler_container', component: RouterStateHandler},
+        {id: 'notifications_container', component: Notifications},
         {id: 'overview_container', component: Overview},
     ];
 

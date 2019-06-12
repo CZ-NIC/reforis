@@ -11,6 +11,9 @@ const API_URLs = new Proxy({
         notifications: '/notifications',
         notificationsSettings: '/notifications-settings',
 
+        language: '/language',
+        languages: '/languages',
+
         // Network
         wifi: '/wifi',
         wan: '/wan',

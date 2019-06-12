@@ -42,6 +42,21 @@ def handle_invalid_usage(error):
     return response
 
 
+@api.route('/languages', methods=['GET'])
+def languages():
+    return jsonify(current_app.backend.perform('web', 'list_languages')['languages'])
+
+
+@api.route('/language', methods=['GET', 'POST'])
+def language():
+    res = ''
+    if request.method == 'GET':
+        res = current_app.backend.perform('web', 'get_data')['language']
+    elif request.method == 'POST':
+        res = current_app.backend.perform('web', 'set_language', request.json)
+    return jsonify(res)
+
+
 @api.route('/notifications', methods=['GET', 'POST'])
 def notifications():
     res = ''
