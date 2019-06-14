@@ -75,9 +75,9 @@ run-ws:
 	--mqtt-passwd-file '/etc/fosquitto/credentials.plain';
 
 watch-js:
-	cd $(JS_DIR);\
-	npx watchify ./src/app.js -o ../reforis/static/js/app.min.js \
-	-t [ babelify --presets [ @babel/preset-env @babel/preset-react ] --plugins [ @babel/plugin-proposal-class-properties ] ]
+	cd $(JS_DIR); npm run-script watch
+compile-js:
+	cd $(JS_DIR); npm run-script build
 
 lint: lint-js lint-web
 lint-js:
