@@ -73,7 +73,4 @@ setuptools.setup(
     cmdclass={
         'build_py': NPMInstall
     },
-    package_data={
-        "": ["static/js/app.min.js"],
-    }
 )

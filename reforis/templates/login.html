@@ -7,10 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     {# Bootstrap #}
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/bootstrap.min.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'reforis/css/bootstrap.min.css') }}"/>
 
     {# Custom CSS #}
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/custom.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'reforis/css/custom.css') }}"/>
 
     {# Custom JS #}
     {% include 'includes/locale.html' %}
@@ -20,7 +20,7 @@
 <body>
 <div class="login">
     <div class="justify-content-between">
-        <img src="{{ url_for('static', filename = 'imgs/logo-turris.svg') }}">
+        <img src="{{ url_for('static', filename = 'reforis/imgs/logo-turris.svg') }}">
         <h1>Login</h1>
         <form action="" method="post">
             <div class="form-group">

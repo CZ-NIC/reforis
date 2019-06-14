@@ -14,6 +14,8 @@ from reforis.auth import login_to_foris, logout_from_foris
 views = Blueprint(  # pylint: disable=invalid-name
     'Foris',
     __name__,
+    static_folder='/tmp/',
+    static_url_path='/static',
     template_folder='templates',
 )
 

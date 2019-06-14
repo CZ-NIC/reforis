@@ -18,6 +18,8 @@ def create_app(config):
     app = Flask(__name__)
     app.config.from_pyfile(f'config/{config}.py')
 
+    app.static_folder = app.config.get('STATIC_DIR')
+
     from flask_session import Session
     Session(app)
 

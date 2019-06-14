@@ -3,9 +3,7 @@
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
 
-.PHONY: all prepare-dev venv install install-reforis install-diagnostics run run-js lint lint-js lint-web test test-web test-js-update-snapshots clean
-
-SHELL=/bin/bash
+.PHONY: all prepare-dev venv install install-reforis run run-js run-ws watch-js compile-js lint-js lint-web test test-web test-js-update-snapshots clean
 
 DEV_PYTHON=python3.7
 VENV_NAME?=venv
@@ -63,11 +61,8 @@ $(VENV_NAME)/bin/activate: setup.py
 	$(VENV_BIN)/$(DEV_PYTHON) -m pip install -e .[devel]
 	touch $(VENV_NAME)/bin/activate
 
-install: install-reforis install-diagnostics
-install-reforis: setup.py
+install: setup.py
 	$(ROUTER_PYTHON) -m pip install -e .
-install-diagnostics: reforis_diagnostics/setup.py
-	cd reforis_diagnostics; $(ROUTER_PYTHON) -m pip install -e .
 
 install-js: js/package.json
 	cd $(JS_DIR); npm install --save-dev
@@ -115,7 +110,5 @@ make_timzezones:
 clean:
 	find . -name '*.pyc' -exec rm -f {} +
 	rm -rf $(VENV_NAME) *.eggs *.egg-info dist build docs/_build .cache
-	rm -rf reforis_diagnostics/dist reforis_diagnostics/build diagnostics/*.egg-info
-	rm -rf js/node_modules/ reforis/static/js/app.min.js
+	rm -rf js/node_modules/ reforis_static/reforis/js/app.min.js
 	$(ROUTER_PYTHON) -m pip uninstall -y reforis
-	$(ROUTER_PYTHON) -m pip uninstall -y reforis_diagnostics

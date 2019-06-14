@@ -13,7 +13,6 @@ api = Blueprint(  # pylint: disable=invalid-name
     'ForisAPI',
     __name__,
     template_folder='templates',
-    static_folder='static',
     url_prefix='/api'
 )
 

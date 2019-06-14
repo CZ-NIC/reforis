@@ -36,7 +36,7 @@ export function useAPIGet(url) {
             });
             dispatch({type: API_ACTIONS.SUCCESS, payload: result.data});
         } catch (error) {
-            dispatch({type: API_ACTIONS.FAILURE});
+            dispatch({type: API_ACTIONS.FAILURE, payload: error.response.data});
         }
     }, [url]);
 
@@ -63,6 +63,7 @@ const APIGetReducer = (state, action) => {
                 ...state,
                 isLoading: false,
                 isError: true,
+                data: action.payload,
             };
         default:
             throw new Error();

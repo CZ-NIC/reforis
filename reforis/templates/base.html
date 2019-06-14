@@ -7,22 +7,22 @@
     <link rel="shortcut icon" href="{{ url_for('static', filename='imgs/favicon.ico') }}">
 
     {# Bootstrap #}
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/bootstrap.min.css') }}"/>
-    <script src="{{ url_for('static', filename = 'js/jquery.min.js') }}"></script>
-    <script src="{{ url_for('static', filename = 'js/bootstrap.bundle.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'reforis/css/bootstrap.min.css') }}"/>
+    <script src="{{ url_for('static', filename = 'reforis/js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'reforis/js/bootstrap.bundle.min.js') }}"></script>
 
     {# Font awesome #}
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/fontawesome.min.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'reforis/css/fontawesome.min.css') }}"/>
 
     {# Custom CSS #}
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/custom.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'reforis/css/custom.css') }}"/>
     {% block css %}{% endblock %}
 
     {# Custom js#}
     {% include 'includes/locale.html' %}
     {% include 'includes/constants.html' %}
 
-    <script type="text/javascript" src="{{ url_for('static', filename = 'js/app.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'reforis/js/app.min.js') }}"></script>
     {% block js %}{% endblock %}
 
     <title>{% block title %}{% endblock %} - Foris</title>

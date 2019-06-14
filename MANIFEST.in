@@ -1,2 +1,2 @@
 recursive-include reforis/templates *
-recursive-include reforis/static *
+recursive-include reforis_static/reforis *
