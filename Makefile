@@ -76,7 +76,7 @@ run-ws:
 
 watch-js:
 	cd $(JS_DIR); npm run-script watch
-compile-js:
+build-js:
 	cd $(JS_DIR); npm run-script build
 
 lint: lint-js lint-web

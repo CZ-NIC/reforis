@@ -7,8 +7,8 @@
 
 const path = require('path');
 
-
 module.exports = {
+    mode: 'development',
     entry: './src/app.js',
     output: {
         filename: 'app.min.js',
@@ -21,5 +21,4 @@ module.exports = {
             loader: 'babel-loader'
         }]
     },
-    mode: 'development'
 };
