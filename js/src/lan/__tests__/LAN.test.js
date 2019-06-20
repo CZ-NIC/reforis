@@ -28,25 +28,25 @@ describe('<LAN/>', () => {
     });
 
     it('Snapshot unmanaged (dhcp).', () => {
-        expect(lanContainer.firstChild).toMatchSnapshot();
+        expect(lanContainer).toMatchSnapshot();
     });
     it('Snapshot unmanaged static.', () => {
         fireEvent.change(getByLabelText(lanContainer, 'IPv4 protocol'), {target: {value: 'static'}});
-        expect(lanContainer.firstChild).toMatchSnapshot();
+        expect(lanContainer).toMatchSnapshot();
     });
     it('Snapshot unmanaged none.', () => {
         fireEvent.change(getByLabelText(lanContainer, 'IPv4 protocol'), {target: {value: 'none'}});
-        expect(lanContainer.firstChild).toMatchSnapshot();
+        expect(lanContainer).toMatchSnapshot();
     });
 
     it('Snapshot managed.', () => {
         fireEvent.change(getByLabelText(lanContainer, 'LAN mode'), {target: {value: 'managed'}});
-        expect(lanContainer.firstChild).toMatchSnapshot();
+        expect(lanContainer).toMatchSnapshot();
     });
 
     it('Snapshot managed with enabled DHCP.', () => {
         fireEvent.change(getByLabelText(lanContainer, 'LAN mode'), {target: {value: 'managed'}});
         fireEvent.click(getByLabelText(lanContainer, 'Enable DHCP'));
-        expect(lanContainer.firstChild).toMatchSnapshot();
+        expect(lanContainer).toMatchSnapshot();
     });
 });
