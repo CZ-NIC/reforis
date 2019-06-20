@@ -74,8 +74,7 @@ def set_backend(app):
 
     if bus == 'mqtt':
         from reforis.backend import MQTTBackend
-        controller_id = bus_config.get('CONTROLLER_ID')
-        app.backend = MQTTBackend(**bus_config, controller_id=controller_id)
+        app.backend = MQTTBackend(**bus_config)
     if bus == 'ubus':
         from reforis.backend import UBusBackend
         app.backend = UBusBackend(**bus_config)

@@ -17,3 +17,5 @@ SESSION_PERMANENT = True
 
 # WebSockets
 WS_PORT = 9081
+
+BUSES_CONF['mqtt']['port'] = 11883

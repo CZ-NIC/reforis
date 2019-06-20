@@ -3,6 +3,8 @@
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
 
+import os
+
 DEBUG = True
 
 SESSION_TYPE = 'filesystem'
@@ -13,7 +15,8 @@ BUS = 'mqtt'
 BUSES_CONF = {
     'mqtt': {
         'host': 'localhost',
-        'port': 11883,
+        'port': os.environ.get('MQTT_PORT'),
+        'controller_id': os.environ.get('CONTROLLER_ID'),
         'credentials_file': '/etc/fosquitto/credentials.plain',
         'timeout': 30000,
     },
