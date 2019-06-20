@@ -9,12 +9,8 @@ from flask_babel import gettext as _
 from reforis import _get_locale_from_backend
 from reforis.auth import _decode_password_to_base64, check_password
 
-api = Blueprint(  # pylint: disable=invalid-name
-    'ForisAPI',
-    __name__,
-    template_folder='templates',
-    url_prefix='/api'
-)
+# pylint: disable=invalid-name
+api = Blueprint('ForisAPI', __name__, url_prefix='/api')
 
 
 class InvalidUsage(Exception):
@@ -258,6 +254,26 @@ def reboot():
 @api.route('/health-check', methods=['GET'])
 def health_check():
     return jsonify(True)
+
+
+@api.route('/guide', methods=['GET'])
+def guide():
+    res = {
+        **current_app.backend.perform('web', 'get_data')['guide'],
+        **current_app.backend.perform('web', 'get_guide'),
+    }
+    return jsonify(res)
+
+
+@api.route('/finish-guide', methods=['POST'])
+def finish_guide():
+    return jsonify(current_app.backend.perform('web', 'update_guide', {'enabled': False}))
+
+
+@api.route('/guide-workflow', methods=['POST'])
+def guide_workflow():
+    data = request.json
+    return jsonify(current_app.backend.perform('web', 'update_guide', {'enabled': True, **data}))
 
 
 def _foris_controller_settings_call(module):

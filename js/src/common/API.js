@@ -35,6 +35,10 @@ const API_URLs = new Proxy({
         reboot: '/reboot',
 
         healthCheck: '/health-check',
+
+        guide: '/guide',
+        finishGuide: '/finish-guide',
+        guideWorkflow: '/guide-workflow',
     },
     {
         get: (target, name) => {

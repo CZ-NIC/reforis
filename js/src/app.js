@@ -31,6 +31,7 @@ import Reboot from './reboot/Reboot';
 import Updates from './updates/Updates';
 import Packages from './packages/Packages';
 import LanguagesDropdown from './languagesDropdown/LanguagesDropdown';
+import Guide from './guide/Guide';
 
 const ws = new WebSockets();
 
@@ -62,6 +63,7 @@ window.addEventListener('load', () => {
         {id: 'router_state_handler_container', component: RouterStateHandler},
         {id: 'notifications_container', component: Notifications},
         {id: 'overview_container', component: Overview},
+        {id: 'guide_container', component: Guide},
     ];
 
     for (let app of apps) {

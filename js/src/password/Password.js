@@ -19,7 +19,7 @@ import Spinner from '../common/bootstrap/Spinner';
 import {STATES as SUBMIT_BUTTON_STATES} from '../formContainer/SubmitButton';
 
 
-export default function Password() {
+export default function Password({postCallback}) {
     const [formState, onFormChangeHandler, resetFormData] = useForm(validator);
 
     const resetPasswordForm = useCallback(() => {
@@ -43,12 +43,15 @@ export default function Password() {
     const [alert, setAlert] = useState(null);
     const [postState, post] = useAPIPost(API_URLs.password);
     useEffect(() => {
-        if (postState.isSuccess)
-            setAlert({type: 'success', message: _('Password was successfully changed')});
-        else if (postState.isError)
-            setAlert({type: 'danger', message: postState.data.error});
-        resetPasswordForm();
-    }, [postState.isSuccess, postState.isError, resetPasswordForm, postState.data]);
+        if (postState.data) {
+            if (postState.isSuccess) {
+                setAlert({type: 'success', message: _('Password was successfully changed')});
+                postCallback();
+            } else if (postState.isError)
+                setAlert({type: 'danger', message: postState.data.error});
+            resetPasswordForm();
+        }
+    }, [postState.isSuccess, postState.isError, resetPasswordForm, postState.data, postCallback]);
 
     function postForisPassword(e) {
         e.preventDefault();
@@ -80,6 +83,7 @@ export default function Password() {
 
     return <>
         {alert ? <Alert type={alert.type} message={alert.message} onDismiss={() => setAlert(null)}/> : null}
+        <h1>{_('Password')}</h1>
         <h3>{_('Password settings')}</h3>
         {passwordIsSetState.data.password_set ?
             <CurrentForisPasswordForm

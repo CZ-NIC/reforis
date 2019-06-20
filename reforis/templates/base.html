@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='imgs/favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='reforis/imgs/favicon.ico') }}">
 
     {# Bootstrap #}
     <link rel="stylesheet" href="{{ url_for('static', filename = 'reforis/css/bootstrap.min.css') }}"/>
@@ -30,7 +30,7 @@
 
 <body>
 <div class="wrapper">
-    {% include "includes/navigation.html" %}
+    {% block navigation %}{% include "includes/navigation.html" %}{% endblock %}
     <div id="content">
         <div class="col-lg-10 col-sm-12">
             {% include "includes/top-bar.html" %}

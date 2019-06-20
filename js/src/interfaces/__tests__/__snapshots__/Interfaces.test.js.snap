@@ -2,6 +2,46 @@
 
 exports[`<Interfaces/> Snapshot after interface moving. 1`] = `
 <div>
+  <h1>
+    Network interfaces
+  </h1>
+  <p>
+    
+Here you can configure the settings of the network interfaces on your device. You can switch the physical
+network interfaces among networks. If you are unsure what to set here use the default settings.
+        
+  </p>
+  <h4>
+    WAN
+  </h4>
+  <p>
+    
+It acts as an external network connection. Firewall rules should be applied here. It can only contain a
+single interface.
+        
+  </p>
+  <h4>
+    LAN
+  </h4>
+  <p>
+    
+It acts as a local network connection. LAN should contain devices which are under your control and you
+trust them. These devices can see each other and can access this web interface. It is recommended that the
+LAN should contain at least one interface otherwise you might not be able to configure this device in an
+easy way.
+        
+  </p>
+  <h4>
+    Guest network
+  </h4>
+  <p>
+    
+It acts as a local network connection. Unlike LAN the devices in the guest network can't access
+the configuration interface of this device and are only able to access WAN (internet). This network should
+be used for devices which you don't fully trust. Note that you can also limit download/upload speed of the
+devices connected to the guest network.
+        
+  </p>
   <form>
     <div
       class="modal fade "
@@ -439,6 +479,46 @@ This means that the only way to configure your device will be via serial cabel o
 
 exports[`<Interfaces/> Snapshot select interface. 1`] = `
 <div>
+  <h1>
+    Network interfaces
+  </h1>
+  <p>
+    
+Here you can configure the settings of the network interfaces on your device. You can switch the physical
+network interfaces among networks. If you are unsure what to set here use the default settings.
+        
+  </p>
+  <h4>
+    WAN
+  </h4>
+  <p>
+    
+It acts as an external network connection. Firewall rules should be applied here. It can only contain a
+single interface.
+        
+  </p>
+  <h4>
+    LAN
+  </h4>
+  <p>
+    
+It acts as a local network connection. LAN should contain devices which are under your control and you
+trust them. These devices can see each other and can access this web interface. It is recommended that the
+LAN should contain at least one interface otherwise you might not be able to configure this device in an
+easy way.
+        
+  </p>
+  <h4>
+    Guest network
+  </h4>
+  <p>
+    
+It acts as a local network connection. Unlike LAN the devices in the guest network can't access
+the configuration interface of this device and are only able to access WAN (internet). This network should
+be used for devices which you don't fully trust. Note that you can also limit download/upload speed of the
+devices connected to the guest network.
+        
+  </p>
   <form>
     <div
       class="modal fade "
@@ -876,6 +956,46 @@ This means that the only way to configure your device will be via serial cabel o
 
 exports[`<Interfaces/> Snapshot. 1`] = `
 <div>
+  <h1>
+    Network interfaces
+  </h1>
+  <p>
+    
+Here you can configure the settings of the network interfaces on your device. You can switch the physical
+network interfaces among networks. If you are unsure what to set here use the default settings.
+        
+  </p>
+  <h4>
+    WAN
+  </h4>
+  <p>
+    
+It acts as an external network connection. Firewall rules should be applied here. It can only contain a
+single interface.
+        
+  </p>
+  <h4>
+    LAN
+  </h4>
+  <p>
+    
+It acts as a local network connection. LAN should contain devices which are under your control and you
+trust them. These devices can see each other and can access this web interface. It is recommended that the
+LAN should contain at least one interface otherwise you might not be able to configure this device in an
+easy way.
+        
+  </p>
+  <h4>
+    Guest network
+  </h4>
+  <p>
+    
+It acts as a local network connection. Unlike LAN the devices in the guest network can't access
+the configuration interface of this device and are only able to access WAN (internet). This network should
+be used for devices which you don't fully trust. Note that you can also limit download/upload speed of the
+devices connected to the guest network.
+        
+  </p>
   <form>
     <div
       class="modal fade "

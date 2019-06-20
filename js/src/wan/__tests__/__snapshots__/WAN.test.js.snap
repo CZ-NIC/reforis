@@ -5,7 +5,7 @@ exports[`<WAN/> Snapshot WAN IPv4 (pppoe). 1`] = `
 - First value
 + Second value
 
-@@ -40,34 +40,65 @@
+@@ -50,34 +50,65 @@
       <div
         class=\\"form-group row\\"
       >
@@ -79,7 +79,7 @@ exports[`<WAN/> Snapshot WAN IPv4 (pppoe). 1`] = `
       </h3>
       <div
         class=\\"form-group row\\"
-@@ -143,10 +174,11 @@
+@@ -153,10 +184,11 @@
           </small>
         </div>
       </div>
@@ -98,7 +98,7 @@ exports[`<WAN/> Snapshot WAN IPv4 (static). 1`] = `
 - First value
 + Second value
 
-@@ -40,31 +40,150 @@
+@@ -50,31 +50,150 @@
       <div
         class=\\"form-group row\\"
       >
@@ -253,7 +253,7 @@ exports[`<WAN/> Snapshot WAN IPv4 (static). 1`] = `
       </div>
       <h3>
         WAN IPv6
-@@ -143,10 +262,11 @@
+@@ -153,10 +272,11 @@
           </small>
         </div>
       </div>
@@ -272,7 +272,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled. 1`] = `
 - First value
 + Second value
 
-@@ -240,10 +240,115 @@
+@@ -250,10 +250,115 @@
           >
             Some tunnel providers allow you to have public dynamic IPv4. Note that you need to fill in some extra fields to make it work.
           </small>
@@ -395,7 +395,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
 - First value
 + Second value
 
-@@ -111,10 +111,139 @@
+@@ -121,10 +121,139 @@
               6in4 (public IPv4 address required)
             </option>
           </select>
@@ -535,7 +535,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
       </h3>
       <div
         class=\\"form-group row\\"
-@@ -143,10 +272,11 @@
+@@ -153,10 +282,11 @@
           </small>
         </div>
       </div>
@@ -554,7 +554,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6to4). 1`] = `
 - First value
 + Second value
 
-@@ -111,10 +111,45 @@
+@@ -121,10 +121,45 @@
               6in4 (public IPv4 address required)
             </option>
           </select>
@@ -600,7 +600,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6to4). 1`] = `
       </h3>
       <div
         class=\\"form-group row\\"
-@@ -143,10 +178,11 @@
+@@ -153,10 +188,11 @@
           </small>
         </div>
       </div>
@@ -619,7 +619,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (dhcpv6). 1`] = `
 - First value
 + Second value
 
-@@ -111,10 +111,39 @@
+@@ -121,10 +121,39 @@
               6in4 (public IPv4 address required)
             </option>
           </select>
@@ -666,7 +666,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
 - First value
 + Second value
 
-@@ -111,10 +111,168 @@
+@@ -121,10 +121,168 @@
               6in4 (public IPv4 address required)
             </option>
           </select>
@@ -835,7 +835,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
       </h3>
       <div
         class=\\"form-group row\\"
-@@ -143,10 +301,11 @@
+@@ -153,10 +311,11 @@
           </small>
         </div>
       </div>
@@ -854,7 +854,7 @@ exports[`<WAN/> Snapshot: MAC enabled 1`] = `
 - First value
 + Second value
 
-@@ -141,12 +141,48 @@
+@@ -151,12 +151,48 @@
           >
             Useful in cases, when a specific MAC address is required by your internet service provider.
           </small>
@@ -907,6 +907,16 @@ exports[`<WAN/> Snapshot: MAC enabled 1`] = `
 
 exports[`<WAN/> Snapshot: WAN IPv4 dhcp, WAN IPv6 dhcp, MAC disabled 1`] = `
 <DocumentFragment>
+  <h1>
+    WAN
+  </h1>
+  <p>
+    
+Here you specify your WAN port settings. Usually, you can leave this options untouched unless instructed
+otherwise by your internet service provider. Also, in case there is a cable or DSL modem connecting your
+router to the network, it is usually not necessary to change this setting.
+        
+  </p>
   <form>
     <h3>
       WAN IPv4

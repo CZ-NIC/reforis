@@ -2,6 +2,15 @@
 
 exports[`<RegionAndTime/> Snapshot 1`] = `
 <div>
+  <h1>
+    Region and time
+  </h1>
+  <p>
+    
+It is important for your device to have the correct time set. If your device's time is delayed, the
+procedure of SSL certificate verification might not work correctly.
+        
+  </p>
   <form>
     <h4>
       Region settings

@@ -14,17 +14,25 @@ import TimeForm from './TimeForm';
 import API_URLs from '../common/API';
 import ForisForm from '../formContainer/ForisForm';
 
-export default function RegionAndTime() {
-    return <ForisForm
-        forisConfig={{
-            endpoint: API_URLs.regionAndTime
-        }}
-        prepDataToSubmit={prepDataToSubmit}
-        validator={validator}
-    >
+export default function RegionAndTime({postCallback}) {
+    return <>
+        <h1>{_('Region and time')}</h1>
+        <p>{_(`
+It is important for your device to have the correct time set. If your device's time is delayed, the
+procedure of SSL certificate verification might not work correctly.
+        `)}</p>
+        <ForisForm
+            forisConfig={{
+                endpoint: API_URLs.regionAndTime
+            }}
+            prepDataToSubmit={prepDataToSubmit}
+            postCallback={postCallback}
+            validator={validator}
+        >
         <RegionForm/>
         <TimeForm/>
     </ForisForm>
+    </>
 }
 
 function validator(formData) {
