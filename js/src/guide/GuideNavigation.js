@@ -54,6 +54,7 @@ function GuideNavigationItem({name, url, active, next, passed}) {
 
 
     return <li className={`${passedClassName} ${activeClassName} ${nextClassName}`}>
+        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
         {passed || next ? <Link to={url}>{name}</Link> : <a href='#'>{name}</a>}
     </li>
 

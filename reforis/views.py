@@ -5,9 +5,8 @@
 
 
 from flask import Blueprint, current_app, redirect, render_template, request, session, url_for
-from flask_babel import get_locale, gettext as _
+from flask_babel import gettext as _
 
-from reforis import TranslationsHelper
 from reforis.auth import login_to_foris, logout_from_foris
 
 # pylint: disable=invalid-name
@@ -111,7 +110,7 @@ def packages():
 def about():
     return render_template('about.html', **current_app.backend.perform('about', 'get'))
 
-
+# pylint: disable=inconsistent-return-statements
 @views.before_request
 def guide_redirect():
     if request.endpoint in ['Foris.logout', 'Foris.login']:

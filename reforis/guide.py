@@ -11,6 +11,7 @@ from reforis.utils import get_timezone_translations
 guide = Blueprint('ForisGuide', __name__, url_prefix='/guide')
 
 
+# pylint: disable=unused-argument
 @guide.route('/', defaults={'path': ''})
 @guide.route('/<path:path>')
 def index(path):
