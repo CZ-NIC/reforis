@@ -12,13 +12,14 @@ import UpdatesForm from './forms/UpdatesForm';
 import ForisForm from '../formContainer/ForisForm';
 import API_URLs from '../common/API';
 
-export default function Updates() {
+export default function Updates({postCallback}) {
     return <ForisForm
         forisConfig={{
             endpoint: API_URLs.updates
         }}
         prepData={prepData}
         prepDataToSubmit={prepDataToSubmit}
+        postCallback={postCallback}
         validator={validator}
     >
         <UpdatesForm/>

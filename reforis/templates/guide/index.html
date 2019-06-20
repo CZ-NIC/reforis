@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block js %}
+    <script type="text/javascript">
+        ForisTranslations.load({{ babel_tzinfo_catalog | safe }});
+    </script>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'reforis/css/guide.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'reforis/css/react-datatime.css') }}"/>
+{% endblock %}
+
+{% block title %}
+    {% trans %}Guide{% endtrans %}
+{% endblock %}
+
+{% block navigation %}
+    <nav id="stepsbar">
+        <div id="stepsbar-header">
+            <img class="card-img-top" src="{{ url_for('static', filename = 'reforis/imgs/logo-turris.svg') }}">
+            <p>reForis{% if version is defined %} version {{ version }}{% endif %}</p>
+        </div>
+        <div id="steps_container"></div>
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <div id="guide_container"></div>
+{% endblock content %}

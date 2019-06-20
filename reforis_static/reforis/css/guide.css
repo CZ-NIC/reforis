@@ -1,0 +1,95 @@
+/*
+ * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See /LICENSE for more information.
+ */
+
+.wrapper {
+    flex-direction: column;
+}
+
+#content {
+    display: flex;
+    align-items: center;
+}
+
+#content > div {
+    max-width: 75%;
+}
+
+#stepsbar, #steps_container {
+    flex: 0.2;
+    width: 100%;
+    background: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#stepsbar-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 1em;
+    background: #f2f2f2;
+    white-space: nowrap;
+}
+
+
+#stepsbar ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#stepsbar ul li a {
+    padding: .5rem 2rem;
+    font-size: 1.1em;
+    display: block;
+    color: #787878;
+
+    white-space: nowrap
+}
+
+#stepsbar ul li a:hover {
+    background: #cbe8f5;
+    text-decoration: none;
+}
+
+#stepsbar ul li.active > a {
+    color: #fff;
+    background: #00a2e2;
+}
+
+#stepsbar ul li.passed > a {
+    color: #000;
+}
+
+#stepsbar ul li.passed.active > a {
+    color: #fff;
+    background: #00a2e2;
+}
+
+#stepsbar ul li.next > a {
+    color: #00a2e2;
+}
+
+#stepsbar ul li.active.next > a {
+    color: #fff;
+    background: #00a2e2;
+}
+
+#workflow-selector {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+#workflow-selector .btn {
+    margin: 1rem;
+}

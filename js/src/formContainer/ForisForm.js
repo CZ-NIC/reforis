@@ -31,6 +31,7 @@ ForisForm.propTypes = {
 ForisForm.defaultProps = {
     prepData: data => data,
     prepDataToSubmit: data => data,
+    postCallback: () => undefined,
     validator: () => undefined,
 };
 
@@ -39,6 +40,7 @@ export default function ForisForm({
                                       forisConfig,
                                       prepData,
                                       prepDataToSubmit,
+                                      postCallback,
                                       validator,
                                       disabled,
                                       onSubmitOverridden,
@@ -54,6 +56,11 @@ export default function ForisForm({
     }, [forisModuleState.data, resetFormData, prepData]);
 
     const [postState, post] = useAPIPost(forisConfig.endpoint);
+    useEffect(() => {
+        if (postState.isSuccess)
+            postCallback()
+    }, [postCallback, postState.isSuccess]);
+
 
     function onSubmitHandler(e) {
         e.preventDefault();

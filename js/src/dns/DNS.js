@@ -19,7 +19,7 @@ DNS.propTypes = {
     ws: propTypes.object.isRequired
 };
 
-export default function DNS({ws}) {
+export default function DNS({ws, postCallback}) {
     return <>
         <ForisForm
             ws={ws}
@@ -27,6 +27,7 @@ export default function DNS({ws}) {
                 endpoint: API_URLs.dns,
                 wsModule: 'dns',
             }}
+            postCallback={postCallback}
             validator={validator}
             prepDataToSubmit={prepDataToSubmit}
         >

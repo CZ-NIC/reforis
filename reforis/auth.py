@@ -8,7 +8,7 @@
 
 import base64
 
-from flask import session, redirect, current_app, request
+from flask import session, redirect, current_app, request, url_for
 
 
 def login_to_foris(password):
@@ -43,6 +43,10 @@ def register_login_required(app):
         # Do not delete session when user closes the browser.
         session.permanent = True
 
+        web_data = app.backend.perform('web', 'get_data')
+        if not web_data['password_ready']:
+            session['logged'] = True
+
         # User is logged in.
         if session.get('logged', False):
             return
@@ -60,4 +64,4 @@ def register_login_required(app):
         if not view:
             return
 
-        return redirect('/login')
+        return redirect(url_for('Foris.login'))

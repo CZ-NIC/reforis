@@ -6,10 +6,10 @@
 # pylint: disable=unused-variable,unused-argument
 
 import json
+
 import pkg_resources
 from flask import render_template
 
-from .auth import register_login_required
 from .locale import TranslationsHelper
 
 
@@ -26,12 +26,16 @@ def create_app(config):
     set_backend(app)
     set_locale(app)
 
-    register_login_required(app)
-
-    from .api import api
     from .views import views
+    from .api import api
+    from .guide import guide
+
     app.register_blueprint(views)
     app.register_blueprint(api)
+    app.register_blueprint(guide)
+
+    from .auth import register_login_required
+    register_login_required(app)
 
     load_plugins(app)
 
@@ -45,7 +49,7 @@ def create_app(config):
         try:
             version = pkg_resources.get_distribution("reforis").version
         except pkg_resources.DistributionNotFound:
-            version = "?"
+            version = None
         return {'version': version}
 
     return app

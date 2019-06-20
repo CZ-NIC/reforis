@@ -13,7 +13,7 @@
 <nav id="sidebar">
     <div id="sidebar-header">
         <img class="card-img-top" src="{{ url_for('static', filename = 'reforis/imgs/logo-turris.svg') }}">
-        <p>reForis version {{ version }}</p>
+        <p>reForis{% if version is defined %} version {{ version }}{% endif %}</p>
     </div>
 
     <ul class="list-unstyled">
@@ -112,8 +112,6 @@
                     </li>
                 {% endfor %}
             </ul>
-
         </li>
-
     </ul>
 </nav>

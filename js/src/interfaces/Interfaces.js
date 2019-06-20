@@ -22,7 +22,7 @@ export const NETWORKS_CHOICES = {
 
 export const NETWORKS_TYPES = ['wan', 'lan', 'guest', 'none'];
 
-export default function Interfaces({ws}) {
+export default function Interfaces({ws, postCallback}) {
     const [openPortsModalShown, setOpenPortsModalShown] = useState(false);
     const [keepPortsClosedConfirmModalShown, setKeepPortsClosedConfirmShown] = useState(false);
 
@@ -75,6 +75,7 @@ export default function Interfaces({ws}) {
             wsModule: 'networks',
         }}
         prepDataToSubmit={prepDataToSubmit}
+        postCallback={postCallback}
         onSubmitOverridden={onSubmit}
     >
         <OpenPortsModals

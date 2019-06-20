@@ -14,12 +14,13 @@ import TimeForm from './TimeForm';
 import API_URLs from '../common/API';
 import ForisForm from '../formContainer/ForisForm';
 
-export default function RegionAndTime() {
+export default function RegionAndTime({postCallback}) {
     return <ForisForm
         forisConfig={{
             endpoint: API_URLs.regionAndTime
         }}
         prepDataToSubmit={prepDataToSubmit}
+        postCallback={postCallback}
         validator={validator}
     >
         <RegionForm/>

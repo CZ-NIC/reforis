@@ -21,7 +21,7 @@ WAN.propTypes = {
     ws: propTypes.object.isRequired
 };
 
-export default function WAN({ws}) {
+export default function WAN({ws, postCallback}) {
     return <>
         <ForisForm
             ws={ws}
@@ -31,6 +31,7 @@ export default function WAN({ws}) {
             }}
             prepData={prepData}
             prepDataToSubmit={prepDataToSubmit}
+            postCallback={postCallback}
             validator={validator}
         >
             <WANForm/>

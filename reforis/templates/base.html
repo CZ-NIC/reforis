@@ -30,7 +30,7 @@
 
 <body>
 <div class="wrapper">
-    {% include "includes/navigation.html" %}
+    {% block navigation %}{% include "includes/navigation.html" %}{% endblock %}
     <div id="content">
         <div class="col-lg-10 col-sm-12">
             {% include "includes/top-bar.html" %}

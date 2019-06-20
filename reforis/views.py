@@ -5,19 +5,15 @@
 
 
 from flask import Blueprint, current_app, redirect, render_template, request, session, url_for
-from flask_babel import get_locale
-from flask_babel import gettext as _
+from flask_babel import get_locale, gettext as _
 
 from reforis import TranslationsHelper
 from reforis.auth import login_to_foris, logout_from_foris
 
-views = Blueprint(  # pylint: disable=invalid-name
-    'Foris',
-    __name__,
-    static_folder='/tmp/',
-    static_url_path='/static',
-    template_folder='templates',
-)
+# pylint: disable=invalid-name
+from reforis.utils import get_timezone_translations
+
+views = Blueprint('Foris', __name__)
 
 
 @views.route('/', methods=['GET'])
@@ -87,13 +83,7 @@ def password():
 
 @views.route('/region-and-time', methods=['GET'])
 def region_and_time():
-    babel = current_app.extensions['babel']
-    translations = TranslationsHelper.load(
-        # There is only one directory with translations in Foris so it's OK.
-        next(babel.translation_directories),
-        [get_locale()],
-        'tzinfo'
-    )
+    translations = get_timezone_translations()
     return render_template('administration/region_and_time.html', babel_tzinfo_catalog=translations.json_catalog)
 
 
@@ -120,3 +110,12 @@ def packages():
 @views.route('/about', methods=['GET'])
 def about():
     return render_template('about.html', **current_app.backend.perform('about', 'get'))
+
+
+@views.before_request
+def guide_redirect():
+    if request.endpoint in ['Foris.logout', 'Foris.login']:
+        return
+    web_data = current_app.backend.perform('web', 'get_data')
+    if web_data['guide']['enabled']:
+        return redirect(url_for('ForisGuide.index'))
