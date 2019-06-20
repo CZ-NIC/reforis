@@ -8,7 +8,9 @@ from unittest.mock import Mock
 RESPONSE_DATA = {
     'web': {
         'get_data': {
-            'language': 'en'
+            'language': 'en',
+            'password_ready': True,
+            'guide': {'enabled': False}
         }
     },
 }
