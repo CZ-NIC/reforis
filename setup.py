@@ -43,6 +43,7 @@ setuptools.setup(
         'Babel==2.7.0',
         'Flask-Babel==0.12.2',
         'Flask-Session==0.3.1',
+        'flup',
     ],
 
     # Do not use test_require or build_require, because then it's not installed and is
@@ -73,4 +74,5 @@ setuptools.setup(
     cmdclass={
         'build_py': NPMInstall
     },
+    entry_points={"console_scripts": ["reforis = reforis.__main__:main"]},
 )

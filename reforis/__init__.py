@@ -16,7 +16,7 @@ from .locale import TranslationsHelper
 def create_app(config):
     from flask import Flask
     app = Flask(__name__)
-    app.config.from_pyfile(f'config/{config}.py')
+    app.config.from_object(f'reforis.config.{config}')
 
     app.static_folder = app.config.get('STATIC_DIR')
 
