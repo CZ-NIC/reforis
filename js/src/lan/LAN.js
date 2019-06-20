@@ -21,19 +21,36 @@ LAN.propTypes = {
 };
 
 export default function LAN({ws}) {
-    return <ForisForm
-        ws={ws}
-        forisConfig={{
-            endpoint: API_URLs.lan,
-            wsModule: 'lan',
+    return <>
+            <h1>LAN</h1>
+        <p dangerouslySetInnerHTML={{
+            __html: _(`
+This section contains settings for the local network (LAN). The provided defaults are suitable for most
+networks.
+<br/>
+<b>Note:</b> If you change the router IP address, all computers in LAN, probably including the one you are
+using now, will need to obtain a <b>new IP address</b> which does not happen <b>immediately</b>. It is
+recommended to disconnect and reconnect all LAN cables after submitting your changes to force the update.
+The next page will not load until you obtain a new IP from DHCP (if DHCP enabled) and you might need to
+<b>refresh the page</b> in your browser.
+            `)
         }}
-        prepDataToSubmit={prepDataToSubmit}
-        validator={validator}
-    >
-        <LANForm/>
-        {/* eslint-disable-next-line react/jsx-pascal-case */}
-        <LAN_DHCP_ClientsList/>
-    </ForisForm>
+        >
+        </p>
+        <ForisForm
+            ws={ws}
+            forisConfig={{
+                endpoint: API_URLs.lan,
+                wsModule: 'lan',
+            }}
+            prepDataToSubmit={prepDataToSubmit}
+            validator={validator}
+        >
+            <LANForm/>
+            {/* eslint-disable-next-line react/jsx-pascal-case */}
+            <LAN_DHCP_ClientsList/>
+        </ForisForm>
+    </>
 }
 
 function prepDataToSubmit(formData) {

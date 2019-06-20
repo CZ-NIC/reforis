@@ -22,7 +22,7 @@ export const NETWORKS_CHOICES = {
 
 export const NETWORKS_TYPES = ['wan', 'lan', 'guest', 'none'];
 
-export default function Interfaces({ws, postCallback}) {
+export default function Interfaces({ws}) {
     const [openPortsModalShown, setOpenPortsModalShown] = useState(false);
     const [keepPortsClosedConfirmModalShown, setKeepPortsClosedConfirmShown] = useState(false);
 
@@ -68,27 +68,58 @@ export default function Interfaces({ws, postCallback}) {
         setKeepPortsClosedConfirmShown(true);
     }
 
-    return <ForisForm
-        ws={ws}
-        forisConfig={{
-            endpoint: API_URLs.interfaces,
-            wsModule: 'networks',
-        }}
-        prepDataToSubmit={prepDataToSubmit}
-        postCallback={postCallback}
-        onSubmitOverridden={onSubmit}
-    >
-        <OpenPortsModals
-            shown={openPortsModalShown}
-            setShown={setOpenPortsModalShown}
-            onKeepPortsClosed={keepPortsClosedHandler}
-        />
-        <KeepPortsClosedConfirmModal
-            shown={keepPortsClosedConfirmModalShown}
-            setShown={setKeepPortsClosedConfirmShown}
-        />
-        <InterfacesForm/>
-    </ForisForm>
+    return <>
+        <h1>{_('Network interfaces')}</h1>
+        <p>{_(`
+Here you can configure the settings of the network interfaces on your device. You can switch the physical
+network interfaces among networks. If you are unsure what to set here use the default settings.
+        `)}
+        </p>
+        <h4>{_('WAN')}</h4>
+        <p>{_(`
+It acts as an external network connection. Firewall rules should be applied here. It can only contain a
+single interface.
+        `)}
+        </p>
+
+        <h4>{_('LAN')}</h4>
+        <p>{_(`
+It acts as a local network connection. LAN should contain devices which are under your control and you
+trust them. These devices can see each other and can access this web interface. It is recommended that the
+LAN should contain at least one interface otherwise you might not be able to configure this device in an
+easy way.
+        `)}
+        </p>
+
+        <h4>{_('Guest network')}</h4>
+        <p>{_(`
+It acts as a local network connection. Unlike LAN the devices in the guest network can't access
+the configuration interface of this device and are only able to access WAN (internet). This network should
+be used for devices which you don't fully trust. Note that you can also limit download/upload speed of the
+devices connected to the guest network.
+        `)}
+        </p>
+        <ForisForm
+            ws={ws}
+            forisConfig={{
+                endpoint: API_URLs.interfaces,
+                wsModule: 'networks',
+            }}
+            prepDataToSubmit={prepDataToSubmit}
+            onSubmitOverridden={onSubmit}
+        >
+            <OpenPortsModals
+                shown={openPortsModalShown}
+                setShown={setOpenPortsModalShown}
+                onKeepPortsClosed={keepPortsClosedHandler}
+            />
+            <KeepPortsClosedConfirmModal
+                shown={keepPortsClosedConfirmModalShown}
+                setShown={setKeepPortsClosedConfirmShown}
+            />
+            <InterfacesForm/>
+        </ForisForm>
+    </>
 }
 
 function prepDataToSubmit(formData) {

@@ -83,6 +83,7 @@ export default function Password({postCallback}) {
 
     return <>
         {alert ? <Alert type={alert.type} message={alert.message} onDismiss={() => setAlert(null)}/> : null}
+        <h1>{_('Password')}</h1>
         <h3>{_('Password settings')}</h3>
         {passwordIsSetState.data.password_set ?
             <CurrentForisPasswordForm

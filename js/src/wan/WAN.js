@@ -21,7 +21,7 @@ WAN.propTypes = {
     ws: propTypes.object.isRequired
 };
 
-export default function WAN({ws, postCallback}) {
+export default function WAN({ws}) {
     return <>
         <ForisForm
             ws={ws}
@@ -31,9 +31,16 @@ export default function WAN({ws, postCallback}) {
             }}
             prepData={prepData}
             prepDataToSubmit={prepDataToSubmit}
-            postCallback={postCallback}
             validator={validator}
         >
+            <h1>{_('WAN')}</h1>
+            <p>
+                {_(`
+Here you specify your WAN port settings. Usually, you can leave this options untouched unless instructed
+otherwise by your internet service provider. Also, in case there is a cable or DSL modem connecting your
+router to the network, it is usually not necessary to change this setting.
+        `)}
+            </p>
             <WANForm/>
             <WAN6Form/>
             <MACForm/>

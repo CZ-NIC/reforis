@@ -93,3 +93,13 @@
 #workflow-selector .btn {
     margin: 1rem;
 }
+
+.workflow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.workflow {
+    width: 100%;
+}

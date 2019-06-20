@@ -43,7 +43,6 @@ export default function Guide({ws}) {
     const {available_workflows, workflow_steps, next_step, passed} = guideData.data;
 
     return <>
-        <h1>{_('Foris guide')}</h1>
         <Router history={guideHistory}>
             <GuideNavigation
                 workflow_steps={workflow_steps}

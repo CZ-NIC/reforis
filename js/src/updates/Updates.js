@@ -11,19 +11,38 @@ import moment from 'moment';
 import UpdatesForm from './forms/UpdatesForm';
 import ForisForm from '../formContainer/ForisForm';
 import API_URLs from '../common/API';
+import LicenceModal from './LicenceModal';
 
 export default function Updates({postCallback}) {
-    return <ForisForm
-        forisConfig={{
-            endpoint: API_URLs.updates
+    return <>
+        <h1>{_('Updates')}</h1>
+        <p dangerouslySetInnerHTML={{
+            __html: _(`
+One of the most important features of router Turris are automatic system updates. Thanks to this function
+your router's software stays up to date and offers better protection against attacks from the Internet.
+<br/>
+It is <b>highly recommended</b> to have this feature <b>turned on</b>. If you decide to disable it, be
+warned that this might weaken the security of your router and network in case flaws in the software are
+found.
+<br/>
+By turning the automatic updates on, you agree to this feature's license agreement. More information is
+available <a href="" data-toggle="modal" data-target="#licenceModal">here</a>.
+            `)
         }}
-        prepData={prepData}
-        prepDataToSubmit={prepDataToSubmit}
-        postCallback={postCallback}
-        validator={validator}
-    >
-        <UpdatesForm/>
-    </ForisForm>
+        />
+        <LicenceModal/>
+        <ForisForm
+            forisConfig={{
+                endpoint: API_URLs.updates
+            }}
+            prepData={prepData}
+            prepDataToSubmit={prepDataToSubmit}
+            postCallback={postCallback}
+            validator={validator}
+        >
+            <UpdatesForm/>
+        </ForisForm>
+    </>
 }
 
 
