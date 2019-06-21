@@ -19,24 +19,27 @@
 
 import os
 
+from flup.server.fcgi import WSGIServer
+
+from . import create_app
+
+
+class AppWrapper:
+    def __init__(self, app):
+        self.app = app
+
+    def __call__(self, environ, start_response):
+        environ["SCRIPT_NAME"] = "/reforis"
+        return self.app(environ, start_response)
+
 
 def main():
-    class AppWrapper:
-        def __init__(self, app):
-            self.app = app
-
-        def __call__(self, environ, start_response):
-            environ["SCRIPT_NAME"] = "/reforis"
-            return self.app(environ, start_response)
-
-    from flup.server.fcgi import WSGIServer
-    from reforis import create_app
-
     app = AppWrapper(create_app("prod"))
+
     WSGIServer(
         app,
         debug=True,
-        bindAddress=os.environ.get("FCGI_SOCKET", "/tmp/fastcgi.reforis-config.socket")
+        bindAddress=os.environ.get("FCGI_SOCKET", "/tmp/fastcgi.reforis-config.socket-0")
     ).run()
 
 
