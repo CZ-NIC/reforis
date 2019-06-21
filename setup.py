@@ -74,5 +74,8 @@ setuptools.setup(
     cmdclass={
         'build_py': NPMInstall
     },
-    entry_points={"console_scripts": ["reforis = reforis.__main__:main"]},
+    entry_points={"console_scripts": [
+        "reforis = reforis.__main__:main",
+        "reforis-cli = reforis.cli:cli",
+    ]},
 )
