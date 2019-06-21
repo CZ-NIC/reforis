@@ -21,7 +21,6 @@ import os
 
 
 def main():
-
     class AppWrapper:
         def __init__(self, app):
             self.app = app
@@ -34,7 +33,11 @@ def main():
     from reforis import create_app
 
     app = AppWrapper(create_app("prod"))
-    WSGIServer(app, bindAddress=os.environ.get("FCGI_SOCKET", "/var/run/reforis.sock")).run()
+    WSGIServer(
+        app,
+        debug=True,
+        bindAddress=os.environ.get("FCGI_SOCKET", "/tmp/fastcgi.reforis-config.socket")
+    ).run()
 
 
 if __name__ == "__main__":
