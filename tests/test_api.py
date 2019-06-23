@@ -4,24 +4,25 @@
 #  See /LICENSE for more information.
 
 import pytest
+from flask import current_app
 
 
 @pytest.mark.parametrize(
-    'endpoint, post_is_allowed', [
-        ('notifications', True),
-        ('notifications-settings', True),
-        ('wan', True),
-        ('lan', True),
-        ('wifi', True),
-        ('dns', True),
-        ('guest-network', True),
-        ('connection-test', False),
-        ('dns-test', False),
-        ('region-and-time', True),
-        ('reboot', False),
+    'endpoint, module, post_is_allowed', [
+        ('notifications', 'router_notifications', True),
+        ('notifications-settings', 'router_notifications', True),
+        ('wan', 'wan', True),
+        ('lan', 'lan', True),
+        ('wifi', 'wifi', True),
+        ('dns', 'dns', True),
+        ('guest-network', 'guest', True),
+        ('connection-test', 'wan', False),
+        ('dns-test', 'wan', False),
+        ('region-and-time', 'time', True),
+        ('reboot', None, False),
     ]
 )
-def test_api_endpoints_exist(client, endpoint, post_is_allowed):
+def test_api_endpoints_exist(client, endpoint, module, post_is_allowed):
     url = f'/api/{endpoint}'
     response = client.get(url)
     assert response.status_code == 200
@@ -31,3 +32,11 @@ def test_api_endpoints_exist(client, endpoint, post_is_allowed):
         assert response.status_code == 200
     else:
         assert response.status_code == 405
+
+    if module:
+        _check_called_foris_controller_module(current_app.backend._instance, module)
+
+
+def _check_called_foris_controller_module(sender_mock, module):
+    modules = [call[1][0] for call in sender_mock.send.mock_calls]
+    assert module in modules

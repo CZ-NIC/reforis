@@ -3,13 +3,13 @@
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
 
-import pytest
-
 from unittest import mock
 
-import reforis
-from tests.utils.mock_mqttsender import MockMqttSender
+import pytest
+from tests.utils.mock_mqttsender import send_mock
 from tests.utils.surrogate import surrogate
+
+import reforis
 
 
 @pytest.fixture
@@ -46,9 +46,10 @@ def request_ctx():
 
 @surrogate('foris_client.buses.mqtt.MqttSender')
 @surrogate('foris_client.buses.base.ControllerError')
-@mock.patch('foris_client.buses.mqtt.MqttSender', MockMqttSender)
+@mock.patch('foris_client.buses.mqtt.MqttSender')
 @mock.patch('reforis.backend.MQTTBackend._parse_credentials', mock.Mock)
-def _stubbed_app():
+def _stubbed_app(sender_mock):
+    sender_mock.return_value.send.side_effect = send_mock
     # The foris client may not existed on the testing environment
     # so we surrogate this module to avoid ImportError during testing.
     return reforis.create_app('test')

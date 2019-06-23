@@ -3,8 +3,6 @@
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
 
-from unittest.mock import Mock
-
 RESPONSE_DATA = {
     'web': {
         'get_data': {
@@ -16,6 +14,9 @@ RESPONSE_DATA = {
 }
 
 
-class MockMqttSender(Mock):
-    def send(self, module, action, data, timeout=None, controller_id=None):
-        return RESPONSE_DATA.get(module, {}).get(action, {})
+class MockMqttSender:
+    send = True
+
+
+def send_mock(module, action, data, timeout=None, controller_id=None):
+    return RESPONSE_DATA.get(module, {}).get(action, {})
