@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import {act, fireEvent, getByLabelText, getByText, render, wait} from 'customTestRender';
+import {fireEvent, getByLabelText, getByText, render, wait} from 'customTestRender';
 
 import {mockedWS} from 'mockWS';
 import mockAxios from 'jest-mock-axios';
@@ -30,9 +30,7 @@ describe('<Interfaces/>', () => {
     });
 
     it('Snapshot select interface.', () => {
-        act(() => {
-            fireEvent.click(getByText(interfacesContainer, 'LAN1'));
-        });
+        fireEvent.click(getByText(interfacesContainer, 'LAN1'));
         expect(interfacesContainer).toMatchSnapshot();
     });
 
@@ -40,5 +38,18 @@ describe('<Interfaces/>', () => {
         fireEvent.click(getByText(interfacesContainer, 'LAN1'));
         fireEvent.change(getByLabelText(interfacesContainer, 'Network'), {target: {value: 'lan'}});
         expect(interfacesContainer).toMatchSnapshot();
+    });
+
+    it('Test post.', async () => {
+        fireEvent.click(getByText(interfacesContainer, 'LAN1'));
+        fireEvent.change(getByLabelText(interfacesContainer, 'Network'), {target: {value: 'lan'}});
+        fireEvent.click(getByText(interfacesContainer, 'Save'));
+
+        expect(mockAxios.post).toBeCalled();
+        const data = {
+            "firewall": {"http_on_wan": false, "https_on_wan": false, "ssh_on_wan": false},
+            "networks": {"guest": ["lan4"], "lan": ["lan3", "lan1"], "none": ["lan0", "lan2"], "wan": ["eth2"]}
+        };
+        expect(mockAxios.post).toHaveBeenCalledWith('/api/interfaces', data, expect.anything());
     });
 });

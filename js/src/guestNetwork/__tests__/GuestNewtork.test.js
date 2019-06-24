@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import {fireEvent, getByLabelText, render, wait} from 'customTestRender';
+import {fireEvent, getByLabelText, getByText, render, wait} from 'customTestRender';
 
 import {mockedWS} from 'mockWS';
 import mockAxios from 'jest-mock-axios';
@@ -47,5 +47,31 @@ describe('<GuestNetwork/>', () => {
         fireEvent.click(getByLabelText(guestNetworkContainer, 'Enable'));
         fireEvent.click(getByLabelText(guestNetworkContainer, 'Enable QoS'));
         expect(guestNetworkContainer).toMatchSnapshot();
+    });
+
+    it('Test post.', async () => {
+        fireEvent.click(getByLabelText(guestNetworkContainer, 'Enable'));
+        fireEvent.click(getByLabelText(guestNetworkContainer, 'Enable DHCP'));
+        fireEvent.click(getByLabelText(guestNetworkContainer, 'Enable QoS'));
+        fireEvent.click(getByText(guestNetworkContainer, 'Save'));
+
+        expect(mockAxios.post).toBeCalled();
+        const data = {
+            "dhcp": {
+                "enabled": true,
+                "lease_time": 3600,
+                "limit": 150,
+                "start": 100,
+            },
+            "enabled": true,
+            "ip": "10.111.222.1",
+            "netmask": "255.255.255.0",
+            "qos": {
+                "enabled": true,
+                "download": 1023,
+                "upload": 1025,
+            },
+        };
+        expect(mockAxios.post).toHaveBeenCalledWith('/api/guest-network', data, expect.anything());
     });
 });
