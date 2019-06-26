@@ -9,6 +9,7 @@ from flask.cli import with_appcontext, FlaskGroup
 from . import create_app
 
 
+# pylint: disable=unused-argument
 def create_cli_app(info):
     return create_app('prod')
 
