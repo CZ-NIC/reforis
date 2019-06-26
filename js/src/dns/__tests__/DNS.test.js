@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import {render, fireEvent, getByLabelText, wait} from 'customTestRender';
+import {fireEvent, getByLabelText, getByText, render, wait} from 'customTestRender';
 
 import {dnsFixture} from './__fixtures__/dns';
 import {mockedWS} from 'mockWS';
@@ -37,5 +37,21 @@ describe('<DNS/>', () => {
     it('Test with snapshot DHCP.', () => {
         fireEvent.click(getByLabelText(dnsContainer, 'Enable DHCP clients in DNS'));
         expect(dnsContainer).toMatchSnapshot()
+    });
+
+    it('Test post.', async () => {
+        fireEvent.click(getByLabelText(dnsContainer, 'Use forwarding'));
+        fireEvent.click(getByLabelText(dnsContainer, 'Enable DHCP clients in DNS'));
+        fireEvent.click(getByText(dnsContainer, 'Save'));
+
+        expect(mockAxios.post).toBeCalled();
+        const data = {
+            "dns_from_dhcp_domain": "lan",
+            "dns_from_dhcp_enabled": true,
+            "dnssec_enabled": true,
+            "forwarder": "",
+            "forwarding_enabled": true
+        };
+        expect(mockAxios.post).toHaveBeenCalledWith('/api/dns', data, expect.anything());
     });
 });

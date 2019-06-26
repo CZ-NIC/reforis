@@ -5,7 +5,7 @@
  * See /LICENSE for more information.
  */
 import React from 'react';
-import {render, getByText, queryByText, fireEvent, act, wait} from 'customTestRender';
+import {fireEvent, getByText, queryByText, render, wait} from 'customTestRender';
 
 import {mockedWS} from 'mockWS';
 import mockAxios from 'jest-mock-axios';
@@ -42,9 +42,7 @@ describe('useNotifications hook.', () => {
 
     it("Dismiss notification.", () => {
         expect(mockAxios.post).toHaveBeenCalledTimes(0);
-        act(() => {
-            fireEvent.click(notificationsContainer.querySelector('[class="fas fa-times"]'));
-        });
+        fireEvent.click(notificationsContainer.querySelector('[class="fas fa-times"]'));
         expect(mockAxios.post).toHaveBeenCalledTimes(1);
         let HTMLnotificationMessage = queryByText(notificationsContainer, 'Notification message.');
         expect(HTMLnotificationMessage).toBeNull();
@@ -54,10 +52,9 @@ describe('useNotifications hook.', () => {
 
     it("Dismiss all notification.", () => {
         expect(mockAxios.post).toHaveBeenCalledTimes(0);
-        act(() => {
-            fireEvent.click(getByText(notificationsContainer, 'Dismiss all'));
-        });
+        fireEvent.click(getByText(notificationsContainer, 'Dismiss all'));
         expect(mockAxios.post).toHaveBeenCalledTimes(1);
+        expect(mockAxios.post).toHaveBeenCalledWith('/api/notifications', {"ids": ["123-123", "123-124"]}, expect.anything());
         let HTMLnotificationMessage = queryByText(notificationsContainer, 'Notification message.');
         expect(HTMLnotificationMessage).toBeNull();
         HTMLnotificationMessage = queryByText(notificationsContainer, 'Second notification messa...');

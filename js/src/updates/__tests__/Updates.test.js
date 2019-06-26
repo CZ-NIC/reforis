@@ -18,6 +18,7 @@ const ENABLE_CHECKBOX_LABEL = 'Enable automatic updates (recommended)';
 describe('<Updates/>', () => {
     let firstRender;
     let getByLabelText;
+    let getByText;
     let asFragment;
 
     beforeEach(async () => {
@@ -25,6 +26,7 @@ describe('<Updates/>', () => {
         mockAxios.mockResponse({data: updatesFixture()});
         asFragment = renderRes.asFragment;
         getByLabelText = renderRes.getByLabelText;
+        getByText = renderRes.getByText;
 
         await waitForElement(() => renderRes.getByLabelText(ENABLE_CHECKBOX_LABEL));
         firstRender = renderRes.asFragment();
@@ -44,5 +46,26 @@ describe('<Updates/>', () => {
         const enabledRender = asFragment();
         fireEvent.click(getByLabelText('Delayed updates'));
         expect(diffSnapshot(enabledRender, asFragment())).toMatchSnapshot();
+    });
+
+
+    it('Post: enabled, delayed', () => {
+        fireEvent.click(getByLabelText(ENABLE_CHECKBOX_LABEL));
+        fireEvent.click(getByLabelText('Delayed updates'));
+        fireEvent.click(getByText('Save'));
+
+        expect(mockAxios.post).toBeCalled();
+        const data = {
+            approval_settings: {
+                delay: 1,
+                status: 'delayed',
+            },
+            enabled: true,
+            reboots: {
+                delay: 4,
+                time: '04:30',
+            }
+        };
+        expect(mockAxios.post).toHaveBeenCalledWith('/api/updates', data, expect.anything());
     });
 });

@@ -14,7 +14,7 @@ import {notificationsFixture} from './__fixtures__/notifications';
 import Notifications from '../Notifications/Notifications';
 
 describe('<Notifications/>', () => {
-    let NotificationCenterContainer;
+    let NotificationContainer;
     beforeEach(async () => {
         const mockWebSockets = new mockedWS();
         const {container, getByText} = render(<Notifications ws={mockWebSockets}/>);
@@ -22,10 +22,10 @@ describe('<Notifications/>', () => {
         await wait(() => {
             getByText('Notification message.')
         });
-        NotificationCenterContainer = container;
+        NotificationContainer = container;
     });
 
     it('Test with snapshot.', () => {
-        expect(NotificationCenterContainer.firstChild).toMatchSnapshot()
+        expect(NotificationContainer.firstChild).toMatchSnapshot()
     })
 });
