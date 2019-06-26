@@ -8,3 +8,4 @@
 from reforis.config.dev import *
 
 TESTING = True
+BUSES_CONF['mqtt']['credentials_file'] = None

@@ -3,11 +3,16 @@
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
 
+"""
+The ForisGuide Blueprints provides a simple page with rendering guide template with guide container. Then React
+application can put all required content into that.
+"""
+
 from flask import Blueprint, render_template, current_app, redirect, url_for
+from reforis.locale import get_timezone_translations
+
 
 # pylint: disable=invalid-name
-from reforis.utils import get_timezone_translations
-
 guide = Blueprint('ForisGuide', __name__, url_prefix='/guide')
 
 
@@ -15,6 +20,7 @@ guide = Blueprint('ForisGuide', __name__, url_prefix='/guide')
 @guide.route('/', defaults={'path': ''})
 @guide.route('/<path:path>')
 def index(path):
+    """Guide page. All subsequent communications is done using API `guide` endpoints."""
     web_data = current_app.backend.perform('web', 'get_data')
     if not web_data['guide']['enabled']:
         return redirect(url_for('Foris.overview'))
