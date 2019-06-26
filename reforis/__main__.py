@@ -39,7 +39,7 @@ def main():
     WSGIServer(
         app,
         debug=True,
-        bindAddress=os.environ.get("FCGI_SOCKET", "/tmp/fastcgi.reforis-config.socket-0")
+        bindAddress=os.environ.get("FCGI_SOCKET", "/tmp/fastcgi.reforis.socket-0")
     ).run()
 
 

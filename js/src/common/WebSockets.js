@@ -8,7 +8,11 @@
 import {ForisURLs} from './constants';
 
 const PROTOCOL = window.location.protocol === 'http:' ? 'ws' : 'wss';
-const URL = PROTOCOL + '://' + window.location.hostname + ':' + ForisConstants.WSPort;
+
+const URL = process.env.NODE_ENV === 'production' ?
+    PROTOCOL + '://' + window.location.hostname + '/foris-ws' :
+    PROTOCOL + '://' + window.location.hostname + ':' + 9081;
+
 const WAITING_FOR_CONNECTION_TIMEOUT = 500;
 
 export default class WebSockets {

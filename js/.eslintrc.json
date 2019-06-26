@@ -3,7 +3,6 @@
   "globals": {
     "_": false,
     "babel": false,
-    "ForisTranslations": false,
-    "ForisConstants": false
+    "ForisTranslations": false
   }
 }
