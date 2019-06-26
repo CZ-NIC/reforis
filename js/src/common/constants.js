@@ -5,9 +5,11 @@
  * See /LICENSE for more information.
  */
 
+const REFORIS_PREFIX = process.env.NODE_ENV === 'production' ? '/reforis/' : '';
+
 export const ForisURLs = {
-    login: '/login',
-    notifications: '/notifications',
-    notificationsSettings: '/notifications-settings',
+    login: `${REFORIS_PREFIX}/login`,
+    notifications: `${REFORIS_PREFIX}/notifications`,
+    notificationsSettings: `${REFORIS_PREFIX}/notifications-settings`,
     luci: '/cgi-bin/luci',
 };
