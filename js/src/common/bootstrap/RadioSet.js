@@ -13,13 +13,20 @@ import {FIELD_SIZE, LABEL_SIZE} from './constants';
 
 
 RadioSet.propTypes = {
+    /** Name attribute of the input HTML tag.*/
     name: propTypes.string.isRequired,
+    /** RadioSet label .*/
     label: propTypes.string,
+    /** Choices .*/
     choices: propTypes.arrayOf(propTypes.shape({
+        /** Choice lable .*/
         label: propTypes.string.isRequired,
+        /** Choice value .*/
         value: propTypes.oneOfType([propTypes.string, propTypes.number]).isRequired,
     })).isRequired,
+    /** Initial value .*/
     value: propTypes.string,
+    /** Help text message .*/
     helpText: propTypes.string,
 };
 

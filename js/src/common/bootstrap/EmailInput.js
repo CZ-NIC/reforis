@@ -14,9 +14,13 @@ const EmailInput = ({...props}) => <Input type="email" {...props}/>;
 
 
 EmailInput.propTypes = {
+    /** Field label. */
     label: PropTypes.string.isRequired,
+    /** Error message. */
     error: PropTypes.string,
+    /** Help text message. */
     helpText: PropTypes.string,
+    /** Email value. */
     value: PropTypes.string,
 };
 

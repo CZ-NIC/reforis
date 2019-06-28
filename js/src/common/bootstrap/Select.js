@@ -13,12 +13,16 @@ import {FIELD_SIZE, LABEL_SIZE} from './constants';
 
 
 Select.propTypes = {
+    /** Select field Label. */
     label: propTypes.string.isRequired,
+    /** Choices if form of {value : "Label",...}.*/
     choices: propTypes.object.isRequired,
+    /** Current value. */
     value: propTypes.oneOfType([
         propTypes.string,
         propTypes.number,
     ]).isRequired,
+    /** Help text message. */
     helpText: propTypes.string,
 };
 

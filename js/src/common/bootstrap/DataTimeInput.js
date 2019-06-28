@@ -13,9 +13,13 @@ import moment from 'moment/moment';
 import Input from './Input';
 
 DataTimeInput.propTypes = {
+    /** Field label. */
     label: PropTypes.string.isRequired,
+    /** Error message. */
     error: PropTypes.string,
+    /** DataTime or Data or Time value. Can be `moment` or string.*/
     value: PropTypes.oneOfType([PropTypes.objectOf(moment), PropTypes.string]),
+    /** Help text message. */
     helpText: PropTypes.string,
 };
 

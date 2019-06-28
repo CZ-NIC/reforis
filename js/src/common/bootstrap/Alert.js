@@ -9,9 +9,14 @@ import React from 'react';
 import propTypes from 'prop-types'
 
 Alert.propTypes = {
+    /** Type of the alert it adds as `alert-${type}` class.*/
     type: propTypes.string.isRequired,
+    /** Alert message.*/
     message: propTypes.string.isRequired,
+    /** onDismiss handler.*/
+    onDismiss: propTypes.func
 };
+
 
 export default function Alert({type, message, onDismiss}) {
     return <div className={`alert alert-dismissible alert-${type}`}>
@@ -19,3 +24,4 @@ export default function Alert({type, message, onDismiss}) {
         {message}
     </div>
 }
+

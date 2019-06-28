@@ -21,6 +21,11 @@ const API_ACTIONS = {
     FAILURE: 3,
 };
 
+/**
+ * This function adds one to its input.
+ * @returns {number} that number, plus one.
+ * @param url
+ */
 export function useAPIGet(url) {
     const [state, dispatch] = useReducer(APIGetReducer, {
         isLoading: false,

@@ -9,7 +9,10 @@ import React from 'react';
 import propTypes from 'prop-types';
 
 Modal.propTypes = {
+    /** Is modal shown value */
     shown: propTypes.bool.isRequired,
+
+    /** Modal content use following: `ModalHeader`, `ModalBody`, `ModalFooter` */
     children: propTypes.oneOfType([
         propTypes.arrayOf(propTypes.node),
         propTypes.node

@@ -5,5 +5,6 @@
  * See /LICENSE for more information.
  */
 
+/** Foris form sizes */
 export const LABEL_SIZE = 3;
 export const FIELD_SIZE = 8;

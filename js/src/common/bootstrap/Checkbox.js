@@ -12,7 +12,9 @@ import {useUID} from 'react-uid/dist/es5/index';
 import {FIELD_SIZE, LABEL_SIZE} from './constants';
 
 CheckBox.propTypes = {
+    /** Label message*/
     label: PropTypes.string.isRequired,
+    /** Help text message*/
     helpText: PropTypes.string,
 };
 
