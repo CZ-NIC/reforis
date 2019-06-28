@@ -6,25 +6,41 @@
 #  See /LICENSE for more information.
 
 import os
+import copy
+import pathlib
 
 import setuptools
 from setuptools.command.build_py import build_py
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = pathlib.Path(__file__).absolute().parent
 
 
-class NPMInstall(build_py):
+class CustomBuild(build_py):
     def run(self):
         build_py.run(self)
-        npm_install_and_build(self.build_lib)
+        self.compile_translations()
+        self.npm_install_and_build()
 
+    def compile_translations(self):
 
-def npm_install_and_build(path):
-    os.system('cd {}/js; npm install --save-dev'.format(BASE_DIR))
-    build_dir = os.path.join(BASE_DIR, path, 'reforis')
-    os.system(
-        f'cd {BASE_DIR}/js; npx browserify ./src/app.js -o {build_dir}/static/js/app.min.js -t [ babelify --presets [ @babel/preset-env @babel/preset-react ] --plugins [ @babel/plugin-proposal-class-properties ] ]'
-    )
+        # compile translation
+        from babel.messages import frontend as babel
+
+        def compile_domain(domain):
+            distribution = copy.copy(self.distribution)
+            cmd = babel.compile_catalog(distribution)
+            cmd.directory = str(pathlib.Path(self.build_lib) / "reforis/translations")
+            cmd.domain = domain
+            cmd.ensure_finalized()
+            cmd.run()
+
+        compile_domain("messages")
+        compile_domain("tzinfo")
+
+    def npm_install_and_build(self):
+        os.system(f"cd {BASE_DIR}/js; npm install --save-dev")
+        build_dir = BASE_DIR / self.build_lib / "reforis"
+        os.system(f"cd {BASE_DIR}/js; npx browserify ./src/app.js -o {build_dir}/static/js/app.min.js -t [ babelify --presets [ @babel/preset-env @babel/preset-react ] --plugins [ @babel/plugin-proposal-class-properties ] ]")
 
 
 setuptools.setup(
@@ -44,6 +60,10 @@ setuptools.setup(
         'Flask-Babel==0.12.2',
         'Flask-Session==0.3.1',
         'flup',
+    ],
+
+    setup_requires=[
+        'Babel',
     ],
 
     # Do not use test_require or build_require, because then it's not installed and is
@@ -72,7 +92,7 @@ setuptools.setup(
     ],
     zip_safe=False,
     cmdclass={
-        'build_py': NPMInstall
+        'build_py': CustomBuild,
     },
     entry_points={"console_scripts": [
         "reforis = reforis.__main__:main",
