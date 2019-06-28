@@ -14,15 +14,20 @@ const SIZE_CLASS = ' offset-lg-' + OFFSET + ' col-lg-' + SIZE;
 const SIZE_CLASS_SM = ' col-sm-12';
 
 Button.propTypes = {
+    /** Additional class name. */
     className: PropTypes.string,
+    /** Use foris form size and offset. */
+    forisFormSize: PropTypes.bool,
+    /** Show loading icon. */
     loading: PropTypes.bool,
+    /** Button content. */
     children: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.element,
     ]).isRequired
 };
 
-export default function Button({className, loading, children, forisFormSize, ...props}) {
+export default function Button({className, loading, forisFormSize, children, ...props}) {
     className = className ? 'btn ' + className : 'btn btn-primary ';
     if (forisFormSize)
         className += SIZE_CLASS + SIZE_CLASS_SM;

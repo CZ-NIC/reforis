@@ -9,10 +9,12 @@ import React from 'react';
 import propTypes from 'prop-types';
 
 Spinner.propTypes = {
+    /** Children components put into `div` with "spinner-text" class. */
     children: propTypes.oneOfType([
         propTypes.arrayOf(propTypes.node),
         propTypes.node
     ]),
+    /** Render component with full-screen mode (using apropriate `.css` styles) */
     fullScreen: propTypes.bool.isRequired,
 };
 

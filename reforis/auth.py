@@ -6,12 +6,22 @@
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
 
+"""
+Set of authentication helpers.
+"""
+
 import base64
 
 from flask import session, redirect, current_app, request, url_for
 
 
 def login_to_foris(password):
+    """Mark a session as `logged` if the password is correct.
+
+    :param password: string
+    :return: result: Session was logged.
+    :rtype: bool
+    """
     if check_password(password):
         session['logged'] = True
         return True
@@ -21,10 +31,15 @@ def login_to_foris(password):
 
 
 def check_password(password):
+    """Check given password with ``foris-controller``.
+
+    :return: result: Password is correct or not set.
+    :rtype: bool
+    """
     decoded_password = _decode_password_to_base64(password)
     res = current_app.backend.perform('password', 'check', {'password': decoded_password})
 
-    # consider unset password as successful auth maybe set some session variable in this case
+    # Consider unset password as successful auth maybe set some session variable in this case
     return res['status'] in ('unset', 'good')
 
 
@@ -33,10 +48,19 @@ def _decode_password_to_base64(password):
 
 
 def logout_from_foris():
+    """Mark session as `unlogged`.
+
+    :param password: string
+    """
     session['logged'] = False
 
 
 def register_login_required(app):
+    """Add checking ``before_request`` function in order to protect pages from unlogged access. It also performs
+    redirects to login page when session is not `logged`.
+
+    :param app: Flask application
+    """
     # pylint: disable=unused-variable,inconsistent-return-statements
     @app.before_request
     def require_login():

@@ -16,15 +16,28 @@ import SubmitButton, {STATES as SUBMIT_BUTTON_STATES} from './SubmitButton';
 import {FailAlert, SuccessAlert} from './alerts';
 
 ForisForm.propTypes = {
+    /** WebSocket object see `scr/common/WebSockets.js`. */
     ws: propTypes.object,
+    /** Foris configuration object. See usage in main components. */
     forisConfig: propTypes.shape({
+        /** reForis Flask aplication API endpoint from `src/common/API.js`. */
         endpoint: propTypes.string.isRequired,
+        /** `foris-controller` module name to be used via WebSockets.
+         *  If it's not passed then WebSockets aren't used
+         * */
         wsModule: propTypes.string,
+        /**`foris-controller` action name to be used via WebSockets.
+         *  If it's not passed then `update_settings` is used. see `src/common/WebSocketHooks.js`
+         * */
         wsAction: propTypes.string,
     }).isRequired,
+    /** Function to prepare data recived from the API before using in forms. */
     prepData: propTypes.func.isRequired,
+    /** Function to prepare data from form before submitting. */
     prepDataToSubmit: propTypes.func.isRequired,
+    /** Validate data and provide validation object. Then validation errors passed to children. */
     validator: propTypes.func.isRequired,
+    /** reForis form components. */
     children: propTypes.node.isRequired,
 };
 
@@ -35,6 +48,7 @@ ForisForm.defaultProps = {
     validator: () => undefined,
 };
 
+/** Serves as HOC for all foris forms components. */
 export default function ForisForm({
                                       ws,
                                       forisConfig,

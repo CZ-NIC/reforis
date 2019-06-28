@@ -104,6 +104,13 @@ compile-messages: venv
 	$(VENV_BIN)/pybabel compile -f -d ./reforis/translations
 	$(VENV_BIN)/pybabel compile -f -d ./reforis/translations -D tzinfo
 
+docs: docs-web docs-js
+docs-web: venv
+	rm -rf docs/build
+	. $(VENV_BIN)/activate && cd docs; make html
+docs-js:
+	cd js; npm run-script docs
+
 make_timzezones:
 	$(VENV_BIN)/$(DEV_PYTHON) ./scripts/make_timezones.py ./js/src/utils/timezones.js
 

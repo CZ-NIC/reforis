@@ -110,3 +110,4 @@ venv.bak/
 .mypy_cache/
 
 /reforis_static/reforis/js/app.min.js
+/js/styleguide/

@@ -78,6 +78,10 @@ setuptools.setup(
             'pycodestyle==2.5.0',
             'pylint==2.3.1',
         ],
+        'build': [
+            'Sphinx==2.1.2',
+            'sphinxcontrib-httpdomain==1.7.0',
+        ],
     },
 
     classifiers=[

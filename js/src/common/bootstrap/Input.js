@@ -10,7 +10,7 @@ import {useUID} from 'react-uid/dist/es5/index';
 
 import {FIELD_SIZE, LABEL_SIZE} from './constants';
 
-
+/** Base bootstrap input component. */
 export default function Input({type, label, helpText, error, children, ...props}) {
     const uid = useUID();
     return <div className='form-group row'>

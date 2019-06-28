@@ -5,6 +5,10 @@
  * See /LICENSE for more information.
  */
 
+/**
+ * Set of validation helpers and validation error messages.
+ */
+
 export const ERROR_MESSAGES = {
     IPv4: _('This is not a valid IPv4 address.'),
     IPv6: _('This is not a valid IPv6 address.'),

@@ -5,6 +5,15 @@
 
 # pylint: disable=unused-variable,unused-argument
 
+"""
+The application factory approach is used in this project.
+It allows to create more Flask applications with a different configuration for more thorough test-ing.
+It also encourages to create a better application structure by defining all of the application dependencies in one
+place.
+See `Flask Application Factories <http://flask.pocoo.org/docs/1.0/patterns/appfactories/>`_.
+"""
+
+
 import json
 
 import pkg_resources
@@ -14,6 +23,13 @@ from .locale import TranslationsHelper
 
 
 def create_app(config):
+    """
+    Flask application factory.
+    It creates applications and registered all blueprints and plugins.
+
+    :param config: config name
+    :rtype: Flask (applications)
+    """
     from flask import Flask
     app = Flask(__name__)
     app.config.from_object(f'reforis.config.{config}')
@@ -37,7 +53,7 @@ def create_app(config):
     from .auth import register_login_required
     register_login_required(app)
 
-    load_plugins(app)
+    register_plugins(app)
 
     app.register_error_handler(404, not_found_error)
     app.register_error_handler(500, internal_error)
@@ -64,6 +80,12 @@ def internal_error(error):
 
 
 def foris_controller_error(e):
+    """
+    Add stacktrace, errors description in case of ``foris-controller`` error.
+
+    :param e: error
+    :return: rendered template, 500
+    """
     error = {
         'error': 'Remote Exception: %s' % e.remote_description,
         'extra': '%s' % json.dumps(e.query),
@@ -73,6 +95,17 @@ def foris_controller_error(e):
 
 
 def set_backend(app):
+    """
+    Set ``foris-controller`` backend on the Flask applications.
+    Then it can be used as following:
+
+    .. code-block::
+
+        from flask import current_app
+        web_data = current_app.backend.perform('web', 'get_data')
+
+    :param app: Flask (application)
+    """
     bus = app.config['BUS']
     bus_config = app.config['BUSES_CONF'][bus]
 
@@ -85,6 +118,17 @@ def set_backend(app):
 
 
 def set_locale(app):
+    """
+    Set babel ``localeselector`` and add translations catalog to context.
+    Catalog is a dict of prepared translation messages by :class:`locale.TranslationsHelper` to the right format to be
+    loaded and used by ``babel.js`` library.
+
+    .. code-block:: js+jinja
+
+        babel.Translations.load({{ babel_catalog | safe }}).install();
+
+    :param app: Flask (application)
+    """
     from flask_babel import Babel
     babel = Babel(app)
 
@@ -111,7 +155,12 @@ def _get_locale_from_backend(app):
     return app.backend.perform('web', 'get_data')['language']
 
 
-def load_plugins(app):
+def register_plugins(app):
+    """
+    Iterate over all plugins and register their blueprints.
+
+    :param app: Flask (application)
+    """
     from .plugins import get_plugins
 
     plugins = get_plugins()

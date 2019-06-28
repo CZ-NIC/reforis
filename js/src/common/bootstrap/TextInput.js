@@ -15,8 +15,11 @@ const TextInput = ({...props}) => <Input type="text" {...props}/>;
 
 
 TextInput.propTypes = {
+    /** Field label. */
     label: PropTypes.string.isRequired,
+    /** Error text. */
     error: PropTypes.string,
+    /** Help text message. */
     helpText: PropTypes.string,
 };
 

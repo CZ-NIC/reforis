@@ -13,9 +13,13 @@ import PropTypes from 'prop-types';
 const NumberInput = ({...props}) => <Input type="number" {...props}/>;
 
 NumberInput.propTypes = {
+    /** Field label. */
     label: PropTypes.string.isRequired,
+    /** Error message. */
     error: PropTypes.string,
+    /** Help text message. */
     helpText: PropTypes.string,
+    /** Number value. */
     value: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number,
