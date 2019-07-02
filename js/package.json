@@ -36,6 +36,7 @@
     "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-react-transform": "^3.0.0",
+    "babel-polyfill": "^6.26.0",
     "css-loader": "^3.0.0",
     "eslint": "^5.16.0",
     "eslint-config-react-app": "^4.0.1",
