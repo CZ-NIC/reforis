@@ -14,7 +14,7 @@ import TimeForm from './TimeForm';
 import API_URLs from '../common/API';
 import ForisForm from '../formContainer/ForisForm';
 
-export default function RegionAndTime({postCallback}) {
+export default function RegionAndTime({ws, postCallback}) {
     return <>
         <h1>{_('Region and time')}</h1>
         <p>{_(`
@@ -29,9 +29,9 @@ procedure of SSL certificate verification might not work correctly.
             postCallback={postCallback}
             validator={validator}
         >
-        <RegionForm/>
-        <TimeForm/>
-    </ForisForm>
+            <RegionForm/>
+            <TimeForm ws={ws}/>
+        </ForisForm>
     </>
 }
 

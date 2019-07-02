@@ -5,20 +5,21 @@
  * See /LICENSE for more information.
  */
 
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import propTypes from 'prop-types';
 import moment from 'moment/moment';
 
 import Select from '../common/bootstrap/Select';
 import DataTimeInput from '../common/bootstrap/DataTimeInput';
-import {useAPIGet} from '../common/APIhooks';
-import API_URLs from '../common/API';
+import useNTPDate from './hooks';
+import {SpinnerElement} from '../common/bootstrap/Spinner';
+import Button from '../common/bootstrap/Button';
 
 // Foris backend ignore value after "."...
 const TIME_FORMAT = 'YYYY-MM-DDTHH:mm:ss.0';
 
 const TIME_SETTING_TYPE_CHOICES = {
-    ntp: _('Via ntp'),
+    ntp: _('Via NTP'),
     manual: _('Manually'),
 };
 
@@ -50,17 +51,24 @@ TimeForm.defaultProps = {
     },
 };
 
-export default function TimeForm({formData, formErrors, setFormValue, ...props}) {
-    const [updateTimeState, updateTime] = useAPIGet(API_URLs.time);
+export default function TimeForm({ws, formData, formErrors, setFormValue, ...props}) {
+    const [ntpData, triggerNTP] = useNTPDate(ws);
     useEffect(() => {
-        if (updateTimeState.data) {
-            const time = updateTimeState.data.time;
-            const momentumTime = moment(time).isValid() ? moment(time).format(TIME_FORMAT) : time;
+        if (ntpData.data) {
+            const time = ntpData.data.time;
+            const momentTime = moment(time).isValid() ? moment(time).format(TIME_FORMAT) : time;
             setFormValue(
                 value => ({time_settings: {time: {$set: value}}})
-            )({target: {value: momentumTime}})
+            )({target: {value: momentTime}})
         }
-    }, [setFormValue, updateTimeState.data]);
+    }, [setFormValue, ntpData.data]);
+
+    function updateTimeFromBrowser(e) {
+        e.preventDefault();
+        setFormValue(value => (
+            {time_settings: {time: {$set: value}}})
+        )({target: {value: moment()}})
+    }
 
     const data = formData.time_settings;
     const errors = formErrors.time_settings || {};
@@ -100,11 +108,15 @@ export default function TimeForm({formData, formErrors, setFormValue, ...props})
 
             {...props}
 
-            disabled={data.how_to_set_time !== 'manual' || updateTimeState.isLoading}
+            disabled={data.how_to_set_time !== 'manual' || ntpData.isLoading}
         >
             <div className="input-group-append">
-                <button className="input-group-text" onClick={updateTime}>
-                    <i className="fa fa-sync-alt"/>
+                <button
+                    className="input-group-text"
+                    onClick={data.how_to_set_time === 'ntp' ? triggerNTP : updateTimeFromBrowser}
+                    disabled={ntpData.isLoading}
+                >
+                    {ntpData.isLoading ? <SpinnerElement small/> : <i className="fa fa-sync-alt"/>}
                 </button>
             </div>
         </DataTimeInput>
@@ -116,18 +128,26 @@ NTPServersList.propTypes = {
 };
 
 function NTPServersList({servers}) {
-    return <table className='table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12'>
-        <thead>
-        <tr>
-            <th>{_('NTP servers')}</th>
-        </tr>
-        </thead>
-        <tbody>
-        {servers.map(server =>
-            <tr key={server}>
-                <td>{server}</td>
-            </tr>
-        )}
-        </tbody>
-    </table>
+    const [shown, setShown] = useState(false);
+    return <>
+        <Button
+            className="btn-outline-primary"
+            forisFormSize
+            data-toggle="collapse"
+            href="#collapseNTPServers"
+            onClick={e => {
+                e.preventDefault();
+                setShown(!shown)
+            }}
+        >
+            {shown ? _('Hide NTP servers list') : _('Show NTP servers list')}
+        </Button>
+
+        <div className="collapse" id="collapseNTPServers">
+            <h5>{_('NTP servers')}</h5>
+            <div id="ntpServersList">
+                {servers.map(server => <p key={server}>{server}</p>)}
+            </div>
+        </div>
+    </>
 }

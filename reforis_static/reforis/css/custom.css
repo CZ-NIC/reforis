@@ -26,6 +26,10 @@ a, .btn-link {
     border-color: #00a2e2;
 }
 
+button {
+    margin-bottom: 0.5rem;
+}
+
 .separator {
     width: 100%;
     height: 1px;
@@ -522,4 +526,16 @@ a, .btn-link {
     animation-name: modalFade;
     animation-duration: .3s;
     background: rgba(0, 0, 0, 0.2);
+}
+
+
+/* Other */
+#ntpServersList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#ntpServersList > p {
+    margin: 0.5rem;
 }

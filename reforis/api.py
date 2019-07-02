@@ -524,9 +524,15 @@ def region_and_time():
     return _foris_controller_settings_call('time')
 
 
-@api.route('/time', methods=['GET'])
-def time():
-    return jsonify(current_app.backend.perform('time', 'get_router_time'))
+@api.route('/ntp-update', methods=['GET'])
+def ntp_update():
+    """
+    .. http:get:: /api/region-and-time
+        Request to trigger ntpdate.
+        See ``ntpdate_trigger`` action in the `foris-controller time module JSON schema
+        <https://gitlab.labs.nic.cz/turris/foris-controller/blob/master/foris_controller_modules/time/schema/time.json>`_.
+    """
+    return jsonify(current_app.backend.perform('time', 'ntpdate_trigger'))
 
 
 @api.route('/reboot', methods=['GET'])
