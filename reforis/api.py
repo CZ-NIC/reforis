@@ -209,6 +209,18 @@ def wifi():
     return _foris_controller_settings_call('wifi')
 
 
+@api.route('/wifi-reset', methods=['GET'])
+def wifi_reset():
+    """
+    .. http:get:: /api/wifi
+        Reset WiFI router settings.
+        See ``reset`` action in the `foris-controller wifi module JSON schema
+        <https://gitlab.labs.nic.cz/turris/foris-controller/blob/master/foris_controller_modules/wifi/schema/wifi.json>`_.
+
+    """
+    return jsonify(current_app.backend.perform('wifi', 'reset'))
+
+
 @api.route('/lan', methods=['GET', 'POST'])
 def lan():
     """
