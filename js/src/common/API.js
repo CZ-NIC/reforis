@@ -28,7 +28,7 @@ const API_URLs = new Proxy({
         // Administration
         password: '/password',
         regionAndTime: '/region-and-time',
-        time: '/time',
+        ntpUpdate: '/ntp-update',
         approvals: '/approvals',
         updates: '/updates',
         packages: '/packages',

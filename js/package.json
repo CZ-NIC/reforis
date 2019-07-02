@@ -56,7 +56,7 @@
     "webpack-cli": "^3.3.4"
   },
   "scripts": {
-    "watch": "webpack --watch",
+    "watch": "webpack --watch --mode=development",
     "build": "webpack --mode=production",
     "lint": "eslint src",
     "test": "jest",

@@ -22,7 +22,7 @@ from flask import current_app
         ('notifications', 'router_notifications', True),
         ('notifications-settings', 'router_notifications', True),
         ('region-and-time', 'time', True),
-        ('time', 'time', False),
+        ('ntp-update', 'time', False),
 
         ('language', 'web', True),
         ('languages', 'web', False),

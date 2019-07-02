@@ -400,7 +400,7 @@ procedure of SSL certificate verification might not work correctly.
           <option
             value="ntp"
           >
-            Via ntp
+            Via NTP
           </option>
           <option
             value="manual"
@@ -410,64 +410,54 @@ procedure of SSL certificate verification might not work correctly.
         </select>
       </div>
     </div>
-    <table
-      class="table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12"
+    <button
+      class="btn btn-outline-primary offset-lg-8 col-lg-3 col-sm-12"
+      data-toggle="collapse"
+      href="#collapseNTPServers"
     >
-      <thead>
-        <tr>
-          <th>
-            NTP servers
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            217.31.202.100
-          </td>
-        </tr>
-        <tr>
-          <td>
-            195.113.144.201
-          </td>
-        </tr>
-        <tr>
-          <td>
-            195.113.144.238
-          </td>
-        </tr>
-        <tr>
-          <td>
-            2001:1488:ffff::100
-          </td>
-        </tr>
-        <tr>
-          <td>
-            ntp.nic.cz
-          </td>
-        </tr>
-        <tr>
-          <td>
-            0.openwrt.pool.ntp.org
-          </td>
-        </tr>
-        <tr>
-          <td>
-            1.openwrt.pool.ntp.org
-          </td>
-        </tr>
-        <tr>
-          <td>
-            2.openwrt.pool.ntp.org
-          </td>
-        </tr>
-        <tr>
-          <td>
-            3.openwrt.pool.ntp.org
-          </td>
-        </tr>
-      </tbody>
-    </table>
+       
+       
+      Show NTP servers list
+    </button>
+    <div
+      class="collapse"
+      id="collapseNTPServers"
+    >
+      <h5>
+        NTP servers
+      </h5>
+      <div
+        id="ntpServersList"
+      >
+        <p>
+          217.31.202.100
+        </p>
+        <p>
+          195.113.144.201
+        </p>
+        <p>
+          195.113.144.238
+        </p>
+        <p>
+          2001:1488:ffff::100
+        </p>
+        <p>
+          ntp.nic.cz
+        </p>
+        <p>
+          0.openwrt.pool.ntp.org
+        </p>
+        <p>
+          1.openwrt.pool.ntp.org
+        </p>
+        <p>
+          2.openwrt.pool.ntp.org
+        </p>
+        <p>
+          3.openwrt.pool.ntp.org
+        </p>
+      </div>
+    </div>
     <div
       class="rdt"
     >
