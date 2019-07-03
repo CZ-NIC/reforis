@@ -307,6 +307,22 @@ exports[`<WiFi/> Snapshot both modules disabled. 1`] = `
         Save
     </button>
   </form>
+  <form>
+    <h4>
+      Reset Wi-Fi Settings
+    </h4>
+    <p>
+      
+If a number of wireless cards doesn't match, you may try to reset the Wi-Fi settings. Note that this will remove the
+current Wi-Fi configuration and restore the default values.
+        
+    </p>
+    <button
+      class="btn btn-warning offset-lg-8 col-lg-3 col-sm-12"
+    >
+        Reset Wi-Fi Settings
+    </button>
+  </form>
 </DocumentFragment>
 `;
 
@@ -410,7 +426,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
           Save
       </button>
     </form>
-  </DocumentFragment>"
+    <form>"
 `;
 
 exports[`<WiFi/> Snapshot one module enabled. 1`] = `
