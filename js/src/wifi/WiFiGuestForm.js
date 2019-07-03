@@ -12,22 +12,23 @@ import TextInput from '../common/bootstrap/TextInput';
 import PasswordInput from '../common/bootstrap/PasswordInput';
 
 import {HELP_TEXTS} from './WiFiForm';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
+import WiFiQRCode from './WiFiQRCode';
 
 WifiGuestForm.propTypes = {
-    formData: propTypes.shape({
-        id: propTypes.number.isRequired,
-        SSID: propTypes.string.isRequired,
-        password: propTypes.string.isRequired,
+    formData: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        SSID: PropTypes.string.isRequired,
+        password: PropTypes.string.isRequired,
     }),
-    formErrors: propTypes.shape({
-        SSID: propTypes.string,
-        password: propTypes.string,
+    formErrors: PropTypes.shape({
+        SSID: PropTypes.string,
+        password: PropTypes.string,
     }),
-    setFormValue: propTypes.func.isRequired,
+    setFormValue: PropTypes.func.isRequired,
 };
 
-export function WifiGuestForm({formData, formErrors, setFormValue, ...props}) {
+export default function WifiGuestForm({formData, formErrors, setFormValue, ...props}) {
     return <>
         <CheckBox
             label={_('Enable Guest Wifi')}
@@ -52,7 +53,14 @@ export function WifiGuestForm({formData, formErrors, setFormValue, ...props}) {
                     )}
 
                     {...props}
-                />
+                >
+                    <div className="input-group-append">
+                        <WiFiQRCode
+                            SSID={formData.SSID}
+                            password={formData.password}
+                        />
+                    </div>
+                </TextInput>
 
                 <PasswordInput
                     withEye={true}

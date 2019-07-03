@@ -28,3 +28,7 @@ jest.doMock('moment', () => {
 });
 
 Date.now = jest.fn(() => new Date(Date.UTC(2019, 1, 1, 12, 13, 14)).valueOf());
+
+jest.doMock('../utils/vfs_fonts', () => {
+    return {};
+});

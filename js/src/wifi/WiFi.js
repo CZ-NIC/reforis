@@ -11,23 +11,27 @@ import propTypes from 'prop-types';
 import WiFiForm from './WiFiForm';
 import ForisForm from '../formContainer/ForisForm';
 import API_URLs from '../common/API';
+import ResetWiFiSettings from './ResetWiFiSettings';
 
 WiFi.propTypes = {
     ws: propTypes.object.isRequired
 };
 
 export default function WiFi({ws}) {
-    return <ForisForm
-        ws={ws}
-        forisConfig={{
-            endpoint: API_URLs.wifi,
-            wsModule: 'wifi',
-        }}
-        prepDataToSubmit={prepDataToSubmit}
-        validator={validator}
-    >
-        <WiFiForm/>
-    </ForisForm>
+    return <>
+        <ForisForm
+            ws={ws}
+            forisConfig={{
+                endpoint: API_URLs.wifi,
+                wsModule: 'wifi',
+            }}
+            prepDataToSubmit={prepDataToSubmit}
+            validator={validator}
+        >
+            <WiFiForm/>
+        </ForisForm>
+        <ResetWiFiSettings ws={ws}/>
+    </>
 }
 
 function prepDataToSubmit(formData) {

@@ -16,6 +16,7 @@ const API_URLs = new Proxy({
 
         // Network
         wifi: '/wifi',
+        wifiReset: '/wifi-reset',
         wan: '/wan',
         lan: '/lan',
         dns: '/dns',

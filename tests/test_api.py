@@ -13,6 +13,7 @@ from flask import current_app
         ('wan', 'wan', True),
         ('lan', 'lan', True),
         ('wifi', 'wifi', True),
+        ('wifi-reset', 'wifi', False),
         ('dns', 'dns', True),
         ('guest-network', 'guest', True),
         ('connection-test', 'wan', False),
