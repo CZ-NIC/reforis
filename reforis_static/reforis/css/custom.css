@@ -26,7 +26,7 @@ a, .btn-link {
     border-color: #00a2e2;
 }
 
-button {
+form > button {
     margin-bottom: 0.5rem;
 }
 

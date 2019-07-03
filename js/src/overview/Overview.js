@@ -8,9 +8,11 @@
 import React from 'react';
 
 import UpdateApprovals from './UpdatesApprovals';
+import RebootIsRequiredAlert from './RebootIsRequiredAlert';
 
-export default function Overview() {
+export default function Overview({ws}) {
     return <>
+        <RebootIsRequiredAlert ws={ws}/>
         <UpdateApprovals/>
     </>
 }
