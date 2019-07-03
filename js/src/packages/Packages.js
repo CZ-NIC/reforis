@@ -14,6 +14,7 @@ import ForisForm from '../formContainer/ForisForm';
 
 import LanguageForm from './LanguageForm';
 import PackagesForm from './PackagesForm';
+import {ForisURLs} from '../common/constants';
 
 export default function Packages() {
     return <ForisForm
@@ -57,8 +58,13 @@ DisabledUpdaterAlert.propTypes = {
 function DisabledUpdaterAlert() {
     return <Alert
         type='warning'
-        message={_('Please enable automatic updates to manage packages and languages.')}
-    />
+    >
+        <p dangerouslySetInnerHTML={{
+            __html: `
+Please enable <a href="${ForisURLs.updates}">automatic updates</a> to manage packages and languages.
+        `
+        }}></p>
+    </Alert>
 }
 
 function prepData(formData) {

@@ -11,5 +11,6 @@ export const ForisURLs = {
     login: `${REFORIS_PREFIX}/login`,
     notifications: `${REFORIS_PREFIX}/notifications`,
     notificationsSettings: `${REFORIS_PREFIX}/notifications-settings`,
+    updates: `${REFORIS_PREFIX}/updates`,
     luci: '/cgi-bin/luci',
 };
