@@ -5,7 +5,7 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import propTypes from 'prop-types';
 
 Modal.propTypes = {
@@ -19,9 +19,24 @@ Modal.propTypes = {
     ]).isRequired
 };
 
-export function Modal({shown, children}) {
+export function Modal({shown, setShown, children}) {
+    const dialogRef = useRef();
+
+    useEffect(() => {
+        function handleClickOutsideDialog(e) {
+            if (!dialogRef.current.contains(e.target))
+                setShown(false);
+        }
+
+        document.addEventListener("mousedown", handleClickOutsideDialog);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutsideDialog);
+        };
+    }, [setShown]);
+
+
     return <div className={'modal fade ' + (shown ? 'show' : '')} role="dialog">
-        <div className="modal-dialog" role="document">
+        <div ref={dialogRef} className="modal-dialog" role="document">
             <div className="modal-content">
                 {children}
             </div>

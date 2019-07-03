@@ -24,7 +24,7 @@ Do you want to <strong>open ports 22, 80 and 443 on WAN network</strong> in orde
 interface of our device?                
     `);
 
-    return <Modal shown={shown}>
+    return <Modal shown={shown} setShown={setShown}>
         <ModalHeader setShown={setShown} title={_('Warning!')}/>
         <ModalBody>
             <p dangerouslySetInnerHTML={{__html: message}}/>
@@ -49,7 +49,7 @@ This means that the only way to configure your device will be via serial cabel o
 <p><strong>Is this really what you want?</strong></p>           
 `);
 
-    return <Modal shown={shown}>
+    return <Modal shown={shown} setShown={setShown}>
         <ModalHeader setShown={setShown} title={_('Warning!')}/>
         <ModalBody>
             <p dangerouslySetInnerHTML={{__html: message}}/>
