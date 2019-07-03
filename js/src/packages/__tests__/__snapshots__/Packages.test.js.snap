@@ -5,13 +5,23 @@ exports[`<Packages/> Updates disabled 1`] = `
 - First value
 + Second value
 
-@@ -1,7 +1,15 @@
+@@ -1,7 +1,25 @@
   <DocumentFragment>
     <form>
 +     <div
 +       class=\\"alert alert-dismissible alert-warning\\"
 +     >
-+       Please enable automatic updates to manage packages and languages.
++       <p>
++         
++ Please enable 
++         <a
++           href=\\"/updates\\"
++         >
++           automatic updates
++         </a>
++          to manage packages and languages.
++         
++       </p>
 +     </div>
 +     <div
 +       class=\\"text-muted\\"
@@ -21,7 +31,7 @@ exports[`<Packages/> Updates disabled 1`] = `
         </h3>
         <div
           class=\\"form-group row\\"
-@@ -19,10 +27,11 @@
+@@ -19,10 +37,11 @@
           <div
             class=\\"form-check col-sm-8\\"
           >
@@ -33,7 +43,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <small
               class=\\"form-text text-muted\\"
-@@ -46,10 +55,11 @@
+@@ -46,10 +65,11 @@
           </div>
           <div
             class=\\"form-check col-sm-8\\"
@@ -45,7 +55,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <small
               class=\\"form-text text-muted\\"
-@@ -73,10 +83,11 @@
+@@ -73,10 +93,11 @@
           </div>
           <div
             class=\\"form-check col-sm-8\\"
@@ -57,7 +67,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <small
               class=\\"form-text text-muted\\"
-@@ -100,10 +111,11 @@
+@@ -100,10 +121,11 @@
           </div>
           <div
             class=\\"form-check col-sm-8\\"
@@ -69,7 +79,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <small
               class=\\"form-text text-muted\\"
-@@ -127,10 +139,11 @@
+@@ -127,10 +149,11 @@
           </div>
           <div
             class=\\"form-check col-sm-8\\"
@@ -81,7 +91,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <small
               class=\\"form-text text-muted\\"
-@@ -154,10 +167,11 @@
+@@ -154,10 +177,11 @@
           </div>
           <div
             class=\\"form-check col-sm-8\\"
@@ -93,7 +103,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <small
               class=\\"form-text text-muted\\"
-@@ -181,10 +195,11 @@
+@@ -181,10 +205,11 @@
           </div>
           <div
             class=\\"form-check col-sm-8\\"
@@ -105,7 +115,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <small
               class=\\"form-text text-muted\\"
-@@ -208,10 +223,11 @@
+@@ -208,10 +233,11 @@
           </div>
           <div
             class=\\"form-check col-sm-8\\"
@@ -117,7 +127,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <small
               class=\\"form-text text-muted\\"
-@@ -235,10 +251,11 @@
+@@ -235,10 +261,11 @@
           </div>
           <div
             class=\\"form-check col-sm-8\\"
@@ -129,7 +139,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <small
               class=\\"form-text text-muted\\"
-@@ -262,10 +279,11 @@
+@@ -262,10 +289,11 @@
           </div>
           <div
             class=\\"form-check col-sm-8\\"
@@ -141,7 +151,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <small
               class=\\"form-text text-muted\\"
-@@ -289,10 +307,11 @@
+@@ -289,10 +317,11 @@
           </div>
           <div
             class=\\"form-check col-sm-8\\"
@@ -153,7 +163,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <small
               class=\\"form-text text-muted\\"
-@@ -316,10 +335,11 @@
+@@ -316,10 +345,11 @@
           </div>
           <div
             class=\\"form-check col-sm-8\\"
@@ -165,7 +175,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <small
               class=\\"form-text text-muted\\"
-@@ -343,10 +363,11 @@
+@@ -343,10 +373,11 @@
           </div>
           <div
             class=\\"form-check col-sm-8\\"
@@ -177,7 +187,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <small
               class=\\"form-text text-muted\\"
-@@ -377,10 +398,11 @@
+@@ -377,10 +408,11 @@
           <div
             class=\\"form-check col-sm-8\\"
           >
@@ -189,7 +199,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
           </div>
         </div>
-@@ -399,10 +421,11 @@
+@@ -399,10 +431,11 @@
           </div>
           <div
             class=\\"form-check col-sm-8\\"
@@ -201,7 +211,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
           </div>
         </div>
-@@ -421,10 +444,11 @@
+@@ -421,10 +454,11 @@
           </div>
           <div
             class=\\"form-check col-sm-8\\"
@@ -213,7 +223,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
           </div>
         </div>
-@@ -443,10 +467,11 @@
+@@ -443,10 +477,11 @@
           </div>
           <div
             class=\\"form-check col-sm-8\\"
@@ -225,7 +235,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
           </div>
         </div>
-@@ -465,10 +490,11 @@
+@@ -465,10 +500,11 @@
           </div>
           <div
             class=\\"form-check col-sm-8\\"
@@ -237,7 +247,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
           </div>
         </div>
-@@ -487,10 +513,11 @@
+@@ -487,10 +523,11 @@
           </div>
           <div
             class=\\"form-check col-sm-8\\"
@@ -249,7 +259,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
           </div>
         </div>
-@@ -509,10 +536,11 @@
+@@ -509,10 +546,11 @@
           </div>
           <div
             class=\\"form-check col-sm-8\\"
@@ -261,7 +271,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
           </div>
         </div>
-@@ -531,10 +559,11 @@
+@@ -531,10 +569,11 @@
           </div>
           <div
             class=\\"form-check col-sm-8\\"
@@ -273,7 +283,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
           </div>
         </div>
-@@ -553,10 +582,11 @@
+@@ -553,10 +592,11 @@
           </div>
           <div
             class=\\"form-check col-sm-8\\"
@@ -285,7 +295,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
           </div>
         </div>
-@@ -575,10 +605,11 @@
+@@ -575,10 +615,11 @@
           </div>
           <div
             class=\\"form-check col-sm-8\\"
@@ -297,7 +307,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
           </div>
         </div>
-@@ -597,17 +628,20 @@
+@@ -597,17 +638,20 @@
           </div>
           <div
             class=\\"form-check col-sm-8\\"
@@ -307,9 +317,9 @@ exports[`<Packages/> Updates disabled 1`] = `
               id=\\"24\\"
               type=\\"checkbox\\"
             />
-          </div>
++         </div>
         </div>
-+     </div>
+      </div>
       <button
         class=\\"btn btn-primary  offset-lg-8 col-lg-3 col-sm-12\\"
 +       disabled=\\"\\"
