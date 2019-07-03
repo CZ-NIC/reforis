@@ -13,7 +13,9 @@ import PasswordInput from '../common/bootstrap/PasswordInput';
 import CheckBox from '../common/bootstrap/Checkbox';
 import RadioSet from '../common/bootstrap/RadioSet';
 import Select from '../common/bootstrap/Select';
-import {WifiGuestForm} from './WiFiGuestForm';
+
+import WiFiQRCode from './WiFiQRCode';
+import WifiGuestForm from './WiFiGuestForm';
 
 const HTMODES = {
     NOHT: _('Disabled'),
@@ -123,13 +125,19 @@ function DeviceForm({formData, formErrors, setFormValue, ...props}) {
                     value={formData.SSID}
                     error={formErrors.SSID || null}
                     required
-
                     onChange={setFormValue(
                         value => ({devices: {[deviceID]: {SSID: {$set: value}}}})
                     )}
 
                     {...props}
-                />
+                >
+                    <div className="input-group-append">
+                        <WiFiQRCode
+                            SSID={formData.SSID}
+                            password={formData.password}
+                        />
+                    </div>
+                </TextInput>
 
                 <PasswordInput
                     withEye={true}
@@ -145,6 +153,7 @@ function DeviceForm({formData, formErrors, setFormValue, ...props}) {
 
                     {...props}
                 />
+
 
                 <CheckBox
                     label='Hide SSID'

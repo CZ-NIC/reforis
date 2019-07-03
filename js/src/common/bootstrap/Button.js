@@ -24,6 +24,8 @@ Button.propTypes = {
     children: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.element,
+        PropTypes.node,
+        PropTypes.arrayOf(PropTypes.node),
     ]).isRequired
 };
 
