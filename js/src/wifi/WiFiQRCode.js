@@ -28,7 +28,7 @@ export default function WiFiQRCode({SSID, password}) {
                     setModal(true);
                 }}
         >
-            <img width="23" src='/static/reforis/imgs/QR_icon.svg'/>
+            <img width="23" src='/static/reforis/imgs/QR_icon.svg' alt="QR"/>
         </button>
         {modal ? <QRCodeModal setShown={setModal} shown={modal} SSID={SSID} password={password}/> : null}
     </>

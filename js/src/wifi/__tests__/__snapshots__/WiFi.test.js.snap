@@ -5,7 +5,7 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
 - First value
 + Second value
 
-@@ -261,207 +261,95 @@
+@@ -274,207 +274,95 @@
               value=\\"0\\"
             >
               auto
@@ -331,7 +331,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
 - First value
 + Second value
 
-@@ -494,10 +494,83 @@
+@@ -507,10 +507,96 @@
           Parameters of the guest network can be set in the Guest network tab.
           
           </small>
@@ -358,6 +358,19 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
 +             type=\\"text\\"
 +             value=\\"TestGuestSSID\\"
 +           />
++           <div
++             class=\\"input-group-append\\"
++           >
++             <button
++               class=\\"input-group-text\\"
++             >
++               <img
++                 alt=\\"QR\\"
++                 src=\\"/static/reforis/imgs/QR_icon.svg\\"
++                 width=\\"23\\"
++               />
++             </button>
++           </div>
 +         </div>
 +       </div>
 +     </div>
@@ -415,7 +428,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
       </h3>
       <div
         class=\\"form-group row\\"
-@@ -521,10 +594,11 @@
+@@ -534,10 +620,11 @@
           />
         </div>
       </div>
@@ -434,7 +447,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
 - First value
 + Second value
 
-@@ -23,10 +23,481 @@
+@@ -23,10 +23,494 @@
             id=\\"1\\"
             type=\\"checkbox\\"
           />
@@ -462,6 +475,19 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
 +             type=\\"text\\"
 +             value=\\"TestSSID1\\"
 +           />
++           <div
++             class=\\"input-group-append\\"
++           >
++             <button
++               class=\\"input-group-text\\"
++             >
++               <img
++                 alt=\\"QR\\"
++                 src=\\"/static/reforis/imgs/QR_icon.svg\\"
++                 width=\\"23\\"
++               />
++             </button>
++           </div>
 +         </div>
 +       </div>
 +     </div>
