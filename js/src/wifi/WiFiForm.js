@@ -93,7 +93,7 @@ DeviceForm.propTypes = {
         hidden: propTypes.bool.isRequired,
         hwmode: propTypes.string.isRequired,
         htmode: propTypes.string.isRequired,
-        channel: propTypes.number.isRequired,
+        channel: propTypes.string.isRequired,
         guest_wifi: propTypes.object.isRequired,
     }),
     formErrors: propTypes.object.isRequired,
