@@ -5,8 +5,8 @@
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
 
-import os
 import copy
+import os
 import pathlib
 
 import setuptools
@@ -22,25 +22,24 @@ class CustomBuild(build_py):
         self.npm_install_and_build()
 
     def compile_translations(self):
-
         # compile translation
         from babel.messages import frontend as babel
 
         def compile_domain(domain):
             distribution = copy.copy(self.distribution)
             cmd = babel.compile_catalog(distribution)
-            cmd.directory = str(pathlib.Path(self.build_lib) / "reforis/translations")
+            cmd.directory = str(BASE_DIR / 'reforis/translations')
             cmd.domain = domain
             cmd.ensure_finalized()
             cmd.run()
 
-        compile_domain("messages")
-        compile_domain("tzinfo")
+        compile_domain('messages')
+        compile_domain('tzinfo')
 
     def npm_install_and_build(self):
-        os.system(f"cd {BASE_DIR}/js; npm install --save-dev")
-        build_dir = BASE_DIR / self.build_lib / "reforis"
-        os.system(f"cd {BASE_DIR}/js; npx browserify ./src/app.js -o {build_dir}/static/js/app.min.js -t [ babelify --presets [ @babel/preset-env @babel/preset-react ] --plugins [ @babel/plugin-proposal-class-properties ] ]")
+        os.system(f'cd {BASE_DIR}/js; npm install --save-dev')
+        build_dir = BASE_DIR / self.build_lib / 'reforis_static/reforis/js'
+        os.system(f'cd {BASE_DIR}/js; npm run-script build -- -o {build_dir}/app.min.js')
 
 
 setuptools.setup(
@@ -99,8 +98,8 @@ setuptools.setup(
     cmdclass={
         'build_py': CustomBuild,
     },
-    entry_points={"console_scripts": [
-        "reforis = reforis.__main__:main",
-        "reforis-cli = reforis.cli:cli",
+    entry_points={'console_scripts': [
+        'reforis = reforis.__main__:main',
+        'reforis-cli = reforis.cli:cli',
     ]},
 )
