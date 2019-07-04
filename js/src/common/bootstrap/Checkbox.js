@@ -9,7 +9,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {useUID} from 'react-uid/dist/es5/index';
 
-import {FIELD_SIZE, LABEL_SIZE} from './constants';
+import {formFieldsSize} from './constants';
 
 CheckBox.propTypes = {
     /** Label message*/
@@ -20,17 +20,17 @@ CheckBox.propTypes = {
 
 export default function CheckBox({label, helpText, ...props}) {
     const uid = useUID();
-    return <div className='form-group row'>
-        <div className={'form-label col-sm-' + LABEL_SIZE}>
-            <label className='form-label' htmlFor={uid}>{label}</label>
-        </div>
-        <div className={'form-check col-sm-' + FIELD_SIZE}>
+    return <div className={formFieldsSize} style={{marginBottom: '1rem'}}>
+        <div className='form-group form-check' style={{marginBottom: '0'}}>
             <input
+                className='form-check-input'
                 type='checkbox'
                 id={uid}
+
                 {...props}
             />
-            {helpText ? <small className="form-text text-muted">{helpText}</small> : null}
+            <label className='form-label' htmlFor={uid} style={helpText ? {marginBottom: '0'} : null}>{label}</label>
         </div>
-    </div>;
+        {helpText ? <small className="form-text text-muted">{helpText}</small> : null}
+    </div>
 }

@@ -7,22 +7,21 @@
 
 import React from 'react';
 import {useUID} from 'react-uid/dist/es5/index';
-
-import {FIELD_SIZE, LABEL_SIZE} from './constants';
+import {formFieldsSize} from './constants';
 
 /** Base bootstrap input component. */
 export default function Input({type, label, helpText, error, children, ...props}) {
     const uid = useUID();
-    return <div className='form-group row'>
-        <label className={'form-control-label col-sm-' + LABEL_SIZE} htmlFor={uid}>{label}</label>
-        <div className={'col-sm-' + FIELD_SIZE}>
+    return <div className={formFieldsSize}>
+        <div className='form-group'>
+            <label className='form-control-label' htmlFor={uid}>{label}</label>
             <div className='input-group'>
                 <input
+                    className={'form-control ' + (error ? 'is-invalid' : '')}
                     type={type}
                     id={uid}
 
                     {...props}
-                    className={'form-control ' + (error ? 'is-invalid' : '')}
                 />
                 {children}
             </div>

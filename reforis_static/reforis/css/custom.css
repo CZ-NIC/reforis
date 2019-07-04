@@ -52,9 +52,6 @@ form > button {
     height: 100%;
 }
 
-#content label, .form-label {
-    text-align: right;
-}
 
 /* Side bar */
 #sidebar {

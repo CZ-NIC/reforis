@@ -9,8 +9,6 @@ import React from 'react';
 import propTypes from 'prop-types';
 import {useUID} from 'react-uid/dist/es5/index';
 
-import {FIELD_SIZE, LABEL_SIZE} from './constants';
-
 
 Select.propTypes = {
     /** Select field Label. */
@@ -33,19 +31,15 @@ export default function Select({label, choices, helpText, ...props}) {
         key => <option key={key} value={key}>{choices[key]}</option>
     );
 
-    return <div className='form-group row'>
-        <label className={'form-control-label col-sm-' + LABEL_SIZE} htmlFor={uid}>{label}</label>
-        <div className={'col-sm-' + FIELD_SIZE}>
-            <select
-                className='form-control'
-                id={uid}
-                {...props}
-            >
-                {options}
-            </select>
-            {helpText ? <small className="form-text text-muted">{helpText}</small> : null}
-        </div>
+    return <div className='form-group col-sm-12 offset-lg-1 col-lg-10'>
+        <label className='form-control-label' htmlFor={uid}>{label}</label>
+        <select
+            className='form-control'
+            id={uid}
+            {...props}
+        >
+            {options}
+        </select>
+        {helpText ? <small className="form-text text-muted">{helpText}</small> : null}
     </div>;
 }
-
-
