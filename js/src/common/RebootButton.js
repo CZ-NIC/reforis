@@ -8,7 +8,7 @@
 import React, {useState} from 'react';
 import propTypes from 'prop-types';
 
-import {useAPIGet} from './APIhooks';
+import {useAPIPost} from './APIhooks';
 import API_URLs from './API';
 import {Modal, ModalBody, ModalFooter, ModalHeader} from './bootstrap/Modal';
 import Button from './bootstrap/Button';
@@ -20,7 +20,7 @@ RebootButton.propTypes = {
 
 export default function RebootButton({forisFormSize}) {
     const [clicked, setClicked] = useState(false);
-    const [, triggerReboot] = useAPIGet(API_URLs.reboot);
+    const [, triggerReboot] = useAPIPost(API_URLs.reboot);
     const [modalShown, setModalShown] = useState(false);
 
     function rebootHandler() {

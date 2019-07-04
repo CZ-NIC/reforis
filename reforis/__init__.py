@@ -39,6 +39,9 @@ def create_app(config):
     from flask_session import Session
     Session(app)
 
+    from flask_seasurf import SeaSurf
+    SeaSurf(app)
+
     set_backend(app)
     set_locale(app)
 

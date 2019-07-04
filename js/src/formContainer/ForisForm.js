@@ -112,7 +112,6 @@ export default function ForisForm({
 
     const onSubmit = onSubmitOverridden ?
         onSubmitOverridden(formState.data, onFormChangeHandler, onSubmitHandler) : onSubmitHandler;
-
     return <>
         {!alertIsDismissed ?
             postState.isSuccess ?

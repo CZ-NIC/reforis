@@ -9,6 +9,8 @@
 
     {# Bootstrap #}
     <link rel="stylesheet" href="{{ url_for('static', filename = 'reforis/css/bootstrap.min.css') }}"/>
+    <script src="{{ url_for('static', filename = 'reforis/js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'reforis/js/bootstrap.bundle.min.js') }}"></script>
 
     {# Custom CSS #}
     <link rel="stylesheet" href="{{ url_for('static', filename = 'reforis/css/custom.css') }}"/>
@@ -19,19 +21,27 @@
     <title>Login - Foris</title>
 </head>
 <body>
-<div class="login">
-    <div class="justify-content-between">
-        <img src="{{ url_for('static', filename = 'reforis/imgs/logo-turris.svg') }}">
-        <h1>Login</h1>
-        <form action="" method="post">
-            <div class="form-group">
-                <input type="password" placeholder="Password" class="form-control" name="password">
+<div id="login-wrapper">
+    <img id="logo" src="{{ url_for('static', filename = 'reforis/imgs/logo-turris.svg') }}">
+    <div id="login">
+        <div class="justify-content-between">
+            {% if error_message %}
+                <div class="alert alert-dismissible alert-danger" >
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <p>{{ error_message }}</p>
+                </div>
+            {% endif %}
+            <h2>{% trans %}Foris{% endtrans %}</h2>
+            <form action="{{ url_for('Foris.login') }}" method="POST">
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+                <div class="form-group">
+                    <input type="password" placeholder="Password" class="form-control" name="password">
+                </div>
+                <button class="btn btn-primary col-12" type="submit">{% trans %}Log in{% endtrans %}</button>
+            </form>
+            <div style="text-align: right">
+                <a href="/cgi-bin/luci">{% trans %}Go to LuCI{% endtrans %}</a>
             </div>
-
-            <button class="btn btn-primary" type="submit">Login</button>
-        </form>
-        <div style="text-align: right">
-            <a href="/cgi-bin/luci">Go to LuCI</a>
         </div>
     </div>
 </div>

@@ -209,7 +209,7 @@ def wifi():
     return _foris_controller_settings_call('wifi')
 
 
-@api.route('/wifi-reset', methods=['GET'])
+@api.route('/wifi-reset', methods=['POST'])
 def wifi_reset():
     """
     .. http:get:: /api/wifi
@@ -303,7 +303,7 @@ def guest_network():
     return _foris_controller_settings_call('guest')
 
 
-@api.route('/connection-test', methods=['GET'])
+@api.route('/connection-test', methods=['POST'])
 def connection_test():
     """
         Trigger WAN connection test . The results of the test is obtained via WebSockets.
@@ -329,7 +329,7 @@ def dns():
     return _foris_controller_settings_call('dns')
 
 
-@api.route('/dns-test', methods=['GET'])
+@api.route('/dns-test', methods=['POST'])
 def dns_test():
     """
         Trigger DNS connection test . The results of the test is obtained via WebSockets.
@@ -536,7 +536,7 @@ def region_and_time():
     return _foris_controller_settings_call('time')
 
 
-@api.route('/ntp-update', methods=['GET'])
+@api.route('/ntp-update', methods=['POST'])
 def ntp_update():
     """
     .. http:get:: /api/region-and-time
@@ -547,7 +547,7 @@ def ntp_update():
     return jsonify(current_app.backend.perform('time', 'ntpdate_trigger'))
 
 
-@api.route('/reboot', methods=['GET'])
+@api.route('/reboot', methods=['POST'])
 def reboot():
     """
         Trigger device reboot.

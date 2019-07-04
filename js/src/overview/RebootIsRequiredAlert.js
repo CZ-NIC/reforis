@@ -14,7 +14,6 @@ import RebootButton from '../common/RebootButton';
 export default function RebootIsRequiredAlert({ws}) {
     const [notifications,] = useNotifications(ws);
     const rebootIsRequired = notifications.some(notification => notification.severity === 'restart');
-    console.log(ws);
     if (!rebootIsRequired)
         return null;
 

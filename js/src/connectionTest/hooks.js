@@ -8,7 +8,7 @@
 import {useCallback, useEffect, useMemo, useState} from 'react';
 
 import API_URLs from '../common/API';
-import {useAPIGet} from '../common/APIhooks';
+import {useAPIPost} from '../common/APIhooks';
 import {useWSForisModule} from '../common/WebSocketsHooks';
 
 const TESTS_TYPES = {
@@ -62,7 +62,7 @@ export default function useConnectionTest(ws, type) {
         updateTestResults(wsFinishedData);
     }, [wsFinishedData, id, type, updateTestResults]);
 
-    const [triggerTestData, triggerTest] = useAPIGet(ENDPOINTS[type]);
+    const [triggerTestData, triggerTest] = useAPIPost(ENDPOINTS[type]);
     useEffect(() => {
         if (triggerTestData.data) {
             setState(TEST_STATES.RUNNING);
