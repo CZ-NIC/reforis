@@ -3,43 +3,39 @@
 exports[`<Select/> Test with snapshot. 1`] = `
 <div>
   <div
-    class="form-group row"
+    class="form-group col-sm-12 offset-lg-1 col-lg-10"
   >
     <label
-      class="form-control-label col-sm-3"
+      class="form-control-label"
       for="1"
     >
       Test label
     </label>
-    <div
-      class="col-sm-8"
+    <select
+      class="form-control"
+      id="1"
     >
-      <select
-        class="form-control"
-        id="1"
+      <option
+        value="1"
       >
-        <option
-          value="1"
-        >
-          one
-        </option>
-        <option
-          value="2"
-        >
-          two
-        </option>
-        <option
-          value="3"
-        >
-          three
-        </option>
-      </select>
-      <small
-        class="form-text text-muted"
+        one
+      </option>
+      <option
+        value="2"
       >
-        Help text
-      </small>
-    </div>
+        two
+      </option>
+      <option
+        value="3"
+      >
+        three
+      </option>
+    </select>
+    <small
+      class="form-text text-muted"
+    >
+      Help text
+    </small>
   </div>
 </div>
 `;

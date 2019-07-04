@@ -379,38 +379,34 @@ This means that the only way to configure your device will be via serial cabel o
       LAN1
     </h1>
     <div
-      class="form-group row"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <label
-        class="form-control-label col-sm-3"
+        class="form-control-label"
         for="1"
       >
         Network
       </label>
-      <div
-        class="col-sm-8"
+      <select
+        class="form-control"
+        id="1"
       >
-        <select
-          class="form-control"
-          id="1"
+        <option
+          value="lan"
         >
-          <option
-            value="lan"
-          >
-            LAN
-          </option>
-          <option
-            value="guest"
-          >
-            Guest Network
-          </option>
-          <option
-            value="none"
-          >
-            Unassigned
-          </option>
-        </select>
-      </div>
+          LAN
+        </option>
+        <option
+          value="guest"
+        >
+          Guest Network
+        </option>
+        <option
+          value="none"
+        >
+          Unassigned
+        </option>
+      </select>
     </div>
     <table
       class="table table-hover"
@@ -856,38 +852,34 @@ This means that the only way to configure your device will be via serial cabel o
       LAN1
     </h1>
     <div
-      class="form-group row"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <label
-        class="form-control-label col-sm-3"
+        class="form-control-label"
         for="1"
       >
         Network
       </label>
-      <div
-        class="col-sm-8"
+      <select
+        class="form-control"
+        id="1"
       >
-        <select
-          class="form-control"
-          id="1"
+        <option
+          value="lan"
         >
-          <option
-            value="lan"
-          >
-            LAN
-          </option>
-          <option
-            value="guest"
-          >
-            Guest Network
-          </option>
-          <option
-            value="none"
-          >
-            Unassigned
-          </option>
-        </select>
-      </div>
+          LAN
+        </option>
+        <option
+          value="guest"
+        >
+          Guest Network
+        </option>
+        <option
+          value="none"
+        >
+          Unassigned
+        </option>
+      </select>
     </div>
     <table
       class="table table-hover"

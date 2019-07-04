@@ -19,361 +19,349 @@ procedure of SSL certificate verification might not work correctly.
       Please select the timezone the router is being operated in. Correct setting is required to display the right time and for related functions.
     </p>
     <div
-      class="form-group row"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <label
-        class="form-control-label col-sm-3"
+        class="form-control-label"
         for="1"
       >
         Continent or ocean
       </label>
-      <div
-        class="col-sm-8"
+      <select
+        class="form-control"
+        id="1"
       >
-        <select
-          class="form-control"
-          id="1"
+        <option
+          value="Africa"
         >
-          <option
-            value="Africa"
-          >
-            Africa
-          </option>
-          <option
-            value="America"
-          >
-            America
-          </option>
-          <option
-            value="Antarctica"
-          >
-            Antarctica
-          </option>
-          <option
-            value="Arctic"
-          >
-            Arctic
-          </option>
-          <option
-            value="Asia"
-          >
-            Asia
-          </option>
-          <option
-            value="Atlantic"
-          >
-            Atlantic
-          </option>
-          <option
-            value="Australia"
-          >
-            Australia
-          </option>
-          <option
-            value="Europe"
-          >
-            Europe
-          </option>
-          <option
-            value="Indian"
-          >
-            Indian
-          </option>
-          <option
-            value="Pacific"
-          >
-            Pacific
-          </option>
-        </select>
-      </div>
+          Africa
+        </option>
+        <option
+          value="America"
+        >
+          America
+        </option>
+        <option
+          value="Antarctica"
+        >
+          Antarctica
+        </option>
+        <option
+          value="Arctic"
+        >
+          Arctic
+        </option>
+        <option
+          value="Asia"
+        >
+          Asia
+        </option>
+        <option
+          value="Atlantic"
+        >
+          Atlantic
+        </option>
+        <option
+          value="Australia"
+        >
+          Australia
+        </option>
+        <option
+          value="Europe"
+        >
+          Europe
+        </option>
+        <option
+          value="Indian"
+        >
+          Indian
+        </option>
+        <option
+          value="Pacific"
+        >
+          Pacific
+        </option>
+      </select>
     </div>
     <div
-      class="form-group row"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <label
-        class="form-control-label col-sm-3"
+        class="form-control-label"
         for="2"
       >
         Country
       </label>
-      <div
-        class="col-sm-8"
+      <select
+        class="form-control"
+        id="2"
       >
-        <select
-          class="form-control"
-          id="2"
+        <option
+          value="AD"
         >
-          <option
-            value="AD"
-          >
-            Andorra
-          </option>
-          <option
-            value="AL"
-          >
-            Albania
-          </option>
-          <option
-            value="AT"
-          >
-            Austria
-          </option>
-          <option
-            value="AX"
-          >
-            Åland Islands
-          </option>
-          <option
-            value="BA"
-          >
-            Bosnia & Herzegovina
-          </option>
-          <option
-            value="BE"
-          >
-            Belgium
-          </option>
-          <option
-            value="BG"
-          >
-            Bulgaria
-          </option>
-          <option
-            value="BY"
-          >
-            Belarus
-          </option>
-          <option
-            value="CH"
-          >
-            Switzerland
-          </option>
-          <option
-            value="CZ"
-          >
-            Czech Republic
-          </option>
-          <option
-            value="DE"
-          >
-            Germany
-          </option>
-          <option
-            value="DK"
-          >
-            Denmark
-          </option>
-          <option
-            value="EE"
-          >
-            Estonia
-          </option>
-          <option
-            value="ES"
-          >
-            Spain
-          </option>
-          <option
-            value="FI"
-          >
-            Finland
-          </option>
-          <option
-            value="FR"
-          >
-            France
-          </option>
-          <option
-            value="GB"
-          >
-            United Kingdom
-          </option>
-          <option
-            value="GG"
-          >
-            Guernsey
-          </option>
-          <option
-            value="GI"
-          >
-            Gibraltar
-          </option>
-          <option
-            value="GR"
-          >
-            Greece
-          </option>
-          <option
-            value="HR"
-          >
-            Croatia
-          </option>
-          <option
-            value="HU"
-          >
-            Hungary
-          </option>
-          <option
-            value="IE"
-          >
-            Ireland
-          </option>
-          <option
-            value="IM"
-          >
-            Isle of Man
-          </option>
-          <option
-            value="IT"
-          >
-            Italy
-          </option>
-          <option
-            value="JE"
-          >
-            Jersey
-          </option>
-          <option
-            value="LI"
-          >
-            Liechtenstein
-          </option>
-          <option
-            value="LT"
-          >
-            Lithuania
-          </option>
-          <option
-            value="LU"
-          >
-            Luxembourg
-          </option>
-          <option
-            value="LV"
-          >
-            Latvia
-          </option>
-          <option
-            value="MC"
-          >
-            Monaco
-          </option>
-          <option
-            value="MD"
-          >
-            Moldova
-          </option>
-          <option
-            value="ME"
-          >
-            Montenegro
-          </option>
-          <option
-            value="MK"
-          >
-            Macedonia
-          </option>
-          <option
-            value="MT"
-          >
-            Malta
-          </option>
-          <option
-            value="NL"
-          >
-            Netherlands
-          </option>
-          <option
-            value="NO"
-          >
-            Norway
-          </option>
-          <option
-            value="PL"
-          >
-            Poland
-          </option>
-          <option
-            value="PT"
-          >
-            Portugal
-          </option>
-          <option
-            value="RO"
-          >
-            Romania
-          </option>
-          <option
-            value="RS"
-          >
-            Serbia
-          </option>
-          <option
-            value="RU"
-          >
-            Russia
-          </option>
-          <option
-            value="SE"
-          >
-            Sweden
-          </option>
-          <option
-            value="SI"
-          >
-            Slovenia
-          </option>
-          <option
-            value="SK"
-          >
-            Slovakia
-          </option>
-          <option
-            value="SM"
-          >
-            San Marino
-          </option>
-          <option
-            value="TR"
-          >
-            Turkey
-          </option>
-          <option
-            value="UA"
-          >
-            Ukraine
-          </option>
-          <option
-            value="VA"
-          >
-            Vatican City
-          </option>
-        </select>
-      </div>
+          Andorra
+        </option>
+        <option
+          value="AL"
+        >
+          Albania
+        </option>
+        <option
+          value="AT"
+        >
+          Austria
+        </option>
+        <option
+          value="AX"
+        >
+          Åland Islands
+        </option>
+        <option
+          value="BA"
+        >
+          Bosnia & Herzegovina
+        </option>
+        <option
+          value="BE"
+        >
+          Belgium
+        </option>
+        <option
+          value="BG"
+        >
+          Bulgaria
+        </option>
+        <option
+          value="BY"
+        >
+          Belarus
+        </option>
+        <option
+          value="CH"
+        >
+          Switzerland
+        </option>
+        <option
+          value="CZ"
+        >
+          Czech Republic
+        </option>
+        <option
+          value="DE"
+        >
+          Germany
+        </option>
+        <option
+          value="DK"
+        >
+          Denmark
+        </option>
+        <option
+          value="EE"
+        >
+          Estonia
+        </option>
+        <option
+          value="ES"
+        >
+          Spain
+        </option>
+        <option
+          value="FI"
+        >
+          Finland
+        </option>
+        <option
+          value="FR"
+        >
+          France
+        </option>
+        <option
+          value="GB"
+        >
+          United Kingdom
+        </option>
+        <option
+          value="GG"
+        >
+          Guernsey
+        </option>
+        <option
+          value="GI"
+        >
+          Gibraltar
+        </option>
+        <option
+          value="GR"
+        >
+          Greece
+        </option>
+        <option
+          value="HR"
+        >
+          Croatia
+        </option>
+        <option
+          value="HU"
+        >
+          Hungary
+        </option>
+        <option
+          value="IE"
+        >
+          Ireland
+        </option>
+        <option
+          value="IM"
+        >
+          Isle of Man
+        </option>
+        <option
+          value="IT"
+        >
+          Italy
+        </option>
+        <option
+          value="JE"
+        >
+          Jersey
+        </option>
+        <option
+          value="LI"
+        >
+          Liechtenstein
+        </option>
+        <option
+          value="LT"
+        >
+          Lithuania
+        </option>
+        <option
+          value="LU"
+        >
+          Luxembourg
+        </option>
+        <option
+          value="LV"
+        >
+          Latvia
+        </option>
+        <option
+          value="MC"
+        >
+          Monaco
+        </option>
+        <option
+          value="MD"
+        >
+          Moldova
+        </option>
+        <option
+          value="ME"
+        >
+          Montenegro
+        </option>
+        <option
+          value="MK"
+        >
+          Macedonia
+        </option>
+        <option
+          value="MT"
+        >
+          Malta
+        </option>
+        <option
+          value="NL"
+        >
+          Netherlands
+        </option>
+        <option
+          value="NO"
+        >
+          Norway
+        </option>
+        <option
+          value="PL"
+        >
+          Poland
+        </option>
+        <option
+          value="PT"
+        >
+          Portugal
+        </option>
+        <option
+          value="RO"
+        >
+          Romania
+        </option>
+        <option
+          value="RS"
+        >
+          Serbia
+        </option>
+        <option
+          value="RU"
+        >
+          Russia
+        </option>
+        <option
+          value="SE"
+        >
+          Sweden
+        </option>
+        <option
+          value="SI"
+        >
+          Slovenia
+        </option>
+        <option
+          value="SK"
+        >
+          Slovakia
+        </option>
+        <option
+          value="SM"
+        >
+          San Marino
+        </option>
+        <option
+          value="TR"
+        >
+          Turkey
+        </option>
+        <option
+          value="UA"
+        >
+          Ukraine
+        </option>
+        <option
+          value="VA"
+        >
+          Vatican City
+        </option>
+      </select>
     </div>
     <div
-      class="form-group row"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <label
-        class="form-control-label col-sm-3"
+        class="form-control-label"
         for="3"
       >
         Timezone
       </label>
-      <div
-        class="col-sm-8"
+      <select
+        class="form-control"
+        id="3"
       >
-        <select
-          class="form-control"
-          id="3"
+        <option
+          value="Prague"
         >
-          <option
-            value="Prague"
-          >
-            Prague
-          </option>
-        </select>
-      </div>
+          Prague
+        </option>
+      </select>
     </div>
     <h4>
       Time settings
@@ -382,33 +370,29 @@ procedure of SSL certificate verification might not work correctly.
       Time should be up-to-date otherwise DNS and other services might not work properly.
     </p>
     <div
-      class="form-group row"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <label
-        class="form-control-label col-sm-3"
+        class="form-control-label"
         for="4"
       >
         How to set time
       </label>
-      <div
-        class="col-sm-8"
+      <select
+        class="form-control"
+        id="4"
       >
-        <select
-          class="form-control"
-          id="4"
+        <option
+          value="ntp"
         >
-          <option
-            value="ntp"
-          >
-            Via NTP
-          </option>
-          <option
-            value="manual"
-          >
-            Manually
-          </option>
-        </select>
-      </div>
+          Via NTP
+        </option>
+        <option
+          value="manual"
+        >
+          Manually
+        </option>
+      </select>
     </div>
     <button
       class="btn btn-outline-primary offset-lg-8 col-lg-3 col-sm-12"
@@ -463,22 +447,22 @@ procedure of SSL certificate verification might not work correctly.
     >
       <div>
         <div
-          class="form-group row"
+          class="col-sm-12 offset-lg-1 col-lg-10"
         >
-          <label
-            class="form-control-label col-sm-3"
-            for="5"
-          >
-            Time
-          </label>
           <div
-            class="col-sm-8"
+            class="form-group"
           >
+            <label
+              class="form-control-label"
+              for="5"
+            >
+              Time
+            </label>
             <div
               class="input-group"
             >
               <input
-                class="form-control "
+                class="form-control"
                 disabled=""
                 id="5"
                 type="text"

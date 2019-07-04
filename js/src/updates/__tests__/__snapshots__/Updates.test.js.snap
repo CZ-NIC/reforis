@@ -148,11 +148,18 @@ available
   </div>
   <form>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="1"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="1"
@@ -160,30 +167,22 @@ available
           Enable automatic updates (recommended)
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
-      >
-        <input
-          id="1"
-          type="checkbox"
-        />
-      </div>
     </div>
     <h4>
       Automatic restarts after software update
     </h4>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
     >
-      <label
-        class="form-control-label col-sm-3"
-        for="2"
-      >
-        Delay (days)
-      </label>
       <div
-        class="col-sm-8"
+        class="form-group"
       >
+        <label
+          class="form-control-label"
+          for="2"
+        >
+          Delay (days)
+        </label>
         <div
           class="input-group"
         >
@@ -208,22 +207,22 @@ available
     >
       <div>
         <div
-          class="form-group row"
+          class="col-sm-12 offset-lg-1 col-lg-10"
         >
-          <label
-            class="form-control-label col-sm-3"
-            for="3"
-          >
-            Reboot time
-          </label>
           <div
-            class="col-sm-8"
+            class="form-group"
           >
+            <label
+              class="form-control-label"
+              for="3"
+            >
+              Reboot time
+            </label>
             <div
               class="input-group"
             >
               <input
-                class="form-control "
+                class="form-control"
                 id="3"
                 type="text"
                 value="04:30"
@@ -315,24 +314,24 @@ exports[`<Updates/> Test with snapshot enabled, delayed. 1`] = `
 - First value
 + Second value
 
-@@ -257,10 +257,36 @@
-          >
-            You have to approve the updates, otherwise they won't be installed.
-          </small>
-        </div>
+@@ -244,10 +244,36 @@
+          class=\\"form-text text-muted\\"
+        >
+          You have to approve the updates, otherwise they won't be installed.
+        </small>
       </div>
 +     <div
-+       class=\\"form-group row\\"
++       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <label
-+         class=\\"form-control-label col-sm-3\\"
-+         for=\\"10\\"
-+       >
-+         Delayed updates (hours)
-+       </label>
 +       <div
-+         class=\\"col-sm-8\\"
++         class=\\"form-group\\"
 +       >
++         <label
++           class=\\"form-control-label\\"
++           for=\\"10\\"
++         >
++           Delayed updates (hours)
++         </label>
 +         <div
 +           class=\\"input-group\\"
 +         >
@@ -351,7 +350,7 @@ exports[`<Updates/> Test with snapshot enabled, delayed. 1`] = `
         Automatic restarts after software update
       </h4>
       <div
-        class=\\"form-group row\\""
+        class=\\"col-sm-12 offset-lg-1 col-lg-10\\""
 `;
 
 exports[`<Updates/> Test with snapshot enabled. 1`] = `
@@ -359,9 +358,9 @@ exports[`<Updates/> Test with snapshot enabled. 1`] = `
 - First value
 + Second value
 
-@@ -165,10 +165,103 @@
-            type=\\"checkbox\\"
-          />
+@@ -164,10 +164,91 @@
+            Enable automatic updates (recommended)
+          </label>
         </div>
       </div>
       <h4>
@@ -374,93 +373,81 @@ exports[`<Updates/> Test with snapshot enabled. 1`] = `
 +             it will be offered to you again together with the next package installation.
 +     </p>
 +     <div
-+       class=\\"form-group row\\"
-+       id=\\"5\\"
++       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
++       style=\\"margin-bottom: 1rem;\\"
 +     >
 +       <div
-+         class=\\"form-label col-sm-3\\"
++         class=\\"form-check form-check-inline\\"
 +       >
-+         <label
-+           class=\\"form-label\\"
-+           for=\\"5\\"
++         <input
++           class=\\"form-check-input\\"
++           id=\\"approvals-0\\"
++           name=\\"approvals\\"
++           type=\\"radio\\"
++           value=\\"off\\"
 +         />
++         <label
++           class=\\"form-check-label\\"
++           for=\\"approvals-0\\"
++         >
++           Automatic installation
++         </label>
 +       </div>
-+       <div
-+         class=\\"col-sm-8\\"
++       <small
++         class=\\"form-text text-muted\\"
 +       >
-+         <div
-+           class=\\"form-check form-check-inline\\"
++         Updates will be installed without user's intervention.
++       </small>
++       <div
++         class=\\"form-check form-check-inline\\"
++       >
++         <input
++           class=\\"form-check-input\\"
++           id=\\"approvals-1\\"
++           name=\\"approvals\\"
++           type=\\"radio\\"
++           value=\\"delayed\\"
++         />
++         <label
++           class=\\"form-check-label\\"
++           for=\\"approvals-1\\"
 +         >
-+           <input
-+             class=\\"form-check-input\\"
-+             id=\\"approvals-0\\"
-+             name=\\"approvals\\"
-+             type=\\"radio\\"
-+             value=\\"off\\"
-+           />
-+           <label
-+             class=\\"form-check-label\\"
-+             for=\\"approvals-0\\"
-+           >
-+             Automatic installation
-+           </label>
-+         </div>
-+         <small
-+           class=\\"form-text text-muted\\"
-+         >
-+           Updates will be installed without user's intervention.
-+         </small>
-+         <div
-+           class=\\"form-check form-check-inline\\"
-+         >
-+           <input
-+             class=\\"form-check-input\\"
-+             id=\\"approvals-1\\"
-+             name=\\"approvals\\"
-+             type=\\"radio\\"
-+             value=\\"delayed\\"
-+           />
-+           <label
-+             class=\\"form-check-label\\"
-+             for=\\"approvals-1\\"
-+           >
-+             Delayed updates
-+           </label>
-+         </div>
-+         <small
-+           class=\\"form-text text-muted\\"
-+         >
-+           Updates will be installed with an adjustable delay. You can also approve them manually.
-+         </small>
-+         <div
-+           class=\\"form-check form-check-inline\\"
-+         >
-+           <input
-+             checked=\\"\\"
-+             class=\\"form-check-input\\"
-+             id=\\"approvals-2\\"
-+             name=\\"approvals\\"
-+             type=\\"radio\\"
-+             value=\\"on\\"
-+           />
-+           <label
-+             class=\\"form-check-label\\"
-+             for=\\"approvals-2\\"
-+           >
-+             Update approval needed
-+           </label>
-+         </div>
-+         <small
-+           class=\\"form-text text-muted\\"
-+         >
-+           You have to approve the updates, otherwise they won't be installed.
-+         </small>
++           Delayed updates
++         </label>
 +       </div>
++       <small
++         class=\\"form-text text-muted\\"
++       >
++         Updates will be installed with an adjustable delay. You can also approve them manually.
++       </small>
++       <div
++         class=\\"form-check form-check-inline\\"
++       >
++         <input
++           checked=\\"\\"
++           class=\\"form-check-input\\"
++           id=\\"approvals-2\\"
++           name=\\"approvals\\"
++           type=\\"radio\\"
++           value=\\"on\\"
++         />
++         <label
++           class=\\"form-check-label\\"
++           for=\\"approvals-2\\"
++         >
++           Update approval needed
++         </label>
++       </div>
++       <small
++         class=\\"form-text text-muted\\"
++       >
++         You have to approve the updates, otherwise they won't be installed.
++       </small>
 +     </div>
 +     <h4>
         Automatic restarts after software update
       </h4>
       <div
-        class=\\"form-group row\\"
+        class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
       >"
 `;

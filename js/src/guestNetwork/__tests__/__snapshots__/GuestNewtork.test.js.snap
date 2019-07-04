@@ -4,25 +4,24 @@ exports[`<GuestNetwork/> Snapshot disabled. 1`] = `
 <div>
   <form>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="1"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="1"
         >
           Enable
         </label>
-      </div>
-      <div
-        class="form-check col-sm-8"
-      >
-        <input
-          id="1"
-          type="checkbox"
-        />
       </div>
     </div>
     <button
@@ -40,11 +39,18 @@ exports[`<GuestNetwork/> Snapshot enabled DHCP. 1`] = `
 <div>
   <form>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="1"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="1"
@@ -52,27 +58,19 @@ exports[`<GuestNetwork/> Snapshot enabled DHCP. 1`] = `
           Enable
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
-      >
-        <input
-          id="1"
-          type="checkbox"
-        />
-      </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
     >
-      <label
-        class="form-control-label col-sm-3"
-        for="3"
-      >
-        Router IP address
-      </label>
       <div
-        class="col-sm-8"
+        class="form-group"
       >
+        <label
+          class="form-control-label"
+          for="3"
+        >
+          Router IP address
+        </label>
         <div
           class="input-group"
         >
@@ -92,17 +90,17 @@ exports[`<GuestNetwork/> Snapshot enabled DHCP. 1`] = `
       </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
     >
-      <label
-        class="form-control-label col-sm-3"
-        for="4"
-      >
-        Network mask
-      </label>
       <div
-        class="col-sm-8"
+        class="form-group"
       >
+        <label
+          class="form-control-label"
+          for="4"
+        >
+          Network mask
+        </label>
         <div
           class="input-group"
         >
@@ -117,44 +115,44 @@ exports[`<GuestNetwork/> Snapshot enabled DHCP. 1`] = `
       </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="5"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="5"
+          style="margin-bottom: 0px;"
         >
           Enable DHCP
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
+      <small
+        class="form-text text-muted"
       >
-        <input
-          id="5"
-          type="checkbox"
-        />
-        <small
-          class="form-text text-muted"
-        >
-          Enable this option to automatically assign IP addresses to the devices connected to the router.
-        </small>
-      </div>
+        Enable this option to automatically assign IP addresses to the devices connected to the router.
+      </small>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
     >
-      <label
-        class="form-control-label col-sm-3"
-        for="11"
-      >
-        DHCP start
-      </label>
       <div
-        class="col-sm-8"
+        class="form-group"
       >
+        <label
+          class="form-control-label"
+          for="11"
+        >
+          DHCP start
+        </label>
         <div
           class="input-group"
         >
@@ -170,17 +168,17 @@ exports[`<GuestNetwork/> Snapshot enabled DHCP. 1`] = `
       </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
     >
-      <label
-        class="form-control-label col-sm-3"
-        for="12"
-      >
-        DHCP max leases
-      </label>
       <div
-        class="col-sm-8"
+        class="form-group"
       >
+        <label
+          class="form-control-label"
+          for="12"
+        >
+          DHCP max leases
+        </label>
         <div
           class="input-group"
         >
@@ -196,17 +194,17 @@ exports[`<GuestNetwork/> Snapshot enabled DHCP. 1`] = `
       </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
     >
-      <label
-        class="form-control-label col-sm-3"
-        for="13"
-      >
-        Lease time (hours)
-      </label>
       <div
-        class="col-sm-8"
+        class="form-group"
       >
+        <label
+          class="form-control-label"
+          for="13"
+        >
+          Lease time (hours)
+        </label>
         <div
           class="input-group"
         >
@@ -222,31 +220,31 @@ exports[`<GuestNetwork/> Snapshot enabled DHCP. 1`] = `
       </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="6"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="6"
+          style="margin-bottom: 0px;"
         >
           Enable QoS
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
+      <small
+        class="form-text text-muted"
       >
-        <input
-          id="6"
-          type="checkbox"
-        />
-        <small
-          class="form-text text-muted"
-        >
-          This option enables you to set a bandwidth limit for the guest network, so that your main network doesn't get slowed-down by it.
-        </small>
-      </div>
+        This option enables you to set a bandwidth limit for the guest network, so that your main network doesn't get slowed-down by it.
+      </small>
     </div>
     <button
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
@@ -263,11 +261,18 @@ exports[`<GuestNetwork/> Snapshot enabled QoS. 1`] = `
 <div>
   <form>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="1"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="1"
@@ -275,27 +280,19 @@ exports[`<GuestNetwork/> Snapshot enabled QoS. 1`] = `
           Enable
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
-      >
-        <input
-          id="1"
-          type="checkbox"
-        />
-      </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
     >
-      <label
-        class="form-control-label col-sm-3"
-        for="3"
-      >
-        Router IP address
-      </label>
       <div
-        class="col-sm-8"
+        class="form-group"
       >
+        <label
+          class="form-control-label"
+          for="3"
+        >
+          Router IP address
+        </label>
         <div
           class="input-group"
         >
@@ -315,17 +312,17 @@ exports[`<GuestNetwork/> Snapshot enabled QoS. 1`] = `
       </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
     >
-      <label
-        class="form-control-label col-sm-3"
-        for="4"
-      >
-        Network mask
-      </label>
       <div
-        class="col-sm-8"
+        class="form-group"
       >
+        <label
+          class="form-control-label"
+          for="4"
+        >
+          Network mask
+        </label>
         <div
           class="input-group"
         >
@@ -340,71 +337,71 @@ exports[`<GuestNetwork/> Snapshot enabled QoS. 1`] = `
       </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="5"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="5"
+          style="margin-bottom: 0px;"
         >
           Enable DHCP
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
+      <small
+        class="form-text text-muted"
       >
-        <input
-          id="5"
-          type="checkbox"
-        />
-        <small
-          class="form-text text-muted"
-        >
-          Enable this option to automatically assign IP addresses to the devices connected to the router.
-        </small>
-      </div>
+        Enable this option to automatically assign IP addresses to the devices connected to the router.
+      </small>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="6"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="6"
+          style="margin-bottom: 0px;"
         >
           Enable QoS
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
+      <small
+        class="form-text text-muted"
       >
-        <input
-          id="6"
-          type="checkbox"
-        />
-        <small
-          class="form-text text-muted"
-        >
-          This option enables you to set a bandwidth limit for the guest network, so that your main network doesn't get slowed-down by it.
-        </small>
-      </div>
+        This option enables you to set a bandwidth limit for the guest network, so that your main network doesn't get slowed-down by it.
+      </small>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
     >
-      <label
-        class="form-control-label col-sm-3"
-        for="12"
-      >
-        Download
-      </label>
       <div
-        class="col-sm-8"
+        class="form-group"
       >
+        <label
+          class="form-control-label"
+          for="12"
+        >
+          Download
+        </label>
         <div
           class="input-group"
         >
@@ -434,17 +431,17 @@ exports[`<GuestNetwork/> Snapshot enabled QoS. 1`] = `
       </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
     >
-      <label
-        class="form-control-label col-sm-3"
-        for="13"
-      >
-        Upload
-      </label>
       <div
-        class="col-sm-8"
+        class="form-group"
       >
+        <label
+          class="form-control-label"
+          for="13"
+        >
+          Upload
+        </label>
         <div
           class="input-group"
         >
@@ -488,11 +485,18 @@ exports[`<GuestNetwork/> Snapshot enabled. 1`] = `
 <div>
   <form>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="1"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="1"
@@ -500,27 +504,19 @@ exports[`<GuestNetwork/> Snapshot enabled. 1`] = `
           Enable
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
-      >
-        <input
-          id="1"
-          type="checkbox"
-        />
-      </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
     >
-      <label
-        class="form-control-label col-sm-3"
-        for="3"
-      >
-        Router IP address
-      </label>
       <div
-        class="col-sm-8"
+        class="form-group"
       >
+        <label
+          class="form-control-label"
+          for="3"
+        >
+          Router IP address
+        </label>
         <div
           class="input-group"
         >
@@ -540,17 +536,17 @@ exports[`<GuestNetwork/> Snapshot enabled. 1`] = `
       </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
     >
-      <label
-        class="form-control-label col-sm-3"
-        for="4"
-      >
-        Network mask
-      </label>
       <div
-        class="col-sm-8"
+        class="form-group"
       >
+        <label
+          class="form-control-label"
+          for="4"
+        >
+          Network mask
+        </label>
         <div
           class="input-group"
         >
@@ -565,58 +561,58 @@ exports[`<GuestNetwork/> Snapshot enabled. 1`] = `
       </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="5"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="5"
+          style="margin-bottom: 0px;"
         >
           Enable DHCP
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
+      <small
+        class="form-text text-muted"
       >
-        <input
-          id="5"
-          type="checkbox"
-        />
-        <small
-          class="form-text text-muted"
-        >
-          Enable this option to automatically assign IP addresses to the devices connected to the router.
-        </small>
-      </div>
+        Enable this option to automatically assign IP addresses to the devices connected to the router.
+      </small>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="6"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="6"
+          style="margin-bottom: 0px;"
         >
           Enable QoS
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
+      <small
+        class="form-text text-muted"
       >
-        <input
-          id="6"
-          type="checkbox"
-        />
-        <small
-          class="form-text text-muted"
-        >
-          This option enables you to set a bandwidth limit for the guest network, so that your main network doesn't get slowed-down by it.
-        </small>
-      </div>
+        This option enables you to set a bandwidth limit for the guest network, so that your main network doesn't get slowed-down by it.
+      </small>
     </div>
     <button
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"

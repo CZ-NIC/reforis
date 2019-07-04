@@ -101,11 +101,18 @@ Do you still want to continue and stay unprotected?
       </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="1"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="1"
@@ -113,21 +120,21 @@ Do you still want to continue and stay unprotected?
           Use forwarding
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
-      >
-        <input
-          id="1"
-          type="checkbox"
-        />
-      </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          checked=""
+          class="form-check-input"
+          id="2"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="2"
@@ -135,55 +142,46 @@ Do you still want to continue and stay unprotected?
           Enable DNSSEC
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
-      >
-        <input
-          checked=""
-          id="2"
-          type="checkbox"
-        />
-      </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="3"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="3"
+          style="margin-bottom: 0px;"
         >
           Enable DHCP clients in DNS
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
+      <small
+        class="form-text text-muted"
       >
-        <input
-          id="3"
-          type="checkbox"
-        />
-        <small
-          class="form-text text-muted"
-        >
-          This will enable your DNS resolver to place DHCP client's names among the local DNS records.
-        </small>
-      </div>
+        This will enable your DNS resolver to place DHCP client's names among the local DNS records.
+      </small>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
     >
-      <label
-        class="form-control-label col-sm-3"
-        for="7"
-      >
-        Domain of DHCP clients in DNS
-      </label>
       <div
-        class="col-sm-8"
+        class="form-group"
       >
+        <label
+          class="form-control-label"
+          for="7"
+        >
+          Domain of DHCP clients in DNS
+        </label>
         <div
           class="input-group"
         >
@@ -335,11 +333,18 @@ Do you still want to continue and stay unprotected?
       </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="1"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="1"
@@ -347,65 +352,61 @@ Do you still want to continue and stay unprotected?
           Use forwarding
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
-      >
-        <input
-          id="1"
-          type="checkbox"
-        />
-      </div>
     </div>
     <div
-      class="form-group row"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <label
-        class="form-control-label col-sm-3"
+        class="form-control-label"
         for="5"
       >
         DNS Forwarder
       </label>
-      <div
-        class="col-sm-8"
+      <select
+        class="form-control"
+        id="5"
       >
-        <select
-          class="form-control"
-          id="5"
+        <option
+          value=""
         >
-          <option
-            value=""
-          >
-            Use provider's DNS resolver
-          </option>
-          <option
-            value="99_cloudflare"
-          >
-            Cloudflare (TLS)
-          </option>
-          <option
-            value="99_quad9"
-          >
-            Quad9 (TLS)
-          </option>
-          <option
-            value="00_odvr-cznic"
-          >
-            CZ.NIC (TLS)
-          </option>
-          <option
-            value="99_google"
-          >
-            Google
-          </option>
-        </select>
-      </div>
+          Use provider's DNS resolver
+        </option>
+        <option
+          value="99_cloudflare"
+        >
+          Cloudflare (TLS)
+        </option>
+        <option
+          value="99_quad9"
+        >
+          Quad9 (TLS)
+        </option>
+        <option
+          value="00_odvr-cznic"
+        >
+          CZ.NIC (TLS)
+        </option>
+        <option
+          value="99_google"
+        >
+          Google
+        </option>
+      </select>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          checked=""
+          class="form-check-input"
+          id="2"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="2"
@@ -413,42 +414,33 @@ Do you still want to continue and stay unprotected?
           Enable DNSSEC
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
-      >
-        <input
-          checked=""
-          id="2"
-          type="checkbox"
-        />
-      </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="3"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="3"
+          style="margin-bottom: 0px;"
         >
           Enable DHCP clients in DNS
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
+      <small
+        class="form-text text-muted"
       >
-        <input
-          id="3"
-          type="checkbox"
-        />
-        <small
-          class="form-text text-muted"
-        >
-          This will enable your DNS resolver to place DHCP client's names among the local DNS records.
-        </small>
-      </div>
+        This will enable your DNS resolver to place DHCP client's names among the local DNS records.
+      </small>
     </div>
     <button
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
@@ -584,11 +576,18 @@ Do you still want to continue and stay unprotected?
       </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="1"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="1"
@@ -596,21 +595,21 @@ Do you still want to continue and stay unprotected?
           Use forwarding
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
-      >
-        <input
-          id="1"
-          type="checkbox"
-        />
-      </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          checked=""
+          class="form-check-input"
+          id="2"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="2"
@@ -618,42 +617,33 @@ Do you still want to continue and stay unprotected?
           Enable DNSSEC
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
-      >
-        <input
-          checked=""
-          id="2"
-          type="checkbox"
-        />
-      </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="3"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="3"
+          style="margin-bottom: 0px;"
         >
           Enable DHCP clients in DNS
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
+      <small
+        class="form-text text-muted"
       >
-        <input
-          id="3"
-          type="checkbox"
-        />
-        <small
-          class="form-text text-muted"
-        >
-          This will enable your DNS resolver to place DHCP client's names among the local DNS records.
-        </small>
-      </div>
+        This will enable your DNS resolver to place DHCP client's names among the local DNS records.
+      </small>
     </div>
     <button
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"

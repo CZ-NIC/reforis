@@ -2,61 +2,61 @@
 
 exports[`<Checkbox/> Render checkbox 1`] = `
 <div
-  class="form-group row"
+  class="col-sm-12 offset-lg-1 col-lg-10"
+  style="margin-bottom: 1rem;"
 >
   <div
-    class="form-label col-sm-3"
+    class="form-group form-check"
+    style="margin-bottom: 0px;"
   >
+    <input
+      checked=""
+      class="form-check-input"
+      id="1"
+      type="checkbox"
+    />
     <label
       class="form-label"
       for="1"
+      style="margin-bottom: 0px;"
     >
       Test label
     </label>
   </div>
-  <div
-    class="form-check col-sm-8"
+  <small
+    class="form-text text-muted"
   >
-    <input
-      checked=""
-      id="1"
-      type="checkbox"
-    />
-    <small
-      class="form-text text-muted"
-    >
-      Some help text
-    </small>
-  </div>
+    Some help text
+  </small>
 </div>
 `;
 
 exports[`<Checkbox/> Render uncheked checkbox 1`] = `
 <div
-  class="form-group row"
+  class="col-sm-12 offset-lg-1 col-lg-10"
+  style="margin-bottom: 1rem;"
 >
   <div
-    class="form-label col-sm-3"
+    class="form-group form-check"
+    style="margin-bottom: 0px;"
   >
+    <input
+      class="form-check-input"
+      id="1"
+      type="checkbox"
+    />
     <label
       class="form-label"
       for="1"
+      style="margin-bottom: 0px;"
     >
       Test label
     </label>
   </div>
-  <div
-    class="form-check col-sm-8"
+  <small
+    class="form-text text-muted"
   >
-    <input
-      id="1"
-      type="checkbox"
-    />
-    <small
-      class="form-text text-muted"
-    >
-      Some help text
-    </small>
-  </div>
+    Some help text
+  </small>
 </div>
 `;
