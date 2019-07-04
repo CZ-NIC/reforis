@@ -87,7 +87,7 @@ lint-web: venv
 	$(VENV_BIN)/$(DEV_PYTHON) -m pycodestyle --config=pycodestyle reforis
 
 test: test-js test-web
-test-js: install-js
+test-js:
 	cd js; npm test
 test-web: venv
 	$(VENV_BIN)/$(DEV_PYTHON) -m pytest -vv tests

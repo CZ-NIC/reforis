@@ -179,7 +179,7 @@ function DeviceForm({formData, formErrors, setFormValue, ...props}) {
                             devices: {
                                 [deviceID]: {
                                     hwmode: {$set: value},
-                                    channel: {$set: 0}
+                                    channel: {$set: '0'}
                                 }
                             }
                         })
@@ -227,7 +227,9 @@ function DeviceForm({formData, formErrors, setFormValue, ...props}) {
 }
 
 function getChannelChoices(device) {
-    let channelChoices = {};
+    let channelChoices = {
+        '0': _('auto'),
+    };
 
     device.available_bands.forEach((availableBand) => {
         if (availableBand.hwmode !== device.hwmode) return;
@@ -240,7 +242,6 @@ function getChannelChoices(device) {
         })
     });
 
-    channelChoices['0'] = _('auto');
     return channelChoices
 }
 

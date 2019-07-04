@@ -18,7 +18,7 @@ describe('<ConnectionTest/>', () => {
 
     it('Snapshot before connection test.', () => {
         const {asFragment} = render(<ConnectionTest ws={mockWebSockets} type='wan'/>);
-        expect(asFragment()).toMatchSnapshot()
+        expect(asFragment()).toMatchSnapshot();
     });
 
     it('Snapshot after trigger WAN connection test.', async () => {
@@ -27,9 +27,9 @@ describe('<ConnectionTest/>', () => {
         mockAxios.mockResponse({data: {test_id: "test-id"}});
         await waitForElement(() => getByText('IPv6 connectivity'));
 
-        expect(mockAxios.get).toBeCalled();
-        expect(mockAxios.get).toHaveBeenCalledWith('/api/connection-test', expect.anything());
-        expect(asFragment()).toMatchSnapshot()
+        expect(mockAxios.post).toBeCalled();
+        expect(mockAxios.post).toHaveBeenCalledWith('/api/connection-test', undefined, expect.anything());
+        expect(asFragment()).toMatchSnapshot();
     });
 
     it('Snapshot after trigger DNS connection test.', async () => {
@@ -38,8 +38,8 @@ describe('<ConnectionTest/>', () => {
         mockAxios.mockResponse({data: {test_id: "test-id"}});
         await waitForElement(() => getByText(/DNSSEC/));
 
-        expect(mockAxios.get).toBeCalled();
-        expect(mockAxios.get).toHaveBeenCalledWith('/api/dns-test', expect.anything());
-        expect(asFragment()).toMatchSnapshot()
+        expect(mockAxios.post).toBeCalled();
+        expect(mockAxios.post).toHaveBeenCalledWith('/api/dns-test', undefined, expect.anything());
+        expect(asFragment()).toMatchSnapshot();
     })
 });

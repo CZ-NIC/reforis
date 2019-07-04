@@ -25,8 +25,8 @@ export default function WiFi({ws}) {
                 endpoint: API_URLs.wifi,
                 wsModule: 'wifi',
             }}
-            prepDataToSubmit={prepDataToSubmit}
             prepData={prepData}
+            prepDataToSubmit={prepDataToSubmit}
             validator={validator}
         >
             <WiFiForm/>
