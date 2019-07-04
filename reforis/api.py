@@ -208,6 +208,7 @@ def wifi():
     """
     return _foris_controller_settings_call('wifi')
 
+
 @api.route('/wifi-reset', methods=['POST'])
 def wifi_reset():
     """
