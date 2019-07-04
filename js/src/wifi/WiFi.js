@@ -26,12 +26,20 @@ export default function WiFi({ws}) {
                 wsModule: 'wifi',
             }}
             prepDataToSubmit={prepDataToSubmit}
+            prepData={prepData}
             validator={validator}
         >
             <WiFiForm/>
         </ForisForm>
         <ResetWiFiSettings ws={ws}/>
     </>
+}
+
+function prepData(formData) {
+    formData.devices.forEach((device, idx) => {
+        formData.devices[idx].channel = device.channel.toString();
+    });
+    return formData
 }
 
 function prepDataToSubmit(formData) {

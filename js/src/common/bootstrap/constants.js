@@ -5,6 +5,5 @@
  * See /LICENSE for more information.
  */
 
-/** Foris form sizes */
-export const LABEL_SIZE = 3;
-export const FIELD_SIZE = 8;
+/** Bootstrap column size for form fields */
+export const formFieldsSize = 'col-sm-12 offset-lg-1 col-lg-10';

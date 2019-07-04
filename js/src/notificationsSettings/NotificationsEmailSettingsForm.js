@@ -54,7 +54,6 @@ export default function NotificationsEmailSettingsForm({formData, formErrors, se
         <CheckBox
             label={_('Enable email notifications')}
             checked={formData.enabled}
-            helpText={HELP_TEXTS.smtp_type}
             onChange={setFormValue(
                 value => ({enabled: {$set: value}})
             )}
@@ -68,6 +67,7 @@ export default function NotificationsEmailSettingsForm({formData, formErrors, se
                     name={'smtp_provider'}
                     choices={SMTP_TYPE_CHOICES}
                     value={formData.smtp_type}
+                    helpText={HELP_TEXTS.smtp_type}
 
                     onChange={setFormValue(
                         value => ({smtp_type: {$set: value}})

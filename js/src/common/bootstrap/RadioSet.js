@@ -9,7 +9,7 @@ import React from 'react';
 import propTypes from 'prop-types';
 import {useUID} from 'react-uid/dist/es5/index';
 
-import {FIELD_SIZE, LABEL_SIZE} from './constants';
+import {formFieldsSize} from './constants';
 
 
 RadioSet.propTypes = {
@@ -32,8 +32,8 @@ RadioSet.propTypes = {
 
 export default function RadioSet({name, label, choices, value, helpText, ...props}) {
     const uid = useUID();
-    const radios = choices.map((choice, key) => {
-        return <Radio
+    const radios = choices.map((choice, key) =>
+        <Radio
             id={`${name}-${key}`}
             key={key}
             name={name}
@@ -43,17 +43,17 @@ export default function RadioSet({name, label, choices, value, helpText, ...prop
             checked={choice.value === value}
 
             {...props}
-        />;
-    });
+        />
+    );
 
-    return <div id={uid} className='form-group row'>
-        <div className={'form-label col-sm-' + LABEL_SIZE}>
-            <label className='form-label' htmlFor={uid}>{label}</label>
-        </div>
-        <div className={'col-sm-' + FIELD_SIZE}>
-            {radios}
-            {helpText ? <small className="form-text text-muted">{helpText}</small> : null}
-        </div>
+    return <div className={`form-group ${formFieldsSize}`} style={{marginBottom: '1rem'}}>
+        {label ?
+            <label className='form-control-label col-12' htmlFor={uid} style={{paddingLeft: '0'}}>
+                {label}
+            </label>
+            : null}
+        {radios}
+        {helpText ? <small className="form-text text-muted">{helpText}</small> : null}
     </div>;
 }
 

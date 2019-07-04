@@ -12,16 +12,22 @@ Alert.propTypes = {
     /** Type of the alert it adds as `alert-${type}` class.*/
     type: propTypes.string.isRequired,
     /** Alert message.*/
-    message: propTypes.string.isRequired,
+    message: propTypes.string,
+    /** Alert content.*/
+    children: propTypes.oneOfType([
+        propTypes.arrayOf(propTypes.node),
+        propTypes.node
+    ]),
     /** onDismiss handler.*/
     onDismiss: propTypes.func
 };
 
 
-export default function Alert({type, message, onDismiss}) {
+export default function Alert({type, message, onDismiss, children}) {
     return <div className={`alert alert-dismissible alert-${type}`}>
         {onDismiss ? <button type="button" className="close" onClick={onDismiss}>&times;</button> : false}
         {message}
+        {children}
     </div>
 }
 

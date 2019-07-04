@@ -5,13 +5,23 @@ exports[`<Packages/> Updates disabled 1`] = `
 - First value
 + Second value
 
-@@ -1,7 +1,15 @@
+@@ -1,7 +1,25 @@
   <DocumentFragment>
     <form>
 +     <div
 +       class=\\"alert alert-dismissible alert-warning\\"
 +     >
-+       Please enable automatic updates to manage packages and languages.
++       <p>
++         
++ Please enable 
++         <a
++           href=\\"/updates\\"
++         >
++           automatic updates
++         </a>
++          to manage packages and languages.
++         
++       </p>
 +     </div>
 +     <div
 +       class=\\"text-muted\\"
@@ -20,296 +30,302 @@ exports[`<Packages/> Updates disabled 1`] = `
           Packages
         </h3>
         <div
-          class=\\"form-group row\\"
-@@ -19,10 +27,11 @@
-          <div
-            class=\\"form-check col-sm-8\\"
+          class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
+@@ -12,10 +30,11 @@
+            style=\\"margin-bottom: 0px;\\"
           >
             <input
               checked=\\"\\"
+              class=\\"form-check-input\\"
 +             disabled=\\"\\"
               id=\\"1\\"
               type=\\"checkbox\\"
             />
-            <small
-              class=\\"form-text text-muted\\"
-@@ -46,10 +55,11 @@
-          </div>
-          <div
-            class=\\"form-check col-sm-8\\"
+            <label
+              class=\\"form-label\\"
+@@ -39,10 +58,11 @@
+            class=\\"form-group form-check\\"
+            style=\\"margin-bottom: 0px;\\"
           >
             <input
+              class=\\"form-check-input\\"
 +             disabled=\\"\\"
               id=\\"2\\"
               type=\\"checkbox\\"
             />
-            <small
-              class=\\"form-text text-muted\\"
-@@ -73,10 +83,11 @@
-          </div>
-          <div
-            class=\\"form-check col-sm-8\\"
+            <label
+              class=\\"form-label\\"
+@@ -66,10 +86,11 @@
+            class=\\"form-group form-check\\"
+            style=\\"margin-bottom: 0px;\\"
           >
             <input
+              class=\\"form-check-input\\"
 +             disabled=\\"\\"
               id=\\"3\\"
               type=\\"checkbox\\"
             />
-            <small
-              class=\\"form-text text-muted\\"
-@@ -100,10 +111,11 @@
-          </div>
-          <div
-            class=\\"form-check col-sm-8\\"
+            <label
+              class=\\"form-label\\"
+@@ -93,10 +114,11 @@
+            class=\\"form-group form-check\\"
+            style=\\"margin-bottom: 0px;\\"
           >
             <input
+              class=\\"form-check-input\\"
 +             disabled=\\"\\"
               id=\\"4\\"
               type=\\"checkbox\\"
             />
-            <small
-              class=\\"form-text text-muted\\"
-@@ -127,10 +139,11 @@
-          </div>
-          <div
-            class=\\"form-check col-sm-8\\"
+            <label
+              class=\\"form-label\\"
+@@ -120,10 +142,11 @@
+            class=\\"form-group form-check\\"
+            style=\\"margin-bottom: 0px;\\"
           >
             <input
+              class=\\"form-check-input\\"
 +             disabled=\\"\\"
               id=\\"5\\"
               type=\\"checkbox\\"
             />
-            <small
-              class=\\"form-text text-muted\\"
-@@ -154,10 +167,11 @@
-          </div>
-          <div
-            class=\\"form-check col-sm-8\\"
+            <label
+              class=\\"form-label\\"
+@@ -147,10 +170,11 @@
+            class=\\"form-group form-check\\"
+            style=\\"margin-bottom: 0px;\\"
           >
             <input
+              class=\\"form-check-input\\"
 +             disabled=\\"\\"
               id=\\"6\\"
               type=\\"checkbox\\"
             />
-            <small
-              class=\\"form-text text-muted\\"
-@@ -181,10 +195,11 @@
-          </div>
-          <div
-            class=\\"form-check col-sm-8\\"
+            <label
+              class=\\"form-label\\"
+@@ -174,10 +198,11 @@
+            class=\\"form-group form-check\\"
+            style=\\"margin-bottom: 0px;\\"
           >
             <input
+              class=\\"form-check-input\\"
 +             disabled=\\"\\"
               id=\\"7\\"
               type=\\"checkbox\\"
             />
-            <small
-              class=\\"form-text text-muted\\"
-@@ -208,10 +223,11 @@
-          </div>
-          <div
-            class=\\"form-check col-sm-8\\"
+            <label
+              class=\\"form-label\\"
+@@ -201,10 +226,11 @@
+            class=\\"form-group form-check\\"
+            style=\\"margin-bottom: 0px;\\"
           >
             <input
+              class=\\"form-check-input\\"
 +             disabled=\\"\\"
               id=\\"8\\"
               type=\\"checkbox\\"
             />
-            <small
-              class=\\"form-text text-muted\\"
-@@ -235,10 +251,11 @@
-          </div>
-          <div
-            class=\\"form-check col-sm-8\\"
+            <label
+              class=\\"form-label\\"
+@@ -228,10 +254,11 @@
+            class=\\"form-group form-check\\"
+            style=\\"margin-bottom: 0px;\\"
           >
             <input
+              class=\\"form-check-input\\"
 +             disabled=\\"\\"
               id=\\"9\\"
               type=\\"checkbox\\"
             />
-            <small
-              class=\\"form-text text-muted\\"
-@@ -262,10 +279,11 @@
-          </div>
-          <div
-            class=\\"form-check col-sm-8\\"
+            <label
+              class=\\"form-label\\"
+@@ -255,10 +282,11 @@
+            class=\\"form-group form-check\\"
+            style=\\"margin-bottom: 0px;\\"
           >
             <input
+              class=\\"form-check-input\\"
 +             disabled=\\"\\"
               id=\\"10\\"
               type=\\"checkbox\\"
             />
-            <small
-              class=\\"form-text text-muted\\"
-@@ -289,10 +307,11 @@
-          </div>
-          <div
-            class=\\"form-check col-sm-8\\"
+            <label
+              class=\\"form-label\\"
+@@ -282,10 +310,11 @@
+            class=\\"form-group form-check\\"
+            style=\\"margin-bottom: 0px;\\"
           >
             <input
+              class=\\"form-check-input\\"
 +             disabled=\\"\\"
               id=\\"11\\"
               type=\\"checkbox\\"
             />
-            <small
-              class=\\"form-text text-muted\\"
-@@ -316,10 +335,11 @@
-          </div>
-          <div
-            class=\\"form-check col-sm-8\\"
+            <label
+              class=\\"form-label\\"
+@@ -309,10 +338,11 @@
+            class=\\"form-group form-check\\"
+            style=\\"margin-bottom: 0px;\\"
           >
             <input
+              class=\\"form-check-input\\"
 +             disabled=\\"\\"
               id=\\"12\\"
               type=\\"checkbox\\"
             />
-            <small
-              class=\\"form-text text-muted\\"
-@@ -343,10 +363,11 @@
-          </div>
-          <div
-            class=\\"form-check col-sm-8\\"
+            <label
+              class=\\"form-label\\"
+@@ -336,10 +366,11 @@
+            class=\\"form-group form-check\\"
+            style=\\"margin-bottom: 0px;\\"
           >
             <input
+              class=\\"form-check-input\\"
 +             disabled=\\"\\"
               id=\\"13\\"
               type=\\"checkbox\\"
             />
-            <small
-              class=\\"form-text text-muted\\"
-@@ -377,10 +398,11 @@
-          <div
-            class=\\"form-check col-sm-8\\"
+            <label
+              class=\\"form-label\\"
+@@ -370,10 +401,11 @@
+            style=\\"margin-bottom: 0px;\\"
           >
             <input
               checked=\\"\\"
+              class=\\"form-check-input\\"
 +             disabled=\\"\\"
               id=\\"14\\"
               type=\\"checkbox\\"
             />
-          </div>
-        </div>
-@@ -399,10 +421,11 @@
-          </div>
-          <div
-            class=\\"form-check col-sm-8\\"
+            <label
+              class=\\"form-label\\"
+@@ -391,10 +423,11 @@
+            class=\\"form-group form-check\\"
+            style=\\"margin-bottom: 0px;\\"
           >
             <input
+              class=\\"form-check-input\\"
 +             disabled=\\"\\"
               id=\\"15\\"
               type=\\"checkbox\\"
             />
-          </div>
-        </div>
-@@ -421,10 +444,11 @@
-          </div>
-          <div
-            class=\\"form-check col-sm-8\\"
+            <label
+              class=\\"form-label\\"
+@@ -412,10 +445,11 @@
+            class=\\"form-group form-check\\"
+            style=\\"margin-bottom: 0px;\\"
           >
             <input
+              class=\\"form-check-input\\"
 +             disabled=\\"\\"
               id=\\"16\\"
               type=\\"checkbox\\"
             />
-          </div>
-        </div>
-@@ -443,10 +467,11 @@
-          </div>
-          <div
-            class=\\"form-check col-sm-8\\"
+            <label
+              class=\\"form-label\\"
+@@ -433,10 +467,11 @@
+            class=\\"form-group form-check\\"
+            style=\\"margin-bottom: 0px;\\"
           >
             <input
+              class=\\"form-check-input\\"
 +             disabled=\\"\\"
               id=\\"17\\"
               type=\\"checkbox\\"
             />
-          </div>
-        </div>
-@@ -465,10 +490,11 @@
-          </div>
-          <div
-            class=\\"form-check col-sm-8\\"
+            <label
+              class=\\"form-label\\"
+@@ -454,10 +489,11 @@
+            class=\\"form-group form-check\\"
+            style=\\"margin-bottom: 0px;\\"
           >
             <input
+              class=\\"form-check-input\\"
 +             disabled=\\"\\"
               id=\\"18\\"
               type=\\"checkbox\\"
             />
-          </div>
-        </div>
-@@ -487,10 +513,11 @@
-          </div>
-          <div
-            class=\\"form-check col-sm-8\\"
+            <label
+              class=\\"form-label\\"
+@@ -475,10 +511,11 @@
+            class=\\"form-group form-check\\"
+            style=\\"margin-bottom: 0px;\\"
           >
             <input
+              class=\\"form-check-input\\"
 +             disabled=\\"\\"
               id=\\"19\\"
               type=\\"checkbox\\"
             />
-          </div>
-        </div>
-@@ -509,10 +536,11 @@
-          </div>
-          <div
-            class=\\"form-check col-sm-8\\"
+            <label
+              class=\\"form-label\\"
+@@ -496,10 +533,11 @@
+            class=\\"form-group form-check\\"
+            style=\\"margin-bottom: 0px;\\"
           >
             <input
+              class=\\"form-check-input\\"
 +             disabled=\\"\\"
               id=\\"20\\"
               type=\\"checkbox\\"
             />
-          </div>
-        </div>
-@@ -531,10 +559,11 @@
-          </div>
-          <div
-            class=\\"form-check col-sm-8\\"
+            <label
+              class=\\"form-label\\"
+@@ -517,10 +555,11 @@
+            class=\\"form-group form-check\\"
+            style=\\"margin-bottom: 0px;\\"
           >
             <input
+              class=\\"form-check-input\\"
 +             disabled=\\"\\"
               id=\\"21\\"
               type=\\"checkbox\\"
             />
-          </div>
-        </div>
-@@ -553,10 +582,11 @@
-          </div>
-          <div
-            class=\\"form-check col-sm-8\\"
+            <label
+              class=\\"form-label\\"
+@@ -538,10 +577,11 @@
+            class=\\"form-group form-check\\"
+            style=\\"margin-bottom: 0px;\\"
           >
             <input
+              class=\\"form-check-input\\"
 +             disabled=\\"\\"
               id=\\"22\\"
               type=\\"checkbox\\"
             />
-          </div>
-        </div>
-@@ -575,10 +605,11 @@
-          </div>
-          <div
-            class=\\"form-check col-sm-8\\"
+            <label
+              class=\\"form-label\\"
+@@ -559,10 +599,11 @@
+            class=\\"form-group form-check\\"
+            style=\\"margin-bottom: 0px;\\"
           >
             <input
+              class=\\"form-check-input\\"
 +             disabled=\\"\\"
               id=\\"23\\"
               type=\\"checkbox\\"
             />
-          </div>
-        </div>
-@@ -597,17 +628,20 @@
-          </div>
-          <div
-            class=\\"form-check col-sm-8\\"
+            <label
+              class=\\"form-label\\"
+@@ -580,23 +621,26 @@
+            class=\\"form-group form-check\\"
+            style=\\"margin-bottom: 0px;\\"
           >
             <input
+              class=\\"form-check-input\\"
 +             disabled=\\"\\"
               id=\\"24\\"
               type=\\"checkbox\\"
             />
-          </div>
+            <label
+              class=\\"form-label\\"
+              for=\\"24\\"
+            >
+              NB
+            </label>
++         </div>
         </div>
-+     </div>
+      </div>
       <button
         class=\\"btn btn-primary  offset-lg-8 col-lg-3 col-sm-12\\"
 +       disabled=\\"\\"
@@ -327,356 +343,356 @@ exports[`<Packages/> Updates enabled 1`] = `
       Packages
     </h3>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          checked=""
+          class="form-check-input"
+          id="1"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="1"
+          style="margin-bottom: 0px;"
         >
           Enabled package title
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
+      <small
+        class="form-text text-muted"
       >
-        <input
-          checked=""
-          id="1"
-          type="checkbox"
-        />
-        <small
-          class="form-text text-muted"
-        >
-          Enabled package msg
-        </small>
-      </div>
+        Enabled package msg
+      </small>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="2"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="2"
+          style="margin-bottom: 0px;"
         >
           Extensions of network protocols for 3G/LTE
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
+      <small
+        class="form-text text-muted"
       >
-        <input
-          id="2"
-          type="checkbox"
-        />
-        <small
-          class="form-text text-muted"
-        >
-          Support for additional protocols and connection types.
-        </small>
-      </div>
+        Support for additional protocols and connection types.
+      </small>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="3"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="3"
+          style="margin-bottom: 0px;"
         >
           Device detection
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
+      <small
+        class="form-text text-muted"
       >
-        <input
-          id="3"
-          type="checkbox"
-        />
-        <small
-          class="form-text text-muted"
-        >
-          Software for detecting new devices on local network (EXPERIMENTAL).
-        </small>
-      </div>
+        Software for detecting new devices on local network (EXPERIMENTAL).
+      </small>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="4"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="4"
+          style="margin-bottom: 0px;"
         >
           DVB tuner
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
+      <small
+        class="form-text text-muted"
       >
-        <input
-          id="4"
-          type="checkbox"
-        />
-        <small
-          class="form-text text-muted"
-        >
-          Software for sharing television received by a DVB tuner on Turris. Does not include device drivers.
-        </small>
-      </div>
+        Software for sharing television received by a DVB tuner on Turris. Does not include device drivers.
+      </small>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="5"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="5"
+          style="margin-bottom: 0px;"
         >
           SSH Honeypot
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
+      <small
+        class="form-text text-muted"
       >
-        <input
-          id="5"
-          type="checkbox"
-        />
-        <small
-          class="form-text text-muted"
-        >
-          Trap for password-guessing robots on SSH.
-        </small>
-      </div>
+        Trap for password-guessing robots on SSH.
+      </small>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="6"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="6"
+          style="margin-bottom: 0px;"
         >
           LuCI extensions
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
+      <small
+        class="form-text text-muted"
       >
-        <input
-          id="6"
-          type="checkbox"
-        />
-        <small
-          class="form-text text-muted"
-        >
-          Several addional tabs and controls for the advanced LuCI interface.
-        </small>
-      </div>
+        Several addional tabs and controls for the advanced LuCI interface.
+      </small>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="7"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="7"
+          style="margin-bottom: 0px;"
         >
           LXC utilities
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
+      <small
+        class="form-text text-muted"
       >
-        <input
-          id="7"
-          type="checkbox"
-        />
-        <small
-          class="form-text text-muted"
-        >
-          Set of utilities to manage Linux Containers (lightweight virtualization technology).
-        </small>
-      </div>
+        Set of utilities to manage Linux Containers (lightweight virtualization technology).
+      </small>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="8"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="8"
+          style="margin-bottom: 0px;"
         >
           NAS
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
+      <small
+        class="form-text text-muted"
       >
-        <input
-          id="8"
-          type="checkbox"
-        />
-        <small
-          class="form-text text-muted"
-        >
-          Services allowing to connect a disk to the router and use it as network data store.
-        </small>
-      </div>
+        Services allowing to connect a disk to the router and use it as network data store.
+      </small>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="9"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="9"
+          style="margin-bottom: 0px;"
         >
           Internet connection speed measurement
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
+      <small
+        class="form-text text-muted"
       >
-        <input
-          id="9"
-          type="checkbox"
-        />
-        <small
-          class="form-text text-muted"
-        >
-          Actively measures speed of Internet connection using netmetr.cz service.
-        </small>
-      </div>
+        Actively measures speed of Internet connection using netmetr.cz service.
+      </small>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="10"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="10"
+          style="margin-bottom: 0px;"
         >
           OpenVPN
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
+      <small
+        class="form-text text-muted"
       >
-        <input
-          id="10"
-          type="checkbox"
-        />
-        <small
-          class="form-text text-muted"
-        >
-          An easy setup of OpenVPN server from Foris.
-        </small>
-      </div>
+        An easy setup of OpenVPN server from Foris.
+      </small>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="11"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="11"
+          style="margin-bottom: 0px;"
         >
           Pakon
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
+      <small
+        class="form-text text-muted"
       >
-        <input
-          id="11"
-          type="checkbox"
-        />
-        <small
-          class="form-text text-muted"
-        >
-          Software for in depth monitoring of your traffic.
-        </small>
-      </div>
+        Software for in depth monitoring of your traffic.
+      </small>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="12"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="12"
+          style="margin-bottom: 0px;"
         >
           Print server
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
+      <small
+        class="form-text text-muted"
       >
-        <input
-          id="12"
-          type="checkbox"
-        />
-        <small
-          class="form-text text-muted"
-        >
-          Services allowing to connect a printer to the router and use it for remote printing.
-        </small>
-      </div>
+        Services allowing to connect a printer to the router and use it for remote printing.
+      </small>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="13"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="13"
+          style="margin-bottom: 0px;"
         >
           Tor
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
+      <small
+        class="form-text text-muted"
       >
-        <input
-          id="13"
-          type="checkbox"
-        />
-        <small
-          class="form-text text-muted"
-        >
-          Service to increase anonymity on the Internet.
-        </small>
-      </div>
+        Service to increase anonymity on the Internet.
+      </small>
     </div>
     <h3>
       Languages
@@ -685,11 +701,19 @@ exports[`<Packages/> Updates enabled 1`] = `
       If you want to use other language than English you can select it from the following list:
     </p>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          checked=""
+          class="form-check-input"
+          id="14"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="14"
@@ -697,22 +721,20 @@ exports[`<Packages/> Updates enabled 1`] = `
           CS
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
-      >
-        <input
-          checked=""
-          id="14"
-          type="checkbox"
-        />
-      </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="15"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="15"
@@ -720,21 +742,20 @@ exports[`<Packages/> Updates enabled 1`] = `
           DA
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
-      >
-        <input
-          id="15"
-          type="checkbox"
-        />
-      </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="16"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="16"
@@ -742,21 +763,20 @@ exports[`<Packages/> Updates enabled 1`] = `
           DE
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
-      >
-        <input
-          id="16"
-          type="checkbox"
-        />
-      </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="17"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="17"
@@ -764,21 +784,20 @@ exports[`<Packages/> Updates enabled 1`] = `
           FR
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
-      >
-        <input
-          id="17"
-          type="checkbox"
-        />
-      </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="18"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="18"
@@ -786,21 +805,20 @@ exports[`<Packages/> Updates enabled 1`] = `
           LT
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
-      >
-        <input
-          id="18"
-          type="checkbox"
-        />
-      </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="19"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="19"
@@ -808,21 +826,20 @@ exports[`<Packages/> Updates enabled 1`] = `
           PL
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
-      >
-        <input
-          id="19"
-          type="checkbox"
-        />
-      </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="20"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="20"
@@ -830,21 +847,20 @@ exports[`<Packages/> Updates enabled 1`] = `
           RU
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
-      >
-        <input
-          id="20"
-          type="checkbox"
-        />
-      </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="21"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="21"
@@ -852,21 +868,20 @@ exports[`<Packages/> Updates enabled 1`] = `
           SK
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
-      >
-        <input
-          id="21"
-          type="checkbox"
-        />
-      </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="22"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="22"
@@ -874,21 +889,20 @@ exports[`<Packages/> Updates enabled 1`] = `
           HU
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
-      >
-        <input
-          id="22"
-          type="checkbox"
-        />
-      </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="23"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="23"
@@ -896,35 +910,26 @@ exports[`<Packages/> Updates enabled 1`] = `
           IT
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
-      >
-        <input
-          id="23"
-          type="checkbox"
-        />
-      </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="24"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="24"
         >
           NB
         </label>
-      </div>
-      <div
-        class="form-check col-sm-8"
-      >
-        <input
-          id="24"
-          type="checkbox"
-        />
       </div>
     </div>
     <button

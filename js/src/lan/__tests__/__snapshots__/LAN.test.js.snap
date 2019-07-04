@@ -40,55 +40,51 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
       LAN Settings
     </h3>
     <div
-      class="form-group row"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <label
-        class="form-control-label col-sm-3"
+        class="form-control-label"
         for="1"
       >
         LAN mode
       </label>
-      <div
-        class="col-sm-8"
+      <select
+        class="form-control"
+        id="1"
       >
-        <select
-          class="form-control"
-          id="1"
+        <option
+          value="managed"
         >
-          <option
-            value="managed"
-          >
-            Router
-          </option>
-          <option
-            value="unmanaged"
-          >
-            Computer
-          </option>
-        </select>
-        <small
-          class="form-text text-muted"
+          Router
+        </option>
+        <option
+          value="unmanaged"
         >
-          
+          Computer
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      >
+        
 Router mode means that this devices manages the LAN (acts as a router, can assing IP addresses, ...).
 Computer mode means that this device acts as a client in this network. It acts in a similar way as WAN, but
 it has opened ports for configuration interface and other services.
         
-        </small>
-      </div>
+      </small>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
     >
-      <label
-        class="form-control-label col-sm-3"
-        for="5"
-      >
-        Router IP address
-      </label>
       <div
-        class="col-sm-8"
+        class="form-group"
       >
+        <label
+          class="form-control-label"
+          for="5"
+        >
+          Router IP address
+        </label>
         <div
           class="input-group"
         >
@@ -108,17 +104,17 @@ it has opened ports for configuration interface and other services.
       </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
     >
-      <label
-        class="form-control-label col-sm-3"
-        for="6"
-      >
-        Network mask
-      </label>
       <div
-        class="col-sm-8"
+        class="form-group"
       >
+        <label
+          class="form-control-label"
+          for="6"
+        >
+          Network mask
+        </label>
         <div
           class="input-group"
         >
@@ -133,44 +129,44 @@ it has opened ports for configuration interface and other services.
       </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="7"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="7"
+          style="margin-bottom: 0px;"
         >
           Enable DHCP
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
+      <small
+        class="form-text text-muted"
       >
-        <input
-          id="7"
-          type="checkbox"
-        />
-        <small
-          class="form-text text-muted"
-        >
-          Enable this option to automatically assign IP addresses to the devices connected to the router.
-        </small>
-      </div>
+        Enable this option to automatically assign IP addresses to the devices connected to the router.
+      </small>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
     >
-      <label
-        class="form-control-label col-sm-3"
-        for="12"
-      >
-        DHCP start
-      </label>
       <div
-        class="col-sm-8"
+        class="form-group"
       >
+        <label
+          class="form-control-label"
+          for="12"
+        >
+          DHCP start
+        </label>
         <div
           class="input-group"
         >
@@ -186,17 +182,17 @@ it has opened ports for configuration interface and other services.
       </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
     >
-      <label
-        class="form-control-label col-sm-3"
-        for="13"
-      >
-        DHCP max leases
-      </label>
       <div
-        class="col-sm-8"
+        class="form-group"
       >
+        <label
+          class="form-control-label"
+          for="13"
+        >
+          DHCP max leases
+        </label>
         <div
           class="input-group"
         >
@@ -212,17 +208,17 @@ it has opened ports for configuration interface and other services.
       </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
     >
-      <label
-        class="form-control-label col-sm-3"
-        for="14"
-      >
-        Lease time (hours)
-      </label>
       <div
-        class="col-sm-8"
+        class="form-group"
       >
+        <label
+          class="form-control-label"
+          for="14"
+        >
+          Lease time (hours)
+        </label>
         <div
           class="input-group"
         >
@@ -288,55 +284,51 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
       LAN Settings
     </h3>
     <div
-      class="form-group row"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <label
-        class="form-control-label col-sm-3"
+        class="form-control-label"
         for="1"
       >
         LAN mode
       </label>
-      <div
-        class="col-sm-8"
+      <select
+        class="form-control"
+        id="1"
       >
-        <select
-          class="form-control"
-          id="1"
+        <option
+          value="managed"
         >
-          <option
-            value="managed"
-          >
-            Router
-          </option>
-          <option
-            value="unmanaged"
-          >
-            Computer
-          </option>
-        </select>
-        <small
-          class="form-text text-muted"
+          Router
+        </option>
+        <option
+          value="unmanaged"
         >
-          
+          Computer
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      >
+        
 Router mode means that this devices manages the LAN (acts as a router, can assing IP addresses, ...).
 Computer mode means that this device acts as a client in this network. It acts in a similar way as WAN, but
 it has opened ports for configuration interface and other services.
         
-        </small>
-      </div>
+      </small>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
     >
-      <label
-        class="form-control-label col-sm-3"
-        for="5"
-      >
-        Router IP address
-      </label>
       <div
-        class="col-sm-8"
+        class="form-group"
       >
+        <label
+          class="form-control-label"
+          for="5"
+        >
+          Router IP address
+        </label>
         <div
           class="input-group"
         >
@@ -356,17 +348,17 @@ it has opened ports for configuration interface and other services.
       </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
     >
-      <label
-        class="form-control-label col-sm-3"
-        for="6"
-      >
-        Network mask
-      </label>
       <div
-        class="col-sm-8"
+        class="form-group"
       >
+        <label
+          class="form-control-label"
+          for="6"
+        >
+          Network mask
+        </label>
         <div
           class="input-group"
         >
@@ -381,31 +373,31 @@ it has opened ports for configuration interface and other services.
       </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="7"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="7"
+          style="margin-bottom: 0px;"
         >
           Enable DHCP
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
+      <small
+        class="form-text text-muted"
       >
-        <input
-          id="7"
-          type="checkbox"
-        />
-        <small
-          class="form-text text-muted"
-        >
-          Enable this option to automatically assign IP addresses to the devices connected to the router.
-        </small>
-      </div>
+        Enable this option to automatically assign IP addresses to the devices connected to the router.
+      </small>
     </div>
     <button
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
@@ -458,89 +450,81 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
       LAN Settings
     </h3>
     <div
-      class="form-group row"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <label
-        class="form-control-label col-sm-3"
+        class="form-control-label"
         for="1"
       >
         LAN mode
       </label>
-      <div
-        class="col-sm-8"
+      <select
+        class="form-control"
+        id="1"
       >
-        <select
-          class="form-control"
-          id="1"
+        <option
+          value="managed"
         >
-          <option
-            value="managed"
-          >
-            Router
-          </option>
-          <option
-            value="unmanaged"
-          >
-            Computer
-          </option>
-        </select>
-        <small
-          class="form-text text-muted"
+          Router
+        </option>
+        <option
+          value="unmanaged"
         >
-          
+          Computer
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      >
+        
 Router mode means that this devices manages the LAN (acts as a router, can assing IP addresses, ...).
 Computer mode means that this device acts as a client in this network. It acts in a similar way as WAN, but
 it has opened ports for configuration interface and other services.
         
-        </small>
-      </div>
+      </small>
     </div>
     <div
-      class="form-group row"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <label
-        class="form-control-label col-sm-3"
+        class="form-control-label"
         for="2"
       >
         IPv4 protocol
       </label>
-      <div
-        class="col-sm-8"
+      <select
+        class="form-control"
+        id="2"
       >
-        <select
-          class="form-control"
-          id="2"
+        <option
+          value="dhcp"
         >
-          <option
-            value="dhcp"
-          >
-            DHCP (automatic configuration)
-          </option>
-          <option
-            value="static"
-          >
-            Static IP address (manual configuration)
-          </option>
-          <option
-            value="none"
-          >
-            Don't connect this device to LAN
-          </option>
-        </select>
-      </div>
+          DHCP (automatic configuration)
+        </option>
+        <option
+          value="static"
+        >
+          Static IP address (manual configuration)
+        </option>
+        <option
+          value="none"
+        >
+          Don't connect this device to LAN
+        </option>
+      </select>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
     >
-      <label
-        class="form-control-label col-sm-3"
-        for="3"
-      >
-        DHCP hostname
-      </label>
       <div
-        class="col-sm-8"
+        class="form-group"
       >
+        <label
+          class="form-control-label"
+          for="3"
+        >
+          DHCP hostname
+        </label>
         <div
           class="input-group"
         >
@@ -609,76 +593,68 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
       LAN Settings
     </h3>
     <div
-      class="form-group row"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <label
-        class="form-control-label col-sm-3"
+        class="form-control-label"
         for="1"
       >
         LAN mode
       </label>
-      <div
-        class="col-sm-8"
+      <select
+        class="form-control"
+        id="1"
       >
-        <select
-          class="form-control"
-          id="1"
+        <option
+          value="managed"
         >
-          <option
-            value="managed"
-          >
-            Router
-          </option>
-          <option
-            value="unmanaged"
-          >
-            Computer
-          </option>
-        </select>
-        <small
-          class="form-text text-muted"
+          Router
+        </option>
+        <option
+          value="unmanaged"
         >
-          
+          Computer
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      >
+        
 Router mode means that this devices manages the LAN (acts as a router, can assing IP addresses, ...).
 Computer mode means that this device acts as a client in this network. It acts in a similar way as WAN, but
 it has opened ports for configuration interface and other services.
         
-        </small>
-      </div>
+      </small>
     </div>
     <div
-      class="form-group row"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <label
-        class="form-control-label col-sm-3"
+        class="form-control-label"
         for="2"
       >
         IPv4 protocol
       </label>
-      <div
-        class="col-sm-8"
+      <select
+        class="form-control"
+        id="2"
       >
-        <select
-          class="form-control"
-          id="2"
+        <option
+          value="dhcp"
         >
-          <option
-            value="dhcp"
-          >
-            DHCP (automatic configuration)
-          </option>
-          <option
-            value="static"
-          >
-            Static IP address (manual configuration)
-          </option>
-          <option
-            value="none"
-          >
-            Don't connect this device to LAN
-          </option>
-        </select>
-      </div>
+          DHCP (automatic configuration)
+        </option>
+        <option
+          value="static"
+        >
+          Static IP address (manual configuration)
+        </option>
+        <option
+          value="none"
+        >
+          Don't connect this device to LAN
+        </option>
+      </select>
     </div>
     <button
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
@@ -731,89 +707,81 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
       LAN Settings
     </h3>
     <div
-      class="form-group row"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <label
-        class="form-control-label col-sm-3"
+        class="form-control-label"
         for="1"
       >
         LAN mode
       </label>
-      <div
-        class="col-sm-8"
+      <select
+        class="form-control"
+        id="1"
       >
-        <select
-          class="form-control"
-          id="1"
+        <option
+          value="managed"
         >
-          <option
-            value="managed"
-          >
-            Router
-          </option>
-          <option
-            value="unmanaged"
-          >
-            Computer
-          </option>
-        </select>
-        <small
-          class="form-text text-muted"
+          Router
+        </option>
+        <option
+          value="unmanaged"
         >
-          
+          Computer
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      >
+        
 Router mode means that this devices manages the LAN (acts as a router, can assing IP addresses, ...).
 Computer mode means that this device acts as a client in this network. It acts in a similar way as WAN, but
 it has opened ports for configuration interface and other services.
         
-        </small>
-      </div>
+      </small>
     </div>
     <div
-      class="form-group row"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <label
-        class="form-control-label col-sm-3"
+        class="form-control-label"
         for="2"
       >
         IPv4 protocol
       </label>
-      <div
-        class="col-sm-8"
+      <select
+        class="form-control"
+        id="2"
       >
-        <select
-          class="form-control"
-          id="2"
+        <option
+          value="dhcp"
         >
-          <option
-            value="dhcp"
-          >
-            DHCP (automatic configuration)
-          </option>
-          <option
-            value="static"
-          >
-            Static IP address (manual configuration)
-          </option>
-          <option
-            value="none"
-          >
-            Don't connect this device to LAN
-          </option>
-        </select>
-      </div>
+          DHCP (automatic configuration)
+        </option>
+        <option
+          value="static"
+        >
+          Static IP address (manual configuration)
+        </option>
+        <option
+          value="none"
+        >
+          Don't connect this device to LAN
+        </option>
+      </select>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
     >
-      <label
-        class="form-control-label col-sm-3"
-        for="6"
-      >
-        IP address
-      </label>
       <div
-        class="col-sm-8"
+        class="form-group"
       >
+        <label
+          class="form-control-label"
+          for="6"
+        >
+          IP address
+        </label>
         <div
           class="input-group"
         >
@@ -828,17 +796,17 @@ it has opened ports for configuration interface and other services.
       </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
     >
-      <label
-        class="form-control-label col-sm-3"
-        for="7"
-      >
-        Network mask
-      </label>
       <div
-        class="col-sm-8"
+        class="form-group"
       >
+        <label
+          class="form-control-label"
+          for="7"
+        >
+          Network mask
+        </label>
         <div
           class="input-group"
         >
@@ -853,17 +821,17 @@ it has opened ports for configuration interface and other services.
       </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
     >
-      <label
-        class="form-control-label col-sm-3"
-        for="8"
-      >
-        Gateway
-      </label>
       <div
-        class="col-sm-8"
+        class="form-group"
       >
+        <label
+          class="form-control-label"
+          for="8"
+        >
+          Gateway
+        </label>
         <div
           class="input-group"
         >
@@ -878,17 +846,17 @@ it has opened ports for configuration interface and other services.
       </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
     >
-      <label
-        class="form-control-label col-sm-3"
-        for="9"
-      >
-        DNS server 1
-      </label>
       <div
-        class="col-sm-8"
+        class="form-group"
       >
+        <label
+          class="form-control-label"
+          for="9"
+        >
+          DNS server 1
+        </label>
         <div
           class="input-group"
         >
@@ -907,17 +875,17 @@ it has opened ports for configuration interface and other services.
       </div>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
     >
-      <label
-        class="form-control-label col-sm-3"
-        for="10"
-      >
-        DNS server 2
-      </label>
       <div
-        class="col-sm-8"
+        class="form-group"
       >
+        <label
+          class="form-control-label"
+          for="10"
+        >
+          DNS server 2
+        </label>
         <div
           class="input-group"
         >

@@ -2,79 +2,72 @@
 
 exports[`<RadioSet/> Render radio set 1`] = `
 <div
-  class="form-group row"
-  id="1"
+  class="form-group col-sm-12 offset-lg-1 col-lg-10"
+  style="margin-bottom: 1rem;"
 >
-  <div
-    class="form-label col-sm-3"
+  <label
+    class="form-control-label col-12"
+    for="1"
+    style="padding-left: 0px;"
   >
+    Radios set label
+  </label>
+  <div
+    class="form-check form-check-inline"
+  >
+    <input
+      checked=""
+      class="form-check-input"
+      id="test_name-0"
+      name="test_name"
+      type="radio"
+      value="value"
+    />
     <label
-      class="form-label"
-      for="1"
+      class="form-check-label"
+      for="test_name-0"
     >
-      Radios set label
+      label
     </label>
   </div>
   <div
-    class="col-sm-8"
+    class="form-check form-check-inline"
   >
-    <div
-      class="form-check form-check-inline"
+    <input
+      class="form-check-input"
+      id="test_name-1"
+      name="test_name"
+      type="radio"
+      value="another value"
+    />
+    <label
+      class="form-check-label"
+      for="test_name-1"
     >
-      <input
-        checked=""
-        class="form-check-input"
-        id="test_name-0"
-        name="test_name"
-        type="radio"
-        value="value"
-      />
-      <label
-        class="form-check-label"
-        for="test_name-0"
-      >
-        label
-      </label>
-    </div>
-    <div
-      class="form-check form-check-inline"
-    >
-      <input
-        class="form-check-input"
-        id="test_name-1"
-        name="test_name"
-        type="radio"
-        value="another value"
-      />
-      <label
-        class="form-check-label"
-        for="test_name-1"
-      >
-        another label
-      </label>
-    </div>
-    <div
-      class="form-check form-check-inline"
-    >
-      <input
-        class="form-check-input"
-        id="test_name-2"
-        name="test_name"
-        type="radio"
-        value="another on value"
-      />
-      <label
-        class="form-check-label"
-        for="test_name-2"
-      >
-        another one  label
-      </label>
-    </div>
-    <small
-      class="form-text text-muted"
-    >
-      Some help text
-    </small>
+      another label
+    </label>
   </div>
+  <div
+    class="form-check form-check-inline"
+  >
+    <input
+      class="form-check-input"
+      id="test_name-2"
+      name="test_name"
+      type="radio"
+      value="another on value"
+    />
+    <label
+      class="form-check-label"
+      for="test_name-2"
+    >
+      another one  label
+    </label>
+  </div>
+  <small
+    class="form-text text-muted"
+  >
+    Some help text
+  </small>
 </div>
 `;

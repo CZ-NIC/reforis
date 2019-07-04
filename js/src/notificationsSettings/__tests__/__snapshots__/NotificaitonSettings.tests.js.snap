@@ -6,31 +6,25 @@ exports[`<NotificationsSettings/> Disabled 1`] = `
     Email notifications settings
   </h3>
   <div
-    class="form-group row"
+    class="col-sm-12 offset-lg-1 col-lg-10"
+    style="margin-bottom: 1rem;"
   >
     <div
-      class="form-label col-sm-3"
+      class="form-group form-check"
+      style="margin-bottom: 0px;"
     >
+      <input
+        checked=""
+        class="form-check-input"
+        id="1"
+        type="checkbox"
+      />
       <label
         class="form-label"
         for="1"
       >
         Enable email notifications
       </label>
-    </div>
-    <div
-      class="form-check col-sm-8"
-    >
-      <input
-        checked=""
-        id="1"
-        type="checkbox"
-      />
-      <small
-        class="form-text text-muted"
-      >
-        If you set SMTP provider to "Turris", the servers provided to members of the Turris project would be used. These servers do not require any additional settings. If you want to set your own SMTP server, please select "Custom" and enter required settings.
-      </small>
     </div>
   </div>
   <button
@@ -49,11 +43,19 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
     Email notifications settings
   </h3>
   <div
-    class="form-group row"
+    class="col-sm-12 offset-lg-1 col-lg-10"
+    style="margin-bottom: 1rem;"
   >
     <div
-      class="form-label col-sm-3"
+      class="form-group form-check"
+      style="margin-bottom: 0px;"
     >
+      <input
+        checked=""
+        class="form-check-input"
+        id="1"
+        type="checkbox"
+      />
       <label
         class="form-label"
         for="1"
@@ -61,87 +63,71 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
         Enable email notifications
       </label>
     </div>
-    <div
-      class="form-check col-sm-8"
-    >
-      <input
-        checked=""
-        id="1"
-        type="checkbox"
-      />
-      <small
-        class="form-text text-muted"
-      >
-        If you set SMTP provider to "Turris", the servers provided to members of the Turris project would be used. These servers do not require any additional settings. If you want to set your own SMTP server, please select "Custom" and enter required settings.
-      </small>
-    </div>
   </div>
   <div
-    class="form-group row"
-    id="2"
+    class="form-group col-sm-12 offset-lg-1 col-lg-10"
+    style="margin-bottom: 1rem;"
   >
-    <div
-      class="form-label col-sm-3"
+    <label
+      class="form-control-label col-12"
+      for="2"
+      style="padding-left: 0px;"
     >
+      SMTP provider
+    </label>
+    <div
+      class="form-check form-check-inline"
+    >
+      <input
+        class="form-check-input"
+        id="smtp_provider-0"
+        name="smtp_provider"
+        type="radio"
+        value="turris"
+      />
       <label
-        class="form-label"
-        for="2"
+        class="form-check-label"
+        for="smtp_provider-0"
       >
-        SMTP provider
+        Turris
       </label>
     </div>
     <div
-      class="col-sm-8"
+      class="form-check form-check-inline"
     >
-      <div
-        class="form-check form-check-inline"
+      <input
+        checked=""
+        class="form-check-input"
+        id="smtp_provider-1"
+        name="smtp_provider"
+        type="radio"
+        value="custom"
+      />
+      <label
+        class="form-check-label"
+        for="smtp_provider-1"
       >
-        <input
-          class="form-check-input"
-          id="smtp_provider-0"
-          name="smtp_provider"
-          type="radio"
-          value="turris"
-        />
-        <label
-          class="form-check-label"
-          for="smtp_provider-0"
-        >
-          Turris
-        </label>
-      </div>
-      <div
-        class="form-check form-check-inline"
-      >
-        <input
-          checked=""
-          class="form-check-input"
-          id="smtp_provider-1"
-          name="smtp_provider"
-          type="radio"
-          value="custom"
-        />
-        <label
-          class="form-check-label"
-          for="smtp_provider-1"
-        >
-          Custom
-        </label>
-      </div>
+        Custom
+      </label>
     </div>
+    <small
+      class="form-text text-muted"
+    >
+      If you set SMTP provider to "Turris", the servers provided to members of the Turris project would be used. These servers do not require any additional settings. If you want to set your own SMTP server, please select "Custom" and enter required settings.
+    </small>
   </div>
   <div
-    class="form-group row"
+    class="col-sm-12 offset-lg-1 col-lg-10"
   >
-    <label
-      class="form-control-label col-sm-3"
-      for="3"
-    >
-      Recipient's email
-    </label>
     <div
-      class="col-sm-8"
+      class="form-group"
     >
+      <label
+        class="form-control-label"
+        for="3"
+      >
+        Recipient's email
+      </label>
       <div
         class="input-group"
       >
@@ -161,82 +147,78 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
     </div>
   </div>
   <div
-    class="form-group row"
+    class="form-group col-sm-12 offset-lg-1 col-lg-10"
   >
     <label
-      class="form-control-label col-sm-3"
+      class="form-control-label"
       for="4"
     >
       Importance
     </label>
-    <div
-      class="col-sm-8"
+    <select
+      class="form-control"
+      id="4"
     >
-      <select
-        class="form-control"
-        id="4"
+      <option
+        value="1"
       >
-        <option
-          value="1"
-        >
-          Reboot is required
-        </option>
-        <option
-          value="2"
-        >
-          Reboot or attention is required
-        </option>
-        <option
-          value="3"
-        >
-          Reboot or attention is required or update was installed
-        </option>
-      </select>
-    </div>
+        Reboot is required
+      </option>
+      <option
+        value="2"
+      >
+        Reboot or attention is required
+      </option>
+      <option
+        value="3"
+      >
+        Reboot or attention is required or update was installed
+      </option>
+    </select>
   </div>
   <div
-    class="form-group row"
+    class="col-sm-12 offset-lg-1 col-lg-10"
+    style="margin-bottom: 1rem;"
   >
     <div
-      class="form-label col-sm-3"
+      class="form-group form-check"
+      style="margin-bottom: 0px;"
     >
+      <input
+        checked=""
+        class="form-check-input"
+        id="5"
+        type="checkbox"
+      />
       <label
         class="form-label"
         for="5"
+        style="margin-bottom: 0px;"
       >
         Send news
       </label>
     </div>
-    <div
-      class="form-check col-sm-8"
+    <small
+      class="form-text text-muted"
     >
-      <input
-        checked=""
-        id="5"
-        type="checkbox"
-      />
-      <small
-        class="form-text text-muted"
-      >
-        Send emails about new features.
-      </small>
-    </div>
+      Send emails about new features.
+    </small>
   </div>
   <h4>
     SMTP settings
   </h4>
   <div
-    class="form-group row"
+    class="col-sm-12 offset-lg-1 col-lg-10"
   >
-    <label
-      class="form-control-label col-sm-3"
-      for="6"
-    >
-      Sender address (From)
-    </label>
     <div
-      class="col-sm-8"
+      class="form-group"
     >
+      <label
+        class="form-control-label"
+        for="6"
+      >
+        Sender address (From)
+      </label>
       <div
         class="input-group"
       >
@@ -257,17 +239,17 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
     </div>
   </div>
   <div
-    class="form-group row"
+    class="col-sm-12 offset-lg-1 col-lg-10"
   >
-    <label
-      class="form-control-label col-sm-3"
-      for="7"
-    >
-      Server address
-    </label>
     <div
-      class="col-sm-8"
+      class="form-group"
     >
+      <label
+        class="form-control-label"
+        for="7"
+      >
+        Server address
+      </label>
       <div
         class="input-group"
       >
@@ -283,17 +265,17 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
     </div>
   </div>
   <div
-    class="form-group row"
+    class="col-sm-12 offset-lg-1 col-lg-10"
   >
-    <label
-      class="form-control-label col-sm-3"
-      for="8"
-    >
-      Server port
-    </label>
     <div
-      class="col-sm-8"
+      class="form-group"
     >
+      <label
+        class="form-control-label"
+        for="8"
+      >
+        Server port
+      </label>
       <div
         class="input-group"
       >
@@ -309,51 +291,47 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
     </div>
   </div>
   <div
-    class="form-group row"
+    class="form-group col-sm-12 offset-lg-1 col-lg-10"
   >
     <label
-      class="form-control-label col-sm-3"
+      class="form-control-label"
       for="9"
     >
       Security
     </label>
-    <div
-      class="col-sm-8"
+    <select
+      class="form-control"
+      id="9"
     >
-      <select
-        class="form-control"
-        id="9"
+      <option
+        value="none"
       >
-        <option
-          value="none"
-        >
-          None
-        </option>
-        <option
-          value="ssl"
-        >
-          SSL
-        </option>
-        <option
-          value="starttls"
-        >
-          STARTTLS
-        </option>
-      </select>
-    </div>
+        None
+      </option>
+      <option
+        value="ssl"
+      >
+        SSL
+      </option>
+      <option
+        value="starttls"
+      >
+        STARTTLS
+      </option>
+    </select>
   </div>
   <div
-    class="form-group row"
+    class="col-sm-12 offset-lg-1 col-lg-10"
   >
-    <label
-      class="form-control-label col-sm-3"
-      for="10"
-    >
-      User
-    </label>
     <div
-      class="col-sm-8"
+      class="form-group"
     >
+      <label
+        class="form-control-label"
+        for="10"
+      >
+        User
+      </label>
       <div
         class="input-group"
       >
@@ -367,17 +345,17 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
     </div>
   </div>
   <div
-    class="form-group row"
+    class="col-sm-12 offset-lg-1 col-lg-10"
   >
-    <label
-      class="form-control-label col-sm-3"
-      for="11"
-    >
-      Password
-    </label>
     <div
-      class="col-sm-8"
+      class="form-group"
     >
+      <label
+        class="form-control-label"
+        for="11"
+      >
+        Password
+      </label>
       <div
         class="input-group"
       >
@@ -418,11 +396,19 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
     Email notifications settings
   </h3>
   <div
-    class="form-group row"
+    class="col-sm-12 offset-lg-1 col-lg-10"
+    style="margin-bottom: 1rem;"
   >
     <div
-      class="form-label col-sm-3"
+      class="form-group form-check"
+      style="margin-bottom: 0px;"
     >
+      <input
+        checked=""
+        class="form-check-input"
+        id="1"
+        type="checkbox"
+      />
       <label
         class="form-label"
         for="1"
@@ -430,87 +416,71 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
         Enable email notifications
       </label>
     </div>
-    <div
-      class="form-check col-sm-8"
-    >
-      <input
-        checked=""
-        id="1"
-        type="checkbox"
-      />
-      <small
-        class="form-text text-muted"
-      >
-        If you set SMTP provider to "Turris", the servers provided to members of the Turris project would be used. These servers do not require any additional settings. If you want to set your own SMTP server, please select "Custom" and enter required settings.
-      </small>
-    </div>
   </div>
   <div
-    class="form-group row"
-    id="2"
+    class="form-group col-sm-12 offset-lg-1 col-lg-10"
+    style="margin-bottom: 1rem;"
   >
-    <div
-      class="form-label col-sm-3"
+    <label
+      class="form-control-label col-12"
+      for="2"
+      style="padding-left: 0px;"
     >
+      SMTP provider
+    </label>
+    <div
+      class="form-check form-check-inline"
+    >
+      <input
+        class="form-check-input"
+        id="smtp_provider-0"
+        name="smtp_provider"
+        type="radio"
+        value="turris"
+      />
       <label
-        class="form-label"
-        for="2"
+        class="form-check-label"
+        for="smtp_provider-0"
       >
-        SMTP provider
+        Turris
       </label>
     </div>
     <div
-      class="col-sm-8"
+      class="form-check form-check-inline"
     >
-      <div
-        class="form-check form-check-inline"
+      <input
+        checked=""
+        class="form-check-input"
+        id="smtp_provider-1"
+        name="smtp_provider"
+        type="radio"
+        value="custom"
+      />
+      <label
+        class="form-check-label"
+        for="smtp_provider-1"
       >
-        <input
-          class="form-check-input"
-          id="smtp_provider-0"
-          name="smtp_provider"
-          type="radio"
-          value="turris"
-        />
-        <label
-          class="form-check-label"
-          for="smtp_provider-0"
-        >
-          Turris
-        </label>
-      </div>
-      <div
-        class="form-check form-check-inline"
-      >
-        <input
-          checked=""
-          class="form-check-input"
-          id="smtp_provider-1"
-          name="smtp_provider"
-          type="radio"
-          value="custom"
-        />
-        <label
-          class="form-check-label"
-          for="smtp_provider-1"
-        >
-          Custom
-        </label>
-      </div>
+        Custom
+      </label>
     </div>
+    <small
+      class="form-text text-muted"
+    >
+      If you set SMTP provider to "Turris", the servers provided to members of the Turris project would be used. These servers do not require any additional settings. If you want to set your own SMTP server, please select "Custom" and enter required settings.
+    </small>
   </div>
   <div
-    class="form-group row"
+    class="col-sm-12 offset-lg-1 col-lg-10"
   >
-    <label
-      class="form-control-label col-sm-3"
-      for="3"
-    >
-      Recipient's email
-    </label>
     <div
-      class="col-sm-8"
+      class="form-group"
     >
+      <label
+        class="form-control-label"
+        for="3"
+      >
+        Recipient's email
+      </label>
       <div
         class="input-group"
       >
@@ -530,79 +500,75 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
     </div>
   </div>
   <div
-    class="form-group row"
+    class="form-group col-sm-12 offset-lg-1 col-lg-10"
   >
     <label
-      class="form-control-label col-sm-3"
+      class="form-control-label"
       for="4"
     >
       Importance
     </label>
-    <div
-      class="col-sm-8"
+    <select
+      class="form-control"
+      id="4"
     >
-      <select
-        class="form-control"
-        id="4"
+      <option
+        value="1"
       >
-        <option
-          value="1"
-        >
-          Reboot is required
-        </option>
-        <option
-          value="2"
-        >
-          Reboot or attention is required
-        </option>
-        <option
-          value="3"
-        >
-          Reboot or attention is required or update was installed
-        </option>
-      </select>
-    </div>
+        Reboot is required
+      </option>
+      <option
+        value="2"
+      >
+        Reboot or attention is required
+      </option>
+      <option
+        value="3"
+      >
+        Reboot or attention is required or update was installed
+      </option>
+    </select>
   </div>
   <div
-    class="form-group row"
+    class="col-sm-12 offset-lg-1 col-lg-10"
+    style="margin-bottom: 1rem;"
   >
     <div
-      class="form-label col-sm-3"
+      class="form-group form-check"
+      style="margin-bottom: 0px;"
     >
+      <input
+        checked=""
+        class="form-check-input"
+        id="5"
+        type="checkbox"
+      />
       <label
         class="form-label"
         for="5"
+        style="margin-bottom: 0px;"
       >
         Send news
       </label>
     </div>
-    <div
-      class="form-check col-sm-8"
+    <small
+      class="form-text text-muted"
     >
-      <input
-        checked=""
-        id="5"
-        type="checkbox"
-      />
-      <small
-        class="form-text text-muted"
-      >
-        Send emails about new features.
-      </small>
-    </div>
+      Send emails about new features.
+    </small>
   </div>
   <div
-    class="form-group row"
+    class="col-sm-12 offset-lg-1 col-lg-10"
   >
-    <label
-      class="form-control-label col-sm-3"
-      for="17"
-    >
-      Sender's name
-    </label>
     <div
-      class="col-sm-8"
+      class="form-group"
     >
+      <label
+        class="form-control-label"
+        for="17"
+      >
+        Sender's name
+      </label>
       <div
         class="input-group"
       >

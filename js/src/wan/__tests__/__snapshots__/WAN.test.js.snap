@@ -5,21 +5,18 @@ exports[`<WAN/> Snapshot WAN IPv4 (pppoe). 1`] = `
 - First value
 + Second value
 
-@@ -50,34 +50,65 @@
-      <div
-        class=\\"form-group row\\"
-      >
-        <label
-          class=\\"form-control-label col-sm-3\\"
--         for=\\"2\\"
-+         for=\\"6\\"
-        >
--         DHCP hostname
-+         PAP/CHAP username
-        </label>
+@@ -49,31 +49,62 @@
         <div
-          class=\\"col-sm-8\\"
+          class=\\"form-group\\"
         >
+          <label
+            class=\\"form-control-label\\"
+-           for=\\"2\\"
++           for=\\"6\\"
+          >
+-           DHCP hostname
++           PAP/CHAP username
+          </label>
           <div
             class=\\"input-group\\"
           >
@@ -45,17 +42,17 @@ exports[`<WAN/> Snapshot WAN IPv4 (pppoe). 1`] = `
 +       </div>
 +     </div>
 +     <div
-+       class=\\"form-group row\\"
++       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <label
-+         class=\\"form-control-label col-sm-3\\"
-+         for=\\"7\\"
-+       >
-+         PAP/CHAP password
-+       </label>
 +       <div
-+         class=\\"col-sm-8\\"
++         class=\\"form-group\\"
 +       >
++         <label
++           class=\\"form-control-label\\"
++           for=\\"7\\"
++         >
++           PAP/CHAP password
++         </label>
 +         <div
 +           class=\\"input-group\\"
 +         >
@@ -78,10 +75,10 @@ exports[`<WAN/> Snapshot WAN IPv4 (pppoe). 1`] = `
         WAN IPv6
       </h3>
       <div
-        class=\\"form-group row\\"
-@@ -153,10 +184,11 @@
-          </small>
-        </div>
+        class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
+@@ -145,10 +176,11 @@
+          Useful in cases, when a specific MAC address is required by your internet service provider.
+        </small>
       </div>
       <button
         class=\\"btn btn-primary  offset-lg-8 col-lg-3 col-sm-12\\"
@@ -98,21 +95,18 @@ exports[`<WAN/> Snapshot WAN IPv4 (static). 1`] = `
 - First value
 + Second value
 
-@@ -50,31 +50,150 @@
-      <div
-        class=\\"form-group row\\"
-      >
-        <label
-          class=\\"form-control-label col-sm-3\\"
--         for=\\"2\\"
-+         for=\\"6\\"
+@@ -49,28 +49,147 @@
+        <div
+          class=\\"form-group\\"
         >
--         DHCP hostname
-+         IP address
-+       </label>
-+       <div
-+         class=\\"col-sm-8\\"
-+       >
+          <label
+            class=\\"form-control-label\\"
+-           for=\\"2\\"
++           for=\\"6\\"
+          >
+-           DHCP hostname
++           IP address
++         </label>
 +         <div
 +           class=\\"input-group\\"
 +         >
@@ -132,17 +126,17 @@ exports[`<WAN/> Snapshot WAN IPv4 (static). 1`] = `
 +       </div>
 +     </div>
 +     <div
-+       class=\\"form-group row\\"
++       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <label
-+         class=\\"form-control-label col-sm-3\\"
-+         for=\\"7\\"
-+       >
-+         Network mask
-+       </label>
 +       <div
-+         class=\\"col-sm-8\\"
++         class=\\"form-group\\"
 +       >
++         <label
++           class=\\"form-control-label\\"
++           for=\\"7\\"
++         >
++           Network mask
++         </label>
 +         <div
 +           class=\\"input-group\\"
 +         >
@@ -162,17 +156,17 @@ exports[`<WAN/> Snapshot WAN IPv4 (static). 1`] = `
 +       </div>
 +     </div>
 +     <div
-+       class=\\"form-group row\\"
++       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <label
-+         class=\\"form-control-label col-sm-3\\"
-+         for=\\"8\\"
-+       >
-+         Gateway
-+       </label>
 +       <div
-+         class=\\"col-sm-8\\"
++         class=\\"form-group\\"
 +       >
++         <label
++           class=\\"form-control-label\\"
++           for=\\"8\\"
++         >
++           Gateway
++         </label>
 +         <div
 +           class=\\"input-group\\"
 +         >
@@ -192,17 +186,17 @@ exports[`<WAN/> Snapshot WAN IPv4 (static). 1`] = `
 +       </div>
 +     </div>
 +     <div
-+       class=\\"form-group row\\"
++       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <label
-+         class=\\"form-control-label col-sm-3\\"
-+         for=\\"9\\"
++       <div
++         class=\\"form-group\\"
 +       >
-+         DNS server 1
-        </label>
-        <div
-          class=\\"col-sm-8\\"
-        >
++         <label
++           class=\\"form-control-label\\"
++           for=\\"9\\"
++         >
++           DNS server 1
+          </label>
           <div
             class=\\"input-group\\"
           >
@@ -222,17 +216,17 @@ exports[`<WAN/> Snapshot WAN IPv4 (static). 1`] = `
 +       </div>
 +     </div>
 +     <div
-+       class=\\"form-group row\\"
++       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <label
-+         class=\\"form-control-label col-sm-3\\"
-+         for=\\"10\\"
-+       >
-+         DNS server 2
-+       </label>
 +       <div
-+         class=\\"col-sm-8\\"
++         class=\\"form-group\\"
 +       >
++         <label
++           class=\\"form-control-label\\"
++           for=\\"10\\"
++         >
++           DNS server 2
++         </label>
 +         <div
 +           class=\\"input-group\\"
 +         >
@@ -253,9 +247,9 @@ exports[`<WAN/> Snapshot WAN IPv4 (static). 1`] = `
       </div>
       <h3>
         WAN IPv6
-@@ -153,10 +272,11 @@
-          </small>
-        </div>
+@@ -145,10 +264,11 @@
+          Useful in cases, when a specific MAC address is required by your internet service provider.
+        </small>
       </div>
       <button
         class=\\"btn btn-primary  offset-lg-8 col-lg-3 col-sm-12\\"
@@ -272,24 +266,24 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled. 1`] = `
 - First value
 + Second value
 
-@@ -250,10 +250,115 @@
-          >
-            Some tunnel providers allow you to have public dynamic IPv4. Note that you need to fill in some extra fields to make it work.
-          </small>
-        </div>
+@@ -242,10 +242,115 @@
+          class=\\"form-text text-muted\\"
+        >
+          Some tunnel providers allow you to have public dynamic IPv4. Note that you need to fill in some extra fields to make it work.
+        </small>
       </div>
 +     <div
-+       class=\\"form-group row\\"
++       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <label
-+         class=\\"form-control-label col-sm-3\\"
-+         for=\\"20\\"
-+       >
-+         Tunnel ID
-+       </label>
 +       <div
-+         class=\\"col-sm-8\\"
++         class=\\"form-group\\"
 +       >
++         <label
++           class=\\"form-control-label\\"
++           for=\\"20\\"
++         >
++           Tunnel ID
++         </label>
 +         <div
 +           class=\\"input-group\\"
 +         >
@@ -314,17 +308,17 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled. 1`] = `
 +       </div>
 +     </div>
 +     <div
-+       class=\\"form-group row\\"
++       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <label
-+         class=\\"form-control-label col-sm-3\\"
-+         for=\\"21\\"
-+       >
-+         Username
-+       </label>
 +       <div
-+         class=\\"col-sm-8\\"
++         class=\\"form-group\\"
 +       >
++         <label
++           class=\\"form-control-label\\"
++           for=\\"21\\"
++         >
++           Username
++         </label>
 +         <div
 +           class=\\"input-group\\"
 +         >
@@ -349,17 +343,17 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled. 1`] = `
 +       </div>
 +     </div>
 +     <div
-+       class=\\"form-group row\\"
++       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <label
-+         class=\\"form-control-label col-sm-3\\"
-+         for=\\"22\\"
-+       >
-+         Key
-+       </label>
 +       <div
-+         class=\\"col-sm-8\\"
++         class=\\"form-group\\"
 +       >
++         <label
++           class=\\"form-control-label\\"
++           for=\\"22\\"
++         >
++           Key
++         </label>
 +         <div
 +           class=\\"input-group\\"
 +         >
@@ -387,7 +381,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled. 1`] = `
         MAC
       </h3>
       <div
-        class=\\"form-group row\\""
+        class=\\"col-sm-12 offset-lg-1 col-lg-10\\""
 `;
 
 exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
@@ -395,24 +389,24 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
 - First value
 + Second value
 
-@@ -121,10 +121,139 @@
-              6in4 (public IPv4 address required)
-            </option>
-          </select>
-        </div>
+@@ -113,10 +113,139 @@
+          >
+            6in4 (public IPv4 address required)
+          </option>
+        </select>
       </div>
 +     <div
-+       class=\\"form-group row\\"
++       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <label
-+         class=\\"form-control-label col-sm-3\\"
-+         for=\\"8\\"
-+       >
-+         Provider IPv4
-+       </label>
 +       <div
-+         class=\\"col-sm-8\\"
++         class=\\"form-group\\"
 +       >
++         <label
++           class=\\"form-control-label\\"
++           for=\\"8\\"
++         >
++           Provider IPv4
++         </label>
 +         <div
 +           class=\\"input-group\\"
 +         >
@@ -437,17 +431,17 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
 +       </div>
 +     </div>
 +     <div
-+       class=\\"form-group row\\"
++       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <label
-+         class=\\"form-control-label col-sm-3\\"
-+         for=\\"9\\"
-+       >
-+         Routed IPv6 prefix
-+       </label>
 +       <div
-+         class=\\"col-sm-8\\"
++         class=\\"form-group\\"
 +       >
++         <label
++           class=\\"form-control-label\\"
++           for=\\"9\\"
++         >
++           Routed IPv6 prefix
++         </label>
 +         <div
 +           class=\\"input-group\\"
 +         >
@@ -472,17 +466,17 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
 +       </div>
 +     </div>
 +     <div
-+       class=\\"form-group row\\"
++       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <label
-+         class=\\"form-control-label col-sm-3\\"
-+         for=\\"10\\"
-+       >
-+         MTU
-+       </label>
 +       <div
-+         class=\\"col-sm-8\\"
++         class=\\"form-group\\"
 +       >
++         <label
++           class=\\"form-control-label\\"
++           for=\\"10\\"
++         >
++           MTU
++         </label>
 +         <div
 +           class=\\"input-group\\"
 +         >
@@ -504,40 +498,40 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
 +       </div>
 +     </div>
 +     <div
-+       class=\\"form-group row\\"
++       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
++       style=\\"margin-bottom: 1rem;\\"
 +     >
 +       <div
-+         class=\\"form-label col-sm-3\\"
++         class=\\"form-group form-check\\"
++         style=\\"margin-bottom: 0px;\\"
 +       >
++         <input
++           class=\\"form-check-input\\"
++           id=\\"11\\"
++           type=\\"checkbox\\"
++         />
 +         <label
 +           class=\\"form-label\\"
 +           for=\\"11\\"
++           style=\\"margin-bottom: 0px;\\"
 +         >
 +           Dynamic IPv4 handling
 +         </label>
 +       </div>
-+       <div
-+         class=\\"form-check col-sm-8\\"
++       <small
++         class=\\"form-text text-muted\\"
 +       >
-+         <input
-+           id=\\"11\\"
-+           type=\\"checkbox\\"
-+         />
-+         <small
-+           class=\\"form-text text-muted\\"
-+         >
-+           Some tunnel providers allow you to have public dynamic IPv4. Note that you need to fill in some extra fields to make it work.
-+         </small>
-+       </div>
++         Some tunnel providers allow you to have public dynamic IPv4. Note that you need to fill in some extra fields to make it work.
++       </small>
 +     </div>
       <h3>
         MAC
       </h3>
       <div
-        class=\\"form-group row\\"
-@@ -153,10 +282,11 @@
-          </small>
-        </div>
+        class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
+@@ -145,10 +274,11 @@
+          Useful in cases, when a specific MAC address is required by your internet service provider.
+        </small>
       </div>
       <button
         class=\\"btn btn-primary  offset-lg-8 col-lg-3 col-sm-12\\"
@@ -554,24 +548,24 @@ exports[`<WAN/> Snapshot WAN IPv6 (6to4). 1`] = `
 - First value
 + Second value
 
-@@ -121,10 +121,45 @@
-              6in4 (public IPv4 address required)
-            </option>
-          </select>
-        </div>
+@@ -113,10 +113,45 @@
+          >
+            6in4 (public IPv4 address required)
+          </option>
+        </select>
       </div>
 +     <div
-+       class=\\"form-group row\\"
++       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <label
-+         class=\\"form-control-label col-sm-3\\"
-+         for=\\"8\\"
-+       >
-+         Public IPv4
-+       </label>
 +       <div
-+         class=\\"col-sm-8\\"
++         class=\\"form-group\\"
 +       >
++         <label
++           class=\\"form-control-label\\"
++           for=\\"8\\"
++         >
++           Public IPv4
++         </label>
 +         <div
 +           class=\\"input-group\\"
 +         >
@@ -599,10 +593,10 @@ exports[`<WAN/> Snapshot WAN IPv6 (6to4). 1`] = `
         MAC
       </h3>
       <div
-        class=\\"form-group row\\"
-@@ -153,10 +188,11 @@
-          </small>
-        </div>
+        class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
+@@ -145,10 +180,11 @@
+          Useful in cases, when a specific MAC address is required by your internet service provider.
+        </small>
       </div>
       <button
         class=\\"btn btn-primary  offset-lg-8 col-lg-3 col-sm-12\\"
@@ -619,24 +613,24 @@ exports[`<WAN/> Snapshot WAN IPv6 (dhcpv6). 1`] = `
 - First value
 + Second value
 
-@@ -121,10 +121,39 @@
-              6in4 (public IPv4 address required)
-            </option>
-          </select>
-        </div>
+@@ -113,10 +113,39 @@
+          >
+            6in4 (public IPv4 address required)
+          </option>
+        </select>
       </div>
 +     <div
-+       class=\\"form-group row\\"
++       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <label
-+         class=\\"form-control-label col-sm-3\\"
-+         for=\\"8\\"
-+       >
-+         Custom DUID
-+       </label>
 +       <div
-+         class=\\"col-sm-8\\"
++         class=\\"form-group\\"
 +       >
++         <label
++           class=\\"form-control-label\\"
++           for=\\"8\\"
++         >
++           Custom DUID
++         </label>
 +         <div
 +           class=\\"input-group\\"
 +         >
@@ -658,7 +652,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (dhcpv6). 1`] = `
         MAC
       </h3>
       <div
-        class=\\"form-group row\\""
+        class=\\"col-sm-12 offset-lg-1 col-lg-10\\""
 `;
 
 exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
@@ -666,24 +660,24 @@ exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
 - First value
 + Second value
 
-@@ -121,10 +121,168 @@
-              6in4 (public IPv4 address required)
-            </option>
-          </select>
-        </div>
+@@ -113,10 +113,168 @@
+          >
+            6in4 (public IPv4 address required)
+          </option>
+        </select>
       </div>
 +     <div
-+       class=\\"form-group row\\"
++       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <label
-+         class=\\"form-control-label col-sm-3\\"
-+         for=\\"8\\"
-+       >
-+         Address
-+       </label>
 +       <div
-+         class=\\"col-sm-8\\"
++         class=\\"form-group\\"
 +       >
++         <label
++           class=\\"form-control-label\\"
++           for=\\"8\\"
++         >
++           Address
++         </label>
 +         <div
 +           class=\\"input-group\\"
 +         >
@@ -708,17 +702,17 @@ exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
 +       </div>
 +     </div>
 +     <div
-+       class=\\"form-group row\\"
++       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <label
-+         class=\\"form-control-label col-sm-3\\"
-+         for=\\"9\\"
-+       >
-+         Gateway
-+       </label>
 +       <div
-+         class=\\"col-sm-8\\"
++         class=\\"form-group\\"
 +       >
++         <label
++           class=\\"form-control-label\\"
++           for=\\"9\\"
++         >
++           Gateway
++         </label>
 +         <div
 +           class=\\"input-group\\"
 +         >
@@ -738,17 +732,17 @@ exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
 +       </div>
 +     </div>
 +     <div
-+       class=\\"form-group row\\"
++       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <label
-+         class=\\"form-control-label col-sm-3\\"
-+         for=\\"10\\"
-+       >
-+         Prefix
-+       </label>
 +       <div
-+         class=\\"col-sm-8\\"
++         class=\\"form-group\\"
 +       >
++         <label
++           class=\\"form-control-label\\"
++           for=\\"10\\"
++         >
++           Prefix
++         </label>
 +         <div
 +           class=\\"input-group\\"
 +         >
@@ -773,17 +767,17 @@ exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
 +       </div>
 +     </div>
 +     <div
-+       class=\\"form-group row\\"
++       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <label
-+         class=\\"form-control-label col-sm-3\\"
-+         for=\\"11\\"
-+       >
-+         DNS server 1
-+       </label>
 +       <div
-+         class=\\"col-sm-8\\"
++         class=\\"form-group\\"
 +       >
++         <label
++           class=\\"form-control-label\\"
++           for=\\"11\\"
++         >
++           DNS server 1
++         </label>
 +         <div
 +           class=\\"input-group\\"
 +         >
@@ -802,17 +796,17 @@ exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
 +       </div>
 +     </div>
 +     <div
-+       class=\\"form-group row\\"
++       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <label
-+         class=\\"form-control-label col-sm-3\\"
-+         for=\\"12\\"
-+       >
-+         DNS server 2
-+       </label>
 +       <div
-+         class=\\"col-sm-8\\"
++         class=\\"form-group\\"
 +       >
++         <label
++           class=\\"form-control-label\\"
++           for=\\"12\\"
++         >
++           DNS server 2
++         </label>
 +         <div
 +           class=\\"input-group\\"
 +         >
@@ -834,10 +828,10 @@ exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
         MAC
       </h3>
       <div
-        class=\\"form-group row\\"
-@@ -153,10 +311,11 @@
-          </small>
-        </div>
+        class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
+@@ -145,10 +303,11 @@
+          Useful in cases, when a specific MAC address is required by your internet service provider.
+        </small>
       </div>
       <button
         class=\\"btn btn-primary  offset-lg-8 col-lg-3 col-sm-12\\"
@@ -854,24 +848,24 @@ exports[`<WAN/> Snapshot: MAC enabled 1`] = `
 - First value
 + Second value
 
-@@ -151,12 +151,48 @@
-          >
-            Useful in cases, when a specific MAC address is required by your internet service provider.
-          </small>
-        </div>
+@@ -143,12 +143,48 @@
+          class=\\"form-text text-muted\\"
+        >
+          Useful in cases, when a specific MAC address is required by your internet service provider.
+        </small>
       </div>
 +     <div
-+       class=\\"form-group row\\"
++       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <label
-+         class=\\"form-control-label col-sm-3\\"
-+         for=\\"9\\"
-+       >
-+         MAC address
-+       </label>
 +       <div
-+         class=\\"col-sm-8\\"
++         class=\\"form-group\\"
 +       >
++         <label
++           class=\\"form-control-label\\"
++           for=\\"9\\"
++         >
++           MAC address
++         </label>
 +         <div
 +           class=\\"input-group\\"
 +         >
@@ -922,51 +916,47 @@ router to the network, it is usually not necessary to change this setting.
       WAN IPv4
     </h3>
     <div
-      class="form-group row"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <label
-        class="form-control-label col-sm-3"
+        class="form-control-label"
         for="1"
       >
         IPv4 protocol
       </label>
-      <div
-        class="col-sm-8"
+      <select
+        class="form-control"
+        id="1"
       >
-        <select
-          class="form-control"
-          id="1"
+        <option
+          value="dhcp"
         >
-          <option
-            value="dhcp"
-          >
-            DHCP (automatic configuration)
-          </option>
-          <option
-            value="static"
-          >
-            Static IP address (manual configuration)
-          </option>
-          <option
-            value="pppoe"
-          >
-            PPPoE (for DSL bridges, Modem Turris, etc.)
-          </option>
-        </select>
-      </div>
+          DHCP (automatic configuration)
+        </option>
+        <option
+          value="static"
+        >
+          Static IP address (manual configuration)
+        </option>
+        <option
+          value="pppoe"
+        >
+          PPPoE (for DSL bridges, Modem Turris, etc.)
+        </option>
+      </select>
     </div>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
     >
-      <label
-        class="form-control-label col-sm-3"
-        for="2"
-      >
-        DHCP hostname
-      </label>
       <div
-        class="col-sm-8"
+        class="form-group"
       >
+        <label
+          class="form-control-label"
+          for="2"
+        >
+          DHCP hostname
+        </label>
         <div
           class="input-group"
         >
@@ -988,78 +978,74 @@ router to the network, it is usually not necessary to change this setting.
       WAN IPv6
     </h3>
     <div
-      class="form-group row"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <label
-        class="form-control-label col-sm-3"
+        class="form-control-label"
         for="3"
       >
         IPv6 protocol
       </label>
-      <div
-        class="col-sm-8"
+      <select
+        class="form-control"
+        id="3"
       >
-        <select
-          class="form-control"
-          id="3"
+        <option
+          value="none"
         >
-          <option
-            value="none"
-          >
-            Disable IPv6
-          </option>
-          <option
-            value="dhcpv6"
-          >
-            DHCPv6 (automatic configuration)
-          </option>
-          <option
-            value="static"
-          >
-            Static IP address (manual configuration)
-          </option>
-          <option
-            value="6to4"
-          >
-            6to4 (public IPv4 address required)
-          </option>
-          <option
-            value="6in4"
-          >
-            6in4 (public IPv4 address required)
-          </option>
-        </select>
-      </div>
+          Disable IPv6
+        </option>
+        <option
+          value="dhcpv6"
+        >
+          DHCPv6 (automatic configuration)
+        </option>
+        <option
+          value="static"
+        >
+          Static IP address (manual configuration)
+        </option>
+        <option
+          value="6to4"
+        >
+          6to4 (public IPv4 address required)
+        </option>
+        <option
+          value="6in4"
+        >
+          6in4 (public IPv4 address required)
+        </option>
+      </select>
     </div>
     <h3>
       MAC
     </h3>
     <div
-      class="form-group row"
+      class="col-sm-12 offset-lg-1 col-lg-10"
+      style="margin-bottom: 1rem;"
     >
       <div
-        class="form-label col-sm-3"
+        class="form-group form-check"
+        style="margin-bottom: 0px;"
       >
+        <input
+          class="form-check-input"
+          id="4"
+          type="checkbox"
+        />
         <label
           class="form-label"
           for="4"
+          style="margin-bottom: 0px;"
         >
           Custom MAC address
         </label>
       </div>
-      <div
-        class="form-check col-sm-8"
+      <small
+        class="form-text text-muted"
       >
-        <input
-          id="4"
-          type="checkbox"
-        />
-        <small
-          class="form-text text-muted"
-        >
-          Useful in cases, when a specific MAC address is required by your internet service provider.
-        </small>
-      </div>
+        Useful in cases, when a specific MAC address is required by your internet service provider.
+      </small>
     </div>
     <button
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"

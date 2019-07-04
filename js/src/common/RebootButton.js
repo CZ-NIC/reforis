@@ -15,7 +15,7 @@ import Button from './bootstrap/Button';
 
 
 RebootButton.propTypes = {
-    forisFormSize: propTypes.bool.isRequired,
+    forisFormSize: propTypes.bool,
 };
 
 export default function RebootButton({forisFormSize}) {

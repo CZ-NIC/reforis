@@ -11,7 +11,7 @@ import Select from '../common/bootstrap/Select';
 import TextInput from '../common/bootstrap/TextInput';
 import DHCPClientForm, {validateDHCPForm} from '../common/network/DHCPClientForm';
 import StaticIPForm, {validateStaticForm} from '../common/network/StaticIPForm';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const WAN_TYPES = {
     dhcp: 'dhcp',
@@ -26,21 +26,21 @@ const WAN_TYPE_CHOICES = {
 };
 
 const FIELDS_PROP_TYPES = {
-    wan_static: propTypes.object,
-    wan_dhcp: propTypes.object,
-    wan_pppoe: propTypes.object,
+    wan_static: PropTypes.object,
+    wan_dhcp: PropTypes.object,
+    wan_pppoe: PropTypes.object,
 };
 
 WANForm.propTypes = {
-    formData: propTypes.shape({
-            wan_settings: propTypes.shape({
-                wan_type: propTypes.string.isRequired,
+    formData: PropTypes.shape({
+            wan_settings: PropTypes.shape({
+                wan_type: PropTypes.string.isRequired,
                 ...FIELDS_PROP_TYPES
             })
         }
     ).isRequired,
-    formErrors: propTypes.shape(FIELDS_PROP_TYPES),
-    setFormValue: propTypes.func.isRequired,
+    formErrors: PropTypes.shape(FIELDS_PROP_TYPES),
+    setFormValue: PropTypes.func.isRequired,
 };
 
 WANForm.defaultProps = {
@@ -100,8 +100,8 @@ export default function WANForm({formData, formErrors, setFormValue, ...props}) 
 }
 
 PPPoEForm.propTypes = {
-    username: propTypes.string,
-    password: propTypes.string,
+    username: PropTypes.string,
+    password: PropTypes.string,
 };
 
 PPPoEForm.defaultProps = {
