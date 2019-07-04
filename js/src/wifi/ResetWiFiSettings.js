@@ -8,7 +8,7 @@
 import React, {useEffect, useState} from 'react';
 
 import Button from '../common/bootstrap/Button';
-import {useAPIGet} from '../common/APIhooks';
+import {useAPIPost} from '../common/APIhooks';
 import API from '../common/API';
 import Alert from '../common/bootstrap/Alert';
 
@@ -25,7 +25,7 @@ export default function ResetWiFiSettings({ws}) {
             })
     }, [ws]);
 
-    const [data, trigger] = useAPIGet(API.wifiReset);
+    const [data, trigger] = useAPIPost(API.wifiReset);
     const [alert, setAlert] = useState(false);
     useEffect(() => {
         if (data.data)

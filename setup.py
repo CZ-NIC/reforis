@@ -59,6 +59,7 @@ setuptools.setup(
         'Babel==2.7.0',
         'Flask-Babel==0.12.2',
         'Flask-Session==0.3.1',
+        'flask-seasurf==0.2.2',
         'flup',
     ],
 

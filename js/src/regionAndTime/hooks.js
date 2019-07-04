@@ -6,7 +6,7 @@
  */
 
 import {useEffect, useState} from 'react';
-import {useAPIGet} from '../common/APIhooks';
+import {useAPIPost} from '../common/APIhooks';
 import API_URLs from '../common/API';
 
 export default function useNTPDate(ws) {
@@ -16,7 +16,7 @@ export default function useNTPDate(ws) {
         isLoading: false
     });
 
-    const [updateTimeState, updateTime] = useAPIGet(API_URLs.ntpUpdate);
+    const [updateTimeState, updateTime] = useAPIPost(API_URLs.ntpUpdate);
     useEffect(() => {
         if (updateTimeState.data) {
             setState((prevState,) => ({...prevState, id: updateTimeState.data.id}))
