@@ -5,18 +5,20 @@
  * See /LICENSE for more information.
  */
 
+import {Link} from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import React from 'react';
+
 import {STEPS, URL_PREFIX} from './constance';
+
 import {withRouter} from 'react-router';
-import {Link} from 'react-router-dom';
 import {useGuideFinish} from './hooks';
 
-const NAVIGATION_CONTAINER_ID = 'steps_container';
+const GUIDE_NAVIGATION_CONTAINER_ID = 'steps_container';
 
 
 function GuideNavigation({workflow_steps, passed, next_step, location}) {
-    const alertContainer = document.getElementById(NAVIGATION_CONTAINER_ID);
+    const guideNavigationContainer = document.getElementById(GUIDE_NAVIGATION_CONTAINER_ID);
     const onGuideFinishHandler = useGuideFinish();
 
     const navigationItems = workflow_steps.map(
@@ -42,7 +44,7 @@ function GuideNavigation({workflow_steps, passed, next_step, location}) {
                 {_('Skip guide')}
             </button>
         </>,
-        alertContainer,
+        guideNavigationContainer,
     )
 }
 

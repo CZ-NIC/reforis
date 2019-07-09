@@ -11,17 +11,19 @@ which is done in `ForisAPI` Blueprint.
 
 from flask import Blueprint, current_app, redirect, render_template, request, session, url_for
 from flask_babel import gettext as _
+
 from reforis.auth import login_to_foris, logout_from_foris
-from reforis.locale import get_timezone_translations
 
 # pylint: disable=invalid-name
 views = Blueprint('Foris', __name__)
 
 
-@views.route('/', methods=['GET'])
-def overview():
-    """Overview page"""
-    return render_template('overview.html')
+# pylint: disable=unused-argument
+@views.route('/', defaults={'path': ''})
+@views.route('/<path:path>')
+def index(path):
+    """Main page."""
+    return render_template('base.html')
 
 
 @views.route('/login', methods=['GET', 'POST'])
@@ -62,79 +64,6 @@ def logout():
 def notifications():
     """Notifications page"""
     return render_template('notifications.html')
-
-
-@views.route('/wifi', methods=['GET'])
-def wifi():
-    """WiFi settings page"""
-    return render_template('network_settings/wifi.html')
-
-
-@views.route('/wan', methods=['GET'])
-def wan():
-    """WAN settings page"""
-    return render_template('network_settings/wan.html')
-
-
-@views.route('/lan', methods=['GET'])
-def lan():
-    """WAN settings page"""
-    return render_template('network_settings/lan.html')
-
-
-@views.route('/dns', methods=['GET'])
-def dns():
-    """DNS settings page"""
-    return render_template('network_settings/dns.html')
-
-
-@views.route('/interfaces', methods=['GET'])
-def interfaces():
-    """Network interfaces settings page"""
-    return render_template('network_settings/interfaces.html')
-
-
-@views.route('/guest-network', methods=['GET'])
-def guest_network():
-    """Guest network settings page"""
-    return render_template('network_settings/guest_network.html')
-
-
-@views.route('/password', methods=['GET'])
-def password():
-    """Root and foris password settings page"""
-    return render_template('administration/password.html')
-
-
-@views.route('/region-and-time', methods=['GET'])
-def region_and_time():
-    """Region and time settings page"""
-    translations = get_timezone_translations()
-    return render_template('administration/region_and_time.html', babel_tzinfo_catalog=translations.json_catalog)
-
-
-@views.route('/notifications-settings', methods=['GET'])
-def notifications_settings():
-    """Notifications settings page"""
-    return render_template('administration/notifications_settings.html')
-
-
-@views.route('/reboot', methods=['GET'])
-def reboot():
-    """Reboot device page"""
-    return render_template('administration/reboot.html')
-
-
-@views.route('/updates', methods=['GET'])
-def updates():
-    """Updates settings page"""
-    return render_template('updates.html')
-
-
-@views.route('/packages', methods=['GET'])
-def packages():
-    """Packages settings page"""
-    return render_template('packages.html')
 
 
 @views.route('/about', methods=['GET'])

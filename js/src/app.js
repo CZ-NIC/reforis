@@ -10,8 +10,9 @@ import {render} from 'react-dom';
 
 import WebSockets from './common/WebSockets';
 
+import Main from './main/Main';
+
 import Overview from './overview/Overview';
-import RouterStateHandler from './routerStateHandler/RouterStateHandler';
 
 import NotificationsDropdown from './notifications/NotificationsDropdown/NotificationsDropdown';
 import Notifications from './notifications/Notifications/Notifications';
@@ -31,44 +32,113 @@ import Reboot from './reboot/Reboot';
 import Updates from './updates/Updates';
 import Packages from './packages/Packages';
 import LanguagesDropdown from './languagesDropdown/LanguagesDropdown';
+import RouterStateHandler from './routerStateHandler/RouterStateHandler';
 import Guide from './guide/Guide';
+
 
 const ws = new WebSockets();
 
+/** This list describes positioning of pages in navigation menu and routing rules. */
+export const ROUTES = [
+    {
+        name: _('Overview'),
+        path: '/overview',
+        icon: 'list',
+        component: Overview,
+    },
+    {
+        name: _('Network Settings'),
+        path: '/network-settings',
+        icon: 'network-wired',
+        routes: [
+            {
+                name: _('Wi-Fi'),
+                path: '/wifi',
+                component: WiFi
+            },
+            {
+                name: _('WAN'),
+                path: '/wan',
+                component: WAN
+            },
+            {
+                name: _('LAN'),
+                path: '/lan',
+                component: LAN
+            },
+            {
+                name: _('DNS'),
+                path: '/dns',
+                component: DNS
+            },
+            {
+                name: _('Interfaces'),
+                path: '/interfaces',
+                component: Interfaces
+            },
+            {
+                name: _('Guest Network'),
+                path: '/guest-network',
+                component: GuestNetwork
+            },
+        ],
+    },
+    {
+        name: _('Administration'),
+        path: '/administration',
+        icon: 'user-cog',
+        routes: [
+            {
+                name: _('Password'),
+                path: '/password',
+                component: Password
+            },
+            {
+                name: _('Region&Time'),
+                path: '/region-and-time',
+                component: RegionAndTime
+            },
+            {
+                name: _('Notification Settings'),
+                path: '/notifications-settings',
+                component: NotificationsSettings
+            },
+            {
+                name: _('Reboot'),
+                path: '/reboot',
+                component: Reboot
+            },
+        ],
+    },
+    {
+        name: _('Updates'),
+        path: '/updates',
+        icon: 'sync',
+        component: Updates
+    },
+    {
+        name: _('Packages'),
+        path: '/packages',
+        icon: 'box',
+        component: Packages
+    },
+];
+
 window.addEventListener('load', () => {
     const apps = [
-        // Network settings
-        {id: 'wifi_container', component: WiFi},
-        {id: 'wan_container', component: WAN},
-        {id: 'lan_container', component: LAN},
-        {id: 'dns_container', component: DNS},
-        {id: 'interfaces_container', component: Interfaces},
-        {id: 'guest_network_container', component: GuestNetwork},
-
-        // Administration
-        {id: 'password_container', component: Password},
-        {id: 'region_and_time_container', component: RegionAndTime},
-        {id: 'notifications_settings_container', component: NotificationsSettings},
-        {id: 'reboot_container', component: Reboot},
-
-        // Updater
-        {id: 'updates_container', component: Updates},
-        {id: 'packages_container', component: Packages},
-
-        // Top bar
         {id: 'notifications_dropdown_container', component: NotificationsDropdown},
-        {id: 'languages_dropdown_container', component: LanguagesDropdown},
-
-        // Other
-        {id: 'router_state_handler_container', component: RouterStateHandler},
         {id: 'notifications_container', component: Notifications},
-        {id: 'overview_container', component: Overview},
+        {id: 'languages_dropdown_container', component: LanguagesDropdown},
+        {id: 'router_state_handler_container', component: RouterStateHandler},
         {id: 'guide_container', component: Guide},
     ];
 
     for (let app of apps) {
-        const appElm = document.getElementById(app.id);
-        if (!appElm) continue;
-        render(<app.component ws={ws}/>, appElm);
+        const appContainer = document.getElementById(app.id);
+        if (!appContainer) continue;
+        render(<app.component ws={ws}/>, appContainer);
     }
+
+    const mainContainer = document.getElementById('content_container');
+    render(<Main ws={ws} routes={ROUTES}/>, mainContainer);
 }, false);

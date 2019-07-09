@@ -1,13 +1,3 @@
-{% macro dropdown_item(name, endpoint) -%}
-    <li {% if request.url_rule.endpoint == endpoint %}class="active"{% endif %}>
-        <a class='text-center' href="{{ url_for(endpoint) }}">
-            <small>{{ name }}</small>
-        </a>
-    </li>
-{%- endmacro %}
-
-{% set network_dropdown_is_active = request.url_rule.endpoint in ['Foris.wan', 'Foris.lan', 'Foris.wifi', 'Foris.dns', 'Foris.interfaces', 'Foris.guest_network'] %}
-{% set administration_dropdown_is_active = request.url_rule.endpoint in ['Foris.password', 'Foris.reboot', 'Foris.region_and_time','Foris.notifications_settings'] %}
 {% set plugins_dropdown_is_active = request.path[:-1] in plugins_urls %}
 
 <nav id="sidebar">
@@ -17,77 +7,17 @@
     </div>
 
     <ul class="list-unstyled">
-        <li {% if request.url_rule.endpoint == 'Foris.overview' %}class="active"{% endif %}>
-            <a href="{{ url_for('Foris.overview') }}">
-                <i class="fas fa-list"></i>&nbsp;
-                {% trans %}Overview{% endtrans %}
-            </a>
-        </li>
-
-        <li{% if network_dropdown_is_active %} class="active" {% endif %}>
-            <a href="#network-settings-submenu"
-               class="dropdown-toggle"
-               data-toggle="collapse"
-            >
-                <i class="fas fa-network-wired"></i>&nbsp;
-                {% trans %}Network settings{% endtrans %}
-            </a>
-            <ul
-                    class="collapse list-unstyled {% if network_dropdown_is_active %} show {% endif %}"
-                    id="network-settings-submenu"
-            >
-                {{ dropdown_item('WAN','Foris.wan') }}
-                {{ dropdown_item('LAN','Foris.lan') }}
-                {{ dropdown_item('Wi-Fi','Foris.wifi') }}
-                {{ dropdown_item('DNS','Foris.dns') }}
-                {{ dropdown_item(gettext('Interfaces'),'Foris.interfaces') }}
-                {{ dropdown_item(gettext('Guest network'),'Foris.guest_network') }}
-            </ul>
-
-
-        <li{% if administration_dropdown_is_active %} class="active" {% endif %}>
-            <a href="#administration-settings-submenu"
-               class="dropdown-toggle"
-               data-toggle="collapse"
-            >
-                <i class="fas fa-user-cog"></i>&nbsp;
-                {% trans %}Administration{% endtrans %}
-            </a>
-            <ul
-                    class="collapse list-unstyled {% if administration_dropdown_is_active %} show {% endif %}"
-                    id="administration-settings-submenu"
-            >
-                {{ dropdown_item(gettext('Password'),'Foris.password') }}
-                {{ dropdown_item(gettext('Region and time'),'Foris.region_and_time') }}
-                {{ dropdown_item(gettext('Notifications settings'),'Foris.notifications_settings') }}
-                {{ dropdown_item(gettext('Reboot'),'Foris.reboot') }}
-            </ul>
-
-        </li>
-        <li {% if request.url_rule.endpoint == 'Foris.updates' %}class="active"{% endif %}>
-            <a href="{{ url_for('Foris.updates') }}">
-                <i class="fas fa-sync"></i>&nbsp;
-                {% trans %}Updates{% endtrans %}
-            </a>
-        </li>
-
-        <li {% if request.url_rule.endpoint == 'Foris.packages' %}class="active"{% endif %}>
-            <a href="{{ url_for('Foris.packages') }}">
-                <i class="fas fa-box"></i>&nbsp;
-                {% trans %}Packages{% endtrans %}
-            </a>
-        </li>
-
+        <div id="navigation_container"></div>
         <li>
             <a href="/cgi-bin/luci">
-                <i class="fas fa-cog"></i>&nbsp;
+                <i class="fas fa-cog"></i>&nbsp;&nbsp;&nbsp;
                 {% trans %}Advanced administration{% endtrans %}
             </a>
         </li>
 
         <li {% if request.url_rule.endpoint == 'Foris.about' %}class="active"{% endif %}>
             <a href="{{ url_for('Foris.about') }}">
-                <i class="fas fa-info-circle"></i>&nbsp;
+                <i class="fas fa-fw fa-info-circle"></i>&nbsp;&nbsp;&nbsp;
                 {% trans %}About{% endtrans %}
             </a>
         </li>
@@ -97,7 +27,7 @@
                class="dropdown-toggle"
                data-toggle="collapse"
             >
-                <i class="fas fa-puzzle-piece"></i>&nbsp;
+                <i class="fas fa-fw fa-puzzle-piece"></i>&nbsp;&nbsp;&nbsp;
                 {% trans %}Plugins{% endtrans %}
             </a>
             <ul

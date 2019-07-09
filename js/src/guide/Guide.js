@@ -7,8 +7,8 @@
 
 import React, {useEffect} from 'react';
 
-import {Redirect, Route, Router} from 'react-router';
-import {createBrowserHistory} from "history";
+import {Redirect, Route} from 'react-router';
+import {createBrowserHistory} from 'history';
 
 
 import {useAPIGet} from '../common/APIhooks';
@@ -16,6 +16,7 @@ import API_URLs from '../common/API';
 import Spinner from '../common/bootstrap/Spinner';
 import GuideNavigation from './GuideNavigation';
 import {STEPS, URL_PREFIX} from './constance';
+import {BrowserRouter} from 'react-router-dom';
 
 const guideHistory = createBrowserHistory();
 
@@ -43,7 +44,7 @@ export default function Guide({ws}) {
     const {available_workflows, workflow_steps, next_step, passed} = guideData.data;
 
     return <>
-        <Router history={guideHistory}>
+        <BrowserRouter>
             <GuideNavigation
                 workflow_steps={workflow_steps}
                 passed={passed}
@@ -68,6 +69,6 @@ export default function Guide({ws}) {
                 )}
             </div>
             <Route render={() => <Redirect to={'/404'}/>} />
-        </Router>
+        </BrowserRouter>
     </>
 }
