@@ -1,4 +1,2 @@
 recursive-include reforis/templates *
-recursive-include reforis/translations *.mo
-
 recursive-include reforis_static/reforis *

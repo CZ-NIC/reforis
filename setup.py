@@ -8,6 +8,7 @@
 import copy
 import os
 import pathlib
+import re
 
 import setuptools
 from setuptools.command.build_py import build_py
@@ -25,16 +26,23 @@ class CustomBuild(build_py):
         # compile translation
         from babel.messages import frontend as babel
 
-        def compile_domain(domain):
+        def compile_domain(domain, path):
             distribution = copy.copy(self.distribution)
             cmd = babel.compile_catalog(distribution)
-            cmd.directory = str(BASE_DIR / 'reforis/translations')
+            cmd.input_file = str(path)
+            lang = re.match(r".*/reforis/translations/([^/]+)/LC_MESSAGES/.*po", str(path)).group(1)
+            out_path = BASE_DIR / self.build_lib / f"reforis/transtlations/{lang}/LC_MESSAGES/{domain}.mo"
+            out_path.parent.mkdir(parents=True, exist_ok=True)
+            cmd.output_file = str(out_path)
             cmd.domain = domain
             cmd.ensure_finalized()
             cmd.run()
 
-        compile_domain('messages')
-        compile_domain('tzinfo')
+        for path in BASE_DIR.glob("reforis/translations/*/LC_MESSAGES/messages.po"):
+            compile_domain('messages', path)
+
+        for path in BASE_DIR.glob("reforis/translations/*/LC_MESSAGES/tzinfo.po"):
+            compile_domain('tzinfo', path)
 
     def npm_install_and_build(self):
         os.system(f'cd {BASE_DIR}/js; npm install --save-dev')
