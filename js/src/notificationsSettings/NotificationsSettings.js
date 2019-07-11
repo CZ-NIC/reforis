@@ -15,6 +15,7 @@ import validator from './validator';
 
 export default function NotificationsSettings({ws}) {
     return <>
+        <h1>{_('Notifications settings')}</h1>
         <ForisForm
             ws={ws}
             forisConfig={{

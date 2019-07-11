@@ -10,35 +10,25 @@
 
     <ul class="list-unstyled">
         <div id="navigation_container"></div>
+
         <li>
-            <a href="/cgi-bin/luci">
-                <i class="fas fa-cog"></i>&nbsp;&nbsp;&nbsp;
-                {% trans %}Advanced administration{% endtrans %}
-            </a>
-        </li>
-
-        <li {% if request.url_rule.endpoint == 'Foris.about' %}class="active"{% endif %}>
-            <a href="{{ url_for('Foris.about') }}">
-                <i class="fas fa-fw fa-info-circle"></i>&nbsp;&nbsp;&nbsp;
-                {% trans %}About{% endtrans %}
-            </a>
-        </li>
-
-        <li{% if plugins_dropdown_is_active %} class="active"{% endif %}>
             <a href="#plugins-settings-submenu"
-               class="dropdown-toggle"
-               data-toggle="collapse"
+                class="dropdown-toggle {% if plugins_dropdown_is_active %}active{% endif %}"
+                data-toggle="collapse"
             >
                 <i class="fas fa-fw fa-puzzle-piece"></i>&nbsp;&nbsp;&nbsp;
                 {% trans %}Plugins{% endtrans %}
             </a>
             <ul
-                    class="collapse list-unstyled {% if plugins_dropdown_is_active %} show {% endif %}"
-                    id="plugins-settings-submenu"
+                class="collapse list-unstyled {% if plugins_dropdown_is_active %} show {% endif %}"
+                id="plugins-settings-submenu"
             >
                 {% for plugin in plugins %}
-                    <li {% if request.path.startswith(plugin.url_prefix) %}class="active"{% endif %}>
-                        <a class='text-center' href="{{ plugin.url_prefix }}">
+                    <li>
+                        <a
+                            class="text-center {% if request.path.startswith(plugin.url_prefix) %}active{% endif %}"
+                            href="{{ plugin.url_prefix }}"
+                        >
                             <small>{{ plugin.name }}</small>
                         </a>
                     </li>

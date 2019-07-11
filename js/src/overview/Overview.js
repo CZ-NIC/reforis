@@ -12,6 +12,7 @@ import RebootIsRequiredAlert from './RebootIsRequiredAlert';
 
 export default function Overview({ws}) {
     return <>
+        <h1>{_('Overview')}</h1>
         <RebootIsRequiredAlert ws={ws}/>
         <UpdateApprovals/>
     </>

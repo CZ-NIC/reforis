@@ -35,6 +35,8 @@ const API_URLs = new Proxy({
         packages: '/packages',
         reboot: '/reboot',
 
+        about: '/about',
+
         healthCheck: '/health-check',
 
         guide: '/guide',

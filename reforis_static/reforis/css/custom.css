@@ -74,6 +74,29 @@ form > button {
     color: gray;
 }
 
+#sidebar a.active {
+    color: #fff;
+    background: #00a2e2;
+}
+
+#sidebar a.dropdown-toggle + ul {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+#sidebar a.active .fas {
+    color: #fff;
+}
+
+#sidebar a:hover .fas {
+    color: grey;
+}
+
+#sidebar ul li a:hover {
+    color: #000;
+    background: #cbe8f5;
+    text-decoration: none;
+}
+
 #sidebar-header {
     display: flex;
     flex-direction: column;
@@ -99,19 +122,6 @@ form > button {
     white-space: nowrap
 }
 
-#sidebar ul li a:hover {
-    background: #cbe8f5;
-    text-decoration: none;
-}
-
-#sidebar ul li.active > a {
-    color: #fff;
-    background: #00a2e2;
-}
-
-#sidebar ul li.active .fas {
-    color: #fff;
-}
 
 /* Drop-down menus */
 

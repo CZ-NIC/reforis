@@ -9,8 +9,9 @@ const REFORIS_PREFIX = process.env.NODE_ENV === 'production' ? '/reforis' : '';
 
 export const ForisURLs = {
     login: `${REFORIS_PREFIX}/login`,
+    wifi: `${REFORIS_PREFIX}/network-settings/wifi`,
     notifications: `${REFORIS_PREFIX}/notifications`,
-    notificationsSettings: `${REFORIS_PREFIX}/notifications-settings`,
+    notificationsSettings: `${REFORIS_PREFIX}/administration/notifications-settings`,
     updates: `${REFORIS_PREFIX}/updates`,
     static: `${REFORIS_PREFIX}/static/reforis`,
     luci: '/cgi-bin/luci',

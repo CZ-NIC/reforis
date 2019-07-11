@@ -26,6 +26,8 @@ from flask import current_app
         ('packages', 'updater', True),
         ('approvals', 'updater', True),
 
+        ('about', 'about', False),
+
         ('health-check', None, False),
 
         ('guide', 'web', False),

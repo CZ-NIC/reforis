@@ -14,13 +14,13 @@
     {# Font awesome #}
     <link rel="stylesheet" href="{{ url_for('static', filename = 'reforis/css/fontawesome.min.css') }}"/>
 
-    {# Custom CSS #}
+    {# CSS #}
     <link rel="stylesheet" href="{{ url_for('static', filename = 'reforis/css/custom.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'reforis/css/react-datatime.css') }}"/>
     {% block css %}{% endblock %}
 
-    {# Custom js#}
+    {# JS #}
     {% include 'includes/locale.html' %}
-
     <script type="text/javascript" src="{{ url_for('static', filename = 'reforis/js/app.min.js') }}"></script>
     {% block js %}{% endblock %}
 
@@ -28,6 +28,7 @@
 </head>
 
 <body>
+<div id="app_container"></div>
 <div class="wrapper">
     {% block navigation %}{% include "includes/navigation.html" %}{% endblock %}
     <div id="content">
@@ -48,7 +49,6 @@
                 {% endif %}
             </div>
             {% block content %}{% endblock %}
-            <div id="content_container"></div>
         </div>
     </div>
 </div>

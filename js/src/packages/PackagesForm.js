@@ -23,7 +23,7 @@ PackagesForm.propTypes = {
 
 export default function PackagesForm({formData, formErrors, setFormValue, ...props}) {
     return <>
-        <h3>{_('Packages')}</h3>
+        <h3>{_('Packages list')}</h3>
         {formData.user_lists.map(
             (_package, idx) => <CheckBox
                 label={_package.title}

@@ -13,25 +13,38 @@ import GuestNetworkForm from './GuestNetworkForm';
 import API_URLs from '../common/API';
 import {validateIPv4Address} from '../common/validations';
 import GuestNetworkDHCPClientsList from './GuestNetworkDHCPClientsList';
+import {ForisURLs} from '../common/constants';
 
 GuestNetwork.propTypes = {
     ws: propTypes.object.isRequired
 };
 
 export default function GuestNetwork({ws}) {
-    return <ForisForm
-        ws={ws}
-        forisConfig={{
-            endpoint: API_URLs.guestNetwork,
-            wsModule: 'guest'
+    return <>
+        <h1>{_('Guest network')}</h1>
+        <p dangerouslySetInnerHTML={{
+            __html: _(`
+Guest network is used for <a href="${ForisURLs.wifi}">guest Wi-Fi</a>.
+It is separated from your ordinary LAN. Devices connected to this network are allowed to access the
+internet, but are not allowed to access the configuration interface of the this device nor the devices
+in LAN.
+        `)
         }}
-        prepData={prepData}
-        prepDataToSubmit={prepDataToSubmit}
-        validator={validator}
-    >
-        <GuestNetworkForm/>
-        <GuestNetworkDHCPClientsList/>
-    </ForisForm>
+        />
+        <ForisForm
+            ws={ws}
+            forisConfig={{
+                endpoint: API_URLs.guestNetwork,
+                wsModule: 'guest'
+            }}
+            prepData={prepData}
+            prepDataToSubmit={prepDataToSubmit}
+            validator={validator}
+        >
+            <GuestNetworkForm/>
+            <GuestNetworkDHCPClientsList/>
+        </ForisForm>
+    </>
 }
 
 function prepData(formData) {

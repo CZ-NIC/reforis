@@ -598,6 +598,16 @@ def guide_workflow():
     return jsonify(current_app.backend.perform('web', 'update_guide', {'enabled': True, **data}))
 
 
+@api.route('/about', methods=['GET'])
+def about():
+    """
+        About.
+        See ``get``  action in the `foris-controller about module JSON schema
+        <https://gitlab.labs.nic.cz/turris/foris-controller/blob/master/foris_controller_modules/about/schema/about.json>`_.
+    """
+    return jsonify(**current_app.backend.perform('about', 'get'))
+
+
 def _foris_controller_settings_call(module):
     """
     "Translate" typical ``foris-controller`` module to HTTP endpoint with ``GET`` and ``POST`` methods.

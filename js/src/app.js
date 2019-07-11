@@ -14,7 +14,6 @@ import Main from './main/Main';
 
 import Overview from './overview/Overview';
 
-import NotificationsDropdown from './notifications/NotificationsDropdown/NotificationsDropdown';
 import Notifications from './notifications/Notifications/Notifications';
 
 import WiFi from './wifi/WiFi';
@@ -31,14 +30,16 @@ import Reboot from './reboot/Reboot';
 
 import Updates from './updates/Updates';
 import Packages from './packages/Packages';
-import LanguagesDropdown from './languagesDropdown/LanguagesDropdown';
-import RouterStateHandler from './routerStateHandler/RouterStateHandler';
-import Guide from './guide/Guide';
+import {ForisURLs} from './common/constants';
+import About from './about/About';
 
 
 const ws = new WebSockets();
 
-/** This list describes positioning of pages in navigation menu and routing rules. */
+/**
+ * This list describes positioning of pages in navigation menu and routing rules.
+ * Icons are icon names from font awesome.
+ * */
 export const ROUTES = [
     {
         name: _('Overview'),
@@ -94,7 +95,7 @@ export const ROUTES = [
                 component: Password
             },
             {
-                name: _('Region&Time'),
+                name: _('Region & Time'),
                 path: '/region-and-time',
                 component: RegionAndTime
             },
@@ -122,23 +123,30 @@ export const ROUTES = [
         icon: 'box',
         component: Packages
     },
+    {
+        name: _('Advanced administration'),
+        path: ForisURLs.luci,
+        icon: 'cog',
+        isLink: true,
+    },
+    {
+        name: _('About'),
+        path: '/about',
+        icon: 'info-circle',
+        component: About
+    },
+
+    // Hidden in navigation menu
+    {
+        name: _('Notifications'),
+        path: '/notifications',
+        component: Notifications,
+        isHidden: true,
+    }
 ];
 
 window.addEventListener('load', () => {
-    const apps = [
-        {id: 'notifications_dropdown_container', component: NotificationsDropdown},
-        {id: 'notifications_container', component: Notifications},
-        {id: 'languages_dropdown_container', component: LanguagesDropdown},
-        {id: 'router_state_handler_container', component: RouterStateHandler},
-        {id: 'guide_container', component: Guide},
-    ];
-
-    for (let app of apps) {
-        const appContainer = document.getElementById(app.id);
-        if (!appContainer) continue;
-        render(<app.component ws={ws}/>, appContainer);
-    }
-
-    const mainContainer = document.getElementById('content_container');
-    render(<Main ws={ws} routes={ROUTES}/>, mainContainer);
+    const mainContainer = document.getElementById('app_container');
+    if (mainContainer)
+        render(<Main ws={ws} routes={ROUTES}/>, mainContainer);
 }, false);

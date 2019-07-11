@@ -18,13 +18,13 @@ SuccessAlert.propTypes = {
 };
 
 export function SuccessAlert({onDismiss}) {
-    const alertContainer = document.getElementById(ALERT_CONTAINER_ID);
     const alert = <Alert
         type='success'
         message={_('Settings were successfully saved.')}
         onDismiss={onDismiss}
     />;
 
+    const alertContainer = document.getElementById(ALERT_CONTAINER_ID);
     return ReactDOM.createPortal(
         alert,
         alertContainer,

@@ -7,6 +7,7 @@
 
 import React from 'react';
 import propTypes from 'prop-types';
+import ReactDOM from 'react-dom';
 
 import NotificationsDropdownButton from './NotificationsDropdownButton';
 import NotificationsDropdownMenu from './NotificationsDropdownMenu';
@@ -20,17 +21,20 @@ NotificationsDropdown.propTypes = {
 export default function NotificationsDropdown({ws}) {
     const [notifications, dismiss, dismissAll] = useNotifications(ws);
     const newNotification = useNewNotification(ws);
+    const container = document.getElementById('notifications_dropdown_container');
+    return ReactDOM.createPortal(
+        <div id='notifications' className='dropdown btn-group'>
+            <NotificationsDropdownButton
+                notificationsCount={notifications.length}
+                newNotification={newNotification}
+            />
+            <NotificationsDropdownMenu
+                notifications={notifications}
 
-    return <div id='notifications' className='dropdown btn-group'>
-        <NotificationsDropdownButton
-            notificationsCount={notifications.length}
-            newNotification={newNotification}
-        />
-        <NotificationsDropdownMenu
-            notifications={notifications}
-
-            dismiss={dismiss}
-            dismissAll={dismissAll}
-        />
-    </div>
+                dismiss={dismiss}
+                dismissAll={dismissAll}
+            />
+        </div>,
+        container,
+    );
 }

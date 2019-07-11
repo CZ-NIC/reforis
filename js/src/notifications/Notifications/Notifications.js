@@ -31,10 +31,11 @@ export default function Notifications({ws}) {
     }
 
     return <div id='notifications-center'>
-        {
-            notifications.length !== 0 ?
-                getDismissAllButton() : <p className='text-muted text-center'>{_('No notifications')}</p>
-        }
+        <h1>{_('Notifications')}</h1>
+
+        {notifications.length !== 0 ?
+            getDismissAllButton() :
+            <p className='text-muted text-center'>{_('No notifications')}</p>}
 
         <NotificationsList
             notifications={notifications}
