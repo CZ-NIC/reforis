@@ -31,7 +31,7 @@ class CustomBuild(build_py):
             cmd = babel.compile_catalog(distribution)
             cmd.input_file = str(path)
             lang = re.match(r".*/reforis/translations/([^/]+)/LC_MESSAGES/.*po", str(path)).group(1)
-            out_path = BASE_DIR / self.build_lib / f"reforis/transtlations/{lang}/LC_MESSAGES/{domain}.mo"
+            out_path = BASE_DIR / self.build_lib / f"reforis/translations/{lang}/LC_MESSAGES/{domain}.mo"
             out_path.parent.mkdir(parents=True, exist_ok=True)
             cmd.output_file = str(out_path)
             cmd.domain = domain
