@@ -52,7 +52,7 @@ class CustomBuild(build_py):
 
 setuptools.setup(
     name='reforis',
-    version='0.3.4',
+    version='0.3.5',
     packages=setuptools.find_packages(exclude=['tests']),
     include_package_data=True,
 
