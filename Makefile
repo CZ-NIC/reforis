@@ -26,7 +26,9 @@ all:
 	@echo "make test"
 	@echo "    Run tests on project."
 	@echo "make install"
-	@echo "    Install package in your system (for running on router)."
+	@echo "    Install package on router."
+	@echo "make install-with-lighttpd"
+	@echo "    Install package with lighttpd configuration and link /tmp/reforis to installed python packages for development."
 	@echo "make watch-js:"
 	@echo "    Run babel to compile JS in watch mode."
 	@echo "make run"
@@ -63,13 +65,19 @@ $(VENV_NAME)/bin/activate: setup.py
 
 install: setup.py
 	$(ROUTER_PYTHON) -m pip install -e .
-
+install-with-lighttpd:
+	opkg update
+	opkg install reforis
+	easy_install-3.6 pip
+	$(ROUTER_PYTHON) -m pip uninstall reforis -y
+	$(ROUTER_PYTHON) -m pip install -e .
+	ln -sf /tmp/reforis/reforis_static /usr/lib/python3.6/site-packages/reforis_static
+	/etc/init.d/lighttpd restart
 install-js: js/package.json
 	cd $(JS_DIR); npm install --save-dev
 
 run:
 	$(FLASK) run --host="0.0.0.0" --port=81
-
 run-ws:
 	foris-ws  --host "0.0.0.0" --port 9081 -a filesystem -d mqtt --mqtt-host localhost --mqtt-port 11883 \
 	--mqtt-passwd-file '/etc/fosquitto/credentials.plain';
@@ -91,7 +99,6 @@ test-js:
 	cd js; npm test
 test-web: venv
 	$(VENV_BIN)/$(DEV_PYTHON) -m pytest -vv tests
-
 test-js-update-snapshots:
 	cd js; npm test -- -u
 
