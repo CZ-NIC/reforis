@@ -15,7 +15,7 @@ configurations has two actions: ``get_settings`` and ``set_settings``. These end
 HTTP endpoint with ``GET`` and ``POST`` methods by appropriate actions.
 """
 
-from flask import Blueprint, current_app, jsonify, request
+from flask import Blueprint, current_app, jsonify, request, make_response
 from flask_babel import gettext as _
 
 from reforis import _get_locale_from_backend
@@ -560,7 +560,11 @@ def reboot():
 @api.route('/health-check', methods=['GET'])
 def health_check():
     """Check if server is run."""
-    return jsonify(True)
+    resp = make_response(jsonify(True))
+    resp.headers.add('Access-Control-Allow-Origin', '*')
+    resp.headers.add('Access-Control-Allow-Methods', 'GET, OPTIONS')
+    resp.headers.add('Access-Control-Allow-Headers', 'Origin, Accept, Content-Type, X-Requested-With')
+    return resp
 
 
 @api.route('/guide', methods=['GET'])

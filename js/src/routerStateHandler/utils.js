@@ -6,40 +6,46 @@
  */
 
 import axios from 'axios';
+import API_URLs from '../common/API';
 
-const HEALTH_CHECK_URL = '/api/health-check';
-const HEALTH_CHECK_TIMEOUT = 5000;
+const HEALTH_CHECK_TIMEOUT = 1000;
 const HEALTH_CHECK_INTERVAL = 1000;
+const REQUEST_HEADERS = {'Content-Type': 'application/json',};
 
 export function waitForDown(callback) {
     waitForDownPolling().then(() => callback());
 }
 
 function waitForDownPolling() {
-    const pool = resolve => {
-        axios.get(HEALTH_CHECK_URL, {timeout: HEALTH_CHECK_TIMEOUT})
-            .then(() => setTimeout(pool, HEALTH_CHECK_INTERVAL, resolve))
+    const poll = resolve => {
+        axios.get(API_URLs.healthCheck, {
+            headers: REQUEST_HEADERS,
+            timeout: HEALTH_CHECK_TIMEOUT,
+        })
+            .then(() => setTimeout(poll, HEALTH_CHECK_INTERVAL, resolve))
             .catch(() => resolve());
     };
-    return new Promise(pool);
+    return new Promise(poll);
 }
 
 export function tryReconnect(ips, reconnectUrlPath) {
     ips.forEach(async ip => {
-        //TODO: PORT is not needed on prod.
         const port = window.location.port === '' ? '' : ':' + window.location.port;
         const protocol = window.location.protocol;
         const baseURL = `${protocol}//${ip}${port}`;
-        waitForUpPolling(`${baseURL}${HEALTH_CHECK_URL}`)
+        waitForUpPolling(`${baseURL}${API_URLs.healthCheck}`)
             .then(() => window.location.replace(`${baseURL}${reconnectUrlPath}`));
     });
 }
 
 function waitForUpPolling(url) {
-    const pool = resolve => {
-        axios.get(url, {timeout: HEALTH_CHECK_TIMEOUT})
+    const poll = resolve => {
+        axios.get(url, {
+            headers: REQUEST_HEADERS,
+            timeout: HEALTH_CHECK_TIMEOUT,
+        })
             .then(() => resolve())
-            .catch(() => setTimeout(pool, HEALTH_CHECK_INTERVAL, resolve));
+            .catch(() => setTimeout(poll, HEALTH_CHECK_INTERVAL, resolve));
     };
-    return new Promise(pool);
+    return new Promise(poll);
 }
