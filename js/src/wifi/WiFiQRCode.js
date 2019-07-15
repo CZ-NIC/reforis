@@ -12,11 +12,14 @@ import propTypes from 'prop-types';
 import {Modal, ModalBody, ModalFooter, ModalHeader} from '../common/bootstrap/Modal';
 import Button from '../common/bootstrap/Button';
 import {createAndDownloadPdf, toQRCodeContent} from './qrCodeHelpers';
+import {ForisURLs} from '../common/constants';
 
 WiFiQRCode.propTypes = {
     SSID: propTypes.string.isRequired,
     password: propTypes.string.isRequired,
 };
+
+const QR_ICON_PATH = `${ForisURLs.static}/imgs/QR_icon.svg`;
 
 export default function WiFiQRCode({SSID, password}) {
     const [modal, setModal] = useState(false);
@@ -28,7 +31,7 @@ export default function WiFiQRCode({SSID, password}) {
                     setModal(true);
                 }}
         >
-            <img width="20" src='/static/reforis/imgs/QR_icon.svg' alt="QR"/>
+            <img width="20" src={QR_ICON_PATH} alt="QR"/>
         </button>
         {modal ? <QRCodeModal setShown={setModal} shown={modal} SSID={SSID} password={password}/> : null}
     </>

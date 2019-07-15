@@ -8,13 +8,14 @@
 import {useEffect, useState} from 'react';
 
 import {tryReconnect, waitForDown} from './utils';
+import {ForisURLs} from '../common/constants';
 
 export function useNetworkRestart(ws) {
     return useRouterState(ws, 'network-restart', window.location.pathname);
 }
 
 export function useReboot(ws) {
-    return useRouterState(ws, 'reboot', '/login');
+    return useRouterState(ws, 'reboot', ForisURLs.login);
 }
 
 export const STATES = {

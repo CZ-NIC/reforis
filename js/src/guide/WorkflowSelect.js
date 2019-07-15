@@ -8,8 +8,9 @@
 import React, {useEffect} from 'react';
 import {useAPIPost} from '../common/APIhooks';
 import API_URLs from '../common/API';
+import {ForisURLs} from '../common/constants';
 
-const IMG_STATIC_URL = '/static/reforis/imgs';
+const IMG_STATIC_URL = `${ForisURLs.static}/imgs`;
 
 const WORKFLOW_DESCRIPTIONS = {
     bridge: _('This workflow will help you to setup your device to act as a local server. It means that the device will provide some kind of service to other devices within your local network (e.g. act as a network-attached storage).'),
