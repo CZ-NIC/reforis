@@ -101,6 +101,10 @@ form > button {
     text-decoration: none;
 }
 
+#sidebar ul li ul li a { /* Nested menu */
+    text-align: center;
+}
+
 #sidebar-header {
     display: flex;
     flex-direction: column;

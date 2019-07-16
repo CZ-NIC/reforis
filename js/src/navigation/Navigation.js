@@ -9,6 +9,7 @@ import React from 'react';
 import {NavLink} from 'react-router-dom';
 import {matchPath, withRouter} from "react-router";
 import {useUID} from 'react-uid';
+import {REFORIS_PREFIX} from '../common/constants';
 
 
 function Navigation({routes, location, htmlLinks}) {
@@ -60,8 +61,8 @@ function NavigationToggleItem({path, name, active, htmlLink}) {
     const content = <small>{name}</small>;
     return <li className={active ? 'active' : ''}>
         {htmlLink ?
-            <a href={path} className='text-center'>{content}</a> :
-            <NavLink activeClassName='active' className='text-center' to={path}>{content}</NavLink>}
+            <a href={`${REFORIS_PREFIX}${path}`}>{content}</a> :
+            <NavLink activeClassName='active' to={path}>{content}</NavLink>}
     </li>
 }
 
@@ -74,7 +75,7 @@ function NavigationItem({path, icon, name, active, htmlLink}) {
 
     return <li className={active ? 'active' : ''}>
         {htmlLink ?
-            <a href={path}>{content}</a> :
+            <a href={`${REFORIS_PREFIX}${path}`}>{content}</a> :
             <NavLink activeClassName='active' to={path}>{content}</NavLink>}
     </li>
 }
