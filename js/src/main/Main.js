@@ -16,10 +16,11 @@ import Notifications from '../notifications/Notifications/Notifications';
 import LanguagesDropdown from '../languagesDropdown/LanguagesDropdown';
 import RouterStateHandler from '../routerStateHandler/RouterStateHandler';
 import Guide from '../guide/Guide';
+import {REFORIS_PREFIX} from '../common/constants';
 
 export default function Main({routes, ws}) {
     const [outsideReactRouting, setInReactRouting] = useState(false);
-    return <BrowserRouter>
+    return <BrowserRouter basename={REFORIS_PREFIX}>
         <Portal containerId='navigation_container'>
             <Navigation htmlLinks={outsideReactRouting} routes={routes}/>
         </Portal>
