@@ -13,7 +13,6 @@ STATIC_DIR = '../reforis_static/'
 
 SECRET_KEY = 'dev_secret_key'
 
-SESSION_PERMANENT = True
 
 # WebSockets
 WS_PORT = 9081

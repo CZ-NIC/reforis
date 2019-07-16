@@ -4,12 +4,11 @@
 #  See /LICENSE for more information.
 
 import os
-
-DEBUG = True
+from datetime import timedelta
 
 SESSION_TYPE = 'filesystem'
-SESSION_PERMANENT = False
 SESSION_FILE_DIR = '/tmp/foris-sessions'
+PERMANENT_SESSION_LIFETIME = timedelta(minutes=10)
 
 BUS = 'mqtt'
 BUSES_CONF = {
