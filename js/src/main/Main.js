@@ -17,29 +17,33 @@ import Guide from '../guide/Guide';
 import Navigation from './Navigation';
 import TopBar from './TopBar';
 
+export const outsideReactRoutingContext = React.createContext();
+
 export default function Main({routes, ws}) {
     const [outsideReactRouting, setInReactRouting] = useState(false);
     return <BrowserRouter basename={REFORIS_PREFIX}>
-        <Portal containerId='navigation_container'>
-            <Navigation htmlLinks={outsideReactRouting} routes={routes}/>
-        </Portal>
-        <Portal containerId='topbar_container'>
-            <TopBar ws={ws} outsideReactRouting={outsideReactRouting}/>
-        </Portal>
-        <Portal containerId='router_state_handler_container'>
-            <RouterStateHandler ws={ws}/>
-        </Portal>
-        <Portal containerId='guide_container'>
-            <Guide ws={ws}/>
-        </Portal>
+        <outsideReactRoutingContext.Provider value={outsideReactRouting}>
+            <Portal containerId='navigation_container'>
+                <Navigation routes={routes}/>
+            </Portal>
+            <Portal containerId='topbar_container'>
+                <TopBar ws={ws}/>
+            </Portal>
+            <Portal containerId='router_state_handler_container'>
+                <RouterStateHandler ws={ws}/>
+            </Portal>
+            <Portal containerId='guide_container'>
+                <Guide ws={ws}/>
+            </Portal>
 
-        <Switch>
-            <Route path='/' exact render={() => <Redirect to='/overview'/>}/>
-            {routes.map((route, i) =>
-                <RouteWithSubRoutes key={i} ws={ws} {...route}/>
-            )}
-            <Route path='*' render={() => setInReactRouting(true)}/>
-        </Switch>
+            <Switch>
+                <Route path='/' exact render={() => <Redirect to='/overview'/>}/>
+                {routes.map((route, i) =>
+                    <RouteWithSubRoutes key={i} ws={ws} {...route}/>
+                )}
+                <Route path='*' render={() => setInReactRouting(true)}/>
+            </Switch>
+        </outsideReactRoutingContext.Provider>
     </BrowserRouter>
 }
 

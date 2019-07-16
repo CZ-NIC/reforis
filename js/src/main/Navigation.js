@@ -8,12 +8,10 @@
 import React from 'react';
 import {useUID} from 'react-uid';
 import {matchPath, withRouter} from "react-router";
-import {NavLink} from 'react-router-dom';
-
-import {REFORIS_PREFIX} from '../common/constants';
+import {ForisNavLink} from './links';
 
 
-function Navigation({routes, location, htmlLinks}) {
+function Navigation({routes, location}) {
     return routes.map((route, i) => {
         if (route.isHidden)
             return null;
@@ -27,7 +25,6 @@ function Navigation({routes, location, htmlLinks}) {
                 {route.routes.map((subRoute, j) =>
                     <NavigationToggleItem
                         key={j}
-                        htmlLink={htmlLinks}
                         {...subRoute}
                         path={`${route.path}${subRoute.path}`}
                     />
@@ -35,7 +32,7 @@ function Navigation({routes, location, htmlLinks}) {
             </NavigationToggle>;
         }
 
-        return <NavigationMainItem key={i} htmlLink={htmlLinks}  {...route} />;
+        return <NavigationMainItem key={i}  {...route} />;
     })
 }
 
@@ -71,11 +68,11 @@ function NavigationMainItem({icon, name, ...props}) {
     </NavigationItem>
 }
 
-function NavigationItem({path, active, htmlLink, isLinkOutside, children}) {
-    return <li className={active ? 'active' : ''}>
-        {htmlLink || isLinkOutside ?
-            <a href={`${!isLinkOutside ? REFORIS_PREFIX : ''}${path}`}>{children}</a> :
-            <NavLink activeClassName='active' to={path}>{children}</NavLink>}
+function NavigationItem({path, children, ...props}) {
+    return <li>
+        <ForisNavLink activeClassName='active' to={path} {...props}>
+            {children}
+        </ForisNavLink>
     </li>
 }
 

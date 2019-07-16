@@ -7,11 +7,11 @@
 
 import React from 'react';
 import propTypes from 'prop-types';
-import {Link} from 'react-router-dom';
 
-import {ForisURLs, REFORIS_PREFIX} from '../../common/constants';
+import {ForisURLs} from '../../common/constants';
 import NotificationIcon from '../NotificationIcon';
 import {NOTIFICATION_PROP_TYPES, toLocaleDateString} from '../utils';
+import {ForisLink} from '../../main/links';
 
 
 NotificationsDropdownItem.propTypes = {
@@ -20,7 +20,7 @@ NotificationsDropdownItem.propTypes = {
     dismiss: propTypes.func.isRequired,
 };
 
-export default function NotificationsDropdownItem({notification, divider, dismiss, outsideReactRouting}) {
+export default function NotificationsDropdownItem({notification, divider, dismiss}) {
     const date = toLocaleDateString(notification.created_at);
 
     const message = <>
@@ -32,14 +32,7 @@ export default function NotificationsDropdownItem({notification, divider, dismis
         <div className='dropdown-item notification-item'>
             <NotificationIcon severity={notification.severity} className={'fa-2x'}/>
             <div className='notifications-info'>
-                {outsideReactRouting ?
-                    <a href={`${REFORIS_PREFIX}${ForisURLs.notifications}?id=${notification.id}`}>{message}</a> :
-                    <Link to={{
-                        pathname: ForisURLs.notifications,
-                        search: `?id=${notification.id}`
-                    }}>
-                        {message}
-                    </Link>}
+                <ForisLink to={ForisURLs.notifications} search={`?id=${notification.id}`}>{message}</ForisLink>
             </div>
             <button className='btn btn-link' onClick={dismiss}>
                 <i className='fas fa-times'/>

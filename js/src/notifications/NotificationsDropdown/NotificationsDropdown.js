@@ -17,7 +17,7 @@ NotificationsDropdown.propTypes = {
     ws: propTypes.object.isRequired
 };
 
-export default function NotificationsDropdown({ws, outsideReactRouting}) {
+export default function NotificationsDropdown({ws}) {
     const [notifications, dismiss, dismissAll] = useNotifications(ws);
     const newNotification = useNewNotification(ws);
     return <div id='notifications' className='dropdown btn-group'>
@@ -27,7 +27,6 @@ export default function NotificationsDropdown({ws, outsideReactRouting}) {
         />
         <NotificationsDropdownMenu
             notifications={notifications}
-            outsideReactRouting={outsideReactRouting}
             dismiss={dismiss}
             dismissAll={dismissAll}
         />

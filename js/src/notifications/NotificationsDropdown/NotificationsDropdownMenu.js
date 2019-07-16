@@ -12,7 +12,7 @@ import {ForisURLs} from '../../common/constants';
 
 import {NOTIFICATION_PROP_TYPES} from '../utils';
 import NotificationsDropdownItem from './NotificationsDropdownItem';
-import {Link} from 'react-router-dom';
+import {ForisLink} from '../../main/links';
 
 
 NotificationsDropdownMenu.propTypes = {
@@ -21,7 +21,7 @@ NotificationsDropdownMenu.propTypes = {
     dismissAll: propTypes.func.isRequired,
 };
 
-export default function NotificationsDropdownMenu({notifications, dismiss, dismissAll, outsideReactRouting}) {
+export default function NotificationsDropdownMenu({notifications, dismiss, dismissAll}) {
     function getNotifications() {
         if (notifications.length === 0)
             return <p className='dropdown-item text-center'>{_('No notifications')}</p>;
@@ -29,7 +29,6 @@ export default function NotificationsDropdownMenu({notifications, dismiss, dismi
         return notifications.map(
             (notification, idx) => {
                 return <NotificationsDropdownItem
-                    outsideReactRouting={outsideReactRouting}
                     key={notification.id}
                     notification={notification}
                     divider={idx + 1 !== notifications.length} //Don't show last divider
@@ -55,12 +54,12 @@ export default function NotificationsDropdownMenu({notifications, dismiss, dismi
 function NotificationsDropdownHeader() {
     return <>
         <div id='notifications-header' className='dropdown-header'>
-            <Link to={ForisURLs.notifications} className='btn btn-link'>
+            <ForisLink path={ForisURLs.notifications} className='btn btn-link'>
                 <h5>{_('Notifications')}</h5>
-            </Link>
-            <Link to={ForisURLs.notificationsSettings} className='btn btn-link'>
+            </ForisLink>
+            <ForisLink path={ForisURLs.notificationsSettings} className='btn btn-link'>
                 <i className='fa fa-cog fa'/>
-            </Link>
+            </ForisLink>
         </div>
         <div className='dropdown-divider dropdown-divider-top'/>
     </>;

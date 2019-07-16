@@ -10,9 +10,9 @@ import React from 'react';
 import NotificationsDropdown from '../notifications/NotificationsDropdown/NotificationsDropdown';
 import LanguagesDropdown from '../languagesDropdown/LanguagesDropdown';
 
-export default function TopBar({ws, outsideReactRouting}) {
+export default function TopBar({ws}) {
     return <>
-        <NotificationsDropdown ws={ws} outsideReactRouting={outsideReactRouting}/>
+        <NotificationsDropdown ws={ws}/>
         <LanguagesDropdown ws={ws}/>
     </>
 }
