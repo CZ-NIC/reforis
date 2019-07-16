@@ -21,7 +21,7 @@ NotificationsDropdownMenu.propTypes = {
     dismissAll: propTypes.func.isRequired,
 };
 
-export default function NotificationsDropdownMenu({notifications, dismiss, dismissAll}) {
+export default function NotificationsDropdownMenu({notifications, dismiss, dismissAll, outsideReactRouting}) {
     function getNotifications() {
         if (notifications.length === 0)
             return <p className='dropdown-item text-center'>{_('No notifications')}</p>;
@@ -29,6 +29,7 @@ export default function NotificationsDropdownMenu({notifications, dismiss, dismi
         return notifications.map(
             (notification, idx) => {
                 return <NotificationsDropdownItem
+                    outsideReactRouting={outsideReactRouting}
                     key={notification.id}
                     notification={notification}
                     divider={idx + 1 !== notifications.length} //Don't show last divider

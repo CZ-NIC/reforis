@@ -5,7 +5,7 @@
  * See /LICENSE for more information.
  */
 
-import React, {useRef, useEffect} from 'react';
+import React, {useEffect, useRef} from 'react';
 import propTypes from 'prop-types';
 
 import {NOTIFICATION_PROP_TYPES, toLocaleDateString} from '../utils';
@@ -18,12 +18,13 @@ NotificationsList.propTypes = {
     dismiss: propTypes.func.isRequired
 };
 
-export default function NotificationsList({notifications, dismiss}) {
+export default function NotificationsList({notifications, dismiss, currentNotification}) {
     return notifications.map(
         notification => {
             return <NotificationsCenterItem
                 key={notification.id}
                 notification={notification}
+                currentNotification={currentNotification}
                 dismiss={() => dismiss(notification.id)}
             />
         }
@@ -37,7 +38,7 @@ const BORDER_TYPES = {
     error: 'border-danger',
 };
 
-function NotificationsCenterItem({notification, dismiss}) {
+function NotificationsCenterItem({notification, currentNotification, dismiss}) {
     const myRef = useRef(null);
 
     function getIDFromURL() {
@@ -46,21 +47,18 @@ function NotificationsCenterItem({notification, dismiss}) {
     }
 
     useEffect(() => {
-        if (getIDFromURL() === notification.id)
+        if (
+            getIDFromURL() === notification.id ||
+            (currentNotification && currentNotification.endsWith(notification.id))
+        )
             myRef.current.scrollIntoView({block: 'start', behavior: 'smooth'});
-    }, [notification.id]);
-
+    }, [notification.id, currentNotification]);
 
     return <div ref={myRef} className={`card bg-light ${BORDER_TYPES[notification.severity]} sm-10`}>
         <div className='card-header'>
             <NotificationIcon severity={notification.severity} className={'fa-2x'}/>
             <p className='text-muted'>{toLocaleDateString(notification.created_at)}</p>
-            <button
-                type='button'
-                className='close'
-                onClick={dismiss}
-            >×
-            </button>
+            <button type='button' className='close' onClick={dismiss}>×</button>
         </div>
 
         <div className='card-body'>

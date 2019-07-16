@@ -24,7 +24,7 @@ export default function Main({routes, ws}) {
             <Navigation htmlLinks={outsideReactRouting} routes={routes}/>
         </Portal>
         <Portal containerId='topbar_container'>
-            <TopBar ws={ws}/>
+            <TopBar ws={ws} outsideReactRouting={outsideReactRouting}/>
         </Portal>
         <Portal containerId='router_state_handler_container'>
             <RouterStateHandler ws={ws}/>

@@ -6,8 +6,9 @@
  */
 
 
-import React from 'react';
+import React, {useState} from 'react';
 import propTypes from 'prop-types';
+import {withRouter} from 'react-router';
 
 import useNotifications from '../hooks';
 import NotificationsList from './NotificationsList';
@@ -16,8 +17,10 @@ Notifications.propTypes = {
     ws: propTypes.object.isRequired
 };
 
-export default function Notifications({ws}) {
+function Notifications({ws, history}) {
     const [notifications, dismiss, dismissAll] = useNotifications(ws);
+    const [currentNotification, setCurrentNotification] = useState();
+
 
     function getDismissAllButton() {
         return <button
@@ -30,6 +33,8 @@ export default function Notifications({ws}) {
         </button>
     }
 
+    history.listen((location,) => setCurrentNotification(location.search));
+
     return <div id='notifications-center'>
         <h1>{_('Notifications')}</h1>
 
@@ -38,8 +43,11 @@ export default function Notifications({ws}) {
             <p className='text-muted text-center'>{_('No notifications')}</p>}
 
         <NotificationsList
+            currentNotification={currentNotification}
             notifications={notifications}
             dismiss={dismiss}
         />
     </div>
 }
+
+export default withRouter(Notifications);
