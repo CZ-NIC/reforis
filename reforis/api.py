@@ -605,7 +605,9 @@ def about():
         See ``get``  action in the `foris-controller about module JSON schema
         <https://gitlab.labs.nic.cz/turris/foris-controller/blob/master/foris_controller_modules/about/schema/about.json>`_.
     """
-    return jsonify(**current_app.backend.perform('about', 'get'))
+    data = current_app.backend.perform('about', 'get')
+    data['serial'] = int(data['serial'], 16)
+    return jsonify(data)
 
 
 def _foris_controller_settings_call(module):
