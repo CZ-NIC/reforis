@@ -6,9 +6,10 @@
  */
 
 import React from 'react';
-import {NavLink} from 'react-router-dom';
-import {matchPath, withRouter} from "react-router";
 import {useUID} from 'react-uid';
+import {matchPath, withRouter} from "react-router";
+import {NavLink} from 'react-router-dom';
+
 import {REFORIS_PREFIX} from '../common/constants';
 
 
@@ -26,7 +27,7 @@ function Navigation({routes, location, htmlLinks}) {
                 {route.routes.map((subRoute, j) =>
                     <NavigationToggleItem
                         key={j}
-                        htmlLink={htmlLinks || route.isLink}
+                        htmlLink={htmlLinks}
                         {...subRoute}
                         path={`${route.path}${subRoute.path}`}
                     />
@@ -34,7 +35,7 @@ function Navigation({routes, location, htmlLinks}) {
             </NavigationToggle>;
         }
 
-        return <NavigationItem key={i} htmlLink={htmlLinks || route.isLink}  {...route} />;
+        return <NavigationMainItem key={i} htmlLink={htmlLinks}  {...route} />;
     })
 }
 
@@ -57,26 +58,24 @@ function NavigationToggle({name, icon, active, children}) {
     </li>
 }
 
-function NavigationToggleItem({path, name, active, htmlLink}) {
-    const content = <small>{name}</small>;
-    return <li className={active ? 'active' : ''}>
-        {htmlLink ?
-            <a href={`${REFORIS_PREFIX}${path}`}>{content}</a> :
-            <NavLink activeClassName='active' to={path}>{content}</NavLink>}
-    </li>
+function NavigationToggleItem({name, ...props}) {
+    return <NavigationItem {...props}>
+        <small>{name}</small>
+    </NavigationItem>
 }
 
-
-function NavigationItem({path, icon, name, active, htmlLink}) {
-    const content = <>
+function NavigationMainItem({icon, name, ...props}) {
+    return <NavigationItem {...props}>
         {icon ? <Icon name={icon}/> : null}
         {name}
-    </>;
+    </NavigationItem>
+}
 
+function NavigationItem({path, active, htmlLink, isLinkOutside, children}) {
     return <li className={active ? 'active' : ''}>
-        {htmlLink ?
-            <a href={`${REFORIS_PREFIX}${path}`}>{content}</a> :
-            <NavLink activeClassName='active' to={path}>{content}</NavLink>}
+        {htmlLink || isLinkOutside ?
+            <a href={`${!isLinkOutside ? REFORIS_PREFIX : ''}${path}`}>{children}</a> :
+            <NavLink activeClassName='active' to={path}>{children}</NavLink>}
     </li>
 }
 

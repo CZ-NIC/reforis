@@ -10,13 +10,12 @@ import ReactDOM from 'react-dom';
 import {BrowserRouter} from 'react-router-dom';
 import {Redirect, Route, Switch,} from 'react-router';
 
-import Navigation from '../navigation/Navigation';
-import NotificationsDropdown from '../notifications/NotificationsDropdown/NotificationsDropdown';
-import Notifications from '../notifications/Notifications/Notifications';
-import LanguagesDropdown from '../languagesDropdown/LanguagesDropdown';
+import {REFORIS_PREFIX} from '../common/constants';
 import RouterStateHandler from '../routerStateHandler/RouterStateHandler';
 import Guide from '../guide/Guide';
-import {REFORIS_PREFIX} from '../common/constants';
+
+import Navigation from './Navigation';
+import TopBar from './TopBar';
 
 export default function Main({routes, ws}) {
     const [outsideReactRouting, setInReactRouting] = useState(false);
@@ -24,14 +23,8 @@ export default function Main({routes, ws}) {
         <Portal containerId='navigation_container'>
             <Navigation htmlLinks={outsideReactRouting} routes={routes}/>
         </Portal>
-        <Portal containerId='notifications_dropdown_container'>
-            <NotificationsDropdown ws={ws}/>
-        </Portal>
-        <Portal containerId='notifications_container'>
-            <Notifications ws={ws}/>
-        </Portal>
-        <Portal containerId='languages_dropdown_container'>
-            <LanguagesDropdown ws={ws}/>
+        <Portal containerId='topbar_container'>
+            <TopBar ws={ws}/>
         </Portal>
         <Portal containerId='router_state_handler_container'>
             <RouterStateHandler ws={ws}/>

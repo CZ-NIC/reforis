@@ -30,9 +30,9 @@ import Reboot from './reboot/Reboot';
 
 import Updates from './updates/Updates';
 import Packages from './packages/Packages';
-import {ForisURLs} from './common/constants';
 import About from './about/About';
 
+import {ForisURLs} from './common/constants';
 
 const ws = new WebSockets();
 
@@ -127,7 +127,7 @@ export const ROUTES = [
         name: _('Advanced administration'),
         path: ForisURLs.luci,
         icon: 'cog',
-        isLink: true,
+        isLinkOutside: true,
     },
     {
         name: _('About'),
