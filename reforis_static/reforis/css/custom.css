@@ -502,7 +502,8 @@ form > button {
     display: flex;
     flex-direction: column;
     margin: 0.5rem;
-    align-items: center
+    align-items: center;
+    cursor: pointer;
 }
 
 @keyframes interfaceSelectedFade {
