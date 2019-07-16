@@ -38,6 +38,11 @@ def send_mock(module, action, data, timeout=None, controller_id=None):
             'get_settings': {
                 'device': {}
             }
+        },
+        'about': {
+            'get': {
+                'serial': '123abcdef'
+            }
         }
     }
     return RESPONSE_DATA.get(module, {}).get(action, {})
