@@ -10,8 +10,10 @@ html, body {
     height: 100%;
 }
 
+/* Fixing twinks due to scroll bar appearing */
 html {
-    margin-right: calc(-1 * (100vw - 100%));
+    width:100vw;
+    overflow-x:hidden;
 }
 
 .wrapper {
