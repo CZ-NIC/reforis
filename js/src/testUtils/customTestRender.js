@@ -4,12 +4,20 @@
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
  */
-
+import React from 'react';
 import {render} from '@testing-library/react'
 import {UIDReset} from 'react-uid';
+import {StaticRouter} from 'react-router';
 
+function Wrapper({children}) {
+    return <StaticRouter>
+        <UIDReset>
+            {children}
+        </UIDReset>
+    </StaticRouter>
+}
 
-const customTestRender = (ui, options) => render(ui, {wrapper: UIDReset, ...options});
+const customTestRender = (ui, options) => render(ui, {wrapper: Wrapper, ...options});
 
 // re-export everything
 export * from '@testing-library/react'

@@ -22,13 +22,13 @@ describe('<NotificationsDropdown/>', () => {
         const mockWebSockets = new mockedWS();
         const {container, getByText} = render(<NotificationsDropdown ws={mockWebSockets}/>);
         mockAxios.mockResponse({data: notificationsFixture()});
-        notificationCenterContainer = container
+        notificationCenterContainer = container;
         await wait(() => {
             getByText('Notification message.')
         });
     });
 
     it('Test with snapshot', () => {
-        expect(notificationCenterContainer.firstChild).toMatchSnapshot()
+        expect(notificationCenterContainer).toMatchSnapshot()
     })
 });

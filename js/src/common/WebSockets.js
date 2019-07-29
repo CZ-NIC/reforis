@@ -23,7 +23,7 @@ export default class WebSockets {
                 console.error("WS: Error observed, you aren't logged probably.");
                 window.location.replace(ForisURLs.login);
             }
-            console.log(`WS: Error: ${e.data}`);
+            console.log(`WS: Error: ${e}`);
         };
         this.ws.onmessage = e => {
             console.log(`WS: Received Message: ${e.data}`);

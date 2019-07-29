@@ -44,6 +44,7 @@ in LAN.
             <GuestNetworkForm/>
             <GuestNetworkDHCPClientsList/>
         </ForisForm>
+        <div id="dhcp_clients_container"/>
     </>
 }
 

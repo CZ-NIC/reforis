@@ -5,7 +5,7 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
 - First value
 + Second value
 
-@@ -259,207 +259,95 @@
+@@ -268,207 +268,95 @@
             value=\\"0\\"
           >
             auto
@@ -250,9 +250,18 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
 
 exports[`<WiFi/> Snapshot both modules disabled. 1`] = `
 <DocumentFragment>
+  <h1>
+    Wi-Fi
+  </h1>
+  <p>
+    
+If you want to use your router as a Wi-Fi access point, enable Wi-Fi here and fill in an SSID (the name of the access 
+point) and a corresponding password. You can then set up your mobile devices, using the QR code available within the form.
+            
+  </p>
   <form>
     <h3>
-      Module 1
+      Wi-Fi 1
     </h3>
     <div
       class="col-sm-12 offset-lg-1 col-lg-10"
@@ -276,7 +285,7 @@ exports[`<WiFi/> Snapshot both modules disabled. 1`] = `
       </div>
     </div>
     <h3>
-      Module 2
+      Wi-Fi 2
     </h3>
     <div
       class="col-sm-12 offset-lg-1 col-lg-10"
@@ -329,7 +338,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
 - First value
 + Second value
 
-@@ -491,10 +491,96 @@
+@@ -500,10 +500,96 @@
           access the internet, but aren't allowed to access other devices and the configuration interface of the router.
           Parameters of the guest network can be set in the Guest network tab.
           
@@ -422,11 +431,11 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
 +       </div>
 +     </div>
       <h3>
-        Module 2
+        Wi-Fi 2
       </h3>
       <div
         class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
-@@ -517,10 +603,11 @@
+@@ -526,10 +612,11 @@
           </label>
         </div>
       </div>
@@ -445,7 +454,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
 - First value
 + Second value
 
-@@ -22,10 +22,479 @@
+@@ -31,10 +31,479 @@
           >
             Enable
           </label>
@@ -921,7 +930,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
 +       </small>
 +     </div>
       <h3>
-        Module 2
+        Wi-Fi 2
       </h3>
       <div
         class=\\"col-sm-12 offset-lg-1 col-lg-10\\""
