@@ -58,8 +58,8 @@
     "webpack-cli": "^3.3.4"
   },
   "scripts": {
-    "watch": "webpack --watch --mode=development",
-    "build": "webpack --mode=production",
+    "watch": "webpack --watch --mode=development --env.lighttpd",
+    "build": "webpack --mode=production --env.lighttpd",
     "lint": "eslint src",
     "test": "jest",
     "test:watch": "jest --watch",

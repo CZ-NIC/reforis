@@ -107,7 +107,7 @@ DeviceForm.defaultProps = {
 function DeviceForm({formData, formErrors, setFormValue, ...props}) {
     const deviceID = formData.id;
     return <>
-        <h3>Module {deviceID + 1}</h3>
+        <h3>{_(`Wi-Fi ${deviceID + 1}`)}</h3>
         <CheckBox
             label={_('Enable')}
             checked={formData.enabled}

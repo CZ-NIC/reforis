@@ -31,7 +31,6 @@ function ForisBaseLink({to, search, isLinkOutside, children, LinkComponent, ...p
             pathname: to,
             search: search
         }}
-
         {...props}
     >
         {children}

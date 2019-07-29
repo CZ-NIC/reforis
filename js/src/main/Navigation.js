@@ -10,7 +10,6 @@ import {useUID} from 'react-uid';
 import {matchPath, withRouter} from "react-router";
 import {ForisNavLink} from './links';
 
-
 function Navigation({routes, location}) {
     return routes.map((route, i) => {
         if (route.isHidden)
@@ -68,9 +67,9 @@ function NavigationMainItem({icon, name, ...props}) {
     </NavigationItem>
 }
 
-function NavigationItem({path, children, ...props}) {
+function NavigationItem({path, children, component, ...props}) {
     return <li>
-        <ForisNavLink activeClassName='active' to={path} {...props}>
+        <ForisNavLink to={path} {...props}>
             {children}
         </ForisNavLink>
     </li>

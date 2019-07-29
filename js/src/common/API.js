@@ -5,7 +5,7 @@
  * See /LICENSE for more information.
  */
 
-const API_URL_PREFIX = process.env.NODE_ENV === 'production' ? '/reforis/api' : '/api';
+const API_URL_PREFIX = process.env.LIGHTTPD ? '/reforis/api' : '/api';
 
 const API_URLs = new Proxy({
         notifications: '/notifications',

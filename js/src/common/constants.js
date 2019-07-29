@@ -5,7 +5,7 @@
  * See /LICENSE for more information.
  */
 
-export const REFORIS_PREFIX = process.env.NODE_ENV === 'production' ? '/reforis' : '';
+export const REFORIS_PREFIX = process.env.LIGHTTPD ? '/reforis' : '';
 
 export const ForisURLs = {
     login: `${REFORIS_PREFIX}/login`,

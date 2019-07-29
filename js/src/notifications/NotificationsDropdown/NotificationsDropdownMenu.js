@@ -54,10 +54,10 @@ export default function NotificationsDropdownMenu({notifications, dismiss, dismi
 function NotificationsDropdownHeader() {
     return <>
         <div id='notifications-header' className='dropdown-header'>
-            <ForisLink path={ForisURLs.notifications} className='btn btn-link'>
+            <ForisLink to={ForisURLs.notifications} className='btn btn-link'>
                 <h5>{_('Notifications')}</h5>
             </ForisLink>
-            <ForisLink path={ForisURLs.notificationsSettings} className='btn btn-link'>
+            <ForisLink to={ForisURLs.notificationsSettings} className='btn btn-link'>
                 <i className='fa fa-cog fa'/>
             </ForisLink>
         </div>
