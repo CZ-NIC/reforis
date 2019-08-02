@@ -6,6 +6,8 @@
 import os
 from datetime import timedelta
 
+STATIC_DIR = '../reforis_static/'
+
 SESSION_TYPE = 'filesystem'
 SESSION_FILE_DIR = '/tmp/foris-sessions'
 PERMANENT_SESSION_LIFETIME = timedelta(minutes=10)
