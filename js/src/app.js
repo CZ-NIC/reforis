@@ -33,6 +33,7 @@ import Packages from './packages/Packages';
 import About from './about/About';
 
 import {ForisURLs} from './common/constants';
+import Guide from './guide/Guide';
 
 const ws = new WebSockets();
 
@@ -149,4 +150,9 @@ window.addEventListener('load', () => {
     const mainContainer = document.getElementById('app_container');
     if (mainContainer)
         render(<Main ws={ws} routes={ROUTES}/>, mainContainer);
+
+    const guideContainer = document.getElementById('guide_container');
+    if (guideContainer)
+        render(<Guide ws={ws}/>, guideContainer);
+
 }, false);

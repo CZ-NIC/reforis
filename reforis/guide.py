@@ -22,4 +22,4 @@ def index(path):
     web_data = current_app.backend.perform('web', 'get_data')
     if not web_data['guide']['enabled']:
         return redirect(url_for('Foris.index'))
-    return render_template('guide/index.html')
+    return render_template('guide.html')

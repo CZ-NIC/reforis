@@ -8,7 +8,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-import {ForisURLs} from '../../common/constants';
+import {ForisURLs, REFORIS_PREFIX} from '../../common/constants';
 
 
 const SMALL_SCREEN = 699;
@@ -26,7 +26,7 @@ export default function NotificationsDropdownButton({notificationsCount, newNoti
             return;
         e.preventDefault();
         e.stopPropagation();
-        document.location = ForisURLs.notifications;
+        document.location = `${REFORIS_PREFIX}/${ForisURLs.notifications}`;
     }
 
     return <button

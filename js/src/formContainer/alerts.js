@@ -6,45 +6,37 @@
  */
 
 import React from 'react';
-import ReactDOM from 'react-dom';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import Alert from '../common/bootstrap/Alert';
+import Portal from '../utils/Portal';
+
+SuccessAlert.propTypes = {
+    onDismiss: PropTypes.func.isRequired,
+};
 
 const ALERT_CONTAINER_ID = 'alert_container';
 
-SuccessAlert.propTypes = {
-    onDismiss: propTypes.func.isRequired,
-};
-
 export function SuccessAlert({onDismiss}) {
-    const alert = <Alert
-        type='success'
-        message={_('Settings were successfully saved.')}
-        onDismiss={onDismiss}
-    />;
-
-    const alertContainer = document.getElementById(ALERT_CONTAINER_ID);
-    return ReactDOM.createPortal(
-        alert,
-        alertContainer,
-    )
+    return <Portal containerId={ALERT_CONTAINER_ID}>
+        <Alert
+            type='success'
+            message={_('Settings were successfully saved.')}
+            onDismiss={onDismiss}
+        />
+    </Portal>;
 }
 
 FailAlert.propTypes = {
-    onDismiss: propTypes.func.isRequired,
+    onDismiss: PropTypes.func.isRequired,
 };
 
 export function FailAlert({onDismiss}) {
-    const alertContainer = document.getElementById(ALERT_CONTAINER_ID);
-    const alert = <Alert
-        type='danger'
-        message={_('Settings update was failed.')}
-        onDismiss={onDismiss}
-    />;
-
-    return ReactDOM.createPortal(
-        alert,
-        alertContainer,
-    )
+    return <Portal containerId={ALERT_CONTAINER_ID}>
+        <Alert
+            type='danger'
+            message={_('Settings update was failed.')}
+            onDismiss={onDismiss}
+        />
+    </Portal>
 }

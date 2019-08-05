@@ -8,7 +8,7 @@
 import {REFORIS_PREFIX} from '../common/constants';
 import {Link, NavLink} from 'react-router-dom';
 import React, {useContext} from 'react';
-import {outsideReactRoutingContext} from './Main';
+import {outsideReactRoutingContext} from '../main/Main';
 
 export function ForisLink({...props}) {
     return <ForisBaseLink LinkComponent={Link}  {...props}/>

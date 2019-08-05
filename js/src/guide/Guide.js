@@ -6,10 +6,7 @@
  */
 
 import React, {useEffect} from 'react';
-
-import {Redirect, Route} from 'react-router';
-import {createBrowserHistory} from 'history';
-
+import {Redirect, Route, Switch} from 'react-router';
 
 import {useAPIGet} from '../common/APIhooks';
 import API_URLs from '../common/API';
@@ -17,58 +14,42 @@ import Spinner from '../common/bootstrap/Spinner';
 import GuideNavigation from './GuideNavigation';
 import {STEPS, URL_PREFIX} from './constance';
 import {BrowserRouter} from 'react-router-dom';
-
-const guideHistory = createBrowserHistory();
-
+import Portal from '../utils/Portal';
+import {REFORIS_PREFIX} from '../common/constants';
 
 export default function Guide({ws}) {
     const [guideData, getGuideData] = useAPIGet(API_URLs.guide);
-
     useEffect(() => {
         getGuideData();
     }, [getGuideData]);
 
-    useEffect(() => {
-        if (guideData.data)
-            guideHistory.push(`${URL_PREFIX}/${guideData.data.next_step}`);
-    }, [guideData.data]);
-
-
-    if (guideData.isLoading || !guideData.data)
+    if (!guideData.data)
         return <Spinner className='row justify-content-center'/>;
-
-    function postCallback() {
-        getGuideData();
-    }
 
     const {available_workflows, workflow_steps, next_step, passed} = guideData.data;
 
-    return <>
-        <BrowserRouter>
-            <GuideNavigation
-                workflow_steps={workflow_steps}
-                passed={passed}
-                next_step={next_step}
-            />
-            <div>
-                <Route exact path={URL_PREFIX} render={() => <Redirect to={`${URL_PREFIX}/${next_step}`}/>}/>
-                {workflow_steps.map(
-                    (step, idx) => {
-                        const Component = STEPS[step].component;
-                        return <Route
-                            key={idx}
-                            path={`${URL_PREFIX}/${step}`}
-                            component={() => <Component
-                                postCallback={postCallback}
-                                ws={ws}
-                                workflows={available_workflows}
-                            />}
-                            exact
-                        />
-                    }
-                )}
-            </div>
-            <Route render={() => <Redirect to={'/404'}/>} />
-        </BrowserRouter>
-    </>
+    return <BrowserRouter basename={`${REFORIS_PREFIX}${URL_PREFIX}`}>
+        <Portal containerId='steps_container'>
+            <GuideNavigation workflow_steps={workflow_steps} passed={passed} next_step={next_step}/>
+        </Portal>
+        <Switch>
+            <Route exact path='/' render={() => <Redirect to={`/${next_step}`}/>}/>
+            {workflow_steps.map(
+                (step, idx) => {
+                    const Component = STEPS[step].component;
+                    return <Route
+                        exact
+                        key={idx}
+                        path={`/${step}`}
+                        component={() => <Component
+                            ws={ws}
+                            postCallback={getGuideData}
+                            workflows={available_workflows}
+                        />}
+                    />
+                }
+            )}
+            <Route render={() => <Redirect to={'/404'}/>}/>
+        </Switch>
+    </BrowserRouter>
 }

@@ -8,7 +8,7 @@
 import React from 'react';
 import {useUID} from 'react-uid';
 import {matchPath, withRouter} from "react-router";
-import {ForisNavLink} from './links';
+import {ForisNavLink} from '../utils/links';
 
 function Navigation({routes, location}) {
     return routes.map((route, i) => {

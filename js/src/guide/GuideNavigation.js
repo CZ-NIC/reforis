@@ -5,61 +5,66 @@
  * See /LICENSE for more information.
  */
 
-import {Link} from 'react-router-dom';
-import ReactDOM from 'react-dom';
 import React from 'react';
 
-import {STEPS, URL_PREFIX} from './constance';
+import {STEPS} from './constance';
 
-import {withRouter} from 'react-router';
 import {useGuideFinish} from './hooks';
+import {ForisLink, ForisNavLink} from '../utils/links';
+import {withRouter} from 'react-router';
 
-const GUIDE_NAVIGATION_CONTAINER_ID = 'steps_container';
-
-
-function GuideNavigation({workflow_steps, passed, next_step, location}) {
-    const guideNavigationContainer = document.getElementById(GUIDE_NAVIGATION_CONTAINER_ID);
+export default function GuideNavigation({workflow_steps, passed, next_step}) {
     const onGuideFinishHandler = useGuideFinish();
-
     const navigationItems = workflow_steps.map(
         (step, idx) => {
-            const url = `${URL_PREFIX}/${step}`;
-
             return <GuideNavigationItem
                 key={idx}
                 name={STEPS[step].name}
                 passed={passed.includes(step)}
-                url={url}
-                active={location.pathname === url}
+                url={`/${step}`}
                 next={step === next_step}
             />
         }
     );
-    return ReactDOM.createPortal(
-        <>
-            <ul className="list-unstyled">
-                {navigationItems}
-            </ul>
-            <button type="button" className="btn btn-link" onClick={onGuideFinishHandler}>
-                {_('Skip guide')}
-            </button>
-        </>,
-        guideNavigationContainer,
-    )
+
+    return <>
+        <ul className="list-unstyled">
+            {navigationItems}
+        </ul>
+        <NextStepButtonWithRouter next_step={next_step}/>
+        <button type="button" className="btn btn-link" onClick={onGuideFinishHandler}>
+            {_('Skip guide')}
+        </button>
+
+    </>
 }
 
-
-function GuideNavigationItem({name, url, active, next, passed}) {
+function GuideNavigationItem({name, url, next, passed}) {
     const passedClassName = passed ? 'passed' : '';
     const nextClassName = next ? 'next' : '';
-    const activeClassName = active ? 'active' : '';
 
+    const content = <>
+        <i className="fas fa-arrow-right"/>
+        &nbsp;
+        {name}
+    </>;
 
-    return <li className={`${passedClassName} ${activeClassName} ${nextClassName}`}>
-        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-        {passed || next ? <Link to={url}>{name}</Link> : <a href='#'>{name}</a>}
+    return <li>
+        {passed || next ?
+            <ForisNavLink className={`${passedClassName} ${nextClassName}`} to={url}>
+                {content}
+            </ForisNavLink>
+            // eslint-disable-next-line jsx-a11y/anchor-is-valid
+            : <a href='#'>{content}</a>}
     </li>
-
 }
 
-export default withRouter(GuideNavigation);
+function NextStepButton({next_step, location}) {
+    if (location.pathname === `/${next_step}`)
+        return null;
+    return <ForisLink id='next-step-button' className='btn btn-lg btn-light ' to={`/${next_step}`}>
+        <i className="fas fa-arrow-right"/>
+    </ForisLink>
+}
+
+const NextStepButtonWithRouter = withRouter(NextStepButton);

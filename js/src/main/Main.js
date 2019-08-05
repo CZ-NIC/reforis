@@ -6,16 +6,15 @@
  */
 
 import React, {useState} from 'react';
-import ReactDOM from 'react-dom';
 import {BrowserRouter} from 'react-router-dom';
 import {Redirect, Route, Switch,} from 'react-router';
 
 import {REFORIS_PREFIX} from '../common/constants';
 import RouterStateHandler from '../routerStateHandler/RouterStateHandler';
-import Guide from '../guide/Guide';
 
 import Navigation from './Navigation';
 import TopBar from './TopBar';
+import Portal from '../utils/Portal';
 
 export const outsideReactRoutingContext = React.createContext();
 
@@ -32,9 +31,6 @@ export default function Main({routes, ws}) {
             <Portal containerId='router_state_handler_container'>
                 <RouterStateHandler ws={ws}/>
             </Portal>
-            <Portal containerId='guide_container'>
-                <Guide ws={ws}/>
-            </Portal>
 
             <Switch>
                 <Route path='/' exact render={() => <Redirect to='/overview'/>}/>
@@ -45,13 +41,6 @@ export default function Main({routes, ws}) {
             </Switch>
         </outsideReactRoutingContext.Provider>
     </BrowserRouter>
-}
-
-function Portal({containerId, children}) {
-    const container = document.getElementById(containerId);
-    if (container)
-        return ReactDOM.createPortal(children, container);
-    return null;
 }
 
 const CONTENT_CONTAINER_ID = 'content_container';

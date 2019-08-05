@@ -11,7 +11,7 @@ import propTypes from 'prop-types';
 import {ForisURLs} from '../../common/constants';
 import NotificationIcon from '../NotificationIcon';
 import {NOTIFICATION_PROP_TYPES, toLocaleDateString} from '../utils';
-import {ForisLink} from '../../main/links';
+import {ForisLink} from '../../utils/links';
 
 
 NotificationsDropdownItem.propTypes = {

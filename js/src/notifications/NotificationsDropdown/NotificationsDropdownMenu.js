@@ -12,7 +12,7 @@ import {ForisURLs} from '../../common/constants';
 
 import {NOTIFICATION_PROP_TYPES} from '../utils';
 import NotificationsDropdownItem from './NotificationsDropdownItem';
-import {ForisLink} from '../../main/links';
+import {ForisLink} from '../../utils/links';
 
 
 NotificationsDropdownMenu.propTypes = {
