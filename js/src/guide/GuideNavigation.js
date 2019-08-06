@@ -35,7 +35,6 @@ export default function GuideNavigation({workflow_steps, passed, next_step}) {
         <button type="button" className="btn btn-link" onClick={onGuideFinishHandler}>
             {_('Skip guide')}
         </button>
-
     </>
 }
 
@@ -44,9 +43,7 @@ function GuideNavigationItem({name, url, next, passed}) {
     const nextClassName = next ? 'next' : '';
 
     const content = <>
-        <i className="fas fa-arrow-right"/>
-        &nbsp;
-        {name}
+        <i className="fas fa-arrow-right"/>&nbsp;{name}
     </>;
 
     return <li>

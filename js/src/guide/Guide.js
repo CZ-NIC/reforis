@@ -6,16 +6,17 @@
  */
 
 import React, {useEffect} from 'react';
+import {BrowserRouter} from 'react-router-dom';
 import {Redirect, Route, Switch} from 'react-router';
 
+import Spinner from '../common/bootstrap/Spinner';
 import {useAPIGet} from '../common/APIhooks';
 import API_URLs from '../common/API';
-import Spinner from '../common/bootstrap/Spinner';
-import GuideNavigation from './GuideNavigation';
-import {STEPS, URL_PREFIX} from './constance';
-import {BrowserRouter} from 'react-router-dom';
 import Portal from '../utils/Portal';
-import {REFORIS_PREFIX} from '../common/constants';
+import {REFORIS_URL_PREFIX} from '../common/constants';
+
+import {GUIDE_URL_PREFIX, STEPS} from './constance';
+import GuideNavigation from './GuideNavigation';
 
 export default function Guide({ws}) {
     const [guideData, getGuideData] = useAPIGet(API_URLs.guide);
@@ -28,28 +29,27 @@ export default function Guide({ws}) {
 
     const {available_workflows, workflow_steps, next_step, passed} = guideData.data;
 
-    return <BrowserRouter basename={`${REFORIS_PREFIX}${URL_PREFIX}`}>
+    return <BrowserRouter basename={`${REFORIS_URL_PREFIX}${GUIDE_URL_PREFIX}`}>
         <Portal containerId='steps_container'>
             <GuideNavigation workflow_steps={workflow_steps} passed={passed} next_step={next_step}/>
         </Portal>
         <Switch>
             <Route exact path='/' render={() => <Redirect to={`/${next_step}`}/>}/>
-            {workflow_steps.map(
-                (step, idx) => {
-                    const Component = STEPS[step].component;
-                    return <Route
-                        exact
-                        key={idx}
-                        path={`/${step}`}
-                        component={() => <Component
-                            ws={ws}
-                            postCallback={getGuideData}
-                            workflows={available_workflows}
-                        />}
-                    />
-                }
-            )}
-            <Route render={() => <Redirect to={'/404'}/>}/>
+            {workflow_steps.map((step, idx) => {
+                const Component = STEPS[step].component;
+                return <Route
+                    exact
+                    key={idx}
+                    path={`/${step}`}
+                    render={() => <Component
+                        ws={ws}
+                        next_step={next_step}
+                        postCallback={getGuideData}
+                        workflows={available_workflows}
+                    />}
+                />
+            })}
+            <Route component={() => <h1>404</h1>}/>
         </Switch>
     </BrowserRouter>
 }

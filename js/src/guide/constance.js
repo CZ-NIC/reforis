@@ -15,7 +15,7 @@ import WAN from '../wan/WAN';
 import LAN from '../lan/LAN';
 import GuideFinished from './GuideFinish';
 
-export const URL_PREFIX = '/guide';
+export const GUIDE_URL_PREFIX = '/guide';
 
 export const STEPS = {
     password: {

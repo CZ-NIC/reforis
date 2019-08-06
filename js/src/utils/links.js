@@ -5,7 +5,7 @@
  * See /LICENSE for more information.
  */
 
-import {REFORIS_PREFIX} from '../common/constants';
+import {REFORIS_URL_PREFIX} from '../common/constants';
 import {Link, NavLink} from 'react-router-dom';
 import React, {useContext} from 'react';
 import {outsideReactRoutingContext} from '../main/Main';
@@ -22,7 +22,7 @@ function ForisBaseLink({to, search, isLinkOutside, children, LinkComponent, ...p
     const outsideReactRouting = useContext(outsideReactRoutingContext);
 
     if (outsideReactRouting || isLinkOutside) {
-        const path = `${isLinkOutside ? '' : REFORIS_PREFIX}${to}${!!search ? search : ''}`;
+        const path = `${isLinkOutside ? '' : REFORIS_URL_PREFIX}${to}${!!search ? search : ''}`;
         return <a href={path} {...props}> {children}</a>;
     }
 
