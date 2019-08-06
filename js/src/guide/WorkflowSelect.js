@@ -30,7 +30,7 @@ export default function WorkflowSelect({workflows, next_step}) {
 
     useEffect(() => {
         if (postWorkflowData.data && postWorkflowData.isSuccess)
-            window.location.href = `${REFORIS_URL_PREFIX}${GUIDE_URL_PREFIX}/${next_step}`;
+            window.location.assign(`${REFORIS_URL_PREFIX}${GUIDE_URL_PREFIX}/${next_step}`);
     }, [next_step, postWorkflowData.data, postWorkflowData.isSuccess]);
 
     function onWorkflowChangeHandler(workflow) {

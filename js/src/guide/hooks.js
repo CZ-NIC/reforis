@@ -16,7 +16,7 @@ export function useGuideFinish() {
 
     useEffect(() => {
         if (finishGuidePostData.data && finishGuidePostData.isSuccess)
-            window.location.href = `${REFORIS_URL_PREFIX}/`;
+            window.location.assign(`${REFORIS_URL_PREFIX}/`);
     }, [finishGuidePostData.data, finishGuidePostData.isSuccess]);
 
     function onGuideFinishHandler(e) {

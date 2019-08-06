@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GuideNavigation/> Snapshot. 1`] = `
+<div>
+  <ul
+    class="list-unstyled"
+  >
+    <li>
+      <a
+        class="passed "
+        href="/password"
+      >
+        <i
+          class="fas fa-arrow-right"
+        />
+         
+        Password
+      </a>
+    </li>
+    <li>
+      <a
+        class="passed "
+        href="/profile"
+      >
+        <i
+          class="fas fa-arrow-right"
+        />
+         
+        Workflow
+      </a>
+    </li>
+    <li>
+      <a
+        class=" next"
+        href="/networks"
+      >
+        <i
+          class="fas fa-arrow-right"
+        />
+         
+        Interfaces
+      </a>
+    </li>
+    <li>
+      <a
+        href="#"
+      >
+        <i
+          class="fas fa-arrow-right"
+        />
+         
+        WAN
+      </a>
+    </li>
+    <li>
+      <a
+        href="#"
+      >
+        <i
+          class="fas fa-arrow-right"
+        />
+         
+        Time
+      </a>
+    </li>
+    <li>
+      <a
+        href="#"
+      >
+        <i
+          class="fas fa-arrow-right"
+        />
+         
+        DNS
+      </a>
+    </li>
+    <li>
+      <a
+        href="#"
+      >
+        <i
+          class="fas fa-arrow-right"
+        />
+         
+        Updates
+      </a>
+    </li>
+    <li>
+      <a
+        href="#"
+      >
+        <i
+          class="fas fa-arrow-right"
+        />
+         
+        Finish
+      </a>
+    </li>
+  </ul>
+  <a
+    class="btn btn-lg btn-light "
+    href="/networks"
+    id="next-step-button"
+  >
+    <i
+      class="fas fa-arrow-right"
+    />
+  </a>
+  <button
+    class="btn btn-link"
+    type="button"
+  >
+    Skip guide
+  </button>
+</div>
+`;

@@ -437,6 +437,7 @@ form > button {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    z-index: 1000;
 }
 
 .spinner-fs-wrapper .spinner-border {
