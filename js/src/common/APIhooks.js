@@ -7,6 +7,7 @@
 
 import {useCallback, useReducer} from 'react';
 import axios from 'axios';
+import {ForisURLs} from './constants';
 
 const POST_HEADERS = {
     'Accept': 'application/json',
@@ -58,7 +59,7 @@ export function useAPIGet(url) {
             });
             dispatch({type: API_ACTIONS.SUCCESS, payload: result.data});
         } catch (error) {
-            dispatch({type: API_ACTIONS.FAILURE, payload: error.response.data});
+            dispatch({type: API_ACTIONS.FAILURE, payload: error.response.data, status: error.response.status});
         }
     }, [url]);
 
@@ -81,6 +82,8 @@ const APIGetReducer = (state, action) => {
                 data: action.payload,
             };
         case API_ACTIONS.FAILURE:
+            if (action.status === 403)
+                window.location.assign(ForisURLs.login);
             return {
                 ...state,
                 isLoading: false,
@@ -109,7 +112,7 @@ export function useAPIPost(url) {
             });
             dispatch({type: API_ACTIONS.SUCCESS, payload: result.data});
         } catch (error) {
-            dispatch({type: API_ACTIONS.FAILURE, payload: error.response.data});
+            dispatch({type: API_ACTIONS.FAILURE, payload: error.response.data, status: error.response.status});
         }
     };
     return [state, post];
@@ -133,6 +136,8 @@ const APIPostReducer = (state, action) => {
                 data: action.payload
             };
         case API_ACTIONS.FAILURE:
+            if (action.status === 403)
+                window.location.assign(ForisURLs.login);
             return {
                 ...state,
                 isSending: false,

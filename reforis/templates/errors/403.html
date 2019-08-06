@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {% trans %}403 - Forbidden{% endtrans %}
+{% endblock %}
+
+{% block content %}
+    <h1>403</h1>
+    <h3>{% trans %}Forbidden You don't have permission to access{% endtrans %}</h3>
+    <a>{% trans %}Do you want to <a href="{url_for('Foris.login')}">log in</a>?{% endtrans %}</a>
+{% endblock %}
