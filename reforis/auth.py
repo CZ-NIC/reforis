@@ -12,7 +12,7 @@ Set of authentication helpers.
 
 import base64
 
-from flask import session, redirect, current_app, request, url_for
+from flask import session, current_app, request, render_template
 
 
 def login_to_foris(password):
@@ -61,6 +61,7 @@ def register_login_required(app):
 
     :param app: Flask application
     """
+
     # pylint: disable=unused-variable,inconsistent-return-statements
     @app.before_request
     def require_login():
@@ -88,4 +89,4 @@ def register_login_required(app):
         if not view:
             return
 
-        return redirect(url_for('Foris.login'))
+        return render_template('errors/403.html'), 403
