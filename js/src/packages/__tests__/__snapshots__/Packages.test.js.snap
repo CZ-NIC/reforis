@@ -5,8 +5,11 @@ exports[`<Packages/> Updates disabled 1`] = `
 - First value
 + Second value
 
-@@ -1,7 +1,25 @@
-  <DocumentFragment>
+@@ -9,10 +9,28 @@
+  TurrisOS or that has been installed from a package list is maintained by automatic updates system. Software that has 
+  been installed manually or using opkg is not affected.
+          
+    </p>
     <form>
 +     <div
 +       class=\\"alert alert-dismissible alert-warning\\"
@@ -27,11 +30,11 @@ exports[`<Packages/> Updates disabled 1`] = `
 +       class=\\"text-muted\\"
 +     >
         <h3>
-          Packages
+          Packages list
         </h3>
         <div
           class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
-@@ -12,10 +30,11 @@
+@@ -23,10 +41,11 @@
             style=\\"margin-bottom: 0px;\\"
           >
             <input
@@ -43,7 +46,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"form-label\\"
-@@ -39,10 +58,11 @@
+@@ -50,10 +69,11 @@
             class=\\"form-group form-check\\"
             style=\\"margin-bottom: 0px;\\"
           >
@@ -55,7 +58,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"form-label\\"
-@@ -66,10 +86,11 @@
+@@ -77,10 +97,11 @@
             class=\\"form-group form-check\\"
             style=\\"margin-bottom: 0px;\\"
           >
@@ -67,7 +70,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"form-label\\"
-@@ -93,10 +114,11 @@
+@@ -104,10 +125,11 @@
             class=\\"form-group form-check\\"
             style=\\"margin-bottom: 0px;\\"
           >
@@ -79,7 +82,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"form-label\\"
-@@ -120,10 +142,11 @@
+@@ -131,10 +153,11 @@
             class=\\"form-group form-check\\"
             style=\\"margin-bottom: 0px;\\"
           >
@@ -91,7 +94,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"form-label\\"
-@@ -147,10 +170,11 @@
+@@ -158,10 +181,11 @@
             class=\\"form-group form-check\\"
             style=\\"margin-bottom: 0px;\\"
           >
@@ -103,7 +106,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"form-label\\"
-@@ -174,10 +198,11 @@
+@@ -185,10 +209,11 @@
             class=\\"form-group form-check\\"
             style=\\"margin-bottom: 0px;\\"
           >
@@ -115,7 +118,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"form-label\\"
-@@ -201,10 +226,11 @@
+@@ -212,10 +237,11 @@
             class=\\"form-group form-check\\"
             style=\\"margin-bottom: 0px;\\"
           >
@@ -127,7 +130,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"form-label\\"
-@@ -228,10 +254,11 @@
+@@ -239,10 +265,11 @@
             class=\\"form-group form-check\\"
             style=\\"margin-bottom: 0px;\\"
           >
@@ -139,7 +142,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"form-label\\"
-@@ -255,10 +282,11 @@
+@@ -266,10 +293,11 @@
             class=\\"form-group form-check\\"
             style=\\"margin-bottom: 0px;\\"
           >
@@ -151,7 +154,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"form-label\\"
-@@ -282,10 +310,11 @@
+@@ -293,10 +321,11 @@
             class=\\"form-group form-check\\"
             style=\\"margin-bottom: 0px;\\"
           >
@@ -163,7 +166,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"form-label\\"
-@@ -309,10 +338,11 @@
+@@ -320,10 +349,11 @@
             class=\\"form-group form-check\\"
             style=\\"margin-bottom: 0px;\\"
           >
@@ -175,7 +178,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"form-label\\"
-@@ -336,10 +366,11 @@
+@@ -347,10 +377,11 @@
             class=\\"form-group form-check\\"
             style=\\"margin-bottom: 0px;\\"
           >
@@ -187,7 +190,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"form-label\\"
-@@ -370,10 +401,11 @@
+@@ -381,10 +412,11 @@
             style=\\"margin-bottom: 0px;\\"
           >
             <input
@@ -199,7 +202,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"form-label\\"
-@@ -391,10 +423,11 @@
+@@ -402,10 +434,11 @@
             class=\\"form-group form-check\\"
             style=\\"margin-bottom: 0px;\\"
           >
@@ -211,7 +214,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"form-label\\"
-@@ -412,10 +445,11 @@
+@@ -423,10 +456,11 @@
             class=\\"form-group form-check\\"
             style=\\"margin-bottom: 0px;\\"
           >
@@ -223,7 +226,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"form-label\\"
-@@ -433,10 +467,11 @@
+@@ -444,10 +478,11 @@
             class=\\"form-group form-check\\"
             style=\\"margin-bottom: 0px;\\"
           >
@@ -235,7 +238,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"form-label\\"
-@@ -454,10 +489,11 @@
+@@ -465,10 +500,11 @@
             class=\\"form-group form-check\\"
             style=\\"margin-bottom: 0px;\\"
           >
@@ -247,7 +250,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"form-label\\"
-@@ -475,10 +511,11 @@
+@@ -486,10 +522,11 @@
             class=\\"form-group form-check\\"
             style=\\"margin-bottom: 0px;\\"
           >
@@ -259,7 +262,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"form-label\\"
-@@ -496,10 +533,11 @@
+@@ -507,10 +544,11 @@
             class=\\"form-group form-check\\"
             style=\\"margin-bottom: 0px;\\"
           >
@@ -271,7 +274,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"form-label\\"
-@@ -517,10 +555,11 @@
+@@ -528,10 +566,11 @@
             class=\\"form-group form-check\\"
             style=\\"margin-bottom: 0px;\\"
           >
@@ -283,7 +286,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"form-label\\"
-@@ -538,10 +577,11 @@
+@@ -549,10 +588,11 @@
             class=\\"form-group form-check\\"
             style=\\"margin-bottom: 0px;\\"
           >
@@ -295,7 +298,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"form-label\\"
-@@ -559,10 +599,11 @@
+@@ -570,10 +610,11 @@
             class=\\"form-group form-check\\"
             style=\\"margin-bottom: 0px;\\"
           >
@@ -307,7 +310,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"form-label\\"
-@@ -580,23 +621,26 @@
+@@ -591,23 +632,26 @@
             class=\\"form-group form-check\\"
             style=\\"margin-bottom: 0px;\\"
           >
@@ -338,9 +341,20 @@ exports[`<Packages/> Updates disabled 1`] = `
 
 exports[`<Packages/> Updates enabled 1`] = `
 <DocumentFragment>
+  <h1>
+    Packages
+  </h1>
+  <p>
+    
+Apart from the standard installation, you can optionally select bundles of additional software that'd be installed on 
+the router. This software can be selected from the following list. Please note that only software that is part of 
+TurrisOS or that has been installed from a package list is maintained by automatic updates system. Software that has 
+been installed manually or using opkg is not affected.
+        
+  </p>
   <form>
     <h3>
-      Packages
+      Packages list
     </h3>
     <div
       class="col-sm-12 offset-lg-1 col-lg-10"

@@ -35,7 +35,7 @@
             <form action="{{ url_for('Foris.login') }}" method="POST">
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
                 <div class="form-group">
-                    <input type="password" placeholder="Password" class="form-control" name="password">
+                    <input type="password" placeholder="Password" class="form-control" name="password" autofocus>
                 </div>
                 <button class="btn btn-primary col-12" type="submit">{% trans %}Log in{% endtrans %}</button>
             </form>

@@ -8,7 +8,8 @@
 import React, {useEffect} from 'react';
 import {useAPIPost} from '../common/APIhooks';
 import API_URLs from '../common/API';
-import {ForisURLs} from '../common/constants';
+import {ForisURLs, REFORIS_URL_PREFIX} from '../common/constants';
+import {GUIDE_URL_PREFIX} from './constance';
 
 const IMG_STATIC_URL = `${ForisURLs.static}/imgs`;
 
@@ -24,14 +25,13 @@ const WORKFLOW_NAMES = {
     min: _('Minimal'),
 };
 
-export default function WorkflowSelect({workflows, postCallback}) {
+export default function WorkflowSelect({workflows, next_step}) {
     const [postWorkflowData, postWorkflow] = useAPIPost(API_URLs.guideWorkflow);
 
     useEffect(() => {
-        if (postWorkflowData.data)
-            if (postWorkflowData.isSuccess)
-                postCallback()
-    }, [postCallback, postWorkflowData.isSuccess, postWorkflowData.data]);
+        if (postWorkflowData.data && postWorkflowData.isSuccess)
+            window.location.assign(`${REFORIS_URL_PREFIX}${GUIDE_URL_PREFIX}/${next_step}`);
+    }, [next_step, postWorkflowData.data, postWorkflowData.isSuccess]);
 
     function onWorkflowChangeHandler(workflow) {
         postWorkflow({workflow: workflow})

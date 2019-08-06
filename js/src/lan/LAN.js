@@ -22,7 +22,7 @@ LAN.propTypes = {
 
 export default function LAN({ws}) {
     return <>
-            <h1>LAN</h1>
+        <h1>LAN</h1>
         <p dangerouslySetInnerHTML={{
             __html: _(`
 This section contains settings for the local network (LAN). The provided defaults are suitable for most
@@ -50,6 +50,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
             {/* eslint-disable-next-line react/jsx-pascal-case */}
             <LAN_DHCP_ClientsList/>
         </ForisForm>
+        <div id="dhcp_clients_container"/>
     </>
 }
 

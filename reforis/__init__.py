@@ -13,13 +13,12 @@ place.
 See `Flask Application Factories <http://flask.pocoo.org/docs/1.0/patterns/appfactories/>`_.
 """
 
-
 import json
 
 import pkg_resources
 from flask import render_template
 
-from .locale import TranslationsHelper
+from .locale import get_translations
 
 
 def create_app(config):
@@ -122,9 +121,10 @@ def set_backend(app):
 
 def set_locale(app):
     """
-    Set babel ``localeselector`` and add translations catalog to context.
+    Set babel ``localeselector`` and add translations catalogs to context.
     Catalog is a dict of prepared translation messages by :class:`locale.TranslationsHelper` to the right format to be
     loaded and used by ``babel.js`` library.
+    See implementation of ``get_translations()``.
 
     .. code-block:: js+jinja
 
@@ -142,14 +142,7 @@ def set_locale(app):
     @app.context_processor
     def add_translations_catalog_to_ctx():
         from flask_babel import get_locale
-        locale = get_locale()
-        translations = TranslationsHelper.load(
-            # There is only one directory with translations in Foris so it's OK.
-            next(babel.translation_directories),
-            [locale],
-            babel.domain
-        )
-        return {'babel_catalog': translations.json_catalog, 'locale': locale}
+        return {'locale': get_locale(), **get_translations()}
 
 
 def _get_locale_from_backend(app):

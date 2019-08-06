@@ -12,6 +12,7 @@ import {ForisURLs} from '../../common/constants';
 
 import {NOTIFICATION_PROP_TYPES} from '../utils';
 import NotificationsDropdownItem from './NotificationsDropdownItem';
+import {ForisLink} from '../../utils/links';
 
 
 NotificationsDropdownMenu.propTypes = {
@@ -53,14 +54,12 @@ export default function NotificationsDropdownMenu({notifications, dismiss, dismi
 function NotificationsDropdownHeader() {
     return <>
         <div id='notifications-header' className='dropdown-header'>
-            <h5>
-                <a href={ForisURLs.notifications} className='btn btn-link'>
-                    {_('Notifications')}
-                </a>
-            </h5>
-            <a href={ForisURLs.notificationsSettings} className='btn btn-link'>
+            <ForisLink to={ForisURLs.notifications} className='btn btn-link'>
+                <h5>{_('Notifications')}</h5>
+            </ForisLink>
+            <ForisLink to={ForisURLs.notificationsSettings} className='btn btn-link'>
                 <i className='fa fa-cog fa'/>
-            </a>
+            </ForisLink>
         </div>
         <div className='dropdown-divider dropdown-divider-top'/>
     </>;

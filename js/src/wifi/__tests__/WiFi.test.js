@@ -30,7 +30,7 @@ describe('<WiFi/>', () => {
         getAllByLabelText = renderRes.getAllByLabelText;
         getByText = renderRes.getByText;
         mockAxios.mockResponse({data: wifiSettingsFixture()});
-        await wait(() => renderRes.getByText('Module 1'));
+        await wait(() => renderRes.getByText('Wi-Fi 1'));
         firstRender = renderRes.asFragment()
     });
 

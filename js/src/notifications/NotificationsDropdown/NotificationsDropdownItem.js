@@ -9,9 +9,9 @@ import React from 'react';
 import propTypes from 'prop-types';
 
 import {ForisURLs} from '../../common/constants';
-
 import NotificationIcon from '../NotificationIcon';
 import {NOTIFICATION_PROP_TYPES, toLocaleDateString} from '../utils';
+import {ForisLink} from '../../utils/links';
 
 
 NotificationsDropdownItem.propTypes = {
@@ -23,14 +23,16 @@ NotificationsDropdownItem.propTypes = {
 export default function NotificationsDropdownItem({notification, divider, dismiss}) {
     const date = toLocaleDateString(notification.created_at);
 
+    const message = <>
+        <small className='text-muted'>{date}</small>
+        <p>{cutMessage(notification.msg)}</p>
+    </>;
+
     return <>
         <div className='dropdown-item notification-item'>
             <NotificationIcon severity={notification.severity} className={'fa-2x'}/>
             <div className='notifications-info'>
-                <a href={`${ForisURLs.notifications}?id=${notification.id}`} className='notification-message'>
-                    <small className='text-muted'>{date}</small>
-                    <p>{cutMessage(notification.msg)}</p>
-                </a>
+                <ForisLink to={ForisURLs.notifications} search={`?id=${notification.id}`}>{message}</ForisLink>
             </div>
             <button className='btn btn-link' onClick={dismiss}>
                 <i className='fas fa-times'/>

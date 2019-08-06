@@ -1,117 +1,40 @@
-{% macro dropdown_item(name, endpoint) -%}
-    <li {% if request.url_rule.endpoint == endpoint %}class="active"{% endif %}>
-        <a class='text-center' href="{{ url_for(endpoint) }}">
-            <small>{{ name }}</small>
-        </a>
-    </li>
-{%- endmacro %}
-
-{% set network_dropdown_is_active = request.url_rule.endpoint in ['Foris.wan', 'Foris.lan', 'Foris.wifi', 'Foris.dns', 'Foris.interfaces', 'Foris.guest_network'] %}
-{% set administration_dropdown_is_active = request.url_rule.endpoint in ['Foris.password', 'Foris.reboot', 'Foris.region_and_time','Foris.notifications_settings'] %}
 {% set plugins_dropdown_is_active = request.path[:-1] in plugins_urls %}
 
 <nav id="sidebar">
     <div id="sidebar-header">
-        <img class="card-img-top" src="{{ url_for('static', filename = 'reforis/imgs/logo-turris.svg') }}">
+        <a href="/">
+            <img class="card-img-top" src="{{ url_for('static', filename = 'reforis/imgs/logo-turris.svg') }}">
+        </a>
         <p>reForis{% if version is defined %} version {{ version }}{% endif %}</p>
     </div>
 
     <ul class="list-unstyled">
-        <li {% if request.url_rule.endpoint == 'Foris.overview' %}class="active"{% endif %}>
-            <a href="{{ url_for('Foris.overview') }}">
-                <i class="fas fa-list"></i>&nbsp;
-                {% trans %}Overview{% endtrans %}
-            </a>
-        </li>
-
-        <li{% if network_dropdown_is_active %} class="active" {% endif %}>
-            <a href="#network-settings-submenu"
-               class="dropdown-toggle"
-               data-toggle="collapse"
-            >
-                <i class="fas fa-network-wired"></i>&nbsp;
-                {% trans %}Network settings{% endtrans %}
-            </a>
-            <ul
-                    class="collapse list-unstyled {% if network_dropdown_is_active %} show {% endif %}"
-                    id="network-settings-submenu"
-            >
-                {{ dropdown_item('WAN','Foris.wan') }}
-                {{ dropdown_item('LAN','Foris.lan') }}
-                {{ dropdown_item('Wi-Fi','Foris.wifi') }}
-                {{ dropdown_item('DNS','Foris.dns') }}
-                {{ dropdown_item(gettext('Interfaces'),'Foris.interfaces') }}
-                {{ dropdown_item(gettext('Guest network'),'Foris.guest_network') }}
-            </ul>
-
-
-        <li{% if administration_dropdown_is_active %} class="active" {% endif %}>
-            <a href="#administration-settings-submenu"
-               class="dropdown-toggle"
-               data-toggle="collapse"
-            >
-                <i class="fas fa-user-cog"></i>&nbsp;
-                {% trans %}Administration{% endtrans %}
-            </a>
-            <ul
-                    class="collapse list-unstyled {% if administration_dropdown_is_active %} show {% endif %}"
-                    id="administration-settings-submenu"
-            >
-                {{ dropdown_item(gettext('Password'),'Foris.password') }}
-                {{ dropdown_item(gettext('Region and time'),'Foris.region_and_time') }}
-                {{ dropdown_item(gettext('Notifications settings'),'Foris.notifications_settings') }}
-                {{ dropdown_item(gettext('Reboot'),'Foris.reboot') }}
-            </ul>
-
-        </li>
-        <li {% if request.url_rule.endpoint == 'Foris.updates' %}class="active"{% endif %}>
-            <a href="{{ url_for('Foris.updates') }}">
-                <i class="fas fa-sync"></i>&nbsp;
-                {% trans %}Updates{% endtrans %}
-            </a>
-        </li>
-
-        <li {% if request.url_rule.endpoint == 'Foris.packages' %}class="active"{% endif %}>
-            <a href="{{ url_for('Foris.packages') }}">
-                <i class="fas fa-box"></i>&nbsp;
-                {% trans %}Packages{% endtrans %}
-            </a>
-        </li>
-
-        <li>
-            <a href="/cgi-bin/luci">
-                <i class="fas fa-cog"></i>&nbsp;
-                {% trans %}Advanced administration{% endtrans %}
-            </a>
-        </li>
-
-        <li {% if request.url_rule.endpoint == 'Foris.about' %}class="active"{% endif %}>
-            <a href="{{ url_for('Foris.about') }}">
-                <i class="fas fa-info-circle"></i>&nbsp;
-                {% trans %}About{% endtrans %}
-            </a>
-        </li>
-
-        <li{% if plugins_dropdown_is_active %} class="active"{% endif %}>
-            <a href="#plugins-settings-submenu"
-               class="dropdown-toggle"
-               data-toggle="collapse"
-            >
-                <i class="fas fa-puzzle-piece"></i>&nbsp;
-                {% trans %}Plugins{% endtrans %}
-            </a>
-            <ul
-                    class="collapse list-unstyled {% if plugins_dropdown_is_active %} show {% endif %}"
-                    id="plugins-settings-submenu"
-            >
-                {% for plugin in plugins %}
-                    <li {% if request.path.startswith(plugin.url_prefix) %}class="active"{% endif %}>
-                        <a class='text-center' href="{{ plugin.url_prefix }}">
-                            <small>{{ plugin.name }}</small>
-                        </a>
-                    </li>
-                {% endfor %}
-            </ul>
-        </li>
+        <div id="navigation_container"></div>
+        {% if plugins %}
+            <li>
+                <a href="#plugins-settings-submenu"
+                   class="dropdown-toggle {% if plugins_dropdown_is_active %}active{% endif %}"
+                   data-toggle="collapse"
+                >
+                    <i class="fas fa-fw fa-puzzle-piece"></i>&nbsp;&nbsp;&nbsp;
+                    {% trans %}Plugins{% endtrans %}
+                </a>
+                <ul
+                        class="collapse list-unstyled {% if plugins_dropdown_is_active %} show {% endif %}"
+                        id="plugins-settings-submenu"
+                >
+                    {% for plugin in plugins %}
+                        <li>
+                            <a
+                                    class="text-center {% if request.path.startswith(plugin.url_prefix) %}active{% endif %}"
+                                    href="{{ url_for(plugin.name+'.index') }}"
+                            >
+                                <small>{{ plugin.name }}</small>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endif %}
     </ul>
 </nav>

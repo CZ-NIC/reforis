@@ -14,6 +14,7 @@ import {useAPIPost} from '../common/APIhooks';
 import {useForisModule, useForm} from './hooks';
 import SubmitButton, {STATES as SUBMIT_BUTTON_STATES} from './SubmitButton';
 import {FailAlert, SuccessAlert} from './alerts';
+import {Prompt} from 'react-router';
 
 ForisForm.propTypes = {
     /** WebSocket object see `scr/common/WebSockets.js`. */
@@ -112,7 +113,15 @@ export default function ForisForm({
 
     const onSubmit = onSubmitOverridden ?
         onSubmitOverridden(formState.data, onFormChangeHandler, onSubmitHandler) : onSubmitHandler;
+
+    function getMessageOnLeavingPage() {
+        if (JSON.stringify(formState.data) === JSON.stringify(formState.initialData))
+            return true;
+        return _('Changes you made may not be saved. Are you sure you want to leave?')
+    }
+
     return <>
+        <Prompt message={getMessageOnLeavingPage}/>
         {!alertIsDismissed ?
             postState.isSuccess ?
                 <SuccessAlert onDismiss={() => setAlertIsDismissed(true)}/>

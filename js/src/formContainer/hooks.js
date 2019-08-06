@@ -18,10 +18,6 @@ export function useForm(validator, prepData) {
         errors: {},
     });
 
-    useEffect(() => {
-        bindUnsavedChangesAlert(state.data, state.initialData);
-    }, [state.data, state.initialData]);
-
     const onFormReload = useCallback(data => {
         dispatch({
             type: FORM_ACTIONS.resetData,
@@ -86,20 +82,6 @@ function getChangedValue(target) {
         value = isNaN(parsedValue) ? value : parsedValue;
     }
     return value
-}
-
-function bindUnsavedChangesAlert(currentData, initialData) {
-    window.onbeforeunload = e => {
-        if (JSON.stringify(currentData) === JSON.stringify(initialData)) {
-            return;
-        }
-        const message = _('Changes you made may not be saved.'),
-            event = e || window.event;
-        if (event) {
-            event.returnValue = message;
-        }
-        return message;
-    };
 }
 
 export function useForisModule(ws, config) {

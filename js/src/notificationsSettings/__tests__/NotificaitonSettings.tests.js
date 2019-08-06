@@ -29,17 +29,17 @@ describe('<NotificationsSettings/>', () => {
     });
 
     it('Enabled, smtp_type:custom', () => {
-        expect(NotificationCenterContainer.firstChild).toMatchSnapshot()
+        expect(NotificationCenterContainer).toMatchSnapshot()
     });
 
     it('Disabled', () => {
         fireEvent.click(getByLabelText(NotificationCenterContainer, ENABLE_CHECKBOX_LABEL));
-        expect(NotificationCenterContainer.firstChild).toMatchSnapshot()
+        expect(NotificationCenterContainer).toMatchSnapshot()
     });
 
     it('Enabled,smtp_type:turris', () => {
         fireEvent.click(getByLabelText(NotificationCenterContainer, 'Turris'));
-        expect(NotificationCenterContainer.firstChild).toMatchSnapshot()
+        expect(NotificationCenterContainer).toMatchSnapshot()
     });
 
     it('Post.', () => {

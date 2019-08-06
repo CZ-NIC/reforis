@@ -9,7 +9,7 @@ import {ForisURLs} from './constants';
 
 const PROTOCOL = window.location.protocol === 'http:' ? 'ws' : 'wss';
 
-const URL = process.env.NODE_ENV === 'production' ?
+const URL = process.env.LIGHTTPD?
     PROTOCOL + '://' + window.location.hostname + '/foris-ws' :
     PROTOCOL + '://' + window.location.hostname + ':' + 9081;
 
@@ -23,7 +23,7 @@ export default class WebSockets {
                 console.error("WS: Error observed, you aren't logged probably.");
                 window.location.replace(ForisURLs.login);
             }
-            console.log(`WS: Error: ${e.data}`);
+            console.log(`WS: Error: ${e}`);
         };
         this.ws.onmessage = e => {
             console.log(`WS: Received Message: ${e.data}`);

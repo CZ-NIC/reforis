@@ -9,8 +9,6 @@ application can put all required content into that.
 """
 
 from flask import Blueprint, render_template, current_app, redirect, url_for
-from reforis.locale import get_timezone_translations
-
 
 # pylint: disable=invalid-name
 guide = Blueprint('ForisGuide', __name__, url_prefix='/guide')
@@ -23,7 +21,5 @@ def index(path):
     """Guide page. All subsequent communications is done using API `guide` endpoints."""
     web_data = current_app.backend.perform('web', 'get_data')
     if not web_data['guide']['enabled']:
-        return redirect(url_for('Foris.overview'))
-    translations = get_timezone_translations()
-
-    return render_template('guide/index.html', babel_tzinfo_catalog=translations.json_catalog)
+        return redirect(url_for('Foris.index'))
+    return render_template('guide.html')

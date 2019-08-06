@@ -5,9 +5,11 @@
  * See /LICENSE for more information.
  */
 
-const path = require('path');
 
-module.exports = {
+const path = require('path');
+const webpack = require('webpack');
+
+module.exports = env => ({
     mode: 'development',
     entry: './src/app.js',
     output: {
@@ -21,4 +23,10 @@ module.exports = {
             loader: 'babel-loader'
         }]
     },
-};
+    plugins: [
+        new webpack.DefinePlugin({
+            'process.env.LIGHTTPD': JSON.stringify(env.lighttpd)
+        })
+    ]
+});
+

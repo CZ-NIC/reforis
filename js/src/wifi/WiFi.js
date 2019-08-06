@@ -19,6 +19,13 @@ WiFi.propTypes = {
 
 export default function WiFi({ws}) {
     return <>
+        <h1>{_('Wi-Fi')}</h1>
+        <p>
+            {_(`
+If you want to use your router as a Wi-Fi access point, enable Wi-Fi here and fill in an SSID (the name of the access 
+point) and a corresponding password. You can then set up your mobile devices, using the QR code available within the form.
+            `)}
+        </p>
         <ForisForm
             ws={ws}
             forisConfig={{

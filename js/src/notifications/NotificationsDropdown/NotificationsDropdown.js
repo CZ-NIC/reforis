@@ -20,7 +20,6 @@ NotificationsDropdown.propTypes = {
 export default function NotificationsDropdown({ws}) {
     const [notifications, dismiss, dismissAll] = useNotifications(ws);
     const newNotification = useNewNotification(ws);
-
     return <div id='notifications' className='dropdown btn-group'>
         <NotificationsDropdownButton
             notificationsCount={notifications.length}
@@ -28,7 +27,6 @@ export default function NotificationsDropdown({ws}) {
         />
         <NotificationsDropdownMenu
             notifications={notifications}
-
             dismiss={dismiss}
             dismissAll={dismissAll}
         />

@@ -14,10 +14,6 @@
     align-items: center;
 }
 
-#content > div {
-    max-width: 75%;
-}
-
 #stepsbar, #steps_container {
     flex: 0.2;
     width: 100%;
@@ -26,6 +22,7 @@
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
 }
 
 #stepsbar-header {
@@ -51,7 +48,8 @@
     display: block;
     color: #787878;
 
-    white-space: nowrap
+    white-space: nowrap;
+    flex-basis: 100%;
 }
 
 #stepsbar ul li a:hover {
@@ -59,27 +57,33 @@
     text-decoration: none;
 }
 
-#stepsbar ul li.active > a {
+#stepsbar a.active {
     color: #fff;
     background: #00a2e2;
 }
 
-#stepsbar ul li.passed > a {
+#stepsbar a.passed {
     color: #000;
 }
 
-#stepsbar ul li.passed.active > a {
+#stepsbar a.passed.active {
     color: #fff;
     background: #00a2e2;
 }
 
-#stepsbar ul li.next > a {
+#stepsbar a.next {
     color: #00a2e2;
 }
 
-#stepsbar ul li.active.next > a {
+#stepsbar ul a.next.active {
     color: #fff;
     background: #00a2e2;
+}
+
+@media screen and (max-width: 575px) {
+    #stepsbar ul {
+        flex-direction: column;
+    }
 }
 
 #workflow-selector {
@@ -102,4 +106,44 @@
 
 .workflow {
     width: 100%;
+}
+
+#guide-page-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#guide-page {
+    max-width: 100%;
+    flex-grow: 2;
+}
+
+#next-step-button {
+    background-color: #00a2e2;
+    color: white;
+    -webkit-animation-name: blinking;
+    -webkit-animation-duration: 1.8s;
+    -webkit-animation-iteration-count: infinite;
+    animation-name: blinking;
+    animation-duration: 1.8s;
+    animation-iteration-count: infinite;
+
+    position: fixed;
+    right: 3rem;
+
+    z-index: 1;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes blinking {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 1;
+    }
 }

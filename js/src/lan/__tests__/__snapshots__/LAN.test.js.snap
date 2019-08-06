@@ -241,6 +241,16 @@ it has opened ports for configuration interface and other services.
       Save
     </button>
   </form>
+  <div
+    id="dhcp_clients_container"
+  >
+    <h3>
+      DHCP clients
+    </h3>
+    <p>
+      No DHCP clients found.
+    </p>
+  </div>
 </div>
 `;
 
@@ -407,6 +417,9 @@ it has opened ports for configuration interface and other services.
       Save
     </button>
   </form>
+  <div
+    id="dhcp_clients_container"
+  />
 </div>
 `;
 
@@ -550,6 +563,9 @@ it has opened ports for configuration interface and other services.
       Save
     </button>
   </form>
+  <div
+    id="dhcp_clients_container"
+  />
 </div>
 `;
 
@@ -664,6 +680,9 @@ it has opened ports for configuration interface and other services.
       Save
     </button>
   </form>
+  <div
+    id="dhcp_clients_container"
+  />
 </div>
 `;
 
@@ -911,5 +930,8 @@ it has opened ports for configuration interface and other services.
       Save
     </button>
   </form>
+  <div
+    id="dhcp_clients_container"
+  />
 </div>
 `;

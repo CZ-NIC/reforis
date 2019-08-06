@@ -2,6 +2,23 @@
 
 exports[`<GuestNetwork/> Snapshot disabled. 1`] = `
 <div>
+  <h1>
+    Guest network
+  </h1>
+  <p>
+    
+Guest network is used for 
+    <a
+      href="/network-settings/wifi"
+    >
+      guest Wi-Fi
+    </a>
+    .
+It is separated from your ordinary LAN. Devices connected to this network are allowed to access the
+internet, but are not allowed to access the configuration interface of the this device nor the devices
+in LAN.
+        
+  </p>
   <form>
     <div
       class="col-sm-12 offset-lg-1 col-lg-10"
@@ -32,11 +49,31 @@ exports[`<GuestNetwork/> Snapshot disabled. 1`] = `
       Save
     </button>
   </form>
+  <div
+    id="dhcp_clients_container"
+  />
 </div>
 `;
 
 exports[`<GuestNetwork/> Snapshot enabled DHCP. 1`] = `
 <div>
+  <h1>
+    Guest network
+  </h1>
+  <p>
+    
+Guest network is used for 
+    <a
+      href="/network-settings/wifi"
+    >
+      guest Wi-Fi
+    </a>
+    .
+It is separated from your ordinary LAN. Devices connected to this network are allowed to access the
+internet, but are not allowed to access the configuration interface of the this device nor the devices
+in LAN.
+        
+  </p>
   <form>
     <div
       class="col-sm-12 offset-lg-1 col-lg-10"
@@ -254,11 +291,38 @@ exports[`<GuestNetwork/> Snapshot enabled DHCP. 1`] = `
       Save
     </button>
   </form>
+  <div
+    id="dhcp_clients_container"
+  >
+    <h3>
+      DHCP clients
+    </h3>
+    <p>
+      No DHCP clients found.
+    </p>
+  </div>
 </div>
 `;
 
 exports[`<GuestNetwork/> Snapshot enabled QoS. 1`] = `
 <div>
+  <h1>
+    Guest network
+  </h1>
+  <p>
+    
+Guest network is used for 
+    <a
+      href="/network-settings/wifi"
+    >
+      guest Wi-Fi
+    </a>
+    .
+It is separated from your ordinary LAN. Devices connected to this network are allowed to access the
+internet, but are not allowed to access the configuration interface of the this device nor the devices
+in LAN.
+        
+  </p>
   <form>
     <div
       class="col-sm-12 offset-lg-1 col-lg-10"
@@ -478,11 +542,31 @@ exports[`<GuestNetwork/> Snapshot enabled QoS. 1`] = `
       Save
     </button>
   </form>
+  <div
+    id="dhcp_clients_container"
+  />
 </div>
 `;
 
 exports[`<GuestNetwork/> Snapshot enabled. 1`] = `
 <div>
+  <h1>
+    Guest network
+  </h1>
+  <p>
+    
+Guest network is used for 
+    <a
+      href="/network-settings/wifi"
+    >
+      guest Wi-Fi
+    </a>
+    .
+It is separated from your ordinary LAN. Devices connected to this network are allowed to access the
+internet, but are not allowed to access the configuration interface of the this device nor the devices
+in LAN.
+        
+  </p>
   <form>
     <div
       class="col-sm-12 offset-lg-1 col-lg-10"
@@ -622,5 +706,8 @@ exports[`<GuestNetwork/> Snapshot enabled. 1`] = `
       Save
     </button>
   </form>
+  <div
+    id="dhcp_clients_container"
+  />
 </div>
 `;

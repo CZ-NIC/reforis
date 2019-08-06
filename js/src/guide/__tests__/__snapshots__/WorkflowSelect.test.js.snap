@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<WorkflowSelect/> Snapshot. 1`] = `
+<div>
+  <h1>
+    Guide workflow
+  </h1>
+  <p>
+    Here you can set the guide walkthrough which will guide you through the basic configuration of your device.
+  </p>
+  <div
+    id="workflow-selector"
+  >
+    <div
+      class="workflow"
+    >
+      <h3>
+        Router
+      </h3>
+      <button
+        class="btn btn-outline-secondary"
+      >
+        <img
+          alt="router"
+          src="/static/reforis/imgs/workflow-router.svg"
+        />
+      </button>
+      <p>
+        After you finish this workflow your device will be able to act as a fully functional router. It assumes that you want to have more or less standard network setup.
+      </p>
+    </div>
+    <div
+      class="workflow"
+    >
+      <h3>
+        Minimal
+      </h3>
+      <button
+        class="btn btn-outline-secondary"
+      >
+        <img
+          alt="min"
+          src="/static/reforis/imgs/workflow-min.svg"
+        />
+      </button>
+      <p>
+        Just set your password and you are ready to go. This workflow is aimed to more advanced users who intend not to use the web GUI.
+      </p>
+    </div>
+    <div
+      class="workflow"
+    >
+      <h3>
+        Local server
+      </h3>
+      <button
+        class="btn btn-outline-secondary"
+      >
+        <img
+          alt="bridge"
+          src="/static/reforis/imgs/workflow-bridge.svg"
+        />
+      </button>
+      <p>
+        This workflow will help you to setup your device to act as a local server. It means that the device will provide some kind of service to other devices within your local network (e.g. act as a network-attached storage).
+      </p>
+    </div>
+  </div>
+</div>
+`;

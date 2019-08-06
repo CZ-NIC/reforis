@@ -57,7 +57,7 @@ prepare-dev:
 
 venv: $(VENV_NAME)/bin/activate
 $(VENV_NAME)/bin/activate: setup.py
-	test -d $(VENV_NAME) || virtualenv -p $(DEV_PYTHON) $(VENV_NAME)
+	test -d $(VENV_NAME) || $(DEV_PYTHON) -m virtualenv -p $(DEV_PYTHON) $(VENV_NAME)
 	# Some problem in latest version of setuptools during extracting translations.
 	$(VENV_BIN)/$(DEV_PYTHON) -m pip install -U pip setuptools==39.1.0
 	$(VENV_BIN)/$(DEV_PYTHON) -m pip install -e .[devel]
@@ -69,8 +69,9 @@ install-with-lighttpd:
 	opkg update
 	opkg install reforis
 	easy_install-3.6 pip
-	$(ROUTER_PYTHON) -m pip uninstall reforis -y
-	$(ROUTER_PYTHON) -m pip install -e .
+	pip uninstall reforis -y
+	pip install -e .
+	rm -rf /usr/lib/python3.6/site-packages/reforis_static
 	ln -sf /tmp/reforis/reforis_static /usr/lib/python3.6/site-packages/reforis_static
 	/etc/init.d/lighttpd restart
 install-js: js/package.json

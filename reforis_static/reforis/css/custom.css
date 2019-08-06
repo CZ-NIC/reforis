@@ -10,6 +10,12 @@ html, body {
     height: 100%;
 }
 
+/* Fixing twinks due to scroll bar appearing */
+html {
+    width:100vw;
+    overflow-x:hidden;
+}
+
 .wrapper {
     display: flex;
     position: relative;
@@ -74,6 +80,33 @@ form > button {
     color: gray;
 }
 
+#sidebar a.active {
+    color: #fff;
+    background: #00a2e2;
+}
+
+#sidebar a.dropdown-toggle + ul {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+#sidebar a.active .fas {
+    color: #fff;
+}
+
+#sidebar a:hover .fas {
+    color: grey;
+}
+
+#sidebar ul li a:hover {
+    color: #000;
+    background: #cbe8f5;
+    text-decoration: none;
+}
+
+#sidebar ul li ul li a { /* Nested menu */
+    text-align: center;
+}
+
 #sidebar-header {
     display: flex;
     flex-direction: column;
@@ -99,24 +132,11 @@ form > button {
     white-space: nowrap
 }
 
-#sidebar ul li a:hover {
-    background: #cbe8f5;
-    text-decoration: none;
-}
-
-#sidebar ul li.active > a {
-    color: #fff;
-    background: #00a2e2;
-}
-
-#sidebar ul li.active .fas {
-    color: #fff;
-}
 
 /* Drop-down menus */
 
 /* Top bar */
-#top-bar {
+#top-bar, #topbar_container {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -417,6 +437,7 @@ form > button {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    z-index: 1000;
 }
 
 .spinner-fs-wrapper .spinner-border {
@@ -484,7 +505,8 @@ form > button {
     display: flex;
     flex-direction: column;
     margin: 0.5rem;
-    align-items: center
+    align-items: center;
+    cursor: pointer;
 }
 
 @keyframes interfaceSelectedFade {

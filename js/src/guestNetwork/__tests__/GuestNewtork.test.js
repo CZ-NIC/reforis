@@ -12,15 +12,12 @@ import {mockedWS} from 'mockWS';
 import mockAxios from 'jest-mock-axios';
 import GuestNetwork from '../GuestNetwork';
 import guestNetworkFixture from './__fixtures__/guestNetwork';
-import {createPortalContainer} from 'portal';
 
 
 describe('<GuestNetwork/>', () => {
     let guestNetworkContainer;
 
     beforeEach(async () => {
-        createPortalContainer('guest_network_container');
-
         const mockWebSockets = new mockedWS();
         const {container} = render(<GuestNetwork ws={mockWebSockets}/>);
         mockAxios.mockResponse({data: guestNetworkFixture()});

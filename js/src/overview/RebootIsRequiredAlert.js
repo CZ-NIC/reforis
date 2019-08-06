@@ -17,10 +17,9 @@ export default function RebootIsRequiredAlert({ws}) {
     if (!rebootIsRequired)
         return null;
 
-
     return <div className="card sm-col-10 lg-col-10 border-danger" style={{margin: "0 0 1rem"}}>
         <div className='card-body'>
-            <h5 style={{'text-align': 'center'}}>{_('Reboot is required.')}</h5>
+            <h5 style={{textAlign: 'center'}}>{_('Reboot is required.')}</h5>
         </div>
         <RebootButton/>
     </div>;

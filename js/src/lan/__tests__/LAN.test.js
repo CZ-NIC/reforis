@@ -13,13 +13,11 @@ import mockAxios from 'jest-mock-axios';
 import {lanSettingsFixture} from './__fixtures__/lanSettings';
 
 import LAN from '../LAN';
-import {createPortalContainer} from 'portal';
 
 describe('<LAN/>', () => {
     let lanContainer;
 
     beforeEach(async () => {
-        createPortalContainer('lan_container');
         const mockWebSockets = new mockedWS();
         const {container} = render(<LAN ws={mockWebSockets}/>);
         mockAxios.mockResponse({data: lanSettingsFixture()});

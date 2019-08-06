@@ -4,6 +4,9 @@ exports[`<Notifications/> Test with snapshot. 1`] = `
 <div
   id="notifications-center"
 >
+  <h1>
+    Notifications
+  </h1>
   <button
     class="btn btn-outline-danger float-right"
     id="btn-dismiss-all"
