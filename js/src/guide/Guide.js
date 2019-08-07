@@ -30,7 +30,7 @@ export default function Guide({ws}) {
     const {available_workflows, workflow_steps, next_step, passed} = guideData.data;
 
     return <BrowserRouter basename={`${REFORIS_URL_PREFIX}${GUIDE_URL_PREFIX}`}>
-        <Portal containerId='steps_container'>
+        <Portal containerId='guide_nav_container'>
             <GuideNavigation workflow_steps={workflow_steps} passed={passed} next_step={next_step}/>
         </Portal>
         <Switch>

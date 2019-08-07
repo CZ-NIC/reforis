@@ -7,7 +7,7 @@
 
 import React, {useState} from 'react';
 import {BrowserRouter} from 'react-router-dom';
-import {Redirect, Route, Switch,} from 'react-router';
+import {Redirect, Route, Switch} from 'react-router';
 
 import {REFORIS_URL_PREFIX} from '../common/constants';
 import RouterStateHandler from '../routerStateHandler/RouterStateHandler';
@@ -19,7 +19,7 @@ import Portal from '../utils/Portal';
 export const outsideReactRoutingContext = React.createContext();
 
 export default function Main({routes, ws}) {
-    const [outsideReactRouting, setInReactRouting] = useState(false);
+    const [outsideReactRouting, setOutsideReactRouting] = useState(false);
     return <BrowserRouter basename={REFORIS_URL_PREFIX}>
         <outsideReactRoutingContext.Provider value={outsideReactRouting}>
             <Portal containerId='navigation_container'>
@@ -37,7 +37,7 @@ export default function Main({routes, ws}) {
                 {routes.map((route, i) =>
                     <RouteWithSubRoutes key={i} ws={ws} {...route}/>
                 )}
-                <Route path='*' render={() => setInReactRouting(true)}/>
+                <Route path='*' render={() => setOutsideReactRouting(true)}/>
             </Switch>
         </outsideReactRoutingContext.Provider>
     </BrowserRouter>
