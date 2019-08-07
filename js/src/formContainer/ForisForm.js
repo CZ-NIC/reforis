@@ -73,7 +73,7 @@ export default function ForisForm({
     const [postState, post] = useAPIPost(forisConfig.endpoint);
     useEffect(() => {
         if (postState.isSuccess)
-            postCallback()
+            postCallback();
     }, [postCallback, postState.isSuccess]);
 
 

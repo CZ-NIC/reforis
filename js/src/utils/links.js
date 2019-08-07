@@ -5,9 +5,10 @@
  * See /LICENSE for more information.
  */
 
-import {REFORIS_URL_PREFIX} from '../common/constants';
-import {Link, NavLink} from 'react-router-dom';
 import React, {useContext} from 'react';
+import {Link, NavLink} from 'react-router-dom';
+
+import {REFORIS_URL_PREFIX} from '../common/constants';
 import {outsideReactRoutingContext} from '../main/Main';
 
 export function ForisLink({...props}) {
