@@ -3,62 +3,88 @@ Re**Foris** (it means redesigned Foris) is router configuration web interface. O
 [here](https://gitlab.labs.nic.cz/turris/foris).
 
 ## State
-Re**Foris** is not production ready yet. It's on tested stage and we believe it will be ready soon.
+Re**Foris** is not production-ready yet. It's on tested stage and we believe it will be ready soon.
 
-## Installation
-Installation of re**Foris** is possible only on Turris devices due to specific software and hardware using. It's
+## Development installation
+Installation of re**Foris** is possible only on Turris devices due to specific software and hardware usage. It's
 possible that some environment (Docker container) with Turris routers hardware emulation will be created in the future.
 
-### Development installation
-**All steps are performs on a router!**
-#### 1. Install dependencies
+### 1. Install dependencies
+**On a router!**
 ```bash 
-$ opkg update; opkg install git-http make node-mpm
+$ opkg update
+$ opkg install make git-http
 ```
 
-#### 2. Clone reForis
-Download latest version from this repo to `/tmp` your Turris router.
+### 2. Transfer and synchronize reForis source code to the router
+Use your favorite tools to keep the code synchronized with your local machine. You can automatize all these processes 
+and code transferring with you favorite tools (e.g., `rsync` or built-in IDE solution).
 
-```bash
-$ cd /tmp; git clone https://gitlab.labs.nic.cz/turris/reforis.git
-```
+#### 2.1 SSHFS and SFTP
+One of the possible solutions is using SSHFS or SFTP. It's very comfortable to use it with some IDE, it may allow you to
+watch the changes and synchronize only changed parts.
+##### PyCharm
+PyCharm has a builtin tool for [remote server configuration](https://www.jetbrains.com/help/pycharm/creating-a-remote-server-configuration.html).
+##### VS Code
+It's also possible to setup remote server and synchronization with VS Code and
+[SFTP plugin](https://marketplace.visualstudio.com/items?itemName=liximomo.sftp).
 
-###### Remark
+##### `rsync`
+You can also use any other IDE or text editor and synchronize code with SSHFS or SFTP using rsync. 
+
+#### 2.2 Ignore unnecessary paths
+It's better to not synchronize subsequent directories with a router:
+ * `js`
+ * `venv`
+ * `pytest_cache`
+So just exclude it.
+
+#### Remark
 eMMC can only sustain 3–10K rewrite cycles before it starts to cause bit errors. In this regard, it’s better to send the
 code to the RAM (`/tmp` or `/var` directories are mapped to the RAM).
 
-#### 3. Check Python version
+### 3. Check Python version
 Minimal required Python version is **3.6**.
 
 Please check if you have the same Python versions in Makefile (variable `$ROUTER_PYTHON`) and on the system installed.
 If not then correct the version in Makefile.
 
-#### 4. Install reForis Flask application
+### 4. Install reForis application with production server (lighttpd)
+**On the router!**
 ```bash
-$ make install-web
+$ make install-with-lighttpd
 ```
 
-#### 5. Install and build JS
+### 5. Build JS
 **You have build JS sources on some other machine with `node-npm` installed!**
 
 ```bash
-$ make install-js
+$ make prepare-dev
 $ make build-js
 ```
+Then don't forget to transfer it to the `/tmp/reforis/reforis_static/reforis/js/app.min.js`.
+#### Note
+If you've made some changes in JS part of code then it has to be rebuilt and sent to the router.
 
-Then transfer it to the `/tmp/reforis/reforis_static/reforis/js`.
-
-###### Remark
-All these steps are just oriented and you can automatize all this processes and code transferring with you favorite tools
-(e.g., `rsync` or built-in IDE solution).
-
-#### 6. Run
-These two commands run Flask development server and WebSocket servers with required configuration.
-
+### 6. Compile translations
+**On the local computer!**
 ```bash
-$ make run
-$ make run-ws
+$ make compile-messages
 ```
+Then transfer it to the router.
+
+### 7. Restart the lighttpd server
+**On the router!**
+```bash
+/etc/init.d/lighttpd  restart
+```
+or
+```bash
+service lighttpd restart
+```
+#### Note
+The lighttpd server has to be restarted after any changes in Python code were made.
+
 ## Documentation
 reForis has extensive documentation. It's simple to build docs via:
 ```bash
@@ -68,7 +94,7 @@ Then you can open HTML documentation in `./docs/build/index.html`.
 
 ## Plugins
 It's possible to extend re**Foris** functionality with plugins. For more information about plugins development see 
-re**Foris** docs and [`refioris_diagnostics` demonstration plugin](https://gitlab.labs.nic.cz/turris/reforis-diagnostics).
+re**Foris** docs and [`refioris_diagnostics` demonstration plugin](https://gitlab.labs.nic.cz/turris/reforis/diagnostics).
 
 ## Supported devices
  * [X] Turris Omnia
