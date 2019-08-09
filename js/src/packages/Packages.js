@@ -65,14 +65,12 @@ DisabledUpdaterAlert.propTypes = {
 };
 
 function DisabledUpdaterAlert() {
-    return <Alert
-        type='warning'
-    >
-        <p dangerouslySetInnerHTML={{
+    return <Alert type='warning'>
+        <span dangerouslySetInnerHTML={{
             __html: `
 Please enable <a href="${ForisURLs.updates}">automatic updates</a> to manage packages and languages.
         `
-        }}></p>
+        }}></span>
     </Alert>
 }
 
