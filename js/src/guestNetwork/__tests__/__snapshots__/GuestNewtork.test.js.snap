@@ -25,16 +25,16 @@ in LAN.
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
-          class="form-check-input"
+          class="custom-control-input"
           id="1"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="1"
         >
           Enable
@@ -80,16 +80,16 @@ in LAN.
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
-          class="form-check-input"
+          class="custom-control-input"
           id="1"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="1"
         >
           Enable
@@ -103,7 +103,6 @@ in LAN.
         class="form-group"
       >
         <label
-          class="form-control-label"
           for="3"
         >
           Router IP address
@@ -133,7 +132,6 @@ in LAN.
         class="form-group"
       >
         <label
-          class="form-control-label"
           for="4"
         >
           Network mask
@@ -156,16 +154,16 @@ in LAN.
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
-          class="form-check-input"
+          class="custom-control-input"
           id="5"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="5"
           style="margin-bottom: 0px;"
         >
@@ -185,7 +183,6 @@ in LAN.
         class="form-group"
       >
         <label
-          class="form-control-label"
           for="11"
         >
           DHCP start
@@ -211,7 +208,6 @@ in LAN.
         class="form-group"
       >
         <label
-          class="form-control-label"
           for="12"
         >
           DHCP max leases
@@ -237,7 +233,6 @@ in LAN.
         class="form-group"
       >
         <label
-          class="form-control-label"
           for="13"
         >
           Lease time (hours)
@@ -261,16 +256,16 @@ in LAN.
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
-          class="form-check-input"
+          class="custom-control-input"
           id="6"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="6"
           style="margin-bottom: 0px;"
         >
@@ -329,16 +324,16 @@ in LAN.
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
-          class="form-check-input"
+          class="custom-control-input"
           id="1"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="1"
         >
           Enable
@@ -352,7 +347,6 @@ in LAN.
         class="form-group"
       >
         <label
-          class="form-control-label"
           for="3"
         >
           Router IP address
@@ -382,7 +376,6 @@ in LAN.
         class="form-group"
       >
         <label
-          class="form-control-label"
           for="4"
         >
           Network mask
@@ -405,16 +398,16 @@ in LAN.
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
-          class="form-check-input"
+          class="custom-control-input"
           id="5"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="5"
           style="margin-bottom: 0px;"
         >
@@ -432,16 +425,16 @@ in LAN.
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
-          class="form-check-input"
+          class="custom-control-input"
           id="6"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="6"
           style="margin-bottom: 0px;"
         >
@@ -461,7 +454,6 @@ in LAN.
         class="form-group"
       >
         <label
-          class="form-control-label"
           for="12"
         >
           Download
@@ -501,7 +493,6 @@ in LAN.
         class="form-group"
       >
         <label
-          class="form-control-label"
           for="13"
         >
           Upload
@@ -573,16 +564,16 @@ in LAN.
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
-          class="form-check-input"
+          class="custom-control-input"
           id="1"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="1"
         >
           Enable
@@ -596,7 +587,6 @@ in LAN.
         class="form-group"
       >
         <label
-          class="form-control-label"
           for="3"
         >
           Router IP address
@@ -626,7 +616,6 @@ in LAN.
         class="form-group"
       >
         <label
-          class="form-control-label"
           for="4"
         >
           Network mask
@@ -649,16 +638,16 @@ in LAN.
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
-          class="form-check-input"
+          class="custom-control-input"
           id="5"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="5"
           style="margin-bottom: 0px;"
         >
@@ -676,16 +665,16 @@ in LAN.
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
-          class="form-check-input"
+          class="custom-control-input"
           id="6"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="6"
           style="margin-bottom: 0px;"
         >

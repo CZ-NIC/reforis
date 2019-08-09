@@ -39,289 +39,289 @@ exports[`<Packages/> Updates disabled 1`] = `
           >
             <input
               checked=\\"\\"
-              class=\\"form-check-input\\"
+              class=\\"custom-control-input\\"
 +             disabled=\\"\\"
               id=\\"1\\"
               type=\\"checkbox\\"
             />
             <label
-              class=\\"form-label\\"
+              class=\\"custom-control-label\\"
 @@ -50,10 +69,11 @@
-            class=\\"form-group form-check\\"
+            class=\\"custom-control custom-checkbox\\"
             style=\\"margin-bottom: 0px;\\"
           >
             <input
-              class=\\"form-check-input\\"
+              class=\\"custom-control-input\\"
 +             disabled=\\"\\"
               id=\\"2\\"
               type=\\"checkbox\\"
             />
             <label
-              class=\\"form-label\\"
+              class=\\"custom-control-label\\"
 @@ -77,10 +97,11 @@
-            class=\\"form-group form-check\\"
+            class=\\"custom-control custom-checkbox\\"
             style=\\"margin-bottom: 0px;\\"
           >
             <input
-              class=\\"form-check-input\\"
+              class=\\"custom-control-input\\"
 +             disabled=\\"\\"
               id=\\"3\\"
               type=\\"checkbox\\"
             />
             <label
-              class=\\"form-label\\"
+              class=\\"custom-control-label\\"
 @@ -104,10 +125,11 @@
-            class=\\"form-group form-check\\"
+            class=\\"custom-control custom-checkbox\\"
             style=\\"margin-bottom: 0px;\\"
           >
             <input
-              class=\\"form-check-input\\"
+              class=\\"custom-control-input\\"
 +             disabled=\\"\\"
               id=\\"4\\"
               type=\\"checkbox\\"
             />
             <label
-              class=\\"form-label\\"
+              class=\\"custom-control-label\\"
 @@ -131,10 +153,11 @@
-            class=\\"form-group form-check\\"
+            class=\\"custom-control custom-checkbox\\"
             style=\\"margin-bottom: 0px;\\"
           >
             <input
-              class=\\"form-check-input\\"
+              class=\\"custom-control-input\\"
 +             disabled=\\"\\"
               id=\\"5\\"
               type=\\"checkbox\\"
             />
             <label
-              class=\\"form-label\\"
+              class=\\"custom-control-label\\"
 @@ -158,10 +181,11 @@
-            class=\\"form-group form-check\\"
+            class=\\"custom-control custom-checkbox\\"
             style=\\"margin-bottom: 0px;\\"
           >
             <input
-              class=\\"form-check-input\\"
+              class=\\"custom-control-input\\"
 +             disabled=\\"\\"
               id=\\"6\\"
               type=\\"checkbox\\"
             />
             <label
-              class=\\"form-label\\"
+              class=\\"custom-control-label\\"
 @@ -185,10 +209,11 @@
-            class=\\"form-group form-check\\"
+            class=\\"custom-control custom-checkbox\\"
             style=\\"margin-bottom: 0px;\\"
           >
             <input
-              class=\\"form-check-input\\"
+              class=\\"custom-control-input\\"
 +             disabled=\\"\\"
               id=\\"7\\"
               type=\\"checkbox\\"
             />
             <label
-              class=\\"form-label\\"
+              class=\\"custom-control-label\\"
 @@ -212,10 +237,11 @@
-            class=\\"form-group form-check\\"
+            class=\\"custom-control custom-checkbox\\"
             style=\\"margin-bottom: 0px;\\"
           >
             <input
-              class=\\"form-check-input\\"
+              class=\\"custom-control-input\\"
 +             disabled=\\"\\"
               id=\\"8\\"
               type=\\"checkbox\\"
             />
             <label
-              class=\\"form-label\\"
+              class=\\"custom-control-label\\"
 @@ -239,10 +265,11 @@
-            class=\\"form-group form-check\\"
+            class=\\"custom-control custom-checkbox\\"
             style=\\"margin-bottom: 0px;\\"
           >
             <input
-              class=\\"form-check-input\\"
+              class=\\"custom-control-input\\"
 +             disabled=\\"\\"
               id=\\"9\\"
               type=\\"checkbox\\"
             />
             <label
-              class=\\"form-label\\"
+              class=\\"custom-control-label\\"
 @@ -266,10 +293,11 @@
-            class=\\"form-group form-check\\"
+            class=\\"custom-control custom-checkbox\\"
             style=\\"margin-bottom: 0px;\\"
           >
             <input
-              class=\\"form-check-input\\"
+              class=\\"custom-control-input\\"
 +             disabled=\\"\\"
               id=\\"10\\"
               type=\\"checkbox\\"
             />
             <label
-              class=\\"form-label\\"
+              class=\\"custom-control-label\\"
 @@ -293,10 +321,11 @@
-            class=\\"form-group form-check\\"
+            class=\\"custom-control custom-checkbox\\"
             style=\\"margin-bottom: 0px;\\"
           >
             <input
-              class=\\"form-check-input\\"
+              class=\\"custom-control-input\\"
 +             disabled=\\"\\"
               id=\\"11\\"
               type=\\"checkbox\\"
             />
             <label
-              class=\\"form-label\\"
+              class=\\"custom-control-label\\"
 @@ -320,10 +349,11 @@
-            class=\\"form-group form-check\\"
+            class=\\"custom-control custom-checkbox\\"
             style=\\"margin-bottom: 0px;\\"
           >
             <input
-              class=\\"form-check-input\\"
+              class=\\"custom-control-input\\"
 +             disabled=\\"\\"
               id=\\"12\\"
               type=\\"checkbox\\"
             />
             <label
-              class=\\"form-label\\"
+              class=\\"custom-control-label\\"
 @@ -347,10 +377,11 @@
-            class=\\"form-group form-check\\"
+            class=\\"custom-control custom-checkbox\\"
             style=\\"margin-bottom: 0px;\\"
           >
             <input
-              class=\\"form-check-input\\"
+              class=\\"custom-control-input\\"
 +             disabled=\\"\\"
               id=\\"13\\"
               type=\\"checkbox\\"
             />
             <label
-              class=\\"form-label\\"
+              class=\\"custom-control-label\\"
 @@ -385,10 +416,11 @@
               style=\\"margin-bottom: 0px;\\"
             >
               <input
                 checked=\\"\\"
-                class=\\"form-check-input\\"
+                class=\\"custom-control-input\\"
 +               disabled=\\"\\"
                 id=\\"14\\"
                 type=\\"checkbox\\"
               />
               <label
-                class=\\"form-label\\"
+                class=\\"custom-control-label\\"
 @@ -406,10 +438,11 @@
-              class=\\"form-group form-check\\"
+              class=\\"custom-control custom-checkbox\\"
               style=\\"margin-bottom: 0px;\\"
             >
               <input
-                class=\\"form-check-input\\"
+                class=\\"custom-control-input\\"
 +               disabled=\\"\\"
                 id=\\"15\\"
                 type=\\"checkbox\\"
               />
               <label
-                class=\\"form-label\\"
+                class=\\"custom-control-label\\"
 @@ -427,10 +460,11 @@
-              class=\\"form-group form-check\\"
+              class=\\"custom-control custom-checkbox\\"
               style=\\"margin-bottom: 0px;\\"
             >
               <input
-                class=\\"form-check-input\\"
+                class=\\"custom-control-input\\"
 +               disabled=\\"\\"
                 id=\\"16\\"
                 type=\\"checkbox\\"
               />
               <label
-                class=\\"form-label\\"
+                class=\\"custom-control-label\\"
 @@ -448,10 +482,11 @@
-              class=\\"form-group form-check\\"
+              class=\\"custom-control custom-checkbox\\"
               style=\\"margin-bottom: 0px;\\"
             >
               <input
-                class=\\"form-check-input\\"
+                class=\\"custom-control-input\\"
 +               disabled=\\"\\"
                 id=\\"17\\"
                 type=\\"checkbox\\"
               />
               <label
-                class=\\"form-label\\"
+                class=\\"custom-control-label\\"
 @@ -469,10 +504,11 @@
-              class=\\"form-group form-check\\"
+              class=\\"custom-control custom-checkbox\\"
               style=\\"margin-bottom: 0px;\\"
             >
               <input
-                class=\\"form-check-input\\"
+                class=\\"custom-control-input\\"
 +               disabled=\\"\\"
                 id=\\"18\\"
                 type=\\"checkbox\\"
               />
               <label
-                class=\\"form-label\\"
+                class=\\"custom-control-label\\"
 @@ -490,10 +526,11 @@
-              class=\\"form-group form-check\\"
+              class=\\"custom-control custom-checkbox\\"
               style=\\"margin-bottom: 0px;\\"
             >
               <input
-                class=\\"form-check-input\\"
+                class=\\"custom-control-input\\"
 +               disabled=\\"\\"
                 id=\\"19\\"
                 type=\\"checkbox\\"
               />
               <label
-                class=\\"form-label\\"
+                class=\\"custom-control-label\\"
 @@ -511,10 +548,11 @@
-              class=\\"form-group form-check\\"
+              class=\\"custom-control custom-checkbox\\"
               style=\\"margin-bottom: 0px;\\"
             >
               <input
-                class=\\"form-check-input\\"
+                class=\\"custom-control-input\\"
 +               disabled=\\"\\"
                 id=\\"20\\"
                 type=\\"checkbox\\"
               />
               <label
-                class=\\"form-label\\"
+                class=\\"custom-control-label\\"
 @@ -532,10 +570,11 @@
-              class=\\"form-group form-check\\"
+              class=\\"custom-control custom-checkbox\\"
               style=\\"margin-bottom: 0px;\\"
             >
               <input
-                class=\\"form-check-input\\"
+                class=\\"custom-control-input\\"
 +               disabled=\\"\\"
                 id=\\"21\\"
                 type=\\"checkbox\\"
               />
               <label
-                class=\\"form-label\\"
+                class=\\"custom-control-label\\"
 @@ -553,10 +592,11 @@
-              class=\\"form-group form-check\\"
+              class=\\"custom-control custom-checkbox\\"
               style=\\"margin-bottom: 0px;\\"
             >
               <input
-                class=\\"form-check-input\\"
+                class=\\"custom-control-input\\"
 +               disabled=\\"\\"
                 id=\\"22\\"
                 type=\\"checkbox\\"
               />
               <label
-                class=\\"form-label\\"
+                class=\\"custom-control-label\\"
 @@ -574,10 +614,11 @@
-              class=\\"form-group form-check\\"
+              class=\\"custom-control custom-checkbox\\"
               style=\\"margin-bottom: 0px;\\"
             >
               <input
-                class=\\"form-check-input\\"
+                class=\\"custom-control-input\\"
 +               disabled=\\"\\"
                 id=\\"23\\"
                 type=\\"checkbox\\"
               />
               <label
-                class=\\"form-label\\"
+                class=\\"custom-control-label\\"
 @@ -595,24 +636,27 @@
-              class=\\"form-group form-check\\"
+              class=\\"custom-control custom-checkbox\\"
               style=\\"margin-bottom: 0px;\\"
             >
               <input
-                class=\\"form-check-input\\"
+                class=\\"custom-control-input\\"
 +               disabled=\\"\\"
                 id=\\"24\\"
                 type=\\"checkbox\\"
               />
               <label
-                class=\\"form-label\\"
+                class=\\"custom-control-label\\"
                 for=\\"24\\"
               >
                 NB
@@ -362,17 +362,17 @@ been installed manually or using opkg is not affected.
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
           checked=""
-          class="form-check-input"
+          class="custom-control-input"
           id="1"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="1"
           style="margin-bottom: 0px;"
         >
@@ -390,16 +390,16 @@ been installed manually or using opkg is not affected.
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
-          class="form-check-input"
+          class="custom-control-input"
           id="2"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="2"
           style="margin-bottom: 0px;"
         >
@@ -417,16 +417,16 @@ been installed manually or using opkg is not affected.
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
-          class="form-check-input"
+          class="custom-control-input"
           id="3"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="3"
           style="margin-bottom: 0px;"
         >
@@ -444,16 +444,16 @@ been installed manually or using opkg is not affected.
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
-          class="form-check-input"
+          class="custom-control-input"
           id="4"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="4"
           style="margin-bottom: 0px;"
         >
@@ -471,16 +471,16 @@ been installed manually or using opkg is not affected.
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
-          class="form-check-input"
+          class="custom-control-input"
           id="5"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="5"
           style="margin-bottom: 0px;"
         >
@@ -498,16 +498,16 @@ been installed manually or using opkg is not affected.
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
-          class="form-check-input"
+          class="custom-control-input"
           id="6"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="6"
           style="margin-bottom: 0px;"
         >
@@ -525,16 +525,16 @@ been installed manually or using opkg is not affected.
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
-          class="form-check-input"
+          class="custom-control-input"
           id="7"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="7"
           style="margin-bottom: 0px;"
         >
@@ -552,16 +552,16 @@ been installed manually or using opkg is not affected.
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
-          class="form-check-input"
+          class="custom-control-input"
           id="8"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="8"
           style="margin-bottom: 0px;"
         >
@@ -579,16 +579,16 @@ been installed manually or using opkg is not affected.
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
-          class="form-check-input"
+          class="custom-control-input"
           id="9"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="9"
           style="margin-bottom: 0px;"
         >
@@ -606,16 +606,16 @@ been installed manually or using opkg is not affected.
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
-          class="form-check-input"
+          class="custom-control-input"
           id="10"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="10"
           style="margin-bottom: 0px;"
         >
@@ -633,16 +633,16 @@ been installed manually or using opkg is not affected.
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
-          class="form-check-input"
+          class="custom-control-input"
           id="11"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="11"
           style="margin-bottom: 0px;"
         >
@@ -660,16 +660,16 @@ been installed manually or using opkg is not affected.
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
-          class="form-check-input"
+          class="custom-control-input"
           id="12"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="12"
           style="margin-bottom: 0px;"
         >
@@ -687,16 +687,16 @@ been installed manually or using opkg is not affected.
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
-          class="form-check-input"
+          class="custom-control-input"
           id="13"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="13"
           style="margin-bottom: 0px;"
         >
@@ -724,17 +724,17 @@ been installed manually or using opkg is not affected.
         style="margin-bottom: 1rem;"
       >
         <div
-          class="form-group form-check"
+          class="custom-control custom-checkbox"
           style="margin-bottom: 0px;"
         >
           <input
             checked=""
-            class="form-check-input"
+            class="custom-control-input"
             id="14"
             type="checkbox"
           />
           <label
-            class="form-label"
+            class="custom-control-label"
             for="14"
           >
             CS
@@ -746,16 +746,16 @@ been installed manually or using opkg is not affected.
         style="margin-bottom: 1rem;"
       >
         <div
-          class="form-group form-check"
+          class="custom-control custom-checkbox"
           style="margin-bottom: 0px;"
         >
           <input
-            class="form-check-input"
+            class="custom-control-input"
             id="15"
             type="checkbox"
           />
           <label
-            class="form-label"
+            class="custom-control-label"
             for="15"
           >
             DA
@@ -767,16 +767,16 @@ been installed manually or using opkg is not affected.
         style="margin-bottom: 1rem;"
       >
         <div
-          class="form-group form-check"
+          class="custom-control custom-checkbox"
           style="margin-bottom: 0px;"
         >
           <input
-            class="form-check-input"
+            class="custom-control-input"
             id="16"
             type="checkbox"
           />
           <label
-            class="form-label"
+            class="custom-control-label"
             for="16"
           >
             DE
@@ -788,16 +788,16 @@ been installed manually or using opkg is not affected.
         style="margin-bottom: 1rem;"
       >
         <div
-          class="form-group form-check"
+          class="custom-control custom-checkbox"
           style="margin-bottom: 0px;"
         >
           <input
-            class="form-check-input"
+            class="custom-control-input"
             id="17"
             type="checkbox"
           />
           <label
-            class="form-label"
+            class="custom-control-label"
             for="17"
           >
             FR
@@ -809,16 +809,16 @@ been installed manually or using opkg is not affected.
         style="margin-bottom: 1rem;"
       >
         <div
-          class="form-group form-check"
+          class="custom-control custom-checkbox"
           style="margin-bottom: 0px;"
         >
           <input
-            class="form-check-input"
+            class="custom-control-input"
             id="18"
             type="checkbox"
           />
           <label
-            class="form-label"
+            class="custom-control-label"
             for="18"
           >
             LT
@@ -830,16 +830,16 @@ been installed manually or using opkg is not affected.
         style="margin-bottom: 1rem;"
       >
         <div
-          class="form-group form-check"
+          class="custom-control custom-checkbox"
           style="margin-bottom: 0px;"
         >
           <input
-            class="form-check-input"
+            class="custom-control-input"
             id="19"
             type="checkbox"
           />
           <label
-            class="form-label"
+            class="custom-control-label"
             for="19"
           >
             PL
@@ -851,16 +851,16 @@ been installed manually or using opkg is not affected.
         style="margin-bottom: 1rem;"
       >
         <div
-          class="form-group form-check"
+          class="custom-control custom-checkbox"
           style="margin-bottom: 0px;"
         >
           <input
-            class="form-check-input"
+            class="custom-control-input"
             id="20"
             type="checkbox"
           />
           <label
-            class="form-label"
+            class="custom-control-label"
             for="20"
           >
             RU
@@ -872,16 +872,16 @@ been installed manually or using opkg is not affected.
         style="margin-bottom: 1rem;"
       >
         <div
-          class="form-group form-check"
+          class="custom-control custom-checkbox"
           style="margin-bottom: 0px;"
         >
           <input
-            class="form-check-input"
+            class="custom-control-input"
             id="21"
             type="checkbox"
           />
           <label
-            class="form-label"
+            class="custom-control-label"
             for="21"
           >
             SK
@@ -893,16 +893,16 @@ been installed manually or using opkg is not affected.
         style="margin-bottom: 1rem;"
       >
         <div
-          class="form-group form-check"
+          class="custom-control custom-checkbox"
           style="margin-bottom: 0px;"
         >
           <input
-            class="form-check-input"
+            class="custom-control-input"
             id="22"
             type="checkbox"
           />
           <label
-            class="form-label"
+            class="custom-control-label"
             for="22"
           >
             HU
@@ -914,16 +914,16 @@ been installed manually or using opkg is not affected.
         style="margin-bottom: 1rem;"
       >
         <div
-          class="form-group form-check"
+          class="custom-control custom-checkbox"
           style="margin-bottom: 0px;"
         >
           <input
-            class="form-check-input"
+            class="custom-control-input"
             id="23"
             type="checkbox"
           />
           <label
-            class="form-label"
+            class="custom-control-label"
             for="23"
           >
             IT
@@ -935,16 +935,16 @@ been installed manually or using opkg is not affected.
         style="margin-bottom: 1rem;"
       >
         <div
-          class="form-group form-check"
+          class="custom-control custom-checkbox"
           style="margin-bottom: 0px;"
         >
           <input
-            class="form-check-input"
+            class="custom-control-input"
             id="24"
             type="checkbox"
           />
           <label
-            class="form-label"
+            class="custom-control-label"
             for="24"
           >
             NB

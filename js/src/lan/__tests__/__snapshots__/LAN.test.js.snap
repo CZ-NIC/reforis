@@ -43,13 +43,12 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
       class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <label
-        class="form-control-label"
         for="1"
       >
         LAN mode
       </label>
       <select
-        class="form-control"
+        class="custom-select"
         id="1"
       >
         <option
@@ -80,7 +79,6 @@ it has opened ports for configuration interface and other services.
         class="form-group"
       >
         <label
-          class="form-control-label"
           for="5"
         >
           Router IP address
@@ -110,7 +108,6 @@ it has opened ports for configuration interface and other services.
         class="form-group"
       >
         <label
-          class="form-control-label"
           for="6"
         >
           Network mask
@@ -133,16 +130,16 @@ it has opened ports for configuration interface and other services.
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
-          class="form-check-input"
+          class="custom-control-input"
           id="7"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="7"
           style="margin-bottom: 0px;"
         >
@@ -162,7 +159,6 @@ it has opened ports for configuration interface and other services.
         class="form-group"
       >
         <label
-          class="form-control-label"
           for="12"
         >
           DHCP start
@@ -188,7 +184,6 @@ it has opened ports for configuration interface and other services.
         class="form-group"
       >
         <label
-          class="form-control-label"
           for="13"
         >
           DHCP max leases
@@ -214,7 +209,6 @@ it has opened ports for configuration interface and other services.
         class="form-group"
       >
         <label
-          class="form-control-label"
           for="14"
         >
           Lease time (hours)
@@ -297,13 +291,12 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
       class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <label
-        class="form-control-label"
         for="1"
       >
         LAN mode
       </label>
       <select
-        class="form-control"
+        class="custom-select"
         id="1"
       >
         <option
@@ -334,7 +327,6 @@ it has opened ports for configuration interface and other services.
         class="form-group"
       >
         <label
-          class="form-control-label"
           for="5"
         >
           Router IP address
@@ -364,7 +356,6 @@ it has opened ports for configuration interface and other services.
         class="form-group"
       >
         <label
-          class="form-control-label"
           for="6"
         >
           Network mask
@@ -387,16 +378,16 @@ it has opened ports for configuration interface and other services.
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
-          class="form-check-input"
+          class="custom-control-input"
           id="7"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="7"
           style="margin-bottom: 0px;"
         >
@@ -466,13 +457,12 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
       class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <label
-        class="form-control-label"
         for="1"
       >
         LAN mode
       </label>
       <select
-        class="form-control"
+        class="custom-select"
         id="1"
       >
         <option
@@ -500,13 +490,12 @@ it has opened ports for configuration interface and other services.
       class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <label
-        class="form-control-label"
         for="2"
       >
         IPv4 protocol
       </label>
       <select
-        class="form-control"
+        class="custom-select"
         id="2"
       >
         <option
@@ -533,7 +522,6 @@ it has opened ports for configuration interface and other services.
         class="form-group"
       >
         <label
-          class="form-control-label"
           for="3"
         >
           DHCP hostname
@@ -612,13 +600,12 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
       class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <label
-        class="form-control-label"
         for="1"
       >
         LAN mode
       </label>
       <select
-        class="form-control"
+        class="custom-select"
         id="1"
       >
         <option
@@ -646,13 +633,12 @@ it has opened ports for configuration interface and other services.
       class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <label
-        class="form-control-label"
         for="2"
       >
         IPv4 protocol
       </label>
       <select
-        class="form-control"
+        class="custom-select"
         id="2"
       >
         <option
@@ -729,13 +715,12 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
       class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <label
-        class="form-control-label"
         for="1"
       >
         LAN mode
       </label>
       <select
-        class="form-control"
+        class="custom-select"
         id="1"
       >
         <option
@@ -763,13 +748,12 @@ it has opened ports for configuration interface and other services.
       class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <label
-        class="form-control-label"
         for="2"
       >
         IPv4 protocol
       </label>
       <select
-        class="form-control"
+        class="custom-select"
         id="2"
       >
         <option
@@ -796,7 +780,6 @@ it has opened ports for configuration interface and other services.
         class="form-group"
       >
         <label
-          class="form-control-label"
           for="6"
         >
           IP address
@@ -821,7 +804,6 @@ it has opened ports for configuration interface and other services.
         class="form-group"
       >
         <label
-          class="form-control-label"
           for="7"
         >
           Network mask
@@ -846,7 +828,6 @@ it has opened ports for configuration interface and other services.
         class="form-group"
       >
         <label
-          class="form-control-label"
           for="8"
         >
           Gateway
@@ -871,7 +852,6 @@ it has opened ports for configuration interface and other services.
         class="form-group"
       >
         <label
-          class="form-control-label"
           for="9"
         >
           DNS server 1
@@ -900,7 +880,6 @@ it has opened ports for configuration interface and other services.
         class="form-group"
       >
         <label
-          class="form-control-label"
           for="10"
         >
           DNS server 2

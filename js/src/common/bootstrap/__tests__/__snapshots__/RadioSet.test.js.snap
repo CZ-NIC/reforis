@@ -6,59 +6,59 @@ exports[`<RadioSet/> Render radio set 1`] = `
   style="margin-bottom: 1rem;"
 >
   <label
-    class="form-control-label col-12"
+    class="col-12"
     for="1"
     style="padding-left: 0px;"
   >
     Radios set label
   </label>
   <div
-    class="form-check form-check-inline"
+    class="custom-control custom-radio custom-control-inline"
   >
     <input
       checked=""
-      class="form-check-input"
+      class="custom-control-input"
       id="test_name-0"
       name="test_name"
       type="radio"
       value="value"
     />
     <label
-      class="form-check-label"
+      class="custom-control-label"
       for="test_name-0"
     >
       label
     </label>
   </div>
   <div
-    class="form-check form-check-inline"
+    class="custom-control custom-radio custom-control-inline"
   >
     <input
-      class="form-check-input"
+      class="custom-control-input"
       id="test_name-1"
       name="test_name"
       type="radio"
       value="another value"
     />
     <label
-      class="form-check-label"
+      class="custom-control-label"
       for="test_name-1"
     >
       another label
     </label>
   </div>
   <div
-    class="form-check form-check-inline"
+    class="custom-control custom-radio custom-control-inline"
   >
     <input
-      class="form-check-input"
+      class="custom-control-input"
       id="test_name-2"
       name="test_name"
       type="radio"
       value="another on value"
     />
     <label
-      class="form-check-label"
+      class="custom-control-label"
       for="test_name-2"
     >
       another one  label

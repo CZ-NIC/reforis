@@ -32,9 +32,9 @@ export default function Select({label, choices, helpText, ...props}) {
     );
 
     return <div className='form-group col-sm-12 offset-lg-1 col-lg-10'>
-        <label className='form-control-label' htmlFor={uid}>{label}</label>
+        <label htmlFor={uid}>{label}</label>
         <select
-            className='form-control'
+            className='custom-select'
             id={uid}
             {...props}
         >

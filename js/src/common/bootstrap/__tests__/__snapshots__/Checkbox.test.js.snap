@@ -6,17 +6,17 @@ exports[`<Checkbox/> Render checkbox 1`] = `
   style="margin-bottom: 1rem;"
 >
   <div
-    class="form-group form-check"
+    class="custom-control custom-checkbox"
     style="margin-bottom: 0px;"
   >
     <input
       checked=""
-      class="form-check-input"
+      class="custom-control-input"
       id="1"
       type="checkbox"
     />
     <label
-      class="form-label"
+      class="custom-control-label"
       for="1"
       style="margin-bottom: 0px;"
     >
@@ -37,16 +37,16 @@ exports[`<Checkbox/> Render uncheked checkbox 1`] = `
   style="margin-bottom: 1rem;"
 >
   <div
-    class="form-group form-check"
+    class="custom-control custom-checkbox"
     style="margin-bottom: 0px;"
   >
     <input
-      class="form-check-input"
+      class="custom-control-input"
       id="1"
       type="checkbox"
     />
     <label
-      class="form-label"
+      class="custom-control-label"
       for="1"
       style="margin-bottom: 0px;"
     >
