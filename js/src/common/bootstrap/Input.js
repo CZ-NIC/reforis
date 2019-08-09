@@ -14,7 +14,7 @@ export default function Input({type, label, helpText, error, children, ...props}
     const uid = useUID();
     return <div className={formFieldsSize}>
         <div className='form-group'>
-            <label className='form-control-label' htmlFor={uid}>{label}</label>
+            <label htmlFor={uid}>{label}</label>
             <div className='input-group'>
                 <input
                     className={'form-control ' + (error ? 'is-invalid' : '')}

@@ -21,21 +21,21 @@ CheckBox.propTypes = {
 };
 
 CheckBox.defaultProps = {
-    useDefaultSize: true
+    useDefaultSize: true,
 };
 
 export default function CheckBox({label, helpText, useDefaultSize, ...props}) {
     const uid = useUID();
     return <div className={useDefaultSize ? formFieldsSize : ""} style={{marginBottom: '1rem'}}>
-        <div className='form-group form-check' style={{marginBottom: '0'}}>
+        <div className='custom-control custom-checkbox' style={{marginBottom: '0'}}>
             <input
-                className='form-check-input'
+                className='custom-control-input'
                 type='checkbox'
                 id={uid}
 
                 {...props}
             />
-            <label className='form-label' htmlFor={uid} style={helpText ? {marginBottom: '0'} : null}>{label}</label>
+            <label className='custom-control-label' htmlFor={uid} style={helpText ? {marginBottom: '0'} : null}>{label}</label>
         </div>
         {helpText ? <small className="form-text text-muted">{helpText}</small> : null}
     </div>

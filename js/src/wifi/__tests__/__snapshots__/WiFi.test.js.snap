@@ -5,7 +5,7 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
 - First value
 + Second value
 
-@@ -268,207 +268,95 @@
+@@ -264,207 +264,95 @@
             value=\\"0\\"
           >
             auto
@@ -268,16 +268,16 @@ point) and a corresponding password. You can then set up your mobile devices, us
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
-          class="form-check-input"
+          class="custom-control-input"
           id="1"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="1"
         >
           Enable
@@ -292,16 +292,16 @@ point) and a corresponding password. You can then set up your mobile devices, us
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
-          class="form-check-input"
+          class="custom-control-input"
           id="2"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="2"
         >
           Enable
@@ -338,7 +338,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
 - First value
 + Second value
 
-@@ -500,10 +500,96 @@
+@@ -496,10 +496,94 @@
           access the internet, but aren't allowed to access other devices and the configuration interface of the router.
           Parameters of the guest network can be set in the Guest network tab.
           
@@ -351,7 +351,6 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
 +         class=\\"form-group\\"
 +       >
 +         <label
-+           class=\\"form-control-label\\"
 +           for=\\"20\\"
 +         >
 +           SSID
@@ -388,7 +387,6 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
 +         class=\\"form-group\\"
 +       >
 +         <label
-+           class=\\"form-control-label\\"
 +           for=\\"21\\"
 +         >
 +           Password
@@ -435,7 +433,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
       </h3>
       <div
         class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
-@@ -526,10 +612,11 @@
+@@ -522,10 +606,11 @@
           </label>
         </div>
       </div>
@@ -454,7 +452,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
 - First value
 + Second value
 
-@@ -31,10 +31,479 @@
+@@ -31,10 +31,475 @@
           >
             Enable
           </label>
@@ -467,7 +465,6 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
 +         class=\\"form-group\\"
 +       >
 +         <label
-+           class=\\"form-control-label\\"
 +           for=\\"4\\"
 +         >
 +           SSID
@@ -505,7 +502,6 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
 +         class=\\"form-group\\"
 +       >
 +         <label
-+           class=\\"form-control-label\\"
 +           for=\\"5\\"
 +         >
 +           Password
@@ -547,16 +543,16 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
 +       style=\\"margin-bottom: 1rem;\\"
 +     >
 +       <div
-+         class=\\"form-group form-check\\"
++         class=\\"custom-control custom-checkbox\\"
 +         style=\\"margin-bottom: 0px;\\"
 +       >
 +         <input
-+           class=\\"form-check-input\\"
++           class=\\"custom-control-input\\"
 +           id=\\"6\\"
 +           type=\\"checkbox\\"
 +         />
 +         <label
-+           class=\\"form-label\\"
++           class=\\"custom-control-label\\"
 +           for=\\"6\\"
 +           style=\\"margin-bottom: 0px;\\"
 +         >
@@ -574,42 +570,42 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
 +       style=\\"margin-bottom: 1rem;\\"
 +     >
 +       <label
-+         class=\\"form-control-label col-12\\"
++         class=\\"col-12\\"
 +         for=\\"7\\"
 +         style=\\"padding-left: 0px;\\"
 +       >
 +         GHz
 +       </label>
 +       <div
-+         class=\\"form-check form-check-inline\\"
++         class=\\"custom-control custom-radio custom-control-inline\\"
 +       >
 +         <input
-+           class=\\"form-check-input\\"
++           class=\\"custom-control-input\\"
 +           id=\\"hwmode-0-0\\"
 +           name=\\"hwmode-0\\"
 +           type=\\"radio\\"
 +           value=\\"11g\\"
 +         />
 +         <label
-+           class=\\"form-check-label\\"
++           class=\\"custom-control-label\\"
 +           for=\\"hwmode-0-0\\"
 +         >
 +           2.4
 +         </label>
 +       </div>
 +       <div
-+         class=\\"form-check form-check-inline\\"
++         class=\\"custom-control custom-radio custom-control-inline\\"
 +       >
 +         <input
 +           checked=\\"\\"
-+           class=\\"form-check-input\\"
++           class=\\"custom-control-input\\"
 +           id=\\"hwmode-0-1\\"
 +           name=\\"hwmode-0\\"
 +           type=\\"radio\\"
 +           value=\\"11a\\"
 +         />
 +         <label
-+           class=\\"form-check-label\\"
++           class=\\"custom-control-label\\"
 +           for=\\"hwmode-0-1\\"
 +         >
 +           5
@@ -628,13 +624,12 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
 +       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
 +       <label
-+         class=\\"form-control-label\\"
 +         for=\\"8\\"
 +       >
 +         802.11n/ac mode
 +       </label>
 +       <select
-+         class=\\"form-control\\"
++         class=\\"custom-select\\"
 +         id=\\"8\\"
 +       >
 +         <option
@@ -682,13 +677,12 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
 +       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
 +       <label
-+         class=\\"form-control-label\\"
 +         for=\\"9\\"
 +       >
 +         Channel
 +       </label>
 +       <select
-+         class=\\"form-control\\"
++         class=\\"custom-select\\"
 +         id=\\"9\\"
 +       >
 +         <option
@@ -903,16 +897,16 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
 +       style=\\"margin-bottom: 1rem;\\"
 +     >
 +       <div
-+         class=\\"form-group form-check\\"
++         class=\\"custom-control custom-checkbox\\"
 +         style=\\"margin-bottom: 0px;\\"
 +       >
 +         <input
-+           class=\\"form-check-input\\"
++           class=\\"custom-control-input\\"
 +           id=\\"10\\"
 +           type=\\"checkbox\\"
 +         />
 +         <label
-+           class=\\"form-label\\"
++           class=\\"custom-control-label\\"
 +           for=\\"10\\"
 +           style=\\"margin-bottom: 0px;\\"
 +         >

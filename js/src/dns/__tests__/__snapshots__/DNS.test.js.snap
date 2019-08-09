@@ -105,16 +105,16 @@ Do you still want to continue and stay unprotected?
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
-          class="form-check-input"
+          class="custom-control-input"
           id="1"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="1"
         >
           Use forwarding
@@ -126,17 +126,17 @@ Do you still want to continue and stay unprotected?
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
           checked=""
-          class="form-check-input"
+          class="custom-control-input"
           id="2"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="2"
         >
           Enable DNSSEC
@@ -148,16 +148,16 @@ Do you still want to continue and stay unprotected?
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
-          class="form-check-input"
+          class="custom-control-input"
           id="3"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="3"
           style="margin-bottom: 0px;"
         >
@@ -177,7 +177,6 @@ Do you still want to continue and stay unprotected?
         class="form-group"
       >
         <label
-          class="form-control-label"
           for="7"
         >
           Domain of DHCP clients in DNS
@@ -337,16 +336,16 @@ Do you still want to continue and stay unprotected?
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
-          class="form-check-input"
+          class="custom-control-input"
           id="1"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="1"
         >
           Use forwarding
@@ -357,13 +356,12 @@ Do you still want to continue and stay unprotected?
       class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <label
-        class="form-control-label"
         for="5"
       >
         DNS Forwarder
       </label>
       <select
-        class="form-control"
+        class="custom-select"
         id="5"
       >
         <option
@@ -398,17 +396,17 @@ Do you still want to continue and stay unprotected?
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
           checked=""
-          class="form-check-input"
+          class="custom-control-input"
           id="2"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="2"
         >
           Enable DNSSEC
@@ -420,16 +418,16 @@ Do you still want to continue and stay unprotected?
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
-          class="form-check-input"
+          class="custom-control-input"
           id="3"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="3"
           style="margin-bottom: 0px;"
         >
@@ -580,16 +578,16 @@ Do you still want to continue and stay unprotected?
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
-          class="form-check-input"
+          class="custom-control-input"
           id="1"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="1"
         >
           Use forwarding
@@ -601,17 +599,17 @@ Do you still want to continue and stay unprotected?
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
           checked=""
-          class="form-check-input"
+          class="custom-control-input"
           id="2"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="2"
         >
           Enable DNSSEC
@@ -623,16 +621,16 @@ Do you still want to continue and stay unprotected?
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
-          class="form-check-input"
+          class="custom-control-input"
           id="3"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="3"
           style="margin-bottom: 0px;"
         >

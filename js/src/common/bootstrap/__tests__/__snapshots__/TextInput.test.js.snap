@@ -8,7 +8,6 @@ exports[`<TextInput/> Render text input 1`] = `
     class="form-group"
   >
     <label
-      class="form-control-label"
       for="1"
     >
       Test label

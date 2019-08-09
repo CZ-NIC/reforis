@@ -152,16 +152,16 @@ available
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
-          class="form-check-input"
+          class="custom-control-input"
           id="1"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="1"
         >
           Enable automatic updates (recommended)
@@ -178,7 +178,6 @@ available
         class="form-group"
       >
         <label
-          class="form-control-label"
           for="2"
         >
           Delay (days)
@@ -213,7 +212,6 @@ available
             class="form-group"
           >
             <label
-              class="form-control-label"
               for="3"
             >
               Reboot time
@@ -314,7 +312,7 @@ exports[`<Updates/> Test with snapshot enabled, delayed. 1`] = `
 - First value
 + Second value
 
-@@ -244,10 +244,36 @@
+@@ -244,10 +244,35 @@
           class=\\"form-text text-muted\\"
         >
           You have to approve the updates, otherwise they won't be installed.
@@ -327,7 +325,6 @@ exports[`<Updates/> Test with snapshot enabled, delayed. 1`] = `
 +         class=\\"form-group\\"
 +       >
 +         <label
-+           class=\\"form-control-label\\"
 +           for=\\"10\\"
 +         >
 +           Delayed updates (hours)
@@ -377,17 +374,17 @@ exports[`<Updates/> Test with snapshot enabled. 1`] = `
 +       style=\\"margin-bottom: 1rem;\\"
 +     >
 +       <div
-+         class=\\"form-check form-check-inline\\"
++         class=\\"custom-control custom-radio custom-control-inline\\"
 +       >
 +         <input
-+           class=\\"form-check-input\\"
++           class=\\"custom-control-input\\"
 +           id=\\"approvals-0\\"
 +           name=\\"approvals\\"
 +           type=\\"radio\\"
 +           value=\\"off\\"
 +         />
 +         <label
-+           class=\\"form-check-label\\"
++           class=\\"custom-control-label\\"
 +           for=\\"approvals-0\\"
 +         >
 +           Automatic installation
@@ -399,17 +396,17 @@ exports[`<Updates/> Test with snapshot enabled. 1`] = `
 +         Updates will be installed without user's intervention.
 +       </small>
 +       <div
-+         class=\\"form-check form-check-inline\\"
++         class=\\"custom-control custom-radio custom-control-inline\\"
 +       >
 +         <input
-+           class=\\"form-check-input\\"
++           class=\\"custom-control-input\\"
 +           id=\\"approvals-1\\"
 +           name=\\"approvals\\"
 +           type=\\"radio\\"
 +           value=\\"delayed\\"
 +         />
 +         <label
-+           class=\\"form-check-label\\"
++           class=\\"custom-control-label\\"
 +           for=\\"approvals-1\\"
 +         >
 +           Delayed updates
@@ -421,18 +418,18 @@ exports[`<Updates/> Test with snapshot enabled. 1`] = `
 +         Updates will be installed with an adjustable delay. You can also approve them manually.
 +       </small>
 +       <div
-+         class=\\"form-check form-check-inline\\"
++         class=\\"custom-control custom-radio custom-control-inline\\"
 +       >
 +         <input
 +           checked=\\"\\"
-+           class=\\"form-check-input\\"
++           class=\\"custom-control-input\\"
 +           id=\\"approvals-2\\"
 +           name=\\"approvals\\"
 +           type=\\"radio\\"
 +           value=\\"on\\"
 +         />
 +         <label
-+           class=\\"form-check-label\\"
++           class=\\"custom-control-label\\"
 +           for=\\"approvals-2\\"
 +         >
 +           Update approval needed

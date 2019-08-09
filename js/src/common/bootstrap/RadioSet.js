@@ -48,7 +48,7 @@ export default function RadioSet({name, label, choices, value, helpText, ...prop
 
     return <div className={`form-group ${formFieldsSize}`} style={{marginBottom: '1rem'}}>
         {label ?
-            <label className='form-control-label col-12' htmlFor={uid} style={{paddingLeft: '0'}}>
+            <label className='col-12' htmlFor={uid} style={{paddingLeft: '0'}}>
                 {label}
             </label>
             : null}
@@ -64,15 +64,15 @@ Radio.propTypes = {
 
 function Radio({label, id, helpText, ...props}) {
     return <>
-        <div className='form-check form-check-inline'>
+        <div className='custom-control custom-radio custom-control-inline'>
             <input
                 id={id}
-                className='form-check-input'
+                className='custom-control-input'
                 type='radio'
 
                 {...props}
             />
-            <label className='form-check-label' htmlFor={id}>{label}</label>
+            <label className='custom-control-label' htmlFor={id}>{label}</label>
         </div>
         {helpText ? <small className="form-text text-muted">{helpText}</small> : null}
     </>

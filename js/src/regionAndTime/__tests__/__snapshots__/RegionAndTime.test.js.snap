@@ -22,13 +22,12 @@ procedure of SSL certificate verification might not work correctly.
       class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <label
-        class="form-control-label"
         for="1"
       >
         Continent or ocean
       </label>
       <select
-        class="form-control"
+        class="custom-select"
         id="1"
       >
         <option
@@ -87,13 +86,12 @@ procedure of SSL certificate verification might not work correctly.
       class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <label
-        class="form-control-label"
         for="2"
       >
         Country
       </label>
       <select
-        class="form-control"
+        class="custom-select"
         id="2"
       >
         <option
@@ -347,13 +345,12 @@ procedure of SSL certificate verification might not work correctly.
       class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <label
-        class="form-control-label"
         for="3"
       >
         Timezone
       </label>
       <select
-        class="form-control"
+        class="custom-select"
         id="3"
       >
         <option
@@ -373,13 +370,12 @@ procedure of SSL certificate verification might not work correctly.
       class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <label
-        class="form-control-label"
         for="4"
       >
         How to set time
       </label>
       <select
-        class="form-control"
+        class="custom-select"
         id="4"
       >
         <option
@@ -453,7 +449,6 @@ procedure of SSL certificate verification might not work correctly.
             class="form-group"
           >
             <label
-              class="form-control-label"
               for="5"
             >
               Time

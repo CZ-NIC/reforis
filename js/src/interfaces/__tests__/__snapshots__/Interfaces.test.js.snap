@@ -382,13 +382,12 @@ This means that the only way to configure your device will be via serial cabel o
       class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <label
-        class="form-control-label"
         for="1"
       >
         Network
       </label>
       <select
-        class="form-control"
+        class="custom-select"
         id="1"
       >
         <option
@@ -855,13 +854,12 @@ This means that the only way to configure your device will be via serial cabel o
       class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <label
-        class="form-control-label"
         for="1"
       >
         Network
       </label>
       <select
-        class="form-control"
+        class="custom-select"
         id="1"
       >
         <option

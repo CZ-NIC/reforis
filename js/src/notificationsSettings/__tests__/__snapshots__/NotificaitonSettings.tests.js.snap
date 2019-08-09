@@ -14,17 +14,17 @@ exports[`<NotificationsSettings/> Disabled 1`] = `
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
           checked=""
-          class="form-check-input"
+          class="custom-control-input"
           id="1"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="1"
         >
           Enable email notifications
@@ -56,17 +56,17 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
           checked=""
-          class="form-check-input"
+          class="custom-control-input"
           id="1"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="1"
         >
           Enable email notifications
@@ -78,42 +78,42 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
       style="margin-bottom: 1rem;"
     >
       <label
-        class="form-control-label col-12"
+        class="col-12"
         for="2"
         style="padding-left: 0px;"
       >
         SMTP provider
       </label>
       <div
-        class="form-check form-check-inline"
+        class="custom-control custom-radio custom-control-inline"
       >
         <input
-          class="form-check-input"
+          class="custom-control-input"
           id="smtp_provider-0"
           name="smtp_provider"
           type="radio"
           value="turris"
         />
         <label
-          class="form-check-label"
+          class="custom-control-label"
           for="smtp_provider-0"
         >
           Turris
         </label>
       </div>
       <div
-        class="form-check form-check-inline"
+        class="custom-control custom-radio custom-control-inline"
       >
         <input
           checked=""
-          class="form-check-input"
+          class="custom-control-input"
           id="smtp_provider-1"
           name="smtp_provider"
           type="radio"
           value="custom"
         />
         <label
-          class="form-check-label"
+          class="custom-control-label"
           for="smtp_provider-1"
         >
           Custom
@@ -132,7 +132,6 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
         class="form-group"
       >
         <label
-          class="form-control-label"
           for="3"
         >
           Recipient's email
@@ -159,13 +158,12 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
       class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <label
-        class="form-control-label"
         for="4"
       >
         Importance
       </label>
       <select
-        class="form-control"
+        class="custom-select"
         id="4"
       >
         <option
@@ -190,17 +188,17 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
           checked=""
-          class="form-check-input"
+          class="custom-control-input"
           id="5"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="5"
           style="margin-bottom: 0px;"
         >
@@ -223,7 +221,6 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
         class="form-group"
       >
         <label
-          class="form-control-label"
           for="6"
         >
           Sender address (From)
@@ -254,7 +251,6 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
         class="form-group"
       >
         <label
-          class="form-control-label"
           for="7"
         >
           Server address
@@ -280,7 +276,6 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
         class="form-group"
       >
         <label
-          class="form-control-label"
           for="8"
         >
           Server port
@@ -303,13 +298,12 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
       class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <label
-        class="form-control-label"
         for="9"
       >
         Security
       </label>
       <select
-        class="form-control"
+        class="custom-select"
         id="9"
       >
         <option
@@ -336,7 +330,6 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
         class="form-group"
       >
         <label
-          class="form-control-label"
           for="10"
         >
           User
@@ -360,7 +353,6 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
         class="form-group"
       >
         <label
-          class="form-control-label"
           for="11"
         >
           Password
@@ -414,17 +406,17 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
           checked=""
-          class="form-check-input"
+          class="custom-control-input"
           id="1"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="1"
         >
           Enable email notifications
@@ -436,42 +428,42 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
       style="margin-bottom: 1rem;"
     >
       <label
-        class="form-control-label col-12"
+        class="col-12"
         for="2"
         style="padding-left: 0px;"
       >
         SMTP provider
       </label>
       <div
-        class="form-check form-check-inline"
+        class="custom-control custom-radio custom-control-inline"
       >
         <input
-          class="form-check-input"
+          class="custom-control-input"
           id="smtp_provider-0"
           name="smtp_provider"
           type="radio"
           value="turris"
         />
         <label
-          class="form-check-label"
+          class="custom-control-label"
           for="smtp_provider-0"
         >
           Turris
         </label>
       </div>
       <div
-        class="form-check form-check-inline"
+        class="custom-control custom-radio custom-control-inline"
       >
         <input
           checked=""
-          class="form-check-input"
+          class="custom-control-input"
           id="smtp_provider-1"
           name="smtp_provider"
           type="radio"
           value="custom"
         />
         <label
-          class="form-check-label"
+          class="custom-control-label"
           for="smtp_provider-1"
         >
           Custom
@@ -490,7 +482,6 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
         class="form-group"
       >
         <label
-          class="form-control-label"
           for="3"
         >
           Recipient's email
@@ -517,13 +508,12 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
       class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <label
-        class="form-control-label"
         for="4"
       >
         Importance
       </label>
       <select
-        class="form-control"
+        class="custom-select"
         id="4"
       >
         <option
@@ -548,17 +538,17 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
       style="margin-bottom: 1rem;"
     >
       <div
-        class="form-group form-check"
+        class="custom-control custom-checkbox"
         style="margin-bottom: 0px;"
       >
         <input
           checked=""
-          class="form-check-input"
+          class="custom-control-input"
           id="5"
           type="checkbox"
         />
         <label
-          class="form-label"
+          class="custom-control-label"
           for="5"
           style="margin-bottom: 0px;"
         >
@@ -578,7 +568,6 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
         class="form-group"
       >
         <label
-          class="form-control-label"
           for="17"
         >
           Sender's name
