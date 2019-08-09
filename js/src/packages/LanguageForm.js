@@ -9,6 +9,7 @@ import React from 'react';
 import propTypes from 'prop-types';
 
 import CheckBox from '../common/bootstrap/Checkbox';
+import {formFieldsSize} from '../common/bootstrap/constants';
 
 LanguageForm.propTypes = {
     formData: propTypes.shape({
@@ -24,11 +25,13 @@ export default function LanguageForm({formData, formErrors, setFormValue, ...pro
     return <>
         <h3>{_('Languages')}</h3>
         <p>{_('If you want to use other language than English you can select it from the following list:')}</p>
+        <div id="language-packages" className={formFieldsSize}>
         {formData.languages.map((language, idx) => {
             return <CheckBox
                 label={language.code.toUpperCase()}
                 key={idx}
                 checked={language.enabled}
+                useDefaultSize={false}
 
                 onChange={setFormValue(value => ({
                     languages: {[idx]: {enabled: {$set: value}}}
@@ -37,5 +40,6 @@ export default function LanguageForm({formData, formErrors, setFormValue, ...pro
                 {...props}
             />
         })}
+        </div>
     </>
 }

@@ -14,7 +14,7 @@ exports[`<Packages/> Updates disabled 1`] = `
 +     <div
 +       class=\\"alert alert-dismissible alert-warning\\"
 +     >
-+       <p>
++       <span>
 +         
 + Please enable 
 +         <a
@@ -24,7 +24,7 @@ exports[`<Packages/> Updates disabled 1`] = `
 +         </a>
 +          to manage packages and languages.
 +         
-+       </p>
++       </span>
 +     </div>
 +     <div
 +       class=\\"text-muted\\"
@@ -190,143 +190,144 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"form-label\\"
-@@ -381,10 +412,11 @@
-            style=\\"margin-bottom: 0px;\\"
-          >
-            <input
-              checked=\\"\\"
-              class=\\"form-check-input\\"
-+             disabled=\\"\\"
-              id=\\"14\\"
-              type=\\"checkbox\\"
-            />
-            <label
-              class=\\"form-label\\"
-@@ -402,10 +434,11 @@
-            class=\\"form-group form-check\\"
-            style=\\"margin-bottom: 0px;\\"
-          >
-            <input
-              class=\\"form-check-input\\"
-+             disabled=\\"\\"
-              id=\\"15\\"
-              type=\\"checkbox\\"
-            />
-            <label
-              class=\\"form-label\\"
-@@ -423,10 +456,11 @@
-            class=\\"form-group form-check\\"
-            style=\\"margin-bottom: 0px;\\"
-          >
-            <input
-              class=\\"form-check-input\\"
-+             disabled=\\"\\"
-              id=\\"16\\"
-              type=\\"checkbox\\"
-            />
-            <label
-              class=\\"form-label\\"
-@@ -444,10 +478,11 @@
-            class=\\"form-group form-check\\"
-            style=\\"margin-bottom: 0px;\\"
-          >
-            <input
-              class=\\"form-check-input\\"
-+             disabled=\\"\\"
-              id=\\"17\\"
-              type=\\"checkbox\\"
-            />
-            <label
-              class=\\"form-label\\"
-@@ -465,10 +500,11 @@
-            class=\\"form-group form-check\\"
-            style=\\"margin-bottom: 0px;\\"
-          >
-            <input
-              class=\\"form-check-input\\"
-+             disabled=\\"\\"
-              id=\\"18\\"
-              type=\\"checkbox\\"
-            />
-            <label
-              class=\\"form-label\\"
-@@ -486,10 +522,11 @@
-            class=\\"form-group form-check\\"
-            style=\\"margin-bottom: 0px;\\"
-          >
-            <input
-              class=\\"form-check-input\\"
-+             disabled=\\"\\"
-              id=\\"19\\"
-              type=\\"checkbox\\"
-            />
-            <label
-              class=\\"form-label\\"
-@@ -507,10 +544,11 @@
-            class=\\"form-group form-check\\"
-            style=\\"margin-bottom: 0px;\\"
-          >
-            <input
-              class=\\"form-check-input\\"
-+             disabled=\\"\\"
-              id=\\"20\\"
-              type=\\"checkbox\\"
-            />
-            <label
-              class=\\"form-label\\"
-@@ -528,10 +566,11 @@
-            class=\\"form-group form-check\\"
-            style=\\"margin-bottom: 0px;\\"
-          >
-            <input
-              class=\\"form-check-input\\"
-+             disabled=\\"\\"
-              id=\\"21\\"
-              type=\\"checkbox\\"
-            />
-            <label
-              class=\\"form-label\\"
-@@ -549,10 +588,11 @@
-            class=\\"form-group form-check\\"
-            style=\\"margin-bottom: 0px;\\"
-          >
-            <input
-              class=\\"form-check-input\\"
-+             disabled=\\"\\"
-              id=\\"22\\"
-              type=\\"checkbox\\"
-            />
-            <label
-              class=\\"form-label\\"
-@@ -570,10 +610,11 @@
-            class=\\"form-group form-check\\"
-            style=\\"margin-bottom: 0px;\\"
-          >
-            <input
-              class=\\"form-check-input\\"
-+             disabled=\\"\\"
-              id=\\"23\\"
-              type=\\"checkbox\\"
-            />
-            <label
-              class=\\"form-label\\"
-@@ -591,23 +632,26 @@
-            class=\\"form-group form-check\\"
-            style=\\"margin-bottom: 0px;\\"
-          >
-            <input
-              class=\\"form-check-input\\"
-+             disabled=\\"\\"
-              id=\\"24\\"
-              type=\\"checkbox\\"
-            />
-            <label
-              class=\\"form-label\\"
-              for=\\"24\\"
+@@ -385,10 +416,11 @@
+              style=\\"margin-bottom: 0px;\\"
             >
-              NB
-            </label>
-+         </div>
+              <input
+                checked=\\"\\"
+                class=\\"form-check-input\\"
++               disabled=\\"\\"
+                id=\\"14\\"
+                type=\\"checkbox\\"
+              />
+              <label
+                class=\\"form-label\\"
+@@ -406,10 +438,11 @@
+              class=\\"form-group form-check\\"
+              style=\\"margin-bottom: 0px;\\"
+            >
+              <input
+                class=\\"form-check-input\\"
++               disabled=\\"\\"
+                id=\\"15\\"
+                type=\\"checkbox\\"
+              />
+              <label
+                class=\\"form-label\\"
+@@ -427,10 +460,11 @@
+              class=\\"form-group form-check\\"
+              style=\\"margin-bottom: 0px;\\"
+            >
+              <input
+                class=\\"form-check-input\\"
++               disabled=\\"\\"
+                id=\\"16\\"
+                type=\\"checkbox\\"
+              />
+              <label
+                class=\\"form-label\\"
+@@ -448,10 +482,11 @@
+              class=\\"form-group form-check\\"
+              style=\\"margin-bottom: 0px;\\"
+            >
+              <input
+                class=\\"form-check-input\\"
++               disabled=\\"\\"
+                id=\\"17\\"
+                type=\\"checkbox\\"
+              />
+              <label
+                class=\\"form-label\\"
+@@ -469,10 +504,11 @@
+              class=\\"form-group form-check\\"
+              style=\\"margin-bottom: 0px;\\"
+            >
+              <input
+                class=\\"form-check-input\\"
++               disabled=\\"\\"
+                id=\\"18\\"
+                type=\\"checkbox\\"
+              />
+              <label
+                class=\\"form-label\\"
+@@ -490,10 +526,11 @@
+              class=\\"form-group form-check\\"
+              style=\\"margin-bottom: 0px;\\"
+            >
+              <input
+                class=\\"form-check-input\\"
++               disabled=\\"\\"
+                id=\\"19\\"
+                type=\\"checkbox\\"
+              />
+              <label
+                class=\\"form-label\\"
+@@ -511,10 +548,11 @@
+              class=\\"form-group form-check\\"
+              style=\\"margin-bottom: 0px;\\"
+            >
+              <input
+                class=\\"form-check-input\\"
++               disabled=\\"\\"
+                id=\\"20\\"
+                type=\\"checkbox\\"
+              />
+              <label
+                class=\\"form-label\\"
+@@ -532,10 +570,11 @@
+              class=\\"form-group form-check\\"
+              style=\\"margin-bottom: 0px;\\"
+            >
+              <input
+                class=\\"form-check-input\\"
++               disabled=\\"\\"
+                id=\\"21\\"
+                type=\\"checkbox\\"
+              />
+              <label
+                class=\\"form-label\\"
+@@ -553,10 +592,11 @@
+              class=\\"form-group form-check\\"
+              style=\\"margin-bottom: 0px;\\"
+            >
+              <input
+                class=\\"form-check-input\\"
++               disabled=\\"\\"
+                id=\\"22\\"
+                type=\\"checkbox\\"
+              />
+              <label
+                class=\\"form-label\\"
+@@ -574,10 +614,11 @@
+              class=\\"form-group form-check\\"
+              style=\\"margin-bottom: 0px;\\"
+            >
+              <input
+                class=\\"form-check-input\\"
++               disabled=\\"\\"
+                id=\\"23\\"
+                type=\\"checkbox\\"
+              />
+              <label
+                class=\\"form-label\\"
+@@ -595,24 +636,27 @@
+              class=\\"form-group form-check\\"
+              style=\\"margin-bottom: 0px;\\"
+            >
+              <input
+                class=\\"form-check-input\\"
++               disabled=\\"\\"
+                id=\\"24\\"
+                type=\\"checkbox\\"
+              />
+              <label
+                class=\\"form-label\\"
+                for=\\"24\\"
+              >
+                NB
+              </label>
++           </div>
+          </div>
         </div>
       </div>
       <button
@@ -716,234 +717,239 @@ been installed manually or using opkg is not affected.
     </p>
     <div
       class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      id="language-packages"
     >
       <div
-        class="form-group form-check"
-        style="margin-bottom: 0px;"
+        class=""
+        style="margin-bottom: 1rem;"
       >
-        <input
-          checked=""
-          class="form-check-input"
-          id="14"
-          type="checkbox"
-        />
-        <label
-          class="form-label"
-          for="14"
+        <div
+          class="form-group form-check"
+          style="margin-bottom: 0px;"
         >
-          CS
-        </label>
+          <input
+            checked=""
+            class="form-check-input"
+            id="14"
+            type="checkbox"
+          />
+          <label
+            class="form-label"
+            for="14"
+          >
+            CS
+          </label>
+        </div>
       </div>
-    </div>
-    <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
-    >
       <div
-        class="form-group form-check"
-        style="margin-bottom: 0px;"
+        class=""
+        style="margin-bottom: 1rem;"
       >
-        <input
-          class="form-check-input"
-          id="15"
-          type="checkbox"
-        />
-        <label
-          class="form-label"
-          for="15"
+        <div
+          class="form-group form-check"
+          style="margin-bottom: 0px;"
         >
-          DA
-        </label>
+          <input
+            class="form-check-input"
+            id="15"
+            type="checkbox"
+          />
+          <label
+            class="form-label"
+            for="15"
+          >
+            DA
+          </label>
+        </div>
       </div>
-    </div>
-    <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
-    >
       <div
-        class="form-group form-check"
-        style="margin-bottom: 0px;"
+        class=""
+        style="margin-bottom: 1rem;"
       >
-        <input
-          class="form-check-input"
-          id="16"
-          type="checkbox"
-        />
-        <label
-          class="form-label"
-          for="16"
+        <div
+          class="form-group form-check"
+          style="margin-bottom: 0px;"
         >
-          DE
-        </label>
+          <input
+            class="form-check-input"
+            id="16"
+            type="checkbox"
+          />
+          <label
+            class="form-label"
+            for="16"
+          >
+            DE
+          </label>
+        </div>
       </div>
-    </div>
-    <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
-    >
       <div
-        class="form-group form-check"
-        style="margin-bottom: 0px;"
+        class=""
+        style="margin-bottom: 1rem;"
       >
-        <input
-          class="form-check-input"
-          id="17"
-          type="checkbox"
-        />
-        <label
-          class="form-label"
-          for="17"
+        <div
+          class="form-group form-check"
+          style="margin-bottom: 0px;"
         >
-          FR
-        </label>
+          <input
+            class="form-check-input"
+            id="17"
+            type="checkbox"
+          />
+          <label
+            class="form-label"
+            for="17"
+          >
+            FR
+          </label>
+        </div>
       </div>
-    </div>
-    <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
-    >
       <div
-        class="form-group form-check"
-        style="margin-bottom: 0px;"
+        class=""
+        style="margin-bottom: 1rem;"
       >
-        <input
-          class="form-check-input"
-          id="18"
-          type="checkbox"
-        />
-        <label
-          class="form-label"
-          for="18"
+        <div
+          class="form-group form-check"
+          style="margin-bottom: 0px;"
         >
-          LT
-        </label>
+          <input
+            class="form-check-input"
+            id="18"
+            type="checkbox"
+          />
+          <label
+            class="form-label"
+            for="18"
+          >
+            LT
+          </label>
+        </div>
       </div>
-    </div>
-    <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
-    >
       <div
-        class="form-group form-check"
-        style="margin-bottom: 0px;"
+        class=""
+        style="margin-bottom: 1rem;"
       >
-        <input
-          class="form-check-input"
-          id="19"
-          type="checkbox"
-        />
-        <label
-          class="form-label"
-          for="19"
+        <div
+          class="form-group form-check"
+          style="margin-bottom: 0px;"
         >
-          PL
-        </label>
+          <input
+            class="form-check-input"
+            id="19"
+            type="checkbox"
+          />
+          <label
+            class="form-label"
+            for="19"
+          >
+            PL
+          </label>
+        </div>
       </div>
-    </div>
-    <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
-    >
       <div
-        class="form-group form-check"
-        style="margin-bottom: 0px;"
+        class=""
+        style="margin-bottom: 1rem;"
       >
-        <input
-          class="form-check-input"
-          id="20"
-          type="checkbox"
-        />
-        <label
-          class="form-label"
-          for="20"
+        <div
+          class="form-group form-check"
+          style="margin-bottom: 0px;"
         >
-          RU
-        </label>
+          <input
+            class="form-check-input"
+            id="20"
+            type="checkbox"
+          />
+          <label
+            class="form-label"
+            for="20"
+          >
+            RU
+          </label>
+        </div>
       </div>
-    </div>
-    <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
-    >
       <div
-        class="form-group form-check"
-        style="margin-bottom: 0px;"
+        class=""
+        style="margin-bottom: 1rem;"
       >
-        <input
-          class="form-check-input"
-          id="21"
-          type="checkbox"
-        />
-        <label
-          class="form-label"
-          for="21"
+        <div
+          class="form-group form-check"
+          style="margin-bottom: 0px;"
         >
-          SK
-        </label>
+          <input
+            class="form-check-input"
+            id="21"
+            type="checkbox"
+          />
+          <label
+            class="form-label"
+            for="21"
+          >
+            SK
+          </label>
+        </div>
       </div>
-    </div>
-    <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
-    >
       <div
-        class="form-group form-check"
-        style="margin-bottom: 0px;"
+        class=""
+        style="margin-bottom: 1rem;"
       >
-        <input
-          class="form-check-input"
-          id="22"
-          type="checkbox"
-        />
-        <label
-          class="form-label"
-          for="22"
+        <div
+          class="form-group form-check"
+          style="margin-bottom: 0px;"
         >
-          HU
-        </label>
+          <input
+            class="form-check-input"
+            id="22"
+            type="checkbox"
+          />
+          <label
+            class="form-label"
+            for="22"
+          >
+            HU
+          </label>
+        </div>
       </div>
-    </div>
-    <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
-    >
       <div
-        class="form-group form-check"
-        style="margin-bottom: 0px;"
+        class=""
+        style="margin-bottom: 1rem;"
       >
-        <input
-          class="form-check-input"
-          id="23"
-          type="checkbox"
-        />
-        <label
-          class="form-label"
-          for="23"
+        <div
+          class="form-group form-check"
+          style="margin-bottom: 0px;"
         >
-          IT
-        </label>
+          <input
+            class="form-check-input"
+            id="23"
+            type="checkbox"
+          />
+          <label
+            class="form-label"
+            for="23"
+          >
+            IT
+          </label>
+        </div>
       </div>
-    </div>
-    <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
-    >
       <div
-        class="form-group form-check"
-        style="margin-bottom: 0px;"
+        class=""
+        style="margin-bottom: 1rem;"
       >
-        <input
-          class="form-check-input"
-          id="24"
-          type="checkbox"
-        />
-        <label
-          class="form-label"
-          for="24"
+        <div
+          class="form-group form-check"
+          style="margin-bottom: 0px;"
         >
-          NB
-        </label>
+          <input
+            class="form-check-input"
+            id="24"
+            type="checkbox"
+          />
+          <label
+            class="form-label"
+            for="24"
+          >
+            NB
+          </label>
+        </div>
       </div>
     </div>
     <button

@@ -65,6 +65,6 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --colors",
     "docs": "npx styleguidist build ",
-    "docs-watch": "styleguidist server"
+    "docs:watch": "styleguidist server"
   }
 }

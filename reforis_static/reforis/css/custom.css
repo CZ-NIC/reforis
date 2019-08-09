@@ -396,7 +396,7 @@ form > button {
 }
 
 
-/*Login*/
+/* Login */
 
 #login-wrapper {
     display: flex;
@@ -449,7 +449,7 @@ form > button {
     margin: 1rem;
 }
 
-/*Notification center*/
+/* Notification center */
 #notifications-center {
     display: flex;
     flex-direction: column;
@@ -556,7 +556,7 @@ form > button {
 }
 
 
-/* Other */
+/* NTP settings */
 #ntpServersList {
     display: flex;
     flex-direction: row;
@@ -565,4 +565,16 @@ form > button {
 
 #ntpServersList > p {
     margin: 0.5rem;
+}
+
+/* Packages - language settings */
+
+#language-packages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#language-packages > div {
+    margin: 0 0.5rem;
 }

@@ -12,15 +12,21 @@ import {useUID} from 'react-uid/dist/es5/index';
 import {formFieldsSize} from './constants';
 
 CheckBox.propTypes = {
-    /** Label message*/
+    /** Label message */
     label: PropTypes.string.isRequired,
-    /** Help text message*/
+    /** Help text message */
     helpText: PropTypes.string,
+    /** Apply default size (full-width) */
+    useDefaultSize: PropTypes.bool
 };
 
-export default function CheckBox({label, helpText, ...props}) {
+CheckBox.defaultProps = {
+    useDefaultSize: true
+};
+
+export default function CheckBox({label, helpText, useDefaultSize, ...props}) {
     const uid = useUID();
-    return <div className={formFieldsSize} style={{marginBottom: '1rem'}}>
+    return <div className={useDefaultSize ? formFieldsSize : ""} style={{marginBottom: '1rem'}}>
         <div className='form-group form-check' style={{marginBottom: '0'}}>
             <input
                 className='form-check-input'
