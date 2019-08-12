@@ -46,12 +46,12 @@ def create_app(config):
 
     from .views import views
     from .foris_controller_api import foris_controller_api
-    from .reforis_api import reforis_api
+    from .api import api
     from .guide import guide
 
     app.register_blueprint(views)
     app.register_blueprint(foris_controller_api)
-    app.register_blueprint(reforis_api)
+    app.register_blueprint(api)
     app.register_blueprint(guide)
 
     from .auth import register_login_required

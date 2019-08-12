@@ -15,7 +15,7 @@ from flask_babel import gettext as _
 from reforis.auth import login_to_foris, logout_from_foris
 
 # pylint: disable=invalid-name
-views = Blueprint('Foris', __name__)
+views = Blueprint('Views', __name__)
 
 
 # pylint: disable=unused-argument
@@ -43,12 +43,12 @@ def login():
     """
     error_message = None
     if session.get('logged', False):
-        return redirect(url_for('Foris.index'))
+        return redirect(url_for('Views.index'))
 
     if request.method == 'POST':
         password = request.form['password']
         if login_to_foris(password):
-            return redirect(url_for('Foris.index'))
+            return redirect(url_for('Views.index'))
         error_message = _('Wrong password.')
     return render_template('login.html', error_message=error_message)
 
@@ -57,13 +57,13 @@ def login():
 def logout():
     """Logout from foris."""
     logout_from_foris()
-    return redirect(url_for('Foris.login'))
+    return redirect(url_for('Views.login'))
 
 
 # pylint: disable=inconsistent-return-statements
 @views.before_request
 def guide_redirect():
-    if request.endpoint in ['Foris.logout', 'Foris.login']:
+    if request.endpoint in ['Views.logout', 'Views.login']:
         return
     web_data = current_app.backend.perform('web', 'get_data')
     if web_data['guide']['enabled']:
