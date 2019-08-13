@@ -3,11 +3,11 @@ from flask import current_app, jsonify, request
 
 def guide():
     """Get guide steps."""
-    res = {
+    response = {
         **current_app.backend.perform('web', 'get_data')['guide'],
         **current_app.backend.perform('web', 'get_guide'),
     }
-    return jsonify(res)
+    return jsonify(response)
 
 
 def finish_guide():
@@ -16,7 +16,8 @@ def finish_guide():
         See ``update_guide``  action in the `foris-controller web module JSON schema
         <https://gitlab.labs.nic.cz/turris/foris-controller/blob/master/foris_controller_modules/web/schema/web.json>`_.
     """
-    return jsonify(current_app.backend.perform('web', 'update_guide', {'enabled': False}))
+    response = current_app.backend.perform('web', 'update_guide', {'enabled': False})
+    return jsonify(response)
 
 
 def guide_workflow():
@@ -26,7 +27,8 @@ def guide_workflow():
         <https://gitlab.labs.nic.cz/turris/foris-controller/blob/master/foris_controller_modules/web/schema/web.json>`_.
     """
     data = request.json
-    return jsonify(current_app.backend.perform('web', 'update_guide', {'enabled': True, **data}))
+    response = current_app.backend.perform('web', 'update_guide', {'enabled': True, **data})
+    return jsonify(response)
 
 
 def languages():
@@ -61,7 +63,7 @@ def language():
 
             {"language" : "en"}
     """
-    res = ''
+    res = None
     if request.method == 'GET':
         res = current_app.backend.perform('web', 'get_data')['language']
     elif request.method == 'POST':

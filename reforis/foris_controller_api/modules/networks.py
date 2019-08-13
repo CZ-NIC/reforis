@@ -14,15 +14,15 @@ def interfaces():
         <https://gitlab.labs.nic.cz/turris/foris-controller/blob/master/foris_controller_modules/networks/schema/networks.json>`_.
     """
     module = 'networks'
-    res = ''
+    response = None
     if request.method == 'GET':
         settings = current_app.backend.perform(module, 'get_settings')
         del settings['device']
-        res = settings
+        response = settings
     elif request.method == 'POST':
         data = request.json
-        res = current_app.backend.perform(module, 'update_settings', data)
-    return jsonify(res)
+        response = current_app.backend.perform(module, 'update_settings', data)
+    return jsonify(response)
 
 
 # pylint: disable=invalid-name

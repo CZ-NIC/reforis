@@ -85,12 +85,5 @@ ROUTES = [
         'path': '/about',
         'icon': 'info-circle',
         'component': 'About'
-    },
-    # Hidden in navigation menu
-    {
-        'name': _('Notifications'),
-        'path': '/notifications',
-        'component': 'Notifications',
-        'isHidden': True,
     }
 ]

@@ -7,10 +7,10 @@ def _foris_controller_settings_call(module):
 
     **It works only inside the request context!**
     """
-    res = ''
+    response = None
     if request.method == 'GET':
-        res = current_app.backend.perform(module, 'get_settings')
+        response = current_app.backend.perform(module, 'get_settings')
     elif request.method == 'POST':
         data = request.json
-        res = current_app.backend.perform(module, 'update_settings', data)
-    return jsonify(res)
+        response = current_app.backend.perform(module, 'update_settings', data)
+    return jsonify(response)

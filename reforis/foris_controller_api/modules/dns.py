@@ -24,7 +24,9 @@ def dns_test():
         See ``connection_test_trigger`` action in the `foris-controller wan module JSON schema
         <https://gitlab.labs.nic.cz/turris/foris-controller/blob/master/foris_controller_modules/wan/schema/wan.json>`_.
     """
-    return jsonify(current_app.backend.perform('wan', 'connection_test_trigger', data={'test_kinds': ['dns']}))
+    request_data = {'test_kinds': ['dns']}
+    response = current_app.backend.perform('wan', 'connection_test_trigger', request_data)
+    return jsonify(response)
 
 
 # pylint: disable=invalid-name

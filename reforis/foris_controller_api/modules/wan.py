@@ -13,16 +13,16 @@ def wan():
         See ``update_settings`` action in the `foris-controller wan module JSON schema
         <https://gitlab.labs.nic.cz/turris/foris-controller/blob/master/foris_controller_modules/wan/schema/wan.json>`_.
     """
-    res = ''
+    response = None
     if request.method == 'GET':
-        res = {
+        response = {
             **current_app.backend.perform('wan', 'get_settings'),
             **current_app.backend.perform('wan', 'get_wan_status')
         }
     elif request.method == 'POST':
         data = request.json
-        res = current_app.backend.perform('wan', 'update_settings', data)
-    return jsonify(res)
+        response = current_app.backend.perform('wan', 'update_settings', data)
+    return jsonify(response)
 
 
 def connection_test():
@@ -31,7 +31,9 @@ def connection_test():
         See ``connection_test_trigger``  action in the `foris-controller wan module JSON schema
         <https://gitlab.labs.nic.cz/turris/foris-controller/blob/master/foris_controller_modules/wan/schema/wan.json>`_.
     """
-    return jsonify(current_app.backend.perform('wan', 'connection_test_trigger', data={'test_kinds': ['ipv4', 'ipv6']}))
+    request_data = {'test_kinds': ['ipv4', 'ipv6']}
+    res = current_app.backend.perform('wan', 'connection_test_trigger', request_data)
+    return jsonify(res)
 
 
 # pylint: disable=invalid-name

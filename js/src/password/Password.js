@@ -18,6 +18,9 @@ import ForisPasswordForm from './ForisPasswordForm';
 import RootPasswordForm from './RootPasswordForm';
 import Spinner from 'common/bootstrap/Spinner';
 
+Password.defaultProps = {
+    postCallback: () => undefined,
+};
 
 export default function Password({postCallback}) {
     const [formState, onFormChangeHandler, resetFormData] = useForm(validator);

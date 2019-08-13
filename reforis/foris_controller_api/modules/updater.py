@@ -38,21 +38,22 @@ def updates():
     settings = current_app.backend.perform('updater', 'get_settings', {'lang': _get_locale_from_backend(current_app)})
     del settings['approval']
 
-    res = None
+    response = None
     if request.method == 'GET':
-        res = {
+        response = {
             **settings,
             'reboots': current_app.backend.perform('router_notifications', 'get_settings')['reboots'],
         }
-        del res['user_lists']
-        del res['languages']
+        del response['user_lists']
+        del response['languages']
     elif request.method == 'POST':
         # pylint: disable=fixme
         # TODO: If router_notifications is saved without errors and updater setting is saved with an error then user got
         # the error message even router_notifications are saved. It's probably better to make some rollback in case of
         # error here.
         data = request.json
-        res_reboots = current_app.backend.perform('router_notifications', 'update_reboot_settings', data['reboots'])
+        response_reboots = current_app.backend.perform('router_notifications', 'update_reboot_settings',
+                                                       data['reboots'])
         del data['reboots']
 
         if data['enabled']:
@@ -63,9 +64,9 @@ def updates():
                 language['code'] for language in settings['languages'] if language['enabled']
             ]
 
-        res_updater = current_app.backend.perform('updater', 'update_settings', data)
-        res = {'result': res_reboots and res_updater}
-    return jsonify(res)
+        response_updater = current_app.backend.perform('updater', 'update_settings', data)
+        response = {'result': response_reboots and response_updater}
+    return jsonify(response)
 
 
 def approvals():
@@ -87,17 +88,16 @@ def approvals():
                 "reboots": { "delay": 4, "time": "04:30"}
             }
     """
-    res = None
+    response = None
     if request.method == 'GET':
-        res = current_app.backend.perform(
-            'updater', 'get_settings', {'lang': _get_locale_from_backend(current_app)}
-        )['approval']
+        lang_data = {'lang': _get_locale_from_backend(current_app)}
+        response = current_app.backend.perform('updater', 'get_settings', lang_data)['approval']
 
     elif request.method == 'POST':
         data = request.json
-        res = current_app.backend.perform('updater', 'resolve_approval', data)
+        response = current_app.backend.perform('updater', 'resolve_approval', data)
 
-    return jsonify(res)
+    return jsonify(response)
 
 
 def packages():
@@ -119,18 +119,18 @@ def packages():
         {'lang': _get_locale_from_backend(current_app)}
     )
     del updater_settings['approval']
-    res = {}
+    response = None
     if request.method == 'GET':
-        res = updater_settings
-        del res['approval_settings']
+        response = updater_settings
+        del response['approval_settings']
     elif request.method == 'POST':
-        data = request.json
         if not updater_settings['enabled']:
             raise InvalidRequest(_("You can't set packages with disabled automatic updates."))
+        data = request.json
         data['enabled'] = True
         data['approval_settings'] = updater_settings['approval_settings']
-        res = current_app.backend.perform('updater', 'update_settings', data)
-    return jsonify(res)
+        response = current_app.backend.perform('updater', 'update_settings', data)
+    return jsonify(response)
 
 
 # pylint: disable=invalid-name

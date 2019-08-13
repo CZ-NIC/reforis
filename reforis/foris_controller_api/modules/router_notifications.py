@@ -36,16 +36,14 @@ def notifications():
 
             {"ids" : ['123-123',...]}
     """
-    res = ''
+    response = None
     if request.method == 'GET':
-        res = current_app.backend.perform(
-            'router_notifications', 'list',
-            {'lang': _get_locale_from_backend(current_app)}
-        )
+        request_data = {'lang': _get_locale_from_backend(current_app)}
+        response = current_app.backend.perform('router_notifications', 'list', request_data)
     elif request.method == 'POST':
         data = request.json
-        res = current_app.backend.perform('router_notifications', 'mark_as_displayed', data)
-    return jsonify(res)
+        response = current_app.backend.perform('router_notifications', 'mark_as_displayed', data)
+    return jsonify(response)
 
 
 def notifications_settings():
@@ -88,16 +86,13 @@ def notifications_settings():
         <https://gitlab.labs.nic.cz/turris/foris-controller/blob/master/foris_controller_modules/router_notifications/schema/router_notifications.json>`_.
         For request example see `GET` method of this endpoint.
     """
-    res = ''
+    response = None
     if request.method == 'GET':
-        res = current_app.backend.perform(
-            'router_notifications',
-            'get_settings',
-        )
+        response = current_app.backend.perform('router_notifications', 'get_settings')
     elif request.method == 'POST':
         data = request.json
-        res = current_app.backend.perform('router_notifications', 'update_email_settings', data)
-    return jsonify(res)
+        response = current_app.backend.perform('router_notifications', 'update_email_settings', data)
+    return jsonify(response)
 
 
 # pylint: disable=invalid-name

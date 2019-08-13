@@ -29,28 +29,27 @@ def password():
                 "root_password": "root_Foris_password"
             }
     """
-    res = ''
+    response = {}
     if request.method == 'GET':
-        res = {'password_set': current_app.backend.perform('web', 'get_data')['password_ready']}
+        response['password_set'] = current_app.backend.perform('web', 'get_data')['password_ready']
+
     elif request.method == 'POST':
         data = request.json
-        res = {}
         if not data.get('foris_current_password', False) or not check_password(data['foris_current_password']):
             raise InvalidRequest(_('Wrong current password.'))
 
+        new_password = _decode_password_to_base64(data['foris_password'])
+        request_data = {'password': new_password}
+
         if data.get('foris_password', False):
-            new_password = _decode_password_to_base64(data['foris_password'])
-            res['foris_password'] = current_app.backend.perform('password', 'set', {
-                'password': new_password,
-                'type': 'foris'
-            })
+            request_data['type'] = 'foris'
+            response['foris_password'] = current_app.backend.perform('password', 'set', request_data)
+
         if data.get('root_password', False):
-            new_password = _decode_password_to_base64(data['root_password'])
-            res['root_password'] = current_app.backend.perform('password', 'set', {
-                'password': new_password,
-                'type': 'foris'
-            })
-    return jsonify(res)
+            request_data['type'] = 'system'
+            response['root_password'] = current_app.backend.perform('password', 'set', request_data)
+
+    return jsonify(response)
 
 
 # pylint: disable=invalid-name

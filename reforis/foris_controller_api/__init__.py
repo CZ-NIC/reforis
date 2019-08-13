@@ -41,7 +41,7 @@ class InvalidRequest(Exception):
     status_code = 400
 
     def __init__(self, error, status_code=None, payload=None):
-        Exception.__init__(self)
+        super().__init__(self)
         self.error = error
         if status_code is not None:
             self.status_code = status_code
@@ -49,9 +49,9 @@ class InvalidRequest(Exception):
 
     def to_dict(self):
         # pylint: disable=invalid-name
-        rv = dict(self.payload or ())
-        rv['error'] = self.error
-        return rv
+        result = dict(self.payload or ())
+        result['error'] = self.error
+        return result
 
 
 @foris_controller_api.errorhandler(InvalidRequest)
