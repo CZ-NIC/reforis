@@ -5,14 +5,15 @@
  * See /LICENSE for more information.
  */
 
-import Password from '../password/Password';
+import Password from 'password/Password';
+import Interfaces from 'interfaces/Interfaces';
+import RegionAndTime from 'regionAndTime/RegionAndTime';
+import DNS from 'dns/DNS';
+import Updates from 'updates/Updates';
+import WAN from 'wan/WAN';
+import LAN from 'lan/LAN';
+
 import WorkflowSelect from './WorkflowSelect';
-import Interfaces from '../interfaces/Interfaces';
-import RegionAndTime from '../regionAndTime/RegionAndTime';
-import DNS from '../dns/DNS';
-import Updates from '../updates/Updates';
-import WAN from '../wan/WAN';
-import LAN from '../lan/LAN';
 import GuideFinished from './GuideFinish';
 
 export const GUIDE_URL_PREFIX = '/guide';

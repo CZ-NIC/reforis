@@ -9,13 +9,13 @@ import React from 'react';
 import update from 'immutability-helper';
 import propTypes from 'prop-types';
 
-import ForisForm from '../formContainer/ForisForm';
-import API_URLs from '../common/API';
+import ForisForm from 'formContainer/ForisForm';
+import API_URLs from 'common/API';
+import ConnectionTest from 'connectionTest/ConnectionTest';
 
 import WAN6Form, {validateWAN6Form} from './WAN6Form';
 import MACForm, {validateMACForm} from './MACForm';
 import WANForm, {validateWANForm} from './WANForm';
-import ConnectionTest from '../connectionTest/ConnectionTest';
 
 WAN.propTypes = {
     ws: propTypes.object.isRequired

@@ -7,16 +7,16 @@
 
 import React, {useCallback, useEffect, useState} from 'react';
 
-import {useAPIGet, useAPIPost} from '../common/APIhooks';
-import API_URLs from '../common/API';
-import {useForm} from '../formContainer/hooks';
-import Alert from '../common/bootstrap/Alert';
+import {STATES as SUBMIT_BUTTON_STATES} from 'formContainer/SubmitButton';
+import {useAPIGet, useAPIPost} from 'common/APIhooks';
+import API_URLs from 'common/API';
+import {useForm} from 'formContainer/hooks';
+import Alert from 'common/bootstrap/Alert';
 
 import CurrentForisPasswordForm from './CurrentForisPasswordForm';
 import ForisPasswordForm from './ForisPasswordForm';
 import RootPasswordForm from './RootPasswordForm';
-import Spinner from '../common/bootstrap/Spinner';
-import {STATES as SUBMIT_BUTTON_STATES} from '../formContainer/SubmitButton';
+import Spinner from 'common/bootstrap/Spinner';
 
 
 export default function Password({postCallback}) {

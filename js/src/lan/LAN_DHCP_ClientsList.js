@@ -9,7 +9,7 @@ import React from 'react';
 import propTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 
-import DHCPClientsList from '../common/network/DHCPClientsList';
+import DHCPClientsList from 'common/network/DHCPClientsList';
 import {LAN_MODES} from './LANForm';
 
 LAN_DHCP_ClientsList.propTypes = {

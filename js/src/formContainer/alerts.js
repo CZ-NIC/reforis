@@ -8,8 +8,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Alert from '../common/bootstrap/Alert';
-import Portal from '../utils/Portal';
+import Alert from 'common/bootstrap/Alert';
+import Portal from 'utils/Portal';
 
 SuccessAlert.propTypes = {
     onDismiss: PropTypes.func.isRequired,

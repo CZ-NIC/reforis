@@ -12,7 +12,7 @@ import mockAxios from 'jest-mock-axios';
 import {regionAndTime} from './__fixtures__/regionAndTime';
 
 import RegionAndTime from '../RegionAndTime';
-import API_URLs from '../../common/API';
+import API_URLs from 'common/API';
 import {mockedWS} from '../../testUtils/mockWS';
 
 describe('<RegionAndTime/>', () => {

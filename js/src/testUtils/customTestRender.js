@@ -5,9 +5,9 @@
  * See /LICENSE for more information.
  */
 import React from 'react';
-import {render} from '@testing-library/react'
 import {UIDReset} from 'react-uid';
 import {StaticRouter} from 'react-router';
+import {render} from '@testing-library/react'
 
 function Wrapper({children}) {
     return <StaticRouter>

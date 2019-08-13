@@ -8,9 +8,9 @@
 import React from 'react';
 import propTypes from 'prop-types'
 
-import {ForisURLs} from '../common/constants';
-import PasswordInput from '../common/bootstrap/PasswordInput';
-import SubmitButton, {STATES as SUBMIT_BUTTON_STATES} from '../formContainer/SubmitButton';
+import {ForisURLs} from 'common/constants';
+import PasswordInput from 'common/bootstrap/PasswordInput';
+import SubmitButton, {STATES as SUBMIT_BUTTON_STATES} from 'formContainer/SubmitButton';
 
 RootPasswordForm.propTypes = {
     formData: propTypes.shape(

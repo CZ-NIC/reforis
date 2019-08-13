@@ -7,9 +7,9 @@
 
 import {useCallback, useEffect, useMemo, useState} from 'react';
 
-import API_URLs from '../common/API';
-import {useAPIPost} from '../common/APIhooks';
-import {useWSForisModule} from '../common/WebSocketsHooks';
+import API_URLs from 'common/API';
+import {useAPIPost} from 'common/APIhooks';
+import {useWSForisModule} from 'common/WebSocketsHooks';
 
 const TESTS_TYPES = {
     wan: ['ipv6', 'ipv6_gateway', 'ipv4', 'ipv4_gateway'],

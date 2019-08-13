@@ -5,10 +5,11 @@
  * See /LICENSE for more information.
  */
 
-import {Modal, ModalBody, ModalFooter, ModalHeader} from '../common/bootstrap/Modal';
-import Button from '../common/bootstrap/Button';
 import React from 'react';
 import propTypes from 'prop-types';
+
+import {Modal, ModalBody, ModalFooter, ModalHeader} from 'common/bootstrap/Modal';
+import Button from 'common/bootstrap/Button';
 
 const DNSSEC_DISABLE_MESSAGE = _(`
 DNSSEC is a security technology that protects the DNS communication against attacks on the DNS infrastructure.

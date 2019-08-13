@@ -8,7 +8,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-import Select from '../common/bootstrap/Select';
+import Select from 'common/bootstrap/Select';
 import LANManagedForm from './LANManagedForm';
 import LANUnmanagedForm from './LANUnmanagedForm';
 

@@ -8,10 +8,10 @@
 import React from 'react';
 import {render} from 'react-dom';
 
-import WebSockets from './common/WebSockets';
+import WebSockets from 'common/WebSockets';
 
-import Main from './main/Main';
-import Guide from './guide/Guide';
+import Main from 'main/Main';
+import Guide from 'guide/Guide';
 
 const ws = new WebSockets();
 

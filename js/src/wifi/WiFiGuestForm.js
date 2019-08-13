@@ -6,13 +6,13 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import CheckBox from '../common/bootstrap/Checkbox';
-import TextInput from '../common/bootstrap/TextInput';
-import PasswordInput from '../common/bootstrap/PasswordInput';
+import CheckBox from 'common/bootstrap/Checkbox';
+import TextInput from 'common/bootstrap/TextInput';
+import PasswordInput from 'common/bootstrap/PasswordInput';
 
 import {HELP_TEXTS} from './WiFiForm';
-import PropTypes from 'prop-types';
 import WiFiQRCode from './WiFiQRCode';
 
 WifiGuestForm.propTypes = {

@@ -9,11 +9,12 @@ import React, {useEffect, useState} from 'react';
 import propTypes from 'prop-types';
 import moment from 'moment/moment';
 
-import Select from '../common/bootstrap/Select';
-import DataTimeInput from '../common/bootstrap/DataTimeInput';
+import Select from 'common/bootstrap/Select';
+import DataTimeInput from 'common/bootstrap/DataTimeInput';
+import {SpinnerElement} from 'common/bootstrap/Spinner';
+import Button from 'common/bootstrap/Button';
+
 import useNTPDate from './hooks';
-import {SpinnerElement} from '../common/bootstrap/Spinner';
-import Button from '../common/bootstrap/Button';
 
 // Foris backend ignore value after "."...
 const TIME_FORMAT = 'YYYY-MM-DDTHH:mm:ss.0';

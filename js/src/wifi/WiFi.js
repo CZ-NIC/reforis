@@ -8,9 +8,10 @@
 import React from 'react'
 import propTypes from 'prop-types';
 
+import ForisForm from 'formContainer/ForisForm';
+import API_URLs from 'common/API';
+
 import WiFiForm from './WiFiForm';
-import ForisForm from '../formContainer/ForisForm';
-import API_URLs from '../common/API';
 import ResetWiFiSettings from './ResetWiFiSettings';
 
 WiFi.propTypes = {

@@ -8,7 +8,8 @@
 import React, {useState, useEffect} from 'react';
 import propTypes from 'prop-types';
 
-import Alert from '../common/bootstrap/Alert';
+import Alert from 'common/bootstrap/Alert';
+
 import {NETWORKS_CHOICES, NETWORKS_TYPES} from './Interfaces';
 import Network from './Network';
 import SelectedInterface from './SelectedInterface';

@@ -5,10 +5,11 @@
  * See /LICENSE for more information.
  */
 
+import React from 'react';
 import {Redirect, Route, Switch} from 'react-router';
+
 import {PAGES} from './pages';
 import Portal from 'utils/Portal';
-import React from 'react';
 
 const CONTENT_CONTAINER_ID = 'content_container';
 

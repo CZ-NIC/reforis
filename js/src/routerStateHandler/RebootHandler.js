@@ -7,8 +7,9 @@
 
 import React from 'react';
 
-import Spinner from '../common/bootstrap/Spinner';
 import {STATES, useReboot} from './hooks';
+
+import Spinner from 'common/bootstrap/Spinner';
 
 export default function RebootHandler({ws}) {
     const [rebootState, remains] = useReboot(ws);

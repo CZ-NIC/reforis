@@ -5,13 +5,13 @@
  * See /LICENSE for more information.
  */
 
+
 import React from 'react';
-
-import {STEPS} from './constance';
-
-import {useGuideFinish} from './hooks';
 import {withRouter} from 'react-router';
 import {Link, NavLink} from 'react-router-dom';
+
+import {STEPS} from './constance';
+import {useGuideFinish} from './hooks';
 
 export default function GuideNavigation({workflow_steps, passed, next_step}) {
     const onGuideFinishHandler = useGuideFinish();

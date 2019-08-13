@@ -11,7 +11,7 @@ import {Link} from 'react-router-dom';
 
 import NotificationIcon from '../NotificationIcon';
 import {NOTIFICATION_PROP_TYPES, toLocaleDateString} from '../utils';
-import {ForisURLs} from '../../common/constants';
+import {ForisURLs} from 'common/constants';
 
 
 NotificationsDropdownItem.propTypes = {

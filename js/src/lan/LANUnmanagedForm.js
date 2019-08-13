@@ -8,9 +8,9 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-import Select from '../common/bootstrap/Select';
-import DHCPClientForm, {validateDHCPForm} from '../common/network/DHCPClientForm';
-import StaticIPForm, {validateStaticForm} from '../common/network/StaticIPForm';
+import Select from 'common/bootstrap/Select';
+import DHCPClientForm, {validateDHCPForm} from 'common/network/DHCPClientForm';
+import StaticIPForm, {validateStaticForm} from 'common/network/StaticIPForm';
 
 const LAN_TYPES = {
     dhcp: 'dhcp',

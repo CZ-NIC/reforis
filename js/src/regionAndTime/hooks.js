@@ -6,8 +6,9 @@
  */
 
 import {useEffect, useState} from 'react';
-import {useAPIPost} from '../common/APIhooks';
-import API_URLs from '../common/API';
+
+import {useAPIPost} from 'common/APIhooks';
+import API_URLs from 'common/API';
 
 export default function useNTPDate(ws) {
     const [state, setState] = useState({

@@ -6,7 +6,7 @@
  */
 
 import pdfMake from 'pdfmake';
-import pdfFonts from '../utils/vfs_fonts';
+import pdfFonts from 'utils/vfs_fonts';
 
 export function createAndDownloadPdf(SSID, password) {
     pdfMake.vfs = pdfFonts.pdfMake.vfs;

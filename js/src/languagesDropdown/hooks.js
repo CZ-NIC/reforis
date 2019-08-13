@@ -7,8 +7,8 @@
 
 import {useEffect} from 'react';
 
-import {useAPIGet} from '../common/APIhooks';
-import API_URLs from '../common/API';
+import {useAPIGet} from 'common/APIhooks';
+import API_URLs from 'common/API';
 
 export function useLanguages() {
     const [languageState, getLanguage] = useAPIGet(API_URLs.language);

@@ -6,9 +6,10 @@
  */
 
 import React from 'react';
-
-import PasswordInput from '../common/bootstrap/PasswordInput';
 import propTypes from 'prop-types';
+
+import PasswordInput from 'common/bootstrap/PasswordInput';
+
 import ForisPasswordForm from './ForisPasswordForm';
 
 ForisPasswordForm.propTypes = {

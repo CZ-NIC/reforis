@@ -8,8 +8,8 @@
 import React from 'react';
 import propType from 'prop-types';
 
-import {Modal, ModalBody, ModalFooter, ModalHeader} from '../common/bootstrap/Modal';
-import Button from '../common/bootstrap/Button';
+import {Modal, ModalBody, ModalFooter, ModalHeader} from 'common/bootstrap/Modal';
+import Button from 'common/bootstrap/Button';
 
 OpenPortsModals.propTypes = {
     shown: propType.bool.isRequired,

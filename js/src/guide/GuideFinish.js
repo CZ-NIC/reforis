@@ -6,7 +6,9 @@
  */
 
 import React from 'react';
-import Button from '../common/bootstrap/Button';
+
+import Button from 'common/bootstrap/Button';
+
 import {useGuideFinish} from './hooks';
 
 export default function GuideFinished() {
