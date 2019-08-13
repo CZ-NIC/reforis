@@ -29,11 +29,12 @@ export default function RootPasswordForm({formData, formErrors, setFormValue, su
         <h4>{_('Advanced administration (root) password')}</h4>
         <p
             dangerouslySetInnerHTML={{
-                __html: babel.format(`
-                            In order to access the advanced configuration options which are not available here, you must
-                            set the root user's password. The advanced configuration options can be managed either 
-                            through the <a href="%s">LuCI web interface</a> or via SSH.
-                    `, ForisURLs.luci)
+                __html: babel.format(_(
+`In order to access the advanced configuration options which are not available here, you must
+set the root user's password. The advanced configuration options can be managed either 
+through the <a href="%s">LuCI web interface</a> or via SSH.`
+                    ), ForisURLs.luci
+                )
             }}
         />
         <PasswordInput

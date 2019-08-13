@@ -12,8 +12,6 @@ import WebSockets from './common/WebSockets';
 
 import Main from './main/Main';
 
-import Overview from './overview/Overview';
-
 import Notifications from './notifications/Notifications/Notifications';
 
 import WiFi from './wifi/WiFi';
@@ -43,10 +41,10 @@ const ws = new WebSockets();
  * */
 export const ROUTES = [
     {
-        name: _('Overview'),
-        path: '/overview',
-        icon: 'list',
-        component: Overview,
+        name: _('Notifications'),
+        path: '/notifications',
+        icon: 'bell',
+        component: Notifications,
     },
     {
         name: _('Network Settings'),
@@ -135,14 +133,6 @@ export const ROUTES = [
         path: '/about',
         icon: 'info-circle',
         component: About
-    },
-
-    // Hidden in navigation menu
-    {
-        name: _('Notifications'),
-        path: '/notifications',
-        component: Notifications,
-        isHidden: true,
     }
 ];
 

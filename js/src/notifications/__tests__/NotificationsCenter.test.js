@@ -11,21 +11,21 @@ import mockAxios from 'jest-mock-axios';
 import {mockedWS} from 'mockWS';
 import {notificationsFixture} from './__fixtures__/notifications';
 
-import Notifications from '../Notifications/Notifications';
+import NotificationsCenter from '../Notifications/NotificationsCenter';
 
-describe('<Notifications/>', () => {
+describe('<NotificationsCenter/>', () => {
     let NotificationContainer;
     beforeEach(async () => {
         const mockWebSockets = new mockedWS();
-        const {container, getByText} = render(<Notifications ws={mockWebSockets}/>);
+        const {container, getByText} = render(<NotificationsCenter ws={mockWebSockets}/>);
         mockAxios.mockResponse({data: notificationsFixture()});
         await wait(() => {
-            getByText('Notification message.')
+            getByText('Notification message.');
         });
         NotificationContainer = container;
     });
 
     it('Test with snapshot.', () => {
-        expect(NotificationContainer.firstChild).toMatchSnapshot()
+        expect(NotificationContainer.firstChild).toMatchSnapshot();
     })
 });

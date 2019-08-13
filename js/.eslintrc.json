@@ -1,8 +1,9 @@
 {
   "extends": "react-app",
   "globals": {
-    "_": false,
-    "babel": false,
-    "ForisTranslations": false
+    "_": "readonly",
+    "babel": "readonly",
+    "ForisTranslations": "readonly",
+    "ngettext": "readonly"
   }
 }

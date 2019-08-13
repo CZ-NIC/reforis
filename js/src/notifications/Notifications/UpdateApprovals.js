@@ -9,10 +9,10 @@ import React, {useEffect} from 'react';
 import propTypes from 'prop-types';
 import moment from 'moment';
 
-import {useAPIGet, useAPIPost} from '../common/APIhooks';
-import API_URLs from '../common/API';
-import Button from '../common/bootstrap/Button';
-import Spinner from '../common/bootstrap/Spinner';
+import {useAPIGet, useAPIPost} from '../../common/APIhooks';
+import API_URLs from '../../common/API';
+import Button from '../../common/bootstrap/Button';
+import Spinner from '../../common/bootstrap/Spinner';
 
 export default function UpdateApprovals() {
     const [getState, get] = useAPIGet(API_URLs.approvals);
@@ -20,7 +20,6 @@ export default function UpdateApprovals() {
     useEffect(() => {
         get();
     }, [get]);
-
 
     const [postState, post] = useAPIPost(API_URLs.approvals);
     useEffect(() => {
@@ -44,9 +43,24 @@ export default function UpdateApprovals() {
         marginBottom: '1rem',
     };
 
+    const summary = babel.format(
+        ngettext(
+            "There is %d package to be updated.",
+            "There are %d packages to be updated.",
+            approval.plan.length
+        ),
+        approval.plan.length
+    );
+    const details = _(
+        'See <a data-toggle="collapse" href="#plan-wrapper" role="button" aria-expanded="false" aria-controls="plan-wrapper">details</a>'
+    );
+
     return <>
-        <h3>{babel.format('Approve update from %s', moment(approval.time).format('YYYY-MM-DD HH:mm:ss'))}</h3>
-        <Plan plan={approval.plan}/>
+        <h3>{babel.format(_('Approve update from %s'), moment(approval.time).format('YYYY-MM-DD HH:mm:ss'))}</h3>
+        <p dangerouslySetInnerHTML={{ __html: `${summary} ${details}` }}></p>
+        <div className="collapse" id="plan-wrapper">
+            <Plan plan={approval.plan}/>
+        </div>
         <Button
             style={buttonMargin}
             className="btn btn-warning offset-lg-1 col-lg-4 col-sm-12"
@@ -83,7 +97,6 @@ function Plan({plan}) {
         </tbody>
     </table>
 }
-
 
 PlanItem.propTypes = {
     name: propTypes.string.isRequired,

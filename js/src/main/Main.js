@@ -33,7 +33,7 @@ export default function Main({routes, ws}) {
             </Portal>
 
             <Switch>
-                <Route path='/' exact render={() => <Redirect to='/overview'/>}/>
+                <Route path='/' exact render={() => <Redirect to='/notifications'/>}/>
                 {routes.map((route, i) =>
                     <RouteWithSubRoutes key={i} ws={ws} {...route}/>
                 )}
