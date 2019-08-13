@@ -10,6 +10,8 @@ import {REFORIS_URL_PREFIX} from './constants';
 const API_URL_PREFIX = `${REFORIS_URL_PREFIX}/api`;
 
 const API_URLs = new Proxy({
+        navigation: '/navigation',
+
         notifications: '/notifications',
         notificationsSettings: '/notifications-settings',
 

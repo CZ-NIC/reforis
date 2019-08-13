@@ -10,6 +10,7 @@ module.exports = {
     moduleDirectories: [
         'node_modules',
         '<rootDir>/src/testUtils',
+        '<rootDir>/src/',
     ],
     clearMocks: true,
     collectCoverageFrom: ['src/**/*.{js,jsx}'],

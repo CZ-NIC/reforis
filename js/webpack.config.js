@@ -16,6 +16,12 @@ module.exports = env => ({
         filename: 'app.min.js',
         path: path.join(__dirname, '../reforis_static/reforis/js')
     },
+    resolve:{
+        modules:[
+            path.resolve(__dirname,'./src'),
+            path.resolve(__dirname,'./node_modules')
+        ]
+    },
     module: {
         rules: [{
             test: /\.js$/,
