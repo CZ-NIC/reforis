@@ -5,49 +5,16 @@
  * See /LICENSE for more information.
  */
 
+import React from 'react';
 
-import React, {useState} from 'react';
-import propTypes from 'prop-types';
-import {withRouter} from 'react-router';
+import RebootIsRequiredAlert from './RebootIsRequiredAlert';
+import UpdateApprovals from './UpdateApprovals';
+import NotificationsCenter from './NotificationsCenter';
 
-import useNotifications from '../hooks';
-import NotificationsList from './NotificationsList';
-
-Notifications.propTypes = {
-    ws: propTypes.object.isRequired
-};
-
-function Notifications({ws, history}) {
-    const [notifications, dismiss, dismissAll] = useNotifications(ws);
-    const [currentNotification, setCurrentNotification] = useState();
-
-
-    function getDismissAllButton() {
-        return <button
-            type='button'
-            id='btn-dismiss-all'
-            className='btn btn-outline-danger float-right'
-            onClick={dismissAll}
-        >
-            {_('Dismiss all')}
-        </button>
-    }
-
-    history.listen((location,) => setCurrentNotification(location.search));
-
-    return <div id='notifications-center'>
-        <h1>{_('Notifications')}</h1>
-
-        {notifications.length !== 0 ?
-            getDismissAllButton() :
-            <p className='text-muted text-center'>{_('No notifications')}</p>}
-
-        <NotificationsList
-            currentNotification={currentNotification}
-            notifications={notifications}
-            dismiss={dismiss}
-        />
-    </div>
+export default function Notifications({ws}) {
+    return <>
+        <RebootIsRequiredAlert ws={ws} />
+        <UpdateApprovals />
+        <NotificationsCenter ws={ws}/>
+    </>;
 }
-
-export default withRouter(Notifications);

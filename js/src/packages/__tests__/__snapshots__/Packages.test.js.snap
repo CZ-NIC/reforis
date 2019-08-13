@@ -5,7 +5,7 @@ exports[`<Packages/> Updates disabled 1`] = `
 - First value
 + Second value
 
-@@ -9,10 +9,28 @@
+@@ -9,10 +9,26 @@
   TurrisOS or that has been installed from a package list is maintained by automatic updates system. Software that has 
   been installed manually or using opkg is not affected.
           
@@ -15,15 +15,13 @@ exports[`<Packages/> Updates disabled 1`] = `
 +       class=\\"alert alert-dismissible alert-warning\\"
 +     >
 +       <span>
-+         
-+ Please enable 
++         Please enable 
 +         <a
 +           href=\\"/updates\\"
 +         >
 +           automatic updates
 +         </a>
 +          to manage packages and languages.
-+         
 +       </span>
 +     </div>
 +     <div
@@ -34,7 +32,7 @@ exports[`<Packages/> Updates disabled 1`] = `
         </h3>
         <div
           class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
-@@ -23,10 +41,11 @@
+@@ -23,10 +39,11 @@
             style=\\"margin-bottom: 0px;\\"
           >
             <input
@@ -46,7 +44,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"custom-control-label\\"
-@@ -50,10 +69,11 @@
+@@ -50,10 +67,11 @@
             class=\\"custom-control custom-checkbox\\"
             style=\\"margin-bottom: 0px;\\"
           >
@@ -58,7 +56,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"custom-control-label\\"
-@@ -77,10 +97,11 @@
+@@ -77,10 +95,11 @@
             class=\\"custom-control custom-checkbox\\"
             style=\\"margin-bottom: 0px;\\"
           >
@@ -70,7 +68,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"custom-control-label\\"
-@@ -104,10 +125,11 @@
+@@ -104,10 +123,11 @@
             class=\\"custom-control custom-checkbox\\"
             style=\\"margin-bottom: 0px;\\"
           >
@@ -82,7 +80,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"custom-control-label\\"
-@@ -131,10 +153,11 @@
+@@ -131,10 +151,11 @@
             class=\\"custom-control custom-checkbox\\"
             style=\\"margin-bottom: 0px;\\"
           >
@@ -94,7 +92,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"custom-control-label\\"
-@@ -158,10 +181,11 @@
+@@ -158,10 +179,11 @@
             class=\\"custom-control custom-checkbox\\"
             style=\\"margin-bottom: 0px;\\"
           >
@@ -106,7 +104,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"custom-control-label\\"
-@@ -185,10 +209,11 @@
+@@ -185,10 +207,11 @@
             class=\\"custom-control custom-checkbox\\"
             style=\\"margin-bottom: 0px;\\"
           >
@@ -118,7 +116,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"custom-control-label\\"
-@@ -212,10 +237,11 @@
+@@ -212,10 +235,11 @@
             class=\\"custom-control custom-checkbox\\"
             style=\\"margin-bottom: 0px;\\"
           >
@@ -130,7 +128,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"custom-control-label\\"
-@@ -239,10 +265,11 @@
+@@ -239,10 +263,11 @@
             class=\\"custom-control custom-checkbox\\"
             style=\\"margin-bottom: 0px;\\"
           >
@@ -142,7 +140,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"custom-control-label\\"
-@@ -266,10 +293,11 @@
+@@ -266,10 +291,11 @@
             class=\\"custom-control custom-checkbox\\"
             style=\\"margin-bottom: 0px;\\"
           >
@@ -154,7 +152,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"custom-control-label\\"
-@@ -293,10 +321,11 @@
+@@ -293,10 +319,11 @@
             class=\\"custom-control custom-checkbox\\"
             style=\\"margin-bottom: 0px;\\"
           >
@@ -166,7 +164,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"custom-control-label\\"
-@@ -320,10 +349,11 @@
+@@ -320,10 +347,11 @@
             class=\\"custom-control custom-checkbox\\"
             style=\\"margin-bottom: 0px;\\"
           >
@@ -178,7 +176,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"custom-control-label\\"
-@@ -347,10 +377,11 @@
+@@ -347,10 +375,11 @@
             class=\\"custom-control custom-checkbox\\"
             style=\\"margin-bottom: 0px;\\"
           >
@@ -190,7 +188,7 @@ exports[`<Packages/> Updates disabled 1`] = `
             />
             <label
               class=\\"custom-control-label\\"
-@@ -385,10 +416,11 @@
+@@ -385,10 +414,11 @@
               style=\\"margin-bottom: 0px;\\"
             >
               <input
@@ -202,7 +200,7 @@ exports[`<Packages/> Updates disabled 1`] = `
               />
               <label
                 class=\\"custom-control-label\\"
-@@ -406,10 +438,11 @@
+@@ -406,10 +436,11 @@
               class=\\"custom-control custom-checkbox\\"
               style=\\"margin-bottom: 0px;\\"
             >
@@ -214,7 +212,7 @@ exports[`<Packages/> Updates disabled 1`] = `
               />
               <label
                 class=\\"custom-control-label\\"
-@@ -427,10 +460,11 @@
+@@ -427,10 +458,11 @@
               class=\\"custom-control custom-checkbox\\"
               style=\\"margin-bottom: 0px;\\"
             >
@@ -226,7 +224,7 @@ exports[`<Packages/> Updates disabled 1`] = `
               />
               <label
                 class=\\"custom-control-label\\"
-@@ -448,10 +482,11 @@
+@@ -448,10 +480,11 @@
               class=\\"custom-control custom-checkbox\\"
               style=\\"margin-bottom: 0px;\\"
             >
@@ -238,7 +236,7 @@ exports[`<Packages/> Updates disabled 1`] = `
               />
               <label
                 class=\\"custom-control-label\\"
-@@ -469,10 +504,11 @@
+@@ -469,10 +502,11 @@
               class=\\"custom-control custom-checkbox\\"
               style=\\"margin-bottom: 0px;\\"
             >
@@ -250,7 +248,7 @@ exports[`<Packages/> Updates disabled 1`] = `
               />
               <label
                 class=\\"custom-control-label\\"
-@@ -490,10 +526,11 @@
+@@ -490,10 +524,11 @@
               class=\\"custom-control custom-checkbox\\"
               style=\\"margin-bottom: 0px;\\"
             >
@@ -262,7 +260,7 @@ exports[`<Packages/> Updates disabled 1`] = `
               />
               <label
                 class=\\"custom-control-label\\"
-@@ -511,10 +548,11 @@
+@@ -511,10 +546,11 @@
               class=\\"custom-control custom-checkbox\\"
               style=\\"margin-bottom: 0px;\\"
             >
@@ -274,7 +272,7 @@ exports[`<Packages/> Updates disabled 1`] = `
               />
               <label
                 class=\\"custom-control-label\\"
-@@ -532,10 +570,11 @@
+@@ -532,10 +568,11 @@
               class=\\"custom-control custom-checkbox\\"
               style=\\"margin-bottom: 0px;\\"
             >
@@ -286,7 +284,7 @@ exports[`<Packages/> Updates disabled 1`] = `
               />
               <label
                 class=\\"custom-control-label\\"
-@@ -553,10 +592,11 @@
+@@ -553,10 +590,11 @@
               class=\\"custom-control custom-checkbox\\"
               style=\\"margin-bottom: 0px;\\"
             >
@@ -298,7 +296,7 @@ exports[`<Packages/> Updates disabled 1`] = `
               />
               <label
                 class=\\"custom-control-label\\"
-@@ -574,10 +614,11 @@
+@@ -574,10 +612,11 @@
               class=\\"custom-control custom-checkbox\\"
               style=\\"margin-bottom: 0px;\\"
             >
@@ -310,7 +308,7 @@ exports[`<Packages/> Updates disabled 1`] = `
               />
               <label
                 class=\\"custom-control-label\\"
-@@ -595,24 +636,27 @@
+@@ -595,24 +634,27 @@
               class=\\"custom-control custom-checkbox\\"
               style=\\"margin-bottom: 0px;\\"
             >

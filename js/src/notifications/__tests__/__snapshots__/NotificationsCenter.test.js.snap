@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Notifications/> Test with snapshot. 1`] = `
+exports[`<NotificationsCenter/> Test with snapshot. 1`] = `
 <div
   id="notifications-center"
 >

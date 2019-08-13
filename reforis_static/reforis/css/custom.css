@@ -310,7 +310,6 @@ form > button {
 
 #notifications-footer .btn-link {
     font-weight: bold;
-
 }
 
 .notification-item {
@@ -347,14 +346,12 @@ form > button {
     opacity: .8;
 }
 
-
 #notifications .dropdown-divider {
     margin: 0;
 }
 
 .notifications-info {
     flex-grow: 2;
-
 }
 
 .notification-message {
@@ -367,7 +364,6 @@ form > button {
     display: flex;
     margin: .5rem 1rem;
 }
-
 
 .active {
     display: block;
