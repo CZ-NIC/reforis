@@ -25,6 +25,7 @@ def interfaces():
     return jsonify(res)
 
 
+# pylint: disable=invalid-name
 views = [{
     'rule': '/interfaces',
     'view_func': interfaces,

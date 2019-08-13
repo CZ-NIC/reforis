@@ -16,6 +16,7 @@ def guest_network():
     return _foris_controller_settings_call('guest')
 
 
+# pylint: disable=invalid-name
 views = [{
     'rule': '/guest-network',
     'view_func': guest_network,

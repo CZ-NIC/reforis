@@ -69,6 +69,7 @@ def language():
     return jsonify(res)
 
 
+# pylint: disable=invalid-name
 views = [
     {
         'rule': '/guide',

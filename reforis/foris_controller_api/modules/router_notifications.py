@@ -100,6 +100,7 @@ def notifications_settings():
     return jsonify(res)
 
 
+# pylint: disable=invalid-name
 views = [
     {
         'rule': '/notifications',

@@ -29,6 +29,7 @@ def ntp_update():
     return jsonify(current_app.backend.perform('time', 'ntpdate_trigger'))
 
 
+# pylint: disable=invalid-name
 views = [
     {
         'rule': '/region-and-time',

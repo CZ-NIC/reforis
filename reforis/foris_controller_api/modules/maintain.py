@@ -10,6 +10,7 @@ def reboot():
     return jsonify(current_app.backend.perform('maintain', 'reboot'))
 
 
+# pylint: disable=invalid-name
 views = [{
     'rule': '/reboot',
     'view_func': reboot,

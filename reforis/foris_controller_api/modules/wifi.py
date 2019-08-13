@@ -29,6 +29,7 @@ def wifi_reset():
     return jsonify(current_app.backend.perform('wifi', 'reset'))
 
 
+# pylint: disable=invalid-name
 views = [
     {
         'rule': '/wifi',

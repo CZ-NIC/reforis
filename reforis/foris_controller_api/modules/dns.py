@@ -27,6 +27,7 @@ def dns_test():
     return jsonify(current_app.backend.perform('wan', 'connection_test_trigger', data={'test_kinds': ['dns']}))
 
 
+# pylint: disable=invalid-name
 views = [
     {
         'rule': '/dns',

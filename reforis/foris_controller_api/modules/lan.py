@@ -16,6 +16,7 @@ def lan():
     return _foris_controller_settings_call('lan')
 
 
+# pylint: disable=invalid-name
 views = [{
     'rule': '/lan',
     'view_func': lan,

@@ -12,6 +12,7 @@ def about():
     return jsonify(data)
 
 
+# pylint: disable=invalid-name
 views = [{
     'rule': '/about',
     'view_func': about,

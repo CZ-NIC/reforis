@@ -34,6 +34,7 @@ def connection_test():
     return jsonify(current_app.backend.perform('wan', 'connection_test_trigger', data={'test_kinds': ['ipv4', 'ipv6']}))
 
 
+# pylint: disable=invalid-name
 views = [
     {
         'rule': '/wan',
