@@ -7,12 +7,12 @@
 
 import React from 'react';
 import propTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
-import {ForisURLs} from '../../common/constants';
+import {ForisURLs} from 'common/constants';
 
 import {NOTIFICATION_PROP_TYPES} from '../utils';
 import NotificationsDropdownItem from './NotificationsDropdownItem';
-import {ForisLink} from '../../utils/links';
 
 
 NotificationsDropdownMenu.propTypes = {
@@ -54,12 +54,12 @@ export default function NotificationsDropdownMenu({notifications, dismiss, dismi
 function NotificationsDropdownHeader() {
     return <>
         <div id='notifications-header' className='dropdown-header'>
-            <ForisLink to={ForisURLs.notifications} className='btn btn-link'>
+            <Link to={ForisURLs.notifications} className='btn btn-link'>
                 <h5>{_('Notifications')}</h5>
-            </ForisLink>
-            <ForisLink to={ForisURLs.notificationsSettings} className='btn btn-link'>
+            </Link>
+            <Link to={ForisURLs.notificationsSettings} className='btn btn-link'>
                 <i className='fa fa-cog fa'/>
-            </ForisLink>
+            </Link>
         </div>
         <div className='dropdown-divider dropdown-divider-top'/>
     </>;

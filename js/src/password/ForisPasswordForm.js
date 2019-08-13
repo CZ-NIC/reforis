@@ -8,9 +8,9 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-import PasswordInput from '../common/bootstrap/PasswordInput';
-import CheckBox from '../common/bootstrap/Checkbox';
-import SubmitButton, {STATES as SUBMIT_BUTTON_STATES} from '../formContainer/SubmitButton';
+import PasswordInput from 'common/bootstrap/PasswordInput';
+import CheckBox from 'common/bootstrap/Checkbox';
+import SubmitButton, {STATES as SUBMIT_BUTTON_STATES} from 'formContainer/SubmitButton';
 
 
 ForisPasswordForm.propTypes = {

@@ -8,13 +8,13 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-import API_URLs from '../common/API';
-import Alert from '../common/bootstrap/Alert';
-import ForisForm from '../formContainer/ForisForm';
+import API_URLs from 'common/API';
+import Alert from 'common/bootstrap/Alert';
+import {ForisURLs} from 'common/constants';
+import ForisForm from 'formContainer/ForisForm';
 
 import LanguageForm from './LanguageForm';
 import PackagesForm from './PackagesForm';
-import {ForisURLs} from '../common/constants';
 
 export default function Packages() {
     return <>

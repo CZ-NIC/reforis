@@ -7,11 +7,11 @@
 
 import React from 'react';
 import propTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
-import {ForisURLs} from '../../common/constants';
 import NotificationIcon from '../NotificationIcon';
 import {NOTIFICATION_PROP_TYPES, toLocaleDateString} from '../utils';
-import {ForisLink} from '../../utils/links';
+import {ForisURLs} from 'common/constants';
 
 
 NotificationsDropdownItem.propTypes = {
@@ -32,7 +32,7 @@ export default function NotificationsDropdownItem({notification, divider, dismis
         <div className='dropdown-item notification-item'>
             <NotificationIcon severity={notification.severity} className={'fa-2x'}/>
             <div className='notifications-info'>
-                <ForisLink to={ForisURLs.notifications} search={`?id=${notification.id}`}>{message}</ForisLink>
+                <Link to={{pathname: ForisURLs.notifications, search: `?id=${notification.id}`}}>{message}</Link>
             </div>
             <button className='btn btn-link' onClick={dismiss}>
                 <i className='fas fa-times'/>

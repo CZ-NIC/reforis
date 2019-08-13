@@ -7,8 +7,8 @@
 
 import React from 'react';
 
-import ForisForm from '../formContainer/ForisForm';
-import API_URLs from '../common/API';
+import ForisForm from 'formContainer/ForisForm';
+import API_URLs from 'common/API';
 
 import NotificationsEmailSettingsForm from './NotificationsEmailSettingsForm';
 import validator from './validator';

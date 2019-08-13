@@ -8,7 +8,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-import NumberInput from '../bootstrap/NumberInput';
+import NumberInput from 'common/bootstrap/NumberInput';
 
 export const HELP_TEXT = _('Enable this option to automatically assign IP addresses to the devices connected to the router.');
 

@@ -7,8 +7,8 @@
 
 import React from 'react';
 
-import RadioSet from '../../common/bootstrap/RadioSet';
-import NumberInput from '../../common/bootstrap/NumberInput';
+import RadioSet from 'common/bootstrap/RadioSet';
+import NumberInput from 'common/bootstrap/NumberInput';
 
 const UPDATE_APPROVALS_CHOICES = [
     {

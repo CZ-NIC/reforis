@@ -7,8 +7,9 @@
 
 import React from 'react';
 
-import useNotifications from '../hooks';
-import RebootButton from '../../common/RebootButton';
+
+import useNotifications from 'notifications/hooks';
+import RebootButton from 'common/RebootButton';
 
 export default function RebootIsRequiredAlert({ws}) {
     const [notifications,] = useNotifications(ws);

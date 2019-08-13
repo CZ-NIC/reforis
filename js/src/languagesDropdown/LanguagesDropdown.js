@@ -7,9 +7,9 @@
 
 import React from 'react';
 
-import {SpinnerElement} from '../common/bootstrap/Spinner';
-import {useAPIPost} from '../common/APIhooks';
-import API_URLs from '../common/API';
+import {SpinnerElement} from 'common/bootstrap/Spinner';
+import {useAPIPost} from 'common/APIhooks';
+import API_URLs from 'common/API';
 
 import {useLanguages, useWSSetLanguageRefresh} from './hooks';
 

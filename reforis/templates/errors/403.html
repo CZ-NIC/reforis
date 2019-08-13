@@ -7,5 +7,5 @@
 {% block content %}
     <h1>403</h1>
     <h3>{% trans %}Forbidden You don't have permission to access{% endtrans %}</h3>
-    <a>{% trans %}Do you want to <a href="{url_for('Foris.login')}">log in</a>?{% endtrans %}</a>
+    <a>{% trans link=url_for('Views.login') %}Do you want to <a href="{{ link }}">log in</a>?{% endtrans %}</a>
 {% endblock %}

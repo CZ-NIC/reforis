@@ -8,10 +8,10 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-import TextInput from '../common/bootstrap/TextInput';
-import CheckBox from '../common/bootstrap/Checkbox';
-import {validateIPv4Address} from '../common/validations';
-import DHCPServerForm, {HELP_TEXT as DHCP_HELP_TEXT} from '../common/network/DHCPServerForm';
+import TextInput from 'common/bootstrap/TextInput';
+import CheckBox from 'common/bootstrap/Checkbox';
+import {validateIPv4Address} from 'common/validations';
+import DHCPServerForm, {HELP_TEXT as DHCP_HELP_TEXT} from 'common/network/DHCPServerForm';
 
 const HELP_TEXTS = {
     router_ip: _("Router's IP address in the inner network."),

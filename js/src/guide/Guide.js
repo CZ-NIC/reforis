@@ -9,11 +9,11 @@ import React, {useEffect} from 'react';
 import {BrowserRouter} from 'react-router-dom';
 import {Redirect, Route, Switch} from 'react-router';
 
-import Spinner from '../common/bootstrap/Spinner';
-import {useAPIGet} from '../common/APIhooks';
-import API_URLs from '../common/API';
-import Portal from '../utils/Portal';
-import {REFORIS_URL_PREFIX} from '../common/constants';
+import Portal from 'utils/Portal';
+import {REFORIS_URL_PREFIX} from 'common/constants';
+import {useAPIGet} from 'common/APIhooks';
+import API_URLs from 'common/API';
+import Spinner from 'common/bootstrap/Spinner';
 
 import {GUIDE_URL_PREFIX, STEPS} from './constance';
 import GuideNavigation from './GuideNavigation';

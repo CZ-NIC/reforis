@@ -8,12 +8,12 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-import {validateDomain} from '../common/validations';
-import ForisForm from '../formContainer/ForisForm';
+import API_URLs from 'common/API';
+import {validateDomain} from 'common/validations';
+import ForisForm from 'formContainer/ForisForm';
+import ConnectionTest from 'connectionTest/ConnectionTest';
 
-import API_URLs from '../common/API';
 import DNSForm from './DNSForm';
-import ConnectionTest from '../connectionTest/ConnectionTest';
 
 DNS.propTypes = {
     ws: propTypes.object.isRequired

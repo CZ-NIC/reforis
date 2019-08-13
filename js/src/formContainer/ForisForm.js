@@ -8,8 +8,8 @@
 import React, {useEffect, useState} from 'react';
 import propTypes from 'prop-types';
 
-import Spinner from '../common/bootstrap/Spinner';
-import {useAPIPost} from '../common/APIhooks';
+import Spinner from 'common/bootstrap/Spinner';
+import {useAPIPost} from 'common/APIhooks';
 
 import {useForisModule, useForm} from './hooks';
 import SubmitButton, {STATES as SUBMIT_BUTTON_STATES} from './SubmitButton';

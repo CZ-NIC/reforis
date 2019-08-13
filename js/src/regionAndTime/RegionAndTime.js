@@ -8,11 +8,12 @@
 import React from 'react';
 import moment from 'moment';
 
+import API_URLs from 'common/API';
+import ForisForm from 'formContainer/ForisForm';
+
 import RegionForm from './RegionForm';
 import TimeForm from './TimeForm';
 
-import API_URLs from '../common/API';
-import ForisForm from '../formContainer/ForisForm';
 
 export default function RegionAndTime({ws, postCallback}) {
     return <>

@@ -7,8 +7,9 @@
 
 import React from 'react';
 
+import Spinner from 'common/bootstrap/Spinner';
+
 import {STATES, useNetworkRestart} from './hooks';
-import Spinner from '../common/bootstrap/Spinner';
 
 export default function NetworkRestartHandler({ws}) {
     const [rebootState, remains] = useNetworkRestart(ws);

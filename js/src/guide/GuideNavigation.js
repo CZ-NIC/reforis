@@ -5,13 +5,13 @@
  * See /LICENSE for more information.
  */
 
+
 import React from 'react';
+import {withRouter} from 'react-router';
+import {Link, NavLink} from 'react-router-dom';
 
 import {STEPS} from './constance';
-
 import {useGuideFinish} from './hooks';
-import {ForisLink, ForisNavLink} from '../utils/links';
-import {withRouter} from 'react-router';
 
 export default function GuideNavigation({workflow_steps, passed, next_step}) {
     const onGuideFinishHandler = useGuideFinish();
@@ -48,9 +48,9 @@ function GuideNavigationItem({name, url, next, passed}) {
 
     return <li>
         {passed || next ?
-            <ForisNavLink className={`${passedClassName} ${nextClassName}`} to={url}>
+            <NavLink className={`${passedClassName} ${nextClassName}`} to={url}>
                 {content}
-            </ForisNavLink>
+            </NavLink>
             // eslint-disable-next-line jsx-a11y/anchor-is-valid
             : <a href='#'>{content}</a>}
     </li>
@@ -59,9 +59,9 @@ function GuideNavigationItem({name, url, next, passed}) {
 function NextStepButton({next_step, location}) {
     if (location.pathname === `/${next_step}`)
         return null;
-    return <ForisLink id='next-step-button' className='btn btn-lg btn-light ' to={`/${next_step}`}>
+    return <Link id='next-step-button' className='btn btn-lg btn-light ' to={`/${next_step}`}>
         <i className="fas fa-arrow-right"/>
-    </ForisLink>
+    </Link>
 }
 
 const NextStepButtonWithRouter = withRouter(NextStepButton);

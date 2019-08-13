@@ -6,12 +6,12 @@
  */
 
 import React from 'react';
-
-import Select from '../common/bootstrap/Select';
-import TextInput from '../common/bootstrap/TextInput';
-import DHCPClientForm, {validateDHCPForm} from '../common/network/DHCPClientForm';
-import StaticIPForm, {validateStaticForm} from '../common/network/StaticIPForm';
 import PropTypes from 'prop-types';
+
+import Select from 'common/bootstrap/Select';
+import TextInput from 'common/bootstrap/TextInput';
+import DHCPClientForm, {validateDHCPForm} from 'common/network/DHCPClientForm';
+import StaticIPForm, {validateStaticForm} from 'common/network/StaticIPForm';
 
 const WAN_TYPES = {
     dhcp: 'dhcp',

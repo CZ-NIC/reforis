@@ -6,12 +6,13 @@
  */
 
 import React from 'react';
+import diffSnapshot from 'snapshot-diff';
+
 import {cleanup, render, wait} from 'customTestRender';
 import mockAxios from 'jest-mock-axios';
 
 import packagesFixture from './__fixtures__/packages';
 import Packages from '../Packages';
-import diffSnapshot from "snapshot-diff";
 
 describe('<Packages/>', () => {
     let firstRender;

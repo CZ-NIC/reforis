@@ -6,14 +6,14 @@
  */
 
 import React from 'react';
-import {fireEvent, render, wait} from 'customTestRender';
+import diffSnapshot from 'snapshot-diff';
 
+import {fireEvent, render, wait} from 'customTestRender';
 import {mockedWS} from 'mockWS';
 import {wifiSettingsFixture} from './__fixtures__/wifiSettings';
-import mockAxios from 'jest-mock-axios';
 
+import mockAxios from 'jest-mock-axios';
 import WiFi from '../WiFi';
-import diffSnapshot from "snapshot-diff";
 
 describe('<WiFi/>', () => {
     let firstRender;

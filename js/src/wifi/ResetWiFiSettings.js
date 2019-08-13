@@ -7,10 +7,10 @@
 
 import React, {useEffect, useState} from 'react';
 
-import Button from '../common/bootstrap/Button';
-import {useAPIPost} from '../common/APIhooks';
-import API from '../common/API';
-import Alert from '../common/bootstrap/Alert';
+import Button from 'common/bootstrap/Button';
+import {useAPIPost} from 'common/APIhooks';
+import API from 'common/API';
+import Alert from 'common/bootstrap/Alert';
 
 export default function ResetWiFiSettings({ws}) {
     const [isLoading, setIsLoading] = useState(false);

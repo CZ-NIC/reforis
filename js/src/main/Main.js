@@ -5,67 +5,50 @@
  * See /LICENSE for more information.
  */
 
-import React, {useState} from 'react';
+import React, {useEffect} from 'react';
 import {BrowserRouter} from 'react-router-dom';
-import {Redirect, Route, Switch} from 'react-router';
+import {Redirect, Switch} from 'react-router';
 
-import {REFORIS_URL_PREFIX} from '../common/constants';
-import RouterStateHandler from '../routerStateHandler/RouterStateHandler';
+import {REFORIS_URL_PREFIX} from 'common/constants';
+import {useAPIGet} from 'common/APIhooks';
+import API_URLs from 'common/API';
+import Spinner from 'common/bootstrap/Spinner';
+import Portal from 'utils/Portal';
+import RouterStateHandler from 'routerStateHandler/RouterStateHandler';
+import Navigation from 'navigation/Navigation';
 
-import Navigation from './Navigation';
 import TopBar from './TopBar';
-import Portal from '../utils/Portal';
+import {RouteWithSubRoutes} from './routing';
+import {PAGE_404} from './constants';
 
-export const outsideReactRoutingContext = React.createContext();
 
-export default function Main({routes, ws}) {
-    const [outsideReactRouting, setOutsideReactRouting] = useState(false);
+export default function Main({ws}) {
+    const [navState, getNav] = useAPIGet(API_URLs.navigation);
+
+    useEffect(() => {
+        getNav();
+    }, [getNav]);
+
+    if (navState.isLoading || !navState.data)
+        return <Spinner fullScreen/>;
+
     return <BrowserRouter basename={REFORIS_URL_PREFIX}>
-        <outsideReactRoutingContext.Provider value={outsideReactRouting}>
-            <Portal containerId='navigation_container'>
-                <Navigation routes={routes}/>
-            </Portal>
-            <Portal containerId='topbar_container'>
-                <TopBar ws={ws}/>
-            </Portal>
-            <Portal containerId='router_state_handler_container'>
-                <RouterStateHandler ws={ws}/>
-            </Portal>
+        <Portal containerId='navigation_container'>
+            <Navigation routes={navState.data}/>
+        </Portal>
+        <Portal containerId='topbar_container'>
+            <TopBar ws={ws}/>
+        </Portal>
+        <Portal containerId='router_state_handler_container'>
+            <RouterStateHandler ws={ws}/>
+        </Portal>
 
-            <Switch>
-                <Route path='/' exact render={() => <Redirect to='/notifications'/>}/>
-                {routes.map((route, i) =>
-                    <RouteWithSubRoutes key={i} ws={ws} {...route}/>
-                )}
-                <Route path='*' render={() => setOutsideReactRouting(true)}/>
-            </Switch>
-        </outsideReactRoutingContext.Provider>
+        <Switch>
+            {navState.data.map((route, i) =>
+                <RouteWithSubRoutes key={i} ws={ws} {...route}/>
+            )}
+            <Redirect to={PAGE_404}/>
+        </Switch>
     </BrowserRouter>
 }
 
-const CONTENT_CONTAINER_ID = 'content_container';
-
-function RouteWithSubRoutes({ws, ...route}) {
-    if (route.routes)
-        return route.routes.map((subRoute, i) =>
-            <RouteWithSubRoutes key={i} ws={ws} {...subRoute} path={`${route.path}${subRoute.path}`}/>
-        );
-
-    const contentContainer = document.getElementById(CONTENT_CONTAINER_ID);
-    if (contentContainer)
-        return <RouteWithTitle
-            title={route.name}
-            path={route.path}
-            render={() => <Portal containerId={CONTENT_CONTAINER_ID}>
-                <route.component ws={ws}/>
-            </Portal>}
-        />;
-    return null;
-}
-
-function RouteWithTitle({title, render, ...props}) {
-    return <Route {...props} render={() => {
-        document.title = `${title} - Foris`;
-        return render();
-    }}/>
-}

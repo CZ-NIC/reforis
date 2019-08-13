@@ -10,7 +10,7 @@ import propTypes from 'prop-types';
 
 import {NOTIFICATION_PROP_TYPES, toLocaleDateString} from '../utils';
 import NotificationIcon from '../NotificationIcon';
-import RebootButton from '../../common/RebootButton';
+import RebootButton from 'common/RebootButton';
 
 
 NotificationsList.propTypes = {

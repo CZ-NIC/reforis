@@ -8,9 +8,10 @@
 import React from 'react'
 import moment from 'moment';
 
+import ForisForm from 'formContainer/ForisForm';
+import API_URLs from 'common/API';
+
 import UpdatesForm from './forms/UpdatesForm';
-import ForisForm from '../formContainer/ForisForm';
-import API_URLs from '../common/API';
 import LicenceModal from './LicenceModal';
 
 export default function Updates({postCallback}) {

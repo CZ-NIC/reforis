@@ -8,8 +8,8 @@
 import {useCallback, useEffect, useReducer} from 'react';
 import update from 'immutability-helper';
 
-import {useAPIGet} from '../common/APIhooks';
-import {useWSForisModule} from '../common/WebSocketsHooks';
+import {useAPIGet} from 'common/APIhooks';
+import {useWSForisModule} from 'common/WebSocketsHooks';
 
 export function useForm(validator, prepData) {
     const [state, dispatch] = useReducer(formReducer, {

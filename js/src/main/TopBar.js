@@ -7,8 +7,8 @@
 
 import React from 'react';
 
-import NotificationsDropdown from '../notifications/NotificationsDropdown/NotificationsDropdown';
-import LanguagesDropdown from '../languagesDropdown/LanguagesDropdown';
+import NotificationsDropdown from 'notifications/NotificationsDropdown/NotificationsDropdown';
+import LanguagesDropdown from 'languagesDropdown/LanguagesDropdown';
 
 export default function TopBar({ws}) {
     return <>

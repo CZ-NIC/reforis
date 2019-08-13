@@ -8,12 +8,13 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-import ForisForm from '../formContainer/ForisForm';
+import ForisForm from 'formContainer/ForisForm';
+import API_URLs from 'common/API';
+import {validateIPv4Address} from 'common/validations';
+import {ForisURLs} from 'common/constants';
+
 import GuestNetworkForm from './GuestNetworkForm';
-import API_URLs from '../common/API';
-import {validateIPv4Address} from '../common/validations';
 import GuestNetworkDHCPClientsList from './GuestNetworkDHCPClientsList';
-import {ForisURLs} from '../common/constants';
 
 GuestNetwork.propTypes = {
     ws: propTypes.object.isRequired

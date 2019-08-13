@@ -8,8 +8,8 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-import CheckBox from '../common/bootstrap/Checkbox';
-import {formFieldsSize} from '../common/bootstrap/constants';
+import CheckBox from 'common/bootstrap/Checkbox';
+import {formFieldsSize} from 'common/bootstrap/constants';
 
 LanguageForm.propTypes = {
     formData: propTypes.shape({

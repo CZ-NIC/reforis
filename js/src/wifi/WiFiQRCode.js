@@ -9,10 +9,11 @@ import React, {useState} from 'react';
 import QRCode from 'qrcode.react';
 import propTypes from 'prop-types';
 
-import {Modal, ModalBody, ModalFooter, ModalHeader} from '../common/bootstrap/Modal';
-import Button from '../common/bootstrap/Button';
+import {Modal, ModalBody, ModalFooter, ModalHeader} from 'common/bootstrap/Modal';
+import {ForisURLs} from 'common/constants';
+import Button from 'common/bootstrap/Button';
+
 import {createAndDownloadPdf, toQRCodeContent} from './qrCodeHelpers';
-import {ForisURLs} from '../common/constants';
 
 WiFiQRCode.propTypes = {
     SSID: propTypes.string.isRequired,

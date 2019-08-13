@@ -7,7 +7,7 @@
 
 import React from 'react';
 
-import CheckBox from '../../common/bootstrap/Checkbox';
+import CheckBox from 'common/bootstrap/Checkbox';
 import RestartAfterUpdateForm from './RestartAfterUpdateForm';
 import UpdateApprovalsForm from './UpdateApprovalsForm';
 

@@ -78,8 +78,8 @@ def register_login_required(app):
 
         not_protected_endpoints = [
             'static',
-            'Foris.login',
-            'ForisAPI.health_check',
+            'Views.login',
+            'Views.health_check',
         ]
         if request.endpoint in not_protected_endpoints:
             return

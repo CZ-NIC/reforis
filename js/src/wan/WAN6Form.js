@@ -8,16 +8,16 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-import Select from '../common/bootstrap/Select';
-import TextInput from '../common/bootstrap/TextInput';
-import CheckBox from '../common/bootstrap/Checkbox';
-import NumberInput from '../common/bootstrap/NumberInput';
+import Select from 'common/bootstrap/Select';
+import TextInput from 'common/bootstrap/TextInput';
+import CheckBox from 'common/bootstrap/Checkbox';
+import NumberInput from 'common/bootstrap/NumberInput';
 import {
     validateDUID,
     validateIPv4Address,
     validateIPv6Address,
     validateIPv6Prefix
-} from '../common/validations';
+} from 'common/validations';
 
 const HELP_TEXTS = {
     dhcpv6: {

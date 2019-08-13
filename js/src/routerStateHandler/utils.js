@@ -6,7 +6,8 @@
  */
 
 import axios from 'axios';
-import API_URLs from '../common/API';
+
+import API_URLs from 'common/API';
 
 const HEALTH_CHECK_TIMEOUT = 1000;
 const HEALTH_CHECK_INTERVAL = 1000;

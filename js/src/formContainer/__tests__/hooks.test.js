@@ -11,7 +11,7 @@ import {fireEvent, render, waitForElement} from 'customTestRender';
 import mockAxios from 'jest-mock-axios';
 
 import ForisForm from '../ForisForm';
-import API_URLs from '../../common/API';
+import API_URLs from 'common/API';
 
 // It's possible to unittest each hooks via react-hooks-testing-library.
 // But it's better and easier to test it by test components which uses this hooks.

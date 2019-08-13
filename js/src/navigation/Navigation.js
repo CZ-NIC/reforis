@@ -7,8 +7,8 @@
 
 import React from 'react';
 import {useUID} from 'react-uid';
-import {matchPath, withRouter} from "react-router";
-import {ForisNavLink} from '../utils/links';
+import {matchPath, withRouter} from 'react-router';
+import {NavLink} from 'react-router-dom';
 
 function Navigation({routes, location}) {
     return routes.map((route, i) => {
@@ -67,11 +67,14 @@ function NavigationMainItem({icon, name, ...props}) {
     </NavigationItem>
 }
 
-function NavigationItem({path, children, component, ...props}) {
+function NavigationItem({path, children, isLinkOutside, component, ...props}) {
+    if (isLinkOutside)
+        return <li><a href={path} {...props}> {children}</a></li>;
+
     return <li>
-        <ForisNavLink to={path} {...props}>
+        <NavLink to={path} {...props}>
             {children}
-        </ForisNavLink>
+        </NavLink>
     </li>
 }
 

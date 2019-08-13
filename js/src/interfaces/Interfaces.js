@@ -7,8 +7,8 @@
 
 import React, {useState} from 'react';
 
-import ForisForm from '../formContainer/ForisForm';
-import API_URLs from '../common/API';
+import ForisForm from 'formContainer/ForisForm';
+import API_URLs from 'common/API';
 
 import InterfacesForm from './InterfacesForm';
 import {KeepPortsClosedConfirmModal, OpenPortsModals} from './modals';

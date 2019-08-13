@@ -11,7 +11,7 @@ import {
     validateIPv4Address,
     validateIPv6Address,
     validateIPv6Prefix, validateMAC
-} from '../../common/validations';
+} from 'common/validations';
 
 describe('Validation functions', () => {
     it('validateIPv4Address valid', () => {

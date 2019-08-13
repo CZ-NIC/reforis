@@ -10,8 +10,8 @@ import propTypes from 'prop-types';
 
 import {useAPIPost} from './APIhooks';
 import API_URLs from './API';
-import {Modal, ModalBody, ModalFooter, ModalHeader} from './bootstrap/Modal';
-import Button from './bootstrap/Button';
+import {Modal, ModalBody, ModalFooter, ModalHeader} from 'common/bootstrap/Modal';
+import Button from 'common/bootstrap/Button';
 
 
 RebootButton.propTypes = {

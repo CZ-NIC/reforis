@@ -9,10 +9,10 @@ import React, {useEffect} from 'react';
 import propTypes from 'prop-types';
 import moment from 'moment';
 
-import {useAPIGet, useAPIPost} from '../../common/APIhooks';
-import API_URLs from '../../common/API';
-import Button from '../../common/bootstrap/Button';
-import Spinner from '../../common/bootstrap/Spinner';
+import {useAPIGet, useAPIPost} from 'common/APIhooks';
+import API_URLs from 'common/API';
+import Button from 'common/bootstrap/Button';
+import Spinner from 'common/bootstrap/Spinner';
 
 export default function UpdateApprovals() {
     const [getState, get] = useAPIGet(API_URLs.approvals);
