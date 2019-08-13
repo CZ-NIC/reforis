@@ -22,7 +22,7 @@ export default function RebootHandler({ws}) {
         case STATES.TRIGGERED:
             message = babel.format(_('Reboot after %d sec.'), remains || 0);
             break;
-        case STATES.IN_PROCESS:
+        case STATES.IN_PROGRESS:
             message = _('Rebooting');
             break;
         case STATES.DONE:

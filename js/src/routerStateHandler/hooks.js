@@ -8,48 +8,47 @@
 import {useEffect, useState} from 'react';
 
 import {ForisURLs} from 'common/constants';
+import {useWSForisModule} from 'common/WebSocketsHooks';
 
 import {tryReconnect, waitForDown} from './utils';
 
-
 export function useNetworkRestart(ws) {
-    return useRouterState(ws, 'network-restart', window.location.pathname);
+    return useDeviceState(ws, 'network-restart', window.location.pathname);
 }
 
 export function useReboot(ws) {
-    return useRouterState(ws, 'reboot', ForisURLs.login);
+    return useDeviceState(ws, 'reboot', ForisURLs.login);
 }
 
 export const STATES = {
     NOT_TRIGGERED: 0,
     TRIGGERED: 1,
-    IN_PROCESS: 2,
+    IN_PROGRESS: 2,
     DONE: 3,
 };
 
-function useRouterState(ws, action, reconnectUrlPath) {
+function useDeviceState(ws, action, reconnectUrlPath) {
     const [state, setState] = useState(STATES.NOT_TRIGGERED);
     const [ips, setIPs] = useState([]);
     const [remainsSec, setRemainsSec] = useState(null);
+    const [wsData] = useWSForisModule(ws, 'maintain', action);
 
     useEffect(() => {
-        const wsModule = 'maintain';
-        ws.subscribe(wsModule)
-            .bind(wsModule, action, msg => {
-                setIPs([...new Set(msg.data.ips)]);
-                const remainsSec = msg.data.remains / 1000;
-                setRemainsSec(remainsSec);
-                setState(remainsSec === 0 ? STATES.IN_PROCESS : STATES.TRIGGERED);
-            })
-    }, [action, ws]);
+        if (!wsData)
+            return;
+        setIPs([...new Set(wsData.ips)]);
+        setRemainsSec(wsData.remains / 1000);
+        setState(wsData.remains === 0 ? STATES.IN_PROGRESS : STATES.TRIGGERED);
+    }, [wsData]);
+
     useEffect(() => {
-        if (state === STATES.IN_PROCESS) {
+        if (state === STATES.IN_PROGRESS) {
             ws.close();
             waitForDown(() => setState(STATES.DONE));
         } else if (state === STATES.DONE) {
             tryReconnect(ips, reconnectUrlPath);
         }
-    }, [ips, reconnectUrlPath, state, ws]);
+    }, [state, ips, reconnectUrlPath, ws]);
 
     return [state, remainsSec];
 }
