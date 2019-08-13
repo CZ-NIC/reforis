@@ -5,8 +5,6 @@
  * See /LICENSE for more information.
  */
 
-import Overview from 'overview/Overview';
-
 import Notifications from 'notifications/Notifications/Notifications';
 
 import WiFi from 'wifi/WiFi';
@@ -25,9 +23,9 @@ import Updates from 'updates/Updates';
 import Packages from 'packages/Packages';
 import About from 'about/About';
 
-export const PAGES = {
-    Overview: Overview,
+export const PAGE_404 = '/notifications';
 
+export const PAGES = {
     Notifications: Notifications,
 
     LAN: LAN,

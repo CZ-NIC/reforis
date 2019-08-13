@@ -8,8 +8,9 @@
 import React from 'react';
 import {Redirect, Route, Switch} from 'react-router';
 
-import {PAGES} from './pages';
 import Portal from 'utils/Portal';
+
+import {PAGE_404, PAGES} from './constants';
 
 const CONTENT_CONTAINER_ID = 'content_container';
 
@@ -19,7 +20,7 @@ export function RouteWithSubRoutes({ws, ...route}) {
             {route.routes.map((subRoute, i) =>
                 <RouteWithSubRoutes key={i} ws={ws} {...subRoute} path={`${route.path}${subRoute.path}`}/>
             )}
-            <Redirect to='/overview'/>
+            <Redirect to={PAGE_404}/>
         </Switch>;
 
     const Component = PAGES[route.component];

@@ -2,10 +2,10 @@ from flask_babel import gettext as _
 
 ROUTES = [
     {
-        'name': _('Overview'),
-        'component': 'Overview',
-        'path': '/overview',
-        'icon': 'list',
+        'name': _('Notifications'),
+        'component': 'Notifications',
+        'path': '/notifications',
+        'icon': 'bell',
     }, {
         'name': _('Network Settings'),
         'icon': 'network-wired',

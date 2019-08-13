@@ -19,6 +19,7 @@ import Navigation from 'navigation/Navigation';
 
 import TopBar from './TopBar';
 import {RouteWithSubRoutes} from './routing';
+import {PAGE_404} from './constants';
 
 
 export default function Main({ws}) {
@@ -46,7 +47,7 @@ export default function Main({ws}) {
             {navState.data.map((route, i) =>
                 <RouteWithSubRoutes key={i} ws={ws} {...route}/>
             )}
-            <Redirect to='/overview'/>
+            <Redirect to={PAGE_404}/>
         </Switch>
     </BrowserRouter>
 }
