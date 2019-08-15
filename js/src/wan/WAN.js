@@ -101,7 +101,8 @@ function prepDataToSubmit(formData) {
 
 function deleteUnnecessarySettings(type, settings) {
     for (let key in settings) {
-        if (!settings.hasOwnProperty(key) || key.endsWith('type'))
+        const hasKey = Object.prototype.hasOwnProperty.call(settings, key);
+        if (!hasKey || key.endsWith('type'))
             continue;
         if (!key.endsWith(type))
             delete settings[key]

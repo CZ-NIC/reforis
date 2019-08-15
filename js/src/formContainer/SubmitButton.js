@@ -18,11 +18,10 @@ export const STATES = {
 
 SubmitButton.propTypes = {
     disabled: propTypes.bool,
-    state: propTypes.oneOf(Object.keys(STATES).map(key => STATES[key])),
-    remindsToNWRestart: propTypes.number,
+    state: propTypes.oneOf(Object.keys(STATES).map(key => STATES[key]))
 };
 
-export default function SubmitButton({disabled, state, remindsToNWRestart, ...props}) {
+export default function SubmitButton({disabled, state, ...props}) {
     const disableSubmitButton = disabled || state !== STATES.READY;
     const loadingSubmitButton = state !== STATES.READY;
 

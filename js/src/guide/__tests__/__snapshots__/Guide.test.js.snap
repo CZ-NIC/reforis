@@ -196,8 +196,9 @@ This means that the only way to configure your device will be via serial cabel o
       <div
         class="scrollable"
       >
-        <div
+        <button
           class="interface "
+          type="button"
         >
           <div>
             <span
@@ -214,7 +215,7 @@ This means that the only way to configure your device will be via serial cabel o
           <h5>
             WAN
           </h5>
-        </div>
+        </button>
       </div>
     </div>
     <h3>
@@ -226,8 +227,9 @@ This means that the only way to configure your device will be via serial cabel o
       <div
         class="scrollable"
       >
-        <div
+        <button
           class="interface "
+          type="button"
         >
           <div>
             <span
@@ -245,7 +247,7 @@ This means that the only way to configure your device will be via serial cabel o
           <h5>
             LAN3
           </h5>
-        </div>
+        </button>
       </div>
     </div>
     <h3>
@@ -257,8 +259,9 @@ This means that the only way to configure your device will be via serial cabel o
       <div
         class="scrollable"
       >
-        <div
+        <button
           class="interface "
+          type="button"
         >
           <div>
             <span
@@ -276,9 +279,10 @@ This means that the only way to configure your device will be via serial cabel o
           <h5>
             LAN1
           </h5>
-        </div>
-        <div
+        </button>
+        <button
           class="interface "
+          type="button"
         >
           <div>
             <span
@@ -296,7 +300,7 @@ This means that the only way to configure your device will be via serial cabel o
           <h5>
             LAN4
           </h5>
-        </div>
+        </button>
       </div>
     </div>
     <h3>
@@ -308,8 +312,9 @@ This means that the only way to configure your device will be via serial cabel o
       <div
         class="scrollable"
       >
-        <div
+        <button
           class="interface "
+          type="button"
         >
           <div>
             <span
@@ -327,9 +332,10 @@ This means that the only way to configure your device will be via serial cabel o
           <h5>
             LAN0
           </h5>
-        </div>
-        <div
+        </button>
+        <button
           class="interface "
+          type="button"
         >
           <div>
             <span
@@ -347,9 +353,10 @@ This means that the only way to configure your device will be via serial cabel o
           <h5>
             LAN2
           </h5>
-        </div>
-        <div
+        </button>
+        <button
           class="interface "
+          type="button"
         >
           <div
             style="color: gray;"
@@ -372,7 +379,7 @@ This means that the only way to configure your device will be via serial cabel o
           <h5>
             1
           </h5>
-        </div>
+        </button>
       </div>
     </div>
     <button

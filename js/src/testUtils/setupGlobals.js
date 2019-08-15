@@ -7,5 +7,5 @@
 
 // Fake babel (gettext) used for docs
 global._ = str => str;
-global.babel = {format: (str, _) => str};
+global.babel = {format: (str) => str};
 global.ForisTranslations = {};

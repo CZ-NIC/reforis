@@ -47,7 +47,7 @@ export default function WorkflowSelect({workflows, next_step}) {
                 <div key={workflow} className="workflow">
                     <h3>{WORKFLOW_NAMES[workflow]}</h3>
                     <button className="btn btn-outline-secondary"
-                            onClick={e => onWorkflowChangeHandler(workflow)}>
+                            onClick={() => onWorkflowChangeHandler(workflow)}>
                         <img src={`${IMG_STATIC_URL}/workflow-${workflow}.svg`} alt={workflow}/>
                     </button>
                     <p>{WORKFLOW_DESCRIPTIONS[workflow]}</p>

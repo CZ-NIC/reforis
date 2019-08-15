@@ -19,9 +19,10 @@ LanguageForm.propTypes = {
         })).isRequired,
     }),
     setFormValue: propTypes.func,
+    disabled: propTypes.bool
 };
 
-export default function LanguageForm({formData, formErrors, setFormValue, ...props}) {
+export default function LanguageForm({formData, setFormValue, disabled}) {
     return <>
         <h3>{_('Languages')}</h3>
         <p>{_('If you want to use other language than English you can select it from the following list:')}</p>
@@ -32,12 +33,11 @@ export default function LanguageForm({formData, formErrors, setFormValue, ...pro
                 key={idx}
                 checked={language.enabled}
                 useDefaultSize={false}
+                disabled={disabled}
 
                 onChange={setFormValue(value => ({
                     languages: {[idx]: {enabled: {$set: value}}}
                 }))}
-
-                {...props}
             />
         })}
         </div>

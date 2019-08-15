@@ -51,7 +51,7 @@ const FORM_ACTIONS = {
 
 function formReducer(state, action) {
     switch (action.type) {
-        case FORM_ACTIONS.updateValue:
+        case FORM_ACTIONS.updateValue: {
             const newData = update(state.data, action.updateRule(action.value));
             const errors = action.validator(newData);
             return {
@@ -59,7 +59,8 @@ function formReducer(state, action) {
                 data: newData,
                 errors: errors
             };
-        case FORM_ACTIONS.resetData:
+        }
+        case FORM_ACTIONS.resetData: {
             if (!action.data)
                 return {...state, initialData: state.data};
             const prepData = action.prepData ? action.prepData(action.data) : action.data;
@@ -68,8 +69,10 @@ function formReducer(state, action) {
                 initialData: prepData,
                 errors: action.data ? action.validator(prepData) : undefined,
             };
-        default:
+        }
+        default: {
             throw new Error();
+        }
     }
 }
 

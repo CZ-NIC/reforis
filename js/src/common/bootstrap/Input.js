@@ -29,4 +29,4 @@ export default function Input({type, label, helpText, error, children, ...props}
             {helpText ? <small className="form-text text-muted">{helpText}</small> : null}
         </div>
     </div>;
-};
+}
