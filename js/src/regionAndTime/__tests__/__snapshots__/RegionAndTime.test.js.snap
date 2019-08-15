@@ -457,7 +457,7 @@ procedure of SSL certificate verification might not work correctly.
               class="input-group"
             >
               <input
-                class="form-control"
+                class="form-control form-control"
                 disabled=""
                 id="5"
                 type="text"

@@ -111,7 +111,7 @@ in LAN.
           class="input-group"
         >
           <input
-            class="form-control "
+            class="form-control"
             id="3"
             required=""
             type="text"
@@ -140,7 +140,7 @@ in LAN.
           class="input-group"
         >
           <input
-            class="form-control "
+            class="form-control"
             id="4"
             required=""
             type="text"
@@ -191,7 +191,7 @@ in LAN.
           class="input-group"
         >
           <input
-            class="form-control "
+            class="form-control"
             id="11"
             min="1"
             required=""
@@ -216,7 +216,7 @@ in LAN.
           class="input-group"
         >
           <input
-            class="form-control "
+            class="form-control"
             id="12"
             min="1"
             required=""
@@ -241,7 +241,7 @@ in LAN.
           class="input-group"
         >
           <input
-            class="form-control "
+            class="form-control"
             id="13"
             min="120"
             required=""
@@ -355,7 +355,7 @@ in LAN.
           class="input-group"
         >
           <input
-            class="form-control "
+            class="form-control"
             id="3"
             required=""
             type="text"
@@ -384,7 +384,7 @@ in LAN.
           class="input-group"
         >
           <input
-            class="form-control "
+            class="form-control"
             id="4"
             required=""
             type="text"
@@ -462,7 +462,7 @@ in LAN.
           class="input-group"
         >
           <input
-            class="form-control "
+            class="form-control"
             id="12"
             min="1"
             required=""
@@ -501,7 +501,7 @@ in LAN.
           class="input-group"
         >
           <input
-            class="form-control "
+            class="form-control"
             id="13"
             min="1"
             required=""
@@ -595,7 +595,7 @@ in LAN.
           class="input-group"
         >
           <input
-            class="form-control "
+            class="form-control"
             id="3"
             required=""
             type="text"
@@ -624,7 +624,7 @@ in LAN.
           class="input-group"
         >
           <input
-            class="form-control "
+            class="form-control"
             id="4"
             required=""
             type="text"

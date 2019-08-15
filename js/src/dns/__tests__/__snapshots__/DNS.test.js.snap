@@ -185,7 +185,7 @@ Do you still want to continue and stay unprotected?
           class="input-group"
         >
           <input
-            class="form-control "
+            class="form-control"
             id="7"
             type="text"
             value="lan"
