@@ -87,7 +87,7 @@ it has opened ports for configuration interface and other services.
           class="input-group"
         >
           <input
-            class="form-control "
+            class="form-control"
             id="5"
             required=""
             type="text"
@@ -116,7 +116,7 @@ it has opened ports for configuration interface and other services.
           class="input-group"
         >
           <input
-            class="form-control "
+            class="form-control"
             id="6"
             required=""
             type="text"
@@ -167,7 +167,7 @@ it has opened ports for configuration interface and other services.
           class="input-group"
         >
           <input
-            class="form-control "
+            class="form-control"
             id="12"
             min="1"
             required=""
@@ -192,7 +192,7 @@ it has opened ports for configuration interface and other services.
           class="input-group"
         >
           <input
-            class="form-control "
+            class="form-control"
             id="13"
             min="1"
             required=""
@@ -217,7 +217,7 @@ it has opened ports for configuration interface and other services.
           class="input-group"
         >
           <input
-            class="form-control "
+            class="form-control"
             id="14"
             min="120"
             required=""
@@ -335,7 +335,7 @@ it has opened ports for configuration interface and other services.
           class="input-group"
         >
           <input
-            class="form-control "
+            class="form-control"
             id="5"
             required=""
             type="text"
@@ -364,7 +364,7 @@ it has opened ports for configuration interface and other services.
           class="input-group"
         >
           <input
-            class="form-control "
+            class="form-control"
             id="6"
             required=""
             type="text"
@@ -530,7 +530,7 @@ it has opened ports for configuration interface and other services.
           class="input-group"
         >
           <input
-            class="form-control "
+            class="form-control"
             id="3"
             type="text"
             value=""
@@ -788,7 +788,7 @@ it has opened ports for configuration interface and other services.
           class="input-group"
         >
           <input
-            class="form-control "
+            class="form-control"
             id="6"
             required=""
             type="text"
@@ -812,7 +812,7 @@ it has opened ports for configuration interface and other services.
           class="input-group"
         >
           <input
-            class="form-control "
+            class="form-control"
             id="7"
             required=""
             type="text"
@@ -836,7 +836,7 @@ it has opened ports for configuration interface and other services.
           class="input-group"
         >
           <input
-            class="form-control "
+            class="form-control"
             id="8"
             required=""
             type="text"
@@ -860,7 +860,7 @@ it has opened ports for configuration interface and other services.
           class="input-group"
         >
           <input
-            class="form-control "
+            class="form-control"
             id="9"
             type="text"
             value=""
@@ -888,7 +888,7 @@ it has opened ports for configuration interface and other services.
           class="input-group"
         >
           <input
-            class="form-control "
+            class="form-control"
             id="10"
             type="text"
             value=""

@@ -359,7 +359,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
 +           class=\\"input-group\\"
 +         >
 +           <input
-+             class=\\"form-control \\"
++             class=\\"form-control\\"
 +             id=\\"20\\"
 +             type=\\"text\\"
 +             value=\\"TestGuestSSID\\"
@@ -396,7 +396,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
 +         >
 +           <input
 +             autocomplete=\\"new-password\\"
-+             class=\\"form-control is-invalid\\"
++             class=\\"form-control  is-invalid\\"
 +             id=\\"21\\"
 +             required=\\"\\"
 +             type=\\"password\\"
@@ -473,7 +473,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
 +           class=\\"input-group\\"
 +         >
 +           <input
-+             class=\\"form-control \\"
++             class=\\"form-control\\"
 +             id=\\"4\\"
 +             required=\\"\\"
 +             type=\\"text\\"
@@ -511,7 +511,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
 +         >
 +           <input
 +             autocomplete=\\"new-password\\"
-+             class=\\"form-control \\"
++             class=\\"form-control\\"
 +             id=\\"5\\"
 +             required=\\"\\"
 +             type=\\"password\\"

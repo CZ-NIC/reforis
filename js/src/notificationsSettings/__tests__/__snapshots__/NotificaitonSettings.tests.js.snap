@@ -140,7 +140,7 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
           class="input-group"
         >
           <input
-            class="form-control "
+            class="form-control"
             id="3"
             required=""
             type="text"
@@ -229,7 +229,7 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
           class="input-group"
         >
           <input
-            class="form-control "
+            class="form-control"
             id="6"
             placeholder="router@example.com"
             required=""
@@ -259,7 +259,7 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
           class="input-group"
         >
           <input
-            class="form-control "
+            class="form-control"
             id="7"
             placeholder="example.com"
             required=""
@@ -284,7 +284,7 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
           class="input-group"
         >
           <input
-            class="form-control "
+            class="form-control"
             id="8"
             max="65535"
             min="1"
@@ -338,7 +338,7 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
           class="input-group"
         >
           <input
-            class="form-control "
+            class="form-control"
             id="10"
             type="text"
             value=""
@@ -362,7 +362,7 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
         >
           <input
             autocomplete="new-password"
-            class="form-control "
+            class="form-control"
             id="11"
             type="password"
             value="test_password"
@@ -490,7 +490,7 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
           class="input-group"
         >
           <input
-            class="form-control "
+            class="form-control"
             id="3"
             required=""
             type="text"
@@ -576,7 +576,7 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
           class="input-group"
         >
           <input
-            class="form-control "
+            class="form-control"
             id="17"
             type="text"
             value="turris"

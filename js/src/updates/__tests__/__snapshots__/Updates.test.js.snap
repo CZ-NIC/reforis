@@ -186,7 +186,7 @@ available
           class="input-group"
         >
           <input
-            class="form-control "
+            class="form-control"
             id="2"
             max="10"
             min="0"
@@ -220,7 +220,7 @@ available
               class="input-group"
             >
               <input
-                class="form-control"
+                class="form-control form-control"
                 id="3"
                 type="text"
                 value="04:30"
@@ -333,7 +333,7 @@ exports[`<Updates/> Test with snapshot enabled, delayed. 1`] = `
 +           class=\\"input-group\\"
 +         >
 +           <input
-+             class=\\"form-control \\"
++             class=\\"form-control\\"
 +             id=\\"10\\"
 +             max=\\"168\\"
 +             min=\\"1\\"

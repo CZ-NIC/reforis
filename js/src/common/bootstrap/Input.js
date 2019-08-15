@@ -10,14 +10,15 @@ import {useUID} from 'react-uid/dist/es5/index';
 import {formFieldsSize} from './constants';
 
 /** Base bootstrap input component. */
-export default function Input({type, label, helpText, error, children, ...props}) {
+export default function Input({type, label, helpText, error, className, children, ...props}) {
     const uid = useUID();
+    const inputClassName = `form-control ${className ? className : ''} ${(error ? 'is-invalid' : '')}`.trim();
     return <div className={formFieldsSize}>
         <div className='form-group'>
             <label htmlFor={uid}>{label}</label>
             <div className='input-group'>
                 <input
-                    className={'form-control ' + (error ? 'is-invalid' : '')}
+                    className={inputClassName}
                     type={type}
                     id={uid}
 

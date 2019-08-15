@@ -16,7 +16,7 @@ exports[`<NumberInput/> Render number input 1`] = `
       class="input-group"
     >
       <input
-        class="form-control "
+        class="form-control"
         id="1"
         type="number"
         value="1123"

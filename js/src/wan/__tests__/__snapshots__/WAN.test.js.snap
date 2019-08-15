@@ -20,7 +20,7 @@ exports[`<WAN/> Snapshot WAN IPv4 (pppoe). 1`] = `
 +           class=\\"input-group\\"
 +         >
 +           <input
-+             class=\\"form-control is-invalid\\"
++             class=\\"form-control  is-invalid\\"
 +             id=\\"6\\"
 +             required=\\"\\"
 +             type=\\"text\\"
@@ -50,9 +50,9 @@ exports[`<WAN/> Snapshot WAN IPv4 (pppoe). 1`] = `
             class=\\"input-group\\"
           >
             <input
--             class=\\"form-control \\"
+-             class=\\"form-control\\"
 -             id=\\"2\\"
-+             class=\\"form-control is-invalid\\"
++             class=\\"form-control  is-invalid\\"
 +             id=\\"7\\"
 +             required=\\"\\"
               type=\\"text\\"
@@ -107,7 +107,7 @@ exports[`<WAN/> Snapshot WAN IPv4 (static). 1`] = `
 +           class=\\"input-group\\"
 +         >
 +           <input
-+             class=\\"form-control is-invalid\\"
++             class=\\"form-control  is-invalid\\"
 +             id=\\"6\\"
 +             required=\\"\\"
 +             type=\\"text\\"
@@ -137,7 +137,7 @@ exports[`<WAN/> Snapshot WAN IPv4 (static). 1`] = `
 +           class=\\"input-group\\"
 +         >
 +           <input
-+             class=\\"form-control is-invalid\\"
++             class=\\"form-control  is-invalid\\"
 +             id=\\"7\\"
 +             required=\\"\\"
 +             type=\\"text\\"
@@ -166,7 +166,7 @@ exports[`<WAN/> Snapshot WAN IPv4 (static). 1`] = `
 +           class=\\"input-group\\"
 +         >
 +           <input
-+             class=\\"form-control is-invalid\\"
++             class=\\"form-control  is-invalid\\"
 +             id=\\"8\\"
 +             required=\\"\\"
 +             type=\\"text\\"
@@ -195,7 +195,7 @@ exports[`<WAN/> Snapshot WAN IPv4 (static). 1`] = `
             class=\\"input-group\\"
           >
             <input
-              class=\\"form-control \\"
+              class=\\"form-control\\"
 -             id=\\"2\\"
 +             id=\\"9\\"
 +             type=\\"text\\"
@@ -224,7 +224,7 @@ exports[`<WAN/> Snapshot WAN IPv4 (static). 1`] = `
 +           class=\\"input-group\\"
 +         >
 +           <input
-+             class=\\"form-control \\"
++             class=\\"form-control\\"
 +             id=\\"10\\"
               type=\\"text\\"
               value=\\"\\"
@@ -280,7 +280,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled. 1`] = `
 +           class=\\"input-group\\"
 +         >
 +           <input
-+             class=\\"form-control is-invalid\\"
++             class=\\"form-control  is-invalid\\"
 +             id=\\"20\\"
 +             required=\\"\\"
 +             type=\\"text\\"
@@ -314,7 +314,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled. 1`] = `
 +           class=\\"input-group\\"
 +         >
 +           <input
-+             class=\\"form-control is-invalid\\"
++             class=\\"form-control  is-invalid\\"
 +             id=\\"21\\"
 +             required=\\"\\"
 +             type=\\"text\\"
@@ -348,7 +348,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled. 1`] = `
 +           class=\\"input-group\\"
 +         >
 +           <input
-+             class=\\"form-control is-invalid\\"
++             class=\\"form-control  is-invalid\\"
 +             id=\\"22\\"
 +             required=\\"\\"
 +             type=\\"text\\"
@@ -400,7 +400,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
 +           class=\\"input-group\\"
 +         >
 +           <input
-+             class=\\"form-control is-invalid\\"
++             class=\\"form-control  is-invalid\\"
 +             id=\\"8\\"
 +             required=\\"\\"
 +             type=\\"text\\"
@@ -434,7 +434,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
 +           class=\\"input-group\\"
 +         >
 +           <input
-+             class=\\"form-control is-invalid\\"
++             class=\\"form-control  is-invalid\\"
 +             id=\\"9\\"
 +             required=\\"\\"
 +             type=\\"text\\"
@@ -468,7 +468,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
 +           class=\\"input-group\\"
 +         >
 +           <input
-+             class=\\"form-control is-invalid\\"
++             class=\\"form-control  is-invalid\\"
 +             id=\\"10\\"
 +             max=\\"1500\\"
 +             min=\\"1280\\"
@@ -556,7 +556,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6to4). 1`] = `
 +           class=\\"input-group\\"
 +         >
 +           <input
-+             class=\\"form-control is-invalid\\"
++             class=\\"form-control  is-invalid\\"
 +             id=\\"8\\"
 +             required=\\"\\"
 +             type=\\"text\\"
@@ -620,7 +620,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (dhcpv6). 1`] = `
 +           class=\\"input-group\\"
 +         >
 +           <input
-+             class=\\"form-control \\"
++             class=\\"form-control\\"
 +             id=\\"8\\"
 +             type=\\"text\\"
 +             value=\\"\\"
@@ -666,7 +666,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
 +           class=\\"input-group\\"
 +         >
 +           <input
-+             class=\\"form-control is-invalid\\"
++             class=\\"form-control  is-invalid\\"
 +             id=\\"8\\"
 +             required=\\"\\"
 +             type=\\"text\\"
@@ -700,7 +700,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
 +           class=\\"input-group\\"
 +         >
 +           <input
-+             class=\\"form-control is-invalid\\"
++             class=\\"form-control  is-invalid\\"
 +             id=\\"9\\"
 +             required=\\"\\"
 +             type=\\"text\\"
@@ -729,7 +729,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
 +           class=\\"input-group\\"
 +         >
 +           <input
-+             class=\\"form-control is-invalid\\"
++             class=\\"form-control  is-invalid\\"
 +             id=\\"10\\"
 +             required=\\"\\"
 +             type=\\"text\\"
@@ -763,7 +763,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
 +           class=\\"input-group\\"
 +         >
 +           <input
-+             class=\\"form-control \\"
++             class=\\"form-control\\"
 +             id=\\"11\\"
 +             type=\\"text\\"
 +             value=\\"\\"
@@ -791,7 +791,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
 +           class=\\"input-group\\"
 +         >
 +           <input
-+             class=\\"form-control \\"
++             class=\\"form-control\\"
 +             id=\\"12\\"
 +             type=\\"text\\"
 +             value=\\"\\"
@@ -849,7 +849,7 @@ exports[`<WAN/> Snapshot: MAC enabled 1`] = `
 +           class=\\"input-group\\"
 +         >
 +           <input
-+             class=\\"form-control is-invalid\\"
++             class=\\"form-control  is-invalid\\"
 +             id=\\"9\\"
 +             required=\\"\\"
 +             type=\\"text\\"
@@ -938,7 +938,7 @@ router to the network, it is usually not necessary to change this setting.
           class="input-group"
         >
           <input
-            class="form-control "
+            class="form-control"
             id="2"
             type="text"
             value=""
