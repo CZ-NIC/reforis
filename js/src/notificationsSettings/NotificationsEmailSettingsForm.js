@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import CheckBox from 'common/bootstrap/Checkbox';
 import RadioSet from 'common/bootstrap/RadioSet';
@@ -22,22 +22,22 @@ const SMTP_TYPE_CHOICES = [
 ];
 
 NotificationsEmailSettingsForm.propTypes = {
-    formData: propTypes.oneOfType(
+    formData: PropTypes.oneOfType(
         [
-            propTypes.shape({}),
-            propTypes.shape({
-                emails: propTypes.shape({
-                    enabled: propTypes.bool.isRequired,
-                    smtp_type: propTypes.oneOf(['turris', 'custom']),
-                    common: propTypes.object,
-                    smtp_turris: propTypes.object,
-                    smtp_custom: propTypes.object,
+            PropTypes.shape({}),
+            PropTypes.shape({
+                emails: PropTypes.shape({
+                    enabled: PropTypes.bool.isRequired,
+                    smtp_type: PropTypes.oneOf(['turris', 'custom']),
+                    common: PropTypes.object,
+                    smtp_turris: PropTypes.object,
+                    smtp_custom: PropTypes.object,
                 })
             })
         ]
     ).isRequired,
-    formErrors: propTypes.shape({}),
-    setFormValue: propTypes.func.isRequired,
+    formErrors: PropTypes.shape({}),
+    setFormValue: PropTypes.func.isRequired,
 };
 
 NotificationsEmailSettingsForm.defaultProps = {

@@ -6,19 +6,19 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 
 import DHCPClientsList from 'common/network/DHCPClientsList';
 import {LAN_MODES} from './LANForm';
 
 LAN_DHCP_ClientsList.propTypes = {
-    formData: propTypes.shape({
-        mode: propTypes.oneOf(Object.keys(LAN_MODES)),
-        mode_managed: propTypes.shape({
-            dhcp: propTypes.shape({
-                enabled: propTypes.bool.isRequired,
-                clients: propTypes.arrayOf(propTypes.object).isRequired,
+    formData: PropTypes.shape({
+        mode: PropTypes.oneOf(Object.keys(LAN_MODES)),
+        mode_managed: PropTypes.shape({
+            dhcp: PropTypes.shape({
+                enabled: PropTypes.bool.isRequired,
+                clients: PropTypes.arrayOf(PropTypes.object).isRequired,
             }).isRequired
         })
     })

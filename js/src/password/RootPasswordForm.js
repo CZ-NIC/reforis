@@ -6,22 +6,22 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 import {ForisURLs} from 'common/constants';
 import PasswordInput from 'common/bootstrap/PasswordInput';
 import SubmitButton, {STATES as SUBMIT_BUTTON_STATES} from 'formContainer/SubmitButton';
 
 RootPasswordForm.propTypes = {
-    formData: propTypes.shape(
-        {newRootPassword: propTypes.string}
+    formData: PropTypes.shape(
+        {newRootPassword: PropTypes.string}
     ).isRequired,
-    submitButtonState: propTypes.oneOf(
+    submitButtonState: PropTypes.oneOf(
         Object.keys(SUBMIT_BUTTON_STATES).map(key => SUBMIT_BUTTON_STATES[key])
     ).isRequired,
-    formErrors: propTypes.shape({}),
-    setFormValue: propTypes.func.isRequired,
-    postRootPassword: propTypes.func.isRequired,
+    formErrors: PropTypes.shape({newRootPassword: PropTypes.string}),
+    setFormValue: PropTypes.func.isRequired,
+    postRootPassword: PropTypes.func.isRequired,
 };
 
 export default function RootPasswordForm({formData, formErrors, setFormValue, submitButtonState, postRootPassword, ...props}) {

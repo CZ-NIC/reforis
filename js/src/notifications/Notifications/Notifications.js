@@ -6,10 +6,15 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import RebootIsRequiredAlert from './RebootIsRequiredAlert';
 import UpdateApprovals from './UpdateApprovals';
 import NotificationsCenter from './NotificationsCenter';
+
+Notifications.propTypes = {
+    ws: PropTypes.object.isRequired
+};
 
 export default function Notifications({ws}) {
     return <>

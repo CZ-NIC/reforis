@@ -20,6 +20,7 @@ WifiGuestForm.propTypes = {
         id: PropTypes.number.isRequired,
         SSID: PropTypes.string.isRequired,
         password: PropTypes.string.isRequired,
+        enabled: PropTypes.bool.isRequired
     }),
     formErrors: PropTypes.shape({
         SSID: PropTypes.string,

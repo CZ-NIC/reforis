@@ -6,20 +6,20 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import NumberInput from 'common/bootstrap/NumberInput';
 
 export const HELP_TEXT = _('Enable this option to automatically assign IP addresses to the devices connected to the router.');
 
 DHCPServerForm.propTypes = {
-    formData: propTypes.shape({
-        start: propTypes.number,
-        limit: propTypes.number,
-        lease_time: propTypes.number,
+    formData: PropTypes.shape({
+        start: PropTypes.number,
+        limit: PropTypes.number,
+        lease_time: PropTypes.number,
     }).isRequired,
-    setFormValue: propTypes.func.isRequired,
-    updateRule: propTypes.func.isRequired,
+    setFormValue: PropTypes.func.isRequired,
+    updateRule: PropTypes.func.isRequired,
 };
 
 export default function DHCPServerForm({formData, updateRule, setFormValue, ...props}) {

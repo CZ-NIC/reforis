@@ -6,22 +6,21 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 Alert.propTypes = {
     /** Type of the alert it adds as `alert-${type}` class.*/
-    type: propTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
     /** Alert message.*/
-    message: propTypes.string,
+    message: PropTypes.string,
     /** Alert content.*/
-    children: propTypes.oneOfType([
-        propTypes.arrayOf(propTypes.node),
-        propTypes.node
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node
     ]),
     /** onDismiss handler.*/
-    onDismiss: propTypes.func
+    onDismiss: PropTypes.func
 };
-
 
 export default function Alert({type, message, onDismiss, children}) {
     return <div className={`alert alert-dismissible alert-${type}`}>
@@ -30,4 +29,3 @@ export default function Alert({type, message, onDismiss, children}) {
         {children}
     </div>
 }
-

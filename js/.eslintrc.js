@@ -37,7 +37,7 @@ module.exports = {
         "no-console": "error",
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
-        "react/prop-types": "off",
+        "react/prop-types": "warn",
         "import/no-unresolved": [
             "error",
             // Ignore imports used only in tests

@@ -6,24 +6,25 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import Select from 'common/bootstrap/Select';
 import {TIMEZONES, COUNTRIES} from 'utils/timezones';
 
 RegionForm.propTypes = {
-    formData: propTypes.shape({
-        region: propTypes.string,
-        country: propTypes.string,
-        city: propTypes.string,
+    formData: PropTypes.shape({
+        region: PropTypes.string,
+        country: PropTypes.string,
+        city: PropTypes.string,
     }),
-    setFormValue: propTypes.func.isRequired,
+    setFormValue: PropTypes.func.isRequired,
+    disabled: PropTypes.bool
 };
-
 
 RegionForm.defaultProps = {
     formData: {},
-    setFormValue: () => {}
+    setFormValue: () => {},
+    disabled: false
 };
 
 export default function RegionForm({formData, setFormValue, disabled}) {

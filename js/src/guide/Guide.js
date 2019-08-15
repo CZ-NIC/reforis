@@ -8,6 +8,7 @@
 import React, {useEffect} from 'react';
 import {BrowserRouter} from 'react-router-dom';
 import {Redirect, Route, Switch} from 'react-router';
+import PropTypes from 'prop-types';
 
 import Portal from 'utils/Portal';
 import {REFORIS_URL_PREFIX} from 'common/constants';
@@ -17,6 +18,10 @@ import Spinner from 'common/bootstrap/Spinner';
 
 import {GUIDE_URL_PREFIX, STEPS} from './constance';
 import GuideNavigation from './GuideNavigation';
+
+Guide.propTypes = {
+    ws: PropTypes.object.isRequired
+};
 
 export default function Guide({ws}) {
     const [guideData, getGuideData] = useAPIGet(API_URLs.guide);

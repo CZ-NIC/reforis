@@ -6,16 +6,16 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import TextInput from 'common/bootstrap/TextInput';
 
 import HELP_TEXTS from './helpTexts';
 
 SMTPTurrisForm.propTypes = {
-    formData: propTypes.shape({sender_name: propTypes.string,}).isRequired,
-    formErrors: propTypes.shape({sender_name: propTypes.string,}),
-    setFormValue: propTypes.func.isRequired,
+    formData: PropTypes.shape({sender_name: PropTypes.string,}).isRequired,
+    formErrors: PropTypes.shape({sender_name: PropTypes.string,}),
+    setFormValue: PropTypes.func.isRequired,
 };
 
 SMTPTurrisForm.defaultProps = {

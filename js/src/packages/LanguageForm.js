@@ -6,20 +6,20 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import CheckBox from 'common/bootstrap/Checkbox';
 import {formFieldsSize} from 'common/bootstrap/constants';
 
 LanguageForm.propTypes = {
-    formData: propTypes.shape({
-        languages: propTypes.arrayOf(propTypes.shape({
-            code: propTypes.string.isRequired,
-            enabled: propTypes.bool.isRequired,
+    formData: PropTypes.shape({
+        languages: PropTypes.arrayOf(PropTypes.shape({
+            code: PropTypes.string.isRequired,
+            enabled: PropTypes.bool.isRequired,
         })).isRequired,
     }),
-    setFormValue: propTypes.func,
-    disabled: propTypes.bool
+    setFormValue: PropTypes.func,
+    disabled: PropTypes.bool
 };
 
 export default function LanguageForm({formData, setFormValue, disabled}) {

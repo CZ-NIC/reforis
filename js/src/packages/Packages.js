@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import API_URLs from 'common/API';
 import Alert from 'common/bootstrap/Alert';
@@ -39,6 +39,14 @@ been installed manually or using opkg is not affected.
     </>
 }
 
+DisableIfUpdaterIsDisabled.propTypes = {
+    formData: PropTypes.shape({enabled: PropTypes.bool.isRequired}),
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node
+    ])
+};
+
 export function DisableIfUpdaterIsDisabled({children, ...props}) {
     const isDisabled = !props.formData.enabled;
     const childrenWithFormProps =
@@ -61,7 +69,7 @@ export function DisableIfUpdaterIsDisabled({children, ...props}) {
 }
 
 DisabledUpdaterAlert.propTypes = {
-    formData: propTypes.shape({enabled: propTypes.bool.isRequired})
+    formData: PropTypes.shape({enabled: PropTypes.bool.isRequired})
 };
 
 function DisabledUpdaterAlert() {

@@ -6,7 +6,7 @@
  */
 
 import React, {useEffect} from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 
 import {useAPIGet, useAPIPost} from 'common/APIhooks';
@@ -79,7 +79,7 @@ export default function UpdateApprovals() {
 }
 
 Plan.propTypes = {
-    plan: propTypes.arrayOf(propTypes.object).isRequired
+    plan: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 function Plan({plan}) {
@@ -99,10 +99,10 @@ function Plan({plan}) {
 }
 
 PlanItem.propTypes = {
-    name: propTypes.string.isRequired,
-    op: propTypes.string.isRequired,
-    new_ver: propTypes.string,
-    cur_Ver: propTypes.string,
+    name: PropTypes.string.isRequired,
+    op: PropTypes.string.isRequired,
+    new_ver: PropTypes.string,
+    cur_ver: PropTypes.string,
 };
 
 function PlanItem({name, op, new_ver, cur_ver}) {

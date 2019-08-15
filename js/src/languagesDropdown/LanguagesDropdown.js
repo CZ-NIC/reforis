@@ -6,12 +6,17 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {SpinnerElement} from 'common/bootstrap/Spinner';
 import {useAPIPost} from 'common/APIhooks';
 import API_URLs from 'common/API';
 
 import {useLanguages, useWSSetLanguageRefresh} from './hooks';
+
+LanguagesDropdown.propTypes = {
+    ws: PropTypes.object.isRequired
+};
 
 export default function LanguagesDropdown({ws}) {
     const [currentLang, langsList] = useLanguages();

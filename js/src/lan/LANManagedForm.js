@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import TextInput from 'common/bootstrap/TextInput';
 import CheckBox from 'common/bootstrap/Checkbox';
@@ -19,16 +19,16 @@ const HELP_TEXTS = {
 };
 
 LANManagedForm.propTypes = {
-    formData: propTypes.shape({
-        router_ip: propTypes.string.isRequired,
-        netmask: propTypes.string,
-        dhcp: propTypes.object,
+    formData: PropTypes.shape({
+        router_ip: PropTypes.string.isRequired,
+        netmask: PropTypes.string,
+        dhcp: PropTypes.object,
     }).isRequired,
-    formErrors: propTypes.shape({
-        mode_managed: propTypes.object,
-        mode_unmanaged: propTypes.object,
+    formErrors: PropTypes.shape({
+        mode_managed: PropTypes.object,
+        mode_unmanaged: PropTypes.object,
     }),
-    setFormValue: propTypes.func.isRequired,
+    setFormValue: PropTypes.func.isRequired,
 };
 
 LANManagedForm.defaultProps = {

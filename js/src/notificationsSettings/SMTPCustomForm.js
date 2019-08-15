@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import Select from 'common/bootstrap/Select';
 import TextInput from 'common/bootstrap/TextInput';
@@ -23,22 +23,22 @@ const SECURITY_CHOICES = {
 };
 
 SMTPCustomForm.propTypes = {
-    formData: propTypes.shape({
-        from: propTypes.string,
-        host: propTypes.string,
-        port: propTypes.number,
-        security: propTypes.oneOf(['none', 'ssl', 'starttls']),
-        username: propTypes.string,
-        password: propTypes.string,
+    formData: PropTypes.shape({
+        from: PropTypes.string,
+        host: PropTypes.string,
+        port: PropTypes.number,
+        security: PropTypes.oneOf(['none', 'ssl', 'starttls']),
+        user: PropTypes.string,
+        password: PropTypes.string,
     }).isRequired,
-    formErrors: propTypes.shape({
-        from: propTypes.string,
-        host: propTypes.string,
-        port: propTypes.string,
-        username: propTypes.string,
-        password: propTypes.string,
+    formErrors: PropTypes.shape({
+        from: PropTypes.string,
+        host: PropTypes.string,
+        port: PropTypes.string,
+        user: PropTypes.string,
+        password: PropTypes.string,
     }),
-    setFormValue: propTypes.func.isRequired,
+    setFormValue: PropTypes.func.isRequired,
 };
 
 SMTPCustomForm.defaultProps = {

@@ -6,14 +6,15 @@
  */
 
 import React, {useState} from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import {withRouter} from 'react-router';
 
 import useNotifications from '../hooks';
 import NotificationsList from './NotificationsList';
 
 NotificationsCenter.propTypes = {
-    ws: propTypes.object.isRequired
+    ws: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired
 };
 
 function NotificationsCenter({ws, history}) {

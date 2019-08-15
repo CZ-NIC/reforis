@@ -6,7 +6,7 @@
  */
 
 import React, {useEffect, useRef} from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import {NOTIFICATION_PROP_TYPES, toLocaleDateString} from '../utils';
 import NotificationIcon from '../NotificationIcon';
@@ -14,8 +14,8 @@ import RebootButton from 'common/RebootButton';
 
 
 NotificationsList.propTypes = {
-    notifications: propTypes.arrayOf(NOTIFICATION_PROP_TYPES),
-    dismiss: propTypes.func.isRequired
+    notifications: PropTypes.arrayOf(NOTIFICATION_PROP_TYPES),
+    dismiss: PropTypes.func.isRequired
 };
 
 export default function NotificationsList({notifications, dismiss, currentNotification}) {

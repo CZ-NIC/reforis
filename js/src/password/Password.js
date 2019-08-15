@@ -6,6 +6,7 @@
  */
 
 import React, {useCallback, useEffect, useState} from 'react';
+import PropTypes from 'prop-types';
 
 import {STATES as SUBMIT_BUTTON_STATES} from 'formContainer/SubmitButton';
 import {useAPIGet, useAPIPost} from 'common/APIhooks';
@@ -17,6 +18,10 @@ import CurrentForisPasswordForm from './CurrentForisPasswordForm';
 import ForisPasswordForm from './ForisPasswordForm';
 import RootPasswordForm from './RootPasswordForm';
 import Spinner from 'common/bootstrap/Spinner';
+
+Password.propTypes = {
+    postCallback: PropTypes.func
+};
 
 Password.defaultProps = {
     postCallback: () => undefined,

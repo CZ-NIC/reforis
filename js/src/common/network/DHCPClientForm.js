@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import TextInput from 'common/bootstrap/TextInput';
 import {validateDomain} from 'common/validations';
@@ -16,14 +16,14 @@ const HELP_TEXTS = {
 };
 
 DHCPClientForm.propTypes = {
-    formData: propTypes.shape({
-        hostname: propTypes.string,
+    formData: PropTypes.shape({
+        hostname: PropTypes.string,
     }).isRequired,
-    formErrors: propTypes.shape({
-        hostname: propTypes.string
+    formErrors: PropTypes.shape({
+        hostname: PropTypes.string
     }),
-    setFormValue: propTypes.func.isRequired,
-    updateRule: propTypes.func.isRequired,
+    setFormValue: PropTypes.func.isRequired,
+    updateRule: PropTypes.func.isRequired,
 };
 
 export default function DHCPClientForm({formData, formErrors, setFormValue, updateRule, ...props}) {

@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 export const INTERFACE_TYPES = {
     eth: 'eth',
@@ -20,12 +20,12 @@ export const INTERFACE_STATES = {
 };
 
 Interface.propTypes = {
-    type: propTypes.oneOf(Object.keys(INTERFACE_TYPES)).isRequired,
-    slot: propTypes.string.isRequired,
-    state: propTypes.oneOf(Object.keys(INTERFACE_STATES)).isRequired,
-    configurable: propTypes.bool.isRequired,
-    isSelected: propTypes.bool.isRequired,
-    onClick: propTypes.func.isRequired,
+    type: PropTypes.oneOf(Object.keys(INTERFACE_TYPES)).isRequired,
+    slot: PropTypes.string.isRequired,
+    state: PropTypes.oneOf(Object.keys(INTERFACE_STATES)).isRequired,
+    configurable: PropTypes.bool.isRequired,
+    isSelected: PropTypes.bool.isRequired,
+    onClick: PropTypes.func.isRequired,
 };
 
 export default function Interface({type, slot, state, configurable, isSelected, onClick}) {
@@ -36,8 +36,8 @@ export default function Interface({type, slot, state, configurable, isSelected, 
 }
 
 InterfaceIcon.propTypes = {
-    type: propTypes.oneOf(Object.keys(INTERFACE_TYPES)).isRequired,
-    configurable: propTypes.bool.isRequired,
+    type: PropTypes.oneOf(Object.keys(INTERFACE_TYPES)).isRequired,
+    configurable: PropTypes.bool.isRequired,
 };
 
 
@@ -54,7 +54,7 @@ function InterfaceIcon({type, configurable, ...props}) {
 
 
 EthInterfaceIcon.propTypes = {
-    state: propTypes.oneOf(Object.keys(INTERFACE_STATES)).isRequired,
+    state: PropTypes.oneOf(Object.keys(INTERFACE_STATES)).isRequired,
 };
 
 function EthInterfaceIcon({state}) {
@@ -65,7 +65,7 @@ function EthInterfaceIcon({state}) {
 }
 
 WiFiInterfaceIcon.propTypes = {
-    state: propTypes.oneOf(Object.keys(INTERFACE_STATES)).isRequired,
+    state: PropTypes.oneOf(Object.keys(INTERFACE_STATES)).isRequired,
 };
 
 
@@ -82,7 +82,7 @@ function WiFiInterfaceIcon({state}) {
 }
 
 WWANInterfaceIcon.propTypes = {
-    state: propTypes.oneOf(Object.keys(INTERFACE_STATES)).isRequired,
+    state: PropTypes.oneOf(Object.keys(INTERFACE_STATES)).isRequired,
 };
 
 function WWANInterfaceIcon({state}) {

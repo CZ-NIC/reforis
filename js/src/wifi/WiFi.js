@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import ForisForm from 'formContainer/ForisForm';
 import API_URLs from 'common/API';
@@ -15,7 +15,7 @@ import WiFiForm from './WiFiForm';
 import ResetWiFiSettings from './ResetWiFiSettings';
 
 WiFi.propTypes = {
-    ws: propTypes.object.isRequired
+    ws: PropTypes.object.isRequired
 };
 
 export default function WiFi({ws}) {

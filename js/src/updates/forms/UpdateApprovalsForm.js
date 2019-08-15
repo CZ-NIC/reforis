@@ -6,6 +6,7 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import RadioSet from 'common/bootstrap/RadioSet';
 import NumberInput from 'common/bootstrap/NumberInput';
@@ -27,6 +28,14 @@ const UPDATE_APPROVALS_CHOICES = [
         helpText: _("You have to approve the updates, otherwise they won't be installed."),
     },
 ];
+
+UpdateApprovalsForm.propTypes = {
+    setFormValue: PropTypes.func.isRequired,
+    formData: PropTypes.shape({
+        status: PropTypes.string,
+        delay: PropTypes.number
+    })
+};
 
 export default function UpdateApprovalsForm({formData, setFormValue, ...props}) {
     return <>

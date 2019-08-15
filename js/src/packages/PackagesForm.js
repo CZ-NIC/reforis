@@ -6,20 +6,20 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import CheckBox from 'common/bootstrap/Checkbox';
 
 PackagesForm.propTypes = {
-    formData: propTypes.shape({
-        user_lists: propTypes.arrayOf(propTypes.shape({
-            title: propTypes.string.isRequired,
-            msg: propTypes.string.isRequired,
-            enabled: propTypes.bool.isRequired,
+    formData: PropTypes.shape({
+        user_lists: PropTypes.arrayOf(PropTypes.shape({
+            title: PropTypes.string.isRequired,
+            msg: PropTypes.string.isRequired,
+            enabled: PropTypes.bool.isRequired,
         })).isRequired,
     }),
-    setFormValue: propTypes.func,
-    disabled: propTypes.bool
+    setFormValue: PropTypes.func,
+    disabled: PropTypes.bool
 };
 
 export default function PackagesForm({formData, setFormValue, disabled}) {

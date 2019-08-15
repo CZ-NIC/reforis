@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import DHCPServerForm, {HELP_TEXT as DHCP_HELP_TEXT} from 'common/network/DHCPServerForm';
 import CheckBox from 'common/bootstrap/Checkbox';
@@ -25,18 +25,18 @@ const HELP_TEXTS = {
 };
 
 GuestNetworkForm.propTypes = {
-    formData: propTypes.shape({
-        enabled: propTypes.bool.isRequired,
-        ip: propTypes.string,
-        netmask: propTypes.string,
-        dhcp: propTypes.object,
-        qos: propTypes.object,
+    formData: PropTypes.shape({
+        enabled: PropTypes.bool.isRequired,
+        ip: PropTypes.string,
+        netmask: PropTypes.string,
+        dhcp: PropTypes.object,
+        qos: PropTypes.object,
     }),
-    formErrors: propTypes.shape({
-        router_ip: propTypes.string,
-        netmask: propTypes.string,
+    formErrors: PropTypes.shape({
+        ip: PropTypes.string,
+        netmask: PropTypes.string,
     }),
-    setFormValue: propTypes.func,
+    setFormValue: PropTypes.func
 };
 
 GuestNetworkForm.defaultProps = {
@@ -131,10 +131,11 @@ export default function GuestNetworkForm({formData, formErrors, setFormValue, ..
 }
 
 QoSForm.propTypes = {
-    formData: propTypes.shape({
-        download: propTypes.number,
-        upload: propTypes.number,
+    formData: PropTypes.shape({
+        download: PropTypes.number,
+        upload: PropTypes.number,
     }).isRequired,
+    setFormValue: PropTypes.func.isRequired
 };
 
 function QoSForm({formData, setFormValue, ...props}) {

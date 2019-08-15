@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import TextInput from 'common/bootstrap/TextInput';
 import {validateIPv4Address} from 'common/validations';
@@ -16,18 +16,18 @@ const HELP_TEXTS = {
 };
 
 const FIELDS_PROP_TYPES = {
-    ip: propTypes.string,
-    netmask: propTypes.string,
-    gateway: propTypes.string,
-    dns1: propTypes.string,
-    dns2: propTypes.string,
+    ip: PropTypes.string,
+    netmask: PropTypes.string,
+    gateway: PropTypes.string,
+    dns1: PropTypes.string,
+    dns2: PropTypes.string,
 };
 
 StaticIPForm.propTypes = {
-    formData: propTypes.shape(FIELDS_PROP_TYPES).isRequired,
-    formErrors: propTypes.shape(FIELDS_PROP_TYPES),
-    setFormValue: propTypes.func.isRequired,
-    updateRule: propTypes.func.isRequired,
+    formData: PropTypes.shape(FIELDS_PROP_TYPES).isRequired,
+    formErrors: PropTypes.shape(FIELDS_PROP_TYPES),
+    setFormValue: PropTypes.func.isRequired,
+    updateRule: PropTypes.func.isRequired,
 };
 
 StaticIPForm.defaultProps = {

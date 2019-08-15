@@ -11,6 +11,14 @@ import React from 'react';
 import {UIDReset} from 'react-uid';
 import {StaticRouter} from 'react-router';
 import {render} from '@testing-library/react'
+import PropTypes from 'prop-types';
+
+Wrapper.propTypes = {
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node
+    ])
+}
 
 function Wrapper({children}) {
     return <StaticRouter>

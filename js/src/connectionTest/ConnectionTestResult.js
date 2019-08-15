@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const TEST_TYPES = {
     ipv4: _('IPv4 connectivity'),
@@ -18,12 +18,12 @@ const TEST_TYPES = {
 };
 
 ConnectionTestResults.propTypes = {
-    ipv4: propTypes.bool,
-    ipv4_gateway: propTypes.bool,
-    ipv6: propTypes.bool,
-    ipv6_gateway: propTypes.bool,
-    dns: propTypes.bool,
-    dnssec: propTypes.bool,
+    ipv4: PropTypes.bool,
+    ipv4_gateway: PropTypes.bool,
+    ipv6: PropTypes.bool,
+    ipv6_gateway: PropTypes.bool,
+    dns: PropTypes.bool,
+    dnssec: PropTypes.bool,
 };
 
 export default function ConnectionTestResults({...tests}) {
@@ -41,8 +41,8 @@ export default function ConnectionTestResults({...tests}) {
 }
 
 ConnectionTestResultItem.propTypes = {
-    type: propTypes.string.isRequired,
-    result: propTypes.bool,
+    type: PropTypes.string.isRequired,
+    result: PropTypes.bool,
 };
 
 function ConnectionTestResultItem({type, result}) {

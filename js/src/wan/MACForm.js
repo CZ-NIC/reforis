@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import CheckBox from 'common/bootstrap/Checkbox';
 import TextInput from 'common/bootstrap/TextInput';
@@ -18,17 +18,17 @@ const HELP_TEXTS = {
 };
 
 MACForm.propTypes = {
-    formData: propTypes.shape({
-            mac_settings: propTypes.shape({
-                custom_mac_enabled: propTypes.bool.isRequired,
-                custom_mac: propTypes.string,
+    formData: PropTypes.shape({
+            mac_settings: PropTypes.shape({
+                custom_mac_enabled: PropTypes.bool.isRequired,
+                custom_mac: PropTypes.string,
             })
         }
     ).isRequired,
-    formErrors: propTypes.shape({
-        custom_mac: propTypes.string,
+    formErrors: PropTypes.shape({
+        custom_mac: PropTypes.string,
     }),
-    setFormValue: propTypes.func.isRequired,
+    setFormValue: PropTypes.func.isRequired,
 };
 
 MACForm.defaultProps = {

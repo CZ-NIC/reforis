@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import {ForisURLs, REFORIS_URL_PREFIX} from 'common/constants';
 
@@ -14,8 +14,8 @@ import {ForisURLs, REFORIS_URL_PREFIX} from 'common/constants';
 const SMALL_SCREEN = 699;
 
 NotificationsDropdownButton.propTypes = {
-    notificationsCount: propTypes.number.isRequired,
-    newNotification: propTypes.bool.isRequired,
+    notificationsCount: PropTypes.number.isRequired,
+    newNotification: PropTypes.bool.isRequired,
 };
 
 export default function NotificationsDropdownButton({notificationsCount, newNotification}) {
@@ -50,8 +50,8 @@ export default function NotificationsDropdownButton({notificationsCount, newNoti
 }
 
 NotificationCounter.propTypes = {
-    notificationsCount: propTypes.number.isRequired,
-    newNotification: propTypes.bool.isRequired,
+    notificationsCount: PropTypes.number.isRequired,
+    newNotification: PropTypes.bool.isRequired,
 };
 
 function NotificationCounter({notificationsCount, newNotification}) {

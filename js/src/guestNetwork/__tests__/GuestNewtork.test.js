@@ -19,7 +19,7 @@ describe('<GuestNetwork/>', () => {
 
     beforeEach(async () => {
         const mockWebSockets = new mockedWS();
-        const {container} = render(<GuestNetwork ws={mockWebSockets}/>);
+        const {container} = render(<GuestNetwork ws={mockWebSockets} setFormValue={() => {}}/>);
         mockAxios.mockResponse({data: guestNetworkFixture()});
         await wait(() => getByLabelText(container, 'Enable'));
         guestNetworkContainer = container

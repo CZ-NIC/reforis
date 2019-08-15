@@ -6,6 +6,7 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 
 import API_URLs from 'common/API';
@@ -14,6 +15,14 @@ import ForisForm from 'formContainer/ForisForm';
 import RegionForm from './RegionForm';
 import TimeForm from './TimeForm';
 
+RegionAndTime.propTypes = {
+    ws: PropTypes.object.isRequired,
+    postCallback: PropTypes.func
+};
+
+RegionAndTime.defaultProps = {
+    postCallback: () => undefined
+};
 
 export default function RegionAndTime({ws, postCallback}) {
     return <>

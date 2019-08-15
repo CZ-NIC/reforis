@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import ForisForm from 'formContainer/ForisForm';
 import API_URLs from 'common/API';
@@ -17,7 +17,7 @@ import GuestNetworkForm from './GuestNetworkForm';
 import GuestNetworkDHCPClientsList from './GuestNetworkDHCPClientsList';
 
 GuestNetwork.propTypes = {
-    ws: propTypes.object.isRequired
+    ws: PropTypes.object.isRequired
 };
 
 export default function GuestNetwork({ws}) {

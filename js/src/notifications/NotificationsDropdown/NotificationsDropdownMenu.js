@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 
 import {ForisURLs} from 'common/constants';
@@ -16,9 +16,9 @@ import NotificationsDropdownItem from './NotificationsDropdownItem';
 
 
 NotificationsDropdownMenu.propTypes = {
-    notifications: propTypes.arrayOf(NOTIFICATION_PROP_TYPES),
-    dismiss: propTypes.func.isRequired,
-    dismissAll: propTypes.func.isRequired,
+    notifications: PropTypes.arrayOf(NOTIFICATION_PROP_TYPES),
+    dismiss: PropTypes.func.isRequired,
+    dismissAll: PropTypes.func.isRequired,
 };
 
 export default function NotificationsDropdownMenu({notifications, dismiss, dismissAll}) {
@@ -64,6 +64,10 @@ function NotificationsDropdownHeader() {
         <div className='dropdown-divider dropdown-divider-top'/>
     </>;
 }
+
+NotificationsDropdownFooter.propTypes = {
+    dismissAll: PropTypes.func.isRequired
+};
 
 function NotificationsDropdownFooter({dismissAll}) {
     return <>
