@@ -52,7 +52,7 @@ function GuideNavigationItem({name, url, next, passed}) {
                 {content}
             </NavLink>
             // eslint-disable-next-line jsx-a11y/anchor-is-valid
-            : <a href='#'>{content}</a>}
+            : <a>{content}</a>}
     </li>
 }
 

@@ -34,7 +34,6 @@ export default function Guide({ws}) {
             <GuideNavigation workflow_steps={workflow_steps} passed={passed} next_step={next_step}/>
         </Portal>
         <Switch>
-            <Route exact path='/' render={() => <Redirect to={`/${next_step}`}/>}/>
             {workflow_steps.map((step, idx) => {
                 const Component = STEPS[step].component;
                 return <Route
@@ -49,7 +48,7 @@ export default function Guide({ws}) {
                     />}
                 />
             })}
-            <Route component={() => <h1>404</h1>}/>
+            <Redirect to={`/${next_step}`}/>
         </Switch>
     </BrowserRouter>
 }
