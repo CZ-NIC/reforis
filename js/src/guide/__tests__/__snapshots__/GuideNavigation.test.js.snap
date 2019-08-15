@@ -42,9 +42,7 @@ exports[`<GuideNavigation/> Snapshot. 1`] = `
       </a>
     </li>
     <li>
-      <a
-        href="#"
-      >
+      <a>
         <i
           class="fas fa-arrow-right"
         />
@@ -53,9 +51,7 @@ exports[`<GuideNavigation/> Snapshot. 1`] = `
       </a>
     </li>
     <li>
-      <a
-        href="#"
-      >
+      <a>
         <i
           class="fas fa-arrow-right"
         />
@@ -64,9 +60,7 @@ exports[`<GuideNavigation/> Snapshot. 1`] = `
       </a>
     </li>
     <li>
-      <a
-        href="#"
-      >
+      <a>
         <i
           class="fas fa-arrow-right"
         />
@@ -75,9 +69,7 @@ exports[`<GuideNavigation/> Snapshot. 1`] = `
       </a>
     </li>
     <li>
-      <a
-        href="#"
-      >
+      <a>
         <i
           class="fas fa-arrow-right"
         />
@@ -86,9 +78,7 @@ exports[`<GuideNavigation/> Snapshot. 1`] = `
       </a>
     </li>
     <li>
-      <a
-        href="#"
-      >
+      <a>
         <i
           class="fas fa-arrow-right"
         />
