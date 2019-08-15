@@ -6,7 +6,7 @@
  */
 
 import React, {useEffect, useState} from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import moment from 'moment/moment';
 
 import Select from 'common/bootstrap/Select';
@@ -25,24 +25,26 @@ const TIME_SETTING_TYPE_CHOICES = {
 };
 
 TimeForm.propTypes = {
-    formData: propTypes.shape({
-        time_settings: propTypes.shape({
-            how_to_set_time: propTypes.oneOf(['ntp', 'manual']),
-            ntp_servers: propTypes.arrayOf(propTypes.string),
-            time: propTypes.oneOfType([
-                propTypes.objectOf(moment),
-                propTypes.string
+    ws: PropTypes.object.isRequired,
+
+    formData: PropTypes.shape({
+        time_settings: PropTypes.shape({
+            how_to_set_time: PropTypes.oneOf(['ntp', 'manual']),
+            ntp_servers: PropTypes.arrayOf(PropTypes.string),
+            time: PropTypes.oneOfType([
+                PropTypes.objectOf(moment),
+                PropTypes.string
             ]),
         }).isRequired,
     }).isRequired,
 
-    formErrors: propTypes.shape({
-        time_settings: propTypes.shape({
-            time: propTypes.string,
+    formErrors: PropTypes.shape({
+        time_settings: PropTypes.shape({
+            time: PropTypes.string,
         }),
     }).isRequired,
 
-    setFormValue: propTypes.func.isRequired,
+    setFormValue: PropTypes.func.isRequired,
 };
 
 TimeForm.defaultProps = {
@@ -125,7 +127,7 @@ export default function TimeForm({ws, formData, formErrors, setFormValue, ...pro
 }
 
 NTPServersList.propTypes = {
-    servers: propTypes.arrayOf(propTypes.string).isRequired
+    servers: PropTypes.arrayOf(PropTypes.string).isRequired
 };
 
 function NTPServersList({servers}) {

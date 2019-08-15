@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import API_URLs from 'common/API';
 import ForisForm from 'formContainer/ForisForm';
@@ -17,7 +17,7 @@ import {validateUnmanaged} from './LANUnmanagedForm';
 import LAN_DHCP_ClientsList from './LAN_DHCP_ClientsList';
 
 LAN.propTypes = {
-    ws: propTypes.object.isRequired
+    ws: PropTypes.object.isRequired
 };
 
 export default function LAN({ws}) {

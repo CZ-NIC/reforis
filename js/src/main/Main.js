@@ -8,6 +8,7 @@
 import React, {useEffect} from 'react';
 import {BrowserRouter} from 'react-router-dom';
 import {Redirect, Switch} from 'react-router';
+import PropTypes from 'prop-types';
 
 import {REFORIS_URL_PREFIX} from 'common/constants';
 import {useAPIGet} from 'common/APIhooks';
@@ -21,6 +22,9 @@ import TopBar from './TopBar';
 import {RouteWithSubRoutes} from './routing';
 import {PAGE_404} from './constants';
 
+Main.propTypes = {
+    ws: PropTypes.object.isRequired
+};
 
 export default function Main({ws}) {
     const [navState, getNav] = useAPIGet(API_URLs.navigation);
@@ -51,4 +55,3 @@ export default function Main({ws}) {
         </Switch>
     </BrowserRouter>
 }
-

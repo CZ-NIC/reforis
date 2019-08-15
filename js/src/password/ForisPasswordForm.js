@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import PasswordInput from 'common/bootstrap/PasswordInput';
 import CheckBox from 'common/bootstrap/Checkbox';
@@ -14,15 +14,18 @@ import SubmitButton, {STATES as SUBMIT_BUTTON_STATES} from 'formContainer/Submit
 
 
 ForisPasswordForm.propTypes = {
-    formData: propTypes.shape(
-        {newForisPassword: propTypes.string}
-    ).isRequired,
-    submitButtonState: propTypes.oneOf(
+    formData: PropTypes.shape({
+        newForisPassword: PropTypes.string,
+        sameForRoot: PropTypes.bool
+    }).isRequired,
+    submitButtonState: PropTypes.oneOf(
         Object.keys(SUBMIT_BUTTON_STATES).map(key => SUBMIT_BUTTON_STATES[key])
     ).isRequired,
-    formErrors: propTypes.shape({}),
-    setFormValue: propTypes.func.isRequired,
-    postForisPassword: propTypes.func.isRequired,
+    formErrors: PropTypes.shape(
+        {newForisPassword: PropTypes.string}
+    ),
+    setFormValue: PropTypes.func.isRequired,
+    postForisPassword: PropTypes.func.isRequired,
 };
 
 export default function ForisPasswordForm({formData, formErrors, setFormValue, submitButtonState, postForisPassword, ...props}) {

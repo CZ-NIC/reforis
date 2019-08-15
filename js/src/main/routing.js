@@ -7,12 +7,17 @@
 
 import React from 'react';
 import {Redirect, Route, Switch} from 'react-router';
+import PropTypes from 'prop-types';
 
 import Portal from 'utils/Portal';
 
 import {PAGE_404, PAGES} from './constants';
 
 const CONTENT_CONTAINER_ID = 'content_container';
+
+RouteWithSubRoutes.propTypes = {
+    ws: PropTypes.object.isRequired
+};
 
 export function RouteWithSubRoutes({ws, ...route}) {
     if (route.routes)
@@ -36,6 +41,11 @@ export function RouteWithSubRoutes({ws, ...route}) {
         />;
     return null;
 }
+
+RouteWithTitle.propTypes = {
+    title: PropTypes.string.isRequired,
+    render: PropTypes.func.isRequired
+};
 
 function RouteWithTitle({title, render, ...props}) {
     return <Route

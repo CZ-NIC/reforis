@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import {Modal, ModalBody, ModalFooter, ModalHeader} from 'common/bootstrap/Modal';
 import Button from 'common/bootstrap/Button';
@@ -20,9 +20,9 @@ Do you still want to continue and stay unprotected?
 `);
 
 DNSSECDisableModal.propTypes = {
-    shown: propTypes.bool.isRequired,
-    setShown: propTypes.func.isRequired,
-    callback: propTypes.func.isRequired,
+    shown: PropTypes.bool.isRequired,
+    setShown: PropTypes.func.isRequired,
+    callback: PropTypes.func.isRequired,
 };
 
 export default function DNSSECDisableModal({shown, setShown, callback}) {

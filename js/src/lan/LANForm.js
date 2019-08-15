@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import Select from 'common/bootstrap/Select';
 import LANManagedForm from './LANManagedForm';
@@ -32,16 +32,16 @@ const LAN_MOD_CHOICES = {
 
 
 LANForm.propTypes = {
-    formData: propTypes.shape({
-        mode: propTypes.string.isRequired,
-        mode_managed: propTypes.object,
-        mode_unmanaged: propTypes.object,
+    formData: PropTypes.shape({
+        mode: PropTypes.string.isRequired,
+        mode_managed: PropTypes.object,
+        mode_unmanaged: PropTypes.object,
     }),
-    formErrors: propTypes.shape({
-        mode_managed: propTypes.object,
-        mode_unmanaged: propTypes.object,
+    formErrors: PropTypes.shape({
+        mode_managed: PropTypes.object,
+        mode_unmanaged: PropTypes.object,
     }),
-    setFormValue: propTypes.func,
+    setFormValue: PropTypes.func,
 };
 
 export default function LANForm({formData, formErrors, setFormValue, ...props}) {

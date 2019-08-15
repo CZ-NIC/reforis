@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import Select from 'common/bootstrap/Select';
 import TextInput from 'common/bootstrap/TextInput';
@@ -60,23 +60,23 @@ const WAN6_CHOICES = {
 };
 
 const FIELDS_PROP_TYPES = {
-    last_seen_duid: propTypes.string,
-    wan6_dhcpv6: propTypes.object,
-    wan6_static: propTypes.object,
-    wan6_6to4: propTypes.object,
-    wan6_6in4: propTypes.object,
+    last_seen_duid: PropTypes.string,
+    wan6_dhcpv6: PropTypes.object,
+    wan6_static: PropTypes.object,
+    wan6_6to4: PropTypes.object,
+    wan6_6in4: PropTypes.object,
 };
 
 WAN6Form.propTypes = {
-    formData: propTypes.shape({
-            wan6_settings: propTypes.shape({
-                wan6_type: propTypes.string.isRequired,
+    formData: PropTypes.shape({
+            wan6_settings: PropTypes.shape({
+                wan6_type: PropTypes.string.isRequired,
                 ...FIELDS_PROP_TYPES
             })
         }
     ).isRequired,
-    formErrors: propTypes.shape(FIELDS_PROP_TYPES),
-    setFormValue: propTypes.func.isRequired,
+    formErrors: PropTypes.shape(FIELDS_PROP_TYPES),
+    setFormValue: PropTypes.func.isRequired,
 };
 
 WAN6Form.defaultProps = {
@@ -149,10 +149,10 @@ export default function WAN6Form({formData, formErrors, setFormValue, ...props})
 }
 
 DHCPv6Form.propTypes = {
-    last_seen_duid: propTypes.string,
-    formData: propTypes.shape({duid: propTypes.string}).isRequired,
-    formErrors: propTypes.shape({duid: propTypes.string}),
-    setFormValue: propTypes.func.isRequired,
+    last_seen_duid: PropTypes.string,
+    formData: PropTypes.shape({duid: PropTypes.string}).isRequired,
+    formErrors: PropTypes.shape({duid: PropTypes.string}),
+    setFormValue: PropTypes.func.isRequired,
 };
 
 DHCPv6Form.defaultProps = {
@@ -176,17 +176,17 @@ function DHCPv6Form({formData, last_seen_duid, formErrors, setFormValue, ...prop
 }
 
 const STATIC_FIELDS_PROPS_TYPES = {
-    ip: propTypes.string,
-    gateway: propTypes.string,
-    network: propTypes.string,
-    dns1: propTypes.string,
-    dns2: propTypes.string,
+    ip: PropTypes.string,
+    gateway: PropTypes.string,
+    network: PropTypes.string,
+    dns1: PropTypes.string,
+    dns2: PropTypes.string,
 };
 
 StaticForm.propTypes = {
-    formData: propTypes.shape(STATIC_FIELDS_PROPS_TYPES).isRequired,
-    formErrors: propTypes.shape(STATIC_FIELDS_PROPS_TYPES),
-    setFormValue: propTypes.func.isRequired,
+    formData: PropTypes.shape(STATIC_FIELDS_PROPS_TYPES).isRequired,
+    formErrors: PropTypes.shape(STATIC_FIELDS_PROPS_TYPES),
+    setFormValue: PropTypes.func.isRequired,
 };
 
 StaticForm.defaultProps = {
@@ -261,9 +261,9 @@ function StaticForm({formData, formErrors, setFormValue, ...props}) {
 }
 
 _6to4Form.propTypes = {
-    formData: propTypes.shape({ipv4_address: propTypes.string}).isRequired,
-    formErrors: propTypes.shape({ipv4_address: propTypes.string}),
-    setFormValue: propTypes.func.isRequired,
+    formData: PropTypes.shape({ipv4_address: PropTypes.string}).isRequired,
+    formErrors: PropTypes.shape({ipv4_address: PropTypes.string}),
+    setFormValue: PropTypes.func.isRequired,
 };
 
 _6to4Form.defaultProps = {
@@ -287,17 +287,17 @@ function _6to4Form({formData, formErrors, setFormValue, ...props}) {
 }
 
 const _6IN4_FIELDS_PROPS_TYPES = {
-    server_ipv4: propTypes.string,
-    ipv6_prefix: propTypes.string,
-    mtu: propTypes.string,
-    dns1: propTypes.string,
-    dns2: propTypes.string,
-    dynamic_ipv4: propTypes.shape({enabled: propTypes.bool}),
+    server_ipv4: PropTypes.string,
+    ipv6_prefix: PropTypes.string,
+    mtu: PropTypes.string,
+    dns1: PropTypes.string,
+    dns2: PropTypes.string,
+    dynamic_ipv4: PropTypes.shape({enabled: PropTypes.bool}),
 };
 
 _6in4Form.propTypes = {
-    formData: propTypes.shape(_6IN4_FIELDS_PROPS_TYPES).isRequired,
-    formErrors: propTypes.shape(_6IN4_FIELDS_PROPS_TYPES),
+    formData: PropTypes.shape(_6IN4_FIELDS_PROPS_TYPES).isRequired,
+    formErrors: PropTypes.shape(_6IN4_FIELDS_PROPS_TYPES),
 };
 
 _6in4Form.defaultProps = {
@@ -372,15 +372,15 @@ function _6in4Form({formData, formErrors, setFormValue, ...props}) {
 }
 
 const _6IN4_DYNAMIC_IPv4_FIELDS_PROPS_TYPES = {
-    tunnel_id: propTypes.string,
-    username: propTypes.string,
-    password_or_key: propTypes.string,
+    tunnel_id: PropTypes.string,
+    username: PropTypes.string,
+    password_or_key: PropTypes.string,
 };
 
 DynamicIPv4Form.propTypes = {
-    formData: propTypes.shape(_6IN4_DYNAMIC_IPv4_FIELDS_PROPS_TYPES).isRequired,
-    formErrors: propTypes.shape(_6IN4_DYNAMIC_IPv4_FIELDS_PROPS_TYPES),
-    setFormValue: propTypes.func.isRequired,
+    formData: PropTypes.shape(_6IN4_DYNAMIC_IPv4_FIELDS_PROPS_TYPES).isRequired,
+    formErrors: PropTypes.shape(_6IN4_DYNAMIC_IPv4_FIELDS_PROPS_TYPES),
+    setFormValue: PropTypes.func.isRequired,
 };
 
 

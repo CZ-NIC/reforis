@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import {useUID} from 'react-uid/dist/es5/index';
 
 import {formFieldsSize} from './constants';
@@ -14,20 +14,20 @@ import {formFieldsSize} from './constants';
 
 RadioSet.propTypes = {
     /** Name attribute of the input HTML tag.*/
-    name: propTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
     /** RadioSet label .*/
-    label: propTypes.string,
+    label: PropTypes.string,
     /** Choices .*/
-    choices: propTypes.arrayOf(propTypes.shape({
+    choices: PropTypes.arrayOf(PropTypes.shape({
         /** Choice lable .*/
-        label: propTypes.string.isRequired,
+        label: PropTypes.string.isRequired,
         /** Choice value .*/
-        value: propTypes.oneOfType([propTypes.string, propTypes.number]).isRequired,
+        value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     })).isRequired,
     /** Initial value .*/
-    value: propTypes.string,
+    value: PropTypes.string,
     /** Help text message .*/
-    helpText: propTypes.string,
+    helpText: PropTypes.string,
 };
 
 export default function RadioSet({name, label, choices, value, helpText, ...props}) {
@@ -58,8 +58,9 @@ export default function RadioSet({name, label, choices, value, helpText, ...prop
 }
 
 Radio.propTypes = {
-    label: propTypes.string.isRequired,
-    id: propTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    helpText: PropTypes.string
 };
 
 function Radio({label, id, helpText, ...props}) {

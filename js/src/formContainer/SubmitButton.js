@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import Button from 'common/bootstrap/Button';
 
@@ -17,8 +17,8 @@ export const STATES = {
 };
 
 SubmitButton.propTypes = {
-    disabled: propTypes.bool,
-    state: propTypes.oneOf(Object.keys(STATES).map(key => STATES[key]))
+    disabled: PropTypes.bool,
+    state: PropTypes.oneOf(Object.keys(STATES).map(key => STATES[key]))
 };
 
 export default function SubmitButton({disabled, state, ...props}) {

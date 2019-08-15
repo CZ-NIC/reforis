@@ -6,7 +6,7 @@
  */
 
 import React, {useState, useEffect} from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import Alert from 'common/bootstrap/Alert';
 
@@ -15,20 +15,20 @@ import Network from './Network';
 import SelectedInterface from './SelectedInterface';
 
 InterfacesForm.propTypes = {
-    formData: propTypes.shape({
-        networks: propTypes.shape({
-            guest: propTypes.arrayOf(propTypes.object).isRequired,
-            lan: propTypes.arrayOf(propTypes.object).isRequired,
-            none: propTypes.arrayOf(propTypes.object).isRequired,
-            wan: propTypes.arrayOf(propTypes.object).isRequired,
+    formData: PropTypes.shape({
+        networks: PropTypes.shape({
+            guest: PropTypes.arrayOf(PropTypes.object).isRequired,
+            lan: PropTypes.arrayOf(PropTypes.object).isRequired,
+            none: PropTypes.arrayOf(PropTypes.object).isRequired,
+            wan: PropTypes.arrayOf(PropTypes.object).isRequired,
         }).isRequired,
-        firewall: propTypes.shape({
-            http_on_wan: propTypes.bool.isRequired,
-            https_on_wan: propTypes.bool.isRequired,
-            ssh_on_wan: propTypes.bool.isRequired,
+        firewall: PropTypes.shape({
+            http_on_wan: PropTypes.bool.isRequired,
+            https_on_wan: PropTypes.bool.isRequired,
+            ssh_on_wan: PropTypes.bool.isRequired,
         }),
     }),
-    setFormValue: propTypes.func.isRequired,
+    setFormValue: PropTypes.func.isRequired,
 };
 
 InterfacesForm.defaultProps = {
@@ -90,7 +90,7 @@ export default function InterfacesForm({formData, setFormValue, ...props}) {
 }
 
 OpenPortAlert.propTypes = {
-    onDismiss: propTypes.func.isRequired
+    onDismiss: PropTypes.func.isRequired
 };
 
 function OpenPortAlert({onDismiss}) {

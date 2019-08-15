@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import Select from 'common/bootstrap/Select';
 import DHCPClientForm, {validateDHCPForm} from 'common/network/DHCPClientForm';
@@ -25,15 +25,16 @@ const LAN_TYPE_CHOICES = {
 };
 
 LANUnmanagedForm.propTypes = {
-    formData: propTypes.shape({
-        lan_dhcp: propTypes.object,
-        lan_static: propTypes.object,
+    formData: PropTypes.shape({
+        lan_type: PropTypes.oneOf(Object.keys(LAN_TYPES)),
+        lan_dhcp: PropTypes.object,
+        lan_static: PropTypes.object,
     }).isRequired,
-    formErrors: propTypes.shape({
-        lan_dhcp: propTypes.object,
-        lan_static: propTypes.object,
+    formErrors: PropTypes.shape({
+        lan_dhcp: PropTypes.object,
+        lan_static: PropTypes.object,
     }),
-    setFormValue: propTypes.func.isRequired,
+    setFormValue: PropTypes.func.isRequired,
 };
 
 LANUnmanagedForm.defaultProps = {

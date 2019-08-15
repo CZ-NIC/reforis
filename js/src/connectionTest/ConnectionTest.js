@@ -6,15 +6,15 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import useConnectionTest, {TEST_STATES} from './hooks';
 import ConnectionTestResults from './ConnectionTestResult';
 import ConnectionTestButton from './ConnectionTestButton';
 
 ConnectionTest.propTypes = {
-    ws: propTypes.object.isRequired,
-    type: propTypes.oneOf(['wan', 'dns']).isRequired
+    ws: PropTypes.object.isRequired,
+    type: PropTypes.oneOf(['wan', 'dns']).isRequired
 };
 
 export default function ConnectionTest({ws, type}) {

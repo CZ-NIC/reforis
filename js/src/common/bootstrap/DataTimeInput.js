@@ -21,6 +21,15 @@ DataTimeInput.propTypes = {
     value: PropTypes.oneOfType([PropTypes.objectOf(moment), PropTypes.string]),
     /** Help text message. */
     helpText: PropTypes.string,
+    /** Content. */
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node
+    ]),
+    isValidDate: PropTypes.bool,
+    onChange: PropTypes.func.isRequired,
+    dateFormat: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+    timeFormat: PropTypes.string
 };
 
 const DEFAULT_DATE_FORMAT = 'YYYY-MM-DD';

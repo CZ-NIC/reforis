@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import API_URLs from 'common/API';
 import {validateDomain} from 'common/validations';
@@ -16,7 +16,12 @@ import ConnectionTest from 'connectionTest/ConnectionTest';
 import DNSForm from './DNSForm';
 
 DNS.propTypes = {
-    ws: propTypes.object.isRequired
+    ws: PropTypes.object.isRequired,
+    postCallback: PropTypes.func
+};
+
+DNS.defaultProps = {
+    postCallback: () => undefined
 };
 
 export default function DNS({ws, postCallback}) {

@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import TextInput from 'common/bootstrap/TextInput';
 import PasswordInput from 'common/bootstrap/PasswordInput';
@@ -54,14 +54,14 @@ export const HELP_TEXTS = {
 };
 
 WiFiForm.propTypes = {
-    formData: propTypes.shape(
-        {devices: propTypes.arrayOf(propTypes.object)}
+    formData: PropTypes.shape(
+        {devices: PropTypes.arrayOf(PropTypes.object)}
     ).isRequired,
-    formErrors: propTypes.oneOfType([
-        propTypes.object,
-        propTypes.array
+    formErrors: PropTypes.oneOfType([
+        PropTypes.object,
+        PropTypes.array
     ]),
-    setFormValue: propTypes.func.isRequired,
+    setFormValue: PropTypes.func.isRequired,
 };
 
 WiFiForm.defaultProps = {
@@ -85,19 +85,19 @@ export default function WiFiForm({formData, formErrors, setFormValue, ...props})
 }
 
 DeviceForm.propTypes = {
-    formData: propTypes.shape({
-        id: propTypes.number.isRequired,
-        enabled: propTypes.bool.isRequired,
-        SSID: propTypes.string.isRequired,
-        password: propTypes.string.isRequired,
-        hidden: propTypes.bool.isRequired,
-        hwmode: propTypes.string.isRequired,
-        htmode: propTypes.string.isRequired,
-        channel: propTypes.string.isRequired,
-        guest_wifi: propTypes.object.isRequired,
+    formData: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        enabled: PropTypes.bool.isRequired,
+        SSID: PropTypes.string.isRequired,
+        password: PropTypes.string.isRequired,
+        hidden: PropTypes.bool.isRequired,
+        hwmode: PropTypes.string.isRequired,
+        htmode: PropTypes.string.isRequired,
+        channel: PropTypes.string.isRequired,
+        guest_wifi: PropTypes.object.isRequired,
     }),
-    formErrors: propTypes.object.isRequired,
-    setFormValue: propTypes.func.isRequired,
+    formErrors: PropTypes.object.isRequired,
+    setFormValue: PropTypes.func.isRequired,
 };
 
 DeviceForm.defaultProps = {

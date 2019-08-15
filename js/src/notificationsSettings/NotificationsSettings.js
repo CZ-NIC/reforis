@@ -6,12 +6,17 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import ForisForm from 'formContainer/ForisForm';
 import API_URLs from 'common/API';
 
 import NotificationsEmailSettingsForm from './NotificationsEmailSettingsForm';
 import validator from './validator';
+
+NotificationsSettings.propTypes = {
+    ws: PropTypes.object.isRequired
+};
 
 export default function NotificationsSettings({ws}) {
     return <>

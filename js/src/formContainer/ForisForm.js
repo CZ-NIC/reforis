@@ -6,7 +6,7 @@
  */
 
 import React, {useEffect, useState} from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import Spinner from 'common/bootstrap/Spinner';
 import {useAPIPost} from 'common/APIhooks';
@@ -18,28 +18,34 @@ import {Prompt} from 'react-router';
 
 ForisForm.propTypes = {
     /** WebSocket object see `scr/common/WebSockets.js`. */
-    ws: propTypes.object,
+    ws: PropTypes.object,
     /** Foris configuration object. See usage in main components. */
-    forisConfig: propTypes.shape({
+    forisConfig: PropTypes.shape({
         /** reForis Flask aplication API endpoint from `src/common/API.js`. */
-        endpoint: propTypes.string.isRequired,
+        endpoint: PropTypes.string.isRequired,
         /** `foris-controller` module name to be used via WebSockets.
          *  If it's not passed then WebSockets aren't used
          * */
-        wsModule: propTypes.string,
+        wsModule: PropTypes.string,
         /**`foris-controller` action name to be used via WebSockets.
          *  If it's not passed then `update_settings` is used. see `src/common/WebSocketHooks.js`
          * */
-        wsAction: propTypes.string,
+        wsAction: PropTypes.string,
     }).isRequired,
     /** Function to prepare data recived from the API before using in forms. */
-    prepData: propTypes.func.isRequired,
+    prepData: PropTypes.func.isRequired,
     /** Function to prepare data from form before submitting. */
-    prepDataToSubmit: propTypes.func.isRequired,
+    prepDataToSubmit: PropTypes.func.isRequired,
+    /** Function to handle response to POST request. */
+    postCallback: PropTypes.func.isRequired,
     /** Validate data and provide validation object. Then validation errors passed to children. */
-    validator: propTypes.func.isRequired,
+    validator: PropTypes.func.isRequired,
+    /** Disables form */
+    disabled: PropTypes.bool,
     /** reForis form components. */
-    children: propTypes.node.isRequired,
+    children: PropTypes.node.isRequired,
+    /** Optional override of form submit callback */
+    onSubmitOverridden: PropTypes.func
 };
 
 ForisForm.defaultProps = {
@@ -47,6 +53,7 @@ ForisForm.defaultProps = {
     prepDataToSubmit: data => data,
     postCallback: () => undefined,
     validator: () => undefined,
+    disabled: false
 };
 
 /** Serves as HOC for all foris forms components. */

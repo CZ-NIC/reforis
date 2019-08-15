@@ -6,10 +6,15 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {STATES, useReboot} from './hooks';
 
 import Spinner from 'common/bootstrap/Spinner';
+
+RebootHandler.propTypes = {
+    ws: PropTypes.object.isRequired
+};
 
 export default function RebootHandler({ws}) {
     const [rebootState, remains] = useReboot(ws);

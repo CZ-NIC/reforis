@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import TextInput from 'common/bootstrap/TextInput';
 import Select from 'common/bootstrap/Select';
@@ -22,15 +22,15 @@ export const SEVERITY_OPTIONS = {
 };
 
 CommonForm.propTypes = {
-    formData: propTypes.shape({
-        to: propTypes.string,
-        severity_filter: propTypes.oneOf(
+    formData: PropTypes.shape({
+        to: PropTypes.string,
+        severity_filter: PropTypes.oneOf(
             Object.keys(SEVERITY_OPTIONS).map(key => parseInt(key))
         ).isRequired,
-        send_news: propTypes.bool.isRequired
+        send_news: PropTypes.bool.isRequired
     }).isRequired,
-    formErrors: propTypes.shape({to: propTypes.string,}),
-    setFormValue: propTypes.func.isRequired,
+    formErrors: PropTypes.shape({to: PropTypes.string,}),
+    setFormValue: PropTypes.func.isRequired,
 };
 
 CommonForm.defaultProps = {

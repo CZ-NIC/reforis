@@ -6,7 +6,7 @@
  */
 
 import React, {useState} from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import CheckBox from 'common/bootstrap/Checkbox';
 import Select from 'common/bootstrap/Select';
@@ -23,18 +23,19 @@ DNSForm.defaultProps = {
 };
 
 DNSForm.propTypes = {
-    formData: propTypes.shape({
-        forwarding_enabled: propTypes.bool.isRequired,
-        forwarder: propTypes.string,
-        dnssec_enabled: propTypes.bool.isRequired,
-        dns_from_dhcp_enabled: propTypes.bool.isRequired,
-        dns_from_dhcp_domain: propTypes.string,
+    formData: PropTypes.shape({
+        forwarding_enabled: PropTypes.bool.isRequired,
+        available_forwarders: PropTypes.array.isRequired,
+        forwarder: PropTypes.string,
+        dnssec_enabled: PropTypes.bool.isRequired,
+        dns_from_dhcp_enabled: PropTypes.bool.isRequired,
+        dns_from_dhcp_domain: PropTypes.string,
 
     }),
-    formErrors: propTypes.shape({
-        dns_from_dhcp_domain: propTypes.string
+    formErrors: PropTypes.shape({
+        dns_from_dhcp_domain: PropTypes.string
     }),
-    setFormValue: propTypes.func,
+    setFormValue: PropTypes.func,
 };
 
 export default function DNSForm({formData, formErrors, setFormValue, ...props}) {

@@ -6,11 +6,16 @@
  */
 
 import React, {useEffect, useState} from 'react';
+import PropTypes from 'prop-types';
 
 import Button from 'common/bootstrap/Button';
 import {useAPIPost} from 'common/APIhooks';
 import API from 'common/API';
 import Alert from 'common/bootstrap/Alert';
+
+ResetWiFiSettings.propTypes = {
+    ws: PropTypes.object.isRequired
+};
 
 export default function ResetWiFiSettings({ws}) {
     const [isLoading, setIsLoading] = useState(false);
@@ -58,6 +63,11 @@ current Wi-Fi configuration and restore the default values.
         </form>
     </>
 }
+
+ResetWiFiDoneAlert.propTypes = {
+    fail: PropTypes.bool.isRequired,
+    onDismiss: PropTypes.func
+};
 
 function ResetWiFiDoneAlert({fail, onDismiss}) {
     const props = fail ? {

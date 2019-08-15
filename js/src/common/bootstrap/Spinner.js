@@ -6,16 +6,17 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 Spinner.propTypes = {
     /** Children components put into `div` with "spinner-text" class. */
-    children: propTypes.oneOfType([
-        propTypes.arrayOf(propTypes.node),
-        propTypes.node
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node
     ]),
     /** Render component with full-screen mode (using apropriate `.css` styles) */
-    fullScreen: propTypes.bool.isRequired,
+    fullScreen: PropTypes.bool.isRequired,
+    className: PropTypes.string
 };
 
 Spinner.defaultProps = {
@@ -35,6 +36,16 @@ export default function Spinner({fullScreen, children, className, ...props}) {
         </div>
     </div>
 }
+
+SpinnerElement.propTypes = {
+    /** Spinner's size */
+    small: PropTypes.bool,
+    /** Children components */
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node
+    ]),
+};
 
 export function SpinnerElement({small, children}) {
     return <>

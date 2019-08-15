@@ -6,22 +6,22 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import {useUID} from 'react-uid/dist/es5/index';
 
 
 Select.propTypes = {
     /** Select field Label. */
-    label: propTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
     /** Choices if form of {value : "Label",...}.*/
-    choices: propTypes.object.isRequired,
+    choices: PropTypes.object.isRequired,
     /** Current value. */
-    value: propTypes.oneOfType([
-        propTypes.string,
-        propTypes.number,
+    value: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
     ]).isRequired,
     /** Help text message. */
-    helpText: propTypes.string,
+    helpText: PropTypes.string,
 };
 
 export default function Select({label, choices, helpText, ...props}) {

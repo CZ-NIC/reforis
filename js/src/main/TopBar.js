@@ -6,9 +6,14 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import NotificationsDropdown from 'notifications/NotificationsDropdown/NotificationsDropdown';
 import LanguagesDropdown from 'languagesDropdown/LanguagesDropdown';
+
+TopBar.propTypes = {
+    ws: PropTypes.object.isRequired
+};
 
 export default function TopBar({ws}) {
     return <>

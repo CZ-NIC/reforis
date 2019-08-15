@@ -6,7 +6,7 @@
  */
 
 import React, {useState} from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import {useAPIPost} from './APIhooks';
 import API_URLs from './API';
@@ -15,7 +15,7 @@ import Button from 'common/bootstrap/Button';
 
 
 RebootButton.propTypes = {
-    forisFormSize: propTypes.bool,
+    forisFormSize: PropTypes.bool,
 };
 
 export default function RebootButton({forisFormSize}) {
@@ -44,9 +44,9 @@ export default function RebootButton({forisFormSize}) {
 }
 
 RebootModal.propTypes = {
-    shown: propTypes.bool.isRequired,
-    setShown: propTypes.func.isRequired,
-    callback: propTypes.func.isRequired,
+    shown: PropTypes.bool.isRequired,
+    setShown: PropTypes.func.isRequired,
+    callback: PropTypes.func.isRequired,
 };
 
 function RebootModal({shown, setShown, callback}) {

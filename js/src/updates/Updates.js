@@ -7,12 +7,21 @@
 
 import React from 'react'
 import moment from 'moment';
+import PropTypes from 'prop-types';
 
 import ForisForm from 'formContainer/ForisForm';
 import API_URLs from 'common/API';
 
 import UpdatesForm from './forms/UpdatesForm';
 import LicenceModal from './LicenceModal';
+
+Updates.propTypes = {
+    postCallback: PropTypes.func
+};
+
+Updates.defaultProps = {
+    postCallback: () => undefined,
+};
 
 export default function Updates({postCallback}) {
     return <>

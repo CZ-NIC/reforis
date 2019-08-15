@@ -8,6 +8,19 @@
 import React from 'react';
 import {useUID} from 'react-uid/dist/es5/index';
 import {formFieldsSize} from './constants';
+import PropTypes from 'prop-types';
+
+Input.propTypes = {
+    type: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    helpText: PropTypes.string,
+    error: PropTypes.string,
+    className: PropTypes.string,
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node
+    ])
+}
 
 /** Base bootstrap input component. */
 export default function Input({type, label, helpText, error, className, children, ...props}) {

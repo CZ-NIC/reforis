@@ -6,10 +6,14 @@
  */
 
 import React from 'react';
-
+import PropTypes from 'prop-types';
 
 import useNotifications from 'notifications/hooks';
 import RebootButton from 'common/RebootButton';
+
+RebootIsRequiredAlert.propTypes = {
+    ws: PropTypes.object.isRequired
+};
 
 export default function RebootIsRequiredAlert({ws}) {
     const [notifications,] = useNotifications(ws);

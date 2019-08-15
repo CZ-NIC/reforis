@@ -6,12 +6,12 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 
 
 DHCPClientsList.propTypes = {
-    clients: propTypes.arrayOf(propTypes.object),
+    clients: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default function DHCPClientsList({clients}) {
@@ -39,11 +39,11 @@ export default function DHCPClientsList({clients}) {
 }
 
 DHCPClientsListItem.propTypes = {
-    ip: propTypes.string.isRequired,
-    expires: propTypes.number.isRequired,
-    mac: propTypes.string.isRequired,
-    hostname: propTypes.string.isRequired,
-    active: propTypes.bool.isRequired,
+    ip: PropTypes.string.isRequired,
+    expires: PropTypes.number.isRequired,
+    mac: PropTypes.string.isRequired,
+    hostname: PropTypes.string.isRequired,
+    active: PropTypes.bool.isRequired,
 };
 
 function DHCPClientsListItem({ip, expires, mac, hostname, active}) {

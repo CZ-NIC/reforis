@@ -6,6 +6,7 @@
  */
 
 import React, {useState} from 'react';
+import PropTypes from 'prop-types';
 
 import ForisForm from 'formContainer/ForisForm';
 import API_URLs from 'common/API';
@@ -21,6 +22,10 @@ export const NETWORKS_CHOICES = {
 };
 
 export const NETWORKS_TYPES = ['wan', 'lan', 'guest', 'none'];
+
+Interfaces.propTypes = {
+    ws: PropTypes.object.isRequired
+};
 
 export default function Interfaces({ws}) {
     const [openPortsModalShown, setOpenPortsModalShown] = useState(false);

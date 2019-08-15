@@ -6,9 +6,14 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import NetworkRestartHandler from './NetworkRestartHandler';
 import RebootHandler from './RebootHandler';
+
+RouterStateHandler.propTypes = {
+    ws: PropTypes.object.isRequired
+};
 
 export default function RouterStateHandler({ws}) {
     return <>

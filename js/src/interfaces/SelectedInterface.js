@@ -6,7 +6,7 @@
  */
 
 import React, {useEffect, useRef} from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import Select from 'common/bootstrap/Select';
 import {NETWORKS_CHOICES} from './Interfaces';
@@ -15,17 +15,17 @@ import {INTERFACE_STATES, INTERFACE_TYPES} from './Interface';
 const BUSES = ['eth', 'pci', 'usb', 'sdio', 'sfp'];
 
 SelectedInterface.propTypes = {
-    id: propTypes.string.isRequired,
-    type: propTypes.oneOf(Object.keys(INTERFACE_TYPES)).isRequired,
-    state: propTypes.oneOf(Object.keys(INTERFACE_STATES)).isRequired,
-    bus: propTypes.oneOf(BUSES).isRequired,
-    slot: propTypes.string.isRequired,
-    module_id: propTypes.number.isRequired,
-    link_speed: propTypes.number.isRequired,
-    network: propTypes.oneOf(['wan', 'lan', 'guest', 'none']).isRequired,
-    configurable: propTypes.bool.isRequired,
-    WANIsEmpty: propTypes.bool.isRequired,
-    onNetworkChange: propTypes.func.isRequired,
+    id: PropTypes.string.isRequired,
+    type: PropTypes.oneOf(Object.keys(INTERFACE_TYPES)).isRequired,
+    state: PropTypes.oneOf(Object.keys(INTERFACE_STATES)).isRequired,
+    bus: PropTypes.oneOf(BUSES).isRequired,
+    slot: PropTypes.string.isRequired,
+    module_id: PropTypes.number.isRequired,
+    link_speed: PropTypes.number.isRequired,
+    network: PropTypes.oneOf(['wan', 'lan', 'guest', 'none']).isRequired,
+    configurable: PropTypes.bool.isRequired,
+    WANIsEmpty: PropTypes.bool.isRequired,
+    onNetworkChange: PropTypes.func.isRequired,
 };
 
 export default function SelectedInterface({

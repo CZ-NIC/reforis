@@ -6,10 +6,15 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Spinner from 'common/bootstrap/Spinner';
 
 import {STATES, useNetworkRestart} from './hooks';
+
+NetworkRestartHandler.propTypes = {
+    ws: PropTypes.object.isRequired
+};
 
 export default function NetworkRestartHandler({ws}) {
     const [rebootState, remains] = useNetworkRestart(ws);

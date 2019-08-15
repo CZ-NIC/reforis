@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 
 import NotificationIcon from '../NotificationIcon';
@@ -16,8 +16,8 @@ import {ForisURLs} from 'common/constants';
 
 NotificationsDropdownItem.propTypes = {
     notification: NOTIFICATION_PROP_TYPES,
-    divider: propTypes.bool.isRequired,
-    dismiss: propTypes.func.isRequired,
+    divider: PropTypes.bool.isRequired,
+    dismiss: PropTypes.func.isRequired,
 };
 
 export default function NotificationsDropdownItem({notification, divider, dismiss}) {

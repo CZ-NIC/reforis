@@ -6,16 +6,18 @@
  */
 
 import React, {useEffect, useRef} from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 Modal.propTypes = {
     /** Is modal shown value */
-    shown: propTypes.bool.isRequired,
+    shown: PropTypes.bool.isRequired,
+    /** Callback to manage modal visibility */
+    setShown: PropTypes.func.isRequired,
 
     /** Modal content use following: `ModalHeader`, `ModalBody`, `ModalFooter` */
-    children: propTypes.oneOfType([
-        propTypes.arrayOf(propTypes.node),
-        propTypes.node
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node
     ]).isRequired
 };
 
@@ -45,8 +47,8 @@ export function Modal({shown, setShown, children}) {
 }
 
 ModalHeader.propTypes = {
-    setShown: propTypes.func.isRequired,
-    title: propTypes.string.isRequired,
+    setShown: PropTypes.func.isRequired,
+    title: PropTypes.string.isRequired,
 };
 
 export function ModalHeader({setShown, title}) {
@@ -59,9 +61,9 @@ export function ModalHeader({setShown, title}) {
 }
 
 ModalBody.propTypes = {
-    children: propTypes.oneOfType([
-        propTypes.arrayOf(propTypes.node),
-        propTypes.node
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node
     ]).isRequired
 };
 
@@ -70,9 +72,9 @@ export function ModalBody({children}) {
 }
 
 ModalFooter.propTypes = {
-    children: propTypes.oneOfType([
-        propTypes.arrayOf(propTypes.node),
-        propTypes.node
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node
     ]).isRequired
 };
 

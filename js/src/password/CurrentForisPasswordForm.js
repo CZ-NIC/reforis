@@ -6,17 +6,15 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import PasswordInput from 'common/bootstrap/PasswordInput';
 
-import ForisPasswordForm from './ForisPasswordForm';
-
-ForisPasswordForm.propTypes = {
-    formData: propTypes.shape(
-        {newForisPassword: propTypes.string}
+CurrentForisPasswordForm.propTypes = {
+    formData: PropTypes.shape(
+        {currentForisPassword: PropTypes.string}
     ).isRequired,
-    setFormValue: propTypes.func.isRequired,
+    setFormValue: PropTypes.func.isRequired,
 };
 
 export default function CurrentForisPasswordForm({formData, setFormValue, ...props}) {

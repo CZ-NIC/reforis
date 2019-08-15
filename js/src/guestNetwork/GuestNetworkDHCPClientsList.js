@@ -6,16 +6,16 @@
  */
 
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 
 import DHCPClientsList from 'common/network/DHCPClientsList';
 
 GuestNetworkDHCPClientsList.propTypes = {
-    formData: propTypes.shape({
-        dhcp: propTypes.shape({
-            enabled: propTypes.bool.isRequired,
-            clients: propTypes.arrayOf(propTypes.object).isRequired,
+    formData: PropTypes.shape({
+        dhcp: PropTypes.shape({
+            enabled: PropTypes.bool.isRequired,
+            clients: PropTypes.arrayOf(PropTypes.object).isRequired,
         }).isRequired
     })
 };

@@ -7,7 +7,7 @@
 
 import React, {useState} from 'react';
 import QRCode from 'qrcode.react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import {Modal, ModalBody, ModalFooter, ModalHeader} from 'common/bootstrap/Modal';
 import {ForisURLs} from 'common/constants';
@@ -16,8 +16,8 @@ import Button from 'common/bootstrap/Button';
 import {createAndDownloadPdf, toQRCodeContent} from './qrCodeHelpers';
 
 WiFiQRCode.propTypes = {
-    SSID: propTypes.string.isRequired,
-    password: propTypes.string.isRequired,
+    SSID: PropTypes.string.isRequired,
+    password: PropTypes.string.isRequired,
 };
 
 const QR_ICON_PATH = `${ForisURLs.static}/imgs/QR_icon.svg`;
@@ -39,10 +39,10 @@ export default function WiFiQRCode({SSID, password}) {
 }
 
 QRCodeModal.propTypes = {
-    SSID: propTypes.string.isRequired,
-    password: propTypes.string.isRequired,
-    shown: propTypes.bool.isRequired,
-    setShown: propTypes.func.isRequired,
+    SSID: PropTypes.string.isRequired,
+    password: PropTypes.string.isRequired,
+    shown: PropTypes.bool.isRequired,
+    setShown: PropTypes.func.isRequired,
 };
 
 function QRCodeModal({shown, setShown, SSID, password}) {
