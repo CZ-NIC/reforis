@@ -4,6 +4,9 @@
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
  */
+
+/* eslint import/export: "off" */
+
 import React from 'react';
 import {UIDReset} from 'react-uid';
 import {StaticRouter} from 'react-router';

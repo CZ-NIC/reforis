@@ -10,9 +10,9 @@
 export class mockedWS {
     bind() {
         return this
-    };
+    }
 
     subscribe() {
         return this
-    };
+    }
 }

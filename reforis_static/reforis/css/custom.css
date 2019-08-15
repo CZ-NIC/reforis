@@ -503,6 +503,8 @@ form > button {
     margin: 0.5rem;
     align-items: center;
     cursor: pointer;
+    background: transparent;
+    border: none;
 }
 
 @keyframes interfaceSelectedFade {

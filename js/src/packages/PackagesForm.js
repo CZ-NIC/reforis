@@ -19,9 +19,10 @@ PackagesForm.propTypes = {
         })).isRequired,
     }),
     setFormValue: propTypes.func,
+    disabled: propTypes.bool
 };
 
-export default function PackagesForm({formData, formErrors, setFormValue, ...props}) {
+export default function PackagesForm({formData, setFormValue, disabled}) {
     return <>
         <h3>{_('Packages list')}</h3>
         {formData.user_lists.map(
@@ -30,12 +31,11 @@ export default function PackagesForm({formData, formErrors, setFormValue, ...pro
                 key={idx}
                 helpText={_package.msg}
                 checked={_package.enabled}
+                disabled={disabled}
 
                 onChange={setFormValue(value => ({
                     user_lists: {[idx]: {enabled: {$set: value}}}
                 }))}
-
-                {...props}
             />
         )}
     </>

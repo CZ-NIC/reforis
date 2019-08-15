@@ -29,10 +29,10 @@ Interface.propTypes = {
 };
 
 export default function Interface({type, slot, state, configurable, isSelected, onClick}) {
-    return <div className={'interface ' + (isSelected ? 'interface-selected' : '')} onClick={onClick}>
+    return <button type="button" className={'interface ' + (isSelected ? 'interface-selected' : '')} onClick={onClick}>
         <InterfaceIcon type={type} state={state} configurable={configurable}/>
         <h5>{slot}</h5>
-    </div>
+    </button>
 }
 
 InterfaceIcon.propTypes = {

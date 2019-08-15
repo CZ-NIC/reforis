@@ -15,7 +15,7 @@ global.afterEach(() => {
 
 // Mock babel (gettext)
 window._ = str => str;
-window.babel = {format: (str, _) => str};
+window.babel = {format: (str) => str};
 window.ForisTranslations = {};
 
 // Mock scrollIntoView

@@ -17,14 +17,17 @@ CheckBox.propTypes = {
     /** Help text message */
     helpText: PropTypes.string,
     /** Apply default size (full-width) */
-    useDefaultSize: PropTypes.bool
+    useDefaultSize: PropTypes.bool,
+    /** Control if checkbox is clickable */
+    disabled: PropTypes.bool
 };
 
 CheckBox.defaultProps = {
     useDefaultSize: true,
+    disabled: false
 };
 
-export default function CheckBox({label, helpText, useDefaultSize, ...props}) {
+export default function CheckBox({label, helpText, useDefaultSize, disabled, ...props}) {
     const uid = useUID();
     return <div className={useDefaultSize ? formFieldsSize : ""} style={{marginBottom: '1rem'}}>
         <div className='custom-control custom-checkbox' style={{marginBottom: '0'}}>
@@ -32,6 +35,7 @@ export default function CheckBox({label, helpText, useDefaultSize, ...props}) {
                 className='custom-control-input'
                 type='checkbox'
                 id={uid}
+                disabled={disabled}
 
                 {...props}
             />

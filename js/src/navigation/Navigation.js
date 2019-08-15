@@ -67,12 +67,12 @@ function NavigationMainItem({icon, name, ...props}) {
     </NavigationItem>
 }
 
-function NavigationItem({path, children, isLinkOutside, component, ...props}) {
+function NavigationItem({path, children, isLinkOutside}) {
     if (isLinkOutside)
-        return <li><a href={path} {...props}> {children}</a></li>;
+        return <li><a href={path}>{children}</a></li>;
 
     return <li>
-        <NavLink to={path} {...props}>
+        <NavLink to={path}>
             {children}
         </NavLink>
     </li>

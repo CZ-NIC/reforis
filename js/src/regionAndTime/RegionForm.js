@@ -23,11 +23,10 @@ RegionForm.propTypes = {
 
 RegionForm.defaultProps = {
     formData: {},
-    formErrors: {},
-    setFormValue: ()=>{},
+    setFormValue: () => {}
 };
 
-export default function RegionForm({formData, formErrors, setFormValue, ...props}) {
+export default function RegionForm({formData, setFormValue, disabled}) {
     function getRegionChoices() {
         return Object.keys(TIMEZONES)
             .sort()
@@ -65,6 +64,7 @@ export default function RegionForm({formData, formErrors, setFormValue, ...props
             choices={getRegionChoices()}
             label={_('Continent or ocean')}
             value={formData.region}
+            disabled={disabled}
 
             onChange={setFormValue(
                 value => {
@@ -77,12 +77,12 @@ export default function RegionForm({formData, formErrors, setFormValue, ...props
                     }
                 }
             )}
-            {...props}
         />
         <Select
             choices={getCountryChoices()}
             label={_('Country')}
             value={formData.country || ''}
+            disabled={disabled}
 
             onChange={setFormValue(
                 value => ({
@@ -90,19 +90,16 @@ export default function RegionForm({formData, formErrors, setFormValue, ...props
                     city: {$set: Object.keys(TIMEZONES[formData.region][value])[0]},
                 })
             )}
-
-            {...props}
         />
         <Select
             choices={getCityChoices()}
             label={_('Timezone')}
             value={formData.city || ''}
+            disabled={disabled}
 
             onChange={setFormValue(
                 value => ({city: {$set: value}})
             )}
-
-            {...props}
         />
     </>
 }

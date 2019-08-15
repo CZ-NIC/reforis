@@ -76,7 +76,7 @@ Then transfer it to the router.
 ### 7. Restart the lighttpd server
 **On the router!**
 ```bash
-/etc/init.d/lighttpd  restart
+/etc/init.d/lighttpd restart
 ```
 or
 ```bash

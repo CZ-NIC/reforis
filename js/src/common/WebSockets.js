@@ -5,6 +5,8 @@
  * See /LICENSE for more information.
  */
 
+/* eslint no-console: "off" */
+
 import {ForisURLs} from './constants';
 
 const PROTOCOL = window.location.protocol === 'http:' ? 'ws' : 'wss';
@@ -50,21 +52,21 @@ export default class WebSockets {
                 that.waitForConnection(callback);
             }, WAITING_FOR_CONNECTION_TIMEOUT);
         }
-    };
+    }
 
     bind(module, action, callback) {
         this.callbacks[module] = this.callbacks[module] || {};
         this.callbacks[module][action] = this.callbacks[module][action] || [];
         this.callbacks[module][action].push(callback);
         return this;
-    };
+    }
 
     subscribe(params) {
         this.waitForConnection(() => {
             this.send('subscribe', params);
         });
         return this;
-    };
+    }
 
     send(action, params) {
         const payload = JSON.stringify({action: action, params: params});
@@ -72,7 +74,7 @@ export default class WebSockets {
             this.ws.send(payload);
         });
         return this;
-    };
+    }
 
     dispatch(json) {
         if (!json.module) return;
