@@ -10,6 +10,9 @@ def notifications():
         See `foris-controller JSON schema
         <https://gitlab.labs.nic.cz/turris/foris-controller/blob/master/foris_controller_modules/router_notifications/schema/router_notifications.json>`_.
 
+        Notifications are sorted by ``created_at`` in descending order (newest first). You can change the order with the
+        `sort` parameter, i.e. ``notifications?sort=asc``.
+
         **Example response**:
 
         .. sourcecode:: http
@@ -40,6 +43,9 @@ def notifications():
     if request.method == 'GET':
         request_data = {'lang': _get_locale_from_backend(current_app)}
         response = current_app.backend.perform('router_notifications', 'list', request_data)
+        sort = request.args.get('sort')
+        if sort != 'asc':
+            response['notifications'].reverse()
     elif request.method == 'POST':
         data = request.json
         response = current_app.backend.perform('router_notifications', 'mark_as_displayed', data)
