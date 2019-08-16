@@ -33,6 +33,9 @@ def send_mock(module, action, data, timeout=None, controller_id=None):
             'get_settings': {
                 'reboots': {}
             },
+            'list': {
+                'notifications': []
+            }
         },
         'networks': {
             'get_settings': {
