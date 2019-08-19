@@ -126,9 +126,8 @@ const PAGES = [
 ];
 
 export default function getPages() {
-    const plugins = window.ForisPlugins;
     let pagesWithWeight = addWeightsToPages(PAGES);
-    plugins.forEach(plugin => {
+    ForisPlugins.forEach(plugin => {
         pagesWithWeight = plug(pagesWithWeight, plugin);
     });
     return pagesWithWeight;

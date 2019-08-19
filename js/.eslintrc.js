@@ -17,8 +17,9 @@ module.exports = {
     "globals": {
         "_": "readonly",
         "babel": "readonly",
+        "ngettext": "readonly",
         "ForisTranslations": "readonly",
-        "ngettext": "readonly"
+        "ForisPlugins": "readonly"
     },
     "parserOptions": {
         "ecmaFeatures": {
