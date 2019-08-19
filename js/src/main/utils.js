@@ -6,8 +6,7 @@
  */
 
 export function addWeightsToPages(pages) {
-    const pagesLength = pages.length;
-    const step = Math.floor(100 / pagesLength);
+    const step = Math.floor(100 / pages.length);
     let i = 0;
     return pages.map((page) => {
         if (Object.prototype.hasOwnProperty.call(page, 'pages'))

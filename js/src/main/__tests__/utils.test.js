@@ -6,14 +6,15 @@
  */
 
 import {PAGES} from './__fixtures__/pages';
-import {pluginInExistedSubmenu, newSubmenu, pluginInRoot} from './__fixtures__/plugins';
+import {newSubmenu, pluginInExistedSubmenu, pluginInRoot} from './__fixtures__/plugins';
 
-import {addWeightsToMenuItems, plug} from '../menu';
+import {addWeightsToPages, plug} from '../utils';
+
 
 describe('Test plugging in the menu.', () => {
     let pagesWithWeight;
     beforeEach(() => {
-        pagesWithWeight = addWeightsToMenuItems(PAGES);
+        pagesWithWeight = addWeightsToPages(PAGES);
     });
 
     it('Plug, weight=1.', () => {

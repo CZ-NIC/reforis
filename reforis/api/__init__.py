@@ -18,14 +18,8 @@ HTTP endpoint with ``GET`` and ``POST`` methods by appropriate actions.
 from flask import Blueprint, jsonify, make_response
 
 # pylint: disable=invalid-name
-from reforis.config.routes import ROUTES
 
 api = Blueprint('reForisAPI', __name__, url_prefix='/api')
-
-
-@api.route('/navigation', methods=['GET'])
-def navigation():
-    return jsonify(ROUTES)
 
 
 @api.route('/health-check', methods=['GET'])

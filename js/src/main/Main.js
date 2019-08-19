@@ -5,15 +5,12 @@
  * See /LICENSE for more information.
  */
 
-import React, {useEffect} from 'react';
+import React from 'react';
 import {BrowserRouter} from 'react-router-dom';
 import {Redirect, Switch} from 'react-router';
 import PropTypes from 'prop-types';
 
 import {REFORIS_URL_PREFIX} from 'common/constants';
-import {useAPIGet} from 'common/APIhooks';
-import API_URLs from 'common/API';
-import Spinner from 'common/bootstrap/Spinner';
 import Portal from 'utils/Portal';
 import RouterStateHandler from 'routerStateHandler/RouterStateHandler';
 import Navigation from 'navigation/Navigation';
@@ -22,23 +19,17 @@ import TopBar from './TopBar';
 import {RouteWithSubRoutes} from './routing';
 import {PAGE_404} from './constants';
 
+import getPages from './pages';
+
 Main.propTypes = {
     ws: PropTypes.object.isRequired
 };
 
 export default function Main({ws}) {
-    const [navState, getNav] = useAPIGet(API_URLs.navigation);
-
-    useEffect(() => {
-        getNav();
-    }, [getNav]);
-
-    if (navState.isLoading || !navState.data)
-        return <Spinner fullScreen/>;
-
+    const pages = getPages();
     return <BrowserRouter basename={REFORIS_URL_PREFIX}>
         <Portal containerId='navigation_container'>
-            <Navigation routes={navState.data}/>
+            <Navigation pages={pages}/>
         </Portal>
         <Portal containerId='topbar_container'>
             <TopBar ws={ws}/>
@@ -48,7 +39,7 @@ export default function Main({ws}) {
         </Portal>
 
         <Switch>
-            {navState.data.map((route, i) =>
+            {pages.map((route, i) =>
                 <RouteWithSubRoutes key={i} ws={ws} {...route}/>
             )}
             <Redirect to={PAGE_404}/>

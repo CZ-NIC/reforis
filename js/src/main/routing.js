@@ -20,15 +20,20 @@ RouteWithSubRoutes.propTypes = {
 };
 
 export function RouteWithSubRoutes({ws, ...route}) {
-    if (route.routes)
+    if (route.pages)
         return <Switch>
-            {route.routes.map((subRoute, i) =>
+            {route.pages.map((subRoute, i) =>
                 <RouteWithSubRoutes key={i} ws={ws} {...subRoute} path={`${route.path}${subRoute.path}`}/>
             )}
             <Redirect to={PAGE_404}/>
         </Switch>;
 
-    const Component = PAGES[route.component];
+    let Component;
+    if (typeof route.component == 'string')
+        Component = PAGES[route.component];
+    else
+        Component = route.component;
+
     const contentContainer = document.getElementById(CONTENT_CONTAINER_ID);
 
     if (contentContainer)
