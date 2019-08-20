@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 
 import {ForisURLs} from 'common/constants';
 import PasswordInput from 'common/bootstrap/PasswordInput';
-import SubmitButton, {STATES as SUBMIT_BUTTON_STATES} from 'formContainer/SubmitButton';
+import SubmitButton, {STATES as SUBMIT_BUTTON_STATES} from 'form/SubmitButton';
 
 RootPasswordForm.propTypes = {
     formData: PropTypes.shape(

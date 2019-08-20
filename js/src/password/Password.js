@@ -8,10 +8,10 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
 
-import {STATES as SUBMIT_BUTTON_STATES} from 'formContainer/SubmitButton';
+import {STATES as SUBMIT_BUTTON_STATES} from 'form/SubmitButton';
 import {useAPIGet, useAPIPost} from 'common/APIhooks';
 import API_URLs from 'common/API';
-import {useForm} from 'formContainer/hooks';
+import {useForm} from 'form/hooks';
 import Alert from 'common/bootstrap/Alert';
 
 import CurrentForisPasswordForm from './CurrentForisPasswordForm';
