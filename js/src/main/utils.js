@@ -17,17 +17,21 @@ export function addWeightsToPages(pages) {
 }
 
 export function plug(pages, plugin) {
-    let copiedPages = [...pages];
-    let menuToInsert;
+    const menuToPlug = getMenuToPlug(pages, plugin);
+    if (Object.hasOwnProperty.call(plugin, 'pages')) {
+        plugin.pages = addWeightsToPages(plugin.pages);
+    }
+    menuToPlug.push(plugin);
+    menuToPlug.sort((a, b) => a.weight - b.weight);
+    return pages;
+}
+
+function getMenuToPlug(pages, plugin) {
+    if (Object.hasOwnProperty.call(plugin, 'pages')) {
+        return pages;
+    }
     if (Object.hasOwnProperty.call(plugin, 'submenuId')) {
-        if (Object.hasOwnProperty.call(plugin, 'pages')) {
-            plugin.pages = addWeightsToPages(plugin.pages);
-            menuToInsert = copiedPages;
-        } else
-            menuToInsert = copiedPages.find(item => item.submenuId === plugin.submenuId).pages;
-    } else
-        menuToInsert = copiedPages;
-    menuToInsert.push(plugin);
-    menuToInsert.sort((a, b) => a.weight - b.weight);
-    return copiedPages;
+        return pages.find(item => item.submenuId === plugin.submenuId).pages;
+    }
+    return pages;
 }
