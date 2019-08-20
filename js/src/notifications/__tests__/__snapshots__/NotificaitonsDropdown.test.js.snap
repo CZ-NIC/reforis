@@ -27,7 +27,7 @@ exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
           <small
             class="circle-text fa-stack-1x"
           >
-            2
+            3
           </small>
         </div>
       </span>
@@ -40,7 +40,6 @@ exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
         id="notifications-header"
       >
         <a
-          class="btn btn-link"
           href="/notifications"
         >
           <h5>
@@ -52,7 +51,7 @@ exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
           href="/administration/notifications-settings"
         >
           <i
-            class="fa fa-cog fa"
+            class="fa fa-cog"
           />
         </a>
       </div>
@@ -114,6 +113,39 @@ exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
               </small>
               <p>
                 Second notification messa...
+              </p>
+            </a>
+          </div>
+          <button
+            class="btn btn-link"
+          >
+            <i
+              class="fas fa-times"
+            />
+          </button>
+        </div>
+        <div
+          class="dropdown-divider"
+        />
+        <div
+          class="dropdown-item notification-item"
+        >
+          <i
+            class="fa fa-power-off fa-2x"
+          />
+          <div
+            class="notifications-info"
+          >
+            <a
+              href="/notifications?id=808-909"
+            >
+              <small
+                class="text-muted"
+              >
+                February 1, 2000, 12:00:00 AM
+              </small>
+              <p>
+                Third notification messag...
               </p>
             </a>
           </div>

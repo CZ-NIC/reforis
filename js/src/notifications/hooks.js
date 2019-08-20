@@ -38,7 +38,7 @@ export default function useNotifications(ws) {
 
     const [, post] = useAPIPost(API_URLs.notifications);
 
-    function dismissNotification(notificationId) {
+    function dismiss(notificationId) {
         post({ids: [notificationId,]});
         setNotifications(notifications => notifications.filter(
             notification => notification.id !== notificationId
@@ -50,7 +50,7 @@ export default function useNotifications(ws) {
         setNotifications([]);
     }
 
-    return [notifications, dismissNotification, dismissAll]
+    return [ notifications, dismiss, dismissAll ];
 }
 
 const NEW_NOTIFICATION_ANIMATION_DURATION = 1; // Sec.

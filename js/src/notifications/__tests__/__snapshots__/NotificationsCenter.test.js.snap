@@ -76,5 +76,43 @@ exports[`<NotificationsCenter/> Test with snapshot. 1`] = `
       </p>
     </div>
   </div>
+  <div
+    class="card bg-light border-danger sm-10"
+  >
+    <div
+      class="card-header"
+    >
+      <i
+        class="fa fa-power-off fa-2x"
+      />
+      <p
+        class="text-muted"
+      >
+        February 1, 2000, 12:00:00 AM
+      </p>
+      <button
+        class="close"
+        type="button"
+      >
+        ×
+      </button>
+    </div>
+    <div
+      class="card-body"
+    >
+      <p
+        class="card-text"
+      >
+        Third notification message.
+      </p>
+    </div>
+    <button
+      class="btn btn-danger"
+    >
+       
+       
+      Reboot
+    </button>
+  </div>
 </div>
 `;

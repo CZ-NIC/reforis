@@ -20,7 +20,7 @@ describe('useNotifications hook.', () => {
     beforeEach(async () => {
         mockWebSockets = new mockedWS();
         const {container} = render(<NotificationsDropdown ws={mockWebSockets}/>);
-        mockAxios.mockResponse({data: notificationsFixture()});
+        mockAxios.mockResponse({data: notificationsFixture});
         await wait(() => getByText(container, 'Notifications'));
         notificationsContainer = container;
     });
@@ -54,7 +54,7 @@ describe('useNotifications hook.', () => {
         expect(mockAxios.post).toHaveBeenCalledTimes(0);
         fireEvent.click(getByText(notificationsContainer, 'Dismiss all'));
         expect(mockAxios.post).toHaveBeenCalledTimes(1);
-        expect(mockAxios.post).toHaveBeenCalledWith('/api/notifications', {"ids": ["123-123", "123-124"]}, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith('/api/notifications', {"ids": ["123-123", "123-124", "808-909"]}, expect.anything());
         let HTMLnotificationMessage = queryByText(notificationsContainer, 'Notification message.');
         expect(HTMLnotificationMessage).toBeNull();
         HTMLnotificationMessage = queryByText(notificationsContainer, 'Second notification messa...');

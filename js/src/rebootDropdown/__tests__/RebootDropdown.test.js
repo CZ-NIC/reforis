@@ -4,28 +4,30 @@
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
  */
+
 import React from 'react';
 import {render, wait} from 'customTestRender';
-
 import mockAxios from 'jest-mock-axios';
+
 import {mockedWS} from 'mockWS';
-import {notificationsFixture} from './__fixtures__/notifications';
+import { notificationsFixture } from 'notifications/__tests__/__fixtures__/notifications.js';
 
-import NotificationsCenter from '../Notifications/NotificationsCenter';
+import RebootDropdown from '../RebootDropdown';
 
-describe('<NotificationsCenter/>', () => {
-    let NotificationContainer;
+describe('<RebootDropdown/>', () => {
+    let rebootDropdownContainer;
+
     beforeEach(async () => {
         const mockWebSockets = new mockedWS();
-        const {container, getByText} = render(<NotificationsCenter ws={mockWebSockets}/>);
+        const {container, getByText} = render(<RebootDropdown ws={mockWebSockets}/>);
         mockAxios.mockResponse({data: notificationsFixture});
+        rebootDropdownContainer = container;
         await wait(() => {
-            getByText('Notification message.');
+            getByText('Reboot required');
         });
-        NotificationContainer = container;
     });
 
-    it('Test with snapshot.', () => {
-        expect(NotificationContainer.firstChild).toMatchSnapshot();
+    it('Test with snapshot', () => {
+        expect(rebootDropdownContainer).toMatchSnapshot();
     })
 });

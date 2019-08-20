@@ -7,6 +7,7 @@
 
 import React, {useEffect, useRef} from 'react';
 import PropTypes from 'prop-types';
+import Portal from 'utils/Portal';
 
 Modal.propTypes = {
     /** Is modal shown value */
@@ -37,13 +38,15 @@ export function Modal({shown, setShown, children}) {
     }, [setShown]);
 
 
-    return <div className={'modal fade ' + (shown ? 'show' : '')} role="dialog">
-        <div ref={dialogRef} className="modal-dialog" role="document">
-            <div className="modal-content">
-                {children}
+    return <Portal containerId="modal_container">
+        <div className={'modal fade ' + (shown ? 'show' : '')} role="dialog">
+            <div ref={dialogRef} className="modal-dialog" role="document">
+                <div className="modal-content">
+                    {children}
+                </div>
             </div>
         </div>
-    </div>
+    </Portal>
 }
 
 ModalHeader.propTypes = {
