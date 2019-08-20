@@ -12,7 +12,6 @@ import NotificationsDropdownButton from './NotificationsDropdownButton';
 import NotificationsDropdownMenu from './NotificationsDropdownMenu';
 import useNotifications, {useNewNotification} from '../hooks';
 
-
 NotificationsDropdown.propTypes = {
     ws: PropTypes.object.isRequired
 };

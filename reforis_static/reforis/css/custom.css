@@ -139,12 +139,20 @@ form > button {
 #top-bar, #topbar_container {
     display: flex;
     justify-content: flex-end;
+}
+
+#top-bar {
     align-items: center;
+}
+
+#topbar_container {
+    align-items: stretch;
 }
 
 #top-bar .nav-item {
     text-decoration: none;
     color: black;
+    height: 100%;
 }
 
 @media screen and (max-width: 768px) {
@@ -153,16 +161,17 @@ form > button {
     }
 }
 
-#top-bar a:hover,
-#top-bar button:hover {
+#top-bar a:hover {
     text-decoration: none;
     color: #00a2e2;
 }
 
+#top-bar .dropdown-header, #top-bar .dropdown-header a {
+    color: #333333;
+}
 
-/* Delete arrow */
-#top-bar .dropdown-toggle:after {
-    content: none
+#top-bar .dropdown-header h5 {
+    margin-bottom: 0
 }
 
 /* Show dropdown on hover */
@@ -170,22 +179,31 @@ form > button {
     display: block;
 }
 
-#top-bar .dropdown-menu {
-    margin-top: 0;
-}
-
-
 .dropdown-menu.lang {
     min-width: 5rem;
 }
 
-.dropdown-item {
-    padding: .25rem .5rem;
+.dropdown-item:hover {
+    background: transparent;
+    color: #7b8a8b;
 }
 
-.dropdown-item:hover {
-    background: white;
-    color: #95a5a6;
+/* Reboot */
+
+@keyframes example {
+    from {
+        opacity: 0.1;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#reboot-dropdown-toggle {
+    animation-name: example;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 /* Notifications */
@@ -243,7 +261,6 @@ form > button {
 
 #notifications .dropdown-menu {
     width: 20rem;
-    padding: 0;
 }
 
 #notifications .dropdown-menu .btn-link {
@@ -255,11 +272,11 @@ form > button {
 }
 
 #notifications .dropdown-divider-top {
-    margin: .25rem 0 0;
+    margin-bottom: 0;
 }
 
 #notifications .dropdown-divider-bottom {
-    margin: 0 0 .25rem;
+    margin-top: 0;
 }
 
 #notifications .scrollable-menu {
@@ -286,13 +303,12 @@ form > button {
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
-    padding-top: .2rem;
-    padding-bottom: 0;
 }
 
+/* Remove spacing for fa-cog link in header */
 #notifications-header .btn-link {
-    padding-right: .5rem;
-    padding-left: 0;
+    padding: 0;
+    margin: 0;
 }
 
 #notifications-header .fa-cog {
@@ -304,30 +320,36 @@ form > button {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding-top: .2rem;
-    padding-bottom: 0;
 }
 
 #notifications-footer .btn-link {
     font-weight: bold;
+    padding: 0;
+}
+
+.no-notifications {
+    text-align: center;
+    margin-top: 0.5rem
 }
 
 .notification-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: .25rem .5rem;
+}
+
+.notification-item + .dropdown-divider {
+    margin: 0
+}
+
+.notification-item:hover {
+    background: white;
+    color: #95a5a6;
 }
 
 .notification-item:hover > .fa {
     opacity: .7;
-}
-
-.notification-message {
-    color: #95a5a6;
-}
-
-.notification-message:hover {
-    color: #00a2e2;
 }
 
 #notifications-center .fa-newspaper,
@@ -346,18 +368,8 @@ form > button {
     opacity: .8;
 }
 
-#notifications .dropdown-divider {
-    margin: 0;
-}
-
 .notifications-info {
     flex-grow: 2;
-}
-
-.notification-message {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .notification-item .fa {
@@ -391,6 +403,11 @@ form > button {
     }
 }
 
+/* Languages dropdown */
+
+#languages-dropdown-menu .dropdown-item:hover {
+    color: #00a2e2;
+}
 
 /* Login */
 

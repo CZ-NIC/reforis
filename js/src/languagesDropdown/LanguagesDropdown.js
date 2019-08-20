@@ -26,15 +26,15 @@ export default function LanguagesDropdown({ws}) {
 
 
     return <div className="dropdown">
-        <button className="nav-item btn btn-link dropdown-toggle"
-                type="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false">
+        <button className="nav-item btn btn-link" type="button">
             {currentLang ? currentLang : <SpinnerElement small/>}
         </button>
 
-        <div className="dropdown-menu">
+        <div className="dropdown-menu" id="languages-dropdown-menu">
+            <div className="dropdown-header">
+                <h5>Languages</h5>
+            </div>
+            <div className="dropdown-divider"></div>
             {langsList ?
                 langsList.map(lang =>
                     <button

@@ -24,14 +24,16 @@ NotificationsDropdownMenu.propTypes = {
 export default function NotificationsDropdownMenu({notifications, dismiss, dismissAll}) {
     function getNotifications() {
         if (notifications.length === 0)
-            return <p className='dropdown-item text-center'>{_('No notifications')}</p>;
+            return <span className='dropdown-item no-notifications'>
+                {_('No notifications')}
+            </span>;
 
         return notifications.map(
             (notification, idx) => {
                 return <NotificationsDropdownItem
                     key={notification.id}
                     notification={notification}
-                    divider={idx + 1 !== notifications.length} //Don't show last divider
+                    divider={idx + 1 !== notifications.length} // Don't show last divider
 
                     dismiss={() => dismiss(notification.id)}
                 />
@@ -48,17 +50,16 @@ export default function NotificationsDropdownMenu({notifications, dismiss, dismi
         <div className='scrollable-menu'>{getNotifications()}</div>
         {footer}
     </div>
-
 }
 
 function NotificationsDropdownHeader() {
     return <>
         <div id='notifications-header' className='dropdown-header'>
-            <Link to={ForisURLs.notifications} className='btn btn-link'>
+            <Link to={ForisURLs.notifications}>
                 <h5>{_('Notifications')}</h5>
             </Link>
             <Link to={ForisURLs.notificationsSettings} className='btn btn-link'>
-                <i className='fa fa-cog fa'/>
+                <i className='fa fa-cog'/>
             </Link>
         </div>
         <div className='dropdown-divider dropdown-divider-top'/>

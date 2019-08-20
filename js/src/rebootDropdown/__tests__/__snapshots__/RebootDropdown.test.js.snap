@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RebootDropdown/> Test with snapshot 1`] = `
+<div>
+  <div
+    class="dropdown"
+  >
+    <button
+      class="nav-item btn btn-link"
+      id="reboot-dropdown-toggle"
+    >
+      <i
+        class="fa fa-power-off fa-lg"
+        style="color: red;"
+      />
+    </button>
+    <div
+      class="dropdown-menu"
+    >
+      <div
+        class="dropdown-header"
+      >
+        <h5>
+          Reboot required
+        </h5>
+      </div>
+      <div
+        class="dropdown-divider"
+      />
+      <div
+        class="dropdown-item"
+      >
+        <p>
+          See 
+          <a
+            href="//notifications"
+          >
+            notifications
+          </a>
+           for details.
+        </p>
+        <button
+          class="btn btn-danger"
+        >
+           
+           
+          Reboot
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -21,7 +21,7 @@ describe('<NotificationsDropdown/>', () => {
     beforeEach(async () => {
         const mockWebSockets = new mockedWS();
         const {container, getByText} = render(<NotificationsDropdown ws={mockWebSockets}/>);
-        mockAxios.mockResponse({data: notificationsFixture()});
+        mockAxios.mockResponse({data: notificationsFixture});
         notificationCenterContainer = container;
         await wait(() => {
             getByText('Notification message.')
