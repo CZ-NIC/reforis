@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
 
 import Portal from 'utils/Portal';
 
-import {PAGE_404, PAGES} from './constants';
+import {REDIRECT_404_PAGE} from './constants';
 
 const CONTENT_CONTAINER_ID = 'content_container';
 
@@ -25,17 +25,11 @@ export function RouteWithSubRoutes({ws, ...route}) {
             {route.pages.map((subRoute, i) =>
                 <RouteWithSubRoutes key={i} ws={ws} {...subRoute} path={`${route.path}${subRoute.path}`}/>
             )}
-            <Redirect to={PAGE_404}/>
+            <Redirect to={REDIRECT_404_PAGE}/>
         </Switch>;
 
-    let Component;
-    if (typeof route.component == 'string')
-        Component = PAGES[route.component];
-    else
-        Component = route.component;
-
     const contentContainer = document.getElementById(CONTENT_CONTAINER_ID);
-
+    const Component = route.component;
     if (contentContainer)
         return <RouteWithTitle
             title={route.name}

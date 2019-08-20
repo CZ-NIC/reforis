@@ -17,9 +17,8 @@ import Navigation from 'navigation/Navigation';
 
 import TopBar from './TopBar';
 import {RouteWithSubRoutes} from './routing';
-import {PAGE_404} from './constants';
-
 import getPages from './pages';
+import {REDIRECT_404_PAGE} from './constants';
 
 Main.propTypes = {
     ws: PropTypes.object.isRequired
@@ -42,7 +41,7 @@ export default function Main({ws}) {
             {pages.map((route, i) =>
                 <RouteWithSubRoutes key={i} ws={ws} {...route}/>
             )}
-            <Redirect to={PAGE_404}/>
+            <Redirect to={REDIRECT_404_PAGE}/>
         </Switch>
     </BrowserRouter>
 }
