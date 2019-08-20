@@ -21,6 +21,7 @@
 
     {# JS #}
     {% include 'includes/locale.html' %}
+    {% include 'includes/plugins.html' %}
     <script type="text/javascript" src="{{ url_for('static', filename = 'reforis/js/app.min.js') }}"></script>
     {% block js %}{% endblock %}
 

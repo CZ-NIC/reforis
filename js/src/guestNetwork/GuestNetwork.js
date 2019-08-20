@@ -8,7 +8,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import ForisForm from 'formContainer/ForisForm';
+import ForisForm from 'form/ForisForm';
 import API_URLs from 'common/API';
 import {validateIPv4Address} from 'common/validations';
 import {ForisURLs} from 'common/constants';

@@ -10,28 +10,28 @@ import {useUID} from 'react-uid';
 import {matchPath, withRouter} from 'react-router';
 import {NavLink} from 'react-router-dom';
 
-function Navigation({routes, location}) {
-    return routes.map((route, i) => {
-        if (route.isHidden)
+function Navigation({pages, location}) {
+    return pages.map((page, i) => {
+        if (page.isHidden)
             return null;
 
-        if (route.routes) {
+        if (page.pages) {
             const active = matchPath(location.pathname, {
-                path: route.path,
+                path: page.path,
                 strict: true,
             });
-            return <NavigationToggle key={i} active={!!active} {...route}>
-                {route.routes.map((subRoute, j) =>
+            return <NavigationToggle key={i} active={!!active} {...page}>
+                {page.pages.map((subPage, j) =>
                     <NavigationToggleItem
                         key={j}
-                        {...subRoute}
-                        path={`${route.path}${subRoute.path}`}
+                        {...subPage}
+                        path={`${page.path}${subPage.path}`}
                     />
                 )}
             </NavigationToggle>;
         }
 
-        return <NavigationMainItem key={i}  {...route} />;
+        return <NavigationMainItem key={i}  {...page} />;
     })
 }
 

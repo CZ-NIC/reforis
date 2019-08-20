@@ -9,7 +9,7 @@ import React from 'react'
 import moment from 'moment';
 import PropTypes from 'prop-types';
 
-import ForisForm from 'formContainer/ForisForm';
+import ForisForm from 'form/ForisForm';
 import API_URLs from 'common/API';
 
 import UpdatesForm from './forms/UpdatesForm';

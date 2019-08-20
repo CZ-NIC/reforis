@@ -162,9 +162,10 @@ def register_plugins(app):
     from .plugins import get_plugins
 
     plugins = get_plugins()
+
     for plugin in plugins:
-        app.register_blueprint(plugin)
+        app.register_blueprint(plugin['blueprint'])
 
     @app.context_processor
     def add_plugins_to_ctx():
-        return {'plugins': plugins, 'plugins_urls': [plugin.url_prefix for plugin in plugins]}
+        return {'plugins_js_app_paths': [plugin['js_app_path'] for plugin in plugins]}

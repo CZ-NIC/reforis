@@ -29,8 +29,10 @@ all:
 	@echo "    Install package on router."
 	@echo "make install-with-lighttpd"
 	@echo "    Install package with lighttpd configuration and link /tmp/reforis to installed python packages for development."
-	@echo "make watch-js:"
-	@echo "    Run babel to compile JS in watch mode."
+	@echo "make build-js"
+	@echo "    Compile JS."
+	@echo "make watch-js"
+	@echo "    Compile JS in watch mode."
 	@echo "make run"
 	@echo "    Run Flask server."
 	@echo "make run-ws"
@@ -40,7 +42,7 @@ all:
 	@echo "make update-messages"
 	@echo "    Update locale messages from .pot file."
 	@echo "make compile-messages"
-	@echo "    Compile locale messager."
+	@echo "    Compile locale messages."
 	@echo "make timezones"
 	@echo "    Generate JS file with timezones."
 	@echo "make clean"
@@ -49,7 +51,7 @@ all:
 prepare-dev:
 	which npm || curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 	which npm || sudo apt install -y nodejs
-	cd js; npm install
+	cd $(JS_DIR); npm install
 
 	which $(DEV_PYTHON) || sudo apt install -y $(DEV_PYTHON) $(DEV_PYTHON)-pip
 	which virtualenv || sudo $(DEV_PYTHON) -m pip install virtualenv
@@ -90,18 +92,18 @@ build-js:
 
 lint: lint-js lint-web
 lint-js:
-	cd js; npm run lint
+	cd $(JS_DIR); npm run lint
 lint-web: venv
 	$(VENV_BIN)/$(DEV_PYTHON) -m pylint --rcfile=pylintrc reforis
 	$(VENV_BIN)/$(DEV_PYTHON) -m pycodestyle --config=pycodestyle reforis
 
 test: test-js test-web
 test-js:
-	cd js; npm test
+	cd $(JS_DIR); npm test
 test-web: venv
 	$(VENV_BIN)/$(DEV_PYTHON) -m pytest -vv tests
 test-js-update-snapshots:
-	cd js; npm test -- -u
+	cd $(JS_DIR); npm test -- -u
 
 create-messages: venv
 	$(VENV_BIN)/pybabel extract -F babel.cfg -o ./reforis/translations/messages.pot .
@@ -117,13 +119,13 @@ docs-web: venv
 	rm -rf docs/build
 	. $(VENV_BIN)/activate && cd docs; make html
 docs-js:
-	cd js; npm run-script docs
+	cd $(JS_DIR); npm run-script docs
 
 make_timzezones:
-	$(VENV_BIN)/$(DEV_PYTHON) ./scripts/make_timezones.py ./js/src/utils/timezones.js
+	$(VENV_BIN)/$(DEV_PYTHON) ./scripts/make_timezones.py $(JS_DIR)/src/utils/timezones.js
 
 clean:
 	find . -name '*.pyc' -exec rm -f {} +
 	rm -rf $(VENV_NAME) *.eggs *.egg-info dist build docs/_build .cache
-	rm -rf js/node_modules/ reforis_static/reforis/js/app.min.js
+	rm -rf $(JS_DIR)/node_modules/ reforis_static/reforis/js/app.min.js
 	$(ROUTER_PYTHON) -m pip uninstall -y reforis

@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
 import API_URLs from 'common/API';
 import Alert from 'common/bootstrap/Alert';
 import {ForisURLs} from 'common/constants';
-import ForisForm from 'formContainer/ForisForm';
+import ForisForm from 'form/ForisForm';
 
 import LanguageForm from './LanguageForm';
 import PackagesForm from './PackagesForm';

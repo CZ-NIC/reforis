@@ -1,5 +1,3 @@
-{% set plugins_dropdown_is_active = request.path[:-1] in plugins_urls %}
-
 <nav id="sidebar">
     <div id="sidebar-header">
         <a href="/">
@@ -10,31 +8,5 @@
 
     <ul class="list-unstyled">
         <div id="navigation_container"></div>
-        {% if plugins %}
-            <li>
-                <a href="#plugins-settings-submenu"
-                   class="dropdown-toggle {% if plugins_dropdown_is_active %}active{% endif %}"
-                   data-toggle="collapse"
-                >
-                    <i class="fas fa-fw fa-puzzle-piece"></i>&nbsp;&nbsp;&nbsp;
-                    {% trans %}Plugins{% endtrans %}
-                </a>
-                <ul
-                        class="collapse list-unstyled {% if plugins_dropdown_is_active %} show {% endif %}"
-                        id="plugins-settings-submenu"
-                >
-                    {% for plugin in plugins %}
-                        <li>
-                            <a
-                                    class="text-center {% if request.path.startswith(plugin.url_prefix) %}active{% endif %}"
-                                    href="{{ url_for(plugin.name+'.index') }}"
-                            >
-                                <small>{{ plugin.name }}</small>
-                            </a>
-                        </li>
-                    {% endfor %}
-                </ul>
-            </li>
-        {% endif %}
     </ul>
 </nav>

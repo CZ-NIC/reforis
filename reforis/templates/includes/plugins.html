@@ -1,0 +1,6 @@
+<script type="application/javascript">ForisPlugins = [];</script>
+{% if plugins_js_app_paths %}
+    {% for js_app_path in plugins_js_app_paths %}
+        <script type="text/javascript" src="{{ url_for('static', filename = js_app_path) }}"></script>
+    {% endfor %}
+{% endif %}

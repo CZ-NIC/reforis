@@ -5,42 +5,4 @@
  * See /LICENSE for more information.
  */
 
-import Notifications from 'notifications/Notifications/Notifications';
-
-import WiFi from 'wifi/WiFi';
-import LAN from 'lan/LAN';
-import WAN from 'wan/WAN';
-import DNS from 'dns/DNS';
-import Interfaces from 'interfaces/Interfaces';
-import GuestNetwork from 'guestNetwork/GuestNetwork';
-
-import Password from 'password/Password';
-import RegionAndTime from 'regionAndTime/RegionAndTime';
-import NotificationsSettings from 'notificationsSettings/NotificationsSettings';
-import Reboot from 'reboot/Reboot';
-
-import Updates from 'updates/Updates';
-import Packages from 'packages/Packages';
-import About from 'about/About';
-
-export const PAGE_404 = '/notifications';
-
-export const PAGES = {
-    Notifications: Notifications,
-
-    LAN: LAN,
-    WAN: WAN,
-    WiFi: WiFi,
-    DNS: DNS,
-    Interfaces: Interfaces,
-    GuestNetwork: GuestNetwork,
-
-    Password: Password,
-    RegionAndTime: RegionAndTime,
-    NotificationsSettings: NotificationsSettings,
-    Reboot: Reboot,
-
-    Updates: Updates,
-    Packages: Packages,
-    About: About,
-};
+export const REDIRECT_404_PAGE = '/notifications';
