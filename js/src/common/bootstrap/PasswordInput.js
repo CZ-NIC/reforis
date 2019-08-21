@@ -5,10 +5,10 @@
  * See /LICENSE for more information.
  */
 
-import React, {useState} from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
 
-import Input from './Input';
+import Input from "./Input";
 
 PasswordInput.propTypes = {
     /** Field label. */
@@ -23,22 +23,29 @@ PasswordInput.propTypes = {
     withEye: PropTypes.bool,
 };
 
-export default function PasswordInput({withEye, ...props}) {
+export default function PasswordInput({ withEye, ...props }) {
     const [isHidden, setHidden] = useState(true);
-    return <Input
-        type={withEye ? isHidden ? 'password' : 'text' : 'password'}
-        autoComplete={isHidden ? 'new-password' : null}
-        {...props}
-    >
-        {withEye ?
-            <div className="input-group-append">
-                <button className="input-group-text" onClick={e => {
-                    e.preventDefault();
-                    setHidden(isHidden => !isHidden);
-                }}>
-                    <i className={'fa ' + (isHidden ? 'fa-eye' : 'fa-eye-slash')}/>
-                </button>
-            </div>
-            : null}
-    </Input>
+    return (
+        <Input
+            type={withEye && !isHidden ? "text" : "password"}
+            autoComplete={isHidden ? "new-password" : null}
+            {...props}
+        >
+            {withEye
+                ? (
+                    <div className="input-group-append">
+                        <button
+                            className="input-group-text"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                setHidden((shouldBeHidden) => !shouldBeHidden);
+                            }}
+                        >
+                            <i className={`fa ${isHidden ? "fa-eye" : "fa-eye-slash"}`} />
+                        </button>
+                    </div>
+                )
+                : null}
+        </Input>
+    );
 }

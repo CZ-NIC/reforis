@@ -7,7 +7,7 @@
 import React from 'react';
 import {fireEvent, getByText, queryByText, render, wait} from 'customTestRender';
 
-import {mockedWS} from 'mockWS';
+import mockedWS from 'mockWS';
 import mockAxios from 'jest-mock-axios';
 
 import {notificationsFixture} from './__fixtures__/notifications';

@@ -9,16 +9,15 @@ export function addWeightsToPages(pages) {
     const step = Math.floor(100 / pages.length);
     let i = 0;
     return pages.map((page) => {
-        if (Object.prototype.hasOwnProperty.call(page, 'pages'))
-            page.pages = addWeightsToPages(page.pages);
+        if (Object.prototype.hasOwnProperty.call(page, "pages")) page.pages = addWeightsToPages(page.pages);
         i++;
-        return {...page, weight: i * step}
+        return { ...page, weight: i * step };
     });
 }
 
 export function plug(pages, plugin) {
     const menuToPlug = getMenuToPlug(pages, plugin);
-    if (Object.hasOwnProperty.call(plugin, 'pages')) {
+    if (Object.hasOwnProperty.call(plugin, "pages")) {
         plugin.pages = addWeightsToPages(plugin.pages);
     }
     menuToPlug.push(plugin);
@@ -27,11 +26,11 @@ export function plug(pages, plugin) {
 }
 
 function getMenuToPlug(pages, plugin) {
-    if (Object.hasOwnProperty.call(plugin, 'pages')) {
+    if (Object.hasOwnProperty.call(plugin, "pages")) {
         return pages;
     }
-    if (Object.hasOwnProperty.call(plugin, 'submenuId')) {
-        return pages.find(item => item.submenuId === plugin.submenuId).pages;
+    if (Object.hasOwnProperty.call(plugin, "submenuId")) {
+        return pages.find((item) => item.submenuId === plugin.submenuId).pages;
     }
     return pages;
 }

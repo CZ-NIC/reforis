@@ -5,12 +5,12 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import ReactDOM from 'react-dom';
+import React from "react";
+import PropTypes from "prop-types";
+import ReactDOM from "react-dom";
 
-import DHCPClientsList from 'common/network/DHCPClientsList';
-import {LAN_MODES} from './LANForm';
+import DHCPClientsList from "common/network/DHCPClientsList";
+import { LAN_MODES } from "./LANForm";
 
 LAN_DHCP_ClientsList.propTypes = {
     formData: PropTypes.shape({
@@ -19,19 +19,18 @@ LAN_DHCP_ClientsList.propTypes = {
             dhcp: PropTypes.shape({
                 enabled: PropTypes.bool.isRequired,
                 clients: PropTypes.arrayOf(PropTypes.object).isRequired,
-            }).isRequired
-        })
-    })
+            }).isRequired,
+        }),
+    }),
 };
 
-export default function LAN_DHCP_ClientsList({formData}) {
-    if (formData.mode !== LAN_MODES.managed || !formData.mode_managed.dhcp.enabled)
-        return null;
+export default function LAN_DHCP_ClientsList({ formData }) {
+    if (formData.mode !== LAN_MODES.managed || !formData.mode_managed.dhcp.enabled) return null;
 
-    const lanContainer = document.getElementById('dhcp_clients_container');
+    const lanContainer = document.getElementById("dhcp_clients_container");
 
     return ReactDOM.createPortal(
-        <DHCPClientsList clients={formData.mode_managed.dhcp.clients}/>,
+        <DHCPClientsList clients={formData.mode_managed.dhcp.clients} />,
         lanContainer,
-    )
+    );
 }

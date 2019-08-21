@@ -5,23 +5,20 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
-import {render} from 'react-dom';
+import React from "react";
+import { render } from "react-dom";
 
-import WebSockets from 'common/WebSockets';
+import WebSockets from "common/WebSockets";
 
-import Main from 'main/Main';
-import Guide from 'guide/Guide';
+import Main from "main/Main";
+import Guide from "guide/Guide";
 
 const ws = new WebSockets();
 
-window.addEventListener('load', () => {
-    const mainContainer = document.getElementById('app_container');
-    if (mainContainer)
-        render(<Main ws={ws}/>, mainContainer);
+window.addEventListener("load", () => {
+    const mainContainer = document.getElementById("app_container");
+    if (mainContainer) render(<Main ws={ws} />, mainContainer);
 
-    const guideContainer = document.getElementById('guide_container');
-    if (guideContainer)
-        render(<Guide ws={ws}/>, guideContainer);
-
+    const guideContainer = document.getElementById("guide_container");
+    if (guideContainer) render(<Guide ws={ws} />, guideContainer);
 }, false);

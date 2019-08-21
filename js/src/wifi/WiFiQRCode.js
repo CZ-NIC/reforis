@@ -5,15 +5,17 @@
  * See /LICENSE for more information.
  */
 
-import React, {useState} from 'react';
-import QRCode from 'qrcode.react';
-import PropTypes from 'prop-types';
+import React, { useState } from "react";
+import QRCode from "qrcode.react";
+import PropTypes from "prop-types";
 
-import {Modal, ModalBody, ModalFooter, ModalHeader} from 'common/bootstrap/Modal';
-import {ForisURLs} from 'common/constants';
-import Button from 'common/bootstrap/Button';
+import {
+    Modal, ModalBody, ModalFooter, ModalHeader,
+} from "common/bootstrap/Modal";
+import { ForisURLs } from "common/constants";
+import Button from "common/bootstrap/Button";
 
-import {createAndDownloadPdf, toQRCodeContent} from './qrCodeHelpers';
+import { createAndDownloadPdf, toQRCodeContent } from "./qrCodeHelpers";
 
 WiFiQRCode.propTypes = {
     SSID: PropTypes.string.isRequired,
@@ -22,20 +24,25 @@ WiFiQRCode.propTypes = {
 
 const QR_ICON_PATH = `${ForisURLs.static}/imgs/QR_icon.svg`;
 
-export default function WiFiQRCode({SSID, password}) {
+export default function WiFiQRCode({ SSID, password }) {
     const [modal, setModal] = useState(false);
 
-    return <>
-        <button className="input-group-text"
-                onClick={e => {
+    return (
+        <>
+            <button
+                className="input-group-text"
+                onClick={(e) => {
                     e.preventDefault();
                     setModal(true);
                 }}
-        >
-            <img width="20" src={QR_ICON_PATH} alt="QR"/>
-        </button>
-        {modal ? <QRCodeModal setShown={setModal} shown={modal} SSID={SSID} password={password}/> : null}
-    </>
+            >
+                <img width="20" src={QR_ICON_PATH} alt="QR" />
+            </button>
+            {modal
+                ? <QRCodeModal setShown={setModal} shown={modal} SSID={SSID} password={password} />
+                : null}
+        </>
+    );
 }
 
 QRCodeModal.propTypes = {
@@ -45,24 +52,34 @@ QRCodeModal.propTypes = {
     setShown: PropTypes.func.isRequired,
 };
 
-function QRCodeModal({shown, setShown, SSID, password}) {
-    return <Modal setShown={setShown} shown={shown}>
-        <ModalHeader setShown={setShown} title={_('Wi-Fi QR Code')}/>
-        <ModalBody>
-            <QRCode
-                renderAs="svg"
-                value={toQRCodeContent(SSID, password)}
-                level="M"
-                size={350}
-                includeMargin
-                style={{display: 'block', margin: 'auto'}}
-            />
-        </ModalBody>
-        <ModalFooter>
-            <Button className="btn-outline-primary" onClick={e => {
-                e.preventDefault();
-                createAndDownloadPdf(SSID, password);
-            }}><i className="fas fa-arrow-down"/>&nbsp;{_('Download PDF')}</Button>
-        </ModalFooter>
-    </Modal>
+function QRCodeModal({
+    shown, setShown, SSID, password,
+}) {
+    return (
+        <Modal setShown={setShown} shown={shown}>
+            <ModalHeader setShown={setShown} title={_("Wi-Fi QR Code")} />
+            <ModalBody>
+                <QRCode
+                    renderAs="svg"
+                    value={toQRCodeContent(SSID, password)}
+                    level="M"
+                    size={350}
+                    includeMargin
+                    style={{ display: "block", margin: "auto" }}
+                />
+            </ModalBody>
+            <ModalFooter>
+                <Button
+                    className="btn-outline-primary"
+                    onClick={(e) => {
+                        e.preventDefault();
+                        createAndDownloadPdf(SSID, password);
+                    }}
+                >
+                    <i className="fas fa-arrow-down" />
+                    {_("Download PDF")}
+                </Button>
+            </ModalFooter>
+        </Modal>
+    );
 }

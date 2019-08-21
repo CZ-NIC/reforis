@@ -5,10 +5,10 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
-import {useUID} from 'react-uid/dist/es5/index';
-import {formFieldsSize} from './constants';
-import PropTypes from 'prop-types';
+import React from "react";
+import { useUID } from "react-uid/dist/es5/index";
+import PropTypes from "prop-types";
+import { formFieldsSize } from "./constants";
 
 Input.propTypes = {
     type: PropTypes.string.isRequired,
@@ -18,29 +18,33 @@ Input.propTypes = {
     className: PropTypes.string,
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.node),
-        PropTypes.node
-    ])
-}
+        PropTypes.node,
+    ]),
+};
 
 /** Base bootstrap input component. */
-export default function Input({type, label, helpText, error, className, children, ...props}) {
+export default function Input({
+    type, label, helpText, error, className, children, ...props
+}) {
     const uid = useUID();
-    const inputClassName = `form-control ${className ? className : ''} ${(error ? 'is-invalid' : '')}`.trim();
-    return <div className={formFieldsSize}>
-        <div className='form-group'>
-            <label htmlFor={uid}>{label}</label>
-            <div className='input-group'>
-                <input
-                    className={inputClassName}
-                    type={type}
-                    id={uid}
+    const inputClassName = `form-control ${className || ""} ${(error ? "is-invalid" : "")}`.trim();
+    return (
+        <div className={formFieldsSize}>
+            <div className="form-group">
+                <label htmlFor={uid}>{label}</label>
+                <div className="input-group">
+                    <input
+                        className={inputClassName}
+                        type={type}
+                        id={uid}
 
-                    {...props}
-                />
-                {children}
+                        {...props}
+                    />
+                    {children}
+                </div>
+                {error ? <div className="invalid-feedback">{error}</div> : null}
+                {helpText ? <small className="form-text text-muted">{helpText}</small> : null}
             </div>
-            {error ? <div className='invalid-feedback'>{error}</div> : null}
-            {helpText ? <small className="form-text text-muted">{helpText}</small> : null}
         </div>
-    </div>;
+    );
 }

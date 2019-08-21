@@ -5,13 +5,13 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import Input from './Input';
+import Input from "./Input";
 
 
-const TextInput = ({...props}) => <Input type="text" {...props}/>;
+const TextInput = ({ ...props }) => <Input type="text" {...props} />;
 
 
 TextInput.propTypes = {

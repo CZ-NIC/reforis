@@ -13,7 +13,7 @@ import {regionAndTime} from './__fixtures__/regionAndTime';
 
 import RegionAndTime from '../RegionAndTime';
 import API_URLs from 'common/API';
-import {mockedWS} from '../../testUtils/mockWS';
+import mockedWS from '../../testUtils/mockWS';
 
 describe('<RegionAndTime/>', () => {
     let regionAndTimeContainer;

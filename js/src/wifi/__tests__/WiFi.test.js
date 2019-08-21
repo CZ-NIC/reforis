@@ -9,7 +9,7 @@ import React from 'react';
 import diffSnapshot from 'snapshot-diff';
 
 import {fireEvent, render, wait} from 'customTestRender';
-import {mockedWS} from 'mockWS';
+import mockedWS from 'mockWS';
 import {wifiSettingsFixture} from './__fixtures__/wifiSettings';
 
 import mockAxios from 'jest-mock-axios';

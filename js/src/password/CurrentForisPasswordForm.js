@@ -5,28 +5,30 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import PasswordInput from 'common/bootstrap/PasswordInput';
+import PasswordInput from "common/bootstrap/PasswordInput";
 
 CurrentForisPasswordForm.propTypes = {
     formData: PropTypes.shape(
-        {currentForisPassword: PropTypes.string}
+        { currentForisPassword: PropTypes.string },
     ).isRequired,
     setFormValue: PropTypes.func.isRequired,
 };
 
-export default function CurrentForisPasswordForm({formData, setFormValue, ...props}) {
-    return <PasswordInput
-        withEye={true}
-        label={_('Current Foris password')}
-        value={formData.currentForisPassword}
+export default function CurrentForisPasswordForm({ formData, setFormValue, ...props }) {
+    return (
+        <PasswordInput
+            withEye
+            label={_("Current Foris password")}
+            value={formData.currentForisPassword}
 
-        onChange={setFormValue(
-            value => ({currentForisPassword: {$set: value}})
-        )}
+            onChange={setFormValue(
+                (value) => ({ currentForisPassword: { $set: value } }),
+            )}
 
-        {...props}
-    />
+            {...props}
+        />
+    );
 }

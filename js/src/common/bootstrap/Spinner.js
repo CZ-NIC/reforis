@@ -5,36 +5,42 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 Spinner.propTypes = {
     /** Children components put into `div` with "spinner-text" class. */
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.node),
-        PropTypes.node
+        PropTypes.node,
     ]),
     /** Render component with full-screen mode (using apropriate `.css` styles) */
     fullScreen: PropTypes.bool.isRequired,
-    className: PropTypes.string
+    className: PropTypes.string,
 };
 
 Spinner.defaultProps = {
     fullScreen: false,
 };
 
-export default function Spinner({fullScreen, children, className, ...props}) {
+export default function Spinner({
+    fullScreen, children, className, ...props
+}) {
     if (!fullScreen) {
-        return <div className={'spinner-wrapper ' + (className ? className : '')} {...props}>
-            <SpinnerElement>{children}</SpinnerElement>
-        </div>;
+        return (
+            <div className={`spinner-wrapper ${className || ""}`} {...props}>
+                <SpinnerElement>{children}</SpinnerElement>
+            </div>
+        );
     }
 
-    return <div className="spinner-fs-wrapper" {...props}>
-        <div className="spinner-fs-background">
-            <SpinnerElement>{children}</SpinnerElement>
+    return (
+        <div className="spinner-fs-wrapper" {...props}>
+            <div className="spinner-fs-background">
+                <SpinnerElement>{children}</SpinnerElement>
+            </div>
         </div>
-    </div>
+    );
 }
 
 SpinnerElement.propTypes = {
@@ -43,15 +49,17 @@ SpinnerElement.propTypes = {
     /** Children components */
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.node),
-        PropTypes.node
+        PropTypes.node,
     ]),
 };
 
-export function SpinnerElement({small, children}) {
-    return <>
-        <div className={'spinner-border ' + (small ? 'spinner-border-sm' : '')} role="status">
-            <span className="sr-only"/>
-        </div>
-        <div className="spinner-text">{children}</div>
-    </>
+export function SpinnerElement({ small, children }) {
+    return (
+        <>
+            <div className={`spinner-border ${small ? "spinner-border-sm" : ""}`} role="status">
+                <span className="sr-only" />
+            </div>
+            <div className="spinner-text">{children}</div>
+        </>
+    );
 }

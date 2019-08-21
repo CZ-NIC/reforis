@@ -5,4 +5,5 @@
  * See /LICENSE for more information.
  */
 
-export const REDIRECT_404_PAGE = '/notifications';
+// eslint-disable-next-line import/prefer-default-export
+export const REDIRECT_404_PAGE = "/notifications";

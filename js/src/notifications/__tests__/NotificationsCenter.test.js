@@ -8,7 +8,7 @@ import React from 'react';
 import {render, wait} from 'customTestRender';
 
 import mockAxios from 'jest-mock-axios';
-import {mockedWS} from 'mockWS';
+import mockedWS from 'mockWS';
 import {notificationsFixture} from './__fixtures__/notifications';
 
 import NotificationsCenter from '../Notifications/NotificationsCenter';

@@ -5,14 +5,14 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import TextInput from 'common/bootstrap/TextInput';
-import {validateIPv4Address} from 'common/validations';
+import TextInput from "common/bootstrap/TextInput";
+import { validateIPv4Address } from "common/validations";
 
 const HELP_TEXTS = {
-    dns: _('DNS server address is not required as the built-in DNS resolver is capable of working without it.'),
+    dns: _("DNS server address is not required as the built-in DNS resolver is capable of working without it."),
 };
 
 const FIELDS_PROP_TYPES = {
@@ -35,86 +35,88 @@ StaticIPForm.defaultProps = {
     formErrors: {},
 };
 
-export default function StaticIPForm({formData, formErrors, updateRule, setFormValue, ...props}) {
-    return <>
-        <TextInput
-            label={_('IP address')}
-            value={formData.ip || ''}
-            error={formErrors.ip || null}
-            required
+export default function StaticIPForm({
+    formData, formErrors, updateRule, setFormValue, ...props
+}) {
+    return (
+        <>
+            <TextInput
+                label={_("IP address")}
+                value={formData.ip || ""}
+                error={formErrors.ip || null}
+                required
 
-            onChange={setFormValue(
-                value => updateRule({ip: {$set: value}})
-            )}
+                onChange={setFormValue(
+                    (value) => updateRule({ ip: { $set: value } }),
+                )}
 
-            {...props}
-        />
-        <TextInput
-            label={_('Network mask')}
-            value={formData.netmask || ''}
-            error={formErrors.netmask || null}
-            required
+                {...props}
+            />
+            <TextInput
+                label={_("Network mask")}
+                value={formData.netmask || ""}
+                error={formErrors.netmask || null}
+                required
 
-            onChange={setFormValue(
-                value => updateRule({netmask: {$set: value}})
-            )}
+                onChange={setFormValue(
+                    (value) => updateRule({ netmask: { $set: value } }),
+                )}
 
-            {...props}
-        />
-        <TextInput
-            label={_('Gateway')}
-            value={formData.gateway || ''}
-            error={formErrors.gateway || null}
-            required
+                {...props}
+            />
+            <TextInput
+                label={_("Gateway")}
+                value={formData.gateway || ""}
+                error={formErrors.gateway || null}
+                required
 
-            onChange={setFormValue(
-                value => updateRule({gateway: {$set: value}})
-            )}
+                onChange={setFormValue(
+                    (value) => updateRule({ gateway: { $set: value } }),
+                )}
 
-            {...props}
-        />
-        <TextInput
-            label={_('DNS server 1')}
-            value={formData.dns1 || ''}
-            error={formErrors.dns1 || null}
-            helpText={HELP_TEXTS.dns}
+                {...props}
+            />
+            <TextInput
+                label={_("DNS server 1")}
+                value={formData.dns1 || ""}
+                error={formErrors.dns1 || null}
+                helpText={HELP_TEXTS.dns}
 
-            onChange={setFormValue(
-                value => updateRule({dns1: {$set: value}})
-            )}
+                onChange={setFormValue(
+                    (value) => updateRule({ dns1: { $set: value } }),
+                )}
 
-            {...props}
-        />
-        <TextInput
-            label={_('DNS server 2')}
-            value={formData.dns2 || ''}
-            error={formErrors.dns2 || null}
-            helpText={HELP_TEXTS.dns}
+                {...props}
+            />
+            <TextInput
+                label={_("DNS server 2")}
+                value={formData.dns2 || ""}
+                error={formErrors.dns2 || null}
+                helpText={HELP_TEXTS.dns}
 
-            onChange={setFormValue(
-                value => updateRule({dns2: {$set: value}})
-            )}
+                onChange={setFormValue(
+                    (value) => updateRule({ dns2: { $set: value } }),
+                )}
 
-            {...props}
-        />
-    </>
+                {...props}
+            />
+        </>
+    );
 }
 
 export function validateStaticForm(formData) {
-    let errors = {};
-    ['ip', 'netmask', 'gateway', 'dns1', 'dns2'].forEach(
-        field => {
-            let error = validateIPv4Address(formData[field]);
-            if (error)
-                errors[field] = error;
-        }
+    const errors = {};
+    ["ip", "netmask", "gateway", "dns1", "dns2"].forEach(
+        (field) => {
+            const error = validateIPv4Address(formData[field]);
+            if (error) errors[field] = error;
+        },
     );
-    ['ip', 'netmask', 'gateway'].forEach(
-        field => {
-            if (!formData[field] || formData[field] === '')
-                errors[field] = _('This field is required.');
-        }
+    ["ip", "netmask", "gateway"].forEach(
+        (field) => {
+            if (!formData[field] || formData[field] === "") errors[field] = _("This field is required.");
+        },
     );
 
-    return JSON.stringify(errors) !== '{}' ? errors : null;
+    return JSON.stringify(errors) !== "{}" ? errors : null;
 }

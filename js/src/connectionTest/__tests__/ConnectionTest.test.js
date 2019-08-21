@@ -9,7 +9,7 @@ import React from 'react';
 import {fireEvent, render, waitForElement} from 'customTestRender';
 import mockAxios from 'jest-mock-axios';
 
-import {mockedWS} from 'mockWS';
+import mockedWS from 'mockWS';
 
 import ConnectionTest from '../ConnectionTest';
 

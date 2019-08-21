@@ -5,109 +5,119 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
-import update from 'immutability-helper';
-import PropTypes from 'prop-types';
+import React from "react";
+import update from "immutability-helper";
+import PropTypes from "prop-types";
 
-import ForisForm from 'form/ForisForm';
-import API_URLs from 'common/API';
-import ConnectionTest from 'connectionTest/ConnectionTest';
+import ForisForm from "form/ForisForm";
+import API_URLs from "common/API";
+import ConnectionTest from "connectionTest/ConnectionTest";
 
-import WAN6Form, {validateWAN6Form} from './WAN6Form';
-import MACForm, {validateMACForm} from './MACForm';
-import WANForm, {validateWANForm} from './WANForm';
+import WAN6Form, { validateWAN6Form } from "./WAN6Form";
+import MACForm, { validateMACForm } from "./MACForm";
+import WANForm, { validateWANForm } from "./WANForm";
 
 WAN.propTypes = {
-    ws: PropTypes.object.isRequired
+    ws: PropTypes.object.isRequired,
 };
 
-export default function WAN({ws}) {
-    return <>
-        <h1>{_('WAN')}</h1>
-        <p>
-            {_(`
+export default function WAN({ ws }) {
+    return (
+        <>
+            <h1>{_("WAN")}</h1>
+            <p>
+                {_(`
 Here you specify your WAN port settings. Usually, you can leave this options untouched unless instructed
 otherwise by your internet service provider. Also, in case there is a cable or DSL modem connecting your
 router to the network, it is usually not necessary to change this setting.
         `)}
-        </p>
-        <ForisForm
-            ws={ws}
-            forisConfig={{
-                endpoint: API_URLs.wan,
-                wsModule: 'wan'
-            }}
-            prepData={prepData}
-            prepDataToSubmit={prepDataToSubmit}
-            validator={validator}
-        >
-            <WANForm/>
-            <WAN6Form/>
-            <MACForm/>
-        </ForisForm>
+            </p>
+            <ForisForm
+                ws={ws}
+                forisConfig={{
+                    endpoint: API_URLs.wan,
+                    wsModule: "wan",
+                }}
+                prepData={prepData}
+                prepDataToSubmit={prepDataToSubmit}
+                validator={validator}
+            >
+                <WANForm />
+                <WAN6Form />
+                <MACForm />
+            </ForisForm>
 
-        <h1>{_('Connection test')}</h1>
-        <p
-            dangerouslySetInnerHTML={{
-                __html: _(`
+            <h1>{_("Connection test")}</h1>
+            <p
+                dangerouslySetInnerHTML={{
+                    __html: _(`
 Here you can test you connection settings. Remember to click on the <b>Save button</b> before running the test.
 Note that sometimes it takes a while before the connection is fully initialized. So it might be useful to
 wait for a while before running this test.
-        `)
-            }}
-        />
-        <ConnectionTest ws={ws} type='wan'/>
-    </>
+        `),
+                }}
+            />
+            <ConnectionTest ws={ws} type="wan" />
+        </>
+    );
 }
 
 function prepData(formData) {
     // Create empty form fields if nothing has got from the server.
     const wan6_6in4 = update((formData.wan6_settings || {}).wan6_6in4 || {}, {
         dynamic_ipv4: {
-            $set: ((formData.wan6_settings || {}).wan6_6in4 || {}).dynamic_ipv4 || {enabled: false}
+            $set: ((formData.wan6_settings || {}).wan6_6in4 || {})
+                .dynamic_ipv4 || { enabled: false },
         },
     });
     return update(formData, {
         wan_settings: {
-            wan_dhcp: {$set: formData.wan_settings.wan_dhcp || {}},
-            wan_static: {$set: formData.wan_settings.wan_static || {}},
-            wan_pppoe: {$set: formData.wan_settings.wan_pppoe || {}}
+            wan_dhcp: { $set: formData.wan_settings.wan_dhcp || {} },
+            wan_static: { $set: formData.wan_settings.wan_static || {} },
+            wan_pppoe: { $set: formData.wan_settings.wan_pppoe || {} },
         },
         wan6_settings: {
-            wan6_dhcpv6: {$set: formData.wan6_settings.wan6_dhcpv6 || {duid: ""}},
-            wan6_static: {$set: formData.wan6_settings.wan6_static || {}},
-            wan6_6to4: {$set: formData.wan6_settings.wan6_6to4 || {}},
-            wan6_6in4: {$set: wan6_6in4},
-        }
-    })
+            wan6_dhcpv6: { $set: formData.wan6_settings.wan6_dhcpv6 || { duid: "" } },
+            wan6_static: { $set: formData.wan6_settings.wan6_static || {} },
+            wan6_6to4: { $set: formData.wan6_settings.wan6_6to4 || {} },
+            wan6_6in4: { $set: wan6_6in4 },
+        },
+    });
 }
 
 
 function prepDataToSubmit(formData) {
     const dataToSubmit = {
-        wan_settings: deleteUnnecessarySettings(formData.wan_settings.wan_type, formData.wan_settings),
-        wan6_settings: deleteUnnecessarySettings(formData.wan6_settings.wan6_type, formData.wan6_settings),
+        wan_settings: deleteUnnecessarySettings(
+            formData.wan_settings.wan_type,
+            formData.wan_settings,
+        ),
+        wan6_settings: deleteUnnecessarySettings(
+            formData.wan6_settings.wan6_type,
+            formData.wan6_settings,
+        ),
         mac_settings: formData.mac_settings,
     };
 
-    if (formData.wan6_settings.wan6_type === '6in4' && !formData.wan6_settings.wan6_6in4.dynamic_ipv4.enabled)
-        formData.wan6_settings.wan6_6in4.dynamic_ipv4 = {enabled: false};
+    if (formData.wan6_settings.wan6_type === "6in4"
+        && !formData.wan6_settings.wan6_6in4.dynamic_ipv4.enabled
+    ) {
+        formData.wan6_settings.wan6_6in4.dynamic_ipv4 = { enabled: false };
+    }
 
-    if (!formData.mac_settings.custom_mac_enabled)
-        delete dataToSubmit.mac_settings.custom_mac;
+    if (!formData.mac_settings.custom_mac_enabled) delete dataToSubmit.mac_settings.custom_mac;
 
     return dataToSubmit;
 }
 
 function deleteUnnecessarySettings(type, settings) {
-    for (let key in settings) {
+    // eslint-disable-next-line guard-for-in
+    for (const key in settings) {
         const hasKey = Object.prototype.hasOwnProperty.call(settings, key);
-        if (!hasKey || key.endsWith('type'))
-            continue;
-        if (!key.endsWith(type))
-            delete settings[key]
+        if (!hasKey || key.endsWith("type")) continue;
+        if (!key.endsWith(type)) delete settings[key];
     }
-    return settings
+    return settings;
 }
 
 function validator(formData) {
@@ -116,7 +126,6 @@ function validator(formData) {
         wan6_settings: validateWAN6Form(formData.wan6_settings),
         mac_settings: validateMACForm(formData.mac_settings),
     };
-    if (errors.wan_settings || errors.wan6_settings || errors.mac_settings)
-        return errors;
+    if (errors.wan_settings || errors.wan6_settings || errors.mac_settings) return errors;
     return null;
 }

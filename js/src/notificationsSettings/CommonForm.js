@@ -5,31 +5,31 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import TextInput from 'common/bootstrap/TextInput';
-import Select from 'common/bootstrap/Select';
-import CheckBox from 'common/bootstrap/Checkbox';
+import TextInput from "common/bootstrap/TextInput";
+import Select from "common/bootstrap/Select";
+import CheckBox from "common/bootstrap/Checkbox";
 
-import HELP_TEXTS from './helpTexts';
+import HELP_TEXTS from "./helpTexts";
 
 export const SEVERITY_OPTIONS = {
     // '0': _?,
-    '1': _("Reboot is required"),
-    '2': _("Reboot or attention is required"),
-    '3': _("Reboot or attention is required or update was installed"),
+    1: _("Reboot is required"),
+    2: _("Reboot or attention is required"),
+    3: _("Reboot or attention is required or update was installed"),
 };
 
 CommonForm.propTypes = {
     formData: PropTypes.shape({
         to: PropTypes.string,
         severity_filter: PropTypes.oneOf(
-            Object.keys(SEVERITY_OPTIONS).map(key => parseInt(key))
+            Object.keys(SEVERITY_OPTIONS).map((key) => parseInt(key)),
         ).isRequired,
-        send_news: PropTypes.bool.isRequired
+        send_news: PropTypes.bool.isRequired,
     }).isRequired,
-    formErrors: PropTypes.shape({to: PropTypes.string,}),
+    formErrors: PropTypes.shape({ to: PropTypes.string }),
     setFormValue: PropTypes.func.isRequired,
 };
 
@@ -40,36 +40,42 @@ CommonForm.defaultProps = {
     formErrors: {},
 };
 
-export default function CommonForm({formData, formErrors, setFormValue, ...props}) {
-    return <>
-        <TextInput
-            label={_("Recipient's email")}
-            value={formData.to || ''}
-            error={formErrors.to}
-            helpText={HELP_TEXTS.common.to}
-            required
+export default function CommonForm({
+    formData, formErrors, setFormValue, ...props
+}) {
+    return (
+        <>
+            <TextInput
+                label={_("Recipient's email")}
+                value={formData.to || ""}
+                error={formErrors.to}
+                helpText={HELP_TEXTS.common.to}
+                required
 
-            onChange={setFormValue(value => ({common: {to: {$set: value}}}))}
+                onChange={setFormValue((value) => ({ common: { to: { $set: value } } }))}
 
-            {...props}
-        />
-        <Select
-            label={_('Importance')}
-            value={formData.severity_filter}
-            choices={SEVERITY_OPTIONS}
+                {...props}
+            />
+            <Select
+                label={_("Importance")}
+                value={formData.severity_filter}
+                choices={SEVERITY_OPTIONS}
 
-            onChange={setFormValue(value => ({common: {severity_filter: {$set: value}}}))}
+                onChange={setFormValue(
+                    (value) => ({ common: { severity_filter: { $set: value } } }),
+                )}
 
-            {...props}
-        />
-        <CheckBox
-            label={_('Send news')}
-            checked={formData.send_news}
-            helpText={HELP_TEXTS.common.send_news}
+                {...props}
+            />
+            <CheckBox
+                label={_("Send news")}
+                checked={formData.send_news}
+                helpText={HELP_TEXTS.common.send_news}
 
-            onChange={setFormValue(value => ({common: {send_news: {$set: value}}}))}
+                onChange={setFormValue((value) => ({ common: { send_news: { $set: value } } }))}
 
-            {...props}
-        />
-    </>
+                {...props}
+            />
+        </>
+    );
 }

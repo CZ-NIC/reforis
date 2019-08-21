@@ -5,11 +5,13 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import {Modal, ModalBody, ModalFooter, ModalHeader} from 'common/bootstrap/Modal';
-import Button from 'common/bootstrap/Button';
+import {
+    Modal, ModalBody, ModalFooter, ModalHeader,
+} from "common/bootstrap/Modal";
+import Button from "common/bootstrap/Button";
 
 const DNSSEC_DISABLE_MESSAGE = _(`
 DNSSEC is a security technology that protects the DNS communication against attacks on the DNS infrastructure.
@@ -25,25 +27,31 @@ DNSSECDisableModal.propTypes = {
     callback: PropTypes.func.isRequired,
 };
 
-export default function DNSSECDisableModal({shown, setShown, callback}) {
-    return <Modal setShown={setShown} shown={shown}>
-        <ModalHeader setShown={setShown} title={_('Warning!')}/>
-        <ModalBody><p>{DNSSEC_DISABLE_MESSAGE}</p></ModalBody>
-        <ModalFooter>
-            <Button onClick={
-                e => {
-                    e.preventDefault();
-                    setShown(false)
+export default function DNSSECDisableModal({ shown, setShown, callback }) {
+    return (
+        <Modal setShown={setShown} shown={shown}>
+            <ModalHeader setShown={setShown} title={_("Warning!")} />
+            <ModalBody><p>{DNSSEC_DISABLE_MESSAGE}</p></ModalBody>
+            <ModalFooter>
+                <Button onClick={
+                    (e) => {
+                        e.preventDefault();
+                        setShown(false);
+                    }
                 }
-            }>
-                {_('Cancel')}
-            </Button>
-            <Button className='btn-danger' onClick={e => {
-                e.preventDefault();
-                callback()
-            }}>
-                {_('Disable DNSSEC')}
-            </Button>
-        </ModalFooter>
-    </Modal>
+                >
+                    {_("Cancel")}
+                </Button>
+                <Button
+                    className="btn-danger"
+                    onClick={(e) => {
+                        e.preventDefault();
+                        callback();
+                    }}
+                >
+                    {_("Disable DNSSEC")}
+                </Button>
+            </ModalFooter>
+        </Modal>
+    );
 }

@@ -13,7 +13,6 @@ exports[`<GuideNavigation/> Snapshot. 1`] = `
         <i
           class="fas fa-arrow-right"
         />
-         
         Password
       </a>
     </li>
@@ -25,7 +24,6 @@ exports[`<GuideNavigation/> Snapshot. 1`] = `
         <i
           class="fas fa-arrow-right"
         />
-         
         Workflow
       </a>
     </li>
@@ -37,7 +35,6 @@ exports[`<GuideNavigation/> Snapshot. 1`] = `
         <i
           class="fas fa-arrow-right"
         />
-         
         Interfaces
       </a>
     </li>
@@ -46,7 +43,6 @@ exports[`<GuideNavigation/> Snapshot. 1`] = `
         <i
           class="fas fa-arrow-right"
         />
-         
         WAN
       </a>
     </li>
@@ -55,7 +51,6 @@ exports[`<GuideNavigation/> Snapshot. 1`] = `
         <i
           class="fas fa-arrow-right"
         />
-         
         Time
       </a>
     </li>
@@ -64,7 +59,6 @@ exports[`<GuideNavigation/> Snapshot. 1`] = `
         <i
           class="fas fa-arrow-right"
         />
-         
         DNS
       </a>
     </li>
@@ -73,7 +67,6 @@ exports[`<GuideNavigation/> Snapshot. 1`] = `
         <i
           class="fas fa-arrow-right"
         />
-         
         Updates
       </a>
     </li>
@@ -82,7 +75,6 @@ exports[`<GuideNavigation/> Snapshot. 1`] = `
         <i
           class="fas fa-arrow-right"
         />
-         
         Finish
       </a>
     </li>

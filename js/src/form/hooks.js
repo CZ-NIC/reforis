@@ -5,11 +5,16 @@
  * See /LICENSE for more information.
  */
 
-import {useCallback, useEffect, useReducer} from 'react';
-import update from 'immutability-helper';
+import { useCallback, useEffect, useReducer } from "react";
+import update from "immutability-helper";
 
-import {useAPIGet} from 'common/APIhooks';
-import {useWSForisModule} from 'common/WebSocketsHooks';
+import { useAPIGet } from "common/APIhooks";
+import useWSForisModule from "common/WebSocketsHooks";
+
+const FORM_ACTIONS = {
+    updateValue: 1,
+    resetData: 2,
+};
 
 export function useForm(validator, prepData) {
     const [state, dispatch] = useReducer(formReducer, {
@@ -18,73 +23,66 @@ export function useForm(validator, prepData) {
         errors: {},
     });
 
-    const onFormReload = useCallback(data => {
+    const onFormReload = useCallback((data) => {
         dispatch({
             type: FORM_ACTIONS.resetData,
-            data: data,
-            prepData: prepData,
-            validator: validator,
+            data,
+            prepData,
+            validator,
         });
     }, [prepData, validator]);
 
-    const onFormChangeHandler = useCallback(updateRule =>
-        event => {
-            dispatch({
-                type: FORM_ACTIONS.updateValue,
-                value: getChangedValue(event.target),
-                updateRule: updateRule,
-                validator: validator,
-            })
-        }, [validator]);
+    const onFormChangeHandler = useCallback((updateRule) => (event) => {
+        dispatch({
+            type: FORM_ACTIONS.updateValue,
+            value: getChangedValue(event.target),
+            updateRule,
+            validator,
+        });
+    }, [validator]);
 
     return [
         state,
         onFormChangeHandler,
         onFormReload,
-    ]
+    ];
 }
-
-const FORM_ACTIONS = {
-    updateValue: 1,
-    resetData: 2,
-};
 
 function formReducer(state, action) {
     switch (action.type) {
-        case FORM_ACTIONS.updateValue: {
-            const newData = update(state.data, action.updateRule(action.value));
-            const errors = action.validator(newData);
-            return {
-                ...state,
-                data: newData,
-                errors: errors
-            };
-        }
-        case FORM_ACTIONS.resetData: {
-            if (!action.data)
-                return {...state, initialData: state.data};
-            const prepData = action.prepData ? action.prepData(action.data) : action.data;
-            return {
-                data: prepData,
-                initialData: prepData,
-                errors: action.data ? action.validator(prepData) : undefined,
-            };
-        }
-        default: {
-            throw new Error();
-        }
+    case FORM_ACTIONS.updateValue: {
+        const newData = update(state.data, action.updateRule(action.value));
+        const errors = action.validator(newData);
+        return {
+            ...state,
+            data: newData,
+            errors,
+        };
+    }
+    case FORM_ACTIONS.resetData: {
+        if (!action.data) return { ...state, initialData: state.data };
+        const prepData = action.prepData ? action.prepData(action.data) : action.data;
+        return {
+            data: prepData,
+            initialData: prepData,
+            errors: action.data ? action.validator(prepData) : undefined,
+        };
+    }
+    default: {
+        throw new Error();
+    }
     }
 }
 
 function getChangedValue(target) {
-    let value = target.value;
-    if (target.type === 'checkbox') {
+    let { value } = target;
+    if (target.type === "checkbox") {
         value = target.checked;
-    } else if (target.type === 'number') {
+    } else if (target.type === "number") {
         const parsedValue = parseInt(value);
-        value = isNaN(parsedValue) ? value : parsedValue;
+        value = Number.isNaN(parsedValue) ? value : parsedValue;
     }
-    return value
+    return value;
 }
 
 export function useForisModule(ws, config) {

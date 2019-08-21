@@ -5,31 +5,31 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 NotificationIcon.propTypes = {
     severity: PropTypes.string.isRequired,
     className: PropTypes.string,
 };
 
-export default function NotificationIcon({severity, className}) {
+export default function NotificationIcon({ severity, className }) {
     let iconName = null;
     switch (severity) {
-        case 'news':
-            iconName = 'newspaper';
-            break;
-        case 'restart':
-            iconName = 'power-off';
-            break;
-        case 'error':
-            iconName = 'exclamation-circle';
-            break;
-        case 'update':
-            iconName = 'sync';
-            break;
-        default:
+    case "news":
+        iconName = "newspaper";
+        break;
+    case "restart":
+        iconName = "power-off";
+        break;
+    case "error":
+        iconName = "exclamation-circle";
+        break;
+    case "update":
+        iconName = "sync";
+        break;
+    default:
     }
 
-    return <i className={`fa fa-${iconName} ${className}`}/>;
+    return <i className={`fa fa-${iconName} ${className}`} />;
 }

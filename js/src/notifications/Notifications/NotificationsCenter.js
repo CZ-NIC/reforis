@@ -5,46 +5,50 @@
  * See /LICENSE for more information.
  */
 
-import React, {useState} from 'react';
-import PropTypes from 'prop-types';
-import {withRouter} from 'react-router';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { withRouter } from "react-router";
 
-import useNotifications from '../hooks';
-import NotificationsList from './NotificationsList';
+import useNotifications from "../hooks";
+import NotificationsList from "./NotificationsList";
 
 NotificationsCenter.propTypes = {
     ws: PropTypes.object.isRequired,
-    history: PropTypes.object.isRequired
+    history: PropTypes.object.isRequired,
 };
 
-function NotificationsCenter({ws, history}) {
+function NotificationsCenter({ ws, history }) {
     const [notifications, dismiss, dismissAll] = useNotifications(ws);
     const [currentNotification, setCurrentNotification] = useState();
 
     function getDismissAllButton() {
-        return <button
-            type='button'
-            id='btn-dismiss-all'
-            className='btn btn-outline-danger float-right'
-            onClick={dismissAll}
-        >
-            {_('Dismiss all')}
-        </button>
+        return (
+            <button
+                type="button"
+                id="btn-dismiss-all"
+                className="btn btn-outline-danger float-right"
+                onClick={dismissAll}
+            >
+                {_("Dismiss all")}
+            </button>
+        );
     }
 
-    history.listen((location,) => setCurrentNotification(location.search));
+    history.listen((location) => setCurrentNotification(location.search));
 
-    return <div id='notifications-center'>
-        <h1>{_('Notifications')}</h1>
-            {notifications.length !== 0 ?
-                getDismissAllButton() :
-                <p className='text-muted text-center'>{_('No notifications')}</p>}
+    return (
+        <div id="notifications-center">
+            <h1>{_("Notifications")}</h1>
+            {notifications.length !== 0
+                ? getDismissAllButton()
+                : <p className="text-muted text-center">{_("No notifications")}</p>}
             <NotificationsList
                 currentNotification={currentNotification}
                 notifications={notifications}
                 dismiss={dismiss}
             />
-    </div>
+        </div>
+    );
 }
 
 export default withRouter(NotificationsCenter);

@@ -9,7 +9,7 @@ import React from 'react';
 import {render, wait} from 'customTestRender';
 import mockAxios from 'jest-mock-axios';
 
-import {mockedWS} from 'mockWS';
+import mockedWS from 'mockWS';
 import { notificationsFixture } from 'notifications/__tests__/__fixtures__/notifications.js';
 
 import RebootDropdown from '../RebootDropdown';

@@ -10,12 +10,12 @@
  */
 
 export const ERROR_MESSAGES = {
-    IPv4: _('This is not a valid IPv4 address.'),
-    IPv6: _('This is not a valid IPv6 address.'),
-    IPv6Prefix: _('This is not a valid IPv6 prefix.'),
-    domain: _('This is not a valid domain name.'),
-    DUID: _('This is not a valid DUID.'),
-    MAC: _('This is not a valid MAC address.'),
+    IPv4: _("This is not a valid IPv4 address."),
+    IPv6: _("This is not a valid IPv6 address."),
+    IPv6Prefix: _("This is not a valid IPv6 prefix."),
+    domain: _("This is not a valid domain name."),
+    DUID: _("This is not a valid DUID."),
+    MAC: _("This is not a valid MAC address."),
     MultipleEmails: _("Doesn't contain a list of emails separated by commas."),
 };
 
@@ -30,18 +30,17 @@ const REs = {
 };
 
 
-const createValidator = fieldType => value => {
-    if (value && value !== '')
-        return REs[fieldType].test(value) ? undefined : ERROR_MESSAGES[fieldType]
+const createValidator = (fieldType) => (value) => {
+    if (value && value !== "") return REs[fieldType].test(value) ? undefined : ERROR_MESSAGES[fieldType];
 };
 
-const validateIPv4Address = createValidator('IPv4');
-const validateIPv6Address = createValidator('IPv6');
-const validateIPv6Prefix = createValidator('IPv6Prefix');
-const validateDomain = createValidator('domain');
-const validateDUID = createValidator('DUID');
-const validateMAC = createValidator('MAC');
-const validateMultipleEmails = createValidator('MultipleEmails');
+const validateIPv4Address = createValidator("IPv4");
+const validateIPv6Address = createValidator("IPv6");
+const validateIPv6Prefix = createValidator("IPv6Prefix");
+const validateDomain = createValidator("domain");
+const validateDUID = createValidator("DUID");
+const validateMAC = createValidator("MAC");
+const validateMultipleEmails = createValidator("MultipleEmails");
 
 export {
     validateIPv4Address,
@@ -51,4 +50,4 @@ export {
     validateDUID,
     validateMAC,
     validateMultipleEmails,
-}
+};

@@ -5,29 +5,31 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import NotificationsDropdownButton from './NotificationsDropdownButton';
-import NotificationsDropdownMenu from './NotificationsDropdownMenu';
-import useNotifications, {useNewNotification} from '../hooks';
+import NotificationsDropdownButton from "./NotificationsDropdownButton";
+import NotificationsDropdownMenu from "./NotificationsDropdownMenu";
+import useNotifications, { useNewNotification } from "../hooks";
 
 NotificationsDropdown.propTypes = {
-    ws: PropTypes.object.isRequired
+    ws: PropTypes.object.isRequired,
 };
 
-export default function NotificationsDropdown({ws}) {
+export default function NotificationsDropdown({ ws }) {
     const [notifications, dismiss, dismissAll] = useNotifications(ws);
     const newNotification = useNewNotification(ws);
-    return <div id='notifications' className='dropdown btn-group'>
-        <NotificationsDropdownButton
-            notificationsCount={notifications.length}
-            newNotification={newNotification}
-        />
-        <NotificationsDropdownMenu
-            notifications={notifications}
-            dismiss={dismiss}
-            dismissAll={dismissAll}
-        />
-    </div>
+    return (
+        <div id="notifications" className="dropdown btn-group">
+            <NotificationsDropdownButton
+                notificationsCount={notifications.length}
+                newNotification={newNotification}
+            />
+            <NotificationsDropdownMenu
+                notifications={notifications}
+                dismiss={dismiss}
+                dismissAll={dismissAll}
+            />
+        </div>
+    );
 }

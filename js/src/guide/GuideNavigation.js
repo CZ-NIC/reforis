@@ -6,62 +6,74 @@
  */
 
 
-import React from 'react';
-import {withRouter} from 'react-router';
-import {Link, NavLink} from 'react-router-dom';
+import React from "react";
+import { withRouter } from "react-router";
+import { Link, NavLink } from "react-router-dom";
 
-import {STEPS} from './constance';
-import {useGuideFinish} from './hooks';
+import { STEPS } from "./constance";
+import useGuideFinish from "./hooks";
 
-export default function GuideNavigation({workflow_steps, passed, next_step}) {
+export default function GuideNavigation({ workflow_steps, passed, next_step }) {
     const onGuideFinishHandler = useGuideFinish();
     const navigationItems = workflow_steps.map(
-        (step, idx) => {
-            return <GuideNavigationItem
+        (step, idx) => (
+            <GuideNavigationItem
                 key={idx}
                 name={STEPS[step].name}
                 passed={passed.includes(step)}
                 url={`/${step}`}
                 next={step === next_step}
             />
-        }
+        ),
     );
 
-    return <>
-        <ul className="list-unstyled">
-            {navigationItems}
-        </ul>
-        <NextStepButtonWithRouter next_step={next_step}/>
-        <button type="button" className="btn btn-link" onClick={onGuideFinishHandler}>
-            {_('Skip guide')}
-        </button>
-    </>
+    return (
+        <>
+            <ul className="list-unstyled">
+                {navigationItems}
+            </ul>
+            <NextStepButtonWithRouter next_step={next_step} />
+            <button type="button" className="btn btn-link" onClick={onGuideFinishHandler}>
+                {_("Skip guide")}
+            </button>
+        </>
+    );
 }
 
-function GuideNavigationItem({name, url, next, passed}) {
-    const passedClassName = passed ? 'passed' : '';
-    const nextClassName = next ? 'next' : '';
+function GuideNavigationItem({
+    name, url, next, passed,
+}) {
+    const passedClassName = passed ? "passed" : "";
+    const nextClassName = next ? "next" : "";
 
-    const content = <>
-        <i className="fas fa-arrow-right"/>&nbsp;{name}
-    </>;
+    const content = (
+        <>
+            <i className="fas fa-arrow-right" />
+            {name}
+        </>
+    );
 
-    return <li>
-        {passed || next ?
-            <NavLink className={`${passedClassName} ${nextClassName}`} to={url}>
-                {content}
-            </NavLink>
+    return (
+        <li>
+            {passed || next
+                ? (
+                    <NavLink className={`${passedClassName} ${nextClassName}`} to={url}>
+                        {content}
+                    </NavLink>
+                )
             // eslint-disable-next-line jsx-a11y/anchor-is-valid
-            : <a>{content}</a>}
-    </li>
+                : <a>{content}</a>}
+        </li>
+    );
 }
 
-function NextStepButton({next_step, location}) {
-    if (location.pathname === `/${next_step}`)
-        return null;
-    return <Link id='next-step-button' className='btn btn-lg btn-light ' to={`/${next_step}`}>
-        <i className="fas fa-arrow-right"/>
-    </Link>
+function NextStepButton({ next_step, location }) {
+    if (location.pathname === `/${next_step}`) return null;
+    return (
+        <Link id="next-step-button" className="btn btn-lg btn-light " to={`/${next_step}`}>
+            <i className="fas fa-arrow-right" />
+        </Link>
+    );
 }
 
 const NextStepButtonWithRouter = withRouter(NextStepButton);

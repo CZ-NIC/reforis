@@ -8,7 +8,7 @@
 import React from 'react';
 import {fireEvent, getByLabelText, getByText, render, wait} from 'customTestRender';
 
-import {mockedWS} from 'mockWS';
+import mockedWS from 'mockWS';
 import mockAxios from 'jest-mock-axios';
 import GuestNetwork from '../GuestNetwork';
 import guestNetworkFixture from './__fixtures__/guestNetwork';

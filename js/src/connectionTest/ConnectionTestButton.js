@@ -5,38 +5,40 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import Button from 'common/bootstrap/Button';
-import {TEST_STATES} from './hooks';
+import Button from "common/bootstrap/Button";
+import { TEST_STATES } from "./hooks";
 
 ConnectionTestButton.propTypes = {
-    state: PropTypes.oneOf(Object.keys(TEST_STATES).map(key => TEST_STATES[key])).isRequired,
+    state: PropTypes.oneOf(Object.keys(TEST_STATES).map((key) => TEST_STATES[key])).isRequired,
 };
 
-export default function ConnectionTestButton({state, ...props}) {
+export default function ConnectionTestButton({ state, ...props }) {
     const isRunning = state === TEST_STATES.RUNNING;
     let labelSubmitButton;
     switch (state) {
-        case TEST_STATES.RUNNING:
-            labelSubmitButton = _('Test is running...');
-            break;
-        case TEST_STATES.FINISHED:
-            labelSubmitButton = _('Test connection again');
-            break;
-        default:
-            labelSubmitButton = _('Test connection');
+    case TEST_STATES.RUNNING:
+        labelSubmitButton = _("Test is running...");
+        break;
+    case TEST_STATES.FINISHED:
+        labelSubmitButton = _("Test connection again");
+        break;
+    default:
+        labelSubmitButton = _("Test connection");
     }
 
-    return <Button
-        className='btn-primary'
-        loading={isRunning}
-        disabled={isRunning}
-        forisFormSize
+    return (
+        <Button
+            className="btn-primary"
+            loading={isRunning}
+            disabled={isRunning}
+            forisFormSize
 
-        {...props}
-    >
-        {labelSubmitButton}
-    </Button>;
+            {...props}
+        >
+            {labelSubmitButton}
+        </Button>
+    );
 }

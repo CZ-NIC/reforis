@@ -5,51 +5,51 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import ForisForm from 'form/ForisForm';
-import API_URLs from 'common/API';
+import ForisForm from "form/ForisForm";
+import API_URLs from "common/API";
 
-import NotificationsEmailSettingsForm from './NotificationsEmailSettingsForm';
-import validator from './validator';
+import NotificationsEmailSettingsForm from "./NotificationsEmailSettingsForm";
+import validator from "./validator";
 
 NotificationsSettings.propTypes = {
-    ws: PropTypes.object.isRequired
+    ws: PropTypes.object.isRequired,
 };
 
-export default function NotificationsSettings({ws}) {
-    return <>
-        <h1>{_('Notifications settings')}</h1>
-        <ForisForm
-            ws={ws}
-            forisConfig={{
-                endpoint: API_URLs.notificationsSettings,
-                wsModule: 'router_notifications',
-                wsAction: 'update_email_settings',
-            }}
-            prepData={prepData}
-            prepDataToSubmit={prepDataToSubmit}
-            validator={validator}
-        >
-            <NotificationsEmailSettingsForm/>
-        </ForisForm>
-    </>
+export default function NotificationsSettings({ ws }) {
+    return (
+        <>
+            <h1>{_("Notifications settings")}</h1>
+            <ForisForm
+                ws={ws}
+                forisConfig={{
+                    endpoint: API_URLs.notificationsSettings,
+                    wsModule: "router_notifications",
+                    wsAction: "update_email_settings",
+                }}
+                prepData={prepData}
+                prepDataToSubmit={prepDataToSubmit}
+                validator={validator}
+            >
+                <NotificationsEmailSettingsForm />
+            </ForisForm>
+        </>
+    );
 }
 
 function prepData(formData) {
     formData = formData.emails;
-    formData.common.to = formData.common.to.join(', ');
-    return formData
+    formData.common.to = formData.common.to.join(", ");
+    return formData;
 }
 
 function prepDataToSubmit(formData) {
-    if (!formData.enabled) return {enabled: false};
-    formData.common.to = formData.common.to.replace(/\s+/g, '').split(',');
+    if (!formData.enabled) return { enabled: false };
+    formData.common.to = formData.common.to.replace(/\s+/g, "").split(",");
 
-    if (formData.smtp_type === 'turris')
-        delete formData.smtp_custom;
-    else if (formData.smtp_type === 'custom')
-        delete formData.smtp_turris;
-    return formData
+    if (formData.smtp_type === "turris") delete formData.smtp_custom;
+    else if (formData.smtp_type === "custom") delete formData.smtp_turris;
+    return formData;
 }

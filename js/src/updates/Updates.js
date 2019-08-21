@@ -5,29 +5,30 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react'
-import moment from 'moment';
-import PropTypes from 'prop-types';
+import React from "react";
+import moment from "moment";
+import PropTypes from "prop-types";
 
-import ForisForm from 'form/ForisForm';
-import API_URLs from 'common/API';
+import ForisForm from "form/ForisForm";
+import API_URLs from "common/API";
 
-import UpdatesForm from './forms/UpdatesForm';
-import LicenceModal from './LicenceModal';
+import UpdatesForm from "./forms/UpdatesForm";
+import LicenceModal from "./LicenceModal";
 
 Updates.propTypes = {
-    postCallback: PropTypes.func
+    postCallback: PropTypes.func,
 };
 
 Updates.defaultProps = {
     postCallback: () => undefined,
 };
 
-export default function Updates({postCallback}) {
-    return <>
-        <h1>{_('Updates')}</h1>
-        <p dangerouslySetInnerHTML={{
-            __html: _(`
+export default function Updates({ postCallback }) {
+    return (
+        <>
+            <h1>{_("Updates")}</h1>
+            <p dangerouslySetInnerHTML={{
+                __html: _(`
 One of the most important features of router Turris are automatic system updates. Thanks to this function
 your router's software stays up to date and offers better protection against attacks from the Internet.
 <br/>
@@ -37,29 +38,29 @@ found.
 <br/>
 By turning the automatic updates on, you agree to this feature's license agreement. More information is
 available <a href="" data-toggle="modal" data-target="#licenceModal">here</a>.
-            `)
-        }}
-        />
-        <LicenceModal/>
-        <ForisForm
-            forisConfig={{
-                endpoint: API_URLs.updates
+            `),
             }}
-            prepData={prepData}
-            prepDataToSubmit={prepDataToSubmit}
-            postCallback={postCallback}
-            validator={validator}
-        >
-            <UpdatesForm/>
-        </ForisForm>
-    </>
+            />
+            <LicenceModal />
+            <ForisForm
+                forisConfig={{
+                    endpoint: API_URLs.updates,
+                }}
+                prepData={prepData}
+                prepDataToSubmit={prepDataToSubmit}
+                postCallback={postCallback}
+                validator={validator}
+            >
+                <UpdatesForm />
+            </ForisForm>
+        </>
+    );
 }
 
 
 function prepData(formData) {
-    if (!formData.approval_settings.delay)
-        formData.approval_settings.delay = 1;
-    return formData
+    if (!formData.approval_settings.delay) formData.approval_settings.delay = 1;
+    return formData;
 }
 
 function prepDataToSubmit(formData) {
@@ -67,16 +68,13 @@ function prepDataToSubmit(formData) {
         delete formData.approval_settings;
         delete formData.languages;
         delete formData.user_lists;
-    } else if (formData.approval_settings.status !== 'delayed')
-        delete formData.approval_settings.delay;
-    return formData
+    } else if (formData.approval_settings.status !== "delayed") delete formData.approval_settings.delay;
+    return formData;
 }
 
 function validator(formData) {
-    let rebootErrors = {};
-    if (!moment(formData.reboots.time, 'HH:mm', true).isValid())
-        rebootErrors.time = _('Time should be in HH:MM format.');
-    if (0 > formData.reboots.delay || formData.reboots.delay > 10)
-        rebootErrors.delay = _('Number of days that must pass between receiving the request for restart and the automatic restart itself.');
-    return rebootErrors.time || rebootErrors.delay ? {reboots: rebootErrors} : undefined;
+    const rebootErrors = {};
+    if (!moment(formData.reboots.time, "HH:mm", true).isValid()) rebootErrors.time = _("Time should be in HH:MM format.");
+    if (formData.reboots.delay < 0 || formData.reboots.delay > 10) rebootErrors.delay = _("Number of days that must pass between receiving the request for restart and the automatic restart itself.");
+    return rebootErrors.time || rebootErrors.delay ? { reboots: rebootErrors } : undefined;
 }

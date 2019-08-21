@@ -5,51 +5,48 @@
  * See /LICENSE for more information.
  */
 
-import {REFORIS_URL_PREFIX} from './constants';
+import { REFORIS_URL_PREFIX } from "./constants";
 
 const API_URL_PREFIX = `${REFORIS_URL_PREFIX}/api`;
 
 const API_URLs = new Proxy({
-        notifications: '/notifications',
-        notificationsSettings: '/notifications-settings',
+    notifications: "/notifications",
+    notificationsSettings: "/notifications-settings",
 
-        language: '/language',
-        languages: '/languages',
+    language: "/language",
+    languages: "/languages",
 
-        // Network
-        wifi: '/wifi',
-        wifiReset: '/wifi-reset',
-        wan: '/wan',
-        lan: '/lan',
-        dns: '/dns',
-        interfaces: '/interfaces',
-        guestNetwork: '/guest-network',
+    // Network
+    wifi: "/wifi",
+    wifiReset: "/wifi-reset",
+    wan: "/wan",
+    lan: "/lan",
+    dns: "/dns",
+    interfaces: "/interfaces",
+    guestNetwork: "/guest-network",
 
-        connectionTest: '/connection-test',
-        dnsTest: '/dns-test',
+    connectionTest: "/connection-test",
+    dnsTest: "/dns-test",
 
-        // Administration
-        password: '/password',
-        regionAndTime: '/region-and-time',
-        ntpUpdate: '/ntp-update',
-        approvals: '/approvals',
-        updates: '/updates',
-        packages: '/packages',
-        reboot: '/reboot',
+    // Administration
+    password: "/password",
+    regionAndTime: "/region-and-time",
+    ntpUpdate: "/ntp-update",
+    approvals: "/approvals",
+    updates: "/updates",
+    packages: "/packages",
+    reboot: "/reboot",
 
-        about: '/about',
+    about: "/about",
 
-        healthCheck: '/health-check',
+    healthCheck: "/health-check",
 
-        guide: '/guide',
-        finishGuide: '/finish-guide',
-        guideWorkflow: '/guide-workflow',
-    },
-    {
-        get: (target, name) => {
-            return `${API_URL_PREFIX}${target[name]}`
-        }
-    }
-);
+    guide: "/guide",
+    finishGuide: "/finish-guide",
+    guideWorkflow: "/guide-workflow",
+},
+{
+    get: (target, name) => `${API_URL_PREFIX}${target[name]}`,
+});
 
 export default API_URLs;

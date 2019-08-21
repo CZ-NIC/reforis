@@ -5,21 +5,23 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import RebootDropdown from 'rebootDropdown/RebootDropdown';
-import NotificationsDropdown from 'notifications/NotificationsDropdown/NotificationsDropdown';
-import LanguagesDropdown from 'languagesDropdown/LanguagesDropdown';
+import RebootDropdown from "rebootDropdown/RebootDropdown";
+import NotificationsDropdown from "notifications/NotificationsDropdown/NotificationsDropdown";
+import LanguagesDropdown from "languagesDropdown/LanguagesDropdown";
 
 TopBar.propTypes = {
-    ws: PropTypes.object.isRequired
+    ws: PropTypes.object.isRequired,
 };
 
-export default function TopBar({ws}) {
-    return <>
-        <RebootDropdown ws={ws}/>
-        <NotificationsDropdown ws={ws}/>
-        <LanguagesDropdown ws={ws}/>
-    </>
+export default function TopBar({ ws }) {
+    return (
+        <>
+            <RebootDropdown ws={ws} />
+            <NotificationsDropdown ws={ws} />
+            <LanguagesDropdown ws={ws} />
+        </>
+    );
 }

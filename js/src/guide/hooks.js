@@ -5,18 +5,17 @@
  * See /LICENSE for more information.
  */
 
-import {useEffect} from 'react';
+import { useEffect } from "react";
 
-import {useAPIPost} from 'common/APIhooks';
-import API_URLs from 'common/API';
-import {REFORIS_URL_PREFIX} from 'common/constants';
+import { useAPIPost } from "common/APIhooks";
+import API_URLs from "common/API";
+import { REFORIS_URL_PREFIX } from "common/constants";
 
-export function useGuideFinish() {
+export default function useGuideFinish() {
     const [finishGuidePostData, finishGuidePost] = useAPIPost(API_URLs.finishGuide);
 
     useEffect(() => {
-        if (finishGuidePostData.data && finishGuidePostData.isSuccess)
-            window.location.assign(`${REFORIS_URL_PREFIX}/`);
+        if (finishGuidePostData.data && finishGuidePostData.isSuccess) window.location.assign(`${REFORIS_URL_PREFIX}/`);
     }, [finishGuidePostData.data, finishGuidePostData.isSuccess]);
 
     function onGuideFinishHandler(e) {

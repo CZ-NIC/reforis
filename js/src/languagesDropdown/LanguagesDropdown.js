@@ -5,47 +5,49 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import {SpinnerElement} from 'common/bootstrap/Spinner';
-import {useAPIPost} from 'common/APIhooks';
-import API_URLs from 'common/API';
+import { SpinnerElement } from "common/bootstrap/Spinner";
+import { useAPIPost } from "common/APIhooks";
+import API_URLs from "common/API";
 
-import {useLanguages, useWSSetLanguageRefresh} from './hooks';
+import { useLanguages, useWSSetLanguageRefresh } from "./hooks";
 
 LanguagesDropdown.propTypes = {
-    ws: PropTypes.object.isRequired
+    ws: PropTypes.object.isRequired,
 };
 
-export default function LanguagesDropdown({ws}) {
+export default function LanguagesDropdown({ ws }) {
     const [currentLang, langsList] = useLanguages();
     useWSSetLanguageRefresh(ws);
 
     const [, post] = useAPIPost(API_URLs.language);
 
 
-    return <div className="dropdown">
-        <button className="nav-item btn btn-link" type="button">
-            {currentLang ? currentLang : <SpinnerElement small/>}
-        </button>
+    return (
+        <div className="dropdown">
+            <button className="nav-item btn btn-link" type="button">
+                {currentLang || <SpinnerElement small />}
+            </button>
 
-        <div className="dropdown-menu" id="languages-dropdown-menu">
-            <div className="dropdown-header">
-                <h5>Languages</h5>
+            <div className="dropdown-menu" id="languages-dropdown-menu">
+                <div className="dropdown-header">
+                    <h5>Languages</h5>
+                </div>
+                <div className="dropdown-divider" />
+                {langsList
+                    ? langsList.map((lang) => (
+                        <button
+                            key={lang}
+                            className="dropdown-item"
+                            onClick={() => post({ language: lang })}
+                        >
+                            {lang}
+                        </button>
+                    ))
+                    : <SpinnerElement small />}
             </div>
-            <div className="dropdown-divider"></div>
-            {langsList ?
-                langsList.map(lang =>
-                    <button
-                        key={lang}
-                        className="dropdown-item"
-                        onClick={() => post({language: lang})}
-                    >
-                        {lang}
-                    </button>
-                )
-                : <SpinnerElement small/>}
         </div>
-    </div>
+    );
 }
