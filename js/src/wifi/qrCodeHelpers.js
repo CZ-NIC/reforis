@@ -5,20 +5,24 @@
  * See /LICENSE for more information.
  */
 
-import pdfMake from 'pdfmake';
-import pdfFonts from 'utils/vfs_fonts';
+import pdfMake from "pdfmake";
+import pdfFonts from "utils/vfs_fonts";
 
 export function createAndDownloadPdf(SSID, password) {
     pdfMake.vfs = pdfFonts.pdfMake.vfs;
     const docDefinition = {
         content: [
-            {text: 'Wi-Fi', style: 'header', fontSize: 55, alignment: 'center'},
-            {qr: toQRCodeContent(SSID, password), fit: '350', margin: [0, 80], alignment: 'center'},
-            {text: `SSID: ${SSID}`, fontSize: 25, alignment: 'center'},
-            {text: `Password: ${password}`, fontSize: 25, alignment: 'center'},
-        ]
+            {
+                text: "Wi-Fi", style: "header", fontSize: 55, alignment: "center",
+            },
+            {
+                qr: toQRCodeContent(SSID, password), fit: "350", margin: [0, 80], alignment: "center",
+            },
+            { text: `SSID: ${SSID}`, fontSize: 25, alignment: "center" },
+            { text: `Password: ${password}`, fontSize: 25, alignment: "center" },
+        ],
     };
-    pdfMake.createPdf(docDefinition).download('wifi.pdf');
+    pdfMake.createPdf(docDefinition).download("wifi.pdf");
 }
 
 export function toQRCodeContent(SSID, password) {

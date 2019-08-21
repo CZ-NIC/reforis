@@ -5,9 +5,9 @@
  * See /LICENSE for more information.
  */
 
-import React, {useEffect, useRef} from 'react';
-import PropTypes from 'prop-types';
-import Portal from 'utils/Portal';
+import React, { useEffect, useRef } from "react";
+import PropTypes from "prop-types";
+import Portal from "utils/Portal";
 
 Modal.propTypes = {
     /** Is modal shown value */
@@ -18,17 +18,16 @@ Modal.propTypes = {
     /** Modal content use following: `ModalHeader`, `ModalBody`, `ModalFooter` */
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.node),
-        PropTypes.node
-    ]).isRequired
+        PropTypes.node,
+    ]).isRequired,
 };
 
-export function Modal({shown, setShown, children}) {
+export function Modal({ shown, setShown, children }) {
     const dialogRef = useRef();
 
     useEffect(() => {
         function handleClickOutsideDialog(e) {
-            if (!dialogRef.current.contains(e.target))
-                setShown(false);
+            if (!dialogRef.current.contains(e.target)) setShown(false);
         }
 
         document.addEventListener("mousedown", handleClickOutsideDialog);
@@ -38,15 +37,17 @@ export function Modal({shown, setShown, children}) {
     }, [setShown]);
 
 
-    return <Portal containerId="modal_container">
-        <div className={'modal fade ' + (shown ? 'show' : '')} role="dialog">
-            <div ref={dialogRef} className="modal-dialog" role="document">
-                <div className="modal-content">
-                    {children}
+    return (
+        <Portal containerId="modal_container">
+            <div className={`modal fade ${shown ? "show" : ""}`} role="dialog">
+                <div ref={dialogRef} className="modal-dialog" role="document">
+                    <div className="modal-content">
+                        {children}
+                    </div>
                 </div>
             </div>
-        </div>
-    </Portal>
+        </Portal>
+    );
 }
 
 ModalHeader.propTypes = {
@@ -54,35 +55,39 @@ ModalHeader.propTypes = {
     title: PropTypes.string.isRequired,
 };
 
-export function ModalHeader({setShown, title}) {
-    return <div className="modal-header">
-        <h5 className="modal-title">{title}</h5>
-        <button type="button" className="close" onClick={() => setShown(false)}>
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
+export function ModalHeader({ setShown, title }) {
+    return (
+        <div className="modal-header">
+            <h5 className="modal-title">{title}</h5>
+            <button type="button" className="close" onClick={() => setShown(false)}>
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    );
 }
 
 ModalBody.propTypes = {
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.node),
-        PropTypes.node
-    ]).isRequired
+        PropTypes.node,
+    ]).isRequired,
 };
 
-export function ModalBody({children}) {
-    return <div className="modal-body">{children}</div>
+export function ModalBody({ children }) {
+    return <div className="modal-body">{children}</div>;
 }
 
 ModalFooter.propTypes = {
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.node),
-        PropTypes.node
-    ]).isRequired
+        PropTypes.node,
+    ]).isRequired,
 };
 
-export function ModalFooter({children}) {
-    return <div className="modal-footer">
-        {children}
-    </div>
+export function ModalFooter({ children }) {
+    return (
+        <div className="modal-footer">
+            {children}
+        </div>
+    );
 }

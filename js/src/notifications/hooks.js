@@ -5,13 +5,13 @@
  * See /LICENSE for more information.
  */
 
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from "react";
 
-import API_URLs from 'common/API';
-import {useWSForisModule} from 'common/WebSocketsHooks';
-import {useAPIGet, useAPIPost} from 'common/APIhooks';
+import API_URLs from "common/API";
+import useWSForisModule from "common/WebSocketsHooks";
+import { useAPIGet, useAPIPost } from "common/APIhooks";
 
-const WS_MODULE = 'router_notifications';
+const WS_MODULE = "router_notifications";
 
 export default function useNotifications(ws) {
     const [notifications, setNotifications] = useState([]);
@@ -23,34 +23,33 @@ export default function useNotifications(ws) {
     useEffect(() => {
         if (getState.data) {
             const nonDisplayedNotifications = getState.data.notifications
-                .filter(notification => !notification.displayed);
+                .filter((notification) => !notification.displayed);
             setNotifications(nonDisplayedNotifications);
         }
     }, [getState]);
 
 
-    const [WSCreateData] = useWSForisModule(ws, WS_MODULE, 'create');
-    const [WSMarkAsDisplayedData] = useWSForisModule(ws, WS_MODULE, 'mark_as_displayed');
+    const [WSCreateData] = useWSForisModule(ws, WS_MODULE, "create");
+    const [WSMarkAsDisplayedData] = useWSForisModule(ws, WS_MODULE, "mark_as_displayed");
     useEffect(() => {
-        if (WSCreateData || WSMarkAsDisplayedData)
-            get();
+        if (WSCreateData || WSMarkAsDisplayedData) get();
     }, [WSCreateData, WSMarkAsDisplayedData, get]);
 
     const [, post] = useAPIPost(API_URLs.notifications);
 
     function dismiss(notificationId) {
-        post({ids: [notificationId,]});
-        setNotifications(notifications => notifications.filter(
-            notification => notification.id !== notificationId
+        post({ ids: [notificationId] });
+        setNotifications((currentNotifications) => currentNotifications.filter(
+            (notification) => notification.id !== notificationId,
         ));
     }
 
     function dismissAll() {
-        post({ids: notifications.map(notification => notification.id)});
+        post({ ids: notifications.map((notification) => notification.id) });
         setNotifications([]);
     }
 
-    return [ notifications, dismiss, dismissAll ];
+    return [notifications, dismiss, dismissAll];
 }
 
 const NEW_NOTIFICATION_ANIMATION_DURATION = 1; // Sec.
@@ -66,12 +65,11 @@ export function useNewNotification(ws) {
         }
     }, [newNotification]);
 
-    const [WSCreateData] = useWSForisModule(ws, WS_MODULE, 'create');
+    const [WSCreateData] = useWSForisModule(ws, WS_MODULE, "create");
 
     useEffect(() => {
-        if (WSCreateData)
-            setNewNotification(true)
+        if (WSCreateData) setNewNotification(true);
     }, [WSCreateData]);
 
-    return newNotification
+    return newNotification;
 }

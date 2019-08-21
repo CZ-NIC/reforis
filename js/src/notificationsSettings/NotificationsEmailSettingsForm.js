@@ -5,20 +5,20 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import CheckBox from 'common/bootstrap/Checkbox';
-import RadioSet from 'common/bootstrap/RadioSet';
+import CheckBox from "common/bootstrap/Checkbox";
+import RadioSet from "common/bootstrap/RadioSet";
 
-import HELP_TEXTS from './helpTexts';
-import CommonForm from './CommonForm';
-import SMTPTurrisForm from './SMTPTurrisForm';
-import SMTPCustomForm from './SMTPCustomForm';
+import HELP_TEXTS from "./helpTexts";
+import CommonForm from "./CommonForm";
+import SMTPTurrisForm from "./SMTPTurrisForm";
+import SMTPCustomForm from "./SMTPCustomForm";
 
 const SMTP_TYPE_CHOICES = [
-    {label: _('Turris'), value: 'turris'},
-    {label: _('Custom'), value: 'custom'}
+    { label: _("Turris"), value: "turris" },
+    { label: _("Custom"), value: "custom" },
 ];
 
 NotificationsEmailSettingsForm.propTypes = {
@@ -28,13 +28,13 @@ NotificationsEmailSettingsForm.propTypes = {
             PropTypes.shape({
                 emails: PropTypes.shape({
                     enabled: PropTypes.bool.isRequired,
-                    smtp_type: PropTypes.oneOf(['turris', 'custom']),
+                    smtp_type: PropTypes.oneOf(["turris", "custom"]),
                     common: PropTypes.object,
                     smtp_turris: PropTypes.object,
                     smtp_custom: PropTypes.object,
-                })
-            })
-        ]
+                }),
+            }),
+        ],
     ).isRequired,
     formErrors: PropTypes.shape({}),
     setFormValue: PropTypes.func.isRequired,
@@ -48,59 +48,69 @@ NotificationsEmailSettingsForm.defaultProps = {
 };
 
 
-export default function NotificationsEmailSettingsForm({formData, formErrors, setFormValue, ...props}) {
-    return <>
-        <h3>{_('Email notifications')}</h3>
-        <CheckBox
-            label={_('Enable email notifications')}
-            checked={formData.enabled}
-            onChange={setFormValue(
-                value => ({enabled: {$set: value}})
-            )}
+export default function NotificationsEmailSettingsForm({
+    formData, formErrors, setFormValue, ...props
+}) {
+    let smtpForm = null;
+    if (formData.smtp_type === "turris") {
+        smtpForm = (
+            <SMTPTurrisForm
+                formData={formData.smtp_turris}
+                formErrors={formErrors.smtp_turris}
+                setFormValue={setFormValue}
+                {...props}
+            />
+        );
+    } else if (formData.smtp_type === "custom") {
+        smtpForm = (
+            <SMTPCustomForm
+                formData={formData.smtp_custom}
+                formErrors={formErrors.smtp_custom}
+                setFormValue={setFormValue}
+                {...props}
+            />
+        );
+    }
 
-            {...props}
-        />
-        {formData.enabled ?
-            <>
-                <RadioSet
-                    label={_('SMTP provider')}
-                    name={'smtp_provider'}
-                    choices={SMTP_TYPE_CHOICES}
-                    value={formData.smtp_type}
-                    helpText={HELP_TEXTS.smtp_type}
+    return (
+        <>
+            <h3>{_("Email notifications")}</h3>
+            <CheckBox
+                label={_("Enable email notifications")}
+                checked={formData.enabled}
+                onChange={setFormValue(
+                    (value) => ({ enabled: { $set: value } }),
+                )}
 
-                    onChange={setFormValue(
-                        value => ({smtp_type: {$set: value}})
-                    )}
+                {...props}
+            />
+            {formData.enabled
+                ? (
+                    <>
+                        <RadioSet
+                            label={_("SMTP provider")}
+                            name="smtp_provider"
+                            choices={SMTP_TYPE_CHOICES}
+                            value={formData.smtp_type}
+                            helpText={HELP_TEXTS.smtp_type}
 
-                    {...props}
-                />
-                <CommonForm
-                    formData={formData.common}
-                    formErrors={formErrors.common}
-                    setFormValue={setFormValue}
+                            onChange={setFormValue(
+                                (value) => ({ smtp_type: { $set: value } }),
+                            )}
 
-                    {...props}
-                />
-                {
-                    formData.smtp_type === 'turris' ?
-                        <SMTPTurrisForm
-                            formData={formData.smtp_turris}
-                            formErrors={formErrors.smtp_turris}
+                            {...props}
+                        />
+                        <CommonForm
+                            formData={formData.common}
+                            formErrors={formErrors.common}
                             setFormValue={setFormValue}
 
                             {...props}
-                        /> :
-                        formData.smtp_type === 'custom' ?
-                            <SMTPCustomForm
-                                formData={formData.smtp_custom}
-                                formErrors={formErrors.smtp_custom}
-                                setFormValue={setFormValue}
-
-                                {...props}
-                            /> : null
-                }
-            </>
-            : null}
-    </>
+                        />
+                        {smtpForm}
+                    </>
+                )
+                : null}
+        </>
+    );
 }

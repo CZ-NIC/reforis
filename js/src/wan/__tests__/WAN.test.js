@@ -8,7 +8,7 @@
 import React from 'react';
 import {fireEvent, render, waitForElement} from 'customTestRender';
 import diffSnapshot from 'snapshot-diff';
-import {mockedWS} from 'mockWS';
+import mockedWS from 'mockWS';
 import {wanSettingsFixture} from './__fixtures__/wanSettings';
 import mockAxios from 'jest-mock-axios';
 

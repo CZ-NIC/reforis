@@ -5,15 +5,15 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import {useUID} from 'react-uid/dist/es5/index';
+import React from "react";
+import PropTypes from "prop-types";
+import { useUID } from "react-uid/dist/es5/index";
 
 
 Select.propTypes = {
     /** Select field Label. */
     label: PropTypes.string.isRequired,
-    /** Choices if form of {value : "Label",...}.*/
+    /** Choices if form of {value : "Label",...}. */
     choices: PropTypes.object.isRequired,
     /** Current value. */
     value: PropTypes.oneOfType([
@@ -24,22 +24,26 @@ Select.propTypes = {
     helpText: PropTypes.string,
 };
 
-export default function Select({label, choices, helpText, ...props}) {
+export default function Select({
+    label, choices, helpText, ...props
+}) {
     const uid = useUID();
 
     const options = Object.keys(choices).map(
-        key => <option key={key} value={key}>{choices[key]}</option>
+        (key) => <option key={key} value={key}>{choices[key]}</option>,
     );
 
-    return <div className='form-group col-sm-12 offset-lg-1 col-lg-10'>
-        <label htmlFor={uid}>{label}</label>
-        <select
-            className='custom-select'
-            id={uid}
-            {...props}
-        >
-            {options}
-        </select>
-        {helpText ? <small className="form-text text-muted">{helpText}</small> : null}
-    </div>;
+    return (
+        <div className="form-group col-sm-12 offset-lg-1 col-lg-10">
+            <label htmlFor={uid}>{label}</label>
+            <select
+                className="custom-select"
+                id={uid}
+                {...props}
+            >
+                {options}
+            </select>
+            {helpText ? <small className="form-text text-muted">{helpText}</small> : null}
+        </div>
+    );
 }

@@ -5,12 +5,12 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import Select from 'common/bootstrap/Select';
-import LANManagedForm from './LANManagedForm';
-import LANUnmanagedForm from './LANUnmanagedForm';
+import Select from "common/bootstrap/Select";
+import LANManagedForm from "./LANManagedForm";
+import LANUnmanagedForm from "./LANUnmanagedForm";
 
 const HELP_TEXTS = {
     mode: _(`
@@ -21,15 +21,14 @@ it has opened ports for configuration interface and other services.
 };
 
 export const LAN_MODES = {
-    managed: 'managed',
-    unmanaged: 'unmanaged',
+    managed: "managed",
+    unmanaged: "unmanaged",
 };
 
 const LAN_MOD_CHOICES = {
-    managed: _('Router'),
-    unmanaged: _('Computer'),
+    managed: _("Router"),
+    unmanaged: _("Computer"),
 };
-
 
 LANForm.propTypes = {
     formData: PropTypes.shape({
@@ -44,39 +43,47 @@ LANForm.propTypes = {
     setFormValue: PropTypes.func,
 };
 
-export default function LANForm({formData, formErrors, setFormValue, ...props}) {
+export default function LANForm({
+    formData, formErrors, setFormValue, ...props
+}) {
     const errors = formErrors || {};
     const lanMode = formData.mode;
-    return <>
-        <h3>{_('LAN Settings')}</h3>
-        <Select
-            label={_('LAN mode')}
-            value={formData.mode}
-            choices={LAN_MOD_CHOICES}
-            helpText={HELP_TEXTS.mode}
 
-            onChange={setFormValue(value => ({mode: {$set: value}}))}
-
-            {...props}
-        />
-        {lanMode === LAN_MODES.managed ?
+    let lanForm = null;
+    if (lanMode === LAN_MODES.managed) {
+        lanForm = (
             <LANManagedForm
                 formData={formData.mode_managed}
                 formErrors={errors.mode_managed}
-
                 setFormValue={setFormValue}
+                {...props}
+            />
+        );
+    } else if (lanMode === LAN_MODES.unmanaged) {
+        lanForm = (
+            <LANUnmanagedForm
+                formData={formData.mode_unmanaged}
+                formErrors={errors.mode_unmanaged}
+                setFormValue={setFormValue}
+                {...props}
+            />
+        );
+    }
+
+    return (
+        <>
+            <h3>{_("LAN Settings")}</h3>
+            <Select
+                label={_("LAN mode")}
+                value={formData.mode}
+                choices={LAN_MOD_CHOICES}
+                helpText={HELP_TEXTS.mode}
+
+                onChange={setFormValue((value) => ({ mode: { $set: value } }))}
 
                 {...props}
             />
-            : lanMode === LAN_MODES.unmanaged ?
-                <LANUnmanagedForm
-                    formData={formData.mode_unmanaged}
-                    formErrors={errors.mode_unmanaged}
-
-                    setFormValue={setFormValue}
-
-                    {...props}
-                />
-                : null}
-    </>
+            {lanForm}
+        </>
+    );
 }

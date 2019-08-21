@@ -5,27 +5,31 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 Alert.propTypes = {
-    /** Type of the alert it adds as `alert-${type}` class.*/
+    /** Type of the alert it adds as `alert-${type}` class. */
     type: PropTypes.string.isRequired,
-    /** Alert message.*/
+    /** Alert message. */
     message: PropTypes.string,
-    /** Alert content.*/
+    /** Alert content. */
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.node),
-        PropTypes.node
+        PropTypes.node,
     ]),
-    /** onDismiss handler.*/
-    onDismiss: PropTypes.func
+    /** onDismiss handler. */
+    onDismiss: PropTypes.func,
 };
 
-export default function Alert({type, message, onDismiss, children}) {
-    return <div className={`alert alert-dismissible alert-${type}`}>
-        {onDismiss ? <button type="button" className="close" onClick={onDismiss}>&times;</button> : false}
-        {message}
-        {children}
-    </div>
+export default function Alert({
+    type, message, onDismiss, children,
+}) {
+    return (
+        <div className={`alert alert-dismissible alert-${type}`}>
+            {onDismiss ? <button type="button" className="close" onClick={onDismiss}>&times;</button> : false}
+            {message}
+            {children}
+        </div>
+    );
 }

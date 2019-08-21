@@ -5,38 +5,38 @@
  * See /LICENSE for more information.
  */
 
-import React, {useCallback, useEffect, useState} from 'react';
-import PropTypes from 'prop-types';
+import React, { useCallback, useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
-import {STATES as SUBMIT_BUTTON_STATES} from 'form/SubmitButton';
-import {useAPIGet, useAPIPost} from 'common/APIhooks';
-import API_URLs from 'common/API';
-import {useForm} from 'form/hooks';
-import Alert from 'common/bootstrap/Alert';
+import { STATES as SUBMIT_BUTTON_STATES } from "form/SubmitButton";
+import { useAPIGet, useAPIPost } from "common/APIhooks";
+import API_URLs from "common/API";
+import { useForm } from "form/hooks";
+import Alert from "common/bootstrap/Alert";
 
-import CurrentForisPasswordForm from './CurrentForisPasswordForm';
-import ForisPasswordForm from './ForisPasswordForm';
-import RootPasswordForm from './RootPasswordForm';
-import Spinner from 'common/bootstrap/Spinner';
+import Spinner from "common/bootstrap/Spinner";
+import CurrentForisPasswordForm from "./CurrentForisPasswordForm";
+import ForisPasswordForm from "./ForisPasswordForm";
+import RootPasswordForm from "./RootPasswordForm";
 
 Password.propTypes = {
-    postCallback: PropTypes.func
+    postCallback: PropTypes.func,
 };
 
 Password.defaultProps = {
     postCallback: () => undefined,
 };
 
-export default function Password({postCallback}) {
+export default function Password({ postCallback }) {
     const [formState, onFormChangeHandler, resetFormData] = useForm(validator);
 
     const resetPasswordForm = useCallback(() => {
         resetFormData({
-            currentForisPassword: '',
-            newForisPassword: '',
+            currentForisPassword: "",
+            newForisPassword: "",
             sameForRoot: false,
-            newRootPassword: '',
-        })
+            newRootPassword: "",
+        });
     }, [resetFormData]);
 
     useEffect(() => {
@@ -45,7 +45,7 @@ export default function Password({postCallback}) {
 
     const [passwordIsSetState, getPasswordIsSet] = useAPIGet(API_URLs.password);
     useEffect(() => {
-        getPasswordIsSet()
+        getPasswordIsSet();
     }, [getPasswordIsSet]);
 
     const [alert, setAlert] = useState(null);
@@ -53,10 +53,9 @@ export default function Password({postCallback}) {
     useEffect(() => {
         if (postState.data) {
             if (postState.isSuccess) {
-                setAlert({type: 'success', message: _('Password was successfully changed')});
+                setAlert({ type: "success", message: _("Password was successfully changed") });
                 postCallback();
-            } else if (postState.isError)
-                setAlert({type: 'danger', message: postState.data.error});
+            } else if (postState.isError) setAlert({ type: "danger", message: postState.data.error });
             resetPasswordForm();
         }
     }, [postState.isSuccess, postState.isError, resetPasswordForm, postState.data, postCallback]);
@@ -64,13 +63,12 @@ export default function Password({postCallback}) {
     function postForisPassword(e) {
         e.preventDefault();
         setAlert(null);
-        let data = {
+        const data = {
             foris_current_password: formState.data.currentForisPassword,
-            foris_password: formState.data.newForisPassword
+            foris_password: formState.data.newForisPassword,
         };
-        if (formState.data.sameForRoot)
-            data['root_password'] = formState.data.newForisPassword;
-        post(data)
+        if (formState.data.sameForRoot) data.root_password = formState.data.newForisPassword;
+        post(data);
     }
 
     function postRootPassword(e) {
@@ -78,49 +76,63 @@ export default function Password({postCallback}) {
         setAlert(null);
         const data = {
             foris_current_password: formState.data.currentForisPassword,
-            root_password: formState.data.newRootPassword
+            root_password: formState.data.newRootPassword,
         };
         post(data);
     }
 
-    if (passwordIsSetState.isLoading || !formState.data)
-        return <Spinner className='row justify-content-center'/>;
+    if (passwordIsSetState.isLoading || !formState.data) return <Spinner className="row justify-content-center" />;
 
     const disabled = postState.isSending;
-    const submitButtonState = postState.isSending ? SUBMIT_BUTTON_STATES.SAVING : SUBMIT_BUTTON_STATES.READY;
+    const submitButtonState = postState.isSending
+        ? SUBMIT_BUTTON_STATES.SAVING
+        : SUBMIT_BUTTON_STATES.READY;
 
-    return <>
-        {alert ? <Alert type={alert.type} message={alert.message} onDismiss={() => setAlert(null)}/> : null}
-        <h1>{_('Password')}</h1>
-        <h3>{_('Password settings')}</h3>
-        {passwordIsSetState.data.password_set ?
-            <CurrentForisPasswordForm
-                formData={formState.data}
-                disabled={disabled}
-                setFormValue={onFormChangeHandler}
-            />
-            : null}
-        <ForisPasswordForm
-            formData={formState.data}
-            formErrors={formState.errors}
-            submitButtonState={submitButtonState}
-            disabled={disabled}
-
-            setFormValue={onFormChangeHandler}
-            postForisPassword={postForisPassword}
-        />
-        {!formState.data.sameForRoot ?
-            <RootPasswordForm
+    return (
+        <>
+            {alert
+                ? (
+                    <Alert
+                        type={alert.type}
+                        message={alert.message}
+                        onDismiss={() => setAlert(null)}
+                    />
+                ) : null}
+            <h1>{_("Password")}</h1>
+            <h3>{_("Password settings")}</h3>
+            {passwordIsSetState.data.password_set
+                ? (
+                    <CurrentForisPasswordForm
+                        formData={formState.data}
+                        disabled={disabled}
+                        setFormValue={onFormChangeHandler}
+                    />
+                )
+                : null}
+            <ForisPasswordForm
                 formData={formState.data}
                 formErrors={formState.errors}
                 submitButtonState={submitButtonState}
                 disabled={disabled}
 
                 setFormValue={onFormChangeHandler}
-                postRootPassword={postRootPassword}
+                postForisPassword={postForisPassword}
             />
-            : null}
-    </>
+            {!formState.data.sameForRoot
+                ? (
+                    <RootPasswordForm
+                        formData={formState.data}
+                        formErrors={formState.errors}
+                        submitButtonState={submitButtonState}
+                        disabled={disabled}
+
+                        setFormValue={onFormChangeHandler}
+                        postRootPassword={postRootPassword}
+                    />
+                )
+                : null}
+        </>
+    );
 }
 
 function validator(formData) {
@@ -129,20 +141,16 @@ function validator(formData) {
         newRootPassword: !formData.sameForRoot ? validatePassword(formData.newRootPassword) : null,
     };
 
-    if (errors.newForisPassword || errors.newRootPassword)
-        return errors;
-    return {}
+    if (errors.newForisPassword || errors.newRootPassword) return errors;
+    return {};
 }
 
 function validatePassword(password) {
-    if (password === '')
-        return _('Password can\'t be empty.');
+    if (password === "") return _("Password can't be empty.");
 
-    if (password.length < 6)
-        return _('Password should have min 6 symbols.');
+    if (password.length < 6) return _("Password should have min 6 symbols.");
 
-    if (password.length > 128)
-        return _('Password should have max 128 symbols.');
+    if (password.length > 128) return _("Password should have max 128 symbols.");
 
-    return null
+    return null;
 }

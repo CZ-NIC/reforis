@@ -5,7 +5,7 @@
  * See /LICENSE for more information.
  */
 
-export const REFORIS_URL_PREFIX = process.env.LIGHTTPD ? '/reforis' : '';
+export const REFORIS_URL_PREFIX = process.env.LIGHTTPD ? "/reforis" : "";
 
 export const ForisURLs = {
     login: `${REFORIS_URL_PREFIX}/login`,
@@ -14,8 +14,8 @@ export const ForisURLs = {
     updates: `${REFORIS_URL_PREFIX}/updates`,
 
     // Notifications links are used with <Link/> inside Router, thus url subdir is not required.
-    notifications: `/notifications`,
-    notificationsSettings: `/administration/notifications-settings`,
+    notifications: "/notifications",
+    notificationsSettings: "/administration/notifications-settings",
 
-    luci: '/cgi-bin/luci',
+    luci: "/cgi-bin/luci",
 };

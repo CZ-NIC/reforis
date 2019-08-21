@@ -5,14 +5,14 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import TextInput from 'common/bootstrap/TextInput';
-import {validateDomain} from 'common/validations';
+import TextInput from "common/bootstrap/TextInput";
+import { validateDomain } from "common/validations";
 
 const HELP_TEXTS = {
-    hostname: _('Hostname which will be provided to DHCP server.'),
+    hostname: _("Hostname which will be provided to DHCP server."),
 };
 
 DHCPClientForm.propTypes = {
@@ -20,28 +20,32 @@ DHCPClientForm.propTypes = {
         hostname: PropTypes.string,
     }).isRequired,
     formErrors: PropTypes.shape({
-        hostname: PropTypes.string
+        hostname: PropTypes.string,
     }),
     setFormValue: PropTypes.func.isRequired,
     updateRule: PropTypes.func.isRequired,
 };
 
-export default function DHCPClientForm({formData, formErrors, setFormValue, updateRule, ...props}) {
-    return <TextInput
-        label={_('DHCP hostname')}
-        value={formData.hostname || ''}
-        error={(formErrors || {}).hostname || null}
-        helpText={HELP_TEXTS.hostname}
+export default function DHCPClientForm({
+    formData, formErrors, setFormValue, updateRule, ...props
+}) {
+    return (
+        <TextInput
+            label={_("DHCP hostname")}
+            value={formData.hostname || ""}
+            error={(formErrors || {}).hostname || null}
+            helpText={HELP_TEXTS.hostname}
 
-        onChange={setFormValue(
-            value => updateRule({hostname: {$set: value}})
-        )}
+            onChange={setFormValue(
+                (value) => updateRule({ hostname: { $set: value } }),
+            )}
 
-        {...props}
-    />
+            {...props}
+        />
+    );
 }
 
 export function validateDHCPForm(formData) {
-    const error = {hostname: validateDomain(formData.hostname)};
+    const error = { hostname: validateDomain(formData.hostname) };
     return error.hostname ? error : null;
 }

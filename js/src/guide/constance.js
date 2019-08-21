@@ -5,54 +5,54 @@
  * See /LICENSE for more information.
  */
 
-import Password from 'password/Password';
-import Interfaces from 'interfaces/Interfaces';
-import RegionAndTime from 'regionAndTime/RegionAndTime';
-import DNS from 'dns/DNS';
-import Updates from 'updates/Updates';
-import WAN from 'wan/WAN';
-import LAN from 'lan/LAN';
+import Password from "password/Password";
+import Interfaces from "interfaces/Interfaces";
+import RegionAndTime from "regionAndTime/RegionAndTime";
+import DNS from "dns/DNS";
+import Updates from "updates/Updates";
+import WAN from "wan/WAN";
+import LAN from "lan/LAN";
 
-import WorkflowSelect from './WorkflowSelect';
-import GuideFinished from './GuideFinish';
+import WorkflowSelect from "./WorkflowSelect";
+import GuideFinished from "./GuideFinish";
 
-export const GUIDE_URL_PREFIX = '/guide';
+export const GUIDE_URL_PREFIX = "/guide";
 
 export const STEPS = {
     password: {
-        name: _('Password'),
-        component: Password
+        name: _("Password"),
+        component: Password,
     },
     profile: {
-        name: _('Workflow'),
-        component: WorkflowSelect
+        name: _("Workflow"),
+        component: WorkflowSelect,
     },
     networks: {
-        name: _('Interfaces'),
-        component: Interfaces
+        name: _("Interfaces"),
+        component: Interfaces,
     },
     time: {
-        name: _('Time'),
-        component: RegionAndTime
+        name: _("Time"),
+        component: RegionAndTime,
     },
     dns: {
-        name: _('DNS'),
-        component: DNS
+        name: _("DNS"),
+        component: DNS,
     },
     updater: {
-        name: _('Updates'),
-        component: Updates
+        name: _("Updates"),
+        component: Updates,
     },
     wan: {
-        name: _('WAN'),
-        component: WAN
+        name: _("WAN"),
+        component: WAN,
     },
     lan: {
-        name: _('LAN'),
-        component: LAN
+        name: _("LAN"),
+        component: LAN,
     },
     finished: {
-        name: _('Finish'),
-        component: GuideFinished
-    }
+        name: _("Finish"),
+        component: GuideFinished,
+    },
 };

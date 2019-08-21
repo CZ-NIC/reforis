@@ -6,4 +6,5 @@
  */
 
 /** Bootstrap column size for form fields */
-export const formFieldsSize = 'col-sm-12 offset-lg-1 col-lg-10';
+// eslint-disable-next-line import/prefer-default-export
+export const formFieldsSize = "col-sm-12 offset-lg-1 col-lg-10";

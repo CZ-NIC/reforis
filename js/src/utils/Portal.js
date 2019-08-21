@@ -5,11 +5,10 @@
  * See /LICENSE for more information.
  */
 
-import ReactDOM from 'react-dom';
+import ReactDOM from "react-dom";
 
-export default function Portal({containerId, children}) {
+export default function Portal({ containerId, children }) {
     const container = document.getElementById(containerId);
-    if (container)
-        return ReactDOM.createPortal(children, container);
+    if (container) return ReactDOM.createPortal(children, container);
     return null;
 }

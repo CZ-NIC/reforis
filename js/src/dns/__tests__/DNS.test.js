@@ -9,7 +9,7 @@ import React from 'react';
 import {fireEvent, getByLabelText, getByText, render, wait} from 'customTestRender';
 
 import {dnsFixture} from './__fixtures__/dns';
-import {mockedWS} from 'mockWS';
+import mockedWS from 'mockWS';
 import mockAxios from 'jest-mock-axios';
 
 import DNS from '../DNS';

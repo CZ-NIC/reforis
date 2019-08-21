@@ -5,14 +5,14 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom';
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
-import {ForisURLs} from 'common/constants';
+import { ForisURLs } from "common/constants";
 
-import {NOTIFICATION_PROP_TYPES} from '../utils';
-import NotificationsDropdownItem from './NotificationsDropdownItem';
+import { NOTIFICATION_PROP_TYPES } from "../utils";
+import NotificationsDropdownItem from "./NotificationsDropdownItem";
 
 
 NotificationsDropdownMenu.propTypes = {
@@ -21,65 +21,74 @@ NotificationsDropdownMenu.propTypes = {
     dismissAll: PropTypes.func.isRequired,
 };
 
-export default function NotificationsDropdownMenu({notifications, dismiss, dismissAll}) {
+export default function NotificationsDropdownMenu({ notifications, dismiss, dismissAll }) {
     function getNotifications() {
-        if (notifications.length === 0)
-            return <span className='dropdown-item no-notifications'>
-                {_('No notifications')}
-            </span>;
+        if (notifications.length === 0) {
+            return (
+                <span className="dropdown-item no-notifications">
+                    {_("No notifications")}
+                </span>
+            );
+        }
 
         return notifications.map(
-            (notification, idx) => {
-                return <NotificationsDropdownItem
+            (notification, idx) => (
+                <NotificationsDropdownItem
                     key={notification.id}
                     notification={notification}
                     divider={idx + 1 !== notifications.length} // Don't show last divider
 
                     dismiss={() => dismiss(notification.id)}
                 />
-            }
+            ),
         );
     }
 
-    const footer = notifications.length !== 0 ?
-        <NotificationsDropdownFooter dismissAll={dismissAll}/>
+    const footer = notifications.length !== 0
+        ? <NotificationsDropdownFooter dismissAll={dismissAll} />
         : null;
 
-    return <div className='dropdown-menu'>
-        <NotificationsDropdownHeader/>
-        <div className='scrollable-menu'>{getNotifications()}</div>
-        {footer}
-    </div>
+    return (
+        <div className="dropdown-menu">
+            <NotificationsDropdownHeader />
+            <div className="scrollable-menu">{getNotifications()}</div>
+            {footer}
+        </div>
+    );
 }
 
 function NotificationsDropdownHeader() {
-    return <>
-        <div id='notifications-header' className='dropdown-header'>
-            <Link to={ForisURLs.notifications}>
-                <h5>{_('Notifications')}</h5>
-            </Link>
-            <Link to={ForisURLs.notificationsSettings} className='btn btn-link'>
-                <i className='fa fa-cog'/>
-            </Link>
-        </div>
-        <div className='dropdown-divider dropdown-divider-top'/>
-    </>;
+    return (
+        <>
+            <div id="notifications-header" className="dropdown-header">
+                <Link to={ForisURLs.notifications}>
+                    <h5>{_("Notifications")}</h5>
+                </Link>
+                <Link to={ForisURLs.notificationsSettings} className="btn btn-link">
+                    <i className="fa fa-cog" />
+                </Link>
+            </div>
+            <div className="dropdown-divider dropdown-divider-top" />
+        </>
+    );
 }
 
 NotificationsDropdownFooter.propTypes = {
-    dismissAll: PropTypes.func.isRequired
+    dismissAll: PropTypes.func.isRequired,
 };
 
-function NotificationsDropdownFooter({dismissAll}) {
-    return <>
-        <div className='dropdown-divider dropdown-divider-bottom'/>
-        <div id='notifications-footer' className='dropdown-footer'>
-            <button
-                className='btn btn-link'
-                onClick={dismissAll}
-            >
-                {_('Dismiss all')}
-            </button>
-        </div>
-    </>
+function NotificationsDropdownFooter({ dismissAll }) {
+    return (
+        <>
+            <div className="dropdown-divider dropdown-divider-bottom" />
+            <div id="notifications-footer" className="dropdown-footer">
+                <button
+                    className="btn btn-link"
+                    onClick={dismissAll}
+                >
+                    {_("Dismiss all")}
+                </button>
+            </div>
+        </>
+    );
 }

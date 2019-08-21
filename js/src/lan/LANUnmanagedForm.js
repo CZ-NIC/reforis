@@ -5,22 +5,22 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import Select from 'common/bootstrap/Select';
-import DHCPClientForm, {validateDHCPForm} from 'common/network/DHCPClientForm';
-import StaticIPForm, {validateStaticForm} from 'common/network/StaticIPForm';
+import Select from "common/bootstrap/Select";
+import DHCPClientForm, { validateDHCPForm } from "common/network/DHCPClientForm";
+import StaticIPForm, { validateStaticForm } from "common/network/StaticIPForm";
 
 const LAN_TYPES = {
-    dhcp: 'dhcp',
-    static: 'static',
-    none: 'none',
+    dhcp: "dhcp",
+    static: "static",
+    none: "none",
 };
 
 const LAN_TYPE_CHOICES = {
-    dhcp: _('DHCP (automatic configuration)'),
-    static: _('Static IP address (manual configuration)'),
+    dhcp: _("DHCP (automatic configuration)"),
+    static: _("Static IP address (manual configuration)"),
     none: _("Don't connect this device to LAN"),
 };
 
@@ -42,50 +42,63 @@ LANUnmanagedForm.defaultProps = {
     formErrors: {},
 };
 
-export default function LANUnmanagedForm({formData, formErrors, setFormValue, ...props}) {
+export default function LANUnmanagedForm({
+    formData, formErrors, setFormValue, ...props
+}) {
     const lanType = formData.lan_type;
-    return <>
-        <Select
-            label={_('IPv4 protocol')}
-            value={lanType}
-            choices={LAN_TYPE_CHOICES}
 
-            onChange={setFormValue(
-                value => ({mode_unmanaged: {lan_type: {$set: value}}})
-            )}
-
-            {...props}
-        />
-        {lanType === LAN_TYPES.dhcp ?
+    let lanForm = null;
+    if (lanType === LAN_TYPES.dhcp) {
+        lanForm = (
             <DHCPClientForm
                 formData={formData.lan_dhcp}
                 formErrors={formErrors.lan_dhcp}
 
-                updateRule={value => ({mode_unmanaged: {lan_dhcp: value}})}
+                updateRule={(value) => ({ mode_unmanaged: { lan_dhcp: value } })}
                 setFormValue={setFormValue}
 
                 {...props}
             />
-            : lanType === LAN_TYPES.static ?
-                <StaticIPForm
-                    formData={formData.lan_static}
-                    formErrors={formErrors.lan_static}
+        );
+    } else if (lanType === LAN_TYPES.static) {
+        lanForm = (
+            <StaticIPForm
+                formData={formData.lan_static}
+                formErrors={formErrors.lan_static}
 
-                    updateRule={value => ({mode_unmanaged: {lan_static: value}})}
-                    setFormValue={setFormValue}
+                updateRule={(value) => ({ mode_unmanaged: { lan_static: value } })}
+                setFormValue={setFormValue}
 
-                    {...props}
-                />
-                : null}
-    </>
+                {...props}
+            />
+        );
+    }
+
+    return (
+        <>
+            <Select
+                label={_("IPv4 protocol")}
+                value={lanType}
+                choices={LAN_TYPE_CHOICES}
+
+                onChange={setFormValue(
+                    (value) => ({ mode_unmanaged: { lan_type: { $set: value } } }),
+                )}
+
+                {...props}
+            />
+            {lanForm}
+        </>
+    );
 }
 
 export function validateUnmanaged(formData) {
-    let errors = {};
-    if (formData.lan_type === LAN_TYPES.dhcp)
+    const errors = {};
+    if (formData.lan_type === LAN_TYPES.dhcp) {
         errors.lan_dhcp = validateDHCPForm(formData.lan_dhcp);
-    else if (formData.lan_type === LAN_TYPES.static)
+    } else if (formData.lan_type === LAN_TYPES.static) {
         errors.lan_static = validateStaticForm(formData.lan_static);
+    }
 
     return errors[`lan_${formData.lan_type}`] ? errors : undefined;
 }

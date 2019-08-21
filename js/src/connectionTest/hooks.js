@@ -5,15 +5,17 @@
  * See /LICENSE for more information.
  */
 
-import {useCallback, useEffect, useMemo, useState} from 'react';
+import {
+    useCallback, useEffect, useMemo, useState,
+} from "react";
 
-import API_URLs from 'common/API';
-import {useAPIPost} from 'common/APIhooks';
-import {useWSForisModule} from 'common/WebSocketsHooks';
+import API_URLs from "common/API";
+import { useAPIPost } from "common/APIhooks";
+import useWSForisModule from "common/WebSocketsHooks";
 
 const TESTS_TYPES = {
-    wan: ['ipv6', 'ipv6_gateway', 'ipv4', 'ipv4_gateway'],
-    dns: ['dns', 'dnssec'],
+    wan: ["ipv6", "ipv6_gateway", "ipv4", "ipv4_gateway"],
+    dns: ["dns", "dnssec"],
 };
 
 const ENDPOINTS = {
@@ -33,31 +35,31 @@ export default function useConnectionTest(ws, type) {
             .reduce((tests, test) => {
                 tests[test] = null;
                 return tests;
-            }, {}), [type]);
+            }, {}), [type],
+    );
 
     const [state, setState] = useState(TEST_STATES.NOT_RUNNING);
     const [id, setId] = useState(null);
     const [results, setResults] = useState(initialResults);
 
-    const updateTestResults = useCallback(data => {
+    const updateTestResults = useCallback((data) => {
         if (data && data.test_id === id) {
             setResults(
-                prevTestResults => ({
+                (prevTestResults) => ({
                     ...prevTestResults,
-                    ...filterResults(data.data, type)
-                })
+                    ...filterResults(data.data, type),
+                }),
             );
-            if (data.passed)
-                setState(TEST_STATES.FINISHED);
+            if (data.passed) setState(TEST_STATES.FINISHED);
         }
     }, [id, type]);
 
-    const wsModule = 'wan';
-    const [wsData] = useWSForisModule(ws, wsModule, 'connection_test');
+    const wsModule = "wan";
+    const [wsData] = useWSForisModule(ws, wsModule, "connection_test");
     useEffect(() => {
-        updateTestResults(wsData)
+        updateTestResults(wsData);
     }, [wsData, id, type, updateTestResults]);
-    const [wsFinishedData] = useWSForisModule(ws, wsModule, 'connection_test_finished');
+    const [wsFinishedData] = useWSForisModule(ws, wsModule, "connection_test_finished");
     useEffect(() => {
         updateTestResults(wsFinishedData);
     }, [wsFinishedData, id, type, updateTestResults]);
@@ -71,14 +73,14 @@ export default function useConnectionTest(ws, type) {
         }
     }, [initialResults, triggerTestData]);
 
-    return [state, results, triggerTest]
+    return [state, results, triggerTest];
 }
 
 function filterResults(results, type) {
     return Object.keys(results)
-        .filter(test => TESTS_TYPES[type].indexOf(test) !== -1)
+        .filter((test) => TESTS_TYPES[type].indexOf(test) !== -1)
         .reduce((res, test) => {
             res[test] = results[test];
-            return res
+            return res;
         }, {});
 }

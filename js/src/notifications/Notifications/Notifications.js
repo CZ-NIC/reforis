@@ -5,19 +5,21 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import UpdateApprovals from './UpdateApprovals';
-import NotificationsCenter from './NotificationsCenter';
+import UpdateApprovals from "./UpdateApprovals";
+import NotificationsCenter from "./NotificationsCenter";
 
 Notifications.propTypes = {
-    ws: PropTypes.object.isRequired
+    ws: PropTypes.object.isRequired,
 };
 
-export default function Notifications({ws}) {
-    return <>
-        <UpdateApprovals />
-        <NotificationsCenter ws={ws}/>
-    </>;
+export default function Notifications({ ws }) {
+    return (
+        <>
+            <UpdateApprovals />
+            <NotificationsCenter ws={ws} />
+        </>
+    );
 }

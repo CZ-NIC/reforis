@@ -5,12 +5,12 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
+import React from "react";
 
-import Input from './Input';
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
+import Input from "./Input";
 
-const EmailInput = ({...props}) => <Input type="email" {...props}/>;
+const EmailInput = ({ ...props }) => <Input type="email" {...props} />;
 
 
 EmailInput.propTypes = {

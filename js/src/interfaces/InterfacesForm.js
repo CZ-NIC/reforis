@@ -5,14 +5,14 @@
  * See /LICENSE for more information.
  */
 
-import React, {useState, useEffect} from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
-import Alert from 'common/bootstrap/Alert';
+import Alert from "common/bootstrap/Alert";
 
-import {NETWORKS_CHOICES, NETWORKS_TYPES} from './Interfaces';
-import Network from './Network';
-import SelectedInterface from './SelectedInterface';
+import { NETWORKS_CHOICES, NETWORKS_TYPES } from "./Interfaces";
+import Network from "./Network";
+import SelectedInterface from "./SelectedInterface";
 
 InterfacesForm.propTypes = {
     formData: PropTypes.shape({
@@ -35,68 +35,102 @@ InterfacesForm.defaultProps = {
     setFormValue: () => {},
 };
 
-export default function InterfacesForm({formData, setFormValue, ...props}) {
+export default function InterfacesForm({ formData, setFormValue, ...props }) {
     const [selectedID, setSelectedID] = useState(null);
     const [openPortAlertShown, setOpenPortAlertShown] = useState(false);
 
     useEffect(() => {
-        const firewall = formData.firewall;
-        if (firewall.http_on_wan || firewall.https_on_wan || firewall.ssh_on_wan)
+        const { firewall } = formData;
+        if (firewall.http_on_wan || firewall.https_on_wan || firewall.ssh_on_wan) {
             setOpenPortAlertShown(true);
+        }
     }, [formData]);
 
     function getInterfaceById(id) {
-        if (!selectedID)
-            return [null, null, null];
+        if (!selectedID) return [null, null, null];
 
-        for (let network of NETWORKS_TYPES) {
-            const interfaceIdx = formData.networks[network].findIndex(i => i.id === id);
-            if (interfaceIdx !== -1) return [formData.networks[network][interfaceIdx], network, interfaceIdx];
+        for (const network of NETWORKS_TYPES) {
+            const interfaceIdx = formData.networks[network].findIndex((i) => i.id === id);
+            if (interfaceIdx !== -1) {
+                return [formData.networks[network][interfaceIdx], network, interfaceIdx];
+            }
         }
     }
-    const [selectedInterface, selectedInterfaceNetwork, selectedInterfaceIdx] = getInterfaceById(selectedID);
+    const [
+        selectedInterface,
+        selectedInterfaceNetwork,
+        selectedInterfaceIdx,
+    ] = getInterfaceById(selectedID);
 
     function handleNetworkChange(e) {
         setFormValue(
-            value => ({
+            (value) => ({
                 networks: {
-                    [value]: {$push: [selectedInterface,]},
-                    [selectedInterfaceNetwork]: {$splice: [[selectedInterfaceIdx, 1]]},
+                    [value]: { $push: [selectedInterface] },
+                    [selectedInterfaceNetwork]: { $splice: [[selectedInterfaceIdx, 1]] },
                 },
-            })
-        )(e)
+            }),
+        )(e);
     }
 
-    return <>
-        {openPortAlertShown ? <OpenPortAlert onDismiss={() => setOpenPortAlertShown(false)}/> : null}
-        <h3>{NETWORKS_CHOICES.wan}</h3>
-        <Network interfaces={formData.networks.wan} selected={selectedID} setSelected={setSelectedID} {...props}/>
-        <h3>{NETWORKS_CHOICES.lan}</h3>
-        <Network interfaces={formData.networks.lan} selected={selectedID} setSelected={setSelectedID} {...props}/>
-        <h3>{NETWORKS_CHOICES.guest}</h3>
-        <Network interfaces={formData.networks.guest} selected={selectedID} setSelected={setSelectedID} {...props}/>
-        <h3>{NETWORKS_CHOICES.none}</h3>
-        <Network interfaces={formData.networks.none} selected={selectedID} setSelected={setSelectedID} {...props}/>
-        {selectedID ?
-            <SelectedInterface
-                network={selectedInterfaceNetwork}
-                WANIsEmpty={formData.networks.wan.length === 0}
-                {...selectedInterface}
-
-                onNetworkChange={handleNetworkChange}
+    return (
+        <>
+            {openPortAlertShown
+                ? <OpenPortAlert onDismiss={() => setOpenPortAlertShown(false)} />
+                : null}
+            <h3>{NETWORKS_CHOICES.wan}</h3>
+            <Network
+                interfaces={formData.networks.wan}
+                selected={selectedID}
+                setSelected={setSelectedID}
+                {...props}
             />
-            : null}
-    </>
+            <h3>{NETWORKS_CHOICES.lan}</h3>
+            <Network
+                interfaces={formData.networks.lan}
+                selected={selectedID}
+                setSelected={setSelectedID}
+                {...props}
+            />
+            <h3>{NETWORKS_CHOICES.guest}</h3>
+            <Network
+                interfaces={formData.networks.guest}
+                selected={selectedID}
+                setSelected={setSelectedID}
+                {...props}
+            />
+            <h3>{NETWORKS_CHOICES.none}</h3>
+            <Network
+                interfaces={formData.networks.none}
+                selected={selectedID}
+                setSelected={setSelectedID}
+                {...props}
+            />
+            {selectedID
+                ? (
+                    <SelectedInterface
+                        network={selectedInterfaceNetwork}
+                        WANIsEmpty={formData.networks.wan.length === 0}
+                        {...selectedInterface}
+
+                        onNetworkChange={handleNetworkChange}
+                    />
+                )
+                : null}
+        </>
+    );
 }
 
 OpenPortAlert.propTypes = {
-    onDismiss: PropTypes.func.isRequired
+    onDismiss: PropTypes.func.isRequired,
 };
 
-function OpenPortAlert({onDismiss}) {
-    return <Alert
-        type='warning'
-        message={_('Ports are open on your WAN interface. It\'s better to reconfigure your interface settings to avoid security issues. ')}
-        onDismiss={onDismiss}
-    />
+function OpenPortAlert({ onDismiss }) {
+    return (
+        <Alert
+            type="warning"
+            message={_("Ports are open on your WAN interface. It's better to reconfigure your interface settings to avoid security issues. ")}
+            onDismiss={onDismiss}
+        />
+    );
 }

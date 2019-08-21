@@ -5,19 +5,21 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import NetworkRestartHandler from './NetworkRestartHandler';
-import RebootHandler from './RebootHandler';
+import NetworkRestartHandler from "./NetworkRestartHandler";
+import RebootHandler from "./RebootHandler";
 
 RouterStateHandler.propTypes = {
-    ws: PropTypes.object.isRequired
+    ws: PropTypes.object.isRequired,
 };
 
-export default function RouterStateHandler({ws}) {
-    return <>
-        <NetworkRestartHandler ws={ws}/>
-        <RebootHandler ws={ws}/>
-    </>
+export default function RouterStateHandler({ ws }) {
+    return (
+        <>
+            <NetworkRestartHandler ws={ws} />
+            <RebootHandler ws={ws} />
+        </>
+    );
 }

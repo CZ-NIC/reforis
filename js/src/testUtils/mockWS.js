@@ -7,12 +7,12 @@
 
 
 // Mock foris WS
-export class mockedWS {
+export default class mockedWS {
     bind() {
-        return this
+        return this;
     }
 
     subscribe() {
-        return this
+        return this;
     }
 }

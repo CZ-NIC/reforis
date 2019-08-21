@@ -5,10 +5,10 @@
  * See /LICENSE for more information.
  */
 
-import {useEffect} from 'react';
+import { useEffect } from "react";
 
-import {useAPIGet} from 'common/APIhooks';
-import API_URLs from 'common/API';
+import { useAPIGet } from "common/APIhooks";
+import API_URLs from "common/API";
 
 export function useLanguages() {
     const [languageState, getLanguage] = useAPIGet(API_URLs.language);
@@ -19,12 +19,12 @@ export function useLanguages() {
         getLanguages();
     }, [getLanguage, getLanguages]);
 
-    return [languageState.data, languagesState.data]
+    return [languageState.data, languagesState.data];
 }
 
 export function useWSSetLanguageRefresh(ws) {
     useEffect(() => {
-        const module = 'web';
-        ws.subscribe(module).bind(module, 'set_language', () => window.location.reload())
+        const module = "web";
+        ws.subscribe(module).bind(module, "set_language", () => window.location.reload());
     }, [ws]);
 }

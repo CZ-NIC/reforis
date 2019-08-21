@@ -93,6 +93,8 @@ build-js:
 lint: lint-js lint-web
 lint-js:
 	cd $(JS_DIR); npm run lint
+lint-js-fix:
+	cd $(JS_DIR); npm run lint:fix
 lint-web: venv
 	$(VENV_BIN)/$(DEV_PYTHON) -m pylint --rcfile=pylintrc reforis
 	$(VENV_BIN)/$(DEV_PYTHON) -m pycodestyle --config=pycodestyle reforis

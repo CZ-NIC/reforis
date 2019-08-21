@@ -5,16 +5,16 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import TextInput from 'common/bootstrap/TextInput';
+import TextInput from "common/bootstrap/TextInput";
 
-import HELP_TEXTS from './helpTexts';
+import HELP_TEXTS from "./helpTexts";
 
 SMTPTurrisForm.propTypes = {
-    formData: PropTypes.shape({sender_name: PropTypes.string,}).isRequired,
-    formErrors: PropTypes.shape({sender_name: PropTypes.string,}),
+    formData: PropTypes.shape({ sender_name: PropTypes.string }).isRequired,
+    formErrors: PropTypes.shape({ sender_name: PropTypes.string }),
     setFormValue: PropTypes.func.isRequired,
 };
 
@@ -26,17 +26,23 @@ SMTPTurrisForm.defaultProps = {
 };
 
 
-export default function SMTPTurrisForm({formData, formErrors, setFormValue, ...props}) {
-    return <>
-        <TextInput
-            label={_("Sender's name")}
-            value={formData.sender_name || ''}
-            error={formErrors.sender_name}
-            helpText={HELP_TEXTS.smtp_turris.sender_name}
+export default function SMTPTurrisForm({
+    formData, formErrors, setFormValue, ...props
+}) {
+    return (
+        <>
+            <TextInput
+                label={_("Sender's name")}
+                value={formData.sender_name || ""}
+                error={formErrors.sender_name}
+                helpText={HELP_TEXTS.smtp_turris.sender_name}
 
-            onChange={setFormValue(value => ({smtp_turris: {sender_name: {$set: value}}}))}
+                onChange={setFormValue(
+                    (value) => ({ smtp_turris: { sender_name: { $set: value } } }),
+                )}
 
-            {...props}
-        />
-    </>
+                {...props}
+            />
+        </>
+    );
 }

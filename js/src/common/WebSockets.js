@@ -7,36 +7,36 @@
 
 /* eslint no-console: "off" */
 
-import {ForisURLs} from './constants';
+import { ForisURLs } from "./constants";
 
-const PROTOCOL = window.location.protocol === 'http:' ? 'ws' : 'wss';
+const PROTOCOL = window.location.protocol === "http:" ? "ws" : "wss";
 
-const URL = process.env.LIGHTTPD?
-    PROTOCOL + '://' + window.location.hostname + '/foris-ws' :
-    PROTOCOL + '://' + window.location.hostname + ':' + 9081;
+const URL = process.env.LIGHTTPD
+    ? `${PROTOCOL}://${window.location.hostname}/foris-ws`
+    : `${PROTOCOL}://${window.location.hostname}:${9081}`;
 
 const WAITING_FOR_CONNECTION_TIMEOUT = 500;
 
 export default class WebSockets {
     constructor() {
         this.ws = new WebSocket(URL);
-        this.ws.onerror = e => {
+        this.ws.onerror = (e) => {
             if (window.location.pathname !== ForisURLs.login) {
                 console.error("WS: Error observed, you aren't logged probably.");
                 window.location.replace(ForisURLs.login);
             }
             console.log(`WS: Error: ${e}`);
         };
-        this.ws.onmessage = e => {
+        this.ws.onmessage = (e) => {
             console.log(`WS: Received Message: ${e.data}`);
             const data = JSON.parse(e.data);
-            this.dispatch(data)
+            this.dispatch(data);
         };
         this.ws.onopen = () => {
-            console.log('WS: Connection open.');
+            console.log("WS: Connection open.");
         };
         this.ws.onclose = () => {
-            console.log('WS: Connection closed.');
+            console.log("WS: Connection closed.");
         };
 
         // callbacks[module][action]
@@ -48,7 +48,7 @@ export default class WebSockets {
             callback();
         } else {
             const that = this;
-            setTimeout(function () {
+            setTimeout(() => {
                 that.waitForConnection(callback);
             }, WAITING_FOR_CONNECTION_TIMEOUT);
         }
@@ -63,13 +63,13 @@ export default class WebSockets {
 
     subscribe(params) {
         this.waitForConnection(() => {
-            this.send('subscribe', params);
+            this.send("subscribe", params);
         });
         return this;
     }
 
     send(action, params) {
-        const payload = JSON.stringify({action: action, params: params});
+        const payload = JSON.stringify({ action, params });
         this.waitForConnection(() => {
             this.ws.send(payload);
         });
@@ -84,14 +84,13 @@ export default class WebSockets {
             chain = this.callbacks[json.module][json.action];
         } catch (e) {
             if (e instanceof TypeError) {
-                console.log('Callback for this message wasn\'t found:' + e.data);
+                console.log(`Callback for this message wasn't found:${e.data}`);
             } else throw e;
         }
 
-        if (typeof chain == 'undefined') return;
+        if (typeof chain === "undefined") return;
 
-        for (let i = 0; i < chain.length; i++)
-            chain[i](json)
+        for (let i = 0; i < chain.length; i++) chain[i](json);
     }
 
     close() {

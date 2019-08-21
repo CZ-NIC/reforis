@@ -7,7 +7,7 @@
 
 import React from 'react';
 import {getByText, render, wait} from 'customTestRender';
-import {mockedWS} from '../../testUtils/mockWS';
+import mockedWS from '../../testUtils/mockWS';
 import mockAxios from 'jest-mock-axios';
 
 import Guide from '../Guide';

@@ -5,12 +5,12 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
+import React from "react";
 
-import Input from './Input';
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
+import Input from "./Input";
 
-const NumberInput = ({...props}) => <Input type="number" {...props}/>;
+const NumberInput = ({ ...props }) => <Input type="number" {...props} />;
 
 NumberInput.propTypes = {
     /** Field label. */

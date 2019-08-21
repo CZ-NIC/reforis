@@ -5,29 +5,29 @@
  * See /LICENSE for more information.
  */
 
-import React, {useState} from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
 
-import ForisForm from 'form/ForisForm';
-import API_URLs from 'common/API';
+import ForisForm from "form/ForisForm";
+import API_URLs from "common/API";
 
-import InterfacesForm from './InterfacesForm';
-import {KeepPortsClosedConfirmModal, OpenPortsModals} from './modals';
+import InterfacesForm from "./InterfacesForm";
+import { KeepPortsClosedConfirmModal, OpenPortsModals } from "./modals";
 
 export const NETWORKS_CHOICES = {
-    wan: _('WAN'),
-    lan: _('LAN'),
-    guest: _('Guest Network'),
-    none: _('Unassigned'),
+    wan: _("WAN"),
+    lan: _("LAN"),
+    guest: _("Guest Network"),
+    none: _("Unassigned"),
 };
 
-export const NETWORKS_TYPES = ['wan', 'lan', 'guest', 'none'];
+export const NETWORKS_TYPES = ["wan", "lan", "guest", "none"];
 
 Interfaces.propTypes = {
-    ws: PropTypes.object.isRequired
+    ws: PropTypes.object.isRequired,
 };
 
-export default function Interfaces({ws}) {
+export default function Interfaces({ ws }) {
     const [openPortsModalShown, setOpenPortsModalShown] = useState(false);
     const [keepPortsClosedConfirmModalShown, setKeepPortsClosedConfirmShown] = useState(false);
 
@@ -39,17 +39,17 @@ export default function Interfaces({ws}) {
                         $set: {
                             http_on_wan: value,
                             https_on_wan: value,
-                            ssh_on_wan: value
-                        }
-                    }
+                            ssh_on_wan: value,
+                        },
+                    },
                 }
-            ))({target: '', value: ''});
+            ))({ target: "", value: "" });
         }
 
-        return e => {
+        return (e) => {
             if (formData.networks.lan.length > 0) {
                 submit(e);
-                return
+                return;
             }
             e.preventDefault();
 
@@ -61,10 +61,8 @@ export default function Interfaces({ws}) {
                 setOpenPorts(false);
                 setKeepPortsClosedConfirmShown(false);
                 submit(e);
-            } else
-                setOpenPortsModalShown(true);
-
-        }
+            } else setOpenPortsModalShown(true);
+        };
     }
 
     function keepPortsClosedHandler(e) {
@@ -73,69 +71,75 @@ export default function Interfaces({ws}) {
         setKeepPortsClosedConfirmShown(true);
     }
 
-    return <>
-        <h1>{_('Network interfaces')}</h1>
-        <p>{_(`
+    return (
+        <>
+            <h1>{_("Network interfaces")}</h1>
+            <p>
+                {_(`
 Here you can configure the settings of the network interfaces on your device. You can switch the physical
 network interfaces among networks. If you are unsure what to set here use the default settings.
         `)}
-        </p>
-        <h4>{_('WAN')}</h4>
-        <p>{_(`
+            </p>
+            <h4>{_("WAN")}</h4>
+            <p>
+                {_(`
 It acts as an external network connection. Firewall rules should be applied here. It can only contain a
 single interface.
         `)}
-        </p>
+            </p>
 
-        <h4>{_('LAN')}</h4>
-        <p>{_(`
+            <h4>{_("LAN")}</h4>
+            <p>
+                {_(`
 It acts as a local network connection. LAN should contain devices which are under your control and you
 trust them. These devices can see each other and can access this web interface. It is recommended that the
 LAN should contain at least one interface otherwise you might not be able to configure this device in an
 easy way.
         `)}
-        </p>
+            </p>
 
-        <h4>{_('Guest network')}</h4>
-        <p>{_(`
+            <h4>{_("Guest network")}</h4>
+            <p>
+                {_(`
 It acts as a local network connection. Unlike LAN the devices in the guest network can't access
 the configuration interface of this device and are only able to access WAN (internet). This network should
 be used for devices which you don't fully trust. Note that you can also limit download/upload speed of the
 devices connected to the guest network.
         `)}
-        </p>
-        <ForisForm
-            ws={ws}
-            forisConfig={{
-                endpoint: API_URLs.interfaces,
-                wsModule: 'networks',
-            }}
-            prepDataToSubmit={prepDataToSubmit}
-            onSubmitOverridden={onSubmit}
-        >
-            <OpenPortsModals
-                shown={openPortsModalShown}
-                setShown={setOpenPortsModalShown}
-                onKeepPortsClosed={keepPortsClosedHandler}
-            />
-            <KeepPortsClosedConfirmModal
-                shown={keepPortsClosedConfirmModalShown}
-                setShown={setKeepPortsClosedConfirmShown}
-            />
-            <InterfacesForm/>
-        </ForisForm>
-    </>
+            </p>
+            <ForisForm
+                ws={ws}
+                forisConfig={{
+                    endpoint: API_URLs.interfaces,
+                    wsModule: "networks",
+                }}
+                prepDataToSubmit={prepDataToSubmit}
+                onSubmitOverridden={onSubmit}
+            >
+                <OpenPortsModals
+                    shown={openPortsModalShown}
+                    setShown={setOpenPortsModalShown}
+                    onKeepPortsClosed={keepPortsClosedHandler}
+                />
+                <KeepPortsClosedConfirmModal
+                    shown={keepPortsClosedConfirmModalShown}
+                    setShown={setKeepPortsClosedConfirmShown}
+                />
+                <InterfacesForm />
+            </ForisForm>
+        </>
+    );
 }
 
 function prepDataToSubmit(formData) {
-    let res = {networks: {}, firewall: formData.firewall};
-    for (let network of NETWORKS_TYPES)
-        res.networks[network] = [];
+    const res = { networks: {}, firewall: formData.firewall };
+    for (const network of NETWORKS_TYPES) res.networks[network] = [];
 
-    for (let network of NETWORKS_TYPES)
+    for (const network of NETWORKS_TYPES) {
         formData.networks[network]
-            .filter(i => i.configurable)
-            .forEach(i => res.networks[network].push(i.id));
+            .filter((i) => i.configurable)
+            .forEach((i) => res.networks[network].push(i.id));
+    }
 
-    return res
+    return res;
 }

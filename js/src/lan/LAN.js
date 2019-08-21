@@ -5,26 +5,27 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import API_URLs from 'common/API';
-import ForisForm from 'form/ForisForm';
+import API_URLs from "common/API";
+import ForisForm from "form/ForisForm";
 
-import LANForm, {LAN_MODES} from './LANForm';
-import {validateManaged} from './LANManagedForm';
-import {validateUnmanaged} from './LANUnmanagedForm';
-import LAN_DHCP_ClientsList from './LAN_DHCP_ClientsList';
+import LANForm, { LAN_MODES } from "./LANForm";
+import { validateManaged } from "./LANManagedForm";
+import { validateUnmanaged } from "./LANUnmanagedForm";
+import LAN_DHCP_ClientsList from "./LAN_DHCP_ClientsList";
 
 LAN.propTypes = {
-    ws: PropTypes.object.isRequired
+    ws: PropTypes.object.isRequired,
 };
 
-export default function LAN({ws}) {
-    return <>
-        <h1>LAN</h1>
-        <p dangerouslySetInnerHTML={{
-            __html: _(`
+export default function LAN({ ws }) {
+    return (
+        <>
+            <h1>LAN</h1>
+            <p dangerouslySetInnerHTML={{
+                __html: _(`
 This section contains settings for the local network (LAN). The provided defaults are suitable for most
 networks.
 <br/>
@@ -33,25 +34,25 @@ using now, will need to obtain a <b>new IP address</b> which does not happen <b>
 recommended to disconnect and reconnect all LAN cables after submitting your changes to force the update.
 The next page will not load until you obtain a new IP from DHCP (if DHCP enabled) and you might need to
 <b>refresh the page</b> in your browser.
-            `)
-        }}
-        >
-        </p>
-        <ForisForm
-            ws={ws}
-            forisConfig={{
-                endpoint: API_URLs.lan,
-                wsModule: 'lan',
+            `),
             }}
-            prepDataToSubmit={prepDataToSubmit}
-            validator={validator}
-        >
-            <LANForm/>
-            {/* eslint-disable-next-line react/jsx-pascal-case */}
-            <LAN_DHCP_ClientsList/>
-        </ForisForm>
-        <div id="dhcp_clients_container"/>
-    </>
+            />
+            <ForisForm
+                ws={ws}
+                forisConfig={{
+                    endpoint: API_URLs.lan,
+                    wsModule: "lan",
+                }}
+                prepDataToSubmit={prepDataToSubmit}
+                validator={validator}
+            >
+                <LANForm />
+                {/* eslint-disable-next-line react/jsx-pascal-case */}
+                <LAN_DHCP_ClientsList />
+            </ForisForm>
+            <div id="dhcp_clients_container" />
+        </>
+    );
 }
 
 function prepDataToSubmit(formData) {
@@ -61,25 +62,25 @@ function prepDataToSubmit(formData) {
     if (formData.mode === LAN_MODES.managed) {
         delete formData.mode_unmanaged;
         delete formData.mode_managed.dhcp.clients;
-        if (!formData.mode_managed.dhcp.enabled)
-            formData.mode_managed.dhcp = {enabled: false}
+        if (!formData.mode_managed.dhcp.enabled) formData.mode_managed.dhcp = { enabled: false };
     } else if (formData.mode === LAN_MODES.unmanaged) {
         delete formData.mode_managed;
         const lanType = formData.mode_unmanaged.lan_type;
         formData.mode_unmanaged = {
             lan_type: lanType,
-            [`lan_${lanType}`]: formData.mode_unmanaged[`lan_${lanType}`]
-        }
+            [`lan_${lanType}`]: formData.mode_unmanaged[`lan_${lanType}`],
+        };
     }
 
-    return formData
+    return formData;
 }
 
 function validator(formData) {
-    let errors = {};
-    if (formData.mode === LAN_MODES.managed)
+    const errors = {};
+    if (formData.mode === LAN_MODES.managed) {
         errors.mode_managed = validateManaged(formData.mode_managed);
-    else if (formData.mode === LAN_MODES.unmanaged)
+    } else if (formData.mode === LAN_MODES.unmanaged) {
         errors.mode_unmanaged = validateUnmanaged(formData.mode_unmanaged);
+    }
     return errors[`mode_${formData.mode}`] ? errors : null;
 }

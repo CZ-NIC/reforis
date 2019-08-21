@@ -5,37 +5,43 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import moment from 'moment';
+import React from "react";
+import PropTypes from "prop-types";
+import moment from "moment";
 
 
 DHCPClientsList.propTypes = {
     clients: PropTypes.arrayOf(PropTypes.object),
 };
 
-export default function DHCPClientsList({clients}) {
-    return <>
-        <h3>{_('DHCP clients')}</h3>
-        {
-            clients.length === 0 ?
-                <p>{_('No DHCP clients found.')}</p>
-                : <table className='table table-hover'>
-                    <thead>
-                    <tr className="text-center">
-                        <th>{_('Expires')}</th>
-                        <th>{_('IP Address')}</th>
-                        <th>{_('MAC Address')}</th>
-                        <th>{_('Hostname')}</th>
-                        <th>{_('Active')}</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {clients.map((client, idx) => <DHCPClientsListItem key={idx} {...client}/>)}
-                    </tbody>
-                </table>
-        }
-    </>
+export default function DHCPClientsList({ clients }) {
+    return (
+        <>
+            <h3>{_("DHCP clients")}</h3>
+            {
+                clients.length === 0
+                    ? <p>{_("No DHCP clients found.")}</p>
+                    : (
+                        <table className="table table-hover">
+                            <thead>
+                                <tr className="text-center">
+                                    <th>{_("Expires")}</th>
+                                    <th>{_("IP Address")}</th>
+                                    <th>{_("MAC Address")}</th>
+                                    <th>{_("Hostname")}</th>
+                                    <th>{_("Active")}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {clients.map(
+                                    (client, idx) => <DHCPClientsListItem key={idx} {...client} />,
+                                )}
+                            </tbody>
+                        </table>
+                    )
+            }
+        </>
+    );
 }
 
 DHCPClientsListItem.propTypes = {
@@ -46,14 +52,18 @@ DHCPClientsListItem.propTypes = {
     active: PropTypes.bool.isRequired,
 };
 
-function DHCPClientsListItem({ip, expires, mac, hostname, active}) {
-    return <tr className="text-center">
-        <td>{moment.unix(expires).format('YYYY-MM-DD HH:mm')}</td>
-        <td>{ip}</td>
-        <td>{mac}</td>
-        <td>{hostname}</td>
-        <td>
-            <i className={'fas ' + (active ? 'fa-check' : 'fa-times')}/>
-        </td>
-    </tr>
+function DHCPClientsListItem({
+    ip, expires, mac, hostname, active,
+}) {
+    return (
+        <tr className="text-center">
+            <td>{moment.unix(expires).format("YYYY-MM-DD HH:mm")}</td>
+            <td>{ip}</td>
+            <td>{mac}</td>
+            <td>{hostname}</td>
+            <td>
+                <i className={`fas ${active ? "fa-check" : "fa-times"}`} />
+            </td>
+        </tr>
+    );
 }

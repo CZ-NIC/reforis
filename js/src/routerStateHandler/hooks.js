@@ -5,19 +5,19 @@
  * See /LICENSE for more information.
  */
 
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from "react";
 
-import {ForisURLs} from 'common/constants';
-import {useWSForisModule} from 'common/WebSocketsHooks';
+import { ForisURLs } from "common/constants";
+import useWSForisModule from "common/WebSocketsHooks";
 
-import {tryReconnect, waitForDown} from './utils';
+import { tryReconnect, waitForDown } from "./utils";
 
 export function useNetworkRestart(ws) {
-    return useDeviceState(ws, 'network-restart', window.location.pathname);
+    return useDeviceState(ws, "network-restart", window.location.pathname);
 }
 
 export function useReboot(ws) {
-    return useDeviceState(ws, 'reboot', ForisURLs.login);
+    return useDeviceState(ws, "reboot", ForisURLs.login);
 }
 
 export const STATES = {
@@ -31,11 +31,10 @@ function useDeviceState(ws, action, reconnectUrlPath) {
     const [state, setState] = useState(STATES.NOT_TRIGGERED);
     const [ips, setIPs] = useState([]);
     const [remainsSec, setRemainsSec] = useState(null);
-    const [wsData] = useWSForisModule(ws, 'maintain', action);
+    const [wsData] = useWSForisModule(ws, "maintain", action);
 
     useEffect(() => {
-        if (!wsData)
-            return;
+        if (!wsData) return;
         setIPs([...new Set(wsData.ips)]);
         setRemainsSec(wsData.remains / 1000);
         setState(wsData.remains === 0 ? STATES.IN_PROGRESS : STATES.TRIGGERED);
