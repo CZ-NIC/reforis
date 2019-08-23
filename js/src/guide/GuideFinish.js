@@ -19,7 +19,7 @@ export default function GuideFinished() {
             <p>
                 {_(
                     `
-Congratulations you've successfully reached the end of this guide. Once you leave this guide you'll be granted access 
+Congratulations! You've successfully reached the end of this guide. Once you leave this guide you'll be granted access 
 to the full configuration interface of this device.
 
 To further improve your security consider enabling data collect (start by selecting it in updater tab).
