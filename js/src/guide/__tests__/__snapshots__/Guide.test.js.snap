@@ -2,6 +2,20 @@
 
 exports[`<Guide/>  Snapshot. Just check if render correct page. 1`] = `
 <div>
+  <div
+    class="card guide-card my-4"
+  >
+    <div
+      class="card-body"
+    >
+      <p>
+        Here you need to decide which interfaces belong to which network.
+      </p>
+      <p>
+        If you are in doubt use the current settings.
+      </p>
+    </div>
+  </div>
   <h1>
     Network interfaces
   </h1>

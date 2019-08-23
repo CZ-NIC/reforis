@@ -10,7 +10,7 @@ import React from "react";
 import { withRouter } from "react-router";
 import { Link, NavLink } from "react-router-dom";
 
-import { STEPS } from "./constance";
+import { STEPS } from "./constants";
 import useGuideFinish from "./hooks";
 
 export default function GuideNavigation({ workflow_steps, passed, next_step }) {

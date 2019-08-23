@@ -57,6 +57,10 @@
     text-decoration: none;
 }
 
+#stepsbar li a .fas {
+    margin-right: 0.5rem;
+}
+
 #stepsbar a.active {
     color: #fff;
     background: #00a2e2;
@@ -133,6 +137,14 @@
     right: 3rem;
 
     z-index: 1;
+}
+
+.guide-card {
+    background-color: #cbe8f5;
+}
+
+.guide-card p:last-of-type {
+    margin-bottom: 0;
 }
 
 /* Safari 4.0 - 8.0 */

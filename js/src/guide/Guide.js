@@ -16,8 +16,9 @@ import { useAPIGet } from "common/APIhooks";
 import API_URLs from "common/API";
 import Spinner from "common/bootstrap/Spinner";
 
-import { GUIDE_URL_PREFIX, STEPS } from "./constance";
+import { GUIDE_URL_PREFIX, STEPS } from "./constants";
 import GuideNavigation from "./GuideNavigation";
+import GuideHelp from "./GuideHelp";
 
 Guide.propTypes = {
     ws: PropTypes.object.isRequired,
@@ -32,7 +33,7 @@ export default function Guide({ ws }) {
     if (!guideData.data) return <Spinner className="row justify-content-center" />;
 
     const {
-        available_workflows, workflow_steps, next_step, passed,
+        available_workflows, workflow_steps, next_step, passed, current_workflow,
     } = guideData.data;
 
     return (
@@ -45,20 +46,27 @@ export default function Guide({ ws }) {
                 />
             </Portal>
             <Switch>
-                {workflow_steps.map((step, idx) => {
+                {workflow_steps.map((step) => {
                     const Component = STEPS[step].component;
                     return (
                         <Route
                             exact
-                            key={idx}
+                            key={step}
                             path={`/${step}`}
                             render={() => (
-                                <Component
-                                    ws={ws}
-                                    next_step={next_step}
-                                    postCallback={getGuideData}
-                                    workflows={available_workflows}
-                                />
+                                <>
+                                    <GuideHelp
+                                        step={step}
+                                        workflow={current_workflow}
+                                        completed={passed.includes(step)}
+                                    />
+                                    <Component
+                                        ws={ws}
+                                        next_step={next_step}
+                                        postCallback={getGuideData}
+                                        workflows={available_workflows}
+                                    />
+                                </>
                             )}
                         />
                     );
