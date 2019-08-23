@@ -14,7 +14,7 @@
     align-items: center;
 }
 
-#stepsbar, #guide_nav_container {
+#stepsbar, #guide-nav-container {
     flex: 0.2;
     width: 100%;
     background: #f2f2f2;

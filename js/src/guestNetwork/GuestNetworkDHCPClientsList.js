@@ -23,7 +23,7 @@ GuestNetworkDHCPClientsList.propTypes = {
 export default function GuestNetworkDHCPClientsList({ formData }) {
     if (!formData.enabled || !formData.dhcp.enabled) return null;
 
-    const container = document.getElementById("dhcp_clients_container");
+    const container = document.getElementById("dhcp-clients-container");
     return ReactDOM.createPortal(
         <DHCPClientsList clients={formData.dhcp.clients} />,
         container,

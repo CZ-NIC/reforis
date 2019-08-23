@@ -12,7 +12,6 @@ import PropTypes from "prop-types";
 
 import { REFORIS_URL_PREFIX } from "common/constants";
 import Portal from "utils/Portal";
-import RouterStateHandler from "routerStateHandler/RouterStateHandler";
 import Navigation from "navigation/Navigation";
 
 import TopBar from "./TopBar";
@@ -28,14 +27,11 @@ export default function Main({ ws }) {
     const pages = getPages();
     return (
         <BrowserRouter basename={REFORIS_URL_PREFIX}>
-            <Portal containerId="navigation_container">
+            <Portal containerId="navigation-container">
                 <Navigation pages={pages} />
             </Portal>
-            <Portal containerId="topbar_container">
+            <Portal containerId="topbar-container">
                 <TopBar ws={ws} />
-            </Portal>
-            <Portal containerId="router_state_handler_container">
-                <RouterStateHandler ws={ws} />
             </Portal>
 
             <Switch>

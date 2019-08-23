@@ -15,7 +15,7 @@ SuccessAlert.propTypes = {
     onDismiss: PropTypes.func.isRequired,
 };
 
-const ALERT_CONTAINER_ID = "alert_container";
+const ALERT_CONTAINER_ID = "alert-container";
 
 export function SuccessAlert({ onDismiss }) {
     return (
