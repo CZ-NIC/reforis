@@ -50,7 +50,7 @@ in LAN.
     </button>
   </form>
   <div
-    id="dhcp_clients_container"
+    id="dhcp-clients-container"
   />
 </div>
 `;
@@ -287,7 +287,7 @@ in LAN.
     </button>
   </form>
   <div
-    id="dhcp_clients_container"
+    id="dhcp-clients-container"
   >
     <h3>
       DHCP clients
@@ -534,7 +534,7 @@ in LAN.
     </button>
   </form>
   <div
-    id="dhcp_clients_container"
+    id="dhcp-clients-container"
   />
 </div>
 `;
@@ -696,7 +696,7 @@ in LAN.
     </button>
   </form>
   <div
-    id="dhcp_clients_container"
+    id="dhcp-clients-container"
   />
 </div>
 `;

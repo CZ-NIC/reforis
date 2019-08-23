@@ -29,13 +29,13 @@
 </head>
 
 <body>
-<div id="app_container"></div>
+<div id="app-container"></div>
 <div class="wrapper">
     {% block navigation %}{% include "includes/navigation.html" %}{% endblock %}
     <div id="content">
         <div class="col-lg-10 col-sm-12">
             {% include "includes/top-bar.html" %}
-            <div id="alert_container">
+            <div id="alert-container">
                 {% if messages %}
                     {% for message in messages %}
                         <div
@@ -59,8 +59,8 @@
 </div>
 
 {# Helpers #}
-<div id="router_state_handler_container"></div>
-<div id="modal_container"></div>
+<div id="router-state-handler"></div>
+<div id="modal-container"></div>
 
 </body>
 </html>

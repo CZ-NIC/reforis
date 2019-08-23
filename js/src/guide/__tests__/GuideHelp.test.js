@@ -35,4 +35,9 @@ describe("<GuideHelp/>", () => {
         const { container } = render(<GuideHelp workflow="router" step="qwe" completed={true} />);
         expect(container.firstChild).toMatchSnapshot();
     });
+
+    it("doesn't display initial message if it doesn't exist", () => {
+        const { container } = render(<GuideHelp workflow="router" step="profile" />);
+        expect(container.firstChild).toMatchSnapshot();
+    });
 });

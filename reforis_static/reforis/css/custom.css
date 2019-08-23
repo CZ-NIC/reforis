@@ -136,7 +136,7 @@ form > button {
 /* Drop-down menus */
 
 /* Top bar */
-#top-bar, #topbar_container {
+#top-bar, #topbar-container {
     display: flex;
     justify-content: flex-end;
 }
@@ -145,7 +145,7 @@ form > button {
     align-items: center;
 }
 
-#topbar_container {
+#topbar-container {
     align-items: stretch;
 }
 

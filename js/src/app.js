@@ -9,6 +9,7 @@ import React from "react";
 import { render } from "react-dom";
 
 import WebSockets from "common/WebSockets";
+import RouterStateHandler from "routerStateHandler/RouterStateHandler";
 
 import Main from "main/Main";
 import Guide from "guide/Guide";
@@ -16,9 +17,16 @@ import Guide from "guide/Guide";
 const ws = new WebSockets();
 
 window.addEventListener("load", () => {
-    const mainContainer = document.getElementById("app_container");
-    if (mainContainer) render(<Main ws={ws} />, mainContainer);
+    const guideContainer = document.getElementById("guide-container");
+    const mainContainer = document.getElementById("app-container");
+    if (guideContainer) {
+        render(<Guide ws={ws} />, guideContainer);
+    } else if (mainContainer) {
+        render(<Main ws={ws} />, mainContainer);
+    }
 
-    const guideContainer = document.getElementById("guide_container");
-    if (guideContainer) render(<Guide ws={ws} />, guideContainer);
+    const routerStateHandlerContainer = document.getElementById("router-state-handler");
+    if (routerStateHandlerContainer) {
+        render(<RouterStateHandler ws={ws} />, routerStateHandlerContainer);
+    }
 }, false);

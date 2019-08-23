@@ -83,3 +83,5 @@ exports[`<GuideHelp/> doesn't display completed message if it doesn't exist 1`] 
   </div>
 </div>
 `;
+
+exports[`<GuideHelp/> doesn't display initial message if it doesn't exist 1`] = `null`;

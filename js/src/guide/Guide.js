@@ -38,7 +38,7 @@ export default function Guide({ ws }) {
 
     return (
         <BrowserRouter basename={`${REFORIS_URL_PREFIX}${GUIDE_URL_PREFIX}`}>
-            <Portal containerId="guide_nav_container">
+            <Portal containerId="guide-nav-container">
                 <GuideNavigation
                     workflow_steps={workflow_steps}
                     passed={passed}

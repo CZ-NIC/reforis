@@ -236,7 +236,7 @@ it has opened ports for configuration interface and other services.
     </button>
   </form>
   <div
-    id="dhcp_clients_container"
+    id="dhcp-clients-container"
   >
     <h3>
       DHCP clients
@@ -409,7 +409,7 @@ it has opened ports for configuration interface and other services.
     </button>
   </form>
   <div
-    id="dhcp_clients_container"
+    id="dhcp-clients-container"
   />
 </div>
 `;
@@ -552,7 +552,7 @@ it has opened ports for configuration interface and other services.
     </button>
   </form>
   <div
-    id="dhcp_clients_container"
+    id="dhcp-clients-container"
   />
 </div>
 `;
@@ -667,7 +667,7 @@ it has opened ports for configuration interface and other services.
     </button>
   </form>
   <div
-    id="dhcp_clients_container"
+    id="dhcp-clients-container"
   />
 </div>
 `;
@@ -910,7 +910,7 @@ it has opened ports for configuration interface and other services.
     </button>
   </form>
   <div
-    id="dhcp_clients_container"
+    id="dhcp-clients-container"
   />
 </div>
 `;

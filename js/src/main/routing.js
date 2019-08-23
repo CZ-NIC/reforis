@@ -13,7 +13,7 @@ import Portal from "utils/Portal";
 
 import { REDIRECT_404_PAGE } from "./constants";
 
-const CONTENT_CONTAINER_ID = "content_container";
+const CONTENT_CONTAINER_ID = "content-container";
 
 RouteWithSubRoutes.propTypes = {
     ws: PropTypes.object.isRequired,

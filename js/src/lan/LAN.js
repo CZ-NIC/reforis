@@ -50,7 +50,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
                 {/* eslint-disable-next-line react/jsx-pascal-case */}
                 <LAN_DHCP_ClientsList />
             </ForisForm>
-            <div id="dhcp_clients_container" />
+            <div id="dhcp-clients-container" />
         </>
     );
 }
