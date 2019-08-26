@@ -85,6 +85,7 @@ exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
           </div>
           <button
             class="btn btn-link"
+            type="button"
           >
             <i
               class="fas fa-times"
@@ -118,6 +119,7 @@ exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
           </div>
           <button
             class="btn btn-link"
+            type="button"
           >
             <i
               class="fas fa-times"
@@ -151,6 +153,7 @@ exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
           </div>
           <button
             class="btn btn-link"
+            type="button"
           >
             <i
               class="fas fa-times"
@@ -167,6 +170,7 @@ exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
       >
         <button
           class="btn btn-link"
+          type="button"
         >
           Dismiss all
         </button>

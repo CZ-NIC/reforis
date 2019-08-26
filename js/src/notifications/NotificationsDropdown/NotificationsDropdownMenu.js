@@ -83,6 +83,7 @@ function NotificationsDropdownFooter({ dismissAll }) {
             <div className="dropdown-divider dropdown-divider-bottom" />
             <div id="notifications-footer" className="dropdown-footer">
                 <button
+                    type="button"
                     className="btn btn-link"
                     onClick={dismissAll}
                 >

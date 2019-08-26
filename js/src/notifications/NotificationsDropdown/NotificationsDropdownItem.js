@@ -37,7 +37,7 @@ export default function NotificationsDropdownItem({ notification, divider, dismi
                 <div className="notifications-info">
                     <Link to={{ pathname: ForisURLs.notifications, search: `?id=${notification.id}` }}>{message}</Link>
                 </div>
-                <button className="btn btn-link" onClick={dismiss}>
+                <button type="button" className="btn btn-link" onClick={dismiss}>
                     <i className="fas fa-times" />
                 </button>
             </div>
