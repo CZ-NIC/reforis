@@ -23,8 +23,7 @@ export function OpenPortsModals({ shown, setShown, onKeepPortsClosed }) {
     const message = _(`
 You don't have any interface assigned to the LAN network.<br/>
 Do you want to <strong>open ports 22, 80 and 443 on WAN network</strong> in order to be able to access the configuration
-interface of our device?                
-    `);
+interface of our device?`);
 
     return (
         <Modal shown={shown} setShown={setShown}>
@@ -48,10 +47,9 @@ KeepPortsClosedConfirmModal.propTypes = {
 export function KeepPortsClosedConfirmModal({ shown, setShown }) {
     const message = _(`
 In the setup you provided it is <strong>not possible to access the administration interface</strong> of your device.
-This means that the only way to configure your device will be via serial cabel or you need to a perform factory reset.
+This means that the only way to configure your device will be via serial cable or you need to a perform factory reset.
 <br/><br/> 
-<p><strong>Is this really what you want?</strong></p>           
-`);
+<p><strong>Is this really what you want?</strong></p>`);
 
     return (
         <Modal shown={shown} setShown={setShown}>

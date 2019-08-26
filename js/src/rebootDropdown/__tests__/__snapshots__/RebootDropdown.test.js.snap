@@ -8,6 +8,7 @@ exports[`<RebootDropdown/> Test with snapshot 1`] = `
     <button
       class="nav-item btn btn-link"
       id="reboot-dropdown-toggle"
+      type="button"
     >
       <i
         class="fa fa-power-off fa-lg"
@@ -30,15 +31,16 @@ exports[`<RebootDropdown/> Test with snapshot 1`] = `
       <div
         class="dropdown-item"
       >
-        <p>
-          See 
-          <a
-            href="//notifications"
+        <a
+          href="/notifications?id=808-909"
+        >
+          <button
+            class="btn btn-primary mr-3"
+            type="button"
           >
-            notifications
-          </a>
-           for details.
-        </p>
+            Details
+          </button>
+        </a>
         <button
           class="btn btn-danger"
         >

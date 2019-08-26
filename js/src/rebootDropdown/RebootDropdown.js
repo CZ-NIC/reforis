@@ -10,7 +10,8 @@ import PropTypes from "prop-types";
 
 import useNotifications from "notifications/hooks";
 import RebootButton from "common/RebootButton";
-import { ForisURLs, REFORIS_URL_PREFIX } from "common/constants";
+import { ForisURLs } from "common/constants";
+import { Link } from "react-router-dom";
 
 RebootDropdown.propTypes = {
     ws: PropTypes.object.isRequired,
@@ -18,15 +19,15 @@ RebootDropdown.propTypes = {
 
 export default function RebootDropdown({ ws }) {
     const [notifications] = useNotifications(ws);
-    const rebootRequired = notifications.some((notification) => notification.severity === "restart");
 
-    if (!rebootRequired) {
+    const rebootNotification = notifications.find((notification) => notification.severity === "restart");
+    if (!rebootNotification) {
         return null;
     }
 
     return (
         <div className="dropdown">
-            <button id="reboot-dropdown-toggle" className="nav-item btn btn-link">
+            <button type="button" id="reboot-dropdown-toggle" className="nav-item btn btn-link">
                 <i className="fa fa-power-off fa-lg" style={{ color: "red" }} />
             </button>
             <div className="dropdown-menu">
@@ -35,11 +36,9 @@ export default function RebootDropdown({ ws }) {
                 </div>
                 <div className="dropdown-divider" />
                 <div className="dropdown-item">
-                    <p
-                        dangerouslySetInnerHTML={{
-                            __html: _(`See <a href="${REFORIS_URL_PREFIX}/${ForisURLs.notifications}">notifications</a> for details.`),
-                        }}
-                    />
+                    <Link to={{ pathname: ForisURLs.notifications, search: `?id=${rebootNotification.id}` }}>
+                        <button type="button" className="btn btn-primary mr-3">{_("Details")}</button>
+                    </Link>
                     <RebootButton />
                 </div>
             </div>

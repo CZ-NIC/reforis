@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-08-22 09:50+0200\n"
+"POT-Creation-Date: 2019-08-26 09:43+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,7 +42,7 @@ msgid "Reboot"
 msgstr ""
 
 #: js/src/common/RebootButton.js:59 js/src/dns/DNSSECDisableModal.js:33
-#: js/src/interfaces/modals.js:31 js/src/interfaces/modals.js:58
+#: js/src/interfaces/modals.js:30 js/src/interfaces/modals.js:56
 msgid "Warning!"
 msgstr ""
 
@@ -386,7 +386,7 @@ msgstr ""
 #: js/src/guide/GuideFinish.js:20
 msgid ""
 "\n"
-"Congratulations you've successfully reached the end of this guide. Once "
+"Congratulations! You've successfully reached the end of this guide. Once "
 "you leave this guide you'll be granted access \n"
 "to the full configuration interface of this device.\n"
 "\n"
@@ -449,89 +449,184 @@ msgid ""
 "basic configuration of your device."
 msgstr ""
 
-#: js/src/guide/constants.js:23 js/src/main/pages.js:81
-#: js/src/notificationsSettings/SMTPCustomForm.js:109
-#: js/src/password/Password.js:101 js/src/wifi/WiFiGuestForm.js:78
-msgid "Password"
-msgstr ""
-
-#: js/src/guide/constants.js:25
+#: js/src/guide/constants.js:23
 msgid ""
 "Welcome to Foris web interface. This guide will help you to setup your "
 "device. Firstly it is required to set your password. Note the security of"
 " your home network is in your hands, so try not to use weak passwords."
 msgstr ""
 
-#: js/src/guide/constants.js:28
-msgid "Workflow"
+#: js/src/guide/constants.js:24
+msgid "Your password is set. You may proceed to the next step."
 msgstr ""
 
-#: js/src/guide/constants.js:32 js/src/main/pages.js:63
-msgid "Interfaces"
+#: js/src/guide/constants.js:27
+msgid "The workflow was set. You may proceed to next step."
+msgstr ""
+
+#: js/src/guide/constants.js:31
+msgid "Here you need to decide which interfaces belong to which network."
+msgstr ""
+
+#: js/src/guide/constants.js:32
+msgid "If you are in doubt use the current settings."
 msgstr ""
 
 #: js/src/guide/constants.js:34
 msgid ""
-"Here you need to decide which interfaces belong to which network. If you "
-"are in doubt use the current settings."
+"You've configured your network interfaces. It seems that you didn't break"
+" any crucial network settings so you can safely proceed to the next step."
 msgstr ""
 
-#: js/src/guide/constants.js:37 js/src/regionAndTime/TimeForm.js:109
-msgid "Time"
+#: js/src/guide/constants.js:37
+msgid "Now you need to set the time and timezone of your device."
 msgstr ""
 
-#: js/src/guide/constants.js:39
+#: js/src/guide/constants.js:38
 msgid ""
-"Now you need to set the time and timezone of your device. Please make "
-"sure that the time matches the time on your computer - if not, try to "
-"update it via NTP or manually."
+"Your time and timezone seem to be set. Please make sure that the time "
+"matches the time on your computer if not try to update it via NTP or "
+"manually."
 msgstr ""
 
-#: js/src/guide/constants.js:42 js/src/main/pages.js:58
-msgid "DNS"
-msgstr ""
-
-#: js/src/guide/constants.js:44
+#: js/src/guide/constants.js:41
 msgid ""
 "A proper DNS resolving is one of the key security features of your "
-"device. After saving the settings, try to run connection test to see "
+"device. Let's configure it now."
+msgstr ""
+
+#: js/src/guide/constants.js:42
+msgid ""
+"You've updated your DNS configuration. Try to run connection test to see "
 "whether your DNS resolver is properly set."
 msgstr ""
 
-#: js/src/guide/constants.js:47 js/src/main/pages.js:103
+#: js/src/guide/constants.js:45
+msgid "In order to access the internet, you need to configure your WAN interface."
+msgstr ""
+
+#: js/src/guide/constants.js:46
+msgid ""
+"You've configured your WAN interface. Try to run connection test to see "
+"whether it is working properly and if so you can safely proceed to the "
+"next step."
+msgstr ""
+
+#: js/src/guide/constants.js:49
+msgid ""
+"Now you should configure your LAN interface. Note that when you change "
+"your network settings you probably won't be able to connect to the "
+"configuration interface unless you restart the network on your current "
+"device."
+msgstr ""
+
+#: js/src/guide/constants.js:50
+msgid ""
+"You've configured your LAN interface. Try to test whether settings work "
+"properly and if so you can safely proceed to the next step."
+msgstr ""
+
+#: js/src/guide/constants.js:59
+msgid ""
+"The device setup is finished. Now your device is able to act as a router "
+"and route network traffic among LAN, WAN and guest network."
+msgstr ""
+
+#: js/src/guide/constants.js:65
+msgid ""
+"Minimal device setup is finished. Note that you probably need to perform "
+"some further configuration updates to fit the device to your needs."
+msgstr ""
+
+#: js/src/guide/constants.js:74
+msgid ""
+"You chose to act as local server this means that it doesn't make sense to"
+" put any interfaces to your WAN and Guest Network. So it is a good idea "
+"to assign all interfaces to LAN."
+msgstr ""
+
+#: js/src/guide/constants.js:79
+msgid ""
+"To act as a local server, there's no need to manage LAN (if you still "
+"want to manage it reset the guide and choose the Router workflow). You "
+"probably want to act as a client here thus select "
+"<strong>Computer</strong> mode here."
+msgstr ""
+
+#: js/src/guide/constants.js:80
+msgid ""
+"If you select the <strong>static</strong> configuration be sure that the "
+"IP addresses are entered correctly otherwise you won't be able to access "
+"this configuration interface when the new settings are applied."
+msgstr ""
+
+#: js/src/guide/constants.js:81
+msgid ""
+"If you select the <strong>DHCP</strong> method you probably you need to "
+"obtain a new IP address of this device. You can obtain it from the DHCP "
+"server which is managing your LAN. Then you need to connect to the new IP"
+" address to proceed the guide."
+msgstr ""
+
+#: js/src/guide/constants.js:82
+msgid ""
+"Note that either way you might need to re-plug your ethernet cables after"
+" you update the settings here."
+msgstr ""
+
+#: js/src/guide/constants.js:84
+msgid ""
+"Please test whether the settings you provided are correctly working. This"
+" means that you can access the configuration interface of your device and"
+" your device is able to access the internet (you can use the connection "
+"test below)."
+msgstr ""
+
+#: js/src/guide/constants.js:87
+msgid ""
+"The device setup is finished. Now your device should be able to act as a "
+"server on your local network."
+msgstr ""
+
+#: js/src/guide/constants.js:94 js/src/main/pages.js:81
+#: js/src/notificationsSettings/SMTPCustomForm.js:109
+#: js/src/password/Password.js:101 js/src/wifi/WiFiGuestForm.js:78
+msgid "Password"
+msgstr ""
+
+#: js/src/guide/constants.js:98
+msgid "Workflow"
+msgstr ""
+
+#: js/src/guide/constants.js:102 js/src/main/pages.js:63
+msgid "Interfaces"
+msgstr ""
+
+#: js/src/guide/constants.js:106 js/src/regionAndTime/TimeForm.js:109
+msgid "Time"
+msgstr ""
+
+#: js/src/guide/constants.js:110 js/src/main/pages.js:58
+msgid "DNS"
+msgstr ""
+
+#: js/src/guide/constants.js:114 js/src/main/pages.js:103
 #: js/src/updates/Updates.js:29
 msgid "Updates"
 msgstr ""
 
-#: js/src/guide/constants.js:51 js/src/interfaces/Interfaces.js:18
+#: js/src/guide/constants.js:118 js/src/interfaces/Interfaces.js:18
 #: js/src/interfaces/Interfaces.js:83 js/src/main/pages.js:48
 #: js/src/wan/WAN.js:27
 msgid "WAN"
 msgstr ""
 
-#: js/src/guide/constants.js:53
-msgid ""
-"In order to access the internet, you need to configure your WAN "
-"interface. After saving the settings, try to run connection test to see "
-"whether it is working properly and if so you can safely proceed to the "
-"next step."
-msgstr ""
-
-#: js/src/guide/constants.js:56 js/src/interfaces/Interfaces.js:19
+#: js/src/guide/constants.js:122 js/src/interfaces/Interfaces.js:19
 #: js/src/interfaces/Interfaces.js:91 js/src/main/pages.js:53
 msgid "LAN"
 msgstr ""
 
-#: js/src/guide/constants.js:58
-msgid ""
-"Now you should configure your LAN interface. Note that when you change "
-"your network settings you probably won't be able to connect to the "
-"configuration interface unless you restart the network on your current "
-"device. After saving the settings, try to test whether connected devices "
-"work properly and if so you can safely proceed to the next step."
-msgstr ""
-
-#: js/src/guide/constants.js:61
+#: js/src/guide/constants.js:126
 msgid "Finish"
 msgstr ""
 
@@ -632,34 +727,33 @@ msgid ""
 "You don't have any interface assigned to the LAN network.<br/>\n"
 "Do you want to <strong>open ports 22, 80 and 443 on WAN network</strong> "
 "in order to be able to access the configuration\n"
-"interface of our device?                \n"
-"    "
+"interface of our device?"
 msgstr ""
 
-#: js/src/interfaces/modals.js:36
+#: js/src/interfaces/modals.js:35
 msgid "Keep closed"
 msgstr ""
 
-#: js/src/interfaces/modals.js:37
+#: js/src/interfaces/modals.js:36
 msgid "Open ports"
 msgstr ""
 
-#: js/src/interfaces/modals.js:49
+#: js/src/interfaces/modals.js:48
 msgid ""
 "\n"
 "In the setup you provided it is <strong>not possible to access the "
 "administration interface</strong> of your device.\n"
 "This means that the only way to configure your device will be via serial "
-"cabel or you need to a perform factory reset.\n"
+"cable or you need to a perform factory reset.\n"
 "<br/><br/> \n"
-"<p><strong>Is this really what you want?</strong></p>           \n"
+"<p><strong>Is this really what you want?</strong></p>"
 msgstr ""
 
-#: js/src/interfaces/modals.js:68
+#: js/src/interfaces/modals.js:66
 msgid "Reconsider"
 msgstr ""
 
-#: js/src/interfaces/modals.js:70
+#: js/src/interfaces/modals.js:68
 msgid "I'm an expert"
 msgstr ""
 
@@ -761,7 +855,7 @@ msgid "Advanced administration"
 msgstr ""
 
 #: js/src/notifications/Notifications/NotificationsCenter.js:32
-#: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:89
+#: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:90
 msgid "Dismiss all"
 msgstr ""
 
@@ -1065,15 +1159,12 @@ msgid ""
 "    "
 msgstr ""
 
-#: js/src/rebootDropdown/RebootDropdown.js:34
+#: js/src/rebootDropdown/RebootDropdown.js:35
 msgid "Reboot required"
 msgstr ""
 
 #: js/src/rebootDropdown/RebootDropdown.js:40
-msgid ""
-"See <a "
-"href=\"${REFORIS_URL_PREFIX}/${ForisURLs.notifications}\">notifications</a>"
-" for details."
+msgid "Details"
 msgstr ""
 
 #: js/src/regionAndTime/RegionAndTime.js:30

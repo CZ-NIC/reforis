@@ -39,6 +39,7 @@ export default function LanguagesDropdown({ ws }) {
                 {langsList
                     ? langsList.map((lang) => (
                         <button
+                            type="button"
                             key={lang}
                             className="dropdown-item"
                             onClick={() => post({ language: lang })}
