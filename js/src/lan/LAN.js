@@ -9,7 +9,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import API_URLs from "common/API";
-import ForisForm from "form/ForisForm";
+import { ForisForm } from "foris";
 
 import LANForm, { LAN_MODES } from "./LANForm";
 import { validateManaged } from "./LANManagedForm";

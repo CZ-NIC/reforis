@@ -9,7 +9,7 @@ import React from "react";
 import update from "immutability-helper";
 import PropTypes from "prop-types";
 
-import ForisForm from "form/ForisForm";
+import { ForisForm } from "foris";
 import API_URLs from "common/API";
 import ConnectionTest from "connectionTest/ConnectionTest";
 

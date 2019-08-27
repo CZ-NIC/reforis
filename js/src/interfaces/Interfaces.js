@@ -8,7 +8,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-import ForisForm from "form/ForisForm";
+import { ForisForm } from "foris";
 import API_URLs from "common/API";
 
 import InterfacesForm from "./InterfacesForm";

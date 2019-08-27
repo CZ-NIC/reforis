@@ -8,13 +8,12 @@
 import React, { useCallback, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-import { STATES as SUBMIT_BUTTON_STATES } from "form/SubmitButton";
+import {
+    SUBMIT_BUTTON_STATES, useForm, Alert, Spinner,
+} from "foris";
 import { useAPIGet, useAPIPost } from "common/APIhooks";
 import API_URLs from "common/API";
-import { useForm } from "form/hooks";
-import { Alert } from "foris";
 
-import { Spinner } from "foris";
 import CurrentForisPasswordForm from "./CurrentForisPasswordForm";
 import ForisPasswordForm from "./ForisPasswordForm";
 import RootPasswordForm from "./RootPasswordForm";
