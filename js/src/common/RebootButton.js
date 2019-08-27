@@ -9,9 +9,8 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 import {
-    Modal, ModalBody, ModalFooter, ModalHeader,
-} from "common/bootstrap/Modal";
-import Button from "common/bootstrap/Button";
+    Modal, ModalBody, ModalFooter, ModalHeader, Button
+} from "foris";
 import { useAPIPost } from "./APIhooks";
 import API_URLs from "./API";
 

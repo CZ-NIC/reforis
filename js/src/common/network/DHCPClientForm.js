@@ -8,7 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import TextInput from "common/bootstrap/TextInput";
+import { TextInput } from "foris";
 import { validateDomain } from "common/validations";
 
 const HELP_TEXTS = {

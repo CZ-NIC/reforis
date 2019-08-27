@@ -8,7 +8,7 @@
 import React, { useEffect } from "react";
 import { useAPIGet } from "common/APIhooks";
 import API_URLs from "common/API";
-import Spinner from "common/bootstrap/Spinner";
+import { Spinner } from "foris";
 
 export default function About() {
     const [state, get] = useAPIGet(API_URLs.about);

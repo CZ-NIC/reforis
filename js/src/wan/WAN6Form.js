@@ -10,10 +10,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Select from "common/bootstrap/Select";
-import TextInput from "common/bootstrap/TextInput";
-import CheckBox from "common/bootstrap/Checkbox";
-import NumberInput from "common/bootstrap/NumberInput";
+import { Select } from "foris";
+import { TextInput } from "foris";
+import { CheckBox } from "foris";
+import { NumberInput } from "foris";
 import {
     validateDUID,
     validateIPv4Address,

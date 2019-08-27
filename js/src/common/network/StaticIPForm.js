@@ -8,7 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import TextInput from "common/bootstrap/TextInput";
+import { TextInput } from "foris";
 import { validateIPv4Address } from "common/validations";
 
 const HELP_TEXTS = {

@@ -14,7 +14,7 @@ import Portal from "utils/Portal";
 import { REFORIS_URL_PREFIX } from "common/constants";
 import { useAPIGet } from "common/APIhooks";
 import API_URLs from "common/API";
-import Spinner from "common/bootstrap/Spinner";
+import { Spinner } from "foris";
 
 import { GUIDE_URL_PREFIX, STEPS } from "./constants";
 import GuideNavigation from "./GuideNavigation";

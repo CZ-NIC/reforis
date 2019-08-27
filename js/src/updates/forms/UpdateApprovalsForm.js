@@ -8,8 +8,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import RadioSet from "common/bootstrap/RadioSet";
-import NumberInput from "common/bootstrap/NumberInput";
+import { RadioSet } from "foris";
+import { NumberInput } from "foris";
 
 const UPDATE_APPROVALS_CHOICES = [
     {

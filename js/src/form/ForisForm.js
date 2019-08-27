@@ -8,7 +8,7 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-import Spinner from "common/bootstrap/Spinner";
+import { Spinner } from "foris";
 import { useAPIPost } from "common/APIhooks";
 
 import { Prompt } from "react-router";

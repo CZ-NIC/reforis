@@ -8,7 +8,7 @@
 import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
-import Select from "common/bootstrap/Select";
+import { Select } from "foris";
 import { NETWORKS_CHOICES } from "./Interfaces";
 import { INTERFACE_STATES, INTERFACE_TYPES } from "./Interface";
 

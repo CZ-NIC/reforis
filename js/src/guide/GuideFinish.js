@@ -7,7 +7,7 @@
 
 import React from "react";
 
-import Button from "common/bootstrap/Button";
+import { Button } from "foris";
 
 import useGuideFinish from "./hooks";
 

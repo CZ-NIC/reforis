@@ -8,7 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Select from "common/bootstrap/Select";
+import { Select } from "foris";
 import DHCPClientForm, { validateDHCPForm } from "common/network/DHCPClientForm";
 import StaticIPForm, { validateStaticForm } from "common/network/StaticIPForm";
 

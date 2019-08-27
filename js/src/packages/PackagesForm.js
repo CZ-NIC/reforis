@@ -8,7 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import CheckBox from "common/bootstrap/Checkbox";
+import { CheckBox } from "foris";
 
 PackagesForm.propTypes = {
     formData: PropTypes.shape({

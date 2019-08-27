@@ -11,8 +11,8 @@ import moment from "moment";
 
 import { useAPIGet, useAPIPost } from "common/APIhooks";
 import API_URLs from "common/API";
-import Button from "common/bootstrap/Button";
-import Spinner from "common/bootstrap/Spinner";
+import { Button } from "foris";
+import { Spinner } from "foris";
 
 export default function UpdateApprovals() {
     const [getState, get] = useAPIGet(API_URLs.approvals);

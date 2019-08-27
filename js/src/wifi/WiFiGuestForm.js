@@ -8,9 +8,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import CheckBox from "common/bootstrap/Checkbox";
-import TextInput from "common/bootstrap/TextInput";
-import PasswordInput from "common/bootstrap/PasswordInput";
+import { CheckBox } from "foris";
+import { TextInput } from "foris";
+import { PasswordInput } from "foris";
 
 import { HELP_TEXTS } from "./WiFiForm";
 import WiFiQRCode from "./WiFiQRCode";

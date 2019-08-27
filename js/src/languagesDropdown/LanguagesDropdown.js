@@ -8,7 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { SpinnerElement } from "common/bootstrap/Spinner";
+import {  SpinnerElement } from "foris";
 import { useAPIPost } from "common/APIhooks";
 import API_URLs from "common/API";
 

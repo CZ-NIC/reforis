@@ -8,10 +8,10 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-import Button from "common/bootstrap/Button";
+import { Button } from "foris";
 import { useAPIPost } from "common/APIhooks";
 import API from "common/API";
-import Alert from "common/bootstrap/Alert";
+import { Alert } from "foris";
 
 ResetWiFiSettings.propTypes = {
     ws: PropTypes.object.isRequired,

@@ -8,20 +8,21 @@
 // https://jestjs.io/docs/en/configuration.html
 module.exports = {
     moduleDirectories: [
-        'node_modules',
-        '<rootDir>/src/testUtils',
-        '<rootDir>/src/',
+        "node_modules",
+        "<rootDir>/src/testUtils",
+        "<rootDir>/src/",
     ],
     clearMocks: true,
-    collectCoverageFrom: ['src/**/*.{js,jsx}'],
-    coverageDirectory: 'coverage',
-    testPathIgnorePatterns: ['/node_modules/', '/__fixtures__/'],
+    collectCoverageFrom: ["src/**/*.{js,jsx}"],
+    coverageDirectory: "coverage",
+    testPathIgnorePatterns: ["/node_modules/", "/__fixtures__/"],
     verbose: false,
     setupFilesAfterEnv: [
-        '@testing-library/react/cleanup-after-each',
-        '<rootDir>/src/testUtils/setupTest',
+        "@testing-library/react/cleanup-after-each",
+        "<rootDir>/src/testUtils/setupTest",
+        "foris/src/testUtils/setup",
     ],
     globals: {
-        TZ: 'utc',
+        TZ: "utc",
     },
 };

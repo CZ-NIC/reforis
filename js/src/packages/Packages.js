@@ -9,7 +9,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import API_URLs from "common/API";
-import Alert from "common/bootstrap/Alert";
+import { Alert } from "foris";
 import { ForisURLs } from "common/constants";
 import ForisForm from "form/ForisForm";
 

@@ -13,20 +13,9 @@ global.afterEach(() => {
     mockAxios.reset();
 });
 
-// Mock babel (gettext)
-window._ = (str) => str;
-window.babel = { format: (str) => str };
-window.ForisTranslations = {};
-
-// Mock scrollIntoView
-window.HTMLElement.prototype.scrollIntoView = () => {
-};
-
-jest.doMock("moment", () => {
-    moment.tz.setDefault("UTC");
+jest.doMock('moment', () => {
+    moment.tz.setDefault('UTC');
     return moment;
 });
-
-Date.now = jest.fn(() => new Date(Date.UTC(2019, 1, 1, 12, 13, 14)).valueOf());
 
 jest.doMock("utils/vfs_fonts", () => ({}));

@@ -8,7 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Button from "common/bootstrap/Button";
+import { Button } from "foris";
 import { TEST_STATES } from "./hooks";
 
 ConnectionTestButton.propTypes = {

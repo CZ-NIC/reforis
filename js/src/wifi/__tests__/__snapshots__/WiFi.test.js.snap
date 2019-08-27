@@ -5,7 +5,7 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
 - First value
 + Second value
 
-@@ -264,207 +264,95 @@
+@@ -265,207 +265,95 @@
             value=\\"0\\"
           >
             auto
@@ -338,7 +338,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
 - First value
 + Second value
 
-@@ -496,10 +496,94 @@
+@@ -497,10 +497,95 @@
           access the internet, but aren't allowed to access other devices and the configuration interface of the router.
           Parameters of the guest network can be set in the Guest network tab.
           
@@ -407,6 +407,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
 +           >
 +             <button
 +               class=\\"input-group-text\\"
++               type=\\"button\\"
 +             >
 +               <i
 +                 class=\\"fa fa-eye\\"
@@ -433,7 +434,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
       </h3>
       <div
         class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
-@@ -522,10 +606,11 @@
+@@ -523,10 +608,11 @@
           </label>
         </div>
       </div>
@@ -452,7 +453,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
 - First value
 + Second value
 
-@@ -31,10 +31,475 @@
+@@ -31,10 +31,476 @@
           >
             Enable
           </label>
@@ -522,6 +523,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
 +           >
 +             <button
 +               class=\\"input-group-text\\"
++               type=\\"button\\"
 +             >
 +               <i
 +                 class=\\"fa fa-eye\\"

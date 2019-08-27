@@ -12,9 +12,9 @@ import { STATES as SUBMIT_BUTTON_STATES } from "form/SubmitButton";
 import { useAPIGet, useAPIPost } from "common/APIhooks";
 import API_URLs from "common/API";
 import { useForm } from "form/hooks";
-import Alert from "common/bootstrap/Alert";
+import { Alert } from "foris";
 
-import Spinner from "common/bootstrap/Spinner";
+import { Spinner } from "foris";
 import CurrentForisPasswordForm from "./CurrentForisPasswordForm";
 import ForisPasswordForm from "./ForisPasswordForm";
 import RootPasswordForm from "./RootPasswordForm";

@@ -8,11 +8,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import TextInput from "common/bootstrap/TextInput";
-import PasswordInput from "common/bootstrap/PasswordInput";
-import CheckBox from "common/bootstrap/Checkbox";
-import RadioSet from "common/bootstrap/RadioSet";
-import Select from "common/bootstrap/Select";
+import { TextInput } from "foris";
+import { PasswordInput } from "foris";
+import { CheckBox } from "foris";
+import { RadioSet } from "foris";
+import { Select } from "foris";
 
 import WiFiQRCode from "./WiFiQRCode";
 import WifiGuestForm from "./WiFiGuestForm";

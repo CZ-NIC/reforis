@@ -8,8 +8,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import CheckBox from "common/bootstrap/Checkbox";
-import RadioSet from "common/bootstrap/RadioSet";
+import { CheckBox } from "foris";
+import { RadioSet } from "foris";
 
 import HELP_TEXTS from "./helpTexts";
 import CommonForm from "./CommonForm";

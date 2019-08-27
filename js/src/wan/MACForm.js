@@ -8,8 +8,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import CheckBox from "common/bootstrap/Checkbox";
-import TextInput from "common/bootstrap/TextInput";
+import { CheckBox } from "foris";
+import { TextInput } from "foris";
 import { validateMAC } from "common/validations";
 
 const HELP_TEXTS = {

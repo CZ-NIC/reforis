@@ -8,7 +8,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
-import Alert from "common/bootstrap/Alert";
+import { Alert } from "foris";
 
 import { NETWORKS_CHOICES, NETWORKS_TYPES } from "./Interfaces";
 import Network from "./Network";

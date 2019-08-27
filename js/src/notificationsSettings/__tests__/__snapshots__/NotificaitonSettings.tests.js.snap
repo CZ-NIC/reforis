@@ -372,6 +372,7 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
           >
             <button
               class="input-group-text"
+              type="button"
             >
               <i
                 class="fa fa-eye"

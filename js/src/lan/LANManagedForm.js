@@ -8,8 +8,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import TextInput from "common/bootstrap/TextInput";
-import CheckBox from "common/bootstrap/Checkbox";
+import { TextInput } from "foris";
+import { CheckBox } from "foris";
 import { validateIPv4Address } from "common/validations";
 import DHCPServerForm, { HELP_TEXT as DHCP_HELP_TEXT } from "common/network/DHCPServerForm";
 

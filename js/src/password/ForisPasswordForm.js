@@ -8,8 +8,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import PasswordInput from "common/bootstrap/PasswordInput";
-import CheckBox from "common/bootstrap/Checkbox";
+import { PasswordInput } from "foris";
+import { CheckBox } from "foris";
 import SubmitButton, { STATES as SUBMIT_BUTTON_STATES } from "form/SubmitButton";
 
 
