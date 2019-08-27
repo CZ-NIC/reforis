@@ -49,6 +49,7 @@ export default function InterfacesForm({ formData, setFormValue, ...props }) {
     function getInterfaceById(id) {
         if (!selectedID) return [null, null, null];
 
+        // eslint-disable-next-line no-unused-vars
         for (const network of NETWORKS_TYPES) {
             const interfaceIdx = formData.networks[network].findIndex((i) => i.id === id);
             if (interfaceIdx !== -1) {
@@ -56,6 +57,7 @@ export default function InterfacesForm({ formData, setFormValue, ...props }) {
             }
         }
     }
+
     const [
         selectedInterface,
         selectedInterfaceNetwork,
