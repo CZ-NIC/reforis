@@ -26,7 +26,7 @@ a, .btn-link {
     color: #00a2e2;
 }
 
-.btn-link:hover {
+a:hover, .btn-link:hover {
     color: #0056b3;
 }
 
