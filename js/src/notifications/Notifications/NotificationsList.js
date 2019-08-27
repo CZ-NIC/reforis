@@ -11,7 +11,7 @@ import PropTypes from "prop-types";
 import RebootButton from "common/RebootButton";
 import { NOTIFICATION_PROP_TYPES, toLocaleDateString } from "../utils";
 import NotificationIcon from "../NotificationIcon";
-
+import TruncatedText from "./TruncatedText";
 
 NotificationsList.propTypes = {
     notifications: PropTypes.arrayOf(NOTIFICATION_PROP_TYPES),
@@ -62,7 +62,7 @@ function NotificationsCenterItem({ notification, currentNotification, dismiss })
             </div>
 
             <div className="card-body">
-                <p className="card-text">{notification.msg}</p>
+                <TruncatedText text={notification.msg} charLimit={256} />
             </div>
             {notification.severity === "restart" ? <RebootButton /> : null}
         </div>

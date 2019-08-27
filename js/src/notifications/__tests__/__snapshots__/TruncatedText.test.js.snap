@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TruncatedText/> displays text with show more/less button 1`] = `
+<div>
+  <p
+    class="card-text"
+  >
+    Veggies es bonus vobis, proinde vos postulo essum...
+  </p>
+  <button
+    class="btn btn-link toggle-collapse"
+    type="button"
+  >
+    Show more
+  </button>
+</div>
+`;
+
+exports[`<TruncatedText/> displays text without show more/less button 1`] = `
+<div>
+  <p
+    class="card-text"
+  >
+    Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.
+  </p>
+</div>
+`;
+
+exports[`<TruncatedText/> doesn't truncate the text then limit is exceeded below threshold 1`] = `
+<div>
+  <p
+    class="card-text"
+  >
+    Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.
+  </p>
+</div>
+`;
