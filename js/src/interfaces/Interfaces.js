@@ -132,14 +132,14 @@ devices connected to the guest network.
 }
 
 function prepDataToSubmit(formData) {
-    const res = { networks: {}, firewall: formData.firewall };
-    for (const network of NETWORKS_TYPES) res.networks[network] = [];
-
-    for (const network of NETWORKS_TYPES) {
+    const data = { networks: {}, firewall: formData.firewall };
+    NETWORKS_TYPES.forEach((network) => {
+        data.networks[network] = [];
+    });
+    NETWORKS_TYPES.forEach((network) => {
         formData.networks[network]
             .filter((i) => i.configurable)
-            .forEach((i) => res.networks[network].push(i.id));
-    }
-
-    return res;
+            .forEach((i) => data.networks[network].push(i.id));
+    });
+    return data;
 }

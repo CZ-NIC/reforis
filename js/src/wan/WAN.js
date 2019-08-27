@@ -111,13 +111,14 @@ function prepDataToSubmit(formData) {
 }
 
 function deleteUnnecessarySettings(type, settings) {
-    // eslint-disable-next-line guard-for-in
-    for (const key in settings) {
-        const hasKey = Object.prototype.hasOwnProperty.call(settings, key);
-        if (!hasKey || key.endsWith("type")) continue;
-        if (!key.endsWith(type)) delete settings[key];
-    }
-    return settings;
+    return Object.keys(settings)
+        .filter((setting) => setting.endsWith(type) || setting.endsWith("type"))
+        .reduce(
+            (accumulator, currentValue) => (
+                { ...accumulator, [currentValue]: settings[currentValue] }
+            ),
+            {},
+        );
 }
 
 function validator(formData) {
