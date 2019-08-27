@@ -15,7 +15,7 @@ describe("<GuideHelp/>", () => {
         const { container } = render(<GuideHelp workflow="router" step="lan" />);
         expect(container.firstChild).toMatchSnapshot();
     });
-    
+
     it("displays lan help with completed message", () => {
         const { container } = render(<GuideHelp workflow="router" step="lan" completed={true} />);
         expect(container.firstChild).toMatchSnapshot();

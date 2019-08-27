@@ -26,6 +26,10 @@ a, .btn-link {
     color: #00a2e2;
 }
 
+.btn-link:hover {
+    color: #0056b3;
+}
+
 .btn-primary {
     color: #fff;
     background-color: #00a2e2;
@@ -269,6 +273,7 @@ form > button {
 
 #notifications .dropdown-menu .btn-link:hover {
     color: #00a2e2;
+    text-decoration: none;
 }
 
 #notifications .dropdown-divider-top {
@@ -493,6 +498,10 @@ form > button {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+}
+
+.toggle-collapse {
+    padding: 0;
 }
 
 /* Interfaces (scroll) */
