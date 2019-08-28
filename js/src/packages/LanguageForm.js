@@ -8,8 +8,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { CheckBox } from "foris";
-import {  formFieldsSize } from "foris";
+import { CheckBox, formFieldsSize } from "foris";
+
 
 LanguageForm.propTypes = {
     formData: PropTypes.shape({

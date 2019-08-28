@@ -8,9 +8,9 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-import { CheckBox } from "foris";
-import { Select } from "foris";
-import { TextInput } from "foris";
+import { CheckBox, Select, TextInput } from "foris";
+
+
 import DNSSECDisableModal from "./DNSSECDisableModal";
 
 const HELP_TEXTS = {

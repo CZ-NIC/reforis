@@ -6,9 +6,9 @@
  */
 
 import React, { useEffect } from "react";
-import { useAPIGet } from "foris";
+import { useAPIGet, Spinner } from "foris";
 import API_URLs from "common/API";
-import { Spinner } from "foris";
+
 
 export default function About() {
     const [state, get] = useAPIGet(API_URLs.about);

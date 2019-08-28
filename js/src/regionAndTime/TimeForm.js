@@ -9,10 +9,10 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import moment from "moment/moment";
 
-import { Select } from "foris";
-import { DataTimeInput } from "foris";
-import {  SpinnerElement } from "foris";
-import { Button } from "foris";
+import {
+    Select, DataTimeInput, SpinnerElement, Button,
+} from "foris";
+
 
 import useNTPDate from "./hooks";
 

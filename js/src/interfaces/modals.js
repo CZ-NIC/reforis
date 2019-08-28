@@ -9,7 +9,7 @@ import React from "react";
 import propType from "prop-types";
 
 import {
-    Modal, ModalBody, ModalFooter, ModalHeader, Button
+    Modal, ModalBody, ModalFooter, ModalHeader, Button,
 } from "foris";
 
 OpenPortsModals.propTypes = {

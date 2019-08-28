@@ -7,8 +7,8 @@
 
 import { useEffect, useState } from "react";
 
-import { ForisURLs } from "foris";
-import { useWSForisModule } from "foris";
+import { ForisURLs, useWSForisModule } from "foris";
+
 
 import { tryReconnect, waitForDown } from "./utils";
 

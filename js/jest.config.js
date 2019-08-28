@@ -19,7 +19,7 @@ module.exports = {
     verbose: false,
     setupFilesAfterEnv: [
         "@testing-library/react/cleanup-after-each",
-        "<rootDir>/src/testUtils/setupTest",
+        "<rootDir>/src/testUtils/setup",
         "foris/src/testUtils/setup",
     ],
     globals: {

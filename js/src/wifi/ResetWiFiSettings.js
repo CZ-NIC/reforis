@@ -8,10 +8,10 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-import { Button } from "foris";
-import { useAPIPost } from "foris";
+import { Button, useAPIPost, Alert } from "foris";
+
 import API from "common/API";
-import { Alert } from "foris";
+
 
 ResetWiFiSettings.propTypes = {
     ws: PropTypes.object.isRequired,

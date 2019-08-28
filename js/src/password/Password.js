@@ -10,8 +10,9 @@ import PropTypes from "prop-types";
 
 import {
     SUBMIT_BUTTON_STATES, useForm, Alert, Spinner,
+    useAPIGet, useAPIPost,
 } from "foris";
-import { useAPIGet, useAPIPost } from "foris";
+
 import API_URLs from "common/API";
 
 import CurrentForisPasswordForm from "./CurrentForisPasswordForm";

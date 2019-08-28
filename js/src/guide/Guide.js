@@ -10,11 +10,13 @@ import { BrowserRouter } from "react-router-dom";
 import { Redirect, Route, Switch } from "react-router";
 import PropTypes from "prop-types";
 
-import { Portal } from "foris";
-import { REFORIS_URL_PREFIX } from "foris";
-import { useAPIGet } from "foris";
+import {
+    Portal, REFORIS_URL_PREFIX, useAPIGet, Spinner,
+} from "foris";
+
+
 import API_URLs from "common/API";
-import { Spinner } from "foris";
+
 
 import { GUIDE_URL_PREFIX, STEPS } from "./constants";
 import GuideNavigation from "./GuideNavigation";

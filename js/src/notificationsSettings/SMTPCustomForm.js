@@ -8,11 +8,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Select } from "foris";
-import { TextInput } from "foris";
-import { NumberInput } from "foris";
-import { PasswordInput } from "foris";
-import { EmailInput } from "foris";
+import {
+    Select, TextInput, NumberInput, PasswordInput, EmailInput,
+} from "foris";
+
 
 import HELP_TEXTS from "./helpTexts";
 

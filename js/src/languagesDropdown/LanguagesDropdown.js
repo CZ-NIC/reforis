@@ -8,8 +8,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import {  SpinnerElement } from "foris";
-import { useAPIPost } from "foris";
+import { SpinnerElement, useAPIPost } from "foris";
+
 import API_URLs from "common/API";
 
 import { useLanguages, useWSSetLanguageRefresh } from "./hooks";

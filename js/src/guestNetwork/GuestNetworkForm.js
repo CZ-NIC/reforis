@@ -9,9 +9,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import DHCPServerForm, { HELP_TEXT as DHCP_HELP_TEXT } from "common/network/DHCPServerForm";
-import { CheckBox } from "foris";
-import { TextInput } from "foris";
-import { NumberInput } from "foris";
+import { CheckBox, TextInput, NumberInput } from "foris";
+
 
 const HELP_TEXTS = {
     router_ip: _("Router's IP address in the guest inner network."),

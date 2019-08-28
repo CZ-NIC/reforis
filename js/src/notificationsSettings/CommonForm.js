@@ -8,9 +8,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { TextInput } from "foris";
-import { Select } from "foris";
-import { CheckBox } from "foris";
+import { TextInput, Select, CheckBox } from "foris";
+
 
 import HELP_TEXTS from "./helpTexts";
 

@@ -8,10 +8,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { ForisForm } from "foris";
+import { ForisForm, validateIPv4Address, ForisURLs } from "foris";
 import API_URLs from "common/API";
-import { validateIPv4Address } from "foris";
-import { ForisURLs } from "foris";
+
 
 import GuestNetworkForm from "./GuestNetworkForm";
 import GuestNetworkDHCPClientsList from "./GuestNetworkDHCPClientsList";

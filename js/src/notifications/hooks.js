@@ -8,8 +8,8 @@
 import { useEffect, useState } from "react";
 
 import API_URLs from "common/API";
-import { useWSForisModule } from "foris";
-import { useAPIGet, useAPIPost } from "foris";
+import { useWSForisModule, useAPIGet, useAPIPost } from "foris";
+
 
 const WS_MODULE = "router_notifications";
 
