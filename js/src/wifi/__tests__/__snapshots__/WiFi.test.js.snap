@@ -310,6 +310,7 @@ point) and a corresponding password. You can then set up your mobile devices, us
     </div>
     <button
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
+      type="submit"
     >
         Save
     </button>
@@ -326,6 +327,7 @@ current Wi-Fi configuration and restore the default values.
     </p>
     <button
       class="btn btn-warning offset-lg-8 col-lg-3 col-sm-12"
+      type="button"
     >
         Reset Wi-Fi Settings
     </button>
@@ -441,11 +443,11 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
       <button
         class=\\"btn btn-primary  offset-lg-8 col-lg-3 col-sm-12\\"
 +       disabled=\\"\\"
+        type=\\"submit\\"
       >
           Save
       </button>
-    </form>
-    <form>"
+    </form>"
 `;
 
 exports[`<WiFi/> Snapshot one module enabled. 1`] = `

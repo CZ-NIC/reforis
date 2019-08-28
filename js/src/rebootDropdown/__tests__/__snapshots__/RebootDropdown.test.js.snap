@@ -43,6 +43,7 @@ exports[`<RebootDropdown/> Test with snapshot 1`] = `
         </a>
         <button
           class="btn btn-danger"
+          type="button"
         >
            
            

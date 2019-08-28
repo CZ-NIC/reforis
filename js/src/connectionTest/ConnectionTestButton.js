@@ -31,6 +31,7 @@ export default function ConnectionTestButton({ state, ...props }) {
 
     return (
         <Button
+            type="submit"
             className="btn-primary"
             loading={isRunning}
             disabled={isRunning}

@@ -394,6 +394,7 @@ procedure of SSL certificate verification might not work correctly.
       class="btn btn-outline-primary offset-lg-8 col-lg-3 col-sm-12"
       data-toggle="collapse"
       href="#collapseNTPServers"
+      type="button"
     >
        
        
@@ -829,6 +830,7 @@ procedure of SSL certificate verification might not work correctly.
     </div>
     <button
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
+      type="submit"
     >
        
        

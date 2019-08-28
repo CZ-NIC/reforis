@@ -80,11 +80,11 @@ exports[`<WAN/> Snapshot WAN IPv4 (pppoe). 1`] = `
       <button
         class=\\"btn btn-primary  offset-lg-8 col-lg-3 col-sm-12\\"
 +       disabled=\\"\\"
+        type=\\"submit\\"
       >
           Save
       </button>
-    </form>
-    <h1>"
+    </form>"
 `;
 
 exports[`<WAN/> Snapshot WAN IPv4 (static). 1`] = `
@@ -247,11 +247,11 @@ exports[`<WAN/> Snapshot WAN IPv4 (static). 1`] = `
       <button
         class=\\"btn btn-primary  offset-lg-8 col-lg-3 col-sm-12\\"
 +       disabled=\\"\\"
+        type=\\"submit\\"
       >
           Save
       </button>
-    </form>
-    <h1>"
+    </form>"
 `;
 
 exports[`<WAN/> Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled. 1`] = `
@@ -523,11 +523,11 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
       <button
         class=\\"btn btn-primary  offset-lg-8 col-lg-3 col-sm-12\\"
 +       disabled=\\"\\"
+        type=\\"submit\\"
       >
           Save
       </button>
-    </form>
-    <h1>"
+    </form>"
 `;
 
 exports[`<WAN/> Snapshot WAN IPv6 (6to4). 1`] = `
@@ -587,11 +587,11 @@ exports[`<WAN/> Snapshot WAN IPv6 (6to4). 1`] = `
       <button
         class=\\"btn btn-primary  offset-lg-8 col-lg-3 col-sm-12\\"
 +       disabled=\\"\\"
+        type=\\"submit\\"
       >
           Save
       </button>
-    </form>
-    <h1>"
+    </form>"
 `;
 
 exports[`<WAN/> Snapshot WAN IPv6 (dhcpv6). 1`] = `
@@ -816,11 +816,11 @@ exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
       <button
         class=\\"btn btn-primary  offset-lg-8 col-lg-3 col-sm-12\\"
 +       disabled=\\"\\"
+        type=\\"submit\\"
       >
           Save
       </button>
-    </form>
-    <h1>"
+    </form>"
 `;
 
 exports[`<WAN/> Snapshot: MAC enabled 1`] = `
@@ -871,11 +871,11 @@ exports[`<WAN/> Snapshot: MAC enabled 1`] = `
       <button
         class=\\"btn btn-primary  offset-lg-8 col-lg-3 col-sm-12\\"
 +       disabled=\\"\\"
+        type=\\"submit\\"
       >
           Save
       </button>
-    </form>
-    <h1>"
+    </form>"
 `;
 
 exports[`<WAN/> Snapshot: WAN IPv4 dhcp, WAN IPv6 dhcp, MAC disabled 1`] = `
@@ -1025,6 +1025,7 @@ router to the network, it is usually not necessary to change this setting.
     </div>
     <button
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
+      type="submit"
     >
         Save
     </button>
@@ -1046,6 +1047,7 @@ wait for a while before running this test.
   <form>
     <button
       class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+      type="submit"
     >
         Test connection
     </button>

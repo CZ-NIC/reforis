@@ -46,6 +46,7 @@ exports[`<ConnectionTest/> Snapshot after trigger DNS connection test. 1`] = `
     <button
       class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
       disabled=""
+      type="submit"
     >
       <span
         aria-hidden="true"
@@ -138,6 +139,7 @@ exports[`<ConnectionTest/> Snapshot after trigger WAN connection test. 1`] = `
     <button
       class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
       disabled=""
+      type="submit"
     >
       <span
         aria-hidden="true"
@@ -155,6 +157,7 @@ exports[`<ConnectionTest/> Snapshot before connection test. 1`] = `
   <form>
     <button
       class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+      type="submit"
     >
         Test connection
     </button>
