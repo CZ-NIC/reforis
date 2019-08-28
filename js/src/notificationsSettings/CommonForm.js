@@ -10,7 +10,6 @@ import PropTypes from "prop-types";
 
 import { TextInput, Select, CheckBox } from "foris";
 
-
 import HELP_TEXTS from "./helpTexts";
 
 export const SEVERITY_OPTIONS = {

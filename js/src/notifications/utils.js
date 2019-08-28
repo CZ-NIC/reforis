@@ -16,7 +16,6 @@ export const NOTIFICATION_PROP_TYPES = PropTypes.shape({
     severity: PropTypes.oneOf(SEVERITIES).isRequired,
 }).isRequired;
 
-
 const DATE_STRING_OPTIONS = {
     year: "numeric",
     month: "long",

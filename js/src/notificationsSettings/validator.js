@@ -5,7 +5,6 @@
  * See /LICENSE for more information.
  */
 
-
 import { validateMultipleEmails } from "foris";
 
 export default function validator(formData) {
@@ -18,14 +17,12 @@ export default function validator(formData) {
     return JSON.stringify(errors) !== "{}" ? errors : undefined;
 }
 
-
 function commonValidator(formData) {
     if (formData.to === "") return { to: _("Can't be empty.") };
 
     const toError = validateMultipleEmails(formData.to);
     return toError ? { to: toError } : undefined;
 }
-
 
 const SENDER_NAME_RE = /^[0-9a-zA-Z_\\.-]+$/;
 

@@ -44,7 +44,6 @@ InterfaceIcon.propTypes = {
     configurable: PropTypes.bool.isRequired,
 };
 
-
 function InterfaceIcon({ type, configurable, ...props }) {
     let icon = null;
     if (type === INTERFACE_TYPES.eth) {
@@ -62,7 +61,6 @@ function InterfaceIcon({ type, configurable, ...props }) {
     );
 }
 
-
 EthInterfaceIcon.propTypes = {
     state: PropTypes.oneOf(Object.keys(INTERFACE_STATES)).isRequired,
 };
@@ -79,7 +77,6 @@ function EthInterfaceIcon({ state }) {
 WiFiInterfaceIcon.propTypes = {
     state: PropTypes.oneOf(Object.keys(INTERFACE_STATES)).isRequired,
 };
-
 
 function WiFiInterfaceIcon({ state }) {
     return (

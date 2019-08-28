@@ -25,7 +25,6 @@ SMTPTurrisForm.defaultProps = {
     formErrors: {},
 };
 
-
 export default function SMTPTurrisForm({
     formData, formErrors, setFormValue, ...props
 }) {

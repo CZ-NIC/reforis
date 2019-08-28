@@ -10,7 +10,6 @@ import moment from "moment";
 
 import { NumberInput, DataTimeInput } from "foris";
 
-
 const TIME_FORMAT = "HH:mm";
 
 const HELP_TEXTS = {

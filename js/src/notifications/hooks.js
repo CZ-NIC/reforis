@@ -10,7 +10,6 @@ import { useEffect, useState } from "react";
 import API_URLs from "common/API";
 import { useWSForisModule, useAPIGet, useAPIPost } from "foris";
 
-
 const WS_MODULE = "router_notifications";
 
 export default function useNotifications(ws) {
@@ -27,7 +26,6 @@ export default function useNotifications(ws) {
             setNotifications(nonDisplayedNotifications);
         }
     }, [getState]);
-
 
     const [WSCreateData] = useWSForisModule(ws, WS_MODULE, "create");
     const [WSMarkAsDisplayedData] = useWSForisModule(ws, WS_MODULE, "mark_as_displayed");

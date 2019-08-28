@@ -10,7 +10,6 @@ import PropTypes from "prop-types";
 
 import { RadioSet, NumberInput } from "foris";
 
-
 const UPDATE_APPROVALS_CHOICES = [
     {
         value: "off",

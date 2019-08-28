@@ -12,7 +12,6 @@ import {
     TextInput, PasswordInput, CheckBox, RadioSet, Select,
 } from "foris";
 
-
 import WiFiQRCode from "./WiFiQRCode";
 import WifiGuestForm from "./WiFiGuestForm";
 
@@ -159,7 +158,6 @@ function DeviceForm({
 
                             {...props}
                         />
-
 
                         <CheckBox
                             label="Hide SSID"

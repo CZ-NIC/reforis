@@ -18,7 +18,6 @@ import {
     validateIPv6Prefix,
 } from "foris";
 
-
 const HELP_TEXTS = {
     dhcpv6: {
         duid: _("DUID which will be provided to the DHCPv6 server."),
@@ -49,7 +48,6 @@ const HELP_TEXTS = {
         },
     },
 };
-
 
 const WAN6_CHOICES = {
     none: _("Disable IPv6"),
@@ -416,7 +414,6 @@ DynamicIPv4Form.propTypes = {
     setFormValue: PropTypes.func.isRequired,
 };
 
-
 DynamicIPv4Form.defaultProps = {
     formErrors: {},
 };
@@ -499,7 +496,6 @@ export function validateWAN6Form(formData) {
     }
     return errors[`wan6_${formData.wan6_type}`] ? errors : null;
 }
-
 
 function validateDHCPv6Form(wan6_dhcpv6) {
     const error = { duid: validateDUID(wan6_dhcpv6.duid) };

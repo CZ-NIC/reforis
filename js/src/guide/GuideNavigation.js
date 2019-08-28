@@ -5,7 +5,6 @@
  * See /LICENSE for more information.
  */
 
-
 import React from "react";
 import { withRouter } from "react-router";
 import { Link, NavLink } from "react-router-dom";

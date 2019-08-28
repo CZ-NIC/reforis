@@ -10,7 +10,6 @@ import PropTypes from "prop-types";
 
 import { ForisURLs, REFORIS_URL_PREFIX } from "foris";
 
-
 const SMALL_SCREEN_WIDTH = 768;
 
 NotificationsDropdownButton.propTypes = {

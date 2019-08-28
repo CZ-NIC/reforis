@@ -10,7 +10,6 @@ import PropTypes from "prop-types";
 
 import { CheckBox, Select, TextInput } from "foris";
 
-
 import DNSSECDisableModal from "./DNSSECDisableModal";
 
 const HELP_TEXTS = {

@@ -13,7 +13,6 @@ import {
     Modal, ModalBody, ModalFooter, ModalHeader, Button, ForisURLs,
 } from "foris";
 
-
 import { createAndDownloadPdf, toQRCodeContent } from "./qrCodeHelpers";
 
 WiFiQRCode.propTypes = {

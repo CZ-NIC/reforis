@@ -11,7 +11,6 @@ import PropTypes from "prop-types";
 import DHCPServerForm, { HELP_TEXT as DHCP_HELP_TEXT } from "common/network/DHCPServerForm";
 import { CheckBox, TextInput, NumberInput } from "foris";
 
-
 const HELP_TEXTS = {
     router_ip: _("Router's IP address in the guest inner network."),
     netmask: _("Network mask of the guest inner network."),

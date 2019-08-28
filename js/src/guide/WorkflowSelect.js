@@ -10,7 +10,6 @@ import React, { useEffect } from "react";
 import { useAPIPost, ForisURLs, REFORIS_URL_PREFIX } from "foris";
 import API_URLs from "common/API";
 
-
 import { GUIDE_URL_PREFIX } from "./constants";
 
 const IMG_STATIC_URL = `${ForisURLs.static}/imgs`;

@@ -13,7 +13,6 @@ import {
     Select, DataTimeInput, SpinnerElement, Button,
 } from "foris";
 
-
 import useNTPDate from "./hooks";
 
 // Foris backend ignore value after "."...

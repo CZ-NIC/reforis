@@ -13,7 +13,6 @@ import { ForisURLs } from "foris";
 import NotificationIcon from "../NotificationIcon";
 import { NOTIFICATION_PROP_TYPES, toLocaleDateString } from "../utils";
 
-
 NotificationsDropdownItem.propTypes = {
     notification: NOTIFICATION_PROP_TYPES,
     divider: PropTypes.bool.isRequired,

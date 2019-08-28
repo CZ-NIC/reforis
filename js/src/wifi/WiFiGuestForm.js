@@ -10,7 +10,6 @@ import PropTypes from "prop-types";
 
 import { CheckBox, TextInput, PasswordInput } from "foris";
 
-
 import { HELP_TEXTS } from "./WiFiForm";
 import WiFiQRCode from "./WiFiQRCode";
 

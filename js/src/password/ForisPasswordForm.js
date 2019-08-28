@@ -12,7 +12,6 @@ import {
     PasswordInput, CheckBox, SubmitButton, SUBMIT_BUTTON_STATES,
 } from "foris";
 
-
 ForisPasswordForm.propTypes = {
     formData: PropTypes.shape({
         newForisPassword: PropTypes.string,
@@ -40,7 +39,6 @@ export default function ForisPasswordForm({
                 label={_("New Foris password")}
                 value={formData.newForisPassword}
                 error={formErrors.newForisPassword}
-
 
                 onChange={setFormValue(
                     (value) => ({ newForisPassword: { $set: value } }),

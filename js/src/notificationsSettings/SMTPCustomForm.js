@@ -12,7 +12,6 @@ import {
     Select, TextInput, NumberInput, PasswordInput, EmailInput,
 } from "foris";
 
-
 import HELP_TEXTS from "./helpTexts";
 
 const SECURITY_CHOICES = {

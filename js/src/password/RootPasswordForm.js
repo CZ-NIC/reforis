@@ -12,7 +12,6 @@ import {
     ForisURLs, PasswordInput, SubmitButton, SUBMIT_BUTTON_STATES,
 } from "foris";
 
-
 RootPasswordForm.propTypes = {
     formData: PropTypes.shape(
         { newRootPassword: PropTypes.string },

@@ -10,7 +10,6 @@ import PropTypes from "prop-types";
 
 import { CheckBox, formFieldsSize } from "foris";
 
-
 LanguageForm.propTypes = {
     formData: PropTypes.shape({
         languages: PropTypes.arrayOf(PropTypes.shape({

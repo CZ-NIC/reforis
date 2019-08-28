@@ -11,7 +11,6 @@ import PropTypes from "prop-types";
 import { Spinner } from "foris";
 import { STATES, useReboot } from "./hooks";
 
-
 RebootHandler.propTypes = {
     ws: PropTypes.object.isRequired,
 };

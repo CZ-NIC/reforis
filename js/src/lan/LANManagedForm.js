@@ -10,7 +10,6 @@ import PropTypes from "prop-types";
 
 import { TextInput, CheckBox, validateIPv4Address } from "foris";
 
-
 import DHCPServerForm, { HELP_TEXT as DHCP_HELP_TEXT } from "common/network/DHCPServerForm";
 
 const HELP_TEXTS = {
@@ -92,7 +91,6 @@ export default function LANManagedForm({
         </>
     );
 }
-
 
 export function validateManaged(formData) {
     const errors = {

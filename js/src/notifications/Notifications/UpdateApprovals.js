@@ -14,7 +14,6 @@ import {
 } from "foris";
 import API_URLs from "common/API";
 
-
 export default function UpdateApprovals() {
     const [getState, get] = useAPIGet(API_URLs.approvals);
     const approval = getState.data;

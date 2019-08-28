@@ -85,7 +85,6 @@ function prepData(formData) {
     });
 }
 
-
 function prepDataToSubmit(formData) {
     const dataToSubmit = {
         wan_settings: deleteUnnecessarySettings(

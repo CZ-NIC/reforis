@@ -14,7 +14,6 @@ import {
 
 import API_URLs from "./API";
 
-
 RebootButton.propTypes = {
     forisFormSize: PropTypes.bool,
 };

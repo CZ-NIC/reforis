@@ -153,7 +153,6 @@ function PPPoEForm({
     );
 }
 
-
 export function validateWANForm(formData) {
     const errors = {};
     switch (formData.wan_type) {
@@ -170,7 +169,6 @@ export function validateWANForm(formData) {
     }
     return errors[`wan_${formData.wan_type}`] ? errors : null;
 }
-
 
 function validatePPPoEForm(wan_pppoe) {
     const errors = {};

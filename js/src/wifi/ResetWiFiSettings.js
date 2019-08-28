@@ -12,7 +12,6 @@ import { Button, useAPIPost, Alert } from "foris";
 
 import API from "common/API";
 
-
 ResetWiFiSettings.propTypes = {
     ws: PropTypes.object.isRequired,
 };

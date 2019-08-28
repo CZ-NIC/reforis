@@ -24,7 +24,6 @@ export default function LanguagesDropdown({ ws }) {
 
     const [, post] = useAPIPost(API_URLs.language);
 
-
     return (
         <div className="dropdown">
             <button className="nav-item btn btn-link" type="button">

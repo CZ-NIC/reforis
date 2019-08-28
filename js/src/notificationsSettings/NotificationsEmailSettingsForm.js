@@ -10,7 +10,6 @@ import PropTypes from "prop-types";
 
 import { CheckBox, RadioSet } from "foris";
 
-
 import HELP_TEXTS from "./helpTexts";
 import CommonForm from "./CommonForm";
 import SMTPTurrisForm from "./SMTPTurrisForm";
@@ -46,7 +45,6 @@ NotificationsEmailSettingsForm.defaultProps = {
     formData: {},
     formErrors: {},
 };
-
 
 export default function NotificationsEmailSettingsForm({
     formData, formErrors, setFormValue, ...props
