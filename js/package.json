@@ -11,7 +11,7 @@
   "main": "./src/app.js",
   "dependencies": {
     "axios": "^0.19.0",
-    "foris": "file:../../forisjs/foris-0.0.2.tgz",
+    "foris": "0.0.3",
     "immutability-helper": "^3.0.0",
     "moment": "^2.24.0",
     "pdfmake": "^0.1.57",
