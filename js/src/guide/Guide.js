@@ -10,7 +10,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Redirect, Route, Switch } from "react-router";
 import PropTypes from "prop-types";
 
-import Portal from "utils/Portal";
+import { Portal } from "foris";
 import { REFORIS_URL_PREFIX } from "foris";
 import { useAPIGet } from "foris";
 import API_URLs from "common/API";
