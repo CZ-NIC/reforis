@@ -11,7 +11,7 @@ import {
 
 import API_URLs from "common/API";
 import { useAPIPost } from "foris";
-import useWSForisModule from "common/WebSocketsHooks";
+import { useWSForisModule } from "foris";
 
 const TESTS_TYPES = {
     wan: ["ipv6", "ipv6_gateway", "ipv4", "ipv4_gateway"],

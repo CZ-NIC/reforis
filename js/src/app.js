@@ -8,7 +8,7 @@
 import React from "react";
 import { render } from "react-dom";
 
-import WebSockets from "common/WebSockets";
+import { WebSockets } from "foris";
 import RouterStateHandler from "routerStateHandler/RouterStateHandler";
 
 import Main from "main/Main";
