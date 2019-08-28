@@ -80,6 +80,7 @@ coverage.xml
 
 ## Translations
 *.mo
+*forisjs.po
 
 ## Flask stuff:
 instance/
