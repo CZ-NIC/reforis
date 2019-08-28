@@ -121,7 +121,7 @@ form > button {
     white-space: nowrap
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
     #sidebar-header {
         align-items: center;
         margin-top: unset;
@@ -159,7 +159,7 @@ form > button {
     height: 100%;
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
     #top-bar {
         justify-content: center;
     }
@@ -179,8 +179,10 @@ form > button {
 }
 
 /* Show dropdown on hover */
-#top-bar .dropdown:hover .dropdown-menu {
-    display: block;
+@media (min-width: 769px) {
+    #top-bar .dropdown:hover .dropdown-menu {
+        display: block;
+    }
 }
 
 .dropdown-menu.lang {

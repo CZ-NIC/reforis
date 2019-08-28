@@ -11,7 +11,7 @@ import PropTypes from "prop-types";
 import { ForisURLs, REFORIS_URL_PREFIX } from "common/constants";
 
 
-const SMALL_SCREEN = 699;
+const SMALL_SCREEN_WIDTH = 768;
 
 NotificationsDropdownButton.propTypes = {
     notificationsCount: PropTypes.number.isRequired,
@@ -22,7 +22,7 @@ export default function NotificationsDropdownButton({ notificationsCount, newNot
     function redirectToNotificationCenter(e) {
         // We don't want to show dropdown on the small devices.
         // So just make redirect to notification center
-        if (window.outerWidth > SMALL_SCREEN) return;
+        if (window.outerWidth > SMALL_SCREEN_WIDTH) return;
         e.preventDefault();
         e.stopPropagation();
         document.location = `${REFORIS_URL_PREFIX}/${ForisURLs.notifications}`;
