@@ -10,7 +10,7 @@ import PropTypes from "prop-types";
 
 import useNotifications from "notifications/hooks";
 import RebootButton from "common/RebootButton";
-import { ForisURLs, REFORIS_URL_PREFIX } from "foris";
+import { ForisURLs } from "foris";
 import { Link } from "react-router-dom";
 
 RebootDropdown.propTypes = {

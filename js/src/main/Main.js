@@ -12,7 +12,6 @@ import PropTypes from "prop-types";
 
 import { REFORIS_URL_PREFIX, Portal } from "foris";
 
-import RouterStateHandler from "routerStateHandler/RouterStateHandler";
 import Navigation from "navigation/Navigation";
 
 import TopBar from "./TopBar";
