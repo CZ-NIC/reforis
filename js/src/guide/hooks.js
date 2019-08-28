@@ -7,7 +7,7 @@
 
 import { useEffect } from "react";
 
-import { useAPIPost } from "common/APIhooks";
+import { useAPIPost } from "foris";
 import API_URLs from "common/API";
 import { REFORIS_URL_PREFIX } from "common/constants";
 

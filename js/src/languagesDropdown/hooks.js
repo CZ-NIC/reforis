@@ -7,7 +7,7 @@
 
 import { useEffect } from "react";
 
-import { useAPIGet } from "common/APIhooks";
+import { useAPIGet } from "foris";
 import API_URLs from "common/API";
 
 export function useLanguages() {

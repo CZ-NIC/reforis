@@ -7,7 +7,7 @@
 
 import { useEffect, useState } from "react";
 
-import { useAPIPost } from "common/APIhooks";
+import { useAPIPost } from "foris";
 import API_URLs from "common/API";
 
 export default function useNTPDate(ws) {

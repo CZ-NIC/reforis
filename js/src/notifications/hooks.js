@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 
 import API_URLs from "common/API";
 import useWSForisModule from "common/WebSocketsHooks";
-import { useAPIGet, useAPIPost } from "common/APIhooks";
+import { useAPIGet, useAPIPost } from "foris";
 
 const WS_MODULE = "router_notifications";
 

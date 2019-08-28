@@ -12,7 +12,7 @@ import PropTypes from "prop-types";
 
 import Portal from "utils/Portal";
 import { REFORIS_URL_PREFIX } from "common/constants";
-import { useAPIGet } from "common/APIhooks";
+import { useAPIGet } from "foris";
 import API_URLs from "common/API";
 import { Spinner } from "foris";
 

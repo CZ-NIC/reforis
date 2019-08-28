@@ -9,7 +9,7 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 import { Button } from "foris";
-import { useAPIPost } from "common/APIhooks";
+import { useAPIPost } from "foris";
 import API from "common/API";
 import { Alert } from "foris";
 

@@ -6,7 +6,7 @@
  */
 
 import React, { useEffect } from "react";
-import { useAPIGet } from "common/APIhooks";
+import { useAPIGet } from "foris";
 import API_URLs from "common/API";
 import { Spinner } from "foris";
 

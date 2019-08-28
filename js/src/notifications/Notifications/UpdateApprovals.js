@@ -9,7 +9,7 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import moment from "moment";
 
-import { useAPIGet, useAPIPost } from "common/APIhooks";
+import { useAPIGet, useAPIPost } from "foris";
 import API_URLs from "common/API";
 import { Button } from "foris";
 import { Spinner } from "foris";

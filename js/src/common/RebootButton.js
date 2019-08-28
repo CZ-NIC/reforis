@@ -11,7 +11,7 @@ import PropTypes from "prop-types";
 import {
     Modal, ModalBody, ModalFooter, ModalHeader, Button
 } from "foris";
-import { useAPIPost } from "./APIhooks";
+import { useAPIPost } from "foris";;
 import API_URLs from "./API";
 
 

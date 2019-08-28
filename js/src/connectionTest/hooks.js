@@ -10,7 +10,7 @@ import {
 } from "react";
 
 import API_URLs from "common/API";
-import { useAPIPost } from "common/APIhooks";
+import { useAPIPost } from "foris";
 import useWSForisModule from "common/WebSocketsHooks";
 
 const TESTS_TYPES = {
