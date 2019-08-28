@@ -55,12 +55,7 @@ export default function LicenceModal() {
                   `),
                         }}
                         />
-                        <b>
-                        By enabling of the automatic updates, you confirm that you are the owner of
-                        this Turris router and you agree with the full text of the
-                            <a href="https://www.turris.cz/omnia-updater-eula">license agreement</a>
-.
-                        </b>
+                        <b dangerouslySetInnerHTML={{ __html: _("By enabling of the automatic updates, you confirm that you are the owner of this Turris router and you agree with the full text of the <a href=\"https://www.turris.cz/omnia-updater-eula\">license agreement</a>.") }} />
                     </div>
                 </div>
             </div>
