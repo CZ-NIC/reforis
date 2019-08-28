@@ -115,6 +115,12 @@ update-messages: venv
 compile-messages: venv
 	$(VENV_BIN)/pybabel compile -f -d ./reforis/translations
 	$(VENV_BIN)/pybabel compile -f -d ./reforis/translations -D tzinfo
+	for file in js/node_modules/foris/translations/* ; do \
+		file_name="$$(basename $$file)" ;\
+		file_path="$${file_name}/LC_MESSAGES/forisjs.po" ;\
+		cp "js/node_modules/foris/translations/$${file_path}" "reforis/translations/$${file_path}" ;\
+	done
+	$(VENV_BIN)/pybabel compile -f -d ./reforis/translations -D forisjs
 
 docs: docs-web docs-js
 docs-web: venv

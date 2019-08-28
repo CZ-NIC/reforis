@@ -60,14 +60,15 @@ class TranslationsHelper(Translations):
 
 def get_translations():
     return {
-        'babel_catalog': _get_messages_translations().json_catalog,
-        'babel_tzinfo_catalog': _get_timezone_translations().json_catalog,
+        'babel_catalog': _get_translations('messages').json_catalog,
+        'babel_forisjs_catalog': _get_translations('forisjs').json_catalog,
+        'babel_tzinfo_catalog': _get_translations('tzinfo').json_catalog,
     }
 
 
-def _get_timezone_translations():
+def _get_translations(domain):
     """
-    Load `tzinfo` translations into :class:`locale.TranslationsHelper` object.
+    Load translations by domain into :class:`locale.TranslationsHelper` object.
 
     :return: TranslationsHelper
     """
@@ -76,20 +77,5 @@ def _get_timezone_translations():
         # There is only one directory with translations in Foris so it's OK.
         next(babel.translation_directories),
         [get_locale()],
-        'tzinfo'
-    )
-
-
-def _get_messages_translations():
-    """
-    Load `messages` translations into :class:`locale.TranslationsHelper` object.
-
-    :return: TranslationsHelper
-    """
-    babel = current_app.extensions['babel']
-    return TranslationsHelper.load(
-        # There is only one directory with translations in Foris so it's OK.
-        next(babel.translation_directories),
-        [get_locale()],
-        'messages'
+        domain
     )

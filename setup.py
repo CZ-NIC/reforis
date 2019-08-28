@@ -19,8 +19,8 @@ BASE_DIR = pathlib.Path(__file__).absolute().parent
 class CustomBuild(build_py):
     def run(self):
         build_py.run(self)
-        self.compile_translations()
         self.npm_install_and_build()
+        self.compile_translations()
 
     def compile_translations(self):
         # compile translation
@@ -43,6 +43,15 @@ class CustomBuild(build_py):
 
         for path in BASE_DIR.glob("reforis/translations/*/LC_MESSAGES/tzinfo.po"):
             compile_domain('tzinfo', path)
+
+        file_name = 'forisjs.po'
+        for po in BASE_DIR.glob('js/node_modules/foris/translations/*/LC_MESSAGES/forisjs.po'):
+            lang = pathlib.Path(po).parent.parent.name
+            path_to_copy = BASE_DIR / f'reforis/translations/{lang}/LC_MESSAGES/{file_name}'
+            os.system(f'cp {po} {path_to_copy}')
+
+        for path in BASE_DIR.glob("reforis/translations/*/LC_MESSAGES/forisjs.po"):
+            compile_domain('forisjs', path)
 
     def npm_install_and_build(self):
         os.system(f'cd {BASE_DIR}/js; npm install --save-dev')
