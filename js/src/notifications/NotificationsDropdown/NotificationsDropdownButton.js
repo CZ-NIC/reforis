@@ -8,7 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { ForisURLs, REFORIS_URL_PREFIX } from "common/constants";
+import { ForisURLs, REFORIS_URL_PREFIX } from "foris";
 
 
 const SMALL_SCREEN_WIDTH = 768;

@@ -7,7 +7,7 @@
 
 import { useEffect, useState } from "react";
 
-import { ForisURLs } from "common/constants";
+import { ForisURLs } from "foris";
 import useWSForisModule from "common/WebSocketsHooks";
 
 import { tryReconnect, waitForDown } from "./utils";

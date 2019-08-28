@@ -9,7 +9,7 @@ import React, { useEffect } from "react";
 
 import { useAPIPost } from "foris";
 import API_URLs from "common/API";
-import { ForisURLs, REFORIS_URL_PREFIX } from "common/constants";
+import { ForisURLs, REFORIS_URL_PREFIX } from "foris";
 
 import { GUIDE_URL_PREFIX } from "./constants";
 

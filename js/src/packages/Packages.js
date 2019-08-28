@@ -10,7 +10,7 @@ import PropTypes from "prop-types";
 
 import API_URLs from "common/API";
 import { Alert } from "foris";
-import { ForisURLs } from "common/constants";
+import { ForisURLs } from "foris";
 import { ForisForm } from "foris";
 
 import LanguageForm from "./LanguageForm";

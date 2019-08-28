@@ -22,7 +22,7 @@ import RegionAndTime from "regionAndTime/RegionAndTime";
 import NotificationsSettings from "notificationsSettings/NotificationsSettings";
 import Reboot from "reboot/Reboot";
 
-import { ForisURLs } from "common/constants";
+import { ForisURLs } from "foris";
 
 import { addWeightsToPages, plug } from "./utils";
 

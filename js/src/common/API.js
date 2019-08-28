@@ -5,7 +5,7 @@
  * See /LICENSE for more information.
  */
 
-import { REFORIS_URL_PREFIX } from "./constants";
+import { REFORIS_URL_PREFIX } from "foris";
 
 const API_URL_PREFIX = `${REFORIS_URL_PREFIX}/api`;
 

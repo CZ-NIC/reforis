@@ -8,7 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { ForisURLs } from "common/constants";
+import { ForisURLs } from "foris";
 import { PasswordInput ,SubmitButton, SUBMIT_BUTTON_STATES } from "foris";
 
 

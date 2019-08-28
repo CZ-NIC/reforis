@@ -12,7 +12,7 @@ import PropTypes from "prop-types";
 import {
     Modal, ModalBody, ModalFooter, ModalHeader, Button
 } from "foris";
-import { ForisURLs } from "common/constants";
+import { ForisURLs } from "foris";
 
 import { createAndDownloadPdf, toQRCodeContent } from "./qrCodeHelpers";
 

@@ -11,7 +11,7 @@ import { Redirect, Route, Switch } from "react-router";
 import PropTypes from "prop-types";
 
 import Portal from "utils/Portal";
-import { REFORIS_URL_PREFIX } from "common/constants";
+import { REFORIS_URL_PREFIX } from "foris";
 import { useAPIGet } from "foris";
 import API_URLs from "common/API";
 import { Spinner } from "foris";

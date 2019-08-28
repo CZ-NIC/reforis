@@ -10,7 +10,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Redirect, Switch } from "react-router";
 import PropTypes from "prop-types";
 
-import { REFORIS_URL_PREFIX } from "common/constants";
+import { REFORIS_URL_PREFIX } from "foris";
 import Portal from "utils/Portal";
 import Navigation from "navigation/Navigation";
 
