@@ -10,7 +10,7 @@ import PropTypes from "prop-types";
 
 import { ForisForm } from "foris";
 import API_URLs from "common/API";
-import { validateIPv4Address } from "common/validations";
+import { validateIPv4Address } from "foris";
 import { ForisURLs } from "common/constants";
 
 import GuestNetworkForm from "./GuestNetworkForm";

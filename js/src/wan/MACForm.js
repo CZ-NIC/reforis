@@ -10,7 +10,7 @@ import PropTypes from "prop-types";
 
 import { CheckBox } from "foris";
 import { TextInput } from "foris";
-import { validateMAC } from "common/validations";
+import { validateMAC } from "foris";
 
 const HELP_TEXTS = {
     custom_mac_enabled: _("Useful in cases, when a specific MAC address is required by your internet service provider."),

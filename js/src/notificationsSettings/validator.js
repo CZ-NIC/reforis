@@ -6,7 +6,7 @@
  */
 
 
-import { validateMultipleEmails } from "common/validations";
+import { validateMultipleEmails } from "foris";
 
 export default function validator(formData) {
     const errors = {};

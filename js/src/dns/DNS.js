@@ -9,7 +9,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import API_URLs from "common/API";
-import { validateDomain } from "common/validations";
+import { validateDomain } from "foris";
 import { ForisForm } from "foris";
 import ConnectionTest from "connectionTest/ConnectionTest";
 

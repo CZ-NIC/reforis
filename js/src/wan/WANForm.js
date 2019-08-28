@@ -8,8 +8,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Select } from "foris";
-import { TextInput } from "foris";
+import { Select, TextInput } from "foris";
+
 import DHCPClientForm, { validateDHCPForm } from "common/network/DHCPClientForm";
 import StaticIPForm, { validateStaticForm } from "common/network/StaticIPForm";
 

@@ -10,7 +10,7 @@ import PropTypes from "prop-types";
 
 import { TextInput } from "foris";
 import { CheckBox } from "foris";
-import { validateIPv4Address } from "common/validations";
+import { validateIPv4Address } from "foris";
 import DHCPServerForm, { HELP_TEXT as DHCP_HELP_TEXT } from "common/network/DHCPServerForm";
 
 const HELP_TEXTS = {

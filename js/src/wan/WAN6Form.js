@@ -10,16 +10,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Select } from "foris";
-import { TextInput } from "foris";
-import { CheckBox } from "foris";
-import { NumberInput } from "foris";
 import {
+    Select, TextInput, CheckBox, NumberInput,
     validateDUID,
     validateIPv4Address,
     validateIPv6Address,
     validateIPv6Prefix,
-} from "common/validations";
+} from "foris";
+
 
 const HELP_TEXTS = {
     dhcpv6: {
