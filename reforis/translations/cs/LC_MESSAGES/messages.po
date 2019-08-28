@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2019-04-20 00:44+0200\n"
-"PO-Revision-Date: 2019-08-28 13:05+0000\n"
-"Last-Translator: Stepan Henek <stepan+github@henek.name>\n"
+"PO-Revision-Date: 2019-08-29 08:58+0000\n"
+"Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/turris/reforis/cs/>"
 "\n"
 "Language: cs\n"
@@ -119,11 +119,11 @@ msgstr "Konektivita IPv6 brány"
 
 #: js/src/forisForm/SubmitButton.js:27
 msgid "Updating"
-msgstr "Aktualizuji"
+msgstr "Aktualizuje se"
 
 #: js/src/forisForm/SubmitButton.js:30
 msgid "Load settings"
-msgstr "Načítám nastavení"
+msgstr "Načítá se nastavení"
 
 #: js/src/forisForm/SubmitButton.js:33
 #, python-format
@@ -160,7 +160,7 @@ msgstr "Tohle není platná MAC adresa."
 
 #: js/src/forisForm/validation.js:15
 msgid "Doesn't contain a list of emails separated by commas."
-msgstr "Neobsahuje seznam e-mailů oddělených čárkou."
+msgstr "Neobsahuje seznam e-mailů oddělovaných čárkou."
 
 #: js/src/forisForm/networkForms/DHCPForm.js:15
 msgid "Hostname which will be provided to DHCP server."
