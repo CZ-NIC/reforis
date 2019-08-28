@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2019-04-20 00:44+0200\n"
-"PO-Revision-Date: 2019-08-10 15:23+0000\n"
+"PO-Revision-Date: 2019-08-29 08:58+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/turris/"
 "reforis/nb_NO/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.8-dev\n"
+"X-Generator: Weblate 3.9-dev\n"
 "Generated-By: Babel 2.7.0\n"
 
 #: js/src/administration/Reboot.js:17
@@ -150,6 +150,7 @@ msgid "This is not a valid domain name."
 msgstr "Dette er ikke et gyldig domenenavn."
 
 #: js/src/forisForm/validation.js:13
+#, fuzzy
 msgid "This is not a valid DUID."
 msgstr "Dette er ikke en gyldig DUID."
 
@@ -160,7 +161,7 @@ msgstr "Dette er ikke en gyldig MAC-adresse."
 #: js/src/forisForm/validation.js:15
 #, fuzzy
 msgid "Doesn't contain a list of emails separated by commas."
-msgstr "Inneholder ikke en kommainndelt liste over e-poster."
+msgstr "Inneholder ikke en kommainndelt liste med e-postadresser."
 
 #: js/src/forisForm/networkForms/DHCPForm.js:15
 msgid "Hostname which will be provided to DHCP server."
