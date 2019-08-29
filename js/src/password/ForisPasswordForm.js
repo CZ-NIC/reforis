@@ -8,10 +8,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import PasswordInput from "common/bootstrap/PasswordInput";
-import CheckBox from "common/bootstrap/Checkbox";
-import SubmitButton, { STATES as SUBMIT_BUTTON_STATES } from "form/SubmitButton";
-
+import {
+    PasswordInput, CheckBox, SubmitButton, SUBMIT_BUTTON_STATES,
+} from "foris";
 
 ForisPasswordForm.propTypes = {
     formData: PropTypes.shape({
@@ -40,7 +39,6 @@ export default function ForisPasswordForm({
                 label={_("New Foris password")}
                 value={formData.newForisPassword}
                 error={formErrors.newForisPassword}
-
 
                 onChange={setFormValue(
                     (value) => ({ newForisPassword: { $set: value } }),

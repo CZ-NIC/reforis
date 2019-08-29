@@ -10,16 +10,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Select from "common/bootstrap/Select";
-import TextInput from "common/bootstrap/TextInput";
-import CheckBox from "common/bootstrap/Checkbox";
-import NumberInput from "common/bootstrap/NumberInput";
 import {
+    Select, TextInput, CheckBox, NumberInput,
     validateDUID,
     validateIPv4Address,
     validateIPv6Address,
     validateIPv6Prefix,
-} from "common/validations";
+} from "foris";
 
 const HELP_TEXTS = {
     dhcpv6: {
@@ -51,7 +48,6 @@ const HELP_TEXTS = {
         },
     },
 };
-
 
 const WAN6_CHOICES = {
     none: _("Disable IPv6"),
@@ -418,7 +414,6 @@ DynamicIPv4Form.propTypes = {
     setFormValue: PropTypes.func.isRequired,
 };
 
-
 DynamicIPv4Form.defaultProps = {
     formErrors: {},
 };
@@ -501,7 +496,6 @@ export function validateWAN6Form(formData) {
     }
     return errors[`wan6_${formData.wan6_type}`] ? errors : null;
 }
-
 
 function validateDHCPv6Form(wan6_dhcpv6) {
     const error = { duid: validateDUID(wan6_dhcpv6.duid) };

@@ -9,10 +9,9 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import moment from "moment/moment";
 
-import Select from "common/bootstrap/Select";
-import DataTimeInput from "common/bootstrap/DataTimeInput";
-import { SpinnerElement } from "common/bootstrap/Spinner";
-import Button from "common/bootstrap/Button";
+import {
+    Select, DataTimeInput, SpinnerElement, Button,
+} from "foris";
 
 import useNTPDate from "./hooks";
 

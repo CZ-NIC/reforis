@@ -9,7 +9,7 @@ import React from "react";
 import moment from "moment";
 import PropTypes from "prop-types";
 
-import ForisForm from "form/ForisForm";
+import { ForisForm } from "foris";
 import API_URLs from "common/API";
 
 import UpdatesForm from "./forms/UpdatesForm";
@@ -56,7 +56,6 @@ available <a href="" data-toggle="modal" data-target="#licenceModal">here</a>.
         </>
     );
 }
-
 
 function prepData(formData) {
     if (!formData.approval_settings.delay) formData.approval_settings.delay = 1;

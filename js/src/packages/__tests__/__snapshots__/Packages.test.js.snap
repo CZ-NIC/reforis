@@ -331,11 +331,11 @@ exports[`<Packages/> Updates disabled 1`] = `
       <button
         class=\\"btn btn-primary  offset-lg-8 col-lg-3 col-sm-12\\"
 +       disabled=\\"\\"
+        type=\\"submit\\"
       >
           Save
       </button>
-    </form>
-  </DocumentFragment>"
+    </form>"
 `;
 
 exports[`<Packages/> Updates enabled 1`] = `
@@ -952,6 +952,7 @@ been installed manually or using opkg is not affected.
     </div>
     <button
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
+      type="submit"
     >
         Save
     </button>

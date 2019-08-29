@@ -8,7 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Button from "common/bootstrap/Button";
+import { Button } from "foris";
 import { TEST_STATES } from "./hooks";
 
 ConnectionTestButton.propTypes = {
@@ -31,6 +31,7 @@ export default function ConnectionTestButton({ state, ...props }) {
 
     return (
         <Button
+            type="submit"
             className="btn-primary"
             loading={isRunning}
             disabled={isRunning}

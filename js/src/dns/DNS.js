@@ -9,8 +9,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import API_URLs from "common/API";
-import { validateDomain } from "common/validations";
-import ForisForm from "form/ForisForm";
+import { validateDomain, ForisForm } from "foris";
+
 import ConnectionTest from "connectionTest/ConnectionTest";
 
 import DNSForm from "./DNSForm";

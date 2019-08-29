@@ -8,8 +8,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { SpinnerElement } from "common/bootstrap/Spinner";
-import { useAPIPost } from "common/APIhooks";
+import { SpinnerElement, useAPIPost } from "foris";
+
 import API_URLs from "common/API";
 
 import { useLanguages, useWSSetLanguageRefresh } from "./hooks";
@@ -23,7 +23,6 @@ export default function LanguagesDropdown({ ws }) {
     useWSSetLanguageRefresh(ws);
 
     const [, post] = useAPIPost(API_URLs.language);
-
 
     return (
         <div className="dropdown">

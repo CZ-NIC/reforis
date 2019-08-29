@@ -43,6 +43,7 @@ in LAN.
     </div>
     <button
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
+      type="submit"
     >
        
        
@@ -280,6 +281,7 @@ in LAN.
     </div>
     <button
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
+      type="submit"
     >
        
        
@@ -527,6 +529,7 @@ in LAN.
     </div>
     <button
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
+      type="submit"
     >
        
        
@@ -689,6 +692,7 @@ in LAN.
     </div>
     <button
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
+      type="submit"
     >
        
        

@@ -8,9 +8,8 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-import CheckBox from "common/bootstrap/Checkbox";
-import Select from "common/bootstrap/Select";
-import TextInput from "common/bootstrap/TextInput";
+import { CheckBox, Select, TextInput } from "foris";
+
 import DNSSECDisableModal from "./DNSSECDisableModal";
 
 const HELP_TEXTS = {

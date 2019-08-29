@@ -8,9 +8,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Spinner from "common/bootstrap/Spinner";
+import { Spinner } from "foris";
 import { STATES, useReboot } from "./hooks";
-
 
 RebootHandler.propTypes = {
     ws: PropTypes.object.isRequired,

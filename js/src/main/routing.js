@@ -9,7 +9,7 @@ import React from "react";
 import { Redirect, Route, Switch } from "react-router";
 import PropTypes from "prop-types";
 
-import Portal from "utils/Portal";
+import { Portal } from "foris";
 
 import { REDIRECT_404_PAGE } from "./constants";
 

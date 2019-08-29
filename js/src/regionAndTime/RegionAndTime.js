@@ -10,7 +10,7 @@ import PropTypes from "prop-types";
 import moment from "moment";
 
 import API_URLs from "common/API";
-import ForisForm from "form/ForisForm";
+import { ForisForm } from "foris";
 
 import RegionForm from "./RegionForm";
 import TimeForm from "./TimeForm";

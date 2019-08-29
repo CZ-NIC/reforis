@@ -10,8 +10,7 @@ import {
 } from "react";
 
 import API_URLs from "common/API";
-import { useAPIPost } from "common/APIhooks";
-import useWSForisModule from "common/WebSocketsHooks";
+import { useAPIPost, useWSForisModule } from "foris";
 
 const TESTS_TYPES = {
     wan: ["ipv6", "ipv6_gateway", "ipv4", "ipv4_gateway"],

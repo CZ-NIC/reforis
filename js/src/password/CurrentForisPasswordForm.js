@@ -8,7 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import PasswordInput from "common/bootstrap/PasswordInput";
+import { PasswordInput } from "foris";
 
 CurrentForisPasswordForm.propTypes = {
     formData: PropTypes.shape(

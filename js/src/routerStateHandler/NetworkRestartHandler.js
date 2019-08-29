@@ -8,7 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Spinner from "common/bootstrap/Spinner";
+import { Spinner } from "foris";
 
 import { STATES, useNetworkRestart } from "./hooks";
 

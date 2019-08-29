@@ -9,7 +9,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import moment from "moment";
 
-
 DHCPClientsList.propTypes = {
     clients: PropTypes.arrayOf(PropTypes.object),
 };

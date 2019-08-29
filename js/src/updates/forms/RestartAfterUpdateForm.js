@@ -8,8 +8,7 @@
 import React from "react";
 import moment from "moment";
 
-import NumberInput from "common/bootstrap/NumberInput";
-import DataTimeInput from "common/bootstrap/DataTimeInput";
+import { NumberInput, DataTimeInput } from "foris";
 
 const TIME_FORMAT = "HH:mm";
 

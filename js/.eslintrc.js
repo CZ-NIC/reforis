@@ -30,11 +30,15 @@ module.exports = {
         "import/no-unresolved": [
             "error",
             // Ignore imports used only in tests
-            {ignore: ["mockWS", "customTestRender"]}
+            { ignore: ["mockWS", "customTestRender"] }
         ],
         "import/no-cycle": "warn",
         "no-console": "error",
-        "no-use-before-define": ["error", { functions: false, classes: true, variables: true }],
+        "no-use-before-define": ["error", {
+            functions: false,
+            classes: true,
+            variables: true
+        }],
         "no-restricted-syntax": "warn",
         // Should be enabled in the future
         "camelcase": "off",
@@ -50,13 +54,18 @@ module.exports = {
         "radix": "off",
         "no-continue": "off",
         "react/no-danger": "off",
+        "no-multiple-empty-lines": ["error", {
+            max: 1,
+            maxBOF: 1,
+            maxEOF: 0
+        }],
     },
     "settings": {
         "import/resolver": {
             "webpack": {
-                "env": {"lighttpd": true},
+                "env": { "lighttpd": true },
                 "config": path.resolve(__dirname, "webpack.config.js")
             }
         }
     }
-}
+};

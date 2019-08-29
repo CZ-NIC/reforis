@@ -9,12 +9,10 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 import {
-    Modal, ModalBody, ModalFooter, ModalHeader,
-} from "common/bootstrap/Modal";
-import Button from "common/bootstrap/Button";
-import { useAPIPost } from "./APIhooks";
-import API_URLs from "./API";
+    Modal, ModalBody, ModalFooter, ModalHeader, Button, useAPIPost,
+} from "foris";
 
+import API_URLs from "./API";
 
 RebootButton.propTypes = {
     forisFormSize: PropTypes.bool,

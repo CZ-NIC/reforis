@@ -33,6 +33,7 @@ exports[`<NotificationsSettings/> Disabled 1`] = `
     </div>
     <button
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
+      type="submit"
     >
        
        
@@ -372,6 +373,7 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
           >
             <button
               class="input-group-text"
+              type="button"
             >
               <i
                 class="fa fa-eye"
@@ -383,6 +385,7 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
     </div>
     <button
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
+      type="submit"
     >
        
        
@@ -591,6 +594,7 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
     </div>
     <button
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
+      type="submit"
     >
        
        

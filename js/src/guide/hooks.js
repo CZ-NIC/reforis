@@ -7,9 +7,8 @@
 
 import { useEffect } from "react";
 
-import { useAPIPost } from "common/APIhooks";
+import { useAPIPost, REFORIS_URL_PREFIX } from "foris";
 import API_URLs from "common/API";
-import { REFORIS_URL_PREFIX } from "common/constants";
 
 export default function useGuideFinish() {
     const [finishGuidePostData, finishGuidePost] = useAPIPost(API_URLs.finishGuide);

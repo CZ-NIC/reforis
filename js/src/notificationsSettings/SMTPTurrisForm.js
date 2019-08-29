@@ -8,7 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import TextInput from "common/bootstrap/TextInput";
+import { TextInput } from "foris";
 
 import HELP_TEXTS from "./helpTexts";
 
@@ -24,7 +24,6 @@ SMTPTurrisForm.defaultProps = {
     formData: {},
     formErrors: {},
 };
-
 
 export default function SMTPTurrisForm({
     formData, formErrors, setFormValue, ...props

@@ -8,11 +8,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Select from "common/bootstrap/Select";
-import TextInput from "common/bootstrap/TextInput";
-import NumberInput from "common/bootstrap/NumberInput";
-import PasswordInput from "common/bootstrap/PasswordInput";
-import EmailInput from "common/bootstrap/EmailInput";
+import {
+    Select, TextInput, NumberInput, PasswordInput, EmailInput,
+} from "foris";
 
 import HELP_TEXTS from "./helpTexts";
 

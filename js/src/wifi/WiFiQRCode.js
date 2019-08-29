@@ -10,10 +10,8 @@ import QRCode from "qrcode.react";
 import PropTypes from "prop-types";
 
 import {
-    Modal, ModalBody, ModalFooter, ModalHeader,
-} from "common/bootstrap/Modal";
-import { ForisURLs } from "common/constants";
-import Button from "common/bootstrap/Button";
+    Modal, ModalBody, ModalFooter, ModalHeader, Button, ForisURLs,
+} from "foris";
 
 import { createAndDownloadPdf, toQRCodeContent } from "./qrCodeHelpers";
 

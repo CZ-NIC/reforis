@@ -136,6 +136,7 @@ this is a serious flaw on their side.
     </div>
     <button
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
+      type="submit"
     >
        
        
@@ -158,6 +159,7 @@ works as expected. Remember to click on the
   <form>
     <button
       class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+      type="submit"
     >
        
        
@@ -314,6 +316,7 @@ this is a serious flaw on their side.
     </div>
     <button
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
+      type="submit"
     >
        
        
@@ -336,6 +339,7 @@ works as expected. Remember to click on the
   <form>
     <button
       class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+      type="submit"
     >
        
        
@@ -453,6 +457,7 @@ this is a serious flaw on their side.
     </div>
     <button
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
+      type="submit"
     >
        
        
@@ -475,6 +480,7 @@ works as expected. Remember to click on the
   <form>
     <button
       class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+      type="submit"
     >
        
        

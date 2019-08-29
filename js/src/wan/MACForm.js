@@ -8,9 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import CheckBox from "common/bootstrap/Checkbox";
-import TextInput from "common/bootstrap/TextInput";
-import { validateMAC } from "common/validations";
+import { CheckBox, TextInput, validateMAC } from "foris";
 
 const HELP_TEXTS = {
     custom_mac_enabled: _("Useful in cases, when a specific MAC address is required by your internet service provider."),

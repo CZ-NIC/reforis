@@ -8,8 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import TextInput from "common/bootstrap/TextInput";
-import { validateDomain } from "common/validations";
+import { TextInput, validateDomain } from "foris";
 
 const HELP_TEXTS = {
     hostname: _("Hostname which will be provided to DHCP server."),

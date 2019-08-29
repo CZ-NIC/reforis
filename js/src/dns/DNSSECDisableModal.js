@@ -9,9 +9,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import {
-    Modal, ModalBody, ModalFooter, ModalHeader,
-} from "common/bootstrap/Modal";
-import Button from "common/bootstrap/Button";
+    Modal, ModalBody, ModalFooter, ModalHeader, Button,
+} from "foris";
 
 const DNSSEC_DISABLE_MESSAGE = _(`
 DNSSEC is a security technology that protects the DNS communication against attacks on the DNS infrastructure.

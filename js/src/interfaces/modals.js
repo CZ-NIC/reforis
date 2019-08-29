@@ -9,9 +9,8 @@ import React from "react";
 import propType from "prop-types";
 
 import {
-    Modal, ModalBody, ModalFooter, ModalHeader,
-} from "common/bootstrap/Modal";
-import Button from "common/bootstrap/Button";
+    Modal, ModalBody, ModalFooter, ModalHeader, Button,
+} from "foris";
 
 OpenPortsModals.propTypes = {
     shown: propType.bool.isRequired,

@@ -8,8 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import CheckBox from "common/bootstrap/Checkbox";
-import RadioSet from "common/bootstrap/RadioSet";
+import { CheckBox, RadioSet } from "foris";
 
 import HELP_TEXTS from "./helpTexts";
 import CommonForm from "./CommonForm";
@@ -46,7 +45,6 @@ NotificationsEmailSettingsForm.defaultProps = {
     formData: {},
     formErrors: {},
 };
-
 
 export default function NotificationsEmailSettingsForm({
     formData, formErrors, setFormValue, ...props

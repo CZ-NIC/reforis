@@ -9,11 +9,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-import { ForisURLs } from "common/constants";
+import { ForisURLs } from "foris";
 
 import { NOTIFICATION_PROP_TYPES } from "../utils";
 import NotificationsDropdownItem from "./NotificationsDropdownItem";
-
 
 NotificationsDropdownMenu.propTypes = {
     notifications: PropTypes.arrayOf(NOTIFICATION_PROP_TYPES),

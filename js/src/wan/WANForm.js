@@ -8,8 +8,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Select from "common/bootstrap/Select";
-import TextInput from "common/bootstrap/TextInput";
+import { Select, TextInput } from "foris";
+
 import DHCPClientForm, { validateDHCPForm } from "common/network/DHCPClientForm";
 import StaticIPForm, { validateStaticForm } from "common/network/StaticIPForm";
 
@@ -153,7 +153,6 @@ function PPPoEForm({
     );
 }
 
-
 export function validateWANForm(formData) {
     const errors = {};
     switch (formData.wan_type) {
@@ -170,7 +169,6 @@ export function validateWANForm(formData) {
     }
     return errors[`wan_${formData.wan_type}`] ? errors : null;
 }
-
 
 function validatePPPoEForm(wan_pppoe) {
     const errors = {};

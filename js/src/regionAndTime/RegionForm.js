@@ -8,7 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Select from "common/bootstrap/Select";
+import { Select } from "foris";
 import { TIMEZONES, COUNTRIES } from "utils/timezones";
 
 RegionForm.propTypes = {
