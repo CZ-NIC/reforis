@@ -8,7 +8,7 @@
 import React from 'react';
 
 import {fireEvent, getByLabelText, getByText, render, wait} from 'customTestRender';
-import mockedWS from 'mockWS';
+import { WebSockets } from "foris";
 import mockAxios from 'jest-mock-axios';
 import notificationsSettings from './__fixtures__/notificationsSettings';
 
@@ -20,8 +20,8 @@ describe('<NotificationsSettings/>', () => {
     let NotificationCenterContainer;
 
     beforeEach(async () => {
-        const mockWebSockets = new mockedWS();
-        const {container} = render(<NotificationsSettings ws={mockWebSockets}/>);
+        const webSockets = new WebSockets();
+        const {container} = render(<NotificationsSettings ws={webSockets}/>);
         mockAxios.mockResponse({data: notificationsSettings()});
         NotificationCenterContainer = container;
         await wait(() => getByLabelText(container, ENABLE_CHECKBOX_LABEL));

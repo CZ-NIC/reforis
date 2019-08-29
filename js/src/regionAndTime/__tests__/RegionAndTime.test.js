@@ -13,14 +13,14 @@ import {regionAndTime} from './__fixtures__/regionAndTime';
 
 import RegionAndTime from '../RegionAndTime';
 import API_URLs from 'common/API';
-import mockedWS from '../../testUtils/mockWS';
+import { WebSockets } from "foris";
 
 describe('<RegionAndTime/>', () => {
     let regionAndTimeContainer;
 
     beforeEach(async () => {
-        const mockWebSockets = new mockedWS();
-        const {container} = render(<RegionAndTime ws={mockWebSockets}/>);
+        const webSockets = new WebSockets();
+        const {container} = render(<RegionAndTime ws={webSockets}/>);
         mockAxios.mockResponse({data: regionAndTime()});
         await wait(() => getByText(container, 'Region settings'));
         regionAndTimeContainer = container;

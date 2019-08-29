@@ -9,7 +9,7 @@ import React from 'react';
 import diffSnapshot from 'snapshot-diff';
 
 import {fireEvent, render, wait} from 'customTestRender';
-import mockedWS from 'mockWS';
+import { WebSockets } from "foris";
 import {wifiSettingsFixture} from './__fixtures__/wifiSettings';
 
 import mockAxios from 'jest-mock-axios';
@@ -23,8 +23,8 @@ describe('<WiFi/>', () => {
     let asFragment;
 
     beforeEach(async () => {
-        const mockWebSockets = new mockedWS();
-        const renderRes = render(<WiFi ws={mockWebSockets}/>);
+        const webSockets = new WebSockets();
+        const renderRes = render(<WiFi ws={webSockets}/>);
         asFragment = renderRes.asFragment;
         getAllByText = renderRes.getAllByText;
         getAllByLabelText = renderRes.getAllByLabelText;

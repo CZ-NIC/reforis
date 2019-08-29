@@ -8,16 +8,17 @@ import React from 'react';
 import {render, wait} from 'customTestRender';
 
 import mockAxios from 'jest-mock-axios';
-import mockedWS from 'mockWS';
+import { WebSockets } from "foris";
 import {notificationsFixture} from './__fixtures__/notifications';
 
 import NotificationsCenter from '../Notifications/NotificationsCenter';
 
 describe('<NotificationsCenter/>', () => {
     let NotificationContainer;
+
     beforeEach(async () => {
-        const mockWebSockets = new mockedWS();
-        const {container, getByText} = render(<NotificationsCenter ws={mockWebSockets}/>);
+        const webSockets = new WebSockets();
+        const {container, getByText} = render(<NotificationsCenter ws={webSockets}/>);
         mockAxios.mockResponse({data: notificationsFixture});
         await wait(() => {
             getByText('Notification message.');
