@@ -7,7 +7,7 @@
 
 import React from 'react';
 import {getByText, render, wait} from 'customTestRender';
-import mockedWS from '../../testUtils/mockWS';
+import { WebSockets } from "foris";
 import mockAxios from 'jest-mock-axios';
 
 import Guide from '../Guide';
@@ -16,9 +16,10 @@ import {guideFixtures} from './__fixtures__/guide';
 
 describe('<Guide/> ', () => {
     let guideContainer;
+
     beforeEach(async () => {
-        const mockWebSockets = new mockedWS();
-        const {container} = render(<Guide ws={mockWebSockets}/>);
+        const webSockets = new WebSockets();
+        const {container} = render(<Guide ws={webSockets}/>);
         mockAxios.mockResponse({data: guideFixtures});
         await wait(() => getByText(container, 'Network interfaces'));
         mockAxios.mockResponse({data: interfacesFixture()});

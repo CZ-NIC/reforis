@@ -8,7 +8,7 @@
 import React from 'react';
 import {fireEvent, getByLabelText, getByText, render, wait} from 'customTestRender';
 
-import mockedWS from 'mockWS';
+import { WebSockets } from "foris";
 import mockAxios from 'jest-mock-axios';
 import {lanSettingsFixture} from './__fixtures__/lanSettings';
 
@@ -18,8 +18,8 @@ describe('<LAN/>', () => {
     let lanContainer;
 
     beforeEach(async () => {
-        const mockWebSockets = new mockedWS();
-        const {container} = render(<LAN ws={mockWebSockets}/>);
+        const webSockets = new WebSockets();
+        const {container} = render(<LAN ws={webSockets}/>);
         mockAxios.mockResponse({data: lanSettingsFixture()});
         await wait(() => getByText(container, 'Save'));
         lanContainer = container

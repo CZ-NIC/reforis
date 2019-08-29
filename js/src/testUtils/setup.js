@@ -19,3 +19,5 @@ jest.doMock('moment', () => {
 });
 
 jest.doMock("utils/vfs_fonts", () => ({}));
+
+window.WebSocket = jest.fn();

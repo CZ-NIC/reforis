@@ -8,7 +8,7 @@
 import React from 'react';
 import {fireEvent, getByLabelText, getByText, render, wait} from 'customTestRender';
 
-import mockedWS from 'mockWS';
+import { WebSockets } from "foris";
 import mockAxios from 'jest-mock-axios';
 import GuestNetwork from '../GuestNetwork';
 import guestNetworkFixture from './__fixtures__/guestNetwork';
@@ -18,8 +18,8 @@ describe('<GuestNetwork/>', () => {
     let guestNetworkContainer;
 
     beforeEach(async () => {
-        const mockWebSockets = new mockedWS();
-        const {container} = render(<GuestNetwork ws={mockWebSockets} setFormValue={() => {}}/>);
+        const webSockets = new WebSockets();
+        const {container} = render(<GuestNetwork ws={webSockets} setFormValue={() => {}}/>);
         mockAxios.mockResponse({data: guestNetworkFixture()});
         await wait(() => getByLabelText(container, 'Enable'));
         guestNetworkContainer = container

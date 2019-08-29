@@ -8,7 +8,7 @@
 import React from 'react';
 import {fireEvent, getByLabelText, getByText, render, wait} from 'customTestRender';
 
-import mockedWS from 'mockWS';
+import { WebSockets } from "foris";
 import mockAxios from 'jest-mock-axios';
 import Interfaces from '../Interfaces';
 import {interfacesFixture} from './__fixtures__/interfaces';
@@ -18,8 +18,8 @@ describe('<Interfaces/>', () => {
     let interfacesContainer;
 
     beforeEach(async () => {
-        const mockWebSockets = new mockedWS();
-        const {container} = render(<Interfaces ws={mockWebSockets}/>);
+        const webSockets = new WebSockets();
+        const {container} = render(<Interfaces ws={webSockets}/>);
         mockAxios.mockResponse({data: interfacesFixture()});
         await wait(() => getByText(container, 'LAN1'));
         interfacesContainer = container

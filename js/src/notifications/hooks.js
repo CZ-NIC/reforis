@@ -20,18 +20,35 @@ export default function useNotifications(ws) {
         get();
     }, [get]);
     useEffect(() => {
-        if (getState.data) {
+        if (getState.data && !getState.isLoading) {
             const nonDisplayedNotifications = getState.data.notifications
                 .filter((notification) => !notification.displayed);
             setNotifications(nonDisplayedNotifications);
         }
     }, [getState]);
 
+    // Reload notifications when a new one is created
     const [WSCreateData] = useWSForisModule(ws, WS_MODULE, "create");
+    useEffect(() => {
+        if (WSCreateData) {
+            get();
+        }
+    }, [WSCreateData, get]);
+
+    // Mark as displayed
     const [WSMarkAsDisplayedData] = useWSForisModule(ws, WS_MODULE, "mark_as_displayed");
     useEffect(() => {
-        if (WSCreateData || WSMarkAsDisplayedData) get();
-    }, [WSCreateData, WSMarkAsDisplayedData, get]);
+        if (!WSMarkAsDisplayedData) {
+            return;
+        }
+        if (WSMarkAsDisplayedData.new_count === 0) {
+            setNotifications([]);
+        } else if (WSMarkAsDisplayedData.ids.length === 1) {
+            setNotifications((currentNotifications) => currentNotifications.filter(
+                (notification) => notification.id !== WSMarkAsDisplayedData.ids[0],
+            ));
+        }
+    }, [WSMarkAsDisplayedData, setNotifications]);
 
     const [, post] = useAPIPost(API_URLs.notifications);
 

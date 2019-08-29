@@ -8,7 +8,7 @@
 import React from 'react';
 import {render, wait} from 'customTestRender';
 
-import mockedWS from 'mockWS';
+import { WebSockets } from "foris";
 import mockAxios from 'jest-mock-axios';
 import {notificationsFixture} from './__fixtures__/notifications';
 
@@ -19,8 +19,8 @@ describe('<NotificationsDropdown/>', () => {
     let notificationCenterContainer;
 
     beforeEach(async () => {
-        const mockWebSockets = new mockedWS();
-        const {container, getByText} = render(<NotificationsDropdown ws={mockWebSockets}/>);
+        const webSockets = new WebSockets();
+        const {container, getByText} = render(<NotificationsDropdown ws={webSockets}/>);
         mockAxios.mockResponse({data: notificationsFixture});
         notificationCenterContainer = container;
         await wait(() => {

@@ -8,7 +8,7 @@
 import React from 'react';
 import {fireEvent, render, waitForElement} from 'customTestRender';
 import diffSnapshot from 'snapshot-diff';
-import mockedWS from 'mockWS';
+import { WebSockets } from "foris";
 import {wanSettingsFixture} from './__fixtures__/wanSettings';
 import mockAxios from 'jest-mock-axios';
 
@@ -22,8 +22,8 @@ describe('<WAN/>', () => {
     let getByText;
 
     beforeEach(async () => {
-        const mockWebSockets = new mockedWS();
-        const renderRes = render(<WAN ws={mockWebSockets}/>);
+        const webSockets = new WebSockets();
+        const renderRes = render(<WAN ws={webSockets}/>);
         mockAxios.mockResponse({data: wanSettingsFixture()});
         asFragment = renderRes.asFragment;
         getByLabelText = renderRes.getByLabelText;

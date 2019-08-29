@@ -30,7 +30,7 @@ module.exports = {
         "import/no-unresolved": [
             "error",
             // Ignore imports used only in tests
-            { ignore: ["mockWS", "customTestRender"] }
+            {ignore: ["customTestRender"]}
         ],
         "import/no-cycle": "warn",
         "no-console": "error",

@@ -9,7 +9,7 @@ import React from 'react';
 import {fireEvent, getByLabelText, getByText, render, wait} from 'customTestRender';
 
 import {dnsFixture} from './__fixtures__/dns';
-import mockedWS from 'mockWS';
+import { WebSockets } from "foris";
 import mockAxios from 'jest-mock-axios';
 
 import DNS from '../DNS';
@@ -17,9 +17,10 @@ import DNS from '../DNS';
 
 describe('<DNS/>', () => {
     let dnsContainer;
+
     beforeEach(async () => {
-        const mockWebSockets = new mockedWS();
-        const {container} = render(<DNS ws={mockWebSockets}/>);
+        const webSockets = new WebSockets();
+        const {container} = render(<DNS ws={webSockets}/>);
         mockAxios.mockResponse({data: dnsFixture()});
         await wait(() => getByLabelText(container, 'Use forwarding'));
         dnsContainer = container;

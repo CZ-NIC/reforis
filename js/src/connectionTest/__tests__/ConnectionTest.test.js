@@ -9,20 +9,20 @@ import React from 'react';
 import {fireEvent, render, waitForElement} from 'customTestRender';
 import mockAxios from 'jest-mock-axios';
 
-import mockedWS from 'mockWS';
+import { WebSockets } from "foris";
 
 import ConnectionTest from '../ConnectionTest';
 
 describe('<ConnectionTest/>', () => {
-    const mockWebSockets = new mockedWS();
+    const webSockets = new WebSockets();
 
     it('Snapshot before connection test.', () => {
-        const {asFragment} = render(<ConnectionTest ws={mockWebSockets} type='wan'/>);
+        const {asFragment} = render(<ConnectionTest ws={webSockets} type='wan'/>);
         expect(asFragment()).toMatchSnapshot();
     });
 
     it('Snapshot after trigger WAN connection test.', async () => {
-        const {asFragment, getByText} = render(<ConnectionTest ws={mockWebSockets} type='wan'/>);
+        const {asFragment, getByText} = render(<ConnectionTest ws={webSockets} type='wan'/>);
         fireEvent.click(getByText('Test connection'));
         mockAxios.mockResponse({data: {test_id: "test-id"}});
         await waitForElement(() => getByText('IPv6 connectivity'));
@@ -33,7 +33,7 @@ describe('<ConnectionTest/>', () => {
     });
 
     it('Snapshot after trigger DNS connection test.', async () => {
-        const {asFragment, getByText} = render(<ConnectionTest ws={mockWebSockets} type='dns'/>);
+        const {asFragment, getByText} = render(<ConnectionTest ws={webSockets} type='dns'/>);
         fireEvent.click(getByText('Test connection'));
         mockAxios.mockResponse({data: {test_id: "test-id"}});
         await waitForElement(() => getByText(/DNSSEC/));
