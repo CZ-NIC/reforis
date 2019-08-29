@@ -16,17 +16,30 @@ from setuptools.command.build_py import build_py
 BASE_DIR = pathlib.Path(__file__).absolute().parent
 
 
+
+
+
 class CustomBuild(build_py):
     def run(self):
         build_py.run(self)
         self.npm_install_and_build()
+        self.copy_translations_from_forisjs()
         self.compile_translations()
 
-    def compile_translations(self):
-        # compile translation
-        from babel.messages import frontend as babel
+    def npm_install_and_build(self):
+        os.system(f'cd {BASE_DIR}/js; npm install --save-dev')
+        build_dir = BASE_DIR / self.build_lib / 'reforis_static/reforis/js'
+        os.system(f'cd {BASE_DIR}/js; npm run-script build -- -o {build_dir}/app.min.js')
 
-        def compile_domain(domain, path):
+    def copy_translations_from_forisjs(self):
+        for po in BASE_DIR.glob('js/node_modules/foris/translations/*/LC_MESSAGES/forisjs.po'):
+            lang = pathlib.Path(po).parent.parent.name
+            path_to_copy = BASE_DIR / f'reforis/translations/{lang}/LC_MESSAGES/forisjs.po'
+            os.system(f'cp {po} {path_to_copy}')
+
+    def compile_translations(self):
+        def compile_language(domain, path):
+            from babel.messages import frontend as babel
             distribution = copy.copy(self.distribution)
             cmd = babel.compile_catalog(distribution)
             cmd.input_file = str(path)
@@ -38,25 +51,13 @@ class CustomBuild(build_py):
             cmd.ensure_finalized()
             cmd.run()
 
-        for path in BASE_DIR.glob("reforis/translations/*/LC_MESSAGES/messages.po"):
-            compile_domain('messages', path)
+        def compile_domain(domain):
+            for path in BASE_DIR.glob(f'reforis/translations/*/LC_MESSAGES/{domain}.po'):
+                compile_language(domain, path)
 
-        for path in BASE_DIR.glob("reforis/translations/*/LC_MESSAGES/tzinfo.po"):
-            compile_domain('tzinfo', path)
-
-        file_name = 'forisjs.po'
-        for po in BASE_DIR.glob('js/node_modules/foris/translations/*/LC_MESSAGES/forisjs.po'):
-            lang = pathlib.Path(po).parent.parent.name
-            path_to_copy = BASE_DIR / f'reforis/translations/{lang}/LC_MESSAGES/{file_name}'
-            os.system(f'cp {po} {path_to_copy}')
-
-        for path in BASE_DIR.glob("reforis/translations/*/LC_MESSAGES/forisjs.po"):
-            compile_domain('forisjs', path)
-
-    def npm_install_and_build(self):
-        os.system(f'cd {BASE_DIR}/js; npm install --save-dev')
-        build_dir = BASE_DIR / self.build_lib / 'reforis_static/reforis/js'
-        os.system(f'cd {BASE_DIR}/js; npm run-script build -- -o {build_dir}/app.min.js')
+        compile_domain('messages')
+        compile_domain('tzinfo')
+        compile_domain('forisjs')
 
 
 setuptools.setup(
