@@ -5,7 +5,7 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
 - First value
 + Second value
 
-@@ -265,207 +265,95 @@
+@@ -267,207 +267,95 @@
             value=\\"0\\"
           >
             auto
@@ -340,7 +340,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
 - First value
 + Second value
 
-@@ -497,10 +497,95 @@
+@@ -499,10 +499,97 @@
           access the internet, but aren't allowed to access other devices and the configuration interface of the router.
           Parameters of the guest network can be set in the Guest network tab.
           
@@ -371,10 +371,12 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
 +           >
 +             <button
 +               class=\\"input-group-text\\"
++               type=\\"button\\"
 +             >
 +               <img
 +                 alt=\\"QR\\"
 +                 src=\\"/static/reforis/imgs/QR_icon.svg\\"
++                 style=\\"opacity: 0.67;\\"
 +                 width=\\"20\\"
 +               />
 +             </button>
@@ -436,7 +438,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
       </h3>
       <div
         class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
-@@ -523,10 +608,11 @@
+@@ -525,10 +612,11 @@
           </label>
         </div>
       </div>
@@ -455,7 +457,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
 - First value
 + Second value
 
-@@ -31,10 +31,476 @@
+@@ -31,10 +31,478 @@
           >
             Enable
           </label>
@@ -487,10 +489,12 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
 +           >
 +             <button
 +               class=\\"input-group-text\\"
++               type=\\"button\\"
 +             >
 +               <img
 +                 alt=\\"QR\\"
 +                 src=\\"/static/reforis/imgs/QR_icon.svg\\"
++                 style=\\"opacity: 0.67;\\"
 +                 width=\\"20\\"
 +               />
 +             </button>
