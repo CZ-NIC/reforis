@@ -28,13 +28,14 @@ export default function WiFiQRCode({ SSID, password }) {
     return (
         <>
             <button
+                type="button"
                 className="input-group-text"
                 onClick={(e) => {
                     e.preventDefault();
                     setModal(true);
                 }}
             >
-                <img width="20" src={QR_ICON_PATH} alt="QR" />
+                <img width="20" src={QR_ICON_PATH} alt="QR" style={{ opacity: 0.67 }} />
             </button>
             {modal
                 ? <QRCodeModal setShown={setModal} shown={modal} SSID={SSID} password={password} />
@@ -74,7 +75,7 @@ function QRCodeModal({
                         createAndDownloadPdf(SSID, password);
                     }}
                 >
-                    <i className="fas fa-arrow-down" />
+                    <i className="fas fa-arrow-down mr-2" />
                     {_("Download PDF")}
                 </Button>
             </ModalFooter>
