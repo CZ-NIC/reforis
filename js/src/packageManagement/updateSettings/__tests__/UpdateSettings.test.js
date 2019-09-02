@@ -9,20 +9,20 @@ import React from 'react';
 import {fireEvent, render, waitForElement} from 'customTestRender';
 
 import {updatesFixture} from './__fixtures__/updates';
-import Updates from '../Updates';
+import UpdateSettings from '../UpdateSettings';
 import mockAxios from 'jest-mock-axios';
 import diffSnapshot from "snapshot-diff";
 
 const ENABLE_CHECKBOX_LABEL = 'Enable automatic updates (recommended)';
 
-describe('<Updates/>', () => {
+describe('<UpdateSettings/>', () => {
     let firstRender;
     let getByLabelText;
     let getByText;
     let asFragment;
 
     beforeEach(async () => {
-        const renderRes = render(<Updates/>);
+        const renderRes = render(<UpdateSettings/>);
         mockAxios.mockResponse({data: updatesFixture()});
         asFragment = renderRes.asFragment;
         getByLabelText = renderRes.getByLabelText;

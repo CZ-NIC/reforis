@@ -17,7 +17,7 @@ exports[`<Packages/> Updates disabled 1`] = `
 +       <span>
 +         Please enable 
 +         <a
-+           href=\\"/updates\\"
++           href=\\"/package-management/update-settings\\"
 +         >
 +           automatic updates
 +         </a>

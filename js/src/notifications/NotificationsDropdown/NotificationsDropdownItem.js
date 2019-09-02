@@ -10,8 +10,9 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 import { ForisURLs } from "foris";
+import toLocaleDateString from "utils/localeDate";
 import NotificationIcon from "../NotificationIcon";
-import { NOTIFICATION_PROP_TYPES, toLocaleDateString } from "../utils";
+import NOTIFICATION_PROP_TYPES from "../utils";
 
 NotificationsDropdownItem.propTypes = {
     notification: NOTIFICATION_PROP_TYPES,

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-08-29 11:54+0200\n"
+"POT-Creation-Date: 2019-08-29 15:30+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 
-#: js/src/about/About.js:23 js/src/main/pages.js:121
+#: js/src/about/About.js:23 js/src/main/pages.js:133
 msgid "About"
 msgstr ""
 
@@ -37,7 +37,7 @@ msgstr ""
 msgid "Kernel version"
 msgstr ""
 
-#: js/src/common/RebootButton.js:42 js/src/main/pages.js:96
+#: js/src/common/RebootButton.js:42 js/src/main/pages.js:97
 msgid "Reboot"
 msgstr ""
 
@@ -536,7 +536,7 @@ msgid ""
 "server on your local network."
 msgstr ""
 
-#: js/src/guide/constants.js:94 js/src/main/pages.js:81
+#: js/src/guide/constants.js:94 js/src/main/pages.js:82
 #: js/src/notificationsSettings/SMTPCustomForm.js:107
 #: js/src/password/Password.js:101 js/src/wifi/WiFiGuestForm.js:76
 msgid "Password"
@@ -546,7 +546,7 @@ msgstr ""
 msgid "Workflow"
 msgstr ""
 
-#: js/src/guide/constants.js:102 js/src/main/pages.js:63
+#: js/src/guide/constants.js:102 js/src/main/pages.js:64
 msgid "Interfaces"
 msgstr ""
 
@@ -554,23 +554,23 @@ msgstr ""
 msgid "Time"
 msgstr ""
 
-#: js/src/guide/constants.js:110 js/src/main/pages.js:58
+#: js/src/guide/constants.js:110 js/src/main/pages.js:59
 msgid "DNS"
 msgstr ""
 
-#: js/src/guide/constants.js:114 js/src/main/pages.js:103
-#: js/src/updates/Updates.js:29
+#: js/src/guide/constants.js:114 js/src/main/pages.js:115
+#: js/src/packageManagement/updates/Updates.js:8
 msgid "Updates"
 msgstr ""
 
 #: js/src/guide/constants.js:118 js/src/interfaces/Interfaces.js:18
-#: js/src/interfaces/Interfaces.js:83 js/src/main/pages.js:48
+#: js/src/interfaces/Interfaces.js:83 js/src/main/pages.js:49
 #: js/src/wan/WAN.js:27
 msgid "WAN"
 msgstr ""
 
 #: js/src/guide/constants.js:122 js/src/interfaces/Interfaces.js:19
-#: js/src/interfaces/Interfaces.js:91 js/src/main/pages.js:53
+#: js/src/interfaces/Interfaces.js:91 js/src/main/pages.js:54
 msgid "LAN"
 msgstr ""
 
@@ -578,7 +578,7 @@ msgstr ""
 msgid "Finish"
 msgstr ""
 
-#: js/src/interfaces/Interfaces.js:20 js/src/main/pages.js:68
+#: js/src/interfaces/Interfaces.js:20 js/src/main/pages.js:69
 msgid "Guest Network"
 msgstr ""
 
@@ -768,37 +768,46 @@ msgstr ""
 msgid "IPv4 protocol"
 msgstr ""
 
-#: js/src/main/pages.js:31
+#: js/src/main/pages.js:32
 #: js/src/notifications/Notifications/NotificationsCenter.js:41
 #: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:64
 msgid "Notifications"
 msgstr ""
 
-#: js/src/main/pages.js:37
+#: js/src/main/pages.js:38
 msgid "Network Settings"
 msgstr ""
 
-#: js/src/main/pages.js:43 js/src/wifi/WiFi.js:52
+#: js/src/main/pages.js:44 js/src/wifi/WiFi.js:52
 msgid "Wi-Fi"
 msgstr ""
 
-#: js/src/main/pages.js:75
+#: js/src/main/pages.js:76
 msgid "Administration"
 msgstr ""
 
-#: js/src/main/pages.js:86
+#: js/src/main/pages.js:87
 msgid "Region & Time"
 msgstr ""
 
-#: js/src/main/pages.js:91
+#: js/src/main/pages.js:92
 msgid "Notification Settings"
 msgstr ""
 
-#: js/src/main/pages.js:109 js/src/packages/Packages.js:20
+#: js/src/main/pages.js:104
+msgid "Package management"
+msgstr ""
+
+#: js/src/main/pages.js:110 js/src/packageManagement/packages/Packages.js:20
 msgid "Packages"
 msgstr ""
 
-#: js/src/main/pages.js:115
+#: js/src/main/pages.js:120
+#: js/src/packageManagement/updateSettings/UpdateSettings.js:29
+msgid "Update settings"
+msgstr ""
+
+#: js/src/main/pages.js:127
 msgid "Advanced administration"
 msgstr ""
 
@@ -810,48 +819,6 @@ msgstr ""
 #: js/src/notifications/Notifications/NotificationsCenter.js:44
 #: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:28
 msgid "No notifications"
-msgstr ""
-
-#: js/src/notifications/Notifications/UpdateApprovals.js:45
-#, python-format
-msgid "There is %d package to be updated."
-msgid_plural "There are %d packages to be updated."
-msgstr[0] ""
-msgstr[1] ""
-
-#: js/src/notifications/Notifications/UpdateApprovals.js:52
-msgid ""
-"See <a data-toggle=\"collapse\" href=\"#plan-wrapper\" role=\"button\" "
-"aria-expanded=\"false\" aria-controls=\"plan-wrapper\">details</a>"
-msgstr ""
-
-#: js/src/notifications/Notifications/UpdateApprovals.js:58
-#, python-format
-msgid "Approve update from %s"
-msgstr ""
-
-#: js/src/notifications/Notifications/UpdateApprovals.js:68
-msgid "Deny"
-msgstr ""
-
-#: js/src/notifications/Notifications/UpdateApprovals.js:75
-msgid "Install now"
-msgstr ""
-
-#: js/src/notifications/Notifications/UpdateApprovals.js:90
-msgid "Action"
-msgstr ""
-
-#: js/src/notifications/Notifications/UpdateApprovals.js:91
-msgid "Name"
-msgstr ""
-
-#: js/src/notifications/Notifications/UpdateApprovals.js:92
-msgid "Current"
-msgstr ""
-
-#: js/src/notifications/Notifications/UpdateApprovals.js:93
-msgid "New"
 msgstr ""
 
 #: js/src/notificationsSettings/CommonForm.js:17
@@ -994,17 +961,17 @@ msgstr ""
 msgid "Minimum port is 1."
 msgstr ""
 
-#: js/src/packages/LanguageForm.js:27
+#: js/src/packageManagement/packages/LanguageForm.js:27
 msgid "Languages"
 msgstr ""
 
-#: js/src/packages/LanguageForm.js:28
+#: js/src/packageManagement/packages/LanguageForm.js:28
 msgid ""
 "If you want to use other language than English you can select it from the"
 " following list:"
 msgstr ""
 
-#: js/src/packages/Packages.js:22
+#: js/src/packageManagement/packages/Packages.js:22
 msgid ""
 "\n"
 "Apart from the standard installation, you can optionally select bundles "
@@ -1017,14 +984,211 @@ msgid ""
 "        "
 msgstr ""
 
-#: js/src/packages/Packages.js:76
+#: js/src/packageManagement/packages/Packages.js:76
 msgid ""
-"Please enable <a href=\"${ForisURLs.updates}\">automatic updates</a> to "
-"manage packages and languages."
+"Please enable <a "
+"href=\"${ForisURLs.packageManagement.updateSettings}\">automatic "
+"updates</a> to manage packages and languages."
 msgstr ""
 
-#: js/src/packages/PackagesForm.js:28
+#: js/src/packageManagement/packages/PackagesForm.js:28
 msgid "Packages list"
+msgstr ""
+
+#: js/src/packageManagement/updateSettings/LicenceModal.js:23
+msgid "Most important license agreement points"
+msgstr ""
+
+#: js/src/packageManagement/updateSettings/LicenceModal.js:30
+msgid ""
+"\n"
+"                    <li>Automatic updates are offered to the Turris "
+"router owners free of charge.</li>\n"
+"                    <li>Updates are prepared exclusively by CZ.NIC, z. s."
+" p. o.</li>\n"
+"                    <li>\n"
+"                        Enabling of the automatic updates is a "
+"prerequisite for additional security features of\n"
+"                        Turris router.\n"
+"                    </li>\n"
+"                    <li>\n"
+"                        Automatic updates take place at the time of their"
+" release, the time of installation\n"
+"                        cannot be influenced by the user.\n"
+"                    </li>\n"
+"                    <li>\n"
+"                        Having the automatic updates turned on can result"
+" in increased Internet traffic on your\n"
+"                        router. Expenses related to this increase are "
+"covered by you.\n"
+"                    </li>\n"
+"                    <li>\n"
+"                        Automatic updates cannot protect you against "
+"every attack coming from the Internet.\n"
+"                        Please do not forget to protect your workstations"
+" and other devices by installing\n"
+"                        antivirus software and explaining to your family "
+"members how to stay safe on the\n"
+"                        Internet.\n"
+"                    </li>\n"
+"                    <li>\n"
+"                        CZ.NIC, z. s. p. o. does not guarantee the "
+"availability of this service and is not\n"
+"                        responsible for any damages caused by the "
+"automatic updates.\n"
+"                    </li>\n"
+"                  "
+msgstr ""
+
+#: js/src/packageManagement/updateSettings/LicenceModal.js:58
+msgid ""
+"By enabling of the automatic updates, you confirm that you are the owner "
+"of this Turris router and you agree with the full text of the <a "
+"href=\"https://www.turris.cz/omnia-updater-eula\">license agreement</a>."
+msgstr ""
+
+#: js/src/packageManagement/updateSettings/UpdateSettings.js:31
+msgid ""
+"\n"
+"One of the most important features of router Turris are automatic system "
+"updates. Thanks to this function\n"
+"your router's software stays up to date and offers better protection "
+"against attacks from the Internet.\n"
+"<br/>\n"
+"It is <b>highly recommended</b> to have this feature <b>turned on</b>. If"
+" you decide to disable it, be\n"
+"warned that this might weaken the security of your router and network in "
+"case flaws in the software are\n"
+"found.\n"
+"<br/>\n"
+"By turning the automatic updates on, you agree to this feature's license "
+"agreement. More information is\n"
+"available <a href=\"\" data-toggle=\"modal\" data-"
+"target=\"#licenceModal\">here</a>.\n"
+"            "
+msgstr ""
+
+#: js/src/packageManagement/updateSettings/UpdateSettings.js:76
+msgid "Time should be in HH:MM format."
+msgstr ""
+
+#: js/src/packageManagement/updateSettings/UpdateSettings.js:77
+#: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:16
+msgid ""
+"Number of days that must pass between receiving the request for restart "
+"and the automatic restart itself."
+msgstr ""
+
+#: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:17
+msgid "Time of day of automatic reboot in HH:MM format."
+msgstr ""
+
+#: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:30
+msgid "Automatic restarts after software update"
+msgstr ""
+
+#: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:32
+msgid "Delay (days)"
+msgstr ""
+
+#: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:44
+msgid "Reboot time"
+msgstr ""
+
+#: js/src/packageManagement/updateSettings/forms/UpdateApprovalsForm.js:16
+msgid "Automatic installation"
+msgstr ""
+
+#: js/src/packageManagement/updateSettings/forms/UpdateApprovalsForm.js:17
+msgid "Updates will be installed without user's intervention."
+msgstr ""
+
+#: js/src/packageManagement/updateSettings/forms/UpdateApprovalsForm.js:21
+msgid "Delayed updates"
+msgstr ""
+
+#: js/src/packageManagement/updateSettings/forms/UpdateApprovalsForm.js:22
+msgid ""
+"Updates will be installed with an adjustable delay. You can also approve "
+"them manually."
+msgstr ""
+
+#: js/src/packageManagement/updateSettings/forms/UpdateApprovalsForm.js:26
+msgid "Update approval needed"
+msgstr ""
+
+#: js/src/packageManagement/updateSettings/forms/UpdateApprovalsForm.js:27
+msgid "You have to approve the updates, otherwise they won't be installed."
+msgstr ""
+
+#: js/src/packageManagement/updateSettings/forms/UpdateApprovalsForm.js:42
+msgid "Update approvals"
+msgstr ""
+
+#: js/src/packageManagement/updateSettings/forms/UpdateApprovalsForm.js:44
+msgid ""
+"Update approvals can be useful when you want to make sure that updates "
+"won't harm your specific\n"
+"            configuration. You can e.g. install updates when you're "
+"prepared for a possible rollback to a previous\n"
+"            snapshot and deny the questionable update temporarily. It "
+"isn't possible to decline the update forever an\n"
+"            it will be offered to you again together with the next "
+"package installation."
+msgstr ""
+
+#: js/src/packageManagement/updateSettings/forms/UpdateApprovalsForm.js:64
+msgid "Delayed updates (hours)"
+msgstr ""
+
+#: js/src/packageManagement/updateSettings/forms/UpdatesForm.js:24
+msgid "Enable automatic updates (recommended)"
+msgstr ""
+
+#: js/src/packageManagement/updates/UpdateApprovals.js:39
+msgid "There are no updates awaiting your approval."
+msgstr ""
+
+#: js/src/packageManagement/updates/UpdateApprovals.js:43
+#, python-format
+msgid "There is %d package to be updated."
+msgid_plural "There are %d packages to be updated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: js/src/packageManagement/updates/UpdateApprovals.js:50
+msgid ""
+"See <a data-toggle=\"collapse\" href=\"#plan-wrapper\" role=\"button\" "
+"aria-expanded=\"false\" aria-controls=\"plan-wrapper\">details</a>"
+msgstr ""
+
+#: js/src/packageManagement/updates/UpdateApprovals.js:58
+#, python-format
+msgid "Approve update from %s"
+msgstr ""
+
+#: js/src/packageManagement/updates/UpdateApprovals.js:68
+msgid "Deny"
+msgstr ""
+
+#: js/src/packageManagement/updates/UpdateApprovals.js:75
+msgid "Install now"
+msgstr ""
+
+#: js/src/packageManagement/updates/UpdateApprovals.js:90
+msgid "Action"
+msgstr ""
+
+#: js/src/packageManagement/updates/UpdateApprovals.js:91
+msgid "Name"
+msgstr ""
+
+#: js/src/packageManagement/updates/UpdateApprovals.js:92
+msgid "Current"
+msgstr ""
+
+#: js/src/packageManagement/updates/UpdateApprovals.js:93
+msgid "New"
 msgstr ""
 
 #: js/src/password/CurrentForisPasswordForm.js:24
@@ -1209,156 +1373,6 @@ msgstr ""
 
 #: js/src/routerStateHandler/RebootHandler.js:29
 msgid "Rebooting"
-msgstr ""
-
-#: js/src/updates/LicenceModal.js:23
-msgid "Most important license agreement points"
-msgstr ""
-
-#: js/src/updates/LicenceModal.js:30
-msgid ""
-"\n"
-"                    <li>Automatic updates are offered to the Turris "
-"router owners free of charge.</li>\n"
-"                    <li>Updates are prepared exclusively by CZ.NIC, z. s."
-" p. o.</li>\n"
-"                    <li>\n"
-"                        Enabling of the automatic updates is a "
-"prerequisite for additional security features of\n"
-"                        Turris router.\n"
-"                    </li>\n"
-"                    <li>\n"
-"                        Automatic updates take place at the time of their"
-" release, the time of installation\n"
-"                        cannot be influenced by the user.\n"
-"                    </li>\n"
-"                    <li>\n"
-"                        Having the automatic updates turned on can result"
-" in increased Internet traffic on your\n"
-"                        router. Expenses related to this increase are "
-"covered by you.\n"
-"                    </li>\n"
-"                    <li>\n"
-"                        Automatic updates cannot protect you against "
-"every attack coming from the Internet.\n"
-"                        Please do not forget to protect your workstations"
-" and other devices by installing\n"
-"                        antivirus software and explaining to your family "
-"members how to stay safe on the\n"
-"                        Internet.\n"
-"                    </li>\n"
-"                    <li>\n"
-"                        CZ.NIC, z. s. p. o. does not guarantee the "
-"availability of this service and is not\n"
-"                        responsible for any damages caused by the "
-"automatic updates.\n"
-"                    </li>\n"
-"                  "
-msgstr ""
-
-#: js/src/updates/LicenceModal.js:58
-msgid ""
-"By enabling of the automatic updates, you confirm that you are the owner "
-"of this Turris router and you agree with the full text of the <a "
-"href=\"https://www.turris.cz/omnia-updater-eula\">license agreement</a>."
-msgstr ""
-
-#: js/src/updates/Updates.js:31
-msgid ""
-"\n"
-"One of the most important features of router Turris are automatic system "
-"updates. Thanks to this function\n"
-"your router's software stays up to date and offers better protection "
-"against attacks from the Internet.\n"
-"<br/>\n"
-"It is <b>highly recommended</b> to have this feature <b>turned on</b>. If"
-" you decide to disable it, be\n"
-"warned that this might weaken the security of your router and network in "
-"case flaws in the software are\n"
-"found.\n"
-"<br/>\n"
-"By turning the automatic updates on, you agree to this feature's license "
-"agreement. More information is\n"
-"available <a href=\"\" data-toggle=\"modal\" data-"
-"target=\"#licenceModal\">here</a>.\n"
-"            "
-msgstr ""
-
-#: js/src/updates/Updates.js:76
-msgid "Time should be in HH:MM format."
-msgstr ""
-
-#: js/src/updates/Updates.js:77
-#: js/src/updates/forms/RestartAfterUpdateForm.js:16
-msgid ""
-"Number of days that must pass between receiving the request for restart "
-"and the automatic restart itself."
-msgstr ""
-
-#: js/src/updates/forms/RestartAfterUpdateForm.js:17
-msgid "Time of day of automatic reboot in HH:MM format."
-msgstr ""
-
-#: js/src/updates/forms/RestartAfterUpdateForm.js:30
-msgid "Automatic restarts after software update"
-msgstr ""
-
-#: js/src/updates/forms/RestartAfterUpdateForm.js:32
-msgid "Delay (days)"
-msgstr ""
-
-#: js/src/updates/forms/RestartAfterUpdateForm.js:44
-msgid "Reboot time"
-msgstr ""
-
-#: js/src/updates/forms/UpdateApprovalsForm.js:16
-msgid "Automatic installation"
-msgstr ""
-
-#: js/src/updates/forms/UpdateApprovalsForm.js:17
-msgid "Updates will be installed without user's intervention."
-msgstr ""
-
-#: js/src/updates/forms/UpdateApprovalsForm.js:21
-msgid "Delayed updates"
-msgstr ""
-
-#: js/src/updates/forms/UpdateApprovalsForm.js:22
-msgid ""
-"Updates will be installed with an adjustable delay. You can also approve "
-"them manually."
-msgstr ""
-
-#: js/src/updates/forms/UpdateApprovalsForm.js:26
-msgid "Update approval needed"
-msgstr ""
-
-#: js/src/updates/forms/UpdateApprovalsForm.js:27
-msgid "You have to approve the updates, otherwise they won't be installed."
-msgstr ""
-
-#: js/src/updates/forms/UpdateApprovalsForm.js:42
-msgid "Update approvals"
-msgstr ""
-
-#: js/src/updates/forms/UpdateApprovalsForm.js:44
-msgid ""
-"Update approvals can be useful when you want to make sure that updates "
-"won't harm your specific\n"
-"            configuration. You can e.g. install updates when you're "
-"prepared for a possible rollback to a previous\n"
-"            snapshot and deny the questionable update temporarily. It "
-"isn't possible to decline the update forever an\n"
-"            it will be offered to you again together with the next "
-"package installation."
-msgstr ""
-
-#: js/src/updates/forms/UpdateApprovalsForm.js:64
-msgid "Delayed updates (hours)"
-msgstr ""
-
-#: js/src/updates/forms/UpdatesForm.js:24
-msgid "Enable automatic updates (recommended)"
 msgstr ""
 
 #: js/src/wan/MACForm.js:14
@@ -1692,7 +1706,7 @@ msgstr ""
 msgid "Wrong current password."
 msgstr ""
 
-#: reforis/foris_controller_api/modules/updater.py:128
+#: reforis/foris_controller_api/modules/updater.py:129
 msgid "You can't set packages with disabled automatic updates."
 msgstr ""
 

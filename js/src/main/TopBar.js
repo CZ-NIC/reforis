@@ -9,6 +9,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import RebootDropdown from "rebootDropdown/RebootDropdown";
+import UpdatesDropdown from "updatesDropdown/UpdatesDropdown";
 import NotificationsDropdown from "notifications/NotificationsDropdown/NotificationsDropdown";
 import LanguagesDropdown from "languagesDropdown/LanguagesDropdown";
 
@@ -20,6 +21,7 @@ export default function TopBar({ ws }) {
     return (
         <>
             <RebootDropdown ws={ws} />
+            <UpdatesDropdown />
             <NotificationsDropdown ws={ws} />
             <LanguagesDropdown ws={ws} />
         </>

@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Updates/> Test with snapshot disabled. 1`] = `
+exports[`<UpdateSettings/> Test with snapshot disabled. 1`] = `
 <DocumentFragment>
   <h1>
-    Updates
+    Update settings
   </h1>
   <p>
     
@@ -308,7 +308,7 @@ available
 </DocumentFragment>
 `;
 
-exports[`<Updates/> Test with snapshot enabled, delayed. 1`] = `
+exports[`<UpdateSettings/> Test with snapshot enabled, delayed. 1`] = `
 "Snapshot Diff:
 - First value
 + Second value
@@ -351,7 +351,7 @@ exports[`<Updates/> Test with snapshot enabled, delayed. 1`] = `
         class=\\"col-sm-12 offset-lg-1 col-lg-10\\""
 `;
 
-exports[`<Updates/> Test with snapshot enabled. 1`] = `
+exports[`<UpdateSettings/> Test with snapshot enabled. 1`] = `
 "Snapshot Diff:
 - First value
 + Second value

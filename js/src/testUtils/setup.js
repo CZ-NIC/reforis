@@ -13,6 +13,8 @@ global.afterEach(() => {
     mockAxios.reset();
 });
 
+global.ngettext = str => str;
+
 jest.doMock('moment', () => {
     moment.tz.setDefault('UTC');
     return moment;

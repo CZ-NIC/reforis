@@ -198,7 +198,7 @@ form > button {
     color: #7b8a8b;
 }
 
-/* Reboot */
+/* Reboot dropdown */
 
 @keyframes example {
     from {
@@ -214,6 +214,17 @@ form > button {
     animation-duration: 1.5s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+}
+
+#reboot-dropdown-toggle .fa {
+    color: red
+}
+
+/* Updates dropdown */
+
+#updates-dropdown-actions {
+    display: flex;
+    justify-content: space-between;
 }
 
 /* Notifications */
