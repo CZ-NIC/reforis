@@ -16,9 +16,6 @@ from setuptools.command.build_py import build_py
 BASE_DIR = pathlib.Path(__file__).absolute().parent
 
 
-
-
-
 class CustomBuild(build_py):
     def run(self):
         build_py.run(self)
@@ -62,7 +59,7 @@ class CustomBuild(build_py):
 
 setuptools.setup(
     name='reforis',
-    version='0.4.2',
+    version='0.4.3',
     packages=setuptools.find_packages(exclude=['tests']),
     include_package_data=True,
 
