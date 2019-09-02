@@ -6,8 +6,9 @@
  */
 
 import Notifications from "notifications/Notifications/Notifications";
-import Updates from "updates/Updates";
-import Packages from "packages/Packages";
+import UpdateSettings from "packageManagement/updateSettings/UpdateSettings";
+import Packages from "packageManagement/packages/Packages";
+import Updates from "packageManagement/updates/Updates";
 import About from "about/About";
 
 import WiFi from "wifi/WiFi";
@@ -100,16 +101,27 @@ const PAGES = [
         ],
     },
     {
-        name: _("Updates"),
-        path: "/updates",
-        icon: "sync",
-        component: Updates,
-    },
-    {
-        name: _("Packages"),
-        path: "/packages",
+        name: _("Package management"),
+        submenuId: "package-management",
+        path: "/package-management",
         icon: "box",
-        component: Packages,
+        pages: [
+            {
+                name: _("Packages"),
+                path: "/packages",
+                component: Packages,
+            },
+            {
+                name: _("Updates"),
+                path: "/updates",
+                component: Updates,
+            },
+            {
+                name: _("Update settings"),
+                path: "/update-settings",
+                component: UpdateSettings,
+            },
+        ],
     },
     {
         name: _("Advanced administration"),

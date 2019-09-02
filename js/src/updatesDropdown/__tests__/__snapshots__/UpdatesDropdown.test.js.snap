@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<UpdatesDropdown/> Loading (spinner visible) 1`] = `
+<div>
+  <div
+    class="dropdown"
+    id="updates-dropdown"
+  >
+    <button
+      class="nav-item btn btn-link"
+      type="button"
+    >
+      <div
+        class="spinner-border spinner-border-sm"
+        role="status"
+      >
+        <span
+          class="sr-only"
+        />
+      </div>
+      <div
+        class="spinner-text"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`<UpdatesDropdown/> Updates awaiting - snapshot 1`] = `
+<div>
+  <div
+    class="dropdown"
+  >
+    <button
+      class="nav-item btn btn-link"
+      type="button"
+    >
+      <i
+        class="fa fa-sync fa-lg"
+      />
+    </button>
+    <div
+      class="dropdown-menu"
+    >
+      <div
+        class="dropdown-header"
+      >
+        <h5>
+          Approve update
+        </h5>
+      </div>
+      <div
+        class="dropdown-divider"
+      />
+      <p
+        class="dropdown-item"
+      >
+        See details in 
+        <a
+          href="/package-management/updates"
+        >
+          Updates
+        </a>
+         page.
+      </p>
+      <div
+        class="dropdown-item"
+        id="updates-dropdown-actions"
+      >
+        <button
+          class="btn btn-warning mr-3"
+          type="button"
+        >
+          Deny
+        </button>
+        <button
+          class="btn btn-primary"
+          type="button"
+        >
+          Install now
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

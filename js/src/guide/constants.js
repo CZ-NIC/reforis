@@ -9,7 +9,7 @@ import Password from "password/Password";
 import Interfaces from "interfaces/Interfaces";
 import RegionAndTime from "regionAndTime/RegionAndTime";
 import DNS from "dns/DNS";
-import Updates from "updates/Updates";
+import Updates from "packageManagement/updateSettings/UpdateSettings";
 import WAN from "wan/WAN";
 import LAN from "lan/LAN";
 

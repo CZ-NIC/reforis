@@ -74,7 +74,7 @@ DisabledUpdaterAlert.propTypes = {
 
 function DisabledUpdaterAlert() {
     const message = _(
-        `Please enable <a href="${ForisURLs.updates}">automatic updates</a> to manage packages and languages.`,
+        `Please enable <a href="${ForisURLs.packageManagement.updateSettings}">automatic updates</a> to manage packages and languages.`,
     );
     return (
         <Alert type="warning">

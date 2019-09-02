@@ -7,12 +7,14 @@
 
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-import moment from "moment";
 
 import {
     useAPIGet, useAPIPost, Button, Spinner,
 } from "foris";
 import API_URLs from "common/API";
+import toLocaleDateString from "utils/localeDate";
+
+import isUpdateAvailable from "./utils";
 
 export default function UpdateApprovals() {
     const [getState, get] = useAPIGet(API_URLs.approvals);
@@ -35,13 +37,11 @@ export default function UpdateApprovals() {
 
     if (getState.isLoading || postState.isSending) return <Spinner className="row justify-content-center" />;
 
-    if (!approval || !approval.present || approval.status !== "asked") return null;
+    if (!isUpdateAvailable(approval)) {
+        return <p>{_("There are no updates awaiting your approval.")}</p>;
+    }
 
-    const buttonMargin = {
-        marginBottom: "1rem",
-    };
-
-    const summary = babel.format(
+    const packagesNumber = babel.format(
         ngettext(
             "There is %d package to be updated.",
             "There are %d packages to be updated.",
@@ -53,11 +53,13 @@ export default function UpdateApprovals() {
         "See <a data-toggle=\"collapse\" href=\"#plan-wrapper\" role=\"button\" aria-expanded=\"false\" aria-controls=\"plan-wrapper\">details</a>",
     );
 
+    const buttonMargin = { marginBottom: "1rem" };
+
     return (
         <>
-            <h3>{babel.format(_("Approve update from %s"), moment(approval.time).format("YYYY-MM-DD HH:mm:ss"))}</h3>
-            <p dangerouslySetInnerHTML={{ __html: `${summary} ${details}` }} />
-            <div className="collapse" id="plan-wrapper">
+            <h3>{babel.format(_("Approve update from %s"), toLocaleDateString(approval.time))}</h3>
+            <p dangerouslySetInnerHTML={{ __html: `${packagesNumber} ${details}` }} />
+            <div className="collapse" id="plan-wrapper" data-testid="plan-wrapper">
                 <Plan plan={approval.plan} />
             </div>
             <Button

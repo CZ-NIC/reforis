@@ -8,23 +8,11 @@
 import PropTypes from "prop-types";
 
 const SEVERITIES = ["news", "restart", "error", "update"];
-export const NOTIFICATION_PROP_TYPES = PropTypes.shape({
+const NOTIFICATION_PROP_TYPES = PropTypes.shape({
     msg: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
     created_at: PropTypes.string.isRequired,
     displayed: PropTypes.bool.isRequired,
     severity: PropTypes.oneOf(SEVERITIES).isRequired,
 }).isRequired;
-
-const DATE_STRING_OPTIONS = {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    hour: "numeric",
-    minute: "numeric",
-    second: "numeric",
-};
-
-export function toLocaleDateString(date) {
-    return new Date(date).toLocaleDateString(ForisTranslations.locale, DATE_STRING_OPTIONS);
-}
+export default NOTIFICATION_PROP_TYPES;

@@ -12,7 +12,6 @@ exports[`<RebootDropdown/> Test with snapshot 1`] = `
     >
       <i
         class="fa fa-power-off fa-lg"
-        style="color: red;"
       />
     </button>
     <div

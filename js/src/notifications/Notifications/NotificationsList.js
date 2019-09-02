@@ -9,7 +9,8 @@ import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
 import RebootButton from "common/RebootButton";
-import { NOTIFICATION_PROP_TYPES, toLocaleDateString } from "../utils";
+import toLocaleDateString from "utils/localeDate";
+import NOTIFICATION_PROP_TYPES from "../utils";
 import NotificationIcon from "../NotificationIcon";
 import TruncatedText from "./TruncatedText";
 

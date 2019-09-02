@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<UpdateApprovals/> Loading (spinner visible) 1`] = `
+<div>
+  <div
+    class="spinner-wrapper row justify-content-center"
+  >
+    <div
+      class="spinner-border "
+      role="status"
+    >
+      <span
+        class="sr-only"
+      />
+    </div>
+    <div
+      class="spinner-text"
+    />
+  </div>
+</div>
+`;
+
+exports[`<UpdateApprovals/> No updates awaiting - automatic updates turned off 1`] = `
+<div>
+  <p>
+    There are no updates awaiting your approval.
+  </p>
+</div>
+`;
+
+exports[`<UpdateApprovals/> No updates awaiting - delayed updates 1`] = `
+<div>
+  <p>
+    There are no updates awaiting your approval.
+  </p>
+</div>
+`;
+
+exports[`<UpdateApprovals/> No updates awaiting - empty list of packages 1`] = `
+<div>
+  <p>
+    There are no updates awaiting your approval.
+  </p>
+</div>
+`;
+
+exports[`<UpdateApprovals/> Updates awaiting - snapshot 1`] = `
+<div>
+  <h3>
+    Approve update from %s
+  </h3>
+  <p>
+    There is %d package to be updated. See 
+    <a
+      aria-controls="plan-wrapper"
+      aria-expanded="false"
+      data-toggle="collapse"
+      href="#plan-wrapper"
+      role="button"
+    >
+      details
+    </a>
+  </p>
+  <div
+    class="collapse"
+    data-testid="plan-wrapper"
+    id="plan-wrapper"
+  >
+    <table
+      class="table table-hover"
+    >
+      <thead>
+        <tr>
+          <th
+            scope="col"
+          >
+            Action
+          </th>
+          <th
+            scope="col"
+          >
+            Name
+          </th>
+          <th
+            scope="col"
+          >
+            Current
+          </th>
+          <th
+            scope="col"
+          >
+            New
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <button
+    class="btn btn btn-warning offset-lg-1 col-lg-4 col-sm-12"
+    style="margin-bottom: 1rem;"
+    type="button"
+  >
+     
+     
+    Deny
+  </button>
+  <button
+    class="btn btn btn-primary col-sm-12 col-lg-4 offset-lg-2 col-lg-3"
+    style="margin-bottom: 1rem;"
+    type="button"
+  >
+     
+     
+    Install now
+  </button>
+</div>
+`;

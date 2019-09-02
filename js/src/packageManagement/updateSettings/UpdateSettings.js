@@ -15,18 +15,18 @@ import API_URLs from "common/API";
 import UpdatesForm from "./forms/UpdatesForm";
 import LicenceModal from "./LicenceModal";
 
-Updates.propTypes = {
+UpdateSettings.propTypes = {
     postCallback: PropTypes.func,
 };
 
-Updates.defaultProps = {
+UpdateSettings.defaultProps = {
     postCallback: () => undefined,
 };
 
-export default function Updates({ postCallback }) {
+export default function UpdateSettings({ postCallback }) {
     return (
         <>
-            <h1>{_("Updates")}</h1>
+            <h1>{_("Update settings")}</h1>
             <p dangerouslySetInnerHTML={{
                 __html: _(`
 One of the most important features of router Turris are automatic system updates. Thanks to this function

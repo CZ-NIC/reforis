@@ -91,7 +91,8 @@ def approvals():
     response = None
     if request.method == 'GET':
         lang_data = {'lang': _get_locale_from_backend(current_app)}
-        response = current_app.backend.perform('updater', 'get_settings', lang_data)['approval']
+        updater_settings = current_app.backend.perform('updater', 'get_settings', lang_data)
+        response = {**updater_settings['approval'], "update_automatically": updater_settings["enabled"]}
 
     elif request.method == 'POST':
         data = request.json
