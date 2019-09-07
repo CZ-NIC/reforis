@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2019-04-20 00:44+0200\n"
-"PO-Revision-Date: 2019-09-05 14:24+0000\n"
+"PO-Revision-Date: 2019-09-08 13:24+0000\n"
 "Last-Translator: Josef Schlehofer <pepe@bloodkings.eu>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/turris/reforis/cs/>"
 "\n"
@@ -316,7 +316,7 @@ msgstr "E-mailová adresa příjemce. Vícero adres oddělujte čárkami."
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/helpTexts.js:14
 msgid "Send emails about new features."
-msgstr "Posílat e-maily o nových funkcích."
+msgstr "Zasílat upozornění na nové funkce"
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/helpTexts.js:17
 msgid ""
@@ -359,16 +359,15 @@ msgstr "Nejnižší možný port je 1."
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/CommonForm.js:19
 msgid "Reboot is required"
-msgstr "Je třeba restartovat"
+msgstr "Vyžadován restart"
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/CommonForm.js:20
 msgid "Reboot or attention is required"
-msgstr "Je třeba restartovat či věnovat pozornost"
+msgstr "Vyžadován restart nebo pozornost"
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/CommonForm.js:21
 msgid "Reboot or attention is required or update was installed"
-msgstr ""
-"Je třeba restartovat či věnovat pozornost nebo byla nainstalována aktualizace"
+msgstr "Vyžadován restart, pozornost nebo byla nainstalována aktualizace"
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/CommonForm.js:46
 msgid "Recipient's email"
@@ -547,11 +546,11 @@ msgstr "DHCPv6 (automatické nastavení)"
 
 #: js/src/wan/WAN6Form.js:58
 msgid "6to4 (public IPv4 address required)"
-msgstr "6to4 (je třeba veřejné IPv4 adresy)"
+msgstr "6to4 (je potřeba mít veřejnou IPv4 adresu)"
 
 #: js/src/wan/WAN6Form.js:59
 msgid "6in4 (public IPv4 address required)"
-msgstr "6in4 (je třeba veřejné IPv4 adresy)"
+msgstr "6in4 (je potřeba mít veřejnou IPv4 adresu)"
 
 #: js/src/wan/WAN6Form.js:95
 msgid "WAN IPv6"
@@ -583,7 +582,7 @@ msgstr "Poskytovatel IPv4"
 
 #: js/src/wan/WAN6Form.js:321
 msgid "Routed IPv6 prefix"
-msgstr "Směrovaná IPv6 přepona"
+msgstr "Směrovaný IPv6 prefix"
 
 #: js/src/wan/WAN6Form.js:334
 msgid "MTU"
@@ -784,6 +783,12 @@ msgid ""
 "            wait for a while before running this test.\n"
 "        "
 msgstr ""
+"\n"
+"            Zde si můžete vyzkoušet nastavení připojení. Před spuštěním "
+"testu, nezapomeňte kliknout na tlačítko Uložit. Někdy může trvat delší dobu, "
+"než je připojení kompletně zinicializováno. A proto chvíli počkejte před "
+"spuštěním testu.\n"
+"        "
 
 #: reforis/templates/wifi.html:8
 msgid ""
@@ -795,6 +800,12 @@ msgid ""
 "        available within the form.\n"
 "    "
 msgstr ""
+"\n"
+"        Pokud chcete router používat pro připojování dalších zařízení k "
+"Internetu pomocí Wi-Fi, zapněte ji v následujícím formuláři a zvolte si SSID "
+"(název přístupového bodu) a příslušné heslo. Mobilní zařízení můžete "
+"jednoduše nastavit načtením QR kódu zobrazovaného uvnitř formuláře.\n"
+"    "
 
 #: reforis/templates/includes/navigation.html:23
 msgid "Network settings"
