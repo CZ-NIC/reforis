@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2019-04-20 00:44+0200\n"
-"PO-Revision-Date: 2019-08-29 08:58+0000\n"
+"PO-Revision-Date: 2019-09-11 14:23+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/turris/"
 "reforis/nb_NO/>\n"
@@ -74,6 +74,10 @@ msgid ""
 "configuration here, you will have the option to do so later. Until then, "
 "the root account will be blocked.)"
 msgstr ""
+"Samme passord brukes for tilgang til administrasjonsgrensesnittet, for root-"
+"bruker i LuCI-grensesnittet, og for SSH-innlogging. Bruk et sikkert passord! "
+"(Hvis du velger å ikke sette passordet for avansert oppsett her, har du "
+"valget om å gjøre det senere. Til da vil root-kontoen være blokkert.)"
 
 #: js/src/administration/Password/forms/RootPasswordForm.js:30
 msgid "Advanced administration (root) password"
@@ -207,12 +211,18 @@ msgid "This field is required."
 msgstr "Dette feltet er påkrevd."
 
 #: js/src/lan/LANForm.js:16
+#, fuzzy
 msgid ""
 "Router mode means that this devices manages the LAN (acts as a router, "
 "can assing IP addresses, ...). Computer mode means that this device acts "
 "as a client in this network. It acts in a similar way as WAN, but it has "
 "opened ports for configuration interface and other services."
 msgstr ""
+"Ruter-modus betyr at denne enheten håndterer lokalnettet (virker som en "
+"ruter, kan tildele IP-adresser, …) Datamaskinsmodus betyr at denne enheten "
+"oppfører seg som klient i dette nettverket. Den kan oppføre seg på lignende "
+"måte som WAN, men den har åpne porter for oppsettsgrensesnitt og andre "
+"tjenester."
 
 #: js/src/lan/LANForm.js:26
 msgid "Router"
@@ -239,6 +249,8 @@ msgid ""
 "Enable this option to automatically assign IP addresses to the devices "
 "connected to the router."
 msgstr ""
+"Skru på dette valget for å automatisk tildele IP-adresser til enhetene "
+"tilkoblet ruteren."
 
 #: js/src/lan/LANManagedForm.js:38
 msgid "Router IP address"
@@ -266,8 +278,9 @@ msgstr "DHCP (automatisk oppsett)"
 
 #: js/src/lan/LANUnmanagedForm.js:23 js/src/wan/WAN6Form.js:57
 #: js/src/wan/WANForm.js:24
+#, fuzzy
 msgid "Static IP address (manual configuration)"
-msgstr ""
+msgstr "Statisk IP-adresse (manuelt oppsett)"
 
 #: js/src/lan/LANUnmanagedForm.js:24
 #, fuzzy
@@ -611,8 +624,9 @@ msgid "PAP/CHAP password"
 msgstr "PAP/CHAP-passord"
 
 #: js/src/wifi/WiFi.js:37 js/src/wifi/WiFi.js:48
+#, fuzzy
 msgid "SSID can't be longer than 32 symbols"
-msgstr ""
+msgstr "SSID kan ikke være lengre enn 32 symboler"
 
 #: js/src/wifi/WiFi.js:39 js/src/wifi/WiFi.js:50
 msgid "SSID can't be empty"
@@ -629,23 +643,23 @@ msgstr "Avskrudd"
 
 #: js/src/wifi/WiFiForm.js:20
 msgid "802.11n - 20 MHz wide channel"
-msgstr ""
+msgstr "802.11n - 20 MHz vid kanal"
 
 #: js/src/wifi/WiFiForm.js:21
 msgid "802.11n - 40 MHz wide channel"
-msgstr ""
+msgstr "802.11n - 40 MHz vid kanal"
 
 #: js/src/wifi/WiFiForm.js:22
 msgid "802.11ac - 20 MHz wide channel"
-msgstr ""
+msgstr "802.11ac - 20 MHz vid kanal"
 
 #: js/src/wifi/WiFiForm.js:23
 msgid "802.11ac - 40 MHz wide channel"
-msgstr ""
+msgstr "802.11ac - 40 MHz vid kanal"
 
 #: js/src/wifi/WiFiForm.js:24
 msgid "802.11ac - 80 MHz wide channel"
-msgstr ""
+msgstr "802.11ac - 80 MHz vid kanal"
 
 #: js/src/wifi/WiFiForm.js:33
 msgid ""
@@ -697,7 +711,7 @@ msgstr "Skru på"
 
 #: js/src/wifi/WiFiForm.js:234
 msgid "auto"
-msgstr ""
+msgstr "automatisk"
 
 #: js/src/wifi/WiFiGuestForm.js:33
 msgid "Enable Guest Wifi"
