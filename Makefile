@@ -8,7 +8,6 @@
 DEV_PYTHON=python3.7
 VENV_NAME?=venv
 VENV_BIN=$(shell pwd)/$(VENV_NAME)/bin
-VENV_ACTIVATE=. $(VENV_BIN)/activate
 
 JS_DIR=./js
 
