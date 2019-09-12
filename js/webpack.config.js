@@ -5,34 +5,52 @@
  * See /LICENSE for more information.
  */
 
+const path = require("path");
+const webpack = require("webpack");
 
-const path = require('path');
-const webpack = require('webpack');
-
-module.exports = env => ({
-    mode: 'development',
-    entry: './src/app.js',
+module.exports = (env) => ({
+    mode: "development",
+    entry: "./src/app.js",
     output: {
-        filename: 'app.min.js',
-        path: path.join(__dirname, '../reforis_static/reforis/js')
+        filename: "app.min.js",
+        path: path.join(__dirname, "../reforis_static/reforis/js"),
     },
-    resolve:{
-        modules:[
-            path.resolve(__dirname,'./src'),
-            path.resolve(__dirname,'./node_modules')
-        ]
+    resolve: {
+        modules: [
+            path.resolve(__dirname, "./src"),
+            path.resolve(__dirname, "./node_modules"),
+        ],
     },
     module: {
-        rules: [{
-            test: /\.js$/,
-            exclude: /node_modules/,
-            loader: 'babel-loader'
-        }]
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: "babel-loader",
+            },
+            {
+                test: require.resolve("react"),
+                use: [
+                    {
+                        loader: "expose-loader",
+                        options: "React",
+                    },
+                ],
+            },
+            {
+                test: require.resolve("react-dom"),
+                use: [
+                    {
+                        loader: "expose-loader",
+                        options: "ReactDOM",
+                    },
+                ],
+            },
+        ],
     },
     plugins: [
         new webpack.DefinePlugin({
-            'process.env.LIGHTTPD': JSON.stringify(env.lighttpd)
-        })
-    ]
+            "process.env.LIGHTTPD": JSON.stringify(env.lighttpd),
+        }),
+    ],
 });
-

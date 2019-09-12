@@ -11,6 +11,7 @@
   "main": "./src/app.js",
   "dependencies": {
     "axios": "^0.19.0",
+    "expose-loader": "^0.7.5",
     "foris": "0.0.7",
     "immutability-helper": "^3.0.0",
     "moment": "^2.24.0",
