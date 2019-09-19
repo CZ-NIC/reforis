@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2019-04-20 00:44+0200\n"
-"PO-Revision-Date: 2019-09-08 13:24+0000\n"
-"Last-Translator: Josef Schlehofer <pepe@bloodkings.eu>\n"
+"PO-Revision-Date: 2019-09-20 19:27+0000\n"
+"Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/turris/reforis/cs/>"
 "\n"
 "Language: cs\n"
@@ -123,7 +123,7 @@ msgstr "Aktualizuje se"
 
 #: js/src/forisForm/SubmitButton.js:30
 msgid "Load settings"
-msgstr "Načítá se nastavení"
+msgstr "Načíst nastavení"
 
 #: js/src/forisForm/SubmitButton.js:33
 #, python-format
@@ -136,27 +136,27 @@ msgstr "Uložit"
 
 #: js/src/forisForm/validation.js:9
 msgid "This is not a valid IPv4 address."
-msgstr "Tohle není platná IPv4 adresa."
+msgstr "Toto není platná IPv4 adresa."
 
 #: js/src/forisForm/validation.js:10
 msgid "This is not a valid IPv6 address."
-msgstr "Tohle není platná IPv6 adresa."
+msgstr "Toto není platná IPv6 adresa."
 
 #: js/src/forisForm/validation.js:11
 msgid "This is not a valid IPv6 prefix."
-msgstr "Tohle není platný IPv6 prefix."
+msgstr "Toto není platný IPv6 prefix."
 
 #: js/src/forisForm/validation.js:12
 msgid "This is not a valid domain name."
-msgstr "Tohle není platné doménové jméno."
+msgstr "Toto není platný doménový název."
 
 #: js/src/forisForm/validation.js:13
 msgid "This is not a valid DUID."
-msgstr "Tohle není platné DUID."
+msgstr "Toto není platný DUID identifikátor."
 
 #: js/src/forisForm/validation.js:14
 msgid "This is not a valid MAC address."
-msgstr "Tohle není platná MAC adresa."
+msgstr "Toto není platná MAC adresa."
 
 #: js/src/forisForm/validation.js:15
 msgid "Doesn't contain a list of emails separated by commas."
@@ -316,7 +316,7 @@ msgstr "E-mailová adresa příjemce. Vícero adres oddělujte čárkami."
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/helpTexts.js:14
 msgid "Send emails about new features."
-msgstr "Zasílat upozornění na nové funkce"
+msgstr "Zasílat upozornění na nové funkce."
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/helpTexts.js:17
 msgid ""
@@ -689,6 +689,12 @@ msgid ""
 "usually has less interference, but the signal\n"
 "        does not carry so well indoors."
 msgstr ""
+"\n"
+"        Pásmo 2,4 GHz je v klientských zařízeních podporováno nejčastěji, "
+"ale bývá více zarušené. Pásmo 5 GHz je\n"
+"        novější standard a nemusí být podporováno všemi vámi používanými "
+"zařízeními. Obvykle bývá méně zarušené,\n"
+"        ale signál se hůře šíři uvnitř budov."
 
 #: js/src/wifi/WiFiForm.js:42
 msgid ""
@@ -700,6 +706,13 @@ msgid ""
 "        option with 20 MHz wide channel.\n"
 "    "
 msgstr ""
+"\n"
+"        Změna tohoto upraví režim fungování 802.11n/ac. 802.11n s kanály o "
+"šíři 40 MHz kanály může pomoci k vyšší\n"
+"        propustnosti, ale je náchylnější na rušení. Pokud nevíte, co zvolit, "
+"použijte výchozí volbu s kanálem šíře\n"
+"        20 MHz.\n"
+"    "
 
 #: js/src/wifi/WiFiForm.js:47
 msgid ""
@@ -712,6 +725,14 @@ msgid ""
 "tab.\n"
 "        "
 msgstr ""
+"\n"
+"        Zapíná Wi-Fi pro hosty, která je oddělená od místní sítě (LAN). "
+"Zařízením připojeným k této síti je umožněn\n"
+"        přístup do Internetu, ale už ne na ostatní zařízení a k rozhraní pro "
+"nastavování směrovače.\n"
+"        Parametry sítě pro hosty je možné nastavit na panelu „Síť pro hosty“."
+"\n"
+"        "
 
 #: js/src/wifi/WiFiForm.js:110
 msgid "Enable"
@@ -752,6 +773,21 @@ msgid ""
 "            <b>refresh the page</b> in your browser.\n"
 "        "
 msgstr ""
+"\n"
+"            Tato sekce obsahuje nastavení pro místní síť (LAN). Poskytovaná "
+"výchozí nastavení jsou použitelná pro\n"
+"            většinu sítí.\n"
+"            <br/>\n"
+"            <b>Pozn.:</b> Pokud změníte IP adresu směrovače, všechny "
+"počítače v LAN, nejspíš včetně toho, který právě\n"
+"            používáte, budou potřebovat obdržet <b>nové IP adresy</b> – což "
+"se nestane <b>hned</b>. Je doporučeno\n"
+"            po uložení změn odpojit a znovu nazpět připojit všechny kabely a "
+"vynutit tak aktualizaci.\n"
+"            Následující stránka se nezobrazí dokud neobdržíte z DHCP (pokud "
+"je zapnuté) novou IP adresu a může být třeba\n"
+"            v prohlížeči <b>stránku znovu načíst</b>.\n"
+"        "
 
 #: reforis/templates/notifications.html:8
 msgid "Notifications center"
@@ -768,6 +804,14 @@ msgid ""
 "this setting.\n"
 "        "
 msgstr ""
+"\n"
+"            Zde je možné zadat nastavení pro port do vnější sítě (WAN). "
+"Obvykle je možné ponechat tyto volby tak, jak\n"
+"            jsou, jinak podle pokynů vašeho poskytovatele připojení. Také v "
+"případě kabelových nebo xDSL modemů,\n"
+"            připojujících váš směrovač do sítě, není obvykle třeba toto "
+"nastavení měnit.\n"
+"        "
 
 #: reforis/templates/wan.html:16
 msgid "Connection test"
