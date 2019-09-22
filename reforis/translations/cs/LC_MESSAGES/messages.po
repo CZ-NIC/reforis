@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2019-04-20 00:44+0200\n"
-"PO-Revision-Date: 2019-09-20 19:27+0000\n"
+"PO-Revision-Date: 2019-09-23 14:10+0000\n"
 "Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/turris/reforis/cs/>"
 "\n"
@@ -212,14 +212,14 @@ msgid ""
 "as a client in this network. It acts in a similar way as WAN, but it has "
 "opened ports for configuration interface and other services."
 msgstr ""
-"Režim router znamená, že toto zařízení spravuje místní síť (působí jako "
-"router, může přiřazovat IP adresy, …). Režim počítač znamená, že toto "
+"Režim směrovač znamená, že toto zařízení spravuje místní síť (působí jako "
+"směrovač, může přiřazovat IP adresy, …). Režim počítač znamená, že toto "
 "zařízení působí na této síti jako klient. Působí podobně, jako na WAN, ale "
 "má otevřené porty pro rozhraní s nastaveními a další služby."
 
 #: js/src/lan/LANForm.js:26
 msgid "Router"
-msgstr "Router"
+msgstr "Směrovač"
 
 #: js/src/lan/LANForm.js:27
 msgid "Computer"
@@ -235,7 +235,7 @@ msgstr "režim místní sítě"
 
 #: js/src/lan/LANManagedForm.js:17
 msgid "Router's IP address in the inner network."
-msgstr "IP adresa routeru na vnitřní síti."
+msgstr "IP adresa směrovače na vnitřní síti."
 
 #: js/src/lan/LANManagedForm.js:18
 msgid ""
@@ -247,7 +247,7 @@ msgstr ""
 
 #: js/src/lan/LANManagedForm.js:38
 msgid "Router IP address"
-msgstr "IP adresa routeru"
+msgstr "IP adresa směrovače"
 
 #: js/src/lan/LANManagedForm.js:63
 msgid "Enable DHCP"
@@ -328,7 +328,7 @@ msgstr ""
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/helpTexts.js:20
 msgid "This is the address notifications are send from."
-msgstr "Toto je adresa ze které jsou odesílány oznámení."
+msgstr "Toto je adresa ze které jsou odesílána oznámení."
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/validator.js:27
 msgid "Can't be empty."
@@ -451,8 +451,8 @@ msgid ""
 "Useful in cases, when a specific MAC address is required by your internet"
 " service provider."
 msgstr ""
-"Užitečné v případech, kdy je pro vašeho poskytovatele připojení k Internetu "
-"potřebná konkrétní MAC adresa."
+"Užitečné v případech, kdy je vaším poskytovatelem připojení k Internetu "
+"vyžadována konkrétní MAC adresa."
 
 #: js/src/wan/MACForm.js:17
 msgid "Colon is used as a separator, for example 00:11:22:33:44:55"
@@ -500,7 +500,7 @@ msgid ""
 "This address will be used as a endpoint of the tunnel on the provider's "
 "side."
 msgstr ""
-"Tato adresa bude použit jako koncový bod tunelu na straně poskytovatele."
+"Tato adresa bude použita jako koncový bod tunelu na straně poskytovatele."
 
 #: js/src/wan/WAN6Form.js:40
 msgid "IPv6 addresses which will be routed to your network."
@@ -516,7 +516,7 @@ msgid ""
 "you need to fill in some extra fields to make it work."
 msgstr ""
 "Někteří poskytovatelé tunelů vám umožňují mít veřejnou dynamickou IPv4 "
-"adres. Ovšem aby to fungovalo, je třeba vyplnit pár dalších kolonek."
+"adresu. Ovšem aby to fungovalo, je třeba vyplnit několik dalších kolonek."
 
 #: js/src/wan/WAN6Form.js:46
 msgid "ID of your tunnel which was assigned to you by the provider."
@@ -546,11 +546,11 @@ msgstr "DHCPv6 (automatické nastavení)"
 
 #: js/src/wan/WAN6Form.js:58
 msgid "6to4 (public IPv4 address required)"
-msgstr "6to4 (je potřeba mít veřejnou IPv4 adresu)"
+msgstr "6to4 (je třeba mít veřejnou IPv4 adresu)"
 
 #: js/src/wan/WAN6Form.js:59
 msgid "6in4 (public IPv4 address required)"
-msgstr "6in4 (je potřeba mít veřejnou IPv4 adresu)"
+msgstr "6in4 (je třeba mít veřejnou IPv4 adresu)"
 
 #: js/src/wan/WAN6Form.js:95
 msgid "WAN IPv6"
@@ -578,7 +578,7 @@ msgstr "Veřejná IPv4 adresa"
 
 #: js/src/wan/WAN6Form.js:308
 msgid "Provider IPv4"
-msgstr "Poskytovatel IPv4"
+msgstr "IPv4 adresa u poskytovatele"
 
 #: js/src/wan/WAN6Form.js:321
 msgid "Routed IPv6 prefix"
@@ -618,7 +618,7 @@ msgstr "PPPoE (pro DSL mosty, modem Turris, atd.)"
 
 #: js/src/wan/WANForm.js:57
 msgid "WAN IPv4"
-msgstr "IPv6 adresa WAN"
+msgstr "IPv4 adresa WAN"
 
 #: js/src/wan/WANForm.js:115
 msgid "PAP/CHAP username"
@@ -709,7 +709,7 @@ msgstr ""
 "\n"
 "        Změna tohoto upraví režim fungování 802.11n/ac. 802.11n s kanály o "
 "šíři 40 MHz kanály může pomoci k vyšší\n"
-"        propustnosti, ale je náchylnější na rušení. Pokud nevíte, co zvolit, "
+"        propustnosti, ale je náchylnější na rušení. Pokud nevíte co zvolit, "
 "použijte výchozí volbu s kanálem šíře\n"
 "        20 MHz.\n"
 "    "
@@ -782,8 +782,8 @@ msgstr ""
 "počítače v LAN, nejspíš včetně toho, který právě\n"
 "            používáte, budou potřebovat obdržet <b>nové IP adresy</b> – což "
 "se nestane <b>hned</b>. Je doporučeno\n"
-"            po uložení změn odpojit a znovu nazpět připojit všechny kabely a "
-"vynutit tak aktualizaci.\n"
+"            po uložení změn odpojit a znovu nazpět připojit všechny kabely "
+"datové sítě a vynutit tak aktualizaci.\n"
 "            Následující stránka se nezobrazí dokud neobdržíte z DHCP (pokud "
 "je zapnuté) novou IP adresu a může být třeba\n"
 "            v prohlížeči <b>stránku znovu načíst</b>.\n"
@@ -829,9 +829,10 @@ msgid ""
 msgstr ""
 "\n"
 "            Zde si můžete vyzkoušet nastavení připojení. Před spuštěním "
-"testu, nezapomeňte kliknout na tlačítko Uložit. Někdy může trvat delší dobu, "
-"než je připojení kompletně zinicializováno. A proto chvíli počkejte před "
-"spuštěním testu.\n"
+"testu, nezapomeňte kliknout na tlačítko Uložit.\n"
+"            Někdy může trvat delší dobu, než je připojení kompletně "
+"zinicializováno. A proto před spuštěním testu chvíli\n"
+"            počkejte.\n"
 "        "
 
 #: reforis/templates/wifi.html:8
@@ -845,10 +846,11 @@ msgid ""
 "    "
 msgstr ""
 "\n"
-"        Pokud chcete router používat pro připojování dalších zařízení k "
-"Internetu pomocí Wi-Fi, zapněte ji v následujícím formuláři a zvolte si SSID "
-"(název přístupového bodu) a příslušné heslo. Mobilní zařízení můžete "
-"jednoduše nastavit načtením QR kódu zobrazovaného uvnitř formuláře.\n"
+"        Pokud chcete směrovač používat pro připojování dalších zařízení k "
+"Internetu pomocí Wi-Fi, v následujícím\n"
+"        formuláři ji zapněte a zvolte si SSID (název přístupového bodu) a "
+"příslušné heslo. Mobilní zařízení můžete\n"
+"        jednoduše nastavit načtením QR kódu zobrazovaného uvnitř formuláře.\n"
 "    "
 
 #: reforis/templates/includes/navigation.html:23
