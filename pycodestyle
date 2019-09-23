@@ -1,8 +1,2 @@
 [pycodestyle]
-# 265: space in comment
-# 402: order of imports
-ignore=E265,E402
 max-line-length=120
-
-# Migration files
-exclude=*_.py

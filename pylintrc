@@ -1,6 +1,6 @@
 
 [MASTER]
-ignore=migrations,tests,tests.py,fixtures.py
+ignore=tests,tests.py,fixtures.py
 load-plugins=
 
 [MESSAGES CONTROL]
