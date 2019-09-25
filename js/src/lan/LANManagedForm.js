@@ -8,9 +8,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { TextInput, CheckBox, validateIPv4Address } from "foris";
+import {
+    TextInput, CheckBox, validateIPv4Address, undefinedIfEmpty, withoutUndefinedKeys,
+} from "foris";
 
-import DHCPServerForm, { HELP_TEXT as DHCP_HELP_TEXT } from "common/network/DHCPServerForm";
+import DHCPServerForm, { HELP_TEXT as DHCP_HELP_TEXT, validateDHCP } from "common/network/DHCPServerForm";
 
 const HELP_TEXTS = {
     router_ip: _("Router's IP address in the inner network."),
@@ -76,18 +78,17 @@ export default function LANManagedForm({
 
                 {...props}
             />
-            {formData.dhcp.enabled
-                ? (
-                    <DHCPServerForm
-                        formData={formData.dhcp}
+            {formData.dhcp.enabled && (
+                <DHCPServerForm
+                    formData={formData.dhcp}
+                    formErrors={errors.dhcp ? errors.dhcp : {}}
 
-                        updateRule={(value) => ({ mode_managed: { dhcp: value } })}
-                        setFormValue={setFormValue}
+                    updateRule={(value) => ({ mode_managed: { dhcp: value } })}
+                    setFormValue={setFormValue}
 
-                        {...props}
-                    />
-                )
-                : null}
+                    {...props}
+                />
+            )}
         </>
     );
 }
@@ -97,5 +98,8 @@ export function validateManaged(formData) {
         router_ip: validateIPv4Address(formData.router_ip) || undefined,
         netmask: validateIPv4Address(formData.netmask) || undefined,
     };
-    return JSON.stringify(errors) !== "{}" ? errors : null;
+    if (formData.dhcp.enabled) {
+        errors.dhcp = validateDHCP(formData.dhcp);
+    }
+    return undefinedIfEmpty(withoutUndefinedKeys(errors));
 }

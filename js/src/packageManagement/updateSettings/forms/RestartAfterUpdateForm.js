@@ -8,7 +8,7 @@
 import React from "react";
 import moment from "moment";
 
-import { NumberInput, DataTimeInput } from "foris";
+import { NumberInput, DataTimeInput, undefinedIfEmpty } from "foris";
 
 const TIME_FORMAT = "HH:mm";
 
@@ -65,4 +65,18 @@ export default function RestartAfterUpdateForm({
             />
         </>
     );
+}
+
+export function validateRestartAfterUpdate(formData) {
+    const errors = {};
+    if (!moment(formData.time, "HH:mm", true).isValid()) {
+        errors.time = _("Time should be in HH:MM format.");
+    }
+    if (formData.delay > 10) {
+        errors.delay = _("Restart can be delayed by at most 10 days");
+    }
+    if (formData.delay < 0) {
+        errors.delay = _("Delay must be a positive number");
+    }
+    return undefinedIfEmpty(errors);
 }

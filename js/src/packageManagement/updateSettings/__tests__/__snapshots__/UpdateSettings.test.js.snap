@@ -193,6 +193,28 @@ available
             type="number"
             value="4"
           />
+          <div
+            class="input-group-append"
+          >
+            <button
+              aria-label="Increase"
+              class="btn btn-outline-secondary"
+              type="button"
+            >
+              <i
+                class="fas fa-plus"
+              />
+            </button>
+            <button
+              aria-label="Decrease"
+              class="btn btn-outline-secondary"
+              type="button"
+            >
+              <i
+                class="fas fa-minus"
+              />
+            </button>
+          </div>
         </div>
         <small
           class="form-text text-muted"
@@ -313,7 +335,7 @@ exports[`<UpdateSettings/> Test with snapshot enabled, delayed. 1`] = `
 - First value
 + Second value
 
-@@ -244,10 +244,35 @@
+@@ -244,10 +244,57 @@
           class=\\"form-text text-muted\\"
         >
           You have to approve the updates, otherwise they won't be installed.
@@ -341,6 +363,28 @@ exports[`<UpdateSettings/> Test with snapshot enabled, delayed. 1`] = `
 +             type=\\"number\\"
 +             value=\\"1\\"
 +           />
++           <div
++             class=\\"input-group-append\\"
++           >
++             <button
++               aria-label=\\"Increase\\"
++               class=\\"btn btn-outline-secondary\\"
++               type=\\"button\\"
++             >
++               <i
++                 class=\\"fas fa-plus\\"
++               />
++             </button>
++             <button
++               aria-label=\\"Decrease\\"
++               class=\\"btn btn-outline-secondary\\"
++               type=\\"button\\"
++             >
++               <i
++                 class=\\"fas fa-minus\\"
++               />
++             </button>
++           </div>
 +         </div>
 +       </div>
 +     </div>

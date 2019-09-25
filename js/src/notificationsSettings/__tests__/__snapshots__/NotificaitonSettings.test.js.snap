@@ -292,6 +292,28 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
             type="number"
             value="465"
           />
+          <div
+            class="input-group-append"
+          >
+            <button
+              aria-label="Increase"
+              class="btn btn-outline-secondary"
+              type="button"
+            >
+              <i
+                class="fas fa-plus"
+              />
+            </button>
+            <button
+              aria-label="Decrease"
+              class="btn btn-outline-secondary"
+              type="button"
+            >
+              <i
+                class="fas fa-minus"
+              />
+            </button>
+          </div>
         </div>
       </div>
     </div>

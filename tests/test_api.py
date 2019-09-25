@@ -37,7 +37,7 @@ def test_api_endpoints_exist(client, endpoint, module, post_is_allowed):
     url = f'/api/{endpoint}'
     response = client.get(url)
     assert response.status_code == 200
-    fake_json = {'reboots': {}, 'enabled': {}}
+    fake_json = {'reboots': {}, 'enabled': {}, 'mode': 'unmanaged'}
     response = client.post(url, json=fake_json)
 
     if post_is_allowed:
