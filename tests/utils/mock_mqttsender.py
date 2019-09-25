@@ -46,6 +46,14 @@ def send_mock(module, action, data, timeout=None, controller_id=None):
             'get': {
                 'serial': '123abcdef'
             }
+        },
+        'lan': {
+            'get_settings': {
+                'mode': 'unmanaged'
+            },
+            'update_settings': {
+                'mode': 'unmanaged'
+            }
         }
     }
     return RESPONSE_DATA.get(module, {}).get(action, {})

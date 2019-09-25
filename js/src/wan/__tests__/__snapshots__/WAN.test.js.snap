@@ -259,7 +259,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled. 1`] = `
 - First value
 + Second value
 
-@@ -236,10 +236,112 @@
+@@ -258,10 +258,112 @@
           class=\\"form-text text-muted\\"
         >
           Some tunnel providers allow you to have public dynamic IPv4. Note that you need to fill in some extra fields to make it work.
@@ -379,7 +379,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
 - First value
 + Second value
 
-@@ -110,10 +110,136 @@
+@@ -110,10 +110,158 @@
           >
             6in4 (public IPv4 address required)
           </option>
@@ -476,6 +476,28 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
 +             type=\\"number\\"
 +             value=\\"\\"
 +           />
++           <div
++             class=\\"input-group-append\\"
++           >
++             <button
++               aria-label=\\"Increase\\"
++               class=\\"btn btn-outline-secondary\\"
++               type=\\"button\\"
++             >
++               <i
++                 class=\\"fas fa-plus\\"
++               />
++             </button>
++             <button
++               aria-label=\\"Decrease\\"
++               class=\\"btn btn-outline-secondary\\"
++               type=\\"button\\"
++             >
++               <i
++                 class=\\"fas fa-minus\\"
++               />
++             </button>
++           </div>
 +         </div>
 +         <div
 +           class=\\"invalid-feedback\\"
@@ -516,7 +538,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
       </h3>
       <div
         class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
-@@ -142,10 +268,11 @@
+@@ -142,10 +290,11 @@
           Useful in cases, when a specific MAC address is required by your internet service provider.
         </small>
       </div>

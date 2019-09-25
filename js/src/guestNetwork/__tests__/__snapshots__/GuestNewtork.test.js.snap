@@ -199,6 +199,28 @@ in LAN.
             type="number"
             value="100"
           />
+          <div
+            class="input-group-append"
+          >
+            <button
+              aria-label="Increase"
+              class="btn btn-outline-secondary"
+              type="button"
+            >
+              <i
+                class="fas fa-plus"
+              />
+            </button>
+            <button
+              aria-label="Decrease"
+              class="btn btn-outline-secondary"
+              type="button"
+            >
+              <i
+                class="fas fa-minus"
+              />
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -224,6 +246,28 @@ in LAN.
             type="number"
             value="150"
           />
+          <div
+            class="input-group-append"
+          >
+            <button
+              aria-label="Increase"
+              class="btn btn-outline-secondary"
+              type="button"
+            >
+              <i
+                class="fas fa-plus"
+              />
+            </button>
+            <button
+              aria-label="Decrease"
+              class="btn btn-outline-secondary"
+              type="button"
+            >
+              <i
+                class="fas fa-minus"
+              />
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -244,11 +288,33 @@ in LAN.
           <input
             class="form-control"
             id="13"
-            min="120"
+            min="1"
             required=""
             type="number"
             value="3600"
           />
+          <div
+            class="input-group-append"
+          >
+            <button
+              aria-label="Increase"
+              class="btn btn-outline-secondary"
+              type="button"
+            >
+              <i
+                class="fas fa-plus"
+              />
+            </button>
+            <button
+              aria-label="Decrease"
+              class="btn btn-outline-secondary"
+              type="button"
+            >
+              <i
+                class="fas fa-minus"
+              />
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -479,6 +545,24 @@ in LAN.
             >
               kb/s
             </p>
+            <button
+              aria-label="Increase"
+              class="btn btn-outline-secondary"
+              type="button"
+            >
+              <i
+                class="fas fa-plus"
+              />
+            </button>
+            <button
+              aria-label="Decrease"
+              class="btn btn-outline-secondary"
+              type="button"
+            >
+              <i
+                class="fas fa-minus"
+              />
+            </button>
           </div>
         </div>
         <small
@@ -518,6 +602,24 @@ in LAN.
             >
               kb/s
             </p>
+            <button
+              aria-label="Increase"
+              class="btn btn-outline-secondary"
+              type="button"
+            >
+              <i
+                class="fas fa-plus"
+              />
+            </button>
+            <button
+              aria-label="Decrease"
+              class="btn btn-outline-secondary"
+              type="button"
+            >
+              <i
+                class="fas fa-minus"
+              />
+            </button>
           </div>
         </div>
         <small

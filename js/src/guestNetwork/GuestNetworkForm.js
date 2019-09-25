@@ -8,8 +8,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import {
+    CheckBox, TextInput, NumberInput, undefinedIfEmpty,
+} from "foris";
+
 import DHCPServerForm, { HELP_TEXT as DHCP_HELP_TEXT } from "common/network/DHCPServerForm";
-import { CheckBox, TextInput, NumberInput } from "foris";
 
 const HELP_TEXTS = {
     router_ip: _("Router's IP address in the guest inner network."),
@@ -33,6 +36,7 @@ GuestNetworkForm.propTypes = {
     formErrors: PropTypes.shape({
         ip: PropTypes.string,
         netmask: PropTypes.string,
+        qos: PropTypes.object,
     }),
     setFormValue: PropTypes.func,
 };
@@ -124,6 +128,7 @@ export default function GuestNetworkForm({
                             ? (
                                 <QoSForm
                                     formData={formData.qos}
+                                    formErrors={formErrors.qos}
                                     setFormValue={setFormValue}
 
                                     {...props}
@@ -144,15 +149,27 @@ QoSForm.propTypes = {
         upload: PropTypes.number,
     }).isRequired,
     setFormValue: PropTypes.func.isRequired,
+    formErrors: PropTypes.shape({
+        download: PropTypes.string,
+        upload: PropTypes.string,
+    }),
 };
 
-function QoSForm({ formData, setFormValue, ...props }) {
+QoSForm.defaultProps = {
+    formErrors: {},
+};
+
+function QoSForm({
+    formData, formErrors, setFormValue, ...props
+}) {
     return (
         <>
             <NumberInput
                 label={_("Download")}
                 value={formData.download}
+                error={formErrors.download}
                 helpText={HELP_TEXTS.qos.download}
+                inlineText="kb/s"
 
                 min="1"
                 required
@@ -162,15 +179,13 @@ function QoSForm({ formData, setFormValue, ...props }) {
                 )}
 
                 {...props}
-            >
-                <div className="input-group-append">
-                    <p className="input-group-text">kb/s</p>
-                </div>
-            </NumberInput>
+            />
             <NumberInput
                 label={_("Upload")}
                 value={formData.upload}
+                error={formErrors.upload}
                 helpText={HELP_TEXTS.qos.upload}
+                inlineText="kb/s"
                 min="1"
                 required
 
@@ -179,11 +194,18 @@ function QoSForm({ formData, setFormValue, ...props }) {
                 )}
 
                 {...props}
-            >
-                <div className="input-group-append">
-                    <p className="input-group-text">kb/s</p>
-                </div>
-            </NumberInput>
+            />
         </>
     );
+}
+
+export function validateQoS(formData) {
+    const errors = {};
+    if (formData.download < 1) {
+        errors.download = _("Download speed must be positive");
+    }
+    if (formData.upload < 1) {
+        errors.upload = _("Upload speed must be positive");
+    }
+    return undefinedIfEmpty(errors);
 }

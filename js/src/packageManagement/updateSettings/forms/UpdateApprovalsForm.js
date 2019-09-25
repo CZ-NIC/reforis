@@ -8,7 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { RadioSet, NumberInput } from "foris";
+import { RadioSet, NumberInput, undefinedIfEmpty } from "foris";
 
 const UPDATE_APPROVALS_CHOICES = [
     {
@@ -34,9 +34,18 @@ UpdateApprovalsForm.propTypes = {
         status: PropTypes.string,
         delay: PropTypes.number,
     }),
+    formErrors: PropTypes.shape({
+        delay: PropTypes.string,
+    }),
 };
 
-export default function UpdateApprovalsForm({ formData, setFormValue, ...props }) {
+UpdateApprovalsForm.defaultProps = {
+    formErrors: {},
+};
+
+export default function UpdateApprovalsForm({
+    formData, formErrors, setFormValue, ...props
+}) {
     return (
         <>
             <h4>{_("Update approvals")}</h4>
@@ -63,6 +72,7 @@ export default function UpdateApprovalsForm({ formData, setFormValue, ...props }
                 <NumberInput
                     label={_("Delayed updates (hours)")}
                     value={formData.delay}
+                    error={formErrors.delay}
                     min="1"
                     max="168"
 
@@ -75,4 +85,12 @@ export default function UpdateApprovalsForm({ formData, setFormValue, ...props }
             ) : null}
         </>
     );
+}
+
+export function validateUpdateApprovals(formData) {
+    const errors = {};
+    if (formData.delay < 1 || formData.delay > 168) {
+        errors.delay = _("Updates must be delayed by least 1 hour and at most by 168 hours");
+    }
+    return undefinedIfEmpty(errors);
 }

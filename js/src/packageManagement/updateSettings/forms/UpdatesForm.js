@@ -7,9 +7,9 @@
 
 import React from "react";
 
-import { CheckBox } from "foris";
-import RestartAfterUpdateForm from "./RestartAfterUpdateForm";
-import UpdateApprovalsForm from "./UpdateApprovalsForm";
+import { CheckBox, undefinedIfEmpty, withoutUndefinedKeys } from "foris";
+import RestartAfterUpdateForm, { validateRestartAfterUpdate } from "./RestartAfterUpdateForm";
+import UpdateApprovalsForm, { validateUpdateApprovals } from "./UpdateApprovalsForm";
 
 UpdatesForm.defaultProps = {
     formErrors: {},
@@ -32,6 +32,7 @@ export default function UpdatesForm({
                 ? (
                     <UpdateApprovalsForm
                         formData={formData.approval_settings}
+                        formErrors={formErrors.approval_settings}
 
                         setFormValue={setFormValue}
 
@@ -48,4 +49,14 @@ export default function UpdatesForm({
             />
         </>
     );
+}
+
+export function validateUpdates(formData) {
+    const errors = {
+        reboots: validateRestartAfterUpdate(formData.reboots),
+    };
+    if (formData.enabled) {
+        errors.approval_settings = validateUpdateApprovals(formData.approval_settings);
+    }
+    return undefinedIfEmpty(withoutUndefinedKeys(errors));
 }

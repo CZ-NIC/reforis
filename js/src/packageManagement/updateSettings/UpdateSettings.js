@@ -6,13 +6,12 @@
  */
 
 import React from "react";
-import moment from "moment";
 import PropTypes from "prop-types";
 
 import { ForisForm } from "foris";
 import API_URLs from "common/API";
 
-import UpdatesForm from "./forms/UpdatesForm";
+import UpdatesForm, { validateUpdates } from "./forms/UpdatesForm";
 import LicenceModal from "./LicenceModal";
 
 UpdateSettings.propTypes = {
@@ -49,7 +48,7 @@ available <a href="" data-toggle="modal" data-target="#licenceModal">here</a>.
                 prepData={prepData}
                 prepDataToSubmit={prepDataToSubmit}
                 postCallback={postCallback}
-                validator={validator}
+                validator={validateUpdates}
             >
                 <UpdatesForm />
             </ForisForm>
@@ -69,11 +68,4 @@ function prepDataToSubmit(formData) {
         delete formData.user_lists;
     } else if (formData.approval_settings.status !== "delayed") delete formData.approval_settings.delay;
     return formData;
-}
-
-function validator(formData) {
-    const rebootErrors = {};
-    if (!moment(formData.reboots.time, "HH:mm", true).isValid()) rebootErrors.time = _("Time should be in HH:MM format.");
-    if (formData.reboots.delay < 0 || formData.reboots.delay > 10) rebootErrors.delay = _("Number of days that must pass between receiving the request for restart and the automatic restart itself.");
-    return rebootErrors.time || rebootErrors.delay ? { reboots: rebootErrors } : undefined;
 }

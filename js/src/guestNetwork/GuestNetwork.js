@@ -8,10 +8,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { ForisForm, validateIPv4Address, ForisURLs } from "foris";
-import API_URLs from "common/API";
+import {
+    ForisForm, validateIPv4Address, ForisURLs, undefinedIfEmpty, withoutUndefinedKeys,
+} from "foris";
 
-import GuestNetworkForm from "./GuestNetworkForm";
+import API_URLs from "common/API";
+import GuestNetworkForm, { validateQoS } from "./GuestNetworkForm";
 import GuestNetworkDHCPClientsList from "./GuestNetworkDHCPClientsList";
 
 GuestNetwork.propTypes = {
@@ -71,5 +73,8 @@ export function validator(formData) {
         ip: validateIPv4Address(formData.ip),
         netmask: validateIPv4Address(formData.netmask),
     };
-    return errors.ip || errors.netmask ? errors : undefined;
+    if (formData.qos.enabled) {
+        errors.qos = validateQoS(formData.qos);
+    }
+    return undefinedIfEmpty(withoutUndefinedKeys(errors));
 }
