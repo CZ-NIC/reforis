@@ -42,6 +42,8 @@ all:
 	@echo "    Update locale messages from .pot file."
 	@echo "make compile-messages"
 	@echo "    Compile locale messages."
+	@echo "make docs"
+	@echo "    Build documentation."
 	@echo "make timezones"
 	@echo "    Generate JS file with timezones."
 	@echo "make clean"

@@ -38,6 +38,7 @@
     "babel-loader": "^8.0.6",
     "babel-plugin-react-transform": "^3.0.0",
     "babel-polyfill": "^6.26.0",
+    "core-js": "^3.2.1",
     "css-loader": "^3.0.0",
     "eslint": "^6.1.0",
     "eslint-config-airbnb": "^18.0.1",
@@ -50,7 +51,7 @@
     "jest": "^24.8.0",
     "jest-mock-axios": "^3.0.0",
     "moment-timezone": "^0.5.25",
-    "react-styleguidist": "^9.1.11",
+    "react-styleguidist": "^9.1.16",
     "snapshot-diff": "^0.5.1",
     "style-loader": "^0.23.1",
     "webpack": "^4.33.0",
@@ -64,7 +65,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --colors",
-    "docs": "npx styleguidist build ",
+    "docs": "npx styleguidist build",
     "docs:watch": "styleguidist server"
   }
 }
