@@ -8,7 +8,7 @@
 const path = require("path");
 
 module.exports = {
-    title: "Foris JS docs",
+    title: "reForis JS docs",
     sections: [
         {
             name: "Introduction",
