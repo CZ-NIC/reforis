@@ -12,6 +12,9 @@ module.exports = {
         "<rootDir>/src/testUtils",
         "<rootDir>/src/",
     ],
+    moduleNameMapper: {
+        "\\.(css|less)$": "<rootDir>/src/__mocks__/styleMock.js",
+    },
     clearMocks: true,
     collectCoverageFrom: ["src/**/*.{js,jsx}"],
     coverageDirectory: "coverage",
