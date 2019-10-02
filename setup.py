@@ -6,9 +6,7 @@
 #  See /LICENSE for more information.
 
 import copy
-import os
 import pathlib
-import re
 
 import setuptools
 from setuptools.command.build_py import build_py
@@ -18,43 +16,15 @@ BASE_DIR = pathlib.Path(__file__).absolute().parent
 
 class CustomBuild(build_py):
     def run(self):
+        # build package
         build_py.run(self)
-        self.npm_install_and_build()
-        self.copy_translations_from_forisjs()
-        self.compile_translations()
 
-    def npm_install_and_build(self):
-        os.system(f'cd {BASE_DIR}/js; npm install --save-dev')
-        build_dir = BASE_DIR / self.build_lib / 'reforis_static/reforis/js'
-        os.system(f'cd {BASE_DIR}/js; npm run-script build -- -o {build_dir}/app.min.js')
-
-    def copy_translations_from_forisjs(self):
-        for po in BASE_DIR.glob('js/node_modules/foris/translations/*/LC_MESSAGES/forisjs.po'):
-            lang = pathlib.Path(po).parent.parent.name
-            path_to_copy = BASE_DIR / f'reforis/translations/{lang}/LC_MESSAGES/forisjs.po'
-            os.system(f'cp {po} {path_to_copy}')
-
-    def compile_translations(self):
-        def compile_language(domain, path):
-            from babel.messages import frontend as babel
-            distribution = copy.copy(self.distribution)
-            cmd = babel.compile_catalog(distribution)
-            cmd.input_file = str(path)
-            lang = re.match(r".*/reforis/translations/([^/]+)/LC_MESSAGES/.*po", str(path)).group(1)
-            out_path = BASE_DIR / self.build_lib / f"reforis/translations/{lang}/LC_MESSAGES/{domain}.mo"
-            out_path.parent.mkdir(parents=True, exist_ok=True)
-            cmd.output_file = str(out_path)
-            cmd.domain = domain
-            cmd.ensure_finalized()
-            cmd.run()
-
-        def compile_domain(domain):
-            for path in BASE_DIR.glob(f'reforis/translations/*/LC_MESSAGES/{domain}.po'):
-                compile_language(domain, path)
-
-        compile_domain('messages')
-        compile_domain('tzinfo')
-        compile_domain('forisjs')
+        from reforis_distutils import ForisBuild
+        cmd = ForisBuild(copy.copy(self.distribution))
+        cmd.root_path = BASE_DIR
+        cmd.build_lib = self.build_lib
+        cmd.ensure_finalized()
+        cmd.run()
 
 
 setuptools.setup(
@@ -65,7 +35,9 @@ setuptools.setup(
 
     description='The reForis, redesigned Foris router configuration web interface.',
     long_description='',
-    author='Bogdan Bodnar',
+    url='https://gitlab.labs.nic.cz/turris/reforis/reforis',
+    author='CZ.NIC, z. s. p. o.',
+    author_email='bogdan.bodnar@nic.cz',
 
     # All versions are fixed just for case. Once in while try to check for new versions.
     install_requires=[
@@ -79,6 +51,10 @@ setuptools.setup(
 
     setup_requires=[
         'Babel',
+        'reforis_distutils',
+    ],
+    dependency_links=[
+        "git+https://gitlab.labs.nic.cz/turris/reforis/reforis-distutils.git#egg=reforis-distutils",
     ],
 
     # Do not use test_require or build_require, because then it's not installed and is
