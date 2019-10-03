@@ -3,7 +3,6 @@
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
 
-
 """
 Flask-Babel can’t process JS codes in real-time because the entire JS code runs on the client machine in a browser. A
 solution is using a small JavaScript library called babel.js. It’s a simple library that provides a gettext-like
@@ -28,10 +27,10 @@ class TranslationsHelper(Translations):
     See :func:`locale.get_timezone_translations` for examples.
     """
 
-    def __init__(self, *args, **kwargs):
-        super(TranslationsHelper, self).__init__(*args, **kwargs)
+    @property
+    def catalog(self):
         locale = self._info['language']
-        self.catalog = {
+        return {
             'locale': locale,
             'plural_expr': get_plural(locale)[1],
             'domain': self.domain,
@@ -60,22 +59,40 @@ class TranslationsHelper(Translations):
 
 def get_translations():
     return {
-        'babel_catalog': _get_translations('messages').json_catalog,
+        'babel_catalog': _get_translations('messages', with_plugins=True).json_catalog,
         'babel_forisjs_catalog': _get_translations('forisjs').json_catalog,
         'babel_tzinfo_catalog': _get_translations('tzinfo').json_catalog,
     }
 
 
-def _get_translations(domain):
+def _get_translations(domain, with_plugins=False):
     """
     Load translations by domain into :class:`locale.TranslationsHelper` object.
 
     :return: TranslationsHelper
     """
     babel = current_app.extensions['babel']
-    return TranslationsHelper.load(
+    translations = TranslationsHelper.load(
         # There is only one directory with translations in Foris so it's OK.
         next(babel.translation_directories),
         [get_locale()],
         domain
     )
+
+    if with_plugins:
+        for translation in _get_plugins_translations(domain):
+            translations.add(translation)
+
+    return translations
+
+
+def _get_plugins_translations(domain):
+    translations = []
+    for translation_path in current_app.plugin_translations:
+        translation = Translations.load(
+            translation_path,
+            [get_locale()],
+            domain
+        )
+        translations.append(translation)
+    return translations

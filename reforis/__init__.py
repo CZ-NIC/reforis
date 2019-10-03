@@ -163,8 +163,10 @@ def register_plugins(app):
 
     plugins = get_plugins()
 
+    app.plugin_translations = []
     for plugin in plugins:
         app.register_blueprint(plugin['blueprint'])
+        app.plugin_translations.append(plugin['translations_path'])
 
     @app.context_processor
     def add_plugins_to_ctx():
