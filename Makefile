@@ -70,6 +70,7 @@ install: setup.py
 	$(ROUTER_PYTHON) -m pip install -e .
 install-with-lighttpd:
 	opkg update
+	opkg install git git-http
 	opkg install reforis
 	easy_install-3.6 pip
 	pip uninstall reforis -y
