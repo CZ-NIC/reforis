@@ -11,7 +11,9 @@ VENV_BIN=$(shell pwd)/$(VENV_NAME)/bin
 
 JS_DIR=./js
 
-ROUTER_PYTHON=python3.6
+ROUTER_PYTHON_VERSION=3.6
+ROUTER_PYTHON=python$(ROUTER_PYTHON_VERSION)
+
 FLASK=flask
 
 export FLASK_APP=reforis:create_app('dev')
@@ -72,11 +74,11 @@ install-with-lighttpd:
 	opkg update
 	opkg install git git-http
 	opkg install reforis
-	easy_install-3.6 pip
+	easy_install-$(ROUTER_PYTHON_VERSION) pip
 	pip uninstall reforis -y
 	pip install -e .
-	rm -rf /usr/lib/python3.6/site-packages/reforis_static
-	ln -sf /tmp/reforis/reforis_static /usr/lib/python3.6/site-packages/reforis_static
+	rm -rf /usr/lib/$(ROUTER_PYTHON)/site-packages/reforis_static
+	ln -sf /tmp/reforis/reforis_static /usr/lib/$(ROUTER_PYTHON)/site-packages/reforis_static
 	/etc/init.d/lighttpd restart
 install-js: js/package.json
 	cd $(JS_DIR); npm install --save-dev
