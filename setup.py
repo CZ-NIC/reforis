@@ -39,7 +39,6 @@ setuptools.setup(
     author='CZ.NIC, z. s. p. o.',
     author_email='bogdan.bodnar@nic.cz',
 
-    # All versions are fixed just for case. Once in while try to check for new versions.
     install_requires=[
         'flask',
         'Babel',
