@@ -68,3 +68,18 @@ def guide_redirect():
     web_data = current_app.backend.perform('web', 'get_data')
     if web_data['guide']['enabled']:
         return redirect(url_for('ForisGuide.index'))
+
+
+@views.after_request
+def remove_old_foris_ws_cookie(response):
+    """
+    It just fixes bug with infinity page refreshing loop. It can be deleted when old WS auth approach is disabled.
+    """
+    for cookie in ('foris.ws.session', 'foris.session'):
+        delete_cookie(response, cookie)
+    return response
+
+
+def delete_cookie(response, cookie_name):
+    if cookie_name in request.cookies:
+        response.set_cookie(cookie_name, '', expires=0)
