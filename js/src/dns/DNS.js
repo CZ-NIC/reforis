@@ -53,9 +53,10 @@ this is a serious flaw on their side.
                 }}
                 postCallback={postCallback}
                 validator={validator}
+                prepData={prepData}
                 prepDataToSubmit={prepDataToSubmit}
             >
-                <DNSForm />
+                <DNSForm ws={ws} />
             </ForisForm>
 
             <h1>{_("Connection test")}</h1>
@@ -80,8 +81,14 @@ function validator(formData) {
     return error.dns_from_dhcp_domain ? error : undefined;
 }
 
+function prepData(formData) {
+    if (formData.forwarder === "") formData.forwarder = "null";
+    return formData;
+}
+
 function prepDataToSubmit(formData) {
     delete formData.available_forwarders;
     if (!formData.forwarding_enabled) delete formData.forwarder;
+    if (formData.forwarder === "null") formData.forwarder = "";
     return formData;
 }

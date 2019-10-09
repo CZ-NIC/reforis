@@ -8,9 +8,10 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-import { CheckBox, Select, TextInput } from "foris";
+import { CheckBox, TextInput, WebSockets } from "foris";
 
 import DNSSECDisableModal from "./DNSSECDisableModal";
+import Forwarders from "./Forwarders/Forwarders";
 
 const HELP_TEXTS = {
     dns_from_dhcp_enabled: _("This will enable your DNS resolver to place DHCP client's names among the local DNS records."),
@@ -35,10 +36,11 @@ DNSForm.propTypes = {
         dns_from_dhcp_domain: PropTypes.string,
     }),
     setFormValue: PropTypes.func,
+    ws: PropTypes.instanceOf(WebSockets),
 };
 
 export default function DNSForm({
-    formData, formErrors, setFormValue, ...props
+    formData, formErrors, setFormValue, ws, ...props
 }) {
     const [DNSSECModalShown, setDNSSECModalShown] = useState(false);
 
@@ -75,14 +77,14 @@ export default function DNSForm({
             />
             {formData.forwarding_enabled
                 ? (
-                    <Select
-                        label={_("DNS Forwarder")}
-                        value={formData.forwarder}
-                        choices={getForwardersChoices(formData.available_forwarders)}
-                        onChange={setFormValue((value) => ({ forwarder: { $set: value } }))}
-
-                        {...props}
-                    />
+                    <>
+                        <Forwarders
+                            value={formData.forwarder}
+                            setFormValue={setFormValue}
+                            ws={ws}
+                            {...props}
+                        />
+                    </>
                 )
                 : null}
             <CheckBox
@@ -119,14 +121,5 @@ export default function DNSForm({
                 )
                 : null}
         </>
-    );
-}
-
-function getForwardersChoices(available_forwarders) {
-    return available_forwarders.reduce(
-        (choices, forwarder) => {
-            choices[forwarder.name] = forwarder.name === "" ? _("Use provider's DNS resolver") : forwarder.description;
-            return choices;
-        }, {},
     );
 }
