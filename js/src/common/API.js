@@ -21,12 +21,16 @@ const API_URLs = new Proxy({
     wifiReset: "/wifi-reset",
     wan: "/wan",
     lan: "/lan",
-    dns: "/dns",
     interfaces: "/interfaces",
     guestNetwork: "/guest-network",
 
+    dns: "/dns",
+    dnsForwarders: "/dns/forwarders",
+    dnsForwarder: "/dns/forwarder",
+    dnsDeleteForwarder: "/dns/delete-forwarder",
+
     connectionTest: "/connection-test",
-    dnsTest: "/dns-test",
+    dnsTest: "/dns/test",
 
     // Administration
     password: "/password",

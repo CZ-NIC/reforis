@@ -1,4 +1,4 @@
-from flask import current_app, jsonify
+from flask import current_app, jsonify, request
 
 from reforis.foris_controller_api.utils import _foris_controller_settings_call
 
@@ -29,6 +29,23 @@ def dns_test():
     return jsonify(response)
 
 
+def forwarders():
+    response = current_app.backend.perform('dns', 'list_forwarders')
+    return jsonify(response)
+
+
+def forwarder():
+    data = request.json
+    response = current_app.backend.perform('dns', 'set_forwarder', data)
+    return jsonify(response)
+
+
+def delete_forwarder():
+    data = request.json
+    response = current_app.backend.perform('dns', 'del_forwarder', data)
+    return jsonify(response)
+
+
 # pylint: disable=invalid-name
 views = [
     {
@@ -36,8 +53,21 @@ views = [
         'view_func': dns,
         'methods': ['GET', 'POST'],
     }, {
-        'rule': '/dns-test',
+        'rule': '/dns/test',
         'view_func': dns_test,
+        'methods': ['POST']
+    }, {
+        'rule': '/dns/forwarders',
+        'view_func': forwarders,
+        'methods': ['GET']
+    }, {
+        'rule': '/dns/forwarder',
+        'view_func': forwarder,
+        'methods': ['POST', 'DELETE']
+    },
+    {
+        'rule': '/dns/delete-forwarder',
+        'view_func': delete_forwarder,
         'methods': ['POST']
     }
 ]
