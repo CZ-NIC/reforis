@@ -101,7 +101,7 @@ const PAGES = [
         ],
     },
     {
-        name: _("Package management"),
+        name: _("Package Management"),
         submenuId: "package-management",
         path: "/package-management",
         icon: "box",
@@ -117,14 +117,14 @@ const PAGES = [
                 component: Updates,
             },
             {
-                name: _("Update settings"),
+                name: _("Update Settings"),
                 path: "/update-settings",
                 component: UpdateSettings,
             },
         ],
     },
     {
-        name: _("Advanced administration"),
+        name: _("Advanced Administration"),
         path: ForisURLs.luci,
         icon: "cog",
         isLinkOutside: true,
