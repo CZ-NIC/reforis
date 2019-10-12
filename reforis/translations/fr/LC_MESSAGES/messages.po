@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2019-04-20 00:44+0200\n"
-"PO-Revision-Date: 2019-09-29 15:56+0000\n"
-"Last-Translator: Michal Čihař <michal@cihar.com>\n"
+"PO-Revision-Date: 2019-10-14 11:04+0000\n"
+"Last-Translator: ButterflyOfFire <ButterflyOfFire@protonmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/turris/reforis/fr/"
 ">\n"
 "Language: fr\n"
@@ -26,15 +26,15 @@ msgstr ""
 
 #: js/src/administration/Password/Password.js:61
 msgid "Password was successfully changed"
-msgstr ""
+msgstr "Le mot de passe a été changé avec succès"
 
 #: js/src/administration/Password/Password.js:100
 msgid "Password settings"
-msgstr ""
+msgstr "Paramètres du mot de passe"
 
 #: js/src/administration/Password/validator.js:21
 msgid "Password can't be empty."
-msgstr ""
+msgstr "Le mot de passe ne peut pas être vide."
 
 #: js/src/administration/Password/validator.js:24
 msgid "Password should have min 6 symbols."
@@ -50,7 +50,7 @@ msgstr "Mot de passe actuel de Foris"
 
 #: js/src/administration/Password/forms/ForisPasswordForm.js:30
 msgid "Foris password"
-msgstr ""
+msgstr "Mot de passe Foris"
 
 #: js/src/administration/Password/forms/ForisPasswordForm.js:31
 msgid "Set your password for this administration interface."
@@ -58,7 +58,7 @@ msgstr ""
 
 #: js/src/administration/Password/forms/ForisPasswordForm.js:34
 msgid "New Foris password"
-msgstr ""
+msgstr "Nouveau mot de passe Foris"
 
 #: js/src/administration/Password/forms/ForisPasswordForm.js:46
 msgid "Use same password for advanced administration (root)"
@@ -92,11 +92,11 @@ msgstr "Région et heure"
 
 #: js/src/connectionTest/ConnectionTestButton.js:23
 msgid "Test is running..."
-msgstr ""
+msgstr "Le test est en cours d’exécution …"
 
 #: js/src/connectionTest/ConnectionTestButton.js:26
 msgid "Test connection again"
-msgstr ""
+msgstr "Tester à nouveau la connexion"
 
 #: js/src/connectionTest/ConnectionTestButton.js:29
 msgid "Test connection"
@@ -104,19 +104,19 @@ msgstr ""
 
 #: js/src/connectionTest/ConnectionTestResult.js:12
 msgid "IPv4 connectivity"
-msgstr ""
+msgstr "Connectivité IPv4"
 
 #: js/src/connectionTest/ConnectionTestResult.js:13
 msgid "IPv4 gateway connectivity"
-msgstr ""
+msgstr "Connectivité de la passerelle IPv4"
 
 #: js/src/connectionTest/ConnectionTestResult.js:14
 msgid "IPv6 connectivity"
-msgstr ""
+msgstr "Connectivité IPv6"
 
 #: js/src/connectionTest/ConnectionTestResult.js:15
 msgid "IPv6 gateway connectivity"
-msgstr ""
+msgstr "Connectivité de la passerelle IPv6"
 
 #: js/src/forisForm/SubmitButton.js:27
 msgid "Updating"
@@ -183,7 +183,7 @@ msgstr ""
 
 #: js/src/forisForm/networkForms/StaticForm.js:36
 msgid "IP address"
-msgstr ""
+msgstr "Adresse IP"
 
 #: js/src/forisForm/networkForms/StaticForm.js:48
 #: js/src/lan/LANManagedForm.js:51
@@ -196,11 +196,11 @@ msgstr "Passerelle"
 
 #: js/src/forisForm/networkForms/StaticForm.js:72 js/src/wan/WAN6Form.js:235
 msgid "DNS server 1"
-msgstr ""
+msgstr "Serveur DNS 1"
 
 #: js/src/forisForm/networkForms/StaticForm.js:84 js/src/wan/WAN6Form.js:247
 msgid "DNS server 2"
-msgstr ""
+msgstr "Serveur DNS 2"
 
 #: js/src/forisForm/networkForms/StaticForm.js:110 js/src/wan/MACForm.js:78
 #: js/src/wan/WAN6Form.js:477 js/src/wan/WAN6Form.js:512
@@ -226,7 +226,7 @@ msgstr "Ordinateur"
 
 #: js/src/lan/LANForm.js:52
 msgid "LAN Settings"
-msgstr ""
+msgstr "Paramètres LAN"
 
 #: js/src/lan/LANForm.js:54
 msgid "LAN mode"
@@ -295,7 +295,7 @@ msgstr "Notifications"
 #: js/src/notifications/NotificationsCenter/NotificationsCenter.js:41
 #: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:26
 msgid "No notifications"
-msgstr ""
+msgstr "Aucune notification"
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/helpTexts.js:9
 msgid ""
@@ -339,15 +339,15 @@ msgstr ""
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/validator.js:47
 msgid "Port is an number."
-msgstr ""
+msgstr "Le port est un numéro."
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/validator.js:49
 msgid "Maximum port is 65535."
-msgstr ""
+msgstr "Le port maximum est 65535."
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/validator.js:51
 msgid "Minimum port is 1."
-msgstr ""
+msgstr "Le port minimum est 1."
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/CommonForm.js:19
 msgid "Reboot is required"
@@ -355,7 +355,7 @@ msgstr "Un redémarrage est nécessaire"
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/CommonForm.js:20
 msgid "Reboot or attention is required"
-msgstr ""
+msgstr "Un redémarrage ou une attention particulière est requise"
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/CommonForm.js:21
 msgid "Reboot or attention is required or update was installed"
@@ -383,11 +383,11 @@ msgstr "Personnalisé"
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/NotificationsEmailSettingsForm.js:53
 msgid "Email notifications settings"
-msgstr ""
+msgstr "Paramètres des notifications par e-mail"
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/NotificationsEmailSettingsForm.js:55
 msgid "Enable email notifications"
-msgstr ""
+msgstr "Activer les notifications par e-mail"
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/NotificationsEmailSettingsForm.js:67
 msgid "SMTP provider"
@@ -399,15 +399,15 @@ msgstr ""
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/SMTPCustomForm.js:21
 msgid "SSL"
-msgstr ""
+msgstr "SSL"
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/SMTPCustomForm.js:22
 msgid "STARTTLS"
-msgstr ""
+msgstr "STARTTLS"
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/SMTPCustomForm.js:53
 msgid "SMTP settings"
-msgstr ""
+msgstr "Paramètres SMTP"
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/SMTPCustomForm.js:55
 msgid "Sender address (From)"
@@ -415,19 +415,19 @@ msgstr ""
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/SMTPCustomForm.js:67
 msgid "Server address"
-msgstr ""
+msgstr "Adresse du serveur"
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/SMTPCustomForm.js:78
 msgid "Server port"
-msgstr ""
+msgstr "Port du serveur"
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/SMTPCustomForm.js:89
 msgid "Security"
-msgstr ""
+msgstr "Sécurité"
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/SMTPCustomForm.js:98
 msgid "User"
-msgstr ""
+msgstr "Utilisateur"
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/SMTPCustomForm.js:106
 #: js/src/wifi/WiFiGuestForm.js:59
@@ -450,15 +450,15 @@ msgstr ""
 
 #: js/src/wan/MACForm.js:45
 msgid "MAC"
-msgstr ""
+msgstr "MAC"
 
 #: js/src/wan/MACForm.js:47
 msgid "Custom MAC address"
-msgstr ""
+msgstr "Adresse MAC personnalisée"
 
 #: js/src/wan/MACForm.js:59
 msgid "MAC address"
-msgstr ""
+msgstr "Adresse MAC"
 
 #: js/src/wan/WAN6Form.js:24
 msgid "DUID which will be provided to the DHCPv6 server."
@@ -517,19 +517,19 @@ msgstr ""
 
 #: js/src/wan/WAN6Form.js:55
 msgid "Disable IPv6"
-msgstr ""
+msgstr "Désactiver IPv6"
 
 #: js/src/wan/WAN6Form.js:56
 msgid "DHCPv6 (automatic configuration)"
-msgstr ""
+msgstr "DHCPv6 (configuration automatique)"
 
 #: js/src/wan/WAN6Form.js:58
 msgid "6to4 (public IPv4 address required)"
-msgstr ""
+msgstr "6to4 (adresse IPv4 publique requise)"
 
 #: js/src/wan/WAN6Form.js:59
 msgid "6in4 (public IPv4 address required)"
-msgstr ""
+msgstr "6in4 (adresse IPv4 publique requise)"
 
 #: js/src/wan/WAN6Form.js:95
 msgid "WAN IPv6"
@@ -537,7 +537,7 @@ msgstr ""
 
 #: js/src/wan/WAN6Form.js:97
 msgid "IPv6 protocol"
-msgstr ""
+msgstr "Protocole IPv6"
 
 #: js/src/wan/WAN6Form.js:162
 msgid "Custom DUID"
@@ -545,27 +545,27 @@ msgstr ""
 
 #: js/src/wan/WAN6Form.js:197
 msgid "Address"
-msgstr ""
+msgstr "Adresse"
 
 #: js/src/wan/WAN6Form.js:222
 msgid "Prefix"
-msgstr ""
+msgstr "Préfixe"
 
 #: js/src/wan/WAN6Form.js:273
 msgid "Public IPv4"
-msgstr ""
+msgstr "IPv4 publique"
 
 #: js/src/wan/WAN6Form.js:308
 msgid "Provider IPv4"
-msgstr ""
+msgstr "Fournisseur IPv4"
 
 #: js/src/wan/WAN6Form.js:321
 msgid "Routed IPv6 prefix"
-msgstr ""
+msgstr "Préfixe IPv6 routé"
 
 #: js/src/wan/WAN6Form.js:334
 msgid "MTU"
-msgstr ""
+msgstr "MTU"
 
 #: js/src/wan/WAN6Form.js:392
 msgid "Tunnel ID"
@@ -573,23 +573,23 @@ msgstr ""
 
 #: js/src/wan/WAN6Form.js:405
 msgid "Username"
-msgstr ""
+msgstr "Nom d’utilisateur"
 
 #: js/src/wan/WAN6Form.js:418
 msgid "Key"
-msgstr ""
+msgstr "Clé"
 
 #: js/src/wan/WAN6Form.js:487
 msgid "Public IPv4 address is required."
-msgstr ""
+msgstr "Une adresse IPv4 publique est requise."
 
 #: js/src/wan/WAN6Form.js:505
 msgid "MTU should be a number in range of 1280-1500."
-msgstr ""
+msgstr "MTU devrait être un nombre compris entre 1280 et 1500."
 
 #: js/src/wan/WAN6Form.js:507
 msgid "MTU should be in range of 1280-1500."
-msgstr ""
+msgstr "MTU devrait être comprise entre 1280-1500."
 
 #: js/src/wan/WANForm.js:25
 msgid "PPPoE (for DSL bridges, Modem Turris, etc.)"
@@ -613,15 +613,15 @@ msgstr ""
 
 #: js/src/wifi/WiFi.js:39 js/src/wifi/WiFi.js:50
 msgid "SSID can't be empty"
-msgstr ""
+msgstr "Le SSID ne peut pas être vide"
 
 #: js/src/wifi/WiFi.js:42 js/src/wifi/WiFi.js:53
 msgid "Password must contain at least 8 symbols"
-msgstr ""
+msgstr "Le mot de passe doit contenir au moins 8 symboles"
 
 #: js/src/wifi/WiFiForm.js:19
 msgid "Disabled"
-msgstr ""
+msgstr "Désactivé"
 
 #: js/src/wifi/WiFiForm.js:20
 msgid "802.11n - 20 MHz wide channel"
@@ -689,7 +689,7 @@ msgstr ""
 
 #: js/src/wifi/WiFiForm.js:110
 msgid "Enable"
-msgstr ""
+msgstr "Activer"
 
 #: js/src/wifi/WiFiForm.js:234
 msgid "auto"
@@ -697,16 +697,16 @@ msgstr ""
 
 #: js/src/wifi/WiFiGuestForm.js:33
 msgid "Enable Guest Wifi"
-msgstr ""
+msgstr "Activer le mode Wi-Fi invité"
 
 #: reforis/templates/administration.html:4
 #: reforis/templates/includes/navigation.html:36
 msgid "Administration"
-msgstr ""
+msgstr "Administration"
 
 #: reforis/templates/administration.html:8
 msgid " Administration "
-msgstr ""
+msgstr " Administration "
 
 #: reforis/templates/lan.html:8
 msgid ""
@@ -729,7 +729,7 @@ msgstr ""
 
 #: reforis/templates/notifications.html:8
 msgid "Notifications center"
-msgstr ""
+msgstr "Centre de notifications"
 
 #: reforis/templates/wan.html:8
 msgid ""
@@ -745,7 +745,7 @@ msgstr ""
 
 #: reforis/templates/wan.html:16
 msgid "Connection test"
-msgstr ""
+msgstr "Test de connexion"
 
 #: reforis/templates/wan.html:18
 msgid ""
@@ -771,11 +771,11 @@ msgstr ""
 
 #: reforis/templates/includes/navigation.html:23
 msgid "Network settings"
-msgstr ""
+msgstr "Paramètres réseau"
 
 #: reforis/templates/includes/top-bar.html:20
 msgid "Logout"
-msgstr ""
+msgstr "Déconnexion"
 
 #~ msgid "There are %1 in the %2"
 #~ msgstr ""
