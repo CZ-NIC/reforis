@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2019-04-20 00:44+0200\n"
-"PO-Revision-Date: 2019-08-10 15:23+0000\n"
+"PO-Revision-Date: 2019-10-14 11:04+0000\n"
 "Last-Translator: powerburner-nl <peter.mulder.1981@gmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/turris/reforis/nl/>"
 "\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.8-dev\n"
+"X-Generator: Weblate 3.9-dev\n"
 "Generated-By: Babel 2.7.0\n"
 
 #: js/src/administration/Reboot.js:17
@@ -49,7 +49,6 @@ msgid "Password should have max 128 symbols."
 msgstr "Wachtwoord mag max. 128 tekens lang zijn."
 
 #: js/src/administration/Password/forms/CurrentForisPasswordForm.js:24
-#, fuzzy
 msgid "Current Foris password"
 msgstr "Huidig Foris-wachtwoord"
 
@@ -93,7 +92,6 @@ msgid "New advanced administration password"
 msgstr "Nieuw wachtwoord voor geavanceerd beheer"
 
 #: js/src/administration/RegionAndTime/RegionAndTime.js:30
-#, fuzzy
 msgid "Region and time"
 msgstr "Regio en tijd"
 
@@ -168,7 +166,6 @@ msgid "This is not a valid IPv6 prefix."
 msgstr "Dit is geen geldig IPv6-voorvoegsel."
 
 #: js/src/forisForm/validation.js:12
-#, fuzzy
 msgid "This is not a valid domain name."
 msgstr "Dit is geen geldige domeinnaam."
 
@@ -188,17 +185,14 @@ msgid "Doesn't contain a list of emails separated by commas."
 msgstr "Bevat geen lijst met e-mails gescheiden door komma's."
 
 #: js/src/forisForm/networkForms/DHCPForm.js:15
-#, fuzzy
 msgid "Hostname which will be provided to DHCP server."
-msgstr "Hostnaam die aan de DHCP-server zal worden verstrekt."
+msgstr "Hostnaam die aan de DHCP-server wordt verstrekt."
 
 #: js/src/forisForm/networkForms/DHCPForm.js:31
-#, fuzzy
 msgid "DHCP hostname"
 msgstr "DHCP-hostnaam"
 
 #: js/src/forisForm/networkForms/StaticForm.js:15 js/src/wan/WAN6Form.js:30
-#, fuzzy
 msgid ""
 "DNS server address is not required as the built-in DNS resolver is "
 "capable of working without it."
@@ -213,12 +207,10 @@ msgstr "IP-adres"
 
 #: js/src/forisForm/networkForms/StaticForm.js:48
 #: js/src/lan/LANManagedForm.js:51
-#, fuzzy
 msgid "Network mask"
 msgstr "Subnetmasker"
 
 #: js/src/forisForm/networkForms/StaticForm.js:60 js/src/wan/WAN6Form.js:210
-#, fuzzy
 msgid "Gateway"
 msgstr "Gateway"
 
@@ -234,9 +226,8 @@ msgstr "DNS-server 2"
 #: js/src/forisForm/networkForms/StaticForm.js:110 js/src/wan/MACForm.js:78
 #: js/src/wan/WAN6Form.js:477 js/src/wan/WAN6Form.js:512
 #: js/src/wan/WAN6Form.js:527 js/src/wan/WANForm.js:165
-#, fuzzy
 msgid "This field is required."
-msgstr "Dit veld is verplicht."
+msgstr "Dit veld is vereist."
 
 #: js/src/lan/LANForm.js:16
 msgid ""
@@ -245,19 +236,17 @@ msgid ""
 "as a client in this network. It acts in a similar way as WAN, but it has "
 "opened ports for configuration interface and other services."
 msgstr ""
-"De routermodus betekent dat deze apparaten het LAN beheren (werkt als een "
-"router, kan IP-adressen toekennen, ....). De computermodus betekent dat dit "
-"apparaat als een client in dit netwerk fungeert. Het werkt op dezelfde "
-"manier als WAN, maar het heeft poorten geopend voor de configuratie-"
-"interface en andere diensten."
+"Router modus betekent dat dit apparaat het LAN beheert (fungeert als een "
+"router, kan IP-adressen toekennen,...). Computermodus betekent dat dit "
+"apparaat als een client in dit netwerk fungeert. Het fungeert op een "
+"vergelijkbare manier als WAN, maar het heeft poorten voor de configuratie-"
+"interface en andere diensten geopend."
 
 #: js/src/lan/LANForm.js:26
-#, fuzzy
 msgid "Router"
 msgstr "Router"
 
 #: js/src/lan/LANForm.js:27
-#, fuzzy
 msgid "Computer"
 msgstr "Computer"
 
@@ -267,17 +256,14 @@ msgid "LAN Settings"
 msgstr "LAN-instellingen"
 
 #: js/src/lan/LANForm.js:54
-#, fuzzy
 msgid "LAN mode"
 msgstr "LAN-modus"
 
 #: js/src/lan/LANManagedForm.js:17
-#, fuzzy
 msgid "Router's IP address in the inner network."
 msgstr "Het IP-adres van de router in het interne netwerk."
 
 #: js/src/lan/LANManagedForm.js:18
-#, fuzzy
 msgid ""
 "Enable this option to automatically assign IP addresses to the devices "
 "connected to the router."
@@ -286,44 +272,41 @@ msgstr ""
 "apparaten die met de router zijn verbonden."
 
 #: js/src/lan/LANManagedForm.js:38
-#, fuzzy
 msgid "Router IP address"
 msgstr "IP-adres router"
 
 #: js/src/lan/LANManagedForm.js:63
-#, fuzzy
 msgid "Enable DHCP"
 msgstr "DHCP inschakelen"
 
 #: js/src/lan/LANManagedForm.js:106
-#, fuzzy
 msgid "DHCP start"
-msgstr "DHCP start"
+msgstr "DHCP-start"
 
 #: js/src/lan/LANManagedForm.js:119
 msgid "DHCP max leases"
-msgstr ""
+msgstr "DHCP max. aantal leases"
 
 #: js/src/lan/LANManagedForm.js:132
 msgid "Lease time (hours)"
-msgstr ""
+msgstr "Leasetijd (uren)"
 
 #: js/src/lan/LANUnmanagedForm.js:22 js/src/wan/WANForm.js:23
 msgid "DHCP (automatic configuration)"
-msgstr ""
+msgstr "DHCP (automatische configuratie)"
 
 #: js/src/lan/LANUnmanagedForm.js:23 js/src/wan/WAN6Form.js:57
 #: js/src/wan/WANForm.js:24
 msgid "Static IP address (manual configuration)"
-msgstr ""
+msgstr "Statisch IP-adres (handmatige configuratie)"
 
 #: js/src/lan/LANUnmanagedForm.js:24
 msgid "Don't connect this device to LAN"
-msgstr ""
+msgstr "Verbind dit apparaat niet met LAN"
 
 #: js/src/lan/LANUnmanagedForm.js:44 js/src/wan/WANForm.js:59
 msgid "IPv4 protocol"
-msgstr ""
+msgstr "IPv4-protocol"
 
 #: js/src/notifications/NotificationsCenter/NotificationsCenter.js:31
 #: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:73
@@ -334,7 +317,7 @@ msgstr ""
 #: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:56
 #: reforis/templates/notifications.html:4
 msgid "Notifications"
-msgstr ""
+msgstr "Meldingen"
 
 #: js/src/notifications/NotificationsCenter/NotificationsCenter.js:41
 #: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:26
@@ -348,6 +331,10 @@ msgid ""
 "additional settings. If you want to set your own SMTP server, please "
 "select \"Custom\" and enter required settings."
 msgstr ""
+"Als u de SMTP-provider instelt op \"Turris\", dan worden de servers  van het "
+"Turris-project gebruikt. Voor deze servers zijn geen aanvullende "
+"instellingen vereist. Als u uw eigen SMTP-server wilt instellen, selecteert "
+"u \"Aangepast\" en voert u de vereiste instellingen in."
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/helpTexts.js:13
 msgid "Email address of recipient. Separate multiple addresses by comma."
@@ -355,13 +342,15 @@ msgstr ""
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/helpTexts.js:14
 msgid "Send emails about new features."
-msgstr ""
+msgstr "Stuur e-mails over nieuwe functies."
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/helpTexts.js:17
 msgid ""
 "Name of the sender - will be used as a part of the sender's email address"
 " before the \"at\" sign."
 msgstr ""
+"Naam van de afzender - zal worden gebruikt als deel van het e-mailadres van "
+"de afzender voor het @-teken."
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/helpTexts.js:20
 msgid "This is the address notifications are send from."
@@ -380,6 +369,8 @@ msgid ""
 "Sender's name can contain only alphanumeric characters, dots and "
 "underscores."
 msgstr ""
+"De naam van de afzender mag alleen alfanumerieke tekens, punten en platte "
+"streepjes bevatten."
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/validator.js:47
 msgid "Port is an number."
@@ -395,35 +386,36 @@ msgstr ""
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/CommonForm.js:19
 msgid "Reboot is required"
-msgstr ""
+msgstr "Opnieuw opstarten is vereist"
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/CommonForm.js:20
 msgid "Reboot or attention is required"
-msgstr ""
+msgstr "Opnieuw opstarten of aandacht is vereist"
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/CommonForm.js:21
 msgid "Reboot or attention is required or update was installed"
 msgstr ""
+"Opnieuw opstarten, of aandacht is vereist, of een update is geïnstalleerd"
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/CommonForm.js:46
 msgid "Recipient's email"
-msgstr ""
+msgstr "E-mailadres ontvanger"
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/CommonForm.js:57
 msgid "Importance"
-msgstr ""
+msgstr "Prioriteit"
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/CommonForm.js:66
 msgid "Send news"
-msgstr ""
+msgstr "Nieuws versturen"
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/NotificationsEmailSettingsForm.js:20
 msgid "Turris"
-msgstr ""
+msgstr "Turris"
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/NotificationsEmailSettingsForm.js:21
 msgid "Custom"
-msgstr ""
+msgstr "Aangepast"
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/NotificationsEmailSettingsForm.js:53
 msgid "Email notifications settings"
@@ -435,7 +427,7 @@ msgstr ""
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/NotificationsEmailSettingsForm.js:67
 msgid "SMTP provider"
-msgstr ""
+msgstr "SMTP-provider"
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/SMTPCustomForm.js:20
 msgid "None"
@@ -451,7 +443,7 @@ msgstr ""
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/SMTPCustomForm.js:53
 msgid "SMTP settings"
-msgstr ""
+msgstr "SMTP-instellingen"
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/SMTPCustomForm.js:55
 msgid "Sender address (From)"
@@ -476,11 +468,11 @@ msgstr ""
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/SMTPCustomForm.js:106
 #: js/src/wifi/WiFiGuestForm.js:59
 msgid "Password"
-msgstr ""
+msgstr "Wachtwoord"
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/SMTPTurrisForm.js:32
 msgid "Sender's name"
-msgstr ""
+msgstr "Naam van afzender"
 
 #: js/src/wan/MACForm.js:16
 msgid ""
