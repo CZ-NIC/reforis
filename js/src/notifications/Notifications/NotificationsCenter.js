@@ -5,7 +5,7 @@
  * See /LICENSE for more information.
  */
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router";
 
@@ -21,6 +21,15 @@ function NotificationsCenter({ ws, history }) {
     const [notifications, dismiss, dismissAll] = useNotifications(ws);
     const [currentNotification, setCurrentNotification] = useState();
 
+    useEffect(() => {
+        const unlisten = history.listen(
+            (location) => {
+                setCurrentNotification(location.search);
+            },
+        );
+        return unlisten;
+    }, [history, setCurrentNotification]);
+
     function getDismissAllButton() {
         return (
             <button
@@ -33,8 +42,6 @@ function NotificationsCenter({ ws, history }) {
             </button>
         );
     }
-
-    history.listen((location) => setCurrentNotification(location.search));
 
     return (
         <div id="notifications-center">
