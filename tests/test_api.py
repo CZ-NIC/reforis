@@ -13,6 +13,8 @@ from flask import current_app
         ('lan', 'lan', True),
         ('wifi', 'wifi', True),
         ('dns', 'dns', True),
+        ('dns/forwarder', 'dns', True),
+        ('dns/forwarders', 'dns', False),
         ('guest-network', 'guest', True),
         ('interfaces', 'networks', True),
 
@@ -53,7 +55,8 @@ def test_api_endpoints_exist(client, endpoint, module, post_is_allowed):
     'endpoint, module', [
         ('wifi-reset', 'wifi'),
         ('connection-test', 'wan'),
-        ('dns-test', 'wan'),
+        ('dns/test', 'wan'),
+        ('dns/delete-forwarder', 'dns'),
         ('ntp-update', 'time'),
         ('reboot', 'maintain'),
     ]
