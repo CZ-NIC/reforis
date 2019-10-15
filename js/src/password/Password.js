@@ -55,7 +55,9 @@ export default function Password({ postCallback }) {
             if (postState.isSuccess) {
                 setAlert({ type: "success", message: _("Password was successfully changed") });
                 postCallback();
-            } else if (postState.isError) setAlert({ type: "danger", message: postState.data.error });
+            } else if (postState.isError) {
+                setAlert({ type: "danger", message: postState.data });
+            }
             resetPasswordForm();
         }
     }, [postState.isSuccess, postState.isError, resetPasswordForm, postState.data, postCallback]);

@@ -4,12 +4,8 @@
 #  See /LICENSE for more information.
 
 
-class MockMqttSender:
-    send = True
-
-
 def send_mock(module, action, data, timeout=None, controller_id=None):
-    RESPONSE_DATA = {
+    response_data = {
         'web': {
             'get_data': {
                 'language': 'en',
@@ -56,4 +52,4 @@ def send_mock(module, action, data, timeout=None, controller_id=None):
             }
         }
     }
-    return RESPONSE_DATA.get(module, {}).get(action, {})
+    return response_data.get(module, {}).get(action, {})

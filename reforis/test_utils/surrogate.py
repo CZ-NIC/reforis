@@ -1,10 +1,7 @@
 # This library is copy and pasted from https://github.com/ikostia/surrogate/blob/master/surrogate.py
 
-
 import sys
 from functools import wraps
-
-__all__ = ('surrogate', )
 
 
 class surrogate(object):
@@ -106,8 +103,8 @@ class surrogate(object):
             by stubs.
         """
         known = 0
-        while known < len(self.elements) and\
-                    '.'.join(self.elements[:known + 1]) in sys.modules:
+        while (known < len(self.elements) and
+               '.'.join(self.elements[:known + 1]) in sys.modules):
             known += 1
         self.known_path = '.'.join(self.elements[:known])
         self.elements = self.elements[known:]

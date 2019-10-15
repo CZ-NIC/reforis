@@ -2,7 +2,7 @@ from flask import current_app, jsonify, request
 from flask_babel import gettext as _
 
 from reforis import _get_locale_from_backend
-from reforis.foris_controller_api import InvalidRequest
+from reforis.foris_controller_api import APIError
 
 
 def updates():
@@ -126,7 +126,7 @@ def packages():
         del response['approval_settings']
     elif request.method == 'POST':
         if not updater_settings['enabled']:
-            raise InvalidRequest(_("You can't set packages with disabled automatic updates."))
+            raise APIError(_("You can't set packages with disabled automatic updates."))
         data = request.json
         data['enabled'] = True
         data['approval_settings'] = updater_settings['approval_settings']

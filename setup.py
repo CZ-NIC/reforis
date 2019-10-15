@@ -48,7 +48,6 @@ setuptools.setup(
         'Flask-SeaSurf',
         'flup',
     ],
-
     setup_requires=[
         'Babel',
         'reforis_distutils',

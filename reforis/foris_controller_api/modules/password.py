@@ -2,7 +2,7 @@ from flask import jsonify, current_app, request
 from flask_babel import gettext as _
 
 from reforis.auth import _decode_password_to_base64, check_password
-from reforis.foris_controller_api import InvalidRequest
+from reforis.foris_controller_api import APIError
 
 
 def password():
@@ -36,7 +36,7 @@ def password():
     elif request.method == 'POST':
         data = request.json
         if not data.get('foris_current_password', False) or not check_password(data['foris_current_password']):
-            raise InvalidRequest(_('Wrong current password.'))
+            raise APIError(_('Wrong current password.'))
 
         new_password = _decode_password_to_base64(data['foris_password'])
         request_data = {'password': new_password}

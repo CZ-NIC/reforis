@@ -1,6 +1,5 @@
-
 [MASTER]
-ignore=tests,tests.py,fixtures.py
+ignore=tests,reforis/test_utils
 load-plugins=
 
 [MESSAGES CONTROL]

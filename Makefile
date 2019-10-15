@@ -3,7 +3,7 @@
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
 
-.PHONY: all prepare-dev venv install install-reforis run run-js run-ws watch-js compile-js lint-js lint-web test test-web test-js-update-snapshots clean
+.PHONY: all prepare-dev venv install install-with-lighttpd install-js run run-ws watch-js build-js lint lint-js lint-js-fix lint-web test test-js test-web test-js-update-snapshots create-messages update-messages compile-messages docs docs-web docs-js timezones clean
 
 DEV_PYTHON=python3.7
 VENV_NAME?=venv
@@ -20,22 +20,22 @@ export FLASK_ENV=development
 all:
 	@echo "make prepare-dev"
 	@echo "    Create python virtual environment and install dependencies."
-	@echo "make lint"
-	@echo "    Run list on project."
-	@echo "make test"
-	@echo "    Run tests on project."
 	@echo "make install"
 	@echo "    Install package on router."
 	@echo "make install-with-lighttpd"
 	@echo "    Install package with lighttpd configuration and link /tmp/reforis to installed python packages for development."
-	@echo "make build-js"
-	@echo "    Compile JS."
-	@echo "make watch-js"
-	@echo "    Compile JS in watch mode."
 	@echo "make run"
 	@echo "    Run Flask server."
 	@echo "make run-ws"
 	@echo "    Run WebSocket server."
+	@echo "make watch-js"
+	@echo "    Compile JS in watch mode."
+	@echo "make build-js"
+	@echo "    Compile JS."
+	@echo "make lint"
+	@echo "    Run lint on project."
+	@echo "make test"
+	@echo "    Run tests on project."
 	@echo "make create-messages"
 	@echo "    Create locale messages (.pot)."
 	@echo "make update-messages"
@@ -131,7 +131,7 @@ docs-web: venv
 docs-js:
 	cd $(JS_DIR); npm run-script docs
 
-make_timzezones:
+timezones:
 	$(VENV_BIN)/$(DEV_PYTHON) ./scripts/make_timezones.py $(JS_DIR)/src/utils/timezones.js
 
 clean:
