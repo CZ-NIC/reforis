@@ -67,7 +67,7 @@ def create_app(config):
     @app.context_processor
     def add_version_to_ctx():
         try:
-            version = pkg_resources.get_distribution("reforis").version
+            version = pkg_resources.get_distribution('reforis').version
         except pkg_resources.DistributionNotFound:
             version = None
         return {'version': version}

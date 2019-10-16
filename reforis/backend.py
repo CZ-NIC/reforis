@@ -36,7 +36,7 @@ class Backend(ABC):
         ...
 
     def __repr__(self):
-        return "%s('%s')" % (type(self._instance).__name__, self.path)
+        return '%s(\'%s\')' % (type(self._instance).__name__, self.path)
 
     def perform(self, module, action, data=None, raise_exception_on_failure=True):
         """ Perform backend action
@@ -50,24 +50,24 @@ class Backend(ABC):
         try:
             response = self._send(module, action, data)
         except ControllerError as e:
-            current_app.logger.error("Exception in backend occured. (%s)", e)
+            current_app.logger.error('Exception in backend occurred. (%s)', e)
             if raise_exception_on_failure:
                 error = e.errors[0]  # right now we are dealing only with the first error
-                msg = {"module": module, "action": action, "kind": "request"}
+                msg = {'module': module, 'action': action, 'kind': 'request'}
                 if data is not None:
-                    msg["data"] = data
-                raise ExceptionInBackend(msg, error["stacktrace"], error["description"])
+                    msg['data'] = data
+                raise ExceptionInBackend(msg, error['stacktrace'], error['description'])
 
         except RuntimeError as e:
             # This may occure when e.g. calling function is not present in backend
-            current_app.logger.error("RuntimeError occured during the communication with backend. (%s)", e)
+            current_app.logger.error('RuntimeError occurred during the communication with backend. (%s)', e)
             if raise_exception_on_failure:
                 raise e
         except Exception as e:
-            current_app.logger.error("Exception occured during the communication with backend. (%s)", e)
+            current_app.logger.error('Exception occurred during the communication with backend. (%s)', e)
             raise e
         finally:
-            current_app.logger.debug("Query took %f: %s.%s - %s", time.time() - start_time, module, action, data)
+            current_app.logger.debug('Query took %f: %s.%s - %s', time.time() - start_time, module, action, data)
 
         return response
 

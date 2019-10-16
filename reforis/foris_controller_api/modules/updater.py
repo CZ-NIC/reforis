@@ -92,7 +92,7 @@ def approvals():
     if request.method == 'GET':
         lang_data = {'lang': _get_locale_from_backend(current_app)}
         updater_settings = current_app.backend.perform('updater', 'get_settings', lang_data)
-        response = {**updater_settings['approval'], "update_automatically": updater_settings["enabled"]}
+        response = {**updater_settings['approval'], 'update_automatically': updater_settings['enabled']}
 
     elif request.method == 'POST':
         data = request.json
@@ -126,7 +126,7 @@ def packages():
         del response['approval_settings']
     elif request.method == 'POST':
         if not updater_settings['enabled']:
-            raise APIError(_("You can't set packages with disabled automatic updates."))
+            raise APIError(_('You can\'t set packages with disabled automatic updates.'))
         data = request.json
         data['enabled'] = True
         data['approval_settings'] = updater_settings['approval_settings']

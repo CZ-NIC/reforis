@@ -67,6 +67,7 @@ setuptools.setup(
             'pytest==3.7.1',
             'pycodestyle==2.5.0',
             'pylint==2.3.1',
+            'pylint-quotes==0.2.1',
         ],
         'build': [
             'Sphinx==2.1.2',
