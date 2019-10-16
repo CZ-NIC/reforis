@@ -49,7 +49,7 @@ WANForm.defaultProps = {
 
 export default function WANForm({
     formData, formErrors, setFormValue, ...props
-}) {
+}) { /* eslint-disable react/prop-types */
     const wanSettings = formData.wan_settings;
     const errors = (formErrors || {}).wan_settings || {};
     const wanType = wanSettings.wan_type;

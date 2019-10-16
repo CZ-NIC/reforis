@@ -10,6 +10,7 @@ import React, { useEffect } from "react";
 import { useAPIPost, ForisURLs, REFORIS_URL_PREFIX } from "foris";
 import API_URLs from "common/API";
 
+import PropTypes from "prop-types";
 import { GUIDE_URL_PREFIX } from "./constants";
 
 const IMG_STATIC_URL = `${ForisURLs.static}/imgs`;
@@ -24,6 +25,11 @@ const WORKFLOW_NAMES = {
     bridge: _("Local server"),
     router: _("Router"),
     min: _("Minimal"),
+};
+
+WorkflowSelect.propTypes = {
+    workflows: PropTypes.arrayOf(PropTypes.string).isRequired,
+    next_step: PropTypes.string.isRequired,
 };
 
 export default function WorkflowSelect({ workflows, next_step }) {
@@ -46,6 +52,7 @@ export default function WorkflowSelect({ workflows, next_step }) {
                     <div key={workflow} className="workflow">
                         <h3>{WORKFLOW_NAMES[workflow]}</h3>
                         <button
+                            type="button"
                             className="btn btn-outline-secondary"
                             onClick={() => onWorkflowChangeHandler(workflow)}
                         >

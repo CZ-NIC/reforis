@@ -117,6 +117,7 @@ export default function TimeForm({
             >
                 <div className="input-group-append">
                     <button
+                        type="button"
                         className="input-group-text"
                         onClick={data.how_to_set_time === "ntp" ? triggerNTP : updateTimeFromBrowser}
                         disabled={ntpData.isLoading}

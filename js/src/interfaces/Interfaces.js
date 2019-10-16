@@ -13,15 +13,7 @@ import API_URLs from "common/API";
 
 import InterfacesForm from "./InterfacesForm";
 import { KeepPortsClosedConfirmModal, OpenPortsModals } from "./modals";
-
-export const NETWORKS_CHOICES = {
-    wan: _("WAN"),
-    lan: _("LAN"),
-    guest: _("Guest Network"),
-    none: _("Unassigned"),
-};
-
-export const NETWORKS_TYPES = ["wan", "lan", "guest", "none"];
+import { NETWORKS_TYPES } from "./constants";
 
 Interfaces.propTypes = {
     ws: PropTypes.object.isRequired,

@@ -8,11 +8,26 @@
 import React from "react";
 
 import { CheckBox, undefinedIfEmpty, withoutUndefinedKeys } from "foris";
+import PropTypes from "prop-types";
 import RestartAfterUpdateForm, { validateRestartAfterUpdate } from "./RestartAfterUpdateForm";
 import UpdateApprovalsForm, { validateUpdateApprovals } from "./UpdateApprovalsForm";
 
 UpdatesForm.defaultProps = {
     formErrors: {},
+    setFormValue: () => {},
+};
+
+UpdatesForm.propTypes = {
+    formData: PropTypes.shape({
+        enabled: PropTypes.bool,
+        approval_settings: PropTypes.object,
+        reboots: PropTypes.object,
+    }),
+    formErrors: PropTypes.shape({
+        approval_settings: PropTypes.object,
+        reboots: PropTypes.object,
+    }),
+    setFormValue: PropTypes.func.isRequired,
 };
 
 export default function UpdatesForm({
@@ -22,7 +37,7 @@ export default function UpdatesForm({
         <>
             <CheckBox
                 label={_("Enable automatic updates (recommended)")}
-                checked={formData.enabled}
+                checked={formData.enabled || false}
 
                 onChange={setFormValue((value) => ({ enabled: { $set: value } }))}
 

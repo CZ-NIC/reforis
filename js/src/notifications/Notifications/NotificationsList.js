@@ -39,6 +39,12 @@ const BORDER_TYPES = {
     error: "border-danger",
 };
 
+NotificationsCenterItem.propTypes = {
+    notification: NOTIFICATION_PROP_TYPES,
+    currentNotification: PropTypes.string,
+    dismiss: PropTypes.func.isRequired,
+};
+
 function NotificationsCenterItem({ notification, currentNotification, dismiss }) {
     const myRef = useRef(null);
 

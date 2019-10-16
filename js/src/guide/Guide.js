@@ -16,9 +16,10 @@ import {
 
 import API_URLs from "common/API";
 
-import { GUIDE_URL_PREFIX, STEPS } from "./constants";
+import { GUIDE_URL_PREFIX } from "./constants";
 import GuideNavigation from "./GuideNavigation";
 import GuideHelp from "./GuideHelp";
+import STEPS from "./steps";
 
 Guide.propTypes = {
     ws: PropTypes.object.isRequired,

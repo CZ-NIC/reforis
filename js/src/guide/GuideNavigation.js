@@ -8,16 +8,23 @@
 import React from "react";
 import { withRouter } from "react-router";
 import { Link, NavLink } from "react-router-dom";
+import PropTypes from "prop-types";
 
-import { STEPS } from "./constants";
 import useGuideFinish from "./hooks";
+import STEPS from "./steps";
+
+GuideNavigation.propTypes = {
+    workflow_steps: PropTypes.arrayOf(PropTypes.string).isRequired,
+    passed: PropTypes.arrayOf(PropTypes.string).isRequired,
+    next_step: PropTypes.string.isRequired,
+};
 
 export default function GuideNavigation({ workflow_steps, passed, next_step }) {
     const onGuideFinishHandler = useGuideFinish();
     const navigationItems = workflow_steps.map(
-        (step, idx) => (
+        (step) => (
             <GuideNavigationItem
-                key={idx}
+                key={step}
                 name={STEPS[step].name}
                 passed={passed.includes(step)}
                 url={`/${step}`}
@@ -38,6 +45,13 @@ export default function GuideNavigation({ workflow_steps, passed, next_step }) {
         </>
     );
 }
+
+GuideNavigationItem.propTypes = {
+    name: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    passed: PropTypes.bool.isRequired,
+    next: PropTypes.bool.isRequired,
+};
 
 function GuideNavigationItem({
     name, url, next, passed,
@@ -60,11 +74,16 @@ function GuideNavigationItem({
                         {content}
                     </NavLink>
                 )
-            // eslint-disable-next-line jsx-a11y/anchor-is-valid
+                // eslint-disable-next-line jsx-a11y/anchor-is-valid
                 : <a>{content}</a>}
         </li>
     );
 }
+
+NextStepButton.propTypes = {
+    next_step: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+};
 
 function NextStepButton({ next_step, location }) {
     if (location.pathname === `/${next_step}`) return null;

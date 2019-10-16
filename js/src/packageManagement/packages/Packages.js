@@ -42,7 +42,7 @@ been installed manually or using opkg is not affected.
 }
 
 DisableIfUpdaterIsDisabled.propTypes = {
-    formData: PropTypes.shape({ enabled: PropTypes.bool.isRequired }),
+    formData: PropTypes.shape({ enabled: PropTypes.bool }),
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.node),
         PropTypes.node,

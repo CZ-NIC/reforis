@@ -6,15 +6,28 @@
  */
 
 import React from "react";
+import PropTypes from "prop-types";
 import moment from "moment";
 
-import { NumberInput, DataTimeInput, undefinedIfEmpty } from "foris";
+import { DataTimeInput, NumberInput, undefinedIfEmpty } from "foris";
 
 const TIME_FORMAT = "HH:mm";
 
 const HELP_TEXTS = {
     delay: _("Number of days that must pass between receiving the request for restart and the automatic restart itself."),
     time: _("Time of day of automatic reboot in HH:MM format."),
+};
+
+RestartAfterUpdateForm.propTypes = {
+    formData: PropTypes.shape({
+        time: PropTypes.string,
+        delay: PropTypes.number,
+    }).isRequired,
+    formErrors: PropTypes.shape({
+        time: PropTypes.string,
+        delay: PropTypes.string,
+    }),
+    setFormValue: PropTypes.func.isRequired,
 };
 
 RestartAfterUpdateForm.defaultProps = {
@@ -69,7 +82,8 @@ export default function RestartAfterUpdateForm({
 
 export function validateRestartAfterUpdate(formData) {
     const errors = {};
-    if (!moment(formData.time, "HH:mm", true).isValid()) {
+    if (!moment(formData.time, "HH:mm", true)
+        .isValid()) {
         errors.time = _("Time should be in HH:MM format.");
     }
     if (formData.delay > 10) {

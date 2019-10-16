@@ -35,7 +35,7 @@ export default function Main({ ws }) {
             </Portal>
 
             <Switch>
-                {pages.map((route, i) => <RouteWithSubRoutes key={i} ws={ws} {...route} />)}
+                {pages.map((route) => <RouteWithSubRoutes key={route} ws={ws} {...route} />)}
                 <Redirect to={REDIRECT_404_PAGE} />
             </Switch>
         </BrowserRouter>

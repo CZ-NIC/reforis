@@ -10,9 +10,9 @@ import PropTypes from "prop-types";
 
 import { Alert } from "foris";
 
-import { NETWORKS_CHOICES, NETWORKS_TYPES } from "./Interfaces";
 import Network from "./Network";
 import SelectedInterface from "./SelectedInterface";
+import { NETWORKS_CHOICES, NETWORKS_TYPES } from "./constants";
 
 InterfacesForm.propTypes = {
     formData: PropTypes.shape({
@@ -49,7 +49,7 @@ export default function InterfacesForm({ formData, setFormValue, ...props }) {
     function getInterfaceById(id) {
         if (!selectedID) return [null, null, null];
 
-        // eslint-disable-next-line no-unused-vars
+        // eslint-disable-next-line no-unused-vars, no-restricted-syntax
         for (const network of NETWORKS_TYPES) {
             const interfaceIdx = formData.networks[network].findIndex((i) => i.id === id);
             if (interfaceIdx !== -1) {

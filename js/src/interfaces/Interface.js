@@ -7,17 +7,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-
-export const INTERFACE_TYPES = {
-    eth: "eth",
-    wifi: "wifi",
-    wwan: "wwan",
-};
-
-export const INTERFACE_STATES = {
-    up: "up",
-    down: "down",
-};
+import { INTERFACE_STATES, INTERFACE_TYPES } from "./constants";
 
 Interface.propTypes = {
     type: PropTypes.oneOf(Object.keys(INTERFACE_TYPES)).isRequired,

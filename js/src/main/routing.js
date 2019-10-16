@@ -23,7 +23,17 @@ export default function RouteWithSubRoutes({ ws, ...route }) {
     if (route.pages) {
         return (
             <Switch>
-                {route.pages.map((subRoute, i) => <RouteWithSubRoutes key={i} ws={ws} {...subRoute} path={`${route.path}${subRoute.path}`} />)}
+                {route.pages.map((subRoute) => {
+                    const path = `${route.path}${subRoute.path}`;
+                    return (
+                        <RouteWithSubRoutes
+                            key={path}
+                            ws={ws}
+                            {...subRoute}
+                            path={path}
+                        />
+                    );
+                })}
                 <Redirect to={REDIRECT_404_PAGE} />
             </Switch>
         );
