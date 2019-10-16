@@ -24,30 +24,25 @@ module.exports = {
         "indent": ["error", 4],
         "react/jsx-indent": ["error", 4],
         "react/jsx-indent-props": ["error", 4],
-        "react/prop-types": "warn",
-        "react/no-array-index-key": "warn",
-        "react/button-has-type": "warn",
         "import/no-unresolved": [
             "error",
             // Ignore imports used only in tests
             {ignore: ["customTestRender"]}
         ],
-        "import/no-cycle": "warn",
         "no-console": "error",
         "no-use-before-define": ["error", {
             functions: false,
             classes: true,
             variables: true
         }],
-        "no-restricted-syntax": "warn",
         // Should be enabled in the future
-        "camelcase": "off",
         "no-param-reassign": "off",
         "react/jsx-props-no-spreading": "off",
         "react/require-default-props": "off",
         "react/default-props-match-prop-types": "off",
         "react/forbid-prop-types": "off",
         // Permanently disabled
+        "camelcase": "off",
         "react/jsx-filename-extension": "off",
         "no-plusplus": "off",
         "consistent-return": "off",
