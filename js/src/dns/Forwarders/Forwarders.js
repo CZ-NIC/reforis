@@ -76,7 +76,7 @@ AddForwarderButton.propTypes = {
 function AddForwarderButton({ onClick }) {
     return (
         <Button forisFormSize className="btn-outline-success btn-sm" onClick={onClick}>
-            <i className="fas fa-plus" />
+            {_("Add custom forwarder")}
         </Button>
     );
 }

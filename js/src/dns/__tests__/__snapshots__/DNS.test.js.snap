@@ -1,352 +1,238 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<DNS/> Test with snapshot DHCP. 1`] = `
-<div>
-  <h1>
-    DNS
-  </h1>
-  <p>
-    
-Router Turris uses its own DNS resolver with DNSSEC support. It is capable of working independently or it
-can forward your DNS queries your internet service provider's DNS resolver.
+"Snapshot Diff:
+- First value
++ Second value
 
-    <br />
-    <br />
-    
-The following setting determines the behavior of the DNS resolver. Usually, it is better to use the ISP's
-resolver in networks where it works properly. If it does not work for some reason, it is necessary to use
-direct resolving without forwarding.
-
-    <br />
-    <br />
-    
-In rare cases ISP's have improperly configured network which interferes with DNSSEC validation. If you
-experience problems with DNS, you can 
-    <b>
-      temporarily
-    </b>
-     disable DNSSEC validation to determine the source
-of the problem. However, keep in mind that without DNSSEC validation, you are vulnerable to DNS spoofing
-attacks! Therefore we 
-    <b>
-      recommend keeping DNSSEC turned on
-    </b>
-     and resolving the situation with your ISP as
-this is a serious flaw on their side.
-            
-  </p>
-  <form>
-    <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
-    >
-      <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
-      >
-        <input
-          class="custom-control-input"
-          id="1"
-          type="checkbox"
-        />
-        <label
-          class="custom-control-label"
-          for="1"
+@@ -101,10 +101,34 @@
+          class=\\"form-text text-muted\\"
         >
-          Use forwarding
-        </label>
+          This will enable your DNS resolver to place DHCP client's names among the local DNS records.
+        </small>
       </div>
-    </div>
-    <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
-    >
-      <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
++     <div
++       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
++     >
++       <label
++         for=\\"7\\"
++       >
++         Domain of DHCP clients in DNS
++       </label>
++       <div
++         class=\\"input-group\\"
++       >
++         <input
++           class=\\"form-control\\"
++           id=\\"7\\"
++           type=\\"text\\"
++           value=\\"lan\\"
++         />
++       </div>
++       <small
++         class=\\"form-text text-muted\\"
++       >
++         This domain will be used as suffix. E.g. The result for client \\"android-123\\" and domain \\"my.lan\\" will be \\"android-123.my.lan\\".
++       </small>
++     </div>
+      <button
+        class=\\"btn btn-primary  offset-lg-8 col-lg-3 col-sm-12\\"
+        type=\\"submit\\"
       >
-        <input
-          checked=""
-          class="custom-control-input"
-          id="2"
-          type="checkbox"
-        />
-        <label
-          class="custom-control-label"
-          for="2"
-        >
-          Enable DNSSEC
-        </label>
-      </div>
-    </div>
-    <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
-    >
-      <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
-      >
-        <input
-          class="custom-control-input"
-          id="3"
-          type="checkbox"
-        />
-        <label
-          class="custom-control-label"
-          for="3"
-          style="margin-bottom: 0px;"
-        >
-          Enable DHCP clients in DNS
-        </label>
-      </div>
-      <small
-        class="form-text text-muted"
-      >
-        This will enable your DNS resolver to place DHCP client's names among the local DNS records.
-      </small>
-    </div>
-    <div
-      class="form-group col-sm-12 offset-lg-1 col-lg-10"
-    >
-      <label
-        for="7"
-      >
-        Domain of DHCP clients in DNS
-      </label>
-      <div
-        class="input-group"
-      >
-        <input
-          class="form-control"
-          id="7"
-          type="text"
-          value="lan"
-        />
-      </div>
-      <small
-        class="form-text text-muted"
-      >
-        This domain will be used as suffix. E.g. The result for client "android-123" and domain "my.lan" will be "android-123.my.lan".
-      </small>
-    </div>
-    <button
-      class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
-      type="submit"
-    >
-       
-       
-      Save
-    </button>
-  </form>
-  <h1>
-    Connection test
-  </h1>
-  <p>
-    
-Here you can test your internet connection. This test is also useful when you need to check that your DNS resolving 
-works as expected. Remember to click on the 
-    <b>
-      Save button
-    </b>
-     if you changed your forwarder setting.
-        
-  </p>
-  <form>
-    <button
-      class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
-      type="submit"
-    >
-       
-       
-      Test connection
-    </button>
-  </form>
-</div>
+          Save"
 `;
 
 exports[`<DNS/> Test with snapshot forwarding. 1`] = `
-<div>
-  <h1>
-    DNS
-  </h1>
-  <p>
-    
-Router Turris uses its own DNS resolver with DNSSEC support. It is capable of working independently or it
-can forward your DNS queries your internet service provider's DNS resolver.
+"Snapshot Diff:
+- First value
++ Second value
 
-    <br />
-    <br />
-    
-The following setting determines the behavior of the DNS resolver. Usually, it is better to use the ISP's
-resolver in networks where it works properly. If it does not work for some reason, it is necessary to use
-direct resolving without forwarding.
-
-    <br />
-    <br />
-    
-In rare cases ISP's have improperly configured network which interferes with DNSSEC validation. If you
-experience problems with DNS, you can 
-    <b>
-      temporarily
-    </b>
-     disable DNSSEC validation to determine the source
-of the problem. However, keep in mind that without DNSSEC validation, you are vulnerable to DNS spoofing
-attacks! Therefore we 
-    <b>
-      recommend keeping DNSSEC turned on
-    </b>
-     and resolving the situation with your ISP as
-this is a serious flaw on their side.
-            
-  </p>
-  <form>
-    <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
-    >
-      <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
-      >
-        <input
-          class="custom-control-input"
-          id="1"
-          type="checkbox"
-        />
-        <label
-          class="custom-control-label"
-          for="1"
-        >
-          Use forwarding
-        </label>
+@@ -52,10 +52,181 @@
+          >
+            Use forwarding
+          </label>
+        </div>
       </div>
-    </div>
-    <div
-      class="form-group col-sm-12 offset-lg-1 col-lg-10"
-    >
-      <label
-        for="5"
-      >
-        DNS Forwarder
-      </label>
-      <select
-        class="custom-select"
-        id="5"
-      >
-        <option
-          value=""
-        >
-          Use provider's DNS resolver
-        </option>
-        <option
-          value="99_cloudflare"
-        >
-          Cloudflare (TLS)
-        </option>
-        <option
-          value="99_quad9"
-        >
-          Quad9 (TLS)
-        </option>
-        <option
-          value="00_odvr-cznic"
-        >
-          CZ.NIC (TLS)
-        </option>
-        <option
-          value="99_google"
-        >
-          Google
-        </option>
-      </select>
-    </div>
-    <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
-    >
++     <table
++       class=\\"table offset-lg-1 col-lg-10\\"
++     >
++       <thead>
++         <tr>
++           <th>
++             Forwarders
++           </th>
++           <th
++             aria-label=\\"Actions\\"
++           />
++         </tr>
++       </thead>
++       <tbody>
++         <tr
++           class=\\"table-secondary\\"
++         >
++           <td>
++             <div
++               class=\\"custom-control custom-radio\\"
++             >
++               <input
++                 checked=\\"\\"
++                 class=\\"custom-control-input\\"
++                 id=\\"provider_forwarder\\"
++                 name=\\"dns-forwarders\\"
++                 type=\\"radio\\"
++                 value=\\"provider_forwarder\\"
++               />
++               <label
++                 class=\\"custom-control-label\\"
++                 for=\\"provider_forwarder\\"
++               >
++                 Use provider's DNS resolver
++               </label>
++             </div>
++           </td>
++           <td
++             align=\\"center\\"
++           />
++         </tr>
++         <tr
++           class=\\"\\"
++         >
++           <td>
++             <div
++               class=\\"custom-control custom-radio\\"
++             >
++               <input
++                 class=\\"custom-control-input\\"
++                 id=\\"00_odvr-cznic\\"
++                 name=\\"dns-forwarders\\"
++                 type=\\"radio\\"
++                 value=\\"00_odvr-cznic\\"
++               />
++               <label
++                 class=\\"custom-control-label\\"
++                 for=\\"00_odvr-cznic\\"
++               >
++                 CZ.NIC (TLS)
++               </label>
++             </div>
++           </td>
++           <td
++             align=\\"center\\"
++           />
++         </tr>
++         <tr
++           class=\\"\\"
++         >
++           <td>
++             <div
++               class=\\"custom-control custom-radio\\"
++             >
++               <input
++                 class=\\"custom-control-input\\"
++                 id=\\"99_cloudflare\\"
++                 name=\\"dns-forwarders\\"
++                 type=\\"radio\\"
++                 value=\\"99_cloudflare\\"
++               />
++               <label
++                 class=\\"custom-control-label\\"
++                 for=\\"99_cloudflare\\"
++               >
++                 Cloudflare (TLS)
++               </label>
++             </div>
++           </td>
++           <td
++             align=\\"center\\"
++           />
++         </tr>
++         <tr
++           class=\\"\\"
++         >
++           <td>
++             <div
++               class=\\"custom-control custom-radio\\"
++             >
++               <input
++                 class=\\"custom-control-input\\"
++                 id=\\"99_google\\"
++                 name=\\"dns-forwarders\\"
++                 type=\\"radio\\"
++                 value=\\"99_google\\"
++               />
++               <label
++                 class=\\"custom-control-label\\"
++                 for=\\"99_google\\"
++               >
++                 Google
++               </label>
++             </div>
++           </td>
++           <td
++             align=\\"center\\"
++           />
++         </tr>
++         <tr
++           class=\\"\\"
++         >
++           <td>
++             <div
++               class=\\"custom-control custom-radio\\"
++             >
++               <input
++                 class=\\"custom-control-input\\"
++                 id=\\"custom_fwd\\"
++                 name=\\"dns-forwarders\\"
++                 type=\\"radio\\"
++                 value=\\"custom_fwd\\"
++               />
++               <label
++                 class=\\"custom-control-label\\"
++                 for=\\"custom_fwd\\"
++               >
++                 Custom forwarder
++               </label>
++             </div>
++           </td>
++           <td
++             align=\\"center\\"
++           >
++             <div
++               class=\\"btn-group\\"
++               role=\\"group\\"
++             >
++               <button
++                 class=\\"btn btn-primary btn-sm\\"
++                 type=\\"button\\"
++               >
++                   Edit
++               </button>
++               <button
++                 class=\\"btn btn-danger btn-sm\\"
++                 type=\\"button\\"
++               >
++                   Delete
++               </button>
++             </div>
++           </td>
++         </tr>
++       </tbody>
++     </table>
++     <button
++       class=\\"btn btn-outline-success btn-sm offset-lg-8 col-lg-3 col-sm-12\\"
++       type=\\"button\\"
++     >
++         Add custom forwarder
++     </button>
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
+        style=\\"margin-bottom: 1rem;\\"
       >
-        <input
-          checked=""
-          class="custom-control-input"
-          id="2"
-          type="checkbox"
-        />
-        <label
-          class="custom-control-label"
-          for="2"
-        >
-          Enable DNSSEC
-        </label>
-      </div>
-    </div>
-    <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
-    >
-      <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
-      >
-        <input
-          class="custom-control-input"
-          id="3"
-          type="checkbox"
-        />
-        <label
-          class="custom-control-label"
-          for="3"
-          style="margin-bottom: 0px;"
-        >
-          Enable DHCP clients in DNS
-        </label>
-      </div>
-      <small
-        class="form-text text-muted"
-      >
-        This will enable your DNS resolver to place DHCP client's names among the local DNS records.
-      </small>
-    </div>
-    <button
-      class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
-      type="submit"
-    >
-       
-       
-      Save
-    </button>
-  </form>
-  <h1>
-    Connection test
-  </h1>
-  <p>
-    
-Here you can test your internet connection. This test is also useful when you need to check that your DNS resolving 
-works as expected. Remember to click on the 
-    <b>
-      Save button
-    </b>
-     if you changed your forwarder setting.
-        
-  </p>
-  <form>
-    <button
-      class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
-      type="submit"
-    >
-       
-       
-      Test connection
-    </button>
-  </form>
-</div>
+        <div"
 `;
 
 exports[`<DNS/> Test with snapshot. 1`] = `
-<div>
+<DocumentFragment>
   <h1>
     DNS
   </h1>
@@ -455,9 +341,7 @@ this is a serious flaw on their side.
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
       type="submit"
     >
-       
-       
-      Save
+        Save
     </button>
   </form>
   <h1>
@@ -478,10 +362,8 @@ works as expected. Remember to click on the
       class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
       type="submit"
     >
-       
-       
-      Test connection
+        Test connection
     </button>
   </form>
-</div>
+</DocumentFragment>
 `;

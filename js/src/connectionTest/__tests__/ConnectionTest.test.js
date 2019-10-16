@@ -39,7 +39,7 @@ describe('<ConnectionTest/>', () => {
         await waitForElement(() => getByText(/DNSSEC/));
 
         expect(mockAxios.post).toBeCalled();
-        expect(mockAxios.post).toHaveBeenCalledWith('/api/dns-test', undefined, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith('/api/dns/test', undefined, expect.anything());
         expect(asFragment()).toMatchSnapshot();
     })
 });

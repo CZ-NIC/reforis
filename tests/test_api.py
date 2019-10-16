@@ -56,7 +56,6 @@ def test_api_endpoints_exist(client, endpoint, module, post_is_allowed):
         ('wifi-reset', 'wifi'),
         ('connection-test', 'wan'),
         ('dns/test', 'wan'),
-        ('dns/delete-forwarder', 'dns'),
         ('ntp-update', 'time'),
         ('reboot', 'maintain'),
     ]

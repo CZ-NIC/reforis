@@ -5,47 +5,61 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
-import {fireEvent, getByLabelText, getByText, render, wait} from 'customTestRender';
-
-import {dnsFixture} from './__fixtures__/dns';
+import React from "react";
+import { fireEvent, render, wait, waitForElement } from "customTestRender";
+import diffSnapshot from "snapshot-diff";
+import mockAxios from "jest-mock-axios";
 import { WebSockets } from "foris";
-import mockAxios from 'jest-mock-axios';
 
-import DNS from '../DNS';
+import { dnsFixture } from "./__fixtures__/dns";
+import { forwardersFixture } from "./__fixtures__/forwarders";
 
+import DNS from "../DNS";
 
-describe('<DNS/>', () => {
-    let dnsContainer;
+describe("<DNS/>", () => {
+    let firstRender;
+    let asFragment;
+    let getByText;
+    let getByLabelText;
 
     beforeEach(async () => {
         const webSockets = new WebSockets();
-        const {container} = render(<DNS ws={webSockets}/>);
-        mockAxios.mockResponse({data: dnsFixture()});
-        await wait(() => getByLabelText(container, 'Use forwarding'));
-        dnsContainer = container;
+        const renderRes = render(<DNS ws={webSockets}/>);
+        mockAxios.mockResponse({ data: dnsFixture });
+        getByText = renderRes.getByText;
+        getByLabelText = renderRes.getByLabelText;
+        asFragment = renderRes.asFragment;
+
+        await wait(() => renderRes.getByLabelText(/Use forwarding/));
+        firstRender = renderRes.asFragment();
     });
 
-    it('Test with snapshot.', () => {
-        expect(dnsContainer).toMatchSnapshot()
+    it("Test with snapshot.", () => {
+        expect(firstRender)
+            .toMatchSnapshot();
     });
 
-    it('Test with snapshot forwarding.', () => {
-        fireEvent.click(getByLabelText(dnsContainer, 'Use forwarding'));
-        expect(dnsContainer).toMatchSnapshot()
+    it("Test with snapshot forwarding.", async () => {
+        fireEvent.click(getByLabelText("Use forwarding"));
+        mockAxios.mockResponse({ data: forwardersFixture });
+        await waitForElement(() => getByLabelText(/Custom forwarder/));
+        expect(diffSnapshot(firstRender, asFragment()))
+            .toMatchSnapshot();
     });
 
-    it('Test with snapshot DHCP.', () => {
-        fireEvent.click(getByLabelText(dnsContainer, 'Enable DHCP clients in DNS'));
-        expect(dnsContainer).toMatchSnapshot()
+    it("Test with snapshot DHCP.", () => {
+        fireEvent.click(getByLabelText("Enable DHCP clients in DNS"));
+        expect(diffSnapshot(firstRender, asFragment()))
+            .toMatchSnapshot();
     });
 
-    it('Test post.', async () => {
-        fireEvent.click(getByLabelText(dnsContainer, 'Use forwarding'));
-        fireEvent.click(getByLabelText(dnsContainer, 'Enable DHCP clients in DNS'));
-        fireEvent.click(getByText(dnsContainer, 'Save'));
+    it("Test post.", () => {
+        fireEvent.click(getByLabelText("Use forwarding"));
+        fireEvent.click(getByLabelText("Enable DHCP clients in DNS"));
+        fireEvent.click(getByText("Save"));
 
-        expect(mockAxios.post).toBeCalled();
+        expect(mockAxios.post)
+            .toBeCalled();
         const data = {
             "dns_from_dhcp_domain": "lan",
             "dns_from_dhcp_enabled": true,
@@ -53,6 +67,7 @@ describe('<DNS/>', () => {
             "forwarder": "",
             "forwarding_enabled": true
         };
-        expect(mockAxios.post).toHaveBeenCalledWith('/api/dns', data, expect.anything());
+        expect(mockAxios.post)
+            .toHaveBeenCalledWith("/api/dns", data, expect.anything());
     });
 });

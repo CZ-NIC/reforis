@@ -118,22 +118,20 @@ function EditForwarderButtons({
     forwarder, editForwarder, deleteForwarder, disabled,
 }) {
     return (
-        <div className="btn-group" role="group" aria-label="Basic example">
+        <div className="btn-group" role="group">
             <Button
-                style={{ width: "2.5rem" }}
                 onClick={() => editForwarder(forwarder)}
                 className="btn-primary btn-sm"
                 disabled={disabled}
             >
-                <i className="fas fa-edit" />
+                {_("Edit")}
             </Button>
             <Button
-                style={{ width: "2rem" }}
                 onClick={deleteForwarder}
                 className="btn-danger btn-sm"
                 disabled={disabled}
             >
-                <i className="fas fa-trash" />
+                {_("Delete")}
             </Button>
         </div>
     );
