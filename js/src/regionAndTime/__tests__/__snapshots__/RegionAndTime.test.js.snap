@@ -466,6 +466,7 @@ procedure of SSL certificate verification might not work correctly.
             >
               <button
                 class="input-group-text"
+                type="button"
               >
                 <i
                   class="fa fa-sync-alt"

@@ -19,6 +19,7 @@ exports[`<WorkflowSelect/> Snapshot. 1`] = `
       </h3>
       <button
         class="btn btn-outline-secondary"
+        type="button"
       >
         <img
           alt="router"
@@ -37,6 +38,7 @@ exports[`<WorkflowSelect/> Snapshot. 1`] = `
       </h3>
       <button
         class="btn btn-outline-secondary"
+        type="button"
       >
         <img
           alt="min"
@@ -55,6 +57,7 @@ exports[`<WorkflowSelect/> Snapshot. 1`] = `
       </h3>
       <button
         class="btn btn-outline-secondary"
+        type="button"
       >
         <img
           alt="bridge"
