@@ -27,7 +27,6 @@ const API_URLs = new Proxy({
     dns: "/dns",
     dnsForwarders: "/dns/forwarders",
     dnsForwarder: "/dns/forwarder",
-    dnsDeleteForwarder: "/dns/delete-forwarder",
 
     connectionTest: "/connection-test",
     dnsTest: "/dns/test",

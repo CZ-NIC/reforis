@@ -8,13 +8,12 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import {
-    Button, Spinner, useAPIPost, WebSockets,
+    Button, Spinner, WebSockets,
 } from "foris";
 
-import API_URLs from "common/API";
 import ForwardersTable from "./ForwardersTable";
-import EditForwarder from "./EditForwarder";
-import { useForwardersList } from "./hooks";
+import useForwardersList from "./hooks";
+import ForwarderModal from "./Forwarder/ForwarderModal";
 
 Forwarders.propTypes = {
     value: PropTypes.string,
@@ -29,15 +28,17 @@ export default function Forwarders({
     const [forwarderList, forwarderListIsLoading] = useForwardersList(ws);
 
     const [forwarderToEdit, setForwarderToEdit] = useState(null);
+    const [forwarderModalShown, setForwarderModalShown] = useState(false);
 
-    const [deleteForwarderStatus, deleteForwarder] = useAPIPost(API_URLs.dnsDeleteForwarder);
-    const [editForwarderModalShown, setEditForwarderModalShown] = useState(false);
     function editForwarder(forwarder) {
         setForwarderToEdit(forwarder);
-        setEditForwarderModalShown(true);
+        setForwarderModalShown(true);
     }
 
-    const [addForwarderModalShown, setAddForwarderModalShown] = useState(false);
+    function addForwarder() {
+        setForwarderToEdit(null);
+        setForwarderModalShown(true);
+    }
 
     if (forwarderListIsLoading || !forwarderList) {
         return <Spinner />;
@@ -47,23 +48,17 @@ export default function Forwarders({
         <>
             <ForwardersTable
                 forwarders={forwarderList}
-                value={value}
+                selectedForwarder={value}
                 setFormValue={setFormValue}
                 editForwarder={editForwarder}
-                deleteForwarder={deleteForwarder}
-                disabled={disabled || deleteForwarderStatus.isSending}
+                disabled={disabled}
             />
-            <AddForwarderButton onClick={() => setAddForwarderModalShown(true)} />
-            <EditForwarder
-                shown={addForwarderModalShown}
-                setShown={setAddForwarderModalShown}
-                forwarders={forwarderList}
-            />
-            <EditForwarder
-                shown={editForwarderModalShown}
-                setShown={setEditForwarderModalShown}
+            <AddForwarderButton onClick={() => addForwarder()} />
+            <ForwarderModal
+                shown={forwarderModalShown}
+                setShown={setForwarderModalShown}
                 forwarder={forwarderToEdit}
-                forwarders={forwarderList}
+                title={forwarderToEdit ? _("Edit forwarder") : _("Add custom forwarder")}
             />
         </>
     );

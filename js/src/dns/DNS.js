@@ -14,6 +14,7 @@ import { validateDomain, ForisForm } from "foris";
 import ConnectionTest from "connectionTest/ConnectionTest";
 
 import DNSForm from "./DNSForm";
+import PROVIDER_FORWARDER from "./constants";
 
 DNS.propTypes = {
     ws: PropTypes.object.isRequired,
@@ -82,13 +83,13 @@ function validator(formData) {
 }
 
 function prepData(formData) {
-    if (formData.forwarder === "") formData.forwarder = "null";
+    if (formData.forwarder === "") formData.forwarder = PROVIDER_FORWARDER;
     return formData;
 }
 
 function prepDataToSubmit(formData) {
     delete formData.available_forwarders;
     if (!formData.forwarding_enabled) delete formData.forwarder;
-    if (formData.forwarder === "null") formData.forwarder = "";
+    else if (formData.forwarder === PROVIDER_FORWARDER) formData.forwarder = "";
     return formData;
 }

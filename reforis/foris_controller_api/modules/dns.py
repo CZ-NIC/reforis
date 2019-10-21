@@ -34,15 +34,20 @@ def forwarders():
     return jsonify(response)
 
 
-def forwarder():
+def add_forwarder():
     data = request.json
-    response = current_app.backend.perform('dns', 'set_forwarder', data)
+    response = current_app.backend.perform('dns', 'add_forwarder', data)
     return jsonify(response)
 
 
-def delete_forwarder():
+def set_forwarder(forwarder_name):
     data = request.json
-    response = current_app.backend.perform('dns', 'del_forwarder', data)
+    response = current_app.backend.perform('dns', 'set_forwarder', {'name': forwarder_name, **data})
+    return jsonify(response)
+
+
+def delete_forwarder(forwarder_name):
+    response = current_app.backend.perform('dns', 'del_forwarder', {'name': forwarder_name})
     return jsonify(response)
 
 
@@ -62,12 +67,15 @@ views = [
         'methods': ['GET']
     }, {
         'rule': '/dns/forwarder',
-        'view_func': forwarder,
-        'methods': ['POST', 'DELETE']
-    },
-    {
-        'rule': '/dns/delete-forwarder',
-        'view_func': delete_forwarder,
+        'view_func': add_forwarder,
         'methods': ['POST']
+    }, {
+        'rule': '/dns/forwarder/<forwarder_name>',
+        'view_func': set_forwarder,
+        'methods': ['PATCH']
+    }, {
+        'rule': '/dns/forwarder/<forwarder_name>',
+        'view_func': delete_forwarder,
+        'methods': ['DELETE']
     }
 ]

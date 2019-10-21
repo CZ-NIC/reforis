@@ -5,65 +5,17 @@
  * See /LICENSE for more information.
  */
 
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import update from "immutability-helper";
-import {
-    useAPIGet, useAPIPost, useForm, useWSForisModule,
-} from "foris";
+import { AlertContext, useAPIGet, useWSForisModule } from "foris";
 
 import API_URLs from "common/API";
-import validator from "./validator";
-
-const EMPTY_FORWARDER = {
-    name: "",
-    description: "",
-    ipaddresses: {
-        ipv4: "",
-        ipv6: "",
-    },
-    tls_type: "no",
-};
-
-export function useForwarderForm(forwarder) {
-    const [formState, setFormValue, initForm] = useForm(validator);
-    useEffect(() => {
-        initForm(forwarder || EMPTY_FORWARDER);
-    }, [forwarder, initForm]);
-
-    const [postState, post] = useAPIPost(API_URLs.dnsForwarder);
-    const [, postDeleteForwarder] = useAPIPost(API_URLs.dnsDeleteForwarder);
-
-    function saveForwarder() {
-        if (forwarder && forwarder.name !== formState.data.name) {
-            postDeleteForwarder({ name: forwarder.name });
-        }
-        post(prepDataToSubmit(formState.data));
-        if (!forwarder) initForm(EMPTY_FORWARDER);
-    }
-
-    return [
-        formState,
-        setFormValue,
-        postState,
-        saveForwarder,
-    ];
-}
-
-function prepDataToSubmit(forwarder) {
-    const tlsUnsetRules = {
-        no: ["tls_hostname", "tls_pin"],
-        hostname: ["tls_pin"],
-        pin: ["tls_hostname"],
-    };
-    const fieldsToUnset = ["editable"].concat(tlsUnsetRules[forwarder.tls_type]);
-
-    return update(forwarder, { $unset: fieldsToUnset });
-}
 
 const MODULE = "dns";
 
-export function useForwardersList(ws) {
+export default function useForwardersList(ws) {
     const [forwarders, setForwarders] = useState([]);
+    const setAlert = useContext(AlertContext);
 
     const [forwardersListState, getForwardersList] = useAPIGet(API_URLs.dnsForwarders);
     useEffect(() => {
@@ -72,47 +24,54 @@ export function useForwardersList(ws) {
 
     useEffect(() => {
         if (forwardersListState.data) {
-            const forwardersDict = forwardersListToDict(forwardersListState.data.forwarders);
-            setForwarders(forwardersDict);
+            setForwarders(forwardersListState.data.forwarders || []);
         }
-    }, [forwardersListState]);
+        if (forwardersListState.isError) {
+            setAlert(_("Can't load list of available forwarders."));
+        }
+    }, [forwardersListState, setAlert]);
 
-    const [wsForwarderSetData] = useWSForisModule(ws, MODULE, "set_forwarder");
-    useEffect(() => {
-        if (wsForwarderSetData) setForwarders((fwds) => updateForwarder(fwds, wsForwarderSetData));
-    }, [wsForwarderSetData]);
+    useForwardersWS(ws, setForwarders);
 
-    const [wsForwarderDelData] = useWSForisModule(ws, MODULE, "del_forwarder");
-    useEffect(() => {
-        if (wsForwarderDelData) setForwarders((fwds) => deleteForwarder(fwds, wsForwarderDelData));
-    }, [wsForwarderDelData]);
-
-    return [forwardersDictToList(forwarders), forwardersListState.isLoading];
+    return [sortForwarders(forwarders), forwardersListState.isLoading];
 }
 
-function forwardersListToDict(forwardersList) {
-    return forwardersList.reduce(
-        (dict, forwarder) => {
-            dict[forwarder.name] = forwarder;
-            delete dict[forwarder.name].name;
-            return dict;
-        }, {},
+function sortForwarders(forwarders) {
+    return forwarders.sort((a, b) => {
+        if (a.editable === b.editable) {
+            return a.name.localeCompare(b.name);
+        }
+        return a.editable ? 1 : -1;
+    });
+}
+
+function useForwardersWS(ws, setForwarders) {
+    function useForwarderWSAction(action, func) {
+        const [wsForwarderData] = useWSForisModule(ws, MODULE, action);
+        useEffect(() => {
+            if (wsForwarderData) setForwarders((forwarders) => func(forwarders, wsForwarderData));
+        }, [func, wsForwarderData]);
+    }
+
+    useForwarderWSAction("add_forwarder", addForwarder);
+    useForwarderWSAction("set_forwarder", setForwarder);
+    useForwarderWSAction("del_forwarder", deleteForwarder);
+}
+
+function addForwarder(forwarders, forwarder) {
+    return update(forwarders, { $push: [{ editable: true, ...forwarder }] });
+}
+
+function setForwarder(forwarders, forwarder) {
+    const forwarderIndex = forwarders.findIndex((fwd) => (fwd.name === forwarder.name));
+    return update(
+        forwarders, { $splice: [[forwarderIndex, 1, { editable: true, ...forwarder }]] },
     );
 }
 
-function forwardersDictToList(forwardersDict) {
-    const forwardersList = [];
-    Object.keys(forwardersDict)
-        .forEach((key) => {
-            forwardersList.push({ name: key, ...forwardersDict[key] });
-        });
-    return forwardersList;
-}
-
-function updateForwarder(forwarders, forwarder) {
-    return update(forwarders, { [forwarder.name]: { $set: { editable: true, ...forwarder } } });
-}
-
 function deleteForwarder(forwarders, forwarder) {
-    return update(forwarders, { $unset: [forwarder.name] });
+    const forwarderIndex = forwarders.findIndex((fwd) => (fwd.name === forwarder.name));
+    return update(
+        forwarders, { $splice: [[forwarderIndex, 1]] },
+    );
 }

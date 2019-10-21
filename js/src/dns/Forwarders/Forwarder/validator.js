@@ -21,7 +21,7 @@ export default function validator(formData) {
     }
 
     const errors = {
-        name: formData.name.length < 1 ? _("Forwarder name should have at least one symbol.") : undefined,
+        description: formData.description.length < 1 ? _("Forwarder name should have at least one symbol.") : undefined,
         ipaddresses: {
             ipv4: validateIPv4Address(formData.ipaddresses.ipv4) || checkAtLeastOneIP(),
             ipv6: validateIPv6Address(formData.ipaddresses.ipv6) || checkAtLeastOneIP(),

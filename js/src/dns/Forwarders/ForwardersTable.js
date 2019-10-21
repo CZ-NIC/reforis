@@ -7,38 +7,39 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import { Button } from "foris";
+import { Button, useAPIDelete } from "foris";
+
+import API_URLs from "common/API";
 
 import forwarderPropTypes from "./propTypes";
+import PROVIDER_FORWARDER from "../constants";
 
 ForwardersTable.propTypes = {
     forwarders: PropTypes.arrayOf(PropTypes.object),
-    value: PropTypes.string,
+    selectedForwarder: PropTypes.string,
     setFormValue: PropTypes.func,
     editForwarder: PropTypes.func,
-    deleteForwarder: PropTypes.func,
     disabled: PropTypes.bool,
 };
 
 export default function ForwardersTable({
-    forwarders, value, setFormValue, editForwarder, deleteForwarder, disabled,
+    forwarders, selectedForwarder, setFormValue, editForwarder, disabled,
 }) {
     return (
         <table className="table offset-lg-1 col-lg-10">
             <thead>
                 <tr>
                     <th>{_("Forwarders")}</th>
-                    {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
-                    <th />
+                    <th aria-label={_("Actions")} />
                 </tr>
             </thead>
             <tbody>
                 <ForwardersTableRow
                     forwarder={{
-                        name: "null",
+                        name: PROVIDER_FORWARDER,
                         description: _("Use provider's DNS resolver"),
                     }}
-                    active={value === "null"}
+                    active={selectedForwarder === PROVIDER_FORWARDER}
                     setFormValue={setFormValue}
                     disabled={disabled}
                 />
@@ -47,10 +48,9 @@ export default function ForwardersTable({
                         <ForwardersTableRow
                             key={forwarder.name}
                             forwarder={forwarder}
-                            active={forwarder.name === value}
+                            active={forwarder.name === selectedForwarder}
                             setFormValue={setFormValue}
                             editForwarder={editForwarder}
-                            deleteForwarder={deleteForwarder}
                             disabled={disabled}
                         />
                     ),
@@ -95,41 +95,45 @@ function ForwardersTableRow({
                 </div>
             </td>
             <td align="center">
-                {forwarder.editable ? (
-                    <EditForwarderButtons
+                {forwarder.editable && (
+                    <ForwarderActions
                         forwarder={forwarder}
                         editForwarder={editForwarder}
-                        deleteForwarder={() => deleteForwarder({ name: forwarder.name })}
+                        deleteForwarder={() => deleteForwarder(forwarder.name)}
                     />
-                ) : null}
+                )}
             </td>
         </tr>
     );
 }
 
-EditForwarderButtons.propTypes = {
+ForwarderActions.propTypes = {
     forwarder: forwarderPropTypes,
     editForwarder: PropTypes.func,
-    deleteForwarder: PropTypes.func,
     disabled: PropTypes.bool,
 };
 
-function EditForwarderButtons({
-    forwarder, editForwarder, deleteForwarder, disabled,
+function ForwarderActions({
+    forwarder, editForwarder, disabled,
 }) {
+    const [
+        deleteForwarderPostStatus,
+        deleteForwarderPost,
+    ] = useAPIDelete(`${API_URLs.dnsForwarder}/${forwarder.name}`);
+
     return (
         <div className="btn-group" role="group">
             <Button
                 onClick={() => editForwarder(forwarder)}
                 className="btn-primary btn-sm"
-                disabled={disabled}
+                disabled={disabled || deleteForwarderPostStatus.isLoading}
             >
                 {_("Edit")}
             </Button>
             <Button
-                onClick={deleteForwarder}
+                onClick={deleteForwarderPost}
                 className="btn-danger btn-sm"
-                disabled={disabled}
+                disabled={disabled || deleteForwarderPostStatus.isLoading}
             >
                 {_("Delete")}
             </Button>
