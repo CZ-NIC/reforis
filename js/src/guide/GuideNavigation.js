@@ -82,7 +82,7 @@ function GuideNavigationItem({
 
 NextStepButton.propTypes = {
     next_step: PropTypes.string.isRequired,
-    location: PropTypes.string.isRequired,
+    location: PropTypes.object.isRequired,
 };
 
 function NextStepButton({ next_step, location }) {
