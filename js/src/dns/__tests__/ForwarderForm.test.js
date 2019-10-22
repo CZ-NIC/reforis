@@ -53,7 +53,7 @@ describe("<ForwarderForm/>: new forwarder.", () => {
             "tls_type": "no",
         };
         expect(mockAxios.post)
-            .toHaveBeenCalledWith("/api/dns/forwarder", data, expect.anything());
+            .toHaveBeenCalledWith("/api/dns/forwarders", data, expect.anything());
     });
 });
 
@@ -97,6 +97,6 @@ describe("<ForwarderForm/>: existed forwarder.", () => {
             "tls_type": "no",
         };
         expect(mockAxios.patch)
-            .toHaveBeenCalledWith("/api/dns/forwarder/99_google", data, expect.anything());
+            .toHaveBeenCalledWith("/api/dns/forwarders/99_google", data, expect.anything());
     });
 });

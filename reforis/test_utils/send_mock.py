@@ -50,6 +50,17 @@ def send_mock(module, action, data, timeout=None, controller_id=None):
             'update_settings': {
                 'mode': 'unmanaged'
             }
+        },
+        'dns': {
+            'add_forwarder': {
+                'result': True
+            },
+            'set_forwarder': {
+                'result': True
+            },
+            'del_forwarder': {
+                'result': True
+            }
         }
     }
     return response_data.get(module, {}).get(action, {})
