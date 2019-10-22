@@ -54,7 +54,7 @@ def delete_forwarder(forwarder_name):
 
 
 def _response_to_json_or_error(response, error_message):
-    if response["result"]:
+    if response['result']:
         return jsonify(response)
     raise APIError(error_message)
 
