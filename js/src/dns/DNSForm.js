@@ -107,21 +107,20 @@ export default function DNSForm({
                 {...props}
             />
             {formData.dns_from_dhcp_enabled
-                ? (
-                    <TextInput
-                        label={_("Domain of DHCP clients in DNS")}
-                        value={formData.dns_from_dhcp_domain}
-                        helpText={HELP_TEXTS.dns_from_dhcp_domain}
-                        error={formErrors.dns_from_dhcp_domain}
+                    && (
+                        <TextInput
+                            label={_("Domain of DHCP clients in DNS")}
+                            value={formData.dns_from_dhcp_domain}
+                            helpText={HELP_TEXTS.dns_from_dhcp_domain}
+                            error={formErrors.dns_from_dhcp_domain}
 
-                        onChange={setFormValue(
-                            (value) => ({ dns_from_dhcp_domain: { $set: value } }),
-                        )}
+                            onChange={setFormValue(
+                                (value) => ({ dns_from_dhcp_domain: { $set: value } }),
+                            )}
 
-                        {...props}
-                    />
-                )
-                : null}
+                            {...props}
+                        />
+                    )}
         </>
     );
 }

@@ -25,8 +25,8 @@ const EMPTY_FORWARDER = {
 
 export default function useForwarderForm(forwarder, saveForwarderCallback) {
     const [formState, setFormValue, initForm] = useForm(validator);
-    const [postState, post] = useAPIPost(API_URLs.dnsForwarder);
-    const [patchState, patch] = useAPIPatch(`${API_URLs.dnsForwarder}/${(forwarder || {}).name}`);
+    const [postState, post] = useAPIPost(API_URLs.dnsForwarders);
+    const [patchState, patch] = useAPIPatch(`${API_URLs.dnsForwarders}/${(forwarder || {}).name}`);
 
     const setAlert = useContext(AlertContext);
 

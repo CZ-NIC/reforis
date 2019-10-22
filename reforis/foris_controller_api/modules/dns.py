@@ -1,5 +1,7 @@
 from flask import current_app, jsonify, request
+from flask_babel import gettext as _
 
+from reforis.foris_controller_api import APIError
 from reforis.foris_controller_api.utils import _foris_controller_settings_call
 
 
@@ -37,18 +39,24 @@ def forwarders():
 def add_forwarder():
     data = request.json
     response = current_app.backend.perform('dns', 'add_forwarder', data)
-    return jsonify(response)
+    return _response_to_json_or_error(response, _('Can\'t add new DNS forwarder.'))
 
 
 def set_forwarder(forwarder_name):
     data = request.json
     response = current_app.backend.perform('dns', 'set_forwarder', {'name': forwarder_name, **data})
-    return jsonify(response)
+    return _response_to_json_or_error(response, _('Can\'t set DNS forwarder.'))
 
 
 def delete_forwarder(forwarder_name):
     response = current_app.backend.perform('dns', 'del_forwarder', {'name': forwarder_name})
-    return jsonify(response)
+    return _response_to_json_or_error(response, _('Can\'t delete DNS forwarder.'))
+
+
+def _response_to_json_or_error(response, error_message):
+    if response["result"]:
+        return jsonify(response)
+    raise APIError(error_message)
 
 
 # pylint: disable=invalid-name
@@ -66,15 +74,15 @@ views = [
         'view_func': forwarders,
         'methods': ['GET']
     }, {
-        'rule': '/dns/forwarder',
+        'rule': '/dns/forwarders',
         'view_func': add_forwarder,
         'methods': ['POST']
     }, {
-        'rule': '/dns/forwarder/<forwarder_name>',
+        'rule': '/dns/forwarders/<forwarder_name>',
         'view_func': set_forwarder,
         'methods': ['PATCH']
     }, {
-        'rule': '/dns/forwarder/<forwarder_name>',
+        'rule': '/dns/forwarders/<forwarder_name>',
         'view_func': delete_forwarder,
         'methods': ['DELETE']
     }

@@ -119,7 +119,7 @@ function ForwarderActions({
     const [
         deleteForwarderPostStatus,
         deleteForwarderPost,
-    ] = useAPIDelete(`${API_URLs.dnsForwarder}/${forwarder.name}`);
+    ] = useAPIDelete(`${API_URLs.dnsForwarders}/${forwarder.name}`);
 
     return (
         <div className="btn-group" role="group">
