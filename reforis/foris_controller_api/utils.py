@@ -2,7 +2,16 @@ from http import HTTPStatus
 
 from flask import request, current_app, jsonify
 
-from . import APIError
+
+class APIError(Exception):
+    """
+    Raised when an error occurred during processing request.
+    """
+
+    def __init__(self, data, status_code=HTTPStatus.BAD_REQUEST):
+        super().__init__(self)
+        self.data = data
+        self.status_code = status_code
 
 
 def _foris_controller_settings_call(module):
@@ -20,12 +29,11 @@ def _foris_controller_settings_call(module):
     return jsonify(response)
 
 
-def log_error(app, message, request):
+def log_error(message):
     """
     Report error using logger from current application. Request URL and data are added to the message.
-    This function comes handy when using blueprints (pass `current_app` as `app`).
     """
-    app.logger.error('%s; URL: %s; data: %s', message, request.url, request.data)
+    current_app.logger.error('%s; URL: %s; data: %s', message, request.url, request.data)
 
 
 def validate_json(json_data, expected_fields=None):

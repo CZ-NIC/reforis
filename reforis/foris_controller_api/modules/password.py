@@ -2,7 +2,7 @@ from flask import jsonify, current_app, request
 from flask_babel import gettext as _
 
 from reforis.auth import _decode_password_to_base64, check_password
-from reforis.foris_controller_api import APIError
+from reforis.foris_controller_api.utils import APIError
 
 
 def password():

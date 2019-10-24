@@ -14,9 +14,10 @@ See `Flask Application Factories <http://flask.pocoo.org/docs/1.0/patterns/appfa
 """
 
 import json
+from http import HTTPStatus
 
 import pkg_resources
-from flask import render_template
+from flask import render_template, jsonify
 
 from .locale import get_translations
 
@@ -61,8 +62,17 @@ def create_app(config):
 
     app.register_error_handler(404, not_found_error)
     app.register_error_handler(500, internal_error)
-    from reforis.backend import ExceptionInBackend
+    # Handle backend errors
+    from .backend import ExceptionInBackend
     app.register_error_handler(ExceptionInBackend, foris_controller_error)
+    # Handle API errors
+    from .foris_controller_api.utils import log_error, APIError
+
+    def handle_api_error(error):
+        if error.status_code == HTTPStatus.INTERNAL_SERVER_ERROR:
+            log_error(error.data)
+        return jsonify(error.data), error.status_code
+    app.register_error_handler(APIError, handle_api_error)
 
     @app.context_processor
     def add_version_to_ctx():

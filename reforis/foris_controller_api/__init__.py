@@ -35,22 +35,6 @@ FORIS_CONTROLLER_MODULES = [
 foris_controller_api = Blueprint('ForisControllerAPI', __name__, url_prefix='/api')
 
 
-class APIError(Exception):
-    """
-    Raised when invalid request was received.
-    """
-
-    def __init__(self, data, status_code=HTTPStatus.BAD_REQUEST):
-        super().__init__(self)
-        self.data = data
-        self.status_code = status_code
-
-
-@foris_controller_api.errorhandler(APIError)
-def handle_invalid_usage(error):
-    return jsonify(error.data), error.status_code
-
-
 def register_modules(modules):
     for module in modules:
         module = import_module(f'.{module}', package='reforis.foris_controller_api.modules')
