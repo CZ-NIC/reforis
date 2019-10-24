@@ -1,6 +1,6 @@
 [MASTER]
 ignore=tests,reforis/test_utils
-load-plugins=
+load-plugins=pylint_quotes
 
 [MESSAGES CONTROL]
 # missing-docstring only for now, remove after this issue is deployed https://github.com/PyCQA/pylint/issues/1164

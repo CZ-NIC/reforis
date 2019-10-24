@@ -107,9 +107,9 @@ const PAGES = [
         icon: "box",
         pages: [
             {
-                name: _("Packages"),
-                path: "/packages",
-                component: Packages,
+                name: _("Update Settings"),
+                path: "/update-settings",
+                component: UpdateSettings,
             },
             {
                 name: _("Updates"),
@@ -117,9 +117,9 @@ const PAGES = [
                 component: Updates,
             },
             {
-                name: _("Update Settings"),
-                path: "/update-settings",
-                component: UpdateSettings,
+                name: _("Packages"),
+                path: "/packages",
+                component: Packages,
             },
         ],
     },

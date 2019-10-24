@@ -22,7 +22,12 @@ def send_mock(module, action, data, timeout=None, controller_id=None):
                 'user_lists': [],
                 'languages': [],
                 'approval': {},
-                'approval_settings': {}
+                'approval_settings': {
+                    'status': 'on'
+                }
+            },
+            'run': {
+                'result': True
             }
         },
         'router_notifications': {

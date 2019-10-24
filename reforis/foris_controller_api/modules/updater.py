@@ -1,3 +1,5 @@
+from http import HTTPStatus
+
 from flask import current_app, jsonify, request
 from flask_babel import gettext as _
 
@@ -81,19 +83,37 @@ def approvals():
         **Example request**:
 
         .. sourcecode:: http
-
             {
-                "approval_settings": {"status": "on"},
-                "enabled": true,
-                "reboots": { "delay": 4, "time": "04:30"}
+                approvable: true,
+                hash: "d529d9d94ac906435cef4124f76f90dbed071b09837ce150615ddfde95bc62ab",
+                plan: [
+                    { name: "base-files", new_ver: "194.2-611f08c.0", op: "install" },
+                    { name: "luci-proto-ipv6", new_ver: "git-19.294.12576-b3ab814-1.0", op: "install" }
+                ],
+                present: true,
+                reboot: false,
+                status: "asked",
+                time: "2019-10-21T06:58:28"
             }
     """
     response = None
     if request.method == 'GET':
         lang_data = {'lang': _get_locale_from_backend(current_app)}
         updater_settings = current_app.backend.perform('updater', 'get_settings', lang_data)
-        response = {**updater_settings['approval'], 'update_automatically': updater_settings['enabled']}
 
+        # Updates that are delayed or need approval
+        approvable = bool(
+            updater_settings['enabled']
+            and updater_settings['approval_settings']['status'] != 'off'
+            and updater_settings['approval'].get('present') is True
+            and updater_settings['approval'].get('status') == 'asked'
+            and updater_settings['approval'].get('plan')  # Non-empty list of packages
+        )
+
+        response = {
+            **updater_settings['approval'],
+            'approvable': approvable,
+        }
     elif request.method == 'POST':
         data = request.json
         response = current_app.backend.perform('updater', 'resolve_approval', data)
@@ -134,12 +154,31 @@ def packages():
     return jsonify(response)
 
 
+def updates_run():
+    response = current_app.backend.perform('updater', 'run', {'set_reboot_indicator': False})
+    if response.get('result') is not True:
+        return jsonify(_('Cannot start updater')), HTTPStatus.INTERNAL_SERVER_ERROR
+    return jsonify(response)
+
+
+def updates_status():
+    return jsonify({'running': current_app.backend.perform('web', 'get_data')['updater_running']})
+
+
 # pylint: disable=invalid-name
 views = [
     {
         'rule': '/updates',
         'view_func': updates,
         'methods': ['GET', 'POST'],
+    }, {
+        'rule': '/updates/run',
+        'view_func': updates_run,
+        'methods': ['POST'],
+    }, {
+        'rule': '/updates/status',
+        'view_func': updates_status,
+        'methods': ['GET'],
     }, {
         'rule': '/approvals',
         'view_func': approvals,

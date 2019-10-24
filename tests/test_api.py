@@ -57,6 +57,7 @@ def test_api_endpoints_exist(client, endpoint, module, post_is_allowed):
         ('dns/test', 'wan'),
         ('ntp-update', 'time'),
         ('reboot', 'maintain'),
+        ('updates/run', 'updater'),
     ]
 )
 def test_api_post_endpoints_exist(client, endpoint, module):

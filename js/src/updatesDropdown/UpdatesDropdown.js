@@ -8,30 +8,30 @@
 import React, { useEffect } from "react";
 
 import {
-    ForisURLs, useAPIGet, useAPIPost, SpinnerElement,
+    ForisURLs, useAPIGet, useAPIPost, SpinnerElement, Button,
 } from "foris";
 import API_URLs from "common/API";
 
-import isUpdateAvailable from "packageManagement/updates/utils";
-
 export default function UpdatesDropdown() {
     const [getState, get] = useAPIGet(API_URLs.approvals);
-    const [postState, post] = useAPIPost(API_URLs.approvals);
-
-    const approval = getState.data;
-
-    function handleUpdate(solution) {
-        return (event) => {
-            event.preventDefault();
-            post({ hash: approval.hash, solution });
-        };
-    }
-
+    const update = getState.data;
     useEffect(() => {
         get();
-    }, [get, postState.data]);
+    }, [get]);
 
-    if (getState.isLoading) {
+    const [postState, post] = useAPIPost(API_URLs.approvals);
+    // Reload approvals when resolution is successful
+    useEffect(() => {
+        if (!postState.isSending && postState.data && !postState.isError) {
+            get();
+        }
+    }, [get, postState]);
+
+    function resolveUpdate(solution) {
+        post({ hash: update.hash, solution });
+    }
+
+    if (getState.isLoading || !update) {
         return (
             <div className="dropdown" id="updates-dropdown">
                 <button type="button" className="nav-item btn btn-link">
@@ -41,28 +41,41 @@ export default function UpdatesDropdown() {
         );
     }
 
-    if (!isUpdateAvailable(approval)) {
+    if (!update.approvable) {
         return null;
+    }
+
+    let hasError = false;
+    let dropdownContent;
+    if (postState.isError) {
+        hasError = true;
+        dropdownContent = <span className="dropdown-item text-danger">{_("Cannot resolve update")}</span>;
+    } else {
+        dropdownContent = (
+            <>
+                <span
+                    className="dropdown-item"
+                    dangerouslySetInnerHTML={{ __html: _(`See details in <a href=${ForisURLs.packageManagement.updates}>Updates</a> page.`) }}
+                />
+                <div className="dropdown-item" id="updates-dropdown-actions">
+                    <Button className="btn-warning mr-3" onClick={() => resolveUpdate("deny")}>{_("Ignore")}</Button>
+                    <Button className="btn-primary" onClick={() => resolveUpdate("grant")}>{_("Install now")}</Button>
+                </div>
+            </>
+        );
     }
 
     return (
         <div className="dropdown">
             <button type="button" className="nav-item btn btn-link">
-                <i className="fa fa-sync fa-lg" />
+                <i className={`fa fa-sync fa-lg ${hasError ? "text-danger" : ""}`.trim()} />
             </button>
             <div className="dropdown-menu">
                 <div className="dropdown-header">
                     <h5>{_("Approve update")}</h5>
                 </div>
                 <div className="dropdown-divider" />
-                <p
-                    className="dropdown-item"
-                    dangerouslySetInnerHTML={{ __html: _(`See details in <a href=${ForisURLs.packageManagement.updates}>Updates</a> page.`) }}
-                />
-                <div className="dropdown-item" id="updates-dropdown-actions">
-                    <button type="button" className="btn btn-warning mr-3" onClick={handleUpdate("deny")}>{_("Deny")}</button>
-                    <button type="button" className="btn btn-primary" onClick={handleUpdate("grant")}>{_("Install now")}</button>
-                </div>
+                {dropdownContent}
             </div>
         </div>
     );

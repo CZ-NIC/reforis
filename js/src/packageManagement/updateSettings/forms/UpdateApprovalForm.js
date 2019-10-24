@@ -28,7 +28,7 @@ const UPDATE_APPROVALS_CHOICES = [
     },
 ];
 
-UpdateApprovalsForm.propTypes = {
+UpdateApprovalForm.propTypes = {
     setFormValue: PropTypes.func.isRequired,
     formData: PropTypes.shape({
         status: PropTypes.string,
@@ -39,11 +39,11 @@ UpdateApprovalsForm.propTypes = {
     }),
 };
 
-UpdateApprovalsForm.defaultProps = {
+UpdateApprovalForm.defaultProps = {
     formErrors: {},
 };
 
-export default function UpdateApprovalsForm({
+export default function UpdateApprovalForm({
     formData, formErrors, setFormValue, ...props
 }) {
     return (
@@ -87,7 +87,7 @@ export default function UpdateApprovalsForm({
     );
 }
 
-export function validateUpdateApprovals(formData) {
+export function validateUpdateApproval(formData) {
     const errors = {};
     if (formData.delay < 1 || formData.delay > 168) {
         errors.delay = _("Updates must be delayed by least 1 hour and at most by 168 hours");

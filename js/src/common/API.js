@@ -36,6 +36,8 @@ const API_URLs = new Proxy({
     ntpUpdate: "/ntp-update",
     approvals: "/approvals",
     updates: "/updates",
+    runUpdates: "/updates/run",
+    updatesStatus: "/updates/status",
     packages: "/packages",
     reboot: "/reboot",
 

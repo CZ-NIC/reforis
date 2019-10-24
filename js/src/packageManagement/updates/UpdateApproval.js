@@ -5,49 +5,51 @@
  * See /LICENSE for more information.
  */
 
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 
 import {
-    useAPIGet, useAPIPost, Button, Spinner,
+    useAPIPost, Button, Spinner, AlertContext,
 } from "foris";
 import API_URLs from "common/API";
 import toLocaleDateString from "utils/localeDate";
 
-import isUpdateAvailable from "./utils";
+UpdateApproval.propTypes = {
+    update: PropTypes.object.isRequired,
+    onSuccess: PropTypes.func.isRequired,
+    className: PropTypes.string,
+};
 
-export default function UpdateApprovals() {
-    const [getState, get] = useAPIGet(API_URLs.approvals);
-    const approval = getState.data;
-    useEffect(() => {
-        get();
-    }, [get]);
+export default function UpdateApproval({ update, onSuccess, className }) {
+    const setAlert = useContext(AlertContext);
 
     const [postState, post] = useAPIPost(API_URLs.approvals);
+    // Execute callback when resolution is successful
     useEffect(() => {
-        get();
-    }, [get, postState.data]);
+        if (postState.isError) {
+            setAlert(_("Cannot resolve update"));
+        } else if (!postState.isSending && postState.data) {
+            onSuccess();
+        }
+    }, [postState, onSuccess, setAlert]);
 
-    function postHandler(solution) {
-        return (e) => {
-            e.preventDefault();
-            post({ hash: approval.hash, solution });
-        };
+    function resolveUpdate(solution) {
+        post({ hash: update.hash, solution });
     }
 
-    if (getState.isLoading || postState.isSending) return <Spinner className="row justify-content-center" />;
+    if (postState.isSending) return <Spinner className="text-center" />;
 
-    if (!isUpdateAvailable(approval)) {
-        return <p>{_("There are no updates awaiting your approval.")}</p>;
+    if (!update.approvable) {
+        return <p className="text-center text-muted">{_("There are no updates awaiting your approval.")}</p>;
     }
 
     const packagesNumber = babel.format(
         ngettext(
             "There is %d package to be updated.",
             "There are %d packages to be updated.",
-            approval.plan.length,
+            update.plan.length,
         ),
-        approval.plan.length,
+        update.plan.length,
     );
     const details = _(
         "See <a data-toggle=\"collapse\" href=\"#plan-wrapper\" role=\"button\" aria-expanded=\"false\" aria-controls=\"plan-wrapper\">details</a>",
@@ -56,27 +58,27 @@ export default function UpdateApprovals() {
     const buttonMargin = { marginBottom: "1rem" };
 
     return (
-        <>
-            <h3>{babel.format(_("Approve update from %s"), toLocaleDateString(approval.time))}</h3>
+        <div className={className}>
+            <h3>{babel.format(_("Approve update from %s"), toLocaleDateString(update.time))}</h3>
             <p dangerouslySetInnerHTML={{ __html: `${packagesNumber} ${details}` }} />
             <div className="collapse" id="plan-wrapper" data-testid="plan-wrapper">
-                <Plan plan={approval.plan} />
+                <Plan plan={update.plan} />
             </div>
             <Button
                 style={buttonMargin}
-                className="btn btn-warning offset-lg-1 col-lg-4 col-sm-12"
-                onClick={postHandler("deny")}
+                className="btn-warning offset-lg-1 col-lg-4 col-sm-12"
+                onClick={() => resolveUpdate("deny")}
             >
-                {_("Deny")}
+                {_("Ignore")}
             </Button>
             <Button
                 style={buttonMargin}
-                className="btn btn-primary col-sm-12 col-lg-4 offset-lg-2 col-lg-3"
-                onClick={postHandler("grant")}
+                className="btn-primary col-sm-12 col-lg-4 offset-lg-2 col-lg-3"
+                onClick={() => resolveUpdate("grant")}
             >
                 {_("Install now")}
             </Button>
-        </>
+        </div>
     );
 }
 

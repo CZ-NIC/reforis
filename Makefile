@@ -100,7 +100,7 @@ lint-js:
 lint-js-fix:
 	cd $(JS_DIR); npm run lint:fix
 lint-web: venv
-	$(VENV_BIN)/$(DEV_PYTHON) -m pylint --load-plugins pylint_quotes --rcfile=pylintrc reforis
+	$(VENV_BIN)/$(DEV_PYTHON) -m pylint --rcfile=pylintrc reforis
 	$(VENV_BIN)/$(DEV_PYTHON) -m pycodestyle --config=pycodestyle reforis
 
 test: test-js test-web
