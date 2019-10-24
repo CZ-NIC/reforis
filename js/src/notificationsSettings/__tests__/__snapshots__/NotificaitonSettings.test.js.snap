@@ -10,12 +10,10 @@ exports[`<NotificationsSettings/> Disabled 1`] = `
       Email notifications
     </h3>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           checked=""
@@ -53,12 +51,10 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
       Email notifications
     </h3>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           checked=""
@@ -76,12 +72,10 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
     </div>
     <div
       class="form-group col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
     >
       <label
-        class="col-12"
+        class="d-block"
         for="2"
-        style="padding-left: 0px;"
       >
         SMTP provider
       </label>
@@ -181,12 +175,10 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
       </select>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           checked=""
@@ -197,16 +189,15 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
         <label
           class="custom-control-label"
           for="5"
-          style="margin-bottom: 0px;"
         >
           Send news
         </label>
+        <small
+          class="form-text text-muted"
+        >
+          Send emails about new features.
+        </small>
       </div>
-      <small
-        class="form-text text-muted"
-      >
-        Send emails about new features.
-      </small>
     </div>
     <h4>
       SMTP settings
@@ -403,12 +394,10 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
       Email notifications
     </h3>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           checked=""
@@ -426,12 +415,10 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
     </div>
     <div
       class="form-group col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
     >
       <label
-        class="col-12"
+        class="d-block"
         for="2"
-        style="padding-left: 0px;"
       >
         SMTP provider
       </label>
@@ -531,12 +518,10 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
       </select>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           checked=""
@@ -547,16 +532,15 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
         <label
           class="custom-control-label"
           for="5"
-          style="margin-bottom: 0px;"
         >
           Send news
         </label>
+        <small
+          class="form-text text-muted"
+        >
+          Send emails about new features.
+        </small>
       </div>
-      <small
-        class="form-text text-muted"
-      >
-        Send emails about new features.
-      </small>
     </div>
     <div
       class="form-group col-sm-12 offset-lg-1 col-lg-10"

@@ -148,12 +148,10 @@ available
   </div>
   <form>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           class="custom-control-input"
@@ -327,11 +325,11 @@ exports[`<UpdateSettings/> Test with snapshot enabled, delayed. 1`] = `
 - First value
 + Second value
 
-@@ -244,10 +244,53 @@
-          class=\\"form-text text-muted\\"
-        >
-          You have to approve the updates, otherwise they won't be installed.
-        </small>
+@@ -241,10 +241,53 @@
+          >
+            You have to approve the updates, otherwise they won't be installed.
+          </small>
+        </div>
       </div>
 +     <div
 +       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
@@ -388,7 +386,7 @@ exports[`<UpdateSettings/> Test with snapshot enabled. 1`] = `
 - First value
 + Second value
 
-@@ -164,10 +164,91 @@
+@@ -162,10 +162,90 @@
             Enable automatic updates (recommended)
           </label>
         </div>
@@ -404,10 +402,9 @@ exports[`<UpdateSettings/> Test with snapshot enabled. 1`] = `
 +     </p>
 +     <div
 +       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
-+       style=\\"margin-bottom: 1rem;\\"
 +     >
 +       <div
-+         class=\\"custom-control custom-radio custom-control-inline\\"
++         class=\\"custom-control custom-radio\\"
 +       >
 +         <input
 +           class=\\"custom-control-input\\"
@@ -422,14 +419,14 @@ exports[`<UpdateSettings/> Test with snapshot enabled. 1`] = `
 +         >
 +           Automatic installation
 +         </label>
++         <small
++           class=\\"form-text text-muted mt-0 mb-3\\"
++         >
++           Updates will be installed without user's intervention.
++         </small>
 +       </div>
-+       <small
-+         class=\\"form-text text-muted\\"
-+       >
-+         Updates will be installed without user's intervention.
-+       </small>
 +       <div
-+         class=\\"custom-control custom-radio custom-control-inline\\"
++         class=\\"custom-control custom-radio\\"
 +       >
 +         <input
 +           class=\\"custom-control-input\\"
@@ -444,14 +441,14 @@ exports[`<UpdateSettings/> Test with snapshot enabled. 1`] = `
 +         >
 +           Delayed updates
 +         </label>
++         <small
++           class=\\"form-text text-muted mt-0 mb-3\\"
++         >
++           Updates will be installed with an adjustable delay. You can also approve them manually.
++         </small>
 +       </div>
-+       <small
-+         class=\\"form-text text-muted\\"
-+       >
-+         Updates will be installed with an adjustable delay. You can also approve them manually.
-+       </small>
 +       <div
-+         class=\\"custom-control custom-radio custom-control-inline\\"
++         class=\\"custom-control custom-radio\\"
 +       >
 +         <input
 +           checked=\\"\\"
@@ -467,12 +464,12 @@ exports[`<UpdateSettings/> Test with snapshot enabled. 1`] = `
 +         >
 +           Update approval needed
 +         </label>
++         <small
++           class=\\"form-text text-muted mt-0 mb-3\\"
++         >
++           You have to approve the updates, otherwise they won't be installed.
++         </small>
 +       </div>
-+       <small
-+         class=\\"form-text text-muted\\"
-+       >
-+         You have to approve the updates, otherwise they won't be installed.
-+       </small>
 +     </div>
 +     <h4>
         Automatic restarts after software update

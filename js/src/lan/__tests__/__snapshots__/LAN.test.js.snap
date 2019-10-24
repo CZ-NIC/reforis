@@ -118,12 +118,10 @@ it has opened ports for configuration interface and other services.
       </div>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           class="custom-control-input"
@@ -133,16 +131,15 @@ it has opened ports for configuration interface and other services.
         <label
           class="custom-control-label"
           for="7"
-          style="margin-bottom: 0px;"
         >
           Enable DHCP
         </label>
+        <small
+          class="form-text text-muted"
+        >
+          Enable this option to automatically assign IP addresses to the devices connected to the router.
+        </small>
       </div>
-      <small
-        class="form-text text-muted"
-      >
-        Enable this option to automatically assign IP addresses to the devices connected to the router.
-      </small>
     </div>
     <div
       class="form-group col-sm-12 offset-lg-1 col-lg-10"
@@ -413,12 +410,10 @@ it has opened ports for configuration interface and other services.
       </div>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           class="custom-control-input"
@@ -428,16 +423,15 @@ it has opened ports for configuration interface and other services.
         <label
           class="custom-control-label"
           for="7"
-          style="margin-bottom: 0px;"
         >
           Enable DHCP
         </label>
+        <small
+          class="form-text text-muted"
+        >
+          Enable this option to automatically assign IP addresses to the devices connected to the router.
+        </small>
       </div>
-      <small
-        class="form-text text-muted"
-      >
-        Enable this option to automatically assign IP addresses to the devices connected to the router.
-      </small>
     </div>
     <button
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"

@@ -69,9 +69,9 @@ exports[`<WAN/> Snapshot WAN IPv4 (pppoe). 1`] = `
         WAN IPv6
       </h3>
       <div
-@@ -138,10 +164,11 @@
-          Useful in cases, when a specific MAC address is required by your internet service provider.
-        </small>
+@@ -135,10 +161,11 @@
+          </small>
+        </div>
       </div>
       <button
         class=\\"btn btn-primary  offset-lg-8 col-lg-3 col-sm-12\\"
@@ -220,9 +220,9 @@ exports[`<WAN/> Snapshot WAN IPv4 (static). 1`] = `
       <h3>
         WAN IPv6
       </h3>
-@@ -138,10 +237,11 @@
-          Useful in cases, when a specific MAC address is required by your internet service provider.
-        </small>
+@@ -135,10 +234,11 @@
+          </small>
+        </div>
       </div>
       <button
         class=\\"btn btn-primary  offset-lg-8 col-lg-3 col-sm-12\\"
@@ -239,11 +239,11 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled. 1`] = `
 - First value
 + Second value
 
-@@ -242,10 +242,100 @@
-          class=\\"form-text text-muted\\"
-        >
-          Some tunnel providers allow you to have public dynamic IPv4. Note that you need to fill in some extra fields to make it work.
-        </small>
+@@ -239,10 +239,100 @@
+          >
+            Some tunnel providers allow you to have public dynamic IPv4. Note that you need to fill in some extra fields to make it work.
+          </small>
+        </div>
       </div>
 +     <div
 +       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
@@ -339,7 +339,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled. 1`] = `
         MAC
       </h3>
       <div
-        class=\\"col-sm-12 offset-lg-1 col-lg-10\\""
+        class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\""
 `;
 
 exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
@@ -347,7 +347,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
 - First value
 + Second value
 
-@@ -106,10 +106,146 @@
+@@ -106,10 +106,143 @@
           >
             6in4 (public IPv4 address required)
           </option>
@@ -463,12 +463,10 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
 +       </div>
 +     </div>
 +     <div
-+       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
-+       style=\\"margin-bottom: 1rem;\\"
++       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
 +       <div
-+         class=\\"custom-control custom-checkbox\\"
-+         style=\\"margin-bottom: 0px;\\"
++         class=\\"custom-control custom-checkbox \\"
 +       >
 +         <input
 +           class=\\"custom-control-input\\"
@@ -478,25 +476,24 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
 +         <label
 +           class=\\"custom-control-label\\"
 +           for=\\"11\\"
-+           style=\\"margin-bottom: 0px;\\"
 +         >
 +           Dynamic IPv4 handling
 +         </label>
++         <small
++           class=\\"form-text text-muted\\"
++         >
++           Some tunnel providers allow you to have public dynamic IPv4. Note that you need to fill in some extra fields to make it work.
++         </small>
 +       </div>
-+       <small
-+         class=\\"form-text text-muted\\"
-+       >
-+         Some tunnel providers allow you to have public dynamic IPv4. Note that you need to fill in some extra fields to make it work.
-+       </small>
 +     </div>
       <h3>
         MAC
       </h3>
       <div
-        class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
-@@ -138,10 +274,11 @@
-          Useful in cases, when a specific MAC address is required by your internet service provider.
-        </small>
+        class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
+@@ -135,10 +268,11 @@
+          </small>
+        </div>
       </div>
       <button
         class=\\"btn btn-primary  offset-lg-8 col-lg-3 col-sm-12\\"
@@ -553,10 +550,10 @@ exports[`<WAN/> Snapshot WAN IPv6 (6to4). 1`] = `
         MAC
       </h3>
       <div
-        class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
-@@ -138,10 +168,11 @@
-          Useful in cases, when a specific MAC address is required by your internet service provider.
-        </small>
+        class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
+@@ -135,10 +165,11 @@
+          </small>
+        </div>
       </div>
       <button
         class=\\"btn btn-primary  offset-lg-8 col-lg-3 col-sm-12\\"
@@ -607,7 +604,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (dhcpv6). 1`] = `
         MAC
       </h3>
       <div
-        class=\\"col-sm-12 offset-lg-1 col-lg-10\\""
+        class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\""
 `;
 
 exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
@@ -758,10 +755,10 @@ exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
         MAC
       </h3>
       <div
-        class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
-@@ -138,10 +271,11 @@
-          Useful in cases, when a specific MAC address is required by your internet service provider.
-        </small>
+        class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
+@@ -135,10 +268,11 @@
+          </small>
+        </div>
       </div>
       <button
         class=\\"btn btn-primary  offset-lg-8 col-lg-3 col-sm-12\\"
@@ -778,11 +775,11 @@ exports[`<WAN/> Snapshot: MAC enabled 1`] = `
 - First value
 + Second value
 
-@@ -136,12 +136,43 @@
-          class=\\"form-text text-muted\\"
-        >
-          Useful in cases, when a specific MAC address is required by your internet service provider.
-        </small>
+@@ -133,12 +133,43 @@
+          >
+            Useful in cases, when a specific MAC address is required by your internet service provider.
+          </small>
+        </div>
       </div>
 +     <div
 +       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
@@ -939,12 +936,10 @@ router to the network, it is usually not necessary to change this setting.
       MAC
     </h3>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           class="custom-control-input"
@@ -954,16 +949,15 @@ router to the network, it is usually not necessary to change this setting.
         <label
           class="custom-control-label"
           for="4"
-          style="margin-bottom: 0px;"
         >
           Custom MAC address
         </label>
+        <small
+          class="form-text text-muted"
+        >
+          Useful in cases, when a specific MAC address is required by your internet service provider.
+        </small>
       </div>
-      <small
-        class="form-text text-muted"
-      >
-        Useful in cases, when a specific MAC address is required by your internet service provider.
-      </small>
     </div>
     <button
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"

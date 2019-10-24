@@ -5,11 +5,11 @@ exports[`<DNS/> Test with snapshot DHCP. 1`] = `
 - First value
 + Second value
 
-@@ -101,10 +101,34 @@
-          class=\\"form-text text-muted\\"
-        >
-          This will enable your DNS resolver to place DHCP client's names among the local DNS records.
-        </small>
+@@ -94,10 +94,34 @@
+          >
+            This will enable your DNS resolver to place DHCP client's names among the local DNS records.
+          </small>
+        </div>
       </div>
 +     <div
 +       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
@@ -47,7 +47,7 @@ exports[`<DNS/> Test with snapshot forwarding. 1`] = `
 - First value
 + Second value
 
-@@ -52,10 +52,181 @@
+@@ -50,10 +50,181 @@
           >
             Use forwarding
           </label>
@@ -225,10 +225,10 @@ exports[`<DNS/> Test with snapshot forwarding. 1`] = `
 +         Add custom forwarder
 +     </button>
       <div
-        class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
-        style=\\"margin-bottom: 1rem;\\"
+        class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
       >
-        <div"
+        <div
+          class=\\"custom-control custom-checkbox \\""
 `;
 
 exports[`<DNS/> Test with snapshot. 1`] = `
@@ -268,12 +268,10 @@ this is a serious flaw on their side.
   </p>
   <form>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           class="custom-control-input"
@@ -289,12 +287,10 @@ this is a serious flaw on their side.
       </div>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           checked=""
@@ -311,12 +307,10 @@ this is a serious flaw on their side.
       </div>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           class="custom-control-input"
@@ -326,16 +320,15 @@ this is a serious flaw on their side.
         <label
           class="custom-control-label"
           for="3"
-          style="margin-bottom: 0px;"
         >
           Enable DHCP clients in DNS
         </label>
+        <small
+          class="form-text text-muted"
+        >
+          This will enable your DNS resolver to place DHCP client's names among the local DNS records.
+        </small>
       </div>
-      <small
-        class="form-text text-muted"
-      >
-        This will enable your DNS resolver to place DHCP client's names among the local DNS records.
-      </small>
     </div>
     <button
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"

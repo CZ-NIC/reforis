@@ -21,12 +21,10 @@ in LAN.
   </p>
   <form>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           class="custom-control-input"
@@ -77,12 +75,10 @@ in LAN.
   </p>
   <form>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           class="custom-control-input"
@@ -143,12 +139,10 @@ in LAN.
       </div>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           class="custom-control-input"
@@ -158,16 +152,15 @@ in LAN.
         <label
           class="custom-control-label"
           for="5"
-          style="margin-bottom: 0px;"
         >
           Enable DHCP
         </label>
+        <small
+          class="form-text text-muted"
+        >
+          Enable this option to automatically assign IP addresses to the devices connected to the router.
+        </small>
       </div>
-      <small
-        class="form-text text-muted"
-      >
-        Enable this option to automatically assign IP addresses to the devices connected to the router.
-      </small>
     </div>
     <div
       class="form-group col-sm-12 offset-lg-1 col-lg-10"
@@ -299,12 +292,10 @@ in LAN.
       </div>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           class="custom-control-input"
@@ -314,16 +305,15 @@ in LAN.
         <label
           class="custom-control-label"
           for="6"
-          style="margin-bottom: 0px;"
         >
           Enable QoS
         </label>
+        <small
+          class="form-text text-muted"
+        >
+          This option enables you to set a bandwidth limit for the guest network, so that your main network doesn't get slowed-down by it.
+        </small>
       </div>
-      <small
-        class="form-text text-muted"
-      >
-        This option enables you to set a bandwidth limit for the guest network, so that your main network doesn't get slowed-down by it.
-      </small>
     </div>
     <button
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
@@ -368,12 +358,10 @@ in LAN.
   </p>
   <form>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           class="custom-control-input"
@@ -434,12 +422,10 @@ in LAN.
       </div>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           class="custom-control-input"
@@ -449,24 +435,21 @@ in LAN.
         <label
           class="custom-control-label"
           for="5"
-          style="margin-bottom: 0px;"
         >
           Enable DHCP
         </label>
+        <small
+          class="form-text text-muted"
+        >
+          Enable this option to automatically assign IP addresses to the devices connected to the router.
+        </small>
       </div>
-      <small
-        class="form-text text-muted"
-      >
-        Enable this option to automatically assign IP addresses to the devices connected to the router.
-      </small>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           class="custom-control-input"
@@ -476,16 +459,15 @@ in LAN.
         <label
           class="custom-control-label"
           for="6"
-          style="margin-bottom: 0px;"
         >
           Enable QoS
         </label>
+        <small
+          class="form-text text-muted"
+        >
+          This option enables you to set a bandwidth limit for the guest network, so that your main network doesn't get slowed-down by it.
+        </small>
       </div>
-      <small
-        class="form-text text-muted"
-      >
-        This option enables you to set a bandwidth limit for the guest network, so that your main network doesn't get slowed-down by it.
-      </small>
     </div>
     <div
       class="form-group col-sm-12 offset-lg-1 col-lg-10"
@@ -629,12 +611,10 @@ in LAN.
   </p>
   <form>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           class="custom-control-input"
@@ -695,12 +675,10 @@ in LAN.
       </div>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           class="custom-control-input"
@@ -710,24 +688,21 @@ in LAN.
         <label
           class="custom-control-label"
           for="5"
-          style="margin-bottom: 0px;"
         >
           Enable DHCP
         </label>
+        <small
+          class="form-text text-muted"
+        >
+          Enable this option to automatically assign IP addresses to the devices connected to the router.
+        </small>
       </div>
-      <small
-        class="form-text text-muted"
-      >
-        Enable this option to automatically assign IP addresses to the devices connected to the router.
-      </small>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           class="custom-control-input"
@@ -737,16 +712,15 @@ in LAN.
         <label
           class="custom-control-label"
           for="6"
-          style="margin-bottom: 0px;"
         >
           Enable QoS
         </label>
+        <small
+          class="form-text text-muted"
+        >
+          This option enables you to set a bandwidth limit for the guest network, so that your main network doesn't get slowed-down by it.
+        </small>
       </div>
-      <small
-        class="form-text text-muted"
-      >
-        This option enables you to set a bandwidth limit for the guest network, so that your main network doesn't get slowed-down by it.
-      </small>
     </div>
     <button
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
