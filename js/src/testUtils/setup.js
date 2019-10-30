@@ -5,21 +5,4 @@
  * See /LICENSE for more information.
  */
 
-import mockAxios from "jest-mock-axios";
-import moment from "moment-timezone";
-
-// Setup axios cleanup
-global.afterEach(() => {
-    mockAxios.reset();
-});
-
-global.ngettext = str => str;
-
-jest.doMock('moment', () => {
-    moment.tz.setDefault('UTC');
-    return moment;
-});
-
 jest.doMock("utils/vfs_fonts", () => ({}));
-
-window.WebSocket = jest.fn();

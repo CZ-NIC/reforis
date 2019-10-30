@@ -9,7 +9,7 @@ import React from "react";
 import { render, fireEvent, wait } from "customTestRender";
 import mockAxios from 'jest-mock-axios';
 
-import { AlertContext } from "foris";
+import { mockJSONError, mockSetAlert } from "foris";
 
 import UpdateChecker from "../UpdateChecker";
 
@@ -18,19 +18,16 @@ describe("<UpdateChecker/>", () => {
     let getByText;
     const setPending = jest.fn();
     const onSuccess = () => new Promise((resolve) => resolve());
-    const setAlert = jest.fn();
 
     beforeEach(() => {
         ({ container, getByText } = render(
-            <AlertContext.Provider value={setAlert}>
-                <UpdateChecker
-                    onSuccess={onSuccess}
-                    pending={false}
-                    setPending={setPending}
-                >
-                    {"Check updates"}
-                </UpdateChecker>
-            </AlertContext.Provider>
+            <UpdateChecker
+                onSuccess={onSuccess}
+                pending={false}
+                setPending={setPending}
+            >
+                {"Check updates"}
+            </UpdateChecker>
         ));
     });
 
@@ -50,11 +47,9 @@ describe("<UpdateChecker/>", () => {
         fireEvent.click(getByText("Check updates"));
         const errorMessage = "API error"
         // Response to POST updates/run
-        mockAxios.mockError(
-            { response: { data: errorMessage, headers: { "content-type": "application/json" } } },
-        );
+        mockJSONError(errorMessage);
         await wait(() => expect(setPending).toBeCalledWith(false));
-        expect(setAlert).toBeCalledWith(errorMessage);
+        expect(mockSetAlert).toBeCalledWith(errorMessage);
     });
 
     it("should handle success on updater check", async () => {
@@ -78,8 +73,8 @@ describe("<UpdateChecker/>", () => {
         mockAxios.mockResponse({ data: { result: true } });
 
         await wait(() => expect(mockAxios.get).toBeCalledWith("/api/updates/status", expect.anything()));
-        mockAxios.mockError({ response: { headers: { "content-type": "application/json" } } });
+        mockJSONError();
 
-        await wait(() => expect(setAlert).toBeCalledWith("Cannot fetch updater status"));
+        await wait(() => expect(mockSetAlert).toBeCalledWith("Cannot fetch updater status"));
     });
 });

@@ -5,10 +5,10 @@
  * See /LICENSE for more information.
  */
 
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import update from "immutability-helper";
 import {
-    AlertContext, useAPIPatch, useAPIPost, useForm,
+    useAlert, useAPIPatch, useAPIPost, useForm,
 } from "foris";
 import API_URLs from "common/API";
 import validator from "./validator";
@@ -28,7 +28,7 @@ export default function useForwarderForm(forwarder, saveForwarderCallback) {
     const [postState, post] = useAPIPost(API_URLs.dnsForwarders);
     const [patchState, patch] = useAPIPatch(`${API_URLs.dnsForwarders}/${(forwarder || {}).name}`);
 
-    const setAlert = useContext(AlertContext);
+    const [setAlert] = useAlert();
 
     useEffect(() => {
         if (postState.isSuccess) {

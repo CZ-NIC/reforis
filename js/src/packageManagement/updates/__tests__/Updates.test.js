@@ -8,6 +8,7 @@
 import React from "react";
 import { render, wait, fireEvent } from "customTestRender";
 import mockAxios from 'jest-mock-axios';
+import { mockJSONError } from "foris";
 
 import { exampleUpdate } from "./__fixtures__/updates";
 import Updates from "../Updates";
@@ -26,7 +27,7 @@ describe("<Updates/>", () => {
 
     it("should handle error", async () => {
         expect(mockAxios.get).toBeCalledWith("/api/updates", expect.anything());
-        mockAxios.mockError({ response: { headers: { "content-type": "application/json" } } });
+        mockJSONError();
         await wait(() => expect(container).toMatchSnapshot());
     });
 

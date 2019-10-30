@@ -8,7 +8,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import PropTypes from "prop-types";
 
-import { useAPIGet, Spinner, AlertContextProvider } from "foris";
+import { useAPIGet, Spinner } from "foris";
 
 import API_URLs from "common/API";
 import UpdateChecker from "./UpdateChecker";
@@ -32,10 +32,10 @@ export default function Updates() {
     }
 
     return (
-        <AlertContextProvider>
+        <>
             <h1>{_("Updates")}</h1>
             {componentContent}
-        </AlertContextProvider>
+        </>
     );
 }
 

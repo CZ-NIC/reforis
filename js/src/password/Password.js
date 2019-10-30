@@ -5,12 +5,11 @@
  * See /LICENSE for more information.
  */
 
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect } from "react";
 import PropTypes from "prop-types";
 
 import {
-    SUBMIT_BUTTON_STATES, useForm, Alert, Spinner,
-    useAPIGet, useAPIPost,
+    SUBMIT_BUTTON_STATES, useForm, Spinner, useAPIGet, useAPIPost, useAlert, ALERT_TYPES,
 } from "foris";
 
 import API_URLs from "common/API";
@@ -48,23 +47,23 @@ export default function Password({ postCallback }) {
         getPasswordIsSet();
     }, [getPasswordIsSet]);
 
-    const [alert, setAlert] = useState(null);
+    const [setAlert, dismissAlert] = useAlert();
     const [postState, post] = useAPIPost(API_URLs.password);
     useEffect(() => {
         if (postState.data) {
             if (postState.isSuccess) {
-                setAlert({ type: "success", message: _("Password was successfully changed") });
+                setAlert(_("Password changed successfully"), ALERT_TYPES.SUCCESS);
                 postCallback();
             } else if (postState.isError) {
-                setAlert({ type: "danger", message: postState.data });
+                setAlert(postState.data);
             }
             resetPasswordForm();
         }
-    }, [postState.isSuccess, postState.isError, resetPasswordForm, postState.data, postCallback]);
+    }, [postState, resetPasswordForm, postCallback, setAlert]);
 
-    function postForisPassword(e) {
-        e.preventDefault();
-        setAlert(null);
+    function postForisPassword(event) {
+        event.preventDefault();
+        dismissAlert();
         const data = {
             foris_current_password: formState.data.currentForisPassword,
             foris_password: formState.data.newForisPassword,
@@ -73,9 +72,9 @@ export default function Password({ postCallback }) {
         post(data);
     }
 
-    function postRootPassword(e) {
-        e.preventDefault();
-        setAlert(null);
+    function postRootPassword(event) {
+        event.preventDefault();
+        dismissAlert();
         const data = {
             foris_current_password: formState.data.currentForisPassword,
             root_password: formState.data.newRootPassword,
@@ -92,14 +91,6 @@ export default function Password({ postCallback }) {
 
     return (
         <>
-            {alert
-                ? (
-                    <Alert
-                        type={alert.type}
-                        message={alert.message}
-                        onDismiss={() => setAlert(null)}
-                    />
-                ) : null}
             <h1>{_("Password")}</h1>
             <h3>{_("Password settings")}</h3>
             {passwordIsSetState.data.password_set

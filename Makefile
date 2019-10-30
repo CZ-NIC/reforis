@@ -3,7 +3,7 @@
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
 
-.PHONY: all prepare-dev venv install install-with-lighttpd install-js run run-ws watch-js build-js lint lint-js lint-js-fix lint-web test test-js test-web test-js-update-snapshots create-messages update-messages compile-messages docs docs-web docs-js timezones clean
+.PHONY: all prepare-dev prepare-docs venv install install-with-lighttpd install-js run run-ws watch-js build-js lint lint-js lint-js-fix lint-web test test-js test-web test-js-update-snapshots create-messages update-messages compile-messages docs docs-web docs-js timezones clean
 
 DEV_PYTHON=python3.7
 VENV_NAME?=venv
@@ -22,6 +22,8 @@ export FLASK_ENV=development
 all:
 	@echo "make prepare-dev"
 	@echo "    Create python virtual environment and install dependencies."
+	@echo "make prepare-docs"
+	@echo "    Install tools for building docs."
 	@echo "make install"
 	@echo "    Install package on router."
 	@echo "make install-with-lighttpd"
@@ -59,6 +61,8 @@ prepare-dev:
 	which $(DEV_PYTHON) || sudo apt install -y $(DEV_PYTHON) $(DEV_PYTHON)-pip
 	which virtualenv || sudo $(DEV_PYTHON) -m pip install virtualenv
 	make venv
+prepare-docs:
+	$(VENV_BIN)/$(DEV_PYTHON) -m pip install -e .[build]
 
 venv: $(VENV_NAME)/bin/activate
 $(VENV_NAME)/bin/activate: setup.py

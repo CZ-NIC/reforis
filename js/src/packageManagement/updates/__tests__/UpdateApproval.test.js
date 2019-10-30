@@ -9,20 +9,17 @@ import React from "react";
 import { render, fireEvent, getByText, wait } from "customTestRender";
 import mockAxios from 'jest-mock-axios';
 
-import { AlertContext } from "foris";
+import { mockJSONError, mockSetAlert } from "foris";
 
 import { exampleHash, exampleUpdate } from "./__fixtures__/updates";
 import UpdateApproval from "../UpdateApproval";
 
 describe("<UpdateApproval/>", () => {
-    const setAlert = jest.fn();
     const onSuccess = jest.fn();
 
     function renderUpdateApproval(update=exampleUpdate) {
         const { container } = render(
-            <AlertContext.Provider value={setAlert}>
-                <UpdateApproval update={update} onSuccess={onSuccess} />
-            </AlertContext.Provider>
+            <UpdateApproval update={update} onSuccess={onSuccess} />
         );
         return container;
     }
@@ -64,7 +61,7 @@ describe("<UpdateApproval/>", () => {
     it("Updates resolution - display error", async () => {
         const container = renderUpdateApproval();
         fireEvent.click(getByText(container, "Ignore"));
-        mockAxios.mockError({ response: { headers: { "content-type": "application/json" } } });
-        await wait(() => expect(setAlert).toBeCalledWith("Cannot resolve update"));
+        mockJSONError();
+        await wait(() => expect(mockSetAlert).toBeCalledWith("Cannot resolve update"));
     });
 });

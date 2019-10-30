@@ -200,7 +200,7 @@ form > button {
 
 /* Reboot dropdown */
 
-@keyframes example {
+@keyframes rebootFade {
     from {
         opacity: 0.1;
     }
@@ -210,7 +210,7 @@ form > button {
 }
 
 #reboot-dropdown-toggle {
-    animation-name: example;
+    animation-name: rebootFade;
     animation-duration: 1.5s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
@@ -565,14 +565,6 @@ form > button {
     text-shadow: 0 0 0.5rem #00a2e2;
 }
 
-@keyframes interfaceSelectedSlashFade {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
 
 .network .interface-selected .fa-inverse {
     display: none;

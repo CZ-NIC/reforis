@@ -8,7 +8,9 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-import { Button, useAPIPost, Alert } from "foris";
+import {
+    Button, useAPIPost, useAlert, ALERT_TYPES,
+} from "foris";
 
 import API from "common/API";
 
@@ -29,24 +31,25 @@ export default function ResetWiFiSettings({ ws }) {
             });
     }, [ws]);
 
-    const [data, trigger] = useAPIPost(API.wifiReset);
-    const [alert, setAlert] = useState(false);
+    const [postResetResponse, postReset] = useAPIPost(API.wifiReset);
+    const [setAlert] = useAlert();
     useEffect(() => {
-        if (data.data) setAlert(true);
-    }, [data, setAlert]);
+        if (postResetResponse.isError) {
+            setAlert(_("An error occurred during resetting Wi-Fi settings"));
+        } else if (postResetResponse.isSuccess) {
+            setAlert(_("Wi-Fi settings are set to defaults"), ALERT_TYPES.SUCCESS);
+        }
+    }, [postResetResponse, setAlert]);
 
-    function resetWiFiSettingsHandler(e) {
-        e.preventDefault();
-        trigger();
+    function resetWiFiSettingsHandler(event) {
+        event.preventDefault();
+        postReset();
     }
 
     return (
         <>
             <form onSubmit={resetWiFiSettingsHandler}>
                 <h4>{_("Reset Wi-Fi Settings")}</h4>
-                {alert
-                    ? <ResetWiFiDoneAlert fail={data.isError} onDismiss={() => setAlert(false)} />
-                    : null}
                 <p>
                     {_(`
 If a number of wireless cards doesn't match, you may try to reset the Wi-Fi settings. Note that this will remove the
@@ -66,21 +69,4 @@ current Wi-Fi configuration and restore the default values.
             </form>
         </>
     );
-}
-
-ResetWiFiDoneAlert.propTypes = {
-    fail: PropTypes.bool.isRequired,
-    onDismiss: PropTypes.func,
-};
-
-function ResetWiFiDoneAlert({ fail, onDismiss }) {
-    const props = fail ? {
-        message: _("Wi-Fi reset was failed."),
-        type: "danger",
-    } : {
-        message: _("Wi-Fi reset was successful."),
-        type: "success",
-    };
-
-    return <Alert {...props} onDismiss={onDismiss} />;
 }

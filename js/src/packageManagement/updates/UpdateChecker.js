@@ -5,11 +5,11 @@
  * See /LICENSE for more information.
  */
 
-import React, { useEffect, useContext } from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 
 import {
-    useAPIGet, useAPIPost, Button, AlertContext,
+    useAPIGet, useAPIPost, Button, useAlert,
 } from "foris";
 
 import API_URLs from "common/API";
@@ -44,7 +44,7 @@ export default function UpdateChecker({
 }
 
 function useUpdates(onSuccess, setPending) {
-    const setAlert = useContext(AlertContext);
+    const [setAlert] = useAlert();
 
     const [checkStatusResponse, checkStatus] = useAPIGet(API_URLs.updatesStatus);
     // Wait until updater stops working
@@ -65,10 +65,7 @@ function useUpdates(onSuccess, setPending) {
     const [runUpdatesResponse, runUpdates] = useAPIPost(API_URLs.runUpdates);
     // Trigger updater status checker after updater is enabled
     useEffect(() => {
-        if (!runUpdatesResponse.isLoading
-            && !runUpdatesResponse.isError
-            && runUpdatesResponse.data
-        ) {
+        if (runUpdatesResponse.isSuccess) {
             checkStatus();
         } else if (runUpdatesResponse.isError) {
             setPending(false);

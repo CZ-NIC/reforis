@@ -8,6 +8,7 @@
 import React from "react";
 import { render, waitForElement, waitForElementToBeRemoved, wait, fireEvent } from "customTestRender";
 import mockAxios from 'jest-mock-axios';
+import { mockJSONError } from "foris";
 
 import UpdatesDropdown from "../UpdatesDropdown";
 
@@ -61,7 +62,7 @@ describe("<UpdatesDropdown/>", () => {
         mockAxios.mockResponse({data: {hash: exampleHash, approvable: true}});
         await waitForElement(() => getByText("Approve update"));
         fireEvent.click(getByText("Install now"));
-        mockAxios.mockError({ response: { headers: { "content-type": "application/json" } } });
+        mockJSONError();
         await waitForElement(() => getByText("Cannot resolve update"));
     });
 });

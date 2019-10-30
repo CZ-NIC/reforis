@@ -22,7 +22,7 @@ export default function UpdatesDropdown() {
     const [postState, post] = useAPIPost(API_URLs.approvals);
     // Reload approvals when resolution is successful
     useEffect(() => {
-        if (!postState.isSending && postState.data && !postState.isError) {
+        if (postState.isSuccess) {
             get();
         }
     }, [get, postState]);

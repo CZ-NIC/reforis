@@ -5,9 +5,9 @@
  * See /LICENSE for more information.
  */
 
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import update from "immutability-helper";
-import { AlertContext, useAPIGet, useWSForisModule } from "foris";
+import { useAlert, useAPIGet, useWSForisModule } from "foris";
 
 import API_URLs from "common/API";
 
@@ -15,7 +15,7 @@ const MODULE = "dns";
 
 export default function useForwardersList(ws) {
     const [forwarders, setForwarders] = useState([]);
-    const setAlert = useContext(AlertContext);
+    const [setAlert] = useAlert();
 
     const [forwardersListState, getForwardersList] = useAPIGet(API_URLs.dnsForwarders);
     useEffect(() => {

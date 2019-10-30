@@ -8,7 +8,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
-import { Alert } from "foris";
+import { useAlert } from "foris";
 
 import Network from "./Network";
 import SelectedInterface from "./SelectedInterface";
@@ -37,14 +37,14 @@ InterfacesForm.defaultProps = {
 
 export default function InterfacesForm({ formData, setFormValue, ...props }) {
     const [selectedID, setSelectedID] = useState(null);
-    const [openPortAlertShown, setOpenPortAlertShown] = useState(false);
+    const [setAlert] = useAlert();
 
     useEffect(() => {
         const { firewall } = formData;
         if (firewall.http_on_wan || firewall.https_on_wan || firewall.ssh_on_wan) {
-            setOpenPortAlertShown(true);
+            setAlert(_("Ports are open on your WAN interface. It's better to reconfigure your interface settings to avoid security issues."));
         }
-    }, [formData]);
+    }, [formData, setAlert]);
 
     function getInterfaceById(id) {
         if (!selectedID) return [null, null, null];
@@ -77,9 +77,6 @@ export default function InterfacesForm({ formData, setFormValue, ...props }) {
 
     return (
         <>
-            {openPortAlertShown
-                ? <OpenPortAlert onDismiss={() => setOpenPortAlertShown(false)} />
-                : null}
             <h3>{NETWORKS_CHOICES.wan}</h3>
             <Network
                 interfaces={formData.networks.wan}
@@ -108,31 +105,15 @@ export default function InterfacesForm({ formData, setFormValue, ...props }) {
                 setSelected={setSelectedID}
                 {...props}
             />
-            {selectedID
-                ? (
-                    <SelectedInterface
-                        network={selectedInterfaceNetwork}
-                        WANIsEmpty={formData.networks.wan.length === 0}
-                        {...selectedInterface}
+            {selectedID && (
+                <SelectedInterface
+                    network={selectedInterfaceNetwork}
+                    WANIsEmpty={formData.networks.wan.length === 0}
+                    {...selectedInterface}
 
-                        onNetworkChange={handleNetworkChange}
-                    />
-                )
-                : null}
+                    onNetworkChange={handleNetworkChange}
+                />
+            )}
         </>
-    );
-}
-
-OpenPortAlert.propTypes = {
-    onDismiss: PropTypes.func.isRequired,
-};
-
-function OpenPortAlert({ onDismiss }) {
-    return (
-        <Alert
-            type="warning"
-            message={_("Ports are open on your WAN interface. It's better to reconfigure your interface settings to avoid security issues. ")}
-            onDismiss={onDismiss}
-        />
     );
 }

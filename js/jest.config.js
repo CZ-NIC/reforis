@@ -9,6 +9,7 @@
 module.exports = {
     moduleDirectories: [
         "node_modules",
+        "node_modules/foris/dist/testUtils",
         "<rootDir>/src/testUtils",
         "<rootDir>/src/",
     ],

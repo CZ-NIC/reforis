@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-10-22 16:56+0200\n"
+"POT-Creation-Date: 2019-10-30 17:23+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -225,31 +225,31 @@ msgid ""
 "        "
 msgstr ""
 
-#: js/src/dns/DNSForm.js:19
+#: js/src/dns/DNSForm.js:17
 msgid ""
 "This will enable your DNS resolver to place DHCP client's names among the"
 " local DNS records."
 msgstr ""
 
-#: js/src/dns/DNSForm.js:20
+#: js/src/dns/DNSForm.js:18
 msgid ""
 "This domain will be used as suffix. E.g. The result for client "
 "\"android-123\" and domain \"my.lan\" will be \"android-123.my.lan\"."
 msgstr ""
 
-#: js/src/dns/DNSForm.js:73
+#: js/src/dns/DNSForm.js:71
 msgid "Use forwarding"
 msgstr ""
 
-#: js/src/dns/DNSForm.js:93
+#: js/src/dns/DNSForm.js:87
 msgid "Enable DNSSEC"
 msgstr ""
 
-#: js/src/dns/DNSForm.js:101
+#: js/src/dns/DNSForm.js:95
 msgid "Enable DHCP clients in DNS"
 msgstr ""
 
-#: js/src/dns/DNSForm.js:112
+#: js/src/dns/DNSForm.js:106
 msgid "Domain of DHCP clients in DNS"
 msgstr ""
 
@@ -640,7 +640,7 @@ msgstr ""
 
 #: js/src/guide/steps.js:20 js/src/main/pages.js:82
 #: js/src/notificationsSettings/SMTPCustomForm.js:107
-#: js/src/password/Password.js:103 js/src/wifi/WiFiGuestForm.js:76
+#: js/src/password/Password.js:94 js/src/wifi/WiFiGuestForm.js:76
 msgid "Password"
 msgstr ""
 
@@ -661,7 +661,7 @@ msgid "DNS"
 msgstr ""
 
 #: js/src/guide/steps.js:40 js/src/main/pages.js:115
-#: js/src/packageManagement/updates/Updates.js:69
+#: js/src/packageManagement/updates/Updates.js:36
 msgid "Updates"
 msgstr ""
 
@@ -729,10 +729,10 @@ msgid ""
 "        "
 msgstr ""
 
-#: js/src/interfaces/InterfacesForm.js:134
+#: js/src/interfaces/InterfacesForm.js:45
 msgid ""
 "Ports are open on your WAN interface. It's better to reconfigure your "
-"interface settings to avoid security issues. "
+"interface settings to avoid security issues."
 msgstr ""
 
 #: js/src/interfaces/SelectedInterface.js:57
@@ -1085,7 +1085,7 @@ msgid ""
 "        "
 msgstr ""
 
-#: js/src/packageManagement/packages/Packages.js:76
+#: js/src/packageManagement/packages/Packages.js:72
 msgid ""
 "Please enable <a "
 "href=\"${ForisURLs.packageManagement.updateSettings}\">automatic "
@@ -1310,24 +1310,12 @@ msgstr ""
 msgid "New"
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateChecker.js:39
+#: js/src/packageManagement/updates/UpdateChecker.js:54
 msgid "Cannot fetch updater status"
 msgstr ""
 
-#: js/src/packageManagement/updates/Updates.js:38
-msgid "Check and install updates"
-msgstr ""
-
-#: js/src/packageManagement/updates/Updates.js:39
-msgid "Manually check for updates and install them immediately."
-msgstr ""
-
-#: js/src/packageManagement/updates/Updates.js:42
-msgid "Check updates"
-msgstr ""
-
-#: js/src/packageManagement/updates/Updates.js:44
-msgid "Manually check for updates and review them immediately."
+#: js/src/packageManagement/updates/Updates.js:26
+msgid "An error occurred during loading update settings"
 msgstr ""
 
 #: js/src/packageManagement/updates/Updates.js:47
@@ -1336,8 +1324,20 @@ msgid ""
 "requiring updates to review them."
 msgstr ""
 
-#: js/src/packageManagement/updates/Updates.js:53
-msgid "An error occurred during loading update settings"
+#: js/src/packageManagement/updates/Updates.js:57
+msgid "Check and install updates"
+msgstr ""
+
+#: js/src/packageManagement/updates/Updates.js:58
+msgid "Manually check for updates and install them immediately."
+msgstr ""
+
+#: js/src/packageManagement/updates/Updates.js:61
+msgid "Check updates"
+msgstr ""
+
+#: js/src/packageManagement/updates/Updates.js:63
+msgid "Manually check for updates and review them immediately."
 msgstr ""
 
 #: js/src/password/CurrentForisPasswordForm.js:24
@@ -1369,23 +1369,23 @@ msgid ""
 "the root account will be blocked.)"
 msgstr ""
 
-#: js/src/password/Password.js:56
-msgid "Password was successfully changed"
+#: js/src/password/Password.js:55
+msgid "Password changed successfully"
 msgstr ""
 
-#: js/src/password/Password.js:104
+#: js/src/password/Password.js:95
 msgid "Password settings"
 msgstr ""
 
-#: js/src/password/Password.js:151
+#: js/src/password/Password.js:142
 msgid "Password can't be empty."
 msgstr ""
 
-#: js/src/password/Password.js:153
+#: js/src/password/Password.js:144
 msgid "Password should have min 6 symbols."
 msgstr ""
 
-#: js/src/password/Password.js:155
+#: js/src/password/Password.js:146
 msgid "Password should have max 128 symbols."
 msgstr ""
 
@@ -1726,25 +1726,25 @@ msgstr ""
 msgid "PAP/CHAP password"
 msgstr ""
 
-#: js/src/wifi/ResetWiFiSettings.js:46 js/src/wifi/ResetWiFiSettings.js:64
+#: js/src/wifi/ResetWiFiSettings.js:38
+msgid "An error occurred during resetting Wi-Fi settings"
+msgstr ""
+
+#: js/src/wifi/ResetWiFiSettings.js:40
+msgid "Wi-Fi settings are set to defaults"
+msgstr ""
+
+#: js/src/wifi/ResetWiFiSettings.js:52 js/src/wifi/ResetWiFiSettings.js:67
 msgid "Reset Wi-Fi Settings"
 msgstr ""
 
-#: js/src/wifi/ResetWiFiSettings.js:51
+#: js/src/wifi/ResetWiFiSettings.js:54
 msgid ""
 "\n"
 "If a number of wireless cards doesn't match, you may try to reset the Wi-"
 "Fi settings. Note that this will remove the\n"
 "current Wi-Fi configuration and restore the default values.\n"
 "        "
-msgstr ""
-
-#: js/src/wifi/ResetWiFiSettings.js:78
-msgid "Wi-Fi reset was failed."
-msgstr ""
-
-#: js/src/wifi/ResetWiFiSettings.js:81
-msgid "Wi-Fi reset was successful."
 msgstr ""
 
 #: js/src/wifi/WiFi.js:23 js/src/wifi/WiFi.js:31
@@ -1861,15 +1861,15 @@ msgstr ""
 msgid "Wrong password."
 msgstr ""
 
-#: reforis/foris_controller_api/modules/dns.py:42
+#: reforis/foris_controller_api/modules/dns.py:41
 msgid "Can't add new DNS forwarder."
 msgstr ""
 
-#: reforis/foris_controller_api/modules/dns.py:48
+#: reforis/foris_controller_api/modules/dns.py:47
 msgid "Can't set DNS forwarder."
 msgstr ""
 
-#: reforis/foris_controller_api/modules/dns.py:53
+#: reforis/foris_controller_api/modules/dns.py:52
 msgid "Can't delete DNS forwarder."
 msgstr ""
 

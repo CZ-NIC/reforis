@@ -8,9 +8,7 @@
 import React, { useCallback } from "react";
 import PropTypes from "prop-types";
 
-import {
-    AlertContextProvider, Modal, ModalBody, ModalHeader,
-} from "foris";
+import { Modal, ModalBody, ModalHeader } from "foris";
 import ForwarderForm from "./ForwarderForm";
 
 ForwarderModal.propTypes = {
@@ -35,12 +33,10 @@ export default function ForwarderModal({
                 title={title}
             />
             <ModalBody>
-                <AlertContextProvider>
-                    <ForwarderForm
-                        forwarder={forwarder}
-                        saveForwarderCallback={postCallback}
-                    />
-                </AlertContextProvider>
+                <ForwarderForm
+                    forwarder={forwarder}
+                    saveForwarderCallback={postCallback}
+                />
             </ModalBody>
         </Modal>
     );

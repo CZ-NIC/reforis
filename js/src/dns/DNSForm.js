@@ -8,9 +8,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-import {
-    AlertContextProvider, CheckBox, TextInput, WebSockets,
-} from "foris";
+import { CheckBox, TextInput, WebSockets } from "foris";
 
 import DNSSECDisableModal from "./DNSSECDisableModal";
 import Forwarders from "./Forwarders/Forwarders";
@@ -77,18 +75,14 @@ export default function DNSForm({
 
                 {...props}
             />
-            {formData.forwarding_enabled
-                ? (
-                    <AlertContextProvider>
-                        <Forwarders
-                            value={formData.forwarder}
-                            setFormValue={setFormValue}
-                            ws={ws}
-                            {...props}
-                        />
-                    </AlertContextProvider>
-                )
-                : null}
+            {formData.forwarding_enabled && (
+                <Forwarders
+                    value={formData.forwarder}
+                    setFormValue={setFormValue}
+                    ws={ws}
+                    {...props}
+                />
+            )}
             <CheckBox
                 label={_("Enable DNSSEC")}
                 checked={formData.dnssec_enabled}

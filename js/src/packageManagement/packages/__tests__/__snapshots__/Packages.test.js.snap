@@ -675,7 +675,7 @@ been installed manually or using opkg is not affected.
       If you want to use other language than English you can select it from the following list:
     </p>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
+      class="col-sm-12 offset-lg-1 col-lg-10 mb-3"
       id="language-packages"
     >
       <div

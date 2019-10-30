@@ -5,11 +5,11 @@
  * See /LICENSE for more information.
  */
 
-import React, { useEffect, useContext } from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 
 import {
-    useAPIPost, Button, Spinner, AlertContext,
+    useAPIPost, Button, Spinner, useAlert,
 } from "foris";
 import API_URLs from "common/API";
 import toLocaleDateString from "utils/localeDate";
@@ -21,14 +21,14 @@ UpdateApproval.propTypes = {
 };
 
 export default function UpdateApproval({ update, onSuccess, className }) {
-    const setAlert = useContext(AlertContext);
+    const [setAlert] = useAlert();
 
     const [postState, post] = useAPIPost(API_URLs.approvals);
     // Execute callback when resolution is successful
     useEffect(() => {
         if (postState.isError) {
             setAlert(_("Cannot resolve update"));
-        } else if (!postState.isSending && postState.data) {
+        } else if (postState.isSuccess) {
             onSuccess();
         }
     }, [postState, onSuccess, setAlert]);

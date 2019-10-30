@@ -59,7 +59,6 @@ describe("<ForwarderForm/>: new forwarder.", () => {
 
 describe("<ForwarderForm/>: existed forwarder.", () => {
     let getByText;
-    let getByLabelText;
     let container;
     let saveForwarderCallback;
 
@@ -74,7 +73,6 @@ describe("<ForwarderForm/>: existed forwarder.", () => {
             </AlertContextProvider>
         );
         getByText = renderRes.getByText;
-        getByLabelText = renderRes.getByLabelText;
         container = renderRes.container;
     });
 
