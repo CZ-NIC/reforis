@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import {fireEvent, render, waitForElement} from 'customTestRender';
+import {fireEvent, render, waitForElement} from "foris/testUtils/customTestRender";
 import diffSnapshot from 'snapshot-diff';
 import { WebSockets } from "foris";
 import {wanSettingsFixture} from './__fixtures__/wanSettings';

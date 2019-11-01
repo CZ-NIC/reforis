@@ -6,9 +6,9 @@
  */
 
 import React from "react";
-import { render, waitForElement, waitForElementToBeRemoved, wait, fireEvent } from "customTestRender";
+import { render, waitForElement, waitForElementToBeRemoved, wait, fireEvent } from "foris/testUtils/customTestRender";
 import mockAxios from 'jest-mock-axios';
-import { mockJSONError } from "foris";
+import { mockJSONError } from "foris/testUtils/network";
 
 import UpdatesDropdown from "../UpdatesDropdown";
 

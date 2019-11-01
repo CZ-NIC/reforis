@@ -8,8 +8,7 @@
 import React from "react";
 import mockAxios from "jest-mock-axios";
 import userEvent from "@testing-library/user-event";
-import { AlertContextProvider } from "foris";
-import { fireEvent, render } from "customTestRender";
+import { fireEvent, render } from "foris/testUtils/customTestRender";
 
 import ForwarderForm from "../Forwarders/Forwarder/ForwarderForm";
 import { forwardersFixture } from "./__fixtures__/forwarders";
@@ -22,11 +21,7 @@ describe("<ForwarderForm/>: new forwarder.", () => {
 
     beforeEach(() => {
         saveForwarderCallback = jest.fn();
-        const renderRes = render(
-            <AlertContextProvider>
-                <ForwarderForm saveForwarderCallback={saveForwarderCallback}/>
-            </AlertContextProvider>
-        );
+        const renderRes = render(<ForwarderForm saveForwarderCallback={saveForwarderCallback}/>);
         getByText = renderRes.getByText;
         getByLabelText = renderRes.getByLabelText;
         container = renderRes.container;
@@ -65,12 +60,10 @@ describe("<ForwarderForm/>: existed forwarder.", () => {
     beforeEach(() => {
         saveForwarderCallback = jest.fn();
         const renderRes = render(
-            <AlertContextProvider>
-                <ForwarderForm
-                    forwarder={forwardersFixture.forwarders[0]}
-                    saveForwarderCallback={saveForwarderCallback}
-                />
-            </AlertContextProvider>
+            <ForwarderForm
+                forwarder={forwardersFixture.forwarders[0]}
+                saveForwarderCallback={saveForwarderCallback}
+            />
         );
         getByText = renderRes.getByText;
         container = renderRes.container;

@@ -7,7 +7,7 @@
 
 import React from 'react';
 
-import {fireEvent, getByText, render, wait} from 'customTestRender';
+import {fireEvent, getByText, render, wait} from "foris/testUtils/customTestRender";
 import mockAxios from 'jest-mock-axios';
 import {regionAndTime} from './__fixtures__/regionAndTime';
 

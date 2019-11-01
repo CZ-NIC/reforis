@@ -6,9 +6,8 @@
  */
 
 import React from "react";
-import { render } from "customTestRender";
-
-import { mockSetAlert } from "foris";
+import { render } from "foris/testUtils/customTestRender";
+import { mockSetAlert } from "foris/testUtils/alertContextMock";
 
 import { interfacesFixture } from "./__fixtures__/interfaces";
 import InterfacesForm from "../InterfacesForm";

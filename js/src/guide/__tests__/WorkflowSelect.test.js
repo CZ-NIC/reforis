@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import {fireEvent, getByAltText, getByText, render, wait} from 'customTestRender';
+import {fireEvent, getByAltText, getByText, render, wait} from "foris/testUtils/customTestRender";
 import mockAxios from 'jest-mock-axios';
 
 

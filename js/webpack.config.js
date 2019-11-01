@@ -47,6 +47,15 @@ module.exports = (env) => ({
                 ],
             },
             {
+                test: require.resolve("foris"),
+                use: [
+                    {
+                        loader: "expose-loader",
+                        options: "foris",
+                    },
+                ],
+            },
+            {
                 test: /\.css$/,
                 use: ["style-loader", "css-loader"],
             },

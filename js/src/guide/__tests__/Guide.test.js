@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import {getByText, render, wait} from 'customTestRender';
+import {getByText, render, wait} from "foris/testUtils/customTestRender";
 import { WebSockets } from "foris";
 import mockAxios from 'jest-mock-axios';
 

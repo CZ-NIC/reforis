@@ -6,10 +6,11 @@
  */
 
 import React from "react";
-import { render, fireEvent, getByText, wait } from "customTestRender";
+import { render, fireEvent, getByText, wait } from "foris/testUtils/customTestRender";
 import mockAxios from 'jest-mock-axios';
 
-import { mockJSONError, mockSetAlert } from "foris";
+import { mockJSONError } from "foris/testUtils/network";
+import { mockSetAlert } from "foris/testUtils/alertContextMock";
 
 import { exampleHash, exampleUpdate } from "./__fixtures__/updates";
 import UpdateApproval from "../UpdateApproval";

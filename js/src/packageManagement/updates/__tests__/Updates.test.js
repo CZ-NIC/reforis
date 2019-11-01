@@ -6,9 +6,9 @@
  */
 
 import React from "react";
-import { render, wait, fireEvent } from "customTestRender";
+import { render, wait, fireEvent } from "foris/testUtils/customTestRender";
 import mockAxios from 'jest-mock-axios';
-import { mockJSONError } from "foris";
+import { mockJSONError } from "foris/testUtils/network";
 
 import { exampleUpdate } from "./__fixtures__/updates";
 import Updates from "../Updates";

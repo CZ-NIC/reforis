@@ -5,7 +5,7 @@
  * See /LICENSE for more information.
  */
 import React from 'react';
-import {fireEvent, getByText, queryByText, render, wait, act} from 'customTestRender';
+import {fireEvent, getByText, queryByText, render, wait, act} from "foris/testUtils/customTestRender";
 
 import { WebSockets } from "foris";
 import mockAxios from 'jest-mock-axios';

@@ -7,7 +7,7 @@
 
 import React from 'react';
 
-import {fireEvent, getByLabelText, getByText, render, wait} from 'customTestRender';
+import {fireEvent, getByLabelText, getByText, render, wait} from "foris/testUtils/customTestRender";
 import { WebSockets } from "foris";
 import mockAxios from 'jest-mock-axios';
 import notificationsSettings from './__fixtures__/notificationsSettings';

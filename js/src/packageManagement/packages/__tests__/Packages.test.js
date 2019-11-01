@@ -8,7 +8,7 @@
 import React from 'react';
 import diffSnapshot from 'snapshot-diff';
 
-import {cleanup, render, wait} from 'customTestRender';
+import {cleanup, render, wait} from "foris/testUtils/customTestRender";
 import mockAxios from 'jest-mock-axios';
 
 import packagesFixture from './__fixtures__/packages';

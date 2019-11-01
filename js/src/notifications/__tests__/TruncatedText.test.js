@@ -6,8 +6,7 @@
  */
 
 import React from 'react';
-import {render} from 'customTestRender';
-
+import {render} from "foris/testUtils/customTestRender";
 import TruncatedText from '../Notifications/TruncatedText';
 
 describe("<TruncatedText/>", () => {

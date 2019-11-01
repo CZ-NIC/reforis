@@ -6,7 +6,7 @@
  */
 
 import React from "react";
-import { fireEvent, render, wait, waitForElement } from "customTestRender";
+import { fireEvent, render, wait, waitForElement } from "foris/testUtils/customTestRender";
 import diffSnapshot from "snapshot-diff";
 import mockAxios from "jest-mock-axios";
 import { WebSockets } from "foris";

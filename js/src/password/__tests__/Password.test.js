@@ -7,9 +7,11 @@
 
 import React from "react";
 
-import {fireEvent, getByLabelText, getByText, getAllByText, render, wait} from "customTestRender";
+import {fireEvent, getByLabelText, getByText, getAllByText, render, wait} from "foris/testUtils/customTestRender";
 import mockAxios from "jest-mock-axios";
-import { mockSetAlert, ALERT_TYPES, mockJSONError } from "foris";
+import { ALERT_TYPES } from "foris";
+import { mockJSONError } from "foris/testUtils/network";
+import { mockSetAlert } from "foris/testUtils/alertContextMock";
 
 import Password from "../Password";
 

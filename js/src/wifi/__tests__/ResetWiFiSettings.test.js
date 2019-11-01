@@ -6,10 +6,12 @@
  */
 
 import React from "react";
-import { render, fireEvent, wait } from "customTestRender";
+import { render, fireEvent, wait } from "foris/testUtils/customTestRender";
 
 import mockAxios from "jest-mock-axios";
-import { mockSetAlert, WebSockets, ALERT_TYPES, mockJSONError } from "foris";
+import { WebSockets, ALERT_TYPES } from "foris";
+import { mockJSONError } from "foris/testUtils/network";
+import { mockSetAlert } from "foris/testUtils/alertContextMock";
 
 import ResetWiFiSettings from "../ResetWiFiSettings";
 

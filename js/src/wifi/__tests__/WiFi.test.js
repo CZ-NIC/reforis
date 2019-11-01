@@ -8,7 +8,7 @@
 import React from 'react';
 import diffSnapshot from 'snapshot-diff';
 
-import {fireEvent, render, wait} from 'customTestRender';
+import {fireEvent, render, wait} from "foris/testUtils/customTestRender";
 import { WebSockets } from "foris";
 import {wifiSettingsFixture} from './__fixtures__/wifiSettings';
 

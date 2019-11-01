@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import {fireEvent, getByText, render} from 'customTestRender';
+import {fireEvent, getByText, render} from "foris/testUtils/customTestRender";
 
 import GuideFinish from '../GuideFinish';
 import mockAxios from 'jest-mock-axios';

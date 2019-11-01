@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import {fireEvent, render, waitForElement} from 'customTestRender';
+import {fireEvent, render, waitForElement} from "foris/testUtils/customTestRender";
 
 import {updatesFixture} from './__fixtures__/updates';
 import UpdateSettings from '../UpdateSettings';
