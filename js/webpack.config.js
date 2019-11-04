@@ -29,31 +29,24 @@ module.exports = (env) => ({
                 loader: "babel-loader",
             },
             {
+                test: require.resolve("foris"),
+                use: [{ loader: "expose-loader", options: "foris" }],
+            },
+            {
+                test: require.resolve("prop-types"),
+                use: [{ loader: "expose-loader", options: "PropTypes" }],
+            },
+            {
                 test: require.resolve("react"),
-                use: [
-                    {
-                        loader: "expose-loader",
-                        options: "React",
-                    },
-                ],
+                use: [{ loader: "expose-loader", options: "React" }],
             },
             {
                 test: require.resolve("react-dom"),
-                use: [
-                    {
-                        loader: "expose-loader",
-                        options: "ReactDOM",
-                    },
-                ],
+                use: [{ loader: "expose-loader", options: "ReactDOM" }],
             },
             {
-                test: require.resolve("foris"),
-                use: [
-                    {
-                        loader: "expose-loader",
-                        options: "foris",
-                    },
-                ],
+                test: require.resolve("react-uid"),
+                use: [{ loader: "expose-loader", options: "react-uid" }],
             },
             {
                 test: /\.css$/,
