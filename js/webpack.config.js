@@ -33,6 +33,10 @@ module.exports = (env) => ({
                 use: [{ loader: "expose-loader", options: "foris" }],
             },
             {
+                test: require.resolve("immutability-helper"),
+                use: [{ loader: "expose-loader", options: "immutability-helper" }],
+            },
+            {
                 test: require.resolve("prop-types"),
                 use: [{ loader: "expose-loader", options: "PropTypes" }],
             },
