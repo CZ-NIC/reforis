@@ -77,7 +77,7 @@ describe("<ForwarderForm/>: existed forwarder.", () => {
     it("Test add new forwarder.", async () => {
         fireEvent.click(getByText(/Save forwarder/));
 
-        expect(mockAxios.patch)
+        expect(mockAxios.put)
             .toBeCalled();
         const data = {
             "description": "Google",
@@ -87,7 +87,7 @@ describe("<ForwarderForm/>: existed forwarder.", () => {
             },
             "tls_type": "no",
         };
-        expect(mockAxios.patch)
+        expect(mockAxios.put)
             .toHaveBeenCalledWith("/api/dns/forwarders/99_google", data, expect.anything());
     });
 });

@@ -6,17 +6,19 @@
  */
 
 import React, { useEffect } from "react";
-import { useAPIGet, Spinner } from "foris";
+import { Spinner, useAPIGet, API_STATE } from "foris";
 import API_URLs from "common/API";
 
 export default function About() {
-    const [state, get] = useAPIGet(API_URLs.about);
+    const [getAboutResponse, getAbout] = useAPIGet(API_URLs.about);
 
     useEffect(() => {
-        get();
-    }, [get]);
+        getAbout();
+    }, [getAbout]);
 
-    if (state.isLoading || !state.data) return <Spinner className="row justify-content-center" />;
+    if ([API_STATE.INIT, API_STATE.SENDING].includes(getAboutResponse.state)) {
+        return <Spinner className="row justify-content-center" />;
+    }
 
     return (
         <>
@@ -25,19 +27,19 @@ export default function About() {
                 <tbody>
                     <tr>
                         <th>{_("Device")}</th>
-                        <td>{state.data.model}</td>
+                        <td>{getAboutResponse.data.model}</td>
                     </tr>
                     <tr>
                         <th>{_("Serial number")}</th>
-                        <td>{state.data.serial}</td>
+                        <td>{getAboutResponse.data.serial}</td>
                     </tr>
                     <tr>
                         <th>{_("Turris OS version")}</th>
-                        <td>{state.data.os_version}</td>
+                        <td>{getAboutResponse.data.os_version}</td>
                     </tr>
                     <tr>
                         <th>{_("Kernel version")}</th>
-                        <td>{state.data.kernel}</td>
+                        <td>{getAboutResponse.data.kernel}</td>
                     </tr>
                 </tbody>
             </table>

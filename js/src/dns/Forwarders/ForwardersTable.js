@@ -7,7 +7,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import { Button, useAPIDelete } from "foris";
+import { Button, useAPIDelete, API_STATE } from "foris";
 
 import API_URLs from "common/API";
 
@@ -117,23 +117,24 @@ function ForwarderActions({
     forwarder, editForwarder, disabled,
 }) {
     const [
-        deleteForwarderPostStatus,
-        deleteForwarderPost,
+        deleteForwarderResponse,
+        deleteForwarder,
     ] = useAPIDelete(`${API_URLs.dnsForwarders}/${forwarder.name}`);
+    const buttonDisabled = disabled || deleteForwarderResponse.state === API_STATE.SENDING;
 
     return (
         <div className="btn-group" role="group">
             <Button
                 onClick={() => editForwarder(forwarder)}
                 className="btn-primary btn-sm"
-                disabled={disabled || deleteForwarderPostStatus.isLoading}
+                disabled={buttonDisabled}
             >
                 {_("Edit")}
             </Button>
             <Button
-                onClick={deleteForwarderPost}
+                onClick={deleteForwarder}
                 className="btn-danger btn-sm"
-                disabled={disabled || deleteForwarderPostStatus.isLoading}
+                disabled={buttonDisabled}
             >
                 {_("Delete")}
             </Button>

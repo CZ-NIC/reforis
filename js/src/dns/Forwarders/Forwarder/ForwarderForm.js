@@ -8,7 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {
-    Button, Select, Spinner, TextInput,
+    Button, Select, Spinner, TextInput, API_STATE,
 } from "foris";
 
 import forwarderPropTypes from "../propTypes";
@@ -39,7 +39,7 @@ export default function ForwarderForm({ forwarder, saveForwarderCallback }) {
 
     if (!formState.data) return <Spinner className="text-center" />;
 
-    const disabled = postState.isSending;
+    const disabled = postState.state === API_STATE.SENDING;
     const formData = formState.data;
     const formErrors = formState.errors || {};
 

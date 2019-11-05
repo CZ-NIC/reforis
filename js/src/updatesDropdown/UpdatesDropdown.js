@@ -8,30 +8,30 @@
 import React, { useEffect } from "react";
 
 import {
-    ForisURLs, useAPIGet, useAPIPost, SpinnerElement, Button,
+    ForisURLs, useAPIGet, useAPIPost, SpinnerElement, Button, API_STATE,
 } from "foris";
 import API_URLs from "common/API";
 
 export default function UpdatesDropdown() {
-    const [getState, get] = useAPIGet(API_URLs.approvals);
-    const update = getState.data;
+    const [getApprovalsResponse, getApprovals] = useAPIGet(API_URLs.approvals);
+    const update = getApprovalsResponse.data;
     useEffect(() => {
-        get();
-    }, [get]);
+        getApprovals();
+    }, [getApprovals]);
 
     const [postState, post] = useAPIPost(API_URLs.approvals);
     // Reload approvals when resolution is successful
     useEffect(() => {
-        if (postState.isSuccess) {
-            get();
+        if (postState.state === API_STATE.SUCCESS) {
+            getApprovals();
         }
-    }, [get, postState]);
+    }, [getApprovals, postState]);
 
     function resolveUpdate(solution) {
         post({ hash: update.hash, solution });
     }
 
-    if (getState.isLoading || !update) {
+    if ([API_STATE.INIT, API_STATE.SENDING].includes(getApprovalsResponse.state)) {
         return (
             <div className="dropdown" id="updates-dropdown">
                 <button type="button" className="nav-item btn btn-link">
@@ -47,7 +47,7 @@ export default function UpdatesDropdown() {
 
     let hasError = false;
     let dropdownContent;
-    if (postState.isError) {
+    if (postState.state === API_STATE.ERROR) {
         hasError = true;
         dropdownContent = <span className="dropdown-item text-danger">{_("Cannot resolve update")}</span>;
     } else {

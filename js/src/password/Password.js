@@ -9,7 +9,7 @@ import React, { useCallback, useEffect } from "react";
 import PropTypes from "prop-types";
 
 import {
-    SUBMIT_BUTTON_STATES, useForm, Spinner, useAPIGet, useAPIPost, useAlert, ALERT_TYPES,
+    SUBMIT_BUTTON_STATES, useForm, Spinner, useAPIGet, useAPIPost, API_STATE, useAlert, ALERT_TYPES,
 } from "foris";
 
 import API_URLs from "common/API";
@@ -51,10 +51,10 @@ export default function Password({ postCallback }) {
     const [postState, post] = useAPIPost(API_URLs.password);
     useEffect(() => {
         if (postState.data) {
-            if (postState.isSuccess) {
+            if (postState.state === API_STATE.SUCCESS) {
                 setAlert(_("Password changed successfully"), ALERT_TYPES.SUCCESS);
                 postCallback();
-            } else if (postState.isError) {
+            } else if (postState.state === API_STATE.ERROR) {
                 setAlert(postState.data);
             }
             resetPasswordForm();
@@ -82,10 +82,12 @@ export default function Password({ postCallback }) {
         post(data);
     }
 
-    if (passwordIsSetState.isLoading || !formState.data) return <Spinner className="row justify-content-center" />;
+    if (passwordIsSetState.state === API_STATE.SENDING || !formState.data) {
+        return <Spinner className="row justify-content-center" />;
+    }
 
-    const disabled = postState.isSending;
-    const submitButtonState = postState.isSending
+    const isProcessing = postState === API_STATE.SENDING;
+    const submitButtonState = isProcessing
         ? SUBMIT_BUTTON_STATES.SAVING
         : SUBMIT_BUTTON_STATES.READY;
 
@@ -93,37 +95,33 @@ export default function Password({ postCallback }) {
         <>
             <h1>{_("Password")}</h1>
             <h3>{_("Password settings")}</h3>
-            {passwordIsSetState.data.password_set
-                ? (
-                    <CurrentForisPasswordForm
-                        formData={formState.data}
-                        disabled={disabled}
-                        setFormValue={onFormChangeHandler}
-                    />
-                )
-                : null}
+            {passwordIsSetState.data.password_set && (
+                <CurrentForisPasswordForm
+                    formData={formState.data}
+                    disabled={isProcessing}
+                    setFormValue={onFormChangeHandler}
+                />
+            )}
             <ForisPasswordForm
                 formData={formState.data}
                 formErrors={formState.errors}
                 submitButtonState={submitButtonState}
-                disabled={disabled}
+                disabled={isProcessing}
 
                 setFormValue={onFormChangeHandler}
                 postForisPassword={postForisPassword}
             />
-            {!formState.data.sameForRoot
-                ? (
-                    <RootPasswordForm
-                        formData={formState.data}
-                        formErrors={formState.errors}
-                        submitButtonState={submitButtonState}
-                        disabled={disabled}
+            {!formState.data.sameForRoot && (
+                <RootPasswordForm
+                    formData={formState.data}
+                    formErrors={formState.errors}
+                    submitButtonState={submitButtonState}
+                    disabled={isProcessing}
 
-                        setFormValue={onFormChangeHandler}
-                        postRootPassword={postRootPassword}
-                    />
-                )
-                : null}
+                    setFormValue={onFormChangeHandler}
+                    postRootPassword={postRootPassword}
+                />
+            )}
         </>
     );
 }

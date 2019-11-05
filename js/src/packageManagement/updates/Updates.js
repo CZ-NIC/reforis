@@ -8,7 +8,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import PropTypes from "prop-types";
 
-import { useAPIGet, Spinner } from "foris";
+import { useAPIGet, Spinner, API_STATE } from "foris";
 
 import API_URLs from "common/API";
 import UpdateChecker from "./UpdateChecker";
@@ -22,9 +22,9 @@ export default function Updates() {
     }, [getUpdateSettings]);
 
     let componentContent;
-    if (updateSettingsResponse.isError) {
+    if (updateSettingsResponse.state === API_STATE.ERROR) {
         componentContent = <p className="text-center text-danger">{_("An error occurred during loading update settings")}</p>;
-    } else if (!updateSettingsResponse.isLoading && updateSettings) {
+    } else if (updateSettingsResponse.state === API_STATE.SUCCESS) {
         const managerProps = getManagerProps(updateSettings);
         componentContent = <UpdateManager {...managerProps} />;
     } else {
@@ -94,7 +94,7 @@ function UpdateManager({
     }, [getUpdateToApprove]);
 
     let approvalComponent;
-    if (pending || getApprovalsResponse.isLoading) {
+    if (pending || getApprovalsResponse.state === API_STATE.SENDING) {
         approvalComponent = <Spinner className="text-center" />;
     } else if (displayApproval && updateToApprove) {
         approvalComponent = (

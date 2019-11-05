@@ -11,7 +11,7 @@ import { Redirect, Route, Switch } from "react-router";
 import PropTypes from "prop-types";
 
 import {
-    Portal, REFORIS_URL_PREFIX, useAPIGet, Spinner,
+    Portal, REFORIS_URL_PREFIX, useAPIGet, Spinner, API_STATE,
 } from "foris";
 
 import API_URLs from "common/API";
@@ -31,7 +31,9 @@ export default function Guide({ ws }) {
         getGuideData();
     }, [getGuideData]);
 
-    if (!guideData.data) return <Spinner className="row justify-content-center" />;
+    if ([API_STATE.INIT, API_STATE.SENDING].includes(guideData.state)) {
+        return <Spinner className="row justify-content-center" />;
+    }
 
     const {
         available_workflows, workflow_steps, next_step, passed, current_workflow,

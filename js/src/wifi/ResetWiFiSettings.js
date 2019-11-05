@@ -9,7 +9,7 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 import {
-    Button, useAPIPost, useAlert, ALERT_TYPES,
+    Button, useAlert, ALERT_TYPES, useAPIPost, API_STATE,
 } from "foris";
 
 import API from "common/API";
@@ -34,39 +34,32 @@ export default function ResetWiFiSettings({ ws }) {
     const [postResetResponse, postReset] = useAPIPost(API.wifiReset);
     const [setAlert] = useAlert();
     useEffect(() => {
-        if (postResetResponse.isError) {
+        if (postResetResponse.state === API_STATE.ERROR) {
             setAlert(_("An error occurred during resetting Wi-Fi settings"));
-        } else if (postResetResponse.isSuccess) {
+        } else if (postResetResponse.state === API_STATE.SUCCESS) {
             setAlert(_("Wi-Fi settings are set to defaults"), ALERT_TYPES.SUCCESS);
         }
     }, [postResetResponse, setAlert]);
 
-    function resetWiFiSettingsHandler(event) {
-        event.preventDefault();
-        postReset();
-    }
-
     return (
         <>
-            <form onSubmit={resetWiFiSettingsHandler}>
-                <h4>{_("Reset Wi-Fi Settings")}</h4>
-                <p>
-                    {_(`
+            <h4>{_("Reset Wi-Fi Settings")}</h4>
+            <p>
+                {_(`
 If a number of wireless cards doesn't match, you may try to reset the Wi-Fi settings. Note that this will remove the
 current Wi-Fi configuration and restore the default values.
         `)}
-                </p>
-                <Button
-                    className="btn-warning"
-                    forisFormSize
-                    loading={isLoading}
-                    disabled={isLoading}
+            </p>
+            <Button
+                className="btn-warning"
+                forisFormSize
+                loading={isLoading}
+                disabled={isLoading}
 
-                    onClick={resetWiFiSettingsHandler}
-                >
-                    {_("Reset Wi-Fi Settings")}
-                </Button>
-            </form>
+                onClick={() => postReset()}
+            >
+                {_("Reset Wi-Fi Settings")}
+            </Button>
         </>
     );
 }

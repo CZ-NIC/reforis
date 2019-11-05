@@ -9,7 +9,7 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 
 import {
-    useAPIGet, useAPIPost, Button, useAlert,
+    useAPIGet, useAPIPost, Button, useAlert, API_STATE,
 } from "foris";
 
 import API_URLs from "common/API";
@@ -49,10 +49,10 @@ function useUpdates(onSuccess, setPending) {
     const [checkStatusResponse, checkStatus] = useAPIGet(API_URLs.updatesStatus);
     // Wait until updater stops working
     useEffect(() => {
-        if (checkStatusResponse.isError) {
+        if (checkStatusResponse.state === API_STATE.ERROR) {
             setPending(false);
             setAlert(_("Cannot fetch updater status"));
-        } else if (!checkStatusResponse.isLoading && checkStatusResponse.data) {
+        } else if (checkStatusResponse.state === API_STATE.SUCCESS) {
             if (checkStatusResponse.data.running !== false) {
                 const timeout = setTimeout(() => checkStatus(), REFRESH_INTERVAL);
                 return () => clearTimeout(timeout);
@@ -65,9 +65,9 @@ function useUpdates(onSuccess, setPending) {
     const [runUpdatesResponse, runUpdates] = useAPIPost(API_URLs.runUpdates);
     // Trigger updater status checker after updater is enabled
     useEffect(() => {
-        if (runUpdatesResponse.isSuccess) {
+        if (runUpdatesResponse.state === API_STATE.SUCCESS) {
             checkStatus();
-        } else if (runUpdatesResponse.isError) {
+        } else if (runUpdatesResponse.state === API_STATE.ERROR) {
             setPending(false);
             setAlert(runUpdatesResponse.data);
         }

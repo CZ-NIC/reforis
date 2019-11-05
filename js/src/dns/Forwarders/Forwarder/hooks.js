@@ -8,7 +8,7 @@
 import { useEffect } from "react";
 import update from "immutability-helper";
 import {
-    useAlert, useAPIPatch, useAPIPost, useForm,
+    useAlert, useAPIPut, useAPIPost, useForm, API_STATE,
 } from "foris";
 import API_URLs from "common/API";
 import validator from "./validator";
@@ -26,28 +26,28 @@ const EMPTY_FORWARDER = {
 export default function useForwarderForm(forwarder, saveForwarderCallback) {
     const [formState, setFormValue, initForm] = useForm(validator);
     const [postState, post] = useAPIPost(API_URLs.dnsForwarders);
-    const [patchState, patch] = useAPIPatch(`${API_URLs.dnsForwarders}/${(forwarder || {}).name}`);
+    const [putState, put] = useAPIPut(`${API_URLs.dnsForwarders}/${(forwarder || {}).name}`);
 
     const [setAlert] = useAlert();
 
     useEffect(() => {
-        if (postState.isSuccess) {
+        if (postState.state === API_STATE.SUCCESS) {
             setAlert(null);
             saveForwarderCallback();
             initForm(EMPTY_FORWARDER);
-        } else if (postState.isError) {
+        } else if (postState.state === API_STATE.ERROR) {
             setAlert(_("Can't save forwarder."));
         }
     }, [setAlert, postState, initForm, saveForwarderCallback]);
 
     useEffect(() => {
-        if (patchState.isSuccess) {
+        if (putState.state === API_STATE.SUCCESS) {
             setAlert(null);
             saveForwarderCallback();
-        } else if (patchState.isError) {
+        } else if (putState.state === API_STATE.ERROR) {
             setAlert(_("Can't add new forwarder."));
         }
-    }, [patchState, saveForwarderCallback, setAlert]);
+    }, [putState, saveForwarderCallback, setAlert]);
 
     useEffect(() => {
         if (forwarder) initForm(forwarder);
@@ -55,7 +55,7 @@ export default function useForwarderForm(forwarder, saveForwarderCallback) {
     }, [forwarder, initForm]);
 
     function saveForwarder() {
-        if (forwarder) patch(prepDataToSubmit(formState.data));
+        if (forwarder) put(prepDataToSubmit(formState.data));
         else post(prepDataToSubmit(formState.data));
     }
 

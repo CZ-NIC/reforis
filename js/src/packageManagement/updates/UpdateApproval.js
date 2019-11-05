@@ -9,7 +9,7 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 
 import {
-    useAPIPost, Button, Spinner, useAlert,
+    useAPIPost, Button, Spinner, useAlert, API_STATE,
 } from "foris";
 import API_URLs from "common/API";
 import toLocaleDateString from "utils/localeDate";
@@ -26,9 +26,9 @@ export default function UpdateApproval({ update, onSuccess, className }) {
     const [postState, post] = useAPIPost(API_URLs.approvals);
     // Execute callback when resolution is successful
     useEffect(() => {
-        if (postState.isError) {
+        if (postState.state === API_STATE.ERROR) {
             setAlert(_("Cannot resolve update"));
-        } else if (postState.isSuccess) {
+        } else if (postState.state === API_STATE.SUCCESS) {
             onSuccess();
         }
     }, [postState, onSuccess, setAlert]);
@@ -37,7 +37,7 @@ export default function UpdateApproval({ update, onSuccess, className }) {
         post({ hash: update.hash, solution });
     }
 
-    if (postState.isSending) return <Spinner className="text-center" />;
+    if (postState.state === API_STATE.SENDING) return <Spinner className="text-center" />;
 
     if (!update.approvable) {
         return <p className="text-center text-muted">{_("There are no updates awaiting your approval.")}</p>;

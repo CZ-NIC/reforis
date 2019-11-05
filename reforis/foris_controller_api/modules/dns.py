@@ -79,7 +79,7 @@ views = [
     }, {
         'rule': '/dns/forwarders/<forwarder_name>',
         'view_func': set_forwarder,
-        'methods': ['PATCH']
+        'methods': ['PUT']
     }, {
         'rule': '/dns/forwarders/<forwarder_name>',
         'view_func': delete_forwarder,

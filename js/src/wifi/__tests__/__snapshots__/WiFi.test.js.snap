@@ -311,23 +311,21 @@ point) and a corresponding password. You can then set up your mobile devices, us
         Save
     </button>
   </form>
-  <form>
-    <h4>
-      Reset Wi-Fi Settings
-    </h4>
-    <p>
-      
+  <h4>
+    Reset Wi-Fi Settings
+  </h4>
+  <p>
+    
 If a number of wireless cards doesn't match, you may try to reset the Wi-Fi settings. Note that this will remove the
 current Wi-Fi configuration and restore the default values.
         
-    </p>
-    <button
-      class="btn btn-warning offset-lg-8 col-lg-3 col-sm-12"
-      type="button"
-    >
-        Reset Wi-Fi Settings
-    </button>
-  </form>
+  </p>
+  <button
+    class="btn btn-warning offset-lg-8 col-lg-3 col-sm-12"
+    type="button"
+  >
+      Reset Wi-Fi Settings
+  </button>
 </DocumentFragment>
 `;
 

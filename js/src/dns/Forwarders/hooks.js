@@ -7,7 +7,9 @@
 
 import { useEffect, useState } from "react";
 import update from "immutability-helper";
-import { useAlert, useAPIGet, useWSForisModule } from "foris";
+import {
+    useAlert, useAPIGet, useWSForisModule, API_STATE,
+} from "foris";
 
 import API_URLs from "common/API";
 
@@ -23,17 +25,16 @@ export default function useForwardersList(ws) {
     }, [getForwardersList]);
 
     useEffect(() => {
-        if (forwardersListState.data) {
+        if (forwardersListState.state === API_STATE.SUCCESS) {
             setForwarders(forwardersListState.data.forwarders || []);
-        }
-        if (forwardersListState.isError) {
+        } else if (forwardersListState.state === API_STATE.ERROR) {
             setAlert(_("Can't load list of available forwarders."));
         }
     }, [forwardersListState, setAlert]);
 
     useForwardersWS(ws, setForwarders);
 
-    return [sortForwarders(forwarders), forwardersListState.isLoading];
+    return [sortForwarders(forwarders), forwardersListState === API_STATE.SENDING];
 }
 
 function sortForwarders(forwarders) {

@@ -7,7 +7,9 @@
 
 import React, { useEffect } from "react";
 
-import { useAPIPost, ForisURLs, REFORIS_URL_PREFIX } from "foris";
+import {
+    useAPIPost, ForisURLs, REFORIS_URL_PREFIX, API_STATE,
+} from "foris";
 import API_URLs from "common/API";
 
 import PropTypes from "prop-types";
@@ -36,8 +38,8 @@ export default function WorkflowSelect({ workflows, next_step }) {
     const [postWorkflowData, postWorkflow] = useAPIPost(API_URLs.guideWorkflow);
 
     useEffect(() => {
-        if (postWorkflowData.data && postWorkflowData.isSuccess) window.location.assign(`${REFORIS_URL_PREFIX}${GUIDE_URL_PREFIX}/${next_step}`);
-    }, [next_step, postWorkflowData.data, postWorkflowData.isSuccess]);
+        if (postWorkflowData.state === API_STATE.SUCCESS) window.location.assign(`${REFORIS_URL_PREFIX}${GUIDE_URL_PREFIX}/${next_step}`);
+    }, [next_step, postWorkflowData]);
 
     function onWorkflowChangeHandler(workflow) {
         postWorkflow({ workflow });
