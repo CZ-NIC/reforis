@@ -79,7 +79,7 @@ def register_login_required(app):
         not_protected_endpoints = [
             'static',
             'Views.login',
-            'Views.health_check',
+            'reForisAPI.health_check',
         ]
         if request.endpoint in not_protected_endpoints:
             return
