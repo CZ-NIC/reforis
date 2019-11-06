@@ -49,10 +49,6 @@ module.exports = (env) => ({
                 use: [{ loader: "expose-loader", options: "ReactDOM" }],
             },
             {
-                test: require.resolve("react-uid"),
-                use: [{ loader: "expose-loader", options: "react-uid" }],
-            },
-            {
                 test: /\.css$/,
                 use: ["style-loader", "css-loader"],
             },
