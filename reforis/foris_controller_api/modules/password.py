@@ -2,7 +2,7 @@ from flask import jsonify, current_app, request
 from flask_babel import gettext as _
 
 from reforis.auth import _decode_password_to_base64, check_password
-from reforis.foris_controller_api.utils import APIError
+from reforis.foris_controller_api.utils import APIError, validate_json
 
 
 def password():
@@ -35,21 +35,24 @@ def password():
 
     elif request.method == 'POST':
         data = request.json
-        if not data.get('foris_current_password', False) or not check_password(data['foris_current_password']):
-            raise APIError(_('Wrong current password.'))
+        validate_json(data, {'foris_current_password': str})
 
-        new_password = _decode_password_to_base64(data['foris_password'])
-        request_data = {'password': new_password}
+        if not check_password(data['foris_current_password']):
+            raise APIError(_('Wrong current password.'), 400)
 
         if data.get('foris_password', False):
-            request_data['type'] = 'foris'
-            response['foris_password'] = current_app.backend.perform('password', 'set', request_data)
+            response['foris_password'] = _update_password('foris', data['foris_password'])
 
         if data.get('root_password', False):
-            request_data['type'] = 'system'
-            response['root_password'] = current_app.backend.perform('password', 'set', request_data)
+            response['root_password'] = _update_password('system', data['root_password'])
 
     return jsonify(response)
+
+
+def _update_password(password_type: str, password: str) -> dict:
+    new_password = _decode_password_to_base64(password)
+    request_data = {'type': password_type, 'password': new_password}
+    return current_app.backend.perform('password', 'set', request_data)
 
 
 # pylint: disable=invalid-name
