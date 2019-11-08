@@ -6,9 +6,10 @@
  */
 
 import React from 'react';
-import {fireEvent, render, waitForElement} from "foris/testUtils/customTestRender";
+import { fireEvent, render, waitForElement, wait } from "foris/testUtils/customTestRender";
+import { mockJSONError } from "foris/testUtils/network";
 
-import {updatesFixture} from './__fixtures__/updates';
+import { updatesFixture } from './__fixtures__/updates';
 import UpdateSettings from '../UpdateSettings';
 import mockAxios from 'jest-mock-axios';
 import diffSnapshot from "snapshot-diff";
@@ -30,6 +31,14 @@ describe('<UpdateSettings/>', () => {
 
         await waitForElement(() => renderRes.getByLabelText(ENABLE_CHECKBOX_LABEL));
         firstRender = renderRes.asFragment();
+    });
+
+    it("should handle error", async () => {
+        const { getByText } = render(<UpdateSettings/>);
+        mockJSONError();
+        await wait(() => {
+            expect(getByText("An error occurred while fetching data.")).toBeTruthy();
+        });
     });
 
     it('Test with snapshot disabled.', () => {

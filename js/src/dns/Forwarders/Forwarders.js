@@ -8,7 +8,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import {
-    Button, Spinner, WebSockets,
+    Button, WebSockets, withSpinnerOnSending, withErrorMessage,
 } from "foris";
 
 import ForwardersTable from "./ForwardersTable";
@@ -25,8 +25,28 @@ Forwarders.propTypes = {
 export default function Forwarders({
     value, setFormValue, ws, disabled,
 }) {
-    const [forwarderList, forwarderListIsLoading] = useForwardersList(ws);
+    const [forwarderList, forwarderListState] = useForwardersList(ws);
+    return (
+        <ForwardersFormWithErrorAndSpinner
+            apiState={forwarderListState}
+            forwarderList={forwarderList}
+            value={value}
+            setFormValue={setFormValue}
+            disabled={disabled}
+        />
+    );
+}
 
+ForwardersForm.propTypes = {
+    forwarderList: PropTypes.array,
+    value: PropTypes.string,
+    setFormValue: PropTypes.func,
+    disabled: PropTypes.bool,
+};
+
+function ForwardersForm({
+    forwarderList, value, setFormValue, disabled,
+}) {
     const [forwarderToEdit, setForwarderToEdit] = useState(null);
     const [forwarderModalShown, setForwarderModalShown] = useState(false);
 
@@ -38,10 +58,6 @@ export default function Forwarders({
     function addForwarder() {
         setForwarderToEdit(null);
         setForwarderModalShown(true);
-    }
-
-    if (forwarderListIsLoading || !forwarderList) {
-        return <Spinner />;
     }
 
     return (
@@ -63,6 +79,8 @@ export default function Forwarders({
         </>
     );
 }
+
+const ForwardersFormWithErrorAndSpinner = withSpinnerOnSending(withErrorMessage(ForwardersForm));
 
 AddForwarderButton.propTypes = {
     onClick: PropTypes.func,

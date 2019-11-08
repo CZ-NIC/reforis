@@ -8,9 +8,10 @@
 import React from 'react';
 import diffSnapshot from 'snapshot-diff';
 
-import {fireEvent, render, wait} from "foris/testUtils/customTestRender";
+import { fireEvent, render, wait } from "foris/testUtils/customTestRender";
 import { WebSockets } from "foris";
-import {wifiSettingsFixture} from './__fixtures__/wifiSettings';
+import { mockJSONError } from "foris/testUtils/network";
+import { wifiSettingsFixture } from './__fixtures__/wifiSettings';
 
 import mockAxios from 'jest-mock-axios';
 import WiFi from '../WiFi';
@@ -32,6 +33,15 @@ describe('<WiFi/>', () => {
         mockAxios.mockResponse({data: wifiSettingsFixture()});
         await wait(() => renderRes.getByText('Wi-Fi 1'));
         firstRender = renderRes.asFragment()
+    });
+
+    it("should handle error", async () => {
+        const webSockets = new WebSockets();
+        const { getByText } = render(<WiFi ws={webSockets}/>);
+        mockJSONError();
+        await wait(() => {
+            expect(getByText("An error occurred while fetching data.")).toBeTruthy();
+        });
     });
 
     it('Snapshot both modules disabled.', () => {
@@ -56,7 +66,6 @@ describe('<WiFi/>', () => {
         fireEvent.click(getAllByText('Enable Guest Wifi')[0]);
         expect(diffSnapshot(enabledRender, asFragment())).toMatchSnapshot();
     });
-
 
     it('Post form: both modules disabled.', () => {
         fireEvent.click(getByText('Save'));

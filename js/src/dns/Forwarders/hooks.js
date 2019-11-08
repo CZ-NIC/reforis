@@ -27,14 +27,12 @@ export default function useForwardersList(ws) {
     useEffect(() => {
         if (forwardersListState.state === API_STATE.SUCCESS) {
             setForwarders(forwardersListState.data.forwarders || []);
-        } else if (forwardersListState.state === API_STATE.ERROR) {
-            setAlert(_("Can't load list of available forwarders."));
         }
     }, [forwardersListState, setAlert]);
 
     useForwardersWS(ws, setForwarders);
 
-    return [sortForwarders(forwarders), forwardersListState === API_STATE.SENDING];
+    return [sortForwarders(forwarders), forwardersListState.state];
 }
 
 function sortForwarders(forwarders) {

@@ -6,14 +6,15 @@
  */
 
 import React from 'react';
-import {fireEvent, render, waitForElement} from "foris/testUtils/customTestRender";
-import diffSnapshot from 'snapshot-diff';
-import { WebSockets } from "foris";
-import {wanSettingsFixture} from './__fixtures__/wanSettings';
 import mockAxios from 'jest-mock-axios';
+import diffSnapshot from 'snapshot-diff';
 
+import { WebSockets } from "foris";
+import { fireEvent, render, waitForElement, wait } from "foris/testUtils/customTestRender";
+import { mockJSONError } from "foris/testUtils/network";
+
+import { wanSettingsFixture } from './__fixtures__/wanSettings';
 import WAN from '../WAN';
-
 
 describe('<WAN/>', () => {
     let asFragment;
@@ -31,6 +32,15 @@ describe('<WAN/>', () => {
 
         await waitForElement(() => renderRes.getByText('WAN IPv4'));
         firstRender = renderRes.asFragment();
+    });
+
+    it("should handle error", async () => {
+        const webSockets = new WebSockets();
+        const { getByText } = render(<WAN ws={webSockets} />);
+        mockJSONError();
+        await wait(() => {
+            expect(getByText("An error occurred while fetching data.")).toBeTruthy();
+        });
     });
 
     it('Snapshot: WAN IPv4 dhcp, WAN IPv6 dhcp, MAC disabled', () => {

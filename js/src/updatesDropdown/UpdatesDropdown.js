@@ -6,77 +6,103 @@
  */
 
 import React, { useEffect } from "react";
+import PropTypes from "prop-types";
 
 import {
-    ForisURLs, useAPIGet, useAPIPost, SpinnerElement, Button, API_STATE,
+    ForisURLs, useAPIGet, useAPIPost, SpinnerElement, Button, API_STATE, withEither, withSending,
 } from "foris";
 import API_URLs from "common/API";
 
 export default function UpdatesDropdown() {
     const [getApprovalsResponse, getApprovals] = useAPIGet(API_URLs.approvals);
-    const update = getApprovalsResponse.data;
+    const update = getApprovalsResponse.data || {};
     useEffect(() => {
         getApprovals();
     }, [getApprovals]);
 
-    const [postState, post] = useAPIPost(API_URLs.approvals);
-    // Reload approvals when resolution is successful
-    useEffect(() => {
-        if (postState.state === API_STATE.SUCCESS) {
-            getApprovals();
-        }
-    }, [getApprovals, postState]);
-
-    function resolveUpdate(solution) {
-        post({ hash: update.hash, solution });
-    }
-
-    if ([API_STATE.INIT, API_STATE.SENDING].includes(getApprovalsResponse.state)) {
-        return (
-            <div className="dropdown" id="updates-dropdown">
-                <button type="button" className="nav-item btn btn-link">
-                    <SpinnerElement small />
-                </button>
-            </div>
-        );
-    }
-
-    if (!update.approvable) {
+    if (update.approvable === false) {
         return null;
     }
 
-    let hasError = false;
-    let dropdownContent;
-    if (postState.state === API_STATE.ERROR) {
-        hasError = true;
-        dropdownContent = <span className="dropdown-item text-danger">{_("Cannot resolve update")}</span>;
-    } else {
-        dropdownContent = (
-            <>
-                <span
-                    className="dropdown-item"
-                    dangerouslySetInnerHTML={{ __html: _(`See details in <a href=${ForisURLs.packageManagement.updates}>Updates</a> page.`) }}
-                />
-                <div className="dropdown-item" id="updates-dropdown-actions">
-                    <Button className="btn-warning mr-3" onClick={() => resolveUpdate("deny")}>{_("Ignore")}</Button>
-                    <Button className="btn-primary" onClick={() => resolveUpdate("grant")}>{_("Install now")}</Button>
-                </div>
-            </>
-        );
+    return (
+        <div className="dropdown" data-testid="updates-dropdown">
+            <DropdownContentWithSpinner
+                apiState={getApprovalsResponse.state}
+                update={update}
+                onSuccess={getApprovals}
+            />
+        </div>
+    );
+}
+
+DropdownContent.propTypes = {
+    update: PropTypes.object.isRequired,
+    onSuccess: PropTypes.func.isRequired,
+};
+
+function DropdownContent({ update, onSuccess }) {
+    const [postApprovalResponse, postApproval] = useAPIPost(API_URLs.approvals);
+    // Reload approvals when resolution is successful
+    useEffect(() => {
+        if (postApprovalResponse.state === API_STATE.SUCCESS) {
+            onSuccess();
+        }
+    }, [onSuccess, postApprovalResponse]);
+
+    function resolveUpdate(solution) {
+        postApproval({ hash: update.hash, solution });
     }
 
+    const updateFailed = postApprovalResponse.state === API_STATE.ERROR;
     return (
-        <div className="dropdown">
+        <>
             <button type="button" className="nav-item btn btn-link">
-                <i className={`fa fa-sync fa-lg ${hasError ? "text-danger" : ""}`.trim()} />
+                <i className={`fa fa-sync fa-lg ${updateFailed ? "text-danger" : ""}`.trim()} />
             </button>
             <div className="dropdown-menu">
                 <div className="dropdown-header">
                     <h5>{_("Approve update")}</h5>
                 </div>
                 <div className="dropdown-divider" />
-                {dropdownContent}
+                <ManageUpdateWithError
+                    updateFailed={updateFailed}
+                    resolveUpdate={resolveUpdate}
+                />
             </div>
-        </div>
+        </>
     );
 }
+
+const withSmallSpinner = withSending(
+    () => (
+        <button type="button" className="nav-item btn btn-link">
+            <SpinnerElement small />
+        </button>
+    ),
+);
+const DropdownContentWithSpinner = withSmallSpinner(DropdownContent);
+
+ManageUpdate.propTypes = {
+    resolveUpdate: PropTypes.func.isRequired,
+};
+
+function ManageUpdate({ resolveUpdate }) {
+    return (
+        <>
+            <span
+                className="dropdown-item"
+                dangerouslySetInnerHTML={{ __html: _(`See details in <a href=${ForisURLs.packageManagement.updates}>Updates</a> page.`) }}
+            />
+            <div className="dropdown-item" id="updates-dropdown-actions">
+                <Button className="btn-warning mr-3" onClick={() => resolveUpdate("deny")}>{_("Ignore")}</Button>
+                <Button className="btn-primary" onClick={() => resolveUpdate("grant")}>{_("Install now")}</Button>
+            </div>
+        </>
+    );
+}
+
+const withUpdateFailed = withEither(
+    (props) => props.updateFailed,
+    () => <span className="dropdown-item text-danger">{_("Cannot resolve update")}</span>,
+);
+const ManageUpdateWithError = withUpdateFailed(ManageUpdate);

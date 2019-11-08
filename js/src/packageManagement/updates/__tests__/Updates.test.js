@@ -50,6 +50,13 @@ describe("<Updates/>", () => {
         await wait(() => expect(container).toMatchSnapshot());
     });
 
+    fit("should handle error on approvable updates", async () => {
+        mockAxios.mockResponse({ data: { enabled: true, approval_settings: { status: "delayed" } } });
+        await wait(() => expect(getByText("Manually check for updates and review them immediately.")).toBeTruthy());
+        mockJSONError();
+        await wait(() => getByText("An error occurred while fetching data."));
+    });
+
     it("should display spinner while check is pending", async () => {
         mockAxios.mockResponse({ data: { enabled: true, approval_settings: { status: "off" } } });
         await wait(() => getByText("Manually check for updates and install them immediately."));

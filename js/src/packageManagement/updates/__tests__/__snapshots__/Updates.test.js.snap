@@ -6,7 +6,7 @@ exports[`<Updates/> should display spinner 1`] = `
     Updates
   </h1>
   <div
-    class="spinner-wrapper text-center"
+    class="spinner-wrapper my-3 text-center"
   >
     <div
       class="spinner-border "
@@ -227,7 +227,7 @@ exports[`<Updates/> should handle error 1`] = `
   <p
     class="text-center text-danger"
   >
-    An error occurred during loading update settings
+    An error occurred while fetching data.
   </p>
 </div>
 `;

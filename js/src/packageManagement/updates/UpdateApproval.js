@@ -37,8 +37,9 @@ export default function UpdateApproval({ update, onSuccess, className }) {
         post({ hash: update.hash, solution });
     }
 
-    if (postState.state === API_STATE.SENDING) return <Spinner className="text-center" />;
-
+    if (postState.state === API_STATE.SENDING) {
+        return <Spinner className="text-center" />;
+    }
     if (!update.approvable) {
         return <p className="text-center text-muted">{_("There are no updates awaiting your approval.")}</p>;
     }

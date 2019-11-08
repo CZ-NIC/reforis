@@ -9,7 +9,8 @@ import React, { useCallback, useEffect } from "react";
 import PropTypes from "prop-types";
 
 import {
-    SUBMIT_BUTTON_STATES, useForm, Spinner, useAPIGet, useAPIPost, API_STATE, useAlert, ALERT_TYPES,
+    SUBMIT_BUTTON_STATES, useForm, useAPIGet, useAPIPost, API_STATE, useAlert, ALERT_TYPES,
+    withErrorMessage, withSpinnerOnSending,
 } from "foris";
 
 import API_URLs from "common/API";
@@ -27,6 +28,29 @@ Password.defaultProps = {
 };
 
 export default function Password({ postCallback }) {
+    const [getPasswordResponse, getPassword] = useAPIGet(API_URLs.password);
+    useEffect(() => {
+        getPassword();
+    }, [getPassword]);
+
+    return (
+        <>
+            <h1>{_("Password")}</h1>
+            <PasswordFormWithErrorAndSpinner
+                apiState={getPasswordResponse.state}
+                currentPassword={getPasswordResponse.data || {}}
+                postCallback={postCallback}
+            />
+        </>
+    );
+}
+
+PasswordForm.propTypes = {
+    postCallback: PropTypes.func.isRequired,
+    currentPassword: PropTypes.object.isRequired,
+};
+
+function PasswordForm({ postCallback, currentPassword }) {
     const [formState, onFormChangeHandler, resetFormData] = useForm(validator);
 
     const resetPasswordForm = useCallback(() => {
@@ -42,11 +66,6 @@ export default function Password({ postCallback }) {
         resetPasswordForm();
     }, [resetPasswordForm]);
 
-    const [passwordIsSetState, getPasswordIsSet] = useAPIGet(API_URLs.password);
-    useEffect(() => {
-        getPasswordIsSet();
-    }, [getPasswordIsSet]);
-
     const [setAlert, dismissAlert] = useAlert();
     const [postState, post] = useAPIPost(API_URLs.password);
     useEffect(() => {
@@ -60,6 +79,10 @@ export default function Password({ postCallback }) {
             resetPasswordForm();
         }
     }, [postState, resetPasswordForm, postCallback, setAlert]);
+
+    if (!formState.data) {
+        return null;
+    }
 
     function postForisPassword(event) {
         event.preventDefault();
@@ -82,23 +105,18 @@ export default function Password({ postCallback }) {
         post(data);
     }
 
-    if (passwordIsSetState.state === API_STATE.SENDING || !formState.data) {
-        return <Spinner className="row justify-content-center" />;
-    }
-
-    const isProcessing = postState === API_STATE.SENDING;
-    const submitButtonState = isProcessing
+    const isSending = postState === API_STATE.SENDING;
+    const submitButtonState = isSending
         ? SUBMIT_BUTTON_STATES.SAVING
         : SUBMIT_BUTTON_STATES.READY;
 
     return (
         <>
-            <h1>{_("Password")}</h1>
             <h3>{_("Password settings")}</h3>
-            {passwordIsSetState.data.password_set && (
+            {currentPassword.password_set && (
                 <CurrentForisPasswordForm
                     formData={formState.data}
-                    disabled={isProcessing}
+                    disabled={isSending}
                     setFormValue={onFormChangeHandler}
                 />
             )}
@@ -106,7 +124,7 @@ export default function Password({ postCallback }) {
                 formData={formState.data}
                 formErrors={formState.errors}
                 submitButtonState={submitButtonState}
-                disabled={isProcessing}
+                disabled={isSending}
 
                 setFormValue={onFormChangeHandler}
                 postForisPassword={postForisPassword}
@@ -116,7 +134,7 @@ export default function Password({ postCallback }) {
                     formData={formState.data}
                     formErrors={formState.errors}
                     submitButtonState={submitButtonState}
-                    disabled={isProcessing}
+                    disabled={isSending}
 
                     setFormValue={onFormChangeHandler}
                     postRootPassword={postRootPassword}
@@ -145,3 +163,5 @@ function validatePassword(password) {
 
     return null;
 }
+
+const PasswordFormWithErrorAndSpinner = withSpinnerOnSending(withErrorMessage(PasswordForm));

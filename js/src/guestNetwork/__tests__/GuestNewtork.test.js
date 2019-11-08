@@ -9,6 +9,7 @@ import React from 'react';
 import {fireEvent, getByLabelText, getByText, render, wait} from "foris/testUtils/customTestRender";
 
 import { WebSockets } from "foris";
+import { mockJSONError } from "foris/testUtils/network";
 import mockAxios from 'jest-mock-axios';
 import GuestNetwork from '../GuestNetwork';
 import guestNetworkFixture from './__fixtures__/guestNetwork';
@@ -19,10 +20,19 @@ describe('<GuestNetwork/>', () => {
 
     beforeEach(async () => {
         const webSockets = new WebSockets();
-        const {container} = render(<GuestNetwork ws={webSockets} setFormValue={() => {}}/>);
+        const { container } = render(<GuestNetwork ws={webSockets} setFormValue={() => {}}/>);
         mockAxios.mockResponse({data: guestNetworkFixture()});
         await wait(() => getByLabelText(container, 'Enable'));
         guestNetworkContainer = container
+    });
+
+    it("should handle error", async () => {
+        const webSockets = new WebSockets();
+        const { getByText } = render(<GuestNetwork ws={webSockets} setFormValue={() => {}}/>);
+        mockJSONError();
+        await wait(() => {
+            expect(getByText("An error occurred while fetching data.")).toBeTruthy();
+        });
     });
 
     it('Snapshot disabled.', () => {

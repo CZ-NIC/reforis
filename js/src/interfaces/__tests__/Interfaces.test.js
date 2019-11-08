@@ -9,6 +9,7 @@ import React from "react";
 import {fireEvent, getByLabelText, getByText, render, wait} from "foris/testUtils/customTestRender";
 
 import { WebSockets } from "foris";
+import { mockJSONError } from "foris/testUtils/network";
 import mockAxios from "jest-mock-axios";
 import Interfaces from "../Interfaces";
 import { interfacesFixture } from "./__fixtures__/interfaces";
@@ -23,6 +24,15 @@ describe("<Interfaces/>", () => {
         mockAxios.mockResponse({data: interfacesFixture()});
         await wait(() => getByText(container, "LAN1"));
         interfacesContainer = container
+    });
+
+    it("should handle error", async () => {
+        const webSockets = new WebSockets();
+        const { container } = render(<Interfaces ws={webSockets} />);
+        mockJSONError();
+        await wait(() => {
+            expect(getByText(container, "An error occurred while fetching data.")).toBeTruthy();
+        });
     });
 
     it("Snapshot.", () => {

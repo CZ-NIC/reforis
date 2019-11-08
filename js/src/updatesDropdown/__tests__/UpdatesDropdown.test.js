@@ -6,18 +6,18 @@
  */
 
 import React from "react";
-import { render, waitForElement, waitForElementToBeRemoved, wait, fireEvent } from "foris/testUtils/customTestRender";
+import { render, waitForElement, wait, fireEvent } from "foris/testUtils/customTestRender";
 import mockAxios from 'jest-mock-axios';
 import { mockJSONError } from "foris/testUtils/network";
 
 import UpdatesDropdown from "../UpdatesDropdown";
 
 describe("<UpdatesDropdown/>", () => {
-    let container, getByText;
+    let container, getByText, getByTestId, queryByTestId;
     const exampleHash = "303808909";
 
     beforeEach(() => {
-        ({ container, getByText } = render(<UpdatesDropdown />));
+        ({ container, getByText, getByTestId, queryByTestId } = render(<UpdatesDropdown />));
     });
 
     it("Loading (spinner visible)", async () => {
@@ -25,8 +25,9 @@ describe("<UpdatesDropdown/>", () => {
     });
 
     it("No updates awaiting", async () => {
+        expect(getByTestId('updates-dropdown')).toBeTruthy();
         mockAxios.mockResponse({data: {approvable: false}});
-        await waitForElementToBeRemoved(() => document.querySelector('#updates-dropdown'));
+        await wait(() => expect(queryByTestId('updates-dropdown')).toBeFalsy());
     });
 
     it("Updates awaiting - snapshot", async () => {

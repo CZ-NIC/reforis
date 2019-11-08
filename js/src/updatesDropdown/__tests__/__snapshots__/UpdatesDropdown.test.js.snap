@@ -4,7 +4,7 @@ exports[`<UpdatesDropdown/> Loading (spinner visible) 1`] = `
 <div>
   <div
     class="dropdown"
-    id="updates-dropdown"
+    data-testid="updates-dropdown"
   >
     <button
       class="nav-item btn btn-link"
@@ -30,6 +30,7 @@ exports[`<UpdatesDropdown/> Updates awaiting - snapshot 1`] = `
 <div>
   <div
     class="dropdown"
+    data-testid="updates-dropdown"
   >
     <button
       class="nav-item btn btn-link"

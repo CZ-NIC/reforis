@@ -7,7 +7,9 @@
 
 import React from "react";
 
-import {fireEvent, getByLabelText, getByText, getAllByText, render, wait} from "foris/testUtils/customTestRender";
+import {
+    fireEvent, getByLabelText, getByText, getAllByText, render, wait,
+} from "foris/testUtils/customTestRender";
 import mockAxios from "jest-mock-axios";
 import { ALERT_TYPES } from "foris";
 import { mockJSONError } from "foris/testUtils/network";
@@ -23,6 +25,12 @@ describe("<Password/>", () => {
         mockAxios.mockResponse({data: {password_set: true}});
         await wait(() => getByText(container, "Advanced administration (root) password"));
         passwordContainer = container;
+    });
+
+    it("should handle error", async () => {
+        const { container } = render(<Password/>);
+        mockJSONError();
+        await wait(() => getByText(container, "An error occurred while fetching data."));
     });
 
     it("Snapshot", () => {
