@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2019-04-20 00:44+0200\n"
-"PO-Revision-Date: 2019-09-11 14:23+0000\n"
+"PO-Revision-Date: 2019-11-10 16:04+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/turris/"
 "reforis/nb_NO/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9-dev\n"
+"X-Generator: Weblate 3.10-dev\n"
 "Generated-By: Babel 2.7.0\n"
 
 #: js/src/administration/Reboot.js:17
@@ -265,12 +265,14 @@ msgid "DHCP start"
 msgstr "DHCP start"
 
 #: js/src/lan/LANManagedForm.js:119
+#, fuzzy
 msgid "DHCP max leases"
-msgstr ""
+msgstr "Maks DHCP-tildelinger"
 
 #: js/src/lan/LANManagedForm.js:132
+#, fuzzy
 msgid "Lease time (hours)"
-msgstr ""
+msgstr "Tildelningstid (timer)"
 
 #: js/src/lan/LANUnmanagedForm.js:22 js/src/wan/WANForm.js:23
 msgid "DHCP (automatic configuration)"
@@ -309,16 +311,22 @@ msgid "No notifications"
 msgstr "Ingen merknader"
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/helpTexts.js:9
+#, fuzzy
 msgid ""
 "If you set SMTP provider to \"Turris\", the servers provided to members "
 "of the Turris project would be used. These servers do not require any "
 "additional settings. If you want to set your own SMTP server, please "
 "select \"Custom\" and enter required settings."
 msgstr ""
+"Hvis du har satt SMTP-tilbyder til \"Turris\", vil tjenerne tilbudt av "
+"medlemmene av Turris-prosjektet brukes. Disse tjenerne krever ingen "
+"ytterligere innstillinger. Hvis du ønsker å sette din egen SMTP-tjener, velg "
+"\"Egendefinert\" og skriv inn påkrevd oppsett."
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/helpTexts.js:13
+#, fuzzy
 msgid "Email address of recipient. Separate multiple addresses by comma."
-msgstr ""
+msgstr "E-postadresse tilhørende mottager. Inndeling av adresser med komma."
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/helpTexts.js:14
 #, fuzzy
@@ -330,10 +338,12 @@ msgid ""
 "Name of the sender - will be used as a part of the sender's email address"
 " before the \"at\" sign."
 msgstr ""
+"Navn på avsender - brukes som del av senderens e-postadresse, før \""
+"krøllalfa\"-tegnet."
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/helpTexts.js:20
 msgid "This is the address notifications are send from."
-msgstr ""
+msgstr "Dette er adressen merknader sendes fra."
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/validator.js:27
 msgid "Can't be empty."
@@ -380,7 +390,7 @@ msgstr "Mottagerens e-post"
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/CommonForm.js:57
 msgid "Importance"
-msgstr ""
+msgstr "Viktighetsgrad"
 
 #: js/src/notifications/NotificationsCenter/NotificationsEmailSettings/forms/CommonForm.js:66
 msgid "Send news"
@@ -457,6 +467,8 @@ msgid ""
 "Useful in cases, when a specific MAC address is required by your internet"
 " service provider."
 msgstr ""
+"Nyttig i fall en spesifikk MAC-adresse kreves av din "
+"internettjenestetilbyder."
 
 #: js/src/wan/MACForm.js:17
 msgid "Colon is used as a separator, for example 00:11:22:33:44:55"
@@ -475,59 +487,74 @@ msgid "MAC address"
 msgstr "MAC-adresse"
 
 #: js/src/wan/WAN6Form.js:24
+#, fuzzy
 msgid "DUID which will be provided to the DHCPv6 server."
-msgstr ""
+msgstr "DUID tilbudt av DHCPv6-tjeneren."
 
 #: js/src/wan/WAN6Form.js:28
 msgid ""
 "IPv6 address and prefix length for WAN interface e.g. "
 "2001:db8:be13:37da::1/64"
 msgstr ""
+"IPv6-adresse og prefikslengde for WAN-grensesnitt. F.eks 2001:db8:be13:37da::"
+"1/64"
 
 #: js/src/wan/WAN6Form.js:29
 msgid "Address range for local network, e.g. 2001:db8:be13:37da::/64"
-msgstr ""
+msgstr "Adresserekkevidde for lokalnettverk, f.eks. 2001:db8:be13:37da::/64"
 
 #: js/src/wan/WAN6Form.js:34
+#, fuzzy
 msgid ""
 "In order to use 6to4 protocol, you might need to specify your public IPv4"
 " address manually (e.g. when your WAN interface has a private address "
 "which is mapped to public IP)."
 msgstr ""
+"For å kunne bruke 6to4-protokoll, kan det ende du trenger å angi din "
+"offentlige IPv4-adresse manuelt (f.eks. når ditt WAN-grensesnitt har en "
+"privatadresse som er tilknyttet en offentlig IP)."
 
 #: js/src/wan/WAN6Form.js:39
+#, fuzzy
 msgid ""
 "This address will be used as a endpoint of the tunnel on the provider's "
 "side."
-msgstr ""
+msgstr "Denne adressen brukes som sluttpunkt for tunnelen på tilbyderens side."
 
 #: js/src/wan/WAN6Form.js:40
+#, fuzzy
 msgid "IPv6 addresses which will be routed to your network."
-msgstr ""
+msgstr "IPv6-adresser som skal rutes til ditt nettverk."
 
 #: js/src/wan/WAN6Form.js:41
+#, fuzzy
 msgid "Maximum Transmission Unit in the tunnel (in bytes)."
-msgstr ""
+msgstr "Maksimal overføringsenhet i tunnelen (i byte)."
 
 #: js/src/wan/WAN6Form.js:44
 msgid ""
 "Some tunnel providers allow you to have public dynamic IPv4. Note that "
 "you need to fill in some extra fields to make it work."
 msgstr ""
+"Noen tunneltilbydere tillater deg å ha offentlig dynamisk IPv4. Merk at du "
+"må fylle inn noen ekstra felter for å få det til å virke."
 
 #: js/src/wan/WAN6Form.js:46
 msgid "ID of your tunnel which was assigned to you by the provider."
-msgstr ""
+msgstr "ID for din tunnel, slik den ble tildelt deg av tilbyderen."
 
 #: js/src/wan/WAN6Form.js:47
 msgid ""
 "Username which will be used to provide credentials to your tunnel "
 "provider."
 msgstr ""
+"Brukernavn for å angi identitetsbekreftelsesdetaljer til din tunneltilbyder."
 
 #: js/src/wan/WAN6Form.js:48
 msgid "Key which will be used to provide credentials to your tunnel provider."
 msgstr ""
+"Nøkkel brukt til å oppgi identitetbekreftelsesdetaljer til din "
+"tunneltilbyder."
 
 #: js/src/wan/WAN6Form.js:55
 msgid "Disable IPv6"
@@ -572,16 +599,18 @@ msgid "Public IPv4"
 msgstr "Offentlig IPv4"
 
 #: js/src/wan/WAN6Form.js:308
+#, fuzzy
 msgid "Provider IPv4"
-msgstr ""
+msgstr "IPv4-tilbyder"
 
 #: js/src/wan/WAN6Form.js:321
+#, fuzzy
 msgid "Routed IPv6 prefix"
-msgstr ""
+msgstr "Rutet IPv6-prefiks"
 
 #: js/src/wan/WAN6Form.js:334
 msgid "MTU"
-msgstr ""
+msgstr "MTU"
 
 #: js/src/wan/WAN6Form.js:392
 msgid "Tunnel ID"
@@ -600,20 +629,23 @@ msgid "Public IPv4 address is required."
 msgstr "Offentlig IPv4-adresse kreves."
 
 #: js/src/wan/WAN6Form.js:505
+#, fuzzy
 msgid "MTU should be a number in range of 1280-1500."
-msgstr ""
+msgstr "MTU skal være et tall i rekkevidden 1280-1500."
 
 #: js/src/wan/WAN6Form.js:507
+#, fuzzy
 msgid "MTU should be in range of 1280-1500."
-msgstr ""
+msgstr "MTU skal være i rekkevidden 1280-1500."
 
 #: js/src/wan/WANForm.js:25
 msgid "PPPoE (for DSL bridges, Modem Turris, etc.)"
-msgstr ""
+msgstr "PPPoE (for DSL-broer, Turris-modem, osv)."
 
 #: js/src/wan/WANForm.js:57
+#, fuzzy
 msgid "WAN IPv4"
-msgstr ""
+msgstr "WAN IPv4"
 
 #: js/src/wan/WANForm.js:115
 msgid "PAP/CHAP username"
@@ -662,15 +694,20 @@ msgid "802.11ac - 80 MHz wide channel"
 msgstr "802.11ac - 80 MHz vid kanal"
 
 #: js/src/wifi/WiFiForm.js:33
+#, fuzzy
 msgid ""
 "\n"
 "        WPA2 pre-shared key, that is required to connect to the network.\n"
 "    "
 msgstr ""
+"\n"
+"        WPA2 med forhåndsdelt nøkkel, (som kreves for å koble til "
+"nettverket).\n"
+"    "
 
 #: js/src/wifi/WiFiForm.js:36
 msgid "If set, network is not visible when scanning for available networks."
-msgstr ""
+msgstr "Skjuler nettverket fra nettverkslister."
 
 #: js/src/wifi/WiFiForm.js:37
 msgid ""
@@ -681,8 +718,15 @@ msgid ""
 "usually has less interference, but the signal\n"
 "        does not carry so well indoors."
 msgstr ""
+"\n"
+"        2.4 GHz-båndet støttes av flere klienter, men har vanligvis flere "
+"forstyrrelser. 5 Ghz-båndet er en nyere\n"
+"        standard, og kan ikke støttes av alle enhetene dine. Det har "
+"vanligvis mindre forstyrrelse, men signalet\n"
+"        er mer utsatt for hindringer innendørs."
 
 #: js/src/wifi/WiFiForm.js:42
+#, fuzzy
 msgid ""
 "\n"
 "        Change this to adjust 802.11n/ac mode of operation. 802.11n with "
@@ -692,8 +736,16 @@ msgid ""
 "        option with 20 MHz wide channel.\n"
 "    "
 msgstr ""
+"\n"
+"        Endringer har justerer 802.11n/ac-modus. 802.11.n med 40 Mhz brede "
+"kanaler kan gi høyere\n"
+"        gjennomstrømming, men kan forårsake mer forstyrrelse i nettverket. "
+"Hvis du ikke vet hva du skal velge, bruk\n"
+"        forvalget på 20 MHz brede kanaler.\n"
+"    "
 
 #: js/src/wifi/WiFiForm.js:47
+#, fuzzy
 msgid ""
 "\n"
 "        Enables Wi-Fi for guests, which is separated from LAN network. "
@@ -704,6 +756,13 @@ msgid ""
 "tab.\n"
 "        "
 msgstr ""
+"\n"
+"        Skrur på Wi-Fi for gjester, som er adskilt LAN-nettverket. Enheter "
+"som kobler til dette nettverket tillates å\n"
+"        bruke Internett, men tillates ikke å nå andre enheter og "
+"oppsettsgrensesnittet til ruteren..\n"
+"        Parameter for gjestenettverket kan settes i gjestenettverksfanen.\n"
+"        "
 
 #: js/src/wifi/WiFiForm.js:110
 msgid "Enable"
@@ -728,6 +787,7 @@ msgid " Administration "
 msgstr " Administrasjon "
 
 #: reforis/templates/lan.html:8
+#, fuzzy
 msgid ""
 "\n"
 "            This section contains settings for the local network (LAN). "
@@ -745,12 +805,27 @@ msgid ""
 "            <b>refresh the page</b> in your browser.\n"
 "        "
 msgstr ""
+"\n"
+"            Denne delen inneholder innstillinger for lokalnettverket (LAN). "
+"Angitte forvalg passer for de fleste nettverk..\n"
+"            <br/>\n"
+"            <b>Merk:</b> Hvis du endrer ruterens IP-adresse, vil alle "
+"datamaskinene i lokalnettverket, antagelig inkludert\n"
+"            den du bruker nå, få en <b>ny IP-adresse</b>, som ikke skjer "
+"<b>umiddelbart</b>. Det anbefales\n"
+"            å koble fra og koble til alle LAN-kabler etter å ha sendt inn "
+"endringer for å påtvinge oppdateringen.\n"
+"            Neste side vil ikke innlastes med mindre du innhenter en ny IP "
+"fra DHCP (hvis det er påskrudd) og du kan trenge å\n"
+"            <b>gjenoppfriske siden</b> i nettleseren din.\n"
+"        "
 
 #: reforis/templates/notifications.html:8
 msgid "Notifications center"
 msgstr "Merknadssenter"
 
 #: reforis/templates/wan.html:8
+#, fuzzy
 msgid ""
 "\n"
 "            Here you specify your WAN port settings. Usually, you can "
@@ -761,12 +836,21 @@ msgid ""
 "this setting.\n"
 "        "
 msgstr ""
+"\n"
+"            Her kan du angi dine WAN-portinnstillinger. Vanligvis kan du la "
+"disse valgene stå urørt, med mindre\n"
+"            du har blitt instruert om noe annet av din "
+"internettjenestetilbyder. I fall det er et kabel- eller DSL-modem som\n"
+"            kobler ruteren din til nettverket, er det vanligvis ikke "
+"nødvendig å endre denne innstillingen.\n"
+"        "
 
 #: reforis/templates/wan.html:16
 msgid "Connection test"
 msgstr "Tilkoblingstest"
 
 #: reforis/templates/wan.html:18
+#, fuzzy
 msgid ""
 "\n"
 "            Here you can test you connection settings. Remember to click "
@@ -776,8 +860,16 @@ msgid ""
 "            wait for a while before running this test.\n"
 "        "
 msgstr ""
+"\n"
+"            Her kan du teste tilkoblingsinnstillinger. Husk å klikke på "
+"«Lagre»-knappen før du kjører testen.\n"
+"            Merk at noen ganger tar det en stund før tilkoblingene settes i "
+"gang, så det kan være nytt å vente\n"
+"            en stund før kjøring av denne testen.\n"
+"        "
 
 #: reforis/templates/wifi.html:8
+#, fuzzy
 msgid ""
 "\n"
 "        If you want to use your router as a Wi-Fi access point, enable "
@@ -787,6 +879,13 @@ msgid ""
 "        available within the form.\n"
 "    "
 msgstr ""
+"\n"
+"        Hvis du ønsker å bruke ruteren din som Wi-Fi-tilgangspunkt, skru på "
+"Wi-Fi her og fyll inn SSID (navnet på\n"
+"        tilgangspunktet) og tilhørende passord. Du kan så sette opp dine "
+"mobile enheter, ved bruk av QR-kode\n"
+"        tilgjengelig i skjemaet.\n"
+"    "
 
 #: reforis/templates/includes/navigation.html:23
 msgid "Network settings"
