@@ -34,24 +34,7 @@
     <div id="content">
         <div class="col-lg-10 col-sm-12">
             {% include "includes/top-bar.html" %}
-            <div id="alert-container">
-                {% if messages %}
-                    {% for message in messages %}
-                        <div
-                            class="alert alert-dismissible fade show
-                            {% if message.success %}alert-success{% endif %}
-                            {% if message.warning %}alert-warning{% endif %}
-                            {% if message.danger %}alert-danger{% endif %}"
-                            role="alert"
-                        >
-                            {{ message.text }}
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    {% endfor %}
-                {% endif %}
-            </div>
+            <div id="alert-container" class="mt-3"></div>
             {% block content %}{% endblock %}
         </div>
     </div>
