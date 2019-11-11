@@ -53,6 +53,13 @@ form > button {
     color: black;
 }
 
+/* Alerts */
+#alert-container {
+    position: sticky;
+    top: 1rem;
+    z-index: 2000;;
+}
+
 /* Content */
 #content {
     display: flex;

@@ -5,11 +5,12 @@
  * See /LICENSE for more information.
  */
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Redirect, Route, Switch } from "react-router";
+import { useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 
-import { Portal } from "foris";
+import { Portal, useAlert } from "foris";
 
 import { REDIRECT_404_PAGE } from "./constants";
 
@@ -63,6 +64,13 @@ RouteWithTitle.propTypes = {
 };
 
 function RouteWithTitle({ title, render, ...props }) {
+    /* Dismiss alert on changing location */
+    const [, dismissAlert] = useAlert();
+    const location = useLocation();
+    useEffect(() => {
+        dismissAlert();
+    }, [location, dismissAlert]);
+
     return (
         <Route
             render={() => {
