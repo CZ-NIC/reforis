@@ -122,7 +122,7 @@ export default function TimeForm({
                         onClick={data.how_to_set_time === "ntp" ? triggerNTP : updateTimeFromBrowser}
                         disabled={ntpData.state === API_STATE.SENDING}
                     >
-                        {ntpData.state === API_STATE.SENDING ? <SpinnerElement small /> : <i className="fa fa-sync-alt" />}
+                        {ntpData.state === API_STATE.SENDING ? <SpinnerElement small /> : <i className="fas fa-sync-alt" />}
                     </button>
                 </div>
             </DataTimeInput>

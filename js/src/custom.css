@@ -82,12 +82,20 @@ form > button {
     min-height: 100%;
 }
 
+#sidebar ul li a {
+    padding: .5rem 2rem;
+    font-size: 1.1em;
+    display: block;
+    color: #000;
+    white-space: nowrap
+}
+
 #sidebar img {
     max-height: 4rem;
     width: 14rem;
 }
 
-#sidebar .fas {
+#sidebar svg {
     color: gray;
 }
 
@@ -96,15 +104,11 @@ form > button {
     background: #00a2e2;
 }
 
-#sidebar a.dropdown-toggle + ul {
-    background: rgba(0, 0, 0, 0.05);
-}
-
-#sidebar a.active .fas {
+#sidebar a.active svg {
     color: #fff;
 }
 
-#sidebar a:hover .fas {
+#sidebar a:hover svg {
     color: grey;
 }
 
@@ -116,6 +120,10 @@ form > button {
 
 #sidebar ul li ul li a { /* Nested menu */
     text-align: center;
+}
+
+#sidebar a.dropdown-toggle + ul {
+    background: rgba(0, 0, 0, 0.05);
 }
 
 #sidebar-header {
@@ -134,15 +142,6 @@ form > button {
         margin-top: unset;
     }
 }
-
-#sidebar ul li a {
-    padding: .5rem 2rem;
-    font-size: 1.1em;
-    display: block;
-    color: #000;
-    white-space: nowrap
-}
-
 
 /* Drop-down menus */
 
@@ -223,7 +222,7 @@ form > button {
     animation-direction: alternate;
 }
 
-#reboot-dropdown-toggle .fa {
+#reboot-dropdown-toggle svg {
     color: red
 }
 
@@ -241,22 +240,17 @@ form > button {
 
 #notifications-counter {
     display: flex;
-    align-items: center;
-    justify-items: center;
-
-    position: relative;
-    left: .6rem;
-    top: .6rem;
+    justify-content: flex-end;
 }
 
-#notifications-counter > .fa-circle {
-    color: #e74c3c;
-    font-size: 1rem;
-}
-
-#notifications-counter > .circle-text {
+#notifications-counter .number {
+    background: #e74c3c;
     font-size: 0.8rem;
     color: white;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    z-index: 999;
 }
 
 .jump {
@@ -377,7 +371,7 @@ form > button {
     color: #95a5a6;
 }
 
-.notification-item:hover > .fa {
+.notification-item:hover > svg {
     opacity: .7;
 }
 
@@ -401,7 +395,7 @@ form > button {
     flex-grow: 2;
 }
 
-.notification-item .fa {
+.notification-item svg {
     display: flex;
     margin: .5rem 1rem;
 }
@@ -559,24 +553,29 @@ form > button {
 
 @keyframes interfaceSelectedFade {
     from {
-        text-shadow: none;
+        -webkit-filter: none;
+        filter: none;
     }
     to {
-        text-shadow: 0 0 0.5rem #00a2e2;
+        -webkit-filter: drop-shadow(0 0 0.25rem #00a2e2);
+        filter: drop-shadow(0 0 0.25rem #00a2e2);
     }
 }
 
-.network .interface-selected i {
+.network .interface-selected svg {
     animation-name: interfaceSelectedFade;
     animation-duration: .3s;
-    text-shadow: 0 0 0.5rem #00a2e2;
+    -webkit-filter: drop-shadow(0 0 0.5rem #00a2e2);
+    filter: drop-shadow(0 0 0.25rem #00a2e2);
 }
-
 
 .network .interface-selected .fa-inverse {
     display: none;
 }
 
+.interface:focus {
+    outline: none;
+}
 
 /* Modal */
 @keyframes modalFade {

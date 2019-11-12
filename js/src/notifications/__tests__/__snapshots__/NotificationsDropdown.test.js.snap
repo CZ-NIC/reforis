@@ -15,20 +15,17 @@ exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
         class="fa-stack"
       >
         <i
-          class="fa fa-bell fa-stack-1x"
+          class="fas fa-bell fa-stack-1x"
         />
         <div
           class=""
           id="notifications-counter"
         >
-          <i
-            class="fa fa-circle fa-stack-1x"
-          />
-          <small
-            class="circle-text fa-stack-1x"
+          <div
+            class="number"
           >
             3
-          </small>
+          </div>
         </div>
       </span>
     </button>
@@ -51,7 +48,7 @@ exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
           href="/administration/notifications-settings"
         >
           <i
-            class="fa fa-cog"
+            class="fas fa-cog"
           />
         </a>
       </div>

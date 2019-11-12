@@ -469,7 +469,7 @@ procedure of SSL certificate verification might not work correctly.
                 type="button"
               >
                 <i
-                  class="fa fa-sync-alt"
+                  class="fas fa-sync-alt"
                 />
               </button>
             </div>

@@ -7,13 +7,14 @@
 
 const path = require("path");
 const webpack = require("webpack");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = (env) => ({
     mode: "development",
     entry: "./src/app.js",
     output: {
-        filename: "app.min.js",
-        path: path.join(__dirname, "../reforis_static/reforis/js"),
+        filename: "./js/app.min.js",
+        path: path.join(__dirname, "../reforis_static/reforis/"),
     },
     resolve: {
         modules: [
@@ -50,13 +51,19 @@ module.exports = (env) => ({
             },
             {
                 test: /\.css$/,
-                use: ["style-loader", "css-loader"],
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    "css-loader",
+                ],
             },
         ],
     },
     plugins: [
         new webpack.DefinePlugin({
             "process.env.LIGHTTPD": JSON.stringify(env.lighttpd),
+        }),
+        new MiniCssExtractPlugin({
+            filename: "./css/app.css",
         }),
     ],
 });
