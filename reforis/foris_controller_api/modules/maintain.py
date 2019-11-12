@@ -5,7 +5,7 @@ def reboot():
     """
         Trigger device reboot.
         See ``reboot``  action in the `foris-controller maintain module JSON schema
-        <https://gitlab.labs.nic.cz/turris/foris-controller/blob/master/foris_controller_modules/maintain/schema/maintain.json>`_.
+        <https://gitlab.labs.nic.cz/turris/foris-controller/foris-controller/blob/master/foris_controller_modules/maintain/schema/maintain.json>`_.
     """
     return jsonify(current_app.backend.perform('maintain', 'reboot'))
 

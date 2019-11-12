@@ -6,12 +6,12 @@ def interfaces():
     .. http:get:: /api/interfaces
         Get `network interfaces` router settings.
         See ``get_settings`` action in the `foris-controller networks module JSON schema
-        <https://gitlab.labs.nic.cz/turris/foris-controller/blob/master/foris_controller_modules/networks/schema/networks.json>`_.
+        <https://gitlab.labs.nic.cz/turris/foris-controller/foris-controller/blob/master/foris_controller_modules/networks/schema/networks.json>`_.
 
     .. http:post:: /api/interfaces
         Get `network interfaces` router settings.
         See ``update_settings`` action in the `foris-controller networks module JSON schema
-        <https://gitlab.labs.nic.cz/turris/foris-controller/blob/master/foris_controller_modules/networks/schema/networks.json>`_.
+        <https://gitlab.labs.nic.cz/turris/foris-controller/foris-controller/blob/master/foris_controller_modules/networks/schema/networks.json>`_.
     """
     module = 'networks'
     response = None

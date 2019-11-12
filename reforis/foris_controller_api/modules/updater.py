@@ -78,7 +78,7 @@ def approvals():
     .. http:post:: /api/approvals
         Update or dismiss `update approvals`.
         See ``resolve_approval`` action in the `foris-controller updater module JSON schema
-        <https://gitlab.labs.nic.cz/turris/foris-controller/blob/master/foris_controller_modules/updater/schema/updater.json>`_.
+        <https://gitlab.labs.nic.cz/turris/foris-controller/foris-controller/blob/master/foris_controller_modules/updater/schema/updater.json>`_.
 
         **Example request**:
 
@@ -126,13 +126,13 @@ def packages():
     .. http:get:: /api/packages
         Get `packages` router settings.
         See ``get_settings`` action in the `foris-controller updater module JSON schema
-        <https://gitlab.labs.nic.cz/turris/foris-controller/blob/master/foris_controller_modules/updater/schema/updater.json>`_.
+        <https://gitlab.labs.nic.cz/turris/foris-controller/foris-controller/blob/master/foris_controller_modules/updater/schema/updater.json>`_.
 
     .. http:post:: /api/packages
         Set `packages` router settings.
         **It's not possible to change some `packages` settings if automatic updates are disabled.**
         See ``update_settings`` action in the `foris-controller updater module JSON schema
-        <https://gitlab.labs.nic.cz/turris/foris-controller/blob/master/foris_controller_modules/updater/schema/updater.json>`_.
+        <https://gitlab.labs.nic.cz/turris/foris-controller/foris-controller/blob/master/foris_controller_modules/updater/schema/updater.json>`_.
     """
     updater_settings = current_app.backend.perform(
         'updater',
