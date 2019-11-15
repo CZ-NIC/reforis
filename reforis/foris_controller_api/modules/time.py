@@ -8,13 +8,13 @@ def region_and_time():
     .. http:get:: /api/region-and-time
         Get `region and time` router settings.
         See ``get_settings`` action in the `foris-controller time module JSON schema
-        <https://gitlab.labs.nic.cz/turris/foris-controller/blob/master/foris_controller_modules/time/schema/time.json>`_.
+        <https://gitlab.labs.nic.cz/turris/foris-controller/foris-controller/blob/master/foris_controller_modules/time/schema/time.json>`_.
 
     .. http:post:: /api/region-and-time
         Set `region and time` router settings.
         **It's not possible to change some `packages` settings if automatic updates are disabled.**
         See ``update_settings`` action in the `foris-controller time module JSON schema
-        <https://gitlab.labs.nic.cz/turris/foris-controller/blob/master/foris_controller_modules/time/schema/time.json>`_.
+        <https://gitlab.labs.nic.cz/turris/foris-controller/foris-controller/blob/master/foris_controller_modules/time/schema/time.json>`_.
     """
     return _foris_controller_settings_call('time')
 

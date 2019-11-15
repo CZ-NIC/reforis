@@ -23,7 +23,7 @@ module.exports = {
     setupFilesAfterEnv: [
         "@testing-library/react/cleanup-after-each",
         "<rootDir>/src/testUtils/setup",
-        "foris/dist/testUtils/setup",
+        "foris/testUtils/setup",
     ],
     globals: {
         TZ: "utc",

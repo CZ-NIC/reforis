@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import {fireEvent, render, waitForElement} from 'customTestRender';
+import {fireEvent, render, waitForElement} from "foris/testUtils/customTestRender";
 import mockAxios from 'jest-mock-axios';
 
 import { WebSockets } from "foris";
@@ -39,7 +39,7 @@ describe('<ConnectionTest/>', () => {
         await waitForElement(() => getByText(/DNSSEC/));
 
         expect(mockAxios.post).toBeCalled();
-        expect(mockAxios.post).toHaveBeenCalledWith('/api/dns-test', undefined, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith('/api/dns/test', undefined, expect.anything());
         expect(asFragment()).toMatchSnapshot();
     })
 });

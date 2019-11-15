@@ -9,10 +9,9 @@ import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
 import { Select } from "foris";
-import { NETWORKS_CHOICES } from "./Interfaces";
-import { INTERFACE_STATES, INTERFACE_TYPES } from "./Interface";
-
-const BUSES = ["eth", "pci", "usb", "sdio", "sfp"];
+import {
+    BUSES, INTERFACE_STATES, INTERFACE_TYPES, NETWORKS_CHOICES,
+} from "./constants";
 
 SelectedInterface.propTypes = {
     id: PropTypes.string.isRequired,

@@ -7,8 +7,9 @@
 
 import React from 'react';
 
-import {fireEvent, getByLabelText, getByText, render, wait} from 'customTestRender';
+import {fireEvent, getByLabelText, getByText, render, wait} from "foris/testUtils/customTestRender";
 import { WebSockets } from "foris";
+import { mockJSONError } from "foris/testUtils/network";
 import mockAxios from 'jest-mock-axios';
 import notificationsSettings from './__fixtures__/notificationsSettings';
 
@@ -24,8 +25,16 @@ describe('<NotificationsSettings/>', () => {
         const {container} = render(<NotificationsSettings ws={webSockets}/>);
         mockAxios.mockResponse({data: notificationsSettings()});
         NotificationCenterContainer = container;
-        await wait(() => getByLabelText(container, ENABLE_CHECKBOX_LABEL));
+        await wait(() => {
+            expect(getByLabelText(container, ENABLE_CHECKBOX_LABEL)).toBeTruthy();
+        });
+    });
 
+    it("should handle error", async () => {
+        const webSockets = new WebSockets();
+        const { container } = render(<NotificationsSettings ws={webSockets} />);
+        mockJSONError();
+        await wait(() => getByText(container, "An error occurred while fetching data."));
     });
 
     it('Enabled, smtp_type:custom', () => {

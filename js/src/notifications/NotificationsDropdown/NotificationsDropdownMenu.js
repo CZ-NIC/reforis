@@ -64,7 +64,7 @@ function NotificationsDropdownHeader() {
                     <h5>{_("Notifications")}</h5>
                 </Link>
                 <Link to={ForisURLs.notificationsSettings} className="btn btn-link">
-                    <i className="fa fa-cog" />
+                    <i className="fas fa-cog" />
                 </Link>
             </div>
             <div className="dropdown-divider dropdown-divider-top" />

@@ -5,11 +5,12 @@
  * See /LICENSE for more information.
  */
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Redirect, Route, Switch } from "react-router";
+import { useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 
-import { Portal } from "foris";
+import { Portal, useAlert } from "foris";
 
 import { REDIRECT_404_PAGE } from "./constants";
 
@@ -23,7 +24,17 @@ export default function RouteWithSubRoutes({ ws, ...route }) {
     if (route.pages) {
         return (
             <Switch>
-                {route.pages.map((subRoute, i) => <RouteWithSubRoutes key={i} ws={ws} {...subRoute} path={`${route.path}${subRoute.path}`} />)}
+                {route.pages.map((subRoute) => {
+                    const path = `${route.path}${subRoute.path}`;
+                    return (
+                        <RouteWithSubRoutes
+                            key={path}
+                            ws={ws}
+                            {...subRoute}
+                            path={path}
+                        />
+                    );
+                })}
                 <Redirect to={REDIRECT_404_PAGE} />
             </Switch>
         );
@@ -53,6 +64,13 @@ RouteWithTitle.propTypes = {
 };
 
 function RouteWithTitle({ title, render, ...props }) {
+    /* Dismiss alert on changing location */
+    const [, dismissAlert] = useAlert();
+    const location = useLocation();
+    useEffect(() => {
+        dismissAlert();
+    }, [location, dismissAlert]);
+
     return (
         <Route
             render={() => {

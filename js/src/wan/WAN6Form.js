@@ -84,7 +84,7 @@ WAN6Form.defaultProps = {
 
 export default function WAN6Form({
     formData, formErrors, setFormValue, ...props
-}) {
+}) { /* eslint-disable react/prop-types */
     const wan6Settings = formData.wan6_settings;
     const wan6Type = wan6Settings.wan6_type;
     const { last_seen_duid } = wan6Settings;

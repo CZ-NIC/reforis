@@ -8,9 +8,10 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-import { CheckBox, Select, TextInput } from "foris";
+import { CheckBox, TextInput, WebSockets } from "foris";
 
 import DNSSECDisableModal from "./DNSSECDisableModal";
+import Forwarders from "./Forwarders/Forwarders";
 
 const HELP_TEXTS = {
     dns_from_dhcp_enabled: _("This will enable your DNS resolver to place DHCP client's names among the local DNS records."),
@@ -35,10 +36,11 @@ DNSForm.propTypes = {
         dns_from_dhcp_domain: PropTypes.string,
     }),
     setFormValue: PropTypes.func,
+    ws: PropTypes.instanceOf(WebSockets),
 };
 
 export default function DNSForm({
-    formData, formErrors, setFormValue, ...props
+    formData, formErrors, setFormValue, ws, ...props
 }) {
     const [DNSSECModalShown, setDNSSECModalShown] = useState(false);
 
@@ -73,18 +75,14 @@ export default function DNSForm({
 
                 {...props}
             />
-            {formData.forwarding_enabled
-                ? (
-                    <Select
-                        label={_("DNS Forwarder")}
-                        value={formData.forwarder}
-                        choices={getForwardersChoices(formData.available_forwarders)}
-                        onChange={setFormValue((value) => ({ forwarder: { $set: value } }))}
-
-                        {...props}
-                    />
-                )
-                : null}
+            {formData.forwarding_enabled && (
+                <Forwarders
+                    value={formData.forwarder}
+                    setFormValue={setFormValue}
+                    ws={ws}
+                    {...props}
+                />
+            )}
             <CheckBox
                 label={_("Enable DNSSEC")}
                 checked={formData.dnssec_enabled}
@@ -103,30 +101,20 @@ export default function DNSForm({
                 {...props}
             />
             {formData.dns_from_dhcp_enabled
-                ? (
-                    <TextInput
-                        label={_("Domain of DHCP clients in DNS")}
-                        value={formData.dns_from_dhcp_domain}
-                        helpText={HELP_TEXTS.dns_from_dhcp_domain}
-                        error={formErrors.dns_from_dhcp_domain}
+                    && (
+                        <TextInput
+                            label={_("Domain of DHCP clients in DNS")}
+                            value={formData.dns_from_dhcp_domain}
+                            helpText={HELP_TEXTS.dns_from_dhcp_domain}
+                            error={formErrors.dns_from_dhcp_domain}
 
-                        onChange={setFormValue(
-                            (value) => ({ dns_from_dhcp_domain: { $set: value } }),
-                        )}
+                            onChange={setFormValue(
+                                (value) => ({ dns_from_dhcp_domain: { $set: value } }),
+                            )}
 
-                        {...props}
-                    />
-                )
-                : null}
+                            {...props}
+                        />
+                    )}
         </>
-    );
-}
-
-function getForwardersChoices(available_forwarders) {
-    return available_forwarders.reduce(
-        (choices, forwarder) => {
-            choices[forwarder.name] = forwarder.name === "" ? _("Use provider's DNS resolver") : forwarder.description;
-            return choices;
-        }, {},
     );
 }

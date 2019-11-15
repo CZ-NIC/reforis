@@ -21,12 +21,14 @@ const API_URLs = new Proxy({
     wifiReset: "/wifi-reset",
     wan: "/wan",
     lan: "/lan",
-    dns: "/dns",
     interfaces: "/interfaces",
     guestNetwork: "/guest-network",
 
+    dns: "/dns",
+    dnsForwarders: "/dns/forwarders",
+
     connectionTest: "/connection-test",
-    dnsTest: "/dns-test",
+    dnsTest: "/dns/test",
 
     // Administration
     password: "/password",
@@ -34,6 +36,8 @@ const API_URLs = new Proxy({
     ntpUpdate: "/ntp-update",
     approvals: "/approvals",
     updates: "/updates",
+    runUpdates: "/updates/run",
+    updatesStatus: "/updates/status",
     packages: "/packages",
     reboot: "/reboot",
 

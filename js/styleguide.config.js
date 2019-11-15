@@ -67,7 +67,7 @@ module.exports = {
         },
     ],
     require: [
-        "./src/testUtils/setupGlobals.js",
+        "./src/docsUtils/setup.js",
     ],
     webpackConfig: {
         resolve: {

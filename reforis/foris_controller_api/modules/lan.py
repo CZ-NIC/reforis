@@ -6,12 +6,12 @@ def lan():
     .. http:get:: /api/lan
         Get LAN router settings.
         See ``get_settings`` action in the `foris-controller lan module JSON schema
-        <https://gitlab.labs.nic.cz/turris/foris-controller/blob/master/foris_controller_modules/lan/schema/lan.json>`_.
+        <https://gitlab.labs.nic.cz/turris/foris-controller/foris-controller/blob/master/foris_controller_modules/lan/schema/lan.json>`_.
 
     .. http:post:: /api/lan
         Get LAN router settings.
         See ``update_settings`` action in the `foris-controller lan module JSON schema
-        <https://gitlab.labs.nic.cz/turris/foris-controller/blob/master/foris_controller_modules/lan/schema/lan.json>`_.
+        <https://gitlab.labs.nic.cz/turris/foris-controller/foris-controller/blob/master/foris_controller_modules/lan/schema/lan.json>`_.
     """
     response = None
     if request.method == 'GET':

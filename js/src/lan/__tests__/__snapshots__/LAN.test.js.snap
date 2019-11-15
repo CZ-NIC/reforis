@@ -73,65 +73,55 @@ it has opened ports for configuration interface and other services.
       </small>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
-      <div
-        class="form-group"
+      <label
+        for="5"
       >
-        <label
-          for="5"
-        >
-          Router IP address
-        </label>
-        <div
-          class="input-group"
-        >
-          <input
-            class="form-control"
-            id="5"
-            required=""
-            type="text"
-            value="192.168.1.4"
-          />
-        </div>
-        <small
-          class="form-text text-muted"
-        >
-          Router's IP address in the inner network.
-        </small>
+        Router IP address
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control"
+          id="5"
+          required=""
+          type="text"
+          value="192.168.1.4"
+        />
+      </div>
+      <small
+        class="form-text text-muted"
+      >
+        Router's IP address in the inner network.
+      </small>
+    </div>
+    <div
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
+    >
+      <label
+        for="6"
+      >
+        Network mask
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control"
+          id="6"
+          required=""
+          type="text"
+          value="255.255.255.0"
+        />
       </div>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="form-group"
-      >
-        <label
-          for="6"
-        >
-          Network mask
-        </label>
-        <div
-          class="input-group"
-        >
-          <input
-            class="form-control"
-            id="6"
-            required=""
-            type="text"
-            value="255.255.255.0"
-          />
-        </div>
-      </div>
-    </div>
-    <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
-    >
-      <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           class="custom-control-input"
@@ -141,155 +131,142 @@ it has opened ports for configuration interface and other services.
         <label
           class="custom-control-label"
           for="7"
-          style="margin-bottom: 0px;"
         >
           Enable DHCP
         </label>
+        <small
+          class="form-text text-muted"
+        >
+          Enable this option to automatically assign IP addresses to the devices connected to the router.
+        </small>
       </div>
-      <small
-        class="form-text text-muted"
-      >
-        Enable this option to automatically assign IP addresses to the devices connected to the router.
-      </small>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
-      <div
-        class="form-group"
+      <label
+        for="12"
       >
-        <label
-          for="12"
-        >
-          DHCP start
-        </label>
+        DHCP start
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control"
+          id="12"
+          min="1"
+          required=""
+          type="number"
+          value="123123"
+        />
         <div
-          class="input-group"
+          class="input-group-append"
         >
-          <input
-            class="form-control"
-            id="12"
-            min="1"
-            required=""
-            type="number"
-            value="123123"
-          />
-          <div
-            class="input-group-append"
+          <button
+            aria-label="Increase"
+            class="btn btn-outline-secondary"
+            type="button"
           >
-            <button
-              aria-label="Increase"
-              class="btn btn-outline-secondary"
-              type="button"
-            >
-              <i
-                class="fas fa-plus"
-              />
-            </button>
-            <button
-              aria-label="Decrease"
-              class="btn btn-outline-secondary"
-              type="button"
-            >
-              <i
-                class="fas fa-minus"
-              />
-            </button>
-          </div>
+            <i
+              class="fas fa-plus"
+            />
+          </button>
+          <button
+            aria-label="Decrease"
+            class="btn btn-outline-secondary"
+            type="button"
+          >
+            <i
+              class="fas fa-minus"
+            />
+          </button>
         </div>
       </div>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
-      <div
-        class="form-group"
+      <label
+        for="13"
       >
-        <label
-          for="13"
-        >
-          DHCP max leases
-        </label>
+        DHCP max leases
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control"
+          id="13"
+          min="1"
+          required=""
+          type="number"
+          value="150"
+        />
         <div
-          class="input-group"
+          class="input-group-append"
         >
-          <input
-            class="form-control"
-            id="13"
-            min="1"
-            required=""
-            type="number"
-            value="150"
-          />
-          <div
-            class="input-group-append"
+          <button
+            aria-label="Increase"
+            class="btn btn-outline-secondary"
+            type="button"
           >
-            <button
-              aria-label="Increase"
-              class="btn btn-outline-secondary"
-              type="button"
-            >
-              <i
-                class="fas fa-plus"
-              />
-            </button>
-            <button
-              aria-label="Decrease"
-              class="btn btn-outline-secondary"
-              type="button"
-            >
-              <i
-                class="fas fa-minus"
-              />
-            </button>
-          </div>
+            <i
+              class="fas fa-plus"
+            />
+          </button>
+          <button
+            aria-label="Decrease"
+            class="btn btn-outline-secondary"
+            type="button"
+          >
+            <i
+              class="fas fa-minus"
+            />
+          </button>
         </div>
       </div>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
-      <div
-        class="form-group"
+      <label
+        for="14"
       >
-        <label
-          for="14"
-        >
-          Lease time (hours)
-        </label>
+        Lease time (hours)
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control"
+          id="14"
+          min="1"
+          required=""
+          type="number"
+          value="43200"
+        />
         <div
-          class="input-group"
+          class="input-group-append"
         >
-          <input
-            class="form-control"
-            id="14"
-            min="1"
-            required=""
-            type="number"
-            value="43200"
-          />
-          <div
-            class="input-group-append"
+          <button
+            aria-label="Increase"
+            class="btn btn-outline-secondary"
+            type="button"
           >
-            <button
-              aria-label="Increase"
-              class="btn btn-outline-secondary"
-              type="button"
-            >
-              <i
-                class="fas fa-plus"
-              />
-            </button>
-            <button
-              aria-label="Decrease"
-              class="btn btn-outline-secondary"
-              type="button"
-            >
-              <i
-                class="fas fa-minus"
-              />
-            </button>
-          </div>
+            <i
+              class="fas fa-plus"
+            />
+          </button>
+          <button
+            aria-label="Decrease"
+            class="btn btn-outline-secondary"
+            type="button"
+          >
+            <i
+              class="fas fa-minus"
+            />
+          </button>
         </div>
       </div>
     </div>
@@ -388,65 +365,55 @@ it has opened ports for configuration interface and other services.
       </small>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
-      <div
-        class="form-group"
+      <label
+        for="5"
       >
-        <label
-          for="5"
-        >
-          Router IP address
-        </label>
-        <div
-          class="input-group"
-        >
-          <input
-            class="form-control"
-            id="5"
-            required=""
-            type="text"
-            value="192.168.1.4"
-          />
-        </div>
-        <small
-          class="form-text text-muted"
-        >
-          Router's IP address in the inner network.
-        </small>
+        Router IP address
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control"
+          id="5"
+          required=""
+          type="text"
+          value="192.168.1.4"
+        />
+      </div>
+      <small
+        class="form-text text-muted"
+      >
+        Router's IP address in the inner network.
+      </small>
+    </div>
+    <div
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
+    >
+      <label
+        for="6"
+      >
+        Network mask
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control"
+          id="6"
+          required=""
+          type="text"
+          value="255.255.255.0"
+        />
       </div>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="form-group"
-      >
-        <label
-          for="6"
-        >
-          Network mask
-        </label>
-        <div
-          class="input-group"
-        >
-          <input
-            class="form-control"
-            id="6"
-            required=""
-            type="text"
-            value="255.255.255.0"
-          />
-        </div>
-      </div>
-    </div>
-    <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
-    >
-      <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           class="custom-control-input"
@@ -456,16 +423,15 @@ it has opened ports for configuration interface and other services.
         <label
           class="custom-control-label"
           for="7"
-          style="margin-bottom: 0px;"
         >
           Enable DHCP
         </label>
+        <small
+          class="form-text text-muted"
+        >
+          Enable this option to automatically assign IP addresses to the devices connected to the router.
+        </small>
       </div>
-      <small
-        class="form-text text-muted"
-      >
-        Enable this option to automatically assign IP addresses to the devices connected to the router.
-      </small>
     </div>
     <button
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
@@ -584,32 +550,28 @@ it has opened ports for configuration interface and other services.
       </select>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
-      <div
-        class="form-group"
+      <label
+        for="3"
       >
-        <label
-          for="3"
-        >
-          DHCP hostname
-        </label>
-        <div
-          class="input-group"
-        >
-          <input
-            class="form-control"
-            id="3"
-            type="text"
-            value=""
-          />
-        </div>
-        <small
-          class="form-text text-muted"
-        >
-          Hostname which will be provided to DHCP server.
-        </small>
+        DHCP hostname
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control"
+          id="3"
+          type="text"
+          value=""
+        />
       </div>
+      <small
+        class="form-text text-muted"
+      >
+        Hostname which will be provided to DHCP server.
+      </small>
     </div>
     <button
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
@@ -844,132 +806,112 @@ it has opened ports for configuration interface and other services.
       </select>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
-      <div
-        class="form-group"
+      <label
+        for="6"
       >
-        <label
-          for="6"
-        >
-          IP address
-        </label>
-        <div
-          class="input-group"
-        >
-          <input
-            class="form-control"
-            id="6"
-            required=""
-            type="text"
-            value="192.168.1.4"
-          />
-        </div>
+        IP address
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control"
+          id="6"
+          required=""
+          type="text"
+          value="192.168.1.4"
+        />
       </div>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
-      <div
-        class="form-group"
+      <label
+        for="7"
       >
-        <label
-          for="7"
-        >
-          Network mask
-        </label>
-        <div
-          class="input-group"
-        >
-          <input
-            class="form-control"
-            id="7"
-            required=""
-            type="text"
-            value="255.255.255.0"
-          />
-        </div>
+        Network mask
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control"
+          id="7"
+          required=""
+          type="text"
+          value="255.255.255.0"
+        />
       </div>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
-      <div
-        class="form-group"
+      <label
+        for="8"
       >
-        <label
-          for="8"
-        >
-          Gateway
-        </label>
-        <div
-          class="input-group"
-        >
-          <input
-            class="form-control"
-            id="8"
-            required=""
-            type="text"
-            value="192.168.1.4"
-          />
-        </div>
+        Gateway
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control"
+          id="8"
+          required=""
+          type="text"
+          value="192.168.1.4"
+        />
       </div>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
-      <div
-        class="form-group"
+      <label
+        for="9"
       >
-        <label
-          for="9"
-        >
-          DNS server 1
-        </label>
-        <div
-          class="input-group"
-        >
-          <input
-            class="form-control"
-            id="9"
-            type="text"
-            value=""
-          />
-        </div>
-        <small
-          class="form-text text-muted"
-        >
-          DNS server address is not required as the built-in DNS resolver is capable of working without it.
-        </small>
+        DNS server 1
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control"
+          id="9"
+          type="text"
+          value=""
+        />
       </div>
+      <small
+        class="form-text text-muted"
+      >
+        DNS server address is not required as the built-in DNS resolver is capable of working without it.
+      </small>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
-      <div
-        class="form-group"
+      <label
+        for="10"
       >
-        <label
-          for="10"
-        >
-          DNS server 2
-        </label>
-        <div
-          class="input-group"
-        >
-          <input
-            class="form-control"
-            id="10"
-            type="text"
-            value=""
-          />
-        </div>
-        <small
-          class="form-text text-muted"
-        >
-          DNS server address is not required as the built-in DNS resolver is capable of working without it.
-        </small>
+        DNS server 2
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control"
+          id="10"
+          type="text"
+          value=""
+        />
       </div>
+      <small
+        class="form-text text-muted"
+      >
+        DNS server address is not required as the built-in DNS resolver is capable of working without it.
+      </small>
     </div>
     <button
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"

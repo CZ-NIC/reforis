@@ -1,14 +1,10 @@
-
 [MASTER]
-ignore=tests,tests.py,fixtures.py
-load-plugins=
+ignore=tests,reforis/test_utils
+load-plugins=pylint_quotes
 
 [MESSAGES CONTROL]
 # missing-docstring only for now, remove after this issue is deployed https://github.com/PyCQA/pylint/issues/1164
 disable=no-self-use,missing-docstring,redefined-outer-name,too-few-public-methods,cyclic-import,no-member
-
-# SQLAlchemy generates methods on the fly which pylint cannot detect
-ignored-modules=flask_sqlalchemy
 
 [REPORTS]
 output-format=colorized
@@ -23,7 +19,7 @@ ignore-mixin-members=yes
 [BASIC]
 no-docstring-rgx=_.*
 docstring-min-length=3
-good-names=_,dt,e,f,i,db,ip,app
+good-names=_,e,i,ip,app
 bad-names=foo,bar,baz,foobar
 
 [DESIGN]

@@ -33,7 +33,7 @@ export default function DHCPClientsList({ clients }) {
                             </thead>
                             <tbody>
                                 {clients.map(
-                                    (client, idx) => <DHCPClientsListItem key={idx} {...client} />,
+                                    (client) => <DHCPClientsListItem key={client.ip} {...client} />,
                                 )}
                             </tbody>
                         </table>
@@ -56,7 +56,10 @@ function DHCPClientsListItem({
 }) {
     return (
         <tr className="text-center">
-            <td>{moment.unix(expires).format("YYYY-MM-DD HH:mm")}</td>
+            <td>
+                {moment.unix(expires)
+                    .format("YYYY-MM-DD HH:mm")}
+            </td>
             <td>{ip}</td>
             <td>{mac}</td>
             <td>{hostname}</td>

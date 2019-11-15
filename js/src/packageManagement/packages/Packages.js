@@ -42,7 +42,7 @@ been installed manually or using opkg is not affected.
 }
 
 DisableIfUpdaterIsDisabled.propTypes = {
-    formData: PropTypes.shape({ enabled: PropTypes.bool.isRequired }),
+    formData: PropTypes.shape({ enabled: PropTypes.bool }),
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.node),
         PropTypes.node,
@@ -68,14 +68,11 @@ export function DisableIfUpdaterIsDisabled({ children, formData, ...props }) {
     );
 }
 
-DisabledUpdaterAlert.propTypes = {
-    formData: PropTypes.shape({ enabled: PropTypes.bool.isRequired }),
-};
-
 function DisabledUpdaterAlert() {
     const message = _(
         `Please enable <a href="${ForisURLs.packageManagement.updateSettings}">automatic updates</a> to manage packages and languages.`,
     );
+    // <Alert /> is used instead of context because warning isn't result of any action on this page
     return (
         <Alert type="warning">
             <span dangerouslySetInnerHTML={{ __html: message }} />

@@ -5,12 +5,12 @@
  * See /LICENSE for more information.
  */
 
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect } from "react";
 import PropTypes from "prop-types";
 
 import {
-    SUBMIT_BUTTON_STATES, useForm, Alert, Spinner,
-    useAPIGet, useAPIPost,
+    SUBMIT_BUTTON_STATES, useForm, useAPIGet, useAPIPost, API_STATE, useAlert, ALERT_TYPES,
+    withErrorMessage, withSpinnerOnSending,
 } from "foris";
 
 import API_URLs from "common/API";
@@ -28,6 +28,29 @@ Password.defaultProps = {
 };
 
 export default function Password({ postCallback }) {
+    const [getPasswordResponse, getPassword] = useAPIGet(API_URLs.password);
+    useEffect(() => {
+        getPassword();
+    }, [getPassword]);
+
+    return (
+        <>
+            <h1>{_("Password")}</h1>
+            <PasswordFormWithErrorAndSpinner
+                apiState={getPasswordResponse.state}
+                currentPassword={getPasswordResponse.data || {}}
+                postCallback={postCallback}
+            />
+        </>
+    );
+}
+
+PasswordForm.propTypes = {
+    postCallback: PropTypes.func.isRequired,
+    currentPassword: PropTypes.object.isRequired,
+};
+
+function PasswordForm({ postCallback, currentPassword }) {
     const [formState, onFormChangeHandler, resetFormData] = useForm(validator);
 
     const resetPasswordForm = useCallback(() => {
@@ -43,26 +66,27 @@ export default function Password({ postCallback }) {
         resetPasswordForm();
     }, [resetPasswordForm]);
 
-    const [passwordIsSetState, getPasswordIsSet] = useAPIGet(API_URLs.password);
-    useEffect(() => {
-        getPasswordIsSet();
-    }, [getPasswordIsSet]);
-
-    const [alert, setAlert] = useState(null);
+    const [setAlert, dismissAlert] = useAlert();
     const [postState, post] = useAPIPost(API_URLs.password);
     useEffect(() => {
         if (postState.data) {
-            if (postState.isSuccess) {
-                setAlert({ type: "success", message: _("Password was successfully changed") });
+            if (postState.state === API_STATE.SUCCESS) {
+                setAlert(_("Password changed successfully"), ALERT_TYPES.SUCCESS);
                 postCallback();
-            } else if (postState.isError) setAlert({ type: "danger", message: postState.data.error });
+            } else if (postState.state === API_STATE.ERROR) {
+                setAlert(postState.data);
+            }
             resetPasswordForm();
         }
-    }, [postState.isSuccess, postState.isError, resetPasswordForm, postState.data, postCallback]);
+    }, [postState, resetPasswordForm, postCallback, setAlert]);
 
-    function postForisPassword(e) {
-        e.preventDefault();
-        setAlert(null);
+    if (!formState.data) {
+        return null;
+    }
+
+    function postForisPassword(event) {
+        event.preventDefault();
+        dismissAlert();
         const data = {
             foris_current_password: formState.data.currentForisPassword,
             foris_password: formState.data.newForisPassword,
@@ -71,9 +95,9 @@ export default function Password({ postCallback }) {
         post(data);
     }
 
-    function postRootPassword(e) {
-        e.preventDefault();
-        setAlert(null);
+    function postRootPassword(event) {
+        event.preventDefault();
+        dismissAlert();
         const data = {
             foris_current_password: formState.data.currentForisPassword,
             root_password: formState.data.newRootPassword,
@@ -81,56 +105,41 @@ export default function Password({ postCallback }) {
         post(data);
     }
 
-    if (passwordIsSetState.isLoading || !formState.data) return <Spinner className="row justify-content-center" />;
-
-    const disabled = postState.isSending;
-    const submitButtonState = postState.isSending
+    const isSending = postState === API_STATE.SENDING;
+    const submitButtonState = isSending
         ? SUBMIT_BUTTON_STATES.SAVING
         : SUBMIT_BUTTON_STATES.READY;
 
     return (
         <>
-            {alert
-                ? (
-                    <Alert
-                        type={alert.type}
-                        message={alert.message}
-                        onDismiss={() => setAlert(null)}
-                    />
-                ) : null}
-            <h1>{_("Password")}</h1>
             <h3>{_("Password settings")}</h3>
-            {passwordIsSetState.data.password_set
-                ? (
-                    <CurrentForisPasswordForm
-                        formData={formState.data}
-                        disabled={disabled}
-                        setFormValue={onFormChangeHandler}
-                    />
-                )
-                : null}
+            {currentPassword.password_set && (
+                <CurrentForisPasswordForm
+                    formData={formState.data}
+                    disabled={isSending}
+                    setFormValue={onFormChangeHandler}
+                />
+            )}
             <ForisPasswordForm
                 formData={formState.data}
                 formErrors={formState.errors}
                 submitButtonState={submitButtonState}
-                disabled={disabled}
+                disabled={isSending}
 
                 setFormValue={onFormChangeHandler}
                 postForisPassword={postForisPassword}
             />
-            {!formState.data.sameForRoot
-                ? (
-                    <RootPasswordForm
-                        formData={formState.data}
-                        formErrors={formState.errors}
-                        submitButtonState={submitButtonState}
-                        disabled={disabled}
+            {!formState.data.sameForRoot && (
+                <RootPasswordForm
+                    formData={formState.data}
+                    formErrors={formState.errors}
+                    submitButtonState={submitButtonState}
+                    disabled={isSending}
 
-                        setFormValue={onFormChangeHandler}
-                        postRootPassword={postRootPassword}
-                    />
-                )
-                : null}
+                    setFormValue={onFormChangeHandler}
+                    postRootPassword={postRootPassword}
+                />
+            )}
         </>
     );
 }
@@ -154,3 +163,5 @@ function validatePassword(password) {
 
     return null;
 }
+
+const PasswordFormWithErrorAndSpinner = withSpinnerOnSending(withErrorMessage(PasswordForm));

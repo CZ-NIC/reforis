@@ -7,9 +7,12 @@
 
 import React, { useEffect } from "react";
 
-import { useAPIPost, ForisURLs, REFORIS_URL_PREFIX } from "foris";
+import {
+    useAPIPost, ForisURLs, REFORIS_URL_PREFIX, API_STATE, useAlert,
+} from "foris";
 import API_URLs from "common/API";
 
+import PropTypes from "prop-types";
 import { GUIDE_URL_PREFIX } from "./constants";
 
 const IMG_STATIC_URL = `${ForisURLs.static}/imgs`;
@@ -26,12 +29,22 @@ const WORKFLOW_NAMES = {
     min: _("Minimal"),
 };
 
+WorkflowSelect.propTypes = {
+    workflows: PropTypes.arrayOf(PropTypes.string).isRequired,
+    next_step: PropTypes.string.isRequired,
+};
+
 export default function WorkflowSelect({ workflows, next_step }) {
     const [postWorkflowData, postWorkflow] = useAPIPost(API_URLs.guideWorkflow);
+    const [setAlert] = useAlert();
 
     useEffect(() => {
-        if (postWorkflowData.data && postWorkflowData.isSuccess) window.location.assign(`${REFORIS_URL_PREFIX}${GUIDE_URL_PREFIX}/${next_step}`);
-    }, [next_step, postWorkflowData.data, postWorkflowData.isSuccess]);
+        if (postWorkflowData.state === API_STATE.SUCCESS) {
+            window.location.assign(`${REFORIS_URL_PREFIX}${GUIDE_URL_PREFIX}/${next_step}`);
+        } else if (postWorkflowData.state === API_STATE.ERROR) {
+            setAlert("Cannot set workflow");
+        }
+    }, [next_step, postWorkflowData, setAlert]);
 
     function onWorkflowChangeHandler(workflow) {
         postWorkflow({ workflow });
@@ -46,6 +59,7 @@ export default function WorkflowSelect({ workflows, next_step }) {
                     <div key={workflow} className="workflow">
                         <h3>{WORKFLOW_NAMES[workflow]}</h3>
                         <button
+                            type="button"
                             className="btn btn-outline-secondary"
                             onClick={() => onWorkflowChangeHandler(workflow)}
                         >

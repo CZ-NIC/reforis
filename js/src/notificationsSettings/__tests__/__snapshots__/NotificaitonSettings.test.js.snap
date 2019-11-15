@@ -10,12 +10,10 @@ exports[`<NotificationsSettings/> Disabled 1`] = `
       Email notifications
     </h3>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           checked=""
@@ -53,12 +51,10 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
       Email notifications
     </h3>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           checked=""
@@ -76,12 +72,10 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
     </div>
     <div
       class="form-group col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
     >
       <label
-        class="col-12"
+        class="d-block"
         for="2"
-        style="padding-left: 0px;"
       >
         SMTP provider
       </label>
@@ -127,33 +121,29 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
       </small>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
-      <div
-        class="form-group"
+      <label
+        for="3"
       >
-        <label
-          for="3"
-        >
-          Recipient's email
-        </label>
-        <div
-          class="input-group"
-        >
-          <input
-            class="form-control"
-            id="3"
-            required=""
-            type="text"
-            value="some@example.com"
-          />
-        </div>
-        <small
-          class="form-text text-muted"
-        >
-          Email address of recipient. Separate multiple addresses by comma.
-        </small>
+        Recipient's email
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control"
+          id="3"
+          required=""
+          type="text"
+          value="some@example.com"
+        />
       </div>
+      <small
+        class="form-text text-muted"
+      >
+        Email address of recipient. Separate multiple addresses by comma.
+      </small>
     </div>
     <div
       class="form-group col-sm-12 offset-lg-1 col-lg-10"
@@ -185,12 +175,10 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
       </select>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           checked=""
@@ -201,119 +189,106 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
         <label
           class="custom-control-label"
           for="5"
-          style="margin-bottom: 0px;"
         >
           Send news
         </label>
+        <small
+          class="form-text text-muted"
+        >
+          Send emails about new features.
+        </small>
       </div>
-      <small
-        class="form-text text-muted"
-      >
-        Send emails about new features.
-      </small>
     </div>
     <h4>
       SMTP settings
     </h4>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
-      <div
-        class="form-group"
+      <label
+        for="6"
       >
-        <label
-          for="6"
-        >
-          Sender address (From)
-        </label>
-        <div
-          class="input-group"
-        >
-          <input
-            class="form-control"
-            id="6"
-            placeholder="router@example.com"
-            required=""
-            type="email"
-            value="router@example.com"
-          />
-        </div>
-        <small
-          class="form-text text-muted"
-        >
-          This is the address notifications are send from.
-        </small>
+        Sender address (From)
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control"
+          id="6"
+          placeholder="router@example.com"
+          required=""
+          type="email"
+          value="router@example.com"
+        />
+      </div>
+      <small
+        class="form-text text-muted"
+      >
+        This is the address notifications are send from.
+      </small>
+    </div>
+    <div
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
+    >
+      <label
+        for="7"
+      >
+        Server address
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control"
+          id="7"
+          placeholder="example.com"
+          required=""
+          type="text"
+          value="example.com"
+        />
       </div>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
-      <div
-        class="form-group"
+      <label
+        for="8"
       >
-        <label
-          for="7"
-        >
-          Server address
-        </label>
-        <div
-          class="input-group"
-        >
-          <input
-            class="form-control"
-            id="7"
-            placeholder="example.com"
-            required=""
-            type="text"
-            value="example.com"
-          />
-        </div>
-      </div>
-    </div>
-    <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-    >
+        Server port
+      </label>
       <div
-        class="form-group"
+        class="input-group"
       >
-        <label
-          for="8"
-        >
-          Server port
-        </label>
+        <input
+          class="form-control"
+          id="8"
+          max="65535"
+          min="1"
+          type="number"
+          value="465"
+        />
         <div
-          class="input-group"
+          class="input-group-append"
         >
-          <input
-            class="form-control"
-            id="8"
-            max="65535"
-            min="1"
-            type="number"
-            value="465"
-          />
-          <div
-            class="input-group-append"
+          <button
+            aria-label="Increase"
+            class="btn btn-outline-secondary"
+            type="button"
           >
-            <button
-              aria-label="Increase"
-              class="btn btn-outline-secondary"
-              type="button"
-            >
-              <i
-                class="fas fa-plus"
-              />
-            </button>
-            <button
-              aria-label="Decrease"
-              class="btn btn-outline-secondary"
-              type="button"
-            >
-              <i
-                class="fas fa-minus"
-              />
-            </button>
-          </div>
+            <i
+              class="fas fa-plus"
+            />
+          </button>
+          <button
+            aria-label="Decrease"
+            class="btn btn-outline-secondary"
+            type="button"
+          >
+            <i
+              class="fas fa-minus"
+            />
+          </button>
         </div>
       </div>
     </div>
@@ -347,61 +322,53 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
       </select>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
-      <div
-        class="form-group"
+      <label
+        for="10"
       >
-        <label
-          for="10"
-        >
-          User
-        </label>
-        <div
-          class="input-group"
-        >
-          <input
-            class="form-control"
-            id="10"
-            type="text"
-            value=""
-          />
-        </div>
+        User
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control"
+          id="10"
+          type="text"
+          value=""
+        />
       </div>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
-      <div
-        class="form-group"
+      <label
+        for="11"
       >
-        <label
-          for="11"
-        >
-          Password
-        </label>
+        Password
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          autocomplete="new-password"
+          class="form-control"
+          id="11"
+          type="password"
+          value="test_password"
+        />
         <div
-          class="input-group"
+          class="input-group-append"
         >
-          <input
-            autocomplete="new-password"
-            class="form-control"
-            id="11"
-            type="password"
-            value="test_password"
-          />
-          <div
-            class="input-group-append"
+          <button
+            class="input-group-text"
+            type="button"
           >
-            <button
-              class="input-group-text"
-              type="button"
-            >
-              <i
-                class="fa fa-eye"
-              />
-            </button>
-          </div>
+            <i
+              class="fa fa-eye"
+            />
+          </button>
         </div>
       </div>
     </div>
@@ -427,12 +394,10 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
       Email notifications
     </h3>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           checked=""
@@ -450,12 +415,10 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
     </div>
     <div
       class="form-group col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
     >
       <label
-        class="col-12"
+        class="d-block"
         for="2"
-        style="padding-left: 0px;"
       >
         SMTP provider
       </label>
@@ -501,33 +464,29 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
       </small>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
-      <div
-        class="form-group"
+      <label
+        for="3"
       >
-        <label
-          for="3"
-        >
-          Recipient's email
-        </label>
-        <div
-          class="input-group"
-        >
-          <input
-            class="form-control"
-            id="3"
-            required=""
-            type="text"
-            value="some@example.com"
-          />
-        </div>
-        <small
-          class="form-text text-muted"
-        >
-          Email address of recipient. Separate multiple addresses by comma.
-        </small>
+        Recipient's email
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control"
+          id="3"
+          required=""
+          type="text"
+          value="some@example.com"
+        />
       </div>
+      <small
+        class="form-text text-muted"
+      >
+        Email address of recipient. Separate multiple addresses by comma.
+      </small>
     </div>
     <div
       class="form-group col-sm-12 offset-lg-1 col-lg-10"
@@ -559,12 +518,10 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
       </select>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           checked=""
@@ -575,44 +532,39 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
         <label
           class="custom-control-label"
           for="5"
-          style="margin-bottom: 0px;"
         >
           Send news
         </label>
+        <small
+          class="form-text text-muted"
+        >
+          Send emails about new features.
+        </small>
+      </div>
+    </div>
+    <div
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
+    >
+      <label
+        for="17"
+      >
+        Sender's name
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control"
+          id="17"
+          type="text"
+          value="turris"
+        />
       </div>
       <small
         class="form-text text-muted"
       >
-        Send emails about new features.
+        Name of the sender - will be used as a part of the sender's email address before the "at" sign.
       </small>
-    </div>
-    <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-    >
-      <div
-        class="form-group"
-      >
-        <label
-          for="17"
-        >
-          Sender's name
-        </label>
-        <div
-          class="input-group"
-        >
-          <input
-            class="form-control"
-            id="17"
-            type="text"
-            value="turris"
-          />
-        </div>
-        <small
-          class="form-text text-muted"
-        >
-          Name of the sender - will be used as a part of the sender's email address before the "at" sign.
-        </small>
-      </div>
     </div>
     <button
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"

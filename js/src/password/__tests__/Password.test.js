@@ -5,27 +5,73 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
+import React from "react";
 
-import {fireEvent, getByLabelText, getByText, render, wait} from 'customTestRender';
-import mockAxios from 'jest-mock-axios';
+import {
+    fireEvent, getByLabelText, getByText, getAllByText, render, wait,
+} from "foris/testUtils/customTestRender";
+import mockAxios from "jest-mock-axios";
+import { ALERT_TYPES } from "foris";
+import { mockJSONError } from "foris/testUtils/network";
+import { mockSetAlert } from "foris/testUtils/alertContextMock";
 
-import Password from '../Password';
+import Password from "../Password";
 
-describe('<Password/>', () => {
+describe("<Password/>", () => {
     let passwordContainer;
 
     beforeEach(async () => {
-        const {container} = render(<Password/>);
+        const { container } = render(<Password/>);
         mockAxios.mockResponse({data: {password_set: true}});
-        await wait(() => getByText(container, 'Advanced administration (root) password'));
+        await wait(() => getByText(container, "Advanced administration (root) password"));
         passwordContainer = container;
     });
-    it('Snapshot', () => {
+
+    it("should handle error", async () => {
+        const { container } = render(<Password/>);
+        mockJSONError();
+        await wait(() => getByText(container, "An error occurred while fetching data."));
+    });
+
+    it("Snapshot", () => {
         expect(passwordContainer).toMatchSnapshot();
     });
-    it('Snapshot: same password for root', () => {
-        fireEvent.click(getByLabelText(passwordContainer, 'Use same password for advanced administration (root)'));
+
+    it("Snapshot: same password for root", () => {
+        fireEvent.click(getByLabelText(passwordContainer, "Use same password for advanced administration (root)"));
         expect(passwordContainer).toMatchSnapshot();
+    });
+
+    describe("should notify user", () => {
+        beforeEach(() => {
+            // Fill form data
+            fireEvent.change(
+                getByLabelText(passwordContainer, "Current Foris password"),
+                { target: { value: "foobar" } },
+            );
+            fireEvent.change(
+                getByLabelText(passwordContainer, "New Foris password"),
+                { target: { value: "foobar" } },
+            );
+
+            // Save form
+            fireEvent.click(getAllByText(passwordContainer, "Save")[0]);
+            expect(mockAxios.post).toBeCalledWith(
+                "/api/password",
+                { "foris_current_password": "foobar", "foris_password": "foobar" },
+                expect.anything(),
+            );
+        });
+
+        it("on success", async () => {
+            mockAxios.mockResponse({ data: { foo: "bar" } });
+            await wait(() => expect(mockSetAlert).toBeCalledWith("Password changed successfully", ALERT_TYPES.SUCCESS));
+        });
+
+        it("on error", async () => {
+            const errorMessage = "Something went wrong";
+            mockJSONError(errorMessage);
+            await wait(() => expect(mockSetAlert).toBeCalledWith(errorMessage));
+        });
     });
 });

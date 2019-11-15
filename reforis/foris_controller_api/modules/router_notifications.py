@@ -8,7 +8,7 @@ def notifications():
     .. http:get:: /api/notifications
         Get list of the router notifications.
         See `foris-controller JSON schema
-        <https://gitlab.labs.nic.cz/turris/foris-controller/blob/master/foris_controller_modules/router_notifications/schema/router_notifications.json>`_.
+        <https://gitlab.labs.nic.cz/turris/foris-controller/foris-controller/blob/master/foris_controller_modules/router_notifications/schema/router_notifications.json>`_.
 
         Notifications are sorted by ``created_at`` in descending order (newest first). You can change the order with the
         `sort` parameter, i.e. ``notifications?sort=asc``.
@@ -31,7 +31,7 @@ def notifications():
     .. http:post:: /api/notifications
         Dismiss notifications.
         See `foris-controller JSON schema
-        <https://gitlab.labs.nic.cz/turris/foris-controller/blob/master/foris_controller_modules/router_notifications/schema/router_notifications.json>`_.
+        <https://gitlab.labs.nic.cz/turris/foris-controller/foris-controller/blob/master/foris_controller_modules/router_notifications/schema/router_notifications.json>`_.
 
         **Example request**:
 

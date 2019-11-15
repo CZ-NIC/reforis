@@ -444,37 +444,34 @@ procedure of SSL certificate verification might not work correctly.
     >
       <div>
         <div
-          class="col-sm-12 offset-lg-1 col-lg-10"
+          class="form-group col-sm-12 offset-lg-1 col-lg-10"
         >
-          <div
-            class="form-group"
+          <label
+            for="5"
           >
-            <label
-              for="5"
-            >
-              Time
-            </label>
+            Time
+          </label>
+          <div
+            class="input-group"
+          >
+            <input
+              class="form-control form-control"
+              disabled=""
+              id="5"
+              type="text"
+              value="2019-04-24 21:15:03"
+            />
             <div
-              class="input-group"
+              class="input-group-append"
             >
-              <input
-                class="form-control form-control"
-                disabled=""
-                id="5"
-                type="text"
-                value="2019-04-24 21:15:03"
-              />
-              <div
-                class="input-group-append"
+              <button
+                class="input-group-text"
+                type="button"
               >
-                <button
-                  class="input-group-text"
-                >
-                  <i
-                    class="fa fa-sync-alt"
-                  />
-                </button>
-              </div>
+                <i
+                  class="fas fa-sync-alt"
+                />
+              </button>
             </div>
           </div>
         </div>

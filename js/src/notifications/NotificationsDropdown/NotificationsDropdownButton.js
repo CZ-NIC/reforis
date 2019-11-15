@@ -35,7 +35,7 @@ export default function NotificationsDropdownButton({ notificationsCount, newNot
             onClick={redirectToNotificationCenter}
         >
             <span className="fa-stack">
-                <i className="fa fa-bell fa-stack-1x" />
+                <i className="fas fa-bell fa-stack-1x" />
                 {
                     notificationsCount !== 0
                         ? (
@@ -62,10 +62,7 @@ function NotificationCounter({ notificationsCount, newNotification }) {
             id="notifications-counter"
             className={newNotification ? "jump" : ""}
         >
-            <i className="fa fa-circle fa-stack-1x" />
-            <small className="circle-text fa-stack-1x">
-                {notificationsCount < 99 ? notificationsCount : "..."}
-            </small>
+            <div className="number">{notificationsCount < 99 ? notificationsCount : "..."}</div>
         </div>
     );
 }

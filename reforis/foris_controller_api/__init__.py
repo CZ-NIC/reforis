@@ -10,6 +10,7 @@ configurations has two actions: ``get_settings`` and ``set_settings``. These end
 HTTP endpoint with ``GET`` and ``POST`` methods by appropriate actions.
 """
 
+from http import HTTPStatus
 from importlib import import_module
 
 from flask import Blueprint, jsonify
@@ -32,33 +33,6 @@ FORIS_CONTROLLER_MODULES = [
 
 # pylint: disable=invalid-name
 foris_controller_api = Blueprint('ForisControllerAPI', __name__, url_prefix='/api')
-
-
-class InvalidRequest(Exception):
-    """
-    Raised when invalid request was received.
-    """
-    status_code = 400
-
-    def __init__(self, error, status_code=None, payload=None):
-        super().__init__(self)
-        self.error = error
-        if status_code is not None:
-            self.status_code = status_code
-        self.payload = payload
-
-    def to_dict(self):
-        # pylint: disable=invalid-name
-        result = dict(self.payload or ())
-        result['error'] = self.error
-        return result
-
-
-@foris_controller_api.errorhandler(InvalidRequest)
-def handle_invalid_usage(error):
-    response = jsonify(error.to_dict())
-    response.status_code = error.status_code
-    return response
 
 
 def register_modules(modules):

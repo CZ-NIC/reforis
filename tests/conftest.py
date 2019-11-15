@@ -6,10 +6,9 @@
 from unittest import mock
 
 import pytest
-from tests.utils.mock_mqttsender import send_mock
-from tests.utils.surrogate import surrogate
 
-import reforis
+from reforis import create_app
+from reforis.test_utils import send_mock, surrogate
 
 
 @pytest.fixture
@@ -48,8 +47,8 @@ def request_ctx():
 @surrogate('foris_client.buses.base.ControllerError')
 @mock.patch('foris_client.buses.mqtt.MqttSender')
 @mock.patch('reforis.backend.MQTTBackend._parse_credentials', mock.Mock)
-def _stubbed_app(sender_mock):
+def _stubbed_app(sender_mock=None):
     sender_mock.return_value.send.side_effect = send_mock
     # The foris client may not existed on the testing environment
     # so we surrogate this module to avoid ImportError during testing.
-    return reforis.create_app('test')
+    return create_app('test')

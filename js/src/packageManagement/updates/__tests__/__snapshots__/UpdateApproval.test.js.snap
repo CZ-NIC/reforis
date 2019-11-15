@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<UpdateApproval/> No updates awaiting 1`] = `
+<div>
+  <p
+    class="text-center text-muted"
+  >
+    There are no updates awaiting your approval.
+  </p>
+</div>
+`;
+
+exports[`<UpdateApproval/> Updates awaiting - snapshot 1`] = `
+<div>
+  <div>
+    <h3>
+      Approve update from %s
+    </h3>
+    <p>
+      There is %d package to be updated. See 
+      <a
+        aria-controls="plan-wrapper"
+        aria-expanded="false"
+        data-toggle="collapse"
+        href="#plan-wrapper"
+        role="button"
+      >
+        details
+      </a>
+    </p>
+    <div
+      class="collapse"
+      data-testid="plan-wrapper"
+      id="plan-wrapper"
+    >
+      <table
+        class="table table-hover"
+      >
+        <thead>
+          <tr>
+            <th
+              scope="col"
+            >
+              Action
+            </th>
+            <th
+              scope="col"
+            >
+              Name
+            </th>
+            <th
+              scope="col"
+            >
+              Current
+            </th>
+            <th
+              scope="col"
+            >
+              New
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              install
+            </td>
+            <td>
+              PACKAGE
+            </td>
+            <td>
+              1.0
+            </td>
+            <td>
+              2.0
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <button
+      class="btn btn-warning offset-lg-1 col-lg-4 col-sm-12"
+      style="margin-bottom: 1rem;"
+      type="button"
+    >
+       
+       
+      Ignore
+    </button>
+    <button
+      class="btn btn-primary col-sm-12 col-lg-4 offset-lg-2 col-lg-3"
+      style="margin-bottom: 1rem;"
+      type="button"
+    >
+       
+       
+      Install now
+    </button>
+  </div>
+</div>
+`;
+
+exports[`<UpdateApproval/> Updates resolution - spinner 1`] = `
+<div>
+  <div
+    class="spinner-wrapper text-center"
+  >
+    <div
+      class="spinner-border "
+      role="status"
+    >
+      <span
+        class="sr-only"
+      />
+    </div>
+    <div
+      class="spinner-text"
+    />
+  </div>
+</div>
+`;

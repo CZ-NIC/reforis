@@ -16,26 +16,29 @@ import SMTPTurrisForm from "./SMTPTurrisForm";
 import SMTPCustomForm from "./SMTPCustomForm";
 
 const SMTP_TYPE_CHOICES = [
-    { label: _("Turris"), value: "turris" },
-    { label: _("Custom"), value: "custom" },
+    {
+        label: _("Turris"),
+        value: "turris",
+    },
+    {
+        label: _("Custom"),
+        value: "custom",
+    },
 ];
 
 NotificationsEmailSettingsForm.propTypes = {
-    formData: PropTypes.oneOfType(
-        [
-            PropTypes.shape({}),
-            PropTypes.shape({
-                emails: PropTypes.shape({
-                    enabled: PropTypes.bool.isRequired,
-                    smtp_type: PropTypes.oneOf(["turris", "custom"]),
-                    common: PropTypes.object,
-                    smtp_turris: PropTypes.object,
-                    smtp_custom: PropTypes.object,
-                }),
-            }),
-        ],
-    ).isRequired,
-    formErrors: PropTypes.shape({}),
+    formData: PropTypes.shape({
+        enabled: PropTypes.bool,
+        smtp_type: PropTypes.oneOf(["turris", "custom"]),
+        common: PropTypes.object,
+        smtp_turris: PropTypes.object,
+        smtp_custom: PropTypes.object,
+    }).isRequired,
+    formErrors: PropTypes.shape({
+        smtp_turris: PropTypes.object,
+        smtp_custom: PropTypes.object,
+        common: PropTypes.object,
+    }),
     setFormValue: PropTypes.func.isRequired,
 };
 

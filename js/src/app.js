@@ -7,6 +7,10 @@
 
 import React from "react";
 import { render } from "react-dom";
+import "@fortawesome/fontawesome-free/js/all.min";
+import "bootstrap";
+import "bootswatch/dist/flatly/bootstrap.min.css";
+import "custom.css";
 
 import { WebSockets } from "foris";
 import RouterStateHandler from "routerStateHandler/RouterStateHandler";

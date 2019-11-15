@@ -7,11 +7,17 @@
 
 import React from "react";
 import { useUID } from "react-uid";
-import { matchPath, withRouter } from "react-router";
+import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
+import { matchPath, withRouter } from "react-router";
+
+Navigation.propTypes = {
+    pages: PropTypes.arrayOf(PropTypes.object),
+    location: PropTypes.object.isRequired,
+};
 
 function Navigation({ pages, location }) {
-    return pages.map((page, i) => {
+    return pages.map((page) => {
         if (page.isHidden) return null;
 
         if (page.pages) {
@@ -20,10 +26,10 @@ function Navigation({ pages, location }) {
                 strict: true,
             });
             return (
-                <NavigationToggle key={i} active={!!active} {...page}>
-                    {page.pages.map((subPage, j) => (
+                <NavigationToggle key={page.name} active={!!active} {...page}>
+                    {page.pages.map((subPage) => (
                         <NavigationToggleItem
-                            key={j}
+                            key={subPage.name}
                             {...subPage}
                             path={`${page.path}${subPage.path}`}
                         />
@@ -32,9 +38,19 @@ function Navigation({ pages, location }) {
             );
         }
 
-        return <NavigationMainItem key={i} {...page} />;
+        return <NavigationMainItem key={page.name} {...page} />;
     });
 }
+
+NavigationToggle.propTypes = {
+    name: PropTypes.string.isRequired,
+    icon: PropTypes.string.isRequired,
+    active: PropTypes.bool.isRequired,
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node,
+    ]),
+};
 
 function NavigationToggle({
     name, icon, active, children,
@@ -61,6 +77,10 @@ function NavigationToggle({
     );
 }
 
+NavigationToggleItem.propTypes = {
+    name: PropTypes.string.isRequired,
+};
+
 function NavigationToggleItem({ name, ...props }) {
     return (
         <NavigationItem {...props}>
@@ -68,6 +88,11 @@ function NavigationToggleItem({ name, ...props }) {
         </NavigationItem>
     );
 }
+
+NavigationMainItem.propTypes = {
+    icon: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+};
 
 function NavigationMainItem({ icon, name, ...props }) {
     return (
@@ -77,6 +102,15 @@ function NavigationMainItem({ icon, name, ...props }) {
         </NavigationItem>
     );
 }
+
+NavigationItem.propTypes = {
+    path: PropTypes.string.isRequired,
+    isLinkOutside: PropTypes.bool,
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node,
+    ]),
+};
 
 function NavigationItem({ path, children, isLinkOutside }) {
     if (isLinkOutside) return <li><a href={path}>{children}</a></li>;
@@ -90,11 +124,15 @@ function NavigationItem({ path, children, isLinkOutside }) {
     );
 }
 
+Icon.propTypes = {
+    name: PropTypes.string.isRequired,
+};
+
 function Icon({ name }) {
     return (
         <>
             <i className={`fas fa-fw fa-${name}`} />
-        &nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;
         </>
     );
 }

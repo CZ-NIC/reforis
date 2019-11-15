@@ -8,7 +8,9 @@
 import { useEffect, useState } from "react";
 
 import API_URLs from "common/API";
-import { useWSForisModule, useAPIGet, useAPIPost } from "foris";
+import {
+    useWSForisModule, useAPIGet, useAPIPost, API_STATE,
+} from "foris";
 
 const WS_MODULE = "router_notifications";
 
@@ -20,7 +22,7 @@ export default function useNotifications(ws) {
         get();
     }, [get]);
     useEffect(() => {
-        if (getState.data && !getState.isLoading) {
+        if (getState.state === API_STATE.SUCCESS) {
             const nonDisplayedNotifications = getState.data.notifications
                 .filter((notification) => !notification.displayed);
             setNotifications(nonDisplayedNotifications);

@@ -8,7 +8,8 @@
 import React from 'react';
 import diffSnapshot from 'snapshot-diff';
 
-import {cleanup, render, wait} from 'customTestRender';
+import { cleanup, render, wait } from "foris/testUtils/customTestRender";
+import { mockJSONError } from "foris/testUtils/network";
 import mockAxios from 'jest-mock-axios';
 
 import packagesFixture from './__fixtures__/packages';
@@ -26,6 +27,14 @@ describe('<Packages/>', () => {
         firstRender = renderRes.asFragment();
     });
 
+    it("should handle error", async () => {
+        const { getByText } = render(<Packages/>);
+        mockJSONError();
+        await wait(() => {
+            expect(getByText("An error occurred while fetching data.")).toBeTruthy();
+        });
+    });
+
     it('Updates enabled', () => {
         expect(firstRender).toMatchSnapshot()
     });
@@ -38,7 +47,6 @@ describe('<Packages/>', () => {
 
         expect(diffSnapshot(firstRender, asFragment())).toMatchSnapshot();
     });
-
 
     it('Test hidden.', () => {
         const HTMLHiddenPackageMessage = queryByText('Hidden package msg');

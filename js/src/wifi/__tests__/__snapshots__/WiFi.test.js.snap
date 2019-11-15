@@ -5,7 +5,7 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
 - First value
 + Second value
 
-@@ -267,207 +267,95 @@
+@@ -252,207 +252,95 @@
             value=\\"0\\"
           >
             auto
@@ -264,12 +264,10 @@ point) and a corresponding password. You can then set up your mobile devices, us
       Wi-Fi 1
     </h3>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           class="custom-control-input"
@@ -288,12 +286,10 @@ point) and a corresponding password. You can then set up your mobile devices, us
       Wi-Fi 2
     </h3>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           class="custom-control-input"
@@ -315,23 +311,21 @@ point) and a corresponding password. You can then set up your mobile devices, us
         Save
     </button>
   </form>
-  <form>
-    <h4>
-      Reset Wi-Fi Settings
-    </h4>
-    <p>
-      
+  <h4>
+    Reset Wi-Fi Settings
+  </h4>
+  <p>
+    
 If a number of wireless cards doesn't match, you may try to reset the Wi-Fi settings. Note that this will remove the
 current Wi-Fi configuration and restore the default values.
         
-    </p>
-    <button
-      class="btn btn-warning offset-lg-8 col-lg-3 col-sm-12"
-      type="button"
-    >
-        Reset Wi-Fi Settings
-    </button>
-  </form>
+  </p>
+  <button
+    class="btn btn-warning offset-lg-8 col-lg-3 col-sm-12"
+    type="button"
+  >
+      Reset Wi-Fi Settings
+  </button>
 </DocumentFragment>
 `;
 
@@ -340,105 +334,97 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
 - First value
 + Second value
 
-@@ -499,10 +499,97 @@
-          access the internet, but aren't allowed to access other devices and the configuration interface of the router.
+@@ -481,10 +481,89 @@
           Parameters of the guest network can be set in the Guest network tab.
           
-        </small>
+          </small>
+        </div>
       </div>
 +     <div
-+       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
++       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <div
-+         class=\\"form-group\\"
++       <label
++         for=\\"20\\"
 +       >
-+         <label
-+           for=\\"20\\"
-+         >
-+           SSID
-+         </label>
++         SSID
++       </label>
++       <div
++         class=\\"input-group\\"
++       >
++         <input
++           class=\\"form-control\\"
++           id=\\"20\\"
++           type=\\"text\\"
++           value=\\"TestGuestSSID\\"
++         />
 +         <div
-+           class=\\"input-group\\"
++           class=\\"input-group-append\\"
 +         >
-+           <input
-+             class=\\"form-control\\"
-+             id=\\"20\\"
-+             type=\\"text\\"
-+             value=\\"TestGuestSSID\\"
-+           />
-+           <div
-+             class=\\"input-group-append\\"
++           <button
++             class=\\"input-group-text\\"
++             type=\\"button\\"
 +           >
-+             <button
-+               class=\\"input-group-text\\"
-+               type=\\"button\\"
-+             >
-+               <img
-+                 alt=\\"QR\\"
-+                 src=\\"/static/reforis/imgs/QR_icon.svg\\"
-+                 style=\\"opacity: 0.67;\\"
-+                 width=\\"20\\"
-+               />
-+             </button>
-+           </div>
++             <img
++               alt=\\"QR\\"
++               src=\\"/static/reforis/imgs/QR_icon.svg\\"
++               style=\\"opacity: 0.67;\\"
++               width=\\"20\\"
++             />
++           </button>
 +         </div>
 +       </div>
 +     </div>
 +     <div
-+       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
++       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <div
-+         class=\\"form-group\\"
++       <label
++         for=\\"21\\"
 +       >
-+         <label
-+           for=\\"21\\"
-+         >
-+           Password
-+         </label>
++         Password
++       </label>
++       <div
++         class=\\"input-group\\"
++       >
++         <input
++           autocomplete=\\"new-password\\"
++           class=\\"form-control  is-invalid\\"
++           id=\\"21\\"
++           required=\\"\\"
++           type=\\"password\\"
++           value=\\"\\"
++         />
 +         <div
-+           class=\\"input-group\\"
++           class=\\"input-group-append\\"
 +         >
-+           <input
-+             autocomplete=\\"new-password\\"
-+             class=\\"form-control  is-invalid\\"
-+             id=\\"21\\"
-+             required=\\"\\"
-+             type=\\"password\\"
-+             value=\\"\\"
-+           />
-+           <div
-+             class=\\"input-group-append\\"
++           <button
++             class=\\"input-group-text\\"
++             type=\\"button\\"
 +           >
-+             <button
-+               class=\\"input-group-text\\"
-+               type=\\"button\\"
-+             >
-+               <i
-+                 class=\\"fa fa-eye\\"
-+               />
-+             </button>
-+           </div>
++             <i
++               class=\\"fa fa-eye\\"
++             />
++           </button>
 +         </div>
-+         <div
-+           class=\\"invalid-feedback\\"
-+         >
-+           Password must contain at least 8 symbols
-+         </div>
-+         <small
-+           class=\\"form-text text-muted\\"
-+         >
-+           
++       </div>
++       <div
++         class=\\"invalid-feedback\\"
++       >
++         Password must contain at least 8 symbols
++       </div>
++       <small
++         class=\\"form-text text-muted\\"
++       >
++         
 +         WPA2 pre-shared key, that is required to connect to the network.
 +     
-+         </small>
-+       </div>
++       </small>
 +     </div>
       <h3>
         Wi-Fi 2
       </h3>
       <div
-        class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
-@@ -525,10 +612,11 @@
+        class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
+@@ -505,10 +584,11 @@
           </label>
         </div>
       </div>
@@ -457,102 +443,92 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
 - First value
 + Second value
 
-@@ -31,10 +31,478 @@
+@@ -29,10 +29,462 @@
           >
             Enable
           </label>
         </div>
       </div>
 +     <div
-+       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
++       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <div
-+         class=\\"form-group\\"
++       <label
++         for=\\"4\\"
 +       >
-+         <label
-+           for=\\"4\\"
-+         >
-+           SSID
-+         </label>
++         SSID
++       </label>
++       <div
++         class=\\"input-group\\"
++       >
++         <input
++           class=\\"form-control\\"
++           id=\\"4\\"
++           required=\\"\\"
++           type=\\"text\\"
++           value=\\"TestSSID1\\"
++         />
 +         <div
-+           class=\\"input-group\\"
++           class=\\"input-group-append\\"
 +         >
-+           <input
-+             class=\\"form-control\\"
-+             id=\\"4\\"
-+             required=\\"\\"
-+             type=\\"text\\"
-+             value=\\"TestSSID1\\"
-+           />
-+           <div
-+             class=\\"input-group-append\\"
++           <button
++             class=\\"input-group-text\\"
++             type=\\"button\\"
 +           >
-+             <button
-+               class=\\"input-group-text\\"
-+               type=\\"button\\"
-+             >
-+               <img
-+                 alt=\\"QR\\"
-+                 src=\\"/static/reforis/imgs/QR_icon.svg\\"
-+                 style=\\"opacity: 0.67;\\"
-+                 width=\\"20\\"
-+               />
-+             </button>
-+           </div>
++             <img
++               alt=\\"QR\\"
++               src=\\"/static/reforis/imgs/QR_icon.svg\\"
++               style=\\"opacity: 0.67;\\"
++               width=\\"20\\"
++             />
++           </button>
 +         </div>
 +       </div>
 +     </div>
 +     <div
-+       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
++       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <div
-+         class=\\"form-group\\"
++       <label
++         for=\\"5\\"
 +       >
-+         <label
-+           for=\\"5\\"
-+         >
-+           Password
-+         </label>
++         Password
++       </label>
++       <div
++         class=\\"input-group\\"
++       >
++         <input
++           autocomplete=\\"new-password\\"
++           class=\\"form-control\\"
++           id=\\"5\\"
++           required=\\"\\"
++           type=\\"password\\"
++           value=\\"TestPass\\"
++         />
 +         <div
-+           class=\\"input-group\\"
++           class=\\"input-group-append\\"
 +         >
-+           <input
-+             autocomplete=\\"new-password\\"
-+             class=\\"form-control\\"
-+             id=\\"5\\"
-+             required=\\"\\"
-+             type=\\"password\\"
-+             value=\\"TestPass\\"
-+           />
-+           <div
-+             class=\\"input-group-append\\"
++           <button
++             class=\\"input-group-text\\"
++             type=\\"button\\"
 +           >
-+             <button
-+               class=\\"input-group-text\\"
-+               type=\\"button\\"
-+             >
-+               <i
-+                 class=\\"fa fa-eye\\"
-+               />
-+             </button>
-+           </div>
++             <i
++               class=\\"fa fa-eye\\"
++             />
++           </button>
 +         </div>
-+         <small
-+           class=\\"form-text text-muted\\"
-+         >
-+           
++       </div>
++       <small
++         class=\\"form-text text-muted\\"
++       >
++         
 +         WPA2 pre-shared key, that is required to connect to the network.
 +     
-+         </small>
-+       </div>
++       </small>
 +     </div>
 +     <div
-+       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
-+       style=\\"margin-bottom: 1rem;\\"
++       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
 +       <div
-+         class=\\"custom-control custom-checkbox\\"
-+         style=\\"margin-bottom: 0px;\\"
++         class=\\"custom-control custom-checkbox \\"
 +       >
 +         <input
 +           class=\\"custom-control-input\\"
@@ -562,25 +538,22 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
 +         <label
 +           class=\\"custom-control-label\\"
 +           for=\\"6\\"
-+           style=\\"margin-bottom: 0px;\\"
 +         >
 +           Hide SSID
 +         </label>
++         <small
++           class=\\"form-text text-muted\\"
++         >
++           If set, network is not visible when scanning for available networks.
++         </small>
 +       </div>
-+       <small
-+         class=\\"form-text text-muted\\"
-+       >
-+         If set, network is not visible when scanning for available networks.
-+       </small>
 +     </div>
 +     <div
 +       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
-+       style=\\"margin-bottom: 1rem;\\"
 +     >
 +       <label
-+         class=\\"col-12\\"
++         class=\\"d-block\\"
 +         for=\\"7\\"
-+         style=\\"padding-left: 0px;\\"
 +       >
 +         GHz
 +       </label>
@@ -901,12 +874,10 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
 +       </select>
 +     </div>
 +     <div
-+       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
-+       style=\\"margin-bottom: 1rem;\\"
++       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
 +       <div
-+         class=\\"custom-control custom-checkbox\\"
-+         style=\\"margin-bottom: 0px;\\"
++         class=\\"custom-control custom-checkbox \\"
 +       >
 +         <input
 +           class=\\"custom-control-input\\"
@@ -916,24 +887,23 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
 +         <label
 +           class=\\"custom-control-label\\"
 +           for=\\"10\\"
-+           style=\\"margin-bottom: 0px;\\"
 +         >
 +           Enable Guest Wifi
 +         </label>
-+       </div>
-+       <small
-+         class=\\"form-text text-muted\\"
-+       >
-+         
++         <small
++           class=\\"form-text text-muted\\"
++         >
++           
 +         Enables Wi-Fi for guests, which is separated from LAN network. Devices connected to this network are allowed to
 +         access the internet, but aren't allowed to access other devices and the configuration interface of the router.
 +         Parameters of the guest network can be set in the Guest network tab.
 +         
-+       </small>
++         </small>
++       </div>
 +     </div>
       <h3>
         Wi-Fi 2
       </h3>
       <div
-        class=\\"col-sm-12 offset-lg-1 col-lg-10\\""
+        class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\""
 `;

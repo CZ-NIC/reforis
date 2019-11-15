@@ -1,8 +1,10 @@
+from http import HTTPStatus
+
 from flask import current_app, jsonify, request
 from flask_babel import gettext as _
 
 from reforis import _get_locale_from_backend
-from reforis.foris_controller_api import InvalidRequest
+from reforis.foris_controller_api.utils import APIError
 
 
 def updates():
@@ -76,24 +78,42 @@ def approvals():
     .. http:post:: /api/approvals
         Update or dismiss `update approvals`.
         See ``resolve_approval`` action in the `foris-controller updater module JSON schema
-        <https://gitlab.labs.nic.cz/turris/foris-controller/blob/master/foris_controller_modules/updater/schema/updater.json>`_.
+        <https://gitlab.labs.nic.cz/turris/foris-controller/foris-controller/blob/master/foris_controller_modules/updater/schema/updater.json>`_.
 
         **Example request**:
 
         .. sourcecode:: http
-
             {
-                "approval_settings": {"status": "on"},
-                "enabled": true,
-                "reboots": { "delay": 4, "time": "04:30"}
+                approvable: true,
+                hash: "d529d9d94ac906435cef4124f76f90dbed071b09837ce150615ddfde95bc62ab",
+                plan: [
+                    { name: "base-files", new_ver: "194.2-611f08c.0", op: "install" },
+                    { name: "luci-proto-ipv6", new_ver: "git-19.294.12576-b3ab814-1.0", op: "install" }
+                ],
+                present: true,
+                reboot: false,
+                status: "asked",
+                time: "2019-10-21T06:58:28"
             }
     """
     response = None
     if request.method == 'GET':
         lang_data = {'lang': _get_locale_from_backend(current_app)}
         updater_settings = current_app.backend.perform('updater', 'get_settings', lang_data)
-        response = {**updater_settings['approval'], "update_automatically": updater_settings["enabled"]}
 
+        # Updates that are delayed or need approval
+        approvable = bool(
+            updater_settings['enabled']
+            and updater_settings['approval_settings']['status'] != 'off'
+            and updater_settings['approval'].get('present') is True
+            and updater_settings['approval'].get('status') == 'asked'
+            and updater_settings['approval'].get('plan')  # Non-empty list of packages
+        )
+
+        response = {
+            **updater_settings['approval'],
+            'approvable': approvable,
+        }
     elif request.method == 'POST':
         data = request.json
         response = current_app.backend.perform('updater', 'resolve_approval', data)
@@ -106,13 +126,13 @@ def packages():
     .. http:get:: /api/packages
         Get `packages` router settings.
         See ``get_settings`` action in the `foris-controller updater module JSON schema
-        <https://gitlab.labs.nic.cz/turris/foris-controller/blob/master/foris_controller_modules/updater/schema/updater.json>`_.
+        <https://gitlab.labs.nic.cz/turris/foris-controller/foris-controller/blob/master/foris_controller_modules/updater/schema/updater.json>`_.
 
     .. http:post:: /api/packages
         Set `packages` router settings.
         **It's not possible to change some `packages` settings if automatic updates are disabled.**
         See ``update_settings`` action in the `foris-controller updater module JSON schema
-        <https://gitlab.labs.nic.cz/turris/foris-controller/blob/master/foris_controller_modules/updater/schema/updater.json>`_.
+        <https://gitlab.labs.nic.cz/turris/foris-controller/foris-controller/blob/master/foris_controller_modules/updater/schema/updater.json>`_.
     """
     updater_settings = current_app.backend.perform(
         'updater',
@@ -126,12 +146,23 @@ def packages():
         del response['approval_settings']
     elif request.method == 'POST':
         if not updater_settings['enabled']:
-            raise InvalidRequest(_("You can't set packages with disabled automatic updates."))
+            raise APIError(_('You can\'t set packages with disabled automatic updates.'))
         data = request.json
         data['enabled'] = True
         data['approval_settings'] = updater_settings['approval_settings']
         response = current_app.backend.perform('updater', 'update_settings', data)
     return jsonify(response)
+
+
+def updates_run():
+    response = current_app.backend.perform('updater', 'run', {'set_reboot_indicator': False})
+    if response.get('result') is not True:
+        return jsonify(_('Cannot start updater')), HTTPStatus.INTERNAL_SERVER_ERROR
+    return jsonify(response)
+
+
+def updates_status():
+    return jsonify({'running': current_app.backend.perform('web', 'get_data')['updater_running']})
 
 
 # pylint: disable=invalid-name
@@ -140,6 +171,14 @@ views = [
         'rule': '/updates',
         'view_func': updates,
         'methods': ['GET', 'POST'],
+    }, {
+        'rule': '/updates/run',
+        'view_func': updates_run,
+        'methods': ['POST'],
+    }, {
+        'rule': '/updates/status',
+        'view_func': updates_status,
+        'methods': ['GET'],
     }, {
         'rule': '/approvals',
         'view_func': approvals,

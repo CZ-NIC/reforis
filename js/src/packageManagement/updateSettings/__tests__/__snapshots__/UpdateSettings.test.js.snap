@@ -148,12 +148,10 @@ available
   </div>
   <form>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           class="custom-control-input"
@@ -172,88 +170,80 @@ available
       Automatic restarts after software update
     </h4>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
-      <div
-        class="form-group"
+      <label
+        for="2"
       >
-        <label
-          for="2"
-        >
-          Delay (days)
-        </label>
+        Delay (days)
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control"
+          id="2"
+          max="10"
+          min="0"
+          type="number"
+          value="4"
+        />
         <div
-          class="input-group"
+          class="input-group-append"
         >
-          <input
-            class="form-control"
-            id="2"
-            max="10"
-            min="0"
-            type="number"
-            value="4"
-          />
-          <div
-            class="input-group-append"
+          <button
+            aria-label="Increase"
+            class="btn btn-outline-secondary"
+            type="button"
           >
-            <button
-              aria-label="Increase"
-              class="btn btn-outline-secondary"
-              type="button"
-            >
-              <i
-                class="fas fa-plus"
-              />
-            </button>
-            <button
-              aria-label="Decrease"
-              class="btn btn-outline-secondary"
-              type="button"
-            >
-              <i
-                class="fas fa-minus"
-              />
-            </button>
-          </div>
+            <i
+              class="fas fa-plus"
+            />
+          </button>
+          <button
+            aria-label="Decrease"
+            class="btn btn-outline-secondary"
+            type="button"
+          >
+            <i
+              class="fas fa-minus"
+            />
+          </button>
         </div>
-        <small
-          class="form-text text-muted"
-        >
-          Number of days that must pass between receiving the request for restart and the automatic restart itself.
-        </small>
       </div>
+      <small
+        class="form-text text-muted"
+      >
+        Number of days that must pass between receiving the request for restart and the automatic restart itself.
+      </small>
     </div>
     <div
       class="rdt"
     >
       <div>
         <div
-          class="col-sm-12 offset-lg-1 col-lg-10"
+          class="form-group col-sm-12 offset-lg-1 col-lg-10"
         >
-          <div
-            class="form-group"
+          <label
+            for="3"
           >
-            <label
-              for="3"
-            >
-              Reboot time
-            </label>
-            <div
-              class="input-group"
-            >
-              <input
-                class="form-control form-control"
-                id="3"
-                type="text"
-                value="04:30"
-              />
-            </div>
-            <small
-              class="form-text text-muted"
-            >
-              Time of day of automatic reboot in HH:MM format.
-            </small>
+            Reboot time
+          </label>
+          <div
+            class="input-group"
+          >
+            <input
+              class="form-control form-control"
+              id="3"
+              type="text"
+              value="04:30"
+            />
           </div>
+          <small
+            class="form-text text-muted"
+          >
+            Time of day of automatic reboot in HH:MM format.
+          </small>
         </div>
       </div>
       <div
@@ -335,56 +325,52 @@ exports[`<UpdateSettings/> Test with snapshot enabled, delayed. 1`] = `
 - First value
 + Second value
 
-@@ -244,10 +244,57 @@
-          class=\\"form-text text-muted\\"
-        >
-          You have to approve the updates, otherwise they won't be installed.
-        </small>
+@@ -241,10 +241,53 @@
+          >
+            You have to approve the updates, otherwise they won't be installed.
+          </small>
+        </div>
       </div>
 +     <div
-+       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
++       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <div
-+         class=\\"form-group\\"
++       <label
++         for=\\"10\\"
 +       >
-+         <label
-+           for=\\"10\\"
-+         >
-+           Delayed updates (hours)
-+         </label>
++         Delayed updates (hours)
++       </label>
++       <div
++         class=\\"input-group\\"
++       >
++         <input
++           class=\\"form-control\\"
++           id=\\"10\\"
++           max=\\"168\\"
++           min=\\"1\\"
++           type=\\"number\\"
++           value=\\"1\\"
++         />
 +         <div
-+           class=\\"input-group\\"
++           class=\\"input-group-append\\"
 +         >
-+           <input
-+             class=\\"form-control\\"
-+             id=\\"10\\"
-+             max=\\"168\\"
-+             min=\\"1\\"
-+             type=\\"number\\"
-+             value=\\"1\\"
-+           />
-+           <div
-+             class=\\"input-group-append\\"
++           <button
++             aria-label=\\"Increase\\"
++             class=\\"btn btn-outline-secondary\\"
++             type=\\"button\\"
 +           >
-+             <button
-+               aria-label=\\"Increase\\"
-+               class=\\"btn btn-outline-secondary\\"
-+               type=\\"button\\"
-+             >
-+               <i
-+                 class=\\"fas fa-plus\\"
-+               />
-+             </button>
-+             <button
-+               aria-label=\\"Decrease\\"
-+               class=\\"btn btn-outline-secondary\\"
-+               type=\\"button\\"
-+             >
-+               <i
-+                 class=\\"fas fa-minus\\"
-+               />
-+             </button>
-+           </div>
++             <i
++               class=\\"fas fa-plus\\"
++             />
++           </button>
++           <button
++             aria-label=\\"Decrease\\"
++             class=\\"btn btn-outline-secondary\\"
++             type=\\"button\\"
++           >
++             <i
++               class=\\"fas fa-minus\\"
++             />
++           </button>
 +         </div>
 +       </div>
 +     </div>
@@ -392,7 +378,7 @@ exports[`<UpdateSettings/> Test with snapshot enabled, delayed. 1`] = `
         Automatic restarts after software update
       </h4>
       <div
-        class=\\"col-sm-12 offset-lg-1 col-lg-10\\""
+        class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\""
 `;
 
 exports[`<UpdateSettings/> Test with snapshot enabled. 1`] = `
@@ -400,7 +386,7 @@ exports[`<UpdateSettings/> Test with snapshot enabled. 1`] = `
 - First value
 + Second value
 
-@@ -164,10 +164,91 @@
+@@ -162,10 +162,90 @@
             Enable automatic updates (recommended)
           </label>
         </div>
@@ -416,10 +402,9 @@ exports[`<UpdateSettings/> Test with snapshot enabled. 1`] = `
 +     </p>
 +     <div
 +       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
-+       style=\\"margin-bottom: 1rem;\\"
 +     >
 +       <div
-+         class=\\"custom-control custom-radio custom-control-inline\\"
++         class=\\"custom-control custom-radio\\"
 +       >
 +         <input
 +           class=\\"custom-control-input\\"
@@ -434,14 +419,14 @@ exports[`<UpdateSettings/> Test with snapshot enabled. 1`] = `
 +         >
 +           Automatic installation
 +         </label>
++         <small
++           class=\\"form-text text-muted mt-0 mb-3\\"
++         >
++           Updates will be installed without user's intervention.
++         </small>
 +       </div>
-+       <small
-+         class=\\"form-text text-muted\\"
-+       >
-+         Updates will be installed without user's intervention.
-+       </small>
 +       <div
-+         class=\\"custom-control custom-radio custom-control-inline\\"
++         class=\\"custom-control custom-radio\\"
 +       >
 +         <input
 +           class=\\"custom-control-input\\"
@@ -456,14 +441,14 @@ exports[`<UpdateSettings/> Test with snapshot enabled. 1`] = `
 +         >
 +           Delayed updates
 +         </label>
++         <small
++           class=\\"form-text text-muted mt-0 mb-3\\"
++         >
++           Updates will be installed with an adjustable delay. You can also approve them manually.
++         </small>
 +       </div>
-+       <small
-+         class=\\"form-text text-muted\\"
-+       >
-+         Updates will be installed with an adjustable delay. You can also approve them manually.
-+       </small>
 +       <div
-+         class=\\"custom-control custom-radio custom-control-inline\\"
++         class=\\"custom-control custom-radio\\"
 +       >
 +         <input
 +           checked=\\"\\"
@@ -479,17 +464,17 @@ exports[`<UpdateSettings/> Test with snapshot enabled. 1`] = `
 +         >
 +           Update approval needed
 +         </label>
++         <small
++           class=\\"form-text text-muted mt-0 mb-3\\"
++         >
++           You have to approve the updates, otherwise they won't be installed.
++         </small>
 +       </div>
-+       <small
-+         class=\\"form-text text-muted\\"
-+       >
-+         You have to approve the updates, otherwise they won't be installed.
-+       </small>
 +     </div>
 +     <h4>
         Automatic restarts after software update
       </h4>
       <div
-        class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
+        class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
       >"
 `;

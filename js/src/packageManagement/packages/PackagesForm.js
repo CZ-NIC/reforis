@@ -30,7 +30,7 @@ export default function PackagesForm({ formData, setFormValue, disabled }) {
                 (_package, idx) => (
                     <CheckBox
                         label={_package.title}
-                        key={idx}
+                        key={_package.title}
                         helpText={_package.msg}
                         checked={_package.enabled}
                         disabled={disabled}

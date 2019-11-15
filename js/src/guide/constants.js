@@ -5,17 +5,6 @@
  * See /LICENSE for more information.
  */
 
-import Password from "password/Password";
-import Interfaces from "interfaces/Interfaces";
-import RegionAndTime from "regionAndTime/RegionAndTime";
-import DNS from "dns/DNS";
-import Updates from "packageManagement/updateSettings/UpdateSettings";
-import WAN from "wan/WAN";
-import LAN from "lan/LAN";
-
-import WorkflowSelect from "./WorkflowSelect";
-import GuideFinished from "./GuideFinish";
-
 export const GUIDE_URL_PREFIX = "/guide";
 
 const HELP_CONTENT_DEFAULTS = {
@@ -86,44 +75,5 @@ export const HELP_CONTENT = {
         finished: {
             initial: _("The device setup is finished. Now your device should be able to act as a server on your local network."),
         },
-    },
-};
-
-export const STEPS = {
-    password: {
-        name: _("Password"),
-        component: Password,
-    },
-    profile: {
-        name: _("Workflow"),
-        component: WorkflowSelect,
-    },
-    networks: {
-        name: _("Interfaces"),
-        component: Interfaces,
-    },
-    time: {
-        name: _("Time"),
-        component: RegionAndTime,
-    },
-    dns: {
-        name: _("DNS"),
-        component: DNS,
-    },
-    updater: {
-        name: _("Updates"),
-        component: Updates,
-    },
-    wan: {
-        name: _("WAN"),
-        component: WAN,
-    },
-    lan: {
-        name: _("LAN"),
-        component: LAN,
-    },
-    finished: {
-        name: _("Finish"),
-        component: GuideFinished,
     },
 };

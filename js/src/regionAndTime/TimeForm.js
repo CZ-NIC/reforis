@@ -10,7 +10,7 @@ import PropTypes from "prop-types";
 import moment from "moment/moment";
 
 import {
-    Select, DataTimeInput, SpinnerElement, Button,
+    Select, DataTimeInput, SpinnerElement, Button, API_STATE,
 } from "foris";
 
 import useNTPDate from "./hooks";
@@ -113,15 +113,16 @@ export default function TimeForm({
 
                 {...props}
 
-                disabled={data.how_to_set_time !== "manual" || ntpData.isLoading}
+                disabled={data.how_to_set_time !== "manual" || ntpData.state === API_STATE.SENDING}
             >
                 <div className="input-group-append">
                     <button
+                        type="button"
                         className="input-group-text"
                         onClick={data.how_to_set_time === "ntp" ? triggerNTP : updateTimeFromBrowser}
-                        disabled={ntpData.isLoading}
+                        disabled={ntpData.state === API_STATE.SENDING}
                     >
-                        {ntpData.isLoading ? <SpinnerElement small /> : <i className="fa fa-sync-alt" />}
+                        {ntpData.state === API_STATE.SENDING ? <SpinnerElement small /> : <i className="fas fa-sync-alt" />}
                     </button>
                 </div>
             </DataTimeInput>

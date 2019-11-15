@@ -26,11 +26,11 @@ export default function LanguageForm({ formData, setFormValue, disabled }) {
         <>
             <h3>{_("Languages")}</h3>
             <p>{_("If you want to use other language than English you can select it from the following list:")}</p>
-            <div id="language-packages" className={formFieldsSize}>
+            <div id="language-packages" className={`${formFieldsSize} mb-3`}>
                 {formData.languages.map((language, idx) => (
                     <CheckBox
                         label={language.code.toUpperCase()}
-                        key={idx}
+                        key={language.code}
                         checked={language.enabled}
                         useDefaultSize={false}
                         disabled={disabled}

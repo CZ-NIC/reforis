@@ -6,9 +6,10 @@
  */
 
 import React from 'react';
-import {fireEvent, getByLabelText, getByText, render, wait} from 'customTestRender';
+import {fireEvent, getByLabelText, getByText, render, wait} from "foris/testUtils/customTestRender";
 
 import { WebSockets } from "foris";
+import { mockJSONError } from "foris/testUtils/network";
 import mockAxios from 'jest-mock-axios';
 import {lanSettingsFixture} from './__fixtures__/lanSettings';
 
@@ -25,13 +26,24 @@ describe('<LAN/>', () => {
         lanContainer = container
     });
 
+    it("should handle error", async () => {
+        const webSockets = new WebSockets();
+        const { container } = render(<LAN ws={webSockets} />);
+        mockJSONError();
+        await wait(() => {
+            expect(getByText(container, "An error occurred while fetching data.")).toBeTruthy();
+        });
+    });
+
     it('Snapshot unmanaged (dhcp).', () => {
         expect(lanContainer).toMatchSnapshot();
     });
+
     it('Snapshot unmanaged static.', () => {
         fireEvent.change(getByLabelText(lanContainer, 'IPv4 protocol'), {target: {value: 'static'}});
         expect(lanContainer).toMatchSnapshot();
     });
+
     it('Snapshot unmanaged none.', () => {
         fireEvent.change(getByLabelText(lanContainer, 'IPv4 protocol'), {target: {value: 'none'}});
         expect(lanContainer).toMatchSnapshot();
@@ -54,6 +66,7 @@ describe('<LAN/>', () => {
         const data = {mode: 'unmanaged', mode_unmanaged: {lan_dhcp: {}, lan_type: 'dhcp'}};
         expect(mockAxios.post).toHaveBeenCalledWith('/api/lan', data, expect.anything());
     });
+
     it('Test post unmanaged static.', async () => {
         fireEvent.change(getByLabelText(lanContainer, 'IPv4 protocol'), {target: {value: 'static'}});
         fireEvent.click(getByText(lanContainer, 'Save'));
@@ -71,6 +84,7 @@ describe('<LAN/>', () => {
         };
         expect(mockAxios.post).toHaveBeenCalledWith('/api/lan', data, expect.anything());
     });
+
     it('Test post unmanaged none.', () => {
         fireEvent.change(getByLabelText(lanContainer, 'IPv4 protocol'), {target: {value: 'none'}});
         fireEvent.click(getByText(lanContainer, 'Save'));

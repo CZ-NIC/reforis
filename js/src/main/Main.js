@@ -10,7 +10,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Redirect, Switch } from "react-router";
 import PropTypes from "prop-types";
 
-import { REFORIS_URL_PREFIX, Portal } from "foris";
+import { REFORIS_URL_PREFIX, Portal, AlertContextProvider } from "foris";
 
 import Navigation from "navigation/Navigation";
 
@@ -27,17 +27,19 @@ export default function Main({ ws }) {
     const pages = getPages();
     return (
         <BrowserRouter basename={REFORIS_URL_PREFIX}>
-            <Portal containerId="navigation-container">
-                <Navigation pages={pages} />
-            </Portal>
-            <Portal containerId="topbar-container">
-                <TopBar ws={ws} />
-            </Portal>
+            <AlertContextProvider>
+                <Portal containerId="navigation-container">
+                    <Navigation pages={pages} />
+                </Portal>
+                <Portal containerId="topbar-container">
+                    <TopBar ws={ws} />
+                </Portal>
 
-            <Switch>
-                {pages.map((route, i) => <RouteWithSubRoutes key={i} ws={ws} {...route} />)}
-                <Redirect to={REDIRECT_404_PAGE} />
-            </Switch>
+                <Switch>
+                    {pages.map((route) => <RouteWithSubRoutes key={route} ws={ws} {...route} />)}
+                    <Redirect to={REDIRECT_404_PAGE} />
+                </Switch>
+            </AlertContextProvider>
         </BrowserRouter>
     );
 }

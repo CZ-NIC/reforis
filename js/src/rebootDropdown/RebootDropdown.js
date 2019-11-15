@@ -28,7 +28,7 @@ export default function RebootDropdown({ ws }) {
     return (
         <div className="dropdown">
             <button type="button" id="reboot-dropdown-toggle" className="nav-item btn btn-link">
-                <i className="fa fa-power-off fa-lg" />
+                <i className="fas fa-power-off fa-lg" />
             </button>
             <div className="dropdown-menu">
                 <div className="dropdown-header">

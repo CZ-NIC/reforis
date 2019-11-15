@@ -6,41 +6,55 @@
  */
 
 import React, { useEffect } from "react";
-import { useAPIGet, Spinner } from "foris";
+import PropTypes from "prop-types";
+import { useAPIGet, withSpinnerOnSending, withErrorMessage } from "foris";
 import API_URLs from "common/API";
 
 export default function About() {
-    const [state, get] = useAPIGet(API_URLs.about);
+    const [getAboutResponse, getAbout] = useAPIGet(API_URLs.about);
 
     useEffect(() => {
-        get();
-    }, [get]);
-
-    if (state.isLoading || !state.data) return <Spinner className="row justify-content-center" />;
+        getAbout();
+    }, [getAbout]);
 
     return (
         <>
             <h1>{_("About")}</h1>
-            <table className="table table-hover">
-                <tbody>
-                    <tr>
-                        <th>{_("Device")}</th>
-                        <td>{state.data.model}</td>
-                    </tr>
-                    <tr>
-                        <th>{_("Serial number")}</th>
-                        <td>{state.data.serial}</td>
-                    </tr>
-                    <tr>
-                        <th>{_("Turris OS version")}</th>
-                        <td>{state.data.os_version}</td>
-                    </tr>
-                    <tr>
-                        <th>{_("Kernel version")}</th>
-                        <td>{state.data.kernel}</td>
-                    </tr>
-                </tbody>
-            </table>
+            <AboutTableWithErrorAndSpinner
+                apiState={getAboutResponse.state}
+                deviceDetails={getAboutResponse.data || {}}
+            />
         </>
     );
 }
+
+AboutTable.propTypes = {
+    deviceDetails: PropTypes.object.isRequired,
+};
+
+function AboutTable({ deviceDetails }) {
+    return (
+        <table className="table table-hover">
+            <tbody>
+                <tr>
+                    <th>{_("Device")}</th>
+                    <td>{deviceDetails.model}</td>
+                </tr>
+                <tr>
+                    <th>{_("Serial number")}</th>
+                    <td>{deviceDetails.serial}</td>
+                </tr>
+                <tr>
+                    <th>{_("Turris OS version")}</th>
+                    <td>{deviceDetails.os_version}</td>
+                </tr>
+                <tr>
+                    <th>{_("Kernel version")}</th>
+                    <td>{deviceDetails.kernel}</td>
+                </tr>
+            </tbody>
+        </table>
+    );
+}
+
+const AboutTableWithErrorAndSpinner = withSpinnerOnSending(withErrorMessage(AboutTable));

@@ -21,12 +21,10 @@ in LAN.
   </p>
   <form>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           class="custom-control-input"
@@ -77,12 +75,10 @@ in LAN.
   </p>
   <form>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           class="custom-control-input"
@@ -98,65 +94,55 @@ in LAN.
       </div>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
-      <div
-        class="form-group"
+      <label
+        for="3"
       >
-        <label
-          for="3"
-        >
-          Router IP address
-        </label>
-        <div
-          class="input-group"
-        >
-          <input
-            class="form-control"
-            id="3"
-            required=""
-            type="text"
-            value="10.111.222.1"
-          />
-        </div>
-        <small
-          class="form-text text-muted"
-        >
-          Router's IP address in the guest inner network.
-        </small>
+        Router IP address
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control"
+          id="3"
+          required=""
+          type="text"
+          value="10.111.222.1"
+        />
+      </div>
+      <small
+        class="form-text text-muted"
+      >
+        Router's IP address in the guest inner network.
+      </small>
+    </div>
+    <div
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
+    >
+      <label
+        for="4"
+      >
+        Network mask
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control"
+          id="4"
+          required=""
+          type="text"
+          value="255.255.255.0"
+        />
       </div>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="form-group"
-      >
-        <label
-          for="4"
-        >
-          Network mask
-        </label>
-        <div
-          class="input-group"
-        >
-          <input
-            class="form-control"
-            id="4"
-            required=""
-            type="text"
-            value="255.255.255.0"
-          />
-        </div>
-      </div>
-    </div>
-    <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
-    >
-      <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           class="custom-control-input"
@@ -166,165 +152,150 @@ in LAN.
         <label
           class="custom-control-label"
           for="5"
-          style="margin-bottom: 0px;"
         >
           Enable DHCP
         </label>
+        <small
+          class="form-text text-muted"
+        >
+          Enable this option to automatically assign IP addresses to the devices connected to the router.
+        </small>
       </div>
-      <small
-        class="form-text text-muted"
-      >
-        Enable this option to automatically assign IP addresses to the devices connected to the router.
-      </small>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
-      <div
-        class="form-group"
+      <label
+        for="11"
       >
-        <label
-          for="11"
-        >
-          DHCP start
-        </label>
+        DHCP start
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control"
+          id="11"
+          min="1"
+          required=""
+          type="number"
+          value="100"
+        />
         <div
-          class="input-group"
+          class="input-group-append"
         >
-          <input
-            class="form-control"
-            id="11"
-            min="1"
-            required=""
-            type="number"
-            value="100"
-          />
-          <div
-            class="input-group-append"
+          <button
+            aria-label="Increase"
+            class="btn btn-outline-secondary"
+            type="button"
           >
-            <button
-              aria-label="Increase"
-              class="btn btn-outline-secondary"
-              type="button"
-            >
-              <i
-                class="fas fa-plus"
-              />
-            </button>
-            <button
-              aria-label="Decrease"
-              class="btn btn-outline-secondary"
-              type="button"
-            >
-              <i
-                class="fas fa-minus"
-              />
-            </button>
-          </div>
+            <i
+              class="fas fa-plus"
+            />
+          </button>
+          <button
+            aria-label="Decrease"
+            class="btn btn-outline-secondary"
+            type="button"
+          >
+            <i
+              class="fas fa-minus"
+            />
+          </button>
         </div>
       </div>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
-      <div
-        class="form-group"
+      <label
+        for="12"
       >
-        <label
-          for="12"
-        >
-          DHCP max leases
-        </label>
+        DHCP max leases
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control"
+          id="12"
+          min="1"
+          required=""
+          type="number"
+          value="150"
+        />
         <div
-          class="input-group"
+          class="input-group-append"
         >
-          <input
-            class="form-control"
-            id="12"
-            min="1"
-            required=""
-            type="number"
-            value="150"
-          />
-          <div
-            class="input-group-append"
+          <button
+            aria-label="Increase"
+            class="btn btn-outline-secondary"
+            type="button"
           >
-            <button
-              aria-label="Increase"
-              class="btn btn-outline-secondary"
-              type="button"
-            >
-              <i
-                class="fas fa-plus"
-              />
-            </button>
-            <button
-              aria-label="Decrease"
-              class="btn btn-outline-secondary"
-              type="button"
-            >
-              <i
-                class="fas fa-minus"
-              />
-            </button>
-          </div>
+            <i
+              class="fas fa-plus"
+            />
+          </button>
+          <button
+            aria-label="Decrease"
+            class="btn btn-outline-secondary"
+            type="button"
+          >
+            <i
+              class="fas fa-minus"
+            />
+          </button>
         </div>
       </div>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
-      <div
-        class="form-group"
+      <label
+        for="13"
       >
-        <label
-          for="13"
-        >
-          Lease time (hours)
-        </label>
+        Lease time (hours)
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control"
+          id="13"
+          min="1"
+          required=""
+          type="number"
+          value="3600"
+        />
         <div
-          class="input-group"
+          class="input-group-append"
         >
-          <input
-            class="form-control"
-            id="13"
-            min="1"
-            required=""
-            type="number"
-            value="3600"
-          />
-          <div
-            class="input-group-append"
+          <button
+            aria-label="Increase"
+            class="btn btn-outline-secondary"
+            type="button"
           >
-            <button
-              aria-label="Increase"
-              class="btn btn-outline-secondary"
-              type="button"
-            >
-              <i
-                class="fas fa-plus"
-              />
-            </button>
-            <button
-              aria-label="Decrease"
-              class="btn btn-outline-secondary"
-              type="button"
-            >
-              <i
-                class="fas fa-minus"
-              />
-            </button>
-          </div>
+            <i
+              class="fas fa-plus"
+            />
+          </button>
+          <button
+            aria-label="Decrease"
+            class="btn btn-outline-secondary"
+            type="button"
+          >
+            <i
+              class="fas fa-minus"
+            />
+          </button>
         </div>
       </div>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           class="custom-control-input"
@@ -334,16 +305,15 @@ in LAN.
         <label
           class="custom-control-label"
           for="6"
-          style="margin-bottom: 0px;"
         >
           Enable QoS
         </label>
+        <small
+          class="form-text text-muted"
+        >
+          This option enables you to set a bandwidth limit for the guest network, so that your main network doesn't get slowed-down by it.
+        </small>
       </div>
-      <small
-        class="form-text text-muted"
-      >
-        This option enables you to set a bandwidth limit for the guest network, so that your main network doesn't get slowed-down by it.
-      </small>
     </div>
     <button
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
@@ -388,12 +358,10 @@ in LAN.
   </p>
   <form>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           class="custom-control-input"
@@ -409,65 +377,55 @@ in LAN.
       </div>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
-      <div
-        class="form-group"
+      <label
+        for="3"
       >
-        <label
-          for="3"
-        >
-          Router IP address
-        </label>
-        <div
-          class="input-group"
-        >
-          <input
-            class="form-control"
-            id="3"
-            required=""
-            type="text"
-            value="10.111.222.1"
-          />
-        </div>
-        <small
-          class="form-text text-muted"
-        >
-          Router's IP address in the guest inner network.
-        </small>
+        Router IP address
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control"
+          id="3"
+          required=""
+          type="text"
+          value="10.111.222.1"
+        />
+      </div>
+      <small
+        class="form-text text-muted"
+      >
+        Router's IP address in the guest inner network.
+      </small>
+    </div>
+    <div
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
+    >
+      <label
+        for="4"
+      >
+        Network mask
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control"
+          id="4"
+          required=""
+          type="text"
+          value="255.255.255.0"
+        />
       </div>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="form-group"
-      >
-        <label
-          for="4"
-        >
-          Network mask
-        </label>
-        <div
-          class="input-group"
-        >
-          <input
-            class="form-control"
-            id="4"
-            required=""
-            type="text"
-            value="255.255.255.0"
-          />
-        </div>
-      </div>
-    </div>
-    <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
-    >
-      <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           class="custom-control-input"
@@ -477,24 +435,21 @@ in LAN.
         <label
           class="custom-control-label"
           for="5"
-          style="margin-bottom: 0px;"
         >
           Enable DHCP
         </label>
+        <small
+          class="form-text text-muted"
+        >
+          Enable this option to automatically assign IP addresses to the devices connected to the router.
+        </small>
       </div>
-      <small
-        class="form-text text-muted"
-      >
-        Enable this option to automatically assign IP addresses to the devices connected to the router.
-      </small>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           class="custom-control-input"
@@ -504,130 +459,121 @@ in LAN.
         <label
           class="custom-control-label"
           for="6"
-          style="margin-bottom: 0px;"
         >
           Enable QoS
         </label>
+        <small
+          class="form-text text-muted"
+        >
+          This option enables you to set a bandwidth limit for the guest network, so that your main network doesn't get slowed-down by it.
+        </small>
+      </div>
+    </div>
+    <div
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
+    >
+      <label
+        for="12"
+      >
+        Download
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control"
+          id="12"
+          min="1"
+          required=""
+          type="number"
+          value="1023"
+        />
+        <div
+          class="input-group-append"
+        >
+          <p
+            class="input-group-text"
+          >
+            kb/s
+          </p>
+          <button
+            aria-label="Increase"
+            class="btn btn-outline-secondary"
+            type="button"
+          >
+            <i
+              class="fas fa-plus"
+            />
+          </button>
+          <button
+            aria-label="Decrease"
+            class="btn btn-outline-secondary"
+            type="button"
+          >
+            <i
+              class="fas fa-minus"
+            />
+          </button>
+        </div>
       </div>
       <small
         class="form-text text-muted"
       >
-        This option enables you to set a bandwidth limit for the guest network, so that your main network doesn't get slowed-down by it.
+        Download speed in guest network (in kilobits per second).
       </small>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
-      <div
-        class="form-group"
+      <label
+        for="13"
       >
-        <label
-          for="12"
-        >
-          Download
-        </label>
-        <div
-          class="input-group"
-        >
-          <input
-            class="form-control"
-            id="12"
-            min="1"
-            required=""
-            type="number"
-            value="1023"
-          />
-          <div
-            class="input-group-append"
-          >
-            <p
-              class="input-group-text"
-            >
-              kb/s
-            </p>
-            <button
-              aria-label="Increase"
-              class="btn btn-outline-secondary"
-              type="button"
-            >
-              <i
-                class="fas fa-plus"
-              />
-            </button>
-            <button
-              aria-label="Decrease"
-              class="btn btn-outline-secondary"
-              type="button"
-            >
-              <i
-                class="fas fa-minus"
-              />
-            </button>
-          </div>
-        </div>
-        <small
-          class="form-text text-muted"
-        >
-          Download speed in guest network (in kilobits per second).
-        </small>
-      </div>
-    </div>
-    <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-    >
+        Upload
+      </label>
       <div
-        class="form-group"
+        class="input-group"
       >
-        <label
-          for="13"
-        >
-          Upload
-        </label>
+        <input
+          class="form-control"
+          id="13"
+          min="1"
+          required=""
+          type="number"
+          value="1025"
+        />
         <div
-          class="input-group"
+          class="input-group-append"
         >
-          <input
-            class="form-control"
-            id="13"
-            min="1"
-            required=""
-            type="number"
-            value="1025"
-          />
-          <div
-            class="input-group-append"
+          <p
+            class="input-group-text"
           >
-            <p
-              class="input-group-text"
-            >
-              kb/s
-            </p>
-            <button
-              aria-label="Increase"
-              class="btn btn-outline-secondary"
-              type="button"
-            >
-              <i
-                class="fas fa-plus"
-              />
-            </button>
-            <button
-              aria-label="Decrease"
-              class="btn btn-outline-secondary"
-              type="button"
-            >
-              <i
-                class="fas fa-minus"
-              />
-            </button>
-          </div>
+            kb/s
+          </p>
+          <button
+            aria-label="Increase"
+            class="btn btn-outline-secondary"
+            type="button"
+          >
+            <i
+              class="fas fa-plus"
+            />
+          </button>
+          <button
+            aria-label="Decrease"
+            class="btn btn-outline-secondary"
+            type="button"
+          >
+            <i
+              class="fas fa-minus"
+            />
+          </button>
         </div>
-        <small
-          class="form-text text-muted"
-        >
-          Upload speed in guest network (in kilobits per second).
-        </small>
       </div>
+      <small
+        class="form-text text-muted"
+      >
+        Upload speed in guest network (in kilobits per second).
+      </small>
     </div>
     <button
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
@@ -665,12 +611,10 @@ in LAN.
   </p>
   <form>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           class="custom-control-input"
@@ -686,65 +630,55 @@ in LAN.
       </div>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
-      <div
-        class="form-group"
+      <label
+        for="3"
       >
-        <label
-          for="3"
-        >
-          Router IP address
-        </label>
-        <div
-          class="input-group"
-        >
-          <input
-            class="form-control"
-            id="3"
-            required=""
-            type="text"
-            value="10.111.222.1"
-          />
-        </div>
-        <small
-          class="form-text text-muted"
-        >
-          Router's IP address in the guest inner network.
-        </small>
+        Router IP address
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control"
+          id="3"
+          required=""
+          type="text"
+          value="10.111.222.1"
+        />
+      </div>
+      <small
+        class="form-text text-muted"
+      >
+        Router's IP address in the guest inner network.
+      </small>
+    </div>
+    <div
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
+    >
+      <label
+        for="4"
+      >
+        Network mask
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control"
+          id="4"
+          required=""
+          type="text"
+          value="255.255.255.0"
+        />
       </div>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="form-group"
-      >
-        <label
-          for="4"
-        >
-          Network mask
-        </label>
-        <div
-          class="input-group"
-        >
-          <input
-            class="form-control"
-            id="4"
-            required=""
-            type="text"
-            value="255.255.255.0"
-          />
-        </div>
-      </div>
-    </div>
-    <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
-    >
-      <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           class="custom-control-input"
@@ -754,24 +688,21 @@ in LAN.
         <label
           class="custom-control-label"
           for="5"
-          style="margin-bottom: 0px;"
         >
           Enable DHCP
         </label>
+        <small
+          class="form-text text-muted"
+        >
+          Enable this option to automatically assign IP addresses to the devices connected to the router.
+        </small>
       </div>
-      <small
-        class="form-text text-muted"
-      >
-        Enable this option to automatically assign IP addresses to the devices connected to the router.
-      </small>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           class="custom-control-input"
@@ -781,16 +712,15 @@ in LAN.
         <label
           class="custom-control-label"
           for="6"
-          style="margin-bottom: 0px;"
         >
           Enable QoS
         </label>
+        <small
+          class="form-text text-muted"
+        >
+          This option enables you to set a bandwidth limit for the guest network, so that your main network doesn't get slowed-down by it.
+        </small>
       </div>
-      <small
-        class="form-text text-muted"
-      >
-        This option enables you to set a bandwidth limit for the guest network, so that your main network doesn't get slowed-down by it.
-      </small>
     </div>
     <button
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"

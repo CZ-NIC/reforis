@@ -54,3 +54,5 @@ LOGGING = {
         },
     }
 }
+
+MAX_CONTENT_LENGTH = 1024 * 1024  # 1 MB, represented as bytes

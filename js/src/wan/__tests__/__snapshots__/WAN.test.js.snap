@@ -5,77 +5,73 @@ exports[`<WAN/> Snapshot WAN IPv4 (pppoe). 1`] = `
 - First value
 + Second value
 
-@@ -47,29 +47,59 @@
+@@ -44,29 +44,55 @@
+      </div>
+      <div
+        class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
       >
-        <div
-          class=\\"form-group\\"
-        >
-          <label
--           for=\\"2\\"
-+           for=\\"6\\"
-+         >
-+           PAP/CHAP username
-+         </label>
-+         <div
-+           class=\\"input-group\\"
-+         >
-+           <input
-+             class=\\"form-control  is-invalid\\"
-+             id=\\"6\\"
-+             required=\\"\\"
-+             type=\\"text\\"
-+             value=\\"\\"
-+           />
-+         </div>
-+         <div
-+           class=\\"invalid-feedback\\"
-+         >
-+           This field is required.
-+         </div>
+        <label
+-         for=\\"2\\"
++         for=\\"6\\"
++       >
++         PAP/CHAP username
++       </label>
++       <div
++         class=\\"input-group\\"
++       >
++         <input
++           class=\\"form-control  is-invalid\\"
++           id=\\"6\\"
++           required=\\"\\"
++           type=\\"text\\"
++           value=\\"\\"
++         />
++       </div>
++       <div
++         class=\\"invalid-feedback\\"
++       >
++         This field is required.
 +       </div>
 +     </div>
 +     <div
-+       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
-+     >
-+       <div
-+         class=\\"form-group\\"
++       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
+      >
+-         DHCP hostname
++       <label
++         for=\\"7\\"
 +       >
-+         <label
-+           for=\\"7\\"
-          >
--           DHCP hostname
-+           PAP/CHAP password
-          </label>
-          <div
-            class=\\"input-group\\"
-          >
-            <input
--             class=\\"form-control\\"
--             id=\\"2\\"
-+             class=\\"form-control  is-invalid\\"
-+             id=\\"7\\"
-+             required=\\"\\"
-              type=\\"text\\"
-              value=\\"\\"
-            />
-          </div>
--         <small
--           class=\\"form-text text-muted\\"
-+         <div
-+           class=\\"invalid-feedback\\"
-          >
--           Hostname which will be provided to DHCP server.
--         </small>
-+           This field is required.
-+         </div>
++         PAP/CHAP password
+        </label>
+        <div
+          class=\\"input-group\\"
+        >
+          <input
+-           class=\\"form-control\\"
+-           id=\\"2\\"
++           class=\\"form-control  is-invalid\\"
++           id=\\"7\\"
++           required=\\"\\"
+            type=\\"text\\"
+            value=\\"\\"
+          />
         </div>
+-       <small
+-         class=\\"form-text text-muted\\"
++       <div
++         class=\\"invalid-feedback\\"
+        >
+-         Hostname which will be provided to DHCP server.
+-       </small>
++         This field is required.
++       </div>
       </div>
       <h3>
         WAN IPv6
       </h3>
-@@ -142,10 +172,11 @@
-          Useful in cases, when a specific MAC address is required by your internet service provider.
-        </small>
+      <div
+@@ -135,10 +161,11 @@
+          </small>
+        </div>
       </div>
       <button
         class=\\"btn btn-primary  offset-lg-8 col-lg-3 col-sm-12\\"
@@ -92,157 +88,141 @@ exports[`<WAN/> Snapshot WAN IPv4 (static). 1`] = `
 - First value
 + Second value
 
-@@ -47,28 +47,143 @@
+@@ -44,28 +44,127 @@
+      </div>
+      <div
+        class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
       >
+        <label
+-         for=\\"2\\"
++         for=\\"6\\"
++       >
++         IP address
++       </label>
++       <div
++         class=\\"input-group\\"
++       >
++         <input
++           class=\\"form-control  is-invalid\\"
++           id=\\"6\\"
++           required=\\"\\"
++           type=\\"text\\"
++           value=\\"\\"
++         />
++       </div>
++       <div
++         class=\\"invalid-feedback\\"
++       >
++         This field is required.
++       </div>
++     </div>
++     <div
++       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
+      >
+-         DHCP hostname
++       <label
++         for=\\"7\\"
++       >
++         Network mask
++       </label>
++       <div
++         class=\\"input-group\\"
++       >
++         <input
++           class=\\"form-control  is-invalid\\"
++           id=\\"7\\"
++           required=\\"\\"
++           type=\\"text\\"
++           value=\\"\\"
++         />
++       </div>
++       <div
++         class=\\"invalid-feedback\\"
++       >
++         This field is required.
++       </div>
++     </div>
++     <div
++       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
++     >
++       <label
++         for=\\"8\\"
++       >
++         Gateway
++       </label>
++       <div
++         class=\\"input-group\\"
++       >
++         <input
++           class=\\"form-control  is-invalid\\"
++           id=\\"8\\"
++           required=\\"\\"
++           type=\\"text\\"
++           value=\\"\\"
++         />
++       </div>
++       <div
++         class=\\"invalid-feedback\\"
++       >
++         This field is required.
++       </div>
++     </div>
++     <div
++       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
++     >
++       <label
++         for=\\"9\\"
++       >
++         DNS server 1
+        </label>
         <div
-          class=\\"form-group\\"
+          class=\\"input-group\\"
         >
-          <label
--           for=\\"2\\"
-+           for=\\"6\\"
-+         >
-+           IP address
-+         </label>
-+         <div
-+           class=\\"input-group\\"
-+         >
-+           <input
-+             class=\\"form-control  is-invalid\\"
-+             id=\\"6\\"
-+             required=\\"\\"
-+             type=\\"text\\"
-+             value=\\"\\"
-+           />
-+         </div>
-+         <div
-+           class=\\"invalid-feedback\\"
-+         >
-+           This field is required.
-+         </div>
+          <input
+            class=\\"form-control\\"
+-           id=\\"2\\"
++           id=\\"9\\"
++           type=\\"text\\"
++           value=\\"\\"
++         />
 +       </div>
-+     </div>
-+     <div
-+       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
-      >
--           DHCP hostname
-+       <div
-+         class=\\"form-group\\"
++       <small
++         class=\\"form-text text-muted\\"
 +       >
-+         <label
-+           for=\\"7\\"
-+         >
-+           Network mask
-+         </label>
-+         <div
-+           class=\\"input-group\\"
-+         >
-+           <input
-+             class=\\"form-control  is-invalid\\"
-+             id=\\"7\\"
-+             required=\\"\\"
-+             type=\\"text\\"
-+             value=\\"\\"
-+           />
-+         </div>
-+         <div
-+           class=\\"invalid-feedback\\"
-+         >
-+           This field is required.
-+         </div>
-+       </div>
++         DNS server address is not required as the built-in DNS resolver is capable of working without it.
++       </small>
 +     </div>
 +     <div
-+       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
++       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <div
-+         class=\\"form-group\\"
++       <label
++         for=\\"10\\"
 +       >
-+         <label
-+           for=\\"8\\"
-+         >
-+           Gateway
-+         </label>
-+         <div
-+           class=\\"input-group\\"
-+         >
-+           <input
-+             class=\\"form-control  is-invalid\\"
-+             id=\\"8\\"
-+             required=\\"\\"
-+             type=\\"text\\"
-+             value=\\"\\"
-+           />
-+         </div>
-+         <div
-+           class=\\"invalid-feedback\\"
-+         >
-+           This field is required.
-+         </div>
-+       </div>
-+     </div>
-+     <div
-+       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
-+     >
++         DNS server 2
++       </label>
 +       <div
-+         class=\\"form-group\\"
++         class=\\"input-group\\"
 +       >
-+         <label
-+           for=\\"9\\"
-+         >
-+           DNS server 1
-          </label>
-          <div
-            class=\\"input-group\\"
-          >
-            <input
-              class=\\"form-control\\"
--             id=\\"2\\"
-+             id=\\"9\\"
-+             type=\\"text\\"
-+             value=\\"\\"
-+           />
-+         </div>
-+         <small
-+           class=\\"form-text text-muted\\"
-+         >
-+           DNS server address is not required as the built-in DNS resolver is capable of working without it.
-+         </small>
-+       </div>
-+     </div>
-+     <div
-+       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
-+     >
-+       <div
-+         class=\\"form-group\\"
-+       >
-+         <label
-+           for=\\"10\\"
-+         >
-+           DNS server 2
-+         </label>
-+         <div
-+           class=\\"input-group\\"
-+         >
-+           <input
-+             class=\\"form-control\\"
-+             id=\\"10\\"
-              type=\\"text\\"
-              value=\\"\\"
-            />
-          </div>
-          <small
-            class=\\"form-text text-muted\\"
-          >
--           Hostname which will be provided to DHCP server.
-+           DNS server address is not required as the built-in DNS resolver is capable of working without it.
-          </small>
++         <input
++           class=\\"form-control\\"
++           id=\\"10\\"
+            type=\\"text\\"
+            value=\\"\\"
+          />
         </div>
+        <small
+          class=\\"form-text text-muted\\"
+        >
+-         Hostname which will be provided to DHCP server.
++         DNS server address is not required as the built-in DNS resolver is capable of working without it.
+        </small>
       </div>
       <h3>
         WAN IPv6
-@@ -142,10 +257,11 @@
-          Useful in cases, when a specific MAC address is required by your internet service provider.
-        </small>
+      </h3>
+@@ -135,10 +234,11 @@
+          </small>
+        </div>
       </div>
       <button
         class=\\"btn btn-primary  offset-lg-8 col-lg-3 col-sm-12\\"
@@ -259,119 +239,107 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled. 1`] = `
 - First value
 + Second value
 
-@@ -258,10 +258,112 @@
-          class=\\"form-text text-muted\\"
-        >
-          Some tunnel providers allow you to have public dynamic IPv4. Note that you need to fill in some extra fields to make it work.
-        </small>
+@@ -239,10 +239,100 @@
+          >
+            Some tunnel providers allow you to have public dynamic IPv4. Note that you need to fill in some extra fields to make it work.
+          </small>
+        </div>
       </div>
 +     <div
-+       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
++       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <div
-+         class=\\"form-group\\"
++       <label
++         for=\\"20\\"
 +       >
-+         <label
-+           for=\\"20\\"
-+         >
-+           Tunnel ID
-+         </label>
-+         <div
-+           class=\\"input-group\\"
-+         >
-+           <input
-+             class=\\"form-control  is-invalid\\"
-+             id=\\"20\\"
-+             required=\\"\\"
-+             type=\\"text\\"
-+             value=\\"\\"
-+           />
-+         </div>
-+         <div
-+           class=\\"invalid-feedback\\"
-+         >
-+           This field is required.
-+         </div>
-+         <small
-+           class=\\"form-text text-muted\\"
-+         >
-+           ID of your tunnel which was assigned to you by the provider.
-+         </small>
++         Tunnel ID
++       </label>
++       <div
++         class=\\"input-group\\"
++       >
++         <input
++           class=\\"form-control  is-invalid\\"
++           id=\\"20\\"
++           required=\\"\\"
++           type=\\"text\\"
++           value=\\"\\"
++         />
 +       </div>
++       <div
++         class=\\"invalid-feedback\\"
++       >
++         This field is required.
++       </div>
++       <small
++         class=\\"form-text text-muted\\"
++       >
++         ID of your tunnel which was assigned to you by the provider.
++       </small>
 +     </div>
 +     <div
-+       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
++       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <div
-+         class=\\"form-group\\"
++       <label
++         for=\\"21\\"
 +       >
-+         <label
-+           for=\\"21\\"
-+         >
-+           Username
-+         </label>
-+         <div
-+           class=\\"input-group\\"
-+         >
-+           <input
-+             class=\\"form-control  is-invalid\\"
-+             id=\\"21\\"
-+             required=\\"\\"
-+             type=\\"text\\"
-+             value=\\"\\"
-+           />
-+         </div>
-+         <div
-+           class=\\"invalid-feedback\\"
-+         >
-+           This field is required.
-+         </div>
-+         <small
-+           class=\\"form-text text-muted\\"
-+         >
-+           Username which will be used to provide credentials to your tunnel provider.
-+         </small>
++         Username
++       </label>
++       <div
++         class=\\"input-group\\"
++       >
++         <input
++           class=\\"form-control  is-invalid\\"
++           id=\\"21\\"
++           required=\\"\\"
++           type=\\"text\\"
++           value=\\"\\"
++         />
 +       </div>
++       <div
++         class=\\"invalid-feedback\\"
++       >
++         This field is required.
++       </div>
++       <small
++         class=\\"form-text text-muted\\"
++       >
++         Username which will be used to provide credentials to your tunnel provider.
++       </small>
 +     </div>
 +     <div
-+       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
++       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <div
-+         class=\\"form-group\\"
++       <label
++         for=\\"22\\"
 +       >
-+         <label
-+           for=\\"22\\"
-+         >
-+           Key
-+         </label>
-+         <div
-+           class=\\"input-group\\"
-+         >
-+           <input
-+             class=\\"form-control  is-invalid\\"
-+             id=\\"22\\"
-+             required=\\"\\"
-+             type=\\"text\\"
-+             value=\\"\\"
-+           />
-+         </div>
-+         <div
-+           class=\\"invalid-feedback\\"
-+         >
-+           This field is required.
-+         </div>
-+         <small
-+           class=\\"form-text text-muted\\"
-+         >
-+           Key which will be used to provide credentials to your tunnel provider.
-+         </small>
++         Key
++       </label>
++       <div
++         class=\\"input-group\\"
++       >
++         <input
++           class=\\"form-control  is-invalid\\"
++           id=\\"22\\"
++           required=\\"\\"
++           type=\\"text\\"
++           value=\\"\\"
++         />
 +       </div>
++       <div
++         class=\\"invalid-feedback\\"
++       >
++         This field is required.
++       </div>
++       <small
++         class=\\"form-text text-muted\\"
++       >
++         Key which will be used to provide credentials to your tunnel provider.
++       </small>
 +     </div>
       <h3>
         MAC
       </h3>
       <div
-        class=\\"col-sm-12 offset-lg-1 col-lg-10\\""
+        class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\""
 `;
 
 exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
@@ -379,140 +347,126 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
 - First value
 + Second value
 
-@@ -110,10 +110,158 @@
+@@ -106,10 +106,143 @@
           >
             6in4 (public IPv4 address required)
           </option>
         </select>
       </div>
 +     <div
-+       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
++       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <div
-+         class=\\"form-group\\"
++       <label
++         for=\\"8\\"
 +       >
-+         <label
-+           for=\\"8\\"
-+         >
-+           Provider IPv4
-+         </label>
-+         <div
-+           class=\\"input-group\\"
-+         >
-+           <input
-+             class=\\"form-control  is-invalid\\"
-+             id=\\"8\\"
-+             required=\\"\\"
-+             type=\\"text\\"
-+             value=\\"\\"
-+           />
-+         </div>
-+         <div
-+           class=\\"invalid-feedback\\"
-+         >
-+           This field is required.
-+         </div>
-+         <small
-+           class=\\"form-text text-muted\\"
-+         >
-+           This address will be used as a endpoint of the tunnel on the provider's side.
-+         </small>
++         Provider IPv4
++       </label>
++       <div
++         class=\\"input-group\\"
++       >
++         <input
++           class=\\"form-control  is-invalid\\"
++           id=\\"8\\"
++           required=\\"\\"
++           type=\\"text\\"
++           value=\\"\\"
++         />
 +       </div>
++       <div
++         class=\\"invalid-feedback\\"
++       >
++         This field is required.
++       </div>
++       <small
++         class=\\"form-text text-muted\\"
++       >
++         This address will be used as a endpoint of the tunnel on the provider's side.
++       </small>
 +     </div>
 +     <div
-+       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
++       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <div
-+         class=\\"form-group\\"
++       <label
++         for=\\"9\\"
 +       >
-+         <label
-+           for=\\"9\\"
-+         >
-+           Routed IPv6 prefix
-+         </label>
-+         <div
-+           class=\\"input-group\\"
-+         >
-+           <input
-+             class=\\"form-control  is-invalid\\"
-+             id=\\"9\\"
-+             required=\\"\\"
-+             type=\\"text\\"
-+             value=\\"\\"
-+           />
-+         </div>
-+         <div
-+           class=\\"invalid-feedback\\"
-+         >
-+           This field is required.
-+         </div>
-+         <small
-+           class=\\"form-text text-muted\\"
-+         >
-+           IPv6 addresses which will be routed to your network.
-+         </small>
++         Routed IPv6 prefix
++       </label>
++       <div
++         class=\\"input-group\\"
++       >
++         <input
++           class=\\"form-control  is-invalid\\"
++           id=\\"9\\"
++           required=\\"\\"
++           type=\\"text\\"
++           value=\\"\\"
++         />
 +       </div>
++       <div
++         class=\\"invalid-feedback\\"
++       >
++         This field is required.
++       </div>
++       <small
++         class=\\"form-text text-muted\\"
++       >
++         IPv6 addresses which will be routed to your network.
++       </small>
 +     </div>
 +     <div
-+       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
++       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <div
-+         class=\\"form-group\\"
++       <label
++         for=\\"10\\"
 +       >
-+         <label
-+           for=\\"10\\"
-+         >
-+           MTU
-+         </label>
++         MTU
++       </label>
++       <div
++         class=\\"input-group\\"
++       >
++         <input
++           class=\\"form-control  is-invalid\\"
++           id=\\"10\\"
++           max=\\"1500\\"
++           min=\\"1280\\"
++           required=\\"\\"
++           type=\\"number\\"
++           value=\\"\\"
++         />
 +         <div
-+           class=\\"input-group\\"
++           class=\\"input-group-append\\"
 +         >
-+           <input
-+             class=\\"form-control  is-invalid\\"
-+             id=\\"10\\"
-+             max=\\"1500\\"
-+             min=\\"1280\\"
-+             required=\\"\\"
-+             type=\\"number\\"
-+             value=\\"\\"
-+           />
-+           <div
-+             class=\\"input-group-append\\"
++           <button
++             aria-label=\\"Increase\\"
++             class=\\"btn btn-outline-secondary\\"
++             type=\\"button\\"
 +           >
-+             <button
-+               aria-label=\\"Increase\\"
-+               class=\\"btn btn-outline-secondary\\"
-+               type=\\"button\\"
-+             >
-+               <i
-+                 class=\\"fas fa-plus\\"
-+               />
-+             </button>
-+             <button
-+               aria-label=\\"Decrease\\"
-+               class=\\"btn btn-outline-secondary\\"
-+               type=\\"button\\"
-+             >
-+               <i
-+                 class=\\"fas fa-minus\\"
-+               />
-+             </button>
-+           </div>
++             <i
++               class=\\"fas fa-plus\\"
++             />
++           </button>
++           <button
++             aria-label=\\"Decrease\\"
++             class=\\"btn btn-outline-secondary\\"
++             type=\\"button\\"
++           >
++             <i
++               class=\\"fas fa-minus\\"
++             />
++           </button>
 +         </div>
-+         <div
-+           class=\\"invalid-feedback\\"
-+         >
-+           This field is required.
-+         </div>
++       </div>
++       <div
++         class=\\"invalid-feedback\\"
++       >
++         This field is required.
 +       </div>
 +     </div>
 +     <div
-+       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
-+       style=\\"margin-bottom: 1rem;\\"
++       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
 +       <div
-+         class=\\"custom-control custom-checkbox\\"
-+         style=\\"margin-bottom: 0px;\\"
++         class=\\"custom-control custom-checkbox \\"
 +       >
 +         <input
 +           class=\\"custom-control-input\\"
@@ -522,25 +476,24 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
 +         <label
 +           class=\\"custom-control-label\\"
 +           for=\\"11\\"
-+           style=\\"margin-bottom: 0px;\\"
 +         >
 +           Dynamic IPv4 handling
 +         </label>
++         <small
++           class=\\"form-text text-muted\\"
++         >
++           Some tunnel providers allow you to have public dynamic IPv4. Note that you need to fill in some extra fields to make it work.
++         </small>
 +       </div>
-+       <small
-+         class=\\"form-text text-muted\\"
-+       >
-+         Some tunnel providers allow you to have public dynamic IPv4. Note that you need to fill in some extra fields to make it work.
-+       </small>
 +     </div>
       <h3>
         MAC
       </h3>
       <div
-        class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
-@@ -142,10 +290,11 @@
-          Useful in cases, when a specific MAC address is required by your internet service provider.
-        </small>
+        class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
+@@ -135,10 +268,11 @@
+          </small>
+        </div>
       </div>
       <button
         class=\\"btn btn-primary  offset-lg-8 col-lg-3 col-sm-12\\"
@@ -557,54 +510,50 @@ exports[`<WAN/> Snapshot WAN IPv6 (6to4). 1`] = `
 - First value
 + Second value
 
-@@ -110,10 +110,44 @@
+@@ -106,10 +106,40 @@
           >
             6in4 (public IPv4 address required)
           </option>
         </select>
       </div>
 +     <div
-+       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
++       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <div
-+         class=\\"form-group\\"
++       <label
++         for=\\"8\\"
 +       >
-+         <label
-+           for=\\"8\\"
-+         >
-+           Public IPv4
-+         </label>
-+         <div
-+           class=\\"input-group\\"
-+         >
-+           <input
-+             class=\\"form-control  is-invalid\\"
-+             id=\\"8\\"
-+             required=\\"\\"
-+             type=\\"text\\"
-+             value=\\"\\"
-+           />
-+         </div>
-+         <div
-+           class=\\"invalid-feedback\\"
-+         >
-+           Public IPv4 address is required.
-+         </div>
-+         <small
-+           class=\\"form-text text-muted\\"
-+         >
-+           In order to use 6to4 protocol, you might need to specify your public IPv4 address manually (e.g. when your WAN interface has a private address which is mapped to public IP).
-+         </small>
++         Public IPv4
++       </label>
++       <div
++         class=\\"input-group\\"
++       >
++         <input
++           class=\\"form-control  is-invalid\\"
++           id=\\"8\\"
++           required=\\"\\"
++           type=\\"text\\"
++           value=\\"\\"
++         />
 +       </div>
++       <div
++         class=\\"invalid-feedback\\"
++       >
++         Public IPv4 address is required.
++       </div>
++       <small
++         class=\\"form-text text-muted\\"
++       >
++         In order to use 6to4 protocol, you might need to specify your public IPv4 address manually (e.g. when your WAN interface has a private address which is mapped to public IP).
++       </small>
 +     </div>
       <h3>
         MAC
       </h3>
       <div
-        class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
-@@ -142,10 +176,11 @@
-          Useful in cases, when a specific MAC address is required by your internet service provider.
-        </small>
+        class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
+@@ -135,10 +165,11 @@
+          </small>
+        </div>
       </div>
       <button
         class=\\"btn btn-primary  offset-lg-8 col-lg-3 col-sm-12\\"
@@ -621,45 +570,41 @@ exports[`<WAN/> Snapshot WAN IPv6 (dhcpv6). 1`] = `
 - First value
 + Second value
 
-@@ -110,10 +110,38 @@
+@@ -106,10 +106,34 @@
           >
             6in4 (public IPv4 address required)
           </option>
         </select>
       </div>
 +     <div
-+       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
++       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <div
-+         class=\\"form-group\\"
++       <label
++         for=\\"8\\"
 +       >
-+         <label
-+           for=\\"8\\"
-+         >
-+           Custom DUID
-+         </label>
-+         <div
-+           class=\\"input-group\\"
-+         >
-+           <input
-+             class=\\"form-control\\"
-+             id=\\"8\\"
-+             type=\\"text\\"
-+             value=\\"\\"
-+           />
-+         </div>
-+         <small
-+           class=\\"form-text text-muted\\"
-+         >
-+           DUID which will be provided to the DHCPv6 server.
-+         </small>
++         Custom DUID
++       </label>
++       <div
++         class=\\"input-group\\"
++       >
++         <input
++           class=\\"form-control\\"
++           id=\\"8\\"
++           type=\\"text\\"
++           value=\\"\\"
++         />
 +       </div>
++       <small
++         class=\\"form-text text-muted\\"
++       >
++         DUID which will be provided to the DHCPv6 server.
++       </small>
 +     </div>
       <h3>
         MAC
       </h3>
       <div
-        class=\\"col-sm-12 offset-lg-1 col-lg-10\\""
+        class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\""
 `;
 
 exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
@@ -667,173 +612,153 @@ exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
 - First value
 + Second value
 
-@@ -110,10 +110,163 @@
+@@ -106,10 +106,143 @@
           >
             6in4 (public IPv4 address required)
           </option>
         </select>
       </div>
 +     <div
-+       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
++       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <div
-+         class=\\"form-group\\"
++       <label
++         for=\\"8\\"
 +       >
-+         <label
-+           for=\\"8\\"
-+         >
-+           Address
-+         </label>
-+         <div
-+           class=\\"input-group\\"
-+         >
-+           <input
-+             class=\\"form-control  is-invalid\\"
-+             id=\\"8\\"
-+             required=\\"\\"
-+             type=\\"text\\"
-+             value=\\"\\"
-+           />
-+         </div>
-+         <div
-+           class=\\"invalid-feedback\\"
-+         >
-+           This field is required.
-+         </div>
-+         <small
-+           class=\\"form-text text-muted\\"
-+         >
-+           IPv6 address and prefix length for WAN interface e.g. 2001:db8:be13:37da::1/64
-+         </small>
++         Address
++       </label>
++       <div
++         class=\\"input-group\\"
++       >
++         <input
++           class=\\"form-control  is-invalid\\"
++           id=\\"8\\"
++           required=\\"\\"
++           type=\\"text\\"
++           value=\\"\\"
++         />
++       </div>
++       <div
++         class=\\"invalid-feedback\\"
++       >
++         This field is required.
++       </div>
++       <small
++         class=\\"form-text text-muted\\"
++       >
++         IPv6 address and prefix length for WAN interface e.g. 2001:db8:be13:37da::1/64
++       </small>
++     </div>
++     <div
++       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
++     >
++       <label
++         for=\\"9\\"
++       >
++         Gateway
++       </label>
++       <div
++         class=\\"input-group\\"
++       >
++         <input
++           class=\\"form-control  is-invalid\\"
++           id=\\"9\\"
++           required=\\"\\"
++           type=\\"text\\"
++           value=\\"\\"
++         />
++       </div>
++       <div
++         class=\\"invalid-feedback\\"
++       >
++         This field is required.
 +       </div>
 +     </div>
 +     <div
-+       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
++       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <div
-+         class=\\"form-group\\"
++       <label
++         for=\\"10\\"
 +       >
-+         <label
-+           for=\\"9\\"
-+         >
-+           Gateway
-+         </label>
-+         <div
-+           class=\\"input-group\\"
-+         >
-+           <input
-+             class=\\"form-control  is-invalid\\"
-+             id=\\"9\\"
-+             required=\\"\\"
-+             type=\\"text\\"
-+             value=\\"\\"
-+           />
-+         </div>
-+         <div
-+           class=\\"invalid-feedback\\"
-+         >
-+           This field is required.
-+         </div>
++         Prefix
++       </label>
++       <div
++         class=\\"input-group\\"
++       >
++         <input
++           class=\\"form-control  is-invalid\\"
++           id=\\"10\\"
++           required=\\"\\"
++           type=\\"text\\"
++           value=\\"\\"
++         />
 +       </div>
++       <div
++         class=\\"invalid-feedback\\"
++       >
++         This field is required.
++       </div>
++       <small
++         class=\\"form-text text-muted\\"
++       >
++         Address range for local network, e.g. 2001:db8:be13:37da::/64
++       </small>
 +     </div>
 +     <div
-+       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
++       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <div
-+         class=\\"form-group\\"
++       <label
++         for=\\"11\\"
 +       >
-+         <label
-+           for=\\"10\\"
-+         >
-+           Prefix
-+         </label>
-+         <div
-+           class=\\"input-group\\"
-+         >
-+           <input
-+             class=\\"form-control  is-invalid\\"
-+             id=\\"10\\"
-+             required=\\"\\"
-+             type=\\"text\\"
-+             value=\\"\\"
-+           />
-+         </div>
-+         <div
-+           class=\\"invalid-feedback\\"
-+         >
-+           This field is required.
-+         </div>
-+         <small
-+           class=\\"form-text text-muted\\"
-+         >
-+           Address range for local network, e.g. 2001:db8:be13:37da::/64
-+         </small>
++         DNS server 1
++       </label>
++       <div
++         class=\\"input-group\\"
++       >
++         <input
++           class=\\"form-control\\"
++           id=\\"11\\"
++           type=\\"text\\"
++           value=\\"\\"
++         />
 +       </div>
++       <small
++         class=\\"form-text text-muted\\"
++       >
++         DNS server address is not required as the built-in DNS resolver is capable of working without it.
++       </small>
 +     </div>
 +     <div
-+       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
++       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <div
-+         class=\\"form-group\\"
++       <label
++         for=\\"12\\"
 +       >
-+         <label
-+           for=\\"11\\"
-+         >
-+           DNS server 1
-+         </label>
-+         <div
-+           class=\\"input-group\\"
-+         >
-+           <input
-+             class=\\"form-control\\"
-+             id=\\"11\\"
-+             type=\\"text\\"
-+             value=\\"\\"
-+           />
-+         </div>
-+         <small
-+           class=\\"form-text text-muted\\"
-+         >
-+           DNS server address is not required as the built-in DNS resolver is capable of working without it.
-+         </small>
-+       </div>
-+     </div>
-+     <div
-+       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
-+     >
++         DNS server 2
++       </label>
 +       <div
-+         class=\\"form-group\\"
++         class=\\"input-group\\"
 +       >
-+         <label
-+           for=\\"12\\"
-+         >
-+           DNS server 2
-+         </label>
-+         <div
-+           class=\\"input-group\\"
-+         >
-+           <input
-+             class=\\"form-control\\"
-+             id=\\"12\\"
-+             type=\\"text\\"
-+             value=\\"\\"
-+           />
-+         </div>
-+         <small
-+           class=\\"form-text text-muted\\"
-+         >
-+           DNS server address is not required as the built-in DNS resolver is capable of working without it.
-+         </small>
++         <input
++           class=\\"form-control\\"
++           id=\\"12\\"
++           type=\\"text\\"
++           value=\\"\\"
++         />
 +       </div>
++       <small
++         class=\\"form-text text-muted\\"
++       >
++         DNS server address is not required as the built-in DNS resolver is capable of working without it.
++       </small>
 +     </div>
       <h3>
         MAC
       </h3>
       <div
-        class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
-@@ -142,10 +295,11 @@
-          Useful in cases, when a specific MAC address is required by your internet service provider.
-        </small>
+        class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
+@@ -135,10 +268,11 @@
+          </small>
+        </div>
       </div>
       <button
         class=\\"btn btn-primary  offset-lg-8 col-lg-3 col-sm-12\\"
@@ -850,45 +775,41 @@ exports[`<WAN/> Snapshot: MAC enabled 1`] = `
 - First value
 + Second value
 
-@@ -140,12 +140,47 @@
-          class=\\"form-text text-muted\\"
-        >
-          Useful in cases, when a specific MAC address is required by your internet service provider.
-        </small>
+@@ -133,12 +133,43 @@
+          >
+            Useful in cases, when a specific MAC address is required by your internet service provider.
+          </small>
+        </div>
       </div>
 +     <div
-+       class=\\"col-sm-12 offset-lg-1 col-lg-10\\"
++       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
 +     >
-+       <div
-+         class=\\"form-group\\"
++       <label
++         for=\\"9\\"
 +       >
-+         <label
-+           for=\\"9\\"
-+         >
-+           MAC address
-+         </label>
-+         <div
-+           class=\\"input-group\\"
-+         >
-+           <input
-+             class=\\"form-control  is-invalid\\"
-+             id=\\"9\\"
-+             required=\\"\\"
-+             type=\\"text\\"
-+             value=\\"\\"
-+           />
-+         </div>
-+         <div
-+           class=\\"invalid-feedback\\"
-+         >
-+           This field is required.
-+         </div>
-+         <small
-+           class=\\"form-text text-muted\\"
-+         >
-+           Colon is used as a separator, for example 00:11:22:33:44:55
-+         </small>
++         MAC address
++       </label>
++       <div
++         class=\\"input-group\\"
++       >
++         <input
++           class=\\"form-control  is-invalid\\"
++           id=\\"9\\"
++           required=\\"\\"
++           type=\\"text\\"
++           value=\\"\\"
++         />
 +       </div>
++       <div
++         class=\\"invalid-feedback\\"
++       >
++         This field is required.
++       </div>
++       <small
++         class=\\"form-text text-muted\\"
++       >
++         Colon is used as a separator, for example 00:11:22:33:44:55
++       </small>
 +     </div>
       <button
         class=\\"btn btn-primary  offset-lg-8 col-lg-3 col-sm-12\\"
@@ -946,32 +867,28 @@ router to the network, it is usually not necessary to change this setting.
       </select>
     </div>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
-      <div
-        class="form-group"
+      <label
+        for="2"
       >
-        <label
-          for="2"
-        >
-          DHCP hostname
-        </label>
-        <div
-          class="input-group"
-        >
-          <input
-            class="form-control"
-            id="2"
-            type="text"
-            value=""
-          />
-        </div>
-        <small
-          class="form-text text-muted"
-        >
-          Hostname which will be provided to DHCP server.
-        </small>
+        DHCP hostname
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control"
+          id="2"
+          type="text"
+          value=""
+        />
       </div>
+      <small
+        class="form-text text-muted"
+      >
+        Hostname which will be provided to DHCP server.
+      </small>
     </div>
     <h3>
       WAN IPv6
@@ -1019,12 +936,10 @@ router to the network, it is usually not necessary to change this setting.
       MAC
     </h3>
     <div
-      class="col-sm-12 offset-lg-1 col-lg-10"
-      style="margin-bottom: 1rem;"
+      class="form-group col-sm-12 offset-lg-1 col-lg-10"
     >
       <div
-        class="custom-control custom-checkbox"
-        style="margin-bottom: 0px;"
+        class="custom-control custom-checkbox "
       >
         <input
           class="custom-control-input"
@@ -1034,16 +949,15 @@ router to the network, it is usually not necessary to change this setting.
         <label
           class="custom-control-label"
           for="4"
-          style="margin-bottom: 0px;"
         >
           Custom MAC address
         </label>
+        <small
+          class="form-text text-muted"
+        >
+          Useful in cases, when a specific MAC address is required by your internet service provider.
+        </small>
       </div>
-      <small
-        class="form-text text-muted"
-      >
-        Useful in cases, when a specific MAC address is required by your internet service provider.
-      </small>
     </div>
     <button
       class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"

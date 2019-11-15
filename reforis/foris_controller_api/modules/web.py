@@ -14,7 +14,7 @@ def finish_guide():
     """
         Skip guide.
         See ``update_guide``  action in the `foris-controller web module JSON schema
-        <https://gitlab.labs.nic.cz/turris/foris-controller/blob/master/foris_controller_modules/web/schema/web.json>`_.
+        <https://gitlab.labs.nic.cz/turris/foris-controller/foris-controller/blob/master/foris_controller_modules/web/schema/web.json>`_.
     """
     response = current_app.backend.perform('web', 'update_guide', {'enabled': False})
     return jsonify(response)
@@ -24,7 +24,7 @@ def guide_workflow():
     """
         Choose guide workflow.
         See ``update_guide``  action in the `foris-controller web module JSON schema
-        <https://gitlab.labs.nic.cz/turris/foris-controller/blob/master/foris_controller_modules/web/schema/web.json>`_.
+        <https://gitlab.labs.nic.cz/turris/foris-controller/foris-controller/blob/master/foris_controller_modules/web/schema/web.json>`_.
     """
     data = request.json
     response = current_app.backend.perform('web', 'update_guide', {'enabled': True, **data})

@@ -29,7 +29,7 @@ class CustomBuild(build_py):
 
 setuptools.setup(
     name='reforis',
-    version='0.4.4',
+    version='0.5.0',
     packages=setuptools.find_packages(exclude=['tests']),
     include_package_data=True,
 
@@ -39,7 +39,6 @@ setuptools.setup(
     author='CZ.NIC, z. s. p. o.',
     author_email='bogdan.bodnar@nic.cz',
 
-    # All versions are fixed just for case. Once in while try to check for new versions.
     install_requires=[
         'flask',
         'Babel',
@@ -48,7 +47,6 @@ setuptools.setup(
         'Flask-SeaSurf',
         'flup',
     ],
-
     setup_requires=[
         'Babel',
         'reforis_distutils',
@@ -68,6 +66,7 @@ setuptools.setup(
             'pytest==3.7.1',
             'pycodestyle==2.5.0',
             'pylint==2.3.1',
+            'pylint-quotes==0.2.1',
         ],
         'build': [
             'Sphinx==2.1.2',

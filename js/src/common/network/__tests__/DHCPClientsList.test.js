@@ -6,8 +6,7 @@
  */
 
 import React from 'react';
-import {render} from 'customTestRender';
-
+import {render} from "foris/testUtils/customTestRender";
 
 import DHCPClientsList from '../DHCPClientsList';
 import {clients} from './__fixtures__/DHCPClientsList';
