@@ -20,6 +20,8 @@ import Guide from "guide/Guide";
 
 const ws = new WebSockets();
 
+window.AlertContext = React.createContext();
+
 window.addEventListener("load", () => {
     const guideContainer = document.getElementById("guide-container");
     const mainContainer = document.getElementById("app-container");

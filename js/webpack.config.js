@@ -30,10 +30,6 @@ module.exports = (env) => ({
                 loader: "babel-loader",
             },
             {
-                test: require.resolve("foris"),
-                use: [{ loader: "expose-loader", options: "foris" }],
-            },
-            {
                 test: require.resolve("immutability-helper"),
                 use: [{ loader: "expose-loader", options: "immutability-helper" }],
             },
