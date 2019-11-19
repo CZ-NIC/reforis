@@ -5,16 +5,11 @@
  * See /LICENSE for more information.
  */
 
-import React, { useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
-import {
-    useAPIGet, useAPIPost, Button, useAlert, API_STATE,
-} from "foris";
-
-import API_URLs from "common/API";
-
-const REFRESH_INTERVAL = 500; // milliseconds
+import { Button } from "foris";
+import { useUpdates } from "./hooks";
 
 UpdateChecker.propTypes = {
     onSuccess: PropTypes.func.isRequired,
@@ -29,7 +24,7 @@ UpdateChecker.propTypes = {
 export default function UpdateChecker({
     onSuccess, pending, setPending, children,
 }) {
-    const refreshUpdates = useUpdates(onSuccess, setPending);
+    const refreshUpdates = useUpdates(onSuccess, pending, setPending);
 
     return (
         <Button
@@ -41,40 +36,4 @@ export default function UpdateChecker({
             {children}
         </Button>
     );
-}
-
-function useUpdates(onSuccess, setPending) {
-    const [setAlert] = useAlert();
-
-    const [checkStatusResponse, checkStatus] = useAPIGet(API_URLs.updatesStatus);
-    // Wait until updater stops working
-    useEffect(() => {
-        if (checkStatusResponse.state === API_STATE.ERROR) {
-            setPending(false);
-            setAlert(_("Cannot fetch updater status"));
-        } else if (checkStatusResponse.state === API_STATE.SUCCESS) {
-            if (checkStatusResponse.data.running !== false) {
-                const timeout = setTimeout(() => checkStatus(), REFRESH_INTERVAL);
-                return () => clearTimeout(timeout);
-            }
-            onSuccess();
-            setPending(false);
-        }
-    }, [checkStatusResponse, checkStatus, onSuccess, setPending, setAlert]);
-
-    const [runUpdatesResponse, runUpdates] = useAPIPost(API_URLs.runUpdates);
-    // Trigger updater status checker after updater is enabled
-    useEffect(() => {
-        if (runUpdatesResponse.state === API_STATE.SUCCESS) {
-            checkStatus();
-        } else if (runUpdatesResponse.state === API_STATE.ERROR) {
-            setPending(false);
-            setAlert(runUpdatesResponse.data);
-        }
-    }, [runUpdatesResponse, checkStatus, setPending, setAlert]);
-
-    return () => {
-        setPending(true);
-        runUpdates();
-    };
 }

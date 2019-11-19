@@ -5,16 +5,15 @@
  * See /LICENSE for more information.
  */
 
-import React, { useEffect, useState, useCallback } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 import {
-    useAPIGet, Spinner, API_STATE, withSpinnerOnSending, withErrorMessage, ErrorMessage,
+    API_STATE, ErrorMessage, Spinner, withErrorMessage, withSpinnerOnSending,
 } from "foris";
-
-import API_URLs from "common/API";
 import UpdateChecker from "./UpdateChecker";
 import UpdateApproval from "./UpdateApproval";
+import { useApprovals, usePending } from "./hooks";
 
 UpdateManager.propTypes = {
     displayChecker: PropTypes.bool.isRequired,
@@ -30,19 +29,13 @@ UpdateManager.propTypes = {
 function UpdateManager({
     displayChecker, checkerLabel, displayApproval, description,
 }) {
-    const [pending, setPending] = useState(false);
-
-    const [getApprovalsResponse, getApprovals] = useAPIGet(API_URLs.approvals);
-    const updateToApprove = getApprovalsResponse.data;
-    // Request can be ignored - UpdateApproval is hidden
-    const getUpdateToApprove = useCallback(() => {
-        if (displayApproval) {
-            return getApprovals();
-        }
-    }, [displayApproval, getApprovals]);
-    useEffect(() => {
-        getUpdateToApprove();
-    }, [getUpdateToApprove]);
+    const [pending, setPending] = usePending();
+    const [
+        getApprovalsResponse,
+        getApprovals,
+        updateToApprove,
+        getUpdateToApprove,
+    ] = useApprovals(displayApproval);
 
     let approvalComponent;
     if (pending || getApprovalsResponse.state === API_STATE.SENDING) {
@@ -63,15 +56,15 @@ function UpdateManager({
         <>
             {description}
             {displayChecker
-                && (
-                    <UpdateChecker
-                        onSuccess={getUpdateToApprove}
-                        pending={pending}
-                        setPending={setPending}
-                    >
-                        {checkerLabel}
-                    </UpdateChecker>
-                )}
+            && (
+                <UpdateChecker
+                    onSuccess={getUpdateToApprove}
+                    pending={pending}
+                    setPending={setPending}
+                >
+                    {checkerLabel}
+                </UpdateChecker>
+            )}
             {approvalComponent}
         </>
     );
