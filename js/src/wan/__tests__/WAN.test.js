@@ -81,12 +81,12 @@ describe('<WAN/>', () => {
         fireEvent.change(getByLabelText('IPv6 protocol'), {target: {value: '6in4'}});
         firstRender = asFragment();
 
-        fireEvent.click(getByLabelText('Dynamic IPv4 handling'));
+        fireEvent.click(getByText('Dynamic IPv4 handling'));
         expect(diffSnapshot(firstRender, asFragment())).toMatchSnapshot();
     });
 
     it('Snapshot: MAC enabled', () => {
-        fireEvent.click(getByLabelText('Custom MAC address'));
+        fireEvent.click(getByText('Custom MAC address'));
         expect(diffSnapshot(firstRender, asFragment())).toMatchSnapshot();
     });
 
@@ -152,14 +152,14 @@ describe('<WAN/>', () => {
 
     it('Post WAN IPv6 (6in4), dynamic IPv4 handling enabled.', () => {
         fireEvent.change(getByLabelText('IPv6 protocol'), {target: {value: '6in4'}});
-        fireEvent.click(getByLabelText('Dynamic IPv4 handling'));
+        fireEvent.click(getByText('Dynamic IPv4 handling'));
         fireEvent.click(getByText('Save'));
         // IP address value is invalid, button is disabled.
         expect(mockAxios.post).toHaveBeenCalledTimes(0);
     });
 
     it('Post: MAC enabled', () => {
-        fireEvent.click(getByLabelText('Custom MAC address'));
+        fireEvent.click(getByText('Custom MAC address'));
         fireEvent.click(getByText('Save'));
         // MAC address value is invalid, button is disabled.
         expect(mockAxios.post).toHaveBeenCalledTimes(0);

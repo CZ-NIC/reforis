@@ -44,15 +44,24 @@ describe("<Updates/>", () => {
     it("should handle approvable updates", async () => {
         mockAxios.mockResponse({ data: { enabled: true, approval_settings: { status: "delayed" } } });
         await wait(() => expect(getByText("Manually check for updates and review them immediately.")).toBeTruthy());
+        mockAxios.mockResponse({ data: { running: false } });
         // List of approvals
-        expect(mockAxios.get).nthCalledWith(2, "/api/approvals", expect.anything());
+        expect(mockAxios.get).nthCalledWith(3, "/api/approvals", expect.anything());
         mockAxios.mockResponse({ data: exampleUpdate });
         await wait(() => expect(container).toMatchSnapshot());
     });
 
-    fit("should handle error on approvable updates", async () => {
+    it("should check updates status", async () => {
         mockAxios.mockResponse({ data: { enabled: true, approval_settings: { status: "delayed" } } });
         await wait(() => expect(getByText("Manually check for updates and review them immediately.")).toBeTruthy());
+        expect(mockAxios.get).nthCalledWith(2, "/api/updates/status", expect.anything());
+    });
+
+    it("should handle error on approvable updates", async () => {
+        mockAxios.mockResponse({ data: { enabled: true, approval_settings: { status: "delayed" } } });
+        await wait(() => expect(getByText("Manually check for updates and review them immediately.")).toBeTruthy());
+        mockAxios.mockResponse({ data: { running: false } });
+
         mockJSONError();
         await wait(() => getByText("An error occurred while fetching data."));
     });

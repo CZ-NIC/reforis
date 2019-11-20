@@ -70,7 +70,7 @@ exports[`<WAN/> Snapshot WAN IPv4 (pppoe). 1`] = `
       </h3>
       <div
 @@ -135,10 +161,11 @@
-          </small>
+          </label>
         </div>
       </div>
       <button
@@ -221,7 +221,7 @@ exports[`<WAN/> Snapshot WAN IPv4 (static). 1`] = `
         WAN IPv6
       </h3>
 @@ -135,10 +234,11 @@
-          </small>
+          </label>
         </div>
       </div>
       <button
@@ -240,9 +240,9 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled. 1`] = `
 + Second value
 
 @@ -239,10 +239,100 @@
-          >
-            Some tunnel providers allow you to have public dynamic IPv4. Note that you need to fill in some extra fields to make it work.
-          </small>
+              Some tunnel providers allow you to have public dynamic IPv4. Note that you need to fill in some extra fields to make it work.
+            </small>
+          </label>
         </div>
       </div>
 +     <div
@@ -478,12 +478,12 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
 +           for=\\"11\\"
 +         >
 +           Dynamic IPv4 handling
++           <small
++             class=\\"form-text text-muted\\"
++           >
++             Some tunnel providers allow you to have public dynamic IPv4. Note that you need to fill in some extra fields to make it work.
++           </small>
 +         </label>
-+         <small
-+           class=\\"form-text text-muted\\"
-+         >
-+           Some tunnel providers allow you to have public dynamic IPv4. Note that you need to fill in some extra fields to make it work.
-+         </small>
 +       </div>
 +     </div>
       <h3>
@@ -492,7 +492,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
       <div
         class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
 @@ -135,10 +268,11 @@
-          </small>
+          </label>
         </div>
       </div>
       <button
@@ -552,7 +552,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6to4). 1`] = `
       <div
         class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
 @@ -135,10 +165,11 @@
-          </small>
+          </label>
         </div>
       </div>
       <button
@@ -757,7 +757,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
       <div
         class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
 @@ -135,10 +268,11 @@
-          </small>
+          </label>
         </div>
       </div>
       <button
@@ -776,9 +776,9 @@ exports[`<WAN/> Snapshot: MAC enabled 1`] = `
 + Second value
 
 @@ -133,12 +133,43 @@
-          >
-            Useful in cases, when a specific MAC address is required by your internet service provider.
-          </small>
+              Useful in cases, when a specific MAC address is required by your internet service provider.
+            </small>
+          </label>
         </div>
       </div>
 +     <div
@@ -951,12 +951,12 @@ router to the network, it is usually not necessary to change this setting.
           for="4"
         >
           Custom MAC address
+          <small
+            class="form-text text-muted"
+          >
+            Useful in cases, when a specific MAC address is required by your internet service provider.
+          </small>
         </label>
-        <small
-          class="form-text text-muted"
-        >
-          Useful in cases, when a specific MAC address is required by your internet service provider.
-        </small>
       </div>
     </div>
     <button

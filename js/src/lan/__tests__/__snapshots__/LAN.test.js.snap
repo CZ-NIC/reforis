@@ -133,12 +133,12 @@ it has opened ports for configuration interface and other services.
           for="7"
         >
           Enable DHCP
+          <small
+            class="form-text text-muted"
+          >
+            Enable this option to automatically assign IP addresses to the devices connected to the router.
+          </small>
         </label>
-        <small
-          class="form-text text-muted"
-        >
-          Enable this option to automatically assign IP addresses to the devices connected to the router.
-        </small>
       </div>
     </div>
     <div
@@ -425,12 +425,12 @@ it has opened ports for configuration interface and other services.
           for="7"
         >
           Enable DHCP
+          <small
+            class="form-text text-muted"
+          >
+            Enable this option to automatically assign IP addresses to the devices connected to the router.
+          </small>
         </label>
-        <small
-          class="form-text text-muted"
-        >
-          Enable this option to automatically assign IP addresses to the devices connected to the router.
-        </small>
       </div>
     </div>
     <button

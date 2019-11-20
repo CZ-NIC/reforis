@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-10-30 17:23+0100\n"
+"POT-Creation-Date: 2019-11-20 11:31+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,23 +17,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 
-#: js/src/about/About.js:23 js/src/main/pages.js:133
+#: js/src/about/About.js:22 js/src/main/pages.js:133
 msgid "About"
 msgstr ""
 
-#: js/src/about/About.js:27
+#: js/src/about/About.js:40
 msgid "Device"
 msgstr ""
 
-#: js/src/about/About.js:31
+#: js/src/about/About.js:44
 msgid "Serial number"
 msgstr ""
 
-#: js/src/about/About.js:35
+#: js/src/about/About.js:48
 msgid "Turris OS version"
 msgstr ""
 
-#: js/src/about/About.js:39
+#: js/src/about/About.js:52
 msgid "Kernel version"
 msgstr ""
 
@@ -269,12 +269,12 @@ msgstr ""
 msgid "Disable DNSSEC"
 msgstr ""
 
-#: js/src/dns/Forwarders/Forwarders.js:61
+#: js/src/dns/Forwarders/Forwarders.js:77
 msgid "Edit forwarder"
 msgstr ""
 
-#: js/src/dns/Forwarders/Forwarders.js:61
-#: js/src/dns/Forwarders/Forwarders.js:74
+#: js/src/dns/Forwarders/Forwarders.js:77
+#: js/src/dns/Forwarders/Forwarders.js:92
 msgid "Add custom forwarder"
 msgstr ""
 
@@ -290,16 +290,12 @@ msgstr ""
 msgid "Use provider's DNS resolver"
 msgstr ""
 
-#: js/src/dns/Forwarders/ForwardersTable.js:131
+#: js/src/dns/Forwarders/ForwardersTable.js:132
 msgid "Edit"
 msgstr ""
 
-#: js/src/dns/Forwarders/ForwardersTable.js:138
+#: js/src/dns/Forwarders/ForwardersTable.js:139
 msgid "Delete"
-msgstr ""
-
-#: js/src/dns/Forwarders/hooks.js:30
-msgid "Can't load list of available forwarders."
 msgstr ""
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:24
@@ -307,7 +303,7 @@ msgid "base64 encoded sha256."
 msgstr ""
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:49
-#: js/src/packageManagement/updates/UpdateApproval.js:95
+#: js/src/packageManagement/updates/UpdateApproval.js:96
 msgid "Name"
 msgstr ""
 
@@ -456,7 +452,7 @@ msgstr ""
 msgid "Skip guide"
 msgstr ""
 
-#: js/src/guide/WorkflowSelect.js:19
+#: js/src/guide/WorkflowSelect.js:21
 msgid ""
 "This workflow will help you to setup your device to act as a local "
 "server. It means that the device will provide some kind of service to "
@@ -464,36 +460,36 @@ msgid ""
 "storage)."
 msgstr ""
 
-#: js/src/guide/WorkflowSelect.js:20
+#: js/src/guide/WorkflowSelect.js:22
 msgid ""
 "After you finish this workflow your device will be able to act as a fully"
 " functional router. It assumes that you want to have more or less "
 "standard network setup."
 msgstr ""
 
-#: js/src/guide/WorkflowSelect.js:21
+#: js/src/guide/WorkflowSelect.js:23
 msgid ""
 "Just set your password and you are ready to go. This workflow is aimed to"
 " more advanced users who intend not to use the web GUI."
 msgstr ""
 
-#: js/src/guide/WorkflowSelect.js:25
+#: js/src/guide/WorkflowSelect.js:27
 msgid "Local server"
 msgstr ""
 
-#: js/src/guide/WorkflowSelect.js:26 js/src/lan/LANForm.js:29
+#: js/src/guide/WorkflowSelect.js:28 js/src/lan/LANForm.js:29
 msgid "Router"
 msgstr ""
 
-#: js/src/guide/WorkflowSelect.js:27
+#: js/src/guide/WorkflowSelect.js:29
 msgid "Minimal"
 msgstr ""
 
-#: js/src/guide/WorkflowSelect.js:48
+#: js/src/guide/WorkflowSelect.js:55
 msgid "Guide workflow"
 msgstr ""
 
-#: js/src/guide/WorkflowSelect.js:49
+#: js/src/guide/WorkflowSelect.js:56
 msgid ""
 "Here you can set the guide walkthrough which will guide you through the "
 "basic configuration of your device."
@@ -640,7 +636,7 @@ msgstr ""
 
 #: js/src/guide/steps.js:20 js/src/main/pages.js:82
 #: js/src/notificationsSettings/SMTPCustomForm.js:107
-#: js/src/password/Password.js:94 js/src/wifi/WiFiGuestForm.js:76
+#: js/src/password/Password.js:38 js/src/wifi/WiFiGuestForm.js:76
 msgid "Password"
 msgstr ""
 
@@ -661,7 +657,7 @@ msgid "DNS"
 msgstr ""
 
 #: js/src/guide/steps.js:40 js/src/main/pages.js:115
-#: js/src/packageManagement/updates/Updates.js:36
+#: js/src/packageManagement/updates/Updates.js:25
 msgid "Updates"
 msgstr ""
 
@@ -1262,82 +1258,78 @@ msgid "Enable automatic updates (recommended)"
 msgstr ""
 
 #: js/src/packageManagement/updates/UpdateApproval.js:30
-#: js/src/updatesDropdown/UpdatesDropdown.js:52
+#: js/src/updatesDropdown/UpdatesDropdown.js:106
 msgid "Cannot resolve update"
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:43
+#: js/src/packageManagement/updates/UpdateApproval.js:44
 msgid "There are no updates awaiting your approval."
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:47
+#: js/src/packageManagement/updates/UpdateApproval.js:48
 #, python-format
 msgid "There is %d package to be updated."
 msgid_plural "There are %d packages to be updated."
 msgstr[0] ""
 msgstr[1] ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:54
+#: js/src/packageManagement/updates/UpdateApproval.js:55
 msgid ""
 "See <a data-toggle=\"collapse\" href=\"#plan-wrapper\" role=\"button\" "
 "aria-expanded=\"false\" aria-controls=\"plan-wrapper\">details</a>"
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:62
+#: js/src/packageManagement/updates/UpdateApproval.js:63
 #, python-format
 msgid "Approve update from %s"
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:72
-#: js/src/updatesDropdown/UpdatesDropdown.js:61
+#: js/src/packageManagement/updates/UpdateApproval.js:73
+#: js/src/updatesDropdown/UpdatesDropdown.js:97
 msgid "Ignore"
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:79
-#: js/src/updatesDropdown/UpdatesDropdown.js:62
+#: js/src/packageManagement/updates/UpdateApproval.js:80
+#: js/src/updatesDropdown/UpdatesDropdown.js:98
 msgid "Install now"
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:94
+#: js/src/packageManagement/updates/UpdateApproval.js:95
 msgid "Action"
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:96
+#: js/src/packageManagement/updates/UpdateApproval.js:97
 msgid "Current"
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:97
+#: js/src/packageManagement/updates/UpdateApproval.js:98
 msgid "New"
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateChecker.js:54
-msgid "Cannot fetch updater status"
-msgstr ""
-
-#: js/src/packageManagement/updates/Updates.js:26
-msgid "An error occurred during loading update settings"
-msgstr ""
-
-#: js/src/packageManagement/updates/Updates.js:47
+#: js/src/packageManagement/updates/Updates.js:39
 msgid ""
 "Automatic updates are disabled. Please enable delayed or approval-"
 "requiring updates to review them."
 msgstr ""
 
-#: js/src/packageManagement/updates/Updates.js:57
+#: js/src/packageManagement/updates/Updates.js:49
 msgid "Check and install updates"
 msgstr ""
 
-#: js/src/packageManagement/updates/Updates.js:58
+#: js/src/packageManagement/updates/Updates.js:50
 msgid "Manually check for updates and install them immediately."
 msgstr ""
 
-#: js/src/packageManagement/updates/Updates.js:61
+#: js/src/packageManagement/updates/Updates.js:53
 msgid "Check updates"
 msgstr ""
 
-#: js/src/packageManagement/updates/Updates.js:63
+#: js/src/packageManagement/updates/Updates.js:55
 msgid "Manually check for updates and review them immediately."
+msgstr ""
+
+#: js/src/packageManagement/updates/hooks.js:70
+msgid "Cannot fetch updater status."
 msgstr ""
 
 #: js/src/password/CurrentForisPasswordForm.js:24
@@ -1369,23 +1361,23 @@ msgid ""
 "the root account will be blocked.)"
 msgstr ""
 
-#: js/src/password/Password.js:55
+#: js/src/password/Password.js:74
 msgid "Password changed successfully"
 msgstr ""
 
-#: js/src/password/Password.js:95
+#: js/src/password/Password.js:115
 msgid "Password settings"
 msgstr ""
 
-#: js/src/password/Password.js:142
+#: js/src/password/Password.js:158
 msgid "Password can't be empty."
 msgstr ""
 
-#: js/src/password/Password.js:144
+#: js/src/password/Password.js:160
 msgid "Password should have min 6 symbols."
 msgstr ""
 
-#: js/src/password/Password.js:146
+#: js/src/password/Password.js:162
 msgid "Password should have max 128 symbols."
 msgstr ""
 
@@ -1524,14 +1516,14 @@ msgstr ""
 msgid "Rebooting"
 msgstr ""
 
-#: js/src/updatesDropdown/UpdatesDropdown.js:58
+#: js/src/updatesDropdown/UpdatesDropdown.js:64
+msgid "Approve update"
+msgstr ""
+
+#: js/src/updatesDropdown/UpdatesDropdown.js:94
 msgid ""
 "See details in <a href=${ForisURLs.packageManagement.updates}>Updates</a>"
 " page."
-msgstr ""
-
-#: js/src/updatesDropdown/UpdatesDropdown.js:75
-msgid "Approve update"
 msgstr ""
 
 #: js/src/wan/MACForm.js:14
@@ -1734,11 +1726,11 @@ msgstr ""
 msgid "Wi-Fi settings are set to defaults"
 msgstr ""
 
-#: js/src/wifi/ResetWiFiSettings.js:52 js/src/wifi/ResetWiFiSettings.js:67
+#: js/src/wifi/ResetWiFiSettings.js:46 js/src/wifi/ResetWiFiSettings.js:61
 msgid "Reset Wi-Fi Settings"
 msgstr ""
 
-#: js/src/wifi/ResetWiFiSettings.js:54
+#: js/src/wifi/ResetWiFiSettings.js:48
 msgid ""
 "\n"
 "If a number of wireless cards doesn't match, you may try to reset the Wi-"
@@ -1873,7 +1865,7 @@ msgstr ""
 msgid "Can't delete DNS forwarder."
 msgstr ""
 
-#: reforis/foris_controller_api/modules/password.py:39
+#: reforis/foris_controller_api/modules/password.py:41
 msgid "Wrong current password."
 msgstr ""
 
@@ -1885,19 +1877,19 @@ msgstr ""
 msgid "Cannot start updater"
 msgstr ""
 
-#: reforis/templates/guide.html:15
+#: reforis/templates/guide.html:14
 msgid "Guide"
 msgstr ""
 
-#: reforis/templates/login.html:33
+#: reforis/templates/login.html:28
 msgid "Foris"
 msgstr ""
 
-#: reforis/templates/login.html:40
+#: reforis/templates/login.html:35
 msgid "Log in"
 msgstr ""
 
-#: reforis/templates/login.html:44
+#: reforis/templates/login.html:39
 msgid "Go to LuCI"
 msgstr ""
 

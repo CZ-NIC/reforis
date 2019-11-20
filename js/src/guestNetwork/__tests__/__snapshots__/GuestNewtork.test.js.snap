@@ -154,12 +154,12 @@ in LAN.
           for="5"
         >
           Enable DHCP
+          <small
+            class="form-text text-muted"
+          >
+            Enable this option to automatically assign IP addresses to the devices connected to the router.
+          </small>
         </label>
-        <small
-          class="form-text text-muted"
-        >
-          Enable this option to automatically assign IP addresses to the devices connected to the router.
-        </small>
       </div>
     </div>
     <div
@@ -307,12 +307,12 @@ in LAN.
           for="6"
         >
           Enable QoS
+          <small
+            class="form-text text-muted"
+          >
+            This option enables you to set a bandwidth limit for the guest network, so that your main network doesn't get slowed-down by it.
+          </small>
         </label>
-        <small
-          class="form-text text-muted"
-        >
-          This option enables you to set a bandwidth limit for the guest network, so that your main network doesn't get slowed-down by it.
-        </small>
       </div>
     </div>
     <button
@@ -437,12 +437,12 @@ in LAN.
           for="5"
         >
           Enable DHCP
+          <small
+            class="form-text text-muted"
+          >
+            Enable this option to automatically assign IP addresses to the devices connected to the router.
+          </small>
         </label>
-        <small
-          class="form-text text-muted"
-        >
-          Enable this option to automatically assign IP addresses to the devices connected to the router.
-        </small>
       </div>
     </div>
     <div
@@ -461,12 +461,12 @@ in LAN.
           for="6"
         >
           Enable QoS
+          <small
+            class="form-text text-muted"
+          >
+            This option enables you to set a bandwidth limit for the guest network, so that your main network doesn't get slowed-down by it.
+          </small>
         </label>
-        <small
-          class="form-text text-muted"
-        >
-          This option enables you to set a bandwidth limit for the guest network, so that your main network doesn't get slowed-down by it.
-        </small>
       </div>
     </div>
     <div
@@ -690,12 +690,12 @@ in LAN.
           for="5"
         >
           Enable DHCP
+          <small
+            class="form-text text-muted"
+          >
+            Enable this option to automatically assign IP addresses to the devices connected to the router.
+          </small>
         </label>
-        <small
-          class="form-text text-muted"
-        >
-          Enable this option to automatically assign IP addresses to the devices connected to the router.
-        </small>
       </div>
     </div>
     <div
@@ -714,12 +714,12 @@ in LAN.
           for="6"
         >
           Enable QoS
+          <small
+            class="form-text text-muted"
+          >
+            This option enables you to set a bandwidth limit for the guest network, so that your main network doesn't get slowed-down by it.
+          </small>
         </label>
-        <small
-          class="form-text text-muted"
-        >
-          This option enables you to set a bandwidth limit for the guest network, so that your main network doesn't get slowed-down by it.
-        </small>
       </div>
     </div>
     <button

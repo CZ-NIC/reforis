@@ -40,26 +40,26 @@ describe('<GuestNetwork/>', () => {
     });
 
     it('Snapshot enabled.', () => {
-        fireEvent.click(getByLabelText(guestNetworkContainer, 'Enable'));
+        fireEvent.click(getByText(guestNetworkContainer, 'Enable'));
         expect(guestNetworkContainer).toMatchSnapshot();
     });
 
     it('Snapshot enabled DHCP.', () => {
-        fireEvent.click(getByLabelText(guestNetworkContainer, 'Enable'));
-        fireEvent.click(getByLabelText(guestNetworkContainer, 'Enable DHCP'));
+        fireEvent.click(getByText(guestNetworkContainer, 'Enable'));
+        fireEvent.click(getByText(guestNetworkContainer, 'Enable DHCP'));
         expect(guestNetworkContainer).toMatchSnapshot();
     });
 
     it('Snapshot enabled QoS.', () => {
-        fireEvent.click(getByLabelText(guestNetworkContainer, 'Enable'));
-        fireEvent.click(getByLabelText(guestNetworkContainer, 'Enable QoS'));
+        fireEvent.click(getByText(guestNetworkContainer, 'Enable'));
+        fireEvent.click(getByText(guestNetworkContainer, 'Enable QoS'));
         expect(guestNetworkContainer).toMatchSnapshot();
     });
 
     it('Test post.', async () => {
-        fireEvent.click(getByLabelText(guestNetworkContainer, 'Enable'));
-        fireEvent.click(getByLabelText(guestNetworkContainer, 'Enable DHCP'));
-        fireEvent.click(getByLabelText(guestNetworkContainer, 'Enable QoS'));
+        fireEvent.click(getByText(guestNetworkContainer, 'Enable'));
+        fireEvent.click(getByText(guestNetworkContainer, 'Enable DHCP'));
+        fireEvent.click(getByText(guestNetworkContainer, 'Enable QoS'));
         fireEvent.click(getByText(guestNetworkContainer, 'Save'));
 
         expect(mockAxios.post).toBeCalled();

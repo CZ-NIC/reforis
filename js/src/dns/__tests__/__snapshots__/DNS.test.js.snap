@@ -6,9 +6,9 @@ exports[`<DNS/> Test with snapshot DHCP. 1`] = `
 + Second value
 
 @@ -94,10 +94,34 @@
-          >
-            This will enable your DNS resolver to place DHCP client's names among the local DNS records.
-          </small>
+              This will enable your DNS resolver to place DHCP client's names among the local DNS records.
+            </small>
+          </label>
         </div>
       </div>
 +     <div
@@ -322,12 +322,12 @@ this is a serious flaw on their side.
           for="3"
         >
           Enable DHCP clients in DNS
+          <small
+            class="form-text text-muted"
+          >
+            This will enable your DNS resolver to place DHCP client's names among the local DNS records.
+          </small>
         </label>
-        <small
-          class="form-text text-muted"
-        >
-          This will enable your DNS resolver to place DHCP client's names among the local DNS records.
-        </small>
       </div>
     </div>
     <button
