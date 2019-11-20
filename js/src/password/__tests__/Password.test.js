@@ -38,7 +38,7 @@ describe("<Password/>", () => {
     });
 
     it("Snapshot: same password for root", () => {
-        fireEvent.click(getByLabelText(passwordContainer, "Use same password for advanced administration (root)"));
+        fireEvent.click(getByText(passwordContainer, "Use same password for advanced administration (root)"));
         expect(passwordContainer).toMatchSnapshot();
     });
 

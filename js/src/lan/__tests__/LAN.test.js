@@ -56,7 +56,7 @@ describe('<LAN/>', () => {
 
     it('Snapshot managed with enabled DHCP.', () => {
         fireEvent.change(getByLabelText(lanContainer, 'LAN mode'), {target: {value: 'managed'}});
-        fireEvent.click(getByLabelText(lanContainer, 'Enable DHCP'));
+        fireEvent.click(getByText(lanContainer, 'Enable DHCP'));
         expect(lanContainer).toMatchSnapshot();
     });
 
@@ -106,7 +106,7 @@ describe('<LAN/>', () => {
 
     it('Test post managed with enabled DHCP.', () => {
         fireEvent.change(getByLabelText(lanContainer, 'LAN mode'), {target: {value: 'managed'}});
-        fireEvent.click(getByLabelText(lanContainer, 'Enable DHCP'));
+        fireEvent.click(getByText(lanContainer, 'Enable DHCP'));
         fireEvent.click(getByText(lanContainer, 'Save'));
         expect(mockAxios.post).toBeCalled();
         const data = {

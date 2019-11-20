@@ -22,8 +22,9 @@ describe('<Packages/>', () => {
     beforeEach(async () => {
         const renderRes = render(<Packages/>);
         queryByText = renderRes.queryByText;
+        await wait(() => expect(mockAxios.get).toBeCalledWith('/api/packages', expect.anything()));
         mockAxios.mockResponse({data: packagesFixture(true)});
-        await wait(() => renderRes.getByLabelText('Enabled package title'));
+        await wait(() => renderRes.getByText('Enabled package title'));
         firstRender = renderRes.asFragment();
     });
 
@@ -41,9 +42,11 @@ describe('<Packages/>', () => {
 
     it('Updates disabled', async () => {
         cleanup();
-        const {getByLabelText, asFragment} = render(<Packages/>);
+        const {getByText, asFragment} = render(<Packages/>);
+        await wait(() => expect(mockAxios.get).toBeCalledWith('/api/packages', expect.anything()));
         mockAxios.mockResponse({data: packagesFixture(false)});
-        await wait(() => getByLabelText('Enabled package title'));
+
+        await wait(() => getByText('Enabled package title'));
 
         expect(diffSnapshot(firstRender, asFragment())).toMatchSnapshot();
     });

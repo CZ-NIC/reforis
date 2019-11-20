@@ -191,12 +191,12 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
           for="5"
         >
           Send news
+          <small
+            class="form-text text-muted"
+          >
+            Send emails about new features.
+          </small>
         </label>
-        <small
-          class="form-text text-muted"
-        >
-          Send emails about new features.
-        </small>
       </div>
     </div>
     <h4>
@@ -534,12 +534,12 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
           for="5"
         >
           Send news
+          <small
+            class="form-text text-muted"
+          >
+            Send emails about new features.
+          </small>
         </label>
-        <small
-          class="form-text text-muted"
-        >
-          Send emails about new features.
-        </small>
       </div>
     </div>
     <div

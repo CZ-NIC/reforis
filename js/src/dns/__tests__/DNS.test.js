@@ -50,7 +50,7 @@ describe("<DNS/>", () => {
     });
 
     it("Test with snapshot forwarding.", async () => {
-        fireEvent.click(getByLabelText("Use forwarding"));
+        fireEvent.click(getByText("Use forwarding"));
         mockAxios.mockResponse({ data: forwardersFixture });
         await waitForElement(() => getByLabelText(/Custom forwarder/));
         expect(diffSnapshot(firstRender, asFragment()))
@@ -58,14 +58,14 @@ describe("<DNS/>", () => {
     });
 
     it("Test with snapshot DHCP.", () => {
-        fireEvent.click(getByLabelText("Enable DHCP clients in DNS"));
+        fireEvent.click(getByText("Enable DHCP clients in DNS"));
         expect(diffSnapshot(firstRender, asFragment()))
             .toMatchSnapshot();
     });
 
     it("Test post.", () => {
-        fireEvent.click(getByLabelText("Use forwarding"));
-        fireEvent.click(getByLabelText("Enable DHCP clients in DNS"));
+        fireEvent.click(getByText("Use forwarding"));
+        fireEvent.click(getByText("Enable DHCP clients in DNS"));
         fireEvent.click(getByText("Save"));
 
         expect(mockAxios.post)
