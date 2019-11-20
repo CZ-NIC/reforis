@@ -9,7 +9,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Button } from "foris";
-import { useUpdates } from "./hooks";
+import { useCheckUpdates, usePendingPolling } from "./hooks";
 
 UpdateChecker.propTypes = {
     onSuccess: PropTypes.func.isRequired,
@@ -24,7 +24,8 @@ UpdateChecker.propTypes = {
 export default function UpdateChecker({
     onSuccess, pending, setPending, children,
 }) {
-    const refreshUpdates = useUpdates(onSuccess, pending, setPending);
+    usePendingPolling(onSuccess, pending, setPending);
+    const refreshUpdates = useCheckUpdates(setPending);
 
     return (
         <Button

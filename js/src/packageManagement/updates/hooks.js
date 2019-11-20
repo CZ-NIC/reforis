@@ -14,6 +14,9 @@ import API_URLs from "common/API";
 
 const REFRESH_INTERVAL = 500; // milliseconds
 
+/*
+ * usePending is used to check/set if updater is running. It gets initial pending status from API.
+ */
 export function usePending() {
     const [pending, setPending] = useState(false);
     const [getUpdatesStatusResponse, getUpdatesStatus] = useAPIGet(API_URLs.updatesStatus);
@@ -28,11 +31,15 @@ export function usePending() {
     return [pending, setPending];
 }
 
+/*
+ * useUpdateToApprove similar to useAPIGet(API_URLs.approvals). The getUpdateToApprove function
+ * makes request only if displayApproval param is true. It makes initial request as well.
+ */
 export function useApprovals(displayApproval) {
     const [getApprovalsResponse, getApprovals] = useAPIGet(API_URLs.approvals);
     const updateToApprove = getApprovalsResponse.data;
-    // Request can be ignored - UpdateApproval is hidden
     const getUpdateToApprove = useCallback(() => {
+        // Request can be ignored if approval is hidden.
         if (displayApproval) {
             return getApprovals();
         }
@@ -44,12 +51,11 @@ export function useApprovals(displayApproval) {
     return [getApprovalsResponse, getApprovals, updateToApprove, getUpdateToApprove];
 }
 
-export function useUpdates(onSuccess, pending, setPending) {
-    useCheckUpdatesPolling(onSuccess, pending, setPending);
-    return useCheckUpdates(setPending);
-}
-
-function useCheckUpdatesPolling(onSuccess, pending, setPending) {
+/*
+ * usePendingPolling makes API polling until pending is false. It calls setPending to set result of
+ * the polling.
+ */
+export function usePendingPolling(onSuccess, pending, setPending) {
     const [setAlert] = useAlert();
 
     const [checkStatusPollingResponse] = useAPIPolling(
@@ -73,7 +79,10 @@ function useCheckUpdatesPolling(onSuccess, pending, setPending) {
     [checkStatusPollingResponse, onSuccess, setPending, setAlert]);
 }
 
-function useCheckUpdates(setPending) {
+/*
+ * useCheckUpdates is used to check for new updates. Sets pending as true when started.
+ */
+export function useCheckUpdates(setPending) {
     const [setAlert] = useAlert();
 
     const [runUpdatesResponse, runUpdates] = useAPIPost(API_URLs.runUpdates);
