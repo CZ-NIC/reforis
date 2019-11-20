@@ -5,8 +5,8 @@
  * See /LICENSE for more information.
  */
 
-import React from "react";
-import { render, fireEvent, wait } from "foris/testUtils/customTestRender";
+import React, {useState} from "react";
+import { render, fireEvent, wait, act } from "foris/testUtils/customTestRender";
 import mockAxios from 'jest-mock-axios';
 
 import { mockJSONError } from "foris/testUtils/network";
@@ -16,12 +16,25 @@ import UpdateChecker from "../UpdateChecker";
 
 describe("<UpdateChecker/>", () => {
     let container;
+    let rerender;
     let getByText;
     const setPending = jest.fn();
     const onSuccess = () => new Promise((resolve) => resolve());
 
+    function rerenderWithPending(pending){
+        rerender(
+            <UpdateChecker
+                onSuccess={onSuccess}
+                pending={pending}
+                setPending={setPending}
+            >
+                {"Check updates"}
+            </UpdateChecker>
+        )
+    }
+
     beforeEach(() => {
-        ({ container, getByText } = render(
+        ({ container, getByText, rerender } = render(
             <UpdateChecker
                 onSuccess={onSuccess}
                 pending={false}
@@ -39,14 +52,20 @@ describe("<UpdateChecker/>", () => {
     it("should handle success on updater start", async () => {
         fireEvent.click(getByText("Check updates"));
         expect(setPending).toBeCalledWith(true);
+        rerenderWithPending(true);
         expect(mockAxios.post).toBeCalledWith("/api/updates/run", undefined, expect.anything());
         mockAxios.mockResponse({ data: { result: true } });
-        await wait(() => expect(mockAxios.get).toBeCalledWith("/api/updates/status", expect.anything()));
+
+        // Repeated check for status
+        await wait(() => expect(mockAxios.get).nthCalledWith(2, "/api/updates/status", expect.anything()));
+        mockAxios.mockResponse({data: { running: false }});
+
+        await wait(() => expect(setPending).toBeCalledWith(false));
     });
 
     it("should handle error on updater start", async () => {
         fireEvent.click(getByText("Check updates"));
-        const errorMessage = "API error"
+        const errorMessage = "API error";
         // Response to POST updates/run
         mockJSONError(errorMessage);
         await wait(() => expect(setPending).toBeCalledWith(false));
@@ -55,7 +74,9 @@ describe("<UpdateChecker/>", () => {
 
     it("should handle success on updater check", async () => {
         fireEvent.click(getByText("Check updates"));
+        rerenderWithPending(true);
         // Response to POST updates/run
+        await wait(() => expect(mockAxios.post).toBeCalledWith("/api/updates/run", undefined, expect.anything()));
         mockAxios.mockResponse({ data: { result: true } });
 
         await wait(() => expect(mockAxios.get).toBeCalledWith("/api/updates/status", expect.anything()));
@@ -70,12 +91,15 @@ describe("<UpdateChecker/>", () => {
 
     it("should handle error on updater check", async () => {
         fireEvent.click(getByText("Check updates"));
+        rerenderWithPending(true);
+        await wait(() => expect(mockAxios.post).toBeCalledWith("/api/updates/run", undefined, expect.anything()));
+
         // Response to POST updates/run
         mockAxios.mockResponse({ data: { result: true } });
 
         await wait(() => expect(mockAxios.get).toBeCalledWith("/api/updates/status", expect.anything()));
         mockJSONError();
 
-        await wait(() => expect(mockSetAlert).toBeCalledWith("Cannot fetch updater status"));
+        await wait(() => expect(mockSetAlert).toBeCalledWith("Cannot fetch updater status."));
     });
 });
