@@ -13,8 +13,8 @@ module.exports = (env) => ({
     mode: "development",
     entry: "./src/app.js",
     output: {
-        filename: "./js/app.min.js",
-        path: path.join(__dirname, "../reforis_static/reforis/"),
+        filename: "app.min.js",
+        path: path.join(__dirname, "../reforis_static/reforis/js"),
     },
     resolve: {
         modules: [
@@ -59,7 +59,7 @@ module.exports = (env) => ({
             "process.env.LIGHTTPD": JSON.stringify(env.lighttpd),
         }),
         new MiniCssExtractPlugin({
-            filename: "./css/app.css",
+            filename: "../css/app.css",
         }),
     ],
 });
