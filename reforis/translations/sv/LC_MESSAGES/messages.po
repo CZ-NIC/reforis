@@ -7,12 +7,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-11-20 11:31+0100\n"
-"PO-Revision-Date: 2019-02-19 13:35+0100\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2019-11-21 16:06+0100\n"
+"PO-Revision-Date: 2019-10-19 15:52+0000\n"
+"Last-Translator: Mattias Münster <mattiasmun@gmail.com>\n"
 "Language: sv\n"
-"Language-Team: sv <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Language-Team: Swedish "
+"<https://hosted.weblate.org/projects/turris/reforis/sv/>\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -156,7 +157,7 @@ msgstr ""
 #: js/src/wan/WAN6Form.js:521 js/src/wan/WAN6Form.js:550
 #: js/src/wan/WAN6Form.js:563 js/src/wan/WANForm.js:177
 msgid "This field is required."
-msgstr ""
+msgstr "Detta fält är obligatoriskt."
 
 #: js/src/connectionTest/ConnectionTestButton.js:23
 msgid "Test is running..."
@@ -480,7 +481,7 @@ msgstr ""
 
 #: js/src/guide/WorkflowSelect.js:28 js/src/lan/LANForm.js:29
 msgid "Router"
-msgstr ""
+msgstr "Router"
 
 #: js/src/guide/WorkflowSelect.js:29
 msgid "Minimal"
@@ -639,7 +640,7 @@ msgstr ""
 #: js/src/notificationsSettings/SMTPCustomForm.js:107
 #: js/src/password/Password.js:38 js/src/wifi/WiFiGuestForm.js:76
 msgid "Password"
-msgstr ""
+msgstr "Lösenord"
 
 #: js/src/guide/steps.js:24
 msgid "Workflow"
@@ -836,7 +837,7 @@ msgstr ""
 
 #: js/src/lan/LANForm.js:30
 msgid "Computer"
-msgstr ""
+msgstr "Dator"
 
 #: js/src/lan/LANForm.js:75
 msgid "LAN Settings"
@@ -871,7 +872,7 @@ msgstr ""
 #: js/src/notifications/Notifications/NotificationsCenter.js:48
 #: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:64
 msgid "Notifications"
-msgstr ""
+msgstr "Aviseringar"
 
 #: js/src/main/pages.js:38
 msgid "Network Settings"
@@ -921,35 +922,35 @@ msgstr ""
 
 #: js/src/notificationsSettings/CommonForm.js:17
 msgid "Reboot is required"
-msgstr ""
+msgstr "Omstart krävs"
 
 #: js/src/notificationsSettings/CommonForm.js:18
 msgid "Reboot or attention is required"
-msgstr ""
+msgstr "Omstart eller uppmärksamhet krävs"
 
 #: js/src/notificationsSettings/CommonForm.js:19
 msgid "Reboot or attention is required or update was installed"
-msgstr ""
+msgstr "Omstart eller uppmärksamhet krävs eller en uppdatering har installerats"
 
 #: js/src/notificationsSettings/CommonForm.js:47
 msgid "Recipient's email"
-msgstr ""
+msgstr "Mottagarens e-postadress"
 
 #: js/src/notificationsSettings/CommonForm.js:58
 msgid "Importance"
-msgstr ""
+msgstr "Viktighet"
 
 #: js/src/notificationsSettings/CommonForm.js:69
 msgid "Send news"
-msgstr ""
+msgstr "Skicka nyheter"
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:20
 msgid "Turris"
-msgstr ""
+msgstr "Turris"
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:24
 msgid "Custom"
-msgstr ""
+msgstr "Anpassad"
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:78
 msgid "Email notifications"
@@ -961,7 +962,7 @@ msgstr ""
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:92
 msgid "SMTP provider"
-msgstr ""
+msgstr "SMTP-leverantör"
 
 #: js/src/notificationsSettings/NotificationsSettings.js:24
 msgid "Notifications settings"
@@ -969,7 +970,7 @@ msgstr ""
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:18
 msgid "None"
-msgstr ""
+msgstr "Ingen"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:19
 msgid "SSL"
@@ -977,27 +978,27 @@ msgstr ""
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:20
 msgid "STARTTLS"
-msgstr ""
+msgstr "STARTTLS"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:54
 msgid "SMTP settings"
-msgstr ""
+msgstr "SMTP-inställningar"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:56
 msgid "Sender address (From)"
-msgstr ""
+msgstr "Avsändarens adress (Från)"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:68
 msgid "Server address"
-msgstr ""
+msgstr "Serveradress"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:79
 msgid "Server port"
-msgstr ""
+msgstr "Serverport"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:90
 msgid "Security"
-msgstr ""
+msgstr "Säkerhet"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:99
 msgid "User"
@@ -1005,7 +1006,7 @@ msgstr ""
 
 #: js/src/notificationsSettings/SMTPTurrisForm.js:34
 msgid "Sender's name"
-msgstr ""
+msgstr "Avsändarens namn"
 
 #: js/src/notificationsSettings/helpTexts.js:9
 msgid ""
@@ -1014,6 +1015,10 @@ msgid ""
 "additional settings. If you want to set your own SMTP server, please "
 "select \"Custom\" and enter required settings."
 msgstr ""
+"Om du sätter SMTP-leverantör till \"Turris\" kommer servrar som "
+"tillhandahålls till medlemmar av Turris projektet att användas. Dessa "
+"servrar behöver inga ytterligare inställningar. Om du vill använda en "
+"egen SMTP server, välj \"Anpassad\" och mata in nödvändiga inställningar."
 
 #: js/src/notificationsSettings/helpTexts.js:13
 msgid "Email address of recipient. Separate multiple addresses by comma."
@@ -1021,17 +1026,19 @@ msgstr ""
 
 #: js/src/notificationsSettings/helpTexts.js:14
 msgid "Send emails about new features."
-msgstr ""
+msgstr "Skicka e-post om nya funktioner."
 
 #: js/src/notificationsSettings/helpTexts.js:17
 msgid ""
 "Name of the sender - will be used as a part of the sender's email address"
 " before the \"at\" sign."
 msgstr ""
+"Avsändarens namn - kommer att användas som en del av avsändarens "
+"e-postadress innan snabel-a tecknet."
 
 #: js/src/notificationsSettings/helpTexts.js:20
 msgid "This is the address notifications are send from."
-msgstr ""
+msgstr "Detta är adressen aviseringar skickas från."
 
 #: js/src/notificationsSettings/validator.js:21
 msgid "Can't be empty."
@@ -1046,6 +1053,8 @@ msgid ""
 "Sender's name can contain only alphanumeric characters, dots and "
 "underscores."
 msgstr ""
+"Avsändarens namn kan endast innehålla bokstäver, siffror, punkter och "
+"understreck."
 
 #: js/src/notificationsSettings/validator.js:38
 msgid "Port is an number."
@@ -1329,13 +1338,13 @@ msgstr ""
 msgid "Manually check for updates and review them immediately."
 msgstr ""
 
-#: js/src/packageManagement/updates/hooks.js:70
+#: js/src/packageManagement/updates/hooks.js:76
 msgid "Cannot fetch updater status."
 msgstr ""
 
 #: js/src/password/CurrentForisPasswordForm.js:24
 msgid "Current Foris password"
-msgstr ""
+msgstr "Nuvarande Foris-lösenord"
 
 #: js/src/password/ForisPasswordForm.js:35
 msgid "Foris password"
@@ -1361,6 +1370,11 @@ msgid ""
 "configuration here, you will have the option to do so later. Until then, "
 "the root account will be blocked.)"
 msgstr ""
+"Samma lösenord kommer att användas för åtkomst till detta "
+"administrationsgränssnitt, för root-användaren i webbränssnittet LuCI och"
+" för SSH-inloggningar. Använd ett starkt lösenord! (Om du väljer att inte"
+" sätta lösenordet för avancerad konfigurering här kommer du ha möjlighet "
+"att göra det senare. Tills dess kommer root-kontot vara blockerat.)"
 
 #: js/src/password/Password.js:74
 msgid "Password changed successfully"
@@ -1423,7 +1437,7 @@ msgstr ""
 
 #: js/src/regionAndTime/RegionAndTime.js:30
 msgid "Region and time"
-msgstr ""
+msgstr "Region och tid"
 
 #: js/src/regionAndTime/RegionAndTime.js:32
 msgid ""
@@ -1653,7 +1667,7 @@ msgstr ""
 
 #: js/src/wan/WAN6Form.js:178
 msgid "Custom DUID"
-msgstr ""
+msgstr "Anpassad DUID"
 
 #: js/src/wan/WAN6Form.js:217
 msgid "Address"
@@ -1669,7 +1683,7 @@ msgstr ""
 
 #: js/src/wan/WAN6Form.js:336
 msgid "Provider IPv4"
-msgstr ""
+msgstr "Leverantör IPv4"
 
 #: js/src/wan/WAN6Form.js:349
 msgid "Routed IPv6 prefix"
@@ -1685,7 +1699,7 @@ msgstr ""
 
 #: js/src/wan/WAN6Form.js:444
 msgid "Username"
-msgstr ""
+msgstr "Användarnamn"
 
 #: js/src/wan/WAN6Form.js:460
 msgid "Key"
@@ -1979,7 +1993,7 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Save"
-#~ msgstr ""
+#~ msgstr "Spara"
 
 #~ msgid "This is not a valid IPv4 address."
 #~ msgstr ""
@@ -1991,7 +2005,7 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "This is not a valid domain name."
-#~ msgstr ""
+#~ msgstr "Detta är inte ett giltigt domännamn."
 
 #~ msgid "This is not a valid DUID."
 #~ msgstr ""
@@ -2097,14 +2111,5 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Network settings"
-#~ msgstr ""
-
-#~ msgid "Can't load list of available forwarders."
-#~ msgstr ""
-
-#~ msgid "Cannot fetch updater status"
-#~ msgstr ""
-
-#~ msgid "An error occurred during loading update settings"
 #~ msgstr ""
 

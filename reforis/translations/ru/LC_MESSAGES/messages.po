@@ -7,13 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-11-20 11:31+0100\n"
-"PO-Revision-Date: 2019-02-19 13:28+0100\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2019-11-21 16:06+0100\n"
+"PO-Revision-Date: 2019-09-30 13:00+0000\n"
+"Last-Translator: Алексей Леньшин <alenshin@gmail.com>\n"
 "Language: ru\n"
-"Language-Team: ru <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Language-Team: Russian "
+"<https://hosted.weblate.org/projects/turris/reforis/ru/>\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -41,7 +42,7 @@ msgstr ""
 
 #: js/src/common/RebootButton.js:42 js/src/main/pages.js:97
 msgid "Reboot"
-msgstr ""
+msgstr "Перезагрузка"
 
 #: js/src/common/RebootButton.js:57 js/src/dns/DNSSECDisableModal.js:32
 #: js/src/interfaces/modals.js:29 js/src/interfaces/modals.js:55
@@ -62,11 +63,11 @@ msgstr ""
 
 #: js/src/common/network/DHCPClientForm.js:14
 msgid "Hostname which will be provided to DHCP server."
-msgstr ""
+msgstr "Имя хоста, которое будет предоставлено серверу DHCP."
 
 #: js/src/common/network/DHCPClientForm.js:33
 msgid "DHCP hostname"
-msgstr ""
+msgstr "Имя сервера DHCP"
 
 #: js/src/common/network/DHCPClientsList.js:19
 msgid "DHCP clients"
@@ -101,18 +102,20 @@ msgid ""
 "Enable this option to automatically assign IP addresses to the devices "
 "connected to the router."
 msgstr ""
+"Включите эту опцию, чтобы автоматически назначать IP-адреса устройствам, "
+"подключенным к маршрутизатору."
 
 #: js/src/common/network/DHCPServerForm.js:40
 msgid "DHCP start"
-msgstr ""
+msgstr "Начальный адрес пула DHCP"
 
 #: js/src/common/network/DHCPServerForm.js:53
 msgid "DHCP max leases"
-msgstr ""
+msgstr "Размер пула адресов DHCP"
 
 #: js/src/common/network/DHCPServerForm.js:66
 msgid "Lease time (hours)"
-msgstr ""
+msgstr "Время аренды (часы)"
 
 #: js/src/common/network/DHCPServerForm.js:85
 msgid "DHCP start must be positive"
@@ -131,61 +134,63 @@ msgid ""
 "DNS server address is not required as the built-in DNS resolver is "
 "capable of working without it."
 msgstr ""
+"Адрес DNS-сервера не требуется, так как встроенная система разрешения "
+"доменных имён может работать без него."
 
 #: js/src/common/network/StaticIPForm.js:43
 msgid "IP address"
-msgstr ""
+msgstr "IP-адрес"
 
 #: js/src/common/network/StaticIPForm.js:55
 #: js/src/guestNetwork/GuestNetworkForm.js:83 js/src/lan/LANManagedForm.js:59
 msgid "Network mask"
-msgstr ""
+msgstr "Маска подсети"
 
 #: js/src/common/network/StaticIPForm.js:67 js/src/wan/WAN6Form.js:230
 msgid "Gateway"
-msgstr ""
+msgstr "Шлюз"
 
 #: js/src/common/network/StaticIPForm.js:79 js/src/wan/WAN6Form.js:255
 msgid "DNS server 1"
-msgstr ""
+msgstr "DNS-сервер 1"
 
 #: js/src/common/network/StaticIPForm.js:91 js/src/wan/WAN6Form.js:267
 msgid "DNS server 2"
-msgstr ""
+msgstr "DNS-сервер 2"
 
 #: js/src/common/network/StaticIPForm.js:116 js/src/wan/MACForm.js:78
 #: js/src/wan/WAN6Form.js:521 js/src/wan/WAN6Form.js:550
 #: js/src/wan/WAN6Form.js:563 js/src/wan/WANForm.js:177
 msgid "This field is required."
-msgstr ""
+msgstr "Обязательное поле."
 
 #: js/src/connectionTest/ConnectionTestButton.js:23
 msgid "Test is running..."
-msgstr ""
+msgstr "Тест запущен..."
 
 #: js/src/connectionTest/ConnectionTestButton.js:26
 msgid "Test connection again"
-msgstr ""
+msgstr "Повторный тест соединения"
 
 #: js/src/connectionTest/ConnectionTestButton.js:29
 msgid "Test connection"
-msgstr ""
+msgstr "Тест соединения"
 
 #: js/src/connectionTest/ConnectionTestResult.js:12
 msgid "IPv4 connectivity"
-msgstr ""
+msgstr "Работоспособность IPv4"
 
 #: js/src/connectionTest/ConnectionTestResult.js:13
 msgid "IPv4 gateway connectivity"
-msgstr ""
+msgstr "Работоспособность шлюза IPv4"
 
 #: js/src/connectionTest/ConnectionTestResult.js:14
 msgid "IPv6 connectivity"
-msgstr ""
+msgstr "Работоспособность IPv6"
 
 #: js/src/connectionTest/ConnectionTestResult.js:15
 msgid "IPv6 gateway connectivity"
-msgstr ""
+msgstr "Работоспособность шлюза IPv6"
 
 #: js/src/dns/DNS.js:33
 msgid ""
@@ -215,7 +220,7 @@ msgstr ""
 
 #: js/src/dns/DNS.js:63 js/src/wan/WAN.js:50
 msgid "Connection test"
-msgstr ""
+msgstr "Проверка соединения"
 
 #: js/src/dns/DNS.js:66
 msgid ""
@@ -397,15 +402,15 @@ msgstr ""
 
 #: js/src/guestNetwork/GuestNetworkForm.js:57 js/src/wifi/WiFiForm.js:79
 msgid "Enable"
-msgstr ""
+msgstr "Включить"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:70 js/src/lan/LANManagedForm.js:46
 msgid "Router IP address"
-msgstr ""
+msgstr "IP-адрес маршрутизатора"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:95 js/src/lan/LANManagedForm.js:71
 msgid "Enable DHCP"
-msgstr ""
+msgstr "Включить DHCP"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:117
 msgid "Enable QoS"
@@ -481,7 +486,7 @@ msgstr ""
 
 #: js/src/guide/WorkflowSelect.js:28 js/src/lan/LANForm.js:29
 msgid "Router"
-msgstr ""
+msgstr "Маршрутизатор"
 
 #: js/src/guide/WorkflowSelect.js:29
 msgid "Minimal"
@@ -640,7 +645,7 @@ msgstr ""
 #: js/src/notificationsSettings/SMTPCustomForm.js:107
 #: js/src/password/Password.js:38 js/src/wifi/WiFiGuestForm.js:76
 msgid "Password"
-msgstr ""
+msgstr "Пароль"
 
 #: js/src/guide/steps.js:24
 msgid "Workflow"
@@ -837,42 +842,42 @@ msgstr ""
 
 #: js/src/lan/LANForm.js:30
 msgid "Computer"
-msgstr ""
+msgstr "Компьютер"
 
 #: js/src/lan/LANForm.js:75
 msgid "LAN Settings"
-msgstr ""
+msgstr "Настройки локальной сети"
 
 #: js/src/lan/LANForm.js:77
 msgid "LAN mode"
-msgstr ""
+msgstr "Режим локальной сети"
 
 #: js/src/lan/LANManagedForm.js:18
 msgid "Router's IP address in the inner network."
-msgstr ""
+msgstr "IP-адрес маршрутизатора во внутренней сети."
 
 #: js/src/lan/LANUnmanagedForm.js:22 js/src/wan/WANForm.js:23
 msgid "DHCP (automatic configuration)"
-msgstr ""
+msgstr "DHCP (автоматическая настройка)"
 
 #: js/src/lan/LANUnmanagedForm.js:23 js/src/wan/WAN6Form.js:55
 #: js/src/wan/WANForm.js:24
 msgid "Static IP address (manual configuration)"
-msgstr ""
+msgstr "Статический IP-адрес (ручная настройка)"
 
 #: js/src/lan/LANUnmanagedForm.js:24
 msgid "Don't connect this device to LAN"
-msgstr ""
+msgstr "Не подключайте это устройство к локальной сети"
 
 #: js/src/lan/LANUnmanagedForm.js:80 js/src/wan/WANForm.js:99
 msgid "IPv4 protocol"
-msgstr ""
+msgstr "Протокол IPv4"
 
 #: js/src/main/pages.js:32
 #: js/src/notifications/Notifications/NotificationsCenter.js:48
 #: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:64
 msgid "Notifications"
-msgstr ""
+msgstr "Уведомления"
 
 #: js/src/main/pages.js:38
 msgid "Network Settings"
@@ -884,7 +889,7 @@ msgstr ""
 
 #: js/src/main/pages.js:76
 msgid "Administration"
-msgstr ""
+msgstr "Управление"
 
 #: js/src/main/pages.js:87
 msgid "Region & Time"
@@ -913,44 +918,44 @@ msgstr ""
 #: js/src/notifications/Notifications/NotificationsCenter.js:41
 #: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:89
 msgid "Dismiss all"
-msgstr ""
+msgstr "Закрыть все"
 
 #: js/src/notifications/Notifications/NotificationsCenter.js:51
 #: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:28
 msgid "No notifications"
-msgstr ""
+msgstr "Нет уведомлений"
 
 #: js/src/notificationsSettings/CommonForm.js:17
 msgid "Reboot is required"
-msgstr ""
+msgstr "Требуется перезагрузка"
 
 #: js/src/notificationsSettings/CommonForm.js:18
 msgid "Reboot or attention is required"
-msgstr ""
+msgstr "Требуется перезагрузка или внимание"
 
 #: js/src/notificationsSettings/CommonForm.js:19
 msgid "Reboot or attention is required or update was installed"
-msgstr ""
+msgstr "Требуется перезагрузка или внимание, иначе обновление будет установлено"
 
 #: js/src/notificationsSettings/CommonForm.js:47
 msgid "Recipient's email"
-msgstr ""
+msgstr "Электронная почта получателя"
 
 #: js/src/notificationsSettings/CommonForm.js:58
 msgid "Importance"
-msgstr ""
+msgstr "Важность"
 
 #: js/src/notificationsSettings/CommonForm.js:69
 msgid "Send news"
-msgstr ""
+msgstr "Сообщать новости"
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:20
 msgid "Turris"
-msgstr ""
+msgstr "Turris"
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:24
 msgid "Custom"
-msgstr ""
+msgstr "Ручная настройка"
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:78
 msgid "Email notifications"
@@ -958,11 +963,11 @@ msgstr ""
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:80
 msgid "Enable email notifications"
-msgstr ""
+msgstr "Включить уведомления по электронной почте"
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:92
 msgid "SMTP provider"
-msgstr ""
+msgstr "Провайдер SMTP"
 
 #: js/src/notificationsSettings/NotificationsSettings.js:24
 msgid "Notifications settings"
@@ -970,43 +975,43 @@ msgstr ""
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:18
 msgid "None"
-msgstr ""
+msgstr "Нет"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:19
 msgid "SSL"
-msgstr ""
+msgstr "SSL"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:20
 msgid "STARTTLS"
-msgstr ""
+msgstr "STARTTLS"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:54
 msgid "SMTP settings"
-msgstr ""
+msgstr "Настройки SMTP"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:56
 msgid "Sender address (From)"
-msgstr ""
+msgstr "Адрес отправителя (От)"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:68
 msgid "Server address"
-msgstr ""
+msgstr "Адрес сервера"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:79
 msgid "Server port"
-msgstr ""
+msgstr "Порт сервера"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:90
 msgid "Security"
-msgstr ""
+msgstr "Безопасность"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:99
 msgid "User"
-msgstr ""
+msgstr "Пользователь"
 
 #: js/src/notificationsSettings/SMTPTurrisForm.js:34
 msgid "Sender's name"
-msgstr ""
+msgstr "Имя отправителя"
 
 #: js/src/notificationsSettings/helpTexts.js:9
 msgid ""
@@ -1015,50 +1020,58 @@ msgid ""
 "additional settings. If you want to set your own SMTP server, please "
 "select \"Custom\" and enter required settings."
 msgstr ""
+"Если вы выберете в качестве SMTP-провайдера \"Turris\", будут "
+"использоваться серверы, доступные участникам проекта Turris. Они не "
+"требуют дополнительных настроек. Если вы хотите использовать свой сервер "
+"SMTP, выберите \"Ручная настройка\" и введите необходимые данные."
 
 #: js/src/notificationsSettings/helpTexts.js:13
 msgid "Email address of recipient. Separate multiple addresses by comma."
-msgstr ""
+msgstr "Адрес электронной почты получателя. Разделите несколько адресов запятыми."
 
 #: js/src/notificationsSettings/helpTexts.js:14
 msgid "Send emails about new features."
-msgstr ""
+msgstr "Отправлять сообщение о новых функциях."
 
 #: js/src/notificationsSettings/helpTexts.js:17
 msgid ""
 "Name of the sender - will be used as a part of the sender's email address"
 " before the \"at\" sign."
 msgstr ""
+"Имя отправителя - будет использовано как часть адреса отправителя до "
+"знака \"@\"."
 
 #: js/src/notificationsSettings/helpTexts.js:20
 msgid "This is the address notifications are send from."
-msgstr ""
+msgstr "Адрес, с которого будут отправляться уведомления."
 
 #: js/src/notificationsSettings/validator.js:21
 msgid "Can't be empty."
-msgstr ""
+msgstr "Не может быть пустым."
 
 #: js/src/notificationsSettings/validator.js:30
 msgid "Sender's name can't be empty."
-msgstr ""
+msgstr "Имя отправителя не может быть пустым."
 
 #: js/src/notificationsSettings/validator.js:33
 msgid ""
 "Sender's name can contain only alphanumeric characters, dots and "
 "underscores."
 msgstr ""
+"Имя отправителя может содержать только буквы латинского алфавита, цифры, "
+"точки и подчеркивания."
 
 #: js/src/notificationsSettings/validator.js:38
 msgid "Port is an number."
-msgstr ""
+msgstr "Порт-это номер."
 
 #: js/src/notificationsSettings/validator.js:39
 msgid "Maximum port is 65535."
-msgstr ""
+msgstr "Максимальный порт 65535."
 
 #: js/src/notificationsSettings/validator.js:40
 msgid "Minimum port is 1."
-msgstr ""
+msgstr "Минимальный порт 1."
 
 #: js/src/packageManagement/packages/LanguageForm.js:27
 msgid "Languages"
@@ -1331,29 +1344,29 @@ msgstr ""
 msgid "Manually check for updates and review them immediately."
 msgstr ""
 
-#: js/src/packageManagement/updates/hooks.js:70
+#: js/src/packageManagement/updates/hooks.js:76
 msgid "Cannot fetch updater status."
 msgstr ""
 
 #: js/src/password/CurrentForisPasswordForm.js:24
 msgid "Current Foris password"
-msgstr ""
+msgstr "Текущий пароль Foris"
 
 #: js/src/password/ForisPasswordForm.js:35
 msgid "Foris password"
-msgstr ""
+msgstr "Пароль Foris"
 
 #: js/src/password/ForisPasswordForm.js:36
 msgid "Set your password for this administration interface."
-msgstr ""
+msgstr "Установите свой пароль для этого интерфейса администрирования."
 
 #: js/src/password/ForisPasswordForm.js:39
 msgid "New Foris password"
-msgstr ""
+msgstr "Новый пароль Foris"
 
 #: js/src/password/ForisPasswordForm.js:50
 msgid "Use same password for advanced administration (root)"
-msgstr ""
+msgstr "Использовать тот же пароль для расширенного администрирования (root)"
 
 #: js/src/password/ForisPasswordForm.js:51
 msgid ""
@@ -1363,6 +1376,11 @@ msgid ""
 "configuration here, you will have the option to do so later. Until then, "
 "the root account will be blocked.)"
 msgstr ""
+"Один и тот же пароль будет использоваться для данного интерфейса "
+"администрирования, для пользователя root в веб-интерфейсе LuCI и для "
+"авторизации по SSH. Используйте сложный пароль! (Если Вы не установите "
+"пароль для расширенной настройки здесь, можно сделать это позднее. До "
+"этого момента аккаунт root будет заблокирован.)"
 
 #: js/src/password/Password.js:74
 msgid "Password changed successfully"
@@ -1370,23 +1388,23 @@ msgstr ""
 
 #: js/src/password/Password.js:115
 msgid "Password settings"
-msgstr ""
+msgstr "Настройки пароля"
 
 #: js/src/password/Password.js:158
 msgid "Password can't be empty."
-msgstr ""
+msgstr "Пароль не может быть пустым."
 
 #: js/src/password/Password.js:160
 msgid "Password should have min 6 symbols."
-msgstr ""
+msgstr "Пароль должен содержать не менее 6 символов."
 
 #: js/src/password/Password.js:162
 msgid "Password should have max 128 symbols."
-msgstr ""
+msgstr "Пароль должен содержать не более 128 символов."
 
 #: js/src/password/RootPasswordForm.js:32
 msgid "Advanced administration (root) password"
-msgstr ""
+msgstr "Пароль расширенного администрирования (root)"
 
 #: js/src/password/RootPasswordForm.js:35
 #, python-format
@@ -1400,7 +1418,7 @@ msgstr ""
 
 #: js/src/password/RootPasswordForm.js:44
 msgid "New advanced administration password"
-msgstr ""
+msgstr "Новый пароль расширенного администрирования"
 
 #: js/src/reboot/Reboot.js:15
 msgid "Device reboot"
@@ -1534,22 +1552,24 @@ msgid ""
 "Useful in cases, when a specific MAC address is required by your internet"
 " service provider."
 msgstr ""
+"Используйте в случаях, когда ваш интернет-провайдер требует определенный "
+"MAC-адрес."
 
 #: js/src/wan/MACForm.js:15
 msgid "Colon is used as a separator, for example 00:11:22:33:44:55"
-msgstr ""
+msgstr "Разделяйте двоеточием, например, 00:11:22:33:44:55"
 
 #: js/src/wan/MACForm.js:44
 msgid "MAC"
-msgstr ""
+msgstr "MAC-адрес"
 
 #: js/src/wan/MACForm.js:46
 msgid "Custom MAC address"
-msgstr ""
+msgstr "Пользовательский MAC-адрес"
 
 #: js/src/wan/MACForm.js:59
 msgid "MAC address"
-msgstr ""
+msgstr "MAC-адрес"
 
 #: js/src/wan/WAN.js:29
 msgid ""
@@ -1576,17 +1596,19 @@ msgstr ""
 
 #: js/src/wan/WAN6Form.js:23
 msgid "DUID which will be provided to the DHCPv6 server."
-msgstr ""
+msgstr "DUID, который будет предоставлен серверу DHCPv6."
 
 #: js/src/wan/WAN6Form.js:27
 msgid ""
 "IPv6 address and prefix length for WAN interface e.g. "
 "2001:db8:be13:37da::1/64"
 msgstr ""
+"IPv6-адрес и длина префикса для интерфейса WAN, например, 2001: db8: "
+"be13: 37da :: 1/64"
 
 #: js/src/wan/WAN6Form.js:28
 msgid "Address range for local network, e.g. 2001:db8:be13:37da::/64"
-msgstr ""
+msgstr "Диапазон адресов для локальной сети, например, 2001:db8:be13:37da::/64"
 
 #: js/src/wan/WAN6Form.js:33
 msgid ""
@@ -1594,132 +1616,140 @@ msgid ""
 " address manually (e.g. when your WAN interface has a private address "
 "which is mapped to public IP)."
 msgstr ""
+"Чтобы использовать протокол 6to4, вам может потребоваться указать ваш "
+"публичный IPv4-адрес вручную (например, когда ваш wan-интерфейс имеет "
+"частный адрес, который сопоставляется с публичным IP-адресом)."
 
 #: js/src/wan/WAN6Form.js:38
 msgid ""
 "This address will be used as a endpoint of the tunnel on the provider's "
 "side."
 msgstr ""
+"Этот адрес будет использоваться в качестве конечной точки туннеля со "
+"стороны провайдера."
 
 #: js/src/wan/WAN6Form.js:39
 msgid "IPv6 addresses which will be routed to your network."
-msgstr ""
+msgstr "IPv6-адреса, перенаправляемые в вашу сеть."
 
 #: js/src/wan/WAN6Form.js:40
 msgid "Maximum Transmission Unit in the tunnel (in bytes)."
-msgstr ""
+msgstr "Максимальный размер полезного блока данных (MTU) в туннеле (в байтах)."
 
 #: js/src/wan/WAN6Form.js:43
 msgid ""
 "Some tunnel providers allow you to have public dynamic IPv4. Note that "
 "you need to fill in some extra fields to make it work."
 msgstr ""
+"Некоторые провайдеры туннелей позволяют вам иметь публичный динамический "
+"IPv4-адрес. Обратите внимание, что нужно заполнить дополнительные поля, "
+"чтобы они работали."
 
 #: js/src/wan/WAN6Form.js:45
 msgid "ID of your tunnel which was assigned to you by the provider."
-msgstr ""
+msgstr "Идентификатор туннеля, который был назначен провайдером."
 
 #: js/src/wan/WAN6Form.js:46
 msgid ""
 "Username which will be used to provide credentials to your tunnel "
 "provider."
-msgstr ""
+msgstr "Имя пользователя, которое будет использоваться вашим провайдером туннелей."
 
 #: js/src/wan/WAN6Form.js:47
 msgid "Key which will be used to provide credentials to your tunnel provider."
-msgstr ""
+msgstr "Ключ, который будет использоваться вашим провайдером туннелей."
 
 #: js/src/wan/WAN6Form.js:53
 msgid "Disable IPv6"
-msgstr ""
+msgstr "Отключить IPv6"
 
 #: js/src/wan/WAN6Form.js:54
 msgid "DHCPv6 (automatic configuration)"
-msgstr ""
+msgstr "DHCPv6 (автоматическая настройка)"
 
 #: js/src/wan/WAN6Form.js:56
 msgid "6to4 (public IPv4 address required)"
-msgstr ""
+msgstr "6to4 (требуется публичный IPv4-адрес)"
 
 #: js/src/wan/WAN6Form.js:57
 msgid "6in4 (public IPv4 address required)"
-msgstr ""
+msgstr "6in4 (требуется публичный IPv4-адрес)"
 
 #: js/src/wan/WAN6Form.js:145
 msgid "WAN IPv6"
-msgstr ""
+msgstr "WAN IPv6"
 
 #: js/src/wan/WAN6Form.js:147
 msgid "IPv6 protocol"
-msgstr ""
+msgstr "Протокол IPv6"
 
 #: js/src/wan/WAN6Form.js:178
 msgid "Custom DUID"
-msgstr ""
+msgstr "Пользовательский уникальный идентификатор DHCP (DUID)"
 
 #: js/src/wan/WAN6Form.js:217
 msgid "Address"
-msgstr ""
+msgstr "Адрес"
 
 #: js/src/wan/WAN6Form.js:242
 msgid "Prefix"
-msgstr ""
+msgstr "Префикс"
 
 #: js/src/wan/WAN6Form.js:297
 msgid "Public IPv4"
-msgstr ""
+msgstr "Публичный IPv4-адрес"
 
 #: js/src/wan/WAN6Form.js:336
 msgid "Provider IPv4"
-msgstr ""
+msgstr "Провайдер IPv4-адресов"
 
 #: js/src/wan/WAN6Form.js:349
 msgid "Routed IPv6 prefix"
-msgstr ""
+msgstr "Префикс IPv6 маршрутизации"
 
 #: js/src/wan/WAN6Form.js:362
 msgid "MTU"
-msgstr ""
+msgstr "MTU"
 
 #: js/src/wan/WAN6Form.js:427
 msgid "Tunnel ID"
-msgstr ""
+msgstr "ID туннеля"
 
 #: js/src/wan/WAN6Form.js:444
 msgid "Username"
-msgstr ""
+msgstr "Имя пользователя"
 
 #: js/src/wan/WAN6Form.js:460
 msgid "Key"
-msgstr ""
+msgstr "Ключ"
 
 #: js/src/wan/WAN6Form.js:530
 msgid "Public IPv4 address is required."
-msgstr ""
+msgstr "Требуется публичный IPv4-адрес."
 
 #: js/src/wan/WAN6Form.js:545
 msgid "MTU should be a number in range of 1280-1500."
-msgstr ""
+msgstr "MTU должен быть числом в диапазоне 1280-1500."
 
 #: js/src/wan/WAN6Form.js:546
 msgid "MTU should be in range of 1280-1500."
-msgstr ""
+msgstr "MTU должен быть в диапазоне 1280-1500."
 
 #: js/src/wan/WANForm.js:25
 msgid "PPPoE (for DSL bridges, Modem Turris, etc.)"
-msgstr ""
+msgstr "PPPoE (для мостов DSL, модема Turris и т.д.)"
 
 #: js/src/wan/WANForm.js:97
 msgid "WAN IPv4"
-msgstr ""
+msgstr "WAN IPv4"
 
 #: js/src/wan/WANForm.js:129
 msgid "PAP/CHAP username"
-msgstr ""
+msgstr "Имя пользователя PAP/CHAP"
 
 #: js/src/wan/WANForm.js:141
 msgid "PAP/CHAP password"
-msgstr ""
+msgstr "Пароль PAP/CHAP"
 
 #: js/src/wifi/ResetWiFiSettings.js:38
 msgid "An error occurred during resetting Wi-Fi settings"
@@ -1744,15 +1774,15 @@ msgstr ""
 
 #: js/src/wifi/WiFi.js:23 js/src/wifi/WiFi.js:31
 msgid "SSID can't be longer than 32 symbols"
-msgstr ""
+msgstr "SSID не может быть длиннее 32 символов"
 
 #: js/src/wifi/WiFi.js:24 js/src/wifi/WiFi.js:32
 msgid "SSID can't be empty"
-msgstr ""
+msgstr "SSID не может быть пустым"
 
 #: js/src/wifi/WiFi.js:26 js/src/wifi/WiFi.js:34
 msgid "Password must contain at least 8 symbols"
-msgstr ""
+msgstr "Пароль должен содержать не менее 8 символов"
 
 #: js/src/wifi/WiFi.js:54
 msgid ""
@@ -1770,11 +1800,11 @@ msgstr ""
 
 #: js/src/wifi/WiFiForm.js:208
 msgid "auto"
-msgstr ""
+msgstr "авто"
 
 #: js/src/wifi/WiFiGuestForm.js:36
 msgid "Enable Guest Wifi"
-msgstr ""
+msgstr "Включить гостевой WiFi"
 
 #: js/src/wifi/WiFiQRCode.js:59
 msgid "Wi-Fi QR Code"
@@ -1786,27 +1816,27 @@ msgstr ""
 
 #: js/src/wifi/constants.js:9
 msgid "Disabled"
-msgstr ""
+msgstr "Отключён"
 
 #: js/src/wifi/constants.js:10
 msgid "802.11n - 20 MHz wide channel"
-msgstr ""
+msgstr "802.11n - ширина канала в 20 МГц"
 
 #: js/src/wifi/constants.js:11
 msgid "802.11n - 40 MHz wide channel"
-msgstr ""
+msgstr "802.11n - ширина канала в 40 МГц"
 
 #: js/src/wifi/constants.js:12
 msgid "802.11ac - 20 MHz wide channel"
-msgstr ""
+msgstr "802.11ac - ширина канала в 20 МГц"
 
 #: js/src/wifi/constants.js:13
 msgid "802.11ac - 40 MHz wide channel"
-msgstr ""
+msgstr "802.11ac - ширина канала в 40 МГц"
 
 #: js/src/wifi/constants.js:14
 msgid "802.11ac - 80 MHz wide channel"
-msgstr ""
+msgstr "802.11ac - ширина канала в 80 МГц"
 
 #: js/src/wifi/constants.js:21
 msgid ""
@@ -1814,10 +1844,16 @@ msgid ""
 "        WPA2 pre-shared key, that is required to connect to the network.\n"
 "    "
 msgstr ""
+"\n"
+"        Предварительный общий ключ WPA2, необходимый для подключения к "
+"сети.\n"
+"    "
 
 #: js/src/wifi/constants.js:24
 msgid "If set, network is not visible when scanning for available networks."
 msgstr ""
+"Если установлено, сеть не будет отображаться при сканировании доступных "
+"сетей."
 
 #: js/src/wifi/constants.js:25
 msgid ""
@@ -1828,6 +1864,11 @@ msgid ""
 "usually has less interference, but the signal\n"
 "        does not carry so well indoors."
 msgstr ""
+"\n"
+"        Частота 2,4 ГГц более широко поддерживается клиентами, но имеет "
+"больше помех. Частота 5 ГГц является новым стандартом и может "
+"поддерживаться не всеми вашими устройствами. Он обычно имеет меньше "
+"помех, но сигнал не очень хорошо распространяется в помещении."
 
 #: js/src/wifi/constants.js:29
 msgid ""
@@ -1839,6 +1880,12 @@ msgid ""
 "        option with 20 MHz wide channel.\n"
 "    "
 msgstr ""
+"\n"
+"        Измените это, чтобы настроить режим работы 802.11n/ac. 802.11n с "
+"каналами шириной 40 МГц может обеспечить более высокую пропускную "
+"способность, но может вызывать больше помех в сети. Если вы не знаете, "
+"что выбрать, используйте опцию по умолчанию с каналом шириной 20 МГц.\n"
+"    "
 
 #: js/src/wifi/constants.js:34
 msgid ""
@@ -1851,6 +1898,13 @@ msgid ""
 "tab.\n"
 "        "
 msgstr ""
+"\n"
+"        Включает Wi-Fi для гостей, который отделен от локальной сети. "
+"Устройства, подключенные к этой сети, могут доступ в Интернет, но им не "
+"разрешен доступ к другим устройствам и интерфейсу конфигурации "
+"маршрутизатора. Параметры гостевой сети можно настроить на вкладке "
+"Гостевая сеть.\n"
+"        "
 
 #: reforis/views.py:52
 msgid "Wrong password."
@@ -1942,40 +1996,40 @@ msgid "Logout"
 msgstr "Выход"
 
 #~ msgid "Password was successfully changed"
-#~ msgstr ""
+#~ msgstr "Пароль был успешно изменен"
 
 #~ msgid "Updating"
-#~ msgstr ""
+#~ msgstr "Обновление"
 
 #~ msgid "Load settings"
-#~ msgstr ""
+#~ msgstr "Загрузить настройки"
 
 #~ msgid "Restarting after %d sec."
-#~ msgstr ""
+#~ msgstr "Перезапуск через %d сек."
 
 #~ msgid "Save"
-#~ msgstr ""
+#~ msgstr "Сохранить"
 
 #~ msgid "This is not a valid IPv4 address."
-#~ msgstr ""
+#~ msgstr "Это некорректный IPv4-адрес."
 
 #~ msgid "This is not a valid IPv6 address."
-#~ msgstr ""
+#~ msgstr "Это некорректный IPv6-адрес."
 
 #~ msgid "This is not a valid IPv6 prefix."
-#~ msgstr ""
+#~ msgstr "Это некорректный префикс IPv6."
 
 #~ msgid "This is not a valid domain name."
-#~ msgstr ""
+#~ msgstr "Некорректное доменное имя."
 
 #~ msgid "This is not a valid DUID."
-#~ msgstr ""
+#~ msgstr "Это некорректный уникальный идентификатор DHCP (DUID)."
 
 #~ msgid "This is not a valid MAC address."
-#~ msgstr ""
+#~ msgstr "Это некорректный MAC-адрес."
 
 #~ msgid "Doesn't contain a list of emails separated by commas."
-#~ msgstr ""
+#~ msgstr "Не содержит списка электронных адресов, разделенных запятыми."
 
 #~ msgid ""
 #~ "Router mode means that this devices "
@@ -1988,12 +2042,21 @@ msgstr "Выход"
 #~ "for configuration interface and other "
 #~ "services."
 #~ msgstr ""
+#~ "Режим Маршрутизатора означает, что это "
+#~ "устройство управляет локальной сетью "
+#~ "(действует как маршрутизатор, может назначать"
+#~ " IP-адреса, ...). Режим Компьютера "
+#~ "означает, что это устройство выступает в"
+#~ " качестве клиента в этой сети. Он "
+#~ "работает аналогично WAN, но открыты "
+#~ "порты для интерфейса конфигурации и "
+#~ "других сервисов."
 
 #~ msgid "Email notifications settings"
-#~ msgstr ""
+#~ msgstr "Настройки уведомлений по электронной почте"
 
 #~ msgid " Administration "
-#~ msgstr ""
+#~ msgstr " Управление "
 
 #~ msgid ""
 #~ "\n"
@@ -2022,9 +2085,30 @@ msgstr "Выход"
 #~ "            <b>refresh the page</b> in your browser.\n"
 #~ "        "
 #~ msgstr ""
+#~ "\n"
+#~ "            Этот раздел содержит настройки "
+#~ "для локальной сети (LAN). Предусмотренные "
+#~ "значения по умолчанию подходят для "
+#~ "большинства сетей. <br/>\n"
+#~ "<b>Примечание:</b> Если вы измените IP-адрес"
+#~ " маршрутизатора, на все компьютеры в "
+#~ "локальной сети, возможно, включая тот, "
+#~ "на котором вы находитесь, используя "
+#~ "сейчас, потребуется получить <b>новый "
+#~ "IP-адрес</b>, что не происходит "
+#~ "<b>немедленно</b>. Рекомендуется отключить и "
+#~ "снова подключить все кабели локальной "
+#~ "сети после отправки изменений для "
+#~ "принудительного обновления. Следующая страница "
+#~ "не будет загружаться, пока вы не "
+#~ "получите новый IP-адрес от DHCP (если"
+#~ " DHCP включен), и вам может "
+#~ "потребоваться <b>обновите страницу</b> в вашем"
+#~ " браузере.\n"
+#~ "        "
 
 #~ msgid "Notifications center"
-#~ msgstr ""
+#~ msgstr "Центр уведомлений"
 
 #~ msgid ""
 #~ "\n"
@@ -2041,6 +2125,16 @@ msgstr "Выход"
 #~ " this setting.\n"
 #~ "        "
 #~ msgstr ""
+#~ "\n"
+#~ "            Здесь вы указываете настройки "
+#~ "порта WAN. Обычно вы можете оставить "
+#~ "эти параметры без изменений, если "
+#~ "обратного не требует ваш интернет-провайдер."
+#~ " Кроме того, в случае, если есть "
+#~ "кабельный или DSL модем, подключающий "
+#~ "ваш маршрутизатор к сети, обычно нет "
+#~ "необходимости изменять этот параметр.\n"
+#~ "        "
 
 #~ msgid ""
 #~ "\n"
@@ -2055,6 +2149,16 @@ msgstr "Выход"
 #~ "            wait for a while before running this test.\n"
 #~ "        "
 #~ msgstr ""
+#~ "\n"
+#~ "            Здесь вы можете проверить "
+#~ "свои настройки подключения. Не забудьте "
+#~ "нажать кнопку Сохранить перед запуском "
+#~ "теста. Обратите внимание, что иногда для"
+#~ " полной инициализации соединения требуется "
+#~ "некоторое время. Так что может быть "
+#~ "полезно подождать некоторое время, прежде "
+#~ "чем запускать этот тест.\n"
+#~ "        "
 
 #~ msgid ""
 #~ "\n"
@@ -2070,16 +2174,16 @@ msgstr "Выход"
 #~ "        available within the form.\n"
 #~ "    "
 #~ msgstr ""
+#~ "\n"
+#~ "        Если вы хотите использовать свой"
+#~ " маршрутизатор в качестве точки доступа "
+#~ "Wi-Fi, включите здесь Wi-Fi и "
+#~ "введите SSID (имя точки доступа) и "
+#~ "соответствующий пароль. Затем вы можете "
+#~ "настроить свои мобильные устройства, используя"
+#~ " QR-код.\n"
+#~ "    "
 
 #~ msgid "Network settings"
-#~ msgstr ""
-
-#~ msgid "Can't load list of available forwarders."
-#~ msgstr ""
-
-#~ msgid "Cannot fetch updater status"
-#~ msgstr ""
-
-#~ msgid "An error occurred during loading update settings"
-#~ msgstr ""
+#~ msgstr "Сетевые настройки"
 

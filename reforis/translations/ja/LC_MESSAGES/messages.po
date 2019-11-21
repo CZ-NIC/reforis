@@ -7,11 +7,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-11-20 11:31+0100\n"
-"PO-Revision-Date: 2019-02-19 13:34+0100\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2019-11-21 16:06+0100\n"
+"PO-Revision-Date: 2019-10-16 10:08+0000\n"
+"Last-Translator: Scott Anecito <scott.anecito@protonmail.com>\n"
 "Language: ja\n"
-"Language-Team: ja <LL@li.org>\n"
+"Language-Team: Japanese "
+"<https://hosted.weblate.org/projects/turris/reforis/ja/>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -40,7 +41,7 @@ msgstr ""
 
 #: js/src/common/RebootButton.js:42 js/src/main/pages.js:97
 msgid "Reboot"
-msgstr ""
+msgstr "再起動"
 
 #: js/src/common/RebootButton.js:57 js/src/dns/DNSSECDisableModal.js:32
 #: js/src/interfaces/modals.js:29 js/src/interfaces/modals.js:55
@@ -156,7 +157,7 @@ msgstr ""
 #: js/src/wan/WAN6Form.js:521 js/src/wan/WAN6Form.js:550
 #: js/src/wan/WAN6Form.js:563 js/src/wan/WANForm.js:177
 msgid "This field is required."
-msgstr ""
+msgstr "このフィールドは必須です。"
 
 #: js/src/connectionTest/ConnectionTestButton.js:23
 msgid "Test is running..."
@@ -172,7 +173,7 @@ msgstr ""
 
 #: js/src/connectionTest/ConnectionTestResult.js:12
 msgid "IPv4 connectivity"
-msgstr ""
+msgstr "IPv4 接続"
 
 #: js/src/connectionTest/ConnectionTestResult.js:13
 msgid "IPv4 gateway connectivity"
@@ -180,7 +181,7 @@ msgstr ""
 
 #: js/src/connectionTest/ConnectionTestResult.js:14
 msgid "IPv6 connectivity"
-msgstr ""
+msgstr "IPv6 接続"
 
 #: js/src/connectionTest/ConnectionTestResult.js:15
 msgid "IPv6 gateway connectivity"
@@ -396,7 +397,7 @@ msgstr ""
 
 #: js/src/guestNetwork/GuestNetworkForm.js:57 js/src/wifi/WiFiForm.js:79
 msgid "Enable"
-msgstr ""
+msgstr "有効"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:70 js/src/lan/LANManagedForm.js:46
 msgid "Router IP address"
@@ -480,7 +481,7 @@ msgstr ""
 
 #: js/src/guide/WorkflowSelect.js:28 js/src/lan/LANForm.js:29
 msgid "Router"
-msgstr ""
+msgstr "ルーター"
 
 #: js/src/guide/WorkflowSelect.js:29
 msgid "Minimal"
@@ -883,7 +884,7 @@ msgstr ""
 
 #: js/src/main/pages.js:76
 msgid "Administration"
-msgstr ""
+msgstr "管理"
 
 #: js/src/main/pages.js:87
 msgid "Region & Time"
@@ -1328,7 +1329,7 @@ msgstr ""
 msgid "Manually check for updates and review them immediately."
 msgstr ""
 
-#: js/src/packageManagement/updates/hooks.js:70
+#: js/src/packageManagement/updates/hooks.js:76
 msgid "Cannot fetch updater status."
 msgstr ""
 
@@ -1680,15 +1681,15 @@ msgstr ""
 
 #: js/src/wan/WAN6Form.js:427
 msgid "Tunnel ID"
-msgstr ""
+msgstr "トンネル ID"
 
 #: js/src/wan/WAN6Form.js:444
 msgid "Username"
-msgstr ""
+msgstr "ユーザー名"
 
 #: js/src/wan/WAN6Form.js:460
 msgid "Key"
-msgstr ""
+msgstr "暗号キー"
 
 #: js/src/wan/WAN6Form.js:530
 msgid "Public IPv4 address is required."
@@ -1708,15 +1709,15 @@ msgstr ""
 
 #: js/src/wan/WANForm.js:97
 msgid "WAN IPv4"
-msgstr ""
+msgstr "WAN IPv4"
 
 #: js/src/wan/WANForm.js:129
 msgid "PAP/CHAP username"
-msgstr ""
+msgstr "PAP/CHAP ユーザー名"
 
 #: js/src/wan/WANForm.js:141
 msgid "PAP/CHAP password"
-msgstr ""
+msgstr "PAP/CHAP パスワード"
 
 #: js/src/wifi/ResetWiFiSettings.js:38
 msgid "An error occurred during resetting Wi-Fi settings"
@@ -1767,7 +1768,7 @@ msgstr ""
 
 #: js/src/wifi/WiFiForm.js:208
 msgid "auto"
-msgstr ""
+msgstr "自動"
 
 #: js/src/wifi/WiFiGuestForm.js:36
 msgid "Enable Guest Wifi"
@@ -1783,7 +1784,7 @@ msgstr ""
 
 #: js/src/wifi/constants.js:9
 msgid "Disabled"
-msgstr ""
+msgstr "無効"
 
 #: js/src/wifi/constants.js:10
 msgid "802.11n - 20 MHz wide channel"
@@ -1936,7 +1937,7 @@ msgstr ""
 
 #: reforis/templates/includes/top-bar.html:4
 msgid "Logout"
-msgstr ""
+msgstr "ログアウト"
 
 #~ msgid "There are %1 in the %2"
 #~ msgstr ""
@@ -1964,10 +1965,10 @@ msgstr ""
 #~ msgstr[0] ""
 
 #~ msgid "Password was successfully changed"
-#~ msgstr ""
+#~ msgstr "パスワードの変更に成功しました"
 
 #~ msgid "Updating"
-#~ msgstr ""
+#~ msgstr "アップデート中…"
 
 #~ msgid "Load settings"
 #~ msgstr ""
@@ -2015,7 +2016,7 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid " Administration "
-#~ msgstr ""
+#~ msgstr " 管理 "
 
 #~ msgid ""
 #~ "\n"
@@ -2094,14 +2095,5 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Network settings"
-#~ msgstr ""
-
-#~ msgid "Can't load list of available forwarders."
-#~ msgstr ""
-
-#~ msgid "Cannot fetch updater status"
-#~ msgstr ""
-
-#~ msgid "An error occurred during loading update settings"
 #~ msgstr ""
 
