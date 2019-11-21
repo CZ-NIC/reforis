@@ -143,5 +143,5 @@ timezones:
 clean:
 	find . -name '*.pyc' -exec rm -f {} +
 	rm -rf $(VENV_NAME) *.eggs *.egg-info dist build docs/_build .cache
-	rm -rf $(JS_DIR)/node_modules/ reforis_static/reforis/js/app.min.js
+	rm -rf $(JS_DIR)/node_modules/ reforis_static/reforis/js/app.min.js reforis_static/reforis/css/app.css
 	$(ROUTER_PYTHON) -m pip uninstall -y reforis
