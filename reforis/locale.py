@@ -14,7 +14,7 @@ format. Then it is uploaded into JS code with Jinja2 template system.
 """
 
 from babel.messages.plurals import get_plural
-from babel.support import Translations
+from babel.support import Translations, NullTranslations
 
 from flask import json, current_app
 from flask_babel import get_locale
@@ -81,7 +81,8 @@ def _get_translations(domain, with_plugins=False):
 
     if with_plugins:
         for translation in _get_plugins_translations(domain):
-            translations.add(translation)
+            if not isinstance(translation, NullTranslations):
+                translations.add(translation)
 
     return translations
 
