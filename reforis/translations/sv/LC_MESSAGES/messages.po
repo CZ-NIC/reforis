@@ -8,20 +8,21 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2019-11-21 16:06+0100\n"
-"PO-Revision-Date: 2019-10-19 15:52+0000\n"
+"PO-Revision-Date: 2019-11-23 18:05+0000\n"
 "Last-Translator: Mattias Münster <mattiasmun@gmail.com>\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/turris/reforis/"
+"sv/>\n"
 "Language: sv\n"
-"Language-Team: Swedish "
-"<https://hosted.weblate.org/projects/turris/reforis/sv/>\n"
-"Plural-Forms: nplurals=2; plural=n != 1\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.10-dev\n"
 "Generated-By: Babel 2.7.0\n"
 
 #: js/src/about/About.js:22 js/src/main/pages.js:133
 msgid "About"
-msgstr ""
+msgstr "Om"
 
 #: js/src/about/About.js:40
 msgid "Device"
@@ -82,15 +83,15 @@ msgstr ""
 
 #: js/src/common/network/DHCPClientsList.js:28
 msgid "IP Address"
-msgstr ""
+msgstr "IP-adress"
 
 #: js/src/common/network/DHCPClientsList.js:29
 msgid "MAC Address"
-msgstr ""
+msgstr "MAC-adress"
 
 #: js/src/common/network/DHCPClientsList.js:30
 msgid "Hostname"
-msgstr ""
+msgstr "Värdnamn"
 
 #: js/src/common/network/DHCPClientsList.js:31
 msgid "Active"
@@ -241,7 +242,7 @@ msgstr ""
 
 #: js/src/dns/DNSForm.js:71
 msgid "Use forwarding"
-msgstr ""
+msgstr "Använd vidarebefodran"
 
 #: js/src/dns/DNSForm.js:87
 msgid "Enable DNSSEC"
@@ -249,7 +250,7 @@ msgstr ""
 
 #: js/src/dns/DNSForm.js:95
 msgid "Enable DHCP clients in DNS"
-msgstr ""
+msgstr "Aktivera DHCP-klienter i DNS"
 
 #: js/src/dns/DNSForm.js:106
 msgid "Domain of DHCP clients in DNS"
@@ -269,7 +270,7 @@ msgstr ""
 
 #: js/src/dns/DNSSECDisableModal.js:51
 msgid "Disable DNSSEC"
-msgstr ""
+msgstr "Inaktivera DNSSEC"
 
 #: js/src/dns/Forwarders/Forwarders.js:77
 msgid "Edit forwarder"
@@ -656,7 +657,7 @@ msgstr ""
 
 #: js/src/guide/steps.js:36 js/src/main/pages.js:59
 msgid "DNS"
-msgstr ""
+msgstr "DNS"
 
 #: js/src/guide/steps.js:40 js/src/main/pages.js:115
 #: js/src/packageManagement/updates/Updates.js:25
@@ -743,7 +744,7 @@ msgstr ""
 
 #: js/src/interfaces/SelectedInterface.js:70
 msgid "State"
-msgstr ""
+msgstr "Tillstånd"
 
 #: js/src/interfaces/SelectedInterface.js:74
 msgid "Bus"
@@ -966,7 +967,7 @@ msgstr "SMTP-leverantör"
 
 #: js/src/notificationsSettings/NotificationsSettings.js:24
 msgid "Notifications settings"
-msgstr ""
+msgstr "Aviseringsinställningar"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:18
 msgid "None"
@@ -1184,22 +1185,24 @@ msgid ""
 "Number of days that must pass between receiving the request for restart "
 "and the automatic restart itself."
 msgstr ""
+"Antal dagar som måste förflyta från motttangadet av omstartsbegäran till att "
+"den automatiska omstarten utförs."
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:18
 msgid "Time of day of automatic reboot in HH:MM format."
-msgstr ""
+msgstr "Tid på dagen för automatisk omstart i formatet HH:MM."
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:43
 msgid "Automatic restarts after software update"
-msgstr ""
+msgstr "Automatiska omstarter efter programuppdatering"
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:45
 msgid "Delay (days)"
-msgstr ""
+msgstr "Fördröjning (dagar)"
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:57
 msgid "Reboot time"
-msgstr ""
+msgstr "Tidpunkt för omstart"
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:87
 msgid "Time should be in HH:MM format."
@@ -1223,7 +1226,7 @@ msgstr ""
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:21
 msgid "Delayed updates"
-msgstr ""
+msgstr "Fördröjda uppdateringar"
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:22
 msgid ""
@@ -1233,7 +1236,7 @@ msgstr ""
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:26
 msgid "Update approval needed"
-msgstr ""
+msgstr "Uppdateringsgodkännande behövs"
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:27
 msgid "You have to approve the updates, otherwise they won't be installed."
@@ -1454,25 +1457,27 @@ msgstr ""
 
 #: js/src/regionAndTime/RegionForm.js:62
 msgid "Region settings"
-msgstr ""
+msgstr "Regioninställningar"
 
 #: js/src/regionAndTime/RegionForm.js:64
 msgid ""
 "Please select the timezone the router is being operated in. Correct "
 "setting is required to display the right time and for related functions."
 msgstr ""
+"Välj tidszonen routern används i. Rätt inställning krävs för att visa rätt "
+"tid och för relaterade funktioner."
 
 #: js/src/regionAndTime/RegionForm.js:69
 msgid "Continent or ocean"
-msgstr ""
+msgstr "Kontinent eller ocean"
 
 #: js/src/regionAndTime/RegionForm.js:87
 msgid "Country"
-msgstr ""
+msgstr "Land"
 
 #: js/src/regionAndTime/RegionForm.js:100
 msgid "Timezone"
-msgstr ""
+msgstr "Tidszon"
 
 #: js/src/regionAndTime/TimeForm.js:22
 msgid "Via NTP"
@@ -1494,7 +1499,7 @@ msgstr ""
 
 #: js/src/regionAndTime/TimeForm.js:96
 msgid "How to set time"
-msgstr ""
+msgstr "Hur man ställer in tid"
 
 #: js/src/regionAndTime/TimeForm.js:151
 msgid "Hide NTP servers list"
@@ -2112,4 +2117,3 @@ msgstr ""
 
 #~ msgid "Network settings"
 #~ msgstr ""
-
