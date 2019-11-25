@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2019-11-21 16:06+0100\n"
-"PO-Revision-Date: 2019-11-23 18:04+0000\n"
+"PO-Revision-Date: 2019-11-26 16:05+0000\n"
 "Last-Translator: Bogdan Bodnar <bogdan@bodnar.dev>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/turris/reforis/"
 "ru/>\n"
@@ -238,16 +238,20 @@ msgid ""
 "This will enable your DNS resolver to place DHCP client's names among the"
 " local DNS records."
 msgstr ""
+"Это позволит вашему DNS-резолверу размещать имена клиентов DHCP среди "
+"локальных записей DNS."
 
 #: js/src/dns/DNSForm.js:18
 msgid ""
 "This domain will be used as suffix. E.g. The result for client "
 "\"android-123\" and domain \"my.lan\" will be \"android-123.my.lan\"."
 msgstr ""
+"Этот домен будет использоваться в качестве суффикса. Например, результатом "
+"для клиента «android-123» и домена «my.lan» будет «android-123.my.lan»."
 
 #: js/src/dns/DNSForm.js:71
 msgid "Use forwarding"
-msgstr ""
+msgstr "Использовать переадресацию"
 
 #: js/src/dns/DNSForm.js:87
 msgid "Enable DNSSEC"
@@ -255,11 +259,11 @@ msgstr ""
 
 #: js/src/dns/DNSForm.js:95
 msgid "Enable DHCP clients in DNS"
-msgstr ""
+msgstr "Включение DHCP-клиентов в DNS"
 
 #: js/src/dns/DNSForm.js:106
 msgid "Domain of DHCP clients in DNS"
-msgstr ""
+msgstr "Домен DHCP-клиентов в DNS"
 
 #: js/src/dns/DNSSECDisableModal.js:15
 msgid ""
@@ -275,7 +279,7 @@ msgstr ""
 
 #: js/src/dns/DNSSECDisableModal.js:51
 msgid "Disable DNSSEC"
-msgstr ""
+msgstr "Отключить DNSSEC"
 
 #: js/src/dns/Forwarders/Forwarders.js:77
 msgid "Edit forwarder"
@@ -304,7 +308,7 @@ msgstr ""
 
 #: js/src/dns/Forwarders/ForwardersTable.js:139
 msgid "Delete"
-msgstr ""
+msgstr "Удалить"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:24
 msgid "base64 encoded sha256."
@@ -313,7 +317,7 @@ msgstr ""
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:49
 #: js/src/packageManagement/updates/UpdateApproval.js:96
 msgid "Name"
-msgstr ""
+msgstr "Имя"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:59
 msgid "IPv4"
@@ -365,7 +369,7 @@ msgstr ""
 
 #: js/src/guestNetwork/GuestNetwork.js:26 js/src/interfaces/Interfaces.js:93
 msgid "Guest network"
-msgstr ""
+msgstr "Гостевая сеть"
 
 #: js/src/guestNetwork/GuestNetwork.js:28
 msgid ""
@@ -392,14 +396,16 @@ msgid ""
 "This option enables you to set a bandwidth limit for the guest network, "
 "so that your main network doesn't get slowed-down by it."
 msgstr ""
+"Эта опция ограничивает пропускную способность гостевой сети, чтобы не "
+"замедлять основную сеть."
 
 #: js/src/guestNetwork/GuestNetworkForm.js:23
 msgid "Download speed in guest network (in kilobits per second)."
-msgstr ""
+msgstr "Скорость приёма в гостевой сети (в килобитах в секунду)."
 
 #: js/src/guestNetwork/GuestNetworkForm.js:24
 msgid "Upload speed in guest network (in kilobits per second)."
-msgstr ""
+msgstr "Скорость передачи в гостевой сети (в килобитах в секунду)."
 
 #: js/src/guestNetwork/GuestNetworkForm.js:57 js/src/wifi/WiFiForm.js:79
 msgid "Enable"
@@ -419,7 +425,7 @@ msgstr ""
 
 #: js/src/guestNetwork/GuestNetworkForm.js:168
 msgid "Download"
-msgstr ""
+msgstr "Скачать"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:184
 msgid "Upload"
@@ -435,7 +441,7 @@ msgstr ""
 
 #: js/src/guide/GuideFinish.js:18
 msgid "Guide Finished"
-msgstr ""
+msgstr "Начальная настройка завершена"
 
 #: js/src/guide/GuideFinish.js:20
 msgid ""
@@ -454,7 +460,7 @@ msgstr ""
 
 #: js/src/guide/GuideFinish.js:31
 msgid "Continue"
-msgstr ""
+msgstr "Продолжить"
 
 #: js/src/guide/GuideNavigation.js:43
 msgid "Skip guide"
