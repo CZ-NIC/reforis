@@ -55,26 +55,34 @@ ConnectionTestResultItem.propTypes = {
 };
 
 function ConnectionTestResultItem({ type, result }) {
-    let icon = null;
-    switch (result) {
-    case true:
-        icon = <i className="fas fa-check text-success" />;
-        break;
-    case false:
-        icon = <i className="fas fa-times text-danger" />;
-        break;
-    default:
-        icon = (
-            <div className="spinner-border spinner-border-sm text-secondary" role="status">
-                <span className="sr-only" />
-            </div>
-        );
-    }
-
     return (
         <tr>
             <th scope="row">{type}</th>
-            <td>{icon}</td>
+            <td>
+                {result === null
+                    ? <ConnectionTestIconSpinner />
+                    : <ConnectionTestIcon result={result} />}
+            </td>
         </tr>
+    );
+}
+
+ConnectionTestIcon.propTypes = {
+    result: PropTypes.bool,
+};
+
+function ConnectionTestIcon({ result }) {
+    return (
+        <div className={result ? "text-success" : "text-danger"}>
+            <i className={`fas ${result ? "fa-check" : "fa-times"}`} />
+        </div>
+    );
+}
+
+function ConnectionTestIconSpinner() {
+    return (
+        <div className="spinner-border spinner-border-sm text-secondary" role="status">
+            <span className="sr-only" />
+        </div>
     );
 }

@@ -34,14 +34,15 @@ export default function useConnectionTest(ws, type) {
             .reduce((tests, test) => {
                 tests[test] = null;
                 return tests;
-            }, {}), [type],
+            }, {}),
+        [type],
     );
 
     const [state, setState] = useState(TEST_STATES.NOT_RUNNING);
     const [id, setId] = useState(null);
     const [results, setResults] = useState(initialResults);
 
-    const updateTestResults = useCallback((data) => {
+    const updateResults = useCallback((data) => {
         if (data && data.test_id === id) {
             setResults(
                 (prevTestResults) => ({
@@ -56,12 +57,12 @@ export default function useConnectionTest(ws, type) {
     const wsModule = "wan";
     const [wsData] = useWSForisModule(ws, wsModule, "connection_test");
     useEffect(() => {
-        updateTestResults(wsData);
-    }, [wsData, id, type, updateTestResults]);
+        updateResults(wsData);
+    }, [wsData, id, type, updateResults]);
     const [wsFinishedData] = useWSForisModule(ws, wsModule, "connection_test_finished");
     useEffect(() => {
-        updateTestResults(wsFinishedData);
-    }, [wsFinishedData, id, type, updateTestResults]);
+        updateResults(wsFinishedData);
+    }, [wsFinishedData, id, type, updateResults]);
 
     const [triggerTestData, triggerTest] = useAPIPost(ENDPOINTS[type]);
     useEffect(() => {
