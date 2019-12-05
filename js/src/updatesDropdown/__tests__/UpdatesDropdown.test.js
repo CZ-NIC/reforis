@@ -42,7 +42,7 @@ describe("<UpdatesDropdown/>", () => {
 
         fireEvent.click(getByText("Install now"));
         expect(mockAxios.post).toBeCalled();
-        expect(mockAxios.post).toHaveBeenCalledWith("/api/approvals", {"hash": exampleHash, "solution": "grant"}, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/approvals", {"hash": exampleHash, "solution": "grant"}, expect.anything());
 
         // Reload approvals when resolution is successful
         await wait(() => expect(mockAxios.get).toBeCalledTimes(1));
@@ -56,7 +56,7 @@ describe("<UpdatesDropdown/>", () => {
 
         fireEvent.click(getByText("Ignore"));
         expect(mockAxios.post).toBeCalled();
-        expect(mockAxios.post).toHaveBeenCalledWith("/api/approvals", {"hash": exampleHash, "solution": "deny"}, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/approvals", {"hash": exampleHash, "solution": "deny"}, expect.anything());
     });
 
     it("Updates resolution - display error", async () => {

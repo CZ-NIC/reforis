@@ -5,18 +5,18 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
+import React from "react";
 
 export const pluginInRoot = weight => ({
     weight: weight,
-    name: 'Plugin in root',
-    path: '/plugin-in-root',
+    name: "Plugin in root",
+    path: "/plugin-in-root",
     component: () => <p>Root</p>,
 });
 
 export const pluginInExistedSubmenu = (submenuId, weight) => ({
-    path: '/plugin-in-submenu',
-    name: 'Plugin in submenu',
+    path: "/plugin-in-submenu",
+    name: "Plugin in submenu",
     submenuId: submenuId,
     weight: weight,
     component: () => <p>SubPlugin</p>,
@@ -24,18 +24,18 @@ export const pluginInExistedSubmenu = (submenuId, weight) => ({
 
 export const newSubmenu = (submenuId, weight) => ({
     submenuId: submenuId,
-    name: 'New Submenu',
+    name: "New Submenu",
     weight: weight,
-    path: '/plugin-in-submenu',
+    path: "/plugin-in-submenu",
     pages: [
         {
-            name: 'SubPlugin one',
-            path: '/sub-plugin-one',
+            name: "SubPlugin one",
+            path: "/sub-plugin-one",
             component: () => <p>SubPlugin One</p>
         }, {
 
-            name: 'SubPlugin two',
-            path: '/sub-plugin-two',
+            name: "SubPlugin two",
+            path: "/sub-plugin-two",
             component: () => <p>SubPlugin Two</p>
         },
     ]

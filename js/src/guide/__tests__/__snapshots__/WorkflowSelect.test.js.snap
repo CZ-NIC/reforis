@@ -23,7 +23,7 @@ exports[`<WorkflowSelect/> Snapshot. 1`] = `
       >
         <img
           alt="router"
-          src="/static/reforis/imgs/workflow-router.svg"
+          src="/reforis/static/reforis/imgs/workflow-router.svg"
         />
       </button>
       <p>
@@ -42,7 +42,7 @@ exports[`<WorkflowSelect/> Snapshot. 1`] = `
       >
         <img
           alt="min"
-          src="/static/reforis/imgs/workflow-min.svg"
+          src="/reforis/static/reforis/imgs/workflow-min.svg"
         />
       </button>
       <p>
@@ -61,7 +61,7 @@ exports[`<WorkflowSelect/> Snapshot. 1`] = `
       >
         <img
           alt="bridge"
-          src="/static/reforis/imgs/workflow-bridge.svg"
+          src="/reforis/static/reforis/imgs/workflow-bridge.svg"
         />
       </button>
       <p>

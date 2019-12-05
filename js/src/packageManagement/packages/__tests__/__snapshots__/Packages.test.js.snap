@@ -17,7 +17,7 @@ exports[`<Packages/> Updates disabled 1`] = `
 +       <span>
 +         Please enable 
 +         <a
-+           href=\\"/package-management/update-settings\\"
++           href=\\"/reforis/package-management/update-settings\\"
 +         >
 +           automatic updates
 +         </a>

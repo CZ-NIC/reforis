@@ -15,7 +15,7 @@ import Forwarders from "../Forwarders/Forwarders";
 describe("Forwarders", () => {
     it("should handle errors", async () => {
         const { getByText } = render(<Forwarders />);
-        expect(mockAxios.get).toBeCalledWith("/api/dns/forwarders", expect.anything());
+        expect(mockAxios.get).toBeCalledWith("/reforis/api/dns/forwarders", expect.anything());
         mockJSONError();
         await wait(() => getByText("An error occurred while fetching data."));
     });

@@ -5,10 +5,10 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
+import React from "react";
 import {render} from "foris/testUtils/customTestRender";
 
-import DHCPClientsList from '../DHCPClientsList';
+import DHCPClientsList from "../DHCPClientsList";
 import {clients} from './__fixtures__/DHCPClientsList';
 
 describe('<DHCPClientsList/>', () => {

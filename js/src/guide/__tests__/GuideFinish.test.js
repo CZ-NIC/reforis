@@ -5,15 +5,15 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
+import React from "react";
 import { fireEvent, getByText, render, wait } from "foris/testUtils/customTestRender";
 import { mockJSONError } from "foris/testUtils/network";
 import { mockSetAlert } from "foris/testUtils/alertContextMock";
 
-import GuideFinish from '../GuideFinish';
-import mockAxios from 'jest-mock-axios';
+import GuideFinish from "../GuideFinish";
+import mockAxios from "jest-mock-axios";
 
-describe('<GuideFinish/> and useGuideFinish hook', () => {
+describe("<GuideFinish/> and useGuideFinish hook", () => {
     let guideFinishContainer;
 
     beforeEach(async () => {
@@ -21,17 +21,17 @@ describe('<GuideFinish/> and useGuideFinish hook', () => {
         guideFinishContainer = container
     });
 
-    it('Snapshot.', () => {
+    it("Snapshot.", () => {
         expect(guideFinishContainer).toMatchSnapshot();
     });
 
-    it('useGuideFinish hook', () => {
-        fireEvent.click(getByText(guideFinishContainer, 'Continue'));
-        expect(mockAxios.post).toHaveBeenCalledWith('/api/finish-guide', undefined, expect.anything());
+    it("useGuideFinish hook", () => {
+        fireEvent.click(getByText(guideFinishContainer, "Continue"));
+        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/finish-guide", undefined, expect.anything());
     });
 
     it("handle POST error", async () => {
-        fireEvent.click(getByText(guideFinishContainer, 'Continue'));
+        fireEvent.click(getByText(guideFinishContainer, "Continue"));
         mockJSONError();
         await wait(() => expect(mockSetAlert).toBeCalledWith("Cannot mark guide as finished"));
     });

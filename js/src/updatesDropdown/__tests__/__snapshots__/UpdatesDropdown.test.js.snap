@@ -58,7 +58,7 @@ exports[`<UpdatesDropdown/> Updates awaiting - snapshot 1`] = `
       >
         See details in 
         <a
-          href="/package-management/updates"
+          href="/reforis/package-management/updates"
         >
           Updates
         </a>

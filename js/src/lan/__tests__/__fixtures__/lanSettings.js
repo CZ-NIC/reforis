@@ -9,7 +9,7 @@ export function lanSettingsFixture() {
     return {
         interface_count: 5,
         interface_up_count: 0,
-        mode: 'unmanaged',
+        mode: "unmanaged",
         mode_managed: {
             dhcp: {
                 clients: [],
@@ -18,17 +18,17 @@ export function lanSettingsFixture() {
                 limit: 150,
                 start: 123123
             },
-            netmask: '255.255.255.0',
-            router_ip: '192.168.1.4'
+            netmask: "255.255.255.0",
+            router_ip: "192.168.1.4"
         },
         mode_unmanaged: {
             lan_dhcp: {},
             lan_static: {
-                gateway: '192.168.1.4',
-                ip: '192.168.1.4',
-                netmask: '255.255.255.0'
+                gateway: "192.168.1.4",
+                ip: "192.168.1.4",
+                netmask: "255.255.255.0"
             },
-            lan_type: 'dhcp'
+            lan_type: "dhcp"
         }
     }
 }
