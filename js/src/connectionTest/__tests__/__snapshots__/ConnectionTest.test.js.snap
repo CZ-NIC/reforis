@@ -164,3 +164,86 @@ exports[`<ConnectionTest/> Snapshot before connection test. 1`] = `
   </form>
 </DocumentFragment>
 `;
+
+exports[`<ConnectionTest/> Snapshots with connection test results. 1`] = `
+<DocumentFragment>
+  <form>
+    <table
+      class="table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12"
+    >
+      <tbody>
+        <tr>
+          <th
+            scope="row"
+          >
+            IPv6 connectivity
+          </th>
+          <td>
+            <div
+              class="text-success"
+            >
+              <i
+                class="fas fa-check"
+              />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th
+            scope="row"
+          >
+            IPv6 gateway connectivity
+          </th>
+          <td>
+            <div
+              class="text-success"
+            >
+              <i
+                class="fas fa-check"
+              />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th
+            scope="row"
+          >
+            IPv4 connectivity
+          </th>
+          <td>
+            <div
+              class="text-success"
+            >
+              <i
+                class="fas fa-check"
+              />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th
+            scope="row"
+          >
+            IPv4 gateway connectivity
+          </th>
+          <td>
+            <div
+              class="text-success"
+            >
+              <i
+                class="fas fa-check"
+              />
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button
+      class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
+      type="submit"
+    >
+        Test connection again
+    </button>
+  </form>
+</DocumentFragment>
+`;
