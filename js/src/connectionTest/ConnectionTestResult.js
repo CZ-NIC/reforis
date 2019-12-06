@@ -8,6 +8,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { SpinnerElement } from "foris";
+
 const TEST_TYPES = {
     ipv4: _("IPv4 connectivity"),
     ipv4_gateway: _("IPv4 gateway connectivity"),
@@ -60,7 +62,7 @@ function ConnectionTestResultItem({ type, result }) {
             <th scope="row">{type}</th>
             <td>
                 {result === null
-                    ? <ConnectionTestIconSpinner />
+                    ? <SpinnerElement small className="text-secondary" />
                     : <ConnectionTestIcon result={result} />}
             </td>
         </tr>
@@ -75,14 +77,6 @@ function ConnectionTestIcon({ result }) {
     return (
         <div className={result ? "text-success" : "text-danger"}>
             <i className={`fas ${result ? "fa-check" : "fa-times"}`} />
-        </div>
-    );
-}
-
-function ConnectionTestIconSpinner() {
-    return (
-        <div className="spinner-border spinner-border-sm text-secondary" role="status">
-            <span className="sr-only" />
         </div>
     );
 }
