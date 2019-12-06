@@ -28,7 +28,7 @@ describe('<ConnectionTest/>', () => {
         await waitForElement(() => getByText('IPv6 connectivity'));
 
         expect(mockAxios.post).toBeCalled();
-        expect(mockAxios.post).toHaveBeenCalledWith('/api/connection-test', undefined, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith('/reforis/api/connection-test', undefined, expect.anything());
         expect(asFragment()).toMatchSnapshot();
     });
 
@@ -39,7 +39,7 @@ describe('<ConnectionTest/>', () => {
         await waitForElement(() => getByText(/DNSSEC/));
 
         expect(mockAxios.post).toBeCalled();
-        expect(mockAxios.post).toHaveBeenCalledWith('/api/dns/test', undefined, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith('/reforis/api/dns/test', undefined, expect.anything());
         expect(asFragment()).toMatchSnapshot();
     })
 });

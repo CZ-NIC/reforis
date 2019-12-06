@@ -34,7 +34,7 @@ export default function UpdateApproval({ update, onSuccess, className }) {
     }, [postState, onSuccess, setAlert]);
 
     function resolveUpdate(solution) {
-        post({ hash: update.hash, solution });
+        post({ data: { hash: update.hash, solution } });
     }
 
     if (postState.state === API_STATE.SENDING) {

@@ -55,8 +55,9 @@ export default function useForwarderForm(forwarder, saveForwarderCallback) {
     }, [forwarder, initForm]);
 
     function saveForwarder() {
-        if (forwarder) put(prepDataToSubmit(formState.data));
-        else post(prepDataToSubmit(formState.data));
+        const data = prepDataToSubmit(formState.data);
+        if (forwarder) put({ data });
+        else post({ data });
     }
 
     return [

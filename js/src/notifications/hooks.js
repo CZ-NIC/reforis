@@ -55,14 +55,14 @@ export default function useNotifications(ws) {
     const [, post] = useAPIPost(API_URLs.notifications);
 
     function dismiss(notificationId) {
-        post({ ids: [notificationId] });
+        post({ data: { ids: [notificationId] } });
         setNotifications((currentNotifications) => currentNotifications.filter(
             (notification) => notification.id !== notificationId,
         ));
     }
 
     function dismissAll() {
-        post({ ids: notifications.map((notification) => notification.id) });
+        post({ data: { ids: notifications.map((notification) => notification.id) } });
         setNotifications([]);
     }
 

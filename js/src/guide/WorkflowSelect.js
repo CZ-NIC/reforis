@@ -47,7 +47,7 @@ export default function WorkflowSelect({ workflows, next_step }) {
     }, [next_step, postWorkflowData, setAlert]);
 
     function onWorkflowChangeHandler(workflow) {
-        postWorkflow({ workflow });
+        postWorkflow({ data: { workflow } });
     }
 
     return (

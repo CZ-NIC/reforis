@@ -41,7 +41,7 @@ export default function LanguagesDropdown({ ws }) {
                             type="button"
                             key={lang}
                             className="dropdown-item"
-                            onClick={() => post({ language: lang })}
+                            onClick={() => post({ data: { language: lang } })}
                         >
                             {lang}
                         </button>
