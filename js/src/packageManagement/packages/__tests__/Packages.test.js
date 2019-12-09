@@ -5,26 +5,26 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
-import diffSnapshot from 'snapshot-diff';
+import React from "react";
+import diffSnapshot from "snapshot-diff";
 
 import { cleanup, render, wait } from "foris/testUtils/customTestRender";
 import { mockJSONError } from "foris/testUtils/network";
-import mockAxios from 'jest-mock-axios';
+import mockAxios from "jest-mock-axios";
 
-import packagesFixture from './__fixtures__/packages';
-import Packages from '../Packages';
+import packagesFixture from "./__fixtures__/packages";
+import Packages from "../Packages";
 
-describe('<Packages/>', () => {
+describe("<Packages/>", () => {
     let firstRender;
     let queryByText;
 
     beforeEach(async () => {
         const renderRes = render(<Packages/>);
         queryByText = renderRes.queryByText;
-        await wait(() => expect(mockAxios.get).toBeCalledWith('/api/packages', expect.anything()));
+        await wait(() => expect(mockAxios.get).toBeCalledWith("/reforis/api/packages", expect.anything()));
         mockAxios.mockResponse({data: packagesFixture(true)});
-        await wait(() => renderRes.getByText('Enabled package title'));
+        await wait(() => renderRes.getByText("Enabled package title"));
         firstRender = renderRes.asFragment();
     });
 
@@ -36,23 +36,23 @@ describe('<Packages/>', () => {
         });
     });
 
-    it('Updates enabled', () => {
+    it("Updates enabled", () => {
         expect(firstRender).toMatchSnapshot()
     });
 
-    it('Updates disabled', async () => {
+    it("Updates disabled", async () => {
         cleanup();
         const {getByText, asFragment} = render(<Packages/>);
-        await wait(() => expect(mockAxios.get).toBeCalledWith('/api/packages', expect.anything()));
+        await wait(() => expect(mockAxios.get).toBeCalledWith("/reforis/api/packages", expect.anything()));
         mockAxios.mockResponse({data: packagesFixture(false)});
 
-        await wait(() => getByText('Enabled package title'));
+        await wait(() => getByText("Enabled package title"));
 
         expect(diffSnapshot(firstRender, asFragment())).toMatchSnapshot();
     });
 
-    it('Test hidden.', () => {
-        const HTMLHiddenPackageMessage = queryByText('Hidden package msg');
+    it("Test hidden.", () => {
+        const HTMLHiddenPackageMessage = queryByText("Hidden package msg");
         expect(HTMLHiddenPackageMessage).toBeNull();
     })
 });

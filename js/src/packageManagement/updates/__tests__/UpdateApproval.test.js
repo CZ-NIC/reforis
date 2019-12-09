@@ -39,7 +39,7 @@ describe("<UpdateApproval/>", () => {
     it("Updates resolution - install now", async () => {
         const container = renderUpdateApproval();
         fireEvent.click(getByText(container, "Install now"));
-        expect(mockAxios.post).toHaveBeenCalledWith("/api/approvals", {"hash": exampleHash, "solution": "grant"}, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/approvals", {"hash": exampleHash, "solution": "grant"}, expect.anything());
 
         // Reload approvals when resolution is successful
         expect(onSuccess).not.toBeCalled();
@@ -50,7 +50,7 @@ describe("<UpdateApproval/>", () => {
     it("Updates resolution - ignore", () => {
         const container = renderUpdateApproval();
         fireEvent.click(getByText(container, "Ignore"));
-        expect(mockAxios.post).toHaveBeenCalledWith("/api/approvals", {"hash": exampleHash, "solution": "deny"}, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/approvals", {"hash": exampleHash, "solution": "deny"}, expect.anything());
     });
 
     it("Updates resolution - spinner", async () => {

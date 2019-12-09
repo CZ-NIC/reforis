@@ -92,7 +92,7 @@ function PasswordForm({ postCallback, currentPassword }) {
             foris_password: formState.data.newForisPassword,
         };
         if (formState.data.sameForRoot) data.root_password = formState.data.newForisPassword;
-        post(data);
+        post({ data });
     }
 
     function postRootPassword(event) {
@@ -102,7 +102,7 @@ function PasswordForm({ postCallback, currentPassword }) {
             foris_current_password: formState.data.currentForisPassword,
             root_password: formState.data.newRootPassword,
         };
-        post(data);
+        post({ data });
     }
 
     const isSending = postState === API_STATE.SENDING;

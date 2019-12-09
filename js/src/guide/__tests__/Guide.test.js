@@ -5,30 +5,30 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
+import React from "react";
 import  {getByText, render, wait } from "foris/testUtils/customTestRender";
 import { WebSockets } from "foris";
 import { mockJSONError } from "foris/testUtils/network";
-import mockAxios from 'jest-mock-axios';
+import mockAxios from "jest-mock-axios";
 
-import Guide from '../Guide';
-import {interfacesFixture} from '../../interfaces/__tests__/__fixtures__/interfaces';
-import {guideFixtures} from './__fixtures__/guide';
+import Guide from "../Guide";
+import {interfacesFixture} from "../../interfaces/__tests__/__fixtures__/interfaces";
+import {guideFixtures} from "./__fixtures__/guide";
 
-describe('<Guide/> ', () => {
+describe("<Guide/> ", () => {
     let guideContainer;
 
     beforeEach(async () => {
         const webSockets = new WebSockets();
         const { container } = render(<Guide ws={webSockets} />);
         mockAxios.mockResponse({data: guideFixtures});
-        await wait(() => getByText(container, 'Network interfaces'));
+        await wait(() => getByText(container, "Network interfaces"));
         mockAxios.mockResponse({data: interfacesFixture()});
-        await wait(() => getByText(container, 'LAN1'));
+        await wait(() => getByText(container, "LAN1"));
         guideContainer = container;
     });
 
-    it('Snapshot. Just check if render correct page.', () => {
+    it("Snapshot. Just check if render correct page.", () => {
         expect(guideContainer).toMatchSnapshot();
     });
 

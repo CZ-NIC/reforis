@@ -78,6 +78,6 @@ describe("<DNS/>", () => {
             "forwarding_enabled": true
         };
         expect(mockAxios.post)
-            .toHaveBeenCalledWith("/api/dns", data, expect.anything());
+            .toHaveBeenCalledWith("/reforis/api/dns", data, expect.anything());
     });
 });

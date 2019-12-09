@@ -60,6 +60,6 @@ describe("<Interfaces/>", () => {
             "firewall": {"http_on_wan": false, "https_on_wan": false, "ssh_on_wan": false},
             "networks": {"guest": ["lan4"], "lan": ["lan3", "lan1"], "none": ["lan0", "lan2"], "wan": ["eth2"]}
         };
-        expect(mockAxios.post).toHaveBeenCalledWith("/api/interfaces", data, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/interfaces", data, expect.anything());
     });
 });

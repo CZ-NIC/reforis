@@ -53,11 +53,11 @@ describe("<UpdateChecker/>", () => {
         fireEvent.click(getByText("Check updates"));
         expect(setPending).toBeCalledWith(true);
         rerenderWithPending(true);
-        expect(mockAxios.post).toBeCalledWith("/api/updates/run", undefined, expect.anything());
+        expect(mockAxios.post).toBeCalledWith("/reforis/api/updates/run", undefined, expect.anything());
         mockAxios.mockResponse({ data: { result: true } });
 
         // Repeated check for status
-        await wait(() => expect(mockAxios.get).nthCalledWith(2, "/api/updates/status", expect.anything()));
+        await wait(() => expect(mockAxios.get).nthCalledWith(2, "/reforis/api/updates/status", expect.anything()));
         mockAxios.mockResponse({data: { running: false }});
 
         await wait(() => expect(setPending).toBeCalledWith(false));
@@ -76,14 +76,14 @@ describe("<UpdateChecker/>", () => {
         fireEvent.click(getByText("Check updates"));
         rerenderWithPending(true);
         // Response to POST updates/run
-        await wait(() => expect(mockAxios.post).toBeCalledWith("/api/updates/run", undefined, expect.anything()));
+        await wait(() => expect(mockAxios.post).toBeCalledWith("/reforis/api/updates/run", undefined, expect.anything()));
         mockAxios.mockResponse({ data: { result: true } });
 
-        await wait(() => expect(mockAxios.get).toBeCalledWith("/api/updates/status", expect.anything()));
+        await wait(() => expect(mockAxios.get).toBeCalledWith("/reforis/api/updates/status", expect.anything()));
         mockAxios.mockResponse({data: { running: true }});
 
         // Repeated check for status
-        await wait(() => expect(mockAxios.get).nthCalledWith(2, "/api/updates/status", expect.anything()));
+        await wait(() => expect(mockAxios.get).nthCalledWith(2, "/reforis/api/updates/status", expect.anything()));
         mockAxios.mockResponse({data: { running: false }});
 
         await wait(() => expect(setPending).toBeCalledWith(false));
@@ -92,12 +92,12 @@ describe("<UpdateChecker/>", () => {
     it("should handle error on updater check", async () => {
         fireEvent.click(getByText("Check updates"));
         rerenderWithPending(true);
-        await wait(() => expect(mockAxios.post).toBeCalledWith("/api/updates/run", undefined, expect.anything()));
+        await wait(() => expect(mockAxios.post).toBeCalledWith("/reforis/api/updates/run", undefined, expect.anything()));
 
         // Response to POST updates/run
         mockAxios.mockResponse({ data: { result: true } });
 
-        await wait(() => expect(mockAxios.get).toBeCalledWith("/api/updates/status", expect.anything()));
+        await wait(() => expect(mockAxios.get).toBeCalledWith("/reforis/api/updates/status", expect.anything()));
         mockJSONError();
 
         await wait(() => expect(mockSetAlert).toBeCalledWith("Cannot fetch updater status."));

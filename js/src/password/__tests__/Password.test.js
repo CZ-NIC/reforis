@@ -57,7 +57,7 @@ describe("<Password/>", () => {
             // Save form
             fireEvent.click(getAllByText(passwordContainer, "Save")[0]);
             expect(mockAxios.post).toBeCalledWith(
-                "/api/password",
+                "/reforis/api/password",
                 { "foris_current_password": "foobar", "foris_password": "foobar" },
                 expect.anything(),
             );

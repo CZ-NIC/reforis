@@ -26,7 +26,7 @@ describe("<Updates/>", () => {
     });
 
     it("should handle error", async () => {
-        expect(mockAxios.get).toBeCalledWith("/api/updates", expect.anything());
+        expect(mockAxios.get).toBeCalledWith("/reforis/api/updates", expect.anything());
         mockJSONError();
         await wait(() => expect(container).toMatchSnapshot());
     });
@@ -46,7 +46,7 @@ describe("<Updates/>", () => {
         await wait(() => expect(getByText("Manually check for updates and review them immediately.")).toBeTruthy());
         mockAxios.mockResponse({ data: { running: false } });
         // List of approvals
-        expect(mockAxios.get).nthCalledWith(3, "/api/approvals", expect.anything());
+        expect(mockAxios.get).nthCalledWith(3, "/reforis/api/approvals", expect.anything());
         mockAxios.mockResponse({ data: exampleUpdate });
         await wait(() => expect(container).toMatchSnapshot());
     });
@@ -54,7 +54,7 @@ describe("<Updates/>", () => {
     it("should check updates status", async () => {
         mockAxios.mockResponse({ data: { enabled: true, approval_settings: { status: "delayed" } } });
         await wait(() => expect(getByText("Manually check for updates and review them immediately.")).toBeTruthy());
-        expect(mockAxios.get).nthCalledWith(2, "/api/updates/status", expect.anything());
+        expect(mockAxios.get).nthCalledWith(2, "/reforis/api/updates/status", expect.anything());
     });
 
     it("should handle error on approvable updates", async () => {
@@ -72,13 +72,13 @@ describe("<Updates/>", () => {
 
         // Run updater
         fireEvent.click(getByText("Check and install updates"));
-        await wait(() => expect(mockAxios.post).toBeCalledWith("/api/updates/run", undefined, expect.anything()));
+        await wait(() => expect(mockAxios.post).toBeCalledWith("/reforis/api/updates/run", undefined, expect.anything()));
         // Spinner appears
         expect(container).toMatchSnapshot();
 
         // Proceed to status check
         mockAxios.mockResponse({data: { running: true }});
-        await wait(() => expect(mockAxios.get).nthCalledWith(2, "/api/updates/status", expect.anything()));
+        await wait(() => expect(mockAxios.get).nthCalledWith(2, "/reforis/api/updates/status", expect.anything()));
         // Spinner is still visible
         expect(container).toMatchSnapshot();
     });

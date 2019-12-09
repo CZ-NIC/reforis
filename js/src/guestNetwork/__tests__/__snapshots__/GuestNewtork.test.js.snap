@@ -9,7 +9,7 @@ exports[`<GuestNetwork/> Snapshot disabled. 1`] = `
     
 Guest network is used for 
     <a
-      href="/network-settings/wifi"
+      href="/reforis/network-settings/wifi"
     >
       guest Wi-Fi
     </a>
@@ -63,7 +63,7 @@ exports[`<GuestNetwork/> Snapshot enabled DHCP. 1`] = `
     
 Guest network is used for 
     <a
-      href="/network-settings/wifi"
+      href="/reforis/network-settings/wifi"
     >
       guest Wi-Fi
     </a>
@@ -346,7 +346,7 @@ exports[`<GuestNetwork/> Snapshot enabled QoS. 1`] = `
     
 Guest network is used for 
     <a
-      href="/network-settings/wifi"
+      href="/reforis/network-settings/wifi"
     >
       guest Wi-Fi
     </a>
@@ -599,7 +599,7 @@ exports[`<GuestNetwork/> Snapshot enabled. 1`] = `
     
 Guest network is used for 
     <a
-      href="/network-settings/wifi"
+      href="/reforis/network-settings/wifi"
     >
       guest Wi-Fi
     </a>

@@ -5,24 +5,24 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
+import React from "react";
 import {fireEvent, getByLabelText, getByText, render, wait} from "foris/testUtils/customTestRender";
 
 import { WebSockets } from "foris";
 import { mockJSONError } from "foris/testUtils/network";
-import mockAxios from 'jest-mock-axios';
-import GuestNetwork from '../GuestNetwork';
-import guestNetworkFixture from './__fixtures__/guestNetwork';
+import mockAxios from "jest-mock-axios";
+import GuestNetwork from "../GuestNetwork";
+import guestNetworkFixture from "./__fixtures__/guestNetwork";
 
 
-describe('<GuestNetwork/>', () => {
+describe("<GuestNetwork/>", () => {
     let guestNetworkContainer;
 
     beforeEach(async () => {
         const webSockets = new WebSockets();
         const { container } = render(<GuestNetwork ws={webSockets} setFormValue={() => {}}/>);
         mockAxios.mockResponse({data: guestNetworkFixture()});
-        await wait(() => getByLabelText(container, 'Enable'));
+        await wait(() => getByLabelText(container, "Enable"));
         guestNetworkContainer = container
     });
 
@@ -35,32 +35,32 @@ describe('<GuestNetwork/>', () => {
         });
     });
 
-    it('Snapshot disabled.', () => {
+    it("Snapshot disabled.", () => {
         expect(guestNetworkContainer).toMatchSnapshot();
     });
 
-    it('Snapshot enabled.', () => {
-        fireEvent.click(getByText(guestNetworkContainer, 'Enable'));
+    it("Snapshot enabled.", () => {
+        fireEvent.click(getByText(guestNetworkContainer, "Enable"));
         expect(guestNetworkContainer).toMatchSnapshot();
     });
 
-    it('Snapshot enabled DHCP.', () => {
-        fireEvent.click(getByText(guestNetworkContainer, 'Enable'));
-        fireEvent.click(getByText(guestNetworkContainer, 'Enable DHCP'));
+    it("Snapshot enabled DHCP.", () => {
+        fireEvent.click(getByText(guestNetworkContainer, "Enable"));
+        fireEvent.click(getByText(guestNetworkContainer, "Enable DHCP"));
         expect(guestNetworkContainer).toMatchSnapshot();
     });
 
-    it('Snapshot enabled QoS.', () => {
-        fireEvent.click(getByText(guestNetworkContainer, 'Enable'));
-        fireEvent.click(getByText(guestNetworkContainer, 'Enable QoS'));
+    it("Snapshot enabled QoS.", () => {
+        fireEvent.click(getByText(guestNetworkContainer, "Enable"));
+        fireEvent.click(getByText(guestNetworkContainer, "Enable QoS"));
         expect(guestNetworkContainer).toMatchSnapshot();
     });
 
-    it('Test post.', async () => {
-        fireEvent.click(getByText(guestNetworkContainer, 'Enable'));
-        fireEvent.click(getByText(guestNetworkContainer, 'Enable DHCP'));
-        fireEvent.click(getByText(guestNetworkContainer, 'Enable QoS'));
-        fireEvent.click(getByText(guestNetworkContainer, 'Save'));
+    it("Test post.", async () => {
+        fireEvent.click(getByText(guestNetworkContainer, "Enable"));
+        fireEvent.click(getByText(guestNetworkContainer, "Enable DHCP"));
+        fireEvent.click(getByText(guestNetworkContainer, "Enable QoS"));
+        fireEvent.click(getByText(guestNetworkContainer, "Save"));
 
         expect(mockAxios.post).toBeCalled();
         const data = {
@@ -79,6 +79,6 @@ describe('<GuestNetwork/>', () => {
                 "upload": 1025,
             },
         };
-        expect(mockAxios.post).toHaveBeenCalledWith('/api/guest-network', data, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/guest-network", data, expect.anything());
     });
 });

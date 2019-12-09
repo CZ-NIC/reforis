@@ -25,7 +25,7 @@ describe("<ResetWiFiSettings/>", () => {
 
     it("should display alert on open ports - success", async () => {
         fireEvent.click(getAllByText("Reset Wi-Fi Settings")[1]);
-        expect(mockAxios.post).toBeCalledWith("/api/wifi-reset", undefined, expect.anything());
+        expect(mockAxios.post).toBeCalledWith("/reforis/api/wifi-reset", undefined, expect.anything());
         mockAxios.mockResponse({ data: { foo: "bar" } });
         await wait(() => expect(mockSetAlert).toBeCalledWith("Wi-Fi settings are set to defaults", ALERT_TYPES.SUCCESS));
     });

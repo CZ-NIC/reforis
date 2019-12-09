@@ -50,7 +50,7 @@ function DropdownContent({ update, onSuccess }) {
     }, [onSuccess, postApprovalResponse]);
 
     function resolveUpdate(solution) {
-        postApproval({ hash: update.hash, solution });
+        postApproval({ data: { hash: update.hash, solution } });
     }
 
     const updateFailed = postApprovalResponse.state === API_STATE.ERROR;

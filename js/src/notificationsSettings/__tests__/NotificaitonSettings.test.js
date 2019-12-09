@@ -5,19 +5,19 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
+import React from "react";
 
 import {fireEvent, getByLabelText, getByText, render, wait} from "foris/testUtils/customTestRender";
 import { WebSockets } from "foris";
 import { mockJSONError } from "foris/testUtils/network";
-import mockAxios from 'jest-mock-axios';
-import notificationsSettings from './__fixtures__/notificationsSettings';
+import mockAxios from "jest-mock-axios";
+import notificationsSettings from "./__fixtures__/notificationsSettings";
 
-import NotificationsSettings from '../NotificationsSettings';
+import NotificationsSettings from "../NotificationsSettings";
 
-const ENABLE_CHECKBOX_LABEL = 'Enable email notifications';
+const ENABLE_CHECKBOX_LABEL = "Enable email notifications";
 
-describe('<NotificationsSettings/>', () => {
+describe("<NotificationsSettings/>", () => {
     let NotificationCenterContainer;
 
     beforeEach(async () => {
@@ -37,60 +37,60 @@ describe('<NotificationsSettings/>', () => {
         await wait(() => getByText(container, "An error occurred while fetching data."));
     });
 
-    it('Enabled, smtp_type:custom', () => {
+    it("Enabled, smtp_type:custom", () => {
         expect(NotificationCenterContainer).toMatchSnapshot()
     });
 
-    it('Disabled', () => {
+    it("Disabled", () => {
         fireEvent.click(getByLabelText(NotificationCenterContainer, ENABLE_CHECKBOX_LABEL));
         expect(NotificationCenterContainer).toMatchSnapshot()
     });
 
-    it('Enabled,smtp_type:turris', () => {
-        fireEvent.click(getByLabelText(NotificationCenterContainer, 'Turris'));
+    it("Enabled,smtp_type:turris", () => {
+        fireEvent.click(getByLabelText(NotificationCenterContainer, "Turris"));
         expect(NotificationCenterContainer).toMatchSnapshot()
     });
 
-    it('Post.', () => {
-        fireEvent.click(getByText(NotificationCenterContainer, 'Save'));
+    it("Post.", () => {
+        fireEvent.click(getByText(NotificationCenterContainer, "Save"));
 
         expect(mockAxios.post).toBeCalled();
         const data = {
-            common: {send_news: true, severity_filter: 1, to: ['some@example.com']},
+            common: {send_news: true, severity_filter: 1, to: ["some@example.com"]},
             enabled: true,
             smtp_custom: {
-                from: 'router@example.com',
-                host: 'example.com',
-                password: 'test_password',
+                from: "router@example.com",
+                host: "example.com",
+                password: "test_password",
                 port: 465,
-                security: 'ssl',
-                username: 'root'
+                security: "ssl",
+                username: "root"
             },
-            smtp_type: 'custom'
+            smtp_type: "custom"
         };
-        expect(mockAxios.post).toHaveBeenCalledWith('/api/notifications-settings', data, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/notifications-settings", data, expect.anything());
     });
 
-    it('Post smtp_type:turris.', () => {
-        fireEvent.click(getByLabelText(NotificationCenterContainer, 'Turris'));
-        fireEvent.click(getByText(NotificationCenterContainer, 'Save'));
+    it("Post smtp_type:turris.", () => {
+        fireEvent.click(getByLabelText(NotificationCenterContainer, "Turris"));
+        fireEvent.click(getByText(NotificationCenterContainer, "Save"));
 
         expect(mockAxios.post).toBeCalled();
         const data = {
-            common: {send_news: true, severity_filter: 1, to: ['some@example.com']},
+            common: {send_news: true, severity_filter: 1, to: ["some@example.com"]},
             enabled: true,
-            smtp_type: 'turris',
-            smtp_turris: {sender_name: 'turris'}
+            smtp_type: "turris",
+            smtp_turris: {sender_name: "turris"}
         };
-        expect(mockAxios.post).toHaveBeenCalledWith('/api/notifications-settings', data, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/notifications-settings", data, expect.anything());
     });
 
-    it('Post disabled.', () => {
+    it("Post disabled.", () => {
         fireEvent.click(getByLabelText(NotificationCenterContainer, ENABLE_CHECKBOX_LABEL));
-        fireEvent.click(getByText(NotificationCenterContainer, 'Save'));
+        fireEvent.click(getByText(NotificationCenterContainer, "Save"));
 
         expect(mockAxios.post).toBeCalled();
         const data = {enabled: false};
-        expect(mockAxios.post).toHaveBeenCalledWith('/api/notifications-settings', data, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/notifications-settings", data, expect.anything());
     });
 });

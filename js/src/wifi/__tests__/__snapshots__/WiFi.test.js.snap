@@ -366,7 +366,7 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
 +           >
 +             <img
 +               alt=\\"QR\\"
-+               src=\\"/static/reforis/imgs/QR_icon.svg\\"
++               src=\\"/reforis/static/reforis/imgs/QR_icon.svg\\"
 +               style=\\"opacity: 0.67;\\"
 +               width=\\"20\\"
 +             />
@@ -476,7 +476,7 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
 +           >
 +             <img
 +               alt=\\"QR\\"
-+               src=\\"/static/reforis/imgs/QR_icon.svg\\"
++               src=\\"/reforis/static/reforis/imgs/QR_icon.svg\\"
 +               style=\\"opacity: 0.67;\\"
 +               width=\\"20\\"
 +             />
