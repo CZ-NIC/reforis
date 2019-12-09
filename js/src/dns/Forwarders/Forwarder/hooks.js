@@ -50,14 +50,20 @@ export default function useForwarderForm(forwarder, saveForwarderCallback) {
     }, [putState, saveForwarderCallback, setAlert]);
 
     useEffect(() => {
-        if (forwarder) initForm(forwarder);
-        else initForm(EMPTY_FORWARDER);
+        if (forwarder) {
+            initForm(forwarder);
+        } else {
+            initForm(EMPTY_FORWARDER);
+        }
     }, [forwarder, initForm]);
 
     function saveForwarder() {
         const data = prepDataToSubmit(formState.data);
-        if (forwarder) put({ data });
-        else post({ data });
+        if (forwarder) {
+            put({ data });
+        } else {
+            post({ data });
+        }
     }
 
     return [
