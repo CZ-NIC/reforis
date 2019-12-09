@@ -9,16 +9,13 @@ exports[`<Updates/> should display spinner 1`] = `
     class="spinner-wrapper my-3 text-center"
   >
     <div
-      class="spinner-border "
+      class="spinner-border"
       role="status"
     >
       <span
         class="sr-only"
       />
     </div>
-    <div
-      class="spinner-text"
-    />
   </div>
 </div>
 `;
@@ -42,16 +39,13 @@ exports[`<Updates/> should display spinner while check is pending 1`] = `
     class="spinner-wrapper text-center"
   >
     <div
-      class="spinner-border "
+      class="spinner-border"
       role="status"
     >
       <span
         class="sr-only"
       />
     </div>
-    <div
-      class="spinner-text"
-    />
   </div>
 </div>
 `;
@@ -75,16 +69,13 @@ exports[`<Updates/> should display spinner while check is pending 2`] = `
     class="spinner-wrapper text-center"
   >
     <div
-      class="spinner-border "
+      class="spinner-border"
       role="status"
     >
       <span
         class="sr-only"
       />
     </div>
-    <div
-      class="spinner-text"
-    />
   </div>
 </div>
 `;

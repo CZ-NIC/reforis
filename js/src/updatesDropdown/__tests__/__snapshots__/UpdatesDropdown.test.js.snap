@@ -18,9 +18,6 @@ exports[`<UpdatesDropdown/> Loading (spinner visible) 1`] = `
           class="sr-only"
         />
       </div>
-      <div
-        class="spinner-text"
-      />
     </button>
   </div>
 </div>
