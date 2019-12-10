@@ -8,6 +8,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { SpinnerElement } from "foris";
+
 const TEST_TYPES = {
     ipv4: _("IPv4 connectivity"),
     ipv4_gateway: _("IPv4 gateway connectivity"),
@@ -55,26 +57,26 @@ ConnectionTestResultItem.propTypes = {
 };
 
 function ConnectionTestResultItem({ type, result }) {
-    let icon = null;
-    switch (result) {
-    case true:
-        icon = <i className="fas fa-check text-success" />;
-        break;
-    case false:
-        icon = <i className="fas fa-times text-danger" />;
-        break;
-    default:
-        icon = (
-            <div className="spinner-border spinner-border-sm text-secondary" role="status">
-                <span className="sr-only" />
-            </div>
-        );
-    }
-
     return (
         <tr>
             <th scope="row">{type}</th>
-            <td>{icon}</td>
+            <td>
+                {result === null
+                    ? <SpinnerElement small className="text-secondary" />
+                    : <ConnectionTestIcon result={result} />}
+            </td>
         </tr>
+    );
+}
+
+ConnectionTestIcon.propTypes = {
+    result: PropTypes.bool,
+};
+
+function ConnectionTestIcon({ result }) {
+    return (
+        <div className={result ? "text-success" : "text-danger"}>
+            <i className={`fas ${result ? "fa-check" : "fa-times"}`} />
+        </div>
     );
 }

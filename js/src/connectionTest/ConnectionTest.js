@@ -27,7 +27,8 @@ export default function ConnectionTest({ ws, type }) {
 
     return (
         <form onSubmit={onSubmit}>
-            {state !== TEST_STATES.NOT_RUNNING ? <ConnectionTestResults {...testResults} /> : null}
+            {state !== TEST_STATES.NOT_RUNNING
+                && <ConnectionTestResults {...testResults} />}
             <ConnectionTestButton state={state} />
         </form>
     );
