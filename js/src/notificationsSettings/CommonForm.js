@@ -23,7 +23,8 @@ CommonForm.propTypes = {
     formData: PropTypes.shape({
         to: PropTypes.string,
         severity_filter: PropTypes.oneOf(
-            Object.keys(SEVERITY_OPTIONS).map((key) => parseInt(key)),
+            Object.keys(SEVERITY_OPTIONS)
+                .map((key) => parseInt(key)),
         ).isRequired,
         send_news: PropTypes.bool.isRequired,
     }).isRequired,
@@ -60,7 +61,7 @@ export default function CommonForm({
                 choices={SEVERITY_OPTIONS}
 
                 onChange={setFormValue(
-                    (value) => ({ common: { severity_filter: { $set: value } } }),
+                    (value) => ({ common: { severity_filter: { $set: parseInt(value) } } }),
                 )}
 
                 {...props}
