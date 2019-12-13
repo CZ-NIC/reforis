@@ -44,7 +44,10 @@ function Navigation({ pages, location }) {
 
 NavigationToggle.propTypes = {
     name: PropTypes.string.isRequired,
-    icon: PropTypes.string.isRequired,
+    icon: PropTypes.oneOfType([
+        PropTypes.string.isRequired,
+        PropTypes.node,
+    ]),
     active: PropTypes.bool.isRequired,
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.node),
@@ -63,7 +66,7 @@ function NavigationToggle({
                 href={`#nav-toggle-${uid}`}
                 data-toggle="collapse"
             >
-                {icon ? <Icon name={icon} /> : null}
+                {icon ? <Icon icon={icon} /> : null}
                 {name}
             </a>
             <ul
@@ -90,14 +93,17 @@ function NavigationToggleItem({ name, ...props }) {
 }
 
 NavigationMainItem.propTypes = {
-    icon: PropTypes.string.isRequired,
+    icon: PropTypes.oneOfType([
+        PropTypes.string.isRequired,
+        PropTypes.node,
+    ]),
     name: PropTypes.string.isRequired,
 };
 
 function NavigationMainItem({ icon, name, ...props }) {
     return (
         <NavigationItem {...props}>
-            {icon ? <Icon name={icon} /> : null}
+            {icon ? <Icon icon={icon} /> : null}
             {name}
         </NavigationItem>
     );
@@ -125,16 +131,29 @@ function NavigationItem({ path, children, isLinkOutside }) {
 }
 
 Icon.propTypes = {
-    name: PropTypes.string.isRequired,
+    icon: PropTypes.oneOfType([
+        PropTypes.string.isRequired,
+        PropTypes.node,
+    ]),
 };
 
-function Icon({ name }) {
-    return (
-        <>
-            <i className={`fas fa-fw fa-${name}`} />
-            &nbsp;&nbsp;&nbsp;
-        </>
-    );
+function Icon({ icon }) {
+    let element = null;
+    if (typeof icon === "string") {
+        element = <i className={`fas fa-fw fa-${icon}`} />;
+    }
+    if (React.isValidElement(icon)) {
+        element = icon;
+    }
+    if (element) {
+        return (
+            <>
+                {element}
+                &nbsp;&nbsp;&nbsp;
+            </>
+        );
+    }
+    return null;
 }
 
 const NavigationWithRouter = withRouter(Navigation);
