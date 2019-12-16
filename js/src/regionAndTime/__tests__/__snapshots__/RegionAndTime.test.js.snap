@@ -3,7 +3,7 @@
 exports[`<RegionAndTime/> Snapshot 1`] = `
 <div>
   <h1>
-    Region and time
+    Region and Time
   </h1>
   <p>
     
@@ -13,7 +13,7 @@ procedure of SSL certificate verification might not work correctly.
   </p>
   <form>
     <h4>
-      Region settings
+      Region Settings
     </h4>
     <p>
       Please select the timezone the router is being operated in. Correct setting is required to display the right time and for related functions.
@@ -361,7 +361,7 @@ procedure of SSL certificate verification might not work correctly.
       </select>
     </div>
     <h4>
-      Time settings
+      Time Settings
     </h4>
     <p>
       Time should be up-to-date otherwise DNS and other services might not work properly.
@@ -405,7 +405,7 @@ procedure of SSL certificate verification might not work correctly.
       id="collapseNTPServers"
     >
       <h5>
-        NTP servers
+        NTP Servers
       </h5>
       <div
         id="ntpServersList"

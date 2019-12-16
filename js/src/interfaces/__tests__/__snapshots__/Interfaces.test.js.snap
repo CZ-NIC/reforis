@@ -3,7 +3,7 @@
 exports[`<Interfaces/> Snapshot after interface moving. 1`] = `
 <div>
   <h1>
-    Network interfaces
+    Network Interfaces
   </h1>
   <p>
     
@@ -32,7 +32,7 @@ easy way.
         
   </p>
   <h4>
-    Guest network
+    Guest Network
   </h4>
   <p>
     
@@ -339,7 +339,7 @@ devices connected to the guest network.
 exports[`<Interfaces/> Snapshot select interface. 1`] = `
 <div>
   <h1>
-    Network interfaces
+    Network Interfaces
   </h1>
   <p>
     
@@ -368,7 +368,7 @@ easy way.
         
   </p>
   <h4>
-    Guest network
+    Guest Network
   </h4>
   <p>
     
@@ -675,7 +675,7 @@ devices connected to the guest network.
 exports[`<Interfaces/> Snapshot. 1`] = `
 <div>
   <h1>
-    Network interfaces
+    Network Interfaces
   </h1>
   <p>
     
@@ -704,7 +704,7 @@ easy way.
         
   </p>
   <h4>
-    Guest network
+    Guest Network
   </h4>
   <p>
     

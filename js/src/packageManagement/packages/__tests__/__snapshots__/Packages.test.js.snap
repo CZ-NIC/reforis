@@ -28,7 +28,7 @@ exports[`<Packages/> Updates disabled 1`] = `
 +       class=\\"text-muted\\"
 +     >
         <h3>
-          Packages list
+          Packages List
         </h3>
         <div
           class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
@@ -353,7 +353,7 @@ been installed manually or using opkg is not affected.
   </p>
   <form>
     <h3>
-      Packages list
+      Packages List
     </h3>
     <div
       class="form-group col-sm-12 offset-lg-1 col-lg-10"

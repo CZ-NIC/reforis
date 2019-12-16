@@ -19,7 +19,7 @@ describe("<WorkflowSelect/>", () => {
 
     beforeEach(async () => {
         const {container} = render(<WorkflowSelect workflows={workflowFixture} next_step="password"/>);
-        await wait(() => getByText(container, "Guide workflow"));
+        await wait(() => getByText(container, "Guide Workflow"));
         workflowSelectContainer = container;
     });
 

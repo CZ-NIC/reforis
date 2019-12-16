@@ -14,7 +14,7 @@ exports[`<UpdateApproval/> Updates awaiting - snapshot 1`] = `
 <div>
   <div>
     <h3>
-      Approve update from %s
+      Approve Update From %s
     </h3>
     <p>
       There is %d package to be updated. See 

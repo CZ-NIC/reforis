@@ -47,7 +47,7 @@ router to the network, it is usually not necessary to change this setting.
                 <MACForm />
             </ForisForm>
 
-            <h1>{_("Connection test")}</h1>
+            <h1>{_("Connection Test")}</h1>
             <p
                 dangerouslySetInnerHTML={{
                     __html: _(`

@@ -23,7 +23,7 @@ describe("<Password/>", () => {
     beforeEach(async () => {
         const { container } = render(<Password/>);
         mockAxios.mockResponse({data: {password_set: true}});
-        await wait(() => getByText(container, "Advanced administration (root) password"));
+        await wait(() => getByText(container, "Advanced Administration (root) Password"));
         passwordContainer = container;
     });
 

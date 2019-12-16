@@ -98,7 +98,7 @@ exports[`<Updates/> should handle approvable updates 1`] = `
     class="mt-4"
   >
     <h3>
-      Approve update from %s
+      Approve Update From %s
     </h3>
     <p>
       There is %d package to be updated. See 

@@ -32,7 +32,7 @@ export default function LanguagesDropdown({ ws }) {
 
             <div className="dropdown-menu" id="languages-dropdown-menu">
                 <div className="dropdown-header">
-                    <h5>Languages</h5>
+                    <h5>{_("Languages")}</h5>
                 </div>
                 <div className="dropdown-divider" />
                 {langsList

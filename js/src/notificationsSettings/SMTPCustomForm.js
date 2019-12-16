@@ -51,7 +51,7 @@ export default function SMTPCustomForm({
 }) {
     return (
         <>
-            <h4>{_("SMTP settings")}</h4>
+            <h4>{_("SMTP Settings")}</h4>
             <EmailInput
                 label={_("Sender address (From)")}
                 value={formData.from || ""}

@@ -40,7 +40,7 @@ export default function RestartAfterUpdateForm({
     const rebootTime = moment(formData.time, "HH:mm");
     return (
         <>
-            <h4>{_("Automatic restarts after software update")}</h4>
+            <h4>{_("Automatic Restarts After Software Update")}</h4>
             <NumberInput
                 label={_("Delay (days)")}
                 min={0}

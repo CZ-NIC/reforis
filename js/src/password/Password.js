@@ -112,7 +112,7 @@ function PasswordForm({ postCallback, currentPassword }) {
 
     return (
         <>
-            <h3>{_("Password settings")}</h3>
+            <h3>{_("Password Settings")}</h3>
             {currentPassword.password_set && (
                 <CurrentForisPasswordForm
                     formData={formState.data}

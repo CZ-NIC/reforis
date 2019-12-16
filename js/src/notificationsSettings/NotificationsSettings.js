@@ -21,7 +21,7 @@ NotificationsSettings.propTypes = {
 export default function NotificationsSettings({ ws }) {
     return (
         <>
-            <h1>{_("Notifications settings")}</h1>
+            <h1>{_("Notifications Settings")}</h1>
             <ForisForm
                 ws={ws}
                 forisConfig={{

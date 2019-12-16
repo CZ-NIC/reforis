@@ -60,7 +60,7 @@ export default function UpdateApproval({ update, onSuccess, className }) {
 
     return (
         <div className={className}>
-            <h3>{babel.format(_("Approve update from %s"), toLocaleDateString(update.time))}</h3>
+            <h3>{babel.format(_("Approve Update From %s"), toLocaleDateString(update.time))}</h3>
             <p dangerouslySetInnerHTML={{ __html: `${packagesNumber} ${details}` }} />
             <div className="collapse" id="plan-wrapper" data-testid="plan-wrapper">
                 <Plan plan={update.plan} />

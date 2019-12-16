@@ -3,7 +3,7 @@
 exports[`<GuestNetwork/> Snapshot disabled. 1`] = `
 <div>
   <h1>
-    Guest network
+    Guest Network
   </h1>
   <p>
     
@@ -57,7 +57,7 @@ in LAN.
 exports[`<GuestNetwork/> Snapshot enabled DHCP. 1`] = `
 <div>
   <h1>
-    Guest network
+    Guest Network
   </h1>
   <p>
     
@@ -328,7 +328,7 @@ in LAN.
     id="dhcp-clients-container"
   >
     <h3>
-      DHCP clients
+      DHCP Clients
     </h3>
     <p>
       No DHCP clients found.
@@ -340,7 +340,7 @@ in LAN.
 exports[`<GuestNetwork/> Snapshot enabled QoS. 1`] = `
 <div>
   <h1>
-    Guest network
+    Guest Network
   </h1>
   <p>
     
@@ -593,7 +593,7 @@ in LAN.
 exports[`<GuestNetwork/> Snapshot enabled. 1`] = `
 <div>
   <h1>
-    Guest network
+    Guest Network
   </h1>
   <p>
     

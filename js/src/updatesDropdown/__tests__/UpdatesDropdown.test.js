@@ -32,13 +32,13 @@ describe("<UpdatesDropdown/>", () => {
 
     it("Updates awaiting - snapshot", async () => {
         mockAxios.mockResponse({data: {hash: exampleHash, approvable: true}});
-        await waitForElement(() => getByText("Approve update"));
+        await waitForElement(() => getByText("Approve Update"));
         expect(container).toMatchSnapshot();
     });
 
     it("Updates awaiting - install now", async () => {
         mockAxios.mockResponse({data: {hash: exampleHash, approvable: true}});
-        await waitForElement(() => getByText("Approve update"));
+        await waitForElement(() => getByText("Approve Update"));
 
         fireEvent.click(getByText("Install now"));
         expect(mockAxios.post).toBeCalled();
@@ -52,7 +52,7 @@ describe("<UpdatesDropdown/>", () => {
 
     it("Updates awaiting - ignore", async () => {
         mockAxios.mockResponse({data: {hash: exampleHash, approvable: true}});
-        await waitForElement(() => getByText("Approve update"));
+        await waitForElement(() => getByText("Approve Update"));
 
         fireEvent.click(getByText("Ignore"));
         expect(mockAxios.post).toBeCalled();
@@ -61,7 +61,7 @@ describe("<UpdatesDropdown/>", () => {
 
     it("Updates resolution - display error", async () => {
         mockAxios.mockResponse({data: {hash: exampleHash, approvable: true}});
-        await waitForElement(() => getByText("Approve update"));
+        await waitForElement(() => getByText("Approve Update"));
         fireEvent.click(getByText("Install now"));
         mockJSONError();
         await waitForElement(() => getByText("Cannot resolve update"));

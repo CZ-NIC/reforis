@@ -22,7 +22,7 @@ describe("<Guide/> ", () => {
         const webSockets = new WebSockets();
         const { container } = render(<Guide ws={webSockets} />);
         mockAxios.mockResponse({data: guideFixtures});
-        await wait(() => getByText(container, "Network interfaces"));
+        await wait(() => getByText(container, "Network Interfaces"));
         mockAxios.mockResponse({data: interfacesFixture()});
         await wait(() => getByText(container, "LAN1"));
         guideContainer = container;

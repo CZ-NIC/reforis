@@ -3,7 +3,7 @@
 exports[`<DHCPClientsList/> Test with snapshot. 1`] = `
 <div>
   <h3>
-    DHCP clients
+    DHCP Clients
   </h3>
   <table
     class="table table-hover"

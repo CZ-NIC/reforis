@@ -24,7 +24,7 @@ const WORKFLOW_DESCRIPTIONS = {
 };
 
 const WORKFLOW_NAMES = {
-    bridge: _("Local server"),
+    bridge: _("Local Server"),
     router: _("Router"),
     min: _("Minimal"),
 };
@@ -52,7 +52,7 @@ export default function WorkflowSelect({ workflows, next_step }) {
 
     return (
         <>
-            <h1>{_("Guide workflow")}</h1>
+            <h1>{_("Guide Workflow")}</h1>
             <p>{_("Here you can set the guide walkthrough which will guide you through the basic configuration of your device.")}</p>
             <div id="workflow-selector">
                 {workflows.map((workflow) => (

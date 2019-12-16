@@ -23,7 +23,7 @@ GuestNetwork.propTypes = {
 export default function GuestNetwork({ ws }) {
     return (
         <>
-            <h1>{_("Guest network")}</h1>
+            <h1>{_("Guest Network")}</h1>
             <p dangerouslySetInnerHTML={{
                 __html: _(`
 Guest network is used for <a href="${ForisURLs.wifi}">guest Wi-Fi</a>.

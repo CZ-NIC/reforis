@@ -75,7 +75,7 @@ export default function NotificationsEmailSettingsForm({
 
     return (
         <>
-            <h3>{_("Email notifications")}</h3>
+            <h3>{_("Email Notifications")}</h3>
             <CheckBox
                 label={_("Enable email notifications")}
                 checked={formData.enabled}

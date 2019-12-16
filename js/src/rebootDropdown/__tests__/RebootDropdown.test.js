@@ -23,7 +23,7 @@ describe('<RebootDropdown/>', () => {
         mockAxios.mockResponse({data: notificationsFixture});
         rebootDropdownContainer = container;
         await wait(() => {
-            getByText('Reboot required');
+            getByText('Reboot Required');
         });
     });
 

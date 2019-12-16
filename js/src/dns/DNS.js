@@ -60,7 +60,7 @@ this is a serious flaw on their side.
                 <DNSForm ws={ws} />
             </ForisForm>
 
-            <h1>{_("Connection test")}</h1>
+            <h1>{_("Connection Test")}</h1>
             <p
                 dangerouslySetInnerHTML={{
                     __html: _(`
