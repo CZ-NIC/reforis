@@ -95,8 +95,13 @@ form > button {
     width: 14rem;
 }
 
-#sidebar svg {
+#sidebar a svg {
     color: gray;
+    /* Fill is used for custom svg sprite icons */
+    fill: gray;
+    /* Keep custom icons in the same size as fa icon */
+    height: 1em;
+    width: 1em;
 }
 
 #sidebar a.active {
@@ -106,10 +111,14 @@ form > button {
 
 #sidebar a.active svg {
     color: #fff;
+    /* Fill is used for custom svg sprite icons */
+    fill: #fff;
 }
 
 #sidebar a:hover svg {
     color: grey;
+    /* Fill is used for custom svg sprite icons */
+    fill: grey;
 }
 
 #sidebar ul li a:hover {
