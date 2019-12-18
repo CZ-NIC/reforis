@@ -580,11 +580,12 @@ form > button {
 .network .interface {
     display: flex;
     flex-direction: column;
-    margin: 0.5rem;
+    margin: 1rem;
     align-items: center;
     cursor: pointer;
     background: transparent;
     border: none;
+    padding: 0;
 }
 
 @keyframes interfaceSelectedFade {
@@ -611,6 +612,10 @@ form > button {
 
 .interface:focus {
     outline: none;
+}
+
+.interface:active {
+    color: inherit;
 }
 
 /* Modal */
