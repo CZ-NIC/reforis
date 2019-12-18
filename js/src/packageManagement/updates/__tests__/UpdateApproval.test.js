@@ -63,6 +63,6 @@ describe("<UpdateApproval/>", () => {
         const container = renderUpdateApproval();
         fireEvent.click(getByText(container, "Ignore"));
         mockJSONError();
-        await wait(() => expect(mockSetAlert).toBeCalledWith("Cannot resolve update"));
+        await wait(() => expect(mockSetAlert).toBeCalledWith("Cannot install updates."));
     });
 });

@@ -56,7 +56,7 @@ export function useApprovals(displayApproval) {
  * the polling.
  */
 export function usePendingPolling(onSuccess, pending, setPending) {
-    const [setAlert] = useAlert();
+    const [setAlert, dismissAlert] = useAlert();
 
     const [checkStatusPollingResponse] = useAPIPolling(
         API_URLs.updatesStatus,
@@ -68,6 +68,7 @@ export function usePendingPolling(onSuccess, pending, setPending) {
         if (checkStatusPollingResponse.state === API_STATE.SUCCESS) {
             const isRunning = checkStatusPollingResponse.data.running;
             setPending(isRunning);
+            dismissAlert();
             if (!isRunning) {
                 onSuccess();
             }
@@ -76,25 +77,26 @@ export function usePendingPolling(onSuccess, pending, setPending) {
             setAlert(_("Cannot fetch updater status."));
         }
     },
-    [checkStatusPollingResponse, onSuccess, setPending, setAlert]);
+    [checkStatusPollingResponse, onSuccess, setPending, setAlert, dismissAlert]);
 }
 
 /*
  * useCheckUpdates is used to check for new updates. Sets pending as true when started.
  */
 export function useCheckUpdates(setPending) {
-    const [setAlert] = useAlert();
+    const [setAlert, dismissAlert] = useAlert();
 
     const [runUpdatesResponse, runUpdates] = useAPIPost(API_URLs.runUpdates);
     // Trigger updater status checker after updater is enabled
     useEffect(() => {
         if (runUpdatesResponse.state === API_STATE.SUCCESS) {
             setPending(true);
+            dismissAlert();
         } else if (runUpdatesResponse.state === API_STATE.ERROR) {
             setPending(false);
             setAlert(runUpdatesResponse.data);
         }
-    }, [runUpdatesResponse, setPending, setAlert]);
+    }, [runUpdatesResponse, setPending, setAlert, dismissAlert]);
 
     return () => {
         setPending(true);

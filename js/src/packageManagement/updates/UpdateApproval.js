@@ -9,7 +9,7 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 
 import {
-    useAPIPost, Button, Spinner, useAlert, API_STATE,
+    useAPIPost, Button, Spinner, useAlert, API_STATE, ALERT_TYPES,
 } from "foris";
 import API_URLs from "common/API";
 import toLocaleDateString from "utils/localeDate";
@@ -21,19 +21,21 @@ UpdateApproval.propTypes = {
 };
 
 export default function UpdateApproval({ update, onSuccess, className }) {
-    const [setAlert] = useAlert();
+    const [setAlert, dismissAlert] = useAlert();
 
     const [postState, post] = useAPIPost(API_URLs.approvals);
     // Execute callback when resolution is successful
     useEffect(() => {
         if (postState.state === API_STATE.ERROR) {
-            setAlert(_("Cannot resolve update"));
+            setAlert(_("Cannot install updates."));
         } else if (postState.state === API_STATE.SUCCESS) {
             onSuccess();
+            setAlert(_("Updates will be installed shortly."), ALERT_TYPES.SUCCESS);
         }
     }, [postState, onSuccess, setAlert]);
 
     function resolveUpdate(solution) {
+        dismissAlert();
         post({ data: { hash: update.hash, solution } });
     }
 

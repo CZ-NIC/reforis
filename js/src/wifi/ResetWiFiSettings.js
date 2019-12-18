@@ -32,14 +32,19 @@ export default function ResetWiFiSettings({ ws }) {
     }, [ws]);
 
     const [postResetResponse, postReset] = useAPIPost(API.wifiReset);
-    const [setAlert] = useAlert();
+    const [setAlert, dismissAlert] = useAlert();
     useEffect(() => {
         if (postResetResponse.state === API_STATE.ERROR) {
-            setAlert(_("An error occurred during resetting Wi-Fi settings"));
+            setAlert(_("An error occurred during resetting Wi-Fi settings."));
         } else if (postResetResponse.state === API_STATE.SUCCESS) {
-            setAlert(_("Wi-Fi settings are set to defaults"), ALERT_TYPES.SUCCESS);
+            setAlert(_("Wi-Fi settings are set to defaults."), ALERT_TYPES.SUCCESS);
         }
     }, [postResetResponse, setAlert]);
+
+    function onReset() {
+        dismissAlert();
+        postReset();
+    }
 
     return (
         <>
@@ -56,7 +61,7 @@ current Wi-Fi configuration and restore the default values.
                 loading={isLoading}
                 disabled={isLoading}
 
-                onClick={() => postReset()}
+                onClick={onReset}
             >
                 {_("Reset Wi-Fi Settings")}
             </Button>

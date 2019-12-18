@@ -64,6 +64,6 @@ describe("<UpdatesDropdown/>", () => {
         await waitForElement(() => getByText("Approve Update"));
         fireEvent.click(getByText("Install now"));
         mockJSONError();
-        await waitForElement(() => getByText("Cannot resolve update"));
+        await waitForElement(() => getByText("Cannot install updates."));
     });
 });

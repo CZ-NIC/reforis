@@ -7,9 +7,7 @@
 
 import { useEffect, useState } from "react";
 import update from "immutability-helper";
-import {
-    useAlert, useAPIGet, useWSForisModule, API_STATE,
-} from "foris";
+import { useAPIGet, useWSForisModule, API_STATE } from "foris";
 
 import API_URLs from "common/API";
 
@@ -17,7 +15,6 @@ const MODULE = "dns";
 
 export default function useForwardersList(ws) {
     const [forwarders, setForwarders] = useState([]);
-    const [setAlert] = useAlert();
 
     const [forwardersListState, getForwardersList] = useAPIGet(API_URLs.dnsForwarders);
     useEffect(() => {
@@ -28,7 +25,7 @@ export default function useForwardersList(ws) {
         if (forwardersListState.state === API_STATE.SUCCESS) {
             setForwarders(forwardersListState.data.forwarders || []);
         }
-    }, [forwardersListState, setAlert]);
+    }, [forwardersListState]);
 
     useForwardersWS(ws, setForwarders);
 

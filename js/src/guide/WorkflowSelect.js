@@ -42,7 +42,7 @@ export default function WorkflowSelect({ workflows, next_step }) {
         if (postWorkflowData.state === API_STATE.SUCCESS) {
             window.location.assign(`${REFORIS_URL_PREFIX}${GUIDE_URL_PREFIX}/${next_step}`);
         } else if (postWorkflowData.state === API_STATE.ERROR) {
-            setAlert("Cannot set workflow");
+            setAlert(_("Cannot set workflow."));
         }
     }, [next_step, postWorkflowData, setAlert]);
 
