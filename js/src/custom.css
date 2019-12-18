@@ -57,7 +57,8 @@ form > button {
 #alert-container {
     position: sticky;
     top: 1rem;
-    z-index: 2000;;
+    /* Just above bootstrap's defaults */
+    z-index: 4;
 }
 
 /* Content */
@@ -202,6 +203,8 @@ form > button {
 
 .dropdown-menu {
     margin: 0;
+    /* Just below spinner-fs-background */
+    z-index: 1099;
 }
 
 .dropdown-menu.lang {
@@ -259,7 +262,7 @@ form > button {
     width: 1.2rem;
     height: 1.2rem;
     border-radius: 50%;
-    z-index: 999;
+    z-index: 1;
 }
 
 .jump {
@@ -482,7 +485,11 @@ form > button {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    z-index: 1000;
+    /*
+     * Set to high value to me sure that it always overlaps all components
+     * https://getbootstrap.com/docs/4.3/layout/overview/#z-index
+     */
+    z-index: 1100;
 }
 
 .spinner-fs-wrapper .spinner-border {
