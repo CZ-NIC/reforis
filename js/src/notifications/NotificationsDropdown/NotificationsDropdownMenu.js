@@ -48,7 +48,7 @@ export default function NotificationsDropdownMenu({ notifications, dismiss, dism
         : null;
 
     return (
-        <div className="dropdown-menu">
+        <div className="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
             <NotificationsDropdownHeader />
             <div className="scrollable-menu">{getNotifications()}</div>
             {footer}
@@ -64,7 +64,7 @@ function NotificationsDropdownHeader() {
                     <h5>{_("Notifications")}</h5>
                 </Link>
                 <Link to={ForisURLs.notificationsSettings} className="btn btn-link">
-                    <i className="fas fa-cog" />
+                    <i className="fas fa-cog fa-fw" />
                 </Link>
             </div>
             <div className="dropdown-divider dropdown-divider-top" />

@@ -53,7 +53,7 @@ describe("useNotifications hook.", () => {
 
         let HTMLnotificationMessage = queryByText(notificationsContainer, notificationToDismiss.msg);
         expect(HTMLnotificationMessage).toBeNull();
-        HTMLnotificationMessage = queryByText(notificationsContainer, "Second notification messa...");
+        HTMLnotificationMessage = queryByText(notificationsContainer, "Second notification message.");
         expect(HTMLnotificationMessage).not.toBeNull();
     });
 
@@ -70,7 +70,7 @@ describe("useNotifications hook.", () => {
         let HTMLnotificationMessage = queryByText(notificationsContainer, "Notification message.");
         expect(HTMLnotificationMessage).toBeNull();
 
-        HTMLnotificationMessage = queryByText(notificationsContainer, "Second notification messa...");
+        HTMLnotificationMessage = queryByText(notificationsContainer, "Second notification message.");
         expect(HTMLnotificationMessage).toBeNull();
     });
 });

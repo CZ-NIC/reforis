@@ -26,7 +26,7 @@ export default function NotificationsDropdownItem({ notification, divider, dismi
     const message = (
         <>
             <small className="text-muted">{date}</small>
-            <p>{cutMessage(notification.msg)}</p>
+            <p>{notification.msg}</p>
         </>
     );
 
@@ -37,17 +37,11 @@ export default function NotificationsDropdownItem({ notification, divider, dismi
                 <div className="notifications-info">
                     <Link to={{ pathname: ForisURLs.notifications, search: `?id=${notification.id}` }}>{message}</Link>
                 </div>
-                <button type="button" className="btn btn-link" onClick={dismiss}>
+                <button type="button" className="btn btn-link dismiss" onClick={dismiss}>
                     <i className="fas fa-times" />
                 </button>
             </div>
             {divider ? <div className="dropdown-divider" /> : null}
         </>
     );
-}
-
-function cutMessage(message) {
-    const maxLength = 25;
-    if (message.length > maxLength) return `${message.substring(0, maxLength)}...`;
-    return message;
 }

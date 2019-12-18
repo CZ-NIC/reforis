@@ -30,7 +30,7 @@ exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
       </span>
     </button>
     <div
-      class="dropdown-menu"
+      class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left"
     >
       <div
         class="dropdown-header"
@@ -48,7 +48,7 @@ exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
           href="/administration/notifications-settings"
         >
           <i
-            class="fas fa-cog"
+            class="fas fa-cog fa-fw"
           />
         </a>
       </div>
@@ -81,7 +81,7 @@ exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
             </a>
           </div>
           <button
-            class="btn btn-link"
+            class="btn btn-link dismiss"
             type="button"
           >
             <i
@@ -110,12 +110,12 @@ exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
                 February 1, 2000, 12:00:00 AM
               </small>
               <p>
-                Second notification messa...
+                Second notification message.
               </p>
             </a>
           </div>
           <button
-            class="btn btn-link"
+            class="btn btn-link dismiss"
             type="button"
           >
             <i
@@ -144,12 +144,12 @@ exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
                 February 1, 2000, 12:00:00 AM
               </small>
               <p>
-                Third notification messag...
+                Third notification message.
               </p>
             </a>
           </div>
           <button
-            class="btn btn-link"
+            class="btn btn-link dismiss"
             type="button"
           >
             <i
