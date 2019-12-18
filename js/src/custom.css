@@ -207,9 +207,7 @@ form > button {
     z-index: 1099;
 }
 
-.dropdown-menu.lang {
-    min-width: 5rem;
-}
+
 
 .dropdown-item:hover {
     background: transparent;
@@ -245,7 +243,8 @@ form > button {
     justify-content: space-between;
 }
 
-/* Notifications */
+/* Notifications dropdown */
+
 #notifications-btn .fa-bell {
     font-size: 1.5rem;
 }
@@ -371,7 +370,11 @@ form > button {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: .25rem .5rem;
+    padding: 0.5rem 1.5rem;
+}
+
+.notification-item button {
+    padding: 0;
 }
 
 .notification-item + .dropdown-divider {
@@ -404,12 +407,29 @@ form > button {
 }
 
 .notifications-info {
-    flex-grow: 2;
+    flex-grow: 1;
+    min-width: 0;
+    padding-left: 1rem;
+    padding-right: 0.5rem;
+}
+
+.notifications-info p {
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .notification-item svg {
     display: flex;
-    margin: .5rem 1rem;
+}
+
+/* Align dismiss icon with cog icon in header */
+.notification-item .dismiss {
+    width: 1.75rem;
+    flex-shrink: 0;
+}
+
+.dismiss svg {
+    margin: 0 auto;
 }
 
 .active {
