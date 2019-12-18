@@ -61,7 +61,7 @@ function DropdownContent({ update, onSuccess }) {
             </button>
             <div className="dropdown-menu">
                 <div className="dropdown-header">
-                    <h5>{_("Approve update")}</h5>
+                    <h5>{_("Approve Update")}</h5>
                 </div>
                 <div className="dropdown-divider" />
                 <ManageUpdateWithError

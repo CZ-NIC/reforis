@@ -21,7 +21,7 @@ exports[`<RebootDropdown/> Test with snapshot 1`] = `
         class="dropdown-header"
       >
         <h5>
-          Reboot required
+          Reboot Required
         </h5>
       </div>
       <div

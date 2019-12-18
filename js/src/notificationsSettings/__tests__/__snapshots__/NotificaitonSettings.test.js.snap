@@ -3,11 +3,11 @@
 exports[`<NotificationsSettings/> Disabled 1`] = `
 <div>
   <h1>
-    Notifications settings
+    Notifications Settings
   </h1>
   <form>
     <h3>
-      Email notifications
+      Email Notifications
     </h3>
     <div
       class="form-group col-sm-12 offset-lg-1 col-lg-10"
@@ -44,11 +44,11 @@ exports[`<NotificationsSettings/> Disabled 1`] = `
 exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
 <div>
   <h1>
-    Notifications settings
+    Notifications Settings
   </h1>
   <form>
     <h3>
-      Email notifications
+      Email Notifications
     </h3>
     <div
       class="form-group col-sm-12 offset-lg-1 col-lg-10"
@@ -200,7 +200,7 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
       </div>
     </div>
     <h4>
-      SMTP settings
+      SMTP Settings
     </h4>
     <div
       class="form-group col-sm-12 offset-lg-1 col-lg-10"
@@ -387,11 +387,11 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
 exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
 <div>
   <h1>
-    Notifications settings
+    Notifications Settings
   </h1>
   <form>
     <h3>
-      Email notifications
+      Email Notifications
     </h3>
     <div
       class="form-group col-sm-12 offset-lg-1 col-lg-10"

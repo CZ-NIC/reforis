@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-11-21 16:06+0100\n"
+"POT-Creation-Date: 2019-12-16 16:19+0100\n"
 "PO-Revision-Date: 2019-10-29 06:53+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language: es\n"
@@ -69,8 +69,8 @@ msgid "DHCP hostname"
 msgstr "Nombre de anfitrión DHCP"
 
 #: js/src/common/network/DHCPClientsList.js:19
-msgid "DHCP clients"
-msgstr "Clientes DHCP"
+msgid "DHCP Clients"
+msgstr ""
 
 #: js/src/common/network/DHCPClientsList.js:22
 msgid "No DHCP clients found."
@@ -175,19 +175,19 @@ msgstr "Probar conexión de nuevo"
 msgid "Test connection"
 msgstr "Probar conexión"
 
-#: js/src/connectionTest/ConnectionTestResult.js:12
+#: js/src/connectionTest/ConnectionTestResult.js:14
 msgid "IPv4 connectivity"
 msgstr "Conectividad IPv4"
 
-#: js/src/connectionTest/ConnectionTestResult.js:13
+#: js/src/connectionTest/ConnectionTestResult.js:15
 msgid "IPv4 gateway connectivity"
 msgstr "Conectividad de puerta de enlace IPv4"
 
-#: js/src/connectionTest/ConnectionTestResult.js:14
+#: js/src/connectionTest/ConnectionTestResult.js:16
 msgid "IPv6 connectivity"
 msgstr "Conectividad IPv6"
 
-#: js/src/connectionTest/ConnectionTestResult.js:15
+#: js/src/connectionTest/ConnectionTestResult.js:17
 msgid "IPv6 gateway connectivity"
 msgstr "Conectividad de puerta de enlace IPv6"
 
@@ -218,7 +218,7 @@ msgid ""
 msgstr ""
 
 #: js/src/dns/DNS.js:63 js/src/wan/WAN.js:50
-msgid "Connection test"
+msgid "Connection Test"
 msgstr "Prueba de conexión"
 
 #: js/src/dns/DNS.js:66
@@ -374,7 +374,8 @@ msgid "TLS pin should have at least one symbol."
 msgstr ""
 
 #: js/src/guestNetwork/GuestNetwork.js:26 js/src/interfaces/Interfaces.js:93
-msgid "Guest network"
+#: js/src/interfaces/constants.js:11 js/src/main/pages.js:69
+msgid "Guest Network"
 msgstr "Red de invitados"
 
 #: js/src/guestNetwork/GuestNetwork.js:28
@@ -503,8 +504,8 @@ msgid ""
 msgstr ""
 
 #: js/src/guide/WorkflowSelect.js:27
-msgid "Local server"
-msgstr "Servidor local"
+msgid "Local Server"
+msgstr ""
 
 #: js/src/guide/WorkflowSelect.js:28 js/src/lan/LANForm.js:29
 msgid "Router"
@@ -515,7 +516,7 @@ msgid "Minimal"
 msgstr ""
 
 #: js/src/guide/WorkflowSelect.js:55
-msgid "Guide workflow"
+msgid "Guide Workflow"
 msgstr ""
 
 #: js/src/guide/WorkflowSelect.js:56
@@ -726,7 +727,7 @@ msgid "Finish"
 msgstr "Finalizar"
 
 #: js/src/interfaces/Interfaces.js:68
-msgid "Network interfaces"
+msgid "Network Interfaces"
 msgstr "Interfaces de red"
 
 #: js/src/interfaces/Interfaces.js:70
@@ -807,10 +808,6 @@ msgstr "Identificador de módulo"
 #: js/src/interfaces/SelectedInterface.js:86
 msgid "Link speed"
 msgstr "Velocidad de enlace"
-
-#: js/src/interfaces/constants.js:11 js/src/main/pages.js:69
-msgid "Guest Network"
-msgstr "Red de invitados"
 
 #: js/src/interfaces/constants.js:12
 msgid "Unassigned"
@@ -915,6 +912,11 @@ msgstr "No conectar este dispositivo con la LAN"
 msgid "IPv4 protocol"
 msgstr "Protocolo IPv4"
 
+#: js/src/languagesDropdown/LanguagesDropdown.js:35
+#: js/src/packageManagement/packages/LanguageForm.js:27
+msgid "Languages"
+msgstr "Idiomas"
+
 #: js/src/main/pages.js:32
 #: js/src/notifications/Notifications/NotificationsCenter.js:48
 #: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:64
@@ -946,6 +948,7 @@ msgid "Package Management"
 msgstr ""
 
 #: js/src/main/pages.js:110
+#: js/src/packageManagement/updateSettings/UpdateSettings.js:28
 msgid "Update Settings"
 msgstr ""
 
@@ -981,15 +984,15 @@ msgstr ""
 "Se necesita reiniciar, alguna atención concreta o se ha instalado una "
 "actualización"
 
-#: js/src/notificationsSettings/CommonForm.js:47
+#: js/src/notificationsSettings/CommonForm.js:48
 msgid "Recipient's email"
 msgstr "Dirección de correo de destinatario"
 
-#: js/src/notificationsSettings/CommonForm.js:58
+#: js/src/notificationsSettings/CommonForm.js:59
 msgid "Importance"
 msgstr "Importancia"
 
-#: js/src/notificationsSettings/CommonForm.js:69
+#: js/src/notificationsSettings/CommonForm.js:70
 msgid "Send news"
 msgstr "Enviar noticias"
 
@@ -1002,8 +1005,8 @@ msgid "Custom"
 msgstr "Personalizado"
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:78
-msgid "Email notifications"
-msgstr "Notificaciones por correo electrónico"
+msgid "Email Notifications"
+msgstr ""
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:80
 msgid "Enable email notifications"
@@ -1014,8 +1017,8 @@ msgid "SMTP provider"
 msgstr "Proveedor SMTP"
 
 #: js/src/notificationsSettings/NotificationsSettings.js:24
-msgid "Notifications settings"
-msgstr "Configuración de notificaciones"
+msgid "Notifications Settings"
+msgstr ""
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:18
 msgid "None"
@@ -1030,8 +1033,8 @@ msgid "STARTTLS"
 msgstr "STARTTLS"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:54
-msgid "SMTP settings"
-msgstr "Configuración de SMTP"
+msgid "SMTP Settings"
+msgstr ""
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:56
 msgid "Sender address (From)"
@@ -1111,10 +1114,6 @@ msgstr "El puerto máximo es 65535."
 msgid "Minimum port is 1."
 msgstr "El puerto mínimo es 1."
 
-#: js/src/packageManagement/packages/LanguageForm.js:27
-msgid "Languages"
-msgstr "Idiomas"
-
 #: js/src/packageManagement/packages/LanguageForm.js:28
 msgid ""
 "If you want to use other language than English you can select it from the"
@@ -1144,11 +1143,11 @@ msgid ""
 msgstr ""
 
 #: js/src/packageManagement/packages/PackagesForm.js:28
-msgid "Packages list"
-msgstr "Lista de paquetes"
+msgid "Packages List"
+msgstr ""
 
 #: js/src/packageManagement/updateSettings/LicenceModal.js:23
-msgid "Most important license agreement points"
+msgid "Most Important License Agreement Points"
 msgstr ""
 
 #: js/src/packageManagement/updateSettings/LicenceModal.js:30
@@ -1199,10 +1198,6 @@ msgid ""
 "href=\"https://www.turris.cz/omnia-updater-eula\">license agreement</a>."
 msgstr ""
 
-#: js/src/packageManagement/updateSettings/UpdateSettings.js:28
-msgid "Update settings"
-msgstr "Configuración de actualizaciones"
-
 #: js/src/packageManagement/updateSettings/UpdateSettings.js:30
 msgid ""
 "\n"
@@ -1237,7 +1232,7 @@ msgid "Time of day of automatic reboot in HH:MM format."
 msgstr ""
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:43
-msgid "Automatic restarts after software update"
+msgid "Automatic Restarts After Software Update"
 msgstr ""
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:45
@@ -1287,7 +1282,7 @@ msgid "You have to approve the updates, otherwise they won't be installed."
 msgstr ""
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:51
-msgid "Update approvals"
+msgid "Update Approvals"
 msgstr ""
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:53
@@ -1338,7 +1333,7 @@ msgstr ""
 
 #: js/src/packageManagement/updates/UpdateApproval.js:63
 #, python-format
-msgid "Approve update from %s"
+msgid "Approve Update From %s"
 msgstr ""
 
 #: js/src/packageManagement/updates/UpdateApproval.js:73
@@ -1394,7 +1389,7 @@ msgid "Current Foris password"
 msgstr ""
 
 #: js/src/password/ForisPasswordForm.js:35
-msgid "Foris password"
+msgid "Foris Password"
 msgstr ""
 
 #: js/src/password/ForisPasswordForm.js:36
@@ -1423,7 +1418,7 @@ msgid "Password changed successfully"
 msgstr ""
 
 #: js/src/password/Password.js:115
-msgid "Password settings"
+msgid "Password Settings"
 msgstr ""
 
 #: js/src/password/Password.js:158
@@ -1439,7 +1434,7 @@ msgid "Password should have max 128 symbols."
 msgstr ""
 
 #: js/src/password/RootPasswordForm.js:32
-msgid "Advanced administration (root) password"
+msgid "Advanced Administration (root) Password"
 msgstr ""
 
 #: js/src/password/RootPasswordForm.js:35
@@ -1457,7 +1452,7 @@ msgid "New advanced administration password"
 msgstr ""
 
 #: js/src/reboot/Reboot.js:15
-msgid "Device reboot"
+msgid "Device Reboot"
 msgstr ""
 
 #: js/src/reboot/Reboot.js:17
@@ -1470,7 +1465,7 @@ msgid ""
 msgstr ""
 
 #: js/src/rebootDropdown/RebootDropdown.js:35
-msgid "Reboot required"
+msgid "Reboot Required"
 msgstr ""
 
 #: js/src/rebootDropdown/RebootDropdown.js:40
@@ -1478,7 +1473,7 @@ msgid "Details"
 msgstr ""
 
 #: js/src/regionAndTime/RegionAndTime.js:30
-msgid "Region and time"
+msgid "Region and Time"
 msgstr ""
 
 #: js/src/regionAndTime/RegionAndTime.js:32
@@ -1495,7 +1490,7 @@ msgid "Time should be in YYYY-MM-DD HH:MM:SS format."
 msgstr ""
 
 #: js/src/regionAndTime/RegionForm.js:62
-msgid "Region settings"
+msgid "Region Settings"
 msgstr ""
 
 #: js/src/regionAndTime/RegionForm.js:64
@@ -1525,7 +1520,7 @@ msgid "Manually"
 msgstr ""
 
 #: js/src/regionAndTime/TimeForm.js:93
-msgid "Time settings"
+msgid "Time Settings"
 msgstr ""
 
 #: js/src/regionAndTime/TimeForm.js:94
@@ -1547,7 +1542,7 @@ msgid "Show NTP servers list"
 msgstr ""
 
 #: js/src/regionAndTime/TimeForm.js:155
-msgid "NTP servers"
+msgid "NTP Servers"
 msgstr ""
 
 #: js/src/routerStateHandler/NetworkRestartHandler.js:27
@@ -1574,7 +1569,7 @@ msgid "Rebooting"
 msgstr ""
 
 #: js/src/updatesDropdown/UpdatesDropdown.js:64
-msgid "Approve update"
+msgid "Approve Update"
 msgstr ""
 
 #: js/src/updatesDropdown/UpdatesDropdown.js:94
@@ -2025,5 +2020,65 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Wi-Fi reset was successful."
+#~ msgstr ""
+
+#~ msgid "DHCP clients"
+#~ msgstr "Clientes DHCP"
+
+#~ msgid "Guest network"
+#~ msgstr "Red de invitados"
+
+#~ msgid "Local server"
+#~ msgstr "Servidor local"
+
+#~ msgid "Guide workflow"
+#~ msgstr ""
+
+#~ msgid "Email notifications"
+#~ msgstr "Notificaciones por correo electrónico"
+
+#~ msgid "Notifications settings"
+#~ msgstr "Configuración de notificaciones"
+
+#~ msgid "SMTP settings"
+#~ msgstr "Configuración de SMTP"
+
+#~ msgid "Packages list"
+#~ msgstr "Lista de paquetes"
+
+#~ msgid "Most important license agreement points"
+#~ msgstr ""
+
+#~ msgid "Automatic restarts after software update"
+#~ msgstr ""
+
+#~ msgid "Update approvals"
+#~ msgstr ""
+
+#~ msgid "Approve Update from %s"
+#~ msgstr ""
+
+#~ msgid "Foris password"
+#~ msgstr ""
+
+#~ msgid "Password settings"
+#~ msgstr ""
+
+#~ msgid "Advanced administration (root) password"
+#~ msgstr ""
+
+#~ msgid "Device reboot"
+#~ msgstr ""
+
+#~ msgid "Reboot required"
+#~ msgstr ""
+
+#~ msgid "Region and time"
+#~ msgstr ""
+
+#~ msgid "Time settings"
+#~ msgstr ""
+
+#~ msgid "NTP servers"
 #~ msgstr ""
 

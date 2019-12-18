@@ -23,7 +23,7 @@ describe("<RegionAndTime/>", () => {
         const webSockets = new WebSockets();
         const {container} = render(<RegionAndTime ws={webSockets}/>);
         mockAxios.mockResponse({data: regionAndTime()});
-        await wait(() => getByText(container, "Region settings"));
+        await wait(() => getByText(container, "Region Settings"));
         regionAndTimeContainer = container;
     });
 

@@ -3,7 +3,7 @@
 exports[`<UpdateSettings/> Test with snapshot disabled. 1`] = `
 <DocumentFragment>
   <h1>
-    Update settings
+    Update Settings
   </h1>
   <p>
     
@@ -59,7 +59,7 @@ available
           <h5
             class="modal-title"
           >
-            Most important license agreement points
+            Most Important License Agreement Points
           </h5>
           <button
             aria-label="Close"
@@ -167,7 +167,7 @@ available
       </div>
     </div>
     <h4>
-      Automatic restarts after software update
+      Automatic Restarts After Software Update
     </h4>
     <div
       class="form-group col-sm-12 offset-lg-1 col-lg-10"
@@ -375,7 +375,7 @@ exports[`<UpdateSettings/> Test with snapshot enabled, delayed. 1`] = `
 +       </div>
 +     </div>
       <h4>
-        Automatic restarts after software update
+        Automatic Restarts After Software Update
       </h4>
       <div
         class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\""
@@ -392,7 +392,7 @@ exports[`<UpdateSettings/> Test with snapshot enabled. 1`] = `
         </div>
       </div>
       <h4>
-+       Update approvals
++       Update Approvals
 +     </h4>
 +     <p>
 +       Update approvals can be useful when you want to make sure that updates won't harm your specific
@@ -472,7 +472,7 @@ exports[`<UpdateSettings/> Test with snapshot enabled. 1`] = `
 +       </div>
 +     </div>
 +     <h4>
-        Automatic restarts after software update
+        Automatic Restarts After Software Update
       </h4>
       <div
         class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"

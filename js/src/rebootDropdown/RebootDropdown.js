@@ -32,7 +32,7 @@ export default function RebootDropdown({ ws }) {
             </button>
             <div className="dropdown-menu">
                 <div className="dropdown-header">
-                    <h5>{_("Reboot required")}</h5>
+                    <h5>{_("Reboot Required")}</h5>
                 </div>
                 <div className="dropdown-divider" />
                 <div className="dropdown-item">

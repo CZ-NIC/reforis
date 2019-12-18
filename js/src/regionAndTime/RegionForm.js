@@ -59,7 +59,7 @@ export default function RegionForm({ formData, setFormValue, disabled }) {
 
     return (
         <>
-            <h4>{_("Region settings")}</h4>
+            <h4>{_("Region Settings")}</h4>
             <p>
                 {_("Please select the timezone the router is being operated in. Correct setting is required to display "
             + "the right time and for related functions.")}

@@ -29,7 +29,7 @@ export default function RootPasswordForm({
 }) {
     return (
         <form onSubmit={postRootPassword}>
-            <h4>{_("Advanced administration (root) password")}</h4>
+            <h4>{_("Advanced Administration (root) Password")}</h4>
             <p
                 dangerouslySetInnerHTML={{
                     __html: babel.format(_(

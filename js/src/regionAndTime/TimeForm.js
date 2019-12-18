@@ -90,7 +90,7 @@ export default function TimeForm({
 
     return (
         <>
-            <h4>{_("Time settings")}</h4>
+            <h4>{_("Time Settings")}</h4>
             <p>{_("Time should be up-to-date otherwise DNS and other services might not work properly.")}</p>
             <Select
                 label={_("How to set time")}
@@ -152,7 +152,7 @@ function NTPServersList({ servers }) {
             </Button>
 
             <div className="collapse" id="collapseNTPServers">
-                <h5>{_("NTP servers")}</h5>
+                <h5>{_("NTP Servers")}</h5>
                 <div id="ntpServersList">
                     {servers.map((server) => <p key={server}>{server}</p>)}
                 </div>

@@ -65,7 +65,7 @@ export default function Interfaces({ ws }) {
 
     return (
         <>
-            <h1>{_("Network interfaces")}</h1>
+            <h1>{_("Network Interfaces")}</h1>
             <p>
                 {_(`
 Here you can configure the settings of the network interfaces on your device. You can switch the physical
@@ -90,7 +90,7 @@ easy way.
         `)}
             </p>
 
-            <h4>{_("Guest network")}</h4>
+            <h4>{_("Guest Network")}</h4>
             <p>
                 {_(`
 It acts as a local network connection. Unlike LAN the devices in the guest network can't access

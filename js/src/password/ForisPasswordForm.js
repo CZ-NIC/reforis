@@ -32,7 +32,7 @@ export default function ForisPasswordForm({
 }) {
     return (
         <form onSubmit={postForisPassword}>
-            <h4>{_("Foris password")}</h4>
+            <h4>{_("Foris Password")}</h4>
             <p>{_("Set your password for this administration interface.")}</p>
             <PasswordInput
                 withEye

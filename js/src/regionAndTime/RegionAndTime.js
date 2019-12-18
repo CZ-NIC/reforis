@@ -27,7 +27,7 @@ RegionAndTime.defaultProps = {
 export default function RegionAndTime({ ws, postCallback }) {
     return (
         <>
-            <h1>{_("Region and time")}</h1>
+            <h1>{_("Region and Time")}</h1>
             <p>
                 {_(`
 It is important for your device to have the correct time set. If your device's time is delayed, the

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-11-21 16:06+0100\n"
+"POT-Creation-Date: 2019-12-16 16:19+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,7 +67,7 @@ msgid "DHCP hostname"
 msgstr ""
 
 #: js/src/common/network/DHCPClientsList.js:19
-msgid "DHCP clients"
+msgid "DHCP Clients"
 msgstr ""
 
 #: js/src/common/network/DHCPClientsList.js:22
@@ -169,19 +169,19 @@ msgstr ""
 msgid "Test connection"
 msgstr ""
 
-#: js/src/connectionTest/ConnectionTestResult.js:12
+#: js/src/connectionTest/ConnectionTestResult.js:14
 msgid "IPv4 connectivity"
 msgstr ""
 
-#: js/src/connectionTest/ConnectionTestResult.js:13
+#: js/src/connectionTest/ConnectionTestResult.js:15
 msgid "IPv4 gateway connectivity"
 msgstr ""
 
-#: js/src/connectionTest/ConnectionTestResult.js:14
+#: js/src/connectionTest/ConnectionTestResult.js:16
 msgid "IPv6 connectivity"
 msgstr ""
 
-#: js/src/connectionTest/ConnectionTestResult.js:15
+#: js/src/connectionTest/ConnectionTestResult.js:17
 msgid "IPv6 gateway connectivity"
 msgstr ""
 
@@ -212,7 +212,7 @@ msgid ""
 msgstr ""
 
 #: js/src/dns/DNS.js:63 js/src/wan/WAN.js:50
-msgid "Connection test"
+msgid "Connection Test"
 msgstr ""
 
 #: js/src/dns/DNS.js:66
@@ -356,7 +356,8 @@ msgid "TLS pin should have at least one symbol."
 msgstr ""
 
 #: js/src/guestNetwork/GuestNetwork.js:26 js/src/interfaces/Interfaces.js:93
-msgid "Guest network"
+#: js/src/interfaces/constants.js:11 js/src/main/pages.js:69
+msgid "Guest Network"
 msgstr ""
 
 #: js/src/guestNetwork/GuestNetwork.js:28
@@ -474,7 +475,7 @@ msgid ""
 msgstr ""
 
 #: js/src/guide/WorkflowSelect.js:27
-msgid "Local server"
+msgid "Local Server"
 msgstr ""
 
 #: js/src/guide/WorkflowSelect.js:28 js/src/lan/LANForm.js:29
@@ -486,7 +487,7 @@ msgid "Minimal"
 msgstr ""
 
 #: js/src/guide/WorkflowSelect.js:55
-msgid "Guide workflow"
+msgid "Guide Workflow"
 msgstr ""
 
 #: js/src/guide/WorkflowSelect.js:56
@@ -677,7 +678,7 @@ msgid "Finish"
 msgstr ""
 
 #: js/src/interfaces/Interfaces.js:68
-msgid "Network interfaces"
+msgid "Network Interfaces"
 msgstr ""
 
 #: js/src/interfaces/Interfaces.js:70
@@ -757,10 +758,6 @@ msgstr ""
 
 #: js/src/interfaces/SelectedInterface.js:86
 msgid "Link speed"
-msgstr ""
-
-#: js/src/interfaces/constants.js:11 js/src/main/pages.js:69
-msgid "Guest Network"
 msgstr ""
 
 #: js/src/interfaces/constants.js:12
@@ -866,6 +863,11 @@ msgstr ""
 msgid "IPv4 protocol"
 msgstr ""
 
+#: js/src/languagesDropdown/LanguagesDropdown.js:35
+#: js/src/packageManagement/packages/LanguageForm.js:27
+msgid "Languages"
+msgstr ""
+
 #: js/src/main/pages.js:32
 #: js/src/notifications/Notifications/NotificationsCenter.js:48
 #: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:64
@@ -897,6 +899,7 @@ msgid "Package Management"
 msgstr ""
 
 #: js/src/main/pages.js:110
+#: js/src/packageManagement/updateSettings/UpdateSettings.js:28
 msgid "Update Settings"
 msgstr ""
 
@@ -930,15 +933,15 @@ msgstr ""
 msgid "Reboot or attention is required or update was installed"
 msgstr ""
 
-#: js/src/notificationsSettings/CommonForm.js:47
+#: js/src/notificationsSettings/CommonForm.js:48
 msgid "Recipient's email"
 msgstr ""
 
-#: js/src/notificationsSettings/CommonForm.js:58
+#: js/src/notificationsSettings/CommonForm.js:59
 msgid "Importance"
 msgstr ""
 
-#: js/src/notificationsSettings/CommonForm.js:69
+#: js/src/notificationsSettings/CommonForm.js:70
 msgid "Send news"
 msgstr ""
 
@@ -951,7 +954,7 @@ msgid "Custom"
 msgstr ""
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:78
-msgid "Email notifications"
+msgid "Email Notifications"
 msgstr ""
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:80
@@ -963,7 +966,7 @@ msgid "SMTP provider"
 msgstr ""
 
 #: js/src/notificationsSettings/NotificationsSettings.js:24
-msgid "Notifications settings"
+msgid "Notifications Settings"
 msgstr ""
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:18
@@ -979,7 +982,7 @@ msgid "STARTTLS"
 msgstr ""
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:54
-msgid "SMTP settings"
+msgid "SMTP Settings"
 msgstr ""
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:56
@@ -1058,10 +1061,6 @@ msgstr ""
 msgid "Minimum port is 1."
 msgstr ""
 
-#: js/src/packageManagement/packages/LanguageForm.js:27
-msgid "Languages"
-msgstr ""
-
 #: js/src/packageManagement/packages/LanguageForm.js:28
 msgid ""
 "If you want to use other language than English you can select it from the"
@@ -1089,11 +1088,11 @@ msgid ""
 msgstr ""
 
 #: js/src/packageManagement/packages/PackagesForm.js:28
-msgid "Packages list"
+msgid "Packages List"
 msgstr ""
 
 #: js/src/packageManagement/updateSettings/LicenceModal.js:23
-msgid "Most important license agreement points"
+msgid "Most Important License Agreement Points"
 msgstr ""
 
 #: js/src/packageManagement/updateSettings/LicenceModal.js:30
@@ -1144,10 +1143,6 @@ msgid ""
 "href=\"https://www.turris.cz/omnia-updater-eula\">license agreement</a>."
 msgstr ""
 
-#: js/src/packageManagement/updateSettings/UpdateSettings.js:28
-msgid "Update settings"
-msgstr ""
-
 #: js/src/packageManagement/updateSettings/UpdateSettings.js:30
 msgid ""
 "\n"
@@ -1180,7 +1175,7 @@ msgid "Time of day of automatic reboot in HH:MM format."
 msgstr ""
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:43
-msgid "Automatic restarts after software update"
+msgid "Automatic Restarts After Software Update"
 msgstr ""
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:45
@@ -1230,7 +1225,7 @@ msgid "You have to approve the updates, otherwise they won't be installed."
 msgstr ""
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:51
-msgid "Update approvals"
+msgid "Update Approvals"
 msgstr ""
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:53
@@ -1281,7 +1276,7 @@ msgstr ""
 
 #: js/src/packageManagement/updates/UpdateApproval.js:63
 #, python-format
-msgid "Approve update from %s"
+msgid "Approve Update From %s"
 msgstr ""
 
 #: js/src/packageManagement/updates/UpdateApproval.js:73
@@ -1337,7 +1332,7 @@ msgid "Current Foris password"
 msgstr ""
 
 #: js/src/password/ForisPasswordForm.js:35
-msgid "Foris password"
+msgid "Foris Password"
 msgstr ""
 
 #: js/src/password/ForisPasswordForm.js:36
@@ -1366,7 +1361,7 @@ msgid "Password changed successfully"
 msgstr ""
 
 #: js/src/password/Password.js:115
-msgid "Password settings"
+msgid "Password Settings"
 msgstr ""
 
 #: js/src/password/Password.js:158
@@ -1382,7 +1377,7 @@ msgid "Password should have max 128 symbols."
 msgstr ""
 
 #: js/src/password/RootPasswordForm.js:32
-msgid "Advanced administration (root) password"
+msgid "Advanced Administration (root) Password"
 msgstr ""
 
 #: js/src/password/RootPasswordForm.js:35
@@ -1400,7 +1395,7 @@ msgid "New advanced administration password"
 msgstr ""
 
 #: js/src/reboot/Reboot.js:15
-msgid "Device reboot"
+msgid "Device Reboot"
 msgstr ""
 
 #: js/src/reboot/Reboot.js:17
@@ -1413,7 +1408,7 @@ msgid ""
 msgstr ""
 
 #: js/src/rebootDropdown/RebootDropdown.js:35
-msgid "Reboot required"
+msgid "Reboot Required"
 msgstr ""
 
 #: js/src/rebootDropdown/RebootDropdown.js:40
@@ -1421,7 +1416,7 @@ msgid "Details"
 msgstr ""
 
 #: js/src/regionAndTime/RegionAndTime.js:30
-msgid "Region and time"
+msgid "Region and Time"
 msgstr ""
 
 #: js/src/regionAndTime/RegionAndTime.js:32
@@ -1438,7 +1433,7 @@ msgid "Time should be in YYYY-MM-DD HH:MM:SS format."
 msgstr ""
 
 #: js/src/regionAndTime/RegionForm.js:62
-msgid "Region settings"
+msgid "Region Settings"
 msgstr ""
 
 #: js/src/regionAndTime/RegionForm.js:64
@@ -1468,7 +1463,7 @@ msgid "Manually"
 msgstr ""
 
 #: js/src/regionAndTime/TimeForm.js:93
-msgid "Time settings"
+msgid "Time Settings"
 msgstr ""
 
 #: js/src/regionAndTime/TimeForm.js:94
@@ -1490,7 +1485,7 @@ msgid "Show NTP servers list"
 msgstr ""
 
 #: js/src/regionAndTime/TimeForm.js:155
-msgid "NTP servers"
+msgid "NTP Servers"
 msgstr ""
 
 #: js/src/routerStateHandler/NetworkRestartHandler.js:27
@@ -1517,7 +1512,7 @@ msgid "Rebooting"
 msgstr ""
 
 #: js/src/updatesDropdown/UpdatesDropdown.js:64
-msgid "Approve update"
+msgid "Approve Update"
 msgstr ""
 
 #: js/src/updatesDropdown/UpdatesDropdown.js:94

@@ -44,7 +44,7 @@ exports[`<UpdatesDropdown/> Updates awaiting - snapshot 1`] = `
         class="dropdown-header"
       >
         <h5>
-          Approve update
+          Approve Update
         </h5>
       </div>
       <div

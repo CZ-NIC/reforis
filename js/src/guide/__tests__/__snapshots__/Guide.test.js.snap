@@ -17,7 +17,7 @@ exports[`<Guide/>  Snapshot. Just check if render correct page. 1`] = `
     </div>
   </div>
   <h1>
-    Network interfaces
+    Network Interfaces
   </h1>
   <p>
     
@@ -46,7 +46,7 @@ easy way.
         
   </p>
   <h4>
-    Guest network
+    Guest Network
   </h4>
   <p>
     

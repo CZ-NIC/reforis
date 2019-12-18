@@ -25,7 +25,7 @@ UpdateSettings.defaultProps = {
 export default function UpdateSettings({ postCallback }) {
     return (
         <>
-            <h1>{_("Update settings")}</h1>
+            <h1>{_("Update Settings")}</h1>
             <p dangerouslySetInnerHTML={{
                 __html: _(`
 One of the most important features of router Turris are automatic system updates. Thanks to this function
