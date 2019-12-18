@@ -8,7 +8,7 @@
 import { useEffect } from "react";
 import update from "immutability-helper";
 import {
-    useAlert, useAPIPut, useAPIPost, useForm, API_STATE,
+    useAlert, useAPIPut, useAPIPost, useForm, API_STATE, ALERT_TYPES,
 } from "foris";
 import API_URLs from "common/API";
 import validator from "./validator";
@@ -28,13 +28,13 @@ export default function useForwarderForm(forwarder, saveForwarderCallback) {
     const [postState, post] = useAPIPost(API_URLs.dnsForwarders);
     const [putState, put] = useAPIPut(`${API_URLs.dnsForwarders}/${(forwarder || {}).name}`);
 
-    const [setAlert] = useAlert();
+    const [setAlert, dismissAlert] = useAlert();
 
     useEffect(() => {
         if (postState.state === API_STATE.SUCCESS) {
-            setAlert(null);
             saveForwarderCallback();
             initForm(EMPTY_FORWARDER);
+            setAlert(_("Forwarder saved successfully."), ALERT_TYPES.SUCCESS);
         } else if (postState.state === API_STATE.ERROR) {
             setAlert(_("Can't save forwarder."));
         }
@@ -42,8 +42,8 @@ export default function useForwarderForm(forwarder, saveForwarderCallback) {
 
     useEffect(() => {
         if (putState.state === API_STATE.SUCCESS) {
-            setAlert(null);
             saveForwarderCallback();
+            setAlert(_("Forwarder added successfully."), ALERT_TYPES.SUCCESS);
         } else if (putState.state === API_STATE.ERROR) {
             setAlert(_("Can't add new forwarder."));
         }
@@ -59,6 +59,7 @@ export default function useForwarderForm(forwarder, saveForwarderCallback) {
 
     function saveForwarder() {
         const data = prepDataToSubmit(formState.data);
+        dismissAlert();
         if (forwarder) {
             put({ data });
         } else {

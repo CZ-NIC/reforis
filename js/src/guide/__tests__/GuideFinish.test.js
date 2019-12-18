@@ -33,6 +33,6 @@ describe("<GuideFinish/> and useGuideFinish hook", () => {
     it("handle POST error", async () => {
         fireEvent.click(getByText(guideFinishContainer, "Continue"));
         mockJSONError();
-        await wait(() => expect(mockSetAlert).toBeCalledWith("Cannot mark guide as finished"));
+        await wait(() => expect(mockSetAlert).toBeCalledWith("Cannot mark guide as finished."));
     });
 });

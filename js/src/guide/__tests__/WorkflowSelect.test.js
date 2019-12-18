@@ -42,6 +42,6 @@ describe("<WorkflowSelect/>", () => {
     it("handle POST error", async () => {
         fireEvent.click(getByAltText(workflowSelectContainer, "min"));
         mockJSONError();
-        await wait(() => expect(mockSetAlert).toBeCalledWith("Cannot set workflow"));
+        await wait(() => expect(mockSetAlert).toBeCalledWith("Cannot set workflow."));
     });
 });

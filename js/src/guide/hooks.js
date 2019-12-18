@@ -20,7 +20,7 @@ export default function useGuideFinish() {
         if (finishGuidePostData.state === API_STATE.SUCCESS) {
             window.location.assign(`${REFORIS_URL_PREFIX}/`);
         } else if (finishGuidePostData.state === API_STATE.ERROR) {
-            setAlert("Cannot mark guide as finished");
+            setAlert(_("Cannot mark guide as finished."));
         }
     }, [finishGuidePostData, setAlert]);
 

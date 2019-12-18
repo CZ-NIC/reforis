@@ -71,7 +71,7 @@ function PasswordForm({ postCallback, currentPassword }) {
     useEffect(() => {
         if (postState.data) {
             if (postState.state === API_STATE.SUCCESS) {
-                setAlert(_("Password changed successfully"), ALERT_TYPES.SUCCESS);
+                setAlert(_("Password changed successfully."), ALERT_TYPES.SUCCESS);
                 postCallback();
             } else if (postState.state === API_STATE.ERROR) {
                 setAlert(postState.data);

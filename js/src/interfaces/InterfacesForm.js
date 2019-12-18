@@ -37,14 +37,16 @@ InterfacesForm.defaultProps = {
 
 export default function InterfacesForm({ formData, setFormValue, ...props }) {
     const [selectedID, setSelectedID] = useState(null);
-    const [setAlert] = useAlert();
+    const [setAlert, dismissAlert] = useAlert();
 
     useEffect(() => {
         const { firewall } = formData;
         if (firewall.http_on_wan || firewall.https_on_wan || firewall.ssh_on_wan) {
             setAlert(_("Ports are open on your WAN interface. It's better to reconfigure your interface settings to avoid security issues."));
+        } else {
+            dismissAlert();
         }
-    }, [formData, setAlert]);
+    }, [formData, setAlert, dismissAlert]);
 
     function getInterfaceById(id) {
         if (!selectedID) return [null, null, null];

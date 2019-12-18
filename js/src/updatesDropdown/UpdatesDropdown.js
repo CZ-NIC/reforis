@@ -103,6 +103,6 @@ function ManageUpdate({ resolveUpdate }) {
 
 const withUpdateFailed = withEither(
     (props) => props.updateFailed,
-    () => <span className="dropdown-item text-danger">{_("Cannot resolve update")}</span>,
+    () => <span className="dropdown-item text-danger">{_("Cannot install updates.")}</span>,
 );
 const ManageUpdateWithError = withUpdateFailed(ManageUpdate);

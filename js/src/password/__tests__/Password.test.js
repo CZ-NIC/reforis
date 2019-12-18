@@ -65,7 +65,7 @@ describe("<Password/>", () => {
 
         it("on success", async () => {
             mockAxios.mockResponse({ data: { foo: "bar" } });
-            await wait(() => expect(mockSetAlert).toBeCalledWith("Password changed successfully", ALERT_TYPES.SUCCESS));
+            await wait(() => expect(mockSetAlert).toBeCalledWith("Password changed successfully.", ALERT_TYPES.SUCCESS));
         });
 
         it("on error", async () => {
