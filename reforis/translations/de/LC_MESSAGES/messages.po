@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-12-16 16:19+0100\n"
+"POT-Creation-Date: 2019-12-18 13:34+0100\n"
 "PO-Revision-Date: 2019-09-02 07:21+0000\n"
 "Last-Translator: Ulrich Günther <mail@ulrich-guenther.at>\n"
 "Language: de\n"
@@ -309,7 +309,7 @@ msgid "base64 encoded sha256."
 msgstr ""
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:49
-#: js/src/packageManagement/updates/UpdateApproval.js:96
+#: js/src/packageManagement/updates/UpdateApproval.js:98
 msgid "Name"
 msgstr ""
 
@@ -337,8 +337,16 @@ msgstr ""
 msgid "Save forwarder"
 msgstr ""
 
+#: js/src/dns/Forwarders/Forwarder/hooks.js:37
+msgid "Forwarder saved successfully."
+msgstr ""
+
 #: js/src/dns/Forwarders/Forwarder/hooks.js:39
 msgid "Can't save forwarder."
+msgstr ""
+
+#: js/src/dns/Forwarders/Forwarder/hooks.js:46
+msgid "Forwarder added successfully."
 msgstr ""
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:48
@@ -492,6 +500,10 @@ msgstr "Router"
 msgid "Minimal"
 msgstr ""
 
+#: js/src/guide/WorkflowSelect.js:45
+msgid "Cannot set workflow."
+msgstr ""
+
 #: js/src/guide/WorkflowSelect.js:55
 msgid "Guide Workflow"
 msgstr ""
@@ -639,6 +651,10 @@ msgstr ""
 msgid ""
 "The device setup is finished. Now your device should be able to act as a "
 "server on your local network."
+msgstr ""
+
+#: js/src/guide/hooks.js:23
+msgid "Cannot mark guide as finished."
 msgstr ""
 
 #: js/src/guide/steps.js:20 js/src/main/pages.js:82
@@ -1271,50 +1287,54 @@ msgstr ""
 
 #: js/src/packageManagement/updates/UpdateApproval.js:30
 #: js/src/updatesDropdown/UpdatesDropdown.js:106
-msgid "Cannot resolve update"
+msgid "Cannot install updates."
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:44
+#: js/src/packageManagement/updates/UpdateApproval.js:33
+msgid "Updates will be installed shortly."
+msgstr ""
+
+#: js/src/packageManagement/updates/UpdateApproval.js:46
 msgid "There are no updates awaiting your approval."
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:48
+#: js/src/packageManagement/updates/UpdateApproval.js:50
 #, python-format
 msgid "There is %d package to be updated."
 msgid_plural "There are %d packages to be updated."
 msgstr[0] ""
 msgstr[1] ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:55
+#: js/src/packageManagement/updates/UpdateApproval.js:57
 msgid ""
 "See <a data-toggle=\"collapse\" href=\"#plan-wrapper\" role=\"button\" "
 "aria-expanded=\"false\" aria-controls=\"plan-wrapper\">details</a>"
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:63
+#: js/src/packageManagement/updates/UpdateApproval.js:65
 #, python-format
 msgid "Approve Update From %s"
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:73
+#: js/src/packageManagement/updates/UpdateApproval.js:75
 #: js/src/updatesDropdown/UpdatesDropdown.js:97
 msgid "Ignore"
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:80
+#: js/src/packageManagement/updates/UpdateApproval.js:82
 #: js/src/updatesDropdown/UpdatesDropdown.js:98
 msgid "Install now"
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:95
+#: js/src/packageManagement/updates/UpdateApproval.js:97
 msgid "Action"
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:97
+#: js/src/packageManagement/updates/UpdateApproval.js:99
 msgid "Current"
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:98
+#: js/src/packageManagement/updates/UpdateApproval.js:100
 msgid "New"
 msgstr ""
 
@@ -1340,7 +1360,7 @@ msgstr ""
 msgid "Manually check for updates and review them immediately."
 msgstr ""
 
-#: js/src/packageManagement/updates/hooks.js:76
+#: js/src/packageManagement/updates/hooks.js:77
 msgid "Cannot fetch updater status."
 msgstr ""
 
@@ -1379,7 +1399,7 @@ msgstr ""
 " zu tun. Bis dahin wird der root-Benutzer blockiert.)"
 
 #: js/src/password/Password.js:74
-msgid "Password changed successfully"
+msgid "Password changed successfully."
 msgstr ""
 
 #: js/src/password/Password.js:115
@@ -1747,18 +1767,18 @@ msgid "PAP/CHAP password"
 msgstr "PAP/CHAP-Kennwort"
 
 #: js/src/wifi/ResetWiFiSettings.js:38
-msgid "An error occurred during resetting Wi-Fi settings"
+msgid "An error occurred during resetting Wi-Fi settings."
 msgstr ""
 
 #: js/src/wifi/ResetWiFiSettings.js:40
-msgid "Wi-Fi settings are set to defaults"
+msgid "Wi-Fi settings are set to defaults."
 msgstr ""
 
-#: js/src/wifi/ResetWiFiSettings.js:46 js/src/wifi/ResetWiFiSettings.js:61
+#: js/src/wifi/ResetWiFiSettings.js:51 js/src/wifi/ResetWiFiSettings.js:66
 msgid "Reset Wi-Fi Settings"
 msgstr ""
 
-#: js/src/wifi/ResetWiFiSettings.js:48
+#: js/src/wifi/ResetWiFiSettings.js:53
 msgid ""
 "\n"
 "If a number of wireless cards doesn't match, you may try to reset the Wi-"
@@ -2278,5 +2298,17 @@ msgstr "Abmelden"
 #~ msgstr ""
 
 #~ msgid "NTP servers"
+#~ msgstr ""
+
+#~ msgid "Cannot resolve update"
+#~ msgstr ""
+
+#~ msgid "Password changed successfully"
+#~ msgstr ""
+
+#~ msgid "An error occurred during resetting Wi-Fi settings"
+#~ msgstr ""
+
+#~ msgid "Wi-Fi settings are set to defaults"
 #~ msgstr ""
 
