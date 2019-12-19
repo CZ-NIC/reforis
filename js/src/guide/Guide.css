@@ -5,11 +5,11 @@
  * See /LICENSE for more information.
  */
 
-.wrapper {
+.wrapper-guide {
     flex-direction: column;
 }
 
-#content {
+.wrapper-guide #content {
     display: flex;
     align-items: center;
 }

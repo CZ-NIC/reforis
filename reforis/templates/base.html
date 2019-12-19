@@ -8,7 +8,6 @@
 
     {# CSS #}
     <link rel="stylesheet" href="{{ url_for('static', filename = 'reforis/css/app.css') }}"/>
-    {% block css %}{% endblock %}
 
     {# JS #}
     {% include 'includes/locale.html' %}
@@ -21,7 +20,7 @@
 
 <body>
 <div id="app-container"></div>
-<div class="wrapper">
+<div class="wrapper {% block wrapper_class %}{% endblock %}">
     {% block navigation %}{% include "includes/navigation.html" %}{% endblock %}
     <div id="content">
         <div class="col-lg-10 col-sm-12">
