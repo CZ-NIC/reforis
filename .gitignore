@@ -111,5 +111,6 @@ venv.bak/
 .mypy_cache/
 
 /reforis_static/reforis/js/app.min.js
+/reforis_static/reforis/js/app.min.js.LICENSE
 /reforis_static/reforis/css/app.css
 /js/styleguide/

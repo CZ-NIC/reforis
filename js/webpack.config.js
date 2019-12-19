@@ -8,6 +8,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = (env) => ({
     mode: "development",
@@ -52,6 +53,18 @@ module.exports = (env) => ({
                     "css-loader",
                 ],
             },
+        ],
+    },
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new TerserPlugin({
+                terserOptions: {
+                    compress: {
+                        pure_funcs: ["console.log", "console.info", "console.debug"],
+                    },
+                },
+            }),
         ],
     },
     plugins: [
