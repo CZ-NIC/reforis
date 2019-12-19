@@ -21,6 +21,7 @@ import { GUIDE_URL_PREFIX } from "./constants";
 import GuideNavigation from "./GuideNavigation";
 import GuideHelp from "./GuideHelp";
 import STEPS from "./steps";
+import "./Guide.css";
 
 Guide.propTypes = {
     ws: PropTypes.object.isRequired,

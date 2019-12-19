@@ -16,12 +16,6 @@ html {
     overflow-x:hidden;
 }
 
-.wrapper {
-    display: flex;
-    position: relative;
-    min-height: 100vh;
-}
-
 a, .btn-link {
     color: #00a2e2;
 }
@@ -53,15 +47,32 @@ form > button {
     color: black;
 }
 
-/* Alerts */
-#alert-container {
-    position: sticky;
-    top: 1rem;
-    /* Just above bootstrap's defaults */
-    z-index: 4;
+/* Content */
+
+.wrapper {
+    display: flex;
+    position: relative;
+    min-height: 100vh;
 }
 
-/* Content */
+@media (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+    }
+
+    #sidebar {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        flex: none;
+    }
+
+    #content {
+        flex: none;
+    }
+}
+
 #content {
     display: flex;
     flex: 5;
@@ -70,8 +81,17 @@ form > button {
     height: 100%;
 }
 
+/* Alerts */
 
-/* Side bar */
+#alert-container {
+    position: sticky;
+    top: 1rem;
+    /* Just above bootstrap's defaults */
+    z-index: 4;
+}
+
+/* Sidebar */
+
 #sidebar {
     flex: 2;
     background: #f2f2f2;
@@ -155,7 +175,6 @@ form > button {
 
 /* Drop-down menus */
 
-/* Top bar */
 #top-bar, #topbar-container {
     display: flex;
     justify-content: flex-end;
@@ -440,24 +459,6 @@ form > button {
     display: none;
 }
 
-@media (max-width: 768px) {
-    .wrapper {
-        flex-direction: column;
-    }
-
-    #sidebar {
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        flex: none;
-    }
-
-    #content {
-        flex: none;
-    }
-}
-
 /* Languages dropdown */
 
 #languages-dropdown-menu .dropdown-item:hover {
@@ -486,7 +487,8 @@ form > button {
     flex-direction: column;
 }
 
-/*Spinner*/
+/* Spinner */
+
 .spinner-wrapper .spinner-border {
     width: 4rem;
     height: 4rem;
@@ -522,6 +524,7 @@ form > button {
 }
 
 /* Notification center */
+
 #notifications-center {
     display: flex;
     flex-direction: column;
@@ -559,6 +562,7 @@ form > button {
 }
 
 /* Interfaces (scroll) */
+
 .network .scrollable {
     display: flex;
     overflow-x: auto;
@@ -619,6 +623,7 @@ form > button {
 }
 
 /* Modal */
+
 @keyframes modalFade {
     from {
         opacity: 0;
@@ -635,8 +640,8 @@ form > button {
     background: rgba(0, 0, 0, 0.2);
 }
 
-
 /* NTP settings */
+
 #ntpServersList {
     display: flex;
     flex-direction: row;
