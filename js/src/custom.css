@@ -651,15 +651,3 @@ form > button {
 #ntpServersList > p {
     margin: 0.5rem;
 }
-
-/* Packages - language settings */
-
-#language-packages {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-#language-packages > div {
-    margin: 0 0.5rem;
-}

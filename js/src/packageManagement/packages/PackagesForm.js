@@ -26,21 +26,26 @@ export default function PackagesForm({ formData, setFormValue, disabled }) {
     return (
         <>
             <h3>{_("Packages List")}</h3>
-            {formData.user_lists.map(
-                (_package, idx) => (
-                    <CheckBox
-                        label={_package.title}
-                        key={_package.title}
-                        helpText={_package.msg}
-                        checked={_package.enabled}
-                        disabled={disabled}
+            <div className="container">
+                <div className="row justify-content-start">
+                    {formData.user_lists.map(
+                        (_package, idx) => (
+                            <div className="col-12 col-lg-6" key={_package.title}>
+                                <CheckBox
+                                    label={_package.title}
+                                    helpText={_package.msg}
+                                    checked={_package.enabled}
+                                    disabled={disabled}
 
-                        onChange={setFormValue((value) => ({
-                            user_lists: { [idx]: { enabled: { $set: value } } },
-                        }))}
-                    />
-                ),
-            )}
+                                    onChange={setFormValue((value) => ({
+                                        user_lists: { [idx]: { enabled: { $set: value } } },
+                                    }))}
+                                />
+                            </div>
+                        ),
+                    )}
+                </div>
+            </div>
         </>
     );
 }
