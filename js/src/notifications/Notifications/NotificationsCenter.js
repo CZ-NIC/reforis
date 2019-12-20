@@ -8,6 +8,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router";
+import { Spinner } from "foris";
 
 import useNotifications from "../hooks";
 import NotificationsList from "./NotificationsList";
@@ -18,7 +19,7 @@ NotificationsCenter.propTypes = {
 };
 
 function NotificationsCenter({ ws, history }) {
-    const [notifications, dismiss, dismissAll] = useNotifications(ws);
+    const [notifications, dismiss, dismissAll, isLoading] = useNotifications(ws);
     const [currentNotification, setCurrentNotification] = useState();
 
     useEffect(() => {
@@ -43,17 +44,28 @@ function NotificationsCenter({ ws, history }) {
         );
     }
 
+    let componentContent;
+    if (isLoading) {
+        componentContent = <Spinner />;
+    } else {
+        componentContent = (
+            <>
+                {notifications.length !== 0
+                    ? getDismissAllButton()
+                    : <p className="text-muted text-center">{_("No notifications")}</p>}
+                <NotificationsList
+                    currentNotification={currentNotification}
+                    notifications={notifications}
+                    dismiss={dismiss}
+                />
+            </>
+        );
+    }
+
     return (
         <div id="notifications-center">
             <h1>{_("Notifications")}</h1>
-            {notifications.length !== 0
-                ? getDismissAllButton()
-                : <p className="text-muted text-center">{_("No notifications")}</p>}
-            <NotificationsList
-                currentNotification={currentNotification}
-                notifications={notifications}
-                dismiss={dismiss}
-            />
+            {componentContent}
         </div>
     );
 }

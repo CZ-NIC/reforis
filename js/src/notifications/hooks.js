@@ -66,7 +66,8 @@ export default function useNotifications(ws) {
         setNotifications([]);
     }
 
-    return [notifications, dismiss, dismissAll];
+    const isLoading = [API_STATE.INIT, API_STATE.SENDING].includes(getState.state);
+    return [notifications, dismiss, dismissAll, isLoading];
 }
 
 const NEW_NOTIFICATION_ANIMATION_DURATION = 1; // Sec.
