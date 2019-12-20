@@ -5,7 +5,7 @@
  * See /LICENSE for more information.
  */
 
-import React, { useEffect, useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 
 import RebootButton from "common/RebootButton";
@@ -25,7 +25,7 @@ export default function NotificationsList({ notifications, dismiss, currentNotif
             <NotificationsCenterItem
                 key={notification.id}
                 notification={notification}
-                currentNotification={currentNotification}
+                isCurrent={notification.id === currentNotification}
                 dismiss={() => dismiss(notification.id)}
             />
         ),
@@ -41,30 +41,24 @@ const BORDER_TYPES = {
 
 NotificationsCenterItem.propTypes = {
     notification: NOTIFICATION_PROP_TYPES,
-    currentNotification: PropTypes.string,
+    isCurrent: PropTypes.bool.isRequired,
     dismiss: PropTypes.func.isRequired,
 };
 
-function NotificationsCenterItem({ notification, currentNotification, dismiss }) {
-    const myRef = useRef(null);
-
-    function getIDFromURL() {
-        const searchParams = new URLSearchParams(window.location.search);
-        return searchParams.get("id") || null;
-    }
+function NotificationsCenterItem({ notification, isCurrent, dismiss }) {
+    const notificationRef = useRef(null);
 
     useEffect(() => {
-        if (
-            getIDFromURL() === notification.id
-            || (currentNotification && currentNotification.endsWith(notification.id))
-        ) myRef.current.scrollIntoView({ block: "start", behavior: "smooth" });
-    }, [notification.id, currentNotification]);
+        if (isCurrent && notificationRef.current) {
+            notificationRef.current.scrollIntoView({ block: "start", behavior: "smooth" });
+        }
+    });
 
     return (
-        <div ref={myRef} className={`card bg-light ${BORDER_TYPES[notification.severity]} sm-10`}>
+        <div ref={notificationRef} className={`card bg-light ${BORDER_TYPES[notification.severity]} sm-10`}>
             <div className="card-header">
                 <NotificationIcon severity={notification.severity} className="fa-2x" />
-                <p className="text-muted">{toLocaleDateString(notification.created_at)}</p>
+                <p className="text-muted align-middle m-0">{toLocaleDateString(notification.created_at)}</p>
                 <button type="button" className="close" onClick={dismiss}>×</button>
             </div>
 
