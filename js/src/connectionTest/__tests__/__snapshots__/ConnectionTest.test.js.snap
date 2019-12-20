@@ -70,40 +70,6 @@ exports[`<ConnectionTest/> Snapshot after trigger WAN connection test. 1`] = `
           <th
             scope="row"
           >
-            IPv6 connectivity
-          </th>
-          <td>
-            <div
-              class="spinner-border spinner-border-sm text-secondary"
-              role="status"
-            >
-              <span
-                class="sr-only"
-              />
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th
-            scope="row"
-          >
-            IPv6 gateway connectivity
-          </th>
-          <td>
-            <div
-              class="spinner-border spinner-border-sm text-secondary"
-              role="status"
-            >
-              <span
-                class="sr-only"
-              />
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th
-            scope="row"
-          >
             IPv4 connectivity
           </th>
           <td>
@@ -122,6 +88,40 @@ exports[`<ConnectionTest/> Snapshot after trigger WAN connection test. 1`] = `
             scope="row"
           >
             IPv4 gateway connectivity
+          </th>
+          <td>
+            <div
+              class="spinner-border spinner-border-sm text-secondary"
+              role="status"
+            >
+              <span
+                class="sr-only"
+              />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th
+            scope="row"
+          >
+            IPv6 connectivity
+          </th>
+          <td>
+            <div
+              class="spinner-border spinner-border-sm text-secondary"
+              role="status"
+            >
+              <span
+                class="sr-only"
+              />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th
+            scope="row"
+          >
+            IPv6 gateway connectivity
           </th>
           <td>
             <div
@@ -176,38 +176,6 @@ exports[`<ConnectionTest/> Snapshots with connection test results. 1`] = `
           <th
             scope="row"
           >
-            IPv6 connectivity
-          </th>
-          <td>
-            <div
-              class="text-success"
-            >
-              <i
-                class="fas fa-check"
-              />
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th
-            scope="row"
-          >
-            IPv6 gateway connectivity
-          </th>
-          <td>
-            <div
-              class="text-success"
-            >
-              <i
-                class="fas fa-check"
-              />
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th
-            scope="row"
-          >
             IPv4 connectivity
           </th>
           <td>
@@ -225,6 +193,38 @@ exports[`<ConnectionTest/> Snapshots with connection test results. 1`] = `
             scope="row"
           >
             IPv4 gateway connectivity
+          </th>
+          <td>
+            <div
+              class="text-success"
+            >
+              <i
+                class="fas fa-check"
+              />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th
+            scope="row"
+          >
+            IPv6 connectivity
+          </th>
+          <td>
+            <div
+              class="text-success"
+            >
+              <i
+                class="fas fa-check"
+              />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th
+            scope="row"
+          >
+            IPv6 gateway connectivity
           </th>
           <td>
             <div
