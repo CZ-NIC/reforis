@@ -4,7 +4,7 @@ from flask_babel import Babel
 from unittest import mock
 
 from reforis import create_app
-from reforis.test_utils import send_mock, surrogate
+from reforis.test_utils import send_mock
 from reforis.foris_controller_api.utils import APIError
 
 
@@ -56,8 +56,6 @@ def request_ctx():
         yield
 
 
-@surrogate('foris_client.buses.mqtt.MqttSender')
-@surrogate('foris_client.buses.base.ControllerError')
 @mock.patch('foris_client.buses.mqtt.MqttSender')
 @mock.patch('reforis.backend.MQTTBackend._parse_credentials', mock.Mock)
 def _stubbed_app(sender_mock=None):

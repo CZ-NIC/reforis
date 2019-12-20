@@ -7,7 +7,6 @@ from copy import deepcopy
 from contextlib import contextmanager
 from unittest import mock
 
-from .surrogate import surrogate
 from .send_mock import send_mock
 
 

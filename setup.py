@@ -67,6 +67,8 @@ setuptools.setup(
             'pycodestyle==2.5.0',
             'pylint==2.3.1',
             'pylint-quotes==0.2.1',
+            'foris-client @ git+https://gitlab.labs.nic.cz/turris/foris-controller/foris-client@master#egg=foris-client',
+            'paho-mqtt==1.5.0',
         ],
         'build': [
             'Sphinx==2.1.2',

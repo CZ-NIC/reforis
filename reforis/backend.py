@@ -27,9 +27,9 @@ class ExceptionInBackend(Exception):
 class Backend(ABC):
     """Abstract backend"""
 
-    @abstractmethod
-    def __init__(self):
-        ...
+    def __init__(self, instance, path=''):
+        self._instance = instance
+        self.path = path
 
     @abstractmethod
     def _send(self, module, action, data):
