@@ -76,10 +76,9 @@ class UBusBackend(Backend):
     """UBus backend"""
 
     def __init__(self, timeout, path):
-        super().__init__()
         from foris_client.buses.ubus import UbusSender
-        self.path = path
-        self._instance = UbusSender(path, default_timeout=timeout)
+        instance = UbusSender(path, default_timeout=timeout)
+        super().__init__(path, instance)
 
     def _send(self, module, action, data):
         return self._instance.send(module, action, data)
@@ -96,18 +95,20 @@ class MQTTBackend(Backend):
         :param credentials_file:
         :param controller_id:
         """
-        super().__init__()
-        from foris_client.buses.mqtt import MqttSender
         self.controller_id = controller_id
 
         credentials = None
         if credentials_file:
             credentials = self._parse_credentials(credentials_file)
-        self._instance = MqttSender(
+
+        from foris_client.buses.mqtt import MqttSender
+        instance = MqttSender(
             host, port,
             default_timeout=timeout,
             credentials=credentials
         )
+
+        super().__init__(instance)
 
     def _send(self, module, action, data):
         return self._instance.send(module, action, data, controller_id=self.controller_id)

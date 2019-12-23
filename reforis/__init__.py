@@ -72,6 +72,7 @@ def create_app(config):
         if error.status_code == HTTPStatus.INTERNAL_SERVER_ERROR:
             log_error(error.data)
         return jsonify(error.data), error.status_code
+
     app.register_error_handler(APIError, handle_api_error)
 
     @app.context_processor

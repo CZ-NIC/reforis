@@ -1,11 +1,17 @@
+#  Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+#
+#  This is free software, licensed under the GNU General Public License v3.
+#  See /LICENSE for more information.
+
+
 import pytest
 from flask import Flask, jsonify
 from flask_babel import Babel
 from unittest import mock
 
 from reforis import create_app
-from reforis.test_utils import send_mock
 from reforis.foris_controller_api.utils import APIError
+from reforis.test_utils.mocked_send import get_mocked_send
 
 
 @pytest.fixture(scope='module')
@@ -40,7 +46,8 @@ def client():
     with app.test_client() as client:
         with client.session_transaction() as session:
             session['logged'] = True
-        yield client
+        with app.app_context():
+            yield client
 
 
 @pytest.fixture
@@ -58,8 +65,8 @@ def request_ctx():
 
 @mock.patch('foris_client.buses.mqtt.MqttSender')
 @mock.patch('reforis.backend.MQTTBackend._parse_credentials', mock.Mock)
-def _stubbed_app(sender_mock=None):
-    sender_mock.return_value.send.side_effect = send_mock
+def _stubbed_app(sender_mock):
+    sender_mock.return_value.send.side_effect = get_mocked_send()
     # The foris client may not existed on the testing environment
     # so we surrogate this module to avoid ImportError during testing.
     return create_app('test')
