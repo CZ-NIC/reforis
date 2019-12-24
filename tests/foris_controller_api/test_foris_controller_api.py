@@ -5,7 +5,7 @@
 
 import pytest
 
-from reforis.test_utils import mock_backend_response
+from reforis.test_utils import _test_api_endpoint_foris_controller_call
 
 
 @pytest.mark.parametrize(
@@ -40,18 +40,13 @@ from reforis.test_utils import mock_backend_response
         ('guide', 'web', 'get_data', {'guide': {}, 'password_ready': False}),
     ]
 )
-def test_api_get_endpoint_calls_foris_controller_module(client, endpoint, module, action, response_data):
-    url = f'/api/{endpoint}'
-
-    response_mock_data = {module: {action: response_data}}
-    if type(response_data) is dict:
-        response_mock_data.update(response_data)
-
-    with mock_backend_response(response_mock_data) as mock_send:
-        response = client.get(url)
-    assert response.status_code == 200
-
-    _check_called_foris_controller_module(mock_send, module, action)
+def test_api_get_endpoint_foris_controller_calls(client, endpoint, module, action, response_data):
+    _test_api_endpoint_foris_controller_call(
+        client,
+        f'api/{endpoint}', 'get',
+        module, action,
+        response_data=response_data
+    )
 
 
 @pytest.mark.parametrize(
@@ -64,17 +59,10 @@ def test_api_get_endpoint_calls_foris_controller_module(client, endpoint, module
         ('updates/run', 'updater', 'run'),
     ]
 )
-def test_api_post_endpoints_exist(client, endpoint, module, action):
-    url = f'/api/{endpoint}'
-
-    response_mock_data = {module: {action: {'result': True}}}
-    with mock_backend_response(response_mock_data) as mock_send:
-        response = client.post(url)
-
-    assert response.status_code == 200
-    _check_called_foris_controller_module(mock_send, module, action)
-
-
-def _check_called_foris_controller_module(sender_mock, module, action):
-    calls = [(call[1][0], call[1][1]) for call in sender_mock.mock_calls]
-    assert (module, action) in calls
+def test_api_post_endpoint_foris_controller_calls(client, endpoint, module, action):
+    _test_api_endpoint_foris_controller_call(
+        client,
+        f'api/{endpoint}', 'post',
+        module, action,
+        response_data={'result': True}
+    )

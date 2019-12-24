@@ -15,3 +15,28 @@ def mock_backend_response(data):
     with mock.patch('flask.current_app.backend.perform') as perform_mock:
         perform_mock.side_effect = get_mocked_send(data)
         yield perform_mock
+
+
+def _test_api_endpoint_foris_controller_call(
+        client,
+        url, method,
+        module, action,
+        request_data=None,
+        response_data=None
+):
+    response_mock_data = {}
+    if response_data:
+        response_mock_data.update({module: {action: response_data}})
+    if type(response_data) is dict:
+        response_mock_data.update(response_data)
+
+    with mock_backend_response(response_mock_data) as mock_send:
+        response = getattr(client, method)(url, json=request_data)
+
+    assert response.status_code == 200
+    _check_called_foris_controller_module(mock_send, module, action)
+
+
+def _check_called_foris_controller_module(sender_mock, module, action):
+    calls = [(call[1][0], call[1][1]) for call in sender_mock.mock_calls]
+    assert (module, action) in calls
