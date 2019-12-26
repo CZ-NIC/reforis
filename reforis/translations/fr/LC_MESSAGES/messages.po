@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2019-11-21 16:06+0100\n"
-"PO-Revision-Date: 2019-11-25 14:10+0000\n"
+"PO-Revision-Date: 2019-12-27 09:21+0000\n"
 "Last-Translator: Florian <floflr@zaclys.net>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/turris/reforis/fr/"
 ">\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.10-dev\n"
+"X-Generator: Weblate 3.10\n"
 "Generated-By: Babel 2.7.0\n"
 
 #: js/src/about/About.js:22 js/src/main/pages.js:133
@@ -47,7 +47,7 @@ msgstr "Redémarrer"
 #: js/src/common/RebootButton.js:57 js/src/dns/DNSSECDisableModal.js:32
 #: js/src/interfaces/modals.js:29 js/src/interfaces/modals.js:55
 msgid "Warning!"
-msgstr ""
+msgstr "Attention !"
 
 #: js/src/common/RebootButton.js:58
 msgid "Are you sure you want to restart the router?"
@@ -59,7 +59,7 @@ msgstr "Annuler"
 
 #: js/src/common/RebootButton.js:61
 msgid "Confirm reboot"
-msgstr ""
+msgstr "Confirmer le redémarrage"
 
 #: js/src/common/network/DHCPClientForm.js:14
 msgid "Hostname which will be provided to DHCP server."
@@ -111,7 +111,7 @@ msgstr "Démarrage DHCP"
 
 #: js/src/common/network/DHCPServerForm.js:53
 msgid "DHCP max leases"
-msgstr ""
+msgstr "Baux maximum DHCP"
 
 #: js/src/common/network/DHCPServerForm.js:66
 msgid "Lease time (hours)"
@@ -418,7 +418,7 @@ msgstr ""
 
 #: js/src/guestNetwork/GuestNetworkForm.js:168
 msgid "Download"
-msgstr ""
+msgstr "Télécharger"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:184
 msgid "Upload"
