@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2019-11-21 16:06+0100\n"
-"PO-Revision-Date: 2019-12-27 09:21+0000\n"
-"Last-Translator: Florian <floflr@zaclys.net>\n"
+"PO-Revision-Date: 2019-12-27 15:27+0000\n"
+"Last-Translator: Éfrit <Efrit@posteo.net>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/turris/reforis/fr/"
 ">\n"
 "Language: fr\n"
@@ -508,6 +508,10 @@ msgid ""
 "device. Firstly it is required to set your password. Note the security of"
 " your home network is in your hands, so try not to use weak passwords."
 msgstr ""
+"Bienvenue sur l’interface Web de Foris. Ce guide vous aidera à configurer "
+"votre appareil. Tout d’abord, il est nécessaire de définir votre mot de "
+"passe. Notez que la sécurité de votre réseau domestique est entre vos mains, "
+"alors essayez de ne pas utiliser de mots de passe faibles."
 
 #: js/src/guide/constants.js:13
 msgid "Your password is set. You may proceed to the next step."
@@ -515,21 +519,23 @@ msgstr ""
 
 #: js/src/guide/constants.js:16
 msgid "The workflow was set. You may proceed to next step."
-msgstr ""
+msgstr "Le flux de travaux a été défini. Vous pouvez passer à l’étape suivante."
 
 #: js/src/guide/constants.js:20
 msgid "Here you need to decide which interfaces belong to which network."
-msgstr ""
+msgstr "Ici, vous devez décider quelles interfaces appartiennent à quel réseau."
 
 #: js/src/guide/constants.js:21
 msgid "If you are in doubt use the current settings."
-msgstr ""
+msgstr "En cas de doute, utilisez les paramètres actuels."
 
 #: js/src/guide/constants.js:23
 msgid ""
 "You've configured your network interfaces. It seems that you didn't break"
 " any crucial network settings so you can safely proceed to the next step."
 msgstr ""
+"Vous avez configuré vos interfaces réseaux. Vous ne semblez pas avoir briser "
+"de paramètres réseau cruciaux ; vous pouvez donc passer à l’étape suivante."
 
 #: js/src/guide/constants.js:26
 msgid "Now you need to set the time and timezone of your device."
@@ -547,6 +553,8 @@ msgid ""
 "A proper DNS resolving is one of the key security features of your "
 "device. Let's configure it now."
 msgstr ""
+"Une résolution DNS correcte est l’une des principales caractéristiques de "
+"sécurité de votre appareil. Configurons-le maintenant."
 
 #: js/src/guide/constants.js:31
 msgid ""
@@ -557,6 +565,8 @@ msgstr ""
 #: js/src/guide/constants.js:34
 msgid "In order to access the internet, you need to configure your WAN interface."
 msgstr ""
+"Afin d’accéder à Internet, vous devez configurer l’interface de votre réseau "
+"étendu (WAN)."
 
 #: js/src/guide/constants.js:35
 msgid ""
@@ -564,6 +574,9 @@ msgid ""
 "whether it is working properly and if so you can safely proceed to the "
 "next step."
 msgstr ""
+"Vous avez configuré l’interface de votre réseau étendu. Essayez d’effectuer "
+"un test de connexion pour voir si elle fonctionne correctement et si vous "
+"pouvez passer à l’étape suivante."
 
 #: js/src/guide/constants.js:38
 msgid ""
@@ -572,12 +585,19 @@ msgid ""
 "configuration interface unless you restart the network on your current "
 "device."
 msgstr ""
+"Vous devez maintenant configurer l’interface de votre réseau local (LAN). "
+"Notez que lorsque vous modifiez vos paramètres réseau, vous ne pourrez "
+"probablement pas vous connecter à l’interface de configuration à moins de "
+"redémarrer le réseau sur votre appareil actuel."
 
 #: js/src/guide/constants.js:39
 msgid ""
 "You've configured your LAN interface. Try to test whether settings work "
 "properly and if so you can safely proceed to the next step."
 msgstr ""
+"Vous avez configuré l’interface de votre réseau local. Essayez de vérifier "
+"si les paramètres fonctionnent correctement et si vous pouvez passer à l’"
+"étape suivante."
 
 #: js/src/guide/constants.js:48
 msgid ""
@@ -597,6 +617,9 @@ msgid ""
 " put any interfaces to your WAN and Guest Network. So it is a good idea "
 "to assign all interfaces to LAN."
 msgstr ""
+"Vous avez choisi d’agir comme un serveur local, ce qui signifie qu’il n’y a "
+"pas de sens à mettre des interfaces dans vos réseaux étendu et invité. Il "
+"serait donc judicieux d’affecter toutes vos interfaces au réseau local."
 
 #: js/src/guide/constants.js:68
 msgid ""
