@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2019-11-21 16:06+0100\n"
-"PO-Revision-Date: 2019-12-27 15:27+0000\n"
+"PO-Revision-Date: 2019-12-28 14:55+0000\n"
 "Last-Translator: Éfrit <Efrit@posteo.net>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/turris/reforis/fr/"
 ">\n"
@@ -254,7 +254,7 @@ msgstr ""
 
 #: js/src/dns/DNSForm.js:95
 msgid "Enable DHCP clients in DNS"
-msgstr ""
+msgstr "Activer les clients DHCP dans le DNS"
 
 #: js/src/dns/DNSForm.js:106
 msgid "Domain of DHCP clients in DNS"
@@ -466,6 +466,10 @@ msgid ""
 "other devices within your local network (e.g. act as a network-attached "
 "storage)."
 msgstr ""
+"Ce flux de travaux vous aidera à configurer votre appareil pour agir comme "
+"un serveur local. Cela signifie qu’il fournira certains types de services "
+"aux autres appareils dans votre réseau local (p. ex. agir comme un serveur "
+"de stockage en réseau)."
 
 #: js/src/guide/WorkflowSelect.js:22
 msgid ""
@@ -473,12 +477,18 @@ msgid ""
 " functional router. It assumes that you want to have more or less "
 "standard network setup."
 msgstr ""
+"Après avoir terminé ce flux de travaux, votre appareil sera capable d’agir "
+"comme un routeur pleinement fonctionnel. Cela suppose que vous voulez plus "
+"ou moins une installation réseau standard."
 
 #: js/src/guide/WorkflowSelect.js:23
 msgid ""
 "Just set your password and you are ready to go. This workflow is aimed to"
 " more advanced users who intend not to use the web GUI."
 msgstr ""
+"Définissez seulement votre mot de passe et vous serez prêt. Ce flux de "
+"travaux vise les utilisateurs avancés qui n’ont pas l’intention d’utiliser l’"
+"interface graphique Web."
 
 #: js/src/guide/WorkflowSelect.js:27
 msgid "Local server"
@@ -490,7 +500,7 @@ msgstr "Routeur"
 
 #: js/src/guide/WorkflowSelect.js:29
 msgid "Minimal"
-msgstr ""
+msgstr "Minimal"
 
 #: js/src/guide/WorkflowSelect.js:55
 msgid "Guide workflow"
@@ -604,12 +614,18 @@ msgid ""
 "The device setup is finished. Now your device is able to act as a router "
 "and route network traffic among LAN, WAN and guest network."
 msgstr ""
+"L’installation de l’appareil est terminée. Celui-ci peut désormais agir "
+"comme un routeur et donc router le trafic réseau entre les réseaux local, "
+"étendu et invité."
 
 #: js/src/guide/constants.js:54
 msgid ""
 "Minimal device setup is finished. Note that you probably need to perform "
 "some further configuration updates to fit the device to your needs."
 msgstr ""
+"L’installation minimale de l’appareil est terminée. Notez qu’il est "
+"probablement nécessaire que vous réalisiez des mises à jour de configuration "
+"supplémentaires pour que l’appareil réponde à vos besoins."
 
 #: js/src/guide/constants.js:63
 msgid ""
@@ -628,6 +644,10 @@ msgid ""
 "probably want to act as a client here thus select "
 "<strong>Computer</strong> mode here."
 msgstr ""
+"Pour agir comme un serveur local, il n’est pas nécessaire de gérer le réseau "
+"local (si vous souhaitez tout de même le gérer, réinitialisez le guide et "
+"choisissez le flux de travaux Routeur). Vous voulez probablement agir comme "
+"un client alors sélectionnez le mode <strong>Ordinateur</strong> ici."
 
 #: js/src/guide/constants.js:69
 msgid ""
@@ -635,6 +655,10 @@ msgid ""
 "IP addresses are entered correctly otherwise you won't be able to access "
 "this configuration interface when the new settings are applied."
 msgstr ""
+"Si vous sélectionnez la configuration <strong>statique</strong>, assurez-"
+"vous que les adresses IP soient correctement saisies, autrement vous ne "
+"pourrez plus accéder à cette interface de configuration lorsque les nouveaux "
+"paramètres seront appliqués."
 
 #: js/src/guide/constants.js:70
 msgid ""
@@ -643,12 +667,19 @@ msgid ""
 "server which is managing your LAN. Then you need to connect to the new IP"
 " address to proceed the guide."
 msgstr ""
+"Si vous sélectionnez la méthode <strong>DHCP</strong>, vous avez "
+"probablement besoin d’obtenir une nouvelle adresse IP pour cet appareil. "
+"Vous pouvez l’obtenir auprès du serveur DHCP qui gère votre réseau local. "
+"Vous devez ensuite vous connectez à la nouvelle adresse IP pour continuer ce "
+"guide."
 
 #: js/src/guide/constants.js:71
 msgid ""
 "Note that either way you might need to re-plug your ethernet cables after"
 " you update the settings here."
 msgstr ""
+"Notez que dans les deux cas vous pourrez avoir besoin de rebrancher vos "
+"câbles Ethernet après avoir mis à jour vos paramètres ici."
 
 #: js/src/guide/constants.js:73
 msgid ""
@@ -657,12 +688,18 @@ msgid ""
 " your device is able to access the internet (you can use the connection "
 "test below)."
 msgstr ""
+"Veuillez vérifier si les paramètres que vous avez fournis fonctionnent "
+"correctement. Cela signifie que vous pouvez accéder à l’interface de "
+"configuration de votre appareil et que celui-ci est capable d’accéder à "
+"Internet (vous pouvez utiliser le test de connexion ci-dessous)."
 
 #: js/src/guide/constants.js:76
 msgid ""
 "The device setup is finished. Now your device should be able to act as a "
 "server on your local network."
 msgstr ""
+"L’installation de l’appareil est terminée. Celui-ci devrait désormais "
+"pouvoir agir comme un serveur sur votre réseau local."
 
 #: js/src/guide/steps.js:20 js/src/main/pages.js:82
 #: js/src/notificationsSettings/SMTPCustomForm.js:107
