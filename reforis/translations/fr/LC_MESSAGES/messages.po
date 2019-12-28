@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2019-11-21 16:06+0100\n"
-"PO-Revision-Date: 2019-12-28 14:55+0000\n"
+"PO-Revision-Date: 2019-12-28 22:24+0000\n"
 "Last-Translator: Éfrit <Efrit@posteo.net>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/turris/reforis/fr/"
 ">\n"
@@ -103,7 +103,7 @@ msgid ""
 "connected to the router."
 msgstr ""
 "Activer cette option pour attribuer automatiquement des adresses IP aux "
-"périphériques connectés au routeur."
+"appareils connectés au routeur."
 
 #: js/src/common/network/DHCPServerForm.js:40
 msgid "DHCP start"
@@ -111,7 +111,7 @@ msgstr "Démarrage DHCP"
 
 #: js/src/common/network/DHCPServerForm.js:53
 msgid "DHCP max leases"
-msgstr "Baux maximum DHCP"
+msgstr "Baux maximums de DHCP"
 
 #: js/src/common/network/DHCPServerForm.js:66
 msgid "Lease time (hours)"
@@ -134,8 +134,8 @@ msgid ""
 "DNS server address is not required as the built-in DNS resolver is "
 "capable of working without it."
 msgstr ""
-"L’adresse du serveur DNS n’est pas nécessaire car le résolveur DNS "
-"intégré est capable de fonctionner sans elle."
+"L’adresse du serveur DNS n’est pas nécessaire car le résolveur DNS intégré "
+"est capable de fonctionner sans lui."
 
 #: js/src/common/network/StaticIPForm.js:43
 msgid "IP address"
@@ -243,6 +243,8 @@ msgid ""
 "This domain will be used as suffix. E.g. The result for client "
 "\"android-123\" and domain \"my.lan\" will be \"android-123.my.lan\"."
 msgstr ""
+"Ce domaine sera utilisé comme suffixe. Par exemple, le résultat pour le "
+"client « android-123 » et le domaine « my.lan » sera « android-123.my.lan »."
 
 #: js/src/dns/DNSForm.js:71
 msgid "Use forwarding"
@@ -391,14 +393,17 @@ msgid ""
 "This option enables you to set a bandwidth limit for the guest network, "
 "so that your main network doesn't get slowed-down by it."
 msgstr ""
+"Cette option permet d’établir une limite de bande passante pour le réseau "
+"invité, afin que votre réseau principal ne soit pas ralenti par celui-ci."
 
 #: js/src/guestNetwork/GuestNetworkForm.js:23
 msgid "Download speed in guest network (in kilobits per second)."
 msgstr ""
+"Vitesse de téléchargement sur le réseau invité (en kilobit par seconde)."
 
 #: js/src/guestNetwork/GuestNetworkForm.js:24
 msgid "Upload speed in guest network (in kilobits per second)."
-msgstr ""
+msgstr "Vitesse de téléversement sur le réseau invité (en kilobit par seconde)."
 
 #: js/src/guestNetwork/GuestNetworkForm.js:57 js/src/wifi/WiFiForm.js:79
 msgid "Enable"
@@ -737,7 +742,7 @@ msgstr ""
 #: js/src/guide/steps.js:48 js/src/interfaces/Interfaces.js:83
 #: js/src/interfaces/constants.js:10 js/src/main/pages.js:54
 msgid "LAN"
-msgstr ""
+msgstr "Réseau local"
 
 #: js/src/guide/steps.js:52
 msgid "Finish"
@@ -910,7 +915,7 @@ msgstr "Paramètres LAN"
 
 #: js/src/lan/LANForm.js:77
 msgid "LAN mode"
-msgstr "Mode LAN"
+msgstr "Mode réseau local"
 
 #: js/src/lan/LANManagedForm.js:18
 msgid "Router's IP address in the inner network."
@@ -987,19 +992,21 @@ msgstr "Aucune notification"
 
 #: js/src/notificationsSettings/CommonForm.js:17
 msgid "Reboot is required"
-msgstr "Un redémarrage est nécessaire"
+msgstr "Un réamorçage est requis"
 
 #: js/src/notificationsSettings/CommonForm.js:18
 msgid "Reboot or attention is required"
-msgstr "Un redémarrage ou une attention particulière est requise"
+msgstr "Un réamorçage ou une attention particulière est requise"
 
 #: js/src/notificationsSettings/CommonForm.js:19
 msgid "Reboot or attention is required or update was installed"
 msgstr ""
+"Un réamorçage ou une attention particulière est requis, ou une mise à jour a "
+"été installée"
 
 #: js/src/notificationsSettings/CommonForm.js:47
 msgid "Recipient's email"
-msgstr ""
+msgstr "Adresse courriel du destinataire"
 
 #: js/src/notificationsSettings/CommonForm.js:58
 msgid "Importance"
@@ -1051,7 +1058,7 @@ msgstr "Paramètres SMTP"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:56
 msgid "Sender address (From)"
-msgstr ""
+msgstr "Adresse de l’expéditeur (De)"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:68
 msgid "Server address"
@@ -1080,6 +1087,11 @@ msgid ""
 "additional settings. If you want to set your own SMTP server, please "
 "select \"Custom\" and enter required settings."
 msgstr ""
+"Si vous choisissez « Turris » comme fournisseur SMTP, les serveurs fournis "
+"aux membres du projet Turris seront utilisés. Ces serveurs ne nécessitent "
+"pas de réglages supplémentaires. Si vous souhaitez définir votre propre "
+"serveur SMTP, sélectionnez « Personnalisé » et saisissez les paramètres "
+"requis."
 
 #: js/src/notificationsSettings/helpTexts.js:13
 msgid "Email address of recipient. Separate multiple addresses by comma."
@@ -1087,17 +1099,20 @@ msgstr ""
 
 #: js/src/notificationsSettings/helpTexts.js:14
 msgid "Send emails about new features."
-msgstr ""
+msgstr "Envoyer des courriels sur les nouvelles fonctionnalités."
 
 #: js/src/notificationsSettings/helpTexts.js:17
 msgid ""
 "Name of the sender - will be used as a part of the sender's email address"
 " before the \"at\" sign."
 msgstr ""
+"Nom de l’expéditeur — sera utilisé comme une partie de l’adresse courriel de "
+"l’expéditeur avant l’arobase."
 
 #: js/src/notificationsSettings/helpTexts.js:20
 msgid "This is the address notifications are send from."
 msgstr ""
+"Ceci est l’adresse à partir de laquelle sont envoyées les notifications."
 
 #: js/src/notificationsSettings/validator.js:21
 msgid "Can't be empty."
@@ -1112,6 +1127,8 @@ msgid ""
 "Sender's name can contain only alphanumeric characters, dots and "
 "underscores."
 msgstr ""
+"Le nom de l’expéditeur ne peut contenir que des caractères alphanumériques, "
+"des points et des tirets bas."
 
 #: js/src/notificationsSettings/validator.js:38
 msgid "Port is an number."
@@ -1427,12 +1444,11 @@ msgid ""
 "configuration here, you will have the option to do so later. Until then, "
 "the root account will be blocked.)"
 msgstr ""
-"Le même mot de passe serait utilisé pour accéder à cette interface "
-"d'administration, pour l'utilisateur root dans l'interface web LuCI et "
-"pour la connexion SSH. Utiliser un mot de passe fort ! (Si vous "
-"choisissez de ne pas configurer le mot de passe pour la configuration "
-"avancée ici, vous aurez la possibilité de le faire plus tard. D'ici là, "
-"le compte root sera bloqué.)"
+"Le même mot de passe serait utilisé pour accéder à cette interface d’"
+"administration, pour l’utilisateur root dans l’interface Web LuCI et pour la "
+"connexion SSH. Utiliser un mot de passe fort ! (Si vous choisissez de ne pas "
+"configurer le mot de passe pour la configuration avancée ici, vous aurez la "
+"possibilité de le faire plus tard. D’ici là, le compte root sera bloqué.)"
 
 #: js/src/password/Password.js:74
 msgid "Password changed successfully"
@@ -1549,6 +1565,8 @@ msgid ""
 "Time should be up-to-date otherwise DNS and other services might not work"
 " properly."
 msgstr ""
+"L’heure devrait être à jour sinon le DNS et d’autres services pourraient ne "
+"pas fonctionner correctement."
 
 #: js/src/regionAndTime/TimeForm.js:96
 msgid "How to set time"
