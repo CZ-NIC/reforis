@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2019-11-21 16:06+0100\n"
-"PO-Revision-Date: 2019-12-28 22:24+0000\n"
+"PO-Revision-Date: 2019-12-30 21:21+0000\n"
 "Last-Translator: Éfrit <Efrit@posteo.net>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/turris/reforis/fr/"
 ">\n"
@@ -509,7 +509,7 @@ msgstr "Minimal"
 
 #: js/src/guide/WorkflowSelect.js:55
 msgid "Guide workflow"
-msgstr ""
+msgstr "Flux de travaux du guide"
 
 #: js/src/guide/WorkflowSelect.js:56
 msgid ""
@@ -1258,22 +1258,24 @@ msgid ""
 "Number of days that must pass between receiving the request for restart "
 "and the automatic restart itself."
 msgstr ""
+"Nombre de jours qui doivent s’écouler entre la réception de la demande pour "
+"le redémarrage et le redémarrage automatique lui-même."
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:18
 msgid "Time of day of automatic reboot in HH:MM format."
-msgstr ""
+msgstr "Heure du réamorçage automatique au format HH:MM."
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:43
 msgid "Automatic restarts after software update"
-msgstr ""
+msgstr "Redémarrages automatiques après mise à jour logicielle"
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:45
 msgid "Delay (days)"
-msgstr ""
+msgstr "Délai (jours)"
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:57
 msgid "Reboot time"
-msgstr ""
+msgstr "Temps de réamorçage"
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:87
 msgid "Time should be in HH:MM format."
