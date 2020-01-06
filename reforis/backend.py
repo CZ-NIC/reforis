@@ -27,19 +27,19 @@ class ExceptionInBackend(Exception):
 class Backend(ABC):
     """Abstract backend"""
 
-    def __init__(self, instance, path=''):
-        self._instance = instance
-        self.path = path
+    def __init__(self, sender):
+        self.sender = sender
 
     @abstractmethod
     def _send(self, module, action, data):
         ...
 
     def __repr__(self):
-        return '%s(\'%s\')' % (type(self._instance).__name__, self.path)
+        return type(self.sender).__name__
 
     def perform(self, module, action, data=None, raise_exception_on_failure=True):
-        """ Perform backend action
+        """
+        Perform backend action
 
         :returns: None on error, response data otherwise
         :rtype: NoneType or dict
@@ -75,20 +75,25 @@ class Backend(ABC):
 class UBusBackend(Backend):
     """UBus backend"""
 
-    def __init__(self, timeout, path):
+    def __init__(self, timeout, socket_path):
+        self.socket_path = socket_path
         from foris_client.buses.ubus import UbusSender
-        instance = UbusSender(path, default_timeout=timeout)
-        super().__init__(path, instance)
+        sender = UbusSender(socket_path, default_timeout=timeout)
+        super().__init__(sender)
+
+    def __repr__(self):
+        sender_name = type(self.sender).__name__
+        return f'{sender_name} ({self.socket_path})'
 
     def _send(self, module, action, data):
-        return self._instance.send(module, action, data)
+        return self.sender.send(module, action, data)
 
 
 class MQTTBackend(Backend):
     """MQTT backend"""
+
     def __init__(self, timeout, host, port, credentials_file, controller_id):  # pylint: disable=too-many-arguments
         """
-
         :param timeout: Timeout
         :param host: MQTT
         :param port:
@@ -102,16 +107,16 @@ class MQTTBackend(Backend):
             credentials = self._parse_credentials(credentials_file)
 
         from foris_client.buses.mqtt import MqttSender
-        instance = MqttSender(
+        sender = MqttSender(
             host, port,
             default_timeout=timeout,
             credentials=credentials
         )
 
-        super().__init__(instance)
+        super().__init__(sender)
 
     def _send(self, module, action, data):
-        return self._instance.send(module, action, data, controller_id=self.controller_id)
+        return self.sender.send(module, action, data, controller_id=self.controller_id)
 
     @staticmethod
     def _parse_credentials(filepath):
