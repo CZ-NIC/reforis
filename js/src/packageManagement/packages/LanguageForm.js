@@ -26,20 +26,24 @@ export default function LanguageForm({ formData, setFormValue, disabled }) {
         <>
             <h3>{_("Languages")}</h3>
             <p>{_("If you want to use other language than English you can select it from the following list:")}</p>
-            <div id="language-packages" className={`${formFieldsSize} mb-3`}>
-                {formData.languages.map((language, idx) => (
-                    <CheckBox
-                        label={language.code.toUpperCase()}
-                        key={language.code}
-                        checked={language.enabled}
-                        useDefaultSize={false}
-                        disabled={disabled}
+            <div className={`${formFieldsSize} container mb-3`}>
+                <div className="row justify-content-start">
+                    {formData.languages.map((language, idx) => (
+                        <div className="col-2 col-lg-1 mr-4">
+                            <CheckBox
+                                label={language.code.toUpperCase()}
+                                key={language.code}
+                                checked={language.enabled}
+                                useDefaultSize={false}
+                                disabled={disabled}
 
-                        onChange={setFormValue((value) => ({
-                            languages: { [idx]: { enabled: { $set: value } } },
-                        }))}
-                    />
-                ))}
+                                onChange={setFormValue((value) => ({
+                                    languages: { [idx]: { enabled: { $set: value } } },
+                                }))}
+                            />
+                        </div>
+                    ))}
+                </div>
             </div>
         </>
     );
