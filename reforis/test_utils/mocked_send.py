@@ -5,8 +5,7 @@
 
 
 def get_mocked_send(mocked_data=None):
-    if mocked_data is None:
-        mocked_data = {}
+    mocked_data = mocked_data or {}
 
     def mocked_send(module, action, data=None, timeout=None, controller_id=None):
         response_data = {

@@ -24,9 +24,26 @@ def _test_api_endpoint_foris_controller_call(
         request_data=None,
         response_data=None
 ):
+    """
+    response_data is returned by backend call with `module` and `action` specified in arguments. If another backend
+    module and action have to be mocked then `module` and `action` it can be specified directly:
+
+    _test_api_endpoint_foris_controller_call(
+        client,
+        f'api/updates/', 'get',
+        'updater', 'get_settings',
+        response_data={
+            'updater': {'get_settings': {'approval': True, 'user_lists': [], 'languages': []}},
+            'router_notifications': {'get_settings': {'reboots': {}}}
+        }
+    )
+    """
+
     response_mock_data = {}
-    if response_data:
+    if response_data is not None:
         response_mock_data.update({module: {action: response_data}})
+
+    # We want to add dict value again because we don't know if module and action specified inside of dict or not.
     if type(response_data) is dict:
         response_mock_data.update(response_data)
 
