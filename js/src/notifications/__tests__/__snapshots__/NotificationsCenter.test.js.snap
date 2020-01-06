@@ -24,7 +24,7 @@ exports[`<NotificationsCenter/> Test with snapshot. 1`] = `
         class="fa fa-newspaper fa-2x"
       />
       <p
-        class="text-muted"
+        class="text-muted align-middle m-0"
       >
         February 1, 2000, 12:00:00 AM
       </p>
@@ -55,7 +55,7 @@ exports[`<NotificationsCenter/> Test with snapshot. 1`] = `
         class="fa fa-exclamation-circle fa-2x"
       />
       <p
-        class="text-muted"
+        class="text-muted align-middle m-0"
       >
         February 1, 2000, 12:00:00 AM
       </p>
@@ -86,7 +86,7 @@ exports[`<NotificationsCenter/> Test with snapshot. 1`] = `
         class="fa fa-power-off fa-2x"
       />
       <p
-        class="text-muted"
+        class="text-muted align-middle m-0"
       >
         February 1, 2000, 12:00:00 AM
       </p>

@@ -21,10 +21,18 @@ function NotificationsCenter({ ws, history }) {
     const [notifications, dismiss, dismissAll] = useNotifications(ws);
     const [currentNotification, setCurrentNotification] = useState();
 
+    function getIDFromSearch(search) {
+        const params = new URLSearchParams(search);
+        return params.get("id");
+    }
+
     useEffect(() => {
+        // Set initial notification
+        setCurrentNotification(getIDFromSearch(window.location.search));
+        // Listen to changes
         const unlisten = history.listen(
             (location) => {
-                setCurrentNotification(location.search);
+                setCurrentNotification(getIDFromSearch(location.search));
             },
         );
         return unlisten;
