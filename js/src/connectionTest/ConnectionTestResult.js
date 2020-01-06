@@ -32,20 +32,16 @@ export default function ConnectionTestResults({ ...tests }) {
     return (
         <table className="table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12">
             <tbody>
-                {Object.keys(tests).map(
-                    (test) => {
-                        const type = TEST_TYPES[test];
-                        return (type
-                            ? (
-                                <ConnectionTestResultItem
-                                    key={type}
-                                    type={type}
-                                    result={tests[test]}
-                                />
-                            ) : null);
-                    },
+                {Object.keys(TEST_TYPES).map(
+                    (type) => (tests[type] !== undefined
+                        ? (
+                            <ConnectionTestResultItem
+                                key={type}
+                                type={TEST_TYPES[type]}
+                                result={tests[type]}
+                            />
+                        ) : null),
                 )}
-
             </tbody>
         </table>
     );
