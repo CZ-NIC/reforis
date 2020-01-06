@@ -117,3 +117,27 @@ exports[`<NotificationsCenter/> Test with snapshot. 1`] = `
   </div>
 </div>
 `;
+
+exports[`<NotificationsCenter/> Test with spinner. 1`] = `
+<div>
+  <div
+    id="notifications-center"
+  >
+    <h1>
+      Notifications
+    </h1>
+    <div
+      class="spinner-wrapper my-3 text-center"
+    >
+      <div
+        class="spinner-border"
+        role="status"
+      >
+        <span
+          class="sr-only"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
