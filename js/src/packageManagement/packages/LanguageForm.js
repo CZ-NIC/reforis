@@ -29,10 +29,9 @@ export default function LanguageForm({ formData, setFormValue, disabled }) {
             <div className={`${formFieldsSize} container mb-3`}>
                 <div className="row justify-content-start">
                     {formData.languages.map((language, idx) => (
-                        <div className="col-2 col-lg-1 mr-4">
+                        <div className="col-2 col-lg-1 mr-4" key={language.code}>
                             <CheckBox
                                 label={language.code.toUpperCase()}
-                                key={language.code}
                                 checked={language.enabled}
                                 useDefaultSize={false}
                                 disabled={disabled}
