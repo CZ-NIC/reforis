@@ -4,70 +4,65 @@
 #  See /LICENSE for more information.
 
 import pytest
-from flask import current_app
+
+from reforis.test_utils import _test_api_endpoint_foris_controller_call
 
 
 @pytest.mark.parametrize(
-    'endpoint, module, post_is_allowed', [
-        ('wan', 'wan', True),
-        ('lan', 'lan', True),
-        ('wifi', 'wifi', True),
-        ('dns', 'dns', True),
-        ('dns/forwarders', 'dns', True),
-        ('guest-network', 'guest', True),
-        ('interfaces', 'networks', True),
+    'endpoint, module, action, response_data', [
+        ('wan', 'wan', 'get_wan_status', {}),
+        ('lan', 'lan', 'get_settings', {'mode': ''}),
+        ('wifi', 'wifi', 'get_settings', None),
+        ('dns', 'dns', 'get_settings', None),
+        ('dns/forwarders', 'dns', 'list_forwarders', None),
+        ('guest-network', 'guest', 'get_settings', None),
+        ('interfaces', 'networks', 'get_settings', {'device': ''}),
 
-        ('notifications', 'router_notifications', True),
-        ('notifications-settings', 'router_notifications', True),
-        ('region-and-time', 'time', True),
+        ('notifications', 'router_notifications', 'list', {'notifications': []}),
+        ('notifications-settings', 'router_notifications', 'get_settings', None),
+        ('region-and-time', 'time', 'get_settings', None),
 
-        ('language', 'web', True),
-        ('languages', 'web', False),
-        ('updates', 'updater', True),
-        ('packages', 'updater', True),
-        ('approvals', 'updater', True),
+        ('language', 'web', 'get_data', {'password_ready': True, 'language': 'en'}),
+        ('languages', 'web', 'list_languages', {
+            'web': {'get_data': {'password_ready': True}, 'list_languages': {'languages': []}}
+        }),
+        ('updates', 'updater', 'get_settings', {
+            'updater': {'get_settings': {'approval': True, 'user_lists': [], 'languages': []}},
+            'router_notifications': {'get_settings': {'reboots': {}}}
+        }),
+        ('packages', 'updater', 'get_settings', {'approval': True, 'approval_settings': {}}),
+        ('approvals', 'updater', 'get_settings', {
+            'approval': {}, 'enabled': True, 'approval_settings': {'status': 'off'}
+        }),
 
-        ('about', 'about', False),
+        ('about', 'about', 'get', {'serial': '1'}),
 
-        ('health-check', None, False),
-
-        ('guide', 'web', False),
+        ('guide', 'web', 'get_data', {'guide': {}, 'password_ready': False}),
     ]
 )
-def test_api_endpoints_exist(client, endpoint, module, post_is_allowed):
-    url = f'/api/{endpoint}'
-    response = client.get(url)
-    assert response.status_code == 200
-    fake_json = {'reboots': {}, 'enabled': {}, 'mode': 'unmanaged'}
-    response = client.post(url, json=fake_json)
-
-    if post_is_allowed:
-        assert response.status_code == 200
-    else:
-        assert response.status_code == 405
-
-    if module:
-        _check_called_foris_controller_module(current_app.backend._instance, module)
+def test_api_get_endpoint_foris_controller_calls(client, endpoint, module, action, response_data):
+    _test_api_endpoint_foris_controller_call(
+        client,
+        f'api/{endpoint}', 'get',
+        module, action,
+        response_data=response_data
+    )
 
 
 @pytest.mark.parametrize(
-    'endpoint, module', [
-        ('wifi-reset', 'wifi'),
-        ('connection-test', 'wan'),
-        ('dns/test', 'wan'),
-        ('ntp-update', 'time'),
-        ('reboot', 'maintain'),
-        ('updates/run', 'updater'),
+    'endpoint, module, action', [
+        ('wifi-reset', 'wifi', 'reset'),
+        ('connection-test', 'wan', 'connection_test_trigger'),
+        ('dns/test', 'wan', 'connection_test_trigger'),
+        ('ntp-update', 'time', 'ntpdate_trigger'),
+        ('reboot', 'maintain', 'reboot'),
+        ('updates/run', 'updater', 'run'),
     ]
 )
-def test_api_post_endpoints_exist(client, endpoint, module):
-    url = f'/api/{endpoint}'
-    response = client.post(url)
-
-    assert response.status_code == 200
-    _check_called_foris_controller_module(current_app.backend._instance, module)
-
-
-def _check_called_foris_controller_module(sender_mock, module):
-    modules = [call[1][0] for call in sender_mock.send.mock_calls]
-    assert module in modules
+def test_api_post_endpoint_foris_controller_calls(client, endpoint, module, action):
+    _test_api_endpoint_foris_controller_call(
+        client,
+        f'api/{endpoint}', 'post',
+        module, action,
+        response_data={'result': True}
+    )

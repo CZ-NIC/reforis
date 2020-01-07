@@ -4,22 +4,24 @@
 #  See /LICENSE for more information.
 
 import flask
-from unittest import mock
 
 from reforis.auth import login_to_foris, logout_from_foris
+from reforis.test_utils import mock_backend_response
 
 
+@mock_backend_response({'password': {'check': {'status': 'good'}}})
 def test_login(request_ctx):
     assert not hasattr(flask.session, 'logged')
-    with mock.patch('reforis.auth.current_app.backend.perform', return_value={'status': 'good'}):
-        login_to_foris('password')
+    login_to_foris('password')
+    flask.current_app.backend.perform.assert_called_with('password', 'check', {'password': 'cGFzc3dvcmQ='})
     assert flask.session['logged']
 
 
+@mock_backend_response({'password': {'check': {'status': 'not good'}}})
 def test_login_bad(request_ctx):
     assert not hasattr(flask.session, 'logged')
-    with mock.patch('reforis.auth.current_app.backend.perform', return_value={'status': 'not good'}):
-        login_to_foris('password')
+    login_to_foris('password')
+    flask.current_app.backend.perform.assert_called_with('password', 'check', {'password': 'cGFzc3dvcmQ='})
     assert not hasattr(flask.session, 'logged')
 
 
