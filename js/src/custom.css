@@ -123,6 +123,7 @@ form > button {
     /* Keep custom icons in the same size as fa icon */
     height: 1em;
     width: 1em;
+    margin-right: 1em;
 }
 
 #sidebar a.active {
