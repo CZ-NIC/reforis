@@ -60,10 +60,12 @@ export default function ForisPasswordForm({
 
                 {...props}
             />
-            <SubmitButton
-                state={submitButtonState}
-                disabled={!!formErrors.newForisPassword}
-            />
+            <div className="text-right">
+                <SubmitButton
+                    state={submitButtonState}
+                    disabled={!!formErrors.newForisPassword}
+                />
+            </div>
         </form>
     );
 }

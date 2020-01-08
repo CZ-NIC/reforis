@@ -9,7 +9,7 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 import {
-    Button, useAlert, ALERT_TYPES, useAPIPost, API_STATE,
+    Button, useAlert, ALERT_TYPES, useAPIPost, API_STATE, formFieldsSize,
 } from "foris";
 
 import API from "common/API";
@@ -55,16 +55,18 @@ If a number of wireless cards doesn't match, you may try to reset the Wi-Fi sett
 current Wi-Fi configuration and restore the default values.
         `)}
             </p>
-            <Button
-                className="btn-warning"
-                forisFormSize
-                loading={isLoading}
-                disabled={isLoading}
+            <div className={`${formFieldsSize} text-right`}>
+                <Button
+                    className="btn-warning"
+                    forisFormSize
+                    loading={isLoading}
+                    disabled={isLoading}
 
-                onClick={onReset}
-            >
-                {_("Reset Wi-Fi Settings")}
-            </Button>
+                    onClick={onReset}
+                >
+                    {_("Reset Wi-Fi Settings")}
+                </Button>
+            </div>
         </>
     );
 }

@@ -28,7 +28,7 @@ export default function RootPasswordForm({
     formData, formErrors, setFormValue, submitButtonState, postRootPassword, ...props
 }) {
     return (
-        <form onSubmit={postRootPassword}>
+        <form onSubmit={postRootPassword} className="mt-3">
             <h4>{_("Advanced Administration (root) Password")}</h4>
             <p
                 dangerouslySetInnerHTML={{
@@ -51,10 +51,12 @@ through the <a href="%s">LuCI web interface</a> or via SSH.`,
 
                 {...props}
             />
-            <SubmitButton
-                state={submitButtonState}
-                disabled={!!formErrors.newRootPassword}
-            />
+            <div className="text-right">
+                <SubmitButton
+                    state={submitButtonState}
+                    disabled={!!formErrors.newRootPassword}
+                />
+            </div>
         </form>
     );
 }

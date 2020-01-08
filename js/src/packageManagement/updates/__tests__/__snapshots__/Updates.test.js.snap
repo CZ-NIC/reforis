@@ -26,15 +26,19 @@ exports[`<Updates/> should display spinner while check is pending 1`] = `
     Updates
   </h1>
   Manually check for updates and install them immediately.
-  <button
-    class="btn btn-primary mb-3 offset-lg-8 col-lg-3 col-sm-12"
-    disabled=""
-    type="button"
+  <div
+    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3 text-right"
   >
-     
-     
-    Check and install updates
-  </button>
+    <button
+      class="btn btn-primary mb-3 col-sm-12 col-lg-3"
+      disabled=""
+      type="button"
+    >
+       
+       
+      Check and install updates
+    </button>
+  </div>
   <div
     class="spinner-wrapper text-center"
   >
@@ -56,15 +60,19 @@ exports[`<Updates/> should display spinner while check is pending 2`] = `
     Updates
   </h1>
   Manually check for updates and install them immediately.
-  <button
-    class="btn btn-primary mb-3 offset-lg-8 col-lg-3 col-sm-12"
-    disabled=""
-    type="button"
+  <div
+    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3 text-right"
   >
-     
-     
-    Check and install updates
-  </button>
+    <button
+      class="btn btn-primary mb-3 col-sm-12 col-lg-3"
+      disabled=""
+      type="button"
+    >
+       
+       
+      Check and install updates
+    </button>
+  </div>
   <div
     class="spinner-wrapper text-center"
   >
@@ -86,14 +94,18 @@ exports[`<Updates/> should handle approvable updates 1`] = `
     Updates
   </h1>
   Manually check for updates and review them immediately.
-  <button
-    class="btn btn-primary mb-3 offset-lg-8 col-lg-3 col-sm-12"
-    type="button"
+  <div
+    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3 text-right"
   >
-     
-     
-    Check updates
-  </button>
+    <button
+      class="btn btn-primary mb-3 col-sm-12 col-lg-3"
+      type="button"
+    >
+       
+       
+      Check updates
+    </button>
+  </div>
   <div
     class="mt-4"
   >
@@ -190,14 +202,18 @@ exports[`<Updates/> should handle automatic updates (no delays/approvals) 1`] = 
     Updates
   </h1>
   Manually check for updates and install them immediately.
-  <button
-    class="btn btn-primary mb-3 offset-lg-8 col-lg-3 col-sm-12"
-    type="button"
+  <div
+    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3 text-right"
   >
-     
-     
-    Check and install updates
-  </button>
+    <button
+      class="btn btn-primary mb-3 col-sm-12 col-lg-3"
+      type="button"
+    >
+       
+       
+      Check and install updates
+    </button>
+  </div>
 </div>
 `;
 

@@ -9,7 +9,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import {
-    API_STATE, ErrorMessage, Spinner, withErrorMessage, withSpinnerOnSending,
+    API_STATE, ErrorMessage, Spinner, withErrorMessage, withSpinnerOnSending, formFieldsSize,
 } from "foris";
 import UpdateChecker from "./UpdateChecker";
 import UpdateApproval from "./UpdateApproval";
@@ -57,18 +57,19 @@ function UpdateManager({
             {description}
             {displayChecker
             && (
-                <UpdateChecker
-                    onSuccess={getUpdateToApprove}
-                    pending={pending}
-                    setPending={setPending}
-                >
-                    {checkerLabel}
-                </UpdateChecker>
+                <div className={`${formFieldsSize} text-right`}>
+                    <UpdateChecker
+                        onSuccess={getUpdateToApprove}
+                        pending={pending}
+                        setPending={setPending}
+                    >
+                        {checkerLabel}
+                    </UpdateChecker>
+                </div>
             )}
             {approvalComponent}
         </>
     );
 }
 
-const UpdateManagerWithErrorAndSpinner = withSpinnerOnSending(withErrorMessage(UpdateManager));
-export default UpdateManagerWithErrorAndSpinner;
+export default withSpinnerOnSending(withErrorMessage(UpdateManager));

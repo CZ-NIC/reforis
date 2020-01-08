@@ -7,6 +7,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import { formFieldsSize } from "foris";
 
 import useConnectionTest, { TEST_STATES } from "./hooks";
 import ConnectionTestResults from "./ConnectionTestResult";
@@ -29,7 +30,9 @@ export default function ConnectionTest({ ws, type }) {
         <form onSubmit={onSubmit}>
             {state !== TEST_STATES.NOT_RUNNING
                 && <ConnectionTestResults {...testResults} />}
-            <ConnectionTestButton state={state} />
+            <div className={`${formFieldsSize} text-right`}>
+                <ConnectionTestButton state={state} />
+            </div>
         </form>
     );
 }

@@ -42,297 +42,305 @@ be used for devices which you don't fully trust. Note that you can also limit do
 devices connected to the guest network.
         
   </p>
-  <form>
-    <h3>
-      WAN
-    </h3>
-    <div
-      class="network mb-3"
-    >
+  <div
+    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
+  >
+    <form>
+      <h3>
+        WAN
+      </h3>
       <div
-        class="scrollable"
+        class="network mb-3"
       >
-        <button
-          class="interface "
-          type="button"
+        <div
+          class="scrollable"
         >
-          <div>
-            <span
-              class="fa-stack fa-2x"
-            >
-              <i
-                class="far fa-square fa-stack-2x"
-              />
-              <i
-                class="fas fa-ethernet fa-stack-1x"
-              />
-            </span>
-          </div>
-          <h5>
-            WAN
-          </h5>
-        </button>
-      </div>
-    </div>
-    <h3>
-      LAN
-    </h3>
-    <div
-      class="network mb-3"
-    >
-      <div
-        class="scrollable"
-      >
-        <button
-          class="interface "
-          type="button"
-        >
-          <div>
-            <span
-              class="fa-stack fa-2x"
-            >
-              <i
-                class="far fa-square fa-stack-2x"
-              />
-              <i
-                class="fas fa-ethernet fa-stack-1x"
-                style="color: lightgrey;"
-              />
-            </span>
-          </div>
-          <h5>
-            LAN3
-          </h5>
-        </button>
-        <button
-          class="interface interface-selected"
-          type="button"
-        >
-          <div>
-            <span
-              class="fa-stack fa-2x"
-            >
-              <i
-                class="far fa-square fa-stack-2x"
-              />
-              <i
-                class="fas fa-ethernet fa-stack-1x"
-                style="color: lightgrey;"
-              />
-            </span>
-          </div>
-          <h5>
-            LAN1
-          </h5>
-        </button>
-      </div>
-    </div>
-    <h3>
-      Guest Network
-    </h3>
-    <div
-      class="network mb-3"
-    >
-      <div
-        class="scrollable"
-      >
-        <button
-          class="interface "
-          type="button"
-        >
-          <div>
-            <span
-              class="fa-stack fa-2x"
-            >
-              <i
-                class="far fa-square fa-stack-2x"
-              />
-              <i
-                class="fas fa-ethernet fa-stack-1x"
-                style="color: lightgrey;"
-              />
-            </span>
-          </div>
-          <h5>
-            LAN4
-          </h5>
-        </button>
-      </div>
-    </div>
-    <h3>
-      Unassigned
-    </h3>
-    <div
-      class="network mb-3"
-    >
-      <div
-        class="scrollable"
-      >
-        <button
-          class="interface "
-          type="button"
-        >
-          <div>
-            <span
-              class="fa-stack fa-2x"
-            >
-              <i
-                class="far fa-square fa-stack-2x"
-              />
-              <i
-                class="fas fa-ethernet fa-stack-1x"
-                style="color: lightgrey;"
-              />
-            </span>
-          </div>
-          <h5>
-            LAN0
-          </h5>
-        </button>
-        <button
-          class="interface "
-          type="button"
-        >
-          <div>
-            <span
-              class="fa-stack fa-2x"
-            >
-              <i
-                class="far fa-square fa-stack-2x"
-              />
-              <i
-                class="fas fa-ethernet fa-stack-1x"
-                style="color: lightgrey;"
-              />
-            </span>
-          </div>
-          <h5>
-            LAN2
-          </h5>
-        </button>
-        <button
-          class="interface "
-          type="button"
-        >
-          <div
-            style="color: gray;"
+          <button
+            class="interface "
+            type="button"
           >
-            <span
-              class="fa-stack fa-2x"
+            <div>
+              <span
+                class="fa-stack fa-2x"
+              >
+                <i
+                  class="far fa-square fa-stack-2x"
+                />
+                <i
+                  class="fas fa-ethernet fa-stack-1x"
+                />
+              </span>
+            </div>
+            <h5>
+              WAN
+            </h5>
+          </button>
+        </div>
+      </div>
+      <h3>
+        LAN
+      </h3>
+      <div
+        class="network mb-3"
+      >
+        <div
+          class="scrollable"
+        >
+          <button
+            class="interface "
+            type="button"
+          >
+            <div>
+              <span
+                class="fa-stack fa-2x"
+              >
+                <i
+                  class="far fa-square fa-stack-2x"
+                />
+                <i
+                  class="fas fa-ethernet fa-stack-1x"
+                  style="color: lightgrey;"
+                />
+              </span>
+            </div>
+            <h5>
+              LAN3
+            </h5>
+          </button>
+          <button
+            class="interface interface-selected"
+            type="button"
+          >
+            <div>
+              <span
+                class="fa-stack fa-2x"
+              >
+                <i
+                  class="far fa-square fa-stack-2x"
+                />
+                <i
+                  class="fas fa-ethernet fa-stack-1x"
+                  style="color: lightgrey;"
+                />
+              </span>
+            </div>
+            <h5>
+              LAN1
+            </h5>
+          </button>
+        </div>
+      </div>
+      <h3>
+        Guest Network
+      </h3>
+      <div
+        class="network mb-3"
+      >
+        <div
+          class="scrollable"
+        >
+          <button
+            class="interface "
+            type="button"
+          >
+            <div>
+              <span
+                class="fa-stack fa-2x"
+              >
+                <i
+                  class="far fa-square fa-stack-2x"
+                />
+                <i
+                  class="fas fa-ethernet fa-stack-1x"
+                  style="color: lightgrey;"
+                />
+              </span>
+            </div>
+            <h5>
+              LAN4
+            </h5>
+          </button>
+        </div>
+      </div>
+      <h3>
+        Unassigned
+      </h3>
+      <div
+        class="network mb-3"
+      >
+        <div
+          class="scrollable"
+        >
+          <button
+            class="interface "
+            type="button"
+          >
+            <div>
+              <span
+                class="fa-stack fa-2x"
+              >
+                <i
+                  class="far fa-square fa-stack-2x"
+                />
+                <i
+                  class="fas fa-ethernet fa-stack-1x"
+                  style="color: lightgrey;"
+                />
+              </span>
+            </div>
+            <h5>
+              LAN0
+            </h5>
+          </button>
+          <button
+            class="interface "
+            type="button"
+          >
+            <div>
+              <span
+                class="fa-stack fa-2x"
+              >
+                <i
+                  class="far fa-square fa-stack-2x"
+                />
+                <i
+                  class="fas fa-ethernet fa-stack-1x"
+                  style="color: lightgrey;"
+                />
+              </span>
+            </div>
+            <h5>
+              LAN2
+            </h5>
+          </button>
+          <button
+            class="interface "
+            type="button"
+          >
+            <div
+              style="color: gray;"
             >
-              <i
-                class="fas fa-wifi fa-stack-1x"
-              />
-              <i
-                class="fas fa-slash fa-stack-1x fa-inverse"
-              />
-              <i
-                class="fas fa-slash fa-stack-1x"
-                style="bottom: 0.3rem;"
-              />
-            </span>
-          </div>
-          <h5>
-            1
-          </h5>
+              <span
+                class="fa-stack fa-2x"
+              >
+                <i
+                  class="fas fa-wifi fa-stack-1x"
+                />
+                <i
+                  class="fas fa-slash fa-stack-1x fa-inverse"
+                />
+                <i
+                  class="fas fa-slash fa-stack-1x"
+                  style="bottom: 0.3rem;"
+                />
+              </span>
+            </div>
+            <h5>
+              1
+            </h5>
+          </button>
+        </div>
+      </div>
+      <h1>
+        LAN1
+      </h1>
+      <div
+        class="form-group"
+      >
+        <label
+          for="1"
+        >
+          Network
+        </label>
+        <select
+          class="custom-select"
+          id="1"
+        >
+          <option
+            value="lan"
+          >
+            LAN
+          </option>
+          <option
+            value="guest"
+          >
+            Guest Network
+          </option>
+          <option
+            value="none"
+          >
+            Unassigned
+          </option>
+        </select>
+      </div>
+      <table
+        class="table table-hover"
+      >
+        <tbody>
+          <tr>
+            <th>
+              Type
+            </th>
+            <td>
+              eth
+            </td>
+          </tr>
+          <tr>
+            <th>
+              State
+            </th>
+            <td>
+              down
+            </td>
+          </tr>
+          <tr>
+            <th>
+              Bus
+            </th>
+            <td>
+              eth
+            </td>
+          </tr>
+          <tr>
+            <th>
+              Slot
+            </th>
+            <td>
+              LAN1
+            </td>
+          </tr>
+          <tr>
+            <th>
+              Module ID
+            </th>
+            <td>
+              0
+            </td>
+          </tr>
+          <tr>
+            <th>
+              Link speed
+            </th>
+            <td>
+              0
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div
+        class="text-right"
+      >
+        <button
+          class="btn btn-primary  col-sm-12 col-lg-3"
+          type="submit"
+        >
+           
+           
+          Save
         </button>
       </div>
-    </div>
-    <h1>
-      LAN1
-    </h1>
-    <div
-      class="form-group col-sm-12 offset-lg-1 col-lg-10"
-    >
-      <label
-        for="1"
-      >
-        Network
-      </label>
-      <select
-        class="custom-select"
-        id="1"
-      >
-        <option
-          value="lan"
-        >
-          LAN
-        </option>
-        <option
-          value="guest"
-        >
-          Guest Network
-        </option>
-        <option
-          value="none"
-        >
-          Unassigned
-        </option>
-      </select>
-    </div>
-    <table
-      class="table table-hover"
-    >
-      <tbody>
-        <tr>
-          <th>
-            Type
-          </th>
-          <td>
-            eth
-          </td>
-        </tr>
-        <tr>
-          <th>
-            State
-          </th>
-          <td>
-            down
-          </td>
-        </tr>
-        <tr>
-          <th>
-            Bus
-          </th>
-          <td>
-            eth
-          </td>
-        </tr>
-        <tr>
-          <th>
-            Slot
-          </th>
-          <td>
-            LAN1
-          </td>
-        </tr>
-        <tr>
-          <th>
-            Module ID
-          </th>
-          <td>
-            0
-          </td>
-        </tr>
-        <tr>
-          <th>
-            Link speed
-          </th>
-          <td>
-            0
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <button
-      class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
-      type="submit"
-    >
-       
-       
-      Save
-    </button>
-  </form>
+    </form>
+  </div>
 </div>
 `;
 
@@ -378,297 +386,305 @@ be used for devices which you don't fully trust. Note that you can also limit do
 devices connected to the guest network.
         
   </p>
-  <form>
-    <h3>
-      WAN
-    </h3>
-    <div
-      class="network mb-3"
-    >
+  <div
+    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
+  >
+    <form>
+      <h3>
+        WAN
+      </h3>
       <div
-        class="scrollable"
+        class="network mb-3"
       >
-        <button
-          class="interface "
-          type="button"
+        <div
+          class="scrollable"
         >
-          <div>
-            <span
-              class="fa-stack fa-2x"
-            >
-              <i
-                class="far fa-square fa-stack-2x"
-              />
-              <i
-                class="fas fa-ethernet fa-stack-1x"
-              />
-            </span>
-          </div>
-          <h5>
-            WAN
-          </h5>
-        </button>
-      </div>
-    </div>
-    <h3>
-      LAN
-    </h3>
-    <div
-      class="network mb-3"
-    >
-      <div
-        class="scrollable"
-      >
-        <button
-          class="interface "
-          type="button"
-        >
-          <div>
-            <span
-              class="fa-stack fa-2x"
-            >
-              <i
-                class="far fa-square fa-stack-2x"
-              />
-              <i
-                class="fas fa-ethernet fa-stack-1x"
-                style="color: lightgrey;"
-              />
-            </span>
-          </div>
-          <h5>
-            LAN3
-          </h5>
-        </button>
-      </div>
-    </div>
-    <h3>
-      Guest Network
-    </h3>
-    <div
-      class="network mb-3"
-    >
-      <div
-        class="scrollable"
-      >
-        <button
-          class="interface interface-selected"
-          type="button"
-        >
-          <div>
-            <span
-              class="fa-stack fa-2x"
-            >
-              <i
-                class="far fa-square fa-stack-2x"
-              />
-              <i
-                class="fas fa-ethernet fa-stack-1x"
-                style="color: lightgrey;"
-              />
-            </span>
-          </div>
-          <h5>
-            LAN1
-          </h5>
-        </button>
-        <button
-          class="interface "
-          type="button"
-        >
-          <div>
-            <span
-              class="fa-stack fa-2x"
-            >
-              <i
-                class="far fa-square fa-stack-2x"
-              />
-              <i
-                class="fas fa-ethernet fa-stack-1x"
-                style="color: lightgrey;"
-              />
-            </span>
-          </div>
-          <h5>
-            LAN4
-          </h5>
-        </button>
-      </div>
-    </div>
-    <h3>
-      Unassigned
-    </h3>
-    <div
-      class="network mb-3"
-    >
-      <div
-        class="scrollable"
-      >
-        <button
-          class="interface "
-          type="button"
-        >
-          <div>
-            <span
-              class="fa-stack fa-2x"
-            >
-              <i
-                class="far fa-square fa-stack-2x"
-              />
-              <i
-                class="fas fa-ethernet fa-stack-1x"
-                style="color: lightgrey;"
-              />
-            </span>
-          </div>
-          <h5>
-            LAN0
-          </h5>
-        </button>
-        <button
-          class="interface "
-          type="button"
-        >
-          <div>
-            <span
-              class="fa-stack fa-2x"
-            >
-              <i
-                class="far fa-square fa-stack-2x"
-              />
-              <i
-                class="fas fa-ethernet fa-stack-1x"
-                style="color: lightgrey;"
-              />
-            </span>
-          </div>
-          <h5>
-            LAN2
-          </h5>
-        </button>
-        <button
-          class="interface "
-          type="button"
-        >
-          <div
-            style="color: gray;"
+          <button
+            class="interface "
+            type="button"
           >
-            <span
-              class="fa-stack fa-2x"
+            <div>
+              <span
+                class="fa-stack fa-2x"
+              >
+                <i
+                  class="far fa-square fa-stack-2x"
+                />
+                <i
+                  class="fas fa-ethernet fa-stack-1x"
+                />
+              </span>
+            </div>
+            <h5>
+              WAN
+            </h5>
+          </button>
+        </div>
+      </div>
+      <h3>
+        LAN
+      </h3>
+      <div
+        class="network mb-3"
+      >
+        <div
+          class="scrollable"
+        >
+          <button
+            class="interface "
+            type="button"
+          >
+            <div>
+              <span
+                class="fa-stack fa-2x"
+              >
+                <i
+                  class="far fa-square fa-stack-2x"
+                />
+                <i
+                  class="fas fa-ethernet fa-stack-1x"
+                  style="color: lightgrey;"
+                />
+              </span>
+            </div>
+            <h5>
+              LAN3
+            </h5>
+          </button>
+        </div>
+      </div>
+      <h3>
+        Guest Network
+      </h3>
+      <div
+        class="network mb-3"
+      >
+        <div
+          class="scrollable"
+        >
+          <button
+            class="interface interface-selected"
+            type="button"
+          >
+            <div>
+              <span
+                class="fa-stack fa-2x"
+              >
+                <i
+                  class="far fa-square fa-stack-2x"
+                />
+                <i
+                  class="fas fa-ethernet fa-stack-1x"
+                  style="color: lightgrey;"
+                />
+              </span>
+            </div>
+            <h5>
+              LAN1
+            </h5>
+          </button>
+          <button
+            class="interface "
+            type="button"
+          >
+            <div>
+              <span
+                class="fa-stack fa-2x"
+              >
+                <i
+                  class="far fa-square fa-stack-2x"
+                />
+                <i
+                  class="fas fa-ethernet fa-stack-1x"
+                  style="color: lightgrey;"
+                />
+              </span>
+            </div>
+            <h5>
+              LAN4
+            </h5>
+          </button>
+        </div>
+      </div>
+      <h3>
+        Unassigned
+      </h3>
+      <div
+        class="network mb-3"
+      >
+        <div
+          class="scrollable"
+        >
+          <button
+            class="interface "
+            type="button"
+          >
+            <div>
+              <span
+                class="fa-stack fa-2x"
+              >
+                <i
+                  class="far fa-square fa-stack-2x"
+                />
+                <i
+                  class="fas fa-ethernet fa-stack-1x"
+                  style="color: lightgrey;"
+                />
+              </span>
+            </div>
+            <h5>
+              LAN0
+            </h5>
+          </button>
+          <button
+            class="interface "
+            type="button"
+          >
+            <div>
+              <span
+                class="fa-stack fa-2x"
+              >
+                <i
+                  class="far fa-square fa-stack-2x"
+                />
+                <i
+                  class="fas fa-ethernet fa-stack-1x"
+                  style="color: lightgrey;"
+                />
+              </span>
+            </div>
+            <h5>
+              LAN2
+            </h5>
+          </button>
+          <button
+            class="interface "
+            type="button"
+          >
+            <div
+              style="color: gray;"
             >
-              <i
-                class="fas fa-wifi fa-stack-1x"
-              />
-              <i
-                class="fas fa-slash fa-stack-1x fa-inverse"
-              />
-              <i
-                class="fas fa-slash fa-stack-1x"
-                style="bottom: 0.3rem;"
-              />
-            </span>
-          </div>
-          <h5>
-            1
-          </h5>
+              <span
+                class="fa-stack fa-2x"
+              >
+                <i
+                  class="fas fa-wifi fa-stack-1x"
+                />
+                <i
+                  class="fas fa-slash fa-stack-1x fa-inverse"
+                />
+                <i
+                  class="fas fa-slash fa-stack-1x"
+                  style="bottom: 0.3rem;"
+                />
+              </span>
+            </div>
+            <h5>
+              1
+            </h5>
+          </button>
+        </div>
+      </div>
+      <h1>
+        LAN1
+      </h1>
+      <div
+        class="form-group"
+      >
+        <label
+          for="1"
+        >
+          Network
+        </label>
+        <select
+          class="custom-select"
+          id="1"
+        >
+          <option
+            value="lan"
+          >
+            LAN
+          </option>
+          <option
+            value="guest"
+          >
+            Guest Network
+          </option>
+          <option
+            value="none"
+          >
+            Unassigned
+          </option>
+        </select>
+      </div>
+      <table
+        class="table table-hover"
+      >
+        <tbody>
+          <tr>
+            <th>
+              Type
+            </th>
+            <td>
+              eth
+            </td>
+          </tr>
+          <tr>
+            <th>
+              State
+            </th>
+            <td>
+              down
+            </td>
+          </tr>
+          <tr>
+            <th>
+              Bus
+            </th>
+            <td>
+              eth
+            </td>
+          </tr>
+          <tr>
+            <th>
+              Slot
+            </th>
+            <td>
+              LAN1
+            </td>
+          </tr>
+          <tr>
+            <th>
+              Module ID
+            </th>
+            <td>
+              0
+            </td>
+          </tr>
+          <tr>
+            <th>
+              Link speed
+            </th>
+            <td>
+              0
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div
+        class="text-right"
+      >
+        <button
+          class="btn btn-primary  col-sm-12 col-lg-3"
+          type="submit"
+        >
+           
+           
+          Save
         </button>
       </div>
-    </div>
-    <h1>
-      LAN1
-    </h1>
-    <div
-      class="form-group col-sm-12 offset-lg-1 col-lg-10"
-    >
-      <label
-        for="1"
-      >
-        Network
-      </label>
-      <select
-        class="custom-select"
-        id="1"
-      >
-        <option
-          value="lan"
-        >
-          LAN
-        </option>
-        <option
-          value="guest"
-        >
-          Guest Network
-        </option>
-        <option
-          value="none"
-        >
-          Unassigned
-        </option>
-      </select>
-    </div>
-    <table
-      class="table table-hover"
-    >
-      <tbody>
-        <tr>
-          <th>
-            Type
-          </th>
-          <td>
-            eth
-          </td>
-        </tr>
-        <tr>
-          <th>
-            State
-          </th>
-          <td>
-            down
-          </td>
-        </tr>
-        <tr>
-          <th>
-            Bus
-          </th>
-          <td>
-            eth
-          </td>
-        </tr>
-        <tr>
-          <th>
-            Slot
-          </th>
-          <td>
-            LAN1
-          </td>
-        </tr>
-        <tr>
-          <th>
-            Module ID
-          </th>
-          <td>
-            0
-          </td>
-        </tr>
-        <tr>
-          <th>
-            Link speed
-          </th>
-          <td>
-            0
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <button
-      class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
-      type="submit"
-    >
-       
-       
-      Save
-    </button>
-  </form>
+    </form>
+  </div>
 </div>
 `;
 
@@ -714,210 +730,218 @@ be used for devices which you don't fully trust. Note that you can also limit do
 devices connected to the guest network.
         
   </p>
-  <form>
-    <h3>
-      WAN
-    </h3>
-    <div
-      class="network mb-3"
-    >
+  <div
+    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
+  >
+    <form>
+      <h3>
+        WAN
+      </h3>
       <div
-        class="scrollable"
+        class="network mb-3"
       >
-        <button
-          class="interface "
-          type="button"
+        <div
+          class="scrollable"
         >
-          <div>
-            <span
-              class="fa-stack fa-2x"
-            >
-              <i
-                class="far fa-square fa-stack-2x"
-              />
-              <i
-                class="fas fa-ethernet fa-stack-1x"
-              />
-            </span>
-          </div>
-          <h5>
-            WAN
-          </h5>
-        </button>
-      </div>
-    </div>
-    <h3>
-      LAN
-    </h3>
-    <div
-      class="network mb-3"
-    >
-      <div
-        class="scrollable"
-      >
-        <button
-          class="interface "
-          type="button"
-        >
-          <div>
-            <span
-              class="fa-stack fa-2x"
-            >
-              <i
-                class="far fa-square fa-stack-2x"
-              />
-              <i
-                class="fas fa-ethernet fa-stack-1x"
-                style="color: lightgrey;"
-              />
-            </span>
-          </div>
-          <h5>
-            LAN3
-          </h5>
-        </button>
-      </div>
-    </div>
-    <h3>
-      Guest Network
-    </h3>
-    <div
-      class="network mb-3"
-    >
-      <div
-        class="scrollable"
-      >
-        <button
-          class="interface "
-          type="button"
-        >
-          <div>
-            <span
-              class="fa-stack fa-2x"
-            >
-              <i
-                class="far fa-square fa-stack-2x"
-              />
-              <i
-                class="fas fa-ethernet fa-stack-1x"
-                style="color: lightgrey;"
-              />
-            </span>
-          </div>
-          <h5>
-            LAN1
-          </h5>
-        </button>
-        <button
-          class="interface "
-          type="button"
-        >
-          <div>
-            <span
-              class="fa-stack fa-2x"
-            >
-              <i
-                class="far fa-square fa-stack-2x"
-              />
-              <i
-                class="fas fa-ethernet fa-stack-1x"
-                style="color: lightgrey;"
-              />
-            </span>
-          </div>
-          <h5>
-            LAN4
-          </h5>
-        </button>
-      </div>
-    </div>
-    <h3>
-      Unassigned
-    </h3>
-    <div
-      class="network mb-3"
-    >
-      <div
-        class="scrollable"
-      >
-        <button
-          class="interface "
-          type="button"
-        >
-          <div>
-            <span
-              class="fa-stack fa-2x"
-            >
-              <i
-                class="far fa-square fa-stack-2x"
-              />
-              <i
-                class="fas fa-ethernet fa-stack-1x"
-                style="color: lightgrey;"
-              />
-            </span>
-          </div>
-          <h5>
-            LAN0
-          </h5>
-        </button>
-        <button
-          class="interface "
-          type="button"
-        >
-          <div>
-            <span
-              class="fa-stack fa-2x"
-            >
-              <i
-                class="far fa-square fa-stack-2x"
-              />
-              <i
-                class="fas fa-ethernet fa-stack-1x"
-                style="color: lightgrey;"
-              />
-            </span>
-          </div>
-          <h5>
-            LAN2
-          </h5>
-        </button>
-        <button
-          class="interface "
-          type="button"
-        >
-          <div
-            style="color: gray;"
+          <button
+            class="interface "
+            type="button"
           >
-            <span
-              class="fa-stack fa-2x"
+            <div>
+              <span
+                class="fa-stack fa-2x"
+              >
+                <i
+                  class="far fa-square fa-stack-2x"
+                />
+                <i
+                  class="fas fa-ethernet fa-stack-1x"
+                />
+              </span>
+            </div>
+            <h5>
+              WAN
+            </h5>
+          </button>
+        </div>
+      </div>
+      <h3>
+        LAN
+      </h3>
+      <div
+        class="network mb-3"
+      >
+        <div
+          class="scrollable"
+        >
+          <button
+            class="interface "
+            type="button"
+          >
+            <div>
+              <span
+                class="fa-stack fa-2x"
+              >
+                <i
+                  class="far fa-square fa-stack-2x"
+                />
+                <i
+                  class="fas fa-ethernet fa-stack-1x"
+                  style="color: lightgrey;"
+                />
+              </span>
+            </div>
+            <h5>
+              LAN3
+            </h5>
+          </button>
+        </div>
+      </div>
+      <h3>
+        Guest Network
+      </h3>
+      <div
+        class="network mb-3"
+      >
+        <div
+          class="scrollable"
+        >
+          <button
+            class="interface "
+            type="button"
+          >
+            <div>
+              <span
+                class="fa-stack fa-2x"
+              >
+                <i
+                  class="far fa-square fa-stack-2x"
+                />
+                <i
+                  class="fas fa-ethernet fa-stack-1x"
+                  style="color: lightgrey;"
+                />
+              </span>
+            </div>
+            <h5>
+              LAN1
+            </h5>
+          </button>
+          <button
+            class="interface "
+            type="button"
+          >
+            <div>
+              <span
+                class="fa-stack fa-2x"
+              >
+                <i
+                  class="far fa-square fa-stack-2x"
+                />
+                <i
+                  class="fas fa-ethernet fa-stack-1x"
+                  style="color: lightgrey;"
+                />
+              </span>
+            </div>
+            <h5>
+              LAN4
+            </h5>
+          </button>
+        </div>
+      </div>
+      <h3>
+        Unassigned
+      </h3>
+      <div
+        class="network mb-3"
+      >
+        <div
+          class="scrollable"
+        >
+          <button
+            class="interface "
+            type="button"
+          >
+            <div>
+              <span
+                class="fa-stack fa-2x"
+              >
+                <i
+                  class="far fa-square fa-stack-2x"
+                />
+                <i
+                  class="fas fa-ethernet fa-stack-1x"
+                  style="color: lightgrey;"
+                />
+              </span>
+            </div>
+            <h5>
+              LAN0
+            </h5>
+          </button>
+          <button
+            class="interface "
+            type="button"
+          >
+            <div>
+              <span
+                class="fa-stack fa-2x"
+              >
+                <i
+                  class="far fa-square fa-stack-2x"
+                />
+                <i
+                  class="fas fa-ethernet fa-stack-1x"
+                  style="color: lightgrey;"
+                />
+              </span>
+            </div>
+            <h5>
+              LAN2
+            </h5>
+          </button>
+          <button
+            class="interface "
+            type="button"
+          >
+            <div
+              style="color: gray;"
             >
-              <i
-                class="fas fa-wifi fa-stack-1x"
-              />
-              <i
-                class="fas fa-slash fa-stack-1x fa-inverse"
-              />
-              <i
-                class="fas fa-slash fa-stack-1x"
-                style="bottom: 0.3rem;"
-              />
-            </span>
-          </div>
-          <h5>
-            1
-          </h5>
+              <span
+                class="fa-stack fa-2x"
+              >
+                <i
+                  class="fas fa-wifi fa-stack-1x"
+                />
+                <i
+                  class="fas fa-slash fa-stack-1x fa-inverse"
+                />
+                <i
+                  class="fas fa-slash fa-stack-1x"
+                  style="bottom: 0.3rem;"
+                />
+              </span>
+            </div>
+            <h5>
+              1
+            </h5>
+          </button>
+        </div>
+      </div>
+      <div
+        class="text-right"
+      >
+        <button
+          class="btn btn-primary  col-sm-12 col-lg-3"
+          type="submit"
+        >
+           
+           
+          Save
         </button>
       </div>
-    </div>
-    <button
-      class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
-      type="submit"
-    >
-       
-       
-      Save
-    </button>
-  </form>
+    </form>
+  </div>
 </div>
 `;

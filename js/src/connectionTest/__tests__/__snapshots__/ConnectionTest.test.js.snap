@@ -43,18 +43,22 @@ exports[`<ConnectionTest/> Snapshot after trigger DNS connection test. 1`] = `
         </tr>
       </tbody>
     </table>
-    <button
-      class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
-      disabled=""
-      type="submit"
+    <div
+      class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3 text-right"
     >
-      <span
-        aria-hidden="true"
-        class="spinner-border spinner-border-sm"
-        role="status"
-      />
-         Test is running...
-    </button>
+      <button
+        class="btn btn-primary col-sm-12 col-lg-3"
+        disabled=""
+        type="submit"
+      >
+        <span
+          aria-hidden="true"
+          class="spinner-border spinner-border-sm"
+          role="status"
+        />
+           Test is running...
+      </button>
+    </div>
   </form>
 </DocumentFragment>
 `;
@@ -136,18 +140,22 @@ exports[`<ConnectionTest/> Snapshot after trigger WAN connection test. 1`] = `
         </tr>
       </tbody>
     </table>
-    <button
-      class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
-      disabled=""
-      type="submit"
+    <div
+      class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3 text-right"
     >
-      <span
-        aria-hidden="true"
-        class="spinner-border spinner-border-sm"
-        role="status"
-      />
-         Test is running...
-    </button>
+      <button
+        class="btn btn-primary col-sm-12 col-lg-3"
+        disabled=""
+        type="submit"
+      >
+        <span
+          aria-hidden="true"
+          class="spinner-border spinner-border-sm"
+          role="status"
+        />
+           Test is running...
+      </button>
+    </div>
   </form>
 </DocumentFragment>
 `;
@@ -155,12 +163,16 @@ exports[`<ConnectionTest/> Snapshot after trigger WAN connection test. 1`] = `
 exports[`<ConnectionTest/> Snapshot before connection test. 1`] = `
 <DocumentFragment>
   <form>
-    <button
-      class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
-      type="submit"
+    <div
+      class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3 text-right"
     >
-        Test connection
-    </button>
+      <button
+        class="btn btn-primary col-sm-12 col-lg-3"
+        type="submit"
+      >
+          Test connection
+      </button>
+    </div>
   </form>
 </DocumentFragment>
 `;
@@ -238,12 +250,16 @@ exports[`<ConnectionTest/> Snapshots with connection test results. 1`] = `
         </tr>
       </tbody>
     </table>
-    <button
-      class="btn btn-primary offset-lg-8 col-lg-3 col-sm-12"
-      type="submit"
+    <div
+      class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3 text-right"
     >
-        Test connection again
-    </button>
+      <button
+        class="btn btn-primary col-sm-12 col-lg-3"
+        type="submit"
+      >
+          Test connection again
+      </button>
+    </div>
   </form>
 </DocumentFragment>
 `;
