@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2019-11-21 16:06+0100\n"
-"PO-Revision-Date: 2020-01-05 20:21+0000\n"
+"PO-Revision-Date: 2020-01-09 11:12+0000\n"
 "Last-Translator: Florian <floflr@zaclys.net>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/turris/reforis/fr/"
 ">\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.10\n"
+"X-Generator: Weblate 3.10.1-dev\n"
 "Generated-By: Babel 2.7.0\n"
 
 #: js/src/about/About.js:22 js/src/main/pages.js:133
@@ -254,7 +254,7 @@ msgstr "Utiliser la redirection"
 
 #: js/src/dns/DNSForm.js:87
 msgid "Enable DNSSEC"
-msgstr ""
+msgstr "Activer DNSSEC"
 
 #: js/src/dns/DNSForm.js:95
 msgid "Enable DHCP clients in DNS"
@@ -303,7 +303,7 @@ msgstr "Utiliser le résolveur DNS du fournisseur"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:132
 msgid "Edit"
-msgstr ""
+msgstr "Modifier"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:139
 msgid "Delete"
@@ -1514,7 +1514,7 @@ msgstr ""
 
 #: js/src/rebootDropdown/RebootDropdown.js:40
 msgid "Details"
-msgstr ""
+msgstr "Détails"
 
 #: js/src/regionAndTime/RegionAndTime.js:30
 msgid "Region and time"
@@ -1581,11 +1581,11 @@ msgstr ""
 
 #: js/src/regionAndTime/TimeForm.js:151
 msgid "Hide NTP servers list"
-msgstr ""
+msgstr "Masquer la liste des serveurs NTP"
 
 #: js/src/regionAndTime/TimeForm.js:151
 msgid "Show NTP servers list"
-msgstr ""
+msgstr "Afficher la liste des serveurs NTP"
 
 #: js/src/regionAndTime/TimeForm.js:155
 msgid "NTP servers"
@@ -1598,7 +1598,7 @@ msgstr ""
 
 #: js/src/routerStateHandler/NetworkRestartHandler.js:30
 msgid "Network restarting"
-msgstr ""
+msgstr "Redémarrage du réseau"
 
 #: js/src/routerStateHandler/NetworkRestartHandler.js:33
 #: js/src/routerStateHandler/RebootHandler.js:32
