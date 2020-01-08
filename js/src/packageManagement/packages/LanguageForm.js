@@ -33,7 +33,6 @@ export default function LanguageForm({ formData, setFormValue, disabled }) {
                             <CheckBox
                                 label={language.code.toUpperCase()}
                                 checked={language.enabled}
-                                useDefaultSize={false}
                                 disabled={disabled}
 
                                 onChange={setFormValue((value) => ({

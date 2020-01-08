@@ -69,7 +69,9 @@ function ForwardersForm({
                 editForwarder={editForwarder}
                 disabled={disabled}
             />
-            <AddForwarderButton onClick={() => addForwarder()} />
+            <div className="text-right">
+                <AddForwarderButton onClick={() => addForwarder()} />
+            </div>
             <ForwarderModal
                 shown={forwarderModalShown}
                 setShown={setForwarderModalShown}

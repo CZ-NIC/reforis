@@ -10,7 +10,7 @@ import PropTypes from "prop-types";
 
 import {
     SUBMIT_BUTTON_STATES, useForm, useAPIGet, useAPIPost, API_STATE, useAlert, ALERT_TYPES,
-    withErrorMessage, withSpinnerOnSending,
+    withErrorMessage, withSpinnerOnSending, formFieldsSize,
 } from "foris";
 
 import API_URLs from "common/API";
@@ -111,7 +111,7 @@ function PasswordForm({ postCallback, currentPassword }) {
         : SUBMIT_BUTTON_STATES.READY;
 
     return (
-        <>
+        <div className={formFieldsSize}>
             <h3>{_("Password Settings")}</h3>
             {currentPassword.password_set && (
                 <CurrentForisPasswordForm
@@ -140,7 +140,7 @@ function PasswordForm({ postCallback, currentPassword }) {
                     postRootPassword={postRootPassword}
                 />
             )}
-        </>
+        </div>
     );
 }
 

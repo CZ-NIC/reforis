@@ -10,7 +10,7 @@ import React, { useEffect } from "react";
 import { useAPIGet } from "foris";
 
 import API_URLs from "common/API";
-import UpdateManagerWithErrorAndSpinner from "./UpdateManager";
+import UpdateManager from "./UpdateManager";
 
 export default function Updates() {
     const [updateSettingsResponse, getUpdateSettings] = useAPIGet(API_URLs.updates);
@@ -23,7 +23,7 @@ export default function Updates() {
     return (
         <>
             <h1>{_("Updates")}</h1>
-            <UpdateManagerWithErrorAndSpinner
+            <UpdateManager
                 apiState={updateSettingsResponse.state}
                 {...managerProps}
             />

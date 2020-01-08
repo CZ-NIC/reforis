@@ -5,247 +5,247 @@ exports[`<WiFi/> Snapshot 2.4 GHz 1`] = `
 - First value
 + Second value
 
-@@ -252,207 +252,95 @@
-            value=\\"0\\"
-          >
-            auto
-          </option>
-          <option
--           value=\\"36\\"
-+           value=\\"1\\"
-          >
-            
+@@ -255,207 +255,95 @@
+              value=\\"0\\"
+            >
+              auto
+            </option>
+            <option
+-             value=\\"36\\"
++             value=\\"1\\"
+            >
+              
 -                         36
 -                         (5180 MHz )
 +                         1
 +                         (2412 MHz )
                       
-          </option>
-          <option
--           value=\\"40\\"
-+           value=\\"2\\"
-          >
-            
+            </option>
+            <option
+-             value=\\"40\\"
++             value=\\"2\\"
+            >
+              
 -                         40
 -                         (5200 MHz )
 +                         2
 +                         (2417 MHz )
                       
-          </option>
-          <option
--           value=\\"44\\"
-+           value=\\"3\\"
-          >
-            
+            </option>
+            <option
+-             value=\\"44\\"
++             value=\\"3\\"
+            >
+              
 -                         44
 -                         (5220 MHz )
 +                         3
 +                         (2422 MHz )
                       
-          </option>
-          <option
--           value=\\"48\\"
--         >
--           
+            </option>
+            <option
+-             value=\\"48\\"
+-           >
+-             
 -                         48
 -                         (5240 MHz )
 -                     
--         </option>
--         <option
--           value=\\"52\\"
--         >
--           
+-           </option>
+-           <option
+-             value=\\"52\\"
+-           >
+-             
 -                         52
 -                         (5260 MHz  ,DFS)
 -                     
--         </option>
--         <option
--           value=\\"56\\"
--         >
--           
+-           </option>
+-           <option
+-             value=\\"56\\"
+-           >
+-             
 -                         56
 -                         (5280 MHz  ,DFS)
 -                     
--         </option>
--         <option
--           value=\\"60\\"
-+           value=\\"4\\"
-          >
-            
+-           </option>
+-           <option
+-             value=\\"60\\"
++             value=\\"4\\"
+            >
+              
 -                         60
 -                         (5300 MHz  ,DFS)
 +                         4
 +                         (2427 MHz )
                       
-          </option>
-          <option
--           value=\\"64\\"
-+           value=\\"5\\"
-          >
-            
+            </option>
+            <option
+-             value=\\"64\\"
++             value=\\"5\\"
+            >
+              
 -                         64
 -                         (5320 MHz  ,DFS)
 +                         5
 +                         (2432 MHz )
                       
-          </option>
-          <option
--           value=\\"100\\"
-+           value=\\"6\\"
-          >
-            
+            </option>
+            <option
+-             value=\\"100\\"
++             value=\\"6\\"
+            >
+              
 -                         100
 -                         (5500 MHz  ,DFS)
 +                         6
 +                         (2437 MHz )
                       
-          </option>
-          <option
--           value=\\"104\\"
-+           value=\\"7\\"
-          >
-            
+            </option>
+            <option
+-             value=\\"104\\"
++             value=\\"7\\"
+            >
+              
 -                         104
 -                         (5520 MHz  ,DFS)
 +                         7
 +                         (2442 MHz )
                       
-          </option>
-          <option
--           value=\\"108\\"
-+           value=\\"8\\"
-          >
-            
+            </option>
+            <option
+-             value=\\"108\\"
++             value=\\"8\\"
+            >
+              
 -                         108
 -                         (5540 MHz  ,DFS)
 +                         8
 +                         (2447 MHz )
                       
-          </option>
-          <option
--           value=\\"112\\"
-+           value=\\"9\\"
-          >
-            
+            </option>
+            <option
+-             value=\\"112\\"
++             value=\\"9\\"
+            >
+              
 -                         112
 -                         (5560 MHz  ,DFS)
 +                         9
 +                         (2452 MHz )
                       
-          </option>
-          <option
--           value=\\"116\\"
-+           value=\\"10\\"
-          >
-            
+            </option>
+            <option
+-             value=\\"116\\"
++             value=\\"10\\"
+            >
+              
 -                         116
 -                         (5580 MHz  ,DFS)
 +                         10
 +                         (2457 MHz )
                       
-          </option>
-          <option
--           value=\\"120\\"
-+           value=\\"11\\"
-          >
-            
+            </option>
+            <option
+-             value=\\"120\\"
++             value=\\"11\\"
+            >
+              
 -                         120
 -                         (5600 MHz  ,DFS)
 -                     
--         </option>
--         <option
--           value=\\"124\\"
--         >
--           
+-           </option>
+-           <option
+-             value=\\"124\\"
+-           >
+-             
 -                         124
 -                         (5620 MHz  ,DFS)
 -                     
--         </option>
--         <option
--           value=\\"128\\"
--         >
--           
+-           </option>
+-           <option
+-             value=\\"128\\"
+-           >
+-             
 -                         128
 -                         (5640 MHz  ,DFS)
 -                     
--         </option>
--         <option
--           value=\\"132\\"
--         >
--           
+-           </option>
+-           <option
+-             value=\\"132\\"
+-           >
+-             
 -                         132
 -                         (5660 MHz  ,DFS)
 -                     
--         </option>
--         <option
--           value=\\"136\\"
--         >
--           
+-           </option>
+-           <option
+-             value=\\"136\\"
+-           >
+-             
 -                         136
 -                         (5680 MHz  ,DFS)
 -                     
--         </option>
--         <option
--           value=\\"140\\"
--         >
--           
+-           </option>
+-           <option
+-             value=\\"140\\"
+-           >
+-             
 -                         140
 -                         (5700 MHz  ,DFS)
 -                     
--         </option>
--         <option
--           value=\\"144\\"
--         >
--           
+-           </option>
+-           <option
+-             value=\\"144\\"
+-           >
+-             
 -                         144
 -                         (5720 MHz  ,DFS)
 -                     
--         </option>
--         <option
--           value=\\"149\\"
--         >
--           
+-           </option>
+-           <option
+-             value=\\"149\\"
+-           >
+-             
 -                         149
 -                         (5745 MHz )
 -                     
--         </option>
--         <option
--           value=\\"153\\"
--         >
--           
+-           </option>
+-           <option
+-             value=\\"153\\"
+-           >
+-             
 -                         153
 -                         (5765 MHz )
 -                     
--         </option>
--         <option
--           value=\\"157\\"
--         >
--           
+-           </option>
+-           <option
+-             value=\\"157\\"
+-           >
+-             
 -                         157
 -                         (5785 MHz )
 -                     
--         </option>
--         <option
--           value=\\"161\\"
--         >
--           
+-           </option>
+-           <option
+-             value=\\"161\\"
+-           >
+-             
 -                         161
 -                         (5805 MHz )
 -                     
--         </option>
--         <option
--           value=\\"165\\"
--         >
--           
+-           </option>
+-           <option
+-             value=\\"165\\"
+-           >
+-             
 -                         165
 -                         (5825 MHz )
 +                         11
 +                         (2462 MHz )
                       
-          </option>
-        </select>
-      </div>
-      <div"
+            </option>
+          </select>
+        </div>
+        <div"
 `;
 
 exports[`<WiFi/> Snapshot both modules disabled. 1`] = `
@@ -259,58 +259,66 @@ If you want to use your router as a Wi-Fi access point, enable Wi-Fi here and fi
 point) and a corresponding password. You can then set up your mobile devices, using the QR code available within the form.
             
   </p>
-  <form>
-    <h3>
-      Wi-Fi 1
-    </h3>
-    <div
-      class="form-group col-sm-12 offset-lg-1 col-lg-10"
-    >
+  <div
+    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
+  >
+    <form>
+      <h3>
+        Wi-Fi 1
+      </h3>
       <div
-        class="custom-control custom-checkbox "
+        class="form-group"
       >
-        <input
-          class="custom-control-input"
-          id="1"
-          type="checkbox"
-        />
-        <label
-          class="custom-control-label"
-          for="1"
+        <div
+          class="custom-control custom-checkbox "
         >
-          Enable
-        </label>
+          <input
+            class="custom-control-input"
+            id="1"
+            type="checkbox"
+          />
+          <label
+            class="custom-control-label"
+            for="1"
+          >
+            Enable
+          </label>
+        </div>
       </div>
-    </div>
-    <h3>
-      Wi-Fi 2
-    </h3>
-    <div
-      class="form-group col-sm-12 offset-lg-1 col-lg-10"
-    >
+      <h3>
+        Wi-Fi 2
+      </h3>
       <div
-        class="custom-control custom-checkbox "
+        class="form-group"
       >
-        <input
-          class="custom-control-input"
-          id="2"
-          type="checkbox"
-        />
-        <label
-          class="custom-control-label"
-          for="2"
+        <div
+          class="custom-control custom-checkbox "
         >
-          Enable
-        </label>
+          <input
+            class="custom-control-input"
+            id="2"
+            type="checkbox"
+          />
+          <label
+            class="custom-control-label"
+            for="2"
+          >
+            Enable
+          </label>
+        </div>
       </div>
-    </div>
-    <button
-      class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
-      type="submit"
-    >
-        Save
-    </button>
-  </form>
+      <div
+        class="text-right"
+      >
+        <button
+          class="btn btn-primary  col-sm-12 col-lg-3"
+          type="submit"
+        >
+            Save
+        </button>
+      </div>
+    </form>
+  </div>
   <h4>
     Reset Wi-Fi Settings
   </h4>
@@ -320,12 +328,16 @@ If a number of wireless cards doesn't match, you may try to reset the Wi-Fi sett
 current Wi-Fi configuration and restore the default values.
         
   </p>
-  <button
-    class="btn btn-warning offset-lg-8 col-lg-3 col-sm-12"
-    type="button"
+  <div
+    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3 text-right"
   >
-      Reset Wi-Fi Settings
-  </button>
+    <button
+      class="btn btn-warning col-sm-12 col-lg-3"
+      type="button"
+    >
+        Reset Wi-Fi Settings
+    </button>
+  </div>
 </DocumentFragment>
 `;
 
@@ -334,108 +346,108 @@ exports[`<WiFi/> Snapshot guest network. 1`] = `
 - First value
 + Second value
 
-@@ -481,10 +481,89 @@
+@@ -484,10 +484,89 @@
           
-            </small>
-          </label>
+              </small>
+            </label>
+          </div>
         </div>
-      </div>
-+     <div
-+       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
-+     >
-+       <label
-+         for=\\"20\\"
-+       >
-+         SSID
-+       </label>
 +       <div
-+         class=\\"input-group\\"
++         class=\\"form-group\\"
 +       >
-+         <input
-+           class=\\"form-control\\"
-+           id=\\"20\\"
-+           type=\\"text\\"
-+           value=\\"TestGuestSSID\\"
-+         />
-+         <div
-+           class=\\"input-group-append\\"
++         <label
++           for=\\"20\\"
 +         >
-+           <button
-+             class=\\"input-group-text\\"
-+             type=\\"button\\"
-+           >
-+             <img
-+               alt=\\"QR\\"
-+               src=\\"/reforis/static/reforis/imgs/QR_icon.svg\\"
-+               style=\\"opacity: 0.67;\\"
-+               width=\\"20\\"
-+             />
-+           </button>
-+         </div>
-+       </div>
-+     </div>
-+     <div
-+       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
-+     >
-+       <label
-+         for=\\"21\\"
-+       >
-+         Password
-+       </label>
-+       <div
-+         class=\\"input-group\\"
-+       >
-+         <input
-+           autocomplete=\\"new-password\\"
-+           class=\\"form-control  is-invalid\\"
-+           id=\\"21\\"
-+           required=\\"\\"
-+           type=\\"password\\"
-+           value=\\"\\"
-+         />
++           SSID
++         </label>
 +         <div
-+           class=\\"input-group-append\\"
++           class=\\"input-group\\"
 +         >
-+           <button
-+             class=\\"input-group-text\\"
-+             type=\\"button\\"
++           <input
++             class=\\"form-control\\"
++             id=\\"20\\"
++             type=\\"text\\"
++             value=\\"TestGuestSSID\\"
++           />
++           <div
++             class=\\"input-group-append\\"
 +           >
-+             <i
-+               class=\\"fa fa-eye\\"
-+             />
-+           </button>
++             <button
++               class=\\"input-group-text\\"
++               type=\\"button\\"
++             >
++               <img
++                 alt=\\"QR\\"
++                 src=\\"/reforis/static/reforis/imgs/QR_icon.svg\\"
++                 style=\\"opacity: 0.67;\\"
++                 width=\\"20\\"
++               />
++             </button>
++           </div>
 +         </div>
 +       </div>
 +       <div
-+         class=\\"invalid-feedback\\"
++         class=\\"form-group\\"
 +       >
-+         Password must contain at least 8 symbols
-+       </div>
-+       <small
-+         class=\\"form-text text-muted\\"
-+       >
-+         
++         <label
++           for=\\"21\\"
++         >
++           Password
++         </label>
++         <div
++           class=\\"input-group\\"
++         >
++           <input
++             autocomplete=\\"new-password\\"
++             class=\\"form-control  is-invalid\\"
++             id=\\"21\\"
++             required=\\"\\"
++             type=\\"password\\"
++             value=\\"\\"
++           />
++           <div
++             class=\\"input-group-append\\"
++           >
++             <button
++               class=\\"input-group-text\\"
++               type=\\"button\\"
++             >
++               <i
++                 class=\\"fa fa-eye\\"
++               />
++             </button>
++           </div>
++         </div>
++         <div
++           class=\\"invalid-feedback\\"
++         >
++           Password must contain at least 8 symbols
++         </div>
++         <small
++           class=\\"form-text text-muted\\"
++         >
++           
 +         WPA2 pre-shared key, that is required to connect to the network.
 +     
-+       </small>
-+     </div>
-      <h3>
-        Wi-Fi 2
-      </h3>
-      <div
-        class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
-@@ -505,10 +584,11 @@
-          </label>
-        </div>
-      </div>
-      <button
-        class=\\"btn btn-primary  offset-lg-8 col-lg-3 col-sm-12\\"
-+       disabled=\\"\\"
-        type=\\"submit\\"
-      >
-          Save
-      </button>
-    </form>"
++         </small>
++       </div>
+        <h3>
+          Wi-Fi 2
+        </h3>
+        <div
+          class=\\"form-group\\"
+@@ -511,10 +590,11 @@
+        <div
+          class=\\"text-right\\"
+        >
+          <button
+            class=\\"btn btn-primary  col-sm-12 col-lg-3\\"
++           disabled=\\"\\"
+            type=\\"submit\\"
+          >
+              Save
+          </button>
+        </div>"
 `;
 
 exports[`<WiFi/> Snapshot one module enabled. 1`] = `
@@ -443,467 +455,467 @@ exports[`<WiFi/> Snapshot one module enabled. 1`] = `
 - First value
 + Second value
 
-@@ -29,10 +29,462 @@
-          >
-            Enable
-          </label>
+@@ -32,10 +32,462 @@
+            >
+              Enable
+            </label>
+          </div>
         </div>
-      </div>
-+     <div
-+       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
-+     >
-+       <label
-+         for=\\"4\\"
-+       >
-+         SSID
-+       </label>
 +       <div
-+         class=\\"input-group\\"
++         class=\\"form-group\\"
 +       >
-+         <input
-+           class=\\"form-control\\"
-+           id=\\"4\\"
-+           required=\\"\\"
-+           type=\\"text\\"
-+           value=\\"TestSSID1\\"
-+         />
-+         <div
-+           class=\\"input-group-append\\"
++         <label
++           for=\\"4\\"
 +         >
-+           <button
-+             class=\\"input-group-text\\"
-+             type=\\"button\\"
++           SSID
++         </label>
++         <div
++           class=\\"input-group\\"
++         >
++           <input
++             class=\\"form-control\\"
++             id=\\"4\\"
++             required=\\"\\"
++             type=\\"text\\"
++             value=\\"TestSSID1\\"
++           />
++           <div
++             class=\\"input-group-append\\"
 +           >
-+             <img
-+               alt=\\"QR\\"
-+               src=\\"/reforis/static/reforis/imgs/QR_icon.svg\\"
-+               style=\\"opacity: 0.67;\\"
-+               width=\\"20\\"
-+             />
-+           </button>
++             <button
++               class=\\"input-group-text\\"
++               type=\\"button\\"
++             >
++               <img
++                 alt=\\"QR\\"
++                 src=\\"/reforis/static/reforis/imgs/QR_icon.svg\\"
++                 style=\\"opacity: 0.67;\\"
++                 width=\\"20\\"
++               />
++             </button>
++           </div>
 +         </div>
 +       </div>
-+     </div>
-+     <div
-+       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
-+     >
-+       <label
-+         for=\\"5\\"
-+       >
-+         Password
-+       </label>
 +       <div
-+         class=\\"input-group\\"
++         class=\\"form-group\\"
 +       >
-+         <input
-+           autocomplete=\\"new-password\\"
-+           class=\\"form-control\\"
-+           id=\\"5\\"
-+           required=\\"\\"
-+           type=\\"password\\"
-+           value=\\"TestPass\\"
-+         />
-+         <div
-+           class=\\"input-group-append\\"
++         <label
++           for=\\"5\\"
 +         >
-+           <button
-+             class=\\"input-group-text\\"
-+             type=\\"button\\"
++           Password
++         </label>
++         <div
++           class=\\"input-group\\"
++         >
++           <input
++             autocomplete=\\"new-password\\"
++             class=\\"form-control\\"
++             id=\\"5\\"
++             required=\\"\\"
++             type=\\"password\\"
++             value=\\"TestPass\\"
++           />
++           <div
++             class=\\"input-group-append\\"
 +           >
-+             <i
-+               class=\\"fa fa-eye\\"
-+             />
-+           </button>
++             <button
++               class=\\"input-group-text\\"
++               type=\\"button\\"
++             >
++               <i
++                 class=\\"fa fa-eye\\"
++               />
++             </button>
++           </div>
 +         </div>
-+       </div>
-+       <small
-+         class=\\"form-text text-muted\\"
-+       >
-+         
++         <small
++           class=\\"form-text text-muted\\"
++         >
++           
 +         WPA2 pre-shared key, that is required to connect to the network.
 +     
-+       </small>
-+     </div>
-+     <div
-+       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
-+     >
++         </small>
++       </div>
 +       <div
-+         class=\\"custom-control custom-checkbox \\"
++         class=\\"form-group\\"
 +       >
-+         <input
-+           class=\\"custom-control-input\\"
-+           id=\\"6\\"
-+           type=\\"checkbox\\"
-+         />
-+         <label
-+           class=\\"custom-control-label\\"
-+           for=\\"6\\"
++         <div
++           class=\\"custom-control custom-checkbox \\"
 +         >
-+           Hide SSID
-+           <small
-+             class=\\"form-text text-muted\\"
++           <input
++             class=\\"custom-control-input\\"
++             id=\\"6\\"
++             type=\\"checkbox\\"
++           />
++           <label
++             class=\\"custom-control-label\\"
++             for=\\"6\\"
 +           >
-+             If set, network is not visible when scanning for available networks.
-+           </small>
-+         </label>
-+       </div>
-+     </div>
-+     <div
-+       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
-+     >
-+       <label
-+         class=\\"d-block\\"
-+         for=\\"7\\"
-+       >
-+         GHz
-+       </label>
-+       <div
-+         class=\\"custom-control custom-radio custom-control-inline\\"
-+       >
-+         <input
-+           class=\\"custom-control-input\\"
-+           id=\\"hwmode-0-0\\"
-+           name=\\"hwmode-0\\"
-+           type=\\"radio\\"
-+           value=\\"11g\\"
-+         />
-+         <label
-+           class=\\"custom-control-label\\"
-+           for=\\"hwmode-0-0\\"
-+         >
-+           2.4
-+         </label>
++             Hide SSID
++             <small
++               class=\\"form-text text-muted\\"
++             >
++               If set, network is not visible when scanning for available networks.
++             </small>
++           </label>
++         </div>
 +       </div>
 +       <div
-+         class=\\"custom-control custom-radio custom-control-inline\\"
++         class=\\"form-group\\"
 +       >
-+         <input
-+           checked=\\"\\"
-+           class=\\"custom-control-input\\"
-+           id=\\"hwmode-0-1\\"
-+           name=\\"hwmode-0\\"
-+           type=\\"radio\\"
-+           value=\\"11a\\"
-+         />
 +         <label
-+           class=\\"custom-control-label\\"
-+           for=\\"hwmode-0-1\\"
++           class=\\"d-block\\"
++           for=\\"7\\"
 +         >
-+           5
++           GHz
 +         </label>
-+       </div>
-+       <small
-+         class=\\"form-text text-muted\\"
-+       >
-+         
++         <div
++           class=\\"custom-control custom-radio custom-control-inline\\"
++         >
++           <input
++             class=\\"custom-control-input\\"
++             id=\\"hwmode-0-0\\"
++             name=\\"hwmode-0\\"
++             type=\\"radio\\"
++             value=\\"11g\\"
++           />
++           <label
++             class=\\"custom-control-label\\"
++             for=\\"hwmode-0-0\\"
++           >
++             2.4
++           </label>
++         </div>
++         <div
++           class=\\"custom-control custom-radio custom-control-inline\\"
++         >
++           <input
++             checked=\\"\\"
++             class=\\"custom-control-input\\"
++             id=\\"hwmode-0-1\\"
++             name=\\"hwmode-0\\"
++             type=\\"radio\\"
++             value=\\"11a\\"
++           />
++           <label
++             class=\\"custom-control-label\\"
++             for=\\"hwmode-0-1\\"
++           >
++             5
++           </label>
++         </div>
++         <small
++           class=\\"form-text text-muted\\"
++         >
++           
 +         The 2.4 GHz band is more widely supported by clients, but tends to have more interference. The 5 GHz band is a
 +         newer standard and may not be supported by all your devices. It usually has less interference, but the signal
 +         does not carry so well indoors.
-+       </small>
-+     </div>
-+     <div
-+       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
-+     >
-+       <label
-+         for=\\"8\\"
++         </small>
++       </div>
++       <div
++         class=\\"form-group\\"
 +       >
-+         802.11n/ac mode
-+       </label>
-+       <select
-+         class=\\"custom-select\\"
-+         id=\\"8\\"
-+       >
-+         <option
-+           value=\\"NOHT\\"
++         <label
++           for=\\"8\\"
 +         >
-+           Disabled
-+         </option>
-+         <option
-+           value=\\"HT20\\"
++           802.11n/ac mode
++         </label>
++         <select
++           class=\\"custom-select\\"
++           id=\\"8\\"
 +         >
-+           802.11n - 20 MHz wide channel
-+         </option>
-+         <option
-+           value=\\"HT40\\"
++           <option
++             value=\\"NOHT\\"
++           >
++             Disabled
++           </option>
++           <option
++             value=\\"HT20\\"
++           >
++             802.11n - 20 MHz wide channel
++           </option>
++           <option
++             value=\\"HT40\\"
++           >
++             802.11n - 40 MHz wide channel
++           </option>
++           <option
++             value=\\"VHT20\\"
++           >
++             802.11ac - 20 MHz wide channel
++           </option>
++           <option
++             value=\\"VHT40\\"
++           >
++             802.11ac - 40 MHz wide channel
++           </option>
++           <option
++             value=\\"VHT80\\"
++           >
++             802.11ac - 80 MHz wide channel
++           </option>
++         </select>
++         <small
++           class=\\"form-text text-muted\\"
 +         >
-+           802.11n - 40 MHz wide channel
-+         </option>
-+         <option
-+           value=\\"VHT20\\"
-+         >
-+           802.11ac - 20 MHz wide channel
-+         </option>
-+         <option
-+           value=\\"VHT40\\"
-+         >
-+           802.11ac - 40 MHz wide channel
-+         </option>
-+         <option
-+           value=\\"VHT80\\"
-+         >
-+           802.11ac - 80 MHz wide channel
-+         </option>
-+       </select>
-+       <small
-+         class=\\"form-text text-muted\\"
-+       >
-+         
++           
 +         Change this to adjust 802.11n/ac mode of operation. 802.11n with 40 MHz wide channels can yield higher
 +         throughput but can cause more interference in the network. If you don't know what to choose, use the default
 +         option with 20 MHz wide channel.
 +     
-+       </small>
-+     </div>
-+     <div
-+       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
-+     >
-+       <label
-+         for=\\"9\\"
++         </small>
++       </div>
++       <div
++         class=\\"form-group\\"
 +       >
-+         Channel
-+       </label>
-+       <select
-+         class=\\"custom-select\\"
-+         id=\\"9\\"
-+       >
-+         <option
-+           value=\\"0\\"
++         <label
++           for=\\"9\\"
 +         >
-+           auto
-+         </option>
-+         <option
-+           value=\\"36\\"
++           Channel
++         </label>
++         <select
++           class=\\"custom-select\\"
++           id=\\"9\\"
 +         >
-+           
++           <option
++             value=\\"0\\"
++           >
++             auto
++           </option>
++           <option
++             value=\\"36\\"
++           >
++             
 +                         36
 +                         (5180 MHz )
 +                     
-+         </option>
-+         <option
-+           value=\\"40\\"
-+         >
-+           
++           </option>
++           <option
++             value=\\"40\\"
++           >
++             
 +                         40
 +                         (5200 MHz )
 +                     
-+         </option>
-+         <option
-+           value=\\"44\\"
-+         >
-+           
++           </option>
++           <option
++             value=\\"44\\"
++           >
++             
 +                         44
 +                         (5220 MHz )
 +                     
-+         </option>
-+         <option
-+           value=\\"48\\"
-+         >
-+           
++           </option>
++           <option
++             value=\\"48\\"
++           >
++             
 +                         48
 +                         (5240 MHz )
 +                     
-+         </option>
-+         <option
-+           value=\\"52\\"
-+         >
-+           
++           </option>
++           <option
++             value=\\"52\\"
++           >
++             
 +                         52
 +                         (5260 MHz  ,DFS)
 +                     
-+         </option>
-+         <option
-+           value=\\"56\\"
-+         >
-+           
++           </option>
++           <option
++             value=\\"56\\"
++           >
++             
 +                         56
 +                         (5280 MHz  ,DFS)
 +                     
-+         </option>
-+         <option
-+           value=\\"60\\"
-+         >
-+           
++           </option>
++           <option
++             value=\\"60\\"
++           >
++             
 +                         60
 +                         (5300 MHz  ,DFS)
 +                     
-+         </option>
-+         <option
-+           value=\\"64\\"
-+         >
-+           
++           </option>
++           <option
++             value=\\"64\\"
++           >
++             
 +                         64
 +                         (5320 MHz  ,DFS)
 +                     
-+         </option>
-+         <option
-+           value=\\"100\\"
-+         >
-+           
++           </option>
++           <option
++             value=\\"100\\"
++           >
++             
 +                         100
 +                         (5500 MHz  ,DFS)
 +                     
-+         </option>
-+         <option
-+           value=\\"104\\"
-+         >
-+           
++           </option>
++           <option
++             value=\\"104\\"
++           >
++             
 +                         104
 +                         (5520 MHz  ,DFS)
 +                     
-+         </option>
-+         <option
-+           value=\\"108\\"
-+         >
-+           
++           </option>
++           <option
++             value=\\"108\\"
++           >
++             
 +                         108
 +                         (5540 MHz  ,DFS)
 +                     
-+         </option>
-+         <option
-+           value=\\"112\\"
-+         >
-+           
++           </option>
++           <option
++             value=\\"112\\"
++           >
++             
 +                         112
 +                         (5560 MHz  ,DFS)
 +                     
-+         </option>
-+         <option
-+           value=\\"116\\"
-+         >
-+           
++           </option>
++           <option
++             value=\\"116\\"
++           >
++             
 +                         116
 +                         (5580 MHz  ,DFS)
 +                     
-+         </option>
-+         <option
-+           value=\\"120\\"
-+         >
-+           
++           </option>
++           <option
++             value=\\"120\\"
++           >
++             
 +                         120
 +                         (5600 MHz  ,DFS)
 +                     
-+         </option>
-+         <option
-+           value=\\"124\\"
-+         >
-+           
++           </option>
++           <option
++             value=\\"124\\"
++           >
++             
 +                         124
 +                         (5620 MHz  ,DFS)
 +                     
-+         </option>
-+         <option
-+           value=\\"128\\"
-+         >
-+           
++           </option>
++           <option
++             value=\\"128\\"
++           >
++             
 +                         128
 +                         (5640 MHz  ,DFS)
 +                     
-+         </option>
-+         <option
-+           value=\\"132\\"
-+         >
-+           
++           </option>
++           <option
++             value=\\"132\\"
++           >
++             
 +                         132
 +                         (5660 MHz  ,DFS)
 +                     
-+         </option>
-+         <option
-+           value=\\"136\\"
-+         >
-+           
++           </option>
++           <option
++             value=\\"136\\"
++           >
++             
 +                         136
 +                         (5680 MHz  ,DFS)
 +                     
-+         </option>
-+         <option
-+           value=\\"140\\"
-+         >
-+           
++           </option>
++           <option
++             value=\\"140\\"
++           >
++             
 +                         140
 +                         (5700 MHz  ,DFS)
 +                     
-+         </option>
-+         <option
-+           value=\\"144\\"
-+         >
-+           
++           </option>
++           <option
++             value=\\"144\\"
++           >
++             
 +                         144
 +                         (5720 MHz  ,DFS)
 +                     
-+         </option>
-+         <option
-+           value=\\"149\\"
-+         >
-+           
++           </option>
++           <option
++             value=\\"149\\"
++           >
++             
 +                         149
 +                         (5745 MHz )
 +                     
-+         </option>
-+         <option
-+           value=\\"153\\"
-+         >
-+           
++           </option>
++           <option
++             value=\\"153\\"
++           >
++             
 +                         153
 +                         (5765 MHz )
 +                     
-+         </option>
-+         <option
-+           value=\\"157\\"
-+         >
-+           
++           </option>
++           <option
++             value=\\"157\\"
++           >
++             
 +                         157
 +                         (5785 MHz )
 +                     
-+         </option>
-+         <option
-+           value=\\"161\\"
-+         >
-+           
++           </option>
++           <option
++             value=\\"161\\"
++           >
++             
 +                         161
 +                         (5805 MHz )
 +                     
-+         </option>
-+         <option
-+           value=\\"165\\"
-+         >
-+           
++           </option>
++           <option
++             value=\\"165\\"
++           >
++             
 +                         165
 +                         (5825 MHz )
 +                     
-+         </option>
-+       </select>
-+     </div>
-+     <div
-+       class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\"
-+     >
++           </option>
++         </select>
++       </div>
 +       <div
-+         class=\\"custom-control custom-checkbox \\"
++         class=\\"form-group\\"
 +       >
-+         <input
-+           class=\\"custom-control-input\\"
-+           id=\\"10\\"
-+           type=\\"checkbox\\"
-+         />
-+         <label
-+           class=\\"custom-control-label\\"
-+           for=\\"10\\"
++         <div
++           class=\\"custom-control custom-checkbox \\"
 +         >
-+           Enable Guest Wifi
-+           <small
-+             class=\\"form-text text-muted\\"
++           <input
++             class=\\"custom-control-input\\"
++             id=\\"10\\"
++             type=\\"checkbox\\"
++           />
++           <label
++             class=\\"custom-control-label\\"
++             for=\\"10\\"
 +           >
-+             
++             Enable Guest Wifi
++             <small
++               class=\\"form-text text-muted\\"
++             >
++               
 +         Enables Wi-Fi for guests, which is separated from LAN network. Devices connected to this network are allowed to
 +         access the internet, but aren't allowed to access other devices and the configuration interface of the router.
 +         Parameters of the guest network can be set in the Guest network tab.
 +         
-+           </small>
-+         </label>
++             </small>
++           </label>
++         </div>
 +       </div>
-+     </div>
-      <h3>
-        Wi-Fi 2
-      </h3>
-      <div
-        class=\\"form-group col-sm-12 offset-lg-1 col-lg-10\\""
+        <h3>
+          Wi-Fi 2
+        </h3>
+        <div
+          class=\\"form-group\\""
 `;

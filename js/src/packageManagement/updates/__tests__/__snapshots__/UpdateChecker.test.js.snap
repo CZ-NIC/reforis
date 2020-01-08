@@ -3,7 +3,7 @@
 exports[`<UpdateChecker/> should match snapshot 1`] = `
 <div>
   <button
-    class="btn btn-primary mb-3 offset-lg-8 col-lg-3 col-sm-12"
+    class="btn btn-primary mb-3 col-sm-12 col-lg-3"
     type="button"
   >
      
