@@ -27,6 +27,7 @@ module.exports = (env) => ({
         rules: [
             {
                 test: /\.js$/,
+                // Since "foris" is not transpiled we shouldn't ignore it.
                 exclude: /node_modules\/(?!foris)/,
                 loader: "babel-loader",
             },
@@ -35,8 +36,16 @@ module.exports = (env) => ({
                 use: [{ loader: "expose-loader", options: "immutability-helper" }],
             },
             {
+                test: require.resolve("pdfmake"),
+                use: [{ loader: "expose-loader", options: "pdfMake" }],
+            },
+            {
                 test: require.resolve("prop-types"),
                 use: [{ loader: "expose-loader", options: "PropTypes" }],
+            },
+            {
+                test: require.resolve("qrcode.react"),
+                use: [{ loader: "expose-loader", options: "QRCode" }],
             },
             {
                 test: require.resolve("react"),
