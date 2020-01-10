@@ -8,36 +8,37 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2019-11-21 16:06+0100\n"
-"PO-Revision-Date: 2019-10-16 10:08+0000\n"
-"Last-Translator: Scott Anecito <scott.anecito@protonmail.com>\n"
+"PO-Revision-Date: 2020-01-11 21:21+0000\n"
+"Last-Translator: Scott Anecito <scott.anecito@linux.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/turris/reforis/"
+"ja/>\n"
 "Language: ja\n"
-"Language-Team: Japanese "
-"<https://hosted.weblate.org/projects/turris/reforis/ja/>\n"
-"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 3.10.1\n"
 "Generated-By: Babel 2.7.0\n"
 
 #: js/src/about/About.js:22 js/src/main/pages.js:133
 msgid "About"
-msgstr ""
+msgstr "情報"
 
 #: js/src/about/About.js:40
 msgid "Device"
-msgstr ""
+msgstr "デバイス"
 
 #: js/src/about/About.js:44
 msgid "Serial number"
-msgstr ""
+msgstr "シリアル番号"
 
 #: js/src/about/About.js:48
 msgid "Turris OS version"
-msgstr ""
+msgstr "Turris OSのバージョン"
 
 #: js/src/about/About.js:52
 msgid "Kernel version"
-msgstr ""
+msgstr "カーネル バージョン"
 
 #: js/src/common/RebootButton.js:42 js/src/main/pages.js:97
 msgid "Reboot"
@@ -2096,4 +2097,3 @@ msgstr "ログアウト"
 
 #~ msgid "Network settings"
 #~ msgstr ""
-
