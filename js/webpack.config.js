@@ -32,20 +32,8 @@ module.exports = (env) => ({
                 loader: "babel-loader",
             },
             {
-                test: require.resolve("immutability-helper"),
-                use: [{ loader: "expose-loader", options: "immutability-helper" }],
-            },
-            {
-                test: require.resolve("pdfmake"),
-                use: [{ loader: "expose-loader", options: "pdfMake" }],
-            },
-            {
                 test: require.resolve("prop-types"),
                 use: [{ loader: "expose-loader", options: "PropTypes" }],
-            },
-            {
-                test: require.resolve("qrcode.react"),
-                use: [{ loader: "expose-loader", options: "QRCode" }],
             },
             {
                 test: require.resolve("react"),

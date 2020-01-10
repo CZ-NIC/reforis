@@ -9,7 +9,6 @@
 module.exports = {
     moduleDirectories: [
         "node_modules",
-        "<rootDir>/src/testUtils",
         "<rootDir>/src/",
     ],
     moduleNameMapper: {
@@ -19,6 +18,7 @@ module.exports = {
     collectCoverageFrom: ["src/**/*.{js,jsx}"],
     coverageDirectory: "coverage",
     testPathIgnorePatterns: ["/node_modules/", "/__fixtures__/"],
+    transformIgnorePatterns: ["node_modules/(?!(foris)/)"],
     verbose: false,
     setupFilesAfterEnv: [
         "@testing-library/react/cleanup-after-each",
@@ -27,7 +27,4 @@ module.exports = {
     globals: {
         TZ: "utc",
     },
-    transformIgnorePatterns: [
-        "node_modules/(?!(foris)/)",
-    ],
 };
