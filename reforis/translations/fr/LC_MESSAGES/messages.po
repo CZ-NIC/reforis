@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2019-11-21 16:06+0100\n"
-"PO-Revision-Date: 2020-01-09 11:12+0000\n"
+"PO-Revision-Date: 2020-01-13 08:45+0000\n"
 "Last-Translator: Florian <floflr@zaclys.net>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/turris/reforis/fr/"
 ">\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.10.1-dev\n"
+"X-Generator: Weblate 3.10.1\n"
 "Generated-By: Babel 2.7.0\n"
 
 #: js/src/about/About.js:22 js/src/main/pages.js:133
@@ -736,13 +736,13 @@ msgstr "DNS"
 #: js/src/guide/steps.js:40 js/src/main/pages.js:115
 #: js/src/packageManagement/updates/Updates.js:25
 msgid "Updates"
-msgstr ""
+msgstr "Mises à jour"
 
 #: js/src/guide/steps.js:44 js/src/interfaces/Interfaces.js:75
 #: js/src/interfaces/constants.js:9 js/src/main/pages.js:49
 #: js/src/wan/WAN.js:27
 msgid "WAN"
-msgstr ""
+msgstr "WAN"
 
 #: js/src/guide/steps.js:48 js/src/interfaces/Interfaces.js:83
 #: js/src/interfaces/constants.js:10 js/src/main/pages.js:54
@@ -755,7 +755,7 @@ msgstr ""
 
 #: js/src/interfaces/Interfaces.js:68
 msgid "Network interfaces"
-msgstr ""
+msgstr "Interfaces réseau"
 
 #: js/src/interfaces/Interfaces.js:70
 msgid ""
@@ -818,7 +818,7 @@ msgstr ""
 
 #: js/src/interfaces/SelectedInterface.js:70
 msgid "State"
-msgstr ""
+msgstr "État"
 
 #: js/src/interfaces/SelectedInterface.js:74
 msgid "Bus"
@@ -838,11 +838,11 @@ msgstr ""
 
 #: js/src/interfaces/constants.js:11 js/src/main/pages.js:69
 msgid "Guest Network"
-msgstr ""
+msgstr "Réseau invité"
 
 #: js/src/interfaces/constants.js:12
 msgid "Unassigned"
-msgstr ""
+msgstr "Non attribué"
 
 #: js/src/interfaces/modals.js:22
 msgid ""
@@ -924,7 +924,7 @@ msgstr "Mode réseau local"
 
 #: js/src/lan/LANManagedForm.js:18
 msgid "Router's IP address in the inner network."
-msgstr ""
+msgstr "Adresse IP du routeur dans le réseau interne."
 
 #: js/src/lan/LANUnmanagedForm.js:22 js/src/wan/WANForm.js:23
 msgid "DHCP (automatic configuration)"
@@ -955,7 +955,7 @@ msgstr ""
 
 #: js/src/main/pages.js:44 js/src/wifi/WiFi.js:52
 msgid "Wi-Fi"
-msgstr ""
+msgstr "Wi-Fi"
 
 #: js/src/main/pages.js:76
 msgid "Administration"
@@ -1019,7 +1019,7 @@ msgstr "Importance"
 
 #: js/src/notificationsSettings/CommonForm.js:69
 msgid "Send news"
-msgstr ""
+msgstr "Envoyer des nouvelles"
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:20
 msgid "Turris"
@@ -1043,11 +1043,11 @@ msgstr "Fournisseur SMTP"
 
 #: js/src/notificationsSettings/NotificationsSettings.js:24
 msgid "Notifications settings"
-msgstr ""
+msgstr "Paramètres de notifications"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:18
 msgid "None"
-msgstr ""
+msgstr "Aucun"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:19
 msgid "SSL"
@@ -1083,7 +1083,7 @@ msgstr "Utilisateur"
 
 #: js/src/notificationsSettings/SMTPTurrisForm.js:34
 msgid "Sender's name"
-msgstr ""
+msgstr "Nom de l’expéditeur"
 
 #: js/src/notificationsSettings/helpTexts.js:9
 msgid ""
@@ -1149,13 +1149,15 @@ msgstr "Le port minimum est 1."
 
 #: js/src/packageManagement/packages/LanguageForm.js:27
 msgid "Languages"
-msgstr ""
+msgstr "Langues"
 
 #: js/src/packageManagement/packages/LanguageForm.js:28
 msgid ""
 "If you want to use other language than English you can select it from the"
 " following list:"
 msgstr ""
+"Si vous souhaitez utiliser une autre langue que l'anglais, vous pouvez la "
+"sélectionner à partir de la liste suivante :"
 
 #: js/src/packageManagement/packages/Packages.js:22
 msgid ""
@@ -1179,11 +1181,11 @@ msgstr ""
 
 #: js/src/packageManagement/packages/PackagesForm.js:28
 msgid "Packages list"
-msgstr ""
+msgstr "Liste des paquets"
 
 #: js/src/packageManagement/updateSettings/LicenceModal.js:23
 msgid "Most important license agreement points"
-msgstr ""
+msgstr "Points les plus importants du contrat de licence"
 
 #: js/src/packageManagement/updateSettings/LicenceModal.js:30
 msgid ""
@@ -1232,6 +1234,9 @@ msgid ""
 "of this Turris router and you agree with the full text of the <a "
 "href=\"https://www.turris.cz/omnia-updater-eula\">license agreement</a>."
 msgstr ""
+"En activant les mises à jour automatiques, vous confirmez que vous êtes le "
+"propriétaire de ce routeur Turris et vous acceptez le texte intégral de l'<a "
+"href=\"https://www.turris.cz/omnia-updater-eula\">accord de licence</a>."
 
 #: js/src/packageManagement/updateSettings/UpdateSettings.js:28
 msgid "Update settings"
@@ -1296,33 +1301,36 @@ msgstr ""
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:16
 msgid "Automatic installation"
-msgstr ""
+msgstr "Installation automatique"
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:17
 msgid "Updates will be installed without user's intervention."
-msgstr ""
+msgstr "Les mises à jour seront installées sans intervention de l'utilisateur."
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:21
 msgid "Delayed updates"
-msgstr ""
+msgstr "Mises à jour reportées"
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:22
 msgid ""
 "Updates will be installed with an adjustable delay. You can also approve "
 "them manually."
 msgstr ""
+"Les mises à jour seront installées selon un délai pouvant être ajusté. Vous "
+"pouvez aussi les approuver manuellement."
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:26
 msgid "Update approval needed"
-msgstr ""
+msgstr "Approbation pour la mise à jour est nécessaire"
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:27
 msgid "You have to approve the updates, otherwise they won't be installed."
 msgstr ""
+"Vous devez approuver les mises à jour, sinon elles ne seront pas installées."
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:51
 msgid "Update approvals"
-msgstr ""
+msgstr "Approbations de mise à jour"
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:53
 msgid ""
@@ -1383,7 +1391,7 @@ msgstr ""
 #: js/src/packageManagement/updates/UpdateApproval.js:80
 #: js/src/updatesDropdown/UpdatesDropdown.js:98
 msgid "Install now"
-msgstr ""
+msgstr "Installer maintenant"
 
 #: js/src/packageManagement/updates/UpdateApproval.js:95
 msgid "Action"
@@ -1497,7 +1505,7 @@ msgstr ""
 
 #: js/src/reboot/Reboot.js:15
 msgid "Device reboot"
-msgstr ""
+msgstr "Redémarrage de l’appareil"
 
 #: js/src/reboot/Reboot.js:17
 msgid ""
@@ -1535,25 +1543,28 @@ msgstr ""
 
 #: js/src/regionAndTime/RegionForm.js:62
 msgid "Region settings"
-msgstr ""
+msgstr "Paramètres régionaux"
 
 #: js/src/regionAndTime/RegionForm.js:64
 msgid ""
 "Please select the timezone the router is being operated in. Correct "
 "setting is required to display the right time and for related functions."
 msgstr ""
+"Veuillez sélectionner le fuseau horaire dans lequel le routeur est utilisé. "
+"Un réglage correct est requis pour afficher la bonne heure et pour des "
+"fonctions connexes."
 
 #: js/src/regionAndTime/RegionForm.js:69
 msgid "Continent or ocean"
-msgstr ""
+msgstr "Continent ou océan"
 
 #: js/src/regionAndTime/RegionForm.js:87
 msgid "Country"
-msgstr ""
+msgstr "Pays"
 
 #: js/src/regionAndTime/RegionForm.js:100
 msgid "Timezone"
-msgstr ""
+msgstr "Fuseau horaire"
 
 #: js/src/regionAndTime/TimeForm.js:22
 msgid "Via NTP"
@@ -1565,7 +1576,7 @@ msgstr ""
 
 #: js/src/regionAndTime/TimeForm.js:93
 msgid "Time settings"
-msgstr ""
+msgstr "Paramètres de l’heure"
 
 #: js/src/regionAndTime/TimeForm.js:94
 msgid ""
@@ -1577,7 +1588,7 @@ msgstr ""
 
 #: js/src/regionAndTime/TimeForm.js:96
 msgid "How to set time"
-msgstr ""
+msgstr "Comment configurer le temps"
 
 #: js/src/regionAndTime/TimeForm.js:151
 msgid "Hide NTP servers list"
@@ -1612,11 +1623,11 @@ msgstr ""
 
 #: js/src/routerStateHandler/RebootHandler.js:29
 msgid "Rebooting"
-msgstr ""
+msgstr "Redémarrage"
 
 #: js/src/updatesDropdown/UpdatesDropdown.js:64
 msgid "Approve update"
-msgstr ""
+msgstr "Approuver la mise à jour"
 
 #: js/src/updatesDropdown/UpdatesDropdown.js:94
 msgid ""
@@ -1629,10 +1640,14 @@ msgid ""
 "Useful in cases, when a specific MAC address is required by your internet"
 " service provider."
 msgstr ""
+"Utile dans le cas où une adresse MAC spécifique est requise par votre "
+"fournisseur d'accès internet."
 
 #: js/src/wan/MACForm.js:15
 msgid "Colon is used as a separator, for example 00:11:22:33:44:55"
 msgstr ""
+"Les Deux-points sont utilisés en tant que signe de séparation, par exemple "
+"00:11:22:33:44:55"
 
 #: js/src/wan/MACForm.js:44
 msgid "MAC"
@@ -1668,20 +1683,30 @@ msgid ""
 "wait for a while before running this test.\n"
 "        "
 msgstr ""
+"\n"
+"Ici, vous pouvez tester les paramètres de connexion. N'oubliez pas de "
+"cliquer sur le bouton <b>Enregistrer</b> avant d'exécuter le test.\n"
+"Notez que parfois il faut un certain temps avant que la connexion soit "
+"entièrement paraphé. Il pourrait donc être utile \n"
+"d'attendre un peu avant de faire ce test.\n"
+"        "
 
 #: js/src/wan/WAN6Form.js:23
 msgid "DUID which will be provided to the DHCPv6 server."
-msgstr ""
+msgstr "Nom d'hôte qui sera assigné au serveur DHCP."
 
 #: js/src/wan/WAN6Form.js:27
 msgid ""
 "IPv6 address and prefix length for WAN interface e.g. "
 "2001:db8:be13:37da::1/64"
 msgstr ""
+"Adresse IPv6 et longueur du préfixe de l'interface WAN, par exemple "
+"2001:db8:be13:37da::1/64"
 
 #: js/src/wan/WAN6Form.js:28
 msgid "Address range for local network, e.g. 2001:db8:be13:37da::/64"
 msgstr ""
+"Plage d'adresses pour le réseau local, par exemple 2001:db8:be13:37da::/64"
 
 #: js/src/wan/WAN6Form.js:33
 msgid ""
@@ -1689,40 +1714,52 @@ msgid ""
 " address manually (e.g. when your WAN interface has a private address "
 "which is mapped to public IP)."
 msgstr ""
+"Afin d'utiliser le protocole 6to4, vous devrez peut-être spécifier "
+"manuellement votre adresse IPv4 publique (par exemple, lorsque votre "
+"interface WAN a une adresse privée qui est mappée sur l'IP publique)."
 
 #: js/src/wan/WAN6Form.js:38
 msgid ""
 "This address will be used as a endpoint of the tunnel on the provider's "
 "side."
 msgstr ""
+"Cette adresse sera utilisée comme point de terminaison du tunnel côté "
+"fournisseur."
 
 #: js/src/wan/WAN6Form.js:39
 msgid "IPv6 addresses which will be routed to your network."
-msgstr ""
+msgstr "Les adresses IPv6 qui seront routées vers votre réseau."
 
 #: js/src/wan/WAN6Form.js:40
 msgid "Maximum Transmission Unit in the tunnel (in bytes)."
-msgstr ""
+msgstr "Unité de Transmission Maximale (MTU) dans le tunnel (en octets)."
 
 #: js/src/wan/WAN6Form.js:43
 msgid ""
 "Some tunnel providers allow you to have public dynamic IPv4. Note that "
 "you need to fill in some extra fields to make it work."
 msgstr ""
+"Certains fournisseurs de tunnels vous permettent d'avoir une adresse IPv4 "
+"publique dynamique. Notez que vous devez remplir des champs supplémentaires "
+"pour que cela fonctionne."
 
 #: js/src/wan/WAN6Form.js:45
 msgid "ID of your tunnel which was assigned to you by the provider."
-msgstr ""
+msgstr "ID de votre tunnel qui vous a été attribué par le fournisseur."
 
 #: js/src/wan/WAN6Form.js:46
 msgid ""
 "Username which will be used to provide credentials to your tunnel "
 "provider."
 msgstr ""
+"Nom d’utilisateur qui sera utilisé pour fournir des informations d’"
+"identification à votre fournisseur de tunnel."
 
 #: js/src/wan/WAN6Form.js:47
 msgid "Key which will be used to provide credentials to your tunnel provider."
 msgstr ""
+"Clé qui sera utilisée pour fournir des informations d'identification à votre "
+"fournisseur de tunnel."
 
 #: js/src/wan/WAN6Form.js:53
 msgid "Disable IPv6"
@@ -1742,7 +1779,7 @@ msgstr "6in4 (adresse IPv4 publique requise)"
 
 #: js/src/wan/WAN6Form.js:145
 msgid "WAN IPv6"
-msgstr ""
+msgstr "WAN IPv6"
 
 #: js/src/wan/WAN6Form.js:147
 msgid "IPv6 protocol"
@@ -1750,7 +1787,7 @@ msgstr "Protocole IPv6"
 
 #: js/src/wan/WAN6Form.js:178
 msgid "Custom DUID"
-msgstr ""
+msgstr "DUID personnalisé"
 
 #: js/src/wan/WAN6Form.js:217
 msgid "Address"
@@ -1778,7 +1815,7 @@ msgstr "MTU"
 
 #: js/src/wan/WAN6Form.js:427
 msgid "Tunnel ID"
-msgstr ""
+msgstr "ID du tunnel"
 
 #: js/src/wan/WAN6Form.js:444
 msgid "Username"
@@ -1802,23 +1839,24 @@ msgstr "MTU devrait être comprise entre 1280-1500."
 
 #: js/src/wan/WANForm.js:25
 msgid "PPPoE (for DSL bridges, Modem Turris, etc.)"
-msgstr ""
+msgstr "PPPoE (pour les ponts DSL, Modem Turris, etc.)"
 
 #: js/src/wan/WANForm.js:97
 msgid "WAN IPv4"
-msgstr ""
+msgstr "WAN IPv4"
 
 #: js/src/wan/WANForm.js:129
 msgid "PAP/CHAP username"
-msgstr ""
+msgstr "Nom d’utilisateur PAP/CHAP"
 
 #: js/src/wan/WANForm.js:141
 msgid "PAP/CHAP password"
-msgstr ""
+msgstr "Mot de passe PAP/CHAP"
 
 #: js/src/wifi/ResetWiFiSettings.js:38
 msgid "An error occurred during resetting Wi-Fi settings"
 msgstr ""
+"Une erreur s'est produite lors de la réinitialisation des paramètres Wi-Fi"
 
 #: js/src/wifi/ResetWiFiSettings.js:40
 msgid "Wi-Fi settings are set to defaults"
@@ -1826,7 +1864,7 @@ msgstr ""
 
 #: js/src/wifi/ResetWiFiSettings.js:46 js/src/wifi/ResetWiFiSettings.js:61
 msgid "Reset Wi-Fi Settings"
-msgstr ""
+msgstr "Réinitialiser les paramètres Wi-Fi"
 
 #: js/src/wifi/ResetWiFiSettings.js:48
 msgid ""
@@ -1861,11 +1899,11 @@ msgstr ""
 
 #: js/src/wifi/WiFiForm.js:77
 msgid "Wi-Fi ${deviceID + 1}"
-msgstr ""
+msgstr "Wi-Fi ${deviceID + 1}"
 
 #: js/src/wifi/WiFiForm.js:208
 msgid "auto"
-msgstr ""
+msgstr "auto"
 
 #: js/src/wifi/WiFiGuestForm.js:36
 msgid "Enable Guest Wifi"
@@ -1873,11 +1911,11 @@ msgstr "Activer le mode Wi-Fi invité"
 
 #: js/src/wifi/WiFiQRCode.js:59
 msgid "Wi-Fi QR Code"
-msgstr ""
+msgstr "QR Code Wi-FI"
 
 #: js/src/wifi/WiFiQRCode.js:79
 msgid "Download PDF"
-msgstr ""
+msgstr "Télécharger le PDF"
 
 #: js/src/wifi/constants.js:9
 msgid "Disabled"
@@ -1885,23 +1923,23 @@ msgstr "Désactivé"
 
 #: js/src/wifi/constants.js:10
 msgid "802.11n - 20 MHz wide channel"
-msgstr ""
+msgstr "802.11 n - 20 MHz de largeur de canal"
 
 #: js/src/wifi/constants.js:11
 msgid "802.11n - 40 MHz wide channel"
-msgstr ""
+msgstr "802.11 n - 40 MHz de largeur de canal"
 
 #: js/src/wifi/constants.js:12
 msgid "802.11ac - 20 MHz wide channel"
-msgstr ""
+msgstr "802.11 ac - 20 MHz de largeur de canal"
 
 #: js/src/wifi/constants.js:13
 msgid "802.11ac - 40 MHz wide channel"
-msgstr ""
+msgstr "802.11 ac - 40 MHz de largeur de canal"
 
 #: js/src/wifi/constants.js:14
 msgid "802.11ac - 80 MHz wide channel"
-msgstr ""
+msgstr "802.11 ac - 80 MHz de largeur de canal"
 
 #: js/src/wifi/constants.js:21
 msgid ""
@@ -1913,6 +1951,8 @@ msgstr ""
 #: js/src/wifi/constants.js:24
 msgid "If set, network is not visible when scanning for available networks."
 msgstr ""
+"Si activé, le réseau n'est pas visible lors de la recherche des réseaux "
+"disponibles."
 
 #: js/src/wifi/constants.js:25
 msgid ""
@@ -1949,7 +1989,7 @@ msgstr ""
 
 #: reforis/views.py:52
 msgid "Wrong password."
-msgstr ""
+msgstr "Mot de passe incorrect."
 
 #: reforis/foris_controller_api/modules/dns.py:41
 msgid "Can't add new DNS forwarder."
@@ -1965,15 +2005,17 @@ msgstr ""
 
 #: reforis/foris_controller_api/modules/password.py:41
 msgid "Wrong current password."
-msgstr ""
+msgstr "Mot de passe actuel incorrect."
 
 #: reforis/foris_controller_api/modules/updater.py:149
 msgid "You can't set packages with disabled automatic updates."
 msgstr ""
+"Vous ne pouvez pas définir de paquets avec les mises à jour automatiques "
+"désactivées."
 
 #: reforis/foris_controller_api/modules/updater.py:160
 msgid "Cannot start updater"
-msgstr ""
+msgstr "Impossible de démarrer la mise à jour"
 
 #: reforis/templates/guide.html:14
 msgid "Guide"
@@ -1989,7 +2031,7 @@ msgstr "Se connecter"
 
 #: reforis/templates/login.html:39
 msgid "Go to LuCI"
-msgstr ""
+msgstr "Aller sur LuCI"
 
 #: reforis/templates/errors/403.html:4
 msgid "403 - Forbidden"
@@ -2010,15 +2052,15 @@ msgstr ""
 
 #: reforis/templates/errors/404.html:9
 msgid "Page not found :("
-msgstr ""
+msgstr "Page non trouvée :("
 
 #: reforis/templates/errors/500.html:4
 msgid "Server error"
-msgstr ""
+msgstr "Erreur de serveur"
 
 #: reforis/templates/errors/500.html:8
 msgid "500 -- Server error"
-msgstr ""
+msgstr "500 -- Erreur de serveur"
 
 #: reforis/templates/errors/500.html:9
 msgid "Error:"
