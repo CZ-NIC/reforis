@@ -1,21 +1,21 @@
 # Translations template for PROJECT.
-# Copyright (C) 2019 ORGANIZATION
+# Copyright (C) 2020 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-12-18 13:34+0100\n"
+"POT-Creation-Date: 2020-01-10 15:07+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.7.0\n"
+"Generated-By: Babel 2.8.0\n"
 
 #: js/src/about/About.js:22 js/src/main/pages.js:133
 msgid "About"
@@ -269,12 +269,12 @@ msgstr ""
 msgid "Disable DNSSEC"
 msgstr ""
 
-#: js/src/dns/Forwarders/Forwarders.js:77
+#: js/src/dns/Forwarders/Forwarders.js:79
 msgid "Edit forwarder"
 msgstr ""
 
-#: js/src/dns/Forwarders/Forwarders.js:77
-#: js/src/dns/Forwarders/Forwarders.js:92
+#: js/src/dns/Forwarders/Forwarders.js:79
+#: js/src/dns/Forwarders/Forwarders.js:94
 msgid "Add custom forwarder"
 msgstr ""
 
@@ -402,7 +402,7 @@ msgstr ""
 msgid "Upload speed in guest network (in kilobits per second)."
 msgstr ""
 
-#: js/src/guestNetwork/GuestNetworkForm.js:57 js/src/wifi/WiFiForm.js:79
+#: js/src/guestNetwork/GuestNetworkForm.js:57
 msgid "Enable"
 msgstr ""
 
@@ -653,7 +653,7 @@ msgstr ""
 
 #: js/src/guide/steps.js:20 js/src/main/pages.js:82
 #: js/src/notificationsSettings/SMTPCustomForm.js:107
-#: js/src/password/Password.js:38 js/src/wifi/WiFiGuestForm.js:76
+#: js/src/password/Password.js:38
 msgid "Password"
 msgstr ""
 
@@ -885,7 +885,7 @@ msgid "Languages"
 msgstr ""
 
 #: js/src/main/pages.js:32
-#: js/src/notifications/Notifications/NotificationsCenter.js:48
+#: js/src/notifications/Notifications/NotificationsCenter.js:75
 #: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:64
 msgid "Notifications"
 msgstr ""
@@ -894,7 +894,7 @@ msgstr ""
 msgid "Network Settings"
 msgstr ""
 
-#: js/src/main/pages.js:44 js/src/wifi/WiFi.js:52
+#: js/src/main/pages.js:44 js/src/wifi/WiFi.js:21
 msgid "Wi-Fi"
 msgstr ""
 
@@ -927,12 +927,12 @@ msgstr ""
 msgid "Advanced Administration"
 msgstr ""
 
-#: js/src/notifications/Notifications/NotificationsCenter.js:41
+#: js/src/notifications/Notifications/NotificationsCenter.js:50
 #: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:89
 msgid "Dismiss all"
 msgstr ""
 
-#: js/src/notifications/Notifications/NotificationsCenter.js:51
+#: js/src/notifications/Notifications/NotificationsCenter.js:63
 #: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:28
 msgid "No notifications"
 msgstr ""
@@ -1414,11 +1414,11 @@ msgstr ""
 msgid "New advanced administration password"
 msgstr ""
 
-#: js/src/reboot/Reboot.js:15
+#: js/src/reboot/Reboot.js:16
 msgid "Device Reboot"
 msgstr ""
 
-#: js/src/reboot/Reboot.js:17
+#: js/src/reboot/Reboot.js:18
 msgid ""
 "\n"
 "If you need to reboot the device, click on the following button. The "
@@ -1733,40 +1733,7 @@ msgstr ""
 msgid "PAP/CHAP password"
 msgstr ""
 
-#: js/src/wifi/ResetWiFiSettings.js:38
-msgid "An error occurred during resetting Wi-Fi settings."
-msgstr ""
-
-#: js/src/wifi/ResetWiFiSettings.js:40
-msgid "Wi-Fi settings are set to defaults."
-msgstr ""
-
-#: js/src/wifi/ResetWiFiSettings.js:51 js/src/wifi/ResetWiFiSettings.js:66
-msgid "Reset Wi-Fi Settings"
-msgstr ""
-
-#: js/src/wifi/ResetWiFiSettings.js:53
-msgid ""
-"\n"
-"If a number of wireless cards doesn't match, you may try to reset the Wi-"
-"Fi settings. Note that this will remove the\n"
-"current Wi-Fi configuration and restore the default values.\n"
-"        "
-msgstr ""
-
-#: js/src/wifi/WiFi.js:23 js/src/wifi/WiFi.js:31
-msgid "SSID can't be longer than 32 symbols"
-msgstr ""
-
-#: js/src/wifi/WiFi.js:24 js/src/wifi/WiFi.js:32
-msgid "SSID can't be empty"
-msgstr ""
-
-#: js/src/wifi/WiFi.js:26 js/src/wifi/WiFi.js:34
-msgid "Password must contain at least 8 symbols"
-msgstr ""
-
-#: js/src/wifi/WiFi.js:54
+#: js/src/wifi/WiFi.js:23
 msgid ""
 "\n"
 "If you want to use your router as a Wi-Fi access point, enable Wi-Fi here"
@@ -1774,94 +1741,6 @@ msgid ""
 "point) and a corresponding password. You can then set up your mobile "
 "devices, using the QR code available within the form.\n"
 "            "
-msgstr ""
-
-#: js/src/wifi/WiFiForm.js:77
-msgid "Wi-Fi ${deviceID + 1}"
-msgstr ""
-
-#: js/src/wifi/WiFiForm.js:208
-msgid "auto"
-msgstr ""
-
-#: js/src/wifi/WiFiGuestForm.js:36
-msgid "Enable Guest Wifi"
-msgstr ""
-
-#: js/src/wifi/WiFiQRCode.js:59
-msgid "Wi-Fi QR Code"
-msgstr ""
-
-#: js/src/wifi/WiFiQRCode.js:79
-msgid "Download PDF"
-msgstr ""
-
-#: js/src/wifi/constants.js:9
-msgid "Disabled"
-msgstr ""
-
-#: js/src/wifi/constants.js:10
-msgid "802.11n - 20 MHz wide channel"
-msgstr ""
-
-#: js/src/wifi/constants.js:11
-msgid "802.11n - 40 MHz wide channel"
-msgstr ""
-
-#: js/src/wifi/constants.js:12
-msgid "802.11ac - 20 MHz wide channel"
-msgstr ""
-
-#: js/src/wifi/constants.js:13
-msgid "802.11ac - 40 MHz wide channel"
-msgstr ""
-
-#: js/src/wifi/constants.js:14
-msgid "802.11ac - 80 MHz wide channel"
-msgstr ""
-
-#: js/src/wifi/constants.js:21
-msgid ""
-"\n"
-"        WPA2 pre-shared key, that is required to connect to the network.\n"
-"    "
-msgstr ""
-
-#: js/src/wifi/constants.js:24
-msgid "If set, network is not visible when scanning for available networks."
-msgstr ""
-
-#: js/src/wifi/constants.js:25
-msgid ""
-"\n"
-"        The 2.4 GHz band is more widely supported by clients, but tends "
-"to have more interference. The 5 GHz band is a\n"
-"        newer standard and may not be supported by all your devices. It "
-"usually has less interference, but the signal\n"
-"        does not carry so well indoors."
-msgstr ""
-
-#: js/src/wifi/constants.js:29
-msgid ""
-"\n"
-"        Change this to adjust 802.11n/ac mode of operation. 802.11n with "
-"40 MHz wide channels can yield higher\n"
-"        throughput but can cause more interference in the network. If you"
-" don't know what to choose, use the default\n"
-"        option with 20 MHz wide channel.\n"
-"    "
-msgstr ""
-
-#: js/src/wifi/constants.js:34
-msgid ""
-"\n"
-"        Enables Wi-Fi for guests, which is separated from LAN network. "
-"Devices connected to this network are allowed to\n"
-"        access the internet, but aren't allowed to access other devices "
-"and the configuration interface of the router.\n"
-"        Parameters of the guest network can be set in the Guest network "
-"tab.\n"
-"        "
 msgstr ""
 
 #: reforis/views.py:52

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-12-18 13:34+0100\n"
+"POT-Creation-Date: 2020-01-10 15:07+0100\n"
 "PO-Revision-Date: 2019-09-02 07:21+0000\n"
 "Last-Translator: Ulrich Günther <mail@ulrich-guenther.at>\n"
 "Language: de\n"
@@ -17,7 +17,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.7.0\n"
+"Generated-By: Babel 2.8.0\n"
 
 #: js/src/about/About.js:22 js/src/main/pages.js:133
 msgid "About"
@@ -275,12 +275,12 @@ msgstr ""
 msgid "Disable DNSSEC"
 msgstr ""
 
-#: js/src/dns/Forwarders/Forwarders.js:77
+#: js/src/dns/Forwarders/Forwarders.js:79
 msgid "Edit forwarder"
 msgstr ""
 
-#: js/src/dns/Forwarders/Forwarders.js:77
-#: js/src/dns/Forwarders/Forwarders.js:92
+#: js/src/dns/Forwarders/Forwarders.js:79
+#: js/src/dns/Forwarders/Forwarders.js:94
 msgid "Add custom forwarder"
 msgstr ""
 
@@ -408,7 +408,7 @@ msgstr ""
 msgid "Upload speed in guest network (in kilobits per second)."
 msgstr ""
 
-#: js/src/guestNetwork/GuestNetworkForm.js:57 js/src/wifi/WiFiForm.js:79
+#: js/src/guestNetwork/GuestNetworkForm.js:57
 msgid "Enable"
 msgstr "Aktivieren"
 
@@ -659,7 +659,7 @@ msgstr ""
 
 #: js/src/guide/steps.js:20 js/src/main/pages.js:82
 #: js/src/notificationsSettings/SMTPCustomForm.js:107
-#: js/src/password/Password.js:38 js/src/wifi/WiFiGuestForm.js:76
+#: js/src/password/Password.js:38
 msgid "Password"
 msgstr "Passwort"
 
@@ -891,7 +891,7 @@ msgid "Languages"
 msgstr ""
 
 #: js/src/main/pages.js:32
-#: js/src/notifications/Notifications/NotificationsCenter.js:48
+#: js/src/notifications/Notifications/NotificationsCenter.js:75
 #: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:64
 msgid "Notifications"
 msgstr "Benachrichtigungen"
@@ -900,7 +900,7 @@ msgstr "Benachrichtigungen"
 msgid "Network Settings"
 msgstr ""
 
-#: js/src/main/pages.js:44 js/src/wifi/WiFi.js:52
+#: js/src/main/pages.js:44 js/src/wifi/WiFi.js:21
 msgid "Wi-Fi"
 msgstr ""
 
@@ -933,12 +933,12 @@ msgstr ""
 msgid "Advanced Administration"
 msgstr ""
 
-#: js/src/notifications/Notifications/NotificationsCenter.js:41
+#: js/src/notifications/Notifications/NotificationsCenter.js:50
 #: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:89
 msgid "Dismiss all"
 msgstr "Alle verwerfen"
 
-#: js/src/notifications/Notifications/NotificationsCenter.js:51
+#: js/src/notifications/Notifications/NotificationsCenter.js:63
 #: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:28
 msgid "No notifications"
 msgstr "Keine Benachrichtigungen"
@@ -1436,11 +1436,11 @@ msgstr ""
 msgid "New advanced administration password"
 msgstr "Neues erweitertes Administrationskennwort"
 
-#: js/src/reboot/Reboot.js:15
+#: js/src/reboot/Reboot.js:16
 msgid "Device Reboot"
 msgstr ""
 
-#: js/src/reboot/Reboot.js:17
+#: js/src/reboot/Reboot.js:18
 msgid ""
 "\n"
 "If you need to reboot the device, click on the following button. The "
@@ -1766,40 +1766,7 @@ msgstr "PAP/CHAP-Benutzername"
 msgid "PAP/CHAP password"
 msgstr "PAP/CHAP-Kennwort"
 
-#: js/src/wifi/ResetWiFiSettings.js:38
-msgid "An error occurred during resetting Wi-Fi settings."
-msgstr ""
-
-#: js/src/wifi/ResetWiFiSettings.js:40
-msgid "Wi-Fi settings are set to defaults."
-msgstr ""
-
-#: js/src/wifi/ResetWiFiSettings.js:51 js/src/wifi/ResetWiFiSettings.js:66
-msgid "Reset Wi-Fi Settings"
-msgstr ""
-
-#: js/src/wifi/ResetWiFiSettings.js:53
-msgid ""
-"\n"
-"If a number of wireless cards doesn't match, you may try to reset the Wi-"
-"Fi settings. Note that this will remove the\n"
-"current Wi-Fi configuration and restore the default values.\n"
-"        "
-msgstr ""
-
-#: js/src/wifi/WiFi.js:23 js/src/wifi/WiFi.js:31
-msgid "SSID can't be longer than 32 symbols"
-msgstr "SSID darf nicht länger als 32 Symbole sein"
-
-#: js/src/wifi/WiFi.js:24 js/src/wifi/WiFi.js:32
-msgid "SSID can't be empty"
-msgstr "SSID darf nicht leer sein"
-
-#: js/src/wifi/WiFi.js:26 js/src/wifi/WiFi.js:34
-msgid "Password must contain at least 8 symbols"
-msgstr "Das Passwort muss mindestens 8 Zeichen enthalten"
-
-#: js/src/wifi/WiFi.js:54
+#: js/src/wifi/WiFi.js:23
 msgid ""
 "\n"
 "If you want to use your router as a Wi-Fi access point, enable Wi-Fi here"
@@ -1808,122 +1775,6 @@ msgid ""
 "devices, using the QR code available within the form.\n"
 "            "
 msgstr ""
-
-#: js/src/wifi/WiFiForm.js:77
-msgid "Wi-Fi ${deviceID + 1}"
-msgstr ""
-
-#: js/src/wifi/WiFiForm.js:208
-msgid "auto"
-msgstr "automatisch"
-
-#: js/src/wifi/WiFiGuestForm.js:36
-msgid "Enable Guest Wifi"
-msgstr "Gast-WLAN aktivieren"
-
-#: js/src/wifi/WiFiQRCode.js:59
-msgid "Wi-Fi QR Code"
-msgstr ""
-
-#: js/src/wifi/WiFiQRCode.js:79
-msgid "Download PDF"
-msgstr ""
-
-#: js/src/wifi/constants.js:9
-msgid "Disabled"
-msgstr "Deaktiviert"
-
-#: js/src/wifi/constants.js:10
-msgid "802.11n - 20 MHz wide channel"
-msgstr "802.11n - 20 MHz breiter Kanal"
-
-#: js/src/wifi/constants.js:11
-msgid "802.11n - 40 MHz wide channel"
-msgstr "802.11n - 40 MHz breiter Kanal"
-
-#: js/src/wifi/constants.js:12
-msgid "802.11ac - 20 MHz wide channel"
-msgstr "802.11ac - 20 MHz breiter Kanal"
-
-#: js/src/wifi/constants.js:13
-msgid "802.11ac - 40 MHz wide channel"
-msgstr "802.11ac - 40 MHz breiter Kanal"
-
-#: js/src/wifi/constants.js:14
-msgid "802.11ac - 80 MHz wide channel"
-msgstr "802.11ac - 80 MHz breiter Kanal"
-
-#: js/src/wifi/constants.js:21
-msgid ""
-"\n"
-"        WPA2 pre-shared key, that is required to connect to the network.\n"
-"    "
-msgstr ""
-"\n"
-"        WPA2 Pre-Shared Key, der für die Verbindung mit dem Netzwerk "
-"benötigt wird.\n"
-"    "
-
-#: js/src/wifi/constants.js:24
-msgid "If set, network is not visible when scanning for available networks."
-msgstr ""
-"Falls aktiviert, wird das Netzwerk nicht in der Liste der verfügbaren "
-"drahtlosen Netzwerke angezeigt."
-
-#: js/src/wifi/constants.js:25
-msgid ""
-"\n"
-"        The 2.4 GHz band is more widely supported by clients, but tends "
-"to have more interference. The 5 GHz band is a\n"
-"        newer standard and may not be supported by all your devices. It "
-"usually has less interference, but the signal\n"
-"        does not carry so well indoors."
-msgstr ""
-"\n"
-"        Das 2,4 GHz-Band wird stärker von Clients unterstützt, hat aber "
-"tendenziell mehr Interferenzen. Das 5-GHz-Band ist ein\n"
-"        neuerer Standard und wird möglicherweise nicht von allen Geräten "
-"unterstützt. Es hat in der Regel weniger Interferenzen, aber das Signal\n"
-"        trägt nicht so gut drinnen."
-
-#: js/src/wifi/constants.js:29
-msgid ""
-"\n"
-"        Change this to adjust 802.11n/ac mode of operation. 802.11n with "
-"40 MHz wide channels can yield higher\n"
-"        throughput but can cause more interference in the network. If you"
-" don't know what to choose, use the default\n"
-"        option with 20 MHz wide channel.\n"
-"    "
-msgstr ""
-"\n"
-"        Ändern Sie diese Option, um den Betriebsmodus 802.11n/ac "
-"anzupassen. 802.11n mit 40 MHz breiten Kanälen können höhere\n"
-"        durchsatz, kann jedoch zu mehr Interferenzen im Netzwerk führen. "
-"Wenn Sie nicht wissen, was Sie wählen sollen, verwenden Sie die "
-"Standardeinstellung\n"
-"        Option mit 20 MHz breitem Kanal.\n"
-"    "
-
-#: js/src/wifi/constants.js:34
-msgid ""
-"\n"
-"        Enables Wi-Fi for guests, which is separated from LAN network. "
-"Devices connected to this network are allowed to\n"
-"        access the internet, but aren't allowed to access other devices "
-"and the configuration interface of the router.\n"
-"        Parameters of the guest network can be set in the Guest network "
-"tab.\n"
-"        "
-msgstr ""
-"\n"
-"        Ermöglicht Wi-Fi für Gäste, das vom LAN-Netzwerk getrennt ist. "
-"Geräte, die mit diesem Netzwerk verbunden sind, dürfen\n"
-"        auf das Internet zugreifen, dürfen aber nicht auf andere Geräte "
-"und die Konfigurationsschnittstelle des Routers zugreifen.\n"
-"        Die Parameter des Gastnetzwerks können in der Registerkarte "
-"Gastnetzwerk eingestellt werden.\n"
-"        "
 
 #: reforis/views.py:52
 msgid "Wrong password."
@@ -2013,302 +1864,3 @@ msgstr ""
 #: reforis/templates/includes/top-bar.html:4
 msgid "Logout"
 msgstr "Abmelden"
-
-#~ msgid "There are %1 in the %2"
-#~ msgstr ""
-
-#~ msgid "Some translated text here;"
-#~ msgstr ""
-
-#~ msgid "Here is one banana"
-#~ msgid_plural "Here are %1 bananas"
-#~ msgstr[0] ""
-#~ msgstr[1] ""
-
-#~ msgid ""
-#~ "If you want to use your router "
-#~ "as a Wi-Fi access point, enable"
-#~ " Wi-Fi here and fill in an "
-#~ "SSID (the name of the access "
-#~ "point) and a corresponding password. You"
-#~ " can then set up your  mobile "
-#~ "devices, using the QR code available "
-#~ "within the form."
-#~ msgstr ""
-
-#~ msgid "You have %d wifi module"
-#~ msgid_plural "You have %d wifi modules"
-#~ msgstr[0] ""
-#~ msgstr[1] ""
-
-#~ msgid "Password was successfully changed"
-#~ msgstr "Kennwort wurde erfolgreich geändert"
-
-#~ msgid "Updating"
-#~ msgstr "Aktualisiere"
-
-#~ msgid "Load settings"
-#~ msgstr "Einstellungen laden"
-
-#~ msgid "Restarting after %d sec."
-#~ msgstr "Neustart nach %d Sekunden."
-
-#~ msgid "Save"
-#~ msgstr "Speichern"
-
-#~ msgid "This is not a valid IPv4 address."
-#~ msgstr "Dies ist keine gültige IPv4-Adresse."
-
-#~ msgid "This is not a valid IPv6 address."
-#~ msgstr "Dies ist keine gültige IPv6-Adresse."
-
-#~ msgid "This is not a valid IPv6 prefix."
-#~ msgstr "Dies ist kein gültiges IPv6-Präfix."
-
-#~ msgid "This is not a valid domain name."
-#~ msgstr "Dies ist kein gültiger Domainname."
-
-#~ msgid "This is not a valid DUID."
-#~ msgstr "Dies ist keine gültige DUID."
-
-#~ msgid "This is not a valid MAC address."
-#~ msgstr "Dies ist keine gültige MAC-Adresse."
-
-#~ msgid "Doesn't contain a list of emails separated by commas."
-#~ msgstr "Enthält keine Liste von E-Mails, die durch Kommas getrennt sind."
-
-#~ msgid ""
-#~ "Router mode means that this devices "
-#~ "manages the LAN (acts as a router,"
-#~ " can assing IP addresses, ...). "
-#~ "Computer mode means that this device "
-#~ "acts as a client in this network."
-#~ " It acts in a similar way as"
-#~ " WAN, but it has opened ports "
-#~ "for configuration interface and other "
-#~ "services."
-#~ msgstr ""
-#~ "Der Router-Modus bedeutet, dass diese"
-#~ " Geräte das LAN verwalten (fungiert "
-#~ "als Router, kann IP-Adressen "
-#~ "vergeben,....). Computermodus bedeutet, dass "
-#~ "dieses Gerät als Client in diesem "
-#~ "Netzwerk arbeitet. Es verhält sich "
-#~ "ähnlich wie WAN, hat aber Ports "
-#~ "für Konfigurationsschnittstellen und andere "
-#~ "Dienste geöffnet."
-
-#~ msgid "Email notifications settings"
-#~ msgstr "Einstellungen für E-Mail-Benachrichtigungen"
-
-#~ msgid " Administration "
-#~ msgstr " Verwaltung "
-
-#~ msgid ""
-#~ "\n"
-#~ "            This section contains settings "
-#~ "for the local network (LAN). The "
-#~ "provided defaults are suitable for most"
-#~ "\n"
-#~ "            networks.\n"
-#~ "            <br/>\n"
-#~ "            <b>Note:</b> If you change "
-#~ "the router IP address, all computers "
-#~ "in LAN, probably including the one "
-#~ "you are\n"
-#~ "            using now, will need to "
-#~ "obtain a <b>new IP address</b> which "
-#~ "does not happen <b>immediately</b>. It "
-#~ "is\n"
-#~ "            recommended to disconnect and "
-#~ "reconnect all LAN cables after "
-#~ "submitting your changes to force the "
-#~ "update.\n"
-#~ "            The next page will not "
-#~ "load until you obtain a new IP "
-#~ "from DHCP (if DHCP enabled) and "
-#~ "you might need to\n"
-#~ "            <b>refresh the page</b> in your browser.\n"
-#~ "        "
-#~ msgstr ""
-#~ "\n"
-#~ "            Dieser Abschnitt enthält "
-#~ "Einstellungen für das lokale Netzwerk "
-#~ "(LAN). Die bereitgestellten Standardwerte sind"
-#~ " für die meisten\n"
-#~ "            Netzwerke.\n"
-#~ "            <br/>\n"
-#~ "            <b>Hinweis:</b> Wenn Sie die "
-#~ "Router-IP-Adresse ändern, werden alle"
-#~ " Computer im LAN,\n"
-#~ "            eine <b>neue IP-Adressezuhilfe "
-#~ "</b> die nicht <b>sofort </b> geschieht."
-#~ " Es ist\n"
-#~ "            empfohlen, alle LAN-Kabel zu"
-#~ " trennen und wieder anzuschließen, nachdem"
-#~ " Sie Ihre Änderungen übermittelt haben, "
-#~ "um die Aktualisierung zu erzwingen.\n"
-#~ "            Die nächste Seite wird erst"
-#~ " geladen, wenn Sie eine neue IP-"
-#~ "Adresse von DHCP erhalten (falls DHCP"
-#~ " aktiviert ist) und Sie\n"
-#~ "            <b>aktualisieren Sie die Seite</b> in Ihrem Browser.\n"
-#~ "        "
-
-#~ msgid "Notifications center"
-#~ msgstr "Benachrichtigungscenter"
-
-#~ msgid ""
-#~ "\n"
-#~ "            Here you specify your WAN"
-#~ " port settings. Usually, you can "
-#~ "leave this options untouched unless "
-#~ "instructed\n"
-#~ "            otherwise by your internet "
-#~ "service provider. Also, in case there"
-#~ " is a cable or DSL modem "
-#~ "connecting your\n"
-#~ "            router to the network, it"
-#~ " is usually not necessary to change"
-#~ " this setting.\n"
-#~ "        "
-#~ msgstr ""
-#~ "\n"
-#~ "            Hier geben Sie Ihre WAN-"
-#~ "Port-Einstellungen an. In der Regel "
-#~ "können Sie diese Optionen unberührt "
-#~ "lassen, es sei denn Sie werden von"
-#~ " Ihrem Internet-Service-Provider "
-#~ "angewiesen. Falls ein Kabel oder ein "
-#~ "DSL-Modem ihren Router zum Netzwerk "
-#~ "(WAN) verbindet  ist es in der "
-#~ "Regel nicht erforderlich, diese Einstellung"
-#~ " zu ändern\n"
-#~ "        "
-
-#~ msgid ""
-#~ "\n"
-#~ "            Here you can test you "
-#~ "connection settings. Remember to click "
-#~ "on the Save button before running "
-#~ "the test.\n"
-#~ "            Note that sometimes it takes"
-#~ " a while before the connection is "
-#~ "fully initialized. So it might be "
-#~ "useful to\n"
-#~ "            wait for a while before running this test.\n"
-#~ "        "
-#~ msgstr ""
-#~ "\n"
-#~ "            Hier können Sie die "
-#~ "Verbindungseinstellungen testen. Denken Sie "
-#~ "daran, vor dem Ausführen des Tests "
-#~ "auf die Schaltfläche Speichern zu "
-#~ "klicken. Beachten Sie, dass es manchmal"
-#~ " eine Weile dauert, bis die "
-#~ "Verbindung vollständig initialisiert ist. Es"
-#~ " könnte also hilfreich sein eine "
-#~ "Weile zu Warten, bevor Sie diesen "
-#~ "Test ausführen.\n"
-#~ "        "
-
-#~ msgid ""
-#~ "\n"
-#~ "        If you want to use your"
-#~ " router as a Wi-Fi access "
-#~ "point, enable Wi-Fi here and fill"
-#~ " in an SSID (the name of the"
-#~ "\n"
-#~ "        access point) and a "
-#~ "corresponding password. You can then set"
-#~ " up your  mobile devices, using the"
-#~ " QR code\n"
-#~ "        available within the form.\n"
-#~ "    "
-#~ msgstr ""
-#~ "\n"
-#~ "        Wenn Sie den Router als "
-#~ "WLAN-Zugangspunkt verwenden wollen, dann "
-#~ "aktivieren Sie die WLAN-Option. Geben"
-#~ " Sie dann die SSID (Netzwerkname) und"
-#~ " das zugehörige Kennwort ein.<br><br>Danach "
-#~ "können Sie Ihre Mobilgeräte mittels des"
-#~ " angezeigten QR-Codes einfach "
-#~ "konfigurieren.\n"
-#~ "    "
-
-#~ msgid "Network settings"
-#~ msgstr "Netzwerkeinstellungen"
-
-#~ msgid "DHCP clients"
-#~ msgstr ""
-
-#~ msgid "Guest network"
-#~ msgstr ""
-
-#~ msgid "Local server"
-#~ msgstr ""
-
-#~ msgid "Guide workflow"
-#~ msgstr ""
-
-#~ msgid "Email notifications"
-#~ msgstr ""
-
-#~ msgid "Notifications settings"
-#~ msgstr ""
-
-#~ msgid "SMTP settings"
-#~ msgstr "SMTP-Einstellungen"
-
-#~ msgid "Packages list"
-#~ msgstr ""
-
-#~ msgid "Most important license agreement points"
-#~ msgstr ""
-
-#~ msgid "Automatic restarts after software update"
-#~ msgstr ""
-
-#~ msgid "Update approvals"
-#~ msgstr ""
-
-#~ msgid "Approve Update from %s"
-#~ msgstr ""
-
-#~ msgid "Foris password"
-#~ msgstr "Foris-Passwort"
-
-#~ msgid "Password settings"
-#~ msgstr "Kennworteinstellungen"
-
-#~ msgid "Advanced administration (root) password"
-#~ msgstr "Erweitertes Administrationskennwort (Root)"
-
-#~ msgid "Device reboot"
-#~ msgstr ""
-
-#~ msgid "Reboot required"
-#~ msgstr ""
-
-#~ msgid "Region and time"
-#~ msgstr "Region und Zeit"
-
-#~ msgid "Time settings"
-#~ msgstr ""
-
-#~ msgid "NTP servers"
-#~ msgstr ""
-
-#~ msgid "Cannot resolve update"
-#~ msgstr ""
-
-#~ msgid "Password changed successfully"
-#~ msgstr ""
-
-#~ msgid "An error occurred during resetting Wi-Fi settings"
-#~ msgstr ""
-
-#~ msgid "Wi-Fi settings are set to defaults"
-#~ msgstr ""
-
