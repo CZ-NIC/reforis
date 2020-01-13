@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2019-11-21 16:06+0100\n"
-"PO-Revision-Date: 2020-01-13 08:45+0000\n"
+"PO-Revision-Date: 2020-01-13 14:43+0000\n"
 "Last-Translator: Francesco Bisignani <tassobaramba2@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/turris/reforis/"
 "it/>\n"
@@ -180,15 +180,15 @@ msgstr "Connessione IPv4"
 
 #: js/src/connectionTest/ConnectionTestResult.js:13
 msgid "IPv4 gateway connectivity"
-msgstr ""
+msgstr "Gateway connessione IPv4"
 
 #: js/src/connectionTest/ConnectionTestResult.js:14
 msgid "IPv6 connectivity"
-msgstr ""
+msgstr "Connessione IPv6"
 
 #: js/src/connectionTest/ConnectionTestResult.js:15
 msgid "IPv6 gateway connectivity"
-msgstr ""
+msgstr "Gateway connessione IPv6"
 
 #: js/src/dns/DNS.js:33
 msgid ""
@@ -215,10 +215,28 @@ msgid ""
 "this is a serious flaw on their side.\n"
 "            "
 msgstr ""
+"\n"
+"Il router Turris fa uso di un risolutore DNS proprio, con supporto DNSSEC. "
+"Pertanto, può essere usato sia da solo, sia con  per inoltrare query DNS "
+"presso il risolutore DNS del vostro provider.\n"
+"<br/><br/>\n"
+"Le seguenti impostazioni determineranno il funzionamento del risolutore DNS. "
+"Di norma, se il risolutore del vostro provider funziona bene in una rete, "
+"non serve usarne un altro; qualora dovessero sorgere dei problemi, usate il "
+"risolutore del router.\n"
+"<br/><br/>\n"
+"È raro, ma può capitare che errori nella configurazione da parte del vostro "
+"provider interferiscano con la convalidazione delle DNSSEC: in questo caso, "
+"disabilitate <b>temporaneamente</b> la convalida delle DNSSEC per risalire "
+"all'origine del malfunzionamento. Ricorda di fare attenzione: senza una "
+"convalida DNSSEC sarai vulnerabile allo spoofing! <b>Raccomandiamo quindi di "
+"non disattivare le DNSSEC</b> e di contattare il vostro provider quanto "
+"prima: è pur sempre un loro errore, ed è anche bello grosso.\n"
+"            "
 
 #: js/src/dns/DNS.js:63 js/src/wan/WAN.js:50
 msgid "Connection test"
-msgstr ""
+msgstr "Test di connessione"
 
 #: js/src/dns/DNS.js:66
 msgid ""
@@ -229,34 +247,45 @@ msgid ""
 "changed your forwarder setting.\n"
 "        "
 msgstr ""
+"\n"
+"Qui puoi testare la connessione internet; è anche utile per testare il "
+"corretto funzionamento della risoluzione del DNS. Qualora dovessi modificare "
+"le impostazioni del server inoltratore, ricordati di cliccare sul <b>"
+"pulsante Salva</b> per rendere effettive le modifiche.\n"
+"        "
 
 #: js/src/dns/DNSForm.js:17
 msgid ""
 "This will enable your DNS resolver to place DHCP client's names among the"
 " local DNS records."
 msgstr ""
+"Ciò permetterà al risolutore DNS d'inserire i nomi del tuo client DHCP nel "
+"registro DNS locale."
 
 #: js/src/dns/DNSForm.js:18
 msgid ""
 "This domain will be used as suffix. E.g. The result for client "
 "\"android-123\" and domain \"my.lan\" will be \"android-123.my.lan\"."
 msgstr ""
+"Questo dominio sarà usato come suffisso. Per esempio, inserendo \"android-"
+"123\" come nome del client e \"my.lan\" come dominio il risultato sarà \""
+"android-123.my.lan\"."
 
 #: js/src/dns/DNSForm.js:71
 msgid "Use forwarding"
-msgstr ""
+msgstr "Usa server inoltratore"
 
 #: js/src/dns/DNSForm.js:87
 msgid "Enable DNSSEC"
-msgstr ""
+msgstr "Abilita DNSSEC"
 
 #: js/src/dns/DNSForm.js:95
 msgid "Enable DHCP clients in DNS"
-msgstr ""
+msgstr "Abilita client DHCP nel DNS"
 
 #: js/src/dns/DNSForm.js:106
 msgid "Domain of DHCP clients in DNS"
-msgstr ""
+msgstr "Dominio del client DHCP nel DNS"
 
 #: js/src/dns/DNSSECDisableModal.js:15
 msgid ""
@@ -269,31 +298,38 @@ msgid ""
 "\n"
 "Do you still want to continue and stay unprotected?\n"
 msgstr ""
+"\n"
+"Le DNSSEC sono delle specifiche di sicurezza che proteggono le comunicazioni "
+"e le infrastrutture DNS da attacchi. Ti suggeriamo caldamente di mantenere "
+"la convalida DNSSEC sempre attiva, a meno che non sorga il bisogno di "
+"connettere il dispositivo in reti dove le DNSSEC non funzionano.\n"
+"\n"
+"Sei sicuro di voler procedere con la disattivazione delle DNSSEC?\n"
 
 #: js/src/dns/DNSSECDisableModal.js:51
 msgid "Disable DNSSEC"
-msgstr ""
+msgstr "Disabilita DNSSEC"
 
 #: js/src/dns/Forwarders/Forwarders.js:77
 msgid "Edit forwarder"
-msgstr ""
+msgstr "Modifica server inoltratore"
 
 #: js/src/dns/Forwarders/Forwarders.js:77
 #: js/src/dns/Forwarders/Forwarders.js:92
 msgid "Add custom forwarder"
-msgstr ""
+msgstr "Aggiungi server inoltratore personalizzato"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:32
 msgid "Forwarders"
-msgstr ""
+msgstr "Server inoltratori"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:33
 msgid "Actions"
-msgstr ""
+msgstr "Azioni"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:40
 msgid "Use provider's DNS resolver"
-msgstr ""
+msgstr "Usa risolutore DNS del provider"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:132
 msgid "Edit"
