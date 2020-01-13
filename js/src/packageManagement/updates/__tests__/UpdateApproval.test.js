@@ -11,6 +11,7 @@ import mockAxios from 'jest-mock-axios';
 
 import { mockJSONError } from "foris/testUtils/network";
 import { mockSetAlert } from "foris/testUtils/alertContextMock";
+import { ALERT_TYPES } from "foris";
 
 import { exampleHash, exampleUpdate } from "./__fixtures__/updates";
 import UpdateApproval from "../UpdateApproval";
@@ -45,6 +46,7 @@ describe("<UpdateApproval/>", () => {
         expect(onSuccess).not.toBeCalled();
         mockAxios.mockResponse({data: {}});
         await wait(() => expect(onSuccess).toBeCalled());
+        expect(mockSetAlert).toBeCalledWith("Updates will be installed shortly.", ALERT_TYPES.SUCCESS);
     });
 
     it("Updates resolution - ignore", () => {
