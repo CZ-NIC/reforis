@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-12-18 13:34+0100\n"
+"POT-Creation-Date: 2020-01-10 15:07+0100\n"
 "PO-Revision-Date: 2019-09-30 13:00+0000\n"
 "Last-Translator: Алексей Леньшин <alenshin@gmail.com>\n"
 "Language: ru\n"
@@ -18,7 +18,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.7.0\n"
+"Generated-By: Babel 2.8.0\n"
 
 #: js/src/about/About.js:22 js/src/main/pages.js:133
 msgid "About"
@@ -276,12 +276,12 @@ msgstr ""
 msgid "Disable DNSSEC"
 msgstr ""
 
-#: js/src/dns/Forwarders/Forwarders.js:77
+#: js/src/dns/Forwarders/Forwarders.js:79
 msgid "Edit forwarder"
 msgstr ""
 
-#: js/src/dns/Forwarders/Forwarders.js:77
-#: js/src/dns/Forwarders/Forwarders.js:92
+#: js/src/dns/Forwarders/Forwarders.js:79
+#: js/src/dns/Forwarders/Forwarders.js:94
 msgid "Add custom forwarder"
 msgstr ""
 
@@ -409,7 +409,7 @@ msgstr ""
 msgid "Upload speed in guest network (in kilobits per second)."
 msgstr ""
 
-#: js/src/guestNetwork/GuestNetworkForm.js:57 js/src/wifi/WiFiForm.js:79
+#: js/src/guestNetwork/GuestNetworkForm.js:57
 msgid "Enable"
 msgstr "Включить"
 
@@ -660,7 +660,7 @@ msgstr ""
 
 #: js/src/guide/steps.js:20 js/src/main/pages.js:82
 #: js/src/notificationsSettings/SMTPCustomForm.js:107
-#: js/src/password/Password.js:38 js/src/wifi/WiFiGuestForm.js:76
+#: js/src/password/Password.js:38
 msgid "Password"
 msgstr "Пароль"
 
@@ -892,7 +892,7 @@ msgid "Languages"
 msgstr ""
 
 #: js/src/main/pages.js:32
-#: js/src/notifications/Notifications/NotificationsCenter.js:48
+#: js/src/notifications/Notifications/NotificationsCenter.js:75
 #: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:64
 msgid "Notifications"
 msgstr "Уведомления"
@@ -901,7 +901,7 @@ msgstr "Уведомления"
 msgid "Network Settings"
 msgstr ""
 
-#: js/src/main/pages.js:44 js/src/wifi/WiFi.js:52
+#: js/src/main/pages.js:44 js/src/wifi/WiFi.js:21
 msgid "Wi-Fi"
 msgstr ""
 
@@ -934,12 +934,12 @@ msgstr ""
 msgid "Advanced Administration"
 msgstr ""
 
-#: js/src/notifications/Notifications/NotificationsCenter.js:41
+#: js/src/notifications/Notifications/NotificationsCenter.js:50
 #: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:89
 msgid "Dismiss all"
 msgstr "Закрыть все"
 
-#: js/src/notifications/Notifications/NotificationsCenter.js:51
+#: js/src/notifications/Notifications/NotificationsCenter.js:63
 #: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:28
 msgid "No notifications"
 msgstr "Нет уведомлений"
@@ -1435,11 +1435,11 @@ msgstr ""
 msgid "New advanced administration password"
 msgstr "Новый пароль расширенного администрирования"
 
-#: js/src/reboot/Reboot.js:15
+#: js/src/reboot/Reboot.js:16
 msgid "Device Reboot"
 msgstr ""
 
-#: js/src/reboot/Reboot.js:17
+#: js/src/reboot/Reboot.js:18
 msgid ""
 "\n"
 "If you need to reboot the device, click on the following button. The "
@@ -1766,40 +1766,7 @@ msgstr "Имя пользователя PAP/CHAP"
 msgid "PAP/CHAP password"
 msgstr "Пароль PAP/CHAP"
 
-#: js/src/wifi/ResetWiFiSettings.js:38
-msgid "An error occurred during resetting Wi-Fi settings."
-msgstr ""
-
-#: js/src/wifi/ResetWiFiSettings.js:40
-msgid "Wi-Fi settings are set to defaults."
-msgstr ""
-
-#: js/src/wifi/ResetWiFiSettings.js:51 js/src/wifi/ResetWiFiSettings.js:66
-msgid "Reset Wi-Fi Settings"
-msgstr ""
-
-#: js/src/wifi/ResetWiFiSettings.js:53
-msgid ""
-"\n"
-"If a number of wireless cards doesn't match, you may try to reset the Wi-"
-"Fi settings. Note that this will remove the\n"
-"current Wi-Fi configuration and restore the default values.\n"
-"        "
-msgstr ""
-
-#: js/src/wifi/WiFi.js:23 js/src/wifi/WiFi.js:31
-msgid "SSID can't be longer than 32 symbols"
-msgstr "SSID не может быть длиннее 32 символов"
-
-#: js/src/wifi/WiFi.js:24 js/src/wifi/WiFi.js:32
-msgid "SSID can't be empty"
-msgstr "SSID не может быть пустым"
-
-#: js/src/wifi/WiFi.js:26 js/src/wifi/WiFi.js:34
-msgid "Password must contain at least 8 symbols"
-msgstr "Пароль должен содержать не менее 8 символов"
-
-#: js/src/wifi/WiFi.js:54
+#: js/src/wifi/WiFi.js:23
 msgid ""
 "\n"
 "If you want to use your router as a Wi-Fi access point, enable Wi-Fi here"
@@ -1808,118 +1775,6 @@ msgid ""
 "devices, using the QR code available within the form.\n"
 "            "
 msgstr ""
-
-#: js/src/wifi/WiFiForm.js:77
-msgid "Wi-Fi ${deviceID + 1}"
-msgstr ""
-
-#: js/src/wifi/WiFiForm.js:208
-msgid "auto"
-msgstr "авто"
-
-#: js/src/wifi/WiFiGuestForm.js:36
-msgid "Enable Guest Wifi"
-msgstr "Включить гостевой WiFi"
-
-#: js/src/wifi/WiFiQRCode.js:59
-msgid "Wi-Fi QR Code"
-msgstr ""
-
-#: js/src/wifi/WiFiQRCode.js:79
-msgid "Download PDF"
-msgstr ""
-
-#: js/src/wifi/constants.js:9
-msgid "Disabled"
-msgstr "Отключён"
-
-#: js/src/wifi/constants.js:10
-msgid "802.11n - 20 MHz wide channel"
-msgstr "802.11n - ширина канала в 20 МГц"
-
-#: js/src/wifi/constants.js:11
-msgid "802.11n - 40 MHz wide channel"
-msgstr "802.11n - ширина канала в 40 МГц"
-
-#: js/src/wifi/constants.js:12
-msgid "802.11ac - 20 MHz wide channel"
-msgstr "802.11ac - ширина канала в 20 МГц"
-
-#: js/src/wifi/constants.js:13
-msgid "802.11ac - 40 MHz wide channel"
-msgstr "802.11ac - ширина канала в 40 МГц"
-
-#: js/src/wifi/constants.js:14
-msgid "802.11ac - 80 MHz wide channel"
-msgstr "802.11ac - ширина канала в 80 МГц"
-
-#: js/src/wifi/constants.js:21
-msgid ""
-"\n"
-"        WPA2 pre-shared key, that is required to connect to the network.\n"
-"    "
-msgstr ""
-"\n"
-"        Предварительный общий ключ WPA2, необходимый для подключения к "
-"сети.\n"
-"    "
-
-#: js/src/wifi/constants.js:24
-msgid "If set, network is not visible when scanning for available networks."
-msgstr ""
-"Если установлено, сеть не будет отображаться при сканировании доступных "
-"сетей."
-
-#: js/src/wifi/constants.js:25
-msgid ""
-"\n"
-"        The 2.4 GHz band is more widely supported by clients, but tends "
-"to have more interference. The 5 GHz band is a\n"
-"        newer standard and may not be supported by all your devices. It "
-"usually has less interference, but the signal\n"
-"        does not carry so well indoors."
-msgstr ""
-"\n"
-"        Частота 2,4 ГГц более широко поддерживается клиентами, но имеет "
-"больше помех. Частота 5 ГГц является новым стандартом и может "
-"поддерживаться не всеми вашими устройствами. Он обычно имеет меньше "
-"помех, но сигнал не очень хорошо распространяется в помещении."
-
-#: js/src/wifi/constants.js:29
-msgid ""
-"\n"
-"        Change this to adjust 802.11n/ac mode of operation. 802.11n with "
-"40 MHz wide channels can yield higher\n"
-"        throughput but can cause more interference in the network. If you"
-" don't know what to choose, use the default\n"
-"        option with 20 MHz wide channel.\n"
-"    "
-msgstr ""
-"\n"
-"        Измените это, чтобы настроить режим работы 802.11n/ac. 802.11n с "
-"каналами шириной 40 МГц может обеспечить более высокую пропускную "
-"способность, но может вызывать больше помех в сети. Если вы не знаете, "
-"что выбрать, используйте опцию по умолчанию с каналом шириной 20 МГц.\n"
-"    "
-
-#: js/src/wifi/constants.js:34
-msgid ""
-"\n"
-"        Enables Wi-Fi for guests, which is separated from LAN network. "
-"Devices connected to this network are allowed to\n"
-"        access the internet, but aren't allowed to access other devices "
-"and the configuration interface of the router.\n"
-"        Parameters of the guest network can be set in the Guest network "
-"tab.\n"
-"        "
-msgstr ""
-"\n"
-"        Включает Wi-Fi для гостей, который отделен от локальной сети. "
-"Устройства, подключенные к этой сети, могут доступ в Интернет, но им не "
-"разрешен доступ к другим устройствам и интерфейсу конфигурации "
-"маршрутизатора. Параметры гостевой сети можно настроить на вкладке "
-"Гостевая сеть.\n"
-"        "
 
 #: reforis/views.py:52
 msgid "Wrong password."
@@ -2009,268 +1864,3 @@ msgstr ""
 #: reforis/templates/includes/top-bar.html:4
 msgid "Logout"
 msgstr "Выход"
-
-#~ msgid "Password was successfully changed"
-#~ msgstr "Пароль был успешно изменен"
-
-#~ msgid "Updating"
-#~ msgstr "Обновление"
-
-#~ msgid "Load settings"
-#~ msgstr "Загрузить настройки"
-
-#~ msgid "Restarting after %d sec."
-#~ msgstr "Перезапуск через %d сек."
-
-#~ msgid "Save"
-#~ msgstr "Сохранить"
-
-#~ msgid "This is not a valid IPv4 address."
-#~ msgstr "Это некорректный IPv4-адрес."
-
-#~ msgid "This is not a valid IPv6 address."
-#~ msgstr "Это некорректный IPv6-адрес."
-
-#~ msgid "This is not a valid IPv6 prefix."
-#~ msgstr "Это некорректный префикс IPv6."
-
-#~ msgid "This is not a valid domain name."
-#~ msgstr "Некорректное доменное имя."
-
-#~ msgid "This is not a valid DUID."
-#~ msgstr "Это некорректный уникальный идентификатор DHCP (DUID)."
-
-#~ msgid "This is not a valid MAC address."
-#~ msgstr "Это некорректный MAC-адрес."
-
-#~ msgid "Doesn't contain a list of emails separated by commas."
-#~ msgstr "Не содержит списка электронных адресов, разделенных запятыми."
-
-#~ msgid ""
-#~ "Router mode means that this devices "
-#~ "manages the LAN (acts as a router,"
-#~ " can assing IP addresses, ...). "
-#~ "Computer mode means that this device "
-#~ "acts as a client in this network."
-#~ " It acts in a similar way as"
-#~ " WAN, but it has opened ports "
-#~ "for configuration interface and other "
-#~ "services."
-#~ msgstr ""
-#~ "Режим Маршрутизатора означает, что это "
-#~ "устройство управляет локальной сетью "
-#~ "(действует как маршрутизатор, может назначать"
-#~ " IP-адреса, ...). Режим Компьютера "
-#~ "означает, что это устройство выступает в"
-#~ " качестве клиента в этой сети. Он "
-#~ "работает аналогично WAN, но открыты "
-#~ "порты для интерфейса конфигурации и "
-#~ "других сервисов."
-
-#~ msgid "Email notifications settings"
-#~ msgstr "Настройки уведомлений по электронной почте"
-
-#~ msgid " Administration "
-#~ msgstr " Управление "
-
-#~ msgid ""
-#~ "\n"
-#~ "            This section contains settings "
-#~ "for the local network (LAN). The "
-#~ "provided defaults are suitable for most"
-#~ "\n"
-#~ "            networks.\n"
-#~ "            <br/>\n"
-#~ "            <b>Note:</b> If you change "
-#~ "the router IP address, all computers "
-#~ "in LAN, probably including the one "
-#~ "you are\n"
-#~ "            using now, will need to "
-#~ "obtain a <b>new IP address</b> which "
-#~ "does not happen <b>immediately</b>. It "
-#~ "is\n"
-#~ "            recommended to disconnect and "
-#~ "reconnect all LAN cables after "
-#~ "submitting your changes to force the "
-#~ "update.\n"
-#~ "            The next page will not "
-#~ "load until you obtain a new IP "
-#~ "from DHCP (if DHCP enabled) and "
-#~ "you might need to\n"
-#~ "            <b>refresh the page</b> in your browser.\n"
-#~ "        "
-#~ msgstr ""
-#~ "\n"
-#~ "            Этот раздел содержит настройки "
-#~ "для локальной сети (LAN). Предусмотренные "
-#~ "значения по умолчанию подходят для "
-#~ "большинства сетей. <br/>\n"
-#~ "<b>Примечание:</b> Если вы измените IP-адрес"
-#~ " маршрутизатора, на все компьютеры в "
-#~ "локальной сети, возможно, включая тот, "
-#~ "на котором вы находитесь, используя "
-#~ "сейчас, потребуется получить <b>новый "
-#~ "IP-адрес</b>, что не происходит "
-#~ "<b>немедленно</b>. Рекомендуется отключить и "
-#~ "снова подключить все кабели локальной "
-#~ "сети после отправки изменений для "
-#~ "принудительного обновления. Следующая страница "
-#~ "не будет загружаться, пока вы не "
-#~ "получите новый IP-адрес от DHCP (если"
-#~ " DHCP включен), и вам может "
-#~ "потребоваться <b>обновите страницу</b> в вашем"
-#~ " браузере.\n"
-#~ "        "
-
-#~ msgid "Notifications center"
-#~ msgstr "Центр уведомлений"
-
-#~ msgid ""
-#~ "\n"
-#~ "            Here you specify your WAN"
-#~ " port settings. Usually, you can "
-#~ "leave this options untouched unless "
-#~ "instructed\n"
-#~ "            otherwise by your internet "
-#~ "service provider. Also, in case there"
-#~ " is a cable or DSL modem "
-#~ "connecting your\n"
-#~ "            router to the network, it"
-#~ " is usually not necessary to change"
-#~ " this setting.\n"
-#~ "        "
-#~ msgstr ""
-#~ "\n"
-#~ "            Здесь вы указываете настройки "
-#~ "порта WAN. Обычно вы можете оставить "
-#~ "эти параметры без изменений, если "
-#~ "обратного не требует ваш интернет-провайдер."
-#~ " Кроме того, в случае, если есть "
-#~ "кабельный или DSL модем, подключающий "
-#~ "ваш маршрутизатор к сети, обычно нет "
-#~ "необходимости изменять этот параметр.\n"
-#~ "        "
-
-#~ msgid ""
-#~ "\n"
-#~ "            Here you can test you "
-#~ "connection settings. Remember to click "
-#~ "on the Save button before running "
-#~ "the test.\n"
-#~ "            Note that sometimes it takes"
-#~ " a while before the connection is "
-#~ "fully initialized. So it might be "
-#~ "useful to\n"
-#~ "            wait for a while before running this test.\n"
-#~ "        "
-#~ msgstr ""
-#~ "\n"
-#~ "            Здесь вы можете проверить "
-#~ "свои настройки подключения. Не забудьте "
-#~ "нажать кнопку Сохранить перед запуском "
-#~ "теста. Обратите внимание, что иногда для"
-#~ " полной инициализации соединения требуется "
-#~ "некоторое время. Так что может быть "
-#~ "полезно подождать некоторое время, прежде "
-#~ "чем запускать этот тест.\n"
-#~ "        "
-
-#~ msgid ""
-#~ "\n"
-#~ "        If you want to use your"
-#~ " router as a Wi-Fi access "
-#~ "point, enable Wi-Fi here and fill"
-#~ " in an SSID (the name of the"
-#~ "\n"
-#~ "        access point) and a "
-#~ "corresponding password. You can then set"
-#~ " up your  mobile devices, using the"
-#~ " QR code\n"
-#~ "        available within the form.\n"
-#~ "    "
-#~ msgstr ""
-#~ "\n"
-#~ "        Если вы хотите использовать свой"
-#~ " маршрутизатор в качестве точки доступа "
-#~ "Wi-Fi, включите здесь Wi-Fi и "
-#~ "введите SSID (имя точки доступа) и "
-#~ "соответствующий пароль. Затем вы можете "
-#~ "настроить свои мобильные устройства, используя"
-#~ " QR-код.\n"
-#~ "    "
-
-#~ msgid "Network settings"
-#~ msgstr "Сетевые настройки"
-
-#~ msgid "DHCP clients"
-#~ msgstr ""
-
-#~ msgid "Guest network"
-#~ msgstr ""
-
-#~ msgid "Local server"
-#~ msgstr ""
-
-#~ msgid "Guide workflow"
-#~ msgstr ""
-
-#~ msgid "Email notifications"
-#~ msgstr ""
-
-#~ msgid "Notifications settings"
-#~ msgstr ""
-
-#~ msgid "SMTP settings"
-#~ msgstr "Настройки SMTP"
-
-#~ msgid "Packages list"
-#~ msgstr ""
-
-#~ msgid "Most important license agreement points"
-#~ msgstr ""
-
-#~ msgid "Automatic restarts after software update"
-#~ msgstr ""
-
-#~ msgid "Update approvals"
-#~ msgstr ""
-
-#~ msgid "Approve Update from %s"
-#~ msgstr ""
-
-#~ msgid "Foris password"
-#~ msgstr "Пароль Foris"
-
-#~ msgid "Password settings"
-#~ msgstr "Настройки пароля"
-
-#~ msgid "Advanced administration (root) password"
-#~ msgstr "Пароль расширенного администрирования (root)"
-
-#~ msgid "Device reboot"
-#~ msgstr ""
-
-#~ msgid "Reboot required"
-#~ msgstr ""
-
-#~ msgid "Region and time"
-#~ msgstr "Регион и время"
-
-#~ msgid "Time settings"
-#~ msgstr ""
-
-#~ msgid "NTP servers"
-#~ msgstr ""
-
-#~ msgid "Cannot resolve update"
-#~ msgstr ""
-
-#~ msgid "Password changed successfully"
-#~ msgstr ""
-
-#~ msgid "An error occurred during resetting Wi-Fi settings"
-#~ msgstr ""
-
-#~ msgid "Wi-Fi settings are set to defaults"
-#~ msgstr ""
-
