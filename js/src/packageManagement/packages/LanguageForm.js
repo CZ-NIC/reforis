@@ -8,7 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { CheckBox, formFieldsSize } from "foris";
+import { CheckBox } from "foris";
 
 LanguageForm.propTypes = {
     formData: PropTypes.shape({
@@ -26,7 +26,7 @@ export default function LanguageForm({ formData, setFormValue, disabled }) {
         <>
             <h3>{_("Languages")}</h3>
             <p>{_("If you want to use other language than English you can select it from the following list:")}</p>
-            <div className={`${formFieldsSize} container mb-3`}>
+            <div className="container mb-3">
                 <div className="row justify-content-start">
                     {formData.languages.map((language, idx) => (
                         <div className="col-2 col-lg-1 mr-4" key={language.code}>
