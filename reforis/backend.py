@@ -31,13 +31,14 @@ class Backend(ABC):
         self.sender = sender
 
     @abstractmethod
-    def _send(self, module, action, data):
+    def _send(self, module, action, data, controller_id):
         ...
 
     def __repr__(self):
         return type(self.sender).__name__
 
-    def perform(self, module, action, data=None, raise_exception_on_failure=True):
+    # pylint: disable=too-many-arguments
+    def perform(self, module, action, data=None, raise_exception_on_failure=True, controller_id=None):
         """
         Perform backend action
 
@@ -48,7 +49,7 @@ class Backend(ABC):
         response = None
         start_time = time.time()
         try:
-            response = self._send(module, action, data)
+            response = self._send(module, action, data, controller_id)
         except ControllerError as e:
             current_app.logger.error('Exception in backend occurred. (%s)', e)
             if raise_exception_on_failure:
@@ -85,7 +86,7 @@ class UBusBackend(Backend):
         sender_name = type(self.sender).__name__
         return f'{sender_name} ({self.socket_path})'
 
-    def _send(self, module, action, data):
+    def _send(self, module, action, data, controller_id):
         return self.sender.send(module, action, data)
 
 
@@ -115,8 +116,8 @@ class MQTTBackend(Backend):
 
         super().__init__(sender)
 
-    def _send(self, module, action, data):
-        return self.sender.send(module, action, data, controller_id=self.controller_id)
+    def _send(self, module, action, data, controller_id):
+        return self.sender.send(module, action, data, controller_id=controller_id or self.controller_id)
 
     @staticmethod
     def _parse_credentials(filepath):
