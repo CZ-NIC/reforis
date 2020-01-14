@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2019-11-21 16:06+0100\n"
-"PO-Revision-Date: 2020-01-11 21:21+0000\n"
+"PO-Revision-Date: 2020-01-16 00:21+0000\n"
 "Last-Translator: Scott Anecito <scott.anecito@linux.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/turris/reforis/"
 "ja/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.10.1\n"
+"X-Generator: Weblate 3.11-dev\n"
 "Generated-By: Babel 2.7.0\n"
 
 #: js/src/about/About.js:22 js/src/main/pages.js:133
@@ -47,7 +47,7 @@ msgstr "再起動"
 #: js/src/common/RebootButton.js:57 js/src/dns/DNSSECDisableModal.js:32
 #: js/src/interfaces/modals.js:29 js/src/interfaces/modals.js:55
 msgid "Warning!"
-msgstr ""
+msgstr "警告！"
 
 #: js/src/common/RebootButton.js:58
 msgid "Are you sure you want to restart the router?"
@@ -55,7 +55,7 @@ msgstr ""
 
 #: js/src/common/RebootButton.js:60 js/src/dns/DNSSECDisableModal.js:42
 msgid "Cancel"
-msgstr ""
+msgstr "キャンセル"
 
 #: js/src/common/RebootButton.js:61
 msgid "Confirm reboot"
@@ -67,11 +67,11 @@ msgstr ""
 
 #: js/src/common/network/DHCPClientForm.js:33
 msgid "DHCP hostname"
-msgstr ""
+msgstr "DHCPホスト名"
 
 #: js/src/common/network/DHCPClientsList.js:19
 msgid "DHCP clients"
-msgstr ""
+msgstr "DHCP クライアント"
 
 #: js/src/common/network/DHCPClientsList.js:22
 msgid "No DHCP clients found."
@@ -79,11 +79,11 @@ msgstr ""
 
 #: js/src/common/network/DHCPClientsList.js:27
 msgid "Expires"
-msgstr ""
+msgstr "期限切れ"
 
 #: js/src/common/network/DHCPClientsList.js:28
 msgid "IP Address"
-msgstr ""
+msgstr "IP アドレス"
 
 #: js/src/common/network/DHCPClientsList.js:29
 msgid "MAC Address"
@@ -113,7 +113,7 @@ msgstr ""
 
 #: js/src/common/network/DHCPServerForm.js:66
 msgid "Lease time (hours)"
-msgstr ""
+msgstr "リース時間 (アワー )"
 
 #: js/src/common/network/DHCPServerForm.js:85
 msgid "DHCP start must be positive"
@@ -135,7 +135,7 @@ msgstr ""
 
 #: js/src/common/network/StaticIPForm.js:43
 msgid "IP address"
-msgstr ""
+msgstr "IP アドレス"
 
 #: js/src/common/network/StaticIPForm.js:55
 #: js/src/guestNetwork/GuestNetworkForm.js:83 js/src/lan/LANManagedForm.js:59
@@ -144,15 +144,15 @@ msgstr ""
 
 #: js/src/common/network/StaticIPForm.js:67 js/src/wan/WAN6Form.js:230
 msgid "Gateway"
-msgstr ""
+msgstr "ゲートウェイ"
 
 #: js/src/common/network/StaticIPForm.js:79 js/src/wan/WAN6Form.js:255
 msgid "DNS server 1"
-msgstr ""
+msgstr "DNSサーバー 1"
 
 #: js/src/common/network/StaticIPForm.js:91 js/src/wan/WAN6Form.js:267
 msgid "DNS server 2"
-msgstr ""
+msgstr "DNSサーバー 2"
 
 #: js/src/common/network/StaticIPForm.js:116 js/src/wan/MACForm.js:78
 #: js/src/wan/WAN6Form.js:521 js/src/wan/WAN6Form.js:550
@@ -186,7 +186,7 @@ msgstr "IPv6 接続"
 
 #: js/src/connectionTest/ConnectionTestResult.js:15
 msgid "IPv6 gateway connectivity"
-msgstr ""
+msgstr "IPv6 ゲートウェイ接続"
 
 #: js/src/dns/DNS.js:33
 msgid ""
