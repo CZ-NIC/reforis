@@ -16,6 +16,7 @@ const WAIT_FOR_DOWN_TIMEOUT = 3000;
 
 const REQUEST_HEADERS = { "Content-Type": "application/json" };
 
+// Waits until foris is down, then call callback
 export function waitForDown(callback) {
     const polling = setInterval(poll, HEALTH_CHECK_INTERVAL);
 
@@ -32,6 +33,8 @@ export function waitForDown(callback) {
             .catch(stopPolling);
     }
 
+    // When WAIT_FOR_DOWN_TIMEOUT is passed then it means that foris was down short time and we
+    // and we doesn't noticed it. In this case we can stop polling.
     setTimeout(stopPolling, WAIT_FOR_DOWN_TIMEOUT);
 }
 
@@ -45,6 +48,7 @@ export function tryReconnect(ips, reconnectUrlPath) {
     });
 }
 
+// Waits until foris is up, then call callback
 function waitForUpPolling(url, callback) {
     const polling = setInterval(poll, HEALTH_CHECK_INTERVAL);
 
