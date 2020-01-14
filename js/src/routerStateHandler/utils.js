@@ -9,24 +9,30 @@ import axios from "axios";
 
 import API_URLs from "common/API";
 
-const HEALTH_CHECK_TIMEOUT = 1000;
-const HEALTH_CHECK_INTERVAL = 1000;
+const HEALTH_CHECK_TIMEOUT = 500;
+const HEALTH_CHECK_INTERVAL = 500;
+
+const WAIT_FOR_DOWN_TIMEOUT = 3000;
+
 const REQUEST_HEADERS = { "Content-Type": "application/json" };
 
 export function waitForDown(callback) {
-    waitForDownPolling().then(() => callback());
-}
+    const polling = setInterval(poll, HEALTH_CHECK_INTERVAL);
 
-function waitForDownPolling() {
-    const poll = (resolve) => {
+    function stopPolling() {
+        clearInterval(polling);
+        callback();
+    }
+
+    function poll() {
         axios.get(API_URLs.healthCheck, {
             headers: REQUEST_HEADERS,
             timeout: HEALTH_CHECK_TIMEOUT,
         })
-            .then(() => setTimeout(poll, HEALTH_CHECK_INTERVAL, resolve))
-            .catch(() => resolve());
-    };
-    return new Promise(poll);
+            .catch(stopPolling);
+    }
+
+    setTimeout(stopPolling, WAIT_FOR_DOWN_TIMEOUT);
 }
 
 export function tryReconnect(ips, reconnectUrlPath) {
@@ -34,19 +40,24 @@ export function tryReconnect(ips, reconnectUrlPath) {
         const port = window.location.port === "" ? "" : `:${window.location.port}`;
         const { protocol } = window.location;
         const baseURL = `${protocol}//${ip}${port}`;
-        waitForUpPolling(`${baseURL}${API_URLs.healthCheck}`)
-            .then(() => window.location.replace(`${baseURL}${reconnectUrlPath}`));
+        const callback = () => window.location.replace(`${baseURL}${reconnectUrlPath}`);
+        waitForUpPolling(`${baseURL}${API_URLs.healthCheck}`, callback);
     });
 }
 
-function waitForUpPolling(url) {
-    const poll = (resolve) => {
+function waitForUpPolling(url, callback) {
+    const polling = setInterval(poll, HEALTH_CHECK_INTERVAL);
+
+    function stopPolling() {
+        clearInterval(polling);
+        callback();
+    }
+
+    function poll() {
         axios.get(url, {
             headers: REQUEST_HEADERS,
             timeout: HEALTH_CHECK_TIMEOUT,
         })
-            .then(() => resolve())
-            .catch(() => setTimeout(poll, HEALTH_CHECK_INTERVAL, resolve));
-    };
-    return new Promise(poll);
+            .then(stopPolling);
+    }
 }
