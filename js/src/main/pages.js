@@ -139,8 +139,20 @@ const PAGES = [
 
 export default function getPages() {
     let pagesWithWeight = addWeightsToPages(PAGES);
+    const waitingPluginsList = [];
     ForisPlugins.forEach((plugin) => {
+        try {
+            pagesWithWeight = plug(pagesWithWeight, plugin);
+        } catch (e) {
+            if (e.name === "TypeError") {
+                waitingPluginsList.push(plugin);
+            }
+        }
+    });
+
+    waitingPluginsList.forEach((plugin) => {
         pagesWithWeight = plug(pagesWithWeight, plugin);
     });
+
     return pagesWithWeight;
 }
