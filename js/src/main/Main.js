@@ -6,8 +6,7 @@
  */
 
 import React from "react";
-import { BrowserRouter } from "react-router-dom";
-import { Redirect, Switch } from "react-router";
+import { BrowserRouter, Redirect, Switch } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import { REFORIS_URL_PREFIX, Portal, AlertContextProvider } from "foris";

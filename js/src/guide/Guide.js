@@ -6,8 +6,10 @@
  */
 
 import React, { useEffect } from "react";
-import { BrowserRouter } from "react-router-dom";
-import { Redirect, Route, Switch } from "react-router";
+import {
+    BrowserRouter, Redirect, Route, Switch,
+} from "react-router-dom";
+
 import PropTypes from "prop-types";
 
 import {

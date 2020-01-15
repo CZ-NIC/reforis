@@ -6,8 +6,8 @@
  */
 
 import React from "react";
-import { withRouter } from "react-router";
-import { Link, NavLink } from "react-router-dom";
+import { withRouter, Link, NavLink } from "react-router-dom";
+
 import PropTypes from "prop-types";
 
 import useGuideFinish from "./hooks";
