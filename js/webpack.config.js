@@ -44,6 +44,10 @@ module.exports = (env) => ({
                 use: [{ loader: "expose-loader", options: "ReactDOM" }],
             },
             {
+                test: require.resolve("react-router-dom"),
+                use: [{ loader: "expose-loader", options: "ReactRouterDOM" }],
+            },
+            {
                 test: /\.css$/,
                 use: [
                     MiniCssExtractPlugin.loader,
