@@ -5,6 +5,10 @@
  * See /LICENSE for more information.
  */
 
+// It force ReactRouterDOM to be exposed. See:
+// https://github.com/webpack-contrib/expose-loader/issues/20.
+import "expose-loader?ReactRouterDOM!react-router-dom";
+
 import React from "react";
 import { render } from "react-dom";
 import "@fortawesome/fontawesome-free/js/all.min";
