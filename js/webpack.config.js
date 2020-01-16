@@ -44,6 +44,9 @@ module.exports = (env) => ({
                 use: [{ loader: "expose-loader", options: "ReactDOM" }],
             },
             {
+                // Using different instances of library in reForis and foris JS (and plugins) cause
+                // a bug about "using react-router components outside <Router/>". So we expose it to
+                // use same instance of ReactRouterDOM everywhere.
                 test: require.resolve("react-router-dom"),
                 use: [{ loader: "expose-loader", options: "ReactRouterDOM" }],
             },
