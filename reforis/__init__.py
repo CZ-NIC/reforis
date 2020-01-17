@@ -22,6 +22,7 @@ from flask import render_template, jsonify
 from .locale import get_translations
 
 
+# pylint: disable=too-many-locals
 def create_app(config):
     """
     Flask application factory.
@@ -74,6 +75,15 @@ def create_app(config):
         return jsonify(error.data), error.status_code
 
     app.register_error_handler(APIError, handle_api_error)
+
+    # Handle timeout errors
+    def handle_timeout_error(error):
+        return (
+            jsonify('Timeout occurred during performing foris controller action.'),
+            HTTPStatus.INTERNAL_SERVER_ERROR,
+        )
+    from .backend import BackendTimeoutError
+    app.register_error_handler(BackendTimeoutError, handle_timeout_error)
 
     @app.context_processor
     def add_version_to_ctx():
