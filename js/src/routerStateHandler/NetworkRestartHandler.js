@@ -14,10 +14,11 @@ import { STATES, useNetworkRestart } from "./hooks";
 
 NetworkRestartHandler.propTypes = {
     ws: PropTypes.object.isRequired,
+    controllerID: PropTypes.string,
 };
 
-export default function NetworkRestartHandler({ ws }) {
-    const [rebootState, remains] = useNetworkRestart(ws);
+export default function NetworkRestartHandler({ ws, controllerID }) {
+    const [rebootState, remains] = useNetworkRestart(ws, controllerID);
 
     if (rebootState === STATES.NOT_TRIGGERED) return null;
 

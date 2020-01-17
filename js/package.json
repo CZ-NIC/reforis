@@ -14,7 +14,7 @@
     "axios": "^0.19.1",
     "bootstrap": "4.4.1",
     "bootswatch": "4.4.1",
-    "foris": "3.1.1",
+    "foris": "3.2.0-beta.8679749e",
     "immutability-helper": "3.0.1",
     "jquery": "^3.4.1",
     "moment": "^2.24.0",
