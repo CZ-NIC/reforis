@@ -1,3 +1,4 @@
+// eslint-disable-line
 /*
  * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
@@ -7,6 +8,7 @@
 
 // It force ReactRouterDOM to be exposed. See:
 // https://github.com/webpack-contrib/expose-loader/issues/20.
+// eslint-disable-next-line
 import "expose-loader?ReactRouterDOM!react-router-dom";
 
 import React from "react";
