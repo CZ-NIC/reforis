@@ -13,10 +13,11 @@ import { STATES, useReboot } from "./hooks";
 
 RebootHandler.propTypes = {
     ws: PropTypes.object.isRequired,
+    controllerID: PropTypes.string,
 };
 
-export default function RebootHandler({ ws }) {
-    const [rebootState, remains] = useReboot(ws);
+export default function RebootHandler({ ws, controllerID }) {
+    const [rebootState, remains] = useReboot(ws, controllerID);
 
     if (rebootState === STATES.NOT_TRIGGERED) return null;
 

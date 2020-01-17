@@ -11,12 +11,12 @@ import { ForisURLs, useWSForisModule } from "foris";
 
 import { tryReconnect, waitForDown } from "./utils";
 
-export function useNetworkRestart(ws) {
-    return useDeviceState(ws, "network-restart", window.location.pathname);
+export function useNetworkRestart(ws, controllerID) {
+    return useDeviceState(ws, "network-restart", window.location.pathname, controllerID);
 }
 
-export function useReboot(ws) {
-    return useDeviceState(ws, "reboot", ForisURLs.login);
+export function useReboot(ws, controllerID) {
+    return useDeviceState(ws, "reboot", ForisURLs.login, controllerID);
 }
 
 export const STATES = {
@@ -26,14 +26,15 @@ export const STATES = {
     DONE: 3,
 };
 
-function useDeviceState(ws, action, reconnectUrlPath) {
+function useDeviceState(ws, action, reconnectUrlPath, controllerID) {
     const [state, setState] = useState(STATES.NOT_TRIGGERED);
     const [ips, setIPs] = useState([]);
     const [remainsSec, setRemainsSec] = useState(null);
-    const [wsData] = useWSForisModule(ws, "maintain", action);
+    const [wsData] = useWSForisModule(ws, "maintain", action, controllerID);
 
     useEffect(() => {
         if (!wsData) return;
+
         setIPs([...new Set(wsData.ips)]);
         setRemainsSec(wsData.remains / 1000);
         setState(wsData.remains === 0 ? STATES.IN_PROGRESS : STATES.TRIGGERED);

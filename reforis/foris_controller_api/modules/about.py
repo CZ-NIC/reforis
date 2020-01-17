@@ -1,3 +1,5 @@
+import os
+
 from flask import current_app, jsonify
 
 
@@ -12,9 +14,23 @@ def about():
     return jsonify(data)
 
 
+def controller_id():
+    """
+        Return controller ID of current device.
+    """
+    return jsonify(os.environ.get('CONTROLLER_ID'))
+
+
 # pylint: disable=invalid-name
-views = [{
-    'rule': '/about',
-    'view_func': about,
-    'methods': ['GET']
-}]
+views = [
+    {
+        'rule': '/about',
+        'view_func': about,
+        'methods': ['GET']
+    },
+    {
+        'rule': '/controller_id',
+        'view_func': controller_id,
+        'methods': ['GET']
+    },
+]

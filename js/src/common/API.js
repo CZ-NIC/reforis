@@ -48,6 +48,8 @@ const API_URLs = new Proxy({
     guide: "/guide",
     finishGuide: "/finish-guide",
     guideWorkflow: "/guide-workflow",
+
+    controllerID: "/controller_id",
 },
 {
     get: (target, name) => `${API_URL_PREFIX}${target[name]}`,
