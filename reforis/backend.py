@@ -24,6 +24,10 @@ class ExceptionInBackend(Exception):
         self.remote_description = remote_description
 
 
+class BackendTimeoutError(Exception):
+    pass
+
+
 class Backend(ABC):
     """Abstract backend"""
 
@@ -58,7 +62,8 @@ class Backend(ABC):
                 if data is not None:
                     msg['data'] = data
                 raise ExceptionInBackend(msg, error['stacktrace'], error['description'])
-
+        except TimeoutError:
+            raise BackendTimeoutError
         except RuntimeError as e:
             # This may occure when e.g. calling function is not present in backend
             current_app.logger.error('RuntimeError occurred during the communication with backend. (%s)', e)
