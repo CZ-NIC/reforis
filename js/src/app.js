@@ -1,9 +1,15 @@
+// eslint-disable-line
 /*
  * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
  */
+
+// It force ReactRouterDOM to be exposed. See:
+// https://github.com/webpack-contrib/expose-loader/issues/20.
+// eslint-disable-next-line
+import "expose-loader?ReactRouterDOM!react-router-dom";
 
 import React from "react";
 import { render } from "react-dom";

@@ -6,8 +6,9 @@
  */
 
 import React, { useEffect } from "react";
-import { Redirect, Route, Switch } from "react-router";
-import { useLocation } from "react-router-dom";
+import {
+    useLocation, Route, Switch, Redirect,
+} from "react-router-dom";
 import PropTypes from "prop-types";
 
 import { Portal, useAlert } from "foris";

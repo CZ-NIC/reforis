@@ -7,7 +7,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import { matchPath, withRouter } from "react-router";
+import { matchPath, withRouter } from "react-router-dom";
 
 import { NavigationToggle, NavigationToggleItem } from "./NavigationToggle";
 import NavigationMainItem from "./NavigationMainItem";
