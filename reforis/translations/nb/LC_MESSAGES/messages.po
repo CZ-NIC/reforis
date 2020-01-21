@@ -8,36 +8,37 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2019-11-21 16:06+0100\n"
-"PO-Revision-Date: 2019-11-10 16:04+0000\n"
+"PO-Revision-Date: 2020-01-21 13:52+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/turris/"
+"reforis/nb_NO/>\n"
 "Language: nb\n"
-"Language-Team: Norwegian Bokmål "
-"<https://hosted.weblate.org/projects/turris/reforis/nb_NO/>\n"
-"Plural-Forms: nplurals=2; plural=n != 1\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.11-dev\n"
 "Generated-By: Babel 2.7.0\n"
 
 #: js/src/about/About.js:22 js/src/main/pages.js:133
 msgid "About"
-msgstr ""
+msgstr "Om"
 
 #: js/src/about/About.js:40
 msgid "Device"
-msgstr ""
+msgstr "Enhet"
 
 #: js/src/about/About.js:44
 msgid "Serial number"
-msgstr ""
+msgstr "Serienummer"
 
 #: js/src/about/About.js:48
 msgid "Turris OS version"
-msgstr ""
+msgstr "Turris OS-versjon"
 
 #: js/src/about/About.js:52
 msgid "Kernel version"
-msgstr ""
+msgstr "Kjerneversjon"
 
 #: js/src/common/RebootButton.js:42 js/src/main/pages.js:97
 msgid "Reboot"
@@ -46,19 +47,19 @@ msgstr "Start på ny"
 #: js/src/common/RebootButton.js:57 js/src/dns/DNSSECDisableModal.js:32
 #: js/src/interfaces/modals.js:29 js/src/interfaces/modals.js:55
 msgid "Warning!"
-msgstr ""
+msgstr "Advarsel!"
 
 #: js/src/common/RebootButton.js:58
 msgid "Are you sure you want to restart the router?"
-msgstr ""
+msgstr "Er du sikker på at du ønsker å starte ruteren på ny?"
 
 #: js/src/common/RebootButton.js:60 js/src/dns/DNSSECDisableModal.js:42
 msgid "Cancel"
-msgstr ""
+msgstr "Avbryt"
 
 #: js/src/common/RebootButton.js:61
 msgid "Confirm reboot"
-msgstr ""
+msgstr "Bekreft omstart"
 
 #: js/src/common/network/DHCPClientForm.js:14
 msgid "Hostname which will be provided to DHCP server."
@@ -70,31 +71,31 @@ msgstr "DHCP-vertsnavn"
 
 #: js/src/common/network/DHCPClientsList.js:19
 msgid "DHCP clients"
-msgstr ""
+msgstr "DHCP-klienter"
 
 #: js/src/common/network/DHCPClientsList.js:22
 msgid "No DHCP clients found."
-msgstr ""
+msgstr "Fant ingen DHCP-klienter."
 
 #: js/src/common/network/DHCPClientsList.js:27
 msgid "Expires"
-msgstr ""
+msgstr "Utløper"
 
 #: js/src/common/network/DHCPClientsList.js:28
 msgid "IP Address"
-msgstr ""
+msgstr "IP-adresse"
 
 #: js/src/common/network/DHCPClientsList.js:29
 msgid "MAC Address"
-msgstr ""
+msgstr "MAC-adresse"
 
 #: js/src/common/network/DHCPClientsList.js:30
 msgid "Hostname"
-msgstr ""
+msgstr "Vertsnavn"
 
 #: js/src/common/network/DHCPClientsList.js:31
 msgid "Active"
-msgstr ""
+msgstr "Aktiv"
 
 #: js/src/common/network/DHCPServerForm.js:13
 msgid ""
@@ -120,7 +121,7 @@ msgstr "Tildelningstid (timer)"
 
 #: js/src/common/network/DHCPServerForm.js:85
 msgid "DHCP start must be positive"
-msgstr ""
+msgstr "HDCP start må være positiv"
 
 #: js/src/common/network/DHCPServerForm.js:88
 msgid "At least 1 lease is required"
@@ -252,15 +253,15 @@ msgstr ""
 
 #: js/src/dns/DNSForm.js:87
 msgid "Enable DNSSEC"
-msgstr ""
+msgstr "Skru på DNSSEC"
 
 #: js/src/dns/DNSForm.js:95
 msgid "Enable DHCP clients in DNS"
-msgstr ""
+msgstr "Skru på DHCP-klienter i DNS"
 
 #: js/src/dns/DNSForm.js:106
 msgid "Domain of DHCP clients in DNS"
-msgstr ""
+msgstr "Domene for DHCP-klienter i DNS"
 
 #: js/src/dns/DNSSECDisableModal.js:15
 msgid ""
@@ -276,7 +277,7 @@ msgstr ""
 
 #: js/src/dns/DNSSECDisableModal.js:51
 msgid "Disable DNSSEC"
-msgstr ""
+msgstr "Skru av DNSSEC"
 
 #: js/src/dns/Forwarders/Forwarders.js:77
 msgid "Edit forwarder"
@@ -293,7 +294,7 @@ msgstr ""
 
 #: js/src/dns/Forwarders/ForwardersTable.js:33
 msgid "Actions"
-msgstr ""
+msgstr "Handlinger"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:40
 msgid "Use provider's DNS resolver"
@@ -301,11 +302,11 @@ msgstr ""
 
 #: js/src/dns/Forwarders/ForwardersTable.js:132
 msgid "Edit"
-msgstr ""
+msgstr "Rediger"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:139
 msgid "Delete"
-msgstr ""
+msgstr "Slett"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:24
 msgid "base64 encoded sha256."
@@ -314,23 +315,23 @@ msgstr ""
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:49
 #: js/src/packageManagement/updates/UpdateApproval.js:96
 msgid "Name"
-msgstr ""
+msgstr "Navn"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:59
 msgid "IPv4"
-msgstr ""
+msgstr "IPv4"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:69
 msgid "IPv6"
-msgstr ""
+msgstr "IPv6"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:79
 msgid "TLS type"
-msgstr ""
+msgstr "TLS-type"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:100
 msgid "TLS hostname"
-msgstr ""
+msgstr "TLS-vertsnavn"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:113
 msgid "TLS pin"
@@ -366,7 +367,7 @@ msgstr ""
 
 #: js/src/guestNetwork/GuestNetwork.js:26 js/src/interfaces/Interfaces.js:93
 msgid "Guest network"
-msgstr ""
+msgstr "Gjestenettverk"
 
 #: js/src/guestNetwork/GuestNetwork.js:28
 msgid ""
@@ -416,23 +417,23 @@ msgstr "Skru på DHCP"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:117
 msgid "Enable QoS"
-msgstr ""
+msgstr "Skru på QoS"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:168
 msgid "Download"
-msgstr ""
+msgstr "Last ned"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:184
 msgid "Upload"
-msgstr ""
+msgstr "Last opp"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:205
 msgid "Download speed must be positive"
-msgstr ""
+msgstr "Nedlastingshastighet må være positiv"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:208
 msgid "Upload speed must be positive"
-msgstr ""
+msgstr "Opplastingshastighet må være positiv"
 
 #: js/src/guide/GuideFinish.js:18
 msgid "Guide Finished"
@@ -455,7 +456,7 @@ msgstr ""
 
 #: js/src/guide/GuideFinish.js:31
 msgid "Continue"
-msgstr ""
+msgstr "Fortsett"
 
 #: js/src/guide/GuideNavigation.js:43
 msgid "Skip guide"
@@ -659,35 +660,36 @@ msgstr ""
 
 #: js/src/guide/steps.js:32 js/src/regionAndTime/TimeForm.js:108
 msgid "Time"
-msgstr ""
+msgstr "Tid"
 
 #: js/src/guide/steps.js:36 js/src/main/pages.js:59
 msgid "DNS"
-msgstr ""
+msgstr "DNS"
 
 #: js/src/guide/steps.js:40 js/src/main/pages.js:115
 #: js/src/packageManagement/updates/Updates.js:25
+#, fuzzy
 msgid "Updates"
-msgstr ""
+msgstr "Oppdateringer"
 
 #: js/src/guide/steps.js:44 js/src/interfaces/Interfaces.js:75
 #: js/src/interfaces/constants.js:9 js/src/main/pages.js:49
 #: js/src/wan/WAN.js:27
 msgid "WAN"
-msgstr ""
+msgstr "WAN"
 
 #: js/src/guide/steps.js:48 js/src/interfaces/Interfaces.js:83
 #: js/src/interfaces/constants.js:10 js/src/main/pages.js:54
 msgid "LAN"
-msgstr ""
+msgstr "LAN"
 
 #: js/src/guide/steps.js:52
 msgid "Finish"
-msgstr ""
+msgstr "Fullfør"
 
 #: js/src/interfaces/Interfaces.js:68
 msgid "Network interfaces"
-msgstr ""
+msgstr "Nettverksgrensesnitt"
 
 #: js/src/interfaces/Interfaces.js:70
 msgid ""
@@ -742,19 +744,19 @@ msgstr ""
 
 #: js/src/interfaces/SelectedInterface.js:57
 msgid "Network"
-msgstr ""
+msgstr "Nettverk"
 
 #: js/src/interfaces/SelectedInterface.js:66
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 #: js/src/interfaces/SelectedInterface.js:70
 msgid "State"
-msgstr ""
+msgstr "Tilstand"
 
 #: js/src/interfaces/SelectedInterface.js:74
 msgid "Bus"
-msgstr ""
+msgstr "Buss"
 
 #: js/src/interfaces/SelectedInterface.js:78
 msgid "Slot"
@@ -762,19 +764,19 @@ msgstr ""
 
 #: js/src/interfaces/SelectedInterface.js:82
 msgid "Module ID"
-msgstr ""
+msgstr "Modul-ID"
 
 #: js/src/interfaces/SelectedInterface.js:86
 msgid "Link speed"
-msgstr ""
+msgstr "Lenkehastighet"
 
 #: js/src/interfaces/constants.js:11 js/src/main/pages.js:69
 msgid "Guest Network"
-msgstr ""
+msgstr "Gjestenettverk"
 
 #: js/src/interfaces/constants.js:12
 msgid "Unassigned"
-msgstr ""
+msgstr "Utildelt"
 
 #: js/src/interfaces/modals.js:22
 msgid ""
@@ -787,11 +789,11 @@ msgstr ""
 
 #: js/src/interfaces/modals.js:34
 msgid "Keep closed"
-msgstr ""
+msgstr "Behold lukket"
 
 #: js/src/interfaces/modals.js:35
 msgid "Open ports"
-msgstr ""
+msgstr "Åpne porter"
 
 #: js/src/interfaces/modals.js:47
 msgid ""
@@ -810,7 +812,7 @@ msgstr ""
 
 #: js/src/interfaces/modals.js:67
 msgid "I'm an expert"
-msgstr ""
+msgstr "Jeg er en ekspert"
 
 #: js/src/lan/LAN.js:28
 msgid ""
@@ -889,7 +891,7 @@ msgstr ""
 
 #: js/src/main/pages.js:44 js/src/wifi/WiFi.js:52
 msgid "Wi-Fi"
-msgstr ""
+msgstr "Wi-Fi"
 
 #: js/src/main/pages.js:76
 msgid "Administration"
@@ -901,23 +903,23 @@ msgstr ""
 
 #: js/src/main/pages.js:92
 msgid "Notification Settings"
-msgstr ""
+msgstr "Merknadsinnstillinger"
 
 #: js/src/main/pages.js:104
 msgid "Package Management"
-msgstr ""
+msgstr "Pakkebehandling"
 
 #: js/src/main/pages.js:110
 msgid "Update Settings"
-msgstr ""
+msgstr "Oppdateringsinnstillinger"
 
 #: js/src/main/pages.js:120 js/src/packageManagement/packages/Packages.js:20
 msgid "Packages"
-msgstr ""
+msgstr "Pakker"
 
 #: js/src/main/pages.js:127
 msgid "Advanced Administration"
-msgstr ""
+msgstr "Avansert administrasjon"
 
 #: js/src/notifications/Notifications/NotificationsCenter.js:41
 #: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:89
@@ -964,7 +966,7 @@ msgstr "Egendefinert"
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:78
 msgid "Email notifications"
-msgstr ""
+msgstr "E-postmerknader"
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:80
 msgid "Enable email notifications"
@@ -976,7 +978,7 @@ msgstr "SMTP-tilbyder"
 
 #: js/src/notificationsSettings/NotificationsSettings.js:24
 msgid "Notifications settings"
-msgstr ""
+msgstr "Merknadsinnstillinger"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:18
 msgid "None"
@@ -1083,7 +1085,7 @@ msgstr "Minimumsport er 1."
 
 #: js/src/packageManagement/packages/LanguageForm.js:27
 msgid "Languages"
-msgstr ""
+msgstr "Språk"
 
 #: js/src/packageManagement/packages/LanguageForm.js:28
 msgid ""
@@ -1113,7 +1115,7 @@ msgstr ""
 
 #: js/src/packageManagement/packages/PackagesForm.js:28
 msgid "Packages list"
-msgstr ""
+msgstr "Pakkeliste"
 
 #: js/src/packageManagement/updateSettings/LicenceModal.js:23
 msgid "Most important license agreement points"
@@ -1228,7 +1230,7 @@ msgstr ""
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:16
 msgid "Automatic installation"
-msgstr ""
+msgstr "Automatisk installasjon"
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:17
 msgid "Updates will be installed without user's intervention."
@@ -1310,24 +1312,24 @@ msgstr ""
 #: js/src/packageManagement/updates/UpdateApproval.js:73
 #: js/src/updatesDropdown/UpdatesDropdown.js:97
 msgid "Ignore"
-msgstr ""
+msgstr "Ignorer"
 
 #: js/src/packageManagement/updates/UpdateApproval.js:80
 #: js/src/updatesDropdown/UpdatesDropdown.js:98
 msgid "Install now"
-msgstr ""
+msgstr "Installer nå"
 
 #: js/src/packageManagement/updates/UpdateApproval.js:95
 msgid "Action"
-msgstr ""
+msgstr "Handling"
 
 #: js/src/packageManagement/updates/UpdateApproval.js:97
 msgid "Current"
-msgstr ""
+msgstr "Nåværende"
 
 #: js/src/packageManagement/updates/UpdateApproval.js:98
 msgid "New"
-msgstr ""
+msgstr "Ny"
 
 #: js/src/packageManagement/updates/Updates.js:39
 msgid ""
@@ -1835,7 +1837,7 @@ msgstr ""
 
 #: js/src/wifi/WiFiQRCode.js:79
 msgid "Download PDF"
-msgstr ""
+msgstr "Last ned PDF"
 
 #: js/src/wifi/constants.js:9
 msgid "Disabled"
@@ -1935,7 +1937,7 @@ msgstr ""
 
 #: reforis/views.py:52
 msgid "Wrong password."
-msgstr ""
+msgstr "Feil passord."
 
 #: reforis/foris_controller_api/modules/dns.py:41
 msgid "Can't add new DNS forwarder."
@@ -1951,7 +1953,7 @@ msgstr ""
 
 #: reforis/foris_controller_api/modules/password.py:41
 msgid "Wrong current password."
-msgstr ""
+msgstr "Feil nåværende passord."
 
 #: reforis/foris_controller_api/modules/updater.py:149
 msgid "You can't set packages with disabled automatic updates."
@@ -1967,15 +1969,15 @@ msgstr ""
 
 #: reforis/templates/login.html:28
 msgid "Foris"
-msgstr ""
+msgstr "Foris"
 
 #: reforis/templates/login.html:35
 msgid "Log in"
-msgstr ""
+msgstr "Logg inn"
 
 #: reforis/templates/login.html:39
 msgid "Go to LuCI"
-msgstr ""
+msgstr "Gå til LuCI"
 
 #: reforis/templates/errors/403.html:4
 msgid "403 - Forbidden"
@@ -1988,7 +1990,7 @@ msgstr ""
 #: reforis/templates/errors/403.html:10
 #, python-format
 msgid "Do you want to <a href=\"%(link)s\">log in</a>?"
-msgstr ""
+msgstr "Ønsker du å <a href=\"%(link)s\">logge inn</a>?"
 
 #: reforis/templates/errors/404.html:4
 msgid "404 - Page not found"
@@ -2000,19 +2002,19 @@ msgstr ""
 
 #: reforis/templates/errors/500.html:4
 msgid "Server error"
-msgstr ""
+msgstr "Tjenerfeil"
 
 #: reforis/templates/errors/500.html:8
 msgid "500 -- Server error"
-msgstr ""
+msgstr "500 -- tjenerfeil"
 
 #: reforis/templates/errors/500.html:9
 msgid "Error:"
-msgstr ""
+msgstr "Feil:"
 
 #: reforis/templates/errors/500.html:12
 msgid "Extra:"
-msgstr ""
+msgstr "Ekstra:"
 
 #: reforis/templates/errors/500.html:16
 msgid "Trace:"
@@ -2248,4 +2250,3 @@ msgstr "Logg ut"
 
 #~ msgid "Network settings"
 #~ msgstr "Nettverksinnstillinger"
-
