@@ -37,7 +37,7 @@ def create_app(config):
 
     app.static_folder = app.config.get('STATIC_DIR')
 
-    from flask_session import Session
+    from .sessions import Session
     Session(app)
 
     from flask_seasurf import SeaSurf

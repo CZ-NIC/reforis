@@ -43,9 +43,9 @@ setuptools.setup(
         'flask',
         'Babel',
         'Flask-Babel',
-        'Flask-Session',
         'Flask-SeaSurf',
         'flup',
+        'cachelib',
     ],
     setup_requires=[
         'Babel',
