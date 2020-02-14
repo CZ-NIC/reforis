@@ -5,19 +5,19 @@
 
 .PHONY: all prepare-dev prepare-docs venv install install-with-lighttpd install-js run run-ws watch-js build-js lint lint-js lint-js-fix lint-web test test-js test-web test-js-update-snapshots create-messages update-messages compile-messages docs docs-web docs-js timezones clean
 
-DEV_PYTHON=python3.7
 VENV_NAME?=venv
 VENV_BIN=$(shell pwd)/$(VENV_NAME)/bin
 
-JS_DIR=./js
+PYTHON=python3
 
-ROUTER_PYTHON_VERSION=3.6
-ROUTER_PYTHON=python$(ROUTER_PYTHON_VERSION)
+JS_DIR=./js
 
 FLASK=flask
 
 export FLASK_APP=reforis:create_app('dev')
 export FLASK_ENV=development
+
+REFORIS_STATIC_PATH := $(shell $(PYTHON) -c 'import site; print(site.getsitepackages()[0])')/reforis_static
 
 all:
 	@echo "make prepare-dev"
@@ -58,31 +58,31 @@ prepare-dev:
 	which npm || sudo apt install -y nodejs
 	cd $(JS_DIR); npm install
 
-	which $(DEV_PYTHON) || sudo apt install -y $(DEV_PYTHON) $(DEV_PYTHON)-pip
-	which virtualenv || sudo $(DEV_PYTHON) -m pip install virtualenv
+	which $(PYTHON) || sudo apt install -y $(PYTHON) $(PYTHON)-pip
+	which virtualenv || sudo $(PYTHON) -m pip install virtualenv
 	make venv
 prepare-docs:
-	$(VENV_BIN)/$(DEV_PYTHON) -m pip install -e .[build]
+	$(VENV_BIN)/$(PYTHON) -m pip install -e .[build]
 
 venv: $(VENV_NAME)/bin/activate
 $(VENV_NAME)/bin/activate: setup.py
-	test -d $(VENV_NAME) || $(DEV_PYTHON) -m virtualenv -p $(DEV_PYTHON) $(VENV_NAME)
+	test -d $(VENV_NAME) || $(PYTHON) -m virtualenv -p $(PYTHON) $(VENV_NAME)
 	# Some problem in latest version of setuptools during extracting translations.
-	$(VENV_BIN)/$(DEV_PYTHON) -m pip install -U pip setuptools==39.1.0
-	$(VENV_BIN)/$(DEV_PYTHON) -m pip install -e .[devel]
+	$(VENV_BIN)/$(PYTHON) -m pip install -U pip setuptools==39.1.0
+	$(VENV_BIN)/$(PYTHON) -m pip install -e .[devel]
 	touch $(VENV_NAME)/bin/activate
 
 install: setup.py
-	$(ROUTER_PYTHON) -m pip install -e .
+	$(PYTHON) -m pip install -e .
 install-with-lighttpd:
 	opkg update
 	opkg install git git-http
 	opkg install reforis
-	easy_install-$(ROUTER_PYTHON_VERSION) pip
+	easy_install-3 pip
 	pip uninstall reforis -y
 	pip install -e .
-	rm -rf /usr/lib/$(ROUTER_PYTHON)/site-packages/reforis_static
-	ln -sf /tmp/reforis/reforis_static /usr/lib/$(ROUTER_PYTHON)/site-packages/reforis_static
+	rm -rf $(REFORIS_STATIC_PATH)
+	ln -sf /tmp/reforis/reforis_static $(REFORIS_STATIC_PATH)
 	/etc/init.d/lighttpd restart
 install-js: js/package.json
 	cd $(JS_DIR); npm install --save-dev
@@ -104,14 +104,14 @@ lint-js:
 lint-js-fix:
 	cd $(JS_DIR); npm run lint:fix
 lint-web: venv
-	$(VENV_BIN)/$(DEV_PYTHON) -m pylint --rcfile=pylintrc reforis
-	$(VENV_BIN)/$(DEV_PYTHON) -m pycodestyle --config=pycodestyle reforis
+	$(VENV_BIN)/$(PYTHON) -m pylint --rcfile=pylintrc reforis
+	$(VENV_BIN)/$(PYTHON) -m pycodestyle --config=pycodestyle reforis
 
 test: test-js test-web
 test-js:
 	cd $(JS_DIR); npm test
 test-web: venv
-	$(VENV_BIN)/$(DEV_PYTHON) -m pytest -vv tests
+	$(VENV_BIN)/$(PYTHON) -m pytest -vv tests
 test-js-update-snapshots:
 	cd $(JS_DIR); npm test -- -u
 
@@ -138,10 +138,10 @@ docs-js:
 	cd $(JS_DIR); npm run-script docs
 
 timezones:
-	$(VENV_BIN)/$(DEV_PYTHON) ./scripts/make_timezones.py $(JS_DIR)/src/utils/timezones.js
+	$(VENV_BIN)/$(PYTHON) ./scripts/make_timezones.py $(JS_DIR)/src/utils/timezones.js
 
 clean:
 	find . -name '*.pyc' -exec rm -f {} +
 	rm -rf $(VENV_NAME) *.eggs *.egg-info dist build docs/_build .cache
 	rm -rf $(JS_DIR)/node_modules/ reforis_static/reforis/js/app.min.js reforis_static/reforis/css/app.css
-	$(ROUTER_PYTHON) -m pip uninstall -y reforis
+	$(PYTHON) -m pip uninstall -y reforis
