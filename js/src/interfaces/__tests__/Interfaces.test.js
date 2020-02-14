@@ -7,14 +7,15 @@
 
 import React from "react";
 import {
-    fireEvent, getByLabelText, getByText, render, wait,
+    fireEvent, getByLabelText, getByText, getAllByText, render, wait,
 } from "foris/testUtils/customTestRender";
 
 import { WebSockets } from "foris";
 import { mockJSONError } from "foris/testUtils/network";
 import mockAxios from "jest-mock-axios";
 import Interfaces from "../Interfaces";
-import { interfacesFixture, singleInterface } from "./__fixtures__/interfaces";
+
+import { interfacesFixture, interfacesWithVariousModules, singleInterface } from "./__fixtures__/interfaces";
 
 describe("<Interfaces/>", () => {
     let interfacesContainer;
@@ -118,5 +119,26 @@ describe("<Interfaces/> with single interface assigned to WAN", () => {
             "networks": {"guest": [], "lan": [], "none": [], "wan": ["lan3"]}
         };
         expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/interfaces", data, expect.anything());
+    });
+});
+
+describe("<Interfaces/> with various modules", () => {
+    let interfacesContainer;
+
+    beforeEach(async () => {
+        const webSockets = new WebSockets();
+        const {container} = render(<Interfaces ws={webSockets}/>);
+        mockAxios.mockResponse({data: interfacesWithVariousModules});
+        await wait(() => getByText(container, "LAN0"));
+        interfacesContainer = container;
+    });
+
+    it("Snapshot.", () => {
+        expect(interfacesContainer).toMatchSnapshot();
+    });
+
+    it("Snapshot select interface.", () => {
+        fireEvent.click(getAllByText(interfacesContainer, "1")[1]);
+        expect(interfacesContainer).toMatchSnapshot();
     });
 });

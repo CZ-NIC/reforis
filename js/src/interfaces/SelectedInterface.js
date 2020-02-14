@@ -61,9 +61,17 @@ export default function SelectedInterface({
     // Prevent setting "Unassigned" network
     if (hideUnassigned) delete networkChoices.none;
 
+    let stateIconClass = "fa-question-circle text-warning";
+    if (state === "up") {
+        stateIconClass = "fa-check-circle text-success";
+    } else if (state === "down") {
+        stateIconClass = "fa-times-circle text-danger";
+    }
+
+    const moduleName = module_id !== 0 ? `(module ${module_id})` : "";
     return (
         <>
-            <h1>{slot}</h1>
+            <h3>{babel.format(_("Interface %s %s"), slot, moduleName)}</h3>
             <Select
                 choices={networkChoices}
                 label={_("Network")}
@@ -75,28 +83,36 @@ export default function SelectedInterface({
             <table ref={myRef} className="table table-hover">
                 <tbody>
                     <tr>
-                        <th>{_("Type")}</th>
-                        <td>{type}</td>
-                    </tr>
-                    <tr>
                         <th>{_("State")}</th>
-                        <td>{state}</td>
-                    </tr>
-                    <tr>
-                        <th>{_("Bus")}</th>
-                        <td>{bus}</td>
-                    </tr>
-                    <tr>
-                        <th>{_("Slot")}</th>
-                        <td>{slot}</td>
+                        <td>
+                            <span key={`${id}-${state}`}>
+                                <i className={`fa fa-lg ${stateIconClass}`} title={state} />
+                            </span>
+                        </td>
                     </tr>
                     <tr>
                         <th>{_("Module ID")}</th>
                         <td>{module_id}</td>
                     </tr>
                     <tr>
+                        <th>{_("Slot")}</th>
+                        <td>{slot}</td>
+                    </tr>
+                    <tr>
+                        <th>{_("Interface ID")}</th>
+                        <td>{id}</td>
+                    </tr>
+                    <tr>
+                        <th>{_("Type")}</th>
+                        <td>{type}</td>
+                    </tr>
+                    <tr>
+                        <th>{_("Bus")}</th>
+                        <td>{bus}</td>
+                    </tr>
+                    <tr>
                         <th>{_("Link speed")}</th>
-                        <td>{link_speed}</td>
+                        <td>{link_speed > 0 ? `${link_speed} Mbit/s` : _("N/A")}</td>
                     </tr>
                 </tbody>
             </table>
