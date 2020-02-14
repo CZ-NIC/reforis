@@ -21,6 +21,7 @@ describe("<WorkflowSelect/>", () => {
         const {container} = render(<WorkflowSelect workflows={workflowFixture} next_step="password"/>);
         await wait(() => getByText(container, "Guide Workflow"));
         workflowSelectContainer = container;
+        window.location.assign = jest.fn();
     });
 
     it("Snapshot.", () => {
@@ -28,15 +29,18 @@ describe("<WorkflowSelect/>", () => {
     });
 
     it("Select min.", () => {
-        window.location.assign = jest.fn();
         fireEvent.click(getByAltText(workflowSelectContainer, "min"));
         expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/guide-workflow", {workflow: "min"}, expect.anything());
     });
 
     it("Select router.", () => {
-        window.location.assign = jest.fn();
         fireEvent.click(getByAltText(workflowSelectContainer, "router"));
         expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/guide-workflow", {workflow: "router"}, expect.anything());
+    });
+
+    it("Select local server.", () => {
+        fireEvent.click(getByAltText(workflowSelectContainer, "bridge"));
+        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/guide-workflow", {workflow: "bridge"}, expect.anything());
     });
 
     it("handle POST error", async () => {

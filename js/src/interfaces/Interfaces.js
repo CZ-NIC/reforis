@@ -5,14 +5,14 @@
  * See /LICENSE for more information.
  */
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
 import { ForisForm } from "foris";
 import API_URLs from "common/API";
 
 import InterfacesForm from "./InterfacesForm";
-import { KeepPortsClosedConfirmModal, OpenPortsModals } from "./modals";
+import OpenPortsModals from "./OpenPortsModals";
 import { NETWORKS_TYPES } from "./constants";
 
 Interfaces.propTypes = {
@@ -21,46 +21,37 @@ Interfaces.propTypes = {
 
 export default function Interfaces({ ws }) {
     const [openPortsModalShown, setOpenPortsModalShown] = useState(false);
-    const [keepPortsClosedConfirmModalShown, setKeepPortsClosedConfirmShown] = useState(false);
+    const [portsOpen, setPortsOpen] = useState(null);
+    const interfacesForm = useRef(null);
 
-    function onSubmit(formData, setFormValue, submit) {
-        function setOpenPorts(value) {
-            setFormValue(() => (
-                {
-                    firewall: {
-                        $set: {
-                            http_on_wan: value,
-                            https_on_wan: value,
-                            ssh_on_wan: value,
-                        },
-                    },
-                }
-            ))({ target: "", value: "" });
+    useEffect(() => {
+        // Submit the form after user decides if ports should be open
+        if (portsOpen !== null) {
+            interfacesForm.current.dispatchEvent(new Event("submit", { cancelable: true }));
         }
+    }, [portsOpen]);
 
-        return (e) => {
+    function onSubmit(formData, _, submit) {
+        return (event) => {
+            event.preventDefault();
+
             if (formData.networks.lan.length > 0) {
-                submit(e);
+                submit(event);
                 return;
             }
-            e.preventDefault();
 
-            if (openPortsModalShown) {
-                setOpenPorts(true);
-                setOpenPortsModalShown(false);
-                submit(e);
-            } else if (keepPortsClosedConfirmModalShown) {
-                setOpenPorts(false);
-                setKeepPortsClosedConfirmShown(false);
-                submit(e);
-            } else setOpenPortsModalShown(true);
+            // Open modal if there are no LAN interfaces in order to ask if ports should be open
+            if (portsOpen === null) {
+                setOpenPortsModalShown(true);
+            } else {
+                formData.firewall = {
+                    http_on_wan: portsOpen,
+                    https_on_wan: portsOpen,
+                    ssh_on_wan: portsOpen,
+                };
+                submit(event);
+            }
         };
-    }
-
-    function keepPortsClosedHandler(e) {
-        e.preventDefault();
-        setOpenPortsModalShown(false);
-        setKeepPortsClosedConfirmShown(true);
     }
 
     return (
@@ -107,15 +98,12 @@ devices connected to the guest network.
                 }}
                 prepDataToSubmit={prepDataToSubmit}
                 onSubmitOverridden={onSubmit}
+                formReference={interfacesForm}
             >
                 <OpenPortsModals
-                    shown={openPortsModalShown}
-                    setShown={setOpenPortsModalShown}
-                    onKeepPortsClosed={keepPortsClosedHandler}
-                />
-                <KeepPortsClosedConfirmModal
-                    shown={keepPortsClosedConfirmModalShown}
-                    setShown={setKeepPortsClosedConfirmShown}
+                    setPortsOpen={setPortsOpen}
+                    openPortsModalShown={openPortsModalShown}
+                    setOpenPortsModalShown={setOpenPortsModalShown}
                 />
                 <InterfacesForm />
             </ForisForm>

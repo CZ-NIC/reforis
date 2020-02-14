@@ -100,3 +100,29 @@ export function interfacesFixture(portsOpen = false) {
         }
     }
 }
+
+
+export const singleInterface = {
+    firewall: {
+        http_on_wan: false,
+        https_on_wan: false,
+        ssh_on_wan: false,
+    },
+    networks: {
+        guest: [],
+        lan: [
+            {
+                bus: "eth",
+                configurable: true,
+                id: "lan3",
+                link_speed: 0,
+                module_id: 0,
+                slot: "LAN3",
+                state: "down",
+                type: "eth"
+            }
+        ],
+        none: [],
+        wan: [],
+    },
+};
