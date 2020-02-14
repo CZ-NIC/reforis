@@ -12,7 +12,9 @@ import {
     TextInput, CheckBox, validateIPv4Address, undefinedIfEmpty, withoutUndefinedKeys,
 } from "foris";
 
-import DHCPServerForm, { HELP_TEXT as DHCP_HELP_TEXT, validateDHCP } from "common/network/DHCPServerForm";
+import DHCPServerForm, { HELP_TEXT as DHCP_HELP_TEXT } from "common/network/DHCPServerForm";
+import { validateNetworkMask, validateRequiredField } from "common/network/validators";
+import validateDHCP from "common/network/DHCPValidators";
 
 const HELP_TEXTS = {
     router_ip: _("Router's IP address in the inner network."),
@@ -82,9 +84,9 @@ export default function LANManagedForm({
                 <DHCPServerForm
                     formData={formData.dhcp}
                     formErrors={errors.dhcp ? errors.dhcp : {}}
-
                     updateRule={(value) => ({ mode_managed: { dhcp: value } })}
                     setFormValue={setFormValue}
+                    routerIP={formData.router_ip}
 
                     {...props}
                 />
@@ -95,11 +97,23 @@ export default function LANManagedForm({
 
 export function validateManaged(formData) {
     const errors = {
-        router_ip: validateIPv4Address(formData.router_ip) || undefined,
-        netmask: validateIPv4Address(formData.netmask) || undefined,
+        router_ip: (
+            validateRequiredField(formData.router_ip)
+            || validateIPv4Address(formData.router_ip)
+        ),
+        netmask: (
+            validateRequiredField(formData.netmask)
+            || validateIPv4Address(formData.netmask)
+            || validateNetworkMask(formData.netmask)
+        ),
     };
     if (formData.dhcp.enabled) {
-        errors.dhcp = validateDHCP(formData.dhcp);
+        errors.dhcp = validateDHCP(
+            formData.dhcp,
+            formData.router_ip,
+            formData.netmask,
+            errors.router_ip || errors.netmask,
+        );
     }
     return undefinedIfEmpty(withoutUndefinedKeys(errors));
 }

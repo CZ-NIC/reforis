@@ -6,7 +6,9 @@
  */
 
 import React from "react";
-import { fireEvent, getByLabelText, getByText, render, wait, renderIntoDocument } from "foris/testUtils/customTestRender";
+import {
+    fireEvent, getByLabelText, getByText, render, wait,
+} from "foris/testUtils/customTestRender";
 
 import { WebSockets } from "foris";
 import { mockJSONError } from "foris/testUtils/network";
@@ -14,16 +16,15 @@ import mockAxios from "jest-mock-axios";
 import Interfaces from "../Interfaces";
 import { interfacesFixture, singleInterface } from "./__fixtures__/interfaces";
 
-
 describe("<Interfaces/>", () => {
     let interfacesContainer;
 
     beforeEach(async () => {
         const webSockets = new WebSockets();
-        const {container} = render(<Interfaces ws={webSockets}/>);
-        mockAxios.mockResponse({data: interfacesFixture()});
+        const { container } = render(<Interfaces ws={webSockets} />);
+        mockAxios.mockResponse({ data: interfacesFixture() });
         await wait(() => getByText(container, "LAN1"));
-        interfacesContainer = container
+        interfacesContainer = container;
     });
 
     it("should handle error", async () => {
@@ -46,19 +47,21 @@ describe("<Interfaces/>", () => {
 
     it("Snapshot after interface moving.", () => {
         fireEvent.click(getByText(interfacesContainer, "LAN1"));
-        fireEvent.change(getByLabelText(interfacesContainer, "Network"), {target: {value: "lan"}});
+        fireEvent.change(getByLabelText(interfacesContainer, "Network"), { target: { value: "lan" } });
         expect(interfacesContainer).toMatchSnapshot();
     });
 
     it("Test post.", async () => {
         fireEvent.click(getByText(interfacesContainer, "LAN1"));
-        fireEvent.change(getByLabelText(interfacesContainer, "Network"), {target: {value: "lan"}});
+        fireEvent.change(getByLabelText(interfacesContainer, "Network"), { target: { value: "lan" } });
         fireEvent.click(getByText(interfacesContainer, "Save"));
 
         expect(mockAxios.post).toBeCalled();
         const data = {
-            "firewall": {"http_on_wan": false, "https_on_wan": false, "ssh_on_wan": false},
-            "networks": {"guest": ["lan4"], "lan": ["lan3", "lan1"], "none": ["lan0", "lan2"], "wan": ["eth2"]}
+            firewall: { http_on_wan: false, https_on_wan: false, ssh_on_wan: false },
+            networks: {
+                guest: ["lan4"], lan: ["lan3", "lan1"], none: ["lan0", "lan2"], wan: ["eth2"],
+            },
         };
         expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/interfaces", data, expect.anything());
     });

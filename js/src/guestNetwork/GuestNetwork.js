@@ -13,6 +13,9 @@ import {
 } from "foris";
 
 import API_URLs from "common/API";
+import { validateNetworkMask, validateRequiredField } from "common/network/validators";
+import validateDHCP from "common/network/DHCPValidators";
+import { getDHCPStart } from "common/network/utils";
 import GuestNetworkForm, { validateQoS } from "./GuestNetworkForm";
 import GuestNetworkDHCPClientsList from "./GuestNetworkDHCPClientsList";
 
@@ -54,14 +57,21 @@ in LAN.
 function prepData(formData) {
     delete formData.interface_count;
     delete formData.interface_up_count;
+    // eslint-disable-next-line no-restricted-globals
+    if (!isNaN(formData.dhcp.start)) { // Be sure to convert start address only once.
+        formData.dhcp.start = getDHCPStart(formData.ip, formData.dhcp.start).toString();
+    }
     return formData;
 }
 
 export function prepDataToSubmit(formData) {
     if (!formData.enabled) return { enabled: false };
 
-    if (!formData.dhcp.enabled) formData.dhcp = { enabled: false };
-    else delete formData.dhcp.clients;
+    if (!formData.dhcp.enabled) {
+        formData.dhcp = { enabled: false };
+    } else {
+        delete formData.dhcp.clients;
+    }
 
     if (!formData.qos.enabled) formData.qos = { enabled: false };
 
@@ -70,11 +80,26 @@ export function prepDataToSubmit(formData) {
 
 export function validator(formData) {
     const errors = {
-        ip: validateIPv4Address(formData.ip),
-        netmask: validateIPv4Address(formData.netmask),
+        ip: (
+            validateRequiredField(formData.ip)
+            || validateIPv4Address(formData.ip)
+        ),
+        netmask: (
+            validateRequiredField(formData.netmask)
+            || validateIPv4Address(formData.netmask)
+            || validateNetworkMask(formData.netmask)
+        ),
     };
+
     if (formData.qos.enabled) {
         errors.qos = validateQoS(formData.qos);
     }
+
+    if (formData.dhcp.enabled) {
+        errors.dhcp = validateDHCP(
+            formData.dhcp, formData.ip, formData.netmask, errors.ip || errors.netmask,
+        );
+    }
+
     return undefinedIfEmpty(withoutUndefinedKeys(errors));
 }

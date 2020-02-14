@@ -6,18 +6,23 @@
  */
 
 import React from "react";
-import { render, waitForElement, wait, fireEvent } from "foris/testUtils/customTestRender";
-import mockAxios from 'jest-mock-axios';
+import {
+    render, waitForElement, wait, fireEvent,
+} from "foris/testUtils/customTestRender";
+import mockAxios from "jest-mock-axios";
 import { mockJSONError } from "foris/testUtils/network";
 
 import UpdatesDropdown from "../UpdatesDropdown";
 
 describe("<UpdatesDropdown/>", () => {
-    let container, getByText, getByTestId, queryByTestId;
+    let container; let getByText; let getByTestId; let
+        queryByTestId;
     const exampleHash = "303808909";
 
     beforeEach(() => {
-        ({ container, getByText, getByTestId, queryByTestId } = render(<UpdatesDropdown />));
+        ({
+            container, getByText, getByTestId, queryByTestId,
+        } = render(<UpdatesDropdown />));
     });
 
     it("Loading (spinner visible)", async () => {
@@ -25,42 +30,42 @@ describe("<UpdatesDropdown/>", () => {
     });
 
     it("No updates awaiting", async () => {
-        expect(getByTestId('updates-dropdown')).toBeTruthy();
-        mockAxios.mockResponse({data: {approvable: false}});
-        await wait(() => expect(queryByTestId('updates-dropdown')).toBeFalsy());
+        expect(getByTestId("updates-dropdown")).toBeTruthy();
+        mockAxios.mockResponse({ data: { approvable: false } });
+        await wait(() => expect(queryByTestId("updates-dropdown")).toBeFalsy());
     });
 
     it("Updates awaiting - snapshot", async () => {
-        mockAxios.mockResponse({data: {hash: exampleHash, approvable: true}});
+        mockAxios.mockResponse({ data: { hash: exampleHash, approvable: true } });
         await waitForElement(() => getByText("Approve Update"));
         expect(container).toMatchSnapshot();
     });
 
     it("Updates awaiting - install now", async () => {
-        mockAxios.mockResponse({data: {hash: exampleHash, approvable: true}});
+        mockAxios.mockResponse({ data: { hash: exampleHash, approvable: true } });
         await waitForElement(() => getByText("Approve Update"));
 
         fireEvent.click(getByText("Install now"));
         expect(mockAxios.post).toBeCalled();
-        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/approvals", {"hash": exampleHash, "solution": "grant"}, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/approvals", { hash: exampleHash, solution: "grant" }, expect.anything());
 
         // Reload approvals when resolution is successful
         await wait(() => expect(mockAxios.get).toBeCalledTimes(1));
-        mockAxios.mockResponse({data: {}});
+        mockAxios.mockResponse({ data: {} });
         await wait(() => expect(mockAxios.get).toBeCalledTimes(2));
     });
 
     it("Updates awaiting - ignore", async () => {
-        mockAxios.mockResponse({data: {hash: exampleHash, approvable: true}});
+        mockAxios.mockResponse({ data: { hash: exampleHash, approvable: true } });
         await waitForElement(() => getByText("Approve Update"));
 
         fireEvent.click(getByText("Ignore"));
         expect(mockAxios.post).toBeCalled();
-        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/approvals", {"hash": exampleHash, "solution": "deny"}, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/approvals", { hash: exampleHash, solution: "deny" }, expect.anything());
     });
 
     it("Updates resolution - display error", async () => {
-        mockAxios.mockResponse({data: {hash: exampleHash, approvable: true}});
+        mockAxios.mockResponse({ data: { hash: exampleHash, approvable: true } });
         await waitForElement(() => getByText("Approve Update"));
         fireEvent.click(getByText("Install now"));
         mockJSONError();

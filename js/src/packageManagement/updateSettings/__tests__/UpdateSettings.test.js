@@ -6,13 +6,15 @@
  */
 
 import React from "react";
-import { fireEvent, render, waitForElement, wait } from "foris/testUtils/customTestRender";
+import {
+    fireEvent, render, waitForElement, wait,
+} from "foris/testUtils/customTestRender";
 import { mockJSONError } from "foris/testUtils/network";
 
-import { updatesFixture } from "./__fixtures__/updates";
-import UpdateSettings from "../UpdateSettings";
 import mockAxios from "jest-mock-axios";
 import diffSnapshot from "snapshot-diff";
+import { updatesFixture } from "./__fixtures__/updates";
+import UpdateSettings from "../UpdateSettings";
 
 const ENABLE_CHECKBOX_LABEL = "Enable automatic updates (recommended)";
 
@@ -23,8 +25,8 @@ describe("<UpdateSettings/>", () => {
     let asFragment;
 
     beforeEach(async () => {
-        const renderRes = render(<UpdateSettings/>);
-        mockAxios.mockResponse({data: updatesFixture()});
+        const renderRes = render(<UpdateSettings />);
+        mockAxios.mockResponse({ data: updatesFixture() });
         asFragment = renderRes.asFragment;
         getByLabelText = renderRes.getByLabelText;
         getByText = renderRes.getByText;
@@ -34,7 +36,7 @@ describe("<UpdateSettings/>", () => {
     });
 
     it("should handle error", async () => {
-        const { getByText } = render(<UpdateSettings/>);
+        const { getByText } = render(<UpdateSettings />);
         mockJSONError();
         await wait(() => {
             expect(getByText("An error occurred while fetching data.")).toBeTruthy();
@@ -42,7 +44,7 @@ describe("<UpdateSettings/>", () => {
     });
 
     it("Test with snapshot disabled.", () => {
-        expect(firstRender).toMatchSnapshot()
+        expect(firstRender).toMatchSnapshot();
     });
 
     it("Test with snapshot enabled.", () => {
@@ -56,7 +58,6 @@ describe("<UpdateSettings/>", () => {
         fireEvent.click(getByLabelText("Delayed updates"));
         expect(diffSnapshot(enabledRender, asFragment())).toMatchSnapshot();
     });
-
 
     it("Post: enabled, delayed", () => {
         fireEvent.click(getByLabelText(ENABLE_CHECKBOX_LABEL));
@@ -73,7 +74,7 @@ describe("<UpdateSettings/>", () => {
             reboots: {
                 delay: 4,
                 time: "04:30",
-            }
+            },
         };
         expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/updates", data, expect.anything());
     });

@@ -5,9 +5,9 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
-import {render} from "foris/testUtils/customTestRender";
-import TruncatedText from '../Notifications/TruncatedText';
+import React from "react";
+import { render } from "foris/testUtils/customTestRender";
+import TruncatedText from "../Notifications/TruncatedText";
 
 describe("<TruncatedText/>", () => {
     const ipsum = "Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.";

@@ -5,9 +5,11 @@
  * See /LICENSE for more information.
  */
 
-import React, {useState} from "react";
-import { render, fireEvent, wait, act } from "foris/testUtils/customTestRender";
-import mockAxios from 'jest-mock-axios';
+import React, { useState } from "react";
+import {
+    render, fireEvent, wait, act,
+} from "foris/testUtils/customTestRender";
+import mockAxios from "jest-mock-axios";
 
 import { mockJSONError } from "foris/testUtils/network";
 import { mockSetAlert } from "foris/testUtils/alertContextMock";
@@ -21,7 +23,7 @@ describe("<UpdateChecker/>", () => {
     const setPending = jest.fn();
     const onSuccess = () => new Promise((resolve) => resolve());
 
-    function rerenderWithPending(pending){
+    function rerenderWithPending(pending) {
         rerender(
             <UpdateChecker
                 onSuccess={onSuccess}
@@ -29,8 +31,8 @@ describe("<UpdateChecker/>", () => {
                 setPending={setPending}
             >
                 {"Check updates"}
-            </UpdateChecker>
-        )
+            </UpdateChecker>,
+        );
     }
 
     beforeEach(() => {
@@ -41,7 +43,7 @@ describe("<UpdateChecker/>", () => {
                 setPending={setPending}
             >
                 {"Check updates"}
-            </UpdateChecker>
+            </UpdateChecker>,
         ));
     });
 
@@ -58,7 +60,7 @@ describe("<UpdateChecker/>", () => {
 
         // Repeated check for status
         await wait(() => expect(mockAxios.get).nthCalledWith(2, "/reforis/api/updates/status", expect.anything()));
-        mockAxios.mockResponse({data: { running: false }});
+        mockAxios.mockResponse({ data: { running: false } });
 
         await wait(() => expect(setPending).toBeCalledWith(false));
     });
@@ -80,11 +82,11 @@ describe("<UpdateChecker/>", () => {
         mockAxios.mockResponse({ data: { result: true } });
 
         await wait(() => expect(mockAxios.get).toBeCalledWith("/reforis/api/updates/status", expect.anything()));
-        mockAxios.mockResponse({data: { running: true }});
+        mockAxios.mockResponse({ data: { running: true } });
 
         // Repeated check for status
         await wait(() => expect(mockAxios.get).nthCalledWith(2, "/reforis/api/updates/status", expect.anything()));
-        mockAxios.mockResponse({data: { running: false }});
+        mockAxios.mockResponse({ data: { running: false } });
 
         await wait(() => expect(setPending).toBeCalledWith(false));
     });

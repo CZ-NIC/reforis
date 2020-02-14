@@ -5,29 +5,29 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
-import {render, wait} from "foris/testUtils/customTestRender";
-import mockAxios from 'jest-mock-axios';
+import React from "react";
+import { render, wait } from "foris/testUtils/customTestRender";
+import mockAxios from "jest-mock-axios";
 
 import { WebSockets } from "foris";
-import { notificationsFixture } from 'notifications/__tests__/__fixtures__/notifications.js';
+import { notificationsFixture } from "notifications/__tests__/__fixtures__/notifications.js";
 
-import RebootDropdown from '../RebootDropdown';
+import RebootDropdown from "../RebootDropdown";
 
-describe('<RebootDropdown/>', () => {
+describe("<RebootDropdown/>", () => {
     let rebootDropdownContainer;
 
     beforeEach(async () => {
         const webSockets = new WebSockets();
-        const {container, getByText} = render(<RebootDropdown ws={webSockets}/>);
-        mockAxios.mockResponse({data: notificationsFixture});
+        const { container, getByText } = render(<RebootDropdown ws={webSockets} />);
+        mockAxios.mockResponse({ data: notificationsFixture });
         rebootDropdownContainer = container;
         await wait(() => {
-            getByText('Reboot Required');
+            getByText("Reboot Required");
         });
     });
 
-    it('Test with snapshot', () => {
+    it("Test with snapshot", () => {
         expect(rebootDropdownContainer).toMatchSnapshot();
-    })
+    });
 });

@@ -9,29 +9,29 @@ export default function notificationsSettingsFixture() {
     return {
         emails: {
             common: {
-                "send_news": true,
-                "severity_filter": 1,
-                "to": [
-                    "some@example.com"
-                ]
+                send_news: true,
+                severity_filter: 1,
+                to: [
+                    "some@example.com",
+                ],
             },
-            "enabled": true,
-            "smtp_custom": {
-                "from": "router@example.com",
-                "host": "example.com",
-                "password": "test_password",
-                "port": 465,
-                "security": "ssl",
-                "username": "root"
+            enabled: true,
+            smtp_custom: {
+                from: "router@example.com",
+                host: "example.com",
+                password: "test_password",
+                port: 465,
+                security: "ssl",
+                username: "root",
             },
-            "smtp_turris": {
-                "sender_name": "turris"
+            smtp_turris: {
+                sender_name: "turris",
             },
-            "smtp_type": "custom"
+            smtp_type: "custom",
         },
-        "reboots": {
-            "delay": 3,
-            "time": "03:30"
-        }
-    }
+        reboots: {
+            delay: 3,
+            time: "03:30",
+        },
+    };
 }

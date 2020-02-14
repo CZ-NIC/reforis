@@ -20,16 +20,16 @@ describe("<Packages/>", () => {
     let queryByText;
 
     beforeEach(async () => {
-        const renderRes = render(<Packages/>);
+        const renderRes = render(<Packages />);
         queryByText = renderRes.queryByText;
         await wait(() => expect(mockAxios.get).toBeCalledWith("/reforis/api/packages", expect.anything()));
-        mockAxios.mockResponse({data: packagesFixture(true)});
+        mockAxios.mockResponse({ data: packagesFixture(true) });
         await wait(() => renderRes.getByText("Enabled package title"));
         firstRender = renderRes.asFragment();
     });
 
     it("should handle error", async () => {
-        const { getByText } = render(<Packages/>);
+        const { getByText } = render(<Packages />);
         mockJSONError();
         await wait(() => {
             expect(getByText("An error occurred while fetching data.")).toBeTruthy();
@@ -37,14 +37,14 @@ describe("<Packages/>", () => {
     });
 
     it("Updates enabled", () => {
-        expect(firstRender).toMatchSnapshot()
+        expect(firstRender).toMatchSnapshot();
     });
 
     it("Updates disabled", async () => {
         cleanup();
-        const {getByText, asFragment} = render(<Packages/>);
+        const { getByText, asFragment } = render(<Packages />);
         await wait(() => expect(mockAxios.get).toBeCalledWith("/reforis/api/packages", expect.anything()));
-        mockAxios.mockResponse({data: packagesFixture(false)});
+        mockAxios.mockResponse({ data: packagesFixture(false) });
 
         await wait(() => getByText("Enabled package title"));
 
@@ -54,5 +54,5 @@ describe("<Packages/>", () => {
     it("Test hidden.", () => {
         const HTMLHiddenPackageMessage = queryByText("Hidden package msg");
         expect(HTMLHiddenPackageMessage).toBeNull();
-    })
+    });
 });

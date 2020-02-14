@@ -8,13 +8,12 @@
 export function updatesFixture() {
     return {
         approval_settings: {
-            status: "on"
+            status: "on",
         },
         enabled: false,
         reboots: {
             delay: 4,
-            time: "04:30"
-        }
-    }
+            time: "04:30",
+        },
+    };
 }
-

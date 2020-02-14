@@ -37,8 +37,8 @@ export const PAGES = [
                 path: "/sub-three",
                 name: "SubThree",
                 component: () => <p>SubThree</p>,
-            }
-        ]
+            },
+        ],
     }, {
         path: "/five",
         name: "Five",
@@ -51,6 +51,6 @@ export const PAGES = [
             path: "/sec-sub-one",
             name: "SecSubOne",
             component: () => <p>SecSubOne</p>,
-        }]
-    }
+        }],
+    },
 ];

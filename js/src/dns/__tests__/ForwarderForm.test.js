@@ -24,7 +24,7 @@ describe("<ForwarderForm/>: new forwarder.", () => {
 
     beforeEach(() => {
         saveForwarderCallback = jest.fn();
-        const renderRes = render(<ForwarderForm saveForwarderCallback={saveForwarderCallback}/>);
+        const renderRes = render(<ForwarderForm saveForwarderCallback={saveForwarderCallback} />);
         getByText = renderRes.getByText;
         getByLabelText = renderRes.getByLabelText;
         container = renderRes.container;
@@ -43,16 +43,16 @@ describe("<ForwarderForm/>: new forwarder.", () => {
         expect(mockAxios.post)
             .toBeCalled();
         const data = {
-            "description": "Custom forwarder",
-            "ipaddresses": {
-                "ipv4": "1.2.3.4",
-                "ipv6": "",
+            description: "Custom forwarder",
+            ipaddresses: {
+                ipv4: "1.2.3.4",
+                ipv6: "",
             },
-            "tls_type": "no",
+            tls_type: "no",
         };
         expect(mockAxios.post)
             .toHaveBeenCalledWith("/reforis/api/dns/forwarders", data, expect.anything());
-        mockAxios.mockResponse({data: {}});
+        mockAxios.mockResponse({ data: {} });
 
         // Handle success
         await wait(() => {
@@ -83,7 +83,7 @@ describe("<ForwarderForm/>: existed forwarder.", () => {
             <ForwarderForm
                 forwarder={forwardersFixture.forwarders[0]}
                 saveForwarderCallback={saveForwarderCallback}
-            />
+            />,
         );
         getByText = renderRes.getByText;
         container = renderRes.container;
@@ -100,16 +100,16 @@ describe("<ForwarderForm/>: existed forwarder.", () => {
         expect(mockAxios.put)
             .toBeCalled();
         const data = {
-            "description": "Google",
-            "ipaddresses": {
-                "ipv4": "8.8.8.8",
-                "ipv6": "2001:4860:4860::8888",
+            description: "Google",
+            ipaddresses: {
+                ipv4: "8.8.8.8",
+                ipv6: "2001:4860:4860::8888",
             },
-            "tls_type": "no",
+            tls_type: "no",
         };
         expect(mockAxios.put)
             .toHaveBeenCalledWith("/reforis/api/dns/forwarders/99_google", data, expect.anything());
-        mockAxios.mockResponse({data: {}});
+        mockAxios.mockResponse({ data: {} });
 
         // Handle success
         await wait(() => {

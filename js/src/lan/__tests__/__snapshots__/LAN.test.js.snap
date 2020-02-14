@@ -158,33 +158,10 @@ it has opened ports for configuration interface and other services.
           <input
             class="form-control"
             id="12"
-            min="1"
             required=""
-            type="number"
-            value="123123"
+            type="text"
+            value="192.168.1.10"
           />
-          <div
-            class="input-group-append"
-          >
-            <button
-              aria-label="Increase"
-              class="btn btn-outline-secondary"
-              type="button"
-            >
-              <i
-                class="fas fa-plus"
-              />
-            </button>
-            <button
-              aria-label="Decrease"
-              class="btn btn-outline-secondary"
-              type="button"
-            >
-              <i
-                class="fas fa-minus"
-              />
-            </button>
-          </div>
         </div>
       </div>
       <div
@@ -229,6 +206,11 @@ it has opened ports for configuration interface and other services.
             </button>
           </div>
         </div>
+        <small
+          class="form-text text-muted"
+        >
+          Maximum number of addresses available for DHCP clients.
+        </small>
       </div>
       <div
         class="form-group"

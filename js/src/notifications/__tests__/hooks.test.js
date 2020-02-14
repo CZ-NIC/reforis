@@ -5,14 +5,15 @@
  * See /LICENSE for more information.
  */
 import React from "react";
-import {fireEvent, getByText, queryByText, render, wait, act} from "foris/testUtils/customTestRender";
+import {
+    fireEvent, getByText, queryByText, render, wait, act,
+} from "foris/testUtils/customTestRender";
 
 import { WebSockets } from "foris";
 import mockAxios from "jest-mock-axios";
 
-import {notificationsFixture} from "./__fixtures__/notifications";
+import { notificationsFixture } from "./__fixtures__/notifications";
 import NotificationsDropdown from "../NotificationsDropdown/NotificationsDropdown";
-
 
 describe("useNotifications hook.", () => {
     let webSockets;
@@ -20,8 +21,8 @@ describe("useNotifications hook.", () => {
 
     beforeEach(async () => {
         webSockets = new WebSockets();
-        const {container} = render(<NotificationsDropdown ws={webSockets}/>);
-        mockAxios.mockResponse({data: notificationsFixture});
+        const { container } = render(<NotificationsDropdown ws={webSockets} />);
+        mockAxios.mockResponse({ data: notificationsFixture });
         await wait(() => getByText(container, "Notifications"));
         notificationsContainer = container;
     });
@@ -47,7 +48,7 @@ describe("useNotifications hook.", () => {
         expect(mockAxios.post).toHaveBeenCalledTimes(1);
 
         const notificationToDismiss = notificationsFixture.notifications[0];
-        const wsMessage = { module: "router_notifications", action: "mark_as_displayed", data: {ids: [notificationToDismiss.id], "new_count": 2} };
+        const wsMessage = { module: "router_notifications", action: "mark_as_displayed", data: { ids: [notificationToDismiss.id], new_count: 2 } };
         // Simulate receiving message from WS server
         act(() => webSockets.dispatch(wsMessage));
 
@@ -62,10 +63,10 @@ describe("useNotifications hook.", () => {
 
         fireEvent.click(getByText(notificationsContainer, "Dismiss all"));
         expect(mockAxios.post).toHaveBeenCalledTimes(1);
-        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/notifications", {"ids": ["123-123", "123-124", "808-909"]}, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/notifications", { ids: ["123-123", "123-124", "808-909"] }, expect.anything());
 
         // Simulate receiving message from WS server
-        act(() => webSockets.dispatch({ module: "router_notifications", action: "mark_as_displayed", data: {ids: ["123-123", "123-124", "808-909"], "new_count": 0} }));
+        act(() => webSockets.dispatch({ module: "router_notifications", action: "mark_as_displayed", data: { ids: ["123-123", "123-124", "808-909"], new_count: 0 } }));
 
         let HTMLnotificationMessage = queryByText(notificationsContainer, "Notification message.");
         expect(HTMLnotificationMessage).toBeNull();

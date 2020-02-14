@@ -5,23 +5,22 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
-import {getByText, render, wait} from "foris/testUtils/customTestRender";
+import React from "react";
+import { getByText, render, wait } from "foris/testUtils/customTestRender";
 
-import GuideNavigation from '../GuideNavigation';
-import {guideFixtures} from './__fixtures__/guide';
+import GuideNavigation from "../GuideNavigation";
+import { guideFixtures } from "./__fixtures__/guide";
 
-
-describe('<GuideNavigation/>', () => {
+describe("<GuideNavigation/>", () => {
     let guideNavigationContainer;
 
     beforeEach(async () => {
-        const {container} = render(<GuideNavigation {...guideFixtures}/>);
+        const { container } = render(<GuideNavigation {...guideFixtures} />);
         await wait(() => getByText(container, /Password/));
-        guideNavigationContainer = container
+        guideNavigationContainer = container;
     });
 
-    it('Snapshot.', () => {
+    it("Snapshot.", () => {
         expect(guideNavigationContainer).toMatchSnapshot();
     });
 });

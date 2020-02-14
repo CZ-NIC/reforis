@@ -6,19 +6,21 @@
  */
 
 import React from "react";
-import { fireEvent, getByAltText, getByText, render, wait } from "foris/testUtils/customTestRender";
+import {
+    fireEvent, getByAltText, getByText, render, wait,
+} from "foris/testUtils/customTestRender";
 import mockAxios from "jest-mock-axios";
 import { mockJSONError } from "foris/testUtils/network";
 import { mockSetAlert } from "foris/testUtils/alertContextMock";
 
 import WorkflowSelect from "../WorkflowSelect";
-import {workflowFixture} from "./__fixtures__/workflowSelect";
+import { workflowFixture } from "./__fixtures__/workflowSelect";
 
 describe("<WorkflowSelect/>", () => {
     let workflowSelectContainer;
 
     beforeEach(async () => {
-        const {container} = render(<WorkflowSelect workflows={workflowFixture} next_step="password"/>);
+        const { container } = render(<WorkflowSelect workflows={workflowFixture} next_step="password" />);
         await wait(() => getByText(container, "Guide Workflow"));
         workflowSelectContainer = container;
         window.location.assign = jest.fn();
@@ -30,12 +32,12 @@ describe("<WorkflowSelect/>", () => {
 
     it("Select min.", () => {
         fireEvent.click(getByAltText(workflowSelectContainer, "min"));
-        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/guide-workflow", {workflow: "min"}, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/guide-workflow", { workflow: "min" }, expect.anything());
     });
 
     it("Select router.", () => {
         fireEvent.click(getByAltText(workflowSelectContainer, "router"));
-        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/guide-workflow", {workflow: "router"}, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/guide-workflow", { workflow: "router" }, expect.anything());
     });
 
     it("Select local server.", () => {

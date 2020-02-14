@@ -9,7 +9,9 @@ import React from "react";
 import diffSnapshot from "snapshot-diff";
 import mockAxios from "jest-mock-axios";
 
-import { fireEvent, render, wait, waitForElement } from "foris/testUtils/customTestRender";
+import {
+    fireEvent, render, wait, waitForElement,
+} from "foris/testUtils/customTestRender";
 import { WebSockets } from "foris";
 import { mockJSONError } from "foris/testUtils/network";
 
@@ -26,7 +28,7 @@ describe("<DNS/>", () => {
 
     beforeEach(async () => {
         const webSockets = new WebSockets();
-        const renderRes = render(<DNS ws={webSockets}/>);
+        const renderRes = render(<DNS ws={webSockets} />);
         mockAxios.mockResponse({ data: dnsFixture });
         getByText = renderRes.getByText;
         getByLabelText = renderRes.getByLabelText;
@@ -38,7 +40,7 @@ describe("<DNS/>", () => {
 
     it("should handle error", async () => {
         const webSockets = new WebSockets();
-        const { getByText } = render(<DNS ws={webSockets}/>);
+        const { getByText } = render(<DNS ws={webSockets} />);
         mockJSONError();
         await wait(() => {
             expect(getByText("An error occurred while fetching data.")).toBeTruthy();
@@ -71,11 +73,11 @@ describe("<DNS/>", () => {
         expect(mockAxios.post)
             .toBeCalled();
         const data = {
-            "dns_from_dhcp_domain": "lan",
-            "dns_from_dhcp_enabled": true,
-            "dnssec_enabled": true,
-            "forwarder": "",
-            "forwarding_enabled": true
+            dns_from_dhcp_domain: "lan",
+            dns_from_dhcp_enabled: true,
+            dnssec_enabled: true,
+            forwarder: "",
+            forwarding_enabled: true,
         };
         expect(mockAxios.post)
             .toHaveBeenCalledWith("/reforis/api/dns", data, expect.anything());
