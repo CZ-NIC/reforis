@@ -8,13 +8,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { NumberInput, undefinedIfEmpty } from "foris";
+import { NumberInput, TextInput } from "foris";
 
 export const HELP_TEXT = _("Enable this option to automatically assign IP addresses to the devices connected to the router.");
 
 DHCPServerForm.propTypes = {
     formData: PropTypes.shape({
-        start: PropTypes.number,
+        start: PropTypes.string,
         limit: PropTypes.number,
         lease_time: PropTypes.number,
     }).isRequired,
@@ -23,8 +23,9 @@ DHCPServerForm.propTypes = {
         limit: PropTypes.string,
         lease_time: PropTypes.string,
     }),
-    setFormValue: PropTypes.func.isRequired,
     updateRule: PropTypes.func.isRequired,
+    setFormValue: PropTypes.func.isRequired,
+    routerIP: PropTypes.string.isRequired,
 };
 
 DHCPServerForm.defaultProps = {
@@ -32,15 +33,14 @@ DHCPServerForm.defaultProps = {
 };
 
 export default function DHCPServerForm({
-    formData, formErrors, updateRule, setFormValue, ...props
+    formData, formErrors, updateRule, setFormValue, routerIP, ...props
 }) {
     return (
         <>
-            <NumberInput
+            <TextInput
                 label={_("DHCP start")}
                 value={formData.start}
                 error={formErrors.start}
-                min="1"
                 required
 
                 onChange={setFormValue(
@@ -51,6 +51,7 @@ export default function DHCPServerForm({
             />
             <NumberInput
                 label={_("DHCP max leases")}
+                helpText={_("Maximum number of addresses available for DHCP clients.")}
                 value={formData.limit}
                 error={formErrors.limit}
                 min="1"
@@ -77,18 +78,4 @@ export default function DHCPServerForm({
             />
         </>
     );
-}
-
-export function validateDHCP(formData) {
-    const errors = {};
-    if (formData.start < 1) {
-        errors.start = _("DHCP start must be positive");
-    }
-    if (formData.limit < 1) {
-        errors.limit = _("At least 1 lease is required");
-    }
-    if (formData.lease_time < 1) {
-        errors.lease_time = _("Minimum lease time is 1 hour");
-    }
-    return undefinedIfEmpty(errors);
 }

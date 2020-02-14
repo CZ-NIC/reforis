@@ -7,7 +7,7 @@
 
 import React from "react";
 import { render, wait, fireEvent } from "foris/testUtils/customTestRender";
-import mockAxios from 'jest-mock-axios';
+import mockAxios from "jest-mock-axios";
 import { mockJSONError } from "foris/testUtils/network";
 
 import { exampleUpdate } from "./__fixtures__/updates";
@@ -77,7 +77,7 @@ describe("<Updates/>", () => {
         expect(container).toMatchSnapshot();
 
         // Proceed to status check
-        mockAxios.mockResponse({data: { running: true }});
+        mockAxios.mockResponse({ data: { running: true } });
         await wait(() => expect(mockAxios.get).nthCalledWith(2, "/reforis/api/updates/status", expect.anything()));
         // Spinner is still visible
         expect(container).toMatchSnapshot();

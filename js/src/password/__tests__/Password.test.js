@@ -21,14 +21,14 @@ describe("<Password/>", () => {
     let passwordContainer;
 
     beforeEach(async () => {
-        const { container } = render(<Password/>);
-        mockAxios.mockResponse({data: {password_set: true}});
+        const { container } = render(<Password />);
+        mockAxios.mockResponse({ data: { password_set: true } });
         await wait(() => getByText(container, "Advanced Administration (root) Password"));
         passwordContainer = container;
     });
 
     it("should handle error", async () => {
-        const { container } = render(<Password/>);
+        const { container } = render(<Password />);
         mockJSONError();
         await wait(() => getByText(container, "An error occurred while fetching data."));
     });
@@ -58,7 +58,7 @@ describe("<Password/>", () => {
             fireEvent.click(getAllByText(passwordContainer, "Save")[0]);
             expect(mockAxios.post).toBeCalledWith(
                 "/reforis/api/password",
-                { "foris_current_password": "foobar", "foris_password": "foobar" },
+                { foris_current_password: "foobar", foris_password: "foobar" },
                 expect.anything(),
             );
         });

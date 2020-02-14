@@ -7,8 +7,8 @@
 
 import React from "react";
 
-export const pluginInRoot = weight => ({
-    weight: weight,
+export const pluginInRoot = (weight) => ({
+    weight,
     name: "Plugin in root",
     path: "/plugin-in-root",
     component: () => <p>Root</p>,
@@ -17,26 +17,26 @@ export const pluginInRoot = weight => ({
 export const pluginInExistedSubmenu = (submenuId, weight) => ({
     path: "/plugin-in-submenu",
     name: "Plugin in submenu",
-    submenuId: submenuId,
-    weight: weight,
+    submenuId,
+    weight,
     component: () => <p>SubPlugin</p>,
 });
 
 export const newSubmenu = (submenuId, weight) => ({
-    submenuId: submenuId,
+    submenuId,
     name: "New Submenu",
-    weight: weight,
+    weight,
     path: "/plugin-in-submenu",
     pages: [
         {
             name: "SubPlugin one",
             path: "/sub-plugin-one",
-            component: () => <p>SubPlugin One</p>
+            component: () => <p>SubPlugin One</p>,
         }, {
 
             name: "SubPlugin two",
             path: "/sub-plugin-two",
-            component: () => <p>SubPlugin Two</p>
+            component: () => <p>SubPlugin Two</p>,
         },
-    ]
+    ],
 });

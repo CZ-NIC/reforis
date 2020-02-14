@@ -16,6 +16,7 @@
     "bootswatch": "4.4.1",
     "foris": "3.4.0-beta.01fb8971",
     "immutability-helper": "3.0.1",
+    "ipaddr": "npm:ipaddr.js@^1.9.1",
     "jquery": "^3.4.1",
     "moment": "^2.24.0",
     "popper.js": "^1.16.0",

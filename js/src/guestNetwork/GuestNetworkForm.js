@@ -36,6 +36,7 @@ GuestNetworkForm.propTypes = {
     formErrors: PropTypes.shape({
         ip: PropTypes.string,
         netmask: PropTypes.string,
+        dhcp: PropTypes.object,
         qos: PropTypes.object,
     }),
     setFormValue: PropTypes.func,
@@ -106,8 +107,10 @@ export default function GuestNetworkForm({
                             ? (
                                 <DHCPServerForm
                                     formData={formData.dhcp}
+                                    formErrors={formErrors.dhcp ? formErrors.dhcp : {}}
                                     updateRule={(value) => ({ dhcp: value })}
                                     setFormValue={setFormValue}
+                                    routerIP={formData.ip}
 
                                     {...props}
                                 />

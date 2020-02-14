@@ -10,9 +10,8 @@ export function interfacesFixture(portsOpen = false) {
         firewall: {
             http_on_wan: portsOpen,
             https_on_wan: portsOpen,
-            ssh_on_wan: portsOpen
-        }
-        ,
+            ssh_on_wan: portsOpen,
+        },
         networks: {
             guest:
                 [
@@ -24,7 +23,7 @@ export function interfacesFixture(portsOpen = false) {
                         module_id: 0,
                         slot: "LAN1",
                         state: "down",
-                        type: "eth"
+                        type: "eth",
                     },
                     {
                         bus: "eth",
@@ -34,8 +33,8 @@ export function interfacesFixture(portsOpen = false) {
                         module_id: 0,
                         slot: "LAN4",
                         state: "down",
-                        type: "eth"
-                    }
+                        type: "eth",
+                    },
                 ],
             lan:
                 [
@@ -47,8 +46,8 @@ export function interfacesFixture(portsOpen = false) {
                         module_id: 0,
                         slot: "LAN3",
                         state: "down",
-                        type: "eth"
-                    }
+                        type: "eth",
+                    },
                 ],
             none:
                 [
@@ -60,7 +59,7 @@ export function interfacesFixture(portsOpen = false) {
                         module_id: 0,
                         slot: "LAN0",
                         state: "down",
-                        type: "eth"
+                        type: "eth",
                     },
                     {
                         bus: "eth",
@@ -70,7 +69,7 @@ export function interfacesFixture(portsOpen = false) {
                         module_id: 0,
                         slot: "LAN2",
                         state: "down",
-                        type: "eth"
+                        type: "eth",
                     },
                     {
                         bus: "pci",
@@ -81,8 +80,8 @@ export function interfacesFixture(portsOpen = false) {
                         slot: "1",
                         ssid: "",
                         state: "down",
-                        type: "wifi"
-                    }
+                        type: "wifi",
+                    },
                 ],
             wan:
                 [
@@ -94,11 +93,11 @@ export function interfacesFixture(portsOpen = false) {
                         module_id: 0,
                         slot: "WAN",
                         state: "up",
-                        type: "eth"
-                    }
-                ]
-        }
-    }
+                        type: "eth",
+                    },
+                ],
+        },
+    };
 }
 
 

@@ -7,12 +7,12 @@
 
 export function regionAndTime() {
     return {
-        "city": "Prague",
-        "country": "CZ",
-        "region": "Europe",
-        "time_settings": {
-            "how_to_set_time": "ntp",
-            "ntp_servers": [
+        city: "Prague",
+        country: "CZ",
+        region: "Europe",
+        time_settings: {
+            how_to_set_time: "ntp",
+            ntp_servers: [
                 "217.31.202.100",
                 "195.113.144.201",
                 "195.113.144.238",
@@ -21,10 +21,10 @@ export function regionAndTime() {
                 "0.openwrt.pool.ntp.org",
                 "1.openwrt.pool.ntp.org",
                 "2.openwrt.pool.ntp.org",
-                "3.openwrt.pool.ntp.org"
+                "3.openwrt.pool.ntp.org",
             ],
-            "time": "2019-04-24T21:15:03.661918"
+            time: "2019-04-24T21:15:03.661918",
         },
-        "timezone": "CET-1CEST,M3.5.0,M10.5.0/3"
-    }
+        timezone: "CET-1CEST,M3.5.0,M10.5.0/3",
+    };
 }

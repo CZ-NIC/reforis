@@ -7,22 +7,24 @@
 
 import React from "react";
 
-import { fireEvent, getByText, render, wait } from "foris/testUtils/customTestRender";
+import {
+    fireEvent, getByText, render, wait,
+} from "foris/testUtils/customTestRender";
 import { mockJSONError } from "foris/testUtils/network";
 import mockAxios from "jest-mock-axios";
-import {regionAndTime} from "./__fixtures__/regionAndTime";
-
-import RegionAndTime from "../RegionAndTime";
 import API_URLs from "common/API";
 import { WebSockets } from "foris";
+import { regionAndTime } from "./__fixtures__/regionAndTime";
+
+import RegionAndTime from "../RegionAndTime";
 
 describe("<RegionAndTime/>", () => {
     let regionAndTimeContainer;
 
     beforeEach(async () => {
         const webSockets = new WebSockets();
-        const {container} = render(<RegionAndTime ws={webSockets}/>);
-        mockAxios.mockResponse({data: regionAndTime()});
+        const { container } = render(<RegionAndTime ws={webSockets} />);
+        mockAxios.mockResponse({ data: regionAndTime() });
         await wait(() => getByText(container, "Region Settings"));
         regionAndTimeContainer = container;
     });
@@ -38,7 +40,7 @@ describe("<RegionAndTime/>", () => {
 
     it("Snapshot", () => {
         expect(mockAxios.get).toHaveBeenCalledTimes(1);
-        expect(mockAxios.get).toHaveBeenCalledWith(API_URLs.regionAndTime, expect.anything(),);
+        expect(mockAxios.get).toHaveBeenCalledWith(API_URLs.regionAndTime, expect.anything());
         expect(regionAndTimeContainer).toMatchSnapshot();
     });
 
@@ -50,8 +52,8 @@ describe("<RegionAndTime/>", () => {
             city: "Prague",
             country: "CZ",
             region: "Europe",
-            time_settings: {how_to_set_time: "ntp"},
-            timezone: "CET-1CEST,M3.5.0,M10.5.0/3"
+            time_settings: { how_to_set_time: "ntp" },
+            timezone: "CET-1CEST,M3.5.0,M10.5.0/3",
         };
         expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/region-and-time", data, expect.anything());
     });

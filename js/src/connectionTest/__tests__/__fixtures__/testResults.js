@@ -12,8 +12,8 @@ export default function wsTestResultMessage(testId, type) {
         data: {
             passed: true,
             test_id: testId,
-            data: testResults(testId, type)
-        }
+            data: testResults(testId, type),
+        },
     };
 }
 
@@ -26,6 +26,6 @@ function testResults(testId, type) {
         ipv4: ipResults,
         ipv4_gateway: ipResults,
         dns: dnsResults,
-        dnssec: dnsResults
+        dnssec: dnsResults,
     };
 }

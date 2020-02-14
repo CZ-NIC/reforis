@@ -6,14 +6,14 @@
  */
 
 import React from "react";
-import {render} from "foris/testUtils/customTestRender";
+import { render } from "foris/testUtils/customTestRender";
 
 import DHCPClientsList from "../DHCPClientsList";
-import {clients} from './__fixtures__/DHCPClientsList';
+import { clients } from "./__fixtures__/DHCPClientsList";
 
-describe('<DHCPClientsList/>', () => {
-    it('Test with snapshot.', () => {
-        const {container} = render(<DHCPClientsList clients={clients}/>);
+describe("<DHCPClientsList/>", () => {
+    it("Test with snapshot.", () => {
+        const { container } = render(<DHCPClientsList clients={clients} />);
         expect(container).toMatchSnapshot();
-    })
+    });
 });

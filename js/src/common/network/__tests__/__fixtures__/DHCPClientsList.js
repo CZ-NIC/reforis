@@ -7,17 +7,17 @@
 
 export const clients = [
     {
-        ip: '192.168.1.1',
-        mac: '11:22:33:44:55:66',
+        ip: "192.168.1.1",
+        mac: "11:22:33:44:55:66",
         expires: 1539350186,
         active: true,
-        hostname: 'first',
+        hostname: "first",
     },
     {
-        ip: '192.168.2.1',
-        mac: '99:88:77:66:55:44',
+        ip: "192.168.2.1",
+        mac: "99:88:77:66:55:44",
         expires: 1539350188,
         active: false,
-        hostname: '*',
+        hostname: "*",
     },
 ];

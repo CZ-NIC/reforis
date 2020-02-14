@@ -5,30 +5,29 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
-import {render, wait} from "foris/testUtils/customTestRender";
+import React from "react";
+import { render, wait } from "foris/testUtils/customTestRender";
 
 import { WebSockets } from "foris";
-import mockAxios from 'jest-mock-axios';
-import {notificationsFixture} from './__fixtures__/notifications';
+import mockAxios from "jest-mock-axios";
+import { notificationsFixture } from "./__fixtures__/notifications";
 
-import NotificationsDropdown from '../NotificationsDropdown/NotificationsDropdown';
+import NotificationsDropdown from "../NotificationsDropdown/NotificationsDropdown";
 
-
-describe('<NotificationsDropdown/>', () => {
+describe("<NotificationsDropdown/>", () => {
     let notificationCenterContainer;
 
     beforeEach(async () => {
         const webSockets = new WebSockets();
-        const {container, getByText} = render(<NotificationsDropdown ws={webSockets}/>);
-        mockAxios.mockResponse({data: notificationsFixture});
+        const { container, getByText } = render(<NotificationsDropdown ws={webSockets} />);
+        mockAxios.mockResponse({ data: notificationsFixture });
         notificationCenterContainer = container;
         await wait(() => {
-            getByText('Notification message.')
+            getByText("Notification message.");
         });
     });
 
-    it('Test with snapshot', () => {
-        expect(notificationCenterContainer).toMatchSnapshot()
-    })
+    it("Test with snapshot", () => {
+        expect(notificationCenterContainer).toMatchSnapshot();
+    });
 });

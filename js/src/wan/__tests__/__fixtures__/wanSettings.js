@@ -7,20 +7,20 @@
 
 export function wanSettingsFixture() {
     return {
-        "interface_count": 1,
-        "interface_up_count": 1,
-        "last_seen_duid": "12345678d123d12345c4",
-        "mac_settings": {
-            "custom_mac_enabled": false
+        interface_count: 1,
+        interface_up_count: 1,
+        last_seen_duid: "12345678d123d12345c4",
+        mac_settings: {
+            custom_mac_enabled: false,
         },
-        "proto": "dhcp",
-        "up": true,
-        "wan6_settings": {
-            "wan6_type": "none"
+        proto: "dhcp",
+        up: true,
+        wan6_settings: {
+            wan6_type: "none",
         },
-        "wan_settings": {
-            "wan_dhcp": {},
-            "wan_type": "dhcp"
-        }
-    }
+        wan_settings: {
+            wan_dhcp: {},
+            wan_type: "dhcp",
+        },
+    };
 }

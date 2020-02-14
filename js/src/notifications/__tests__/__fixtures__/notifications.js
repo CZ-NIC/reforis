@@ -8,32 +8,32 @@
 export const notificationsFixture = {
     notifications: [
         {
-            msg: 'Notification message.',
-            id: '123-123',
-            created_at: '2000-02-01 00:00:00',
+            msg: "Notification message.",
+            id: "123-123",
+            created_at: "2000-02-01 00:00:00",
             displayed: false,
-            severity: 'news'
+            severity: "news",
         },
         {
-            msg: 'Second notification message.',
-            id: '123-124',
-            created_at: '2000-02-01 00:00:00',
+            msg: "Second notification message.",
+            id: "123-124",
+            created_at: "2000-02-01 00:00:00",
             displayed: false,
-            severity: 'error'
+            severity: "error",
         },
         {
-            msg: 'Third notification message.',
-            id: '808-909',
-            created_at: '2000-02-01 00:00:00',
+            msg: "Third notification message.",
+            id: "808-909",
+            created_at: "2000-02-01 00:00:00",
             displayed: false,
-            severity: 'restart'
+            severity: "restart",
         },
         {
-            msg: 'Displayed notification message.',
-            id: '123-125',
-            created_at: '2000-02-01 00:00:01',
+            msg: "Displayed notification message.",
+            id: "123-125",
+            created_at: "2000-02-01 00:00:01",
             displayed: true,
-            severity: 'error'
-        }
-    ]
+            severity: "error",
+        },
+    ],
 };

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-01-10 15:07+0100\n"
+"POT-Creation-Date: 2020-02-14 15:01+0100\n"
 "PO-Revision-Date: 2019-02-19 13:34+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fi\n"
@@ -43,7 +43,8 @@ msgid "Reboot"
 msgstr ""
 
 #: js/src/common/RebootButton.js:57 js/src/dns/DNSSECDisableModal.js:32
-#: js/src/interfaces/modals.js:29 js/src/interfaces/modals.js:55
+#: js/src/interfaces/OpenPortsModals.js:71
+#: js/src/interfaces/OpenPortsModals.js:101
 msgid "Warning!"
 msgstr ""
 
@@ -101,7 +102,7 @@ msgid ""
 "connected to the router."
 msgstr ""
 
-#: js/src/common/network/DHCPServerForm.js:40
+#: js/src/common/network/DHCPServerForm.js:41
 msgid "DHCP start"
 msgstr ""
 
@@ -109,20 +110,46 @@ msgstr ""
 msgid "DHCP max leases"
 msgstr ""
 
-#: js/src/common/network/DHCPServerForm.js:66
+#: js/src/common/network/DHCPServerForm.js:54
+msgid "Maximum number of addresses available for DHCP clients."
+msgstr ""
+
+#: js/src/common/network/DHCPServerForm.js:67
 msgid "Lease time (hours)"
 msgstr ""
 
-#: js/src/common/network/DHCPServerForm.js:85
-msgid "DHCP start must be positive"
+#: js/src/common/network/DHCPValidators.js:57
+msgid "Value must be a number."
 msgstr ""
 
-#: js/src/common/network/DHCPServerForm.js:88
-msgid "At least 1 lease is required"
+#: js/src/common/network/DHCPValidators.js:59
+msgid "Value must be positive."
 msgstr ""
 
-#: js/src/common/network/DHCPServerForm.js:91
-msgid "Minimum lease time is 1 hour"
+#: js/src/common/network/DHCPValidators.js:69
+msgid "Invalid network settings. DHCP settings can't be validated."
+msgstr ""
+
+#: js/src/common/network/DHCPValidators.js:79
+msgid "Minimum lease time is 1 hour."
+msgstr ""
+
+#: js/src/common/network/DHCPValidators.js:90
+msgid "Address is outside current network."
+msgstr ""
+
+#: js/src/common/network/DHCPValidators.js:92
+msgid "Address is already reserved for other purposes."
+msgstr ""
+
+#: js/src/common/network/DHCPValidators.js:95
+msgid "Too many addresses requested. Set a lower number or change DHCP start."
+msgstr ""
+
+#: js/src/common/network/DHCPValidators.js:97
+msgid ""
+"The only DHCP lease is the same as router's address. Increase limit or "
+"change start address."
 msgstr ""
 
 #: js/src/common/network/StaticIPForm.js:14 js/src/wan/WAN6Form.js:29
@@ -136,7 +163,7 @@ msgid "IP address"
 msgstr ""
 
 #: js/src/common/network/StaticIPForm.js:55
-#: js/src/guestNetwork/GuestNetworkForm.js:83 js/src/lan/LANManagedForm.js:59
+#: js/src/guestNetwork/GuestNetworkForm.js:84 js/src/lan/LANManagedForm.js:61
 msgid "Network mask"
 msgstr ""
 
@@ -152,10 +179,15 @@ msgstr ""
 msgid "DNS server 2"
 msgstr ""
 
-#: js/src/common/network/StaticIPForm.js:116 js/src/wan/MACForm.js:78
+#: js/src/common/network/StaticIPForm.js:116
+#: js/src/common/network/validators.js:19 js/src/wan/MACForm.js:78
 #: js/src/wan/WAN6Form.js:521 js/src/wan/WAN6Form.js:550
 #: js/src/wan/WAN6Form.js:563 js/src/wan/WANForm.js:177
 msgid "This field is required."
+msgstr ""
+
+#: js/src/common/network/validators.js:12
+msgid "This is not a valid network mask."
 msgstr ""
 
 #: js/src/connectionTest/ConnectionTestButton.js:23
@@ -364,12 +396,12 @@ msgstr ""
 msgid "TLS pin should have at least one symbol."
 msgstr ""
 
-#: js/src/guestNetwork/GuestNetwork.js:26 js/src/interfaces/Interfaces.js:93
+#: js/src/guestNetwork/GuestNetwork.js:29 js/src/interfaces/Interfaces.js:84
 #: js/src/interfaces/constants.js:11 js/src/main/pages.js:69
 msgid "Guest Network"
 msgstr ""
 
-#: js/src/guestNetwork/GuestNetwork.js:28
+#: js/src/guestNetwork/GuestNetwork.js:31
 msgid ""
 "\n"
 "Guest network is used for <a href=\"${ForisURLs.wifi}\">guest Wi-Fi</a>.\n"
@@ -403,35 +435,35 @@ msgstr ""
 msgid "Upload speed in guest network (in kilobits per second)."
 msgstr ""
 
-#: js/src/guestNetwork/GuestNetworkForm.js:57
+#: js/src/guestNetwork/GuestNetworkForm.js:58
 msgid "Enable"
 msgstr ""
 
-#: js/src/guestNetwork/GuestNetworkForm.js:70 js/src/lan/LANManagedForm.js:46
+#: js/src/guestNetwork/GuestNetworkForm.js:71 js/src/lan/LANManagedForm.js:48
 msgid "Router IP address"
 msgstr ""
 
-#: js/src/guestNetwork/GuestNetworkForm.js:95 js/src/lan/LANManagedForm.js:71
+#: js/src/guestNetwork/GuestNetworkForm.js:96 js/src/lan/LANManagedForm.js:73
 msgid "Enable DHCP"
 msgstr ""
 
-#: js/src/guestNetwork/GuestNetworkForm.js:117
+#: js/src/guestNetwork/GuestNetworkForm.js:120
 msgid "Enable QoS"
 msgstr ""
 
-#: js/src/guestNetwork/GuestNetworkForm.js:168
+#: js/src/guestNetwork/GuestNetworkForm.js:171
 msgid "Download"
 msgstr ""
 
-#: js/src/guestNetwork/GuestNetworkForm.js:184
+#: js/src/guestNetwork/GuestNetworkForm.js:187
 msgid "Upload"
 msgstr ""
 
-#: js/src/guestNetwork/GuestNetworkForm.js:205
+#: js/src/guestNetwork/GuestNetworkForm.js:208
 msgid "Download speed must be positive"
 msgstr ""
 
-#: js/src/guestNetwork/GuestNetworkForm.js:208
+#: js/src/guestNetwork/GuestNetworkForm.js:211
 msgid "Upload speed must be positive"
 msgstr ""
 
@@ -679,13 +711,13 @@ msgstr ""
 msgid "Updates"
 msgstr ""
 
-#: js/src/guide/steps.js:44 js/src/interfaces/Interfaces.js:75
+#: js/src/guide/steps.js:44 js/src/interfaces/Interfaces.js:66
 #: js/src/interfaces/constants.js:9 js/src/main/pages.js:49
 #: js/src/wan/WAN.js:27
 msgid "WAN"
 msgstr ""
 
-#: js/src/guide/steps.js:48 js/src/interfaces/Interfaces.js:83
+#: js/src/guide/steps.js:48 js/src/interfaces/Interfaces.js:74
 #: js/src/interfaces/constants.js:10 js/src/main/pages.js:54
 msgid "LAN"
 msgstr ""
@@ -694,11 +726,11 @@ msgstr ""
 msgid "Finish"
 msgstr ""
 
-#: js/src/interfaces/Interfaces.js:68
+#: js/src/interfaces/Interfaces.js:59
 msgid "Network Interfaces"
 msgstr ""
 
-#: js/src/interfaces/Interfaces.js:70
+#: js/src/interfaces/Interfaces.js:61
 msgid ""
 "\n"
 "Here you can configure the settings of the network interfaces on your "
@@ -708,7 +740,7 @@ msgid ""
 "        "
 msgstr ""
 
-#: js/src/interfaces/Interfaces.js:77
+#: js/src/interfaces/Interfaces.js:68
 msgid ""
 "\n"
 "It acts as an external network connection. Firewall rules should be "
@@ -717,7 +749,7 @@ msgid ""
 "        "
 msgstr ""
 
-#: js/src/interfaces/Interfaces.js:85
+#: js/src/interfaces/Interfaces.js:76
 msgid ""
 "\n"
 "It acts as a local network connection. LAN should contain devices which "
@@ -730,7 +762,7 @@ msgid ""
 "        "
 msgstr ""
 
-#: js/src/interfaces/Interfaces.js:95
+#: js/src/interfaces/Interfaces.js:86
 msgid ""
 "\n"
 "It acts as a local network connection. Unlike LAN the devices in the "
@@ -743,45 +775,13 @@ msgid ""
 "        "
 msgstr ""
 
-#: js/src/interfaces/InterfacesForm.js:45
+#: js/src/interfaces/InterfacesForm.js:48
 msgid ""
 "Ports are open on your WAN interface. It's better to reconfigure your "
 "interface settings to avoid security issues."
 msgstr ""
 
-#: js/src/interfaces/SelectedInterface.js:57
-msgid "Network"
-msgstr ""
-
-#: js/src/interfaces/SelectedInterface.js:66
-msgid "Type"
-msgstr ""
-
-#: js/src/interfaces/SelectedInterface.js:70
-msgid "State"
-msgstr ""
-
-#: js/src/interfaces/SelectedInterface.js:74
-msgid "Bus"
-msgstr ""
-
-#: js/src/interfaces/SelectedInterface.js:78
-msgid "Slot"
-msgstr ""
-
-#: js/src/interfaces/SelectedInterface.js:82
-msgid "Module ID"
-msgstr ""
-
-#: js/src/interfaces/SelectedInterface.js:86
-msgid "Link speed"
-msgstr ""
-
-#: js/src/interfaces/constants.js:12
-msgid "Unassigned"
-msgstr ""
-
-#: js/src/interfaces/modals.js:22
+#: js/src/interfaces/OpenPortsModals.js:64
 msgid ""
 "\n"
 "You don't have any interface assigned to the LAN network.<br/>\n"
@@ -790,15 +790,15 @@ msgid ""
 "interface of our device?"
 msgstr ""
 
-#: js/src/interfaces/modals.js:34
+#: js/src/interfaces/OpenPortsModals.js:76
 msgid "Keep closed"
 msgstr ""
 
-#: js/src/interfaces/modals.js:35
+#: js/src/interfaces/OpenPortsModals.js:77
 msgid "Open ports"
 msgstr ""
 
-#: js/src/interfaces/modals.js:47
+#: js/src/interfaces/OpenPortsModals.js:93
 msgid ""
 "\n"
 "In the setup you provided it is <strong>not possible to access the "
@@ -809,15 +809,47 @@ msgid ""
 "<p><strong>Is this really what you want?</strong></p>"
 msgstr ""
 
-#: js/src/interfaces/modals.js:65
-msgid "Reconsider"
+#: js/src/interfaces/OpenPortsModals.js:107
+msgid "No, keep ports open"
 msgstr ""
 
-#: js/src/interfaces/modals.js:67
-msgid "I'm an expert"
+#: js/src/interfaces/OpenPortsModals.js:110
+msgid "Yes, I'm an expert"
 msgstr ""
 
-#: js/src/lan/LAN.js:28
+#: js/src/interfaces/SelectedInterface.js:69
+msgid "Network"
+msgstr ""
+
+#: js/src/interfaces/SelectedInterface.js:78
+msgid "Type"
+msgstr ""
+
+#: js/src/interfaces/SelectedInterface.js:82
+msgid "State"
+msgstr ""
+
+#: js/src/interfaces/SelectedInterface.js:86
+msgid "Bus"
+msgstr ""
+
+#: js/src/interfaces/SelectedInterface.js:90
+msgid "Slot"
+msgstr ""
+
+#: js/src/interfaces/SelectedInterface.js:94
+msgid "Module ID"
+msgstr ""
+
+#: js/src/interfaces/SelectedInterface.js:98
+msgid "Link speed"
+msgstr ""
+
+#: js/src/interfaces/constants.js:12
+msgid "Unassigned"
+msgstr ""
+
+#: js/src/lan/LAN.js:29
 msgid ""
 "\n"
 "This section contains settings for the local network (LAN). The provided "
@@ -859,7 +891,7 @@ msgstr ""
 msgid "LAN mode"
 msgstr ""
 
-#: js/src/lan/LANManagedForm.js:18
+#: js/src/lan/LANManagedForm.js:20
 msgid "Router's IP address in the inner network."
 msgstr ""
 
@@ -1509,26 +1541,26 @@ msgstr ""
 msgid "NTP Servers"
 msgstr ""
 
-#: js/src/routerStateHandler/NetworkRestartHandler.js:27
+#: js/src/routerStateHandler/NetworkRestartHandler.js:28
 #, python-format
 msgid "Network restart after %d sec."
 msgstr ""
 
-#: js/src/routerStateHandler/NetworkRestartHandler.js:30
+#: js/src/routerStateHandler/NetworkRestartHandler.js:31
 msgid "Network restarting"
 msgstr ""
 
-#: js/src/routerStateHandler/NetworkRestartHandler.js:33
-#: js/src/routerStateHandler/RebootHandler.js:32
+#: js/src/routerStateHandler/NetworkRestartHandler.js:34
+#: js/src/routerStateHandler/RebootHandler.js:33
 msgid "Reconnecting"
 msgstr ""
 
-#: js/src/routerStateHandler/RebootHandler.js:26
+#: js/src/routerStateHandler/RebootHandler.js:27
 #, python-format
 msgid "Reboot after %d sec."
 msgstr ""
 
-#: js/src/routerStateHandler/RebootHandler.js:29
+#: js/src/routerStateHandler/RebootHandler.js:30
 msgid "Rebooting"
 msgstr ""
 
@@ -1832,3 +1864,19 @@ msgstr ""
 #: reforis/templates/includes/top-bar.html:4
 msgid "Logout"
 msgstr ""
+
+#~ msgid "DHCP start must be positive"
+#~ msgstr ""
+
+#~ msgid "At least 1 lease is required"
+#~ msgstr ""
+
+#~ msgid "Minimum lease time is 1 hour"
+#~ msgstr ""
+
+#~ msgid "Reconsider"
+#~ msgstr ""
+
+#~ msgid "I'm an expert"
+#~ msgstr ""
+

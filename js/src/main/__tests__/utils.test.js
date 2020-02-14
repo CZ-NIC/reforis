@@ -5,11 +5,10 @@
  * See /LICENSE for more information.
  */
 
-import {PAGES} from "./__fixtures__/pages";
-import {newSubmenu, pluginInExistedSubmenu, pluginInRoot} from "./__fixtures__/plugins";
+import { PAGES } from "./__fixtures__/pages";
+import { newSubmenu, pluginInExistedSubmenu, pluginInRoot } from "./__fixtures__/plugins";
 
-import {addWeightsToPages, plug} from "../utils";
-
+import { addWeightsToPages, plug } from "../utils";
 
 describe("Test plugging in the menu.", () => {
     let pagesWithWeight;
@@ -36,13 +35,13 @@ describe("Test plugging in the menu.", () => {
         expect(pages[3].pages[0].name).toBe(plugin.name);
     });
     it("Plug into existed submenu, end.", () => {
-        const plugin = pluginInExistedSubmenu('first-submenu', 100);
-        const pages = plug(pagesWithWeight, plugin)[3].pages;
+        const plugin = pluginInExistedSubmenu("first-submenu", 100);
+        const { pages } = plug(pagesWithWeight, plugin)[3];
         expect(pages[pages.length - 1].name).toBe(plugin.name);
     });
 
-    it('Plug into new submenu.', () => {
-        const submenu = newSubmenu('new-submenu', 1);
+    it("Plug into new submenu.", () => {
+        const submenu = newSubmenu("new-submenu", 1);
         const pages = plug(pagesWithWeight, submenu);
         expect(pages[0].name).toBe(submenu.name);
         expect(pages[0].id).toBe(submenu.id);

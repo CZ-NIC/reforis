@@ -6,21 +6,21 @@
  */
 
 export const guideFixtures = {
-    "available_workflows": [
+    available_workflows: [
         "router",
         "min",
-        "bridge"
+        "bridge",
     ],
-    "current_workflow": "router",
-    "enabled": true,
-    "next_step": "networks",
-    "passed": [
+    current_workflow: "router",
+    enabled: true,
+    next_step: "networks",
+    passed: [
         "password",
-        "profile"
+        "profile",
     ],
-    "recommended_workflow": "router",
-    "workflow": "router",
-    "workflow_steps": [
+    recommended_workflow: "router",
+    workflow: "router",
+    workflow_steps: [
         "password",
         "profile",
         "networks",
@@ -28,6 +28,6 @@ export const guideFixtures = {
         "time",
         "dns",
         "updater",
-        "finished"
-    ]
+        "finished",
+    ],
 };

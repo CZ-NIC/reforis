@@ -5,9 +5,9 @@
  * See /LICENSE for more information.
  */
 
-import React from 'react';
-import {render} from "foris/testUtils/customTestRender";
-import GuideHelp from '../GuideHelp';
+import React from "react";
+import { render } from "foris/testUtils/customTestRender";
+import GuideHelp from "../GuideHelp";
 
 describe("<GuideHelp/>", () => {
     it("displays lan help without completed message", () => {
@@ -16,7 +16,7 @@ describe("<GuideHelp/>", () => {
     });
 
     it("displays lan help with completed message", () => {
-        const { container } = render(<GuideHelp workflow="router" step="lan" completed={true} />);
+        const { container } = render(<GuideHelp workflow="router" step="lan" completed />);
         expect(container.firstChild).toMatchSnapshot();
     });
 
@@ -26,12 +26,12 @@ describe("<GuideHelp/>", () => {
     });
 
     it("doesn't display completed message if it doesn't exist", () => {
-        const { container } = render(<GuideHelp workflow="bridge" step="finished" completed={true} />);
+        const { container } = render(<GuideHelp workflow="bridge" step="finished" completed />);
         expect(container.firstChild).toMatchSnapshot();
     });
 
     it("doesn't display anything if step doesn't exist", () => {
-        const { container } = render(<GuideHelp workflow="router" step="qwe" completed={true} />);
+        const { container } = render(<GuideHelp workflow="router" step="qwe" completed />);
         expect(container.firstChild).toMatchSnapshot();
     });
 
