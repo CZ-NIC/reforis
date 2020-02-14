@@ -37,37 +37,48 @@ def updates():
                 "reboots": { "delay": 4, "time": "04:30"}
             }
     """
-    settings = current_app.backend.perform('updater', 'get_settings', {'lang': _get_locale_from_backend(current_app)})
-    del settings['approval']
-
     response = None
+    reboot_settings = current_app.backend.perform('router_notifications', 'get_settings')['reboots']
+    settings = current_app.backend.perform(
+        'updater', 'get_settings',
+        {'lang': _get_locale_from_backend(current_app)},
+    )
+    del settings['approval']
     if request.method == 'GET':
         response = {
             **settings,
-            'reboots': current_app.backend.perform('router_notifications', 'get_settings')['reboots'],
+            'reboots': reboot_settings,
         }
         del response['user_lists']
         del response['languages']
     elif request.method == 'POST':
-        # pylint: disable=fixme
-        # TODO: If router_notifications is saved without errors and updater setting is saved with an error then user got
-        # the error message even router_notifications are saved. It's probably better to make some rollback in case of
-        # error here.
+        # Change automatic reboot settings
         data = request.json
-        response_reboots = current_app.backend.perform('router_notifications', 'update_reboot_settings',
-                                                       data['reboots'])
-        del data['reboots']
+        notifications_change_result = update_reboot_settings(data['reboots'])
 
-        if data['enabled']:
+        if notifications_change_result.get('result') is not True:
+            return jsonify(_('Cannot change automatic restart settings.')), HTTPStatus.INTERNAL_SERVER_ERROR
+
+        # Change update approvals settings
+        del data['reboots']
+        if data['enabled'] is True:
             data['user_lists'] = [
-                package['name'] for package in settings['user_lists'] if package['enabled']
+                package['name'] for package in settings['user_lists'] if package['enabled'] is True
             ]
             data['languages'] = [
-                language['code'] for language in settings['languages'] if language['enabled']
+                language['code'] for language in settings['languages'] if language['enabled'] is True
             ]
 
-        response_updater = current_app.backend.perform('updater', 'update_settings', data)
-        response = {'result': response_reboots and response_updater}
+        approvals_change_result = current_app.backend.perform('updater', 'update_settings', data)
+
+        if approvals_change_result.get('result') is not True:
+            message = _('Cannot update approvals settings.')
+            # Go back to initial notification settings
+            rollback_result = update_reboot_settings(reboot_settings)
+            if rollback_result.get('result') is not True:
+                message = '{} {}'.format(message, _('Cannot rollback automatic restart settings.'))
+            return jsonify(message), HTTPStatus.INTERNAL_SERVER_ERROR
+        response = {'result': True}
     return jsonify(response)
 
 
@@ -189,3 +200,11 @@ views = [
         'methods': ['GET', 'POST'],
     }
 ]
+
+
+def update_reboot_settings(settings):
+    return current_app.backend.perform(
+        'router_notifications',
+        'update_reboot_settings',
+        settings,
+    )
