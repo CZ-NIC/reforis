@@ -241,9 +241,9 @@ devices connected to the guest network.
           </button>
         </div>
       </div>
-      <h1>
-        LAN1
-      </h1>
+      <h3>
+        Interface %s %s
+      </h3>
       <div
         class="form-group"
       >
@@ -279,34 +279,15 @@ devices connected to the guest network.
         <tbody>
           <tr>
             <th>
-              Type
-            </th>
-            <td>
-              eth
-            </td>
-          </tr>
-          <tr>
-            <th>
               State
             </th>
             <td>
-              down
-            </td>
-          </tr>
-          <tr>
-            <th>
-              Bus
-            </th>
-            <td>
-              eth
-            </td>
-          </tr>
-          <tr>
-            <th>
-              Slot
-            </th>
-            <td>
-              LAN1
+              <span>
+                <i
+                  class="fa fa-lg fa-times-circle text-danger"
+                  title="down"
+                />
+              </span>
             </td>
           </tr>
           <tr>
@@ -319,10 +300,42 @@ devices connected to the guest network.
           </tr>
           <tr>
             <th>
+              Slot
+            </th>
+            <td>
+              LAN1
+            </td>
+          </tr>
+          <tr>
+            <th>
+              Interface ID
+            </th>
+            <td>
+              lan1
+            </td>
+          </tr>
+          <tr>
+            <th>
+              Type
+            </th>
+            <td>
+              eth
+            </td>
+          </tr>
+          <tr>
+            <th>
+              Bus
+            </th>
+            <td>
+              eth
+            </td>
+          </tr>
+          <tr>
+            <th>
               Link speed
             </th>
             <td>
-              0
+              N/A
             </td>
           </tr>
         </tbody>
@@ -585,9 +598,9 @@ devices connected to the guest network.
           </button>
         </div>
       </div>
-      <h1>
-        LAN1
-      </h1>
+      <h3>
+        Interface %s %s
+      </h3>
       <div
         class="form-group"
       >
@@ -623,34 +636,15 @@ devices connected to the guest network.
         <tbody>
           <tr>
             <th>
-              Type
-            </th>
-            <td>
-              eth
-            </td>
-          </tr>
-          <tr>
-            <th>
               State
             </th>
             <td>
-              down
-            </td>
-          </tr>
-          <tr>
-            <th>
-              Bus
-            </th>
-            <td>
-              eth
-            </td>
-          </tr>
-          <tr>
-            <th>
-              Slot
-            </th>
-            <td>
-              LAN1
+              <span>
+                <i
+                  class="fa fa-lg fa-times-circle text-danger"
+                  title="down"
+                />
+              </span>
             </td>
           </tr>
           <tr>
@@ -663,10 +657,42 @@ devices connected to the guest network.
           </tr>
           <tr>
             <th>
+              Slot
+            </th>
+            <td>
+              LAN1
+            </td>
+          </tr>
+          <tr>
+            <th>
+              Interface ID
+            </th>
+            <td>
+              lan1
+            </td>
+          </tr>
+          <tr>
+            <th>
+              Type
+            </th>
+            <td>
+              eth
+            </td>
+          </tr>
+          <tr>
+            <th>
+              Bus
+            </th>
+            <td>
+              eth
+            </td>
+          </tr>
+          <tr>
+            <th>
               Link speed
             </th>
             <td>
-              0
+              N/A
             </td>
           </tr>
         </tbody>
@@ -899,6 +925,677 @@ devices connected to the guest network.
             </div>
             <h5>
               LAN2
+            </h5>
+          </button>
+          <button
+            class="interface "
+            type="button"
+          >
+            <div
+              style="color: gray;"
+            >
+              <span
+                class="fa-stack fa-2x"
+              >
+                <i
+                  class="fas fa-wifi fa-stack-1x"
+                />
+                <i
+                  class="fas fa-slash fa-stack-1x fa-inverse"
+                />
+                <i
+                  class="fas fa-slash fa-stack-1x"
+                  style="bottom: 0.3rem;"
+                />
+              </span>
+            </div>
+            <h5>
+              1
+            </h5>
+          </button>
+        </div>
+      </div>
+      <div
+        class="text-right"
+      >
+        <button
+          class="btn btn-primary  col-sm-12 col-lg-3"
+          type="submit"
+        >
+           
+           
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`<Interfaces/> with various modules Snapshot select interface. 1`] = `
+<div>
+  <h1>
+    Network Interfaces
+  </h1>
+  <p>
+    
+Here you can configure the settings of the network interfaces on your device. You can switch the physical
+network interfaces among networks. If you are unsure what to set here use the default settings.
+        
+  </p>
+  <h4>
+    WAN
+  </h4>
+  <p>
+    
+It acts as an external network connection. Firewall rules should be applied here. It can only contain a
+single interface.
+        
+  </p>
+  <h4>
+    LAN
+  </h4>
+  <p>
+    
+It acts as a local network connection. LAN should contain devices which are under your control and you
+trust them. These devices can see each other and can access this web interface. It is recommended that the
+LAN should contain at least one interface otherwise you might not be able to configure this device in an
+easy way.
+        
+  </p>
+  <h4>
+    Guest Network
+  </h4>
+  <p>
+    
+It acts as a local network connection. Unlike LAN the devices in the guest network can't access
+the configuration interface of this device and are only able to access WAN (internet). This network should
+be used for devices which you don't fully trust. Note that you can also limit download/upload speed of the
+devices connected to the guest network.
+        
+  </p>
+  <div
+    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
+  >
+    <form>
+      <h3>
+        WAN
+      </h3>
+      <div
+        class="network mb-3"
+      >
+        <div
+          class="scrollable"
+        >
+          <button
+            class="interface "
+            type="button"
+          >
+            <div>
+              <span
+                class="fa-stack fa-2x"
+              >
+                <i
+                  class="far fa-square fa-stack-2x"
+                />
+                <i
+                  class="fas fa-ethernet fa-stack-1x"
+                />
+              </span>
+            </div>
+            <h5>
+              WAN
+            </h5>
+          </button>
+        </div>
+      </div>
+      <h3>
+        LAN
+      </h3>
+      <div
+        class="network mb-3"
+      >
+        <div>
+          <h4>
+            Base module
+          </h4>
+          <div
+            class="scrollable"
+          >
+            <button
+              class="interface "
+              type="button"
+            >
+              <div>
+                <span
+                  class="fa-stack fa-2x"
+                >
+                  <i
+                    class="far fa-square fa-stack-2x"
+                  />
+                  <i
+                    class="fas fa-ethernet fa-stack-1x"
+                    style="color: lightgrey;"
+                  />
+                </span>
+              </div>
+              <h5>
+                2
+              </h5>
+            </button>
+          </div>
+        </div>
+        <div>
+          <h4>
+            Module %s
+          </h4>
+          <div
+            class="scrollable"
+          >
+            <button
+              class="interface "
+              type="button"
+            >
+              <div>
+                <span
+                  class="fa-stack fa-2x"
+                >
+                  <i
+                    class="far fa-square fa-stack-2x"
+                  />
+                  <i
+                    class="fas fa-ethernet fa-stack-1x"
+                    style="color: lightgrey;"
+                  />
+                </span>
+              </div>
+              <h5>
+                2
+              </h5>
+            </button>
+          </div>
+        </div>
+      </div>
+      <h3>
+        Guest Network
+      </h3>
+      <div
+        class="network mb-3"
+      >
+        <div>
+          <h4>
+            Base module
+          </h4>
+          <div
+            class="scrollable"
+          >
+            <button
+              class="interface "
+              type="button"
+            >
+              <div>
+                <span
+                  class="fa-stack fa-2x"
+                >
+                  <i
+                    class="far fa-square fa-stack-2x"
+                  />
+                  <i
+                    class="fas fa-ethernet fa-stack-1x"
+                    style="color: lightgrey;"
+                  />
+                </span>
+              </div>
+              <h5>
+                1
+              </h5>
+            </button>
+          </div>
+        </div>
+        <div>
+          <h4>
+            Module %s
+          </h4>
+          <div
+            class="scrollable"
+          >
+            <button
+              class="interface interface-selected"
+              type="button"
+            >
+              <div>
+                <span
+                  class="fa-stack fa-2x"
+                >
+                  <i
+                    class="far fa-square fa-stack-2x"
+                  />
+                  <i
+                    class="fas fa-ethernet fa-stack-1x"
+                    style="color: lightgrey;"
+                  />
+                </span>
+              </div>
+              <h5>
+                1
+              </h5>
+            </button>
+          </div>
+        </div>
+      </div>
+      <h3>
+        Unassigned
+      </h3>
+      <div
+        class="network mb-3"
+      >
+        <div
+          class="scrollable"
+        >
+          <button
+            class="interface "
+            type="button"
+          >
+            <div>
+              <span
+                class="fa-stack fa-2x"
+              >
+                <i
+                  class="far fa-square fa-stack-2x"
+                />
+                <i
+                  class="fas fa-ethernet fa-stack-1x"
+                  style="color: lightgrey;"
+                />
+              </span>
+            </div>
+            <h5>
+              LAN0
+            </h5>
+          </button>
+          <button
+            class="interface "
+            type="button"
+          >
+            <div
+              style="color: gray;"
+            >
+              <span
+                class="fa-stack fa-2x"
+              >
+                <i
+                  class="fas fa-wifi fa-stack-1x"
+                />
+                <i
+                  class="fas fa-slash fa-stack-1x fa-inverse"
+                />
+                <i
+                  class="fas fa-slash fa-stack-1x"
+                  style="bottom: 0.3rem;"
+                />
+              </span>
+            </div>
+            <h5>
+              1
+            </h5>
+          </button>
+        </div>
+      </div>
+      <h3>
+        Interface %s %s
+      </h3>
+      <div
+        class="form-group"
+      >
+        <label
+          for="1"
+        >
+          Network
+        </label>
+        <select
+          class="custom-select"
+          id="1"
+        >
+          <option
+            value="lan"
+          >
+            LAN
+          </option>
+          <option
+            value="guest"
+          >
+            Guest Network
+          </option>
+          <option
+            value="none"
+          >
+            Unassigned
+          </option>
+        </select>
+      </div>
+      <table
+        class="table table-hover"
+      >
+        <tbody>
+          <tr>
+            <th>
+              State
+            </th>
+            <td>
+              <span>
+                <i
+                  class="fa fa-lg fa-times-circle text-danger"
+                  title="down"
+                />
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              Module ID
+            </th>
+            <td>
+              1
+            </td>
+          </tr>
+          <tr>
+            <th>
+              Slot
+            </th>
+            <td>
+              1
+            </td>
+          </tr>
+          <tr>
+            <th>
+              Interface ID
+            </th>
+            <td>
+              lan4
+            </td>
+          </tr>
+          <tr>
+            <th>
+              Type
+            </th>
+            <td>
+              eth
+            </td>
+          </tr>
+          <tr>
+            <th>
+              Bus
+            </th>
+            <td>
+              eth
+            </td>
+          </tr>
+          <tr>
+            <th>
+              Link speed
+            </th>
+            <td>
+              N/A
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div
+        class="text-right"
+      >
+        <button
+          class="btn btn-primary  col-sm-12 col-lg-3"
+          type="submit"
+        >
+           
+           
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`<Interfaces/> with various modules Snapshot. 1`] = `
+<div>
+  <h1>
+    Network Interfaces
+  </h1>
+  <p>
+    
+Here you can configure the settings of the network interfaces on your device. You can switch the physical
+network interfaces among networks. If you are unsure what to set here use the default settings.
+        
+  </p>
+  <h4>
+    WAN
+  </h4>
+  <p>
+    
+It acts as an external network connection. Firewall rules should be applied here. It can only contain a
+single interface.
+        
+  </p>
+  <h4>
+    LAN
+  </h4>
+  <p>
+    
+It acts as a local network connection. LAN should contain devices which are under your control and you
+trust them. These devices can see each other and can access this web interface. It is recommended that the
+LAN should contain at least one interface otherwise you might not be able to configure this device in an
+easy way.
+        
+  </p>
+  <h4>
+    Guest Network
+  </h4>
+  <p>
+    
+It acts as a local network connection. Unlike LAN the devices in the guest network can't access
+the configuration interface of this device and are only able to access WAN (internet). This network should
+be used for devices which you don't fully trust. Note that you can also limit download/upload speed of the
+devices connected to the guest network.
+        
+  </p>
+  <div
+    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
+  >
+    <form>
+      <h3>
+        WAN
+      </h3>
+      <div
+        class="network mb-3"
+      >
+        <div
+          class="scrollable"
+        >
+          <button
+            class="interface "
+            type="button"
+          >
+            <div>
+              <span
+                class="fa-stack fa-2x"
+              >
+                <i
+                  class="far fa-square fa-stack-2x"
+                />
+                <i
+                  class="fas fa-ethernet fa-stack-1x"
+                />
+              </span>
+            </div>
+            <h5>
+              WAN
+            </h5>
+          </button>
+        </div>
+      </div>
+      <h3>
+        LAN
+      </h3>
+      <div
+        class="network mb-3"
+      >
+        <div>
+          <h4>
+            Base module
+          </h4>
+          <div
+            class="scrollable"
+          >
+            <button
+              class="interface "
+              type="button"
+            >
+              <div>
+                <span
+                  class="fa-stack fa-2x"
+                >
+                  <i
+                    class="far fa-square fa-stack-2x"
+                  />
+                  <i
+                    class="fas fa-ethernet fa-stack-1x"
+                    style="color: lightgrey;"
+                  />
+                </span>
+              </div>
+              <h5>
+                2
+              </h5>
+            </button>
+          </div>
+        </div>
+        <div>
+          <h4>
+            Module %s
+          </h4>
+          <div
+            class="scrollable"
+          >
+            <button
+              class="interface "
+              type="button"
+            >
+              <div>
+                <span
+                  class="fa-stack fa-2x"
+                >
+                  <i
+                    class="far fa-square fa-stack-2x"
+                  />
+                  <i
+                    class="fas fa-ethernet fa-stack-1x"
+                    style="color: lightgrey;"
+                  />
+                </span>
+              </div>
+              <h5>
+                2
+              </h5>
+            </button>
+          </div>
+        </div>
+      </div>
+      <h3>
+        Guest Network
+      </h3>
+      <div
+        class="network mb-3"
+      >
+        <div>
+          <h4>
+            Base module
+          </h4>
+          <div
+            class="scrollable"
+          >
+            <button
+              class="interface "
+              type="button"
+            >
+              <div>
+                <span
+                  class="fa-stack fa-2x"
+                >
+                  <i
+                    class="far fa-square fa-stack-2x"
+                  />
+                  <i
+                    class="fas fa-ethernet fa-stack-1x"
+                    style="color: lightgrey;"
+                  />
+                </span>
+              </div>
+              <h5>
+                1
+              </h5>
+            </button>
+          </div>
+        </div>
+        <div>
+          <h4>
+            Module %s
+          </h4>
+          <div
+            class="scrollable"
+          >
+            <button
+              class="interface "
+              type="button"
+            >
+              <div>
+                <span
+                  class="fa-stack fa-2x"
+                >
+                  <i
+                    class="far fa-square fa-stack-2x"
+                  />
+                  <i
+                    class="fas fa-ethernet fa-stack-1x"
+                    style="color: lightgrey;"
+                  />
+                </span>
+              </div>
+              <h5>
+                1
+              </h5>
+            </button>
+          </div>
+        </div>
+      </div>
+      <h3>
+        Unassigned
+      </h3>
+      <div
+        class="network mb-3"
+      >
+        <div
+          class="scrollable"
+        >
+          <button
+            class="interface "
+            type="button"
+          >
+            <div>
+              <span
+                class="fa-stack fa-2x"
+              >
+                <i
+                  class="far fa-square fa-stack-2x"
+                />
+                <i
+                  class="fas fa-ethernet fa-stack-1x"
+                  style="color: lightgrey;"
+                />
+              </span>
+            </div>
+            <h5>
+              LAN0
             </h5>
           </button>
           <button

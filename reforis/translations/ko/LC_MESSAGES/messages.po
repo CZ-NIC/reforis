@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-02-14 15:01+0100\n"
+"POT-Creation-Date: 2020-02-14 17:00+0100\n"
 "PO-Revision-Date: 2019-02-19 13:34+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ko\n"
@@ -781,6 +781,19 @@ msgid ""
 "interface settings to avoid security issues."
 msgstr ""
 
+#: js/src/interfaces/Network.js:40
+msgid "There are no interfaces in this group."
+msgstr ""
+
+#: js/src/interfaces/Network.js:61
+msgid "Base module"
+msgstr ""
+
+#: js/src/interfaces/Network.js:61
+#, python-format
+msgid "Module %s"
+msgstr ""
+
 #: js/src/interfaces/OpenPortsModals.js:64
 msgid ""
 "\n"
@@ -817,24 +830,17 @@ msgstr ""
 msgid "Yes, I'm an expert"
 msgstr ""
 
-#: js/src/interfaces/SelectedInterface.js:69
+#: js/src/interfaces/SelectedInterface.js:74
+#, python-format
+msgid "Interface %s %s"
+msgstr ""
+
+#: js/src/interfaces/SelectedInterface.js:77
 msgid "Network"
 msgstr ""
 
-#: js/src/interfaces/SelectedInterface.js:78
-msgid "Type"
-msgstr ""
-
-#: js/src/interfaces/SelectedInterface.js:82
-msgid "State"
-msgstr ""
-
 #: js/src/interfaces/SelectedInterface.js:86
-msgid "Bus"
-msgstr ""
-
-#: js/src/interfaces/SelectedInterface.js:90
-msgid "Slot"
+msgid "State"
 msgstr ""
 
 #: js/src/interfaces/SelectedInterface.js:94
@@ -842,7 +848,27 @@ msgid "Module ID"
 msgstr ""
 
 #: js/src/interfaces/SelectedInterface.js:98
+msgid "Slot"
+msgstr ""
+
+#: js/src/interfaces/SelectedInterface.js:102
+msgid "Interface ID"
+msgstr ""
+
+#: js/src/interfaces/SelectedInterface.js:106
+msgid "Type"
+msgstr ""
+
+#: js/src/interfaces/SelectedInterface.js:110
+msgid "Bus"
+msgstr ""
+
+#: js/src/interfaces/SelectedInterface.js:114
 msgid "Link speed"
+msgstr ""
+
+#: js/src/interfaces/SelectedInterface.js:115
+msgid "N/A"
 msgstr ""
 
 #: js/src/interfaces/constants.js:12
@@ -1795,11 +1821,23 @@ msgstr ""
 msgid "Wrong current password."
 msgstr ""
 
-#: reforis/foris_controller_api/modules/updater.py:149
-msgid "You can't set packages with disabled automatic updates."
+#: reforis/foris_controller_api/modules/updater.py:60
+msgid "Cannot change automatic restart settings."
+msgstr ""
+
+#: reforis/foris_controller_api/modules/updater.py:75
+msgid "Cannot update approvals settings."
+msgstr ""
+
+#: reforis/foris_controller_api/modules/updater.py:79
+msgid "Cannot rollback automatic restart settings."
 msgstr ""
 
 #: reforis/foris_controller_api/modules/updater.py:160
+msgid "You can't set packages with disabled automatic updates."
+msgstr ""
+
+#: reforis/foris_controller_api/modules/updater.py:171
 msgid "Cannot start updater"
 msgstr ""
 
@@ -1863,19 +1901,4 @@ msgstr ""
 #: reforis/templates/includes/top-bar.html:4
 msgid "Logout"
 msgstr ""
-
-#~ msgid "DHCP start must be positive"
-#~ msgstr ""
-
-#~ msgid "At least 1 lease is required"
-#~ msgstr ""
-
-#~ msgid "Minimum lease time is 1 hour"
-#~ msgstr ""
-
-#~ msgid "Reconsider"
-#~ msgstr ""
-
-#~ msgid "I'm an expert"
-#~ msgstr ""
 

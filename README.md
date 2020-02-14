@@ -9,18 +9,11 @@ Re**Foris** is not production-ready yet. It's on tested stage and we believe it 
 Installation of re**Foris** is possible only on Turris devices due to specific software and hardware usage. It's
 possible that some environment (Docker container) with Turris routers hardware emulation will be created in the future.
 
-### 1. Install dependencies
-**On a router!**
-```bash 
-$ opkg update
-$ opkg install make git-http
-```
-
-### 2. Transfer and synchronize reForis source code to the router
+### 1. Transfer and synchronize reForis source code to the router
 Use your favorite tools to keep the code synchronized with your local machine. You can automatize all these processes 
 and code transferring with you favorite tools (e.g., `rsync` or built-in IDE solution).
 
-#### 2.1 SSHFS and SFTP
+#### 1.1 SSHFS and SFTP
 One of the possible solutions is using SSHFS or SFTP. It's very comfortable to use it with some IDE, it may allow you to
 watch the changes and synchronize only changed parts.
 ##### PyCharm
@@ -32,7 +25,7 @@ It's also possible to setup remote server and synchronization with VS Code and
 ##### `rsync`
 You can also use any other IDE or text editor and synchronize code with SSHFS or SFTP using rsync. 
 
-#### 2.2 Ignore unnecessary paths
+#### 1.2 Ignore unnecessary paths
 It's better to not synchronize subsequent directories with a router:
  * `js`
  * `venv`
@@ -43,19 +36,19 @@ So just exclude it.
 eMMC can only sustain 3–10K rewrite cycles before it starts to cause bit errors. In this regard, it’s better to send the
 code to the RAM (`/tmp` or `/var` directories are mapped to the RAM).
 
-### 3. Check Python version
+### 2. Check Python version
 Minimal required Python version is **3.6**.
 
 Please check if you have the same Python versions in Makefile (variable `$ROUTER_PYTHON`) and on the system installed.
 If not then correct the version in Makefile.
 
-### 4. Install reForis application with production server (lighttpd)
+### 3. Install reForis application with production server (lighttpd)
 **On the router!**
 ```bash
 $ make install-with-lighttpd
 ```
 
-### 5. Build JS
+### 4. Build JS
 **You have build JS sources on some other machine with `node-npm` installed!**
 
 ```bash
@@ -66,14 +59,14 @@ Then don't forget to transfer it to the `/tmp/reforis/reforis_static/reforis/js/
 #### Note
 If you've made some changes in JS part of code then it has to be rebuilt and sent to the router.
 
-### 6. Compile translations
+### 5. Compile translations
 **On the local computer!**
 ```bash
 $ make compile-messages
 ```
 Then transfer it to the router.
 
-### 7. Restart the lighttpd server
+### 6. Restart the lighttpd server
 **On the router!**
 ```bash
 /etc/init.d/lighttpd restart
