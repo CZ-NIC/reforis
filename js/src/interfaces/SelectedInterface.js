@@ -24,7 +24,12 @@ SelectedInterface.propTypes = {
     network: PropTypes.oneOf(["wan", "lan", "guest", "none"]).isRequired,
     configurable: PropTypes.bool.isRequired,
     WANIsEmpty: PropTypes.bool.isRequired,
+    hideUnassigned: PropTypes.bool,
     onNetworkChange: PropTypes.func.isRequired,
+};
+
+SelectedInterface.defaultProps = {
+    hideUnassigned: false,
 };
 
 export default function SelectedInterface({
@@ -39,6 +44,7 @@ export default function SelectedInterface({
     configurable,
 
     WANIsEmpty,
+    hideUnassigned,
     onNetworkChange,
 }) {
     const myRef = useRef(null);
@@ -47,7 +53,13 @@ export default function SelectedInterface({
     }, [id]);
 
     const networkChoices = { ...NETWORKS_CHOICES };
-    if (!WANIsEmpty) delete networkChoices.wan;
+    /*
+    Prevent adding more than 1 inteface to WAN group.
+    Don't remove option if interface it's already in WAN as it breaks UX.
+    */
+    if (!WANIsEmpty && network !== "wan") delete networkChoices.wan;
+    // Prevent setting "Unassigned" network
+    if (hideUnassigned) delete networkChoices.none;
 
     return (
         <>

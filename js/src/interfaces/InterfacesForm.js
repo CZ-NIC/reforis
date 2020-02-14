@@ -35,13 +35,16 @@ InterfacesForm.defaultProps = {
     setFormValue: () => {},
 };
 
-export default function InterfacesForm({ formData, setFormValue, ...props }) {
+export default function InterfacesForm({
+    formData, setFormValue, ...props
+}) {
     const [selectedID, setSelectedID] = useState(null);
     const [setAlert, dismissAlert] = useAlert();
 
     useEffect(() => {
         const { firewall } = formData;
-        if (firewall.http_on_wan || firewall.https_on_wan || firewall.ssh_on_wan) {
+        const hasWAN = formData.networks.wan.length > 0;
+        if (hasWAN && (firewall.http_on_wan || firewall.https_on_wan || firewall.ssh_on_wan)) {
             setAlert(_("Ports are open on your WAN interface. It's better to reconfigure your interface settings to avoid security issues."));
         } else {
             dismissAlert();
@@ -77,6 +80,8 @@ export default function InterfacesForm({ formData, setFormValue, ...props }) {
         )(e);
     }
 
+    const hideUnassigned = getNetworksNumber(formData.networks) === 1;
+
     return (
         <>
             <h3>{NETWORKS_CHOICES.wan}</h3>
@@ -100,22 +105,34 @@ export default function InterfacesForm({ formData, setFormValue, ...props }) {
                 setSelected={setSelectedID}
                 {...props}
             />
-            <h3>{NETWORKS_CHOICES.none}</h3>
-            <Network
-                interfaces={formData.networks.none}
-                selected={selectedID}
-                setSelected={setSelectedID}
-                {...props}
-            />
+            {!hideUnassigned && (
+                <>
+                    <h3>{NETWORKS_CHOICES.none}</h3>
+                    <Network
+                        interfaces={formData.networks.none}
+                        selected={selectedID}
+                        setSelected={setSelectedID}
+                        {...props}
+                    />
+                </>
+            )}
             {selectedID && (
                 <SelectedInterface
                     network={selectedInterfaceNetwork}
                     WANIsEmpty={formData.networks.wan.length === 0}
+                    hideUnassigned={hideUnassigned}
                     {...selectedInterface}
 
                     onNetworkChange={handleNetworkChange}
                 />
             )}
         </>
+    );
+}
+
+function getNetworksNumber(networks) {
+    return Object.keys(networks).reduce(
+        (accumulator, networkName) => accumulator + networks[networkName].length,
+        0,
     );
 }
