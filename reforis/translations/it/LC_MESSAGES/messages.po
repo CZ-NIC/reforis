@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-02-14 17:00+0100\n"
+"POT-Creation-Date: 2020-02-17 11:37+0100\n"
 "PO-Revision-Date: 2019-02-19 13:34+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: it\n"
@@ -35,6 +35,10 @@ msgid "Turris OS version"
 msgstr ""
 
 #: js/src/about/About.js:52
+msgid "Turris OS branch"
+msgstr ""
+
+#: js/src/about/About.js:61
 msgid "Kernel version"
 msgstr ""
 
@@ -698,7 +702,7 @@ msgstr ""
 msgid "Interfaces"
 msgstr ""
 
-#: js/src/guide/steps.js:32 js/src/regionAndTime/TimeForm.js:108
+#: js/src/guide/steps.js:32 js/src/regionAndTime/TimeForm.js:109
 msgid "Time"
 msgstr ""
 
@@ -938,14 +942,14 @@ msgstr ""
 msgid "IPv4 protocol"
 msgstr ""
 
-#: js/src/languagesDropdown/LanguagesDropdown.js:35
+#: js/src/languagesDropdown/LanguagesDropdown.js:36
 #: js/src/packageManagement/packages/LanguageForm.js:27
 msgid "Languages"
 msgstr ""
 
 #: js/src/main/pages.js:32
-#: js/src/notifications/Notifications/NotificationsCenter.js:75
-#: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:64
+#: js/src/notifications/Notifications/NotificationsCenter.js:76
+#: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:65
 msgid "Notifications"
 msgstr ""
 
@@ -986,13 +990,13 @@ msgstr ""
 msgid "Advanced Administration"
 msgstr ""
 
-#: js/src/notifications/Notifications/NotificationsCenter.js:50
-#: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:89
+#: js/src/notifications/Notifications/NotificationsCenter.js:51
+#: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:90
 msgid "Dismiss all"
 msgstr ""
 
-#: js/src/notifications/Notifications/NotificationsCenter.js:63
-#: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:28
+#: js/src/notifications/Notifications/NotificationsCenter.js:64
+#: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:29
 msgid "No notifications"
 msgstr ""
 
@@ -1328,7 +1332,7 @@ msgid "Enable automatic updates (recommended)"
 msgstr ""
 
 #: js/src/packageManagement/updates/UpdateApproval.js:30
-#: js/src/updatesDropdown/UpdatesDropdown.js:106
+#: js/src/updatesDropdown/UpdatesDropdown.js:108
 msgid "Cannot install updates."
 msgstr ""
 
@@ -1359,12 +1363,12 @@ msgid "Approve Update From %s"
 msgstr ""
 
 #: js/src/packageManagement/updates/UpdateApproval.js:75
-#: js/src/updatesDropdown/UpdatesDropdown.js:97
+#: js/src/updatesDropdown/UpdatesDropdown.js:99
 msgid "Ignore"
 msgstr ""
 
 #: js/src/packageManagement/updates/UpdateApproval.js:82
-#: js/src/updatesDropdown/UpdatesDropdown.js:98
+#: js/src/updatesDropdown/UpdatesDropdown.js:100
 msgid "Install now"
 msgstr ""
 
@@ -1486,11 +1490,11 @@ msgid ""
 "    "
 msgstr ""
 
-#: js/src/rebootDropdown/RebootDropdown.js:35
+#: js/src/rebootDropdown/RebootDropdown.js:37
 msgid "Reboot Required"
 msgstr ""
 
-#: js/src/rebootDropdown/RebootDropdown.js:40
+#: js/src/rebootDropdown/RebootDropdown.js:42
 msgid "Details"
 msgstr ""
 
@@ -1533,37 +1537,37 @@ msgstr ""
 msgid "Timezone"
 msgstr ""
 
-#: js/src/regionAndTime/TimeForm.js:22
+#: js/src/regionAndTime/TimeForm.js:23
 msgid "Via NTP"
 msgstr ""
 
-#: js/src/regionAndTime/TimeForm.js:23
+#: js/src/regionAndTime/TimeForm.js:24
 msgid "Manually"
 msgstr ""
 
-#: js/src/regionAndTime/TimeForm.js:93
+#: js/src/regionAndTime/TimeForm.js:94
 msgid "Time Settings"
 msgstr ""
 
-#: js/src/regionAndTime/TimeForm.js:94
+#: js/src/regionAndTime/TimeForm.js:95
 msgid ""
 "Time should be up-to-date otherwise DNS and other services might not work"
 " properly."
 msgstr ""
 
-#: js/src/regionAndTime/TimeForm.js:96
+#: js/src/regionAndTime/TimeForm.js:97
 msgid "How to set time"
 msgstr ""
 
-#: js/src/regionAndTime/TimeForm.js:151
+#: js/src/regionAndTime/TimeForm.js:152
 msgid "Hide NTP servers list"
 msgstr ""
 
-#: js/src/regionAndTime/TimeForm.js:151
+#: js/src/regionAndTime/TimeForm.js:152
 msgid "Show NTP servers list"
 msgstr ""
 
-#: js/src/regionAndTime/TimeForm.js:155
+#: js/src/regionAndTime/TimeForm.js:156
 msgid "NTP Servers"
 msgstr ""
 
@@ -1590,11 +1594,11 @@ msgstr ""
 msgid "Rebooting"
 msgstr ""
 
-#: js/src/updatesDropdown/UpdatesDropdown.js:64
+#: js/src/updatesDropdown/UpdatesDropdown.js:66
 msgid "Approve Update"
 msgstr ""
 
-#: js/src/updatesDropdown/UpdatesDropdown.js:94
+#: js/src/updatesDropdown/UpdatesDropdown.js:96
 msgid ""
 "See details in <a href=${ForisURLs.packageManagement.updates}>Updates</a>"
 " page."
