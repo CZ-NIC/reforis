@@ -1,0 +1,9 @@
+#ntpServersList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#ntpServersList > p {
+    margin: 0.5rem;
+}

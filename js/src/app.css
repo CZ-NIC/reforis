@@ -1,0 +1,49 @@
+/*
+ * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See /LICENSE for more information.
+ */
+
+@import "styles/content.css";
+@import "styles/dropdown.css";
+@import "styles/login.css";
+@import "styles/network-interfaces.css";
+@import "styles/sidebar.css";
+@import "styles/top-bar.css";
+
+html, body {
+    height: 100%;
+}
+
+/* Fixing twinks due to scroll bar appearing */
+html {
+    width:100vw;
+    overflow-x:hidden;
+}
+
+a, .btn-link {
+    color: #00a2e2;
+}
+
+a:hover, .btn-link:hover {
+    color: #0056b3;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #00a2e2;
+    border-color: #00a2e2;
+}
+
+form > button {
+    margin-bottom: 0.5rem;
+}
+
+.invalid-feedback {
+    display: block;
+}
+
+.form-control {
+    color: black;
+}

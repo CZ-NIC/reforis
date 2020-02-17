@@ -14,6 +14,7 @@ import {
 } from "foris";
 
 import useNTPDate from "./hooks";
+import "./TimeForm.css";
 
 // Foris backend ignore value after "."...
 const TIME_FORMAT = "YYYY-MM-DDTHH:mm:ss.0";

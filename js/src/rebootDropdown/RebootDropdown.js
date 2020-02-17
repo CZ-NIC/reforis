@@ -13,6 +13,8 @@ import RebootButton from "common/RebootButton";
 import { ForisURLs } from "foris";
 import { Link } from "react-router-dom";
 
+import "./RebootDropdown.css";
+
 RebootDropdown.propTypes = {
     ws: PropTypes.object.isRequired,
 };

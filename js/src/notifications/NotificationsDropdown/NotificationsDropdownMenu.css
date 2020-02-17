@@ -1,0 +1,33 @@
+#notifications-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+/* Remove spacing for fa-cog link in header */
+#notifications-header .btn-link {
+    padding: 0;
+    margin: 0;
+}
+
+#notifications-header .fa-cog {
+    font-size: 1.25rem;
+}
+
+#notifications-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#notifications-footer .btn-link {
+    font-weight: bold;
+    padding: 0;
+}
+
+.no-notifications {
+    text-align: center;
+    margin-top: 0.5rem
+}

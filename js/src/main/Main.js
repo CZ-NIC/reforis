@@ -30,7 +30,7 @@ export default function Main({ ws }) {
                 <Portal containerId="navigation-container">
                     <Navigation pages={pages} />
                 </Portal>
-                <Portal containerId="topbar-container">
+                <Portal containerId="top-bar-container">
                     <TopBar ws={ws} />
                 </Portal>
 

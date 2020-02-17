@@ -14,6 +14,8 @@ import toLocaleDateString from "utils/localeDate";
 import NotificationIcon from "../NotificationIcon";
 import NOTIFICATION_PROP_TYPES from "../utils";
 
+import "./NotificationsDropdownItem.css";
+
 NotificationsDropdownItem.propTypes = {
     notification: NOTIFICATION_PROP_TYPES,
     divider: PropTypes.bool.isRequired,
