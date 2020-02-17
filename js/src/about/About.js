@@ -49,6 +49,15 @@ function AboutTable({ deviceDetails }) {
                     <td>{deviceDetails.os_version}</td>
                 </tr>
                 <tr>
+                    <th>{_("Turris OS branch")}</th>
+                    <td>
+                        {deviceDetails.os_branch.value.toUpperCase()}
+                        <a href="https://docs.turris.cz/geek/testing/#branches-available" className="text-muted">
+                            <i className="fas fa-question-circle ml-2" />
+                        </a>
+                    </td>
+                </tr>
+                <tr>
                     <th>{_("Kernel version")}</th>
                     <td>{deviceDetails.kernel}</td>
                 </tr>
