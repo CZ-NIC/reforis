@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
+import "./TruncatedText.css";
+
 TruncatedText.propTypes = {
     text: PropTypes.string.isRequired,
     charLimit: PropTypes.number.isRequired,

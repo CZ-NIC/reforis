@@ -12,6 +12,7 @@ import { Spinner } from "foris";
 
 import useNotifications from "../hooks";
 import NotificationsList from "./NotificationsList";
+import "./NotificationsCenter.css";
 
 NotificationsCenter.propTypes = {
     ws: PropTypes.object.isRequired,

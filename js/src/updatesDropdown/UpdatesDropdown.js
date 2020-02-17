@@ -13,6 +13,8 @@ import {
 } from "foris";
 import API_URLs from "common/API";
 
+import "./UpdatesDropdown.css";
+
 export default function UpdatesDropdown() {
     const [getApprovalsResponse, getApprovals] = useAPIGet(API_URLs.approvals);
     const update = getApprovalsResponse.data || {};

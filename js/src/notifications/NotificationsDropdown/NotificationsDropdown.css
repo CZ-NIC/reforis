@@ -1,0 +1,39 @@
+#notifications .dropdown-menu {
+    width: 20rem;
+}
+
+#notifications .dropdown-menu .btn-link {
+    color: #95a5a6;
+}
+
+#notifications .dropdown-menu .btn-link:hover {
+    color: #00a2e2;
+    text-decoration: none;
+}
+
+#notifications .dropdown-divider-top {
+    margin-bottom: 0;
+}
+
+#notifications .dropdown-divider-bottom {
+    margin-top: 0;
+}
+
+#notifications .scrollable-menu {
+    height: auto;
+    max-height: 20rem;
+    overflow-x: hidden;
+}
+
+#notifications ::-webkit-scrollbar {
+    width: .5rem;
+}
+
+#notifications ::-webkit-scrollbar-thumb {
+    background: #95a5a6;
+    border-radius: 0.2em;
+}
+
+#notifications ::-webkit-scrollbar-thumb:hover {
+    background: #4e5a5b;
+}

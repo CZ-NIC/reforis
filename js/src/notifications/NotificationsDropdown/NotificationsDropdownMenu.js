@@ -13,6 +13,7 @@ import { ForisURLs } from "foris";
 
 import NOTIFICATION_PROP_TYPES from "../utils";
 import NotificationsDropdownItem from "./NotificationsDropdownItem";
+import "./NotificationsDropdownMenu.css";
 
 NotificationsDropdownMenu.propTypes = {
     notifications: PropTypes.arrayOf(NOTIFICATION_PROP_TYPES),

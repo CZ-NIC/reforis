@@ -14,7 +14,7 @@
     "axios": "^0.19.1",
     "bootstrap": "4.4.1",
     "bootswatch": "4.4.1",
-    "foris": "3.4.0-beta.01fb8971",
+    "foris": "3.4.0",
     "immutability-helper": "3.0.1",
     "ipaddr": "npm:ipaddr.js@^1.9.1",
     "jquery": "^3.4.1",

@@ -1,0 +1,58 @@
+.network .scrollable {
+    display: flex;
+    overflow-x: auto;
+}
+
+.network ::-webkit-scrollbar {
+    height: 5px;
+}
+
+.network ::-webkit-scrollbar-thumb {
+    background: #95a5a6;
+    border-radius: 0.2em;
+}
+
+.network ::-webkit-scrollbar-thumb:hover {
+    background: #4e5a5b;
+}
+
+.network .interface {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    align-items: center;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+@keyframes interfaceSelectedFade {
+    from {
+        -webkit-filter: none;
+        filter: none;
+    }
+    to {
+        -webkit-filter: drop-shadow(0 0 0.25rem #00a2e2);
+        filter: drop-shadow(0 0 0.25rem #00a2e2);
+    }
+}
+
+.network .interface-selected svg {
+    animation-name: interfaceSelectedFade;
+    animation-duration: .3s;
+    -webkit-filter: drop-shadow(0 0 0.5rem #00a2e2);
+    filter: drop-shadow(0 0 0.25rem #00a2e2);
+}
+
+.network .interface-selected .fa-inverse {
+    display: none;
+}
+
+.interface:focus {
+    outline: none;
+}
+
+.interface:active {
+    color: inherit;
+}

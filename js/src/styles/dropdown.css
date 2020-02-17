@@ -1,0 +1,10 @@
+.dropdown-menu {
+    margin: 0;
+    /* Just below spinner-fs-background */
+    z-index: 1099;
+}
+
+.dropdown-item:hover {
+    background: transparent;
+    color: #7b8a8b;
+}

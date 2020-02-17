@@ -13,6 +13,7 @@ import { SpinnerElement, useAPIPost } from "foris";
 import API_URLs from "common/API";
 
 import { useLanguages, useWSSetLanguageRefresh } from "./hooks";
+import "./LanguagesDropdown.css";
 
 LanguagesDropdown.propTypes = {
     ws: PropTypes.object.isRequired,

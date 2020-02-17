@@ -1,0 +1,38 @@
+.wrapper {
+    display: flex;
+    position: relative;
+    min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+    }
+
+    #sidebar {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        flex: none;
+    }
+
+    #content {
+        flex: none;
+    }
+}
+
+#content {
+    display: flex;
+    flex: 5;
+    flex-direction: column;
+    padding: 2em;
+    height: 100%;
+}
+
+#alert-container {
+    position: sticky;
+    top: 1rem;
+    /* Just above bootstrap's defaults */
+    z-index: 4;
+}

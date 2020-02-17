@@ -1,0 +1,46 @@
+#notifications-btn .fa-bell {
+    font-size: 1.5rem;
+}
+
+#notifications-counter {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#notifications-counter .number {
+    background: #e74c3c;
+    font-size: 0.8rem;
+    color: white;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.jump {
+    animation: jump-keyframes 1s;
+}
+
+@keyframes jump-keyframes {
+    0% {
+        transform: scale(1, 1) translateY(0);
+    }
+    10% {
+        transform: scale(1.1, .9) translateY(0);
+    }
+    30% {
+        transform: scale(.9, 1.1) translateY(-2rem);
+    }
+    50% {
+        transform: scale(1.05, .95) translateY(0);
+    }
+    57% {
+        transform: scale(1, 1) translateY(-0.2rem);
+    }
+    64% {
+        transform: scale(1, 1) translateY(0);
+    }
+    100% {
+        transform: scale(1, 1) translateY(0);
+    }
+}
