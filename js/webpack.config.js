@@ -67,6 +67,7 @@ module.exports = (env) => ({
                     compress: {
                         pure_funcs: ["console.log", "console.info", "console.debug"],
                     },
+                    mangle: false,
                 },
             }),
         ],

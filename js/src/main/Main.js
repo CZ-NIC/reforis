@@ -13,6 +13,7 @@ import { REFORIS_URL_PREFIX, Portal, AlertContextProvider } from "foris";
 
 import Navigation from "navigation/Navigation";
 
+import ErrorBoundary from "utils/ErrorBoundary";
 import TopBar from "./TopBar";
 import RouteWithSubRoutes from "./routing";
 import getPages from "./pages";
@@ -24,21 +25,29 @@ Main.propTypes = {
 
 export default function Main({ ws }) {
     const pages = getPages();
+    // Outer ErrorBoundary catches errors outside content container
     return (
-        <BrowserRouter basename={REFORIS_URL_PREFIX}>
-            <AlertContextProvider>
-                <Portal containerId="navigation-container">
-                    <Navigation pages={pages} />
-                </Portal>
-                <Portal containerId="top-bar-container">
-                    <TopBar ws={ws} />
-                </Portal>
+        <ErrorBoundary>
+            <BrowserRouter basename={REFORIS_URL_PREFIX}>
+                <AlertContextProvider>
+                    <Portal containerId="navigation-container">
+                        <Navigation pages={pages} />
+                    </Portal>
+                    <Portal containerId="top-bar-container">
+                        <TopBar ws={ws} />
+                    </Portal>
 
-                <Switch>
-                    {pages.map((route) => <RouteWithSubRoutes key={route} ws={ws} {...route} />)}
-                    <Redirect to={REDIRECT_404_PAGE} />
-                </Switch>
-            </AlertContextProvider>
-        </BrowserRouter>
+                    {/* Handle errors and display Navigation and TopBar. */}
+                    <ErrorBoundary>
+                        <Switch>
+                            {pages.map(
+                                (route) => <RouteWithSubRoutes key={route} ws={ws} {...route} />,
+                            )}
+                            <Redirect to={REDIRECT_404_PAGE} />
+                        </Switch>
+                    </ErrorBoundary>
+                </AlertContextProvider>
+            </BrowserRouter>
+        </ErrorBoundary>
     );
 }

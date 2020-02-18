@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Main/> should use error boundary when cannot render component 1`] = `
+<div>
+  <div
+    id="content-container"
+  >
+    <h1>
+      An Error Occurred
+    </h1>
+    <code
+      class="error-boundary-description p-3 my-3"
+    >
+      ReferenceError: asd is not defined
+    </code>
+    <p>
+      More detailed information is available in the console of your web browser - on most browsers accessible after pressing Ctrl+Shift+J or F12.
+    </p>
+    <p>
+      Please report this error to our support team via e-mail: 
+      <a
+        href="mailto:tech.support@turris.cz"
+      >
+        tech.support@turris.cz
+      </a>
+      .
+    </p>
+  </div>
+</div>
+`;
