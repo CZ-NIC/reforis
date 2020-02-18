@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-02-17 11:37+0100\n"
+"POT-Creation-Date: 2020-02-17 16:23+0100\n"
 "PO-Revision-Date: 2019-09-29 15:56+0000\n"
 "Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
 "Language: cs\n"
@@ -1621,6 +1621,22 @@ msgstr ""
 msgid ""
 "See details in <a href=${ForisURLs.packageManagement.updates}>Updates</a>"
 " page."
+msgstr ""
+
+#: js/src/utils/ErrorBoundary.js:35
+msgid "An Error Occurred"
+msgstr ""
+
+#: js/src/utils/ErrorBoundary.js:39
+msgid ""
+"More detailed information is available in the console of your web browser"
+" (available by pressing F12)."
+msgstr ""
+
+#: js/src/utils/ErrorBoundary.js:40
+msgid ""
+"Please report this error to our support team via e-mail: <a "
+"href=\"mailto:tech.support@turris.cz\">tech.support@turris.cz</a>."
 msgstr ""
 
 #: js/src/wan/MACForm.js:14
