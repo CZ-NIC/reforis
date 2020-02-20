@@ -5,5 +5,5 @@ export const exampleUpdate = {
     plan: [{
         op: "install", name: "PACKAGE", cur_ver: "1.0", new_ver: "2.0",
     }],
-    time: "now",
+    time: "2020-02-20T12:02:35",
 };

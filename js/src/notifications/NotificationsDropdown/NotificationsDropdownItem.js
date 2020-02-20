@@ -9,8 +9,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-import { ForisURLs } from "foris";
-import toLocaleDateString from "utils/localeDate";
+import { ForisURLs, toLocaleDateString } from "foris";
 import NotificationIcon from "../NotificationIcon";
 import NOTIFICATION_PROP_TYPES from "../utils";
 

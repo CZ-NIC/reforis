@@ -9,10 +9,9 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 
 import {
-    useAPIPost, Button, Spinner, useAlert, API_STATE, ALERT_TYPES,
+    useAPIPost, Button, Spinner, useAlert, API_STATE, ALERT_TYPES, toLocaleDateString,
 } from "foris";
 import API_URLs from "common/API";
-import toLocaleDateString from "utils/localeDate";
 
 UpdateApproval.propTypes = {
     update: PropTypes.object.isRequired,
