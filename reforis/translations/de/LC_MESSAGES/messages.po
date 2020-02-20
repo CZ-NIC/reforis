@@ -460,7 +460,7 @@ msgstr ""
 
 #: js/src/guestNetwork/GuestNetworkForm.js:171
 msgid "Download"
-msgstr ""
+msgstr "Herunterladen"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:187
 msgid "Upload"
@@ -1963,3 +1963,16 @@ msgstr "Abmelden"
 #~ " (available by pressing F12)."
 #~ msgstr ""
 
+#~ "\n"
+#~ "        Wenn Sie den Router als "
+#~ "WLAN-Zugangspunkt verwenden wollen, dann "
+#~ "aktivieren Sie die WLAN-Option. Geben"
+#~ " Sie dann die SSID (Netzwerkname) und"
+#~ " das zugehörige Kennwort ein.<br><br>Danach "
+#~ "können Sie Ihre Mobilgeräte mittels des"
+#~ " angezeigten QR-Codes einfach "
+#~ "konfigurieren.\n"
+#~ "    "
+
+#~ msgid "Network settings"
+#~ msgstr "Netzwerkeinstellungen"
