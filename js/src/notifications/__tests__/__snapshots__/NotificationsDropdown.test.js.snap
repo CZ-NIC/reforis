@@ -73,7 +73,7 @@ exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
               <small
                 class="text-muted"
               >
-                February 1, 2000, 12:00:00 AM
+                February 1, 2000 12:00 AM
               </small>
               <p>
                 Notification message.
@@ -107,7 +107,7 @@ exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
               <small
                 class="text-muted"
               >
-                February 1, 2000, 12:00:00 AM
+                February 1, 2000 12:00 AM
               </small>
               <p>
                 Second notification message.
@@ -141,7 +141,7 @@ exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
               <small
                 class="text-muted"
               >
-                February 1, 2000, 12:00:00 AM
+                February 1, 2000 12:00 AM
               </small>
               <p>
                 Third notification message.

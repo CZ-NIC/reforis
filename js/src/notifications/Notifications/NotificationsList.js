@@ -9,7 +9,7 @@ import React, { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 
 import RebootButton from "common/RebootButton";
-import toLocaleDateString from "utils/localeDate";
+import { toLocaleDateString } from "foris";
 import NOTIFICATION_PROP_TYPES from "../utils";
 import NotificationIcon from "../NotificationIcon";
 import TruncatedText from "./TruncatedText";
