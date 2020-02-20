@@ -10,7 +10,34 @@ exports[`<ErrorBoundary /> should display error message 1`] = `
   <code
     class="error-boundary-description p-3 my-3"
   >
-    ReferenceError: asd is not defined
+    Error: This component is broken!
+  </code>
+  <p>
+    More detailed information is available in the console of your web browser - on most browsers accessible after pressing Ctrl+Shift+J or F12.
+  </p>
+  <p>
+    Please report this error to our support team via e-mail: 
+    <a
+      href="mailto:tech.support@turris.cz"
+    >
+      tech.support@turris.cz
+    </a>
+    .
+  </p>
+</div>
+`;
+
+exports[`<ErrorBoundary /> should handle unexpected API error 1`] = `
+<div
+  id="content-container"
+>
+  <h1>
+    An Error Occurred
+  </h1>
+  <code
+    class="error-boundary-description p-3 my-3"
+  >
+    Error: This API request is broken!
   </code>
   <p>
     More detailed information is available in the console of your web browser - on most browsers accessible after pressing Ctrl+Shift+J or F12.

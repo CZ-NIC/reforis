@@ -5,11 +5,23 @@
  * See /LICENSE for more information.
  */
 
-import React from "react";
+import React, { useEffect } from "react";
 
+import { useAPIGet } from "foris";
 import { render } from "foris/testUtils/customTestRender";
 
 import ErrorBoundary from  "../ErrorBoundary";
+
+function mockBrokenGET() {
+    throw new Error("This API request is broken!");
+}
+
+jest.mock("foris/api/utils", () => ({
+    ...jest.requireActual('foris/api/utils'),
+    API_METHODS: {
+        GET: mockBrokenGET,
+    },
+}));
 
 describe("<ErrorBoundary />", () => {
     it("should render children components when there's no error", () => {
@@ -23,11 +35,12 @@ describe("<ErrorBoundary />", () => {
 
     it("should display error message", () => {
         const BrokenComponent = () => {
-            qwe = asd;
-            return null;
+            throw new Error("This component is broken!");
         };
+
         const content = document.createElement("div");
         content.setAttribute("id", "content-container");
+
         const { container } = render(
             <>
                 <ErrorBoundary>
@@ -36,6 +49,31 @@ describe("<ErrorBoundary />", () => {
             </>,
             { container: document.body.appendChild(content) }
         );
+
+        expect(container).toMatchSnapshot();
+    });
+
+    it("should handle unexpected API error", () => {
+        const BrokenAPIComponent = () => {
+            const [, getExample] = useAPIGet("");
+            useEffect(() => {
+                getExample();
+            }, [getExample]);
+            return <p>No errors so far!</p>;
+        };
+
+        const content = document.createElement("div");
+        content.setAttribute("id", "content-container");
+
+        const { container } = render(
+            <>
+                <ErrorBoundary>
+                    <BrokenAPIComponent />
+                </ErrorBoundary>
+            </>,
+            { container: document.body.appendChild(content) }
+        );
+
         expect(container).toMatchSnapshot();
     });
 });
