@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-02-18 17:56+0100\n"
+"POT-Creation-Date: 2020-02-20 17:21+0100\n"
 "PO-Revision-Date: 2019-11-10 16:04+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language: nb\n"
@@ -17,7 +17,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.8.0\n"
+"Generated-By: Babel 2.7.0\n"
 
 #: js/src/about/About.js:22 js/src/main/pages.js:133
 msgid "About"
@@ -148,10 +148,6 @@ msgstr ""
 #: js/src/common/network/DHCPValidators.js:92
 msgid "Address is already reserved for other purposes."
 msgstr ""
-
-#: js/src/common/network/DHCPServerForm.js:85
-msgid "DHCP start must be positive"
-msgstr "HDCP start må være positiv"
 
 #: js/src/common/network/DHCPValidators.js:95
 msgid "Too many addresses requested. Set a lower number or change DHCP start."
@@ -834,6 +830,10 @@ msgstr "Modul-ID"
 msgid "Slot"
 msgstr ""
 
+#: js/src/interfaces/SelectedInterface.js:93
+msgid "Interface ID"
+msgstr ""
+
 #: js/src/interfaces/SelectedInterface.js:97
 msgid "Type"
 msgstr "Type"
@@ -1011,8 +1011,8 @@ msgid "Custom"
 msgstr "Egendefinert"
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:78
-msgid "Email notifications"
-msgstr "E-postmerknader"
+msgid "Email Notifications"
+msgstr ""
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:80
 msgid "Enable email notifications"
@@ -1023,8 +1023,8 @@ msgid "SMTP provider"
 msgstr "SMTP-tilbyder"
 
 #: js/src/notificationsSettings/NotificationsSettings.js:24
-msgid "Notifications settings"
-msgstr "Merknadsinnstillinger"
+msgid "Notifications Settings"
+msgstr ""
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:18
 msgid "None"
@@ -1129,10 +1129,6 @@ msgstr "Maksimal port er 65535."
 msgid "Minimum port is 1."
 msgstr "Minimumsport er 1."
 
-#: js/src/packageManagement/packages/LanguageForm.js:27
-msgid "Languages"
-msgstr "Språk"
-
 #: js/src/packageManagement/packages/LanguageForm.js:28
 msgid ""
 "If you want to use other language than English you can select it from the"
@@ -1160,8 +1156,8 @@ msgid ""
 msgstr ""
 
 #: js/src/packageManagement/packages/PackagesForm.js:28
-msgid "Packages list"
-msgstr "Pakkeliste"
+msgid "Packages List"
+msgstr ""
 
 #: js/src/packageManagement/updateSettings/LicenceModal.js:23
 msgid "Most Important License Agreement Points"
@@ -1846,7 +1842,6 @@ msgid ""
 "            "
 msgstr ""
 
-
 #: reforis/views.py:52
 msgid "Wrong password."
 msgstr "Feil passord."
@@ -1990,7 +1985,6 @@ msgstr "Logg ut"
 #~ "in the console of your web browser"
 #~ " (available by pressing F12)."
 #~ msgstr ""
-
 #~ "\n"
 #~ "        Hvis du ønsker å bruke "
 #~ "ruteren din som Wi-Fi-tilgangspunkt, "
@@ -2005,3 +1999,16 @@ msgstr "Logg ut"
 
 #~ msgid "Network settings"
 #~ msgstr "Nettverksinnstillinger"
+
+#~ msgid "DHCP start must be positive"
+#~ msgstr "HDCP start må være positiv"
+
+#~ msgid "Email notifications"
+#~ msgstr "E-postmerknader"
+
+#~ msgid "Notifications settings"
+#~ msgstr "Merknadsinnstillinger"
+
+#~ msgid "Packages list"
+#~ msgstr "Pakkeliste"
+

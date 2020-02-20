@@ -7,14 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-02-18 17:56+0100\n"
+"POT-Creation-Date: 2020-02-20 17:21+0100\n"
 "PO-Revision-Date: 2019-10-14 11:04+0000\n"
 "Last-Translator: ButterflyOfFire <ButterflyOfFire@protonmail.com>\n"
 "Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.8.0\n"
+"Generated-By: Babel 2.7.0\n"
 
 #: js/src/about/About.js:22 js/src/main/pages.js:133
 msgid "About"
@@ -69,8 +71,8 @@ msgid "DHCP hostname"
 msgstr "Nom d’hôte DHCP"
 
 #: js/src/common/network/DHCPClientsList.js:19
-msgid "DHCP clients"
-msgstr "Clients DHCP"
+msgid "DHCP Clients"
+msgstr ""
 
 #: js/src/common/network/DHCPClientsList.js:22
 msgid "No DHCP clients found."
@@ -159,8 +161,8 @@ msgid ""
 "DNS server address is not required as the built-in DNS resolver is "
 "capable of working without it."
 msgstr ""
-"L’adresse du serveur DNS n’est pas nécessaire car le résolveur DNS intégré "
-"est capable de fonctionner sans lui."
+"L’adresse du serveur DNS n’est pas nécessaire car le résolveur DNS "
+"intégré est capable de fonctionner sans lui."
 
 #: js/src/common/network/StaticIPForm.js:43
 msgid "IP address"
@@ -276,7 +278,8 @@ msgid ""
 "\"android-123\" and domain \"my.lan\" will be \"android-123.my.lan\"."
 msgstr ""
 "Ce domaine sera utilisé comme suffixe. Par exemple, le résultat pour le "
-"client « android-123 » et le domaine « my.lan » sera « android-123.my.lan »."
+"client « android-123 » et le domaine « my.lan » sera « android-123.my.lan"
+" »."
 
 #: js/src/dns/DNSForm.js:71
 msgid "Use forwarding"
@@ -434,13 +437,13 @@ msgid ""
 "This option enables you to set a bandwidth limit for the guest network, "
 "so that your main network doesn't get slowed-down by it."
 msgstr ""
-"Cette option permet d’établir une limite de bande passante pour le réseau "
-"invité, afin que votre réseau principal ne soit pas ralenti par celui-ci."
+"Cette option permet d’établir une limite de bande passante pour le réseau"
+" invité, afin que votre réseau principal ne soit pas ralenti par celui-"
+"ci."
 
 #: js/src/guestNetwork/GuestNetworkForm.js:23
 msgid "Download speed in guest network (in kilobits per second)."
-msgstr ""
-"Vitesse de téléchargement sur le réseau invité (en kilobit par seconde)."
+msgstr "Vitesse de téléchargement sur le réseau invité (en kilobit par seconde)."
 
 #: js/src/guestNetwork/GuestNetworkForm.js:24
 msgid "Upload speed in guest network (in kilobits per second)."
@@ -512,10 +515,10 @@ msgid ""
 "other devices within your local network (e.g. act as a network-attached "
 "storage)."
 msgstr ""
-"Ce flux de travaux vous aidera à configurer votre appareil pour agir comme "
-"un serveur local. Cela signifie qu’il fournira certains types de services "
-"aux autres appareils dans votre réseau local (p. ex. agir comme un serveur "
-"de stockage en réseau)."
+"Ce flux de travaux vous aidera à configurer votre appareil pour agir "
+"comme un serveur local. Cela signifie qu’il fournira certains types de "
+"services aux autres appareils dans votre réseau local (p. ex. agir comme "
+"un serveur de stockage en réseau)."
 
 #: js/src/guide/WorkflowSelect.js:22
 msgid ""
@@ -523,9 +526,9 @@ msgid ""
 " functional router. It assumes that you want to have more or less "
 "standard network setup."
 msgstr ""
-"Après avoir terminé ce flux de travaux, votre appareil sera capable d’agir "
-"comme un routeur pleinement fonctionnel. Cela suppose que vous voulez plus "
-"ou moins une installation réseau standard."
+"Après avoir terminé ce flux de travaux, votre appareil sera capable "
+"d’agir comme un routeur pleinement fonctionnel. Cela suppose que vous "
+"voulez plus ou moins une installation réseau standard."
 
 #: js/src/guide/WorkflowSelect.js:23
 msgid ""
@@ -533,8 +536,8 @@ msgid ""
 " more advanced users who intend not to use the web GUI."
 msgstr ""
 "Définissez seulement votre mot de passe et vous serez prêt. Ce flux de "
-"travaux vise les utilisateurs avancés qui n’ont pas l’intention d’utiliser l’"
-"interface graphique Web."
+"travaux vise les utilisateurs avancés qui n’ont pas l’intention "
+"d’utiliser l’interface graphique Web."
 
 #: js/src/guide/WorkflowSelect.js:27
 msgid "Local Server"
@@ -568,10 +571,10 @@ msgid ""
 "device. Firstly it is required to set your password. Note the security of"
 " your home network is in your hands, so try not to use weak passwords."
 msgstr ""
-"Bienvenue sur l’interface Web de Foris. Ce guide vous aidera à configurer "
-"votre appareil. Tout d’abord, il est nécessaire de définir votre mot de "
-"passe. Notez que la sécurité de votre réseau domestique est entre vos mains, "
-"alors essayez de ne pas utiliser de mots de passe faibles."
+"Bienvenue sur l’interface Web de Foris. Ce guide vous aidera à configurer"
+" votre appareil. Tout d’abord, il est nécessaire de définir votre mot de "
+"passe. Notez que la sécurité de votre réseau domestique est entre vos "
+"mains, alors essayez de ne pas utiliser de mots de passe faibles."
 
 #: js/src/guide/constants.js:13
 msgid "Your password is set. You may proceed to the next step."
@@ -594,13 +597,15 @@ msgid ""
 "You've configured your network interfaces. It seems that you didn't break"
 " any crucial network settings so you can safely proceed to the next step."
 msgstr ""
-"Vous avez configuré vos interfaces réseaux. Vous ne semblez pas avoir briser "
-"de paramètres réseau cruciaux ; vous pouvez donc passer à l’étape suivante."
+"Vous avez configuré vos interfaces réseaux. Vous ne semblez pas avoir "
+"briser de paramètres réseau cruciaux ; vous pouvez donc passer à l’étape "
+"suivante."
 
 #: js/src/guide/constants.js:26
 msgid "Now you need to set the time and timezone of your device."
 msgstr ""
-"Vous devez maintenant régler l’heure et le fuseau horaire de votre appareil."
+"Vous devez maintenant régler l’heure et le fuseau horaire de votre "
+"appareil."
 
 #: js/src/guide/constants.js:27
 msgid ""
@@ -614,22 +619,22 @@ msgid ""
 "A proper DNS resolving is one of the key security features of your "
 "device. Let's configure it now."
 msgstr ""
-"Une résolution DNS correcte est l’une des principales caractéristiques de "
-"sécurité de votre appareil. Configurons-le maintenant."
+"Une résolution DNS correcte est l’une des principales caractéristiques de"
+" sécurité de votre appareil. Configurons-le maintenant."
 
 #: js/src/guide/constants.js:31
 msgid ""
 "You've updated your DNS configuration. Try to run connection test to see "
 "whether your DNS resolver is properly set."
 msgstr ""
-"Vous avez mis à jour votre configuration DNS. Essayez d’exécuter un test de "
-"connexion pour voir si votre résolveur DNS est correctement configuré."
+"Vous avez mis à jour votre configuration DNS. Essayez d’exécuter un test "
+"de connexion pour voir si votre résolveur DNS est correctement configuré."
 
 #: js/src/guide/constants.js:34
 msgid "In order to access the internet, you need to configure your WAN interface."
 msgstr ""
-"Afin d’accéder à Internet, vous devez configurer l’interface de votre réseau "
-"étendu (WAN)."
+"Afin d’accéder à Internet, vous devez configurer l’interface de votre "
+"réseau étendu (WAN)."
 
 #: js/src/guide/constants.js:35
 msgid ""
@@ -637,9 +642,9 @@ msgid ""
 "whether it is working properly and if so you can safely proceed to the "
 "next step."
 msgstr ""
-"Vous avez configuré l’interface de votre réseau étendu. Essayez d’effectuer "
-"un test de connexion pour voir si elle fonctionne correctement et si vous "
-"pouvez passer à l’étape suivante."
+"Vous avez configuré l’interface de votre réseau étendu. Essayez "
+"d’effectuer un test de connexion pour voir si elle fonctionne "
+"correctement et si vous pouvez passer à l’étape suivante."
 
 #: js/src/guide/constants.js:38
 msgid ""
@@ -648,19 +653,19 @@ msgid ""
 "configuration interface unless you restart the network on your current "
 "device."
 msgstr ""
-"Vous devez maintenant configurer l’interface de votre réseau local (LAN). "
-"Notez que lorsque vous modifiez vos paramètres réseau, vous ne pourrez "
-"probablement pas vous connecter à l’interface de configuration à moins de "
-"redémarrer le réseau sur votre appareil actuel."
+"Vous devez maintenant configurer l’interface de votre réseau local (LAN)."
+" Notez que lorsque vous modifiez vos paramètres réseau, vous ne pourrez "
+"probablement pas vous connecter à l’interface de configuration à moins de"
+" redémarrer le réseau sur votre appareil actuel."
 
 #: js/src/guide/constants.js:39
 msgid ""
 "You've configured your LAN interface. Try to test whether settings work "
 "properly and if so you can safely proceed to the next step."
 msgstr ""
-"Vous avez configuré l’interface de votre réseau local. Essayez de vérifier "
-"si les paramètres fonctionnent correctement et si vous pouvez passer à l’"
-"étape suivante."
+"Vous avez configuré l’interface de votre réseau local. Essayez de "
+"vérifier si les paramètres fonctionnent correctement et si vous pouvez "
+"passer à l’étape suivante."
 
 #: js/src/guide/constants.js:48
 msgid ""
@@ -668,8 +673,8 @@ msgid ""
 "and route network traffic among LAN, WAN and guest network."
 msgstr ""
 "L’installation de l’appareil est terminée. Celui-ci peut désormais agir "
-"comme un routeur et donc router le trafic réseau entre les réseaux local, "
-"étendu et invité."
+"comme un routeur et donc router le trafic réseau entre les réseaux local,"
+" étendu et invité."
 
 #: js/src/guide/constants.js:54
 msgid ""
@@ -677,8 +682,8 @@ msgid ""
 "some further configuration updates to fit the device to your needs."
 msgstr ""
 "L’installation minimale de l’appareil est terminée. Notez qu’il est "
-"probablement nécessaire que vous réalisiez des mises à jour de configuration "
-"supplémentaires pour que l’appareil réponde à vos besoins."
+"probablement nécessaire que vous réalisiez des mises à jour de "
+"configuration supplémentaires pour que l’appareil réponde à vos besoins."
 
 #: js/src/guide/constants.js:63
 msgid ""
@@ -686,9 +691,10 @@ msgid ""
 " put any interfaces to your WAN and Guest Network. So it is a good idea "
 "to assign all interfaces to LAN."
 msgstr ""
-"Vous avez choisi d’agir comme un serveur local, ce qui signifie qu’il n’y a "
-"pas de sens à mettre des interfaces dans vos réseaux étendu et invité. Il "
-"serait donc judicieux d’affecter toutes vos interfaces au réseau local."
+"Vous avez choisi d’agir comme un serveur local, ce qui signifie qu’il n’y"
+" a pas de sens à mettre des interfaces dans vos réseaux étendu et invité."
+" Il serait donc judicieux d’affecter toutes vos interfaces au réseau "
+"local."
 
 #: js/src/guide/constants.js:68
 msgid ""
@@ -697,10 +703,11 @@ msgid ""
 "probably want to act as a client here thus select "
 "<strong>Computer</strong> mode here."
 msgstr ""
-"Pour agir comme un serveur local, il n’est pas nécessaire de gérer le réseau "
-"local (si vous souhaitez tout de même le gérer, réinitialisez le guide et "
-"choisissez le flux de travaux Routeur). Vous voulez probablement agir comme "
-"un client alors sélectionnez le mode <strong>Ordinateur</strong> ici."
+"Pour agir comme un serveur local, il n’est pas nécessaire de gérer le "
+"réseau local (si vous souhaitez tout de même le gérer, réinitialisez le "
+"guide et choisissez le flux de travaux Routeur). Vous voulez probablement"
+" agir comme un client alors sélectionnez le mode "
+"<strong>Ordinateur</strong> ici."
 
 #: js/src/guide/constants.js:69
 msgid ""
@@ -710,8 +717,8 @@ msgid ""
 msgstr ""
 "Si vous sélectionnez la configuration <strong>statique</strong>, assurez-"
 "vous que les adresses IP soient correctement saisies, autrement vous ne "
-"pourrez plus accéder à cette interface de configuration lorsque les nouveaux "
-"paramètres seront appliqués."
+"pourrez plus accéder à cette interface de configuration lorsque les "
+"nouveaux paramètres seront appliqués."
 
 #: js/src/guide/constants.js:70
 msgid ""
@@ -722,9 +729,9 @@ msgid ""
 msgstr ""
 "Si vous sélectionnez la méthode <strong>DHCP</strong>, vous avez "
 "probablement besoin d’obtenir une nouvelle adresse IP pour cet appareil. "
-"Vous pouvez l’obtenir auprès du serveur DHCP qui gère votre réseau local. "
-"Vous devez ensuite vous connectez à la nouvelle adresse IP pour continuer ce "
-"guide."
+"Vous pouvez l’obtenir auprès du serveur DHCP qui gère votre réseau local."
+" Vous devez ensuite vous connectez à la nouvelle adresse IP pour "
+"continuer ce guide."
 
 #: js/src/guide/constants.js:71
 msgid ""
@@ -885,17 +892,9 @@ msgstr ""
 msgid "State"
 msgstr "État"
 
-#: js/src/interfaces/constants.js:11 js/src/main/pages.js:69
-msgid "Guest Network"
-msgstr "Réseau invité"
-
 #: js/src/interfaces/SelectedInterface.js:85
 msgid "Module ID"
 msgstr ""
-
-#: js/src/interfaces/constants.js:12
-msgid "Unassigned"
-msgstr "Non attribué"
 
 #: js/src/interfaces/SelectedInterface.js:89
 msgid "Slot"
@@ -923,7 +922,7 @@ msgstr ""
 
 #: js/src/interfaces/constants.js:12
 msgid "Unassigned"
-msgstr ""
+msgstr "Non attribué"
 
 #: js/src/lan/LAN.js:29
 msgid ""
@@ -1057,8 +1056,8 @@ msgstr "Un réamorçage ou une attention particulière est requise"
 #: js/src/notificationsSettings/CommonForm.js:19
 msgid "Reboot or attention is required or update was installed"
 msgstr ""
-"Un réamorçage ou une attention particulière est requis, ou une mise à jour a "
-"été installée"
+"Un réamorçage ou une attention particulière est requis, ou une mise à "
+"jour a été installée"
 
 #: js/src/notificationsSettings/CommonForm.js:48
 msgid "Recipient's email"
@@ -1143,11 +1142,11 @@ msgid ""
 "additional settings. If you want to set your own SMTP server, please "
 "select \"Custom\" and enter required settings."
 msgstr ""
-"Si vous choisissez « Turris » comme fournisseur SMTP, les serveurs fournis "
-"aux membres du projet Turris seront utilisés. Ces serveurs ne nécessitent "
-"pas de réglages supplémentaires. Si vous souhaitez définir votre propre "
-"serveur SMTP, sélectionnez « Personnalisé » et saisissez les paramètres "
-"requis."
+"Si vous choisissez « Turris » comme fournisseur SMTP, les serveurs "
+"fournis aux membres du projet Turris seront utilisés. Ces serveurs ne "
+"nécessitent pas de réglages supplémentaires. Si vous souhaitez définir "
+"votre propre serveur SMTP, sélectionnez « Personnalisé » et saisissez les"
+" paramètres requis."
 
 #: js/src/notificationsSettings/helpTexts.js:13
 msgid "Email address of recipient. Separate multiple addresses by comma."
@@ -1162,13 +1161,12 @@ msgid ""
 "Name of the sender - will be used as a part of the sender's email address"
 " before the \"at\" sign."
 msgstr ""
-"Nom de l’expéditeur — sera utilisé comme une partie de l’adresse courriel de "
-"l’expéditeur avant l’arobase."
+"Nom de l’expéditeur — sera utilisé comme une partie de l’adresse courriel"
+" de l’expéditeur avant l’arobase."
 
 #: js/src/notificationsSettings/helpTexts.js:20
 msgid "This is the address notifications are send from."
-msgstr ""
-"Ceci est l’adresse à partir de laquelle sont envoyées les notifications."
+msgstr "Ceci est l’adresse à partir de laquelle sont envoyées les notifications."
 
 #: js/src/notificationsSettings/validator.js:21
 msgid "Can't be empty."
@@ -1183,8 +1181,8 @@ msgid ""
 "Sender's name can contain only alphanumeric characters, dots and "
 "underscores."
 msgstr ""
-"Le nom de l’expéditeur ne peut contenir que des caractères alphanumériques, "
-"des points et des tirets bas."
+"Le nom de l’expéditeur ne peut contenir que des caractères "
+"alphanumériques, des points et des tirets bas."
 
 #: js/src/notificationsSettings/validator.js:38
 msgid "Port is an number."
@@ -1198,17 +1196,13 @@ msgstr "Le port maximum est 65535."
 msgid "Minimum port is 1."
 msgstr "Le port minimum est 1."
 
-#: js/src/packageManagement/packages/LanguageForm.js:27
-msgid "Languages"
-msgstr "Langues"
-
 #: js/src/packageManagement/packages/LanguageForm.js:28
 msgid ""
 "If you want to use other language than English you can select it from the"
 " following list:"
 msgstr ""
-"Si vous souhaitez utiliser une autre langue que l'anglais, vous pouvez la "
-"sélectionner à partir de la liste suivante :"
+"Si vous souhaitez utiliser une autre langue que l'anglais, vous pouvez la"
+" sélectionner à partir de la liste suivante :"
 
 #: js/src/packageManagement/packages/Packages.js:22
 msgid ""
@@ -1285,13 +1279,10 @@ msgid ""
 "of this Turris router and you agree with the full text of the <a "
 "href=\"https://www.turris.cz/omnia-updater-eula\">license agreement</a>."
 msgstr ""
-"En activant les mises à jour automatiques, vous confirmez que vous êtes le "
-"propriétaire de ce routeur Turris et vous acceptez le texte intégral de l'<a "
-"href=\"https://www.turris.cz/omnia-updater-eula\">accord de licence</a>."
-
-#: js/src/packageManagement/updateSettings/UpdateSettings.js:28
-msgid "Update settings"
-msgstr ""
+"En activant les mises à jour automatiques, vous confirmez que vous êtes "
+"le propriétaire de ce routeur Turris et vous acceptez le texte intégral "
+"de l'<a href=\"https://www.turris.cz/omnia-updater-eula\">accord de "
+"licence</a>."
 
 #: js/src/packageManagement/updateSettings/UpdateSettings.js:30
 msgid ""
@@ -1319,8 +1310,8 @@ msgid ""
 "Number of days that must pass between receiving the request for restart "
 "and the automatic restart itself."
 msgstr ""
-"Nombre de jours qui doivent s’écouler entre la réception de la demande pour "
-"le redémarrage et le redémarrage automatique lui-même."
+"Nombre de jours qui doivent s’écouler entre la réception de la demande "
+"pour le redémarrage et le redémarrage automatique lui-même."
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:18
 msgid "Time of day of automatic reboot in HH:MM format."
@@ -1367,8 +1358,8 @@ msgid ""
 "Updates will be installed with an adjustable delay. You can also approve "
 "them manually."
 msgstr ""
-"Les mises à jour seront installées selon un délai pouvant être ajusté. Vous "
-"pouvez aussi les approuver manuellement."
+"Les mises à jour seront installées selon un délai pouvant être ajusté. "
+"Vous pouvez aussi les approuver manuellement."
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:26
 msgid "Update approval needed"
@@ -1377,7 +1368,8 @@ msgstr "Approbation pour la mise à jour est nécessaire"
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:27
 msgid "You have to approve the updates, otherwise they won't be installed."
 msgstr ""
-"Vous devez approuver les mises à jour, sinon elles ne seront pas installées."
+"Vous devez approuver les mises à jour, sinon elles ne seront pas "
+"installées."
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:51
 msgid "Update Approvals"
@@ -1514,11 +1506,12 @@ msgid ""
 "configuration here, you will have the option to do so later. Until then, "
 "the root account will be blocked.)"
 msgstr ""
-"Le même mot de passe serait utilisé pour accéder à cette interface d’"
-"administration, pour l’utilisateur root dans l’interface Web LuCI et pour la "
-"connexion SSH. Utiliser un mot de passe fort ! (Si vous choisissez de ne pas "
-"configurer le mot de passe pour la configuration avancée ici, vous aurez la "
-"possibilité de le faire plus tard. D’ici là, le compte root sera bloqué.)"
+"Le même mot de passe serait utilisé pour accéder à cette interface "
+"d’administration, pour l’utilisateur root dans l’interface Web LuCI et "
+"pour la connexion SSH. Utiliser un mot de passe fort ! (Si vous "
+"choisissez de ne pas configurer le mot de passe pour la configuration "
+"avancée ici, vous aurez la possibilité de le faire plus tard. D’ici là, "
+"le compte root sera bloqué.)"
 
 #: js/src/password/Password.js:74
 msgid "Password changed successfully."
@@ -1605,9 +1598,9 @@ msgid ""
 "Please select the timezone the router is being operated in. Correct "
 "setting is required to display the right time and for related functions."
 msgstr ""
-"Veuillez sélectionner le fuseau horaire dans lequel le routeur est utilisé. "
-"Un réglage correct est requis pour afficher la bonne heure et pour des "
-"fonctions connexes."
+"Veuillez sélectionner le fuseau horaire dans lequel le routeur est "
+"utilisé. Un réglage correct est requis pour afficher la bonne heure et "
+"pour des fonctions connexes."
 
 #: js/src/regionAndTime/RegionForm.js:69
 msgid "Continent or ocean"
@@ -1638,8 +1631,8 @@ msgid ""
 "Time should be up-to-date otherwise DNS and other services might not work"
 " properly."
 msgstr ""
-"L’heure devrait être à jour sinon le DNS et d’autres services pourraient ne "
-"pas fonctionner correctement."
+"L’heure devrait être à jour sinon le DNS et d’autres services pourraient "
+"ne pas fonctionner correctement."
 
 #: js/src/regionAndTime/TimeForm.js:97
 msgid "How to set time"
@@ -1717,8 +1710,8 @@ msgstr ""
 #: js/src/wan/MACForm.js:15
 msgid "Colon is used as a separator, for example 00:11:22:33:44:55"
 msgstr ""
-"Les Deux-points sont utilisés en tant que signe de séparation, par exemple "
-"00:11:22:33:44:55"
+"Les Deux-points sont utilisés en tant que signe de séparation, par "
+"exemple 00:11:22:33:44:55"
 
 #: js/src/wan/MACForm.js:44
 msgid "MAC"
@@ -1776,8 +1769,7 @@ msgstr ""
 
 #: js/src/wan/WAN6Form.js:28
 msgid "Address range for local network, e.g. 2001:db8:be13:37da::/64"
-msgstr ""
-"Plage d'adresses pour le réseau local, par exemple 2001:db8:be13:37da::/64"
+msgstr "Plage d'adresses pour le réseau local, par exemple 2001:db8:be13:37da::/64"
 
 #: js/src/wan/WAN6Form.js:33
 msgid ""
@@ -1810,9 +1802,9 @@ msgid ""
 "Some tunnel providers allow you to have public dynamic IPv4. Note that "
 "you need to fill in some extra fields to make it work."
 msgstr ""
-"Certains fournisseurs de tunnels vous permettent d'avoir une adresse IPv4 "
-"publique dynamique. Notez que vous devez remplir des champs supplémentaires "
-"pour que cela fonctionne."
+"Certains fournisseurs de tunnels vous permettent d'avoir une adresse IPv4"
+" publique dynamique. Notez que vous devez remplir des champs "
+"supplémentaires pour que cela fonctionne."
 
 #: js/src/wan/WAN6Form.js:45
 msgid "ID of your tunnel which was assigned to you by the provider."
@@ -1823,14 +1815,14 @@ msgid ""
 "Username which will be used to provide credentials to your tunnel "
 "provider."
 msgstr ""
-"Nom d’utilisateur qui sera utilisé pour fournir des informations d’"
-"identification à votre fournisseur de tunnel."
+"Nom d’utilisateur qui sera utilisé pour fournir des informations "
+"d’identification à votre fournisseur de tunnel."
 
 #: js/src/wan/WAN6Form.js:47
 msgid "Key which will be used to provide credentials to your tunnel provider."
 msgstr ""
-"Clé qui sera utilisée pour fournir des informations d'identification à votre "
-"fournisseur de tunnel."
+"Clé qui sera utilisée pour fournir des informations d'identification à "
+"votre fournisseur de tunnel."
 
 #: js/src/wan/WAN6Form.js:53
 msgid "Disable IPv6"
@@ -1932,96 +1924,6 @@ msgid ""
 "point) and a corresponding password. You can then set up your mobile "
 "devices, using the QR code available within the form.\n"
 "            "
-msgstr ""
-
-#: js/src/wifi/WiFiForm.js:77
-msgid "Wi-Fi ${deviceID + 1}"
-msgstr "Wi-Fi ${deviceID + 1}"
-
-#: js/src/wifi/WiFiForm.js:208
-msgid "auto"
-msgstr "auto"
-
-#: js/src/wifi/WiFiGuestForm.js:36
-msgid "Enable Guest Wifi"
-msgstr "Activer le mode Wi-Fi invité"
-
-#: js/src/wifi/WiFiQRCode.js:59
-msgid "Wi-Fi QR Code"
-msgstr "QR Code Wi-FI"
-
-#: js/src/wifi/WiFiQRCode.js:79
-msgid "Download PDF"
-msgstr "Télécharger le PDF"
-
-#: js/src/wifi/constants.js:9
-msgid "Disabled"
-msgstr "Désactivé"
-
-#: js/src/wifi/constants.js:10
-msgid "802.11n - 20 MHz wide channel"
-msgstr "802.11 n - 20 MHz de largeur de canal"
-
-#: js/src/wifi/constants.js:11
-msgid "802.11n - 40 MHz wide channel"
-msgstr "802.11 n - 40 MHz de largeur de canal"
-
-#: js/src/wifi/constants.js:12
-msgid "802.11ac - 20 MHz wide channel"
-msgstr "802.11 ac - 20 MHz de largeur de canal"
-
-#: js/src/wifi/constants.js:13
-msgid "802.11ac - 40 MHz wide channel"
-msgstr "802.11 ac - 40 MHz de largeur de canal"
-
-#: js/src/wifi/constants.js:14
-msgid "802.11ac - 80 MHz wide channel"
-msgstr "802.11 ac - 80 MHz de largeur de canal"
-
-#: js/src/wifi/constants.js:21
-msgid ""
-"\n"
-"        WPA2 pre-shared key, that is required to connect to the network.\n"
-"    "
-msgstr ""
-
-#: js/src/wifi/constants.js:24
-msgid "If set, network is not visible when scanning for available networks."
-msgstr ""
-"Si activé, le réseau n'est pas visible lors de la recherche des réseaux "
-"disponibles."
-
-#: js/src/wifi/constants.js:25
-msgid ""
-"\n"
-"        The 2.4 GHz band is more widely supported by clients, but tends "
-"to have more interference. The 5 GHz band is a\n"
-"        newer standard and may not be supported by all your devices. It "
-"usually has less interference, but the signal\n"
-"        does not carry so well indoors."
-msgstr ""
-
-#: js/src/wifi/constants.js:29
-msgid ""
-"\n"
-"        Change this to adjust 802.11n/ac mode of operation. 802.11n with "
-"40 MHz wide channels can yield higher\n"
-"        throughput but can cause more interference in the network. If you"
-" don't know what to choose, use the default\n"
-"        option with 20 MHz wide channel.\n"
-"    "
-msgstr ""
-
-#: js/src/wifi/constants.js:34
-msgid ""
-"\n"
-"        Enables Wi-Fi for guests, which is separated from LAN network. "
-"Devices connected to this network are allowed to\n"
-"        access the internet, but aren't allowed to access other devices "
-"and the configuration interface of the router.\n"
-"        Parameters of the guest network can be set in the Guest network "
-"tab.\n"
-"        "
 msgstr ""
 
 #: reforis/views.py:52
@@ -2171,3 +2073,100 @@ msgstr "Déconnexion"
 
 #~ msgid "Network settings"
 #~ msgstr "Paramètres réseau"
+
+#~ msgid "DHCP clients"
+#~ msgstr "Clients DHCP"
+
+#~ msgid "Update settings"
+#~ msgstr ""
+
+#~ msgid "Wi-Fi ${deviceID + 1}"
+#~ msgstr "Wi-Fi ${deviceID + 1}"
+
+#~ msgid "auto"
+#~ msgstr "auto"
+
+#~ msgid "Enable Guest Wifi"
+#~ msgstr "Activer le mode Wi-Fi invité"
+
+#~ msgid "Wi-Fi QR Code"
+#~ msgstr "QR Code Wi-FI"
+
+#~ msgid "Download PDF"
+#~ msgstr "Télécharger le PDF"
+
+#~ msgid "Disabled"
+#~ msgstr "Désactivé"
+
+#~ msgid "802.11n - 20 MHz wide channel"
+#~ msgstr "802.11 n - 20 MHz de largeur de canal"
+
+#~ msgid "802.11n - 40 MHz wide channel"
+#~ msgstr "802.11 n - 40 MHz de largeur de canal"
+
+#~ msgid "802.11ac - 20 MHz wide channel"
+#~ msgstr "802.11 ac - 20 MHz de largeur de canal"
+
+#~ msgid "802.11ac - 40 MHz wide channel"
+#~ msgstr "802.11 ac - 40 MHz de largeur de canal"
+
+#~ msgid "802.11ac - 80 MHz wide channel"
+#~ msgstr "802.11 ac - 80 MHz de largeur de canal"
+
+#~ msgid ""
+#~ "\n"
+#~ "        WPA2 pre-shared key, that "
+#~ "is required to connect to the "
+#~ "network.\n"
+#~ "    "
+#~ msgstr ""
+
+#~ msgid "If set, network is not visible when scanning for available networks."
+#~ msgstr ""
+#~ "Si activé, le réseau n'est pas "
+#~ "visible lors de la recherche des "
+#~ "réseaux disponibles."
+
+#~ msgid ""
+#~ "\n"
+#~ "        The 2.4 GHz band is more"
+#~ " widely supported by clients, but "
+#~ "tends to have more interference. The "
+#~ "5 GHz band is a\n"
+#~ "        newer standard and may not "
+#~ "be supported by all your devices. "
+#~ "It usually has less interference, but"
+#~ " the signal\n"
+#~ "        does not carry so well indoors."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\n"
+#~ "        Change this to adjust 802.11n/ac"
+#~ " mode of operation. 802.11n with 40"
+#~ " MHz wide channels can yield higher"
+#~ "\n"
+#~ "        throughput but can cause more"
+#~ " interference in the network. If you"
+#~ " don't know what to choose, use "
+#~ "the default\n"
+#~ "        option with 20 MHz wide channel.\n"
+#~ "    "
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\n"
+#~ "        Enables Wi-Fi for guests, "
+#~ "which is separated from LAN network. "
+#~ "Devices connected to this network are"
+#~ " allowed to\n"
+#~ "        access the internet, but aren't"
+#~ " allowed to access other devices and"
+#~ " the configuration interface of the "
+#~ "router.\n"
+#~ "        Parameters of the guest network"
+#~ " can be set in the Guest "
+#~ "network tab.\n"
+#~ "        "
+#~ msgstr ""
+
