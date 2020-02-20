@@ -1,7 +1,22 @@
+/*
+ * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See /LICENSE for more information.
+ */
+
 .wrapper {
     display: flex;
     position: relative;
     min-height: 100vh;
+}
+
+#content {
+    display: flex;
+    flex: 5;
+    flex-direction: column;
+    padding: 2em;
+    height: 100%;
 }
 
 @media (max-width: 768px) {
@@ -19,15 +34,14 @@
 
     #content {
         flex: none;
+        padding: 1rem;
     }
 }
 
-#content {
-    display: flex;
-    flex: 5;
-    flex-direction: column;
-    padding: 2em;
-    height: 100%;
+@media screen and (max-width: 480px) {
+    #content {
+        padding: 1rem 0 0 0;
+    }
 }
 
 #alert-container {
