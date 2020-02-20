@@ -28,6 +28,11 @@ InterfacesForm.propTypes = {
             ssh_on_wan: PropTypes.bool.isRequired,
         }),
     }),
+    formErrors: PropTypes.shape({
+        networks: PropTypes.shape({
+            lan: PropTypes.string,
+        }),
+    }),
     setFormValue: PropTypes.func.isRequired,
 };
 
@@ -36,7 +41,7 @@ InterfacesForm.defaultProps = {
 };
 
 export default function InterfacesForm({
-    formData, setFormValue, ...props
+    formData, formErrors, setFormValue, ...props
 }) {
     const [selectedID, setSelectedID] = useState(null);
     const [setAlert, dismissAlert] = useAlert();
@@ -80,8 +85,6 @@ export default function InterfacesForm({
         )(e);
     }
 
-    const hideUnassigned = getNetworksNumber(formData.networks) === 1;
-
     return (
         <>
             <h3>{NETWORKS_CHOICES.wan}</h3>
@@ -92,12 +95,16 @@ export default function InterfacesForm({
                 {...props}
             />
             <h3>{NETWORKS_CHOICES.lan}</h3>
-            <Network
-                interfaces={formData.networks.lan}
-                selected={selectedID}
-                setSelected={setSelectedID}
-                {...props}
-            />
+            {formErrors && formErrors.networks && formErrors.networks.lan
+                ? <p className="text-danger">{formErrors.networks.lan}</p>
+                : (
+                    <Network
+                        interfaces={formData.networks.lan}
+                        selected={selectedID}
+                        setSelected={setSelectedID}
+                        {...props}
+                    />
+                )}
             <h3>{NETWORKS_CHOICES.guest}</h3>
             <Network
                 interfaces={formData.networks.guest}
@@ -105,34 +112,21 @@ export default function InterfacesForm({
                 setSelected={setSelectedID}
                 {...props}
             />
-            {!hideUnassigned && (
-                <>
-                    <h3>{NETWORKS_CHOICES.none}</h3>
-                    <Network
-                        interfaces={formData.networks.none}
-                        selected={selectedID}
-                        setSelected={setSelectedID}
-                        {...props}
-                    />
-                </>
-            )}
+            <h3>{NETWORKS_CHOICES.none}</h3>
+            <Network
+                interfaces={formData.networks.none}
+                selected={selectedID}
+                setSelected={setSelectedID}
+                {...props}
+            />
             {selectedID && (
                 <SelectedInterface
                     network={selectedInterfaceNetwork}
                     WANIsEmpty={formData.networks.wan.length === 0}
-                    hideUnassigned={hideUnassigned}
                     {...selectedInterface}
-
                     onNetworkChange={handleNetworkChange}
                 />
             )}
         </>
-    );
-}
-
-function getNetworksNumber(networks) {
-    return Object.keys(networks).reduce(
-        (accumulator, networkName) => accumulator + networks[networkName].length,
-        0,
     );
 }

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-02-17 16:23+0100\n"
+"POT-Creation-Date: 2020-02-18 17:56+0100\n"
 "PO-Revision-Date: 2019-10-17 09:28+0000\n"
 "Last-Translator: Scott Anecito <scott.anecito@protonmail.com>\n"
 "Language: en\n"
@@ -48,8 +48,6 @@ msgid "Reboot"
 msgstr "Reboot"
 
 #: js/src/common/RebootButton.js:57 js/src/dns/DNSSECDisableModal.js:32
-#: js/src/interfaces/OpenPortsModals.js:71
-#: js/src/interfaces/OpenPortsModals.js:101
 msgid "Warning!"
 msgstr ""
 
@@ -405,7 +403,7 @@ msgstr ""
 msgid "TLS pin should have at least one symbol."
 msgstr ""
 
-#: js/src/guestNetwork/GuestNetwork.js:29 js/src/interfaces/Interfaces.js:84
+#: js/src/guestNetwork/GuestNetwork.js:29 js/src/interfaces/Interfaces.js:49
 #: js/src/interfaces/constants.js:11 js/src/main/pages.js:69
 msgid "Guest Network"
 msgstr ""
@@ -720,13 +718,13 @@ msgstr ""
 msgid "Updates"
 msgstr ""
 
-#: js/src/guide/steps.js:44 js/src/interfaces/Interfaces.js:66
+#: js/src/guide/steps.js:44 js/src/interfaces/Interfaces.js:31
 #: js/src/interfaces/constants.js:9 js/src/main/pages.js:49
 #: js/src/wan/WAN.js:27
 msgid "WAN"
 msgstr ""
 
-#: js/src/guide/steps.js:48 js/src/interfaces/Interfaces.js:74
+#: js/src/guide/steps.js:48 js/src/interfaces/Interfaces.js:39
 #: js/src/interfaces/constants.js:10 js/src/main/pages.js:54
 msgid "LAN"
 msgstr ""
@@ -735,11 +733,11 @@ msgstr ""
 msgid "Finish"
 msgstr ""
 
-#: js/src/interfaces/Interfaces.js:59
+#: js/src/interfaces/Interfaces.js:24
 msgid "Network Interfaces"
 msgstr ""
 
-#: js/src/interfaces/Interfaces.js:61
+#: js/src/interfaces/Interfaces.js:26
 msgid ""
 "\n"
 "Here you can configure the settings of the network interfaces on your "
@@ -749,7 +747,7 @@ msgid ""
 "        "
 msgstr ""
 
-#: js/src/interfaces/Interfaces.js:68
+#: js/src/interfaces/Interfaces.js:33
 msgid ""
 "\n"
 "It acts as an external network connection. Firewall rules should be "
@@ -758,7 +756,7 @@ msgid ""
 "        "
 msgstr ""
 
-#: js/src/interfaces/Interfaces.js:76
+#: js/src/interfaces/Interfaces.js:41
 msgid ""
 "\n"
 "It acts as a local network connection. LAN should contain devices which "
@@ -771,7 +769,7 @@ msgid ""
 "        "
 msgstr ""
 
-#: js/src/interfaces/Interfaces.js:86
+#: js/src/interfaces/Interfaces.js:51
 msgid ""
 "\n"
 "It acts as a local network connection. Unlike LAN the devices in the "
@@ -784,7 +782,11 @@ msgid ""
 "        "
 msgstr ""
 
-#: js/src/interfaces/InterfacesForm.js:48
+#: js/src/interfaces/Interfaces.js:77
+msgid "You have to assign at least one interface to this group."
+msgstr ""
+
+#: js/src/interfaces/InterfacesForm.js:53
 msgid ""
 "Ports are open on your WAN interface. It's better to reconfigure your "
 "interface settings to avoid security issues."
@@ -803,80 +805,44 @@ msgstr ""
 msgid "Module %s"
 msgstr ""
 
-#: js/src/interfaces/OpenPortsModals.js:64
-msgid ""
-"\n"
-"You don't have any interface assigned to the LAN network.<br/>\n"
-"Do you want to <strong>open ports 22, 80 and 443 on WAN network</strong> "
-"in order to be able to access the configuration\n"
-"interface of our device?"
-msgstr ""
-
-#: js/src/interfaces/OpenPortsModals.js:76
-msgid "Keep closed"
-msgstr ""
-
-#: js/src/interfaces/OpenPortsModals.js:77
-msgid "Open ports"
-msgstr ""
-
-#: js/src/interfaces/OpenPortsModals.js:93
-msgid ""
-"\n"
-"In the setup you provided it is <strong>not possible to access the "
-"administration interface</strong> of your device.\n"
-"This means that the only way to configure your device will be via serial "
-"cable or you need to a perform factory reset.\n"
-"<br/><br/> \n"
-"<p><strong>Is this really what you want?</strong></p>"
-msgstr ""
-
-#: js/src/interfaces/OpenPortsModals.js:107
-msgid "No, keep ports open"
-msgstr ""
-
-#: js/src/interfaces/OpenPortsModals.js:110
-msgid "Yes, I'm an expert"
-msgstr ""
-
-#: js/src/interfaces/SelectedInterface.js:74
+#: js/src/interfaces/SelectedInterface.js:65
 #, python-format
 msgid "Interface %s %s"
 msgstr ""
 
-#: js/src/interfaces/SelectedInterface.js:77
+#: js/src/interfaces/SelectedInterface.js:68
 msgid "Network"
 msgstr ""
 
-#: js/src/interfaces/SelectedInterface.js:86
+#: js/src/interfaces/SelectedInterface.js:77
 msgid "State"
 msgstr ""
 
-#: js/src/interfaces/SelectedInterface.js:94
+#: js/src/interfaces/SelectedInterface.js:85
 msgid "Module ID"
 msgstr ""
 
-#: js/src/interfaces/SelectedInterface.js:98
+#: js/src/interfaces/SelectedInterface.js:89
 msgid "Slot"
 msgstr ""
 
-#: js/src/interfaces/SelectedInterface.js:102
+#: js/src/interfaces/SelectedInterface.js:93
 msgid "Interface ID"
 msgstr ""
 
-#: js/src/interfaces/SelectedInterface.js:106
+#: js/src/interfaces/SelectedInterface.js:97
 msgid "Type"
 msgstr ""
 
-#: js/src/interfaces/SelectedInterface.js:110
+#: js/src/interfaces/SelectedInterface.js:101
 msgid "Bus"
 msgstr ""
 
-#: js/src/interfaces/SelectedInterface.js:114
+#: js/src/interfaces/SelectedInterface.js:105
 msgid "Link speed"
 msgstr ""
 
-#: js/src/interfaces/SelectedInterface.js:115
+#: js/src/interfaces/SelectedInterface.js:106
 msgid "N/A"
 msgstr ""
 
@@ -1622,17 +1588,17 @@ msgid ""
 " page."
 msgstr ""
 
-#: js/src/utils/ErrorBoundary.js:35
+#: js/src/utils/ErrorBoundary.js:36
 msgid "An Error Occurred"
 msgstr ""
 
-#: js/src/utils/ErrorBoundary.js:39
+#: js/src/utils/ErrorBoundary.js:40
 msgid ""
 "More detailed information is available in the console of your web browser"
-" (available by pressing F12)."
+" - on most browsers accessible after pressing Ctrl+Shift+J or F12."
 msgstr ""
 
-#: js/src/utils/ErrorBoundary.js:40
+#: js/src/utils/ErrorBoundary.js:41
 msgid ""
 "Please report this error to our support team via e-mail: <a "
 "href=\"mailto:tech.support@turris.cz\">tech.support@turris.cz</a>."
@@ -1953,4 +1919,46 @@ msgstr ""
 #: reforis/templates/includes/top-bar.html:4
 msgid "Logout"
 msgstr "Logout"
+
+#~ msgid ""
+#~ "\n"
+#~ "You don't have any interface assigned to the LAN network.<br/>\n"
+#~ "Do you want to <strong>open ports "
+#~ "22, 80 and 443 on WAN "
+#~ "network</strong> in order to be able "
+#~ "to access the configuration\n"
+#~ "interface of our device?"
+#~ msgstr ""
+
+#~ msgid "Keep closed"
+#~ msgstr ""
+
+#~ msgid "Open ports"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\n"
+#~ "In the setup you provided it is"
+#~ " <strong>not possible to access the "
+#~ "administration interface</strong> of your "
+#~ "device.\n"
+#~ "This means that the only way to"
+#~ " configure your device will be via"
+#~ " serial cable or you need to a"
+#~ " perform factory reset.\n"
+#~ "<br/><br/> \n"
+#~ "<p><strong>Is this really what you want?</strong></p>"
+#~ msgstr ""
+
+#~ msgid "No, keep ports open"
+#~ msgstr ""
+
+#~ msgid "Yes, I'm an expert"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "More detailed information is available "
+#~ "in the console of your web browser"
+#~ " (available by pressing F12)."
+#~ msgstr ""
 
