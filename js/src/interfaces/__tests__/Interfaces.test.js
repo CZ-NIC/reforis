@@ -15,7 +15,7 @@ import { mockJSONError } from "foris/testUtils/network";
 import mockAxios from "jest-mock-axios";
 import Interfaces from "../Interfaces";
 
-import { interfacesFixture, interfacesWithVariousModules, singleInterface } from "./__fixtures__/interfaces";
+import { interfacesFixture, interfacesWithVariousModules } from "./__fixtures__/interfaces";
 
 describe("<Interfaces/>", () => {
     let interfacesContainer;
@@ -66,60 +66,15 @@ describe("<Interfaces/>", () => {
         };
         expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/interfaces", data, expect.anything());
     });
-});
 
-describe("<Interfaces/> with single interface assigned to WAN", () => {
-    let interfacesContainer;
-
-    beforeEach(async () => {
-        const webSockets = new WebSockets();
-        const {container} = render(
-            <>
-                <div id="modal-container" />
-                <Interfaces ws={webSockets} />
-            </>
-        );
-        mockAxios.mockResponse({data: singleInterface});
-        await wait(() => getByText(container, "LAN3"));
-        interfacesContainer = container;
-
+    it("Test if form is invalid when no interfaces are in LAN group.", () => {
         fireEvent.click(getByText(interfacesContainer, "LAN3"));
-        // Assign to WAN interface
-        fireEvent.change(getByLabelText(interfacesContainer, "Network"), {target: {value: "wan"}});
-        fireEvent.click(getByText(interfacesContainer, "Save"));
-    });
+        fireEvent.change(getByLabelText(interfacesContainer, "Network"), { target: { value: "none" } });
 
-    it("keep ports closed", async () => {
-        expect(getByText(interfacesContainer, "Warning!")).toBeTruthy();
-        fireEvent.click(getByText(interfacesContainer, "Keep closed"));
-        fireEvent.click(getByText(interfacesContainer, "Yes, I'm an expert"));
-        const data = {
-            "firewall": {"http_on_wan": false, "https_on_wan": false, "ssh_on_wan": false},
-            "networks": {"guest": [], "lan": [], "none": [], "wan": ["lan3"]}
-        };
-        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/interfaces", data, expect.anything());
-    });
-
-    it("open ports", async () => {
-        expect(getByText(interfacesContainer, "Warning!")).toBeTruthy();
-        fireEvent.click(getByText(interfacesContainer, "Open ports"));
-        const data = {
-            "firewall": {"http_on_wan": true, "https_on_wan": true, "ssh_on_wan": true},
-            "networks": {"guest": [], "lan": [], "none": [], "wan": ["lan3"]}
-        };
-        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/interfaces", data, expect.anything());
-    });
-
-    it("eventually open ports", async () => {
-        expect(getByText(interfacesContainer, "Warning!")).toBeTruthy();
-        fireEvent.click(getByText(interfacesContainer, "Keep closed"));
-        fireEvent.click(getByText(interfacesContainer, "No, keep ports open"));
-        const data = {
-            "firewall": {"http_on_wan": true, "https_on_wan": true, "ssh_on_wan": true},
-            "networks": {"guest": [], "lan": [], "none": [], "wan": ["lan3"]}
-        };
-        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/interfaces", data, expect.anything());
-    });
+        const saveButton = getByText(interfacesContainer, "Save");
+        expect(saveButton.disabled).toBe(true);
+        expect(getByText(interfacesContainer, "You have to assign at least one interface to this group.")).toBeDefined();
+    })
 });
 
 describe("<Interfaces/> with various modules", () => {

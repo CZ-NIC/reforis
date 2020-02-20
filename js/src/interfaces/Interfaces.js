@@ -5,14 +5,13 @@
  * See /LICENSE for more information.
  */
 
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 import { ForisForm } from "foris";
 import API_URLs from "common/API";
 
 import InterfacesForm from "./InterfacesForm";
-import OpenPortsModals from "./OpenPortsModals";
 import { NETWORKS_TYPES } from "./constants";
 
 Interfaces.propTypes = {
@@ -20,40 +19,6 @@ Interfaces.propTypes = {
 };
 
 export default function Interfaces({ ws }) {
-    const [openPortsModalShown, setOpenPortsModalShown] = useState(false);
-    const [portsOpen, setPortsOpen] = useState(null);
-    const interfacesForm = useRef(null);
-
-    useEffect(() => {
-        // Submit the form after user decides if ports should be open
-        if (portsOpen !== null) {
-            interfacesForm.current.dispatchEvent(new Event("submit", { cancelable: true }));
-        }
-    }, [portsOpen]);
-
-    function onSubmit(formData, _, submit) {
-        return (event) => {
-            event.preventDefault();
-
-            if (formData.networks.lan.length > 0) {
-                submit(event);
-                return;
-            }
-
-            // Open modal if there are no LAN interfaces in order to ask if ports should be open
-            if (portsOpen === null) {
-                setOpenPortsModalShown(true);
-            } else {
-                formData.firewall = {
-                    http_on_wan: portsOpen,
-                    https_on_wan: portsOpen,
-                    ssh_on_wan: portsOpen,
-                };
-                submit(event);
-            }
-        };
-    }
-
     return (
         <>
             <h1>{_("Network Interfaces")}</h1>
@@ -97,18 +62,23 @@ devices connected to the guest network.
                     wsModule: "networks",
                 }}
                 prepDataToSubmit={prepDataToSubmit}
-                onSubmitOverridden={onSubmit}
-                formReference={interfacesForm}
+                validator={validateInterfaces}
             >
-                <OpenPortsModals
-                    setPortsOpen={setPortsOpen}
-                    openPortsModalShown={openPortsModalShown}
-                    setOpenPortsModalShown={setOpenPortsModalShown}
-                />
                 <InterfacesForm />
             </ForisForm>
         </>
     );
+}
+
+function validateInterfaces(formData) {
+    if (formData.networks.lan.length < 1) {
+        return {
+            networks: {
+                lan: _("You have to assign at least one interface to this group."),
+            },
+        };
+    }
+    return undefined;
 }
 
 function prepDataToSubmit(formData) {
