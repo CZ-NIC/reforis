@@ -71,6 +71,9 @@ module.exports = (env) => ({
                 },
             }),
         ],
+        // Workaround to get ReactRouterDOM to be exposed. Otherwise, it's excluded as unused
+        // imports as it's flagged as a module without side effects.
+        sideEffects: false,
     },
     plugins: [
         new webpack.DefinePlugin({
