@@ -7,9 +7,11 @@
 
 import React from "react";
 import { withRouter, Link, NavLink } from "react-router-dom";
-
 import PropTypes from "prop-types";
 
+import { Button } from "foris";
+
+import LanguagesDropdown from "languagesDropdown/LanguagesDropdown";
 import useGuideFinish from "./hooks";
 import STEPS from "./steps";
 
@@ -19,7 +21,7 @@ GuideNavigation.propTypes = {
     next_step: PropTypes.string.isRequired,
 };
 
-export default function GuideNavigation({ workflow_steps, passed, next_step }) {
+export default function GuideNavigation({ ws, workflow_steps, passed, next_step }) {
     const onGuideFinishHandler = useGuideFinish();
     const navigationItems = workflow_steps.map(
         (step) => (
@@ -38,10 +40,14 @@ export default function GuideNavigation({ workflow_steps, passed, next_step }) {
             <ul className="list-unstyled">
                 {navigationItems}
             </ul>
-            <NextStepButtonWithRouter next_step={next_step} />
-            <button type="button" className="btn btn-link" onClick={onGuideFinishHandler}>
-                {_("Skip guide")}
-            </button>
+            <div className="guide-controls">
+                <LanguagesDropdown ws={ws} />
+                <NextStepButtonWithRouter next_step={next_step} />
+                <Button className="btn-secondary" onClick={onGuideFinishHandler}>
+                    <i className="fas fa-forward mr-2" />
+                    {_("Skip guide")}
+                </Button>
+            </div>
         </>
     );
 }
@@ -88,8 +94,11 @@ NextStepButton.propTypes = {
 function NextStepButton({ next_step, location }) {
     if (location.pathname === `/${next_step}`) return null;
     return (
-        <Link id="next-step-button" className="btn btn-lg btn-light " to={`/${next_step}`}>
-            <i className="fas fa-arrow-right" />
+        <Link to={`/${next_step}`}>
+            <Button className="btn btn-primary">
+                <i className="fas fa-play mr-2" />
+                {_("Next step")}
+            </Button>
         </Link>
     );
 }

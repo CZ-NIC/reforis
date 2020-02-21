@@ -61,6 +61,7 @@ function GuideRouter({ ws, guideData, getGuideData }) {
             <AlertContextProvider>
                 <Portal containerId="guide-nav-container">
                     <GuideNavigation
+                        ws={ws}
                         workflow_steps={workflow_steps}
                         passed={passed}
                         next_step={next_step}
