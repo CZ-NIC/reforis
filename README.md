@@ -78,6 +78,23 @@ service lighttpd restart
 #### Note
 The lighttpd server has to be restarted after any changes in Python code were made.
 
+## Developing foris JS library
+
+In case you need to see changes in foris JS immediately, use `npm link` command. As a result, reForis will use sources from local directory. When a change is made, reForis is rebuilt with that adjustment applied.
+
+Following commands assume that reForis and foris JS repositories are in the same directory.
+
+```bash
+# Start in root of the repository
+cd js
+npm link ../../foris-js
+cd ..
+# Start build in watch mode
+make watch-js
+```
+
+The same principle applies to plugins.
+
 ## Documentation
 reForis has extensive documentation. It's simple to build docs via:
 ```bash
