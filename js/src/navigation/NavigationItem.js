@@ -8,6 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
+import "./NavigationItem.css";
 
 NavigationItem.propTypes = {
     path: PropTypes.string.isRequired,
@@ -19,7 +20,16 @@ NavigationItem.propTypes = {
 };
 
 export default function NavigationItem({ path, children, isLinkOutside }) {
-    if (isLinkOutside) return <li><a href={path}>{children}</a></li>;
+    if (isLinkOutside) {
+        return (
+            <li>
+                <a href={path}>
+                    {children}
+                    <i className="fas fa-external-link-alt link-outside-icon" />
+                </a>
+            </li>
+        );
+    }
 
     return (
         <li>
