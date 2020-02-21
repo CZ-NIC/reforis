@@ -45,7 +45,7 @@ export const HELP_CONTENT = {
     router: {
         ...HELP_CONTENT_DEFAULTS,
         finished: {
-            initial: _("The device setup is finished. Now your device is able to act as a router and route network traffic among LAN, WAN and guest network."),
+            initial: _("Congratulations! Now your device is able to act as a router and route network traffic among LAN, WAN and guest network."),
         },
     },
     min: {
@@ -73,7 +73,7 @@ export const HELP_CONTENT = {
             completed: _("Please test whether the settings you provided are correctly working. This means that you can access the configuration interface of your device and your device is able to access the internet (you can use the connection test below)."),
         },
         finished: {
-            initial: _("The device setup is finished. Now your device should be able to act as a server on your local network."),
+            initial: _("Congratulations! Now your device should be able to act as a server on your local network."),
         },
     },
 };

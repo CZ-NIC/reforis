@@ -6,22 +6,22 @@ exports[`<GuideFinish/> and useGuideFinish hook Snapshot. 1`] = `
     Guide Finished
   </h2>
   <p>
-    
-Congratulations! You've successfully reached the end of this guide. Once you leave this guide you'll be granted access 
-to the full configuration interface of this device.
-
-To further improve your security consider enabling data collect (start by selecting it in updater tab).
-This will allow you to be part of our security research to discover new attackers and it will also give you access to 
-dynamic updates to your firewall to block all already known attackers.
-            
+    Once you leave this guide you'll be granted access to the full configuration interface of this device.
   </p>
-  <button
-    class="btn btn-primary  col-sm-12 col-lg-3"
-    type="button"
+  <p>
+    To further improve your security consider installing data collection plugin (via Package Management). This will allow you to be part of our security research to discover new attackers and give you access to dynamic firewall updates blocking known attackers.
+  </p>
+  <div
+    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3 text-right"
   >
-     
-     
-    Continue
-  </button>
+    <button
+      class="btn btn-primary  col-sm-12 col-lg-3"
+      type="button"
+    >
+       
+       
+      Continue
+    </button>
+  </div>
 </div>
 `;
