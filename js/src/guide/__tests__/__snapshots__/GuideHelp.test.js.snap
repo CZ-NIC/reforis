@@ -78,7 +78,7 @@ exports[`<GuideHelp/> doesn't display completed message if it doesn't exist 1`] 
     class="card-body"
   >
     <p>
-      The device setup is finished. Now your device should be able to act as a server on your local network.
+      Congratulations! Now your device should be able to act as a server on your local network.
     </p>
   </div>
 </div>

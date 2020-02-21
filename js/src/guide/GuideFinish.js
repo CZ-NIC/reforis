@@ -7,7 +7,7 @@
 
 import React from "react";
 
-import { Button } from "foris";
+import { Button, formFieldsSize } from "foris";
 
 import useGuideFinish from "./hooks";
 
@@ -16,19 +16,11 @@ export default function GuideFinished() {
     return (
         <>
             <h2>{_("Guide Finished")}</h2>
-            <p>
-                {_(
-                    `
-Congratulations! You've successfully reached the end of this guide. Once you leave this guide you'll be granted access 
-to the full configuration interface of this device.
-
-To further improve your security consider enabling data collect (start by selecting it in updater tab).
-This will allow you to be part of our security research to discover new attackers and it will also give you access to 
-dynamic updates to your firewall to block all already known attackers.
-            `,
-                )}
-            </p>
-            <Button forisFormSize onClick={onGuideFinishHandler}>{_("Continue")}</Button>
+            <p>{_("Once you leave this guide you'll be granted access to the full configuration interface of this device.")}</p>
+            <p>{_("To further improve your security consider installing data collection plugin (via Package Management). This will allow you to be part of our security research to discover new attackers and give you access to dynamic firewall updates blocking known attackers.")}</p>
+            <div className={`${formFieldsSize} text-right`}>
+                <Button forisFormSize onClick={onGuideFinishHandler}>{_("Continue")}</Button>
+            </div>
         </>
     );
 }

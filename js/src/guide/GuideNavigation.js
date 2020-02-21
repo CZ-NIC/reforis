@@ -61,7 +61,7 @@ function GuideNavigationItem({
 
     const content = (
         <>
-            <i className="fas fa-arrow-right" />
+            <i className="fas fa-arrow-right mr-2" />
             {name}
         </>
     );
