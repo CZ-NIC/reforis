@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-02-18 17:56+0100\n"
+"POT-Creation-Date: 2020-02-20 17:21+0100\n"
 "PO-Revision-Date: 2019-09-30 13:00+0000\n"
 "Last-Translator: Алексей Леньшин <alenshin@gmail.com>\n"
 "Language: ru\n"
@@ -18,23 +18,23 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.8.0\n"
+"Generated-By: Babel 2.7.0\n"
 
 #: js/src/about/About.js:22 js/src/main/pages.js:133
 msgid "About"
-msgstr ""
+msgstr "Сведения"
 
 #: js/src/about/About.js:40
 msgid "Device"
-msgstr ""
+msgstr "Устройство"
 
 #: js/src/about/About.js:44
 msgid "Serial number"
-msgstr ""
+msgstr "Серийный номер"
 
 #: js/src/about/About.js:48
 msgid "Turris OS version"
-msgstr ""
+msgstr "Версия Turris OS"
 
 #: js/src/about/About.js:52
 msgid "Turris OS branch"
@@ -42,7 +42,7 @@ msgstr ""
 
 #: js/src/about/About.js:61
 msgid "Kernel version"
-msgstr ""
+msgstr "Версия ядра"
 
 #: js/src/common/RebootButton.js:42 js/src/main/pages.js:97
 msgid "Reboot"
@@ -50,19 +50,19 @@ msgstr "Перезагрузка"
 
 #: js/src/common/RebootButton.js:57 js/src/dns/DNSSECDisableModal.js:32
 msgid "Warning!"
-msgstr ""
+msgstr "Предупреждение!"
 
 #: js/src/common/RebootButton.js:58
 msgid "Are you sure you want to restart the router?"
-msgstr ""
+msgstr "Вы действительно хотите перезагрузить маршрутизатор?"
 
 #: js/src/common/RebootButton.js:60 js/src/dns/DNSSECDisableModal.js:42
 msgid "Cancel"
-msgstr ""
+msgstr "Отмена"
 
 #: js/src/common/RebootButton.js:61
 msgid "Confirm reboot"
-msgstr ""
+msgstr "Подтвердите перезагрузку"
 
 #: js/src/common/network/DHCPClientForm.js:14
 msgid "Hostname which will be provided to DHCP server."
@@ -74,31 +74,31 @@ msgstr "Имя сервера DHCP"
 
 #: js/src/common/network/DHCPClientsList.js:19
 msgid "DHCP Clients"
-msgstr ""
+msgstr "Клиенты DHCP"
 
 #: js/src/common/network/DHCPClientsList.js:22
 msgid "No DHCP clients found."
-msgstr ""
+msgstr "DHCP клиенты не найдены."
 
 #: js/src/common/network/DHCPClientsList.js:27
 msgid "Expires"
-msgstr ""
+msgstr "Истекает"
 
 #: js/src/common/network/DHCPClientsList.js:28
 msgid "IP Address"
-msgstr ""
+msgstr "IP-адрес"
 
 #: js/src/common/network/DHCPClientsList.js:29
 msgid "MAC Address"
-msgstr ""
+msgstr "MAC адрес"
 
 #: js/src/common/network/DHCPClientsList.js:30
 msgid "Hostname"
-msgstr ""
+msgstr "Имя хоста"
 
 #: js/src/common/network/DHCPClientsList.js:31
 msgid "Active"
-msgstr ""
+msgstr "Активный"
 
 #: js/src/common/network/DHCPServerForm.js:13
 msgid ""
@@ -138,7 +138,7 @@ msgstr ""
 
 #: js/src/common/network/DHCPValidators.js:79
 msgid "Minimum lease time is 1 hour."
-msgstr ""
+msgstr "Минимальное время аренды 1 час"
 
 #: js/src/common/network/DHCPValidators.js:90
 msgid "Address is outside current network."
@@ -251,6 +251,22 @@ msgid ""
 "this is a serious flaw on their side.\n"
 "            "
 msgstr ""
+"\n"
+"Маршрутизатор Turris использует собственный DNS-резольвер с поддержкой "
+"DNSSEC. Он способен работать независимо или он может пересылать ваши "
+"DNS-запросы вашему  DNS-резольверу вашего интернет-провайдера. <br/> "
+"<br/> Следующая настройка определяет поведение  DNS-резольвер. Обычно "
+"лучше использовать DNS-резольверу вашего интернет-провайдера в сетях, где"
+" он работает должным образом. Если по какой-то причине это не работает, "
+"необходимо использовать прямое разрешение DNS без пересылки. <br/> <br/> "
+"В редких случаях у интернет-провайдеров неправильно настроена сеть, что "
+"мешает проверке DNSSEC. Если у вас возникают проблемы с DNS, вы можете "
+"<b>временно </b> отключить проверку DNSSEC, чтобы определить источник "
+"проблемы. Однако имейте в виду, что без проверки DNSSEC вы уязвимы для "
+"атак спуфинга DNS! Поэтому мы <b>рекомендуем оставить DNSSEC "
+"включенным</b> и разрешить ситуацию с вашим провайдером, поскольку это "
+"серьезный недостаток с их стороны.\n"
+"            "
 
 #: js/src/dns/DNS.js:63 js/src/wan/WAN.js:50
 msgid "Connection Test"
@@ -265,34 +281,45 @@ msgid ""
 "changed your forwarder setting.\n"
 "        "
 msgstr ""
+"\n"
+"Здесь вы можете проверить интернет-соединение. Этот тест также полезен, "
+"когда вам нужно проверить, что ваш DNS-резольвер работает как положено. "
+"Не забудьте нажать кнопку <b>Сохранить</b>, если вы изменили настройки "
+"перенаправления DNS.\n"
+"        "
 
 #: js/src/dns/DNSForm.js:17
 msgid ""
 "This will enable your DNS resolver to place DHCP client's names among the"
 " local DNS records."
 msgstr ""
+"Это позволит вашему DNS-резолверу размещать имена клиентов DHCP среди "
+"локальных записей DNS."
 
 #: js/src/dns/DNSForm.js:18
 msgid ""
 "This domain will be used as suffix. E.g. The result for client "
 "\"android-123\" and domain \"my.lan\" will be \"android-123.my.lan\"."
 msgstr ""
+"Этот домен будет использоваться в качестве суффикса. Например, "
+"результатом для клиента «android-123» и домена «my.lan» будет "
+"«android-123.my.lan»."
 
 #: js/src/dns/DNSForm.js:71
 msgid "Use forwarding"
-msgstr ""
+msgstr "Использовать переадресацию"
 
 #: js/src/dns/DNSForm.js:87
 msgid "Enable DNSSEC"
-msgstr ""
+msgstr "Включить DNSSEC"
 
 #: js/src/dns/DNSForm.js:95
 msgid "Enable DHCP clients in DNS"
-msgstr ""
+msgstr "Включение DHCP-клиентов в DNS"
 
 #: js/src/dns/DNSForm.js:106
 msgid "Domain of DHCP clients in DNS"
-msgstr ""
+msgstr "Домен DHCP-клиентов в DNS"
 
 #: js/src/dns/DNSSECDisableModal.js:15
 msgid ""
@@ -305,72 +332,78 @@ msgid ""
 "\n"
 "Do you still want to continue and stay unprotected?\n"
 msgstr ""
+"\n"
+"DNSSEC - это технология безопасности, которая защищает от атак на "
+"инфраструктуру DNS. Мы настоятельно рекомендуем включить проверку DNSSEC,"
+" только если вы знаете, что будете подключать свое устройство к сети, где"
+" DNSSEC не работает. Вы все еще хотите продолжить и остаться без защиты?"
+"\n"
 
 #: js/src/dns/DNSSECDisableModal.js:51
 msgid "Disable DNSSEC"
-msgstr ""
+msgstr "Отключить DNSSEC"
 
 #: js/src/dns/Forwarders/Forwarders.js:79
 msgid "Edit forwarder"
-msgstr ""
+msgstr "Редактировать перенаправление"
 
 #: js/src/dns/Forwarders/Forwarders.js:79
 #: js/src/dns/Forwarders/Forwarders.js:94
 msgid "Add custom forwarder"
-msgstr ""
+msgstr "Добавить перенаправление вручную"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:32
 msgid "Forwarders"
-msgstr ""
+msgstr "Сервер пересылки"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:33
 msgid "Actions"
-msgstr ""
+msgstr "Действия"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:40
 msgid "Use provider's DNS resolver"
-msgstr ""
+msgstr "Использовать DNS-резольвер провайдера"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:132
 msgid "Edit"
-msgstr ""
+msgstr "Редактировать"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:139
 msgid "Delete"
-msgstr ""
+msgstr "Удалить"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:24
 msgid "base64 encoded sha256."
-msgstr ""
+msgstr "закодированный в base64 sha256."
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:49
 #: js/src/packageManagement/updates/UpdateApproval.js:98
 msgid "Name"
-msgstr ""
+msgstr "Имя"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:59
 msgid "IPv4"
-msgstr ""
+msgstr "IPv4"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:69
 msgid "IPv6"
-msgstr ""
+msgstr "IPv6"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:79
 msgid "TLS type"
-msgstr ""
+msgstr "Протокол защиты транспортного уровня (TLS)"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:100
 msgid "TLS hostname"
-msgstr ""
+msgstr "Имя хоста TLS"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:113
 msgid "TLS pin"
-msgstr ""
+msgstr "Код TLS"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:129
 msgid "Save forwarder"
-msgstr ""
+msgstr "Сохранить сервер пересылки"
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:37
 msgid "Forwarder saved successfully."
@@ -378,7 +411,7 @@ msgstr ""
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:39
 msgid "Can't save forwarder."
-msgstr ""
+msgstr "Невозможно сохранить сервер пересылки."
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:46
 msgid "Forwarder added successfully."
@@ -386,23 +419,23 @@ msgstr ""
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:48
 msgid "Can't add new forwarder."
-msgstr ""
+msgstr "Невозможно добавить сервер пересылки."
 
 #: js/src/dns/Forwarders/Forwarder/validator.js:19
 msgid "Define at least one of the IP addresses of the forwarder."
-msgstr ""
+msgstr "Определите хотя бы один из IP-адресов сервера пересылки."
 
 #: js/src/dns/Forwarders/Forwarder/validator.js:24
 msgid "Forwarder name should have at least one symbol."
-msgstr ""
+msgstr "Имя сервера пересылки должно содержать хотя бы один символ."
 
 #: js/src/dns/Forwarders/Forwarder/validator.js:33
 msgid "Hostname should have at least one symbol."
-msgstr ""
+msgstr "Имя хоста должно содержать хотя бы один символ."
 
 #: js/src/dns/Forwarders/Forwarder/validator.js:37
 msgid "TLS pin should have at least one symbol."
-msgstr ""
+msgstr "Код TLS должен иметь хотя бы один символ."
 
 #: js/src/guestNetwork/GuestNetwork.js:29 js/src/interfaces/Interfaces.js:49
 #: js/src/interfaces/constants.js:11 js/src/main/pages.js:69
@@ -420,28 +453,37 @@ msgid ""
 "in LAN.\n"
 "        "
 msgstr ""
+"\n"
+"Гостевая сеть используется для <a href=\"$ndomForisURLs.wifi "
+"automotive\"> гостевого Wi-Fi </a>. Он отделен от вашей обычной локальной"
+" сети. Устройствам, подключенным к этой сети, разрешен доступ к "
+"Интернету, но не разрешен доступ к интерфейсу конфигурации этого "
+"устройства и устройств в локальной сети.\n"
+"        "
 
 #: js/src/guestNetwork/GuestNetworkForm.js:18
 msgid "Router's IP address in the guest inner network."
-msgstr ""
+msgstr "IP-адрес маршрутизатора во внутренней гостевой сети."
 
 #: js/src/guestNetwork/GuestNetworkForm.js:19
 msgid "Network mask of the guest inner network."
-msgstr ""
+msgstr "Маска подсети гостевой внутренней сети."
 
 #: js/src/guestNetwork/GuestNetworkForm.js:22
 msgid ""
 "This option enables you to set a bandwidth limit for the guest network, "
 "so that your main network doesn't get slowed-down by it."
 msgstr ""
+"Эта опция ограничивает пропускную способность гостевой сети, чтобы не "
+"замедлять основную сеть."
 
 #: js/src/guestNetwork/GuestNetworkForm.js:23
 msgid "Download speed in guest network (in kilobits per second)."
-msgstr ""
+msgstr "Скорость приёма в гостевой сети (в килобитах в секунду)."
 
 #: js/src/guestNetwork/GuestNetworkForm.js:24
 msgid "Upload speed in guest network (in kilobits per second)."
-msgstr ""
+msgstr "Скорость передачи в гостевой сети (в килобитах в секунду)."
 
 #: js/src/guestNetwork/GuestNetworkForm.js:58
 msgid "Enable"
@@ -457,27 +499,27 @@ msgstr "Включить DHCP"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:120
 msgid "Enable QoS"
-msgstr ""
+msgstr "Включить QoS"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:171
 msgid "Download"
-msgstr ""
+msgstr "Скачать"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:187
 msgid "Upload"
-msgstr ""
+msgstr "Загрузить"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:208
 msgid "Download speed must be positive"
-msgstr ""
+msgstr "Скорость скачивания должна быть положительной"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:211
 msgid "Upload speed must be positive"
-msgstr ""
+msgstr "Скорость загрузки должна быть положительной"
 
 #: js/src/guide/GuideFinish.js:18
 msgid "Guide Finished"
-msgstr ""
+msgstr "Начальная настройка завершена"
 
 #: js/src/guide/GuideFinish.js:20
 msgid ""
@@ -493,14 +535,24 @@ msgid ""
 "dynamic updates to your firewall to block all already known attackers.\n"
 "            "
 msgstr ""
+"\n"
+"Поздравляем! Вы успешно достигли конца этого руководства. После того, как"
+" вы покинете это руководство, вам будет предоставлен доступ к полному "
+"интерфейсу конфигурации этого устройства. Для дальнейшего повышения "
+"безопасности рассмотрите возможность сбора данных (начните с выбора на "
+"вкладке Сервиса обновления). Это позволит вам принять участие в наших "
+"исследованиях в области безопасности, чтобы обнаружить новых "
+"злоумышленников, а также даст вам доступ к обновлениям брандмауэра, чтобы"
+" заблокировать всех уже известных злоумышленников.\n"
+"            "
 
 #: js/src/guide/GuideFinish.js:31
 msgid "Continue"
-msgstr ""
+msgstr "Продолжить"
 
 #: js/src/guide/GuideNavigation.js:43
 msgid "Skip guide"
-msgstr ""
+msgstr "Пропустить руководство"
 
 #: js/src/guide/WorkflowSelect.js:21
 msgid ""
@@ -509,6 +561,10 @@ msgid ""
 "other devices within your local network (e.g. act as a network-attached "
 "storage)."
 msgstr ""
+"Эта конфигурация поможет вам настроить ваше устройство для работы в "
+"качестве локального сервера. Это означает, что устройство будет "
+"предоставлять какие-либо услуги другим устройствам в вашей локальной сети"
+" (например, выступать в качестве сетевого хранилища)."
 
 #: js/src/guide/WorkflowSelect.js:22
 msgid ""
@@ -516,12 +572,18 @@ msgid ""
 " functional router. It assumes that you want to have more or less "
 "standard network setup."
 msgstr ""
+"После настройки этой конфигурации ваше устройство сможет выступать в "
+"качестве полнофункционального маршрутизатора. Предполагается, что вы "
+"хотите иметь более или менее стандартную настройку сети."
 
 #: js/src/guide/WorkflowSelect.js:23
 msgid ""
 "Just set your password and you are ready to go. This workflow is aimed to"
 " more advanced users who intend not to use the web GUI."
 msgstr ""
+"Просто установите свой пароль, и устройство готово к работе. Эта "
+"конфигурация предназначена для опытных пользователей, которые намерены не"
+" использовать веб-интерфейс."
 
 #: js/src/guide/WorkflowSelect.js:27
 msgid "Local Server"
@@ -533,7 +595,7 @@ msgstr "Маршрутизатор"
 
 #: js/src/guide/WorkflowSelect.js:29
 msgid "Minimal"
-msgstr ""
+msgstr "Минимальная"
 
 #: js/src/guide/WorkflowSelect.js:45
 msgid "Cannot set workflow."
@@ -548,6 +610,8 @@ msgid ""
 "Here you can set the guide walkthrough which will guide you through the "
 "basic configuration of your device."
 msgstr ""
+"Здесь вы можете начать руководство, которое проведет вас через базовую "
+"конфигурацию вашего устройства."
 
 #: js/src/guide/constants.js:12
 msgid ""
@@ -555,32 +619,39 @@ msgid ""
 "device. Firstly it is required to set your password. Note the security of"
 " your home network is in your hands, so try not to use weak passwords."
 msgstr ""
+"Добро пожаловать в веб интерфейс Foris . Этот проводник поможет вам с "
+"настройкой вашего устройства. Для начала надо будет установить пароль. "
+"Обратите внимание, что безопасность вашей домашней сети в ваших руках, "
+"поэтому не используйте слабый пароль."
 
 #: js/src/guide/constants.js:13
 msgid "Your password is set. You may proceed to the next step."
-msgstr ""
+msgstr "Ваш пароль установлен. Вы можете перейти к следующему шагу."
 
 #: js/src/guide/constants.js:16
 msgid "The workflow was set. You may proceed to next step."
-msgstr ""
+msgstr "Конфигурация выбрана. Вы можете перейти к следующему шагу."
 
 #: js/src/guide/constants.js:20
 msgid "Here you need to decide which interfaces belong to which network."
-msgstr ""
+msgstr "Здесь вам необходимо решить, какие интерфейсы принадлежат какой сети."
 
 #: js/src/guide/constants.js:21
 msgid "If you are in doubt use the current settings."
-msgstr ""
+msgstr "Если вы сомневаетесь, используйте текущие настройки."
 
 #: js/src/guide/constants.js:23
 msgid ""
 "You've configured your network interfaces. It seems that you didn't break"
 " any crucial network settings so you can safely proceed to the next step."
 msgstr ""
+"Вы настроили свои сетевые интерфейсы. Кажется, что вы не нарушали "
+"какие-либо важные настройки сети, поэтому вы можете спокойно перейти к "
+"следующему шагу."
 
 #: js/src/guide/constants.js:26
 msgid "Now you need to set the time and timezone of your device."
-msgstr ""
+msgstr "Теперь необходимо установить время и часовой пояс вашего устройства."
 
 #: js/src/guide/constants.js:27
 msgid ""
@@ -588,22 +659,29 @@ msgid ""
 "matches the time on your computer if not try to update it via NTP or "
 "manually."
 msgstr ""
+"Время и часовой пояс установлены. Убедитесь, что время соответствует "
+"времени на вашем компьютере, если вы не пытаетесь обновить его через NTP "
+"или вручную."
 
 #: js/src/guide/constants.js:30
 msgid ""
 "A proper DNS resolving is one of the key security features of your "
 "device. Let's configure it now."
 msgstr ""
+"Правильное разрешение DNS имен - одна из ключевых функций безопасности "
+"вашего устройства. Давайте его настроим."
 
 #: js/src/guide/constants.js:31
 msgid ""
 "You've updated your DNS configuration. Try to run connection test to see "
 "whether your DNS resolver is properly set."
 msgstr ""
+"Конфигурация DNS обновлена. Запустите проверку подключения, чтобы "
+"проверить, правильно ли настроено разрешение DNS."
 
 #: js/src/guide/constants.js:34
 msgid "In order to access the internet, you need to configure your WAN interface."
-msgstr ""
+msgstr "Чтобы получить доступ к Интернету, необходимо настроить интерфейс WAN."
 
 #: js/src/guide/constants.js:35
 msgid ""
@@ -611,6 +689,8 @@ msgid ""
 "whether it is working properly and if so you can safely proceed to the "
 "next step."
 msgstr ""
+"Интерфейс WAN настроен. Запустите тест подключения, чтобы убедиться, что "
+"он работает правильно и можно безопасно перейти к следующему шагу."
 
 #: js/src/guide/constants.js:38
 msgid ""
@@ -619,24 +699,35 @@ msgid ""
 "configuration interface unless you restart the network on your current "
 "device."
 msgstr ""
+"Теперь надо настроить интерфейс LAN. Обратите внимание, что при изменении"
+" настроек сети вы, вероятно, не сможете подключиться к интерфейсу "
+"конфигурации, пока не перезапустите сеть на своем текущем устройстве."
 
 #: js/src/guide/constants.js:39
 msgid ""
 "You've configured your LAN interface. Try to test whether settings work "
 "properly and if so you can safely proceed to the next step."
 msgstr ""
+"Интерфейс LAN настроен. Проверьте работу сети и вы можете спокойно "
+"перейти к следующему шагу."
 
 #: js/src/guide/constants.js:48
 msgid ""
 "The device setup is finished. Now your device is able to act as a router "
 "and route network traffic among LAN, WAN and guest network."
 msgstr ""
+"Настройка устройства завершена. Теперь ваше устройство может работать как"
+" маршрутизатор и управлять сетевым трафиком между сетью LAN, WAN и "
+"гостевой сетью."
 
 #: js/src/guide/constants.js:54
 msgid ""
 "Minimal device setup is finished. Note that you probably need to perform "
 "some further configuration updates to fit the device to your needs."
 msgstr ""
+"Минимальная настройка устройства завершена. Обратите внимание, что, "
+"вероятно, потребуется выполнить дополнительные обновления конфигурации, "
+"чтобы они соответствовали вашим потребностям."
 
 #: js/src/guide/constants.js:63
 msgid ""
@@ -644,6 +735,9 @@ msgid ""
 " put any interfaces to your WAN and Guest Network. So it is a good idea "
 "to assign all interfaces to LAN."
 msgstr ""
+"Вы решили работать как локальный сервер, это означает, что нет смысла "
+"размещать какие-либо интерфейсы в вашей сети WAN и гостевой сети. Поэтому"
+" неплохо назначить все интерфейсы для LAN."
 
 #: js/src/guide/constants.js:68
 msgid ""
@@ -652,6 +746,11 @@ msgid ""
 "probably want to act as a client here thus select "
 "<strong>Computer</strong> mode here."
 msgstr ""
+"Чтобы действовать как локальный сервер, нет необходимости настраивать "
+"локальную сеть (если вы все еще хотите настроить её, сбросьте начальную "
+"настройку и выберите конфигурацию маршрутизатора). Вы, вероятно, хотите "
+"действовать как клиент, поэтому выберите режим <strong>Компьютер</strong>"
+" здесь."
 
 #: js/src/guide/constants.js:69
 msgid ""
@@ -659,6 +758,9 @@ msgid ""
 "IP addresses are entered correctly otherwise you won't be able to access "
 "this configuration interface when the new settings are applied."
 msgstr ""
+"Если вы выберете конфигурацию <strong>Статичный</strong>, убедитесь, что "
+"IP-адреса введены правильно, иначе вы не сможете получить доступ к этой "
+"конфигурации, когда новые параметры будут применены."
 
 #: js/src/guide/constants.js:70
 msgid ""
@@ -667,12 +769,18 @@ msgid ""
 "server which is managing your LAN. Then you need to connect to the new IP"
 " address to proceed the guide."
 msgstr ""
+"Если вы выберите конфигурацию <strong>DHCP</strong>, необходимо получить "
+"новый IP-адрес этого устройства. Вы можете получить его с сервера DHCP, "
+"который управляет вашей локальной сетью. Затем нужно переподключиться к "
+"новому IP-адресу, чтобы продолжить настройку."
 
 #: js/src/guide/constants.js:71
 msgid ""
 "Note that either way you might need to re-plug your ethernet cables after"
 " you update the settings here."
 msgstr ""
+"Обратите внимание, что вам может понадобиться повторно подключить свои "
+"сетевые кабели после обновления настроек здесь."
 
 #: js/src/guide/constants.js:73
 msgid ""
@@ -681,12 +789,17 @@ msgid ""
 " your device is able to access the internet (you can use the connection "
 "test below)."
 msgstr ""
+"Проверьте, правильно ли проведена настройка. Это означает, что имеется "
+"доступ к интерфейсу конфигурации устройства и оно имеет доступ к "
+"Интернету (вы можете использовать тест подключения ниже)."
 
 #: js/src/guide/constants.js:76
 msgid ""
 "The device setup is finished. Now your device should be able to act as a "
 "server on your local network."
 msgstr ""
+"Настройка устройства завершена. Теперь ваше устройство должно работать "
+"как сервер в локальной сети."
 
 #: js/src/guide/hooks.js:23
 msgid "Cannot mark guide as finished."
@@ -700,43 +813,43 @@ msgstr "Пароль"
 
 #: js/src/guide/steps.js:24
 msgid "Workflow"
-msgstr ""
+msgstr "Конфигурация"
 
 #: js/src/guide/steps.js:28 js/src/main/pages.js:64
 msgid "Interfaces"
-msgstr ""
+msgstr "Интерфейс"
 
 #: js/src/guide/steps.js:32 js/src/regionAndTime/TimeForm.js:109
 msgid "Time"
-msgstr ""
+msgstr "Синхронизация"
 
 #: js/src/guide/steps.js:36 js/src/main/pages.js:59
 msgid "DNS"
-msgstr ""
+msgstr "DNS"
 
 #: js/src/guide/steps.js:40 js/src/main/pages.js:115
 #: js/src/packageManagement/updates/Updates.js:25
 msgid "Updates"
-msgstr ""
+msgstr "Обновления"
 
 #: js/src/guide/steps.js:44 js/src/interfaces/Interfaces.js:31
 #: js/src/interfaces/constants.js:9 js/src/main/pages.js:49
 #: js/src/wan/WAN.js:27
 msgid "WAN"
-msgstr ""
+msgstr "WAN"
 
 #: js/src/guide/steps.js:48 js/src/interfaces/Interfaces.js:39
 #: js/src/interfaces/constants.js:10 js/src/main/pages.js:54
 msgid "LAN"
-msgstr ""
+msgstr "LAN"
 
 #: js/src/guide/steps.js:52
 msgid "Finish"
-msgstr ""
+msgstr "Завершить"
 
 #: js/src/interfaces/Interfaces.js:24
 msgid "Network Interfaces"
-msgstr ""
+msgstr "Сетевые Интерфейсы"
 
 #: js/src/interfaces/Interfaces.js:26
 msgid ""
@@ -747,6 +860,12 @@ msgid ""
 " the default settings.\n"
 "        "
 msgstr ""
+"\n"
+"Здесь вы можете настроить параметры сетевых интерфейсов на вашем "
+"устройстве. Вы можете переключить физическое сетевые интерфейсы между "
+"сетями. Если вы не уверены, что установить здесь, используйте настройки "
+"по умолчанию.\n"
+"        "
 
 #: js/src/interfaces/Interfaces.js:33
 msgid ""
@@ -756,6 +875,11 @@ msgid ""
 "single interface.\n"
 "        "
 msgstr ""
+"\n"
+"Он действует как внешнее сетевое соединение. Правила брандмауэра должны "
+"применяться для этого интерфейса. Он может содержать только один "
+"интерфейс.\n"
+"        "
 
 #: js/src/interfaces/Interfaces.js:41
 msgid ""
@@ -769,6 +893,13 @@ msgid ""
 "easy way.\n"
 "        "
 msgstr ""
+"\n"
+"Он действует как локальное сетевое соединение. Локальная сеть должна "
+"содержать устройства, которые находятся под вашим контролем, и вы им "
+"доверяете. Эти устройства могут видеть друг друга и иметь доступ к этому "
+"веб-интерфейсу. Рекомендуется, чтобы в локальной сети был хотя бы один "
+"интерфейс, иначе вы не сможете просто настроить  маршрутизатор.\n"
+"        "
 
 #: js/src/interfaces/Interfaces.js:51
 msgid ""
@@ -782,6 +913,14 @@ msgid ""
 "devices connected to the guest network.\n"
 "        "
 msgstr ""
+"\n"
+"Он действует как локальное сетевое соединение. В отличие от локальной "
+"сети, устройства в гостевой сети не могут получить доступ к интерфейсу "
+"конфигурации этого устройства и имеют доступ только к глобальной сети "
+"(Интернет). Эта сеть должна использоваться для устройств, которым вы не "
+"полностью доверяете. Обратите внимание, что вы также можете ограничить "
+"скорость скачивания/загрузки устройств, подключенных к гостевой сети.\n"
+"        "
 
 #: js/src/interfaces/Interfaces.js:77
 msgid "You have to assign at least one interface to this group."
@@ -792,6 +931,8 @@ msgid ""
 "Ports are open on your WAN interface. It's better to reconfigure your "
 "interface settings to avoid security issues."
 msgstr ""
+"Порты открыты на вашем интерфейсе WAN. Лучше перенастроить параметры "
+"интерфейса, чтобы избежать проблем с безопасностью."
 
 #: js/src/interfaces/Network.js:40
 msgid "There are no interfaces in this group."
@@ -799,7 +940,7 @@ msgstr ""
 
 #: js/src/interfaces/Network.js:61
 msgid "Base module"
-msgstr ""
+msgstr "Основной модуль"
 
 #: js/src/interfaces/Network.js:61
 #, python-format
@@ -813,19 +954,19 @@ msgstr ""
 
 #: js/src/interfaces/SelectedInterface.js:68
 msgid "Network"
-msgstr ""
+msgstr "Сеть"
 
 #: js/src/interfaces/SelectedInterface.js:77
 msgid "State"
-msgstr ""
+msgstr "Состояние"
 
 #: js/src/interfaces/SelectedInterface.js:85
 msgid "Module ID"
-msgstr ""
+msgstr "Идентификатор модуля"
 
 #: js/src/interfaces/SelectedInterface.js:89
 msgid "Slot"
-msgstr ""
+msgstr "Слот"
 
 #: js/src/interfaces/SelectedInterface.js:93
 msgid "Interface ID"
@@ -833,15 +974,15 @@ msgstr ""
 
 #: js/src/interfaces/SelectedInterface.js:97
 msgid "Type"
-msgstr ""
+msgstr "Тип"
 
 #: js/src/interfaces/SelectedInterface.js:101
 msgid "Bus"
-msgstr ""
+msgstr "Шина"
 
 #: js/src/interfaces/SelectedInterface.js:105
 msgid "Link speed"
-msgstr ""
+msgstr "Скорость соединения"
 
 #: js/src/interfaces/SelectedInterface.js:106
 msgid "N/A"
@@ -849,7 +990,7 @@ msgstr ""
 
 #: js/src/interfaces/constants.js:12
 msgid "Unassigned"
-msgstr ""
+msgstr "Неназначенный"
 
 #: js/src/lan/LAN.js:29
 msgid ""
@@ -869,6 +1010,18 @@ msgid ""
 "<b>refresh the page</b> in your browser.\n"
 "            "
 msgstr ""
+"\n"
+"Этот раздел содержит настройки для локальной сети (LAN). Предусмотренные "
+"значения по умолчанию подходят для большинства сетей. <br/> <b> "
+"Примечание:</b> Если вы измените IP-адрес маршрутизатора, все компьютеры "
+"в локальной сети, возможно, включая тот, который вы используете сейчас, "
+"должны будут получить <b>новый IP-адрес,</b>что не происходит "
+"<b>немедленно</b>. Рекомендуется отключить и снова подключить все кабели "
+"локальной сети после отправки изменений для принудительного обновления. "
+"Следующая страница не будет загружаться, пока вы не получите новый "
+"IP-адрес от DHCP (если DHCP включен), и вам может потребоваться "
+"<b>обновить страницу</b> в браузере.\n"
+"            "
 
 #: js/src/lan/LANForm.js:16
 msgid ""
@@ -880,6 +1033,13 @@ msgid ""
 "it has opened ports for configuration interface and other services.\n"
 "        "
 msgstr ""
+"\n"
+"Режим маршрутизатора означает, что это устройство управляет локальной "
+"сетью (действует как маршрутизатор, может назначать IP-адреса, ...). "
+"Режим компьютера означает, что это устройство действует как клиент в этой"
+" сети. Он действует аналогично WAN, но открыты порты для интерфейса "
+"конфигурации и других служб.\n"
+"        "
 
 #: js/src/lan/LANForm.js:30
 msgid "Computer"
@@ -927,11 +1087,11 @@ msgstr "Уведомления"
 
 #: js/src/main/pages.js:38
 msgid "Network Settings"
-msgstr ""
+msgstr "Сетевые настройки"
 
 #: js/src/main/pages.js:44 js/src/wifi/WiFi.js:21
 msgid "Wi-Fi"
-msgstr ""
+msgstr "Wi-Fi"
 
 #: js/src/main/pages.js:76
 msgid "Administration"
@@ -939,28 +1099,28 @@ msgstr "Управление"
 
 #: js/src/main/pages.js:87
 msgid "Region & Time"
-msgstr ""
+msgstr "Регион и время"
 
 #: js/src/main/pages.js:92
 msgid "Notification Settings"
-msgstr ""
+msgstr "Настройки уведомлений"
 
 #: js/src/main/pages.js:104
 msgid "Package Management"
-msgstr ""
+msgstr "Управление пакетами"
 
 #: js/src/main/pages.js:110
 #: js/src/packageManagement/updateSettings/UpdateSettings.js:28
 msgid "Update Settings"
-msgstr ""
+msgstr "Обновить настройки"
 
 #: js/src/main/pages.js:120 js/src/packageManagement/packages/Packages.js:20
 msgid "Packages"
-msgstr ""
+msgstr "Пакеты"
 
 #: js/src/main/pages.js:127
 msgid "Advanced Administration"
-msgstr ""
+msgstr "Расширенное администрирование"
 
 #: js/src/notifications/Notifications/NotificationsCenter.js:51
 #: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:90
@@ -1006,7 +1166,7 @@ msgstr "Ручная настройка"
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:78
 msgid "Email Notifications"
-msgstr ""
+msgstr "Уведомления по Электронной Почте"
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:80
 msgid "Enable email notifications"
@@ -1018,7 +1178,7 @@ msgstr "Провайдер SMTP"
 
 #: js/src/notificationsSettings/NotificationsSettings.js:24
 msgid "Notifications Settings"
-msgstr ""
+msgstr "Настройки Уведомлений"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:18
 msgid "None"
@@ -1125,6 +1285,8 @@ msgid ""
 "If you want to use other language than English you can select it from the"
 " following list:"
 msgstr ""
+"Если вы хотите использовать другой язык, помимо английского, выберите его"
+" из следующего списка:"
 
 #: js/src/packageManagement/packages/Packages.js:22
 msgid ""
@@ -1138,6 +1300,16 @@ msgid ""
 "been installed manually or using opkg is not affected.\n"
 "        "
 msgstr ""
+"\n"
+"Помимо стандартной установки, вы можете дополнительно выбрать комплекты "
+"дополнительного программного обеспечения, которое будет установлено на "
+"маршрутизаторе. Это программное обеспечение может быть выбрано из "
+"следующего списка. Обратите внимание, что система автоматического "
+"обновления поддерживает только программное обеспечение, которое является "
+"частью TurrisOS или установлено из списка пакетов. Программное "
+"обеспечение, установленное вручную или с помощью opkg, не затрагивается."
+"\n"
+"        "
 
 #: js/src/packageManagement/packages/Packages.js:72
 msgid ""
@@ -1145,14 +1317,17 @@ msgid ""
 "href=\"${ForisURLs.packageManagement.updateSettings}\">automatic "
 "updates</a> to manage packages and languages."
 msgstr ""
+"Включите <a "
+"href=\"$‹ForisURLs.packageManagement.updateSettings‹\">автоматические "
+"обновления</a> для управления пакетами и языками."
 
 #: js/src/packageManagement/packages/PackagesForm.js:28
 msgid "Packages List"
-msgstr ""
+msgstr "Список Пакетов"
 
 #: js/src/packageManagement/updateSettings/LicenceModal.js:23
 msgid "Most Important License Agreement Points"
-msgstr ""
+msgstr "Наиболее Важные Пункты Лицензионного Соглашения"
 
 #: js/src/packageManagement/updateSettings/LicenceModal.js:30
 msgid ""
@@ -1194,6 +1369,23 @@ msgid ""
 "                    </li>\n"
 "                  "
 msgstr ""
+"\n"
+"                    Автоматические обновления предлагаются владельцам "
+"маршрутизаторов Turris бесплатно. Обновления подготовлены исключительно "
+"CZ.NIC, z.s.p.o. Включение автоматических обновлений является "
+"обязательным условием для дополнительных функций безопасности "
+"маршрутизатора Turris. Автоматические обновления выполняются во время их "
+"выпуска, пользователь не может влиять на время установки. Включение "
+"автоматических обновлений может привести к увеличению интернет-трафика на"
+" вашем маршрутизаторе. Расходы, связанные с этим увеличением, покрываются"
+" вами. Автоматические обновления не могут защитить вас от каждой атаки, "
+"исходящей из Интернета. Пожалуйста, не забудьте защитить свои рабочие "
+"станции и другие устройства, установив антивирусное программное "
+"обеспечение и объяснив членам своей семьи, как оставаться в безопасности "
+"в Интернете. CZ.NIC, z. s. п. о. не гарантирует доступность этой услуги и"
+" не несет ответственности за любой ущерб, вызванный автоматическими "
+"обновлениями.\n"
+"                  "
 
 #: js/src/packageManagement/updateSettings/LicenceModal.js:58
 msgid ""
@@ -1201,6 +1393,10 @@ msgid ""
 "of this Turris router and you agree with the full text of the <a "
 "href=\"https://www.turris.cz/omnia-updater-eula\">license agreement</a>."
 msgstr ""
+"Включив автоматические обновления, вы подтверждаете, что являетесь "
+"владельцем этого маршрутизатора Turris, и соглашаетесь с полным текстом "
+"<a href=\"https://www.turris.cz/omnia-updater-eula\">лицензионного "
+"соглашения</a>."
 
 #: js/src/packageManagement/updateSettings/UpdateSettings.js:30
 msgid ""
@@ -1222,70 +1418,84 @@ msgid ""
 "target=\"#licenceModal\">here</a>.\n"
 "            "
 msgstr ""
+"\n"
+"Одной из важнейших функций маршрутизатора Turris являются автоматические "
+"обновления системы. Благодаря этой функции программное обеспечение вашего"
+" маршрутизатора обновляется и обеспечивает лучшую защиту от атак из "
+"Интернета. <br/> Настоятельно <b>рекомендуется /b> включить эту функцию "
+"<b> </b>. Если вы решите отключить его, имейте в виду, что это может "
+"ослабить безопасность вашего маршрутизатора и сети в случае обнаружения "
+"недостатков в программном обеспечении. <br/> Включая автоматические "
+"обновления, вы соглашаетесь с лицензионным соглашением для этой функции. "
+"Дополнительную информацию можно найти <a href=\"\" data-toggle=\"modal\" "
+"data-target=\"#licenceModal\"> здесь </a>.\n"
+"            "
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:17
 msgid ""
 "Number of days that must pass between receiving the request for restart "
 "and the automatic restart itself."
-msgstr ""
+msgstr "Количество дней с момента запроса до автоматической перезагрузки."
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:18
 msgid "Time of day of automatic reboot in HH:MM format."
-msgstr ""
+msgstr "Время автоматической перезагрузки (ЧЧ:MM)."
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:43
 msgid "Automatic Restarts After Software Update"
-msgstr ""
+msgstr "Автоматическая Перезагрузка После Установки Обновлений"
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:45
 msgid "Delay (days)"
-msgstr ""
+msgstr "Задержка (в днях)"
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:57
 msgid "Reboot time"
-msgstr ""
+msgstr "Время перезагрузки"
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:87
 msgid "Time should be in HH:MM format."
-msgstr ""
+msgstr "Время должно быть в формате ЧЧ:ММ."
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:90
 msgid "Restart can be delayed by at most 10 days"
-msgstr ""
+msgstr "Перезагрузка может быть отложена максимум на 10 дней"
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:93
 msgid "Delay must be a positive number"
-msgstr ""
+msgstr "Задержка перезагрузки должна быть положительным числом"
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:16
 msgid "Automatic installation"
-msgstr ""
+msgstr "Автоматическая установка"
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:17
 msgid "Updates will be installed without user's intervention."
-msgstr ""
+msgstr "Обновления будут установлены без подтверждения пользователя."
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:21
 msgid "Delayed updates"
-msgstr ""
+msgstr "Отложенные обновления"
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:22
 msgid ""
 "Updates will be installed with an adjustable delay. You can also approve "
 "them manually."
 msgstr ""
+"Обновления будут установлены с регулируемой задержкой. Вы также можете "
+"одобрить вручную."
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:26
 msgid "Update approval needed"
-msgstr ""
+msgstr "Обновления требуют одобрения"
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:27
 msgid "You have to approve the updates, otherwise they won't be installed."
-msgstr ""
+msgstr "Вы должны одобрить обновления, иначе они не будут установлены."
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:51
 msgid "Update Approvals"
-msgstr ""
+msgstr "Одобрения Обновления"
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:53
 msgid ""
@@ -1298,23 +1508,31 @@ msgid ""
 "            it will be offered to you again together with the next "
 "package installation."
 msgstr ""
+"Утверждения обновлений могут быть полезны, если вы хотите убедиться, что "
+"обновления не повредят вашей конкретной конфигурации. Вы можете, "
+"например, установить обновления, когда будете готовы к возможному откату "
+"к предыдущей конфигурации, и временно отклоните сомнительное обновление. "
+"Отменить обновление невозможно навсегда, и оно будет предложено вам снова"
+" вместе с установкой следующего пакета."
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:73
 msgid "Delayed updates (hours)"
-msgstr ""
+msgstr "Отложенные обновления (часы)"
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:93
 msgid "Updates must be delayed by least 1 hour and at most by 168 hours"
 msgstr ""
+"Обновление должно быть отложено не менее чем на 1 час и не более чем на "
+"168 часов"
 
 #: js/src/packageManagement/updateSettings/forms/UpdatesForm.js:39
 msgid "Enable automatic updates (recommended)"
-msgstr ""
+msgstr "Включить автоматическое обновление (рекомендуется)"
 
 #: js/src/packageManagement/updates/UpdateApproval.js:30
 #: js/src/updatesDropdown/UpdatesDropdown.js:108
 msgid "Cannot install updates."
-msgstr ""
+msgstr "Не удаётся установить обновление."
 
 #: js/src/packageManagement/updates/UpdateApproval.js:33
 msgid "Updates will be installed shortly."
@@ -1322,74 +1540,79 @@ msgstr ""
 
 #: js/src/packageManagement/updates/UpdateApproval.js:46
 msgid "There are no updates awaiting your approval."
-msgstr ""
+msgstr "Нет обновлений, ожидающих вашего одобрения."
 
 #: js/src/packageManagement/updates/UpdateApproval.js:50
 #, python-format
 msgid "There is %d package to be updated."
 msgid_plural "There are %d packages to be updated."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Пакет %d подлежит обновлению."
+msgstr[1] "Есть %d пакета для обновления."
+msgstr[2] "Есть %d пакетов для обновления."
 
 #: js/src/packageManagement/updates/UpdateApproval.js:57
 msgid ""
 "See <a data-toggle=\"collapse\" href=\"#plan-wrapper\" role=\"button\" "
 "aria-expanded=\"false\" aria-controls=\"plan-wrapper\">details</a>"
 msgstr ""
+"Смотрите <a data-toggle=\"collapse\" href=\"#plan-wrapper\" "
+"role=\"button\" aria-expanded=\"false\" aria-controls=\"plan-"
+"wrapper\">детали</a>"
 
 #: js/src/packageManagement/updates/UpdateApproval.js:65
 #, python-format
 msgid "Approve Update From %s"
-msgstr ""
+msgstr "Одобрить Обновление от %s"
 
 #: js/src/packageManagement/updates/UpdateApproval.js:75
 #: js/src/updatesDropdown/UpdatesDropdown.js:99
 msgid "Ignore"
-msgstr ""
+msgstr "Игнорировать"
 
 #: js/src/packageManagement/updates/UpdateApproval.js:82
 #: js/src/updatesDropdown/UpdatesDropdown.js:100
 msgid "Install now"
-msgstr ""
+msgstr "Установить сейчас"
 
 #: js/src/packageManagement/updates/UpdateApproval.js:97
 msgid "Action"
-msgstr ""
+msgstr "Действие"
 
 #: js/src/packageManagement/updates/UpdateApproval.js:99
 msgid "Current"
-msgstr ""
+msgstr "Текущий"
 
 #: js/src/packageManagement/updates/UpdateApproval.js:100
 msgid "New"
-msgstr ""
+msgstr "Новый"
 
 #: js/src/packageManagement/updates/Updates.js:39
 msgid ""
 "Automatic updates are disabled. Please enable delayed or approval-"
 "requiring updates to review them."
 msgstr ""
+"Автоматические обновления отключены. Пожалуйста, включите отложенные или "
+"требующие одобрения обновления, чтобы просмотреть их."
 
 #: js/src/packageManagement/updates/Updates.js:49
 msgid "Check and install updates"
-msgstr ""
+msgstr "Проверьте и установите обновления"
 
 #: js/src/packageManagement/updates/Updates.js:50
 msgid "Manually check for updates and install them immediately."
-msgstr ""
+msgstr "Проверьте наличие обновлений вручную и установите их немедленно."
 
 #: js/src/packageManagement/updates/Updates.js:53
 msgid "Check updates"
-msgstr ""
+msgstr "Проверьте обновления"
 
 #: js/src/packageManagement/updates/Updates.js:55
 msgid "Manually check for updates and review them immediately."
-msgstr ""
+msgstr "Проверьте наличие обновлений вручную и просмотрите их немедленно."
 
 #: js/src/packageManagement/updates/hooks.js:77
 msgid "Cannot fetch updater status."
-msgstr ""
+msgstr "Невозможно получить статус обновления."
 
 #: js/src/password/CurrentForisPasswordForm.js:24
 msgid "Current Foris password"
@@ -1427,7 +1650,7 @@ msgstr ""
 
 #: js/src/password/Password.js:74
 msgid "Password changed successfully."
-msgstr ""
+msgstr "Пароль успешно изменен."
 
 #: js/src/password/Password.js:115
 msgid "Password Settings"
@@ -1458,6 +1681,10 @@ msgid ""
 "managed either \n"
 "through the <a href=\"%s\">LuCI web interface</a> or via SSH."
 msgstr ""
+"Для доступа к дополнительным параметрам конфигурации, которые здесь "
+"недоступны, необходимо установить пароль пользователя root. Расширенные "
+"параметры конфигурации можно управлять либо через <a "
+"href=\"%s\">веб-интерфейс LuCI</a> или через SSH."
 
 #: js/src/password/RootPasswordForm.js:44
 msgid "New advanced administration password"
@@ -1465,7 +1692,7 @@ msgstr "Новый пароль расширенного администрир�
 
 #: js/src/reboot/Reboot.js:16
 msgid "Device Reboot"
-msgstr ""
+msgstr "Перезагрузка Устройства"
 
 #: js/src/reboot/Reboot.js:18
 msgid ""
@@ -1475,14 +1702,19 @@ msgid ""
 "will be required to log in again after the reboot.\n"
 "    "
 msgstr ""
+"\n"
+"Если вам нужно перезагрузить устройство, нажмите на следующую кнопку. "
+"Процесс перезагрузки занимает около 30 секунд, необходимо будет "
+"авторизоваться после перезагрузки.\n"
+"    "
 
 #: js/src/rebootDropdown/RebootDropdown.js:37
 msgid "Reboot Required"
-msgstr ""
+msgstr "Требуется Перезагрузка"
 
 #: js/src/rebootDropdown/RebootDropdown.js:42
 msgid "Details"
-msgstr ""
+msgstr "Подробности"
 
 #: js/src/regionAndTime/RegionAndTime.js:30
 msgid "Region and Time"
@@ -1496,99 +1728,110 @@ msgid ""
 "procedure of SSL certificate verification might not work correctly.\n"
 "        "
 msgstr ""
+"\n"
+"Для вашего устройства важно установить правильное время. Если время "
+"вашего устройства задерживается, процедура проверки сертификата SSL может"
+" работать некорректно.\n"
+"        "
 
 #: js/src/regionAndTime/RegionAndTime.js:53
 msgid "Time should be in YYYY-MM-DD HH:MM:SS format."
-msgstr ""
+msgstr "Время должно быть в формате ГГГГ-ММ-ДД ЧЧ:ММ:СС."
 
 #: js/src/regionAndTime/RegionForm.js:62
 msgid "Region Settings"
-msgstr ""
+msgstr "Настройки Региона"
 
 #: js/src/regionAndTime/RegionForm.js:64
 msgid ""
 "Please select the timezone the router is being operated in. Correct "
 "setting is required to display the right time and for related functions."
 msgstr ""
+"Выберите часовой пояс маршрутизатора для отображения правильного времени "
+"и связанных функций."
 
 #: js/src/regionAndTime/RegionForm.js:69
 msgid "Continent or ocean"
-msgstr ""
+msgstr "Континент или океан"
 
 #: js/src/regionAndTime/RegionForm.js:87
 msgid "Country"
-msgstr ""
+msgstr "Страна"
 
 #: js/src/regionAndTime/RegionForm.js:100
 msgid "Timezone"
-msgstr ""
+msgstr "Часовой пояс"
 
 #: js/src/regionAndTime/TimeForm.js:23
 msgid "Via NTP"
-msgstr ""
+msgstr "Через NTP"
 
 #: js/src/regionAndTime/TimeForm.js:24
 msgid "Manually"
-msgstr ""
+msgstr "Вручную"
 
 #: js/src/regionAndTime/TimeForm.js:94
 msgid "Time Settings"
-msgstr ""
+msgstr "Настройки Времени"
 
 #: js/src/regionAndTime/TimeForm.js:95
 msgid ""
 "Time should be up-to-date otherwise DNS and other services might not work"
 " properly."
 msgstr ""
+"Время должно быть актуальным, иначе DNS и другие службы могут работать "
+"некорректно."
 
 #: js/src/regionAndTime/TimeForm.js:97
 msgid "How to set time"
-msgstr ""
+msgstr "Способ синхронизации"
 
 #: js/src/regionAndTime/TimeForm.js:152
 msgid "Hide NTP servers list"
-msgstr ""
+msgstr "Скрыть список NTP серверов"
 
 #: js/src/regionAndTime/TimeForm.js:152
 msgid "Show NTP servers list"
-msgstr ""
+msgstr "Показать список NTP серверов"
 
 #: js/src/regionAndTime/TimeForm.js:156
 msgid "NTP Servers"
-msgstr ""
+msgstr "Серверы NTP"
 
 #: js/src/routerStateHandler/NetworkRestartHandler.js:28
 #, python-format
 msgid "Network restart after %d sec."
-msgstr ""
+msgstr "Перезагрузка сети через %d сек."
 
 #: js/src/routerStateHandler/NetworkRestartHandler.js:31
 msgid "Network restarting"
-msgstr ""
+msgstr "Перезапуск сети"
 
 #: js/src/routerStateHandler/NetworkRestartHandler.js:34
 #: js/src/routerStateHandler/RebootHandler.js:33
 msgid "Reconnecting"
-msgstr ""
+msgstr "Переподключение"
 
 #: js/src/routerStateHandler/RebootHandler.js:27
 #, python-format
 msgid "Reboot after %d sec."
-msgstr ""
+msgstr "Перезагрузка через %d сек."
 
 #: js/src/routerStateHandler/RebootHandler.js:30
 msgid "Rebooting"
-msgstr ""
+msgstr "Перезагрузка"
 
 #: js/src/updatesDropdown/UpdatesDropdown.js:66
 msgid "Approve Update"
-msgstr ""
+msgstr "Одобрить Обновление"
 
 #: js/src/updatesDropdown/UpdatesDropdown.js:96
 msgid ""
 "See details in <a href=${ForisURLs.packageManagement.updates}>Updates</a>"
 " page."
 msgstr ""
+"Подробности см. на <a href=$ndomForisURLs.packageManagement.updates "
+"rout>странице обновлений</a>."
 
 #: js/src/utils/ErrorBoundary.js:36
 msgid "An Error Occurred"
@@ -1641,6 +1884,12 @@ msgid ""
 "setting.\n"
 "        "
 msgstr ""
+"\n"
+"Здесь вы указываете настройки порта WAN. Обычно вы можете оставить эти "
+"параметры без изменений, если ваш интернет-провайдер не указал иное. "
+"Кроме того, в случае, если есть кабельный или DSL модем, соединяющий ваш "
+"маршрутизатор с сетью, обычно нет необходимости изменять этот параметр.\n"
+"        "
 
 #: js/src/wan/WAN.js:53
 msgid ""
@@ -1652,6 +1901,13 @@ msgid ""
 "wait for a while before running this test.\n"
 "        "
 msgstr ""
+"\n"
+"Здесь вы можете проверить свои настройки подключения. Не забудьте нажать "
+"кнопку <b>Сохранить</b> перед запуском теста. Обратите внимание, что "
+"иногда для полной инициализации соединения требуется некоторое время. "
+"Поэтому может быть полезно немного подождать, прежде чем запускать этот "
+"тест.\n"
+"        "
 
 #: js/src/wan/WAN6Form.js:23
 msgid "DUID which will be provided to the DHCPv6 server."
@@ -1819,26 +2075,32 @@ msgid ""
 "devices, using the QR code available within the form.\n"
 "            "
 msgstr ""
+"\n"
+"Если вы хотите использовать свой маршрутизатор в качестве точки доступа "
+"Wi-Fi, включите здесь Wi-Fi и введите SSID (имя доступа пункт) и "
+"соответствующий пароль. Затем вы можете настроить свои мобильные "
+"устройства, используя QR-код, доступный ниже.\n"
+"            "
 
 #: reforis/views.py:52
 msgid "Wrong password."
-msgstr ""
+msgstr "Неверный пароль."
 
 #: reforis/foris_controller_api/modules/dns.py:41
 msgid "Can't add new DNS forwarder."
-msgstr ""
+msgstr "Не удается добавить новый DNS-сервер пересылки."
 
 #: reforis/foris_controller_api/modules/dns.py:47
 msgid "Can't set DNS forwarder."
-msgstr ""
+msgstr "Не удается установить DNS-сервер пересылки."
 
 #: reforis/foris_controller_api/modules/dns.py:52
 msgid "Can't delete DNS forwarder."
-msgstr ""
+msgstr "Не удается удалить сервер пересылки DNS."
 
 #: reforis/foris_controller_api/modules/password.py:41
 msgid "Wrong current password."
-msgstr ""
+msgstr "Неверный текущий пароль."
 
 #: reforis/foris_controller_api/modules/updater.py:60
 msgid "Cannot change automatic restart settings."
@@ -1851,6 +2113,8 @@ msgstr ""
 #: reforis/foris_controller_api/modules/updater.py:79
 msgid "Cannot rollback automatic restart settings."
 msgstr ""
+"Вы не можете устанавливать пакеты с отключенными автоматическими "
+"обновлениями."
 
 #: reforis/foris_controller_api/modules/updater.py:160
 msgid "You can't set packages with disabled automatic updates."
@@ -1858,64 +2122,64 @@ msgstr ""
 
 #: reforis/foris_controller_api/modules/updater.py:171
 msgid "Cannot start updater"
-msgstr ""
+msgstr "Не удается запустить Сервис обновлений"
 
 #: reforis/templates/guide.html:14
 msgid "Guide"
-msgstr ""
+msgstr "Руководство"
 
 #: reforis/templates/login.html:28
 msgid "Foris"
-msgstr ""
+msgstr "Foris"
 
 #: reforis/templates/login.html:35
 msgid "Log in"
-msgstr ""
+msgstr "Авторизоваться"
 
 #: reforis/templates/login.html:39
 msgid "Go to LuCI"
-msgstr ""
+msgstr "Перейти к LuCI"
 
 #: reforis/templates/errors/403.html:4
 msgid "403 - Forbidden"
-msgstr ""
+msgstr "403 - Forbidden"
 
 #: reforis/templates/errors/403.html:9
 msgid "Forbidden You don't have permission to access"
-msgstr ""
+msgstr "Запрещено. У вас нет разрешения на доступ"
 
 #: reforis/templates/errors/403.html:10
 #, python-format
 msgid "Do you want to <a href=\"%(link)s\">log in</a>?"
-msgstr ""
+msgstr "Хотите <a href=\"%(link)s\"> авторизоваться</a>?"
 
 #: reforis/templates/errors/404.html:4
 msgid "404 - Page not found"
-msgstr ""
+msgstr "404 - Page not found"
 
 #: reforis/templates/errors/404.html:9
 msgid "Page not found :("
-msgstr ""
+msgstr "Страница не найдена :("
 
 #: reforis/templates/errors/500.html:4
 msgid "Server error"
-msgstr ""
+msgstr "Ошибка сервера"
 
 #: reforis/templates/errors/500.html:8
 msgid "500 -- Server error"
-msgstr ""
+msgstr "500 -- Server error"
 
 #: reforis/templates/errors/500.html:9
 msgid "Error:"
-msgstr ""
+msgstr "Ошибка:"
 
 #: reforis/templates/errors/500.html:12
 msgid "Extra:"
-msgstr ""
+msgstr "Дополнительно:"
 
 #: reforis/templates/errors/500.html:16
 msgid "Trace:"
-msgstr ""
+msgstr "Трассировка:"
 
 #: reforis/templates/includes/top-bar.html:4
 msgid "Logout"
@@ -1962,4 +2226,28 @@ msgstr "Выход"
 #~ "in the console of your web browser"
 #~ " (available by pressing F12)."
 #~ msgstr ""
+#~ "\n"
+#~ "        Если вы хотите использовать свой"
+#~ " маршрутизатор в качестве точки доступа "
+#~ "Wi-Fi, включите здесь Wi-Fi и "
+#~ "введите SSID (имя точки доступа) и "
+#~ "соответствующий пароль. Затем вы можете "
+#~ "настроить свои мобильные устройства, используя"
+#~ " QR-код.\n"
+#~ "    "
+
+#~ msgid "Network settings"
+#~ msgstr "Сетевые настройки"
+
+#~ msgid "Guest network"
+#~ msgstr "Гостевая Сеть"
+
+#~ msgid "Local server"
+#~ msgstr "Локальный Сервер"
+
+#~ msgid "Guide workflow"
+#~ msgstr "Руководство Настройки"
+
+#~ msgid "Update settings"
+#~ msgstr "Обновить настройки"
 

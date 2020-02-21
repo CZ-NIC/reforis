@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-02-18 17:56+0100\n"
+"POT-Creation-Date: 2020-02-20 17:21+0100\n"
 "PO-Revision-Date: 2019-09-29 15:56+0000\n"
 "Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
 "Language: cs\n"
@@ -17,23 +17,23 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.8.0\n"
+"Generated-By: Babel 2.7.0\n"
 
 #: js/src/about/About.js:22 js/src/main/pages.js:133
 msgid "About"
-msgstr ""
+msgstr "O zařízení"
 
 #: js/src/about/About.js:40
 msgid "Device"
-msgstr ""
+msgstr "Zařízení"
 
 #: js/src/about/About.js:44
 msgid "Serial number"
-msgstr ""
+msgstr "Sériové číslo"
 
 #: js/src/about/About.js:48
 msgid "Turris OS version"
-msgstr ""
+msgstr "Verze Turris OS"
 
 #: js/src/about/About.js:52
 msgid "Turris OS branch"
@@ -41,7 +41,7 @@ msgstr ""
 
 #: js/src/about/About.js:61
 msgid "Kernel version"
-msgstr ""
+msgstr "Verze jádra systému"
 
 #: js/src/common/RebootButton.js:42 js/src/main/pages.js:97
 msgid "Reboot"
@@ -49,19 +49,19 @@ msgstr "Restartovat"
 
 #: js/src/common/RebootButton.js:57 js/src/dns/DNSSECDisableModal.js:32
 msgid "Warning!"
-msgstr ""
+msgstr "Varování!"
 
 #: js/src/common/RebootButton.js:58
 msgid "Are you sure you want to restart the router?"
-msgstr ""
+msgstr "Opravdu chcete router restartovat?"
 
 #: js/src/common/RebootButton.js:60 js/src/dns/DNSSECDisableModal.js:42
 msgid "Cancel"
-msgstr ""
+msgstr "Storno"
 
 #: js/src/common/RebootButton.js:61
 msgid "Confirm reboot"
-msgstr ""
+msgstr "Potvrdit restart"
 
 #: js/src/common/network/DHCPClientForm.js:14
 msgid "Hostname which will be provided to DHCP server."
@@ -73,31 +73,31 @@ msgstr "Název stroje pro DHCP"
 
 #: js/src/common/network/DHCPClientsList.js:19
 msgid "DHCP Clients"
-msgstr ""
+msgstr "DHCP Klienti"
 
 #: js/src/common/network/DHCPClientsList.js:22
 msgid "No DHCP clients found."
-msgstr ""
+msgstr "Nenalezeni žádní DHCP klienti."
 
 #: js/src/common/network/DHCPClientsList.js:27
 msgid "Expires"
-msgstr ""
+msgstr "Platnost končí"
 
 #: js/src/common/network/DHCPClientsList.js:28
 msgid "IP Address"
-msgstr ""
+msgstr "IP adresa"
 
 #: js/src/common/network/DHCPClientsList.js:29
 msgid "MAC Address"
-msgstr ""
+msgstr "MAC adresa"
 
 #: js/src/common/network/DHCPClientsList.js:30
 msgid "Hostname"
-msgstr ""
+msgstr "Název stroje"
 
 #: js/src/common/network/DHCPClientsList.js:31
 msgid "Active"
-msgstr ""
+msgstr "Aktivní"
 
 #: js/src/common/network/DHCPServerForm.js:13
 msgid ""
@@ -250,6 +250,28 @@ msgid ""
 "this is a serious flaw on their side.\n"
 "            "
 msgstr ""
+"\n"
+"Router Turris používá svůj vlastní DNS překladač s podporou DNSSEC. Je "
+"schopný fungovat nezávisle nebo\n"
+"může směrovat vaše DNS dotazy na překladač DNS vašeho poskytovatele "
+"připojení k Intenetu.\n"
+"<br/><br/>\n"
+"Chování určují následující nastavení. V sítích, které fungují správně, je"
+" obvykle je lepší použít překladač\n"
+"poskytovatele připojení. Pokud to z nějakého důvodu nefunguje, je "
+"nezbytné použít přímý překlad bez\n"
+"přeposílání.\n"
+"<br/><br/>\n"
+"Ve vzácných případech poskytovatelé připojení nemají správně nastavenou "
+"síť, což ovlivňuje DNSSEC ověřování.\n"
+"POkud narážíte na problémy s DNS, můžete <b>dočasně</b> vypnout DNSSEC "
+"ověřování, abyste zjistili zdroj\n"
+"problému. Nicméně, mějte na paměti, že bez DNSSEC ověřování jste "
+"zranitelní k útokům podvržením DNS!\n"
+"Proto <b>doporučujeme ponechat DNSSEC zapnuté</b> a řešit situaci s vaším"
+" poskytovatelem připojení,\n"
+"protože se jedná o závažný nedostatek na jejich straně.\n"
+"            "
 
 #: js/src/dns/DNS.js:63 js/src/wan/WAN.js:50
 msgid "Connection Test"
@@ -264,34 +286,42 @@ msgid ""
 "changed your forwarder setting.\n"
 "        "
 msgstr ""
+"\n"
+"Zde je možné vyzkoušet fungování připojení k Internetu. Tento test je "
+"také užitečný když potřebujete ověřit zda DNS překlad\n"
+"funguje dle očekávání. Pokud jste změnili nastavení přeposílání, "
+"nezapomeňte kliknout na <b>Uložit</b>.\n"
+"        "
 
 #: js/src/dns/DNSForm.js:17
 msgid ""
 "This will enable your DNS resolver to place DHCP client's names among the"
 " local DNS records."
-msgstr ""
+msgstr "Toto zapíná ukládání názvů DHCP klientů do místních záznamů DNS překladu."
 
 #: js/src/dns/DNSForm.js:18
 msgid ""
 "This domain will be used as suffix. E.g. The result for client "
 "\"android-123\" and domain \"my.lan\" will be \"android-123.my.lan\"."
 msgstr ""
+"Tato doména bude použita jako TLD. Např. pro klienta „android-123“ a "
+"doménu „my.lan“ bude výsledek „android-123.my.lan“."
 
 #: js/src/dns/DNSForm.js:71
 msgid "Use forwarding"
-msgstr ""
+msgstr "Používat přeposílání"
 
 #: js/src/dns/DNSForm.js:87
 msgid "Enable DNSSEC"
-msgstr ""
+msgstr "Zapnout DNSSEC"
 
 #: js/src/dns/DNSForm.js:95
 msgid "Enable DHCP clients in DNS"
-msgstr ""
+msgstr "Registrovat DHCP klienty v DNS"
 
 #: js/src/dns/DNSForm.js:106
 msgid "Domain of DHCP clients in DNS"
-msgstr ""
+msgstr "Doména DHCP klientů v DNS"
 
 #: js/src/dns/DNSSECDisableModal.js:15
 msgid ""
@@ -304,72 +334,80 @@ msgid ""
 "\n"
 "Do you still want to continue and stay unprotected?\n"
 msgstr ""
+"\n"
+"DNSSEC je technologie pro zabezpečení, která chrání DNS komunikaci proti "
+"útokům na DNS infrastrukturu.\n"
+"Důrazně doporučujeme ponechat DNSSEC ověřování zapnuté, s výjimkou toho, "
+"kdy své zařízení připojujete do sítě, o které víte,\n"
+"že je DNSSEC rozbité. \n"
+"\n"
+"Opravdu chcete pokračovat a zůstat nechránění?\n"
 
 #: js/src/dns/DNSSECDisableModal.js:51
 msgid "Disable DNSSEC"
-msgstr ""
+msgstr "Vypnout DNSSEC"
 
 #: js/src/dns/Forwarders/Forwarders.js:79
 msgid "Edit forwarder"
-msgstr ""
+msgstr "Upravit přeposílání"
 
 #: js/src/dns/Forwarders/Forwarders.js:79
 #: js/src/dns/Forwarders/Forwarders.js:94
 msgid "Add custom forwarder"
-msgstr ""
+msgstr "Přidat uživatelsky určené přeposílání"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:32
 msgid "Forwarders"
-msgstr ""
+msgstr "Přeposílání"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:33
 msgid "Actions"
-msgstr ""
+msgstr "Akce"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:40
 msgid "Use provider's DNS resolver"
-msgstr ""
+msgstr "Použít DNS server poskytovatele připojení"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:132
 msgid "Edit"
-msgstr ""
+msgstr "Upravit"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:139
 msgid "Delete"
-msgstr ""
+msgstr "Smazat"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:24
 msgid "base64 encoded sha256."
-msgstr ""
+msgstr "sha256 v base64 kódování."
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:49
 #: js/src/packageManagement/updates/UpdateApproval.js:98
 msgid "Name"
-msgstr ""
+msgstr "Název"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:59
 msgid "IPv4"
-msgstr ""
+msgstr "IPv4"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:69
 msgid "IPv6"
-msgstr ""
+msgstr "IPv6"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:79
 msgid "TLS type"
-msgstr ""
+msgstr "Typ TLS"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:100
 msgid "TLS hostname"
-msgstr ""
+msgstr "TLS název hostitele"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:113
 msgid "TLS pin"
-msgstr ""
+msgstr "TLS pin"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:129
 msgid "Save forwarder"
-msgstr ""
+msgstr "Uložit přeposílání"
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:37
 msgid "Forwarder saved successfully."
@@ -377,7 +415,7 @@ msgstr ""
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:39
 msgid "Can't save forwarder."
-msgstr ""
+msgstr "Přeposílání se nedaří uložit."
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:46
 msgid "Forwarder added successfully."
@@ -385,28 +423,28 @@ msgstr ""
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:48
 msgid "Can't add new forwarder."
-msgstr ""
+msgstr "Nedaří se přidat nové přeposílání."
 
 #: js/src/dns/Forwarders/Forwarder/validator.js:19
 msgid "Define at least one of the IP addresses of the forwarder."
-msgstr ""
+msgstr "Zadejte alespoň jednu z IP adres přeposílání."
 
 #: js/src/dns/Forwarders/Forwarder/validator.js:24
 msgid "Forwarder name should have at least one symbol."
-msgstr ""
+msgstr "Název přeposílání by mělo obsahovat alespoň jeden symbol."
 
 #: js/src/dns/Forwarders/Forwarder/validator.js:33
 msgid "Hostname should have at least one symbol."
-msgstr ""
+msgstr "Název stroje by měl obsahovat alespoň jeden symbol."
 
 #: js/src/dns/Forwarders/Forwarder/validator.js:37
 msgid "TLS pin should have at least one symbol."
-msgstr ""
+msgstr "TLS pin by měl obsahovat alespoň jeden symbol."
 
 #: js/src/guestNetwork/GuestNetwork.js:29 js/src/interfaces/Interfaces.js:49
 #: js/src/interfaces/constants.js:11 js/src/main/pages.js:69
 msgid "Guest Network"
-msgstr ""
+msgstr "Síť Pro Hosty"
 
 #: js/src/guestNetwork/GuestNetwork.js:31
 msgid ""
@@ -419,28 +457,38 @@ msgid ""
 "in LAN.\n"
 "        "
 msgstr ""
+"\n"
+"Síť pro hosty souží pro <a href=\"${ForisURLs.wifi}\">Wi-Fi pro "
+"hosty</a>.\n"
+"Je oddělená od vaší běžné LAN. Zařízením připojených do této sítě je "
+"umožněn přístup do Internetu,\n"
+"ale už ne ke správnímu rozhraní tohoto routeru ani ostatním zařízením v "
+"LAN.\n"
+"        "
 
 #: js/src/guestNetwork/GuestNetworkForm.js:18
 msgid "Router's IP address in the guest inner network."
-msgstr ""
+msgstr "IP adresa routeru ve vnitřní síti pro hosty."
 
 #: js/src/guestNetwork/GuestNetworkForm.js:19
 msgid "Network mask of the guest inner network."
-msgstr ""
+msgstr "Maska sítě vnitřní sítě pro hosty."
 
 #: js/src/guestNetwork/GuestNetworkForm.js:22
 msgid ""
 "This option enables you to set a bandwidth limit for the guest network, "
 "so that your main network doesn't get slowed-down by it."
 msgstr ""
+"Tato volba zapne omezení rychlosti přenosu pro síť hostů, aby "
+"nezpomalovala vaši hlavní síť."
 
 #: js/src/guestNetwork/GuestNetworkForm.js:23
 msgid "Download speed in guest network (in kilobits per second)."
-msgstr ""
+msgstr "Rychlost stahování v síti pro hosty (v kilobitech za sekundu)."
 
 #: js/src/guestNetwork/GuestNetworkForm.js:24
 msgid "Upload speed in guest network (in kilobits per second)."
-msgstr ""
+msgstr "Rychlost odesílání v síti pro hosty (v kilobitech za sekundu)."
 
 #: js/src/guestNetwork/GuestNetworkForm.js:58
 msgid "Enable"
@@ -456,27 +504,27 @@ msgstr "Zapnout DHCP"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:120
 msgid "Enable QoS"
-msgstr ""
+msgstr "Zapnout QoS"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:171
 msgid "Download"
-msgstr ""
+msgstr "Stahování"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:187
 msgid "Upload"
-msgstr ""
+msgstr "Odesílání"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:208
 msgid "Download speed must be positive"
-msgstr ""
+msgstr "Je třeba, aby rychlost stahování byla kladná"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:211
 msgid "Upload speed must be positive"
-msgstr ""
+msgstr "Je třeba, aby rychlost odesílání byla kladná"
 
 #: js/src/guide/GuideFinish.js:18
 msgid "Guide Finished"
-msgstr ""
+msgstr "Průvodce dokončen"
 
 #: js/src/guide/GuideFinish.js:20
 msgid ""
@@ -492,14 +540,26 @@ msgid ""
 "dynamic updates to your firewall to block all already known attackers.\n"
 "            "
 msgstr ""
+"\n"
+"Gratulujeme! Úspěšně jste dosáhli konce tohoto průvodce. Jakmile ho "
+"opustíte, obdržíte přístup \n"
+"k úplnému rozhraní pro nastavování tohoto zařízení.\n"
+"\n"
+"Pro další zlepšení zabezpečení zvažte zapnutí shromažďování dat (začněte "
+"jeho výběrem na panelu správy aktualizací).\n"
+"Toto vám umožní být součástí našeho bezpečnostního výzkumu, zaměřeného na"
+" objevování nových útočníků a dá vám také\n"
+"přístup k dynamickým aktualizacím vaší brány firewall pro blokování všech"
+" už známých útočníků.\n"
+"            "
 
 #: js/src/guide/GuideFinish.js:31
 msgid "Continue"
-msgstr ""
+msgstr "Pokračovat"
 
 #: js/src/guide/GuideNavigation.js:43
 msgid "Skip guide"
-msgstr ""
+msgstr "Přeskočit průvodce"
 
 #: js/src/guide/WorkflowSelect.js:21
 msgid ""
@@ -508,6 +568,10 @@ msgid ""
 "other devices within your local network (e.g. act as a network-attached "
 "storage)."
 msgstr ""
+"Tento scénář vám pomůže nastavit své zařízení pro roli místního serveru. "
+"To znamená, že zařízení bude poskytovat nějaký druh služby ostatním "
+"zařízením na vaší místní síti (např. sloužit jako síťové datové "
+"úložiště)."
 
 #: js/src/guide/WorkflowSelect.js:22
 msgid ""
@@ -515,16 +579,21 @@ msgid ""
 " functional router. It assumes that you want to have more or less "
 "standard network setup."
 msgstr ""
+"Po dokončení tohoto scénáře bude vaše zařízení schopné fungovat jako plně"
+" funkční router. Předpokládá se, že chcete více méně standardní "
+"uspořádání sítě."
 
 #: js/src/guide/WorkflowSelect.js:23
 msgid ""
 "Just set your password and you are ready to go. This workflow is aimed to"
 " more advanced users who intend not to use the web GUI."
 msgstr ""
+"Stačí jen nastavit si heslo a jste připravení. Tento postup je cílen na "
+"pokročilejší uživatele kteří nezamýšlejí použít webové rozhraní."
 
 #: js/src/guide/WorkflowSelect.js:27
 msgid "Local Server"
-msgstr ""
+msgstr "Místní Server"
 
 #: js/src/guide/WorkflowSelect.js:28 js/src/lan/LANForm.js:29
 msgid "Router"
@@ -532,7 +601,7 @@ msgstr "Router"
 
 #: js/src/guide/WorkflowSelect.js:29
 msgid "Minimal"
-msgstr ""
+msgstr "Minimální"
 
 #: js/src/guide/WorkflowSelect.js:45
 msgid "Cannot set workflow."
@@ -540,13 +609,15 @@ msgstr ""
 
 #: js/src/guide/WorkflowSelect.js:55
 msgid "Guide Workflow"
-msgstr ""
+msgstr "Scénář Průvodce"
 
 #: js/src/guide/WorkflowSelect.js:56
 msgid ""
 "Here you can set the guide walkthrough which will guide you through the "
 "basic configuration of your device."
 msgstr ""
+"Zde je možné nastavit průvodce, který vás provede základním nastavením "
+"vašeho zařízení."
 
 #: js/src/guide/constants.js:12
 msgid ""
@@ -554,32 +625,38 @@ msgid ""
 "device. Firstly it is required to set your password. Note the security of"
 " your home network is in your hands, so try not to use weak passwords."
 msgstr ""
+"Vítejte ve webovém rozhraní Foris. Tento průvodce vám pomůže s nastavením"
+" vašeho zařízení. Nejprve je třeba si zvolit heslo. Poznamenejme, že "
+"zabezpečení vaší domácí sítě je ve vašich rukách, proto se snažte "
+"vyvarovat používání slabých hesel."
 
 #: js/src/guide/constants.js:13
 msgid "Your password is set. You may proceed to the next step."
-msgstr ""
+msgstr "Vaše heslo je nastaveno. Můžete pokračovat na další krok."
 
 #: js/src/guide/constants.js:16
 msgid "The workflow was set. You may proceed to next step."
-msgstr ""
+msgstr "Scénář byl nastaven, můžete pokračovat k dalšímu kroku."
 
 #: js/src/guide/constants.js:20
 msgid "Here you need to decide which interfaces belong to which network."
-msgstr ""
+msgstr "Zde je třeba rozhodnout, která síťová rozhraní patří do které sítě."
 
 #: js/src/guide/constants.js:21
 msgid "If you are in doubt use the current settings."
-msgstr ""
+msgstr "Pokud váháte, použijte stávající nastavení."
 
 #: js/src/guide/constants.js:23
 msgid ""
 "You've configured your network interfaces. It seems that you didn't break"
 " any crucial network settings so you can safely proceed to the next step."
 msgstr ""
+"Nastavili jste sítová rozhraní. Zdá se, že jste si nerozbili žádná "
+"důležitá nastavení sítě a tak můžete pokračovat na další krok."
 
 #: js/src/guide/constants.js:26
 msgid "Now you need to set the time and timezone of your device."
-msgstr ""
+msgstr "Nyní je třeba nastavit čas a časové pásmo, ve kterém se zařízení nachází."
 
 #: js/src/guide/constants.js:27
 msgid ""
@@ -587,22 +664,29 @@ msgid ""
 "matches the time on your computer if not try to update it via NTP or "
 "manually."
 msgstr ""
+"Čas a časové pásmo bylo nastaveno. Ověřte, že čas na vašem zařízení "
+"odpovídá skutečnému času. Pokud ne, zaktualizujte ho pomocí ntp nebo "
+"ručně."
 
 #: js/src/guide/constants.js:30
 msgid ""
 "A proper DNS resolving is one of the key security features of your "
 "device. Let's configure it now."
 msgstr ""
+"Správný DNS překlad je jeden z klíčových bezpečnostních prvků vašeho "
+"zařízení. Pojďme ho proto nyní nastavit."
 
 #: js/src/guide/constants.js:31
 msgid ""
 "You've updated your DNS configuration. Try to run connection test to see "
 "whether your DNS resolver is properly set."
 msgstr ""
+"Aktualizovali jste nastavení DNS. Zkuste spustit test připojení, abyste "
+"si ověřili, že překlad DNS funguje správně."
 
 #: js/src/guide/constants.js:34
 msgid "In order to access the internet, you need to configure your WAN interface."
-msgstr ""
+msgstr "Pro přístup k Internetu potřebujete nastavit WAN rozhraní."
 
 #: js/src/guide/constants.js:35
 msgid ""
@@ -610,6 +694,8 @@ msgid ""
 "whether it is working properly and if so you can safely proceed to the "
 "next step."
 msgstr ""
+"Nastavili jste WAN rozhraní. Zkuste spustit test připojení, abyste si "
+"ověřili, že vše funguje, jak má. Poté můžete pokračovat na další krok."
 
 #: js/src/guide/constants.js:38
 msgid ""
@@ -618,24 +704,36 @@ msgid ""
 "configuration interface unless you restart the network on your current "
 "device."
 msgstr ""
+"Nyní byste měli nastavit LAN rozhraní. Poznamenejme, že když změníte svá "
+"síťové nastavení, tak se pravděpodobně nebudete moci připojit do rozhraní"
+" pro nastavování, dokud nerestartujete síť na zařízení, ze kterého "
+"přistupujete."
 
 #: js/src/guide/constants.js:39
 msgid ""
 "You've configured your LAN interface. Try to test whether settings work "
 "properly and if so you can safely proceed to the next step."
 msgstr ""
+"Nastavili jste LAN rozhraní. Zkuste si ověřit, zda nastavení funguje "
+"správně a pokud ano, můžete pokračovat na další krok."
 
 #: js/src/guide/constants.js:48
 msgid ""
 "The device setup is finished. Now your device is able to act as a router "
 "and route network traffic among LAN, WAN and guest network."
 msgstr ""
+"Nastavení zařízení je dokončeno. Nyní by vaše zařízení mělo být schopné "
+"fungovat jako router a řídit předávání síťového provozu mezi LAN, WAN a "
+"sítí pro hosty."
 
 #: js/src/guide/constants.js:54
 msgid ""
 "Minimal device setup is finished. Note that you probably need to perform "
 "some further configuration updates to fit the device to your needs."
 msgstr ""
+"Minimální nastavení zařízení je dokončeno. Poznamenejme, že pro "
+"přizpůsobení zařízení vašim potřebám bude nejspíš třeba provést v "
+"nastavení ještě další změny."
 
 #: js/src/guide/constants.js:63
 msgid ""
@@ -643,6 +741,9 @@ msgid ""
 " put any interfaces to your WAN and Guest Network. So it is a good idea "
 "to assign all interfaces to LAN."
 msgstr ""
+"Zvolíte chování jako místní server což znamená, že nedává smysl umisťovat"
+" jakékoli rozhraní do WAN nebo sítě pro hosty. Takže je dobrý nápad "
+"přiřadit veškerá rozhraní do LAN."
 
 #: js/src/guide/constants.js:68
 msgid ""
@@ -651,6 +752,10 @@ msgid ""
 "probably want to act as a client here thus select "
 "<strong>Computer</strong> mode here."
 msgstr ""
+"Pro fungování jako místní server, není potřeba spravovat LAN (pokud ji i "
+"tak chcete spravovat, resetuje průvodce a zvolte scénář Router). Nejspíš "
+"chcete aby fungovalo jako klient a proto vyberte režim "
+"<strong>Počítač</strong>."
 
 #: js/src/guide/constants.js:69
 msgid ""
@@ -658,6 +763,9 @@ msgid ""
 "IP addresses are entered correctly otherwise you won't be able to access "
 "this configuration interface when the new settings are applied."
 msgstr ""
+"Pokud zvolíte <strong>statické</strong> nastavení ověřte, že jste IP "
+"adresy zadali správně. Jinak po uplatnění tohoto nového nastavení nebude "
+"rozhraní pro nastavování přístupné."
 
 #: js/src/guide/constants.js:70
 msgid ""
@@ -666,12 +774,18 @@ msgid ""
 "server which is managing your LAN. Then you need to connect to the new IP"
 " address to proceed the guide."
 msgstr ""
+"Pokud vyberete metodu <strong>DHCP</strong>, pravděpodobně pro tohle "
+"zařízení obdržíte novou IP adresu. Tu můžete zjistit z DHCP serveru, "
+"který spravuje vaši síť. Na tuto novou IP adresu se budete potřebovat "
+"připojit pro dokončení průvodce."
 
 #: js/src/guide/constants.js:71
 msgid ""
 "Note that either way you might need to re-plug your ethernet cables after"
 " you update the settings here."
 msgstr ""
+"Poznamenejme že v obou případech může po změně nastavení zde být třeba "
+"odpojit a znovu připojit ethernetové kabely."
 
 #: js/src/guide/constants.js:73
 msgid ""
@@ -680,12 +794,18 @@ msgid ""
 " your device is able to access the internet (you can use the connection "
 "test below)."
 msgstr ""
+"Vyzkoušejte zda vámi zadaná nastavení správně fungují. To znamená, že "
+"můžete přistupovat k rozhraní pro nastavování svého zařízení a to je "
+"schopné přistupovat k Internetu (k tomu je možné využít test připojení "
+"níže)."
 
 #: js/src/guide/constants.js:76
 msgid ""
 "The device setup is finished. Now your device should be able to act as a "
 "server on your local network."
 msgstr ""
+"Nastavení zařízení je dokončeno. Nyní by vaše zařízení mělo být schopné "
+"fungovat jako server na místní síti."
 
 #: js/src/guide/hooks.js:23
 msgid "Cannot mark guide as finished."
@@ -699,43 +819,43 @@ msgstr "Heslo"
 
 #: js/src/guide/steps.js:24
 msgid "Workflow"
-msgstr ""
+msgstr "Scénář"
 
 #: js/src/guide/steps.js:28 js/src/main/pages.js:64
 msgid "Interfaces"
-msgstr ""
+msgstr "Rozhraní"
 
 #: js/src/guide/steps.js:32 js/src/regionAndTime/TimeForm.js:109
 msgid "Time"
-msgstr ""
+msgstr "Čas"
 
 #: js/src/guide/steps.js:36 js/src/main/pages.js:59
 msgid "DNS"
-msgstr ""
+msgstr "DNS"
 
 #: js/src/guide/steps.js:40 js/src/main/pages.js:115
 #: js/src/packageManagement/updates/Updates.js:25
 msgid "Updates"
-msgstr ""
+msgstr "Aktualizace"
 
 #: js/src/guide/steps.js:44 js/src/interfaces/Interfaces.js:31
 #: js/src/interfaces/constants.js:9 js/src/main/pages.js:49
 #: js/src/wan/WAN.js:27
 msgid "WAN"
-msgstr ""
+msgstr "WAN"
 
 #: js/src/guide/steps.js:48 js/src/interfaces/Interfaces.js:39
 #: js/src/interfaces/constants.js:10 js/src/main/pages.js:54
 msgid "LAN"
-msgstr ""
+msgstr "LAN"
 
 #: js/src/guide/steps.js:52
 msgid "Finish"
-msgstr ""
+msgstr "Dokončit"
 
 #: js/src/interfaces/Interfaces.js:24
 msgid "Network Interfaces"
-msgstr ""
+msgstr "Síťová Rozhraní"
 
 #: js/src/interfaces/Interfaces.js:26
 msgid ""
@@ -746,6 +866,12 @@ msgid ""
 " the default settings.\n"
 "        "
 msgstr ""
+"\n"
+"Zde můžete nastavit síťová rozhraní svého zařízení. Je možné přendavat "
+"fyzická síťová rozhraní\n"
+"mezi sítěmi. Pokud si nejste jistí, co zde nastavit, ponechte výchozí "
+"hodnoty.\n"
+"        "
 
 #: js/src/interfaces/Interfaces.js:33
 msgid ""
@@ -755,6 +881,11 @@ msgid ""
 "single interface.\n"
 "        "
 msgstr ""
+"\n"
+"Slouží jako připojení do vnější sítě. Pravidla brány firewall by měla být"
+" uplatňována zde. Může obsahovat\n"
+"pouze jedno rozhraní.\n"
+"        "
 
 #: js/src/interfaces/Interfaces.js:41
 msgid ""
@@ -768,6 +899,14 @@ msgid ""
 "easy way.\n"
 "        "
 msgstr ""
+"\n"
+"Slouží jako připojení do místní sítě. LAN by měla obsahovat zařízení, "
+"která jsou pod vaší zprávou a věříte jim\n"
+"Tato zařízení se mohou vidět navzájem a mohou přistupovat k tomuto "
+"webovému rozhraní. je doporučeno,\n"
+"aby LAN obsahovala alespoň jedno rozhraní, jinak nebude kudy toto "
+"zařízení nastavovat (přinejmenším nijak jednoduše).\n"
+"        "
 
 #: js/src/interfaces/Interfaces.js:51
 msgid ""
@@ -781,6 +920,15 @@ msgid ""
 "devices connected to the guest network.\n"
 "        "
 msgstr ""
+"\n"
+"Slouží jako připojení do místní sítě. Narozdíl od LAN zařízení, zařízení "
+"v síti pro hosty nemohou přistupovat\n"
+"ke správnímu rozhraní tohoto routeru a mohou přistupovat pouze k WAN "
+"(Internet). Tato síť by měla být\n"
+"používána pro zařízení, kterým tak úplně nedůvěřujete. Poznamenejme, že "
+"zařízením v síti pro hosty také\n"
+"můžete omezit rychlost stahování/odesílání.\n"
+"        "
 
 #: js/src/interfaces/Interfaces.js:77
 msgid "You have to assign at least one interface to this group."
@@ -791,6 +939,8 @@ msgid ""
 "Ports are open on your WAN interface. It's better to reconfigure your "
 "interface settings to avoid security issues."
 msgstr ""
+"Porty jsou otevřeny na vašem WAN rozhraní. Pro vyhnutí se problémům se "
+"zabezpečením je lepší znovu nastavit své rozhraní."
 
 #: js/src/interfaces/Network.js:40
 msgid "There are no interfaces in this group."
@@ -803,44 +953,48 @@ msgstr ""
 #: js/src/interfaces/Network.js:61
 #, python-format
 msgid "Module %s"
-msgstr ""
+msgstr "Modulu %s"
 
 #: js/src/interfaces/SelectedInterface.js:65
 #, python-format
 msgid "Interface %s %s"
-msgstr ""
+msgstr "Rozhraní %s %s"
 
 #: js/src/interfaces/SelectedInterface.js:68
 msgid "Network"
-msgstr ""
+msgstr "Síť"
 
 #: js/src/interfaces/SelectedInterface.js:77
 msgid "State"
-msgstr ""
+msgstr "Stav"
 
 #: js/src/interfaces/SelectedInterface.js:85
 msgid "Module ID"
-msgstr ""
+msgstr "Identifikátor modulu"
 
 #: js/src/interfaces/SelectedInterface.js:89
 msgid "Slot"
-msgstr ""
+msgstr "Slot"
 
 #: js/src/interfaces/SelectedInterface.js:93
 msgid "Interface ID"
 msgstr ""
+"Identifikátor rozhraní\n"
+"Nemáte žádné rozhraní přiřazené do LAN sítě.<br/>\n"
+"Chcete <strong>otevřít porty 22, 80 a 443 na WAN síti</strong>, abyste "
+"mohli přistupovat ke správnímu rozhraní svého routeru?"
 
 #: js/src/interfaces/SelectedInterface.js:97
 msgid "Type"
-msgstr ""
+msgstr "Typ"
 
 #: js/src/interfaces/SelectedInterface.js:101
 msgid "Bus"
-msgstr ""
+msgstr "Sběrnice"
 
 #: js/src/interfaces/SelectedInterface.js:105
 msgid "Link speed"
-msgstr ""
+msgstr "Rychlost linky"
 
 #: js/src/interfaces/SelectedInterface.js:106
 msgid "N/A"
@@ -848,7 +1002,7 @@ msgstr ""
 
 #: js/src/interfaces/constants.js:12
 msgid "Unassigned"
-msgstr ""
+msgstr "Nepřiřazeno"
 
 #: js/src/lan/LAN.js:29
 msgid ""
@@ -868,6 +1022,21 @@ msgid ""
 "<b>refresh the page</b> in your browser.\n"
 "            "
 msgstr ""
+"\n"
+"Tato sekce obsahuje nastavení pro místní síť (LAN). Poskytované výchozí "
+"hodnoty jsou použitelné pro většinu\n"
+"sítí.\n"
+"<br/>\n"
+"<b>Pozn.:</b> Pokud změníte IP adresu routeru, všechny počítače (a další "
+"zařízení) v LAN, nejspíš včetně toho,\n"
+"ze kterého sem nyní přistupujte, budou potřebovat obdržet <b>novou IP "
+"adresu</b> což se nestane <b>okamžitě</b>.\n"
+"Po odeslání vámi provedených změn je doporučeno odpojit všechny LAN "
+"kabely a vynutit tak aktualizaci adres.\n"
+"Následující stránka se nenačte, doku neobdržíte novou IP adresu z DHCP "
+"(pokud je DHCP zpanuté) a možná bude třeba\n"
+"ve webovém prohlížeči <b>stránku znovu načíst</b>.\n"
+"            "
 
 #: js/src/lan/LANForm.js:16
 msgid ""
@@ -879,6 +1048,13 @@ msgid ""
 "it has opened ports for configuration interface and other services.\n"
 "        "
 msgstr ""
+"\n"
+"Režim router znamená, že toto zařízení spravuje LAN (chová se jako "
+"router, může přiřazovat IP adresy, …).\n"
+"Režim počítač znamená, že toto zařízení se na této síti chová jako "
+"klient. Je to podobné jako pro WAN, ale\n"
+"má otevřené porty pro správní rozhraní a další služby.\n"
+"        "
 
 #: js/src/lan/LANForm.js:30
 msgid "Computer"
@@ -926,11 +1102,11 @@ msgstr "Oznámení"
 
 #: js/src/main/pages.js:38
 msgid "Network Settings"
-msgstr ""
+msgstr "Nastavení sítě"
 
 #: js/src/main/pages.js:44 js/src/wifi/WiFi.js:21
 msgid "Wi-Fi"
-msgstr ""
+msgstr "Wi-Fi"
 
 #: js/src/main/pages.js:76
 msgid "Administration"
@@ -938,28 +1114,28 @@ msgstr "Správa"
 
 #: js/src/main/pages.js:87
 msgid "Region & Time"
-msgstr ""
+msgstr "Oblast a čas"
 
 #: js/src/main/pages.js:92
 msgid "Notification Settings"
-msgstr ""
+msgstr "Nastavení oznamování"
 
 #: js/src/main/pages.js:104
 msgid "Package Management"
-msgstr ""
+msgstr "Správa balíčků"
 
 #: js/src/main/pages.js:110
 #: js/src/packageManagement/updateSettings/UpdateSettings.js:28
 msgid "Update Settings"
-msgstr ""
+msgstr "Nastavení aktualizace"
 
 #: js/src/main/pages.js:120 js/src/packageManagement/packages/Packages.js:20
 msgid "Packages"
-msgstr ""
+msgstr "Balíčky"
 
 #: js/src/main/pages.js:127
 msgid "Advanced Administration"
-msgstr ""
+msgstr "Pokročilá správa"
 
 #: js/src/notifications/Notifications/NotificationsCenter.js:51
 #: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:90
@@ -1005,7 +1181,7 @@ msgstr "Uživatelsky určené"
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:78
 msgid "Email Notifications"
-msgstr ""
+msgstr "Oznamování E-mailem"
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:80
 msgid "Enable email notifications"
@@ -1017,7 +1193,7 @@ msgstr "Poskytovat SMTP"
 
 #: js/src/notificationsSettings/NotificationsSettings.js:24
 msgid "Notifications Settings"
-msgstr ""
+msgstr "Nastavení Oznamování"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:18
 msgid "None"
@@ -1124,6 +1300,8 @@ msgid ""
 "If you want to use other language than English you can select it from the"
 " following list:"
 msgstr ""
+"Pokud chcete používat jiný jazyk než angličtinu, můžete ho vybrat z "
+"následujícího seznamu:"
 
 #: js/src/packageManagement/packages/Packages.js:22
 msgid ""
@@ -1137,6 +1315,15 @@ msgid ""
 "been installed manually or using opkg is not affected.\n"
 "        "
 msgstr ""
+"\n"
+"Krom standardní instalace můžete zvolit také sady dodatečného software, "
+"který na tento router nainstalovat. \n"
+"Tento software je možné vybrat z následujícího seznamu. Poznamenejme, že "
+"pouze software, který je součástí \n"
+"TurrisOS nebo který byl nainstalován ze seznamu balíčků je spravován "
+"automatickými aktualizacemi. Software,\n"
+"který byl nainstalován ručně nebo pomocí opkg se toto netýká.\n"
+"        "
 
 #: js/src/packageManagement/packages/Packages.js:72
 msgid ""
@@ -1144,14 +1331,17 @@ msgid ""
 "href=\"${ForisURLs.packageManagement.updateSettings}\">automatic "
 "updates</a> to manage packages and languages."
 msgstr ""
+"Aby bylo možné spravovat balíčky a jazyky, zapněte <a "
+"href=\"${ForisURLs.packageManagement.updateSettings}\">automatické "
+"aktualizace</a>."
 
 #: js/src/packageManagement/packages/PackagesForm.js:28
 msgid "Packages List"
-msgstr ""
+msgstr "Seznam Balíčků"
 
 #: js/src/packageManagement/updateSettings/LicenceModal.js:23
 msgid "Most Important License Agreement Points"
-msgstr ""
+msgstr "Nejdůležitější Body z Licenčního Ujednání"
 
 #: js/src/packageManagement/updateSettings/LicenceModal.js:30
 msgid ""
@@ -1193,6 +1383,43 @@ msgid ""
 "                    </li>\n"
 "                  "
 msgstr ""
+"\n"
+"                    <li>Automatické aktualizace jsou vlastníkům routerů "
+"Turris poskytovány zdarma.</li>\n"
+"                    <li>Aktualizace jsou připravovány výhradně sdružením "
+"CZ.NIC, z. s. p. o.</li>\n"
+"                    <li>\n"
+"                        Zapnutí automatických aktualizací je podmínkou "
+"pro dalších zabezpečovacích funkcí\n"
+"                        routeru Turris.\n"
+"                    </li>\n"
+"                    <li>\n"
+"                        Automatické aktualizace se dějí v okamžiku jejich"
+" vydání, uživatel nemůže dobu instalace\n"
+"                        ovlivnit.\n"
+"                    </li>\n"
+"                    <li>\n"
+"                        Zapnutí automatických aktualizací může vést ke "
+"zvýšení datového provozu na vašem\n"
+"                        routeru. Náklady spojené s tímto navýšením nesete"
+" vy.\n"
+"                    </li>\n"
+"                    <li>\n"
+"                        Automatické aktualizace vás nemohou ochránit před"
+" všemi útoky, přicházejícími z Internetu.\n"
+"                        Nezapomeňte chránit vaše počítače a ostatní "
+"zařízení instalací antivirového software\n"
+"                        a vysvětlením členům domácnosti, jak se chovat na"
+" Internetu bezpečně\n"
+"                        Internetu.\n"
+"                    </li>\n"
+"                    <li>\n"
+"                        Sdružení CZ.NIC, z. s. p. o. nezaručuje "
+"dostupnost této služby a není odpovědné\n"
+"                        za jakékoli škody, způsobené automatickými "
+"aktualizacemi.\n"
+"                    </li>\n"
+"                  "
 
 #: js/src/packageManagement/updateSettings/LicenceModal.js:58
 msgid ""
@@ -1200,6 +1427,10 @@ msgid ""
 "of this Turris router and you agree with the full text of the <a "
 "href=\"https://www.turris.cz/omnia-updater-eula\">license agreement</a>."
 msgstr ""
+"Zapnutím automatické instalace aktualizací potvrzujete, že jste "
+"vlastníkem tohoto routeru Turris a seznámili jste se s <a "
+"href=\"https://www.turris.cz/omnia-updater-eula\">kompletními podmínkami "
+"účasti</a> v tomto projektu."
 
 #: js/src/packageManagement/updateSettings/UpdateSettings.js:30
 msgid ""
@@ -1226,65 +1457,67 @@ msgstr ""
 msgid ""
 "Number of days that must pass between receiving the request for restart "
 "and the automatic restart itself."
-msgstr ""
+msgstr "Počet dní mezi obdržením požadavku na restart a automatickým restartem."
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:18
 msgid "Time of day of automatic reboot in HH:MM format."
-msgstr ""
+msgstr "Denní doba automatického restartu ve formátu HH:MM."
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:43
 msgid "Automatic Restarts After Software Update"
-msgstr ""
+msgstr "Automatické Restarty po Aktualizaci Software"
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:45
 msgid "Delay (days)"
-msgstr ""
+msgstr "Prodleva (dny)"
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:57
 msgid "Reboot time"
-msgstr ""
+msgstr "Čas restartu"
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:87
 msgid "Time should be in HH:MM format."
-msgstr ""
+msgstr "Čas by měl být ve formátu HH:MM."
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:90
 msgid "Restart can be delayed by at most 10 days"
-msgstr ""
+msgstr "Restart je možné odložit nejdéle o 10 dnů"
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:93
 msgid "Delay must be a positive number"
-msgstr ""
+msgstr "Je třeba, aby odklad bylo kladné číslo"
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:16
 msgid "Automatic installation"
-msgstr ""
+msgstr "Automatická instalace"
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:17
 msgid "Updates will be installed without user's intervention."
-msgstr ""
+msgstr "Aktualizace budou instalovány bez zásahu uživatele."
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:21
 msgid "Delayed updates"
-msgstr ""
+msgstr "Odložené aktualizace"
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:22
 msgid ""
 "Updates will be installed with an adjustable delay. You can also approve "
 "them manually."
 msgstr ""
+"Aktualizace budou instalovány s nastavitelnou prodlevou. Můžete je také "
+"schvalovat ručně."
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:26
 msgid "Update approval needed"
-msgstr ""
+msgstr "Aktualizace bude třeba schvalovat"
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:27
 msgid "You have to approve the updates, otherwise they won't be installed."
-msgstr ""
+msgstr "Aktualizace bude třeba schválit, jinak nebudou nainstalovány."
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:51
 msgid "Update Approvals"
-msgstr ""
+msgstr "Schvalování Aktualizací"
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:53
 msgid ""
@@ -1300,15 +1533,15 @@ msgstr ""
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:73
 msgid "Delayed updates (hours)"
-msgstr ""
+msgstr "Odložené aktualizace (hodiny)"
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:93
 msgid "Updates must be delayed by least 1 hour and at most by 168 hours"
-msgstr ""
+msgstr "Aktualizace lze odložit o nejméně jednu hodinu a nejdéle 168 hodin (týden)"
 
 #: js/src/packageManagement/updateSettings/forms/UpdatesForm.js:39
 msgid "Enable automatic updates (recommended)"
-msgstr ""
+msgstr "Zapnout automatické aktualizace (doporučeno)"
 
 #: js/src/packageManagement/updates/UpdateApproval.js:30
 #: js/src/updatesDropdown/UpdatesDropdown.js:108
@@ -1327,68 +1560,72 @@ msgstr ""
 #, python-format
 msgid "There is %d package to be updated."
 msgid_plural "There are %d packages to be updated."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%d balíček k aktualizaci."
+msgstr[1] "%d balíčky k aktualizaci."
+msgstr[2] "%d balíčků k aktualizaci."
 
 #: js/src/packageManagement/updates/UpdateApproval.js:57
 msgid ""
 "See <a data-toggle=\"collapse\" href=\"#plan-wrapper\" role=\"button\" "
 "aria-expanded=\"false\" aria-controls=\"plan-wrapper\">details</a>"
 msgstr ""
+"Viz <a data-toggle=\"collapse\" href=\"#plan-wrapper\" role=\"button\" "
+"aria-expanded=\"false\" aria-controls=\"plan-wrapper\">podrobnosti</a>"
 
 #: js/src/packageManagement/updates/UpdateApproval.js:65
 #, python-format
 msgid "Approve Update From %s"
-msgstr ""
+msgstr "Schválit Aktualizaci Od %s"
 
 #: js/src/packageManagement/updates/UpdateApproval.js:75
 #: js/src/updatesDropdown/UpdatesDropdown.js:99
 msgid "Ignore"
-msgstr ""
+msgstr "Ignorovat"
 
 #: js/src/packageManagement/updates/UpdateApproval.js:82
 #: js/src/updatesDropdown/UpdatesDropdown.js:100
 msgid "Install now"
-msgstr ""
+msgstr "Nainstalovat nyní"
 
 #: js/src/packageManagement/updates/UpdateApproval.js:97
 msgid "Action"
-msgstr ""
+msgstr "Akce"
 
 #: js/src/packageManagement/updates/UpdateApproval.js:99
 msgid "Current"
-msgstr ""
+msgstr "Stávající"
 
 #: js/src/packageManagement/updates/UpdateApproval.js:100
 msgid "New"
-msgstr ""
+msgstr "Nová"
 
 #: js/src/packageManagement/updates/Updates.js:39
 msgid ""
 "Automatic updates are disabled. Please enable delayed or approval-"
 "requiring updates to review them."
 msgstr ""
+"Automatické aktualizace jsou vypnuté. Pro jejich přehled tedy zapněte "
+"odložené nebo schválení vyžadující aktualizace."
 
 #: js/src/packageManagement/updates/Updates.js:49
 msgid "Check and install updates"
-msgstr ""
+msgstr "Zkontrolovat a nainstalovat aktualizace"
 
 #: js/src/packageManagement/updates/Updates.js:50
 msgid "Manually check for updates and install them immediately."
-msgstr ""
+msgstr "Ručně zjistiti dostupnost případných aktualizací a hned je nainstalovat."
 
 #: js/src/packageManagement/updates/Updates.js:53
 msgid "Check updates"
-msgstr ""
+msgstr "Zjistit dostupnost případných aktualizací"
 
 #: js/src/packageManagement/updates/Updates.js:55
 msgid "Manually check for updates and review them immediately."
-msgstr ""
+msgstr "Ručně zjistit dostupnost případných aktualizací a hned je zrevidovat."
 
 #: js/src/packageManagement/updates/hooks.js:77
 msgid "Cannot fetch updater status."
-msgstr ""
+msgstr "Nedaří se získat stav aktualizací."
 
 #: js/src/password/CurrentForisPasswordForm.js:24
 msgid "Current Foris password"
@@ -1426,7 +1663,7 @@ msgstr ""
 
 #: js/src/password/Password.js:74
 msgid "Password changed successfully."
-msgstr ""
+msgstr "Heslo úspěšně změněno."
 
 #: js/src/password/Password.js:115
 msgid "Password Settings"
@@ -1464,7 +1701,7 @@ msgstr "Nové heslo pro pokročilou správu"
 
 #: js/src/reboot/Reboot.js:16
 msgid "Device Reboot"
-msgstr ""
+msgstr "Restart Zařízení"
 
 #: js/src/reboot/Reboot.js:18
 msgid ""
@@ -1477,11 +1714,11 @@ msgstr ""
 
 #: js/src/rebootDropdown/RebootDropdown.js:37
 msgid "Reboot Required"
-msgstr ""
+msgstr "Vyžadován Restart"
 
 #: js/src/rebootDropdown/RebootDropdown.js:42
 msgid "Details"
-msgstr ""
+msgstr "Podrobnosti"
 
 #: js/src/regionAndTime/RegionAndTime.js:30
 msgid "Region and Time"
@@ -1498,96 +1735,100 @@ msgstr ""
 
 #: js/src/regionAndTime/RegionAndTime.js:53
 msgid "Time should be in YYYY-MM-DD HH:MM:SS format."
-msgstr ""
+msgstr "Čas by měl být ve formátu RRRR-MM-DD HH:MM:SS."
 
 #: js/src/regionAndTime/RegionForm.js:62
 msgid "Region Settings"
-msgstr ""
+msgstr "Nastavení Regionu"
 
 #: js/src/regionAndTime/RegionForm.js:64
 msgid ""
 "Please select the timezone the router is being operated in. Correct "
 "setting is required to display the right time and for related functions."
 msgstr ""
+"Vyberte časovou zónu ve které je router používán. Korektní nastavení je "
+"nutné pro zobrazování správného času a pro související funkce."
 
 #: js/src/regionAndTime/RegionForm.js:69
 msgid "Continent or ocean"
-msgstr ""
+msgstr "Kontinent nebo oceán"
 
 #: js/src/regionAndTime/RegionForm.js:87
 msgid "Country"
-msgstr ""
+msgstr "Země"
 
 #: js/src/regionAndTime/RegionForm.js:100
 msgid "Timezone"
-msgstr ""
+msgstr "Časová zóna"
 
 #: js/src/regionAndTime/TimeForm.js:23
 msgid "Via NTP"
-msgstr ""
+msgstr "Prostřednictvím NTP protokolu"
 
 #: js/src/regionAndTime/TimeForm.js:24
 msgid "Manually"
-msgstr ""
+msgstr "Ručně"
 
 #: js/src/regionAndTime/TimeForm.js:94
 msgid "Time Settings"
-msgstr ""
+msgstr "Nastavení času"
 
 #: js/src/regionAndTime/TimeForm.js:95
 msgid ""
 "Time should be up-to-date otherwise DNS and other services might not work"
 " properly."
-msgstr ""
+msgstr "Čas by měl být aktuální, jinak nemusí správně fungovat DNS a další služby."
 
 #: js/src/regionAndTime/TimeForm.js:97
 msgid "How to set time"
-msgstr ""
+msgstr "Jak nastavit čas"
 
 #: js/src/regionAndTime/TimeForm.js:152
 msgid "Hide NTP servers list"
-msgstr ""
+msgstr "Skrýt seznam NTP serverů"
 
 #: js/src/regionAndTime/TimeForm.js:152
 msgid "Show NTP servers list"
-msgstr ""
+msgstr "Zobrazit seznam NTP serverů"
 
 #: js/src/regionAndTime/TimeForm.js:156
 msgid "NTP Servers"
-msgstr ""
+msgstr "NTP Servery"
 
 #: js/src/routerStateHandler/NetworkRestartHandler.js:28
 #, python-format
 msgid "Network restart after %d sec."
-msgstr ""
+msgstr "Restart sítě po %d sekundách."
 
 #: js/src/routerStateHandler/NetworkRestartHandler.js:31
 msgid "Network restarting"
-msgstr ""
+msgstr "Restart sítě"
 
 #: js/src/routerStateHandler/NetworkRestartHandler.js:34
 #: js/src/routerStateHandler/RebootHandler.js:33
 msgid "Reconnecting"
-msgstr ""
+msgstr "Opětovné navazování spojení"
 
 #: js/src/routerStateHandler/RebootHandler.js:27
 #, python-format
 msgid "Reboot after %d sec."
-msgstr ""
+msgstr "Restart po %d sekundách."
 
 #: js/src/routerStateHandler/RebootHandler.js:30
 msgid "Rebooting"
-msgstr ""
+msgstr "Restartování"
 
 #: js/src/updatesDropdown/UpdatesDropdown.js:66
 msgid "Approve Update"
-msgstr ""
+msgstr "Schválit Aktualizaci"
 
 #: js/src/updatesDropdown/UpdatesDropdown.js:96
 msgid ""
 "See details in <a href=${ForisURLs.packageManagement.updates}>Updates</a>"
 " page."
 msgstr ""
+"Viz podrobnosti na stránce <a "
+"href=${ForisURLs.packageManagement.updates}>Updates</a>."
 
 #: js/src/utils/ErrorBoundary.js:36
 msgid "An Error Occurred"
@@ -1822,23 +2063,23 @@ msgstr ""
 
 #: reforis/views.py:52
 msgid "Wrong password."
-msgstr ""
+msgstr "Nesprávné heslo."
 
 #: reforis/foris_controller_api/modules/dns.py:41
 msgid "Can't add new DNS forwarder."
-msgstr ""
+msgstr "Nedaří se přidat nové DNS přeposílání."
 
 #: reforis/foris_controller_api/modules/dns.py:47
 msgid "Can't set DNS forwarder."
-msgstr ""
+msgstr "Nedaří se nastavit DNS přeposílání."
 
 #: reforis/foris_controller_api/modules/dns.py:52
 msgid "Can't delete DNS forwarder."
-msgstr ""
+msgstr "Nedaří se smazat DNS přeposílání."
 
 #: reforis/foris_controller_api/modules/password.py:41
 msgid "Wrong current password."
-msgstr ""
+msgstr "Nesprávné stávající heslo."
 
 #: reforis/foris_controller_api/modules/updater.py:60
 msgid "Cannot change automatic restart settings."
@@ -1858,60 +2099,60 @@ msgstr ""
 
 #: reforis/foris_controller_api/modules/updater.py:171
 msgid "Cannot start updater"
-msgstr ""
+msgstr "Nástroj pro aktualizaci není možné spustit"
 
 #: reforis/templates/guide.html:14
 msgid "Guide"
-msgstr ""
+msgstr "Příručka"
 
 #: reforis/templates/login.html:28
 msgid "Foris"
-msgstr ""
+msgstr "Foris"
 
 #: reforis/templates/login.html:35
 msgid "Log in"
-msgstr ""
+msgstr "Přihlásit se"
 
 #: reforis/templates/login.html:39
 msgid "Go to LuCI"
-msgstr ""
+msgstr "Přejít do rozhraní LuCI"
 
 #: reforis/templates/errors/403.html:4
 msgid "403 - Forbidden"
-msgstr ""
+msgstr "403 – odepřeno"
 
 #: reforis/templates/errors/403.html:9
 msgid "Forbidden You don't have permission to access"
-msgstr ""
+msgstr "Odepřeno – nemáte oprávnění k přístupu"
 
 #: reforis/templates/errors/403.html:10
 #, python-format
 msgid "Do you want to <a href=\"%(link)s\">log in</a>?"
-msgstr ""
+msgstr "Chcete se <a href=\"%(link)s\">přihlásit</a>?"
 
 #: reforis/templates/errors/404.html:4
 msgid "404 - Page not found"
-msgstr ""
+msgstr "404 – stránka nenalezena"
 
 #: reforis/templates/errors/404.html:9
 msgid "Page not found :("
-msgstr ""
+msgstr "Stránka nenalezena :("
 
 #: reforis/templates/errors/500.html:4
 msgid "Server error"
-msgstr ""
+msgstr "Chyba serveru"
 
 #: reforis/templates/errors/500.html:8
 msgid "500 -- Server error"
-msgstr ""
+msgstr "500 – chyba serveru"
 
 #: reforis/templates/errors/500.html:9
 msgid "Error:"
-msgstr ""
+msgstr "Chyba:"
 
 #: reforis/templates/errors/500.html:12
 msgid "Extra:"
-msgstr ""
+msgstr "Další:"
 
 #: reforis/templates/errors/500.html:16
 msgid "Trace:"
@@ -1962,4 +2203,135 @@ msgstr "Odhlásit"
 #~ "in the console of your web browser"
 #~ " (available by pressing F12)."
 #~ msgstr ""
+
+#~ msgid "Update settings"
+#~ msgstr "Nastavení aktualizací"
+
+#~ msgid "Wi-Fi ${deviceID + 1}"
+#~ msgstr "Wi-Fi ${deviceID + 1}"
+
+#~ msgid "auto"
+#~ msgstr "automaticky"
+
+#~ msgid "Enable Guest Wifi"
+#~ msgstr "Zapnout WiFi pro hosty"
+
+#~ msgid "Wi-Fi QR Code"
+#~ msgstr "QR kód s nastavením Wi-Fi"
+
+#~ msgid "Download PDF"
+#~ msgstr "Stáhnout si PDF"
+
+#~ msgid "Disabled"
+#~ msgstr "Vypnuto"
+
+#~ msgid "802.11n - 20 MHz wide channel"
+#~ msgstr "802.11n – kanál šíře 20 MHz"
+
+#~ msgid "802.11n - 40 MHz wide channel"
+#~ msgstr "802.11n – kanál šíře 40 MHz"
+
+#~ msgid "802.11ac - 20 MHz wide channel"
+#~ msgstr "802.11ac – kanál šíře 20 MHz"
+
+#~ msgid "802.11ac - 40 MHz wide channel"
+#~ msgstr "802.11ac – kanál šíře 40 MHz"
+
+#~ msgid "802.11ac - 80 MHz wide channel"
+#~ msgstr "802.11ac – kanál šíře 80 MHz"
+
+#~ msgid ""
+#~ "\n"
+#~ "        WPA2 pre-shared key, that "
+#~ "is required to connect to the "
+#~ "network.\n"
+#~ "    "
+#~ msgstr ""
+#~ "\n"
+#~ "        WPA2 předsdílený klíč, který je"
+#~ " vyžadován pro připojení se k síti."
+#~ "\n"
+#~ "    "
+
+#~ msgid "If set, network is not visible when scanning for available networks."
+#~ msgstr ""
+#~ "Při zapnutí této volby se síť "
+#~ "nebude zobrazovat zařízením když budou "
+#~ "vyhledávat dostupné sítě."
+
+#~ msgid ""
+#~ "\n"
+#~ "        The 2.4 GHz band is more"
+#~ " widely supported by clients, but "
+#~ "tends to have more interference. The "
+#~ "5 GHz band is a\n"
+#~ "        newer standard and may not "
+#~ "be supported by all your devices. "
+#~ "It usually has less interference, but"
+#~ " the signal\n"
+#~ "        does not carry so well indoors."
+#~ msgstr ""
+#~ "\n"
+#~ "        Pásmo 2,4 GHz je v "
+#~ "klientských zařízeních podporováno nejčastěji, "
+#~ "ale bývá více zarušené. Pásmo 5 "
+#~ "GHz je\n"
+#~ "        novější standard a nemusí být"
+#~ " podporováno všemi vámi používanými "
+#~ "zařízeními. Obvykle bývá méně zarušené,\n"
+#~ ""
+#~ "        ale signál se hůře šíři uvnitř budov."
+
+#~ msgid ""
+#~ "\n"
+#~ "        Change this to adjust 802.11n/ac"
+#~ " mode of operation. 802.11n with 40"
+#~ " MHz wide channels can yield higher"
+#~ "\n"
+#~ "        throughput but can cause more"
+#~ " interference in the network. If you"
+#~ " don't know what to choose, use "
+#~ "the default\n"
+#~ "        option with 20 MHz wide channel.\n"
+#~ "    "
+#~ msgstr ""
+#~ "\n"
+#~ "        Změna tohoto upraví režim "
+#~ "fungování 802.11n/ac. 802.11n s kanály o"
+#~ " šíři 40 MHz kanály může pomoci "
+#~ "k vyšší\n"
+#~ "        propustnosti, ale je náchylnější "
+#~ "na rušení. Pokud nevíte co zvolit, "
+#~ "použijte výchozí volbu s kanálem šíře"
+#~ "\n"
+#~ "        20 MHz.\n"
+#~ "    "
+
+#~ msgid ""
+#~ "\n"
+#~ "        Enables Wi-Fi for guests, "
+#~ "which is separated from LAN network. "
+#~ "Devices connected to this network are"
+#~ " allowed to\n"
+#~ "        access the internet, but aren't"
+#~ " allowed to access other devices and"
+#~ " the configuration interface of the "
+#~ "router.\n"
+#~ "        Parameters of the guest network"
+#~ " can be set in the Guest "
+#~ "network tab.\n"
+#~ "        "
+#~ msgstr ""
+#~ "\n"
+#~ "        Zapíná Wi-Fi pro hosty, "
+#~ "která je oddělená od místní sítě "
+#~ "(LAN). Zařízením připojeným k této síti"
+#~ " je umožněn\n"
+#~ "        přístup do Internetu, ale už "
+#~ "ne na ostatní zařízení a k "
+#~ "rozhraní pro nastavování směrovače.\n"
+#~ "        Parametry sítě pro hosty je "
+#~ "možné nastavit na panelu „Síť pro "
+#~ "hosty“.\n"
+#~ "        "
 

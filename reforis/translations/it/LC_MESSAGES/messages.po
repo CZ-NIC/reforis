@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-02-18 17:56+0100\n"
+"POT-Creation-Date: 2020-02-20 17:21+0100\n"
 "PO-Revision-Date: 2019-02-19 13:34+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: it\n"
@@ -16,23 +16,23 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.8.0\n"
+"Generated-By: Babel 2.7.0\n"
 
 #: js/src/about/About.js:22 js/src/main/pages.js:133
 msgid "About"
-msgstr ""
+msgstr "Informazioni"
 
 #: js/src/about/About.js:40
 msgid "Device"
-msgstr ""
+msgstr "Dispositivo"
 
 #: js/src/about/About.js:44
 msgid "Serial number"
-msgstr ""
+msgstr "Numero di serie"
 
 #: js/src/about/About.js:48
 msgid "Turris OS version"
-msgstr ""
+msgstr "Versione SO Turris"
 
 #: js/src/about/About.js:52
 msgid "Turris OS branch"
@@ -40,77 +40,79 @@ msgstr ""
 
 #: js/src/about/About.js:61
 msgid "Kernel version"
-msgstr ""
+msgstr "Versione del Kernel"
 
 #: js/src/common/RebootButton.js:42 js/src/main/pages.js:97
 msgid "Reboot"
-msgstr ""
+msgstr "Riavvia"
 
 #: js/src/common/RebootButton.js:57 js/src/dns/DNSSECDisableModal.js:32
 msgid "Warning!"
-msgstr ""
+msgstr "Attenzione!"
 
 #: js/src/common/RebootButton.js:58
 msgid "Are you sure you want to restart the router?"
-msgstr ""
+msgstr "Vuoi davvero riavviare il router?"
 
 #: js/src/common/RebootButton.js:60 js/src/dns/DNSSECDisableModal.js:42
 msgid "Cancel"
-msgstr ""
+msgstr "Annulla"
 
 #: js/src/common/RebootButton.js:61
 msgid "Confirm reboot"
-msgstr ""
+msgstr "Conferma il riavvio"
 
 #: js/src/common/network/DHCPClientForm.js:14
 msgid "Hostname which will be provided to DHCP server."
-msgstr ""
+msgstr "Il nome dell'host che verrà dato al server DHCP."
 
 #: js/src/common/network/DHCPClientForm.js:33
 msgid "DHCP hostname"
-msgstr ""
+msgstr "Nome dell'host DHCP"
 
 #: js/src/common/network/DHCPClientsList.js:19
 msgid "DHCP Clients"
-msgstr ""
+msgstr "Client DHCP"
 
 #: js/src/common/network/DHCPClientsList.js:22
 msgid "No DHCP clients found."
-msgstr ""
+msgstr "Nessun client DHCP trovato."
 
 #: js/src/common/network/DHCPClientsList.js:27
 msgid "Expires"
-msgstr ""
+msgstr "Scadenza"
 
 #: js/src/common/network/DHCPClientsList.js:28
 msgid "IP Address"
-msgstr ""
+msgstr "Indirizzo IP"
 
 #: js/src/common/network/DHCPClientsList.js:29
 msgid "MAC Address"
-msgstr ""
+msgstr "Indirizzo MAC"
 
 #: js/src/common/network/DHCPClientsList.js:30
 msgid "Hostname"
-msgstr ""
+msgstr "Nome dell'host"
 
 #: js/src/common/network/DHCPClientsList.js:31
 msgid "Active"
-msgstr ""
+msgstr "Attivo"
 
 #: js/src/common/network/DHCPServerForm.js:13
 msgid ""
 "Enable this option to automatically assign IP addresses to the devices "
 "connected to the router."
 msgstr ""
+"Attivando questa opzione, un indirizzo IP sarà assegnato automaticamente "
+"a ogni dispositivo connesso al router."
 
 #: js/src/common/network/DHCPServerForm.js:41
 msgid "DHCP start"
-msgstr ""
+msgstr "Avvia DHCP"
 
 #: js/src/common/network/DHCPServerForm.js:53
 msgid "DHCP max leases"
-msgstr ""
+msgstr "Numero massimo di prestiti del DHCP"
 
 #: js/src/common/network/DHCPServerForm.js:54
 msgid "Maximum number of addresses available for DHCP clients."
@@ -118,7 +120,7 @@ msgstr ""
 
 #: js/src/common/network/DHCPServerForm.js:67
 msgid "Lease time (hours)"
-msgstr ""
+msgstr "Tempo del prestito (in ore)"
 
 #: js/src/common/network/DHCPValidators.js:57
 msgid "Value must be a number."
@@ -158,35 +160,35 @@ msgstr ""
 msgid ""
 "DNS server address is not required as the built-in DNS resolver is "
 "capable of working without it."
-msgstr ""
+msgstr "Grazie al risolutore DNS incorporato, non è richiesto un indirizzo DNS."
 
 #: js/src/common/network/StaticIPForm.js:43
 msgid "IP address"
-msgstr ""
+msgstr "Indirizzo IP"
 
 #: js/src/common/network/StaticIPForm.js:55
 #: js/src/guestNetwork/GuestNetworkForm.js:84 js/src/lan/LANManagedForm.js:61
 msgid "Network mask"
-msgstr ""
+msgstr "Maschera di rete"
 
 #: js/src/common/network/StaticIPForm.js:67 js/src/wan/WAN6Form.js:230
 msgid "Gateway"
-msgstr ""
+msgstr "Gateway"
 
 #: js/src/common/network/StaticIPForm.js:79 js/src/wan/WAN6Form.js:255
 msgid "DNS server 1"
-msgstr ""
+msgstr "Server DNS 1"
 
 #: js/src/common/network/StaticIPForm.js:91 js/src/wan/WAN6Form.js:267
 msgid "DNS server 2"
-msgstr ""
+msgstr "Server DNS 2"
 
 #: js/src/common/network/StaticIPForm.js:116
 #: js/src/common/network/validators.js:19 js/src/wan/MACForm.js:78
 #: js/src/wan/WAN6Form.js:521 js/src/wan/WAN6Form.js:550
 #: js/src/wan/WAN6Form.js:563 js/src/wan/WANForm.js:177
 msgid "This field is required."
-msgstr ""
+msgstr "Campo richiesto."
 
 #: js/src/common/network/validators.js:12
 msgid "This is not a valid network mask."
@@ -194,31 +196,31 @@ msgstr ""
 
 #: js/src/connectionTest/ConnectionTestButton.js:23
 msgid "Test is running..."
-msgstr ""
+msgstr "Test in corso..."
 
 #: js/src/connectionTest/ConnectionTestButton.js:26
 msgid "Test connection again"
-msgstr ""
+msgstr "Riesecuzione del test"
 
 #: js/src/connectionTest/ConnectionTestButton.js:29
 msgid "Test connection"
-msgstr ""
+msgstr "Test di connessione"
 
 #: js/src/connectionTest/ConnectionTestResult.js:14
 msgid "IPv4 connectivity"
-msgstr ""
+msgstr "Connessione IPv4"
 
 #: js/src/connectionTest/ConnectionTestResult.js:15
 msgid "IPv4 gateway connectivity"
-msgstr ""
+msgstr "Gateway connessione IPv4"
 
 #: js/src/connectionTest/ConnectionTestResult.js:16
 msgid "IPv6 connectivity"
-msgstr ""
+msgstr "Connessione IPv6"
 
 #: js/src/connectionTest/ConnectionTestResult.js:17
 msgid "IPv6 gateway connectivity"
-msgstr ""
+msgstr "Gateway connessione IPv6"
 
 #: js/src/dns/DNS.js:33
 msgid ""
@@ -245,6 +247,25 @@ msgid ""
 "this is a serious flaw on their side.\n"
 "            "
 msgstr ""
+"\n"
+"Il router Turris fa uso di un risolutore DNS proprio, con supporto "
+"DNSSEC. Pertanto, può essere usato sia da solo, sia con  per inoltrare "
+"query DNS presso il risolutore DNS del vostro provider.\n"
+"<br/><br/>\n"
+"Le seguenti impostazioni determineranno il funzionamento del risolutore "
+"DNS. Di norma, se il risolutore del vostro provider funziona bene in una "
+"rete, non serve usarne un altro; qualora dovessero sorgere dei problemi, "
+"usate il risolutore del router.\n"
+"<br/><br/>\n"
+"È raro, ma può capitare che errori nella configurazione da parte del "
+"vostro provider interferiscano con la convalidazione delle DNSSEC: in "
+"questo caso, disabilitate <b>temporaneamente</b> la convalida delle "
+"DNSSEC per risalire all'origine del malfunzionamento. Ricorda di fare "
+"attenzione: senza una convalida DNSSEC sarai vulnerabile allo spoofing! "
+"<b>Raccomandiamo quindi di non disattivare le DNSSEC</b> e di contattare "
+"il vostro provider quanto prima: è pur sempre un loro errore, ed è anche "
+"bello grosso.\n"
+"            "
 
 #: js/src/dns/DNS.js:63 js/src/wan/WAN.js:50
 msgid "Connection Test"
@@ -259,34 +280,45 @@ msgid ""
 "changed your forwarder setting.\n"
 "        "
 msgstr ""
+"\n"
+"Qui puoi testare la connessione internet; è anche utile per testare il "
+"corretto funzionamento della risoluzione del DNS. Qualora dovessi "
+"modificare le impostazioni del server inoltratore, ricordati di cliccare "
+"sul <b>pulsante Salva</b> per rendere effettive le modifiche.\n"
+"        "
 
 #: js/src/dns/DNSForm.js:17
 msgid ""
 "This will enable your DNS resolver to place DHCP client's names among the"
 " local DNS records."
 msgstr ""
+"Ciò permetterà al risolutore DNS d'inserire i nomi del tuo client DHCP "
+"nel registro DNS locale."
 
 #: js/src/dns/DNSForm.js:18
 msgid ""
 "This domain will be used as suffix. E.g. The result for client "
 "\"android-123\" and domain \"my.lan\" will be \"android-123.my.lan\"."
 msgstr ""
+"Questo dominio sarà usato come suffisso. Per esempio, inserendo "
+"\"android-123\" come nome del client e \"my.lan\" come dominio il "
+"risultato sarà \"android-123.my.lan\"."
 
 #: js/src/dns/DNSForm.js:71
 msgid "Use forwarding"
-msgstr ""
+msgstr "Usa server inoltratore"
 
 #: js/src/dns/DNSForm.js:87
 msgid "Enable DNSSEC"
-msgstr ""
+msgstr "Abilita DNSSEC"
 
 #: js/src/dns/DNSForm.js:95
 msgid "Enable DHCP clients in DNS"
-msgstr ""
+msgstr "Abilita client DHCP nel DNS"
 
 #: js/src/dns/DNSForm.js:106
 msgid "Domain of DHCP clients in DNS"
-msgstr ""
+msgstr "Dominio del client DHCP nel DNS"
 
 #: js/src/dns/DNSSECDisableModal.js:15
 msgid ""
@@ -299,31 +331,39 @@ msgid ""
 "\n"
 "Do you still want to continue and stay unprotected?\n"
 msgstr ""
+"\n"
+"Le DNSSEC sono delle specifiche di sicurezza che proteggono le "
+"comunicazioni e le infrastrutture DNS da attacchi. Ti suggeriamo "
+"caldamente di mantenere la convalida DNSSEC sempre attiva, a meno che non"
+" sorga il bisogno di connettere il dispositivo in reti dove le DNSSEC non"
+" funzionano.\n"
+"\n"
+"Sei sicuro di voler procedere con la disattivazione delle DNSSEC?\n"
 
 #: js/src/dns/DNSSECDisableModal.js:51
 msgid "Disable DNSSEC"
-msgstr ""
+msgstr "Disabilita DNSSEC"
 
 #: js/src/dns/Forwarders/Forwarders.js:79
 msgid "Edit forwarder"
-msgstr ""
+msgstr "Modifica server inoltratore"
 
 #: js/src/dns/Forwarders/Forwarders.js:79
 #: js/src/dns/Forwarders/Forwarders.js:94
 msgid "Add custom forwarder"
-msgstr ""
+msgstr "Aggiungi server inoltratore personalizzato"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:32
 msgid "Forwarders"
-msgstr ""
+msgstr "Server inoltratori"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:33
 msgid "Actions"
-msgstr ""
+msgstr "Azioni"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:40
 msgid "Use provider's DNS resolver"
-msgstr ""
+msgstr "Usa risolutore DNS del provider"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:132
 msgid "Edit"
@@ -549,6 +589,10 @@ msgid ""
 "device. Firstly it is required to set your password. Note the security of"
 " your home network is in your hands, so try not to use weak passwords."
 msgstr ""
+"Benvenuto sull'interfaccia Web di Foris. Questa guida ti aiuterà nel "
+"processo d'installazione del dispositivo. Prima di tutto, è necessario "
+"impostare una password. Vedi di sceglierne una complessa: da essa dipende"
+" la sicurezza della tua rete!"
 
 #: js/src/guide/constants.js:13
 msgid "Your password is set. You may proceed to the next step."
@@ -1930,4 +1974,7 @@ msgstr ""
 #~ "in the console of your web browser"
 #~ " (available by pressing F12)."
 #~ msgstr ""
+
+#~ msgid "Minimum lease time is 1 hour"
+#~ msgstr "Il tempo minimo per il prestito deve essere di un'ora"
 
