@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
+{% block content_col_size %}10{% endblock %}
+
 {% block content %}
+    {% include "includes/top-bar.html" %}
+    <div id="alert-container" class="mt-3"></div>
     <div id="content-container"></div>
 {% endblock %}
