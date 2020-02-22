@@ -14,7 +14,7 @@ import LANUnmanagedForm from "./LANUnmanagedForm";
 
 const HELP_TEXTS = {
     mode: _(`
-Router mode means that this devices manages the LAN (acts as a router, can assing IP addresses, ...).
+Router mode means that this device manages the LAN (acts as a router, can assign IP addresses, ...).
 Computer mode means that this device acts as a client in this network. It acts in a similar way as WAN, but
 it has opened ports for configuration interface and other services.
         `),
