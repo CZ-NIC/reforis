@@ -27,7 +27,7 @@ export default function WAN({ ws }) {
             <h1>{_("WAN")}</h1>
             <p>
                 {_(`
-Here you specify your WAN port settings. Usually, you can leave this options untouched unless instructed
+Here you specify your WAN port settings. Usually, you can leave these options untouched unless instructed
 otherwise by your internet service provider. Also, in case there is a cable or DSL modem connecting your
 router to the network, it is usually not necessary to change this setting.
         `)}
