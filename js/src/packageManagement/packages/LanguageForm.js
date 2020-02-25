@@ -25,7 +25,7 @@ export default function LanguageForm({ formData, setFormValue, disabled }) {
     return (
         <>
             <h3>{_("Languages")}</h3>
-            <p>{_("If you want to use other language than English you can select it from the following list:")}</p>
+            <p>{_("If you want to use another language than English you can select it from the following list:")}</p>
             <div className="container mb-3">
                 <div className="row justify-content-start">
                     {formData.languages.map((language, idx) => (
