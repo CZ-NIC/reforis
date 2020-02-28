@@ -8,16 +8,17 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2020-02-20 17:21+0100\n"
-"PO-Revision-Date: 2019-09-30 13:00+0000\n"
+"PO-Revision-Date: 2020-02-29 08:33+0000\n"
 "Last-Translator: Алексей Леньшин <alenshin@gmail.com>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/turris/reforis/"
+"ru/>\n"
 "Language: ru\n"
-"Language-Team: Russian "
-"<https://hosted.weblate.org/projects/turris/reforis/ru/>\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.0-dev\n"
 "Generated-By: Babel 2.7.0\n"
 
 #: js/src/about/About.js:22 js/src/main/pages.js:133
@@ -38,7 +39,7 @@ msgstr "Версия Turris OS"
 
 #: js/src/about/About.js:52
 msgid "Turris OS branch"
-msgstr ""
+msgstr "Ветка Turris OS"
 
 #: js/src/about/About.js:61
 msgid "Kernel version"
@@ -118,7 +119,7 @@ msgstr "Размер пула адресов DHCP"
 
 #: js/src/common/network/DHCPServerForm.js:54
 msgid "Maximum number of addresses available for DHCP clients."
-msgstr ""
+msgstr "Максимальное количество адресов, доступных для клиентов DHCP."
 
 #: js/src/common/network/DHCPServerForm.js:67
 msgid "Lease time (hours)"
@@ -126,37 +127,41 @@ msgstr "Время аренды (часы)"
 
 #: js/src/common/network/DHCPValidators.js:57
 msgid "Value must be a number."
-msgstr ""
+msgstr "Значение должно быть числом."
 
 #: js/src/common/network/DHCPValidators.js:59
 msgid "Value must be positive."
-msgstr ""
+msgstr "Значение должно быть положительным."
 
 #: js/src/common/network/DHCPValidators.js:69
 msgid "Invalid network settings. DHCP settings can't be validated."
-msgstr ""
+msgstr "Неверные настройки сети. Настройки DHCP не могут быть проверены."
 
 #: js/src/common/network/DHCPValidators.js:79
 msgid "Minimum lease time is 1 hour."
-msgstr "Минимальное время аренды 1 час"
+msgstr "Минимальное время аренды 1 час."
 
 #: js/src/common/network/DHCPValidators.js:90
 msgid "Address is outside current network."
-msgstr ""
+msgstr "Адрес находится вне текущей сети."
 
 #: js/src/common/network/DHCPValidators.js:92
 msgid "Address is already reserved for other purposes."
-msgstr ""
+msgstr "Адрес уже зарезервирован для других целей."
 
 #: js/src/common/network/DHCPValidators.js:95
 msgid "Too many addresses requested. Set a lower number or change DHCP start."
 msgstr ""
+"Запрошено слишком много адресов. Установите меньшее число или измените "
+"запуск DHCP."
 
 #: js/src/common/network/DHCPValidators.js:97
 msgid ""
 "The only DHCP lease is the same as router's address. Increase limit or "
 "change start address."
 msgstr ""
+"Единственный адрес DHCP совпадает с адресом маршрутизатора. Увеличьте лимит "
+"или измените начальный адрес."
 
 #: js/src/common/network/StaticIPForm.js:14 js/src/wan/WAN6Form.js:29
 msgid ""
@@ -196,7 +201,7 @@ msgstr "Обязательное поле."
 
 #: js/src/common/network/validators.js:12
 msgid "This is not a valid network mask."
-msgstr ""
+msgstr "Это недопустимая маска подсети."
 
 #: js/src/connectionTest/ConnectionTestButton.js:23
 msgid "Test is running..."
@@ -407,7 +412,7 @@ msgstr "Сохранить сервер пересылки"
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:37
 msgid "Forwarder saved successfully."
-msgstr ""
+msgstr "Сервер пересылки успешно сохранен."
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:39
 msgid "Can't save forwarder."
@@ -415,7 +420,7 @@ msgstr "Невозможно сохранить сервер пересылки.
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:46
 msgid "Forwarder added successfully."
-msgstr ""
+msgstr "Сервер пересылки успешно добавлен."
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:48
 msgid "Can't add new forwarder."
@@ -440,7 +445,7 @@ msgstr "Код TLS должен иметь хотя бы один символ."
 #: js/src/guestNetwork/GuestNetwork.js:29 js/src/interfaces/Interfaces.js:49
 #: js/src/interfaces/constants.js:11 js/src/main/pages.js:69
 msgid "Guest Network"
-msgstr ""
+msgstr "Гостевая сеть"
 
 #: js/src/guestNetwork/GuestNetwork.js:31
 msgid ""
@@ -587,7 +592,7 @@ msgstr ""
 
 #: js/src/guide/WorkflowSelect.js:27
 msgid "Local Server"
-msgstr ""
+msgstr "Локальный сервер"
 
 #: js/src/guide/WorkflowSelect.js:28 js/src/lan/LANForm.js:29
 msgid "Router"
@@ -599,11 +604,11 @@ msgstr "Минимальная"
 
 #: js/src/guide/WorkflowSelect.js:45
 msgid "Cannot set workflow."
-msgstr ""
+msgstr "Невозможно установить конфигурацию."
 
 #: js/src/guide/WorkflowSelect.js:55
 msgid "Guide Workflow"
-msgstr ""
+msgstr "Руководство настройки"
 
 #: js/src/guide/WorkflowSelect.js:56
 msgid ""
@@ -803,7 +808,7 @@ msgstr ""
 
 #: js/src/guide/hooks.js:23
 msgid "Cannot mark guide as finished."
-msgstr ""
+msgstr "Начальная настройка не завершена."
 
 #: js/src/guide/steps.js:20 js/src/main/pages.js:82
 #: js/src/notificationsSettings/SMTPCustomForm.js:107
@@ -924,7 +929,7 @@ msgstr ""
 
 #: js/src/interfaces/Interfaces.js:77
 msgid "You have to assign at least one interface to this group."
-msgstr ""
+msgstr "Вы должны назначить хотя бы один интерфейс для этой группы."
 
 #: js/src/interfaces/InterfacesForm.js:53
 msgid ""
@@ -936,7 +941,7 @@ msgstr ""
 
 #: js/src/interfaces/Network.js:40
 msgid "There are no interfaces in this group."
-msgstr ""
+msgstr "В этой группе нет интерфейсов."
 
 #: js/src/interfaces/Network.js:61
 msgid "Base module"
@@ -945,12 +950,12 @@ msgstr "Основной модуль"
 #: js/src/interfaces/Network.js:61
 #, python-format
 msgid "Module %s"
-msgstr ""
+msgstr "Модуль %s"
 
 #: js/src/interfaces/SelectedInterface.js:65
 #, python-format
 msgid "Interface %s %s"
-msgstr ""
+msgstr "Интерфейс %s %s"
 
 #: js/src/interfaces/SelectedInterface.js:68
 msgid "Network"
@@ -970,7 +975,7 @@ msgstr "Слот"
 
 #: js/src/interfaces/SelectedInterface.js:93
 msgid "Interface ID"
-msgstr ""
+msgstr "Идентификатор интерфейса"
 
 #: js/src/interfaces/SelectedInterface.js:97
 msgid "Type"
@@ -986,7 +991,7 @@ msgstr "Скорость соединения"
 
 #: js/src/interfaces/SelectedInterface.js:106
 msgid "N/A"
-msgstr ""
+msgstr "Н/Д"
 
 #: js/src/interfaces/constants.js:12
 msgid "Unassigned"
@@ -1077,7 +1082,7 @@ msgstr "Протокол IPv4"
 #: js/src/languagesDropdown/LanguagesDropdown.js:36
 #: js/src/packageManagement/packages/LanguageForm.js:27
 msgid "Languages"
-msgstr ""
+msgstr "Языки"
 
 #: js/src/main/pages.js:32
 #: js/src/notifications/Notifications/NotificationsCenter.js:76
@@ -1194,7 +1199,7 @@ msgstr "STARTTLS"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:54
 msgid "SMTP Settings"
-msgstr ""
+msgstr "Настройки SMTP"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:56
 msgid "Sender address (From)"
@@ -1536,7 +1541,7 @@ msgstr "Не удаётся установить обновление."
 
 #: js/src/packageManagement/updates/UpdateApproval.js:33
 msgid "Updates will be installed shortly."
-msgstr ""
+msgstr "Обновления будут вскоре установлены."
 
 #: js/src/packageManagement/updates/UpdateApproval.js:46
 msgid "There are no updates awaiting your approval."
@@ -1620,7 +1625,7 @@ msgstr "Текущий пароль Foris"
 
 #: js/src/password/ForisPasswordForm.js:35
 msgid "Foris Password"
-msgstr ""
+msgstr "Пароль Foris"
 
 #: js/src/password/ForisPasswordForm.js:36
 msgid "Set your password for this administration interface."
@@ -1654,7 +1659,7 @@ msgstr "Пароль успешно изменен."
 
 #: js/src/password/Password.js:115
 msgid "Password Settings"
-msgstr ""
+msgstr "Настройки пароля"
 
 #: js/src/password/Password.js:158
 msgid "Password can't be empty."
@@ -1670,7 +1675,7 @@ msgstr "Пароль должен содержать не более 128 сим�
 
 #: js/src/password/RootPasswordForm.js:32
 msgid "Advanced Administration (root) Password"
-msgstr ""
+msgstr "Пароль расширенного администрирования (root)"
 
 #: js/src/password/RootPasswordForm.js:35
 #, python-format
@@ -1718,7 +1723,7 @@ msgstr "Подробности"
 
 #: js/src/regionAndTime/RegionAndTime.js:30
 msgid "Region and Time"
-msgstr ""
+msgstr "Регион и время"
 
 #: js/src/regionAndTime/RegionAndTime.js:32
 msgid ""
@@ -1835,19 +1840,24 @@ msgstr ""
 
 #: js/src/utils/ErrorBoundary.js:36
 msgid "An Error Occurred"
-msgstr ""
+msgstr "Произошла ошибка"
 
 #: js/src/utils/ErrorBoundary.js:40
 msgid ""
 "More detailed information is available in the console of your web browser"
 " - on most browsers accessible after pressing Ctrl+Shift+J or F12."
 msgstr ""
+"Более подробная информация доступна в консоли вашего веб-браузера - в "
+"большинстве браузеров доступно после нажатия клавиш Ctrl+Shift+J или F12."
 
 #: js/src/utils/ErrorBoundary.js:41
 msgid ""
 "Please report this error to our support team via e-mail: <a "
 "href=\"mailto:tech.support@turris.cz\">tech.support@turris.cz</a>."
 msgstr ""
+"Пожалуйста, сообщите об этой ошибке в нашу службу поддержки по электронной "
+"почте: <a href=\"mailto:tech.support@turris.cz\"> tech.support@turris.cz "
+"</a>."
 
 #: js/src/wan/MACForm.js:14
 msgid ""
@@ -2104,11 +2114,11 @@ msgstr "Неверный текущий пароль."
 
 #: reforis/foris_controller_api/modules/updater.py:60
 msgid "Cannot change automatic restart settings."
-msgstr ""
+msgstr "Невозможно изменить настройки автоматического перезапуска."
 
 #: reforis/foris_controller_api/modules/updater.py:75
 msgid "Cannot update approvals settings."
-msgstr ""
+msgstr "Невозможно обновить настройки одобрений."
 
 #: reforis/foris_controller_api/modules/updater.py:79
 msgid "Cannot rollback automatic restart settings."
@@ -2119,6 +2129,8 @@ msgstr ""
 #: reforis/foris_controller_api/modules/updater.py:160
 msgid "You can't set packages with disabled automatic updates."
 msgstr ""
+"Вы не можете устанавливать пакеты с отключенными автоматическими "
+"обновлениями."
 
 #: reforis/foris_controller_api/modules/updater.py:171
 msgid "Cannot start updater"
@@ -2142,7 +2154,7 @@ msgstr "Перейти к LuCI"
 
 #: reforis/templates/errors/403.html:4
 msgid "403 - Forbidden"
-msgstr "403 - Forbidden"
+msgstr "403 - Запрещено"
 
 #: reforis/templates/errors/403.html:9
 msgid "Forbidden You don't have permission to access"
@@ -2155,7 +2167,7 @@ msgstr "Хотите <a href=\"%(link)s\"> авторизоваться</a>?"
 
 #: reforis/templates/errors/404.html:4
 msgid "404 - Page not found"
-msgstr "404 - Page not found"
+msgstr "404 - Страница не найдена"
 
 #: reforis/templates/errors/404.html:9
 msgid "Page not found :("
@@ -2250,4 +2262,3 @@ msgstr "Выход"
 
 #~ msgid "Update settings"
 #~ msgstr "Обновить настройки"
-
