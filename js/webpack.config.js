@@ -9,6 +9,7 @@ const path = require("path");
 const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 module.exports = (env) => ({
     mode: "development",
@@ -67,6 +68,15 @@ module.exports = (env) => ({
                 use: [
                     MiniCssExtractPlugin.loader,
                     "css-loader",
+                    {
+                        loader: "string-replace-loader",
+                        options: {
+                            // Remove usage external resources to sure we are not using any of them.
+                            search: "@import url\\(\"https?://(.*)\\);",
+                            replace: "",
+                            flags: "i",
+                        },
+                    },
                 ],
             },
         ],

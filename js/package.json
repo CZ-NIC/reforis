@@ -48,6 +48,7 @@
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "react-styleguidist": "^10.4.2",
     "snapshot-diff": "^0.5.1",
+    "string-replace-loader": "^2.2.0",
     "style-loader": "^0.23.1",
     "terser-webpack-plugin": "^2.3.2",
     "webpack": "^4.41.5",
