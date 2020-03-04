@@ -14,8 +14,8 @@ import "expose-loader?ReactRouterDOM!react-router-dom";
 import React from "react";
 import { render } from "react-dom";
 import "@fortawesome/fontawesome-free/js/all.min";
-import "bootstrap";
-import "bootswatch/dist/flatly/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min";
+import "bootswatch/dist/flatly/bootstrap.css";
 import "./app.css";
 
 import { WebSockets } from "foris";

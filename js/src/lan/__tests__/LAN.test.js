@@ -212,10 +212,14 @@ describe("<LAN/>", () => {
                 expect(getByText(lanContainer, "Value must be positive.")).toBeDefined();
             });
 
+            const originalError = console.error;
+            console.error = jest.fn();
             changeMaxLeases("foobar");
             await wait(() => {
                 expect(getByText(lanContainer, "Value must be a number.")).toBeDefined();
             });
+            expect(console.error).toBeCalled();
+            console.error = originalError;
 
             changeMaxLeases(300);
             await wait(() => {
