@@ -33,22 +33,34 @@ module.exports = (env) => ({
             },
             {
                 test: require.resolve("prop-types"),
-                use: [{ loader: "expose-loader", options: "PropTypes" }],
+                use: [{
+                    loader: "expose-loader",
+                    options: "PropTypes",
+                }],
             },
             {
                 test: require.resolve("react"),
-                use: [{ loader: "expose-loader", options: "React" }],
+                use: [{
+                    loader: "expose-loader",
+                    options: "React",
+                }],
             },
             {
                 test: require.resolve("react-dom"),
-                use: [{ loader: "expose-loader", options: "ReactDOM" }],
+                use: [{
+                    loader: "expose-loader",
+                    options: "ReactDOM",
+                }],
             },
             {
                 // Using different instances of library in reForis and foris JS (and plugins) cause
                 // a bug about "using react-router components outside <Router/>". So we expose it to
                 // use same instance of ReactRouterDOM everywhere.
                 test: require.resolve("react-router-dom"),
-                use: [{ loader: "expose-loader", options: "ReactRouterDOM" }],
+                use: [{
+                    loader: "expose-loader",
+                    options: "ReactRouterDOM",
+                }],
             },
             {
                 test: /\.css$/,
@@ -70,6 +82,7 @@ module.exports = (env) => ({
                     mangle: false,
                 },
             }),
+            new OptimizeCSSAssetsPlugin({}),
         ],
         // Workaround to get ReactRouterDOM to be exposed. Otherwise, it's excluded as unused
         // imports as it's flagged as a module without side effects.
