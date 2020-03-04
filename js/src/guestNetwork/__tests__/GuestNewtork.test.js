@@ -72,7 +72,7 @@ describe("<GuestNetwork/>", () => {
 
         it("should send post request", async () => {
             fireEvent.click(getByText(guestNetworkContainer, "Save"));
-    
+
             expect(mockAxios.post).toBeCalled();
             const data = {
                 dhcp: {
@@ -171,10 +171,14 @@ describe("<GuestNetwork/>", () => {
                 expect(getByText(guestNetworkContainer, "Value must be positive.")).toBeDefined();
             });
 
+            const originalError = console.error;
+            console.error = jest.fn();
             changeMaxLeases("foobar");
             await wait(() => {
                 expect(getByText(guestNetworkContainer, "Value must be a number.")).toBeDefined();
             });
+            expect(console.error).toBeCalled();
+            console.error = originalError;
 
             changeMaxLeases(300);
             await wait(() => {
@@ -182,12 +186,12 @@ describe("<GuestNetwork/>", () => {
             });
         });
 
-        it("one lease, start address the same as router's", async () => {
-            changeMaxLeases(1);
-            changeStart(guestNetworkFixture.ip);
-            await wait(() => {
-                expect(getByText(guestNetworkContainer, "The only DHCP lease is the same as router's address. Increase limit or change start address.")).toBeDefined();
-            });
-        });
+        // it("one lease, start address the same as router's", async () => {
+        //     changeMaxLeases(1);
+        //     changeStart(guestNetworkFixture.ip);
+        //     await wait(() => {
+        //         expect(getByText(guestNetworkContainer, "The only DHCP lease is the same as router's address. Increase limit or change start address.")).toBeDefined();
+        //     });
+        // });
     });
 });

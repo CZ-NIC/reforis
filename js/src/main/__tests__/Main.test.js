@@ -13,9 +13,7 @@ import { WebSockets } from "foris";
 import Main from "../Main";
 
 function mockBrokenComponent() {
-    // Trigger error
-    qwe = asd;
-    return <p>Notifications!</p>
+    throw new Error("This component is broken!");
 }
 
 jest.mock("../pages", () => {
@@ -33,12 +31,18 @@ describe("<Main/>", () => {
     it("should use error boundary when cannot render component", () => {
         global.ForisPlugins = [];
         const webSockets = new WebSockets();
+        const originalError = console.error;
+
+        console.error = jest.fn();
         const { container } = render(
             <>
                 <div id="content-container" />
                 <Main ws={webSockets} />
             </>,
         );
+        expect(console.error).toBeCalled();
+        console.error = originalError;
+
         expect(container).toMatchSnapshot();
     });
 });

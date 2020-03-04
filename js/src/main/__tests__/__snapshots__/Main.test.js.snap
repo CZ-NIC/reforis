@@ -11,7 +11,7 @@ exports[`<Main/> should use error boundary when cannot render component 1`] = `
     <code
       class="error-boundary-description p-3 my-3"
     >
-      ReferenceError: asd is not defined
+      Error: This component is broken!
     </code>
     <p>
       More detailed information is available in the console of your web browser - on most browsers accessible after pressing Ctrl+Shift+J or F12.

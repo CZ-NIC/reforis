@@ -41,6 +41,8 @@ describe("<ErrorBoundary />", () => {
         const content = document.createElement("div");
         content.setAttribute("id", "content-container");
 
+        const originalError = console.error;
+        console.error = jest.fn();
         const { container } = render(
             <>
                 <ErrorBoundary>
@@ -49,6 +51,8 @@ describe("<ErrorBoundary />", () => {
             </>,
             { container: document.body.appendChild(content) }
         );
+        expect(console.error).toBeCalled();
+        console.error = originalError;
 
         expect(container).toMatchSnapshot();
     });
@@ -65,6 +69,8 @@ describe("<ErrorBoundary />", () => {
         const content = document.createElement("div");
         content.setAttribute("id", "content-container");
 
+        const originalError = console.error;
+        console.error = jest.fn();
         const { container } = render(
             <>
                 <ErrorBoundary>
@@ -73,6 +79,8 @@ describe("<ErrorBoundary />", () => {
             </>,
             { container: document.body.appendChild(content) }
         );
+        expect(console.error).toBeCalled();
+        console.error = originalError;
 
         expect(container).toMatchSnapshot();
     });
