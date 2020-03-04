@@ -1,4 +1,4 @@
-#  Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+#  Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
 #
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
@@ -106,7 +106,10 @@ class MQTTBackend(Backend):
         :param credentials_file:
         :param controller_id:
         """
-        self.controller_id = controller_id
+
+        self.controller_id = None
+        if controller_id:
+            self.controller_id = controller_id
 
         credentials = None
         if credentials_file:
@@ -121,7 +124,7 @@ class MQTTBackend(Backend):
 
         super().__init__(sender)
 
-    def _send(self, module, action, data, controller_id):
+    def _send(self, module, action, data, controller_id=None):
         return self.sender.send(module, action, data, controller_id=controller_id or self.controller_id)
 
     @staticmethod
