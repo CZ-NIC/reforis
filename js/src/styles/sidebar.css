@@ -80,6 +80,10 @@
     white-space: nowrap
 }
 
+.sidebar-header-version {
+    text-align: right;
+}
+
 @media (max-width: 768px) {
     #sidebar {
         flex: initial;
