@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -7,10 +7,9 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-
-import API_URLs from "common/API";
 import { Alert, ForisURLs, ForisForm } from "foris";
 
+import API_URLs from "common/API";
 import LanguageForm from "./LanguageForm";
 import PackagesForm from "./PackagesForm";
 
@@ -53,7 +52,11 @@ export function DisableIfUpdaterIsDisabled({ children, formData, ...props }) {
     const isDisabled = !formData.enabled;
     const childrenWithFormProps = React.Children.map(
         children,
-        (child) => React.cloneElement(child, { ...props, formData, disabled: isDisabled }),
+        (child) => React.cloneElement(child, {
+            ...props,
+            formData,
+            disabled: isDisabled,
+        }),
     );
 
     if (!isDisabled) return childrenWithFormProps;
@@ -89,13 +92,25 @@ function prepData(formData) {
 function prepDataToSubmit(formData) {
     const packages = formData.user_lists
         .filter((_package) => _package.enabled)
-        .map((_package) => _package.name);
+        .map((_package) => {
+            const options = _package.options.map((option) => ({
+                name: option.name,
+                enabled: option.enabled,
+            }));
+            return {
+                name: _package.name,
+                options,
+            };
+        });
 
     const languages = formData.languages
         .filter((language) => language.enabled)
         .map((language) => language.code);
 
-    return { languages, user_lists: packages };
+    return {
+        languages,
+        user_lists: packages,
+    };
 }
 
 // Hack to disable submit button
