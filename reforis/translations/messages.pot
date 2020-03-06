@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-02-20 17:21+0100\n"
+"POT-Creation-Date: 2020-03-06 15:38+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,6 +39,10 @@ msgstr ""
 
 #: js/src/about/About.js:61
 msgid "Kernel version"
+msgstr ""
+
+#: js/src/common/LogoutButton.js:31
+msgid "Logout"
 msgstr ""
 
 #: js/src/common/RebootButton.js:42 js/src/main/pages.js:97
@@ -337,7 +341,7 @@ msgid "base64 encoded sha256."
 msgstr ""
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:49
-#: js/src/packageManagement/updates/UpdateApproval.js:98
+#: js/src/packageManagement/updates/UpdateApproval.js:97
 msgid "Name"
 msgstr ""
 
@@ -472,22 +476,21 @@ msgstr ""
 msgid "Guide Finished"
 msgstr ""
 
-#: js/src/guide/GuideFinish.js:20
+#: js/src/guide/GuideFinish.js:19
 msgid ""
-"\n"
-"Congratulations! You've successfully reached the end of this guide. Once "
-"you leave this guide you'll be granted access \n"
-"to the full configuration interface of this device.\n"
-"\n"
-"To further improve your security consider enabling data collect (start by"
-" selecting it in updater tab).\n"
-"This will allow you to be part of our security research to discover new "
-"attackers and it will also give you access to \n"
-"dynamic updates to your firewall to block all already known attackers.\n"
-"            "
+"Once you leave this guide you'll be granted access to the full "
+"configuration interface of this device."
 msgstr ""
 
-#: js/src/guide/GuideFinish.js:31
+#: js/src/guide/GuideFinish.js:20
+msgid ""
+"To further improve your security consider installing data collection "
+"plugin (via Package Management). This will allow you to be part of our "
+"security research to discover new attackers and give you access to "
+"dynamic firewall updates blocking known attackers."
+msgstr ""
+
+#: js/src/guide/GuideFinish.js:22
 msgid "Continue"
 msgstr ""
 
@@ -621,8 +624,8 @@ msgstr ""
 
 #: js/src/guide/constants.js:48
 msgid ""
-"The device setup is finished. Now your device is able to act as a router "
-"and route network traffic among LAN, WAN and guest network."
+"Congratulations! Now your device is able to act as a router and route "
+"network traffic among LAN, WAN and guest network."
 msgstr ""
 
 #: js/src/guide/constants.js:54
@@ -677,8 +680,8 @@ msgstr ""
 
 #: js/src/guide/constants.js:76
 msgid ""
-"The device setup is finished. Now your device should be able to act as a "
-"server on your local network."
+"Congratulations! Now your device should be able to act as a server on "
+"your local network."
 msgstr ""
 
 #: js/src/guide/hooks.js:23
@@ -866,8 +869,8 @@ msgstr ""
 #: js/src/lan/LANForm.js:16
 msgid ""
 "\n"
-"Router mode means that this device manages the LAN (acts as a router, "
-"can assign IP addresses, ...).\n"
+"Router mode means that this device manages the LAN (acts as a router, can"
+" assign IP addresses, ...).\n"
 "Computer mode means that this device acts as a client in this network. It"
 " acts in a similar way as WAN, but\n"
 "it has opened ports for configuration interface and other services.\n"
@@ -1107,8 +1110,8 @@ msgstr ""
 
 #: js/src/packageManagement/packages/LanguageForm.js:28
 msgid ""
-"If you want to use other language than English you can select it from the"
-" following list:"
+"If you want to use another language than English you can select it from "
+"the following list:"
 msgstr ""
 
 #: js/src/packageManagement/packages/Packages.js:22
@@ -1296,56 +1299,56 @@ msgstr ""
 msgid "Enable automatic updates (recommended)"
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:30
+#: js/src/packageManagement/updates/UpdateApproval.js:29
 #: js/src/updatesDropdown/UpdatesDropdown.js:108
 msgid "Cannot install updates."
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:33
+#: js/src/packageManagement/updates/UpdateApproval.js:32
 msgid "Updates will be installed shortly."
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:46
+#: js/src/packageManagement/updates/UpdateApproval.js:45
 msgid "There are no updates awaiting your approval."
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:50
+#: js/src/packageManagement/updates/UpdateApproval.js:49
 #, python-format
 msgid "There is %d package to be updated."
 msgid_plural "There are %d packages to be updated."
 msgstr[0] ""
 msgstr[1] ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:57
+#: js/src/packageManagement/updates/UpdateApproval.js:56
 msgid ""
 "See <a data-toggle=\"collapse\" href=\"#plan-wrapper\" role=\"button\" "
 "aria-expanded=\"false\" aria-controls=\"plan-wrapper\">details</a>"
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:65
+#: js/src/packageManagement/updates/UpdateApproval.js:64
 #, python-format
 msgid "Approve Update From %s"
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:75
+#: js/src/packageManagement/updates/UpdateApproval.js:74
 #: js/src/updatesDropdown/UpdatesDropdown.js:99
 msgid "Ignore"
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:82
+#: js/src/packageManagement/updates/UpdateApproval.js:81
 #: js/src/updatesDropdown/UpdatesDropdown.js:100
 msgid "Install now"
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:97
+#: js/src/packageManagement/updates/UpdateApproval.js:96
 msgid "Action"
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:99
+#: js/src/packageManagement/updates/UpdateApproval.js:98
 msgid "Current"
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:100
+#: js/src/packageManagement/updates/UpdateApproval.js:99
 msgid "New"
 msgstr ""
 
@@ -1610,7 +1613,7 @@ msgstr ""
 #: js/src/wan/WAN.js:29
 msgid ""
 "\n"
-"Here you specify your WAN port settings. Usually, you can leave this "
+"Here you specify your WAN port settings. Usually, you can leave these "
 "options untouched unless instructed\n"
 "otherwise by your internet service provider. Also, in case there is a "
 "cable or DSL modem connecting your\n"
@@ -1882,9 +1885,5 @@ msgstr ""
 
 #: reforis/templates/errors/500.html:16
 msgid "Trace:"
-msgstr ""
-
-#: reforis/templates/includes/top-bar.html:4
-msgid "Logout"
 msgstr ""
 
