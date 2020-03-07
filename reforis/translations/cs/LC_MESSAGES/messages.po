@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2020-02-20 17:21+0100\n"
-"PO-Revision-Date: 2019-09-29 15:56+0000\n"
-"Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
+"PO-Revision-Date: 2020-03-08 14:33+0000\n"
+"Last-Translator: Josef Schlehofer <pepe@bloodkings.eu>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/turris/reforis/cs/>"
+"\n"
 "Language: cs\n"
-"Language-Team: Czech "
-"<https://hosted.weblate.org/projects/turris/reforis/cs/>\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 4.0-dev\n"
 "Generated-By: Babel 2.7.0\n"
 
 #: js/src/about/About.js:22 js/src/main/pages.js:133
@@ -37,11 +38,11 @@ msgstr "Verze Turris OS"
 
 #: js/src/about/About.js:52
 msgid "Turris OS branch"
-msgstr ""
+msgstr "Větev Turris OS"
 
 #: js/src/about/About.js:61
 msgid "Kernel version"
-msgstr "Verze jádra systému"
+msgstr "Verze kernelu"
 
 #: js/src/common/RebootButton.js:42 js/src/main/pages.js:97
 msgid "Reboot"
@@ -444,7 +445,7 @@ msgstr "TLS pin by měl obsahovat alespoň jeden symbol."
 #: js/src/guestNetwork/GuestNetwork.js:29 js/src/interfaces/Interfaces.js:49
 #: js/src/interfaces/constants.js:11 js/src/main/pages.js:69
 msgid "Guest Network"
-msgstr "Síť Pro Hosty"
+msgstr "Síť pro hosty"
 
 #: js/src/guestNetwork/GuestNetwork.js:31
 msgid ""
@@ -855,7 +856,7 @@ msgstr "Dokončit"
 
 #: js/src/interfaces/Interfaces.js:24
 msgid "Network Interfaces"
-msgstr "Síťová Rozhraní"
+msgstr "Síťová rozhraní"
 
 #: js/src/interfaces/Interfaces.js:26
 msgid ""
@@ -1181,7 +1182,7 @@ msgstr "Uživatelsky určené"
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:78
 msgid "Email Notifications"
-msgstr "Oznamování E-mailem"
+msgstr "Oznamování e-mailem"
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:80
 msgid "Enable email notifications"
@@ -1193,7 +1194,7 @@ msgstr "Poskytovat SMTP"
 
 #: js/src/notificationsSettings/NotificationsSettings.js:24
 msgid "Notifications Settings"
-msgstr "Nastavení Oznamování"
+msgstr "Nastavení oznamování"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:18
 msgid "None"
@@ -1316,11 +1317,11 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"Krom standardní instalace můžete zvolit také sady dodatečného software, "
-"který na tento router nainstalovat. \n"
-"Tento software je možné vybrat z následujícího seznamu. Poznamenejme, že "
-"pouze software, který je součástí \n"
-"TurrisOS nebo který byl nainstalován ze seznamu balíčků je spravován "
+"Krom standardní instalace můžete zvolit také sady dodatečného softwaru, "
+"které je možné na tento router nainstalovat. \n"
+"Software je možné vybrat z následujícího seznamu. Poznamenejme, že pouze "
+"software, který je součástí \n"
+"Turris OS nebo který byl nainstalován ze seznamu balíčků je spravován "
 "automatickými aktualizacemi. Software,\n"
 "který byl nainstalován ručně nebo pomocí opkg se toto netýká.\n"
 "        "
@@ -1613,7 +1614,7 @@ msgstr "Zkontrolovat a nainstalovat aktualizace"
 
 #: js/src/packageManagement/updates/Updates.js:50
 msgid "Manually check for updates and install them immediately."
-msgstr "Ručně zjistiti dostupnost případných aktualizací a hned je nainstalovat."
+msgstr "Ručně zjistit dostupnost případných aktualizací a hned je nainstalovat."
 
 #: js/src/packageManagement/updates/Updates.js:53
 msgid "Check updates"
@@ -1701,7 +1702,7 @@ msgstr "Nové heslo pro pokročilou správu"
 
 #: js/src/reboot/Reboot.js:16
 msgid "Device Reboot"
-msgstr "Restart Zařízení"
+msgstr "Restart zařízení"
 
 #: js/src/reboot/Reboot.js:18
 msgid ""
@@ -1722,7 +1723,7 @@ msgstr "Podrobnosti"
 
 #: js/src/regionAndTime/RegionAndTime.js:30
 msgid "Region and Time"
-msgstr ""
+msgstr "Oblast a čas"
 
 #: js/src/regionAndTime/RegionAndTime.js:32
 msgid ""
@@ -1739,7 +1740,7 @@ msgstr "Čas by měl být ve formátu RRRR-MM-DD HH:MM:SS."
 
 #: js/src/regionAndTime/RegionForm.js:62
 msgid "Region Settings"
-msgstr "Nastavení Regionu"
+msgstr "Nastavení oblasti"
 
 #: js/src/regionAndTime/RegionForm.js:64
 msgid ""
@@ -2334,4 +2335,3 @@ msgstr "Odhlásit"
 #~ "možné nastavit na panelu „Síť pro "
 #~ "hosty“.\n"
 #~ "        "
-
