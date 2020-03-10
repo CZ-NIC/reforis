@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Packages/> Updates disabled 1`] = `
+exports[`<Packages/> Should render: updates disabled. 1`] = `
 "Snapshot Diff:
 - First value
 + Second value
@@ -128,71 +128,11 @@ exports[`<Packages/> Updates disabled 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -257,10 +281,11 @@
+@@ -388,10 +412,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
                     <input
-                      class=\\"custom-control-input\\"
-+                     disabled=\\"\\"
-                      id=\\"9\\"
-                      type=\\"checkbox\\"
-                    />
-                    <label
-                      class=\\"custom-control-label\\"
-@@ -285,10 +310,11 @@
-                  <div
-                    class=\\"custom-control custom-checkbox \\"
-                  >
-                    <input
-                      class=\\"custom-control-input\\"
-+                     disabled=\\"\\"
-                      id=\\"10\\"
-                      type=\\"checkbox\\"
-                    />
-                    <label
-                      class=\\"custom-control-label\\"
-@@ -313,10 +339,11 @@
-                  <div
-                    class=\\"custom-control custom-checkbox \\"
-                  >
-                    <input
-                      class=\\"custom-control-input\\"
-+                     disabled=\\"\\"
-                      id=\\"11\\"
-                      type=\\"checkbox\\"
-                    />
-                    <label
-                      class=\\"custom-control-label\\"
-@@ -341,10 +368,11 @@
-                  <div
-                    class=\\"custom-control custom-checkbox \\"
-                  >
-                    <input
-                      class=\\"custom-control-input\\"
-+                     disabled=\\"\\"
-                      id=\\"12\\"
-                      type=\\"checkbox\\"
-                    />
-                    <label
-                      class=\\"custom-control-label\\"
-@@ -369,10 +397,11 @@
-                  <div
-                    class=\\"custom-control custom-checkbox \\"
-                  >
-                    <input
-                      class=\\"custom-control-input\\"
-+                     disabled=\\"\\"
-                      id=\\"13\\"
-                      type=\\"checkbox\\"
-                    />
-                    <label
-                      class=\\"custom-control-label\\"
-@@ -412,10 +441,11 @@
-                    class=\\"custom-control custom-checkbox \\"
-                  >
-                    <input
-                      checked=\\"\\"
                       class=\\"custom-control-input\\"
 +                     disabled=\\"\\"
                       id=\\"14\\"
@@ -200,7 +140,7 @@ exports[`<Packages/> Updates disabled 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -435,10 +465,11 @@
+@@ -416,10 +441,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -212,7 +152,7 @@ exports[`<Packages/> Updates disabled 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -458,10 +489,11 @@
+@@ -444,10 +470,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -224,7 +164,7 @@ exports[`<Packages/> Updates disabled 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -481,10 +513,11 @@
+@@ -472,10 +499,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -236,7 +176,7 @@ exports[`<Packages/> Updates disabled 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -504,10 +537,11 @@
+@@ -500,10 +528,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -248,11 +188,11 @@ exports[`<Packages/> Updates disabled 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -527,10 +561,11 @@
-                  <div
+@@ -543,10 +572,11 @@
                     class=\\"custom-control custom-checkbox \\"
                   >
                     <input
+                      checked=\\"\\"
                       class=\\"custom-control-input\\"
 +                     disabled=\\"\\"
                       id=\\"19\\"
@@ -260,7 +200,7 @@ exports[`<Packages/> Updates disabled 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -550,10 +585,11 @@
+@@ -566,10 +596,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -272,7 +212,7 @@ exports[`<Packages/> Updates disabled 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -573,10 +609,11 @@
+@@ -589,10 +620,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -284,7 +224,7 @@ exports[`<Packages/> Updates disabled 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -596,10 +633,11 @@
+@@ -612,10 +644,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -296,7 +236,7 @@ exports[`<Packages/> Updates disabled 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -619,10 +657,11 @@
+@@ -635,10 +668,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -308,7 +248,7 @@ exports[`<Packages/> Updates disabled 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -642,29 +681,32 @@
+@@ -658,10 +692,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -320,7 +260,67 @@ exports[`<Packages/> Updates disabled 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-                      for=\\"24\\"
+@@ -681,10 +716,11 @@
+                  <div
+                    class=\\"custom-control custom-checkbox \\"
+                  >
+                    <input
+                      class=\\"custom-control-input\\"
++                     disabled=\\"\\"
+                      id=\\"25\\"
+                      type=\\"checkbox\\"
+                    />
+                    <label
+                      class=\\"custom-control-label\\"
+@@ -704,10 +740,11 @@
+                  <div
+                    class=\\"custom-control custom-checkbox \\"
+                  >
+                    <input
+                      class=\\"custom-control-input\\"
++                     disabled=\\"\\"
+                      id=\\"26\\"
+                      type=\\"checkbox\\"
+                    />
+                    <label
+                      class=\\"custom-control-label\\"
+@@ -727,10 +764,11 @@
+                  <div
+                    class=\\"custom-control custom-checkbox \\"
+                  >
+                    <input
+                      class=\\"custom-control-input\\"
++                     disabled=\\"\\"
+                      id=\\"27\\"
+                      type=\\"checkbox\\"
+                    />
+                    <label
+                      class=\\"custom-control-label\\"
+@@ -750,10 +788,11 @@
+                  <div
+                    class=\\"custom-control custom-checkbox \\"
+                  >
+                    <input
+                      class=\\"custom-control-input\\"
++                     disabled=\\"\\"
+                      id=\\"28\\"
+                      type=\\"checkbox\\"
+                    />
+                    <label
+                      class=\\"custom-control-label\\"
+@@ -773,29 +812,32 @@
+                  <div
+                    class=\\"custom-control custom-checkbox \\"
+                  >
+                    <input
+                      class=\\"custom-control-input\\"
++                     disabled=\\"\\"
+                      id=\\"29\\"
+                      type=\\"checkbox\\"
+                    />
+                    <label
+                      class=\\"custom-control-label\\"
+                      for=\\"29\\"
                     >
                       NB
                     </label>
@@ -343,7 +343,7 @@ exports[`<Packages/> Updates disabled 1`] = `
         </div>"
 `;
 
-exports[`<Packages/> Updates enabled 1`] = `
+exports[`<Packages/> Should render: updates enabled. 1`] = `
 <DocumentFragment>
   <h1>
     Packages
@@ -367,10 +367,10 @@ been installed manually or using opkg is not affected.
         class="container"
       >
         <div
-          class="row justify-content-start"
+          class="packages-list"
         >
           <div
-            class="col-12 col-lg-6"
+            class="package"
           >
             <div
               class="form-group"
@@ -392,14 +392,14 @@ been installed manually or using opkg is not affected.
                   <small
                     class="form-text text-muted"
                   >
-                    Enabled package msg
+                    Enabled package description
                   </small>
                 </label>
               </div>
             </div>
           </div>
           <div
-            class="col-12 col-lg-6"
+            class="package"
           >
             <div
               class="form-group"
@@ -427,7 +427,7 @@ been installed manually or using opkg is not affected.
             </div>
           </div>
           <div
-            class="col-12 col-lg-6"
+            class="package"
           >
             <div
               class="form-group"
@@ -455,7 +455,7 @@ been installed manually or using opkg is not affected.
             </div>
           </div>
           <div
-            class="col-12 col-lg-6"
+            class="package"
           >
             <div
               class="form-group"
@@ -483,7 +483,7 @@ been installed manually or using opkg is not affected.
             </div>
           </div>
           <div
-            class="col-12 col-lg-6"
+            class="package"
           >
             <div
               class="form-group"
@@ -511,7 +511,7 @@ been installed manually or using opkg is not affected.
             </div>
           </div>
           <div
-            class="col-12 col-lg-6"
+            class="package"
           >
             <div
               class="form-group"
@@ -539,7 +539,7 @@ been installed manually or using opkg is not affected.
             </div>
           </div>
           <div
-            class="col-12 col-lg-6"
+            class="package"
           >
             <div
               class="form-group"
@@ -567,7 +567,7 @@ been installed manually or using opkg is not affected.
             </div>
           </div>
           <div
-            class="col-12 col-lg-6"
+            class="package"
           >
             <div
               class="form-group"
@@ -593,9 +593,140 @@ been installed manually or using opkg is not affected.
                 </label>
               </div>
             </div>
+            <div
+              class="option"
+            >
+              <div
+                class="form-group"
+              >
+                <div
+                  class="custom-control custom-checkbox "
+                >
+                  <input
+                    checked=""
+                    class="custom-control-input"
+                    disabled=""
+                    id="9"
+                    type="checkbox"
+                  />
+                  <label
+                    class="custom-control-label"
+                    for="9"
+                  >
+                    Samba
+                    <small
+                      class="form-text text-muted"
+                    >
+                      Implementation of SMB network protocol.
+                    </small>
+                  </label>
+                </div>
+              </div>
+              <div
+                class="form-group"
+              >
+                <div
+                  class="custom-control custom-checkbox "
+                >
+                  <input
+                    class="custom-control-input"
+                    disabled=""
+                    id="10"
+                    type="checkbox"
+                  />
+                  <label
+                    class="custom-control-label"
+                    for="10"
+                  >
+                    DLNA
+                    <small
+                      class="form-text text-muted"
+                    >
+                      Digital media sharing server.
+                    </small>
+                  </label>
+                </div>
+              </div>
+              <div
+                class="form-group"
+              >
+                <div
+                  class="custom-control custom-checkbox "
+                >
+                  <input
+                    checked=""
+                    class="custom-control-input"
+                    disabled=""
+                    id="11"
+                    type="checkbox"
+                  />
+                  <label
+                    class="custom-control-label"
+                    for="11"
+                  >
+                    Transmission
+                    <small
+                      class="form-text text-muted"
+                    >
+                      BitTorrent client.
+                    </small>
+                  </label>
+                </div>
+              </div>
+              <div
+                class="form-group"
+              >
+                <div
+                  class="custom-control custom-checkbox "
+                >
+                  <input
+                    class="custom-control-input"
+                    disabled=""
+                    id="12"
+                    type="checkbox"
+                  />
+                  <label
+                    class="custom-control-label"
+                    for="12"
+                  >
+                    mdadm RAID
+                    <small
+                      class="form-text text-muted"
+                    >
+                      Software RAID storage support using mdadm.
+                    </small>
+                  </label>
+                </div>
+              </div>
+              <div
+                class="form-group"
+              >
+                <div
+                  class="custom-control custom-checkbox "
+                >
+                  <input
+                    class="custom-control-input"
+                    disabled=""
+                    id="13"
+                    type="checkbox"
+                  />
+                  <label
+                    class="custom-control-label"
+                    for="13"
+                  >
+                    Encrypted Storage
+                    <small
+                      class="form-text text-muted"
+                    >
+                      Add support to access encrypted storage devices using dm-crypt.
+                    </small>
+                  </label>
+                </div>
+              </div>
+            </div>
           </div>
           <div
-            class="col-12 col-lg-6"
+            class="package"
           >
             <div
               class="form-group"
@@ -605,12 +736,12 @@ been installed manually or using opkg is not affected.
               >
                 <input
                   class="custom-control-input"
-                  id="9"
+                  id="14"
                   type="checkbox"
                 />
                 <label
                   class="custom-control-label"
-                  for="9"
+                  for="14"
                 >
                   Internet connection speed measurement
                   <small
@@ -623,7 +754,7 @@ been installed manually or using opkg is not affected.
             </div>
           </div>
           <div
-            class="col-12 col-lg-6"
+            class="package"
           >
             <div
               class="form-group"
@@ -633,12 +764,12 @@ been installed manually or using opkg is not affected.
               >
                 <input
                   class="custom-control-input"
-                  id="10"
+                  id="15"
                   type="checkbox"
                 />
                 <label
                   class="custom-control-label"
-                  for="10"
+                  for="15"
                 >
                   OpenVPN
                   <small
@@ -651,7 +782,7 @@ been installed manually or using opkg is not affected.
             </div>
           </div>
           <div
-            class="col-12 col-lg-6"
+            class="package"
           >
             <div
               class="form-group"
@@ -661,12 +792,12 @@ been installed manually or using opkg is not affected.
               >
                 <input
                   class="custom-control-input"
-                  id="11"
+                  id="16"
                   type="checkbox"
                 />
                 <label
                   class="custom-control-label"
-                  for="11"
+                  for="16"
                 >
                   Pakon
                   <small
@@ -679,7 +810,7 @@ been installed manually or using opkg is not affected.
             </div>
           </div>
           <div
-            class="col-12 col-lg-6"
+            class="package"
           >
             <div
               class="form-group"
@@ -689,12 +820,12 @@ been installed manually or using opkg is not affected.
               >
                 <input
                   class="custom-control-input"
-                  id="12"
+                  id="17"
                   type="checkbox"
                 />
                 <label
                   class="custom-control-label"
-                  for="12"
+                  for="17"
                 >
                   Print server
                   <small
@@ -707,7 +838,7 @@ been installed manually or using opkg is not affected.
             </div>
           </div>
           <div
-            class="col-12 col-lg-6"
+            class="package"
           >
             <div
               class="form-group"
@@ -717,12 +848,12 @@ been installed manually or using opkg is not affected.
               >
                 <input
                   class="custom-control-input"
-                  id="13"
+                  id="18"
                   type="checkbox"
                 />
                 <label
                   class="custom-control-label"
-                  for="13"
+                  for="18"
                 >
                   Tor
                   <small
@@ -760,121 +891,6 @@ been installed manually or using opkg is not affected.
                 <input
                   checked=""
                   class="custom-control-input"
-                  id="14"
-                  type="checkbox"
-                />
-                <label
-                  class="custom-control-label"
-                  for="14"
-                >
-                  CS
-                </label>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-2 col-lg-1 mr-4"
-          >
-            <div
-              class="form-group"
-            >
-              <div
-                class="custom-control custom-checkbox "
-              >
-                <input
-                  class="custom-control-input"
-                  id="15"
-                  type="checkbox"
-                />
-                <label
-                  class="custom-control-label"
-                  for="15"
-                >
-                  DA
-                </label>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-2 col-lg-1 mr-4"
-          >
-            <div
-              class="form-group"
-            >
-              <div
-                class="custom-control custom-checkbox "
-              >
-                <input
-                  class="custom-control-input"
-                  id="16"
-                  type="checkbox"
-                />
-                <label
-                  class="custom-control-label"
-                  for="16"
-                >
-                  DE
-                </label>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-2 col-lg-1 mr-4"
-          >
-            <div
-              class="form-group"
-            >
-              <div
-                class="custom-control custom-checkbox "
-              >
-                <input
-                  class="custom-control-input"
-                  id="17"
-                  type="checkbox"
-                />
-                <label
-                  class="custom-control-label"
-                  for="17"
-                >
-                  FR
-                </label>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-2 col-lg-1 mr-4"
-          >
-            <div
-              class="form-group"
-            >
-              <div
-                class="custom-control custom-checkbox "
-              >
-                <input
-                  class="custom-control-input"
-                  id="18"
-                  type="checkbox"
-                />
-                <label
-                  class="custom-control-label"
-                  for="18"
-                >
-                  LT
-                </label>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-2 col-lg-1 mr-4"
-          >
-            <div
-              class="form-group"
-            >
-              <div
-                class="custom-control custom-checkbox "
-              >
-                <input
-                  class="custom-control-input"
                   id="19"
                   type="checkbox"
                 />
@@ -882,7 +898,7 @@ been installed manually or using opkg is not affected.
                   class="custom-control-label"
                   for="19"
                 >
-                  PL
+                  CS
                 </label>
               </div>
             </div>
@@ -905,7 +921,7 @@ been installed manually or using opkg is not affected.
                   class="custom-control-label"
                   for="20"
                 >
-                  RU
+                  DA
                 </label>
               </div>
             </div>
@@ -928,7 +944,7 @@ been installed manually or using opkg is not affected.
                   class="custom-control-label"
                   for="21"
                 >
-                  SK
+                  DE
                 </label>
               </div>
             </div>
@@ -951,7 +967,7 @@ been installed manually or using opkg is not affected.
                   class="custom-control-label"
                   for="22"
                 >
-                  HU
+                  FR
                 </label>
               </div>
             </div>
@@ -974,7 +990,7 @@ been installed manually or using opkg is not affected.
                   class="custom-control-label"
                   for="23"
                 >
-                  IT
+                  LT
                 </label>
               </div>
             </div>
@@ -996,6 +1012,121 @@ been installed manually or using opkg is not affected.
                 <label
                   class="custom-control-label"
                   for="24"
+                >
+                  PL
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-2 col-lg-1 mr-4"
+          >
+            <div
+              class="form-group"
+            >
+              <div
+                class="custom-control custom-checkbox "
+              >
+                <input
+                  class="custom-control-input"
+                  id="25"
+                  type="checkbox"
+                />
+                <label
+                  class="custom-control-label"
+                  for="25"
+                >
+                  RU
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-2 col-lg-1 mr-4"
+          >
+            <div
+              class="form-group"
+            >
+              <div
+                class="custom-control custom-checkbox "
+              >
+                <input
+                  class="custom-control-input"
+                  id="26"
+                  type="checkbox"
+                />
+                <label
+                  class="custom-control-label"
+                  for="26"
+                >
+                  SK
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-2 col-lg-1 mr-4"
+          >
+            <div
+              class="form-group"
+            >
+              <div
+                class="custom-control custom-checkbox "
+              >
+                <input
+                  class="custom-control-input"
+                  id="27"
+                  type="checkbox"
+                />
+                <label
+                  class="custom-control-label"
+                  for="27"
+                >
+                  HU
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-2 col-lg-1 mr-4"
+          >
+            <div
+              class="form-group"
+            >
+              <div
+                class="custom-control custom-checkbox "
+              >
+                <input
+                  class="custom-control-input"
+                  id="28"
+                  type="checkbox"
+                />
+                <label
+                  class="custom-control-label"
+                  for="28"
+                >
+                  IT
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-2 col-lg-1 mr-4"
+          >
+            <div
+              class="form-group"
+            >
+              <div
+                class="custom-control custom-checkbox "
+              >
+                <input
+                  class="custom-control-input"
+                  id="29"
+                  type="checkbox"
+                />
+                <label
+                  class="custom-control-label"
+                  for="29"
                 >
                   NB
                 </label>

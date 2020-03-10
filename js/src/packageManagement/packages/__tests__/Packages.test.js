@@ -8,7 +8,7 @@
 import React from "react";
 import diffSnapshot from "snapshot-diff";
 
-import { cleanup, render, wait } from "foris/testUtils/customTestRender";
+import { cleanup, render, wait, fireEvent } from "foris/testUtils/customTestRender";
 import { mockJSONError } from "foris/testUtils/network";
 import mockAxios from "jest-mock-axios";
 
@@ -18,41 +18,116 @@ import Packages from "../Packages";
 describe("<Packages/>", () => {
     let firstRender;
     let queryByText;
+    let getByText;
+    let getByLabelText;
 
     beforeEach(async () => {
-        const renderRes = render(<Packages />);
-        queryByText = renderRes.queryByText;
-        await wait(() => expect(mockAxios.get).toBeCalledWith("/reforis/api/packages", expect.anything()));
+        let asFragment;
+        ({
+            queryByText,
+            getByLabelText,
+            getByText,
+            asFragment
+        } = render(<Packages/>));
+        await wait(() => expect(mockAxios.get)
+            .toBeCalledWith("/reforis/api/packages", expect.anything()));
         mockAxios.mockResponse({ data: packagesFixture(true) });
-        await wait(() => renderRes.getByText("Enabled package title"));
-        firstRender = renderRes.asFragment();
+        await wait(() => getByText("Enabled package title"));
+        firstRender = asFragment();
     });
 
-    it("should handle error", async () => {
-        const { getByText } = render(<Packages />);
+    it("Should handle error.", async () => {
+        const { getByText } = render(<Packages/>);
         mockJSONError();
         await wait(() => {
-            expect(getByText("An error occurred while fetching data.")).toBeTruthy();
+            expect(getByText("An error occurred while fetching data."))
+                .toBeTruthy();
         });
     });
 
-    it("Updates enabled", () => {
-        expect(firstRender).toMatchSnapshot();
+    it("Should render: updates enabled.", () => {
+        expect(firstRender)
+            .toMatchSnapshot();
     });
 
-    it("Updates disabled", async () => {
+    it("Should render: updates disabled.", async () => {
         cleanup();
-        const { getByText, asFragment } = render(<Packages />);
-        await wait(() => expect(mockAxios.get).toBeCalledWith("/reforis/api/packages", expect.anything()));
+        const { getByText, asFragment } = render(<Packages/>);
+        await wait(() => expect(mockAxios.get)
+            .toBeCalledWith("/reforis/api/packages", expect.anything()));
         mockAxios.mockResponse({ data: packagesFixture(false) });
 
         await wait(() => getByText("Enabled package title"));
 
-        expect(diffSnapshot(firstRender, asFragment())).toMatchSnapshot();
+        expect(diffSnapshot(firstRender, asFragment()))
+            .toMatchSnapshot();
     });
 
-    it("Test hidden.", () => {
-        const HTMLHiddenPackageMessage = queryByText("Hidden package msg");
-        expect(HTMLHiddenPackageMessage).toBeNull();
+    it("Should not render hidden package.", () => {
+        const HTMLHiddenPackageMessage = queryByText("Hidden package description");
+        expect(HTMLHiddenPackageMessage)
+            .toBeNull();
+    });
+
+    it("Send packages.", () => {
+        fireEvent.click(getByText("Save"));
+        expect(mockAxios.post)
+            .toHaveBeenCalledWith("/reforis/api/packages", {
+                "languages": [
+                    "cs",
+                ],
+                "user_lists": [
+                    {
+                        "name": "enabled-package",
+                        "options": [],
+                    },
+                ],
+            }, expect.anything());
+    });
+
+    it("Send packages with options.", () => {
+        fireEvent.click(getByText("NAS"));
+        fireEvent.click(getByText("Samba"));
+        fireEvent.click(getByText("DLNA"));
+
+        fireEvent.click(getByText("Save"));
+        expect(mockAxios.post)
+            .toHaveBeenCalledWith("/reforis/api/packages", {
+                "languages": [
+                    "cs",
+                ],
+                "user_lists": [
+                    {
+                        "name": "enabled-package",
+                        "options": []
+                    },
+                    {
+                        "name": "nas",
+                        "options": [
+                            {
+                                "enabled": false,
+                                "name": "samba",
+                            },
+                            {
+                                "enabled": true,
+                                "name": "dlna",
+                            },
+                            {
+                                "enabled": true,
+                                "name": "transmission",
+                            },
+                            {
+                                "enabled": false,
+                                "name": "raid",
+                            },
+                            {
+                                "enabled": false,
+                                "name": "encrypt",
+                            },
+
+                        ],
+                    },
+                ],
+            }, expect.anything());
     });
 });
