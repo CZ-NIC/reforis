@@ -3,6 +3,33 @@
 exports[`<Guide/>  Snapshot. Just check if render correct page. 1`] = `
 <div>
   <div
+    class="sticky-top"
+  >
+    <button
+      class="btn btn btn-warning col-4 offset-1 mb-3"
+      type="button"
+    >
+       
+       
+      Skip guide
+       
+      <i
+        class="fas fa-forward"
+      />
+    </button>
+    <a
+      class="btn btn-primary col-4 offset-2 mb-3 disabled"
+      disabled=""
+      href="/reforis/guide/networks"
+    >
+      Next step
+       
+      <i
+        class="fas fa-step-forward"
+      />
+    </a>
+  </div>
+  <div
     class="card guide-card my-4"
   >
     <div
