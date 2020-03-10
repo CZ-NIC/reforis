@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-03-06 15:38+0100\n"
+"POT-Creation-Date: 2020-03-10 16:23+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,64 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
+
+#: js/src/TopBar/LogoutButton.js:31
+msgid "Logout"
+msgstr ""
+
+#: js/src/TopBar/NotificationsDropdown/NotificationsDropdownMenu.js:29
+#: js/src/notifications/Notifications/Notifications.js:64
+msgid "No notifications"
+msgstr ""
+
+#: js/src/TopBar/NotificationsDropdown/NotificationsDropdownMenu.js:65
+#: js/src/main/pages.js:32
+#: js/src/notifications/Notifications/Notifications.js:76
+msgid "Notifications"
+msgstr ""
+
+#: js/src/TopBar/NotificationsDropdown/NotificationsDropdownMenu.js:90
+#: js/src/notifications/Notifications/Notifications.js:51
+msgid "Dismiss all"
+msgstr ""
+
+#: js/src/TopBar/languagesDropdown/LanguagesDropdown.js:36
+#: js/src/packageManagement/packages/LanguageForm.js:27
+msgid "Languages"
+msgstr ""
+
+#: js/src/TopBar/rebootDropdown/RebootDropdown.js:37
+msgid "Reboot Required"
+msgstr ""
+
+#: js/src/TopBar/rebootDropdown/RebootDropdown.js:42
+msgid "Details"
+msgstr ""
+
+#: js/src/TopBar/updatesDropdown/UpdatesDropdown.js:66
+msgid "Approve Update"
+msgstr ""
+
+#: js/src/TopBar/updatesDropdown/UpdatesDropdown.js:96
+msgid ""
+"See details in <a href=${ForisURLs.packageManagement.updates}>Updates</a>"
+" page."
+msgstr ""
+
+#: js/src/TopBar/updatesDropdown/UpdatesDropdown.js:99
+#: js/src/packageManagement/updates/UpdateApproval.js:74
+msgid "Ignore"
+msgstr ""
+
+#: js/src/TopBar/updatesDropdown/UpdatesDropdown.js:100
+#: js/src/packageManagement/updates/UpdateApproval.js:81
+msgid "Install now"
+msgstr ""
+
+#: js/src/TopBar/updatesDropdown/UpdatesDropdown.js:108
+#: js/src/packageManagement/updates/UpdateApproval.js:29
+msgid "Cannot install updates."
+msgstr ""
 
 #: js/src/about/About.js:22 js/src/main/pages.js:133
 msgid "About"
@@ -39,10 +97,6 @@ msgstr ""
 
 #: js/src/about/About.js:61
 msgid "Kernel version"
-msgstr ""
-
-#: js/src/common/LogoutButton.js:31
-msgid "Logout"
 msgstr ""
 
 #: js/src/common/RebootButton.js:42 js/src/main/pages.js:97
@@ -472,79 +526,6 @@ msgstr ""
 msgid "Upload speed must be positive"
 msgstr ""
 
-#: js/src/guide/GuideFinish.js:18
-msgid "Guide Finished"
-msgstr ""
-
-#: js/src/guide/GuideFinish.js:19
-msgid ""
-"Once you leave this guide you'll be granted access to the full "
-"configuration interface of this device."
-msgstr ""
-
-#: js/src/guide/GuideFinish.js:20
-msgid ""
-"To further improve your security consider installing data collection "
-"plugin (via Package Management). This will allow you to be part of our "
-"security research to discover new attackers and give you access to "
-"dynamic firewall updates blocking known attackers."
-msgstr ""
-
-#: js/src/guide/GuideFinish.js:22
-msgid "Continue"
-msgstr ""
-
-#: js/src/guide/GuideNavigation.js:43
-msgid "Skip guide"
-msgstr ""
-
-#: js/src/guide/WorkflowSelect.js:21
-msgid ""
-"This workflow will help you to setup your device to act as a local "
-"server. It means that the device will provide some kind of service to "
-"other devices within your local network (e.g. act as a network-attached "
-"storage)."
-msgstr ""
-
-#: js/src/guide/WorkflowSelect.js:22
-msgid ""
-"After you finish this workflow your device will be able to act as a fully"
-" functional router. It assumes that you want to have more or less "
-"standard network setup."
-msgstr ""
-
-#: js/src/guide/WorkflowSelect.js:23
-msgid ""
-"Just set your password and you are ready to go. This workflow is aimed to"
-" more advanced users who intend not to use the web GUI."
-msgstr ""
-
-#: js/src/guide/WorkflowSelect.js:27
-msgid "Local Server"
-msgstr ""
-
-#: js/src/guide/WorkflowSelect.js:28 js/src/lan/LANForm.js:29
-msgid "Router"
-msgstr ""
-
-#: js/src/guide/WorkflowSelect.js:29
-msgid "Minimal"
-msgstr ""
-
-#: js/src/guide/WorkflowSelect.js:45
-msgid "Cannot set workflow."
-msgstr ""
-
-#: js/src/guide/WorkflowSelect.js:55
-msgid "Guide Workflow"
-msgstr ""
-
-#: js/src/guide/WorkflowSelect.js:56
-msgid ""
-"Here you can set the guide walkthrough which will guide you through the "
-"basic configuration of your device."
-msgstr ""
-
 #: js/src/guide/constants.js:12
 msgid ""
 "Welcome to Foris web interface. This guide will help you to setup your "
@@ -730,6 +711,83 @@ msgstr ""
 msgid "Finish"
 msgstr ""
 
+#: js/src/guide/GuideControls/NextStepButton.js:25
+msgid "Next step"
+msgstr ""
+
+#: js/src/guide/GuideControls/SkipGuideButton.js:21
+msgid "Skip guide"
+msgstr ""
+
+#: js/src/guide/GuidePages/GuideFinish.js:18
+msgid "Guide Finished"
+msgstr ""
+
+#: js/src/guide/GuidePages/GuideFinish.js:19
+msgid ""
+"Once you leave this guide you'll be granted access to the full "
+"configuration interface of this device."
+msgstr ""
+
+#: js/src/guide/GuidePages/GuideFinish.js:20
+msgid ""
+"To further improve your security consider installing data collection "
+"plugin (via Package Management). This will allow you to be part of our "
+"security research to discover new attackers and give you access to "
+"dynamic firewall updates blocking known attackers."
+msgstr ""
+
+#: js/src/guide/GuidePages/GuideFinish.js:22
+msgid "Continue"
+msgstr ""
+
+#: js/src/guide/GuidePages/WorkflowSelect.js:21
+msgid ""
+"This workflow will help you to setup your device to act as a local "
+"server. It means that the device will provide some kind of service to "
+"other devices within your local network (e.g. act as a network-attached "
+"storage)."
+msgstr ""
+
+#: js/src/guide/GuidePages/WorkflowSelect.js:22
+msgid ""
+"After you finish this workflow your device will be able to act as a fully"
+" functional router. It assumes that you want to have more or less "
+"standard network setup."
+msgstr ""
+
+#: js/src/guide/GuidePages/WorkflowSelect.js:23
+msgid ""
+"Just set your password and you are ready to go. This workflow is aimed to"
+" more advanced users who intend not to use the web GUI."
+msgstr ""
+
+#: js/src/guide/GuidePages/WorkflowSelect.js:27
+msgid "Local Server"
+msgstr ""
+
+#: js/src/guide/GuidePages/WorkflowSelect.js:28 js/src/lan/LANForm.js:29
+msgid "Router"
+msgstr ""
+
+#: js/src/guide/GuidePages/WorkflowSelect.js:29
+msgid "Minimal"
+msgstr ""
+
+#: js/src/guide/GuidePages/WorkflowSelect.js:45
+msgid "Cannot set workflow."
+msgstr ""
+
+#: js/src/guide/GuidePages/WorkflowSelect.js:55
+msgid "Guide Workflow"
+msgstr ""
+
+#: js/src/guide/GuidePages/WorkflowSelect.js:56
+msgid ""
+"Here you can set the guide walkthrough which will guide you through the "
+"basic configuration of your device."
+msgstr ""
+
 #: js/src/interfaces/Interfaces.js:24
 msgid "Network Interfaces"
 msgstr ""
@@ -910,17 +968,6 @@ msgstr ""
 msgid "IPv4 protocol"
 msgstr ""
 
-#: js/src/languagesDropdown/LanguagesDropdown.js:36
-#: js/src/packageManagement/packages/LanguageForm.js:27
-msgid "Languages"
-msgstr ""
-
-#: js/src/main/pages.js:32
-#: js/src/notifications/Notifications/NotificationsCenter.js:76
-#: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:65
-msgid "Notifications"
-msgstr ""
-
 #: js/src/main/pages.js:38
 msgid "Network Settings"
 msgstr ""
@@ -956,16 +1003,6 @@ msgstr ""
 
 #: js/src/main/pages.js:127
 msgid "Advanced Administration"
-msgstr ""
-
-#: js/src/notifications/Notifications/NotificationsCenter.js:51
-#: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:90
-msgid "Dismiss all"
-msgstr ""
-
-#: js/src/notifications/Notifications/NotificationsCenter.js:64
-#: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:29
-msgid "No notifications"
 msgstr ""
 
 #: js/src/notificationsSettings/CommonForm.js:17
@@ -1299,11 +1336,6 @@ msgstr ""
 msgid "Enable automatic updates (recommended)"
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:29
-#: js/src/updatesDropdown/UpdatesDropdown.js:108
-msgid "Cannot install updates."
-msgstr ""
-
 #: js/src/packageManagement/updates/UpdateApproval.js:32
 msgid "Updates will be installed shortly."
 msgstr ""
@@ -1328,16 +1360,6 @@ msgstr ""
 #: js/src/packageManagement/updates/UpdateApproval.js:64
 #, python-format
 msgid "Approve Update From %s"
-msgstr ""
-
-#: js/src/packageManagement/updates/UpdateApproval.js:74
-#: js/src/updatesDropdown/UpdatesDropdown.js:99
-msgid "Ignore"
-msgstr ""
-
-#: js/src/packageManagement/updates/UpdateApproval.js:81
-#: js/src/updatesDropdown/UpdatesDropdown.js:100
-msgid "Install now"
 msgstr ""
 
 #: js/src/packageManagement/updates/UpdateApproval.js:96
@@ -1458,14 +1480,6 @@ msgid ""
 "    "
 msgstr ""
 
-#: js/src/rebootDropdown/RebootDropdown.js:37
-msgid "Reboot Required"
-msgstr ""
-
-#: js/src/rebootDropdown/RebootDropdown.js:42
-msgid "Details"
-msgstr ""
-
 #: js/src/regionAndTime/RegionAndTime.js:30
 msgid "Region and Time"
 msgstr ""
@@ -1560,16 +1574,6 @@ msgstr ""
 
 #: js/src/routerStateHandler/RebootHandler.js:30
 msgid "Rebooting"
-msgstr ""
-
-#: js/src/updatesDropdown/UpdatesDropdown.js:66
-msgid "Approve Update"
-msgstr ""
-
-#: js/src/updatesDropdown/UpdatesDropdown.js:96
-msgid ""
-"See details in <a href=${ForisURLs.packageManagement.updates}>Updates</a>"
-" page."
 msgstr ""
 
 #: js/src/utils/ErrorBoundary.js:36

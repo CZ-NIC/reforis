@@ -9,7 +9,7 @@ import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { API_STATE, ForisURLs, useAPIPost } from "foris";
 
-import API_URLs from "./API";
+import API_URLs from "common/API";
 
 export default function LogoutButton() {
     const history = useHistory();

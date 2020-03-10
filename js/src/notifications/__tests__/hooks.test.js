@@ -13,7 +13,7 @@ import { WebSockets } from "foris";
 import mockAxios from "jest-mock-axios";
 
 import { notificationsFixture } from "./__fixtures__/notifications";
-import NotificationsDropdown from "../NotificationsDropdown/NotificationsDropdown";
+import NotificationsDropdown from "../../main/TopBar/NotificationsDropdown/NotificationsDropdown";
 
 describe("useNotifications hook.", () => {
     let webSockets;

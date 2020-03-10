@@ -8,11 +8,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import RebootDropdown from "rebootDropdown/RebootDropdown";
-import UpdatesDropdown from "updatesDropdown/UpdatesDropdown";
-import NotificationsDropdown from "notifications/NotificationsDropdown/NotificationsDropdown";
-import LanguagesDropdown from "languagesDropdown/LanguagesDropdown";
-import LogoutButton from "common/LogoutButton";
+import "./TopBar.css";
+
+import RebootDropdown from "./rebootDropdown/RebootDropdown";
+import UpdatesDropdown from "./updatesDropdown/UpdatesDropdown";
+import NotificationsDropdown from "./NotificationsDropdown/NotificationsDropdown";
+import LanguagesDropdown from "./languagesDropdown/LanguagesDropdown";
+import LogoutButton from "./LogoutButton";
 
 TopBar.propTypes = {
     ws: PropTypes.object.isRequired,
