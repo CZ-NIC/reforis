@@ -24,6 +24,7 @@ import GuideNavigation from "./GuideNavigation";
 import GuideHelp from "./GuideHelp";
 import STEPS from "./steps";
 import "./Guide.css";
+import GuideControls from "./GuideControlls";
 
 Guide.propTypes = {
     ws: PropTypes.object.isRequired,
@@ -76,10 +77,12 @@ function GuideRouter({ ws, guideData, getGuideData }) {
                                 path={`/${step}`}
                                 render={() => (
                                     <>
+                                        <GuideControls next_step={next_step} />
                                         <GuideHelp
                                             step={step}
                                             workflow={current_workflow}
                                             completed={passed.includes(step)}
+                                            next_step={next_step}
                                         />
                                         <Component
                                             ws={ws}

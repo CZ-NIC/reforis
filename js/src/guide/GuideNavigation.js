@@ -20,7 +20,6 @@ GuideNavigation.propTypes = {
 };
 
 export default function GuideNavigation({ workflow_steps, passed, next_step }) {
-    const onGuideFinishHandler = useGuideFinish();
     const navigationItems = workflow_steps.map(
         (step) => (
             <GuideNavigationItem
@@ -38,10 +37,6 @@ export default function GuideNavigation({ workflow_steps, passed, next_step }) {
             <ul className="list-unstyled">
                 {navigationItems}
             </ul>
-            <NextStepButtonWithRouter next_step={next_step} />
-            <button type="button" className="btn btn-link" onClick={onGuideFinishHandler}>
-                {_("Skip guide")}
-            </button>
         </>
     );
 }
@@ -79,19 +74,3 @@ function GuideNavigationItem({
         </li>
     );
 }
-
-NextStepButton.propTypes = {
-    next_step: PropTypes.string.isRequired,
-    location: PropTypes.object.isRequired,
-};
-
-function NextStepButton({ next_step, location }) {
-    if (location.pathname === `/${next_step}`) return null;
-    return (
-        <Link id="next-step-button" className="btn btn-lg btn-light " to={`/${next_step}`}>
-            <i className="fas fa-arrow-right" />
-        </Link>
-    );
-}
-
-const NextStepButtonWithRouter = withRouter(NextStepButton);
