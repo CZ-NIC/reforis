@@ -12,14 +12,19 @@ import { SpinnerElement, useAPIPost } from "foris";
 
 import API_URLs from "common/API";
 
-import { useLanguages, useWSSetLanguageRefresh } from "./hooks";
 import "./LanguagesDropdown.css";
+import { useLanguages, useWSSetLanguageRefresh } from "./hooks";
 
 LanguagesDropdown.propTypes = {
     ws: PropTypes.object.isRequired,
+    className: PropTypes.string,
 };
 
-export default function LanguagesDropdown({ ws }) {
+LanguagesDropdown.defaultProps = {
+    className: "",
+};
+
+export default function LanguagesDropdown({ ws, className }) {
     const [currentLang, langsList] = useLanguages();
     useWSSetLanguageRefresh(ws);
 
@@ -27,7 +32,10 @@ export default function LanguagesDropdown({ ws }) {
 
     return (
         <div className="dropdown">
-            <button className="nav-item btn btn-link" type="button">
+            <button
+                className={`nav-item btn ${className || "btn-link"}`}
+                type="button"
+            >
                 {currentLang || <SpinnerElement small />}
             </button>
 

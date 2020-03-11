@@ -11,7 +11,7 @@ import mockAxios from "jest-mock-axios";
 import { WebSockets } from "foris";
 import { notificationsFixture } from "./__fixtures__/notifications";
 
-import NotificationsCenter from "../Notifications/NotificationsCenter";
+import NotificationsCenter from "../Notifications/Notifications";
 
 describe("<NotificationsCenter/>", () => {
     it("Test with snapshot.", async () => {

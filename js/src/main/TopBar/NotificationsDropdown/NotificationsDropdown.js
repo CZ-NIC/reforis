@@ -10,7 +10,7 @@ import PropTypes from "prop-types";
 
 import NotificationsDropdownButton from "./NotificationsDropdownButton";
 import NotificationsDropdownMenu from "./NotificationsDropdownMenu";
-import useNotifications, { useNewNotification } from "../hooks";
+import useNotifications, { useNewNotification } from "../../../notifications/hooks";
 import "./NotificationsDropdown.css";
 
 NotificationsDropdown.propTypes = {

@@ -43,9 +43,6 @@
     margin-bottom: 0
 }
 
-/* Show dropdown on hover */
-@media (min-width: 769px) {
-    #top-bar .dropdown:hover .dropdown-menu {
-        display: block;
-    }
+#top-bar .dropdown:hover .dropdown-menu {
+    display: block;
 }

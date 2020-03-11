@@ -14,7 +14,7 @@ import { REFORIS_URL_PREFIX, Portal, AlertContextProvider } from "foris";
 import Navigation from "navigation/Navigation";
 
 import ErrorBoundary from "utils/ErrorBoundary";
-import TopBar from "./TopBar";
+import TopBar from "./TopBar/TopBar";
 import RouteWithSubRoutes from "./routing";
 import getPages from "./pages";
 import { REDIRECT_404_PAGE } from "./constants";

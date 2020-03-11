@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-02-20 17:21+0100\n"
+"POT-Creation-Date: 2020-03-11 16:18+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -337,7 +337,7 @@ msgid "base64 encoded sha256."
 msgstr ""
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:49
-#: js/src/packageManagement/updates/UpdateApproval.js:98
+#: js/src/packageManagement/updates/UpdateApproval.js:97
 msgid "Name"
 msgstr ""
 
@@ -397,7 +397,7 @@ msgstr ""
 msgid "TLS pin should have at least one symbol."
 msgstr ""
 
-#: js/src/guestNetwork/GuestNetwork.js:29 js/src/interfaces/Interfaces.js:49
+#: js/src/guestNetwork/GuestNetwork.js:29 js/src/interfaces/Interfaces.js:50
 #: js/src/interfaces/constants.js:11 js/src/main/pages.js:69
 msgid "Guest Network"
 msgstr ""
@@ -466,80 +466,6 @@ msgstr ""
 
 #: js/src/guestNetwork/GuestNetworkForm.js:211
 msgid "Upload speed must be positive"
-msgstr ""
-
-#: js/src/guide/GuideFinish.js:18
-msgid "Guide Finished"
-msgstr ""
-
-#: js/src/guide/GuideFinish.js:20
-msgid ""
-"\n"
-"Congratulations! You've successfully reached the end of this guide. Once "
-"you leave this guide you'll be granted access \n"
-"to the full configuration interface of this device.\n"
-"\n"
-"To further improve your security consider enabling data collect (start by"
-" selecting it in updater tab).\n"
-"This will allow you to be part of our security research to discover new "
-"attackers and it will also give you access to \n"
-"dynamic updates to your firewall to block all already known attackers.\n"
-"            "
-msgstr ""
-
-#: js/src/guide/GuideFinish.js:31
-msgid "Continue"
-msgstr ""
-
-#: js/src/guide/GuideNavigation.js:43
-msgid "Skip guide"
-msgstr ""
-
-#: js/src/guide/WorkflowSelect.js:21
-msgid ""
-"This workflow will help you to setup your device to act as a local "
-"server. It means that the device will provide some kind of service to "
-"other devices within your local network (e.g. act as a network-attached "
-"storage)."
-msgstr ""
-
-#: js/src/guide/WorkflowSelect.js:22
-msgid ""
-"After you finish this workflow your device will be able to act as a fully"
-" functional router. It assumes that you want to have more or less "
-"standard network setup."
-msgstr ""
-
-#: js/src/guide/WorkflowSelect.js:23
-msgid ""
-"Just set your password and you are ready to go. This workflow is aimed to"
-" more advanced users who intend not to use the web GUI."
-msgstr ""
-
-#: js/src/guide/WorkflowSelect.js:27
-msgid "Local Server"
-msgstr ""
-
-#: js/src/guide/WorkflowSelect.js:28 js/src/lan/LANForm.js:29
-msgid "Router"
-msgstr ""
-
-#: js/src/guide/WorkflowSelect.js:29
-msgid "Minimal"
-msgstr ""
-
-#: js/src/guide/WorkflowSelect.js:45
-msgid "Cannot set workflow."
-msgstr ""
-
-#: js/src/guide/WorkflowSelect.js:55
-msgid "Guide Workflow"
-msgstr ""
-
-#: js/src/guide/WorkflowSelect.js:56
-msgid ""
-"Here you can set the guide walkthrough which will guide you through the "
-"basic configuration of your device."
 msgstr ""
 
 #: js/src/guide/constants.js:12
@@ -621,8 +547,8 @@ msgstr ""
 
 #: js/src/guide/constants.js:48
 msgid ""
-"The device setup is finished. Now your device is able to act as a router "
-"and route network traffic among LAN, WAN and guest network."
+"Congratulations! Now your device is able to act as a router and route "
+"network traffic among LAN, WAN and guest network."
 msgstr ""
 
 #: js/src/guide/constants.js:54
@@ -677,8 +603,8 @@ msgstr ""
 
 #: js/src/guide/constants.js:76
 msgid ""
-"The device setup is finished. Now your device should be able to act as a "
-"server on your local network."
+"Congratulations! Now your device should be able to act as a server on "
+"your local network."
 msgstr ""
 
 #: js/src/guide/hooks.js:23
@@ -712,13 +638,13 @@ msgstr ""
 msgid "Updates"
 msgstr ""
 
-#: js/src/guide/steps.js:44 js/src/interfaces/Interfaces.js:31
+#: js/src/guide/steps.js:44 js/src/interfaces/Interfaces.js:32
 #: js/src/interfaces/constants.js:9 js/src/main/pages.js:49
 #: js/src/wan/WAN.js:27
 msgid "WAN"
 msgstr ""
 
-#: js/src/guide/steps.js:48 js/src/interfaces/Interfaces.js:39
+#: js/src/guide/steps.js:48 js/src/interfaces/Interfaces.js:40
 #: js/src/interfaces/constants.js:10 js/src/main/pages.js:54
 msgid "LAN"
 msgstr ""
@@ -727,11 +653,88 @@ msgstr ""
 msgid "Finish"
 msgstr ""
 
-#: js/src/interfaces/Interfaces.js:24
+#: js/src/guide/GuideControls/NextStepButton.js:26
+msgid "Next step"
+msgstr ""
+
+#: js/src/guide/GuideControls/SkipGuideButton.js:22
+msgid "Skip guide"
+msgstr ""
+
+#: js/src/guide/GuidePages/GuideFinish.js:18
+msgid "Guide Finished"
+msgstr ""
+
+#: js/src/guide/GuidePages/GuideFinish.js:19
+msgid ""
+"Once you leave this guide you'll be granted access to the full "
+"configuration interface of this device."
+msgstr ""
+
+#: js/src/guide/GuidePages/GuideFinish.js:20
+msgid ""
+"To further improve your security consider installing data collection "
+"plugin (via Package Management). This will allow you to be part of our "
+"security research to discover new attackers and give you access to "
+"dynamic firewall updates blocking known attackers."
+msgstr ""
+
+#: js/src/guide/GuidePages/GuideFinish.js:22
+msgid "Continue"
+msgstr ""
+
+#: js/src/guide/GuidePages/WorkflowSelect.js:21
+msgid ""
+"This workflow will help you to setup your device to act as a local "
+"server. It means that the device will provide some kind of service to "
+"other devices within your local network (e.g. act as a network-attached "
+"storage)."
+msgstr ""
+
+#: js/src/guide/GuidePages/WorkflowSelect.js:22
+msgid ""
+"After you finish this workflow your device will be able to act as a fully"
+" functional router. It assumes that you want to have more or less "
+"standard network setup."
+msgstr ""
+
+#: js/src/guide/GuidePages/WorkflowSelect.js:23
+msgid ""
+"Just set your password and you are ready to go. This workflow is aimed to"
+" more advanced users who intend not to use the web GUI."
+msgstr ""
+
+#: js/src/guide/GuidePages/WorkflowSelect.js:27
+msgid "Local Server"
+msgstr ""
+
+#: js/src/guide/GuidePages/WorkflowSelect.js:28 js/src/lan/LANForm.js:29
+msgid "Router"
+msgstr ""
+
+#: js/src/guide/GuidePages/WorkflowSelect.js:29
+msgid "Minimal"
+msgstr ""
+
+#: js/src/guide/GuidePages/WorkflowSelect.js:45
+msgid "Cannot set workflow."
+msgstr ""
+
+#: js/src/guide/GuidePages/WorkflowSelect.js:55
+msgid "Guide Workflow"
+msgstr ""
+
+#: js/src/guide/GuidePages/WorkflowSelect.js:56
+msgid ""
+"Here you can set the guide walkthrough which will guide you through the "
+"basic configuration of your device."
+msgstr ""
+
+#: js/src/interfaces/Interfaces.js:25
 msgid "Network Interfaces"
 msgstr ""
 
-#: js/src/interfaces/Interfaces.js:26
+#: js/src/interfaces/Interfaces.js:27
 msgid ""
 "\n"
 "Here you can configure the settings of the network interfaces on your "
@@ -741,7 +744,7 @@ msgid ""
 "        "
 msgstr ""
 
-#: js/src/interfaces/Interfaces.js:33
+#: js/src/interfaces/Interfaces.js:34
 msgid ""
 "\n"
 "It acts as an external network connection. Firewall rules should be "
@@ -750,7 +753,7 @@ msgid ""
 "        "
 msgstr ""
 
-#: js/src/interfaces/Interfaces.js:41
+#: js/src/interfaces/Interfaces.js:42
 msgid ""
 "\n"
 "It acts as a local network connection. LAN should contain devices which "
@@ -763,7 +766,7 @@ msgid ""
 "        "
 msgstr ""
 
-#: js/src/interfaces/Interfaces.js:51
+#: js/src/interfaces/Interfaces.js:52
 msgid ""
 "\n"
 "It acts as a local network connection. Unlike LAN the devices in the "
@@ -776,7 +779,7 @@ msgid ""
 "        "
 msgstr ""
 
-#: js/src/interfaces/Interfaces.js:77
+#: js/src/interfaces/Interfaces.js:78
 msgid "You have to assign at least one interface to this group."
 msgstr ""
 
@@ -866,8 +869,8 @@ msgstr ""
 #: js/src/lan/LANForm.js:16
 msgid ""
 "\n"
-"Router mode means that this device manages the LAN (acts as a router, "
-"can assign IP addresses, ...).\n"
+"Router mode means that this device manages the LAN (acts as a router, can"
+" assign IP addresses, ...).\n"
 "Computer mode means that this device acts as a client in this network. It"
 " acts in a similar way as WAN, but\n"
 "it has opened ports for configuration interface and other services.\n"
@@ -907,14 +910,9 @@ msgstr ""
 msgid "IPv4 protocol"
 msgstr ""
 
-#: js/src/languagesDropdown/LanguagesDropdown.js:36
-#: js/src/packageManagement/packages/LanguageForm.js:27
-msgid "Languages"
-msgstr ""
-
+#: js/src/main/TopBar/NotificationsDropdown/NotificationsDropdownMenu.js:65
 #: js/src/main/pages.js:32
-#: js/src/notifications/Notifications/NotificationsCenter.js:76
-#: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:65
+#: js/src/notifications/Notifications/Notifications.js:76
 msgid "Notifications"
 msgstr ""
 
@@ -955,14 +953,56 @@ msgstr ""
 msgid "Advanced Administration"
 msgstr ""
 
-#: js/src/notifications/Notifications/NotificationsCenter.js:51
-#: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:90
+#: js/src/main/TopBar/LogoutButton.js:31
+msgid "Logout"
+msgstr ""
+
+#: js/src/main/TopBar/NotificationsDropdown/NotificationsDropdownMenu.js:29
+#: js/src/notifications/Notifications/Notifications.js:64
+msgid "No notifications"
+msgstr ""
+
+#: js/src/main/TopBar/NotificationsDropdown/NotificationsDropdownMenu.js:90
+#: js/src/notifications/Notifications/Notifications.js:51
 msgid "Dismiss all"
 msgstr ""
 
-#: js/src/notifications/Notifications/NotificationsCenter.js:64
-#: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:29
-msgid "No notifications"
+#: js/src/main/TopBar/languagesDropdown/LanguagesDropdown.js:44
+#: js/src/packageManagement/packages/LanguageForm.js:27
+msgid "Languages"
+msgstr ""
+
+#: js/src/main/TopBar/rebootDropdown/RebootDropdown.js:37
+msgid "Reboot Required"
+msgstr ""
+
+#: js/src/main/TopBar/rebootDropdown/RebootDropdown.js:42
+msgid "Details"
+msgstr ""
+
+#: js/src/main/TopBar/updatesDropdown/UpdatesDropdown.js:66
+msgid "Approve Update"
+msgstr ""
+
+#: js/src/main/TopBar/updatesDropdown/UpdatesDropdown.js:96
+msgid ""
+"See details in <a href=${ForisURLs.packageManagement.updates}>Updates</a>"
+" page."
+msgstr ""
+
+#: js/src/main/TopBar/updatesDropdown/UpdatesDropdown.js:99
+#: js/src/packageManagement/updates/UpdateApproval.js:74
+msgid "Ignore"
+msgstr ""
+
+#: js/src/main/TopBar/updatesDropdown/UpdatesDropdown.js:100
+#: js/src/packageManagement/updates/UpdateApproval.js:81
+msgid "Install now"
+msgstr ""
+
+#: js/src/main/TopBar/updatesDropdown/UpdatesDropdown.js:108
+#: js/src/packageManagement/updates/UpdateApproval.js:29
+msgid "Cannot install updates."
 msgstr ""
 
 #: js/src/notificationsSettings/CommonForm.js:17
@@ -1107,8 +1147,8 @@ msgstr ""
 
 #: js/src/packageManagement/packages/LanguageForm.js:28
 msgid ""
-"If you want to use other language than English you can select it from the"
-" following list:"
+"If you want to use another language than English you can select it from "
+"the following list:"
 msgstr ""
 
 #: js/src/packageManagement/packages/Packages.js:22
@@ -1296,56 +1336,41 @@ msgstr ""
 msgid "Enable automatic updates (recommended)"
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:30
-#: js/src/updatesDropdown/UpdatesDropdown.js:108
-msgid "Cannot install updates."
-msgstr ""
-
-#: js/src/packageManagement/updates/UpdateApproval.js:33
+#: js/src/packageManagement/updates/UpdateApproval.js:32
 msgid "Updates will be installed shortly."
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:46
+#: js/src/packageManagement/updates/UpdateApproval.js:45
 msgid "There are no updates awaiting your approval."
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:50
+#: js/src/packageManagement/updates/UpdateApproval.js:49
 #, python-format
 msgid "There is %d package to be updated."
 msgid_plural "There are %d packages to be updated."
 msgstr[0] ""
 msgstr[1] ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:57
+#: js/src/packageManagement/updates/UpdateApproval.js:56
 msgid ""
 "See <a data-toggle=\"collapse\" href=\"#plan-wrapper\" role=\"button\" "
 "aria-expanded=\"false\" aria-controls=\"plan-wrapper\">details</a>"
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:65
+#: js/src/packageManagement/updates/UpdateApproval.js:64
 #, python-format
 msgid "Approve Update From %s"
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:75
-#: js/src/updatesDropdown/UpdatesDropdown.js:99
-msgid "Ignore"
-msgstr ""
-
-#: js/src/packageManagement/updates/UpdateApproval.js:82
-#: js/src/updatesDropdown/UpdatesDropdown.js:100
-msgid "Install now"
-msgstr ""
-
-#: js/src/packageManagement/updates/UpdateApproval.js:97
+#: js/src/packageManagement/updates/UpdateApproval.js:96
 msgid "Action"
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:99
+#: js/src/packageManagement/updates/UpdateApproval.js:98
 msgid "Current"
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:100
+#: js/src/packageManagement/updates/UpdateApproval.js:99
 msgid "New"
 msgstr ""
 
@@ -1455,14 +1480,6 @@ msgid ""
 "    "
 msgstr ""
 
-#: js/src/rebootDropdown/RebootDropdown.js:37
-msgid "Reboot Required"
-msgstr ""
-
-#: js/src/rebootDropdown/RebootDropdown.js:42
-msgid "Details"
-msgstr ""
-
 #: js/src/regionAndTime/RegionAndTime.js:30
 msgid "Region and Time"
 msgstr ""
@@ -1559,16 +1576,6 @@ msgstr ""
 msgid "Rebooting"
 msgstr ""
 
-#: js/src/updatesDropdown/UpdatesDropdown.js:66
-msgid "Approve Update"
-msgstr ""
-
-#: js/src/updatesDropdown/UpdatesDropdown.js:96
-msgid ""
-"See details in <a href=${ForisURLs.packageManagement.updates}>Updates</a>"
-" page."
-msgstr ""
-
 #: js/src/utils/ErrorBoundary.js:36
 msgid "An Error Occurred"
 msgstr ""
@@ -1610,7 +1617,7 @@ msgstr ""
 #: js/src/wan/WAN.js:29
 msgid ""
 "\n"
-"Here you specify your WAN port settings. Usually, you can leave this "
+"Here you specify your WAN port settings. Usually, you can leave these "
 "options untouched unless instructed\n"
 "otherwise by your internet service provider. Also, in case there is a "
 "cable or DSL modem connecting your\n"
@@ -1882,9 +1889,5 @@ msgstr ""
 
 #: reforis/templates/errors/500.html:16
 msgid "Trace:"
-msgstr ""
-
-#: reforis/templates/includes/top-bar.html:4
-msgid "Logout"
 msgstr ""
 

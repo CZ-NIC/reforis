@@ -8,9 +8,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { ForisURLs, REFORIS_URL_PREFIX, SpinnerElement } from "foris";
+import { ForisURLs, SpinnerElement } from "foris";
 
 import "./NotificationsDropdownButton.css";
+import { useHistory } from "react-router-dom";
 
 const SMALL_SCREEN_WIDTH = 768;
 
@@ -23,13 +24,15 @@ NotificationsDropdownButton.propTypes = {
 export default function NotificationsDropdownButton({
     notificationsCount, newNotification, isLoading,
 }) {
+    const history = useHistory();
+
     function redirectToNotificationCenter(e) {
         // We don't want to show dropdown on the small devices.
         // So just make redirect to notification center
         if (window.outerWidth > SMALL_SCREEN_WIDTH) return;
         e.preventDefault();
         e.stopPropagation();
-        document.location = `${REFORIS_URL_PREFIX}/${ForisURLs.notifications}`;
+        history.push(ForisURLs.notifications);
     }
 
     let componentContent;

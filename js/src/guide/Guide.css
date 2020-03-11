@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -123,7 +123,7 @@
     flex-grow: 2;
 }
 
-#next-step-button {
+.blinking {
     background-color: #00a2e2;
     color: white;
     -webkit-animation-name: blinking;
@@ -132,11 +132,6 @@
     animation-name: blinking;
     animation-duration: 1.8s;
     animation-iteration-count: infinite;
-
-    position: fixed;
-    right: 3rem;
-
-    z-index: 1;
 }
 
 .guide-card {
@@ -158,4 +153,9 @@
     100% {
         opacity: 1;
     }
+}
+
+/* Guide controls */
+.sticky-top {
+    top: 0.5em;
 }

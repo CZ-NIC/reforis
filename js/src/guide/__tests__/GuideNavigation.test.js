@@ -8,7 +8,7 @@
 import React from "react";
 import { getByText, render, wait } from "foris/testUtils/customTestRender";
 
-import GuideNavigation from "../GuideNavigation";
+import GuideNavigation from "../GuideNavigation/GuideNavigation";
 import { guideFixtures } from "./__fixtures__/guide";
 
 describe("<GuideNavigation/>", () => {

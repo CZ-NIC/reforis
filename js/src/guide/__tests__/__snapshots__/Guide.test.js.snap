@@ -3,7 +3,7 @@
 exports[`<Guide/>  Snapshot. Just check if render correct page. 1`] = `
 <div>
   <div
-    class="card guide-card my-4"
+    class="card guide-card"
   >
     <div
       class="card-body"
@@ -14,6 +14,83 @@ exports[`<Guide/>  Snapshot. Just check if render correct page. 1`] = `
       <p>
         If you are in doubt use the current settings.
       </p>
+    </div>
+    <div
+      class="guide-controls"
+    >
+      <div
+        class="dropdown"
+      >
+        <button
+          class="nav-item btn guide-controls-button btn-primary"
+          type="button"
+        >
+          en
+        </button>
+        <div
+          class="dropdown-menu"
+          id="languages-dropdown-menu"
+        >
+          <div
+            class="dropdown-header"
+          >
+            <h5>
+              Languages
+            </h5>
+          </div>
+          <div
+            class="dropdown-divider"
+          />
+          <button
+            class="dropdown-item"
+            type="button"
+          >
+            en
+          </button>
+          <button
+            class="dropdown-item"
+            type="button"
+          >
+            cs
+          </button>
+          <button
+            class="dropdown-item"
+            type="button"
+          >
+            ru
+          </button>
+        </div>
+      </div>
+      <button
+        class="btn guide-controls-button btn btn-warning"
+        type="button"
+      >
+         
+         
+        <div
+          class="d-none d-sm-block"
+        >
+          Skip guide
+           
+        </div>
+        <i
+          class="fas fa-forward"
+        />
+      </button>
+      <a
+        class="guide-controls-button btn btn-primary disabled"
+        disabled=""
+        href="/reforis/guide/networks"
+      >
+        <div
+          class="d-none d-sm-block"
+        >
+          Next step
+        </div>
+        <i
+          class="fas fa-step-forward"
+        />
+      </a>
     </div>
   </div>
   <h1>
