@@ -28,6 +28,7 @@ export default function GuidePage({
     return (
         <>
             <GuideHelper
+                ws={ws}
                 step={step}
                 workflow={current_workflow}
                 completed={passed.includes(step)}

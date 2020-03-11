@@ -23,7 +23,7 @@ GuideHelper.defaultProps = {
 };
 
 export default function GuideHelper({
-    workflow, step, next_step, completed,
+    ws, workflow, step, next_step, completed,
 }) {
     const stepContent = HELP_CONTENT[workflow][step];
     if (!stepContent) {
@@ -41,7 +41,7 @@ export default function GuideHelper({
                 {stepContent.initial && <ParagraphsArray content={stepContent.initial} />}
                 {isCompletedVisible && <p className="font-weight-bold">{ stepContent.completed }</p>}
             </div>
-            <GuideControls next_step={next_step} />
+            <GuideControls ws={ws} next_step={next_step} />
         </div>
     );
 }

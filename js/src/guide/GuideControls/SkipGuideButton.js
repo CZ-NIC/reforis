@@ -15,7 +15,7 @@ export default function SkipGuideButton() {
 
     return (
         <Button
-            className="guide-controls-button btn btn-warning col-3 offset-2 mb-3"
+            className="guide-controls-button btn btn-warning"
             onClick={onGuideFinishHandler}
         >
             <div className="d-none d-sm-block">

@@ -37,3 +37,9 @@
 #notifications ::-webkit-scrollbar-thumb:hover {
     background: #4e5a5b;
 }
+
+@media (max-width: 769px) {
+    #top-bar #notifications.dropdown:hover .dropdown-menu {
+        display: none;
+    }
+}

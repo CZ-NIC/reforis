@@ -11,14 +11,16 @@ import PropTypes from "prop-types";
 import "./GuideControls.css";
 import SkipGuideButton from "./SkipGuideButton";
 import NextStepButtonWithRouter from "./NextStepButton";
+import LanguagesDropdown from "../../main/TopBar/languagesDropdown/LanguagesDropdown";
 
 GuideControls.propTypes = {
     next_step: PropTypes.string.isRequired,
 };
 
-export default function GuideControls({ next_step }) {
+export default function GuideControls({ ws, next_step }) {
     return (
         <div className="guide-controls">
+            <LanguagesDropdown ws={ws} className="guide-controls-button btn-primary" />
             <SkipGuideButton />
             <NextStepButtonWithRouter next_step={next_step} />
         </div>

@@ -5,14 +5,21 @@
  * See /LICENSE for more information.
  */
 
-.guide-controls{
+.guide-controls {
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
 }
 
-.guide-controls-button{
+.guide-controls-button {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    margin-right: 1rem;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
 }
