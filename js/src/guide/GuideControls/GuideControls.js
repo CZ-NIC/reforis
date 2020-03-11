@@ -8,6 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import "./GuideControls.css";
 import SkipGuideButton from "./SkipGuideButton";
 import NextStepButtonWithRouter from "./NextStepButton";
 
@@ -17,7 +18,7 @@ GuideControls.propTypes = {
 
 export default function GuideControls({ next_step }) {
     return (
-        <div className="sticky-top">
+        <div className="guide-controls">
             <SkipGuideButton />
             <NextStepButtonWithRouter next_step={next_step} />
         </div>

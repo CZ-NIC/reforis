@@ -15,11 +15,13 @@ export default function SkipGuideButton() {
 
     return (
         <Button
-            className="btn btn-warning col-3 offset-2 mb-3"
+            className="guide-controls-button btn btn-warning col-3 offset-2 mb-3"
             onClick={onGuideFinishHandler}
         >
-            {_("Skip guide")}
-            &nbsp;
+            <div className="d-none d-sm-block">
+                {_("Skip guide")}
+                &nbsp;
+            </div>
             <i className="fas fa-forward" />
         </Button>
     );

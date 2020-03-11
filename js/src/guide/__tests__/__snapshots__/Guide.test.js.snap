@@ -3,34 +3,7 @@
 exports[`<Guide/>  Snapshot. Just check if render correct page. 1`] = `
 <div>
   <div
-    class="sticky-top"
-  >
-    <button
-      class="btn btn btn-warning col-4 offset-1 mb-3"
-      type="button"
-    >
-       
-       
-      Skip guide
-       
-      <i
-        class="fas fa-forward"
-      />
-    </button>
-    <a
-      class="btn btn-primary col-4 offset-2 mb-3 disabled"
-      disabled=""
-      href="/reforis/guide/networks"
-    >
-      Next step
-       
-      <i
-        class="fas fa-step-forward"
-      />
-    </a>
-  </div>
-  <div
-    class="card guide-card my-4"
+    class="card guide-card"
   >
     <div
       class="card-body"
@@ -41,6 +14,40 @@ exports[`<Guide/>  Snapshot. Just check if render correct page. 1`] = `
       <p>
         If you are in doubt use the current settings.
       </p>
+    </div>
+    <div
+      class="guide-controls"
+    >
+      <button
+        class="btn guide-controls-button btn btn-warning col-3 offset-2 mb-3"
+        type="button"
+      >
+         
+         
+        <div
+          class="d-none d-sm-block"
+        >
+          Skip guide
+           
+        </div>
+        <i
+          class="fas fa-forward"
+        />
+      </button>
+      <a
+        class="guide-controls-button btn btn-primary col-3 offset-2 mb-3 disabled"
+        disabled=""
+        href="/reforis/guide/networks"
+      >
+        <div
+          class="d-none d-sm-block"
+        >
+          Next step
+        </div>
+        <i
+          class="fas fa-step-forward"
+        />
+      </a>
     </div>
   </div>
   <h1>

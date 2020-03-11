@@ -18,12 +18,13 @@ export function NextStepButton({ next_step, location }) {
     const disabled = location.pathname === `/${next_step}`;
     return (
         <Link
-            className={`btn btn-primary col-3 offset-2 mb-3 ${disabled ? "disabled" : "blinking"}`}
+            className={`guide-controls-button btn btn-primary col-3 offset-2 mb-3 ${disabled ? "disabled" : "blinking"}`}
             to={`/${next_step}`}
             disabled={disabled}
         >
-            {_("Next step")}
-            &nbsp;
+            <div className="d-none d-sm-block">
+                {_("Next step")}
+            </div>
             <i className="fas fa-step-forward" />
         </Link>
     );

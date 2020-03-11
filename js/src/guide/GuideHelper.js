@@ -9,18 +9,22 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { HELP_CONTENT } from "./constants";
+import GuideControls from "./GuideControls/GuideControls";
 
-GuideHelp.propTypes = {
+GuideHelper.propTypes = {
     workflow: PropTypes.string.isRequired,
     step: PropTypes.string.isRequired,
+    next_step: PropTypes.string.isRequired,
     completed: PropTypes.bool,
 };
 
-GuideHelp.defaultProps = {
+GuideHelper.defaultProps = {
     completed: false,
 };
 
-export default function GuideHelp({ workflow, step, completed }) {
+export default function GuideHelper({
+    workflow, step, next_step, completed,
+}) {
     const stepContent = HELP_CONTENT[workflow][step];
     if (!stepContent) {
         return null;
@@ -32,11 +36,12 @@ export default function GuideHelp({ workflow, step, completed }) {
     }
 
     return (
-        <div className="card guide-card my-4">
+        <div className="card guide-card">
             <div className="card-body">
                 {stepContent.initial && <ParagraphsArray content={stepContent.initial} />}
                 {isCompletedVisible && <p className="font-weight-bold">{ stepContent.completed }</p>}
             </div>
+            <GuideControls next_step={next_step} />
         </div>
     );
 }

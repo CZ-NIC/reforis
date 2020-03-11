@@ -9,15 +9,14 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import STEPS from "./steps";
-import GuideControls from "./GuideControls/GuideControlls";
-import GuideHelp from "./GuideHelp";
+import GuideHelper from "./GuideHelper";
 
 GuidePage.propTypes = {
     ws: PropTypes.object.isRequired,
     step: PropTypes.string.isRequired,
     next_step: PropTypes.string.isRequired,
     passed: PropTypes.arrayOf(PropTypes.string).isRequired,
-    current_workflow: PropTypes.arrayOf(PropTypes.string).isRequired,
+    current_workflow: PropTypes.string.isRequired,
     available_workflows: PropTypes.arrayOf(PropTypes.string).isRequired,
     getGuideData: PropTypes.func.isRequired,
 };
@@ -28,11 +27,7 @@ export default function GuidePage({
     const Component = STEPS[step].component;
     return (
         <>
-            <GuideControls
-                ws={ws}
-                next_step={next_step}
-            />
-            <GuideHelp
+            <GuideHelper
                 step={step}
                 workflow={current_workflow}
                 completed={passed.includes(step)}

@@ -7,36 +7,36 @@
 
 import React from "react";
 import { render } from "foris/testUtils/customTestRender";
-import GuideHelp from "../GuideHelp";
+import GuideHelper from "../GuideHelper";
 
 describe("<GuideHelp/>", () => {
     it("displays lan help without completed message", () => {
-        const { container } = render(<GuideHelp workflow="router" step="lan" />);
+        const { container } = render(<GuideHelper workflow="router" step="lan" next_step="some"/>);
         expect(container.firstChild).toMatchSnapshot();
     });
 
     it("displays lan help with completed message", () => {
-        const { container } = render(<GuideHelp workflow="router" step="lan" completed />);
+        const { container } = render(<GuideHelper workflow="router" step="lan" next_step="some" completed />);
         expect(container.firstChild).toMatchSnapshot();
     });
 
     it("displays lan help without completed message - server workflow", () => {
-        const { container } = render(<GuideHelp workflow="bridge" step="lan" />);
+        const { container } = render(<GuideHelper workflow="bridge" step="lan" next_step="some"/>);
         expect(container.firstChild).toMatchSnapshot();
     });
 
     it("doesn't display completed message if it doesn't exist", () => {
-        const { container } = render(<GuideHelp workflow="bridge" step="finished" completed />);
+        const { container } = render(<GuideHelper workflow="bridge" step="finished" next_step="some" completed />);
         expect(container.firstChild).toMatchSnapshot();
     });
 
     it("doesn't display anything if step doesn't exist", () => {
-        const { container } = render(<GuideHelp workflow="router" step="qwe" completed />);
+        const { container } = render(<GuideHelper workflow="router" step="qwe" next_step="some" completed />);
         expect(container.firstChild).toMatchSnapshot();
     });
 
     it("doesn't display initial message if it doesn't exist", () => {
-        const { container } = render(<GuideHelp workflow="router" step="profile" />);
+        const { container } = render(<GuideHelper workflow="router" step="profile" next_step="some" />);
         expect(container.firstChild).toMatchSnapshot();
     });
 });
