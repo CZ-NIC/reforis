@@ -13,7 +13,7 @@ import { mockJSONError } from "foris/testUtils/network";
 import { mockSetAlert } from "foris/testUtils/alertContextMock";
 
 import mockAxios from "jest-mock-axios";
-import GuideFinish from "../GuideFinish";
+import GuideFinish from "../GuidePages/GuideFinish";
 
 describe("<GuideFinish/> and useGuideFinish hook", () => {
     let guideFinishContainer;

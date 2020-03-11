@@ -79,20 +79,5 @@ exports[`<GuideNavigation/> Snapshot. 1`] = `
       </a>
     </li>
   </ul>
-  <a
-    class="btn btn-lg btn-light "
-    href="/networks"
-    id="next-step-button"
-  >
-    <i
-      class="fas fa-arrow-right"
-    />
-  </a>
-  <button
-    class="btn btn-link"
-    type="button"
-  >
-    Skip guide
-  </button>
 </div>
 `;

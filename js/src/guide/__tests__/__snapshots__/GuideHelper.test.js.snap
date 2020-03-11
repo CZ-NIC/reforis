@@ -1,0 +1,379 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GuideHelp/> displays lan help with completed message 1`] = `
+<div
+  class="card guide-card"
+>
+  <div
+    class="card-body"
+  >
+    <p>
+      Now you should configure your LAN interface. Note that when you change your network settings you probably won't be able to connect to the configuration interface unless you restart the network on your current device.
+    </p>
+    <p
+      class="font-weight-bold"
+    >
+      You've configured your LAN interface. Try to test whether settings work properly and if so you can safely proceed to the next step.
+    </p>
+  </div>
+  <div
+    class="guide-controls"
+  >
+    <div
+      class="dropdown"
+    >
+      <button
+        class="nav-item btn guide-controls-button btn-primary"
+        type="button"
+      >
+        <div
+          class="spinner-border spinner-border-sm"
+          role="status"
+        >
+          <span
+            class="sr-only"
+          />
+        </div>
+      </button>
+      <div
+        class="dropdown-menu"
+        id="languages-dropdown-menu"
+      >
+        <div
+          class="dropdown-header"
+        >
+          <h5>
+            Languages
+          </h5>
+        </div>
+        <div
+          class="dropdown-divider"
+        />
+        <div
+          class="spinner-border spinner-border-sm"
+          role="status"
+        >
+          <span
+            class="sr-only"
+          />
+        </div>
+      </div>
+    </div>
+    <button
+      class="btn guide-controls-button btn btn-warning"
+      type="button"
+    >
+       
+       
+      <div
+        class="d-none d-sm-block"
+      >
+        Skip guide
+         
+      </div>
+      <i
+        class="fas fa-forward"
+      />
+    </button>
+    <a
+      class="guide-controls-button btn btn-primary blinking"
+      href="/some"
+    >
+      <div
+        class="d-none d-sm-block"
+      >
+        Next step
+      </div>
+      <i
+        class="fas fa-step-forward"
+      />
+    </a>
+  </div>
+</div>
+`;
+
+exports[`<GuideHelp/> displays lan help without completed message - server workflow 1`] = `
+<div
+  class="card guide-card"
+>
+  <div
+    class="card-body"
+  >
+    <p>
+      To act as a local server, there's no need to manage LAN (if you still want to manage it reset the guide and choose the Router workflow). You probably want to act as a client here thus select 
+      <strong>
+        Computer
+      </strong>
+       mode here.
+    </p>
+    <p>
+      If you select the 
+      <strong>
+        static
+      </strong>
+       configuration be sure that the IP addresses are entered correctly otherwise you won't be able to access this configuration interface when the new settings are applied.
+    </p>
+    <p>
+      If you select the 
+      <strong>
+        DHCP
+      </strong>
+       method you probably you need to obtain a new IP address of this device. You can obtain it from the DHCP server which is managing your LAN. Then you need to connect to the new IP address to proceed the guide.
+    </p>
+    <p>
+      Note that either way you might need to re-plug your ethernet cables after you update the settings here.
+    </p>
+  </div>
+  <div
+    class="guide-controls"
+  >
+    <div
+      class="dropdown"
+    >
+      <button
+        class="nav-item btn guide-controls-button btn-primary"
+        type="button"
+      >
+        <div
+          class="spinner-border spinner-border-sm"
+          role="status"
+        >
+          <span
+            class="sr-only"
+          />
+        </div>
+      </button>
+      <div
+        class="dropdown-menu"
+        id="languages-dropdown-menu"
+      >
+        <div
+          class="dropdown-header"
+        >
+          <h5>
+            Languages
+          </h5>
+        </div>
+        <div
+          class="dropdown-divider"
+        />
+        <div
+          class="spinner-border spinner-border-sm"
+          role="status"
+        >
+          <span
+            class="sr-only"
+          />
+        </div>
+      </div>
+    </div>
+    <button
+      class="btn guide-controls-button btn btn-warning"
+      type="button"
+    >
+       
+       
+      <div
+        class="d-none d-sm-block"
+      >
+        Skip guide
+         
+      </div>
+      <i
+        class="fas fa-forward"
+      />
+    </button>
+    <a
+      class="guide-controls-button btn btn-primary blinking"
+      href="/some"
+    >
+      <div
+        class="d-none d-sm-block"
+      >
+        Next step
+      </div>
+      <i
+        class="fas fa-step-forward"
+      />
+    </a>
+  </div>
+</div>
+`;
+
+exports[`<GuideHelp/> displays lan help without completed message 1`] = `
+<div
+  class="card guide-card"
+>
+  <div
+    class="card-body"
+  >
+    <p>
+      Now you should configure your LAN interface. Note that when you change your network settings you probably won't be able to connect to the configuration interface unless you restart the network on your current device.
+    </p>
+  </div>
+  <div
+    class="guide-controls"
+  >
+    <div
+      class="dropdown"
+    >
+      <button
+        class="nav-item btn guide-controls-button btn-primary"
+        type="button"
+      >
+        <div
+          class="spinner-border spinner-border-sm"
+          role="status"
+        >
+          <span
+            class="sr-only"
+          />
+        </div>
+      </button>
+      <div
+        class="dropdown-menu"
+        id="languages-dropdown-menu"
+      >
+        <div
+          class="dropdown-header"
+        >
+          <h5>
+            Languages
+          </h5>
+        </div>
+        <div
+          class="dropdown-divider"
+        />
+        <div
+          class="spinner-border spinner-border-sm"
+          role="status"
+        >
+          <span
+            class="sr-only"
+          />
+        </div>
+      </div>
+    </div>
+    <button
+      class="btn guide-controls-button btn btn-warning"
+      type="button"
+    >
+       
+       
+      <div
+        class="d-none d-sm-block"
+      >
+        Skip guide
+         
+      </div>
+      <i
+        class="fas fa-forward"
+      />
+    </button>
+    <a
+      class="guide-controls-button btn btn-primary blinking"
+      href="/some"
+    >
+      <div
+        class="d-none d-sm-block"
+      >
+        Next step
+      </div>
+      <i
+        class="fas fa-step-forward"
+      />
+    </a>
+  </div>
+</div>
+`;
+
+exports[`<GuideHelp/> doesn't display anything if step doesn't exist 1`] = `null`;
+
+exports[`<GuideHelp/> doesn't display completed message if it doesn't exist 1`] = `
+<div
+  class="card guide-card"
+>
+  <div
+    class="card-body"
+  >
+    <p>
+      Congratulations! Now your device should be able to act as a server on your local network.
+    </p>
+  </div>
+  <div
+    class="guide-controls"
+  >
+    <div
+      class="dropdown"
+    >
+      <button
+        class="nav-item btn guide-controls-button btn-primary"
+        type="button"
+      >
+        <div
+          class="spinner-border spinner-border-sm"
+          role="status"
+        >
+          <span
+            class="sr-only"
+          />
+        </div>
+      </button>
+      <div
+        class="dropdown-menu"
+        id="languages-dropdown-menu"
+      >
+        <div
+          class="dropdown-header"
+        >
+          <h5>
+            Languages
+          </h5>
+        </div>
+        <div
+          class="dropdown-divider"
+        />
+        <div
+          class="spinner-border spinner-border-sm"
+          role="status"
+        >
+          <span
+            class="sr-only"
+          />
+        </div>
+      </div>
+    </div>
+    <button
+      class="btn guide-controls-button btn btn-warning"
+      type="button"
+    >
+       
+       
+      <div
+        class="d-none d-sm-block"
+      >
+        Skip guide
+         
+      </div>
+      <i
+        class="fas fa-forward"
+      />
+    </button>
+    <a
+      class="guide-controls-button btn btn-primary blinking"
+      href="/some"
+    >
+      <div
+        class="d-none d-sm-block"
+      >
+        Next step
+      </div>
+      <i
+        class="fas fa-step-forward"
+      />
+    </a>
+  </div>
+</div>
+`;
+
+exports[`<GuideHelp/> doesn't display initial message if it doesn't exist 1`] = `null`;

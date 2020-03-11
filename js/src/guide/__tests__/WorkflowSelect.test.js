@@ -13,7 +13,7 @@ import mockAxios from "jest-mock-axios";
 import { mockJSONError } from "foris/testUtils/network";
 import { mockSetAlert } from "foris/testUtils/alertContextMock";
 
-import WorkflowSelect from "../WorkflowSelect";
+import WorkflowSelect from "../GuidePages/WorkflowSelect";
 import { workflowFixture } from "./__fixtures__/workflowSelect";
 
 describe("<WorkflowSelect/>", () => {

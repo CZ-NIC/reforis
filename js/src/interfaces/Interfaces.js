@@ -11,6 +11,7 @@ import PropTypes from "prop-types";
 import { ForisForm } from "foris";
 import API_URLs from "common/API";
 
+import "./Interfaces.css";
 import InterfacesForm from "./InterfacesForm";
 import { NETWORKS_TYPES } from "./constants";
 

@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 import { ForisURLs } from "foris";
 
-import NOTIFICATION_PROP_TYPES from "../utils";
+import NOTIFICATION_PROP_TYPES from "../../../notifications/utils";
 import NotificationsDropdownItem from "./NotificationsDropdownItem";
 import "./NotificationsDropdownMenu.css";
 

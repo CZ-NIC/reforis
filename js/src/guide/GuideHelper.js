@@ -1,19 +1,31 @@
+/*
+ * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See /LICENSE for more information.
+ */
+
 import React from "react";
 import PropTypes from "prop-types";
 
 import { HELP_CONTENT } from "./constants";
+import GuideControls from "./GuideControls/GuideControls";
 
-GuideHelp.propTypes = {
+GuideHelper.propTypes = {
+    ws: PropTypes.object.isRequired,
     workflow: PropTypes.string.isRequired,
     step: PropTypes.string.isRequired,
+    next_step: PropTypes.string.isRequired,
     completed: PropTypes.bool,
 };
 
-GuideHelp.defaultProps = {
+GuideHelper.defaultProps = {
     completed: false,
 };
 
-export default function GuideHelp({ workflow, step, completed }) {
+export default function GuideHelper({
+    ws, workflow, step, next_step, completed,
+}) {
     const stepContent = HELP_CONTENT[workflow][step];
     if (!stepContent) {
         return null;
@@ -25,11 +37,12 @@ export default function GuideHelp({ workflow, step, completed }) {
     }
 
     return (
-        <div className="card guide-card my-4">
+        <div className="card guide-card">
             <div className="card-body">
                 {stepContent.initial && <ParagraphsArray content={stepContent.initial} />}
                 {isCompletedVisible && <p className="font-weight-bold">{ stepContent.completed }</p>}
             </div>
+            <GuideControls ws={ws} next_step={next_step} />
         </div>
     );
 }
