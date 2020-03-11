@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2020-02-20 17:21+0100\n"
-"PO-Revision-Date: 2020-03-10 18:33+0000\n"
-"Last-Translator: Josef Schlehofer <pepe@bloodkings.eu>\n"
+"PO-Revision-Date: 2020-03-12 17:33+0000\n"
+"Last-Translator: Lukas Jelinek <lukas.jelinek@nic.cz>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/turris/reforis/cs/>"
 "\n"
 "Language: cs\n"
@@ -134,7 +134,7 @@ msgstr "Hodnota musí být kladná."
 
 #: js/src/common/network/DHCPValidators.js:69
 msgid "Invalid network settings. DHCP settings can't be validated."
-msgstr ""
+msgstr "Neplatné nastavení sítě. Nelze ověřit nastavení DHCP."
 
 #: js/src/common/network/DHCPValidators.js:79
 msgid "Minimum lease time is 1 hour."
@@ -142,15 +142,17 @@ msgstr "Minimální lease time je 1 hodina."
 
 #: js/src/common/network/DHCPValidators.js:90
 msgid "Address is outside current network."
-msgstr ""
+msgstr "Adresa je mimo aktuální síť."
 
 #: js/src/common/network/DHCPValidators.js:92
 msgid "Address is already reserved for other purposes."
-msgstr ""
+msgstr "Adresa je už rezervována pro jiné účely."
 
 #: js/src/common/network/DHCPValidators.js:95
 msgid "Too many addresses requested. Set a lower number or change DHCP start."
 msgstr ""
+"Požadováno příliš mnoho adres. Nastavte nižší číslo nebo změňte začátek "
+"rozsahu pro DHCP."
 
 #: js/src/common/network/DHCPValidators.js:97
 msgid ""
