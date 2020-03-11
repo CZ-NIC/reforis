@@ -6,7 +6,7 @@
  */
 
 import React from "react";
-import { getByText, render, wait } from "foris/testUtils/customTestRender";
+import { render, wait, getByText, getAllByText, } from "foris/testUtils/customTestRender";
 import { WebSockets } from "foris";
 import { mockJSONError } from "foris/testUtils/network";
 import mockAxios from "jest-mock-axios";
@@ -21,8 +21,14 @@ describe("<Guide/> ", () => {
     beforeEach(async () => {
         const webSockets = new WebSockets();
         const { container } = render(<Guide ws={webSockets} />);
+
         mockAxios.mockResponse({ data: guideFixtures });
         await wait(() => getByText(container, "Network Interfaces"));
+
+        mockAxios.mockResponse({ data: "en" });
+        mockAxios.mockResponse({ data: ["en", "cs", "ru"] });
+        await wait(() => getAllByText(container, "en"));
+
         mockAxios.mockResponse({ data: interfacesFixture() });
         await wait(() => getByText(container, "LAN1"));
         guideContainer = container;
@@ -32,7 +38,7 @@ describe("<Guide/> ", () => {
         expect(guideContainer).toMatchSnapshot();
     });
 
-    it("should handle error", async () => {
+    it("Should handle error.", async () => {
         const webSockets = new WebSockets();
         const { container } = render(<Guide ws={webSockets} />);
         mockJSONError();

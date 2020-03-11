@@ -19,8 +19,48 @@ exports[`<GuideHelp/> displays lan help with completed message 1`] = `
   <div
     class="guide-controls"
   >
+    <div
+      class="dropdown"
+    >
+      <button
+        class="nav-item btn guide-controls-button btn-primary"
+        type="button"
+      >
+        <div
+          class="spinner-border spinner-border-sm"
+          role="status"
+        >
+          <span
+            class="sr-only"
+          />
+        </div>
+      </button>
+      <div
+        class="dropdown-menu"
+        id="languages-dropdown-menu"
+      >
+        <div
+          class="dropdown-header"
+        >
+          <h5>
+            Languages
+          </h5>
+        </div>
+        <div
+          class="dropdown-divider"
+        />
+        <div
+          class="spinner-border spinner-border-sm"
+          role="status"
+        >
+          <span
+            class="sr-only"
+          />
+        </div>
+      </div>
+    </div>
     <button
-      class="btn guide-controls-button btn btn-warning col-3 offset-2 mb-3"
+      class="btn guide-controls-button btn btn-warning"
       type="button"
     >
        
@@ -36,7 +76,7 @@ exports[`<GuideHelp/> displays lan help with completed message 1`] = `
       />
     </button>
     <a
-      class="guide-controls-button btn btn-primary col-3 offset-2 mb-3 blinking"
+      class="guide-controls-button btn btn-primary blinking"
       href="/some"
     >
       <div
@@ -87,8 +127,48 @@ exports[`<GuideHelp/> displays lan help without completed message - server workf
   <div
     class="guide-controls"
   >
+    <div
+      class="dropdown"
+    >
+      <button
+        class="nav-item btn guide-controls-button btn-primary"
+        type="button"
+      >
+        <div
+          class="spinner-border spinner-border-sm"
+          role="status"
+        >
+          <span
+            class="sr-only"
+          />
+        </div>
+      </button>
+      <div
+        class="dropdown-menu"
+        id="languages-dropdown-menu"
+      >
+        <div
+          class="dropdown-header"
+        >
+          <h5>
+            Languages
+          </h5>
+        </div>
+        <div
+          class="dropdown-divider"
+        />
+        <div
+          class="spinner-border spinner-border-sm"
+          role="status"
+        >
+          <span
+            class="sr-only"
+          />
+        </div>
+      </div>
+    </div>
     <button
-      class="btn guide-controls-button btn btn-warning col-3 offset-2 mb-3"
+      class="btn guide-controls-button btn btn-warning"
       type="button"
     >
        
@@ -104,7 +184,7 @@ exports[`<GuideHelp/> displays lan help without completed message - server workf
       />
     </button>
     <a
-      class="guide-controls-button btn btn-primary col-3 offset-2 mb-3 blinking"
+      class="guide-controls-button btn btn-primary blinking"
       href="/some"
     >
       <div
@@ -134,8 +214,48 @@ exports[`<GuideHelp/> displays lan help without completed message 1`] = `
   <div
     class="guide-controls"
   >
+    <div
+      class="dropdown"
+    >
+      <button
+        class="nav-item btn guide-controls-button btn-primary"
+        type="button"
+      >
+        <div
+          class="spinner-border spinner-border-sm"
+          role="status"
+        >
+          <span
+            class="sr-only"
+          />
+        </div>
+      </button>
+      <div
+        class="dropdown-menu"
+        id="languages-dropdown-menu"
+      >
+        <div
+          class="dropdown-header"
+        >
+          <h5>
+            Languages
+          </h5>
+        </div>
+        <div
+          class="dropdown-divider"
+        />
+        <div
+          class="spinner-border spinner-border-sm"
+          role="status"
+        >
+          <span
+            class="sr-only"
+          />
+        </div>
+      </div>
+    </div>
     <button
-      class="btn guide-controls-button btn btn-warning col-3 offset-2 mb-3"
+      class="btn guide-controls-button btn btn-warning"
       type="button"
     >
        
@@ -151,7 +271,7 @@ exports[`<GuideHelp/> displays lan help without completed message 1`] = `
       />
     </button>
     <a
-      class="guide-controls-button btn btn-primary col-3 offset-2 mb-3 blinking"
+      class="guide-controls-button btn btn-primary blinking"
       href="/some"
     >
       <div
@@ -183,8 +303,48 @@ exports[`<GuideHelp/> doesn't display completed message if it doesn't exist 1`] 
   <div
     class="guide-controls"
   >
+    <div
+      class="dropdown"
+    >
+      <button
+        class="nav-item btn guide-controls-button btn-primary"
+        type="button"
+      >
+        <div
+          class="spinner-border spinner-border-sm"
+          role="status"
+        >
+          <span
+            class="sr-only"
+          />
+        </div>
+      </button>
+      <div
+        class="dropdown-menu"
+        id="languages-dropdown-menu"
+      >
+        <div
+          class="dropdown-header"
+        >
+          <h5>
+            Languages
+          </h5>
+        </div>
+        <div
+          class="dropdown-divider"
+        />
+        <div
+          class="spinner-border spinner-border-sm"
+          role="status"
+        >
+          <span
+            class="sr-only"
+          />
+        </div>
+      </div>
+    </div>
     <button
-      class="btn guide-controls-button btn btn-warning col-3 offset-2 mb-3"
+      class="btn guide-controls-button btn btn-warning"
       type="button"
     >
        
@@ -200,7 +360,7 @@ exports[`<GuideHelp/> doesn't display completed message if it doesn't exist 1`] 
       />
     </button>
     <a
-      class="guide-controls-button btn btn-primary col-3 offset-2 mb-3 blinking"
+      class="guide-controls-button btn btn-primary blinking"
       href="/some"
     >
       <div

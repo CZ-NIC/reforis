@@ -12,6 +12,7 @@ import { HELP_CONTENT } from "./constants";
 import GuideControls from "./GuideControls/GuideControls";
 
 GuideHelper.propTypes = {
+    ws: PropTypes.object.isRequired,
     workflow: PropTypes.string.isRequired,
     step: PropTypes.string.isRequired,
     next_step: PropTypes.string.isRequired,

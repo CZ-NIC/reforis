@@ -14,6 +14,7 @@ import NextStepButtonWithRouter from "./NextStepButton";
 import LanguagesDropdown from "../../main/TopBar/languagesDropdown/LanguagesDropdown";
 
 GuideControls.propTypes = {
+    ws: PropTypes.object.isRequired,
     next_step: PropTypes.string.isRequired,
 };
 

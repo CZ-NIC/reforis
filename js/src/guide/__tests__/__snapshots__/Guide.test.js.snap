@@ -18,8 +18,51 @@ exports[`<Guide/>  Snapshot. Just check if render correct page. 1`] = `
     <div
       class="guide-controls"
     >
+      <div
+        class="dropdown"
+      >
+        <button
+          class="nav-item btn guide-controls-button btn-primary"
+          type="button"
+        >
+          en
+        </button>
+        <div
+          class="dropdown-menu"
+          id="languages-dropdown-menu"
+        >
+          <div
+            class="dropdown-header"
+          >
+            <h5>
+              Languages
+            </h5>
+          </div>
+          <div
+            class="dropdown-divider"
+          />
+          <button
+            class="dropdown-item"
+            type="button"
+          >
+            en
+          </button>
+          <button
+            class="dropdown-item"
+            type="button"
+          >
+            cs
+          </button>
+          <button
+            class="dropdown-item"
+            type="button"
+          >
+            ru
+          </button>
+        </div>
+      </div>
       <button
-        class="btn guide-controls-button btn btn-warning col-3 offset-2 mb-3"
+        class="btn guide-controls-button btn btn-warning"
         type="button"
       >
          
@@ -35,7 +78,7 @@ exports[`<Guide/>  Snapshot. Just check if render correct page. 1`] = `
         />
       </button>
       <a
-        class="guide-controls-button btn btn-primary col-3 offset-2 mb-3 disabled"
+        class="guide-controls-button btn btn-primary disabled"
         disabled=""
         href="/reforis/guide/networks"
       >
