@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2020-02-20 17:21+0100\n"
-"PO-Revision-Date: 2020-03-13 18:33+0000\n"
+"PO-Revision-Date: 2020-03-14 21:37+0000\n"
 "Last-Translator: Florian <floflr@zaclys.net>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/turris/reforis/fr/"
 ">\n"
@@ -38,7 +38,7 @@ msgstr "Version Turris OS"
 
 #: js/src/about/About.js:52
 msgid "Turris OS branch"
-msgstr ""
+msgstr "Branche Turris OS"
 
 #: js/src/about/About.js:61
 msgid "Kernel version"
@@ -74,7 +74,7 @@ msgstr "Nom d’hôte DHCP"
 
 #: js/src/common/network/DHCPClientsList.js:19
 msgid "DHCP Clients"
-msgstr ""
+msgstr "Clients DHCP"
 
 #: js/src/common/network/DHCPClientsList.js:22
 msgid "No DHCP clients found."
@@ -118,7 +118,7 @@ msgstr "Baux maximums de DHCP"
 
 #: js/src/common/network/DHCPServerForm.js:54
 msgid "Maximum number of addresses available for DHCP clients."
-msgstr ""
+msgstr "Nombre maximal d'adresses disponibles pour les clients DHCP."
 
 #: js/src/common/network/DHCPServerForm.js:67
 msgid "Lease time (hours)"
@@ -126,23 +126,24 @@ msgstr "Durée du bail (heures)"
 
 #: js/src/common/network/DHCPValidators.js:57
 msgid "Value must be a number."
-msgstr ""
+msgstr "La valeur doit être un nombre."
 
 #: js/src/common/network/DHCPValidators.js:59
 msgid "Value must be positive."
-msgstr ""
+msgstr "La valeur doit être positive."
 
 #: js/src/common/network/DHCPValidators.js:69
 msgid "Invalid network settings. DHCP settings can't be validated."
 msgstr ""
+"Paramètres réseau invalides. Les paramètres DHCP ne peuvent pas être validés."
 
 #: js/src/common/network/DHCPValidators.js:79
 msgid "Minimum lease time is 1 hour."
-msgstr ""
+msgstr "La durée de bail minimale est de 1 heure."
 
 #: js/src/common/network/DHCPValidators.js:90
 msgid "Address is outside current network."
-msgstr ""
+msgstr "L'adresse est en dehors du réseau actuel."
 
 #: js/src/common/network/DHCPValidators.js:92
 msgid "Address is already reserved for other purposes."
@@ -196,7 +197,7 @@ msgstr "Ce champ est obligatoire."
 
 #: js/src/common/network/validators.js:12
 msgid "This is not a valid network mask."
-msgstr ""
+msgstr "Ce n’est pas un masque réseau valide."
 
 #: js/src/connectionTest/ConnectionTestButton.js:23
 msgid "Test is running..."
@@ -310,6 +311,14 @@ msgid ""
 "\n"
 "Do you still want to continue and stay unprotected?\n"
 msgstr ""
+"\n"
+"DNSSEC est une technologie de sécurité qui protège les communications DNS "
+"contre les attaques sur l’infrastructure DNS.\n"
+"Nous recommandons fortement de garder la validation de DNSSEC activée, sauf "
+"si vous savez que vous connecterez votre appareil dans un\n"
+"réseau où DNSSEC est cassé.\n"
+"\n"
+"Voulez-vous toujours continuer et rester sans protection ?\n"
 
 #: js/src/dns/DNSSECDisableModal.js:51
 msgid "Disable DNSSEC"
@@ -355,11 +364,11 @@ msgstr "Nom"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:59
 msgid "IPv4"
-msgstr ""
+msgstr "IPv4"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:69
 msgid "IPv6"
-msgstr ""
+msgstr "IPv6"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:79
 msgid "TLS type"
@@ -543,7 +552,7 @@ msgstr ""
 
 #: js/src/guide/WorkflowSelect.js:27
 msgid "Local Server"
-msgstr ""
+msgstr "Serveur local"
 
 #: js/src/guide/WorkflowSelect.js:28 js/src/lan/LANForm.js:29
 msgid "Router"
@@ -992,7 +1001,7 @@ msgstr "Protocole IPv4"
 #: js/src/languagesDropdown/LanguagesDropdown.js:36
 #: js/src/packageManagement/packages/LanguageForm.js:27
 msgid "Languages"
-msgstr ""
+msgstr "Langues"
 
 #: js/src/main/pages.js:32
 #: js/src/notifications/Notifications/NotificationsCenter.js:76
@@ -1965,6 +1974,8 @@ msgstr ""
 #: reforis/foris_controller_api/modules/updater.py:160
 msgid "You can't set packages with disabled automatic updates."
 msgstr ""
+"Vous ne pouvez pas définir de paquets avec les mises à jour automatiques "
+"désactivées."
 
 #: reforis/foris_controller_api/modules/updater.py:171
 msgid "Cannot start updater"
