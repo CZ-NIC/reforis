@@ -8,7 +8,7 @@
 import { useEffect } from "react";
 import update from "immutability-helper";
 import {
-    useAlert, useAPIPut, useAPIPost, useForm, API_STATE, ALERT_TYPES,
+    ALERT_TYPES, API_STATE, useAlert, useAPIPost, useAPIPut, useForm,
 } from "foris";
 import API_URLs from "common/API";
 import validator from "./validator";
@@ -17,8 +17,8 @@ const EMPTY_FORWARDER = {
     name: "",
     description: "",
     ipaddresses: {
-        ipv4: "",
-        ipv6: "",
+        ipv4: [""],
+        ipv6: [""],
     },
     tls_type: "no",
 };
@@ -82,6 +82,16 @@ function prepDataToSubmit(forwarder) {
         pin: ["tls_hostname"],
     };
     const fieldsToUnset = ["name", "editable"].concat(tlsUnsetRules[forwarder.tls_type]);
+    const ipAddresses = filterEmptyIPAddresses(forwarder.ipaddresses);
+    return update(forwarder, {
+        $unset: fieldsToUnset,
+        ipaddresses: { $set: ipAddresses },
+    });
+}
 
-    return update(forwarder, { $unset: fieldsToUnset });
+function filterEmptyIPAddresses(ipaddresses) {
+    return {
+        ipv4: ipaddresses.ipv4.filter((ipaddress) => !!ipaddress),
+        ipv6: ipaddresses.ipv6.filter((ipaddress) => !!ipaddress),
+    };
 }

@@ -8,11 +8,11 @@
 import PropTypes from "prop-types";
 
 const forwarderPropTypes = PropTypes.shape({
-    name: PropTypes.string,
-    description: PropTypes.string,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
     ipaddresses: PropTypes.shape({
-        ipv4: PropTypes.string,
-        ipv6: PropTypes.string,
+        ipv4: PropTypes.arrayOf(PropTypes.string).isRequired,
+        ipv6: PropTypes.arrayOf(PropTypes.string).isRequired,
     }),
     tls_type: PropTypes.oneOf(["no", "hostname", "pin"]),
     tls_hostname: PropTypes.string,
