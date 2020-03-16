@@ -27,7 +27,7 @@ export default function ForwarderModal({
     );
 
     return (
-        <Modal shown={shown} setShown={setShown}>
+        <Modal scrollable shown={shown} setShown={setShown}>
             <ModalHeader
                 setShown={setShown}
                 title={title}

@@ -6,7 +6,7 @@
     "url": "https://gitlab.labs.nic.cz/turris/reforis/reforis.git"
   },
   "license": "GPL-3.0",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "description": "Turris routers web configuration interface.",
   "main": "./src/app.js",
   "dependencies": {
@@ -14,7 +14,7 @@
     "axios": "^0.19.2",
     "bootstrap": "4.4.1",
     "bootswatch": "4.4.1",
-    "foris": "4.3.1",
+    "foris": "4.4.0",
     "immutability-helper": "3.0.1",
     "ipaddr": "npm:ipaddr.js@^1.9.1",
     "jquery": "^3.4.1",

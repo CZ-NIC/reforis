@@ -24,7 +24,7 @@ describe("<ForwarderForm/>: new forwarder.", () => {
 
     beforeEach(() => {
         saveForwarderCallback = jest.fn();
-        const renderRes = render(<ForwarderForm saveForwarderCallback={saveForwarderCallback} />);
+        const renderRes = render(<ForwarderForm saveForwarderCallback={saveForwarderCallback}/>);
         getByText = renderRes.getByText;
         getByLabelText = renderRes.getByLabelText;
         container = renderRes.container;
@@ -37,7 +37,9 @@ describe("<ForwarderForm/>: new forwarder.", () => {
 
     it("Test add new forwarder - handle success.", async () => {
         userEvent.type(getByLabelText("Name"), "Custom forwarder");
-        userEvent.type(getByLabelText("IPv4"), "1.2.3.4");
+        userEvent.type(getByLabelText("IPv4 #1"), "1.2.3.4");
+        fireEvent.click(getByText(/Add IPv4 address/));
+        userEvent.type(getByLabelText("IPv4 #2"), "2.2.2.2");
         fireEvent.click(getByText(/Save forwarder/));
 
         expect(mockAxios.post)
@@ -45,8 +47,8 @@ describe("<ForwarderForm/>: new forwarder.", () => {
         const data = {
             description: "Custom forwarder",
             ipaddresses: {
-                ipv4: "1.2.3.4",
-                ipv6: "",
+                ipv4: ["1.2.3.4", "2.2.2.2"],
+                ipv6: [],
             },
             tls_type: "no",
         };
@@ -56,18 +58,21 @@ describe("<ForwarderForm/>: new forwarder.", () => {
 
         // Handle success
         await wait(() => {
-            expect(saveForwarderCallback).toBeCalled();
+            expect(saveForwarderCallback)
+                .toBeCalled();
         });
-        expect(mockSetAlert).toBeCalledWith("Forwarder saved successfully.", ALERT_TYPES.SUCCESS);
+        expect(mockSetAlert)
+            .toBeCalledWith("Forwarder saved successfully.", ALERT_TYPES.SUCCESS);
     });
 
     it("Test add new forwarder - handle error.", async () => {
         userEvent.type(getByLabelText("Name"), "Custom forwarder");
-        userEvent.type(getByLabelText("IPv4"), "1.2.3.4");
+        userEvent.type(getByLabelText("IPv4 #1"), "1.2.3.4");
         fireEvent.click(getByText(/Save forwarder/));
         mockJSONError();
         await wait(() => {
-            expect(mockSetAlert).toBeCalledWith("Can't save forwarder.");
+            expect(mockSetAlert)
+                .toBeCalledWith("Can't save forwarder.");
         });
     });
 });
@@ -94,7 +99,7 @@ describe("<ForwarderForm/>: existed forwarder.", () => {
             .toMatchSnapshot();
     });
 
-    it("Test add new forwarder - handle success..", async () => {
+    it("Test edit forwarder - handle success..", async () => {
         fireEvent.click(getByText(/Save forwarder/));
 
         expect(mockAxios.put)
@@ -102,8 +107,8 @@ describe("<ForwarderForm/>: existed forwarder.", () => {
         const data = {
             description: "Google",
             ipaddresses: {
-                ipv4: "8.8.8.8",
-                ipv6: "2001:4860:4860::8888",
+                ipv4: ["8.8.8.8"],
+                ipv6: ["2001:4860:4860::8888"],
             },
             tls_type: "no",
         };
@@ -113,16 +118,19 @@ describe("<ForwarderForm/>: existed forwarder.", () => {
 
         // Handle success
         await wait(() => {
-            expect(saveForwarderCallback).toBeCalled();
+            expect(saveForwarderCallback)
+                .toBeCalled();
         });
-        expect(mockSetAlert).toBeCalledWith("Forwarder added successfully.", ALERT_TYPES.SUCCESS);
+        expect(mockSetAlert)
+            .toBeCalledWith("Forwarder added successfully.", ALERT_TYPES.SUCCESS);
     });
 
-    it("Test add new forwarder - handle error.", async () => {
+    it("Test edit forwarder - handle error.", async () => {
         fireEvent.click(getByText(/Save forwarder/));
         mockJSONError();
         await wait(() => {
-            expect(mockSetAlert).toBeCalledWith("Can't add new forwarder.");
+            expect(mockSetAlert)
+                .toBeCalledWith("Can't add new forwarder.");
         });
     });
 });

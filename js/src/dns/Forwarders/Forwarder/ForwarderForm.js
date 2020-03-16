@@ -13,6 +13,7 @@ import {
 
 import forwarderPropTypes from "../propTypes";
 import useForwarderForm from "./hooks";
+import IPAddressesForm from "./IPAddressesForm";
 
 const TLS_TYPES = {
     no: "No TLS",
@@ -55,24 +56,18 @@ export default function ForwarderForm({ forwarder, saveForwarderCallback }) {
                 )}
                 disabled={disabled}
             />
-            <TextInput
-                label={_("IPv4")}
-                value={formData.ipaddresses.ipv4}
-                error={(formErrors.ipaddresses || {}).ipv4}
-
-                onChange={setFormValue(
-                    (value) => ({ ipaddresses: { ipv4: { $set: value } } }),
-                )}
+            <IPAddressesForm
+                ipVersion="ipv4"
+                ipaddresses={formData.ipaddresses.ipv4}
+                setFormValue={setFormValue}
+                errors={(formErrors.ipaddresses || {}).ipv4}
                 disabled={disabled}
             />
-            <TextInput
-                label={_("IPv6")}
-                value={formData.ipaddresses.ipv6}
-
-                error={(formErrors.ipaddresses || {}).ipv6}
-                onChange={setFormValue(
-                    (value) => ({ ipaddresses: { ipv6: { $set: value } } }),
-                )}
+            <IPAddressesForm
+                ipVersion="ipv6"
+                ipaddresses={formData.ipaddresses.ipv6}
+                setFormValue={setFormValue}
+                errors={(formErrors.ipaddresses || {}).ipv6}
                 disabled={disabled}
             />
             <Select
