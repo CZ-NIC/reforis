@@ -11,8 +11,8 @@ const forwarderPropTypes = PropTypes.shape({
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     ipaddresses: PropTypes.shape({
-        ipv4: PropTypes.arrayOf(PropTypes.string).isRequired,
-        ipv6: PropTypes.arrayOf(PropTypes.string).isRequired,
+        ipv4: PropTypes.arrayOf(PropTypes.string),
+        ipv6: PropTypes.arrayOf(PropTypes.string),
     }),
     tls_type: PropTypes.oneOf(["no", "hostname", "pin"]),
     tls_hostname: PropTypes.string,

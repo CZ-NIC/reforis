@@ -37,7 +37,7 @@ describe("<ForwarderForm/>: new forwarder.", () => {
 
     it("Test add new forwarder - handle success.", async () => {
         userEvent.type(getByLabelText("Name"), "Custom forwarder");
-        userEvent.type(getByLabelText("IPv4"), "1.2.3.4");
+        userEvent.type(getByLabelText("IPv4 #1"), "1.2.3.4");
         fireEvent.click(getByText(/Save forwarder/));
 
         expect(mockAxios.post)
@@ -45,8 +45,8 @@ describe("<ForwarderForm/>: new forwarder.", () => {
         const data = {
             description: "Custom forwarder",
             ipaddresses: {
-                ipv4: "1.2.3.4",
-                ipv6: "",
+                ipv4: ["1.2.3.4"],
+                ipv6: [],
             },
             tls_type: "no",
         };
@@ -63,7 +63,7 @@ describe("<ForwarderForm/>: new forwarder.", () => {
 
     it("Test add new forwarder - handle error.", async () => {
         userEvent.type(getByLabelText("Name"), "Custom forwarder");
-        userEvent.type(getByLabelText("IPv4"), "1.2.3.4");
+        userEvent.type(getByLabelText("IPv4 #1"), "1.2.3.4");
         fireEvent.click(getByText(/Save forwarder/));
         mockJSONError();
         await wait(() => {
@@ -102,8 +102,8 @@ describe("<ForwarderForm/>: existed forwarder.", () => {
         const data = {
             description: "Google",
             ipaddresses: {
-                ipv4: "8.8.8.8",
-                ipv6: "2001:4860:4860::8888",
+                ipv4: ["8.8.8.8"],
+                ipv6: ["2001:4860:4860::8888"],
             },
             tls_type: "no",
         };

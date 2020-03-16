@@ -21,43 +21,73 @@ exports[`<ForwarderForm/>: existed forwarder. Test with snapshot. 1`] = `
       />
     </div>
   </div>
+  <h5>
+    IPv4 Addresses
+  </h5>
   <div
-    class="form-group"
+    class="offset-1 col-10"
   >
-    <label
-      for="2"
-    >
-      IPv4
-    </label>
     <div
-      class="input-group"
+      class="form-group"
     >
-      <input
-        class="form-control"
-        id="2"
-        type="text"
-        value="8.8.8.8"
-      />
+      <label
+        for="2"
+      >
+        IPv4 #1
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control"
+          id="2"
+          type="text"
+          value="8.8.8.8"
+        />
+      </div>
     </div>
+    <button
+      class="btn btn-outline-success btn-sm col-12 mb-2"
+      type="button"
+    >
+       
+       
+      Add IPv4 address
+    </button>
   </div>
+  <h5>
+    IPv6 Addresses
+  </h5>
   <div
-    class="form-group"
+    class="offset-1 col-10"
   >
-    <label
-      for="3"
-    >
-      IPv6
-    </label>
     <div
-      class="input-group"
+      class="form-group"
     >
-      <input
-        class="form-control"
-        id="3"
-        type="text"
-        value="2001:4860:4860::8888"
-      />
+      <label
+        for="3"
+      >
+        IPv6 #1
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control"
+          id="3"
+          type="text"
+          value="2001:4860:4860::8888"
+        />
+      </div>
     </div>
+    <button
+      class="btn btn-outline-success btn-sm col-12 mb-2"
+      type="button"
+    >
+       
+       
+      Add IPv6 address
+    </button>
   </div>
   <div
     class="form-group"
@@ -125,53 +155,83 @@ exports[`<ForwarderForm/>: new forwarder. Test with snapshot. 1`] = `
       Forwarder name should have at least one symbol.
     </div>
   </div>
+  <h5>
+    IPv4 Addresses
+  </h5>
   <div
-    class="form-group"
+    class="offset-1 col-10"
   >
-    <label
-      for="2"
-    >
-      IPv4
-    </label>
     <div
-      class="input-group"
+      class="form-group"
     >
-      <input
-        class="form-control  is-invalid"
-        id="2"
-        type="text"
-        value=""
-      />
+      <label
+        for="2"
+      >
+        IPv4 #1
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control  is-invalid"
+          id="2"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="invalid-feedback"
+      >
+        Define at least one of the IP addresses of the forwarder.
+      </div>
     </div>
-    <div
-      class="invalid-feedback"
+    <button
+      class="btn btn-outline-success btn-sm col-12 mb-2"
+      type="button"
     >
-      Define at least one of the IP addresses of the forwarder.
-    </div>
+       
+       
+      Add IPv4 address
+    </button>
   </div>
+  <h5>
+    IPv6 Addresses
+  </h5>
   <div
-    class="form-group"
+    class="offset-1 col-10"
   >
-    <label
-      for="3"
-    >
-      IPv6
-    </label>
     <div
-      class="input-group"
+      class="form-group"
     >
-      <input
-        class="form-control  is-invalid"
-        id="3"
-        type="text"
-        value=""
-      />
+      <label
+        for="3"
+      >
+        IPv6 #1
+      </label>
+      <div
+        class="input-group"
+      >
+        <input
+          class="form-control  is-invalid"
+          id="3"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="invalid-feedback"
+      >
+        Define at least one of the IP addresses of the forwarder.
+      </div>
     </div>
-    <div
-      class="invalid-feedback"
+    <button
+      class="btn btn-outline-success btn-sm col-12 mb-2"
+      type="button"
     >
-      Define at least one of the IP addresses of the forwarder.
-    </div>
+       
+       
+      Add IPv6 address
+    </button>
   </div>
   <div
     class="form-group"
