@@ -18,10 +18,7 @@ IPAddressesForm.propTypes = {
     ipVersion: PropTypes.string.isRequired,
     ipaddresses: PropTypes.arrayOf(PropTypes.string).isRequired,
     setFormValue: PropTypes.func.isRequired,
-    errors: PropTypes.shape({
-        ipv4: PropTypes.arrayOf(PropTypes.string),
-        ipv6: PropTypes.arrayOf(PropTypes.string),
-    }),
+    errors: PropTypes.arrayOf(PropTypes.string),
     disabled: PropTypes.bool,
 };
 
