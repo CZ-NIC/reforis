@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2020-02-20 17:21+0100\n"
-"PO-Revision-Date: 2020-03-17 11:10+0000\n"
-"Last-Translator: XoD DarK <xod@xoddark.com>\n"
+"PO-Revision-Date: 2020-03-18 21:36+0000\n"
+"Last-Translator: Florian <floflr@zaclys.net>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/turris/reforis/fr/"
 ">\n"
 "Language: fr\n"
@@ -946,7 +946,6 @@ msgstr ""
 "        "
 
 #: js/src/interfaces/Interfaces.js:77
-#, fuzzy
 msgid "You have to assign at least one interface to this group."
 msgstr "Vous devez attribuer au moins une interface à ce groupe."
 
@@ -964,7 +963,6 @@ msgid "There are no interfaces in this group."
 msgstr "Il n'y a aucune interface dans ce groupe."
 
 #: js/src/interfaces/Network.js:61
-#, fuzzy
 msgid "Base module"
 msgstr "Module de base"
 
@@ -1078,7 +1076,7 @@ msgstr "Ordinateur"
 
 #: js/src/lan/LANForm.js:75
 msgid "LAN Settings"
-msgstr "Paramètres LAN"
+msgstr "Paramètres réseau local"
 
 #: js/src/lan/LANForm.js:77
 msgid "LAN mode"
@@ -1156,7 +1154,7 @@ msgstr "Administration avancée"
 #: js/src/notifications/Notifications/NotificationsCenter.js:51
 #: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:90
 msgid "Dismiss all"
-msgstr ""
+msgstr "Tout ignorer"
 
 #: js/src/notifications/Notifications/NotificationsCenter.js:64
 #: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:29
