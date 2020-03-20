@@ -69,9 +69,12 @@ export default function IPAddressesForm({
                         )}
                     </TextInput>
                 ))}
-                <Button className="btn-outline-success btn-sm col-12 mb-2" onClick={addIP}>
-                    {_(`Add ${label} address`)}
-                </Button>
+                { ipaddresses.length < 2
+                    && (
+                        <Button className="btn-outline-success btn-sm col-12 mb-2" onClick={addIP}>
+                            {_(`Add ${label} address`)}
+                        </Button>
+                    )}
             </div>
         </>
     );
