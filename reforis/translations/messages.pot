@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-03-11 16:18+0100\n"
+"POT-Creation-Date: 2020-03-23 13:30+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -332,37 +332,49 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:24
+#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:25
 msgid "base64 encoded sha256."
 msgstr ""
 
-#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:49
+#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:50
 #: js/src/packageManagement/updates/UpdateApproval.js:97
 msgid "Name"
 msgstr ""
 
-#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:59
-msgid "IPv4"
-msgstr ""
-
-#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:69
-msgid "IPv6"
-msgstr ""
-
-#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:79
+#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:74
 msgid "TLS type"
 msgstr ""
 
-#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:100
+#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:95
 msgid "TLS hostname"
 msgstr ""
 
-#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:113
+#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:108
 msgid "TLS pin"
 msgstr ""
 
-#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:129
+#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:124
 msgid "Save forwarder"
+msgstr ""
+
+#: js/src/dns/Forwarders/Forwarder/IPAddressesForm.js:13
+msgid "IPv4"
+msgstr ""
+
+#: js/src/dns/Forwarders/Forwarder/IPAddressesForm.js:14
+msgid "IPv6"
+msgstr ""
+
+#: js/src/dns/Forwarders/Forwarder/IPAddressesForm.js:47
+msgid "${label} Addresses"
+msgstr ""
+
+#: js/src/dns/Forwarders/Forwarder/IPAddressesForm.js:52
+msgid "${label} #${index + 1}"
+msgstr ""
+
+#: js/src/dns/Forwarders/Forwarder/IPAddressesForm.js:75
+msgid "Add ${label} address"
 msgstr ""
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:37
@@ -381,20 +393,20 @@ msgstr ""
 msgid "Can't add new forwarder."
 msgstr ""
 
-#: js/src/dns/Forwarders/Forwarder/validator.js:19
-msgid "Define at least one of the IP addresses of the forwarder."
-msgstr ""
-
-#: js/src/dns/Forwarders/Forwarder/validator.js:24
+#: js/src/dns/Forwarders/Forwarder/validator.js:18
 msgid "Forwarder name should have at least one symbol."
 msgstr ""
 
-#: js/src/dns/Forwarders/Forwarder/validator.js:33
+#: js/src/dns/Forwarders/Forwarder/validator.js:24
 msgid "Hostname should have at least one symbol."
 msgstr ""
 
-#: js/src/dns/Forwarders/Forwarder/validator.js:37
+#: js/src/dns/Forwarders/Forwarder/validator.js:28
 msgid "TLS pin should have at least one symbol."
+msgstr ""
+
+#: js/src/dns/Forwarders/Forwarder/validator.js:37
+msgid "Define at least one of the IP addresses of the forwarder."
 msgstr ""
 
 #: js/src/guestNetwork/GuestNetwork.js:29 js/src/interfaces/Interfaces.js:50
