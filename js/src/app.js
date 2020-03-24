@@ -11,6 +11,11 @@
 // eslint-disable-next-line
 import "expose-loader?ReactRouterDOM!react-router-dom";
 
+// eslint-disable-next-line
+import pdfMake from "expose-loader?pdfMake!pdfmake/build/pdfmake";
+// eslint-disable-next-line
+import pdfFonts from "pdfmake/build/vfs_fonts";
+
 import React from "react";
 import { render } from "react-dom";
 import "@fortawesome/fontawesome-free/js/all.min";
@@ -23,6 +28,8 @@ import RouterStateHandler from "routerStateHandler/RouterStateHandler";
 
 import Main from "main/Main";
 import Guide from "guide/Guide";
+
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 const ws = new WebSockets();
 
