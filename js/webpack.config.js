@@ -64,6 +64,13 @@ module.exports = (env) => ({
                 }],
             },
             {
+                test: require.resolve("pdfmake/build/pdfmake"),
+                use: [{
+                    loader: "expose-loader",
+                    options: "pdfMake",
+                }],
+            },
+            {
                 test: /\.css$/,
                 use: [
                     MiniCssExtractPlugin.loader,
