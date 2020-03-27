@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2020-02-20 17:21+0100\n"
-"PO-Revision-Date: 2020-03-12 17:33+0000\n"
-"Last-Translator: Lukas Jelinek <lukas.jelinek@nic.cz>\n"
+"PO-Revision-Date: 2020-03-28 23:09+0000\n"
+"Last-Translator: Josef Schlehofer <pepe@bloodkings.eu>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/turris/reforis/cs/>"
 "\n"
 "Language: cs\n"
@@ -981,11 +981,7 @@ msgstr "Slot"
 
 #: js/src/interfaces/SelectedInterface.js:93
 msgid "Interface ID"
-msgstr ""
-"Identifikátor rozhraní\n"
-"Nemáte žádné rozhraní přiřazené do LAN sítě.<br/>\n"
-"Chcete <strong>otevřít porty 22, 80 a 443 na WAN síti</strong>, abyste "
-"mohli přistupovat ke správnímu rozhraní svého routeru?"
+msgstr "ID Rozhraní"
 
 #: js/src/interfaces/SelectedInterface.js:97
 msgid "Type"
@@ -2124,7 +2120,7 @@ msgstr "Přejít do rozhraní LuCI"
 
 #: reforis/templates/errors/403.html:4
 msgid "403 - Forbidden"
-msgstr "403 – odepřeno"
+msgstr "403 – Přístup zamítnut"
 
 #: reforis/templates/errors/403.html:9
 msgid "Forbidden You don't have permission to access"
@@ -2137,11 +2133,11 @@ msgstr "Chcete se <a href=\"%(link)s\">přihlásit</a>?"
 
 #: reforis/templates/errors/404.html:4
 msgid "404 - Page not found"
-msgstr "404 – stránka nenalezena"
+msgstr "404 – Stránka nenalezena"
 
 #: reforis/templates/errors/404.html:9
 msgid "Page not found :("
-msgstr "Stránka nenalezena :("
+msgstr "Stránka nenalezena. :("
 
 #: reforis/templates/errors/500.html:4
 msgid "Server error"
@@ -2149,7 +2145,7 @@ msgstr "Chyba serveru"
 
 #: reforis/templates/errors/500.html:8
 msgid "500 -- Server error"
-msgstr "500 – chyba serveru"
+msgstr "500 – Chyba serveru"
 
 #: reforis/templates/errors/500.html:9
 msgid "Error:"
@@ -2157,11 +2153,11 @@ msgstr "Chyba:"
 
 #: reforis/templates/errors/500.html:12
 msgid "Extra:"
-msgstr "Další:"
+msgstr "Extra:"
 
 #: reforis/templates/errors/500.html:16
 msgid "Trace:"
-msgstr ""
+msgstr "Trace:"
 
 #: reforis/templates/includes/top-bar.html:4
 msgid "Logout"
