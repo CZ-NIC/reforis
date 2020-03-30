@@ -1888,7 +1888,7 @@ msgid "Server error"
 msgstr ""
 
 #: reforis/templates/errors/500.html:8
-msgid "500 -- Server error"
+msgid "500 - Server error"
 msgstr ""
 
 #: reforis/templates/errors/500.html:9
