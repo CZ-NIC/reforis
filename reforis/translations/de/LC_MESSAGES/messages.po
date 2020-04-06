@@ -8,40 +8,41 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2020-02-20 17:21+0100\n"
-"PO-Revision-Date: 2019-09-02 07:21+0000\n"
-"Last-Translator: Ulrich Günther <mail@ulrich-guenther.at>\n"
+"PO-Revision-Date: 2020-04-07 05:51+0000\n"
+"Last-Translator: BMN <weblate@yopmail.com>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/turris/reforis/de/"
+">\n"
 "Language: de\n"
-"Language-Team: German "
-"<https://hosted.weblate.org/projects/turris/reforis/de/>\n"
-"Plural-Forms: nplurals=2; plural=n != 1\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.0-dev\n"
 "Generated-By: Babel 2.7.0\n"
 
 #: js/src/about/About.js:22 js/src/main/pages.js:133
 msgid "About"
-msgstr ""
+msgstr "Info"
 
 #: js/src/about/About.js:40
 msgid "Device"
-msgstr ""
+msgstr "Gerät"
 
 #: js/src/about/About.js:44
 msgid "Serial number"
-msgstr ""
+msgstr "Seriennummer"
 
 #: js/src/about/About.js:48
 msgid "Turris OS version"
-msgstr ""
+msgstr "Turris OS Version"
 
 #: js/src/about/About.js:52
 msgid "Turris OS branch"
-msgstr ""
+msgstr "Turris OS Branch"
 
 #: js/src/about/About.js:61
 msgid "Kernel version"
-msgstr ""
+msgstr "Kernel-Version"
 
 #: js/src/common/RebootButton.js:42 js/src/main/pages.js:97
 msgid "Reboot"
@@ -49,19 +50,19 @@ msgstr "Systemneustart"
 
 #: js/src/common/RebootButton.js:57 js/src/dns/DNSSECDisableModal.js:32
 msgid "Warning!"
-msgstr ""
+msgstr "Warnung!"
 
 #: js/src/common/RebootButton.js:58
 msgid "Are you sure you want to restart the router?"
-msgstr ""
+msgstr "Wollen Sie den Router wirklich neu starten?"
 
 #: js/src/common/RebootButton.js:60 js/src/dns/DNSSECDisableModal.js:42
 msgid "Cancel"
-msgstr ""
+msgstr "Abbrechen"
 
 #: js/src/common/RebootButton.js:61
 msgid "Confirm reboot"
-msgstr ""
+msgstr "Neustart bestätigen"
 
 #: js/src/common/network/DHCPClientForm.js:14
 msgid "Hostname which will be provided to DHCP server."
@@ -73,31 +74,31 @@ msgstr "DHCP Hostname"
 
 #: js/src/common/network/DHCPClientsList.js:19
 msgid "DHCP Clients"
-msgstr ""
+msgstr "DHCP-Clients"
 
 #: js/src/common/network/DHCPClientsList.js:22
 msgid "No DHCP clients found."
-msgstr ""
+msgstr "Keine DHCP-Clients gefunden."
 
 #: js/src/common/network/DHCPClientsList.js:27
 msgid "Expires"
-msgstr ""
+msgstr "Verfällt"
 
 #: js/src/common/network/DHCPClientsList.js:28
 msgid "IP Address"
-msgstr ""
+msgstr "IP-Adresse"
 
 #: js/src/common/network/DHCPClientsList.js:29
 msgid "MAC Address"
-msgstr ""
+msgstr "MAC-Adresse"
 
 #: js/src/common/network/DHCPClientsList.js:30
 msgid "Hostname"
-msgstr ""
+msgstr "Rechnername"
 
 #: js/src/common/network/DHCPClientsList.js:31
 msgid "Active"
-msgstr ""
+msgstr "Aktiv"
 
 #: js/src/common/network/DHCPServerForm.js:13
 msgid ""
@@ -117,7 +118,7 @@ msgstr "Anzahl der zugewiesenen IP-Adressen"
 
 #: js/src/common/network/DHCPServerForm.js:54
 msgid "Maximum number of addresses available for DHCP clients."
-msgstr ""
+msgstr "Anzahl der maximalen für DHCP-Clients verfügbaren Adressen."
 
 #: js/src/common/network/DHCPServerForm.js:67
 msgid "Lease time (hours)"
@@ -125,45 +126,51 @@ msgstr "Lease-Zeit (in Stunden)"
 
 #: js/src/common/network/DHCPValidators.js:57
 msgid "Value must be a number."
-msgstr ""
+msgstr "Wert muss eine Nummer sein."
 
 #: js/src/common/network/DHCPValidators.js:59
 msgid "Value must be positive."
-msgstr ""
+msgstr "Wert muss positiv sein."
 
 #: js/src/common/network/DHCPValidators.js:69
 msgid "Invalid network settings. DHCP settings can't be validated."
 msgstr ""
+"Ungültige Netzwerkeinstellungen. DHCP-Einstellungen können nicht validiert "
+"werden."
 
 #: js/src/common/network/DHCPValidators.js:79
 msgid "Minimum lease time is 1 hour."
-msgstr ""
+msgstr "Minimale Lease-Zeit beträgt 1 Stunde."
 
 #: js/src/common/network/DHCPValidators.js:90
 msgid "Address is outside current network."
-msgstr ""
+msgstr "Adresse ist außerhalb des aktuellen Netzwerks."
 
 #: js/src/common/network/DHCPValidators.js:92
 msgid "Address is already reserved for other purposes."
-msgstr ""
+msgstr "Adresse ist bereits für andere Verwendungszwecke reserviert."
 
 #: js/src/common/network/DHCPValidators.js:95
 msgid "Too many addresses requested. Set a lower number or change DHCP start."
 msgstr ""
+"Zu viele Adressen angefordert. Setzen Sie eine niedrigere Nummer oder ändern "
+"sie den DHCP-Start."
 
 #: js/src/common/network/DHCPValidators.js:97
 msgid ""
 "The only DHCP lease is the same as router's address. Increase limit or "
 "change start address."
 msgstr ""
+"Der einzige DHCP-Lease ist der selbe wie die Router-Adresse. Erhöhen Sie das "
+"Limit oder ändern Sie die Startadresse."
 
 #: js/src/common/network/StaticIPForm.js:14 js/src/wan/WAN6Form.js:29
 msgid ""
 "DNS server address is not required as the built-in DNS resolver is "
 "capable of working without it."
 msgstr ""
-"Die DNS-Serveradresse wird nicht benötigt, der eingebaute DNS Resolver "
-"ist fähig ohne diese Angaben zu arbeiten."
+"Die DNS-Serveradresse wird nicht benötigt, der eingebaute DNS-Resolver ist "
+"fähig ohne diese Angaben zu arbeiten."
 
 #: js/src/common/network/StaticIPForm.js:43
 msgid "IP address"
@@ -195,7 +202,7 @@ msgstr "Dieses Feld ist erforderlich."
 
 #: js/src/common/network/validators.js:12
 msgid "This is not a valid network mask."
-msgstr ""
+msgstr "Dies ist keine gültige Netzwerkmaske."
 
 #: js/src/connectionTest/ConnectionTestButton.js:23
 msgid "Test is running..."
@@ -250,6 +257,29 @@ msgid ""
 "this is a serious flaw on their side.\n"
 "            "
 msgstr ""
+"\n"
+"Router Turris verwendet seinen eigenen DNS-Auflöser mit DNSSEC-Unterstützung."
+"\n"
+"Es ist in der Lage, unabhängig zu arbeiten, oder kann Ihre DNS-Anfragen an "
+"den DNS-Auflöser Ihres Internetdienstleisters weiterleiten.\n"
+"<br/><br/>\n"
+"Die folgende Einstellung bestimmt das Verhalten des DNS-Auflösers.\n"
+"Normalerweise ist es besser, den Internetdienstleister-Auflöser (ISP-"
+"Resolver) in Netzwerken, in denen er ordnungsgemäß funktioniert, zu "
+"verwenden.\n"
+"Sollte dieser aus bestimmten Gründen nicht funktionieren, ist es notwendig, "
+"direktes Auflösen ohne Weiterleitung zu verwenden.\n"
+"<br/><br/>\n"
+"In seltenen Fällen haben Internetdienstleister ein falsch konfiguriertes "
+"Netzwerk, was die DNSSEC-Validierung beeinträchtigt.\n"
+"Wenn Probleme mit DNS auftreten, können Sie die DNSSEC-Validierung "
+"<b>vorübergehend</b> deaktivieren, um die Quelle des Problems zu ermitteln.\n"
+"Beachten Sie jedoch, dass Sie ohne DNSSEC-Validierung für DNS-Spoofing-"
+"Angriffe anfällig sind.\n"
+"<b>Wir empfehlen daher, DNSSEC aktiviert zu lassen</b> und die Situation mit "
+"Ihrem Internetdienstleister zu lösen,\n"
+"weil dies ein schwerwiegender Fehler auf dessen Seite ist.\n"
+"            "
 
 #: js/src/dns/DNS.js:63 js/src/wan/WAN.js:50
 msgid "Connection Test"
@@ -264,34 +294,44 @@ msgid ""
 "changed your forwarder setting.\n"
 "        "
 msgstr ""
+"\n"
+"Hier können Sie Ihre Internetverbindung prüfen. Der Test ist nützlich, wenn "
+"Sie die korrekte Funktion des DNS-Resolvers überprüfen wollen.\n"
+"Vergessen Sie nicht, die <b>Speichern</b>-Schaltfläche zu betätigen, wenn "
+"Sie die Einstellungen geändert haben.\n"
+"        "
 
 #: js/src/dns/DNSForm.js:17
 msgid ""
 "This will enable your DNS resolver to place DHCP client's names among the"
 " local DNS records."
 msgstr ""
+"Dies ermöglicht der DNS-Namensauflösung den lokalen DNS-Einträgen "
+"ausgelesene DHCP-Client-Namen hinzuzufügen."
 
 #: js/src/dns/DNSForm.js:18
 msgid ""
 "This domain will be used as suffix. E.g. The result for client "
 "\"android-123\" and domain \"my.lan\" will be \"android-123.my.lan\"."
 msgstr ""
+"Diese Domäne wird als Präfix genutzt. Z. B. für das Gerät \"android-123\" "
+"und der Domäne \"my.lan\" wäre das Ergebnis dann \"android-123.my.lan\"."
 
 #: js/src/dns/DNSForm.js:71
 msgid "Use forwarding"
-msgstr ""
+msgstr "Weiterleitung benutzen"
 
 #: js/src/dns/DNSForm.js:87
 msgid "Enable DNSSEC"
-msgstr ""
+msgstr "DNSSEC aktivieren"
 
 #: js/src/dns/DNSForm.js:95
 msgid "Enable DHCP clients in DNS"
-msgstr ""
+msgstr "DHCP auf DNS-Geräten aktivieren"
 
 #: js/src/dns/DNSForm.js:106
 msgid "Domain of DHCP clients in DNS"
-msgstr ""
+msgstr "Domäne der DHCP-Geräte im DNS"
 
 #: js/src/dns/DNSSECDisableModal.js:15
 msgid ""
@@ -307,7 +347,7 @@ msgstr ""
 
 #: js/src/dns/DNSSECDisableModal.js:51
 msgid "Disable DNSSEC"
-msgstr ""
+msgstr "DNSSEC deaktivieren"
 
 #: js/src/dns/Forwarders/Forwarders.js:79
 msgid "Edit forwarder"
@@ -328,7 +368,7 @@ msgstr ""
 
 #: js/src/dns/Forwarders/ForwardersTable.js:40
 msgid "Use provider's DNS resolver"
-msgstr ""
+msgstr "DNS-Resolver des Providers verwenden"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:132
 msgid "Edit"
@@ -345,7 +385,7 @@ msgstr ""
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:49
 #: js/src/packageManagement/updates/UpdateApproval.js:98
 msgid "Name"
-msgstr ""
+msgstr "Name"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:59
 msgid "IPv4"
@@ -406,7 +446,7 @@ msgstr ""
 #: js/src/guestNetwork/GuestNetwork.js:29 js/src/interfaces/Interfaces.js:49
 #: js/src/interfaces/constants.js:11 js/src/main/pages.js:69
 msgid "Guest Network"
-msgstr ""
+msgstr "Gastnetzwerk"
 
 #: js/src/guestNetwork/GuestNetwork.js:31
 msgid ""
@@ -433,14 +473,16 @@ msgid ""
 "This option enables you to set a bandwidth limit for the guest network, "
 "so that your main network doesn't get slowed-down by it."
 msgstr ""
+"Diese Option erlaubt es, die Bandbreite des Gastnetzwerkes zu limitieren. So "
+"verlangsamt es nicht Ihr Heimnetzwerk."
 
 #: js/src/guestNetwork/GuestNetworkForm.js:23
 msgid "Download speed in guest network (in kilobits per second)."
-msgstr ""
+msgstr "Downloadgeschwindigkeit im Gastnetzwerk (kbit/s)."
 
 #: js/src/guestNetwork/GuestNetworkForm.js:24
 msgid "Upload speed in guest network (in kilobits per second)."
-msgstr ""
+msgstr "Uploadgeschwindigkeit im Gastnetzwerk (kbit/s)."
 
 #: js/src/guestNetwork/GuestNetworkForm.js:58
 msgid "Enable"
@@ -476,7 +518,7 @@ msgstr ""
 
 #: js/src/guide/GuideFinish.js:18
 msgid "Guide Finished"
-msgstr ""
+msgstr "Leitfaden Fertig"
 
 #: js/src/guide/GuideFinish.js:20
 msgid ""
@@ -495,7 +537,7 @@ msgstr ""
 
 #: js/src/guide/GuideFinish.js:31
 msgid "Continue"
-msgstr ""
+msgstr "Weiter"
 
 #: js/src/guide/GuideNavigation.js:43
 msgid "Skip guide"
@@ -508,6 +550,10 @@ msgid ""
 "other devices within your local network (e.g. act as a network-attached "
 "storage)."
 msgstr ""
+"Diese Arbeitsschritte helfen Ihnen, das Gerät so einzurichten, dass es als "
+"lokaler Server arbeitet. Das bedeutet, dass dieses Gerät den anderen Geräten "
+"in Ihrem lokalen Netzwerk einen Dienst zur Verfügung stellt (z.B. als "
+"Netzwerkspeicher arbeitet)."
 
 #: js/src/guide/WorkflowSelect.js:22
 msgid ""
@@ -515,16 +561,22 @@ msgid ""
 " functional router. It assumes that you want to have more or less "
 "standard network setup."
 msgstr ""
+"Nachdem Sie diesen Workflow abgeschlossen haben, kann Ihr Gerät als "
+"vollwertiger Router arbeiten. Es wird davon ausgegangen, dass Sie eine mehr "
+"oder weniger standardmäßige Netzwerkeinrichtung wünschen."
 
 #: js/src/guide/WorkflowSelect.js:23
 msgid ""
 "Just set your password and you are ready to go. This workflow is aimed to"
 " more advanced users who intend not to use the web GUI."
 msgstr ""
+"Setzen Sie einfach Ihr Passwort und schon können Sie loslegen. Dieser "
+"Workflow richtet sich an fortgeschrittenere Benutzer, die beabsichtigen, die "
+"Web-GUI nicht zu verwenden."
 
 #: js/src/guide/WorkflowSelect.js:27
 msgid "Local Server"
-msgstr ""
+msgstr "Lokaler Server"
 
 #: js/src/guide/WorkflowSelect.js:28 js/src/lan/LANForm.js:29
 msgid "Router"
@@ -532,7 +584,7 @@ msgstr "Router"
 
 #: js/src/guide/WorkflowSelect.js:29
 msgid "Minimal"
-msgstr ""
+msgstr "Minimal"
 
 #: js/src/guide/WorkflowSelect.js:45
 msgid "Cannot set workflow."
@@ -547,6 +599,8 @@ msgid ""
 "Here you can set the guide walkthrough which will guide you through the "
 "basic configuration of your device."
 msgstr ""
+"Hier können Sie den Leitfaden einstellen, der Sie durch die "
+"Grundkonfiguration Ihres Geräts führt."
 
 #: js/src/guide/constants.js:12
 msgid ""
@@ -554,6 +608,10 @@ msgid ""
 "device. Firstly it is required to set your password. Note the security of"
 " your home network is in your hands, so try not to use weak passwords."
 msgstr ""
+"Willkommen zu Foris. Diese Anleitung wird Ihnen helfen, Ihr Gerät "
+"einzurichten. Als erstes muss ein Passwort gesetzt werden. Bitte beachten "
+"Sie dabei, dass die Sicherheit Ihres Heimnetzwerkes in Ihren Händen liegt "
+"und Sie daher kein zu einfaches Passwort wählen sollten."
 
 #: js/src/guide/constants.js:13
 msgid "Your password is set. You may proceed to the next step."
@@ -562,24 +620,32 @@ msgstr ""
 #: js/src/guide/constants.js:16
 msgid "The workflow was set. You may proceed to next step."
 msgstr ""
+"Der Workflow wurde eingestellt. Sie können mit dem nächsten Schritt "
+"fortfahren."
 
 #: js/src/guide/constants.js:20
 msgid "Here you need to decide which interfaces belong to which network."
 msgstr ""
+"Hier müssen Sie sich entscheiden, welche Schnittstelle zu welchem Netzwerk "
+"gehört."
 
 #: js/src/guide/constants.js:21
 msgid "If you are in doubt use the current settings."
 msgstr ""
+"Falls Sie sich nicht sicher sind, verwenden sie die aktuellen Einstellungen."
 
 #: js/src/guide/constants.js:23
 msgid ""
 "You've configured your network interfaces. It seems that you didn't break"
 " any crucial network settings so you can safely proceed to the next step."
 msgstr ""
+"Sie haben die Netzwerkschnittstellen konfiguriert. Dabei wurden scheinbar "
+"keine wichtigen Netzwerkeinstellungen falsch konfiguriert und Sie können mit "
+"dem nächsten Schritt fortfahren."
 
 #: js/src/guide/constants.js:26
 msgid "Now you need to set the time and timezone of your device."
-msgstr ""
+msgstr "Nun müssen Sie die Zeit und Zeitzone Ihres Gerätes einstellen."
 
 #: js/src/guide/constants.js:27
 msgid ""
@@ -593,16 +659,22 @@ msgid ""
 "A proper DNS resolving is one of the key security features of your "
 "device. Let's configure it now."
 msgstr ""
+"Eine korrekte DNS-Auflösung ist eine der wichtigsten Sicherheitsmerkmale "
+"Ihres Geräts. Lassen Sie uns das jetzt konfigurieren."
 
 #: js/src/guide/constants.js:31
 msgid ""
 "You've updated your DNS configuration. Try to run connection test to see "
 "whether your DNS resolver is properly set."
 msgstr ""
+"Sie haben Ihre DNS-Konfiguration aktualisiert. Versuchen Sie, einen "
+"Verbindungstest durchzuführen, um festzustellen, ob Ihr DNS-Resolver richtig "
+"eingestellt ist."
 
 #: js/src/guide/constants.js:34
 msgid "In order to access the internet, you need to configure your WAN interface."
 msgstr ""
+"Für den Internetzugriff müssen Sie Ihre WAN Schnittstelle konfigurieren."
 
 #: js/src/guide/constants.js:35
 msgid ""
@@ -658,6 +730,10 @@ msgid ""
 "IP addresses are entered correctly otherwise you won't be able to access "
 "this configuration interface when the new settings are applied."
 msgstr ""
+"Wenn Sie die <strong>statische</strong> Konfiguration auswählen, stellen Sie "
+"sicher, dass die IP-Adressen korrekt eingetragen sind, sonst können Sie "
+"nicht mehr auf das Konfigurationsoberfläche zugreifen, wenn die neuen "
+"Einstellungen übernommen werden."
 
 #: js/src/guide/constants.js:70
 msgid ""
@@ -1975,4 +2051,3 @@ msgstr "Abmelden"
 
 #~ msgid "Network settings"
 #~ msgstr "Netzwerkeinstellungen"
-
