@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2020-02-20 17:21+0100\n"
-"PO-Revision-Date: 2020-03-18 21:36+0000\n"
+"PO-Revision-Date: 2020-04-15 20:11+0000\n"
 "Last-Translator: Florian <floflr@zaclys.net>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/turris/reforis/fr/"
 ">\n"
@@ -412,7 +412,7 @@ msgstr "Nom d'hôte TLS"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:113
 msgid "TLS pin"
-msgstr ""
+msgstr "Broche TLS"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:129
 msgid "Save forwarder"
@@ -990,7 +990,7 @@ msgstr "ID du module"
 
 #: js/src/interfaces/SelectedInterface.js:89
 msgid "Slot"
-msgstr ""
+msgstr "Emplacement"
 
 #: js/src/interfaces/SelectedInterface.js:93
 #, fuzzy
