@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2020-02-20 17:21+0100\n"
-"PO-Revision-Date: 2020-03-28 23:09+0000\n"
-"Last-Translator: Josef Schlehofer <pepe@bloodkings.eu>\n"
+"PO-Revision-Date: 2020-05-05 15:11+0000\n"
+"Last-Translator: Lukas Jelinek <lukas.jelinek@nic.cz>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/turris/reforis/cs/>"
 "\n"
 "Language: cs\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.0-dev\n"
+"X-Generator: Weblate 4.1-dev\n"
 "Generated-By: Babel 2.7.0\n"
 
 #: js/src/about/About.js:22 js/src/main/pages.js:133
@@ -159,6 +159,8 @@ msgid ""
 "The only DHCP lease is the same as router's address. Increase limit or "
 "change start address."
 msgstr ""
+"Jediná DHCP zápůjčka je stejná jako adresa směrovače. Zvyšte limit nebo "
+"změňte počáteční adresu."
 
 #: js/src/common/network/StaticIPForm.js:14 js/src/wan/WAN6Form.js:29
 msgid ""
@@ -422,7 +424,7 @@ msgstr "Přeposílání se nedaří uložit."
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:46
 msgid "Forwarder added successfully."
-msgstr ""
+msgstr "Přeposílání DNS dotazů bylo úspěšně přidáno."
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:48
 msgid "Can't add new forwarder."
@@ -812,7 +814,7 @@ msgstr ""
 
 #: js/src/guide/hooks.js:23
 msgid "Cannot mark guide as finished."
-msgstr ""
+msgstr "Nelze označit průvodce jako dokončený."
 
 #: js/src/guide/steps.js:20 js/src/main/pages.js:82
 #: js/src/notificationsSettings/SMTPCustomForm.js:107
@@ -935,7 +937,7 @@ msgstr ""
 
 #: js/src/interfaces/Interfaces.js:77
 msgid "You have to assign at least one interface to this group."
-msgstr ""
+msgstr "Musíte této skupině přiřadit alespoň jedno rozhraní."
 
 #: js/src/interfaces/InterfacesForm.js:53
 msgid ""
@@ -1838,6 +1840,8 @@ msgid ""
 "More detailed information is available in the console of your web browser"
 " - on most browsers accessible after pressing Ctrl+Shift+J or F12."
 msgstr ""
+"Podrobnější informace jsou k dispozici v konzole vašeho webového prohlížeče –"
+" ve většině prohlížečů je dostupná stisknutím Ctrl+Shift+J nebo F12."
 
 #: js/src/utils/ErrorBoundary.js:41
 msgid ""
@@ -2092,7 +2096,7 @@ msgstr "Nelze nastavit schvalování aktualizací."
 
 #: reforis/foris_controller_api/modules/updater.py:79
 msgid "Cannot rollback automatic restart settings."
-msgstr ""
+msgstr "Nelze vrátit zpět nastavení automatického restartu."
 
 #: reforis/foris_controller_api/modules/updater.py:160
 msgid "You can't set packages with disabled automatic updates."
