@@ -14,6 +14,7 @@ const API_URLs = new Proxy({
 
     notifications: "/notifications",
     notificationsSettings: "/notifications-settings",
+    sendTestNotification: "/send-test-notification",
 
     language: "/language",
     languages: "/languages",

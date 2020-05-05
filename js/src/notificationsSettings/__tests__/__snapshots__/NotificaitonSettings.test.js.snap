@@ -46,6 +46,9 @@ exports[`<NotificationsSettings/> Disabled 1`] = `
       </div>
     </form>
   </div>
+  <div
+    id="test-notification"
+  />
 </div>
 `;
 
@@ -397,6 +400,25 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
       </div>
     </form>
   </div>
+  <div
+    id="test-notification"
+  >
+    <h3>
+      Test notification
+    </h3>
+    <div
+      class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3 text-right"
+    >
+      <button
+        class="btn btn-primary  col-sm-12 col-lg-3"
+        type="button"
+      >
+         
+         
+        Send testing notification
+      </button>
+    </div>
+  </div>
 </div>
 `;
 
@@ -598,6 +620,25 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
         </button>
       </div>
     </form>
+  </div>
+  <div
+    id="test-notification"
+  >
+    <h3>
+      Test notification
+    </h3>
+    <div
+      class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3 text-right"
+    >
+      <button
+        class="btn btn-primary  col-sm-12 col-lg-3"
+        type="button"
+      >
+         
+         
+        Send testing notification
+      </button>
+    </div>
   </div>
 </div>
 `;

@@ -1,4 +1,7 @@
+from http import HTTPStatus
+
 from flask import current_app, jsonify, request
+from flask_babel import gettext as _
 
 from reforis import _get_locale_from_backend
 
@@ -101,6 +104,25 @@ def notifications_settings():
     return jsonify(response)
 
 
+def send_test_notification():
+    response = current_app.backend.perform(
+        'router_notifications',
+        'create',
+        {
+            'msg': _('This is a testing notification. Please ignore me.'),
+            'severity': 'error',
+            'immediate': True,
+        },
+    )
+
+    if response['result']:
+        return jsonify(_('Testing message was sent, please check your inbox.')), HTTPStatus.OK
+
+    return jsonify(
+        _('Sending of the testing message failed, your configuration is possibly wrong.')
+    ), HTTPStatus.INTERNAL_SERVER_ERROR
+
+
 # pylint: disable=invalid-name
 views = [
     {
@@ -111,5 +133,9 @@ views = [
         'rule': '/notifications-settings',
         'view_func': notifications_settings,
         'methods': ['GET', 'POST'],
+    }, {
+        'rule': '/send-test-notification',
+        'view_func': send_test_notification,
+        'methods': ['POST'],
     }
 ]
