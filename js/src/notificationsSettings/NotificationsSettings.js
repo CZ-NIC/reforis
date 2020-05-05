@@ -13,6 +13,7 @@ import API_URLs from "common/API";
 
 import NotificationsEmailSettingsForm from "./NotificationsEmailSettingsForm";
 import validator from "./validator";
+import TestNotification from "./TestNotification";
 
 NotificationsSettings.propTypes = {
     ws: PropTypes.object.isRequired,
@@ -34,7 +35,9 @@ export default function NotificationsSettings({ ws }) {
                 validator={validator}
             >
                 <NotificationsEmailSettingsForm />
+                <TestNotification />
             </ForisForm>
+            <div id="test-notification" />
         </>
     );
 }
