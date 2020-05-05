@@ -17,7 +17,9 @@ import {
     ALERT_TYPES,
     formFieldsSize,
     Modal,
-    ModalHeader, ModalBody, ModalFooter,
+    ModalHeader,
+    ModalBody,
+    ModalFooter,
 } from "foris";
 
 import API_URLs from "../common/API";
