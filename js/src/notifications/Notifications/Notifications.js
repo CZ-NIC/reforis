@@ -5,14 +5,16 @@
  * See /LICENSE for more information.
  */
 
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 import { Spinner } from "foris";
 
-import useNotifications from "../hooks";
-import NotificationsList from "./NotificationsList";
 import "./Notifications.css";
+import useNotifications from "../hooks";
+import { NOT_DISMISSABLE } from "../constants";
+import NotificationsList from "./NotificationsList";
+import DismissAllButton from "./DismissAllButton";
 
 Notifications.propTypes = {
     ws: PropTypes.object.isRequired,
@@ -32,36 +34,25 @@ function Notifications({ ws, history }) {
         // Set initial notification
         setCurrentNotification(getIDFromSearch(window.location.search));
         // Listen to changes
-        const unlisten = history.listen(
+        return history.listen(
             (location) => {
                 setCurrentNotification(getIDFromSearch(location.search));
             },
         );
-        return unlisten;
     }, [history, setCurrentNotification]);
-
-    function getDismissAllButton() {
-        return (
-            <button
-                type="button"
-                id="btn-dismiss-all"
-                className="btn btn-outline-danger float-right"
-                onClick={dismissAll}
-            >
-                {_("Dismiss all")}
-            </button>
-        );
-    }
 
     let componentContent;
     if (isLoading) {
         componentContent = <Spinner />;
+    } else if (notifications.length === 0) {
+        componentContent = <p className="text-muted text-center">{_("No notifications")}</p>;
     } else {
+        const dismissableNotificationsCount = notifications
+            .filter((notification) => !NOT_DISMISSABLE.includes(notification.severity))
+            .length;
         componentContent = (
             <>
-                {notifications.length !== 0
-                    ? getDismissAllButton()
-                    : <p className="text-muted text-center">{_("No notifications")}</p>}
+                { dismissableNotificationsCount > 0 && <DismissAllButton dismissAll={dismissAll} />}
                 <NotificationsList
                     currentNotification={currentNotification}
                     notifications={notifications}

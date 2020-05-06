@@ -90,12 +90,6 @@ exports[`<NotificationsCenter/> Test with snapshot. 1`] = `
       >
         February 1, 2000 12:00 AM
       </p>
-      <button
-        class="close"
-        type="button"
-      >
-        ×
-      </button>
     </div>
     <div
       class="card-body"

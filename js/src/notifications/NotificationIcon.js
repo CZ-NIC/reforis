@@ -7,6 +7,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import { SEVERITIES } from "./constants";
 
 NotificationIcon.propTypes = {
     severity: PropTypes.string.isRequired,
@@ -16,16 +17,16 @@ NotificationIcon.propTypes = {
 export default function NotificationIcon({ severity, className }) {
     let iconName = null;
     switch (severity) {
-    case "news":
+    case SEVERITIES.NEWS:
         iconName = "newspaper";
         break;
-    case "restart":
+    case SEVERITIES.RESTART:
         iconName = "power-off";
         break;
-    case "error":
+    case SEVERITIES.ERROR:
         iconName = "exclamation-circle";
         break;
-    case "update":
+    case SEVERITIES.UPDATE:
         iconName = "sync";
         break;
     default:

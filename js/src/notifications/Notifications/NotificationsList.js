@@ -13,6 +13,7 @@ import { toLocaleDateString } from "foris";
 import NOTIFICATION_PROP_TYPES from "../utils";
 import NotificationIcon from "../NotificationIcon";
 import TruncatedText from "./TruncatedText";
+import { NOT_DISMISSABLE } from "../constants";
 
 NotificationsList.propTypes = {
     notifications: PropTypes.arrayOf(NOTIFICATION_PROP_TYPES),
@@ -53,13 +54,13 @@ function NotificationsCenterItem({ notification, isCurrent, dismiss }) {
             notificationRef.current.scrollIntoView({ block: "start", behavior: "smooth" });
         }
     });
-
+    const isDisableable = !NOT_DISMISSABLE.includes(notification.severity);
     return (
         <div ref={notificationRef} className={`card bg-light ${BORDER_TYPES[notification.severity]} sm-10`}>
             <div className="card-header">
                 <NotificationIcon severity={notification.severity} className="fa-2x" />
                 <p className="text-muted align-middle m-0">{toLocaleDateString(notification.created_at)}</p>
-                <button type="button" className="close" onClick={dismiss}>×</button>
+                {isDisableable && <button type="button" className="close" onClick={dismiss}>×</button>}
             </div>
 
             <div className="card-body">
