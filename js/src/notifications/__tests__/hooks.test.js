@@ -63,7 +63,7 @@ describe("useNotifications hook.", () => {
 
         fireEvent.click(getByText(notificationsContainer, "Dismiss all"));
         expect(mockAxios.post).toHaveBeenCalledTimes(1);
-        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/notifications", { ids: ["123-123", "123-124", "808-909"] }, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/notifications", { ids: ["123-123", "123-124"] }, expect.anything());
 
         // Simulate receiving message from WS server
         act(() => webSockets.dispatch({ module: "router_notifications", action: "mark_as_displayed", data: { ids: ["123-123", "123-124", "808-909"], new_count: 0 } }));
