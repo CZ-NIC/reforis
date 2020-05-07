@@ -44,24 +44,27 @@ TestNotification.propTypes = {
             ).isRequired,
         }),
     }).isRequired,
+    initialData: PropTypes.shape({
+        enabled: PropTypes.bool,
+        common: PropTypes.shape({
+            severity_filter: PropTypes.oneOf(
+                Object.keys(SEVERITY_OPTIONS)
+                    .map((key) => parseInt(key)),
+            ).isRequired,
+        }),
+    }).isRequired,
     formErrors: PropTypes.shape({ enabled: PropTypes.bool }),
 };
 
 TestNotification.defaultProps = {
     formData: {},
+    initialData: {},
 };
 
-export default function TestNotification({ formData, formErrors, formPostState }) {
+export default function TestNotification({ formData, formErrors, initialData }) {
     const [postState, post] = useAPIPost(API_URLs.sendTestNotification);
     const [setAlert] = useAlert();
     const [modalShown, setModalShown] = useState(false);
-
-    const [initialFormData, setInitialFormData] = useState(null);
-    useEffect(() => {
-        if (!initialFormData) {
-            setInitialFormData(formData);
-        }
-    }, [formData, initialFormData]);
 
     useEffect(() => {
         if (postState.state === API_STATE.SUCCESS) {
@@ -76,7 +79,7 @@ export default function TestNotification({ formData, formErrors, formPostState }
     }
 
     function onTestNotificationHandler() {
-        if (JSON.stringify(initialFormData) !== JSON.stringify(formData)) {
+        if (JSON.stringify(initialData) !== JSON.stringify(formData)) {
             setModalShown(true);
             return;
         }
@@ -89,7 +92,7 @@ export default function TestNotification({ formData, formErrors, formPostState }
     }
 
     const postIsSending = postState.state === API_STATE.SENDING;
-    const showSeverityAlert = initialFormData ? initialFormData.common.severity_filter < 2 : false;
+    const showSeverityAlert = initialData ? initialData.common.severity_filter < 2 : false;
 
     return (
         <>
