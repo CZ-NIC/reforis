@@ -37,10 +37,11 @@ DNSForm.propTypes = {
     }),
     setFormValue: PropTypes.func,
     ws: PropTypes.instanceOf(WebSockets),
+    disabled: PropTypes.bool,
 };
 
 export default function DNSForm({
-    formData, formErrors, setFormValue, ws, ...props
+    formData, formErrors, setFormValue, ws, disabled,
 }) {
     const [DNSSECModalShown, setDNSSECModalShown] = useState(false);
 
@@ -73,14 +74,14 @@ export default function DNSForm({
 
                 onChange={setFormValue((value) => ({ forwarding_enabled: { $set: value } }))}
 
-                {...props}
+                disabled={disabled}
             />
             {formData.forwarding_enabled && (
                 <Forwarders
                     value={formData.forwarder}
                     setFormValue={setFormValue}
                     ws={ws}
-                    {...props}
+                    disabled={disabled}
                 />
             )}
             <CheckBox
@@ -89,7 +90,7 @@ export default function DNSForm({
 
                 onChange={changeDNSSECHandler}
 
-                {...props}
+                disabled={disabled}
             />
             <CheckBox
                 label={_("Enable DHCP clients in DNS")}
@@ -98,7 +99,7 @@ export default function DNSForm({
 
                 onChange={setFormValue((value) => ({ dns_from_dhcp_enabled: { $set: value } }))}
 
-                {...props}
+                disabled={disabled}
             />
             {formData.dns_from_dhcp_enabled
                     && (
@@ -112,7 +113,7 @@ export default function DNSForm({
                                 (value) => ({ dns_from_dhcp_domain: { $set: value } }),
                             )}
 
-                            {...props}
+                            disabled={disabled}
                         />
                     )}
         </>

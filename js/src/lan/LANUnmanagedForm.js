@@ -35,6 +35,7 @@ LANUnmanagedForm.propTypes = {
         lan_static: PropTypes.object,
     }),
     setFormValue: PropTypes.func.isRequired,
+    disabled: PropTypes.bool,
 };
 
 LANUnmanagedForm.defaultProps = {
@@ -43,7 +44,7 @@ LANUnmanagedForm.defaultProps = {
 };
 
 export default function LANUnmanagedForm({
-    formData, formErrors, setFormValue, ...props
+    formData, formErrors, setFormValue, disabled,
 }) {
     const lanType = formData.lan_type;
 
@@ -57,7 +58,7 @@ export default function LANUnmanagedForm({
                 updateRule={(value) => ({ mode_unmanaged: { lan_dhcp: value } })}
                 setFormValue={setFormValue}
 
-                {...props}
+                disabled={disabled}
             />
         );
     } else if (lanType === LAN_TYPES.static) {
@@ -69,7 +70,7 @@ export default function LANUnmanagedForm({
                 updateRule={(value) => ({ mode_unmanaged: { lan_static: value } })}
                 setFormValue={setFormValue}
 
-                {...props}
+                disabled={disabled}
             />
         );
     }
@@ -85,7 +86,7 @@ export default function LANUnmanagedForm({
                     (value) => ({ mode_unmanaged: { lan_type: { $set: value } } }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
             {lanForm}
         </>

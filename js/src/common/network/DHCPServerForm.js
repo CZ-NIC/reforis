@@ -25,7 +25,7 @@ DHCPServerForm.propTypes = {
     }),
     updateRule: PropTypes.func.isRequired,
     setFormValue: PropTypes.func.isRequired,
-    routerIP: PropTypes.string.isRequired,
+    disabled: PropTypes.bool,
 };
 
 DHCPServerForm.defaultProps = {
@@ -33,7 +33,7 @@ DHCPServerForm.defaultProps = {
 };
 
 export default function DHCPServerForm({
-    formData, formErrors, updateRule, setFormValue, routerIP, ...props
+    formData, formErrors, updateRule, setFormValue, disabled,
 }) {
     return (
         <>
@@ -47,7 +47,7 @@ export default function DHCPServerForm({
                     (value) => updateRule({ start: { $set: value } }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
             <NumberInput
                 label={_("DHCP max leases")}
@@ -61,7 +61,7 @@ export default function DHCPServerForm({
                     (value) => updateRule({ limit: { $set: value } }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
             <NumberInput
                 label={_("Lease time (hours)")}
@@ -74,7 +74,7 @@ export default function DHCPServerForm({
                     (value) => updateRule({ lease_time: { $set: value } }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
         </>
     );

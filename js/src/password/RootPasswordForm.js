@@ -22,10 +22,11 @@ RootPasswordForm.propTypes = {
     formErrors: PropTypes.shape({ newRootPassword: PropTypes.string }),
     setFormValue: PropTypes.func.isRequired,
     postRootPassword: PropTypes.func.isRequired,
+    disabled: PropTypes.bool,
 };
 
 export default function RootPasswordForm({
-    formData, formErrors, setFormValue, submitButtonState, postRootPassword, ...props
+    formData, formErrors, setFormValue, submitButtonState, postRootPassword, disabled,
 }) {
     return (
         <form onSubmit={postRootPassword} className="mt-3">
@@ -49,7 +50,7 @@ through the <a href="%s">LuCI web interface</a> or via SSH.`,
                     (value) => ({ newRootPassword: { $set: value } }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
             <div className="text-right">
                 <SubmitButton

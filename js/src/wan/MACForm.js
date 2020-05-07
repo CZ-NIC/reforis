@@ -26,6 +26,7 @@ MACForm.propTypes = {
         custom_mac: PropTypes.string,
     }),
     setFormValue: PropTypes.func.isRequired,
+    disabled: PropTypes.bool,
 };
 
 MACForm.defaultProps = {
@@ -35,7 +36,7 @@ MACForm.defaultProps = {
 };
 
 export default function MACForm({
-    formData, formErrors, setFormValue, ...props
+    formData, formErrors, setFormValue, disabled,
 }) {
     const macSettings = formData.mac_settings;
     const errors = (formErrors || {}).mac_settings || {};
@@ -51,7 +52,7 @@ export default function MACForm({
                     (value) => ({ mac_settings: { custom_mac_enabled: { $set: value } } }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
             {macSettings.custom_mac_enabled
                 ? (
@@ -66,7 +67,7 @@ export default function MACForm({
                             (value) => ({ mac_settings: { custom_mac: { $set: value } } }),
                         )}
 
-                        {...props}
+                        disabled={disabled}
                     />
                 )
                 : null}
