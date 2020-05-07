@@ -16,6 +16,7 @@ SMTPTurrisForm.propTypes = {
     formData: PropTypes.shape({ sender_name: PropTypes.string }).isRequired,
     formErrors: PropTypes.shape({ sender_name: PropTypes.string }),
     setFormValue: PropTypes.func.isRequired,
+    disabled: PropTypes.bool,
 };
 
 SMTPTurrisForm.defaultProps = {
@@ -26,7 +27,7 @@ SMTPTurrisForm.defaultProps = {
 };
 
 export default function SMTPTurrisForm({
-    formData, formErrors, setFormValue, ...props
+    formData, formErrors, setFormValue, disabled,
 }) {
     return (
         <>
@@ -40,7 +41,7 @@ export default function SMTPTurrisForm({
                     (value) => ({ smtp_turris: { sender_name: { $set: value } } }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
         </>
     );

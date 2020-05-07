@@ -40,6 +40,7 @@ WANForm.propTypes = {
     }).isRequired,
     formErrors: PropTypes.shape(FIELDS_PROP_TYPES),
     setFormValue: PropTypes.func.isRequired,
+    disabled: PropTypes.bool,
 };
 
 WANForm.defaultProps = {
@@ -48,7 +49,7 @@ WANForm.defaultProps = {
 };
 
 export default function WANForm({
-    formData, formErrors, setFormValue, ...props
+    formData, formErrors, setFormValue, disabled,
 }) { /* eslint-disable react/prop-types */
     const wanSettings = formData.wan_settings;
     const errors = (formErrors || {}).wan_settings || {};
@@ -64,7 +65,7 @@ export default function WANForm({
                 updateRule={(value) => ({ wan_settings: { wan_dhcp: value } })}
                 setFormValue={setFormValue}
 
-                {...props}
+                disabled={disabled}
             />
         );
     } else if (wanType === WAN_TYPES.static) {
@@ -76,7 +77,7 @@ export default function WANForm({
                 updateRule={(value) => ({ wan_settings: { wan_static: value } })}
                 setFormValue={setFormValue}
 
-                {...props}
+                disabled={disabled}
             />
         );
     } else if (wanType === WAN_TYPES.pppoe) {
@@ -87,7 +88,7 @@ export default function WANForm({
 
                 setFormValue={setFormValue}
 
-                {...props}
+                disabled={disabled}
             />
         );
     }
@@ -104,7 +105,7 @@ export default function WANForm({
                     (value) => ({ wan_settings: { wan_type: { $set: value } } }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
             {wanForm}
         </>
@@ -121,7 +122,7 @@ PPPoEForm.defaultProps = {
 };
 
 function PPPoEForm({
-    formData, formErrors, setFormValue, ...props
+    formData, formErrors, setFormValue, disabled,
 }) {
     return (
         <>
@@ -135,7 +136,7 @@ function PPPoEForm({
                     (value) => ({ wan_settings: { wan_pppoe: { username: { $set: value } } } }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
             <TextInput
                 label={_("PAP/CHAP password")}
@@ -147,7 +148,7 @@ function PPPoEForm({
                     (value) => ({ wan_settings: { wan_pppoe: { password: { $set: value } } } }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
         </>
     );

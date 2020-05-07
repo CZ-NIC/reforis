@@ -41,10 +41,11 @@ LANForm.propTypes = {
         mode_unmanaged: PropTypes.object,
     }),
     setFormValue: PropTypes.func,
+    disabled: PropTypes.bool,
 };
 
 export default function LANForm({
-    formData, formErrors, setFormValue, ...props
+    formData, formErrors, setFormValue, disabled,
 }) {
     const errors = formErrors || {};
     const lanMode = formData.mode;
@@ -56,7 +57,7 @@ export default function LANForm({
                 formData={formData.mode_managed}
                 formErrors={errors.mode_managed}
                 setFormValue={setFormValue}
-                {...props}
+                disabled={disabled}
             />
         );
     } else if (lanMode === LAN_MODES.unmanaged) {
@@ -65,7 +66,7 @@ export default function LANForm({
                 formData={formData.mode_unmanaged}
                 formErrors={errors.mode_unmanaged}
                 setFormValue={setFormValue}
-                {...props}
+                disabled={disabled}
             />
         );
     }
@@ -81,7 +82,7 @@ export default function LANForm({
 
                 onChange={setFormValue((value) => ({ mode: { $set: value } }))}
 
-                {...props}
+                disabled={disabled}
             />
             {lanForm}
         </>

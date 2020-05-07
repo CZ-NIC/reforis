@@ -40,6 +40,7 @@ NotificationsEmailSettingsForm.propTypes = {
         common: PropTypes.object,
     }),
     setFormValue: PropTypes.func.isRequired,
+    disabled: PropTypes.bool,
 };
 
 NotificationsEmailSettingsForm.defaultProps = {
@@ -50,7 +51,7 @@ NotificationsEmailSettingsForm.defaultProps = {
 };
 
 export default function NotificationsEmailSettingsForm({
-    formData, formErrors, setFormValue, ...props
+    formData, formErrors, setFormValue, disabled,
 }) {
     let smtpForm = null;
     if (formData.smtp_type === "turris") {
@@ -59,7 +60,7 @@ export default function NotificationsEmailSettingsForm({
                 formData={formData.smtp_turris}
                 formErrors={formErrors.smtp_turris}
                 setFormValue={setFormValue}
-                {...props}
+                disabled={disabled}
             />
         );
     } else if (formData.smtp_type === "custom") {
@@ -68,7 +69,7 @@ export default function NotificationsEmailSettingsForm({
                 formData={formData.smtp_custom}
                 formErrors={formErrors.smtp_custom}
                 setFormValue={setFormValue}
-                {...props}
+                disabled={disabled}
             />
         );
     }
@@ -83,7 +84,7 @@ export default function NotificationsEmailSettingsForm({
                     (value) => ({ enabled: { $set: value } }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
             {formData.enabled
                 ? (
@@ -99,14 +100,14 @@ export default function NotificationsEmailSettingsForm({
                                 (value) => ({ smtp_type: { $set: value } }),
                             )}
 
-                            {...props}
+                            disabled={disabled}
                         />
                         <CommonForm
                             formData={formData.common}
                             formErrors={formErrors.common}
                             setFormValue={setFormValue}
 
-                            {...props}
+                            disabled={disabled}
                         />
                         {smtpForm}
                     </>

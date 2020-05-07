@@ -45,6 +45,7 @@ TimeForm.propTypes = {
     }).isRequired,
 
     setFormValue: PropTypes.func.isRequired,
+    disabled: PropTypes.bool,
 };
 
 TimeForm.defaultProps = {
@@ -55,7 +56,7 @@ TimeForm.defaultProps = {
 };
 
 export default function TimeForm({
-    ws, formData, formErrors, setFormValue, ...props
+    ws, formData, formErrors, setFormValue, disabled,
 }) {
     const [ntpData, triggerNTP] = useNTPDate(ws);
     useEffect(() => {
@@ -102,7 +103,7 @@ export default function TimeForm({
                     (value) => ({ time_settings: { how_to_set_time: { $set: value } } }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
             {data.how_to_set_time === "ntp" ? <NTPServersList servers={data.ntp_servers} /> : null}
             <DataTimeInput
@@ -111,8 +112,6 @@ export default function TimeForm({
                 error={errors.time}
 
                 onChange={onDataTimeChangeHandler}
-
-                {...props}
 
                 disabled={data.how_to_set_time !== "manual" || ntpData.state === API_STATE.SENDING}
             >

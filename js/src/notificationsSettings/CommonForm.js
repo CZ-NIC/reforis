@@ -30,6 +30,7 @@ CommonForm.propTypes = {
     }).isRequired,
     formErrors: PropTypes.shape({ to: PropTypes.string }),
     setFormValue: PropTypes.func.isRequired,
+    disabled: PropTypes.bool,
 };
 
 CommonForm.defaultProps = {
@@ -40,7 +41,7 @@ CommonForm.defaultProps = {
 };
 
 export default function CommonForm({
-    formData, formErrors, setFormValue, ...props
+    formData, formErrors, setFormValue, disabled,
 }) {
     return (
         <>
@@ -53,7 +54,7 @@ export default function CommonForm({
 
                 onChange={setFormValue((value) => ({ common: { to: { $set: value } } }))}
 
-                {...props}
+                disabled={disabled}
             />
             <Select
                 label={_("Importance")}
@@ -64,7 +65,7 @@ export default function CommonForm({
                     (value) => ({ common: { severity_filter: { $set: parseInt(value) } } }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
             <CheckBox
                 label={_("Send news")}
@@ -73,7 +74,7 @@ export default function CommonForm({
 
                 onChange={setFormValue((value) => ({ common: { send_news: { $set: value } } }))}
 
-                {...props}
+                disabled={disabled}
             />
         </>
     );

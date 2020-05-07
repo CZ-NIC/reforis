@@ -25,10 +25,11 @@ ForisPasswordForm.propTypes = {
     ),
     setFormValue: PropTypes.func.isRequired,
     postForisPassword: PropTypes.func.isRequired,
+    disabled: PropTypes.bool,
 };
 
 export default function ForisPasswordForm({
-    formData, formErrors, setFormValue, submitButtonState, postForisPassword, ...props
+    formData, formErrors, setFormValue, submitButtonState, postForisPassword, disabled,
 }) {
     return (
         <form onSubmit={postForisPassword}>
@@ -44,7 +45,7 @@ export default function ForisPasswordForm({
                     (value) => ({ newForisPassword: { $set: value } }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
             <CheckBox
                 label={_("Use same password for advanced administration (root)")}
@@ -58,7 +59,7 @@ export default function ForisPasswordForm({
                     (value) => ({ sameForRoot: { $set: value } }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
             <div className="text-right">
                 <SubmitButton

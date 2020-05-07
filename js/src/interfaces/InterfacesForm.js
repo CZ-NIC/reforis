@@ -34,6 +34,7 @@ InterfacesForm.propTypes = {
         }),
     }),
     setFormValue: PropTypes.func.isRequired,
+    disabled: PropTypes.bool,
 };
 
 InterfacesForm.defaultProps = {
@@ -41,7 +42,7 @@ InterfacesForm.defaultProps = {
 };
 
 export default function InterfacesForm({
-    formData, formErrors, setFormValue, ...props
+    formData, formErrors, setFormValue, disabled,
 }) {
     const [selectedID, setSelectedID] = useState(null);
     const [setAlert, dismissAlert] = useAlert();
@@ -92,7 +93,7 @@ export default function InterfacesForm({
                 interfaces={formData.networks.wan}
                 selected={selectedID}
                 setSelected={setSelectedID}
-                {...props}
+                disabled={disabled}
             />
             <h3>{NETWORKS_CHOICES.lan}</h3>
             {formErrors && formErrors.networks && formErrors.networks.lan
@@ -102,7 +103,7 @@ export default function InterfacesForm({
                         interfaces={formData.networks.lan}
                         selected={selectedID}
                         setSelected={setSelectedID}
-                        {...props}
+                        disabled={disabled}
                     />
                 )}
             <h3>{NETWORKS_CHOICES.guest}</h3>
@@ -110,14 +111,14 @@ export default function InterfacesForm({
                 interfaces={formData.networks.guest}
                 selected={selectedID}
                 setSelected={setSelectedID}
-                {...props}
+                disabled={disabled}
             />
             <h3>{NETWORKS_CHOICES.none}</h3>
             <Network
                 interfaces={formData.networks.none}
                 selected={selectedID}
                 setSelected={setSelectedID}
-                {...props}
+                disabled={disabled}
             />
             {selectedID && (
                 <SelectedInterface

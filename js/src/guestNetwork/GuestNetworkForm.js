@@ -40,6 +40,7 @@ GuestNetworkForm.propTypes = {
         qos: PropTypes.object,
     }),
     setFormValue: PropTypes.func,
+    disabled: PropTypes.bool,
 };
 
 GuestNetworkForm.defaultProps = {
@@ -50,7 +51,7 @@ GuestNetworkForm.defaultProps = {
 };
 
 export default function GuestNetworkForm({
-    formData, formErrors, setFormValue, ...props
+    formData, formErrors, setFormValue, disabled,
 }) {
     return (
         <>
@@ -62,7 +63,7 @@ export default function GuestNetworkForm({
                     (value) => ({ enabled: { $set: value } }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
             {formData.enabled
                 ? (
@@ -78,7 +79,7 @@ export default function GuestNetworkForm({
                                 (value) => ({ ip: { $set: value } }),
                             )}
 
-                            {...props}
+                            disabled={disabled}
                         />
                         <TextInput
                             label={_("Network mask")}
@@ -90,7 +91,7 @@ export default function GuestNetworkForm({
                                 (value) => ({ netmask: { $set: value } }),
                             )}
 
-                            {...props}
+                            disabled={disabled}
                         />
                         <CheckBox
                             label={_("Enable DHCP")}
@@ -101,7 +102,7 @@ export default function GuestNetworkForm({
                                 (value) => ({ dhcp: { enabled: { $set: value } } }),
                             )}
 
-                            {...props}
+                            disabled={disabled}
                         />
                         {formData.dhcp.enabled
                             ? (
@@ -110,9 +111,8 @@ export default function GuestNetworkForm({
                                     formErrors={formErrors.dhcp ? formErrors.dhcp : {}}
                                     updateRule={(value) => ({ dhcp: value })}
                                     setFormValue={setFormValue}
-                                    routerIP={formData.ip}
 
-                                    {...props}
+                                    disabled={disabled}
                                 />
                             )
                             : null}
@@ -125,7 +125,7 @@ export default function GuestNetworkForm({
                                 (value) => ({ qos: { enabled: { $set: value } } }),
                             )}
 
-                            {...props}
+                            disabled={disabled}
                         />
                         {formData.qos.enabled
                             ? (
@@ -134,7 +134,7 @@ export default function GuestNetworkForm({
                                     formErrors={formErrors.qos}
                                     setFormValue={setFormValue}
 
-                                    {...props}
+                                    disabled={disabled}
                                 />
                             )
                             : null}
@@ -156,6 +156,7 @@ QoSForm.propTypes = {
         download: PropTypes.string,
         upload: PropTypes.string,
     }),
+    disabled: PropTypes.bool,
 };
 
 QoSForm.defaultProps = {
@@ -163,7 +164,7 @@ QoSForm.defaultProps = {
 };
 
 function QoSForm({
-    formData, formErrors, setFormValue, ...props
+    formData, formErrors, setFormValue, disabled,
 }) {
     return (
         <>
@@ -181,7 +182,7 @@ function QoSForm({
                     (value) => ({ qos: { download: { $set: value } } }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
             <NumberInput
                 label={_("Upload")}
@@ -196,7 +197,7 @@ function QoSForm({
                     (value) => ({ qos: { upload: { $set: value } } }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
         </>
     );

@@ -28,10 +28,11 @@ UpdatesForm.propTypes = {
         reboots: PropTypes.object,
     }),
     setFormValue: PropTypes.func.isRequired,
+    disabled: PropTypes.bool,
 };
 
 export default function UpdatesForm({
-    formData, formErrors, setFormValue, ...props
+    formData, formErrors, setFormValue, disabled,
 }) {
     return (
         <>
@@ -41,7 +42,7 @@ export default function UpdatesForm({
 
                 onChange={setFormValue((value) => ({ enabled: { $set: value } }))}
 
-                {...props}
+                disabled={disabled}
             />
             {formData.enabled
                 ? (
@@ -51,7 +52,7 @@ export default function UpdatesForm({
 
                         setFormValue={setFormValue}
 
-                        {...props}
+                        disabled={disabled}
                     />
                 )
                 : null}
@@ -60,7 +61,7 @@ export default function UpdatesForm({
                 formErrors={formErrors.reboots}
                 setFormValue={setFormValue}
 
-                {...props}
+                disabled={disabled}
             />
         </>
     );

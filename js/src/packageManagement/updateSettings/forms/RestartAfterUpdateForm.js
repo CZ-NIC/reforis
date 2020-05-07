@@ -28,6 +28,7 @@ RestartAfterUpdateForm.propTypes = {
         delay: PropTypes.string,
     }),
     setFormValue: PropTypes.func.isRequired,
+    disabled: PropTypes.bool,
 };
 
 RestartAfterUpdateForm.defaultProps = {
@@ -35,7 +36,7 @@ RestartAfterUpdateForm.defaultProps = {
 };
 
 export default function RestartAfterUpdateForm({
-    formData, formErrors, setFormValue, ...props
+    formData, formErrors, setFormValue, disabled,
 }) {
     const rebootTime = moment(formData.time, "HH:mm");
     return (
@@ -51,7 +52,7 @@ export default function RestartAfterUpdateForm({
 
                 onChange={setFormValue((value) => ({ reboots: { delay: { $set: value } } }))}
 
-                {...props}
+                disabled={disabled}
             />
             <DataTimeInput
                 label={_("Reboot time")}
@@ -74,7 +75,7 @@ export default function RestartAfterUpdateForm({
                     }
                 }
 
-                {...props}
+                disabled={disabled}
             />
         </>
     );

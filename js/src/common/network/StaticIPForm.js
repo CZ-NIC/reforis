@@ -27,6 +27,7 @@ StaticIPForm.propTypes = {
     formErrors: PropTypes.shape(FIELDS_PROP_TYPES),
     setFormValue: PropTypes.func.isRequired,
     updateRule: PropTypes.func.isRequired,
+    disabled: PropTypes.bool,
 };
 
 StaticIPForm.defaultProps = {
@@ -35,7 +36,7 @@ StaticIPForm.defaultProps = {
 };
 
 export default function StaticIPForm({
-    formData, formErrors, updateRule, setFormValue, ...props
+    formData, formErrors, updateRule, setFormValue, disabled,
 }) {
     return (
         <>
@@ -49,7 +50,7 @@ export default function StaticIPForm({
                     (value) => updateRule({ ip: { $set: value } }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
             <TextInput
                 label={_("Network mask")}
@@ -61,7 +62,7 @@ export default function StaticIPForm({
                     (value) => updateRule({ netmask: { $set: value } }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
             <TextInput
                 label={_("Gateway")}
@@ -73,7 +74,7 @@ export default function StaticIPForm({
                     (value) => updateRule({ gateway: { $set: value } }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
             <TextInput
                 label={_("DNS server 1")}
@@ -85,7 +86,7 @@ export default function StaticIPForm({
                     (value) => updateRule({ dns1: { $set: value } }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
             <TextInput
                 label={_("DNS server 2")}
@@ -97,7 +98,7 @@ export default function StaticIPForm({
                     (value) => updateRule({ dns2: { $set: value } }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
         </>
     );

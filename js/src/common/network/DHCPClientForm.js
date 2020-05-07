@@ -23,10 +23,11 @@ DHCPClientForm.propTypes = {
     }),
     setFormValue: PropTypes.func.isRequired,
     updateRule: PropTypes.func.isRequired,
+    disabled: PropTypes.bool,
 };
 
 export default function DHCPClientForm({
-    formData, formErrors, setFormValue, updateRule, ...props
+    formData, formErrors, setFormValue, updateRule, disabled,
 }) {
     return (
         <TextInput
@@ -39,7 +40,7 @@ export default function DHCPClientForm({
                 (value) => updateRule({ hostname: { $set: value } }),
             )}
 
-            {...props}
+            disabled={disabled}
         />
     );
 }
