@@ -10,12 +10,12 @@ import { REFORIS_URL_PREFIX } from "foris";
 const API_URL_PREFIX = `${REFORIS_URL_PREFIX}/api`;
 
 const API_URLs = new Proxy({
-    logout: "/logout",
-
+    // Notifications
     notifications: "/notifications",
     notificationsSettings: "/notifications-settings",
     sendTestNotification: "/send-test-notification",
 
+    // Languages
     language: "/language",
     languages: "/languages",
 
@@ -26,10 +26,8 @@ const API_URLs = new Proxy({
     lan: "/lan",
     interfaces: "/interfaces",
     guestNetwork: "/guest-network",
-
     dns: "/dns",
     dnsForwarders: "/dns/forwarders",
-
     connectionTest: "/connection-test",
     dnsTest: "/dns/test",
 
@@ -37,22 +35,27 @@ const API_URLs = new Proxy({
     password: "/password",
     regionAndTime: "/region-and-time",
     ntpUpdate: "/ntp-update",
+    reboot: "/reboot",
+
+    // Updater
     approvals: "/approvals",
     updates: "/updates",
     runUpdates: "/updates/run",
-    updatesStatus: "/updates/status",
+    updatesRunning: "/updates/running",
+    updatesEnabled: "/updates/enabled",
     packages: "/packages",
-    reboot: "/reboot",
+    languagePackages: "/language-packages",
 
-    about: "/about",
-
-    healthCheck: "/health-check",
-
+    // Guide
     guide: "/guide",
     finishGuide: "/finish-guide",
     guideWorkflow: "/guide-workflow",
 
+    // Other
+    logout: "/logout",
+    healthCheck: "/health-check",
     controllerID: "/controller_id",
+    about: "/about",
 },
 {
     get: (target, name) => `${API_URL_PREFIX}${target[name]}`,

@@ -5,9 +5,11 @@
  * See /LICENSE for more information.
  */
 
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-import { Alert, ForisURLs, ForisForm } from "foris";
+import {
+    Alert, ForisURLs, ForisForm, useAPIGet, API_STATE, Spinner,
+} from "foris";
 
 import API_URLs from "common/API";
 import LanguageForm from "./LanguageForm";
@@ -49,7 +51,18 @@ DisableIfUpdaterIsDisabled.propTypes = {
 };
 
 export function DisableIfUpdaterIsDisabled({ children, formData, ...props }) {
-    const isDisabled = !formData.enabled;
+    const [getEnabledState, getEnabled] = useAPIGet(API_URLs.updatesEnabled);
+
+    useEffect(() => {
+        getEnabled();
+    }, [getEnabled]);
+
+    if (getEnabledState.state !== API_STATE.SUCCESS) {
+        return <Spinner />;
+    }
+
+    const isDisabled = !getEnabledState.data.enabled;
+
     const childrenWithFormProps = React.Children.map(
         children,
         (child) => React.cloneElement(child, {
