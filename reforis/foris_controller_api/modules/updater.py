@@ -132,36 +132,35 @@ def approvals():
     return jsonify(response)
 
 
-def packages():
+def packages_get():
     """
     .. http:get:: /api/packages
         Get `packages` router settings.
-        See ``get_settings`` action in the `foris-controller updater module JSON schema
-        <https://gitlab.labs.nic.cz/turris/foris-controller/foris-controller/blob/master/foris_controller_modules/updater/schema/updater.json>`_.
-
-    .. http:post:: /api/packages
-        Set `packages` router settings.
-        **It's not possible to change some `packages` settings if automatic updates are disabled.**
-        See ``update_settings`` action in the `foris-controller updater module JSON schema
+        See ``get_package_lists`` action in the `foris-controller updater module JSON schema
         <https://gitlab.labs.nic.cz/turris/foris-controller/foris-controller/blob/master/foris_controller_modules/updater/schema/updater.json>`_.
     """
-    updater_settings = current_app.backend.perform(
+    updater_is_enabled = current_app.backend.perform('updater', 'get_enabled')
+
+    response = current_app.backend.perform(
         'updater',
-        'get_settings',
+        'get_package_lists',
         {'lang': _get_locale_from_backend(current_app)}
     )
-    del updater_settings['approval']
-    response = None
-    if request.method == 'GET':
-        response = updater_settings
-        del response['approval_settings']
-    elif request.method == 'POST':
-        if not updater_settings['enabled']:
-            raise APIError(_('You can\'t set packages with disabled automatic updates.'))
-        data = request.json
-        data['enabled'] = True
-        data['approval_settings'] = updater_settings['approval_settings']
-        response = current_app.backend.perform('updater', 'update_settings', data)
+    return jsonify({**response, **updater_is_enabled})
+
+
+def packages_set():
+    """
+    .. http:post:: /api/packages
+        Set `packages` router settings.
+        **It's not possible to change some `packages` settings if updater is disabled.**
+        See ``update_package_lists`` action in the `foris-controller updater module JSON schema
+        <https://gitlab.labs.nic.cz/turris/foris-controller/foris-controller/blob/master/foris_controller_modules/updater/schema/updater.json>`_.
+    """
+    _check_updater_enabled()
+
+    data = request.json
+    response = current_app.backend.perform('updater', 'update_package_lists', data)
     return jsonify(response)
 
 
@@ -172,8 +171,32 @@ def updates_run():
     return jsonify(response)
 
 
-def updates_status():
-    return jsonify({'running': current_app.backend.perform('web', 'get_data')['updater_running']})
+def updates_enabled():
+    return jsonify(current_app.backend.perform('updater', 'get_enabled'))
+
+
+def updates_running():
+    return jsonify(current_app.backend.perform('updater', 'get_running'))
+
+
+def language_packages_get():
+    updater_is_enabled = current_app.backend.perform('updater', 'get_enabled')
+    response = current_app.backend.perform('updater', 'get_languages')
+    return jsonify({**response, **updater_is_enabled})
+
+
+def language_packages_set():
+    _check_updater_enabled()
+
+    data = request.json
+    response = current_app.backend.perform('updater', 'update_languages', data)
+    return jsonify(response)
+
+
+def _check_updater_enabled():
+    updater_is_enabled = current_app.backend.perform('updater', 'get_enabled')['enabled']
+    if not updater_is_enabled:
+        raise APIError(_('You can\'t set it with disabled automatic updates.'))
 
 
 # pylint: disable=invalid-name
@@ -187,8 +210,12 @@ views = [
         'view_func': updates_run,
         'methods': ['POST'],
     }, {
-        'rule': '/updates/status',
-        'view_func': updates_status,
+        'rule': '/updates/enabled',
+        'view_func': updates_enabled,
+        'methods': ['GET'],
+    }, {
+        'rule': '/updates/running',
+        'view_func': updates_running,
         'methods': ['GET'],
     }, {
         'rule': '/approvals',
@@ -196,8 +223,20 @@ views = [
         'methods': ['GET', 'POST'],
     }, {
         'rule': '/packages',
-        'view_func': packages,
-        'methods': ['GET', 'POST'],
+        'view_func': packages_get,
+        'methods': ['GET'],
+    }, {
+        'rule': '/packages',
+        'view_func': packages_set,
+        'methods': ['POST'],
+    }, {
+        'rule': '/language-packages',
+        'view_func': language_packages_get,
+        'methods': ['GET'],
+    }, {
+        'rule': '/language-packages',
+        'view_func': language_packages_set,
+        'methods': ['POST'],
     }
 ]
 
