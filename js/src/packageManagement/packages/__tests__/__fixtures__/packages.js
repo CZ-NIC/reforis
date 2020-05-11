@@ -55,7 +55,7 @@ export default function packagesFixture(UpdatesEnabled = true) {
                     enabled: false,
                 },
             ],
-        user_lists:
+        package_lists:
             [
                 {
                     enabled: false,

@@ -31,7 +31,7 @@ export default function UserOptions({
                         disabled={disabled}
 
                         onChange={setFormValue((value) => ({
-                            user_lists: {
+                            package_lists: {
                                 [packageIdx]: {
                                     options: { [idx]: { enabled: { $set: value } } },
                                 },

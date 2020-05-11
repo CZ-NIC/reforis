@@ -14,7 +14,7 @@ import "./PackagesForm.css";
 
 PackagesForm.propTypes = {
     formData: PropTypes.shape({
-        user_lists: PropTypes.arrayOf(PropTypes.shape({
+        package_lists: PropTypes.arrayOf(PropTypes.shape({
             title: PropTypes.string.isRequired,
             description: PropTypes.string.isRequired,
             enabled: PropTypes.bool.isRequired,
@@ -31,7 +31,7 @@ export default function PackagesForm({ formData, setFormValue, disabled }) {
             <h3>{_("Packages List")}</h3>
             <div className="container">
                 <div className="packages-list">
-                    {formData.user_lists.map(
+                    {formData.package_lists.map(
                         (_package, idx) => (
                             <div className="package" key={_package.title}>
                                 <CheckBox
@@ -41,7 +41,7 @@ export default function PackagesForm({ formData, setFormValue, disabled }) {
                                     disabled={disabled}
 
                                     onChange={setFormValue((value) => ({
-                                        user_lists: { [idx]: { enabled: { $set: value } } },
+                                        package_lists: { [idx]: { enabled: { $set: value } } },
                                     }))}
                                 />
                                 {_package.options && _package.options.length > 0

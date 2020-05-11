@@ -76,7 +76,7 @@ describe("<Packages/>", () => {
                 "languages": [
                     "cs",
                 ],
-                "user_lists": [
+                "package_lists": [
                     {
                         "name": "enabled-package",
                         "options": [],
@@ -96,7 +96,7 @@ describe("<Packages/>", () => {
                 "languages": [
                     "cs",
                 ],
-                "user_lists": [
+                "package_lists": [
                     {
                         "name": "enabled-package",
                         "options": []

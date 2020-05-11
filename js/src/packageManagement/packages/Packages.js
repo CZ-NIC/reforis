@@ -97,13 +97,13 @@ function DisabledUpdaterAlert() {
 }
 
 function prepData(formData) {
-    formData.user_lists = formData.user_lists
+    formData.package_lists = formData.package_lists
         .filter((_package) => !_package.hidden);
     return formData;
 }
 
 function prepDataToSubmit(formData) {
-    const packages = formData.user_lists
+    const packages = formData.package_lists
         .filter((_package) => _package.enabled)
         .map((_package) => {
             const options = _package.options.map((option) => ({
@@ -122,7 +122,7 @@ function prepDataToSubmit(formData) {
 
     return {
         languages,
-        user_lists: packages,
+        package_lists: packages,
     };
 }
 
