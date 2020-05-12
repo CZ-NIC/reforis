@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2020-02-20 17:21+0100\n"
-"PO-Revision-Date: 2020-04-15 20:11+0000\n"
+"PO-Revision-Date: 2020-05-13 08:41+0000\n"
 "Last-Translator: Florian <floflr@zaclys.net>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/turris/reforis/fr/"
 ">\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.0-dev\n"
+"X-Generator: Weblate 4.1-dev\n"
 "Generated-By: Babel 2.7.0\n"
 
 #: js/src/about/About.js:22 js/src/main/pages.js:133
@@ -993,7 +993,6 @@ msgid "Slot"
 msgstr "Emplacement"
 
 #: js/src/interfaces/SelectedInterface.js:93
-#, fuzzy
 msgid "Interface ID"
 msgstr "ID d'interface"
 
@@ -1638,7 +1637,6 @@ msgid "Action"
 msgstr "Action"
 
 #: js/src/packageManagement/updates/UpdateApproval.js:99
-#, fuzzy
 msgid "Current"
 msgstr "En cours"
 
@@ -1655,7 +1653,6 @@ msgstr ""
 "jour différées ou nécessitant une approbation pour les examiner."
 
 #: js/src/packageManagement/updates/Updates.js:49
-#, fuzzy
 msgid "Check and install updates"
 msgstr "Vérifier et installer les mises à jour"
 
@@ -1674,9 +1671,8 @@ msgid "Manually check for updates and review them immediately."
 msgstr "Recherchez manuellement les mises à jour et examinez-les immédiatement."
 
 #: js/src/packageManagement/updates/hooks.js:77
-#, fuzzy
 msgid "Cannot fetch updater status."
-msgstr "Impossible de récupérer l'état du programme de mise à jour."
+msgstr "Impossible d'obtenir le statut de mise à jour."
 
 #: js/src/password/CurrentForisPasswordForm.js:24
 msgid "Current Foris password"
@@ -1718,9 +1714,8 @@ msgid "Password changed successfully."
 msgstr "Mot de passe changé avec succès."
 
 #: js/src/password/Password.js:115
-#, fuzzy
 msgid "Password Settings"
-msgstr "Paramètres du mot de passe"
+msgstr "Paramètre des mot de passe"
 
 #: js/src/password/Password.js:158
 msgid "Password can't be empty."
