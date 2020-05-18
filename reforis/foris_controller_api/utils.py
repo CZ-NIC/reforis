@@ -1,3 +1,4 @@
+import ipaddress
 from http import HTTPStatus
 
 from flask import request, current_app, jsonify
@@ -55,3 +56,15 @@ def validate_json(json_data, expected_fields=None):
             errors[field_name] = f'Expected data of type: {field_type.__name__}'
     if errors:
         raise APIError(errors, HTTPStatus.BAD_REQUEST)
+
+
+def process_dhcp_response(dhcp, ip, netmask):
+    network = ipaddress.IPv4Network(f'{ip}/{netmask}', strict=False)
+    start = network.network_address + dhcp['start']
+    limit = start + dhcp['limit']
+    return {
+        **dhcp,
+        'lease_time': dhcp['lease_time'] / 3600,
+        'start': str(start),
+        'limit': str(limit),
+    }
