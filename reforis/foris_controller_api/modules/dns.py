@@ -1,7 +1,7 @@
 from flask import current_app, jsonify, request
 from flask_babel import gettext as _
 
-from reforis.foris_controller_api.utils import _foris_controller_settings_call, APIError
+from .utils import _foris_controller_settings_call, APIError
 
 
 def dns():

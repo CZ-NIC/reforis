@@ -10,7 +10,7 @@ from flask_babel import Babel
 from unittest import mock
 
 from reforis import create_app
-from reforis.foris_controller_api.utils import APIError
+from reforis.utils import APIError
 from reforis.test_utils.mocked_send import get_mocked_send
 
 

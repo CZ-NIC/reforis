@@ -1,6 +1,6 @@
 from flask import jsonify, current_app
 
-from reforis.foris_controller_api.utils import _foris_controller_settings_call
+from .utils import _foris_controller_settings_call
 
 
 def region_and_time():

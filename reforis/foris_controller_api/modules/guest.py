@@ -1,6 +1,6 @@
 from flask import current_app, jsonify, request
 
-from ..utils import process_dhcp_response
+from .utils import process_dhcp_get, process_dhcp_post
 
 
 def guest_network_get():
@@ -13,7 +13,7 @@ def guest_network_get():
     response = current_app.backend.perform('guest', 'get_settings')
     if response['dhcp']['enabled'] is True:
         # Convert seconds to hours
-        response['dhcp'] = process_dhcp_response(response['dhcp'], response['ip'], response['netmask'])
+        response['dhcp'] = process_dhcp_get(response['dhcp'], response['ip'], response['netmask'])
     return jsonify(response)
 
 
@@ -27,7 +27,8 @@ def guest_network_set():
     data = request.json
     if data.get('dhcp', False) and data['dhcp']['enabled'] is True:
         # Convert hours to seconds
-        data['dhcp']['lease_time'] *= 3600
+        data['dhcp'] = process_dhcp_post(data['dhcp'], data['ip'], data['netmask'])
+
     response = current_app.backend.perform('guest', 'update_settings', data)
     return jsonify(response)
 

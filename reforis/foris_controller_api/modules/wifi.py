@@ -1,6 +1,6 @@
 from flask import current_app, jsonify
 
-from reforis.foris_controller_api.utils import _foris_controller_settings_call
+from .utils import _foris_controller_settings_call
 
 
 def wifi():

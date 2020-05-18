@@ -67,7 +67,7 @@ def create_app(config):
     from .backend import ExceptionInBackend
     app.register_error_handler(ExceptionInBackend, foris_controller_error)
     # Handle API errors
-    from .foris_controller_api.utils import log_error, APIError
+    from .utils import log_error, APIError
 
     def handle_api_error(error):
         if error.status_code == HTTPStatus.INTERNAL_SERVER_ERROR:

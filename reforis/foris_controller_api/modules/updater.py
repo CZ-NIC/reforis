@@ -2,9 +2,9 @@ from http import HTTPStatus
 
 from flask import current_app, jsonify, request
 from flask_babel import gettext as _
-
 from reforis import _get_locale_from_backend
-from reforis.foris_controller_api.utils import APIError
+
+from .utils import APIError
 
 
 def updates():
