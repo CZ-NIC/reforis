@@ -1,0 +1,474 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Packages/> Should render: updates disabled. 1`] = `
+"Snapshot Diff:
+- First value
++ Second value
+
+@@ -8,10 +8,26 @@
+    <div
+      class=\\"col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3\\"
+    >
+      <form>
+        <div
++         class=\\"alert alert-dismissible alert-warning\\"
++       >
++         <span>
++           Please enable 
++           <a
++             href=\\"/reforis/package-management/update-settings\\"
++           >
++             automatic updates
++           </a>
++            to manage packages and languages.
++         </span>
++       </div>
++       <div
++         class=\\"text-muted\\"
++       >
++         <div
+            class=\\"container mb-3\\"
+          >
+            <div
+              class=\\"row justify-content-start\\"
+            >
+@@ -25,10 +41,11 @@
+                    class=\\"custom-control custom-checkbox \\"
+                  >
+                    <input
+                      checked=\\"\\"
+                      class=\\"custom-control-input\\"
++                     disabled=\\"\\"
+                      id=\\"1\\"
+                      type=\\"checkbox\\"
+                    />
+                    <label
+                      class=\\"custom-control-label\\"
+@@ -48,10 +65,11 @@
+                  <div
+                    class=\\"custom-control custom-checkbox \\"
+                  >
+                    <input
+                      class=\\"custom-control-input\\"
++                     disabled=\\"\\"
+                      id=\\"2\\"
+                      type=\\"checkbox\\"
+                    />
+                    <label
+                      class=\\"custom-control-label\\"
+@@ -71,10 +89,11 @@
+                  <div
+                    class=\\"custom-control custom-checkbox \\"
+                  >
+                    <input
+                      class=\\"custom-control-input\\"
++                     disabled=\\"\\"
+                      id=\\"3\\"
+                      type=\\"checkbox\\"
+                    />
+                    <label
+                      class=\\"custom-control-label\\"
+@@ -94,10 +113,11 @@
+                  <div
+                    class=\\"custom-control custom-checkbox \\"
+                  >
+                    <input
+                      class=\\"custom-control-input\\"
++                     disabled=\\"\\"
+                      id=\\"4\\"
+                      type=\\"checkbox\\"
+                    />
+                    <label
+                      class=\\"custom-control-label\\"
+@@ -117,10 +137,11 @@
+                  <div
+                    class=\\"custom-control custom-checkbox \\"
+                  >
+                    <input
+                      class=\\"custom-control-input\\"
++                     disabled=\\"\\"
+                      id=\\"5\\"
+                      type=\\"checkbox\\"
+                    />
+                    <label
+                      class=\\"custom-control-label\\"
+@@ -140,10 +161,11 @@
+                  <div
+                    class=\\"custom-control custom-checkbox \\"
+                  >
+                    <input
+                      class=\\"custom-control-input\\"
++                     disabled=\\"\\"
+                      id=\\"6\\"
+                      type=\\"checkbox\\"
+                    />
+                    <label
+                      class=\\"custom-control-label\\"
+@@ -163,10 +185,11 @@
+                  <div
+                    class=\\"custom-control custom-checkbox \\"
+                  >
+                    <input
+                      class=\\"custom-control-input\\"
++                     disabled=\\"\\"
+                      id=\\"7\\"
+                      type=\\"checkbox\\"
+                    />
+                    <label
+                      class=\\"custom-control-label\\"
+@@ -186,10 +209,11 @@
+                  <div
+                    class=\\"custom-control custom-checkbox \\"
+                  >
+                    <input
+                      class=\\"custom-control-input\\"
++                     disabled=\\"\\"
+                      id=\\"8\\"
+                      type=\\"checkbox\\"
+                    />
+                    <label
+                      class=\\"custom-control-label\\"
+@@ -209,10 +233,11 @@
+                  <div
+                    class=\\"custom-control custom-checkbox \\"
+                  >
+                    <input
+                      class=\\"custom-control-input\\"
++                     disabled=\\"\\"
+                      id=\\"9\\"
+                      type=\\"checkbox\\"
+                    />
+                    <label
+                      class=\\"custom-control-label\\"
+@@ -232,10 +257,11 @@
+                  <div
+                    class=\\"custom-control custom-checkbox \\"
+                  >
+                    <input
+                      class=\\"custom-control-input\\"
++                     disabled=\\"\\"
+                      id=\\"10\\"
+                      type=\\"checkbox\\"
+                    />
+                    <label
+                      class=\\"custom-control-label\\"
+@@ -255,10 +281,11 @@
+                  <div
+                    class=\\"custom-control custom-checkbox \\"
+                  >
+                    <input
+                      class=\\"custom-control-input\\"
++                     disabled=\\"\\"
+                      id=\\"11\\"
+                      type=\\"checkbox\\"
+                    />
+                    <label
+                      class=\\"custom-control-label\\"
+@@ -269,15 +296,17 @@
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
++       </div>
+        <div
+          class=\\"text-right\\"
+        >
+          <button
+            class=\\"btn btn-primary  col-sm-12 col-lg-3\\"
++           disabled=\\"\\"
+            type=\\"submit\\"
+          >
+              Save
+          </button>
+        </div>"
+`;
+
+exports[`<Packages/> Should render: updates enabled. 1`] = `
+<DocumentFragment>
+  <h1>
+    Languages
+  </h1>
+  <p>
+    If you want to use another language than English you can select it from the following list:
+  </p>
+  <div
+    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
+  >
+    <form>
+      <div
+        class="container mb-3"
+      >
+        <div
+          class="row justify-content-start"
+        >
+          <div
+            class="col-2 col-lg-1 mr-4"
+          >
+            <div
+              class="form-group"
+            >
+              <div
+                class="custom-control custom-checkbox "
+              >
+                <input
+                  checked=""
+                  class="custom-control-input"
+                  id="1"
+                  type="checkbox"
+                />
+                <label
+                  class="custom-control-label"
+                  for="1"
+                >
+                  CS
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-2 col-lg-1 mr-4"
+          >
+            <div
+              class="form-group"
+            >
+              <div
+                class="custom-control custom-checkbox "
+              >
+                <input
+                  class="custom-control-input"
+                  id="2"
+                  type="checkbox"
+                />
+                <label
+                  class="custom-control-label"
+                  for="2"
+                >
+                  DA
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-2 col-lg-1 mr-4"
+          >
+            <div
+              class="form-group"
+            >
+              <div
+                class="custom-control custom-checkbox "
+              >
+                <input
+                  class="custom-control-input"
+                  id="3"
+                  type="checkbox"
+                />
+                <label
+                  class="custom-control-label"
+                  for="3"
+                >
+                  DE
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-2 col-lg-1 mr-4"
+          >
+            <div
+              class="form-group"
+            >
+              <div
+                class="custom-control custom-checkbox "
+              >
+                <input
+                  class="custom-control-input"
+                  id="4"
+                  type="checkbox"
+                />
+                <label
+                  class="custom-control-label"
+                  for="4"
+                >
+                  FR
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-2 col-lg-1 mr-4"
+          >
+            <div
+              class="form-group"
+            >
+              <div
+                class="custom-control custom-checkbox "
+              >
+                <input
+                  class="custom-control-input"
+                  id="5"
+                  type="checkbox"
+                />
+                <label
+                  class="custom-control-label"
+                  for="5"
+                >
+                  LT
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-2 col-lg-1 mr-4"
+          >
+            <div
+              class="form-group"
+            >
+              <div
+                class="custom-control custom-checkbox "
+              >
+                <input
+                  class="custom-control-input"
+                  id="6"
+                  type="checkbox"
+                />
+                <label
+                  class="custom-control-label"
+                  for="6"
+                >
+                  PL
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-2 col-lg-1 mr-4"
+          >
+            <div
+              class="form-group"
+            >
+              <div
+                class="custom-control custom-checkbox "
+              >
+                <input
+                  class="custom-control-input"
+                  id="7"
+                  type="checkbox"
+                />
+                <label
+                  class="custom-control-label"
+                  for="7"
+                >
+                  RU
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-2 col-lg-1 mr-4"
+          >
+            <div
+              class="form-group"
+            >
+              <div
+                class="custom-control custom-checkbox "
+              >
+                <input
+                  class="custom-control-input"
+                  id="8"
+                  type="checkbox"
+                />
+                <label
+                  class="custom-control-label"
+                  for="8"
+                >
+                  SK
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-2 col-lg-1 mr-4"
+          >
+            <div
+              class="form-group"
+            >
+              <div
+                class="custom-control custom-checkbox "
+              >
+                <input
+                  class="custom-control-input"
+                  id="9"
+                  type="checkbox"
+                />
+                <label
+                  class="custom-control-label"
+                  for="9"
+                >
+                  HU
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-2 col-lg-1 mr-4"
+          >
+            <div
+              class="form-group"
+            >
+              <div
+                class="custom-control custom-checkbox "
+              >
+                <input
+                  class="custom-control-input"
+                  id="10"
+                  type="checkbox"
+                />
+                <label
+                  class="custom-control-label"
+                  for="10"
+                >
+                  IT
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-2 col-lg-1 mr-4"
+          >
+            <div
+              class="form-group"
+            >
+              <div
+                class="custom-control custom-checkbox "
+              >
+                <input
+                  class="custom-control-input"
+                  id="11"
+                  type="checkbox"
+                />
+                <label
+                  class="custom-control-label"
+                  for="11"
+                >
+                  NB
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="text-right"
+      >
+        <button
+          class="btn btn-primary  col-sm-12 col-lg-3"
+          type="submit"
+        >
+            Save
+        </button>
+      </div>
+    </form>
+  </div>
+</DocumentFragment>
+`;

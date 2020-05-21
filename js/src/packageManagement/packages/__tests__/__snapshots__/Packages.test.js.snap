@@ -104,7 +104,7 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -201,10 +223,11 @@
+@@ -201,32 +223,33 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -116,7 +116,32 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -229,10 +252,11 @@
+                      for=\\"7\\"
+                    >
+                      LXC utilities
+                      <span
+-                     class=\\"badge badge-primary\\"
++                       class=\\"badge badge-primary badge-disabled\\"
+                        title=\\"Using external storage is highly suggested for this package list usage. Software it contains can wear out flash storages as it performs increased amount of writes.\\"
+                      >
+                        External storage
+                      </span>
+                      <span
+-                     class=\\"badge badge-info\\"
++                       class=\\"badge badge-info badge-disabled\\"
+                        title=\\"Software in this package list consumes possibly higher amount of RAM to run. It is not suggested to use it with small memory.\\"
+                      >
+                        High memory usage
+                      </span>
+                      <span
+-                     class=\\"badge badge-secondary\\"
++                       class=\\"badge badge-secondary badge-disabled\\"
+                        title=\\"This functionality is usable only for advanced users.\\"
+                      >
+                        Advanced users
+                      </span>
+                      <small
+@@ -247,10 +270,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -128,7 +153,7 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -388,10 +412,11 @@
+@@ -412,10 +436,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -140,7 +165,7 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -416,10 +441,11 @@
+@@ -440,10 +465,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -152,7 +177,7 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -444,10 +470,11 @@
+@@ -468,10 +494,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -164,7 +189,7 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -472,10 +499,11 @@
+@@ -496,10 +523,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -176,7 +201,7 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -500,10 +528,11 @@
+@@ -524,10 +552,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -188,148 +213,13 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -543,10 +572,11 @@
-                    class=\\"custom-control custom-checkbox \\"
-                  >
-                    <input
-                      checked=\\"\\"
-                      class=\\"custom-control-input\\"
-+                     disabled=\\"\\"
-                      id=\\"19\\"
-                      type=\\"checkbox\\"
-                    />
-                    <label
-                      class=\\"custom-control-label\\"
-@@ -566,10 +596,11 @@
-                  <div
-                    class=\\"custom-control custom-checkbox \\"
-                  >
-                    <input
-                      class=\\"custom-control-input\\"
-+                     disabled=\\"\\"
-                      id=\\"20\\"
-                      type=\\"checkbox\\"
-                    />
-                    <label
-                      class=\\"custom-control-label\\"
-@@ -589,10 +620,11 @@
-                  <div
-                    class=\\"custom-control custom-checkbox \\"
-                  >
-                    <input
-                      class=\\"custom-control-input\\"
-+                     disabled=\\"\\"
-                      id=\\"21\\"
-                      type=\\"checkbox\\"
-                    />
-                    <label
-                      class=\\"custom-control-label\\"
-@@ -612,10 +644,11 @@
-                  <div
-                    class=\\"custom-control custom-checkbox \\"
-                  >
-                    <input
-                      class=\\"custom-control-input\\"
-+                     disabled=\\"\\"
-                      id=\\"22\\"
-                      type=\\"checkbox\\"
-                    />
-                    <label
-                      class=\\"custom-control-label\\"
-@@ -635,10 +668,11 @@
-                  <div
-                    class=\\"custom-control custom-checkbox \\"
-                  >
-                    <input
-                      class=\\"custom-control-input\\"
-+                     disabled=\\"\\"
-                      id=\\"23\\"
-                      type=\\"checkbox\\"
-                    />
-                    <label
-                      class=\\"custom-control-label\\"
-@@ -658,10 +692,11 @@
-                  <div
-                    class=\\"custom-control custom-checkbox \\"
-                  >
-                    <input
-                      class=\\"custom-control-input\\"
-+                     disabled=\\"\\"
-                      id=\\"24\\"
-                      type=\\"checkbox\\"
-                    />
-                    <label
-                      class=\\"custom-control-label\\"
-@@ -681,10 +716,11 @@
-                  <div
-                    class=\\"custom-control custom-checkbox \\"
-                  >
-                    <input
-                      class=\\"custom-control-input\\"
-+                     disabled=\\"\\"
-                      id=\\"25\\"
-                      type=\\"checkbox\\"
-                    />
-                    <label
-                      class=\\"custom-control-label\\"
-@@ -704,10 +740,11 @@
-                  <div
-                    class=\\"custom-control custom-checkbox \\"
-                  >
-                    <input
-                      class=\\"custom-control-input\\"
-+                     disabled=\\"\\"
-                      id=\\"26\\"
-                      type=\\"checkbox\\"
-                    />
-                    <label
-                      class=\\"custom-control-label\\"
-@@ -727,10 +764,11 @@
-                  <div
-                    class=\\"custom-control custom-checkbox \\"
-                  >
-                    <input
-                      class=\\"custom-control-input\\"
-+                     disabled=\\"\\"
-                      id=\\"27\\"
-                      type=\\"checkbox\\"
-                    />
-                    <label
-                      class=\\"custom-control-label\\"
-@@ -750,10 +788,11 @@
-                  <div
-                    class=\\"custom-control custom-checkbox \\"
-                  >
-                    <input
-                      class=\\"custom-control-input\\"
-+                     disabled=\\"\\"
-                      id=\\"28\\"
-                      type=\\"checkbox\\"
-                    />
-                    <label
-                      class=\\"custom-control-label\\"
-@@ -773,29 +812,32 @@
-                  <div
-                    class=\\"custom-control custom-checkbox \\"
-                  >
-                    <input
-                      class=\\"custom-control-input\\"
-+                     disabled=\\"\\"
-                      id=\\"29\\"
-                      type=\\"checkbox\\"
-                    />
-                    <label
-                      class=\\"custom-control-label\\"
-                      for=\\"29\\"
-                    >
-                      NB
-                    </label>
-+                 </div>
+@@ -543,15 +572,17 @@
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
++       </div>
         <div
           class=\\"text-right\\"
         >
@@ -557,6 +447,24 @@ been installed manually or using opkg is not affected.
                   for="7"
                 >
                   LXC utilities
+                  <span
+                    class="badge badge-primary"
+                    title="Using external storage is highly suggested for this package list usage. Software it contains can wear out flash storages as it performs increased amount of writes."
+                  >
+                    External storage
+                  </span>
+                  <span
+                    class="badge badge-info"
+                    title="Software in this package list consumes possibly higher amount of RAM to run. It is not suggested to use it with small memory."
+                  >
+                    High memory usage
+                  </span>
+                  <span
+                    class="badge badge-secondary"
+                    title="This functionality is usable only for advanced users."
+                  >
+                    Advanced users
+                  </span>
                   <small
                     class="form-text text-muted"
                   >
@@ -690,6 +598,12 @@ been installed manually or using opkg is not affected.
                     for="12"
                   >
                     mdadm RAID
+                    <span
+                      class="badge badge-secondary badge-disabled"
+                      title="This functionality is usable only for advanced users."
+                    >
+                      Advanced users
+                    </span>
                     <small
                       class="form-text text-muted"
                     >
@@ -861,274 +775,6 @@ been installed manually or using opkg is not affected.
                   >
                     Service to increase anonymity on the Internet.
                   </small>
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <h3>
-        Languages
-      </h3>
-      <p>
-        If you want to use another language than English you can select it from the following list:
-      </p>
-      <div
-        class="container mb-3"
-      >
-        <div
-          class="row justify-content-start"
-        >
-          <div
-            class="col-2 col-lg-1 mr-4"
-          >
-            <div
-              class="form-group"
-            >
-              <div
-                class="custom-control custom-checkbox "
-              >
-                <input
-                  checked=""
-                  class="custom-control-input"
-                  id="19"
-                  type="checkbox"
-                />
-                <label
-                  class="custom-control-label"
-                  for="19"
-                >
-                  CS
-                </label>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-2 col-lg-1 mr-4"
-          >
-            <div
-              class="form-group"
-            >
-              <div
-                class="custom-control custom-checkbox "
-              >
-                <input
-                  class="custom-control-input"
-                  id="20"
-                  type="checkbox"
-                />
-                <label
-                  class="custom-control-label"
-                  for="20"
-                >
-                  DA
-                </label>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-2 col-lg-1 mr-4"
-          >
-            <div
-              class="form-group"
-            >
-              <div
-                class="custom-control custom-checkbox "
-              >
-                <input
-                  class="custom-control-input"
-                  id="21"
-                  type="checkbox"
-                />
-                <label
-                  class="custom-control-label"
-                  for="21"
-                >
-                  DE
-                </label>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-2 col-lg-1 mr-4"
-          >
-            <div
-              class="form-group"
-            >
-              <div
-                class="custom-control custom-checkbox "
-              >
-                <input
-                  class="custom-control-input"
-                  id="22"
-                  type="checkbox"
-                />
-                <label
-                  class="custom-control-label"
-                  for="22"
-                >
-                  FR
-                </label>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-2 col-lg-1 mr-4"
-          >
-            <div
-              class="form-group"
-            >
-              <div
-                class="custom-control custom-checkbox "
-              >
-                <input
-                  class="custom-control-input"
-                  id="23"
-                  type="checkbox"
-                />
-                <label
-                  class="custom-control-label"
-                  for="23"
-                >
-                  LT
-                </label>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-2 col-lg-1 mr-4"
-          >
-            <div
-              class="form-group"
-            >
-              <div
-                class="custom-control custom-checkbox "
-              >
-                <input
-                  class="custom-control-input"
-                  id="24"
-                  type="checkbox"
-                />
-                <label
-                  class="custom-control-label"
-                  for="24"
-                >
-                  PL
-                </label>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-2 col-lg-1 mr-4"
-          >
-            <div
-              class="form-group"
-            >
-              <div
-                class="custom-control custom-checkbox "
-              >
-                <input
-                  class="custom-control-input"
-                  id="25"
-                  type="checkbox"
-                />
-                <label
-                  class="custom-control-label"
-                  for="25"
-                >
-                  RU
-                </label>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-2 col-lg-1 mr-4"
-          >
-            <div
-              class="form-group"
-            >
-              <div
-                class="custom-control custom-checkbox "
-              >
-                <input
-                  class="custom-control-input"
-                  id="26"
-                  type="checkbox"
-                />
-                <label
-                  class="custom-control-label"
-                  for="26"
-                >
-                  SK
-                </label>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-2 col-lg-1 mr-4"
-          >
-            <div
-              class="form-group"
-            >
-              <div
-                class="custom-control custom-checkbox "
-              >
-                <input
-                  class="custom-control-input"
-                  id="27"
-                  type="checkbox"
-                />
-                <label
-                  class="custom-control-label"
-                  for="27"
-                >
-                  HU
-                </label>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-2 col-lg-1 mr-4"
-          >
-            <div
-              class="form-group"
-            >
-              <div
-                class="custom-control custom-checkbox "
-              >
-                <input
-                  class="custom-control-input"
-                  id="28"
-                  type="checkbox"
-                />
-                <label
-                  class="custom-control-label"
-                  for="28"
-                >
-                  IT
-                </label>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-2 col-lg-1 mr-4"
-          >
-            <div
-              class="form-group"
-            >
-              <div
-                class="custom-control custom-checkbox "
-              >
-                <input
-                  class="custom-control-input"
-                  id="29"
-                  type="checkbox"
-                />
-                <label
-                  class="custom-control-label"
-                  for="29"
-                >
-                  NB
                 </label>
               </div>
             </div>
