@@ -5,11 +5,10 @@
  * See /LICENSE for more information.
  */
 
-import Notifications from "notifications/Notifications/Notifications";
 import UpdateSettings from "packageManagement/updateSettings/UpdateSettings";
 import Packages from "packageManagement/packages/Packages";
 import Updates from "packageManagement/updates/Updates";
-import About from "about/About";
+import Languages from "packageManagement/languages/Languages";
 
 import WiFi from "wifi/WiFi";
 import WAN from "wan/WAN";
@@ -22,6 +21,9 @@ import Password from "password/Password";
 import RegionAndTime from "regionAndTime/RegionAndTime";
 import NotificationsSettings from "notificationsSettings/NotificationsSettings";
 import Reboot from "reboot/Reboot";
+
+import Notifications from "notifications/Notifications/Notifications";
+import About from "about/About";
 
 import { ForisURLs } from "foris";
 
@@ -120,6 +122,11 @@ const PAGES = [
                 name: _("Packages"),
                 path: "/packages",
                 component: Packages,
+            },
+            {
+                name: _("Languages"),
+                path: "/languages",
+                component: Languages,
             },
         ],
     },
