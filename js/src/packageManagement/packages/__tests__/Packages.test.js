@@ -29,8 +29,10 @@ describe("<Packages/>", () => {
             getByText,
             asFragment
         } = render(<Packages/>));
-        await wait(() => expect(mockAxios.get)
-            .toBeCalledWith("/reforis/api/packages", expect.anything()));
+        await wait(
+            () => expect(mockAxios.get)
+                .toBeCalledWith("/reforis/api/packages", expect.anything())
+        );
         mockAxios.mockResponse({ data: packagesFixture(true) });
         await wait(() => getByText("Enabled package title"));
         firstRender = asFragment();
@@ -53,8 +55,10 @@ describe("<Packages/>", () => {
     it("Should render: updates disabled.", async () => {
         cleanup();
         const { getByText, asFragment } = render(<Packages/>);
-        await wait(() => expect(mockAxios.get)
-            .toBeCalledWith("/reforis/api/packages", expect.anything()));
+        await wait(
+            () => expect(mockAxios.get)
+                .toBeCalledWith("/reforis/api/packages", expect.anything())
+        );
         mockAxios.mockResponse({ data: packagesFixture(false) });
 
         await wait(() => getByText("Enabled package title"));
@@ -73,9 +77,6 @@ describe("<Packages/>", () => {
         fireEvent.click(getByText("Save"));
         expect(mockAxios.post)
             .toHaveBeenCalledWith("/reforis/api/packages", {
-                "languages": [
-                    "cs",
-                ],
                 "package_lists": [
                     {
                         "name": "enabled-package",
@@ -93,9 +94,6 @@ describe("<Packages/>", () => {
         fireEvent.click(getByText("Save"));
         expect(mockAxios.post)
             .toHaveBeenCalledWith("/reforis/api/packages", {
-                "languages": [
-                    "cs",
-                ],
                 "package_lists": [
                     {
                         "name": "enabled-package",

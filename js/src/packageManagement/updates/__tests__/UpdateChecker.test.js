@@ -59,7 +59,7 @@ describe("<UpdateChecker/>", () => {
         mockAxios.mockResponse({ data: { result: true } });
 
         // Repeated check for status
-        await wait(() => expect(mockAxios.get).nthCalledWith(2, "/reforis/api/updates/status", expect.anything()));
+        await wait(() => expect(mockAxios.get).nthCalledWith(2, "/reforis/api/updates/running", expect.anything()));
         mockAxios.mockResponse({ data: { running: false } });
 
         await wait(() => expect(setPending).toBeCalledWith(false));
@@ -81,11 +81,11 @@ describe("<UpdateChecker/>", () => {
         await wait(() => expect(mockAxios.post).toBeCalledWith("/reforis/api/updates/run", undefined, expect.anything()));
         mockAxios.mockResponse({ data: { result: true } });
 
-        await wait(() => expect(mockAxios.get).toBeCalledWith("/reforis/api/updates/status", expect.anything()));
+        await wait(() => expect(mockAxios.get).toBeCalledWith("/reforis/api/updates/running", expect.anything()));
         mockAxios.mockResponse({ data: { running: true } });
 
         // Repeated check for status
-        await wait(() => expect(mockAxios.get).nthCalledWith(2, "/reforis/api/updates/status", expect.anything()));
+        await wait(() => expect(mockAxios.get).nthCalledWith(2, "/reforis/api/updates/running", expect.anything()));
         mockAxios.mockResponse({ data: { running: false } });
 
         await wait(() => expect(setPending).toBeCalledWith(false));
@@ -99,7 +99,7 @@ describe("<UpdateChecker/>", () => {
         // Response to POST updates/run
         mockAxios.mockResponse({ data: { result: true } });
 
-        await wait(() => expect(mockAxios.get).toBeCalledWith("/reforis/api/updates/status", expect.anything()));
+        await wait(() => expect(mockAxios.get).toBeCalledWith("/reforis/api/updates/running", expect.anything()));
         mockJSONError();
 
         await wait(() => expect(mockSetAlert).toBeCalledWith("Cannot fetch updater status."));

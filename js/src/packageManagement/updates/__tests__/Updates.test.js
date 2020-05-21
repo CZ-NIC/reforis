@@ -54,7 +54,7 @@ describe("<Updates/>", () => {
     it("should check updates status", async () => {
         mockAxios.mockResponse({ data: { enabled: true, approval_settings: { status: "delayed" } } });
         await wait(() => expect(getByText("Manually check for updates and review them immediately.")).toBeTruthy());
-        expect(mockAxios.get).nthCalledWith(2, "/reforis/api/updates/status", expect.anything());
+        expect(mockAxios.get).nthCalledWith(2, "/reforis/api/updates/running", expect.anything());
     });
 
     it("should handle error on approvable updates", async () => {
@@ -78,7 +78,7 @@ describe("<Updates/>", () => {
 
         // Proceed to status check
         mockAxios.mockResponse({ data: { running: true } });
-        await wait(() => expect(mockAxios.get).nthCalledWith(2, "/reforis/api/updates/status", expect.anything()));
+        await wait(() => expect(mockAxios.get).nthCalledWith(2, "/reforis/api/updates/running", expect.anything()));
         // Spinner is still visible
         expect(container).toMatchSnapshot();
     });
