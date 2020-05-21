@@ -3,7 +3,6 @@
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
 
-from unittest import mock
 from http import HTTPStatus
 
 from reforis.test_utils import mock_backend_response
@@ -18,12 +17,10 @@ def test_post_updates_automatic_restart_error(client):
         'updater': {
             'get_settings': {
                 'approval': {},
-                # 'user_lists': {},
-                # 'languages': {},
             },
         },
     }
-    with mock_backend_response(backend_response) as mock_send:
+    with mock_backend_response(backend_response):
         response = client.post('/api/updates', json={'reboots': {}, 'enabled': False})
     assert response.status_code == HTTPStatus.INTERNAL_SERVER_ERROR
     assert response.json == 'Cannot change automatic restart settings.'
@@ -42,7 +39,7 @@ def test_post_updates_approvals_error(client):
             },
         },
     }
-    with mock_backend_response(backend_response) as mock_send:
+    with mock_backend_response(backend_response):
         response = client.post('/api/updates', json={'reboots': {}, 'enabled': False})
     assert response.status_code == HTTPStatus.INTERNAL_SERVER_ERROR
     assert response.json == 'Cannot update approvals settings.'
@@ -63,7 +60,7 @@ def test_post_updates_approvals_error_updates_enabled(client):
             },
         },
     }
-    with mock_backend_response(backend_response) as mock_send:
+    with mock_backend_response(backend_response):
         response = client.post('/api/updates', json={'reboots': {}, 'enabled': True})
     assert response.status_code == HTTPStatus.INTERNAL_SERVER_ERROR
     assert response.json == 'Cannot update approvals settings.'

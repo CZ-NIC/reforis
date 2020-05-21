@@ -1,4 +1,4 @@
-#  Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+#  Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
 #
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
@@ -30,7 +30,12 @@ from reforis.test_utils import _test_api_endpoint_foris_controller_call
             'updater': {'get_settings': {'approval': True, 'user_lists': [], 'languages': []}},
             'router_notifications': {'get_settings': {'reboots': {}}}
         }),
-        ('packages', 'updater', 'get_settings', {'approval': True, 'approval_settings': {}}),
+
+        ('packages', 'updater', 'get_package_lists', None),
+        ('packages', 'updater', 'get_enabled', None),
+        ('language-packages', 'updater', 'get_languages', None),
+        ('language-packages', 'updater', 'get_enabled', None),
+
         ('approvals', 'updater', 'get_settings', {
             'approval': {}, 'enabled': True, 'approval_settings': {'status': 'off'}
         }),
