@@ -5,15 +5,13 @@
  * See /LICENSE for more information.
  */
 
-import React, { useEffect } from "react";
-import PropTypes from "prop-types";
-import {
-    Alert, ForisURLs, ForisForm, useAPIGet, API_STATE, Spinner,
-} from "foris";
+import React from "react";
+
+import { ForisForm } from "foris";
 
 import API_URLs from "common/API";
-import LanguageForm from "./LanguageForm";
 import PackagesForm from "./PackagesForm";
+import DisableIfUpdaterIsDisabled from "../utils/DisableIfUpdaterIsDisabled";
 
 export default function Packages() {
     return (
@@ -35,64 +33,9 @@ been installed manually or using opkg is not affected.
             >
                 <DisableIfUpdaterIsDisabled>
                     <PackagesForm />
-                    <LanguageForm />
                 </DisableIfUpdaterIsDisabled>
             </ForisForm>
         </>
-    );
-}
-
-DisableIfUpdaterIsDisabled.propTypes = {
-    formData: PropTypes.shape({ enabled: PropTypes.bool }),
-    children: PropTypes.oneOfType([
-        PropTypes.arrayOf(PropTypes.node),
-        PropTypes.node,
-    ]),
-};
-
-export function DisableIfUpdaterIsDisabled({ children, formData, ...props }) {
-    const [getEnabledState, getEnabled] = useAPIGet(API_URLs.updatesEnabled);
-
-    useEffect(() => {
-        getEnabled();
-    }, [getEnabled]);
-
-    if (getEnabledState.state !== API_STATE.SUCCESS) {
-        return <Spinner />;
-    }
-
-    const isDisabled = !getEnabledState.data.enabled;
-
-    const childrenWithFormProps = React.Children.map(
-        children,
-        (child) => React.cloneElement(child, {
-            ...props,
-            formData,
-            disabled: isDisabled,
-        }),
-    );
-
-    if (!isDisabled) return childrenWithFormProps;
-
-    return (
-        <>
-            <DisabledUpdaterAlert />
-            <div className="text-muted">
-                {childrenWithFormProps}
-            </div>
-        </>
-    );
-}
-
-function DisabledUpdaterAlert() {
-    const message = _(
-        `Please enable <a href="${ForisURLs.packageManagement.updateSettings}">automatic updates</a> to manage packages and languages.`,
-    );
-    // <Alert /> is used instead of context because warning isn't result of any action on this page
-    return (
-        <Alert type="warning">
-            <span dangerouslySetInnerHTML={{ __html: message }} />
-        </Alert>
     );
 }
 
@@ -116,12 +59,7 @@ function prepDataToSubmit(formData) {
             };
         });
 
-    const languages = formData.languages
-        .filter((language) => language.enabled)
-        .map((language) => language.code);
-
     return {
-        languages,
         package_lists: packages,
     };
 }

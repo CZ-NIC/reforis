@@ -6,7 +6,7 @@
  */
 
 import React from "react";
-import { useUID } from "react-uid";
+import PropTypes from "prop-types";
 
 import UserOptions from "./UserOptions/UserOptions";
 import PackageCheckBox from "./PackageCheckBox";
