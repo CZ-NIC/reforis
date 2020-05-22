@@ -32,6 +32,7 @@ LANManagedForm.propTypes = {
         mode_unmanaged: PropTypes.object,
     }),
     setFormValue: PropTypes.func.isRequired,
+    disabled: PropTypes.bool,
 };
 
 LANManagedForm.defaultProps = {
@@ -39,7 +40,7 @@ LANManagedForm.defaultProps = {
 };
 
 export default function LANManagedForm({
-    formData, formErrors, setFormValue, ...props
+    formData, formErrors, setFormValue, disabled,
 }) {
     const errors = (formErrors || {});
     return (
@@ -55,7 +56,7 @@ export default function LANManagedForm({
                     (value) => ({ mode_managed: { router_ip: { $set: value } } }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
             <TextInput
                 label={_("Network mask")}
@@ -67,7 +68,7 @@ export default function LANManagedForm({
                     (value) => ({ mode_managed: { netmask: { $set: value } } }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
             <CheckBox
                 label={_("Enable DHCP")}
@@ -78,7 +79,7 @@ export default function LANManagedForm({
                     (value) => ({ mode_managed: { dhcp: { enabled: { $set: value } } } }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
             {formData.dhcp.enabled && (
                 <DHCPServerForm
@@ -86,9 +87,8 @@ export default function LANManagedForm({
                     formErrors={errors.dhcp ? errors.dhcp : {}}
                     updateRule={(value) => ({ mode_managed: { dhcp: value } })}
                     setFormValue={setFormValue}
-                    routerIP={formData.router_ip}
 
-                    {...props}
+                    disabled={disabled}
                 />
             )}
         </>

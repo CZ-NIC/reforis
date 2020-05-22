@@ -109,7 +109,10 @@ def send_test_notification():
         'router_notifications',
         'create',
         {
-            'msg': _('This is a testing notification. Please ignore me.'),
+            'msg': _('''
+This is a testing notification. Please note you should receive this to your e-mail inbox only if you set the importance
+level on "Reboot or attention is required" or higher.
+            '''),
             'severity': 'error',
             'immediate': True,
         },

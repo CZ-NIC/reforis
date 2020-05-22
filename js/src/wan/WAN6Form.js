@@ -74,6 +74,7 @@ WAN6Form.propTypes = {
     }).isRequired,
     formErrors: PropTypes.shape(FIELDS_PROP_TYPES),
     setFormValue: PropTypes.func.isRequired,
+    disabled: PropTypes.bool,
 };
 
 WAN6Form.defaultProps = {
@@ -83,7 +84,7 @@ WAN6Form.defaultProps = {
 };
 
 export default function WAN6Form({
-    formData, formErrors, setFormValue, ...props
+    formData, formErrors, setFormValue, disabled,
 }) { /* eslint-disable react/prop-types */
     const wan6Settings = formData.wan6_settings;
     const wan6Type = wan6Settings.wan6_type;
@@ -98,7 +99,7 @@ export default function WAN6Form({
                 formErrors={errors.wan6_dhcpv6}
                 last_seen_duid={last_seen_duid}
 
-                {...props}
+                disabled={disabled}
 
                 setFormValue={setFormValue}
             />
@@ -111,7 +112,7 @@ export default function WAN6Form({
 
                 setFormValue={setFormValue}
 
-                {...props}
+                disabled={disabled}
             />
         );
     } else if (wan6Type === "6to4") {
@@ -123,7 +124,7 @@ export default function WAN6Form({
 
                 setFormValue={setFormValue}
 
-                {...props}
+                disabled={disabled}
             />
         );
     } else if (wan6Type === "6in4") {
@@ -135,7 +136,7 @@ export default function WAN6Form({
 
                 setFormValue={setFormValue}
 
-                {...props}
+                disabled={disabled}
             />
         );
     }
@@ -152,7 +153,7 @@ export default function WAN6Form({
                     (value) => ({ wan6_settings: { wan6_type: { $set: value } } }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
             {wanForm}
         </>
@@ -171,7 +172,7 @@ DHCPv6Form.defaultProps = {
 };
 
 function DHCPv6Form({
-    formData, last_seen_duid, formErrors, setFormValue, ...props
+    formData, last_seen_duid, formErrors, setFormValue, disabled,
 }) {
     return (
         <TextInput
@@ -185,7 +186,7 @@ function DHCPv6Form({
                 (value) => ({ wan6_settings: { wan6_dhcpv6: { duid: { $set: value } } } }),
             )}
 
-            {...props}
+            disabled={disabled}
         />
     );
 }
@@ -209,7 +210,7 @@ StaticForm.defaultProps = {
 };
 
 function StaticForm({
-    formData, formErrors, setFormValue, ...props
+    formData, formErrors, setFormValue, disabled,
 }) {
     return (
         <>
@@ -224,7 +225,7 @@ function StaticForm({
                     (value) => ({ wan6_settings: { wan6_static: { ip: { $set: value } } } }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
             <TextInput
                 label={_("Gateway")}
@@ -236,7 +237,7 @@ function StaticForm({
                     (value) => ({ wan6_settings: { wan6_static: { gateway: { $set: value } } } }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
             <TextInput
                 label={_("Prefix")}
@@ -249,7 +250,7 @@ function StaticForm({
                     (value) => ({ wan6_settings: { wan6_static: { network: { $set: value } } } }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
             <TextInput
                 label={_("DNS server 1")}
@@ -261,7 +262,7 @@ function StaticForm({
                     (value) => ({ wan6_settings: { wan6_static: { dns1: { $set: value } } } }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
             <TextInput
                 label={_("DNS server 2")}
@@ -273,7 +274,7 @@ function StaticForm({
                     (value) => ({ wan6_settings: { wan6_static: { dns2: { $set: value } } } }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
         </>
     );
@@ -290,7 +291,7 @@ _6to4Form.defaultProps = {
 };
 
 function _6to4Form({
-    formData, formErrors, setFormValue, ...props
+    formData, formErrors, setFormValue, disabled,
 }) {
     return (
         <TextInput
@@ -304,7 +305,7 @@ function _6to4Form({
                 (value) => ({ wan6_settings: { wan6_6to4: { ipv4_address: { $set: value } } } }),
             )}
 
-            {...props}
+            disabled={disabled}
         />
     );
 }
@@ -328,7 +329,7 @@ _6in4Form.defaultProps = {
 };
 
 function _6in4Form({
-    formData, formErrors, setFormValue, ...props
+    formData, formErrors, setFormValue, disabled,
 }) {
     return (
         <>
@@ -343,7 +344,7 @@ function _6in4Form({
                     (value) => ({ wan6_settings: { wan6_6in4: { server_ipv4: { $set: value } } } }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
             <TextInput
                 label={_("Routed IPv6 prefix")}
@@ -356,7 +357,7 @@ function _6in4Form({
                     (value) => ({ wan6_settings: { wan6_6in4: { ipv6_prefix: { $set: value } } } }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
             <NumberInput
                 label={_("MTU")}
@@ -370,7 +371,7 @@ function _6in4Form({
                     (value) => ({ wan6_settings: { wan6_6in4: { mtu: { $set: value } } } }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
             <CheckBox
                 label="Dynamic IPv4 handling"
@@ -384,7 +385,7 @@ function _6in4Form({
                     }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
             {formData.dynamic_ipv4.enabled
                 ? (
@@ -394,7 +395,7 @@ function _6in4Form({
 
                         setFormValue={setFormValue}
 
-                        {...props}
+                        disabled={disabled}
                     />
                 )
                 : null}
@@ -419,7 +420,7 @@ DynamicIPv4Form.defaultProps = {
 };
 
 function DynamicIPv4Form({
-    formData, formErrors, setFormValue, ...props
+    formData, formErrors, setFormValue, disabled,
 }) {
     return (
         <>
@@ -438,7 +439,7 @@ function DynamicIPv4Form({
                     }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
             <TextInput
                 label={_("Username")}
@@ -454,7 +455,7 @@ function DynamicIPv4Form({
                     }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
             <TextInput
                 label={_("Key")}
@@ -471,7 +472,7 @@ function DynamicIPv4Form({
                     }),
                 )}
 
-                {...props}
+                disabled={disabled}
             />
         </>
     );

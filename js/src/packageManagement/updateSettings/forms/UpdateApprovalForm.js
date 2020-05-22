@@ -37,6 +37,7 @@ UpdateApprovalForm.propTypes = {
     formErrors: PropTypes.shape({
         delay: PropTypes.string,
     }),
+    disabled: PropTypes.bool,
 };
 
 UpdateApprovalForm.defaultProps = {
@@ -44,7 +45,7 @@ UpdateApprovalForm.defaultProps = {
 };
 
 export default function UpdateApprovalForm({
-    formData, formErrors, setFormValue, ...props
+    formData, formErrors, setFormValue, disabled,
 }) {
     return (
         <>
@@ -66,7 +67,7 @@ export default function UpdateApprovalForm({
                     setFormValue((value) => ({ approval_settings: { status: { $set: value } } }))
                 }
 
-                {...props}
+                disabled={disabled}
             />
             {formData.status === "delayed" ? (
                 <NumberInput
@@ -80,7 +81,7 @@ export default function UpdateApprovalForm({
                         setFormValue((value) => ({ approval_settings: { delay: { $set: value } } }))
                     }
 
-                    {...props}
+                    disabled={disabled}
                 />
             ) : null}
         </>

@@ -407,6 +407,11 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
       Test notification
     </h3>
     <div
+      class="alert alert-dismissible alert-warning"
+    >
+      You will not receive the testing notification to your email inbox with current importance level. Please raise the importance level at least to "Reboot or attention is required" and click "Save" button if you want to get this notification by email.
+    </div>
+    <div
       class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3 text-right"
     >
       <button
@@ -627,6 +632,11 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
     <h3>
       Test notification
     </h3>
+    <div
+      class="alert alert-dismissible alert-warning"
+    >
+      You will not receive the testing notification to your email inbox with current importance level. Please raise the importance level at least to "Reboot or attention is required" and click "Save" button if you want to get this notification by email.
+    </div>
     <div
       class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3 text-right"
     >

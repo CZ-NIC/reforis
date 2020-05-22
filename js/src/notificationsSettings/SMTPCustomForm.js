@@ -37,6 +37,7 @@ SMTPCustomForm.propTypes = {
         password: PropTypes.string,
     }),
     setFormValue: PropTypes.func.isRequired,
+    disabled: PropTypes.bool,
 };
 
 SMTPCustomForm.defaultProps = {
@@ -47,7 +48,7 @@ SMTPCustomForm.defaultProps = {
 };
 
 export default function SMTPCustomForm({
-    formData, formErrors, setFormValue, ...props
+    formData, formErrors, setFormValue, disabled,
 }) {
     return (
         <>
@@ -62,7 +63,7 @@ export default function SMTPCustomForm({
 
                 onChange={setFormValue((value) => ({ smtp_custom: { from: { $set: value } } }))}
 
-                {...props}
+                disabled={disabled}
             />
             <TextInput
                 label={_("Server address")}
@@ -73,7 +74,7 @@ export default function SMTPCustomForm({
 
                 onChange={setFormValue((value) => ({ smtp_custom: { host: { $set: value } } }))}
 
-                {...props}
+                disabled={disabled}
             />
             <NumberInput
                 label={_("Server port")}
@@ -84,7 +85,7 @@ export default function SMTPCustomForm({
 
                 onChange={setFormValue((value) => ({ smtp_custom: { port: { $set: value } } }))}
 
-                {...props}
+                disabled={disabled}
             />
             <Select
                 label={_("Security")}
@@ -93,7 +94,7 @@ export default function SMTPCustomForm({
 
                 onChange={setFormValue((value) => ({ smtp_custom: { security: { $set: value } } }))}
 
-                {...props}
+                disabled={disabled}
             />
             <TextInput
                 label={_("User")}
@@ -101,7 +102,7 @@ export default function SMTPCustomForm({
 
                 onChange={setFormValue((value) => ({ smtp_custom: { user: { $set: value } } }))}
 
-                {...props}
+                disabled={disabled}
             />
             <PasswordInput
                 label={_("Password")}
@@ -109,7 +110,7 @@ export default function SMTPCustomForm({
                 value={formData.password || ""}
                 onChange={setFormValue((value) => ({ smtp_custom: { password: { $set: value } } }))}
 
-                {...props}
+                disabled={disabled}
             />
 
         </>

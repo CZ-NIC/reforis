@@ -15,9 +15,10 @@ CurrentForisPasswordForm.propTypes = {
         { currentForisPassword: PropTypes.string },
     ).isRequired,
     setFormValue: PropTypes.func.isRequired,
+    disabled: PropTypes.bool,
 };
 
-export default function CurrentForisPasswordForm({ formData, setFormValue, ...props }) {
+export default function CurrentForisPasswordForm({ formData, setFormValue, disabled }) {
     return (
         <PasswordInput
             withEye
@@ -28,7 +29,7 @@ export default function CurrentForisPasswordForm({ formData, setFormValue, ...pr
                 (value) => ({ currentForisPassword: { $set: value } }),
             )}
 
-            {...props}
+            disabled={disabled}
         />
     );
 }
