@@ -17,7 +17,7 @@
     "foris": "^4.5.0",
     "immutability-helper": "3.0.1",
     "ipaddr": "npm:ipaddr.js@^1.9.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.1",
     "moment": "^2.24.0",
     "pdfmake": "^0.1.63",
     "popper.js": "^1.16.1",
