@@ -65,7 +65,7 @@ function prepDataToSubmit(formData) {
     if (!formData.enabled) {
         delete formData.approval_settings;
         delete formData.languages;
-        delete formData.user_lists;
+        delete formData.package_lists;
     } else if (formData.approval_settings.status !== "delayed") delete formData.approval_settings.delay;
     return formData;
 }

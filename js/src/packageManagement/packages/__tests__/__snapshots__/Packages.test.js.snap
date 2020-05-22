@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Packages/> Updates disabled 1`] = `
+exports[`<Packages/> Should render: updates disabled. 1`] = `
 "Snapshot Diff:
 - First value
 + Second value
@@ -104,7 +104,7 @@ exports[`<Packages/> Updates disabled 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -201,10 +223,11 @@
+@@ -201,32 +223,33 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -116,7 +116,32 @@ exports[`<Packages/> Updates disabled 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -229,10 +252,11 @@
+                      for=\\"7\\"
+                    >
+                      LXC utilities
+                      <span
+-                     class=\\"badge badge-primary\\"
++                       class=\\"badge badge-primary badge-disabled\\"
+                        title=\\"Using external storage is highly suggested for this package list usage. Software it contains can wear out flash storages as it performs increased amount of writes.\\"
+                      >
+                        External storage
+                      </span>
+                      <span
+-                     class=\\"badge badge-info\\"
++                       class=\\"badge badge-info badge-disabled\\"
+                        title=\\"Software in this package list consumes possibly higher amount of RAM to run. It is not suggested to use it with small memory.\\"
+                      >
+                        High memory usage
+                      </span>
+                      <span
+-                     class=\\"badge badge-secondary\\"
++                       class=\\"badge badge-secondary badge-disabled\\"
+                        title=\\"This functionality is usable only for advanced users.\\"
+                      >
+                        Advanced users
+                      </span>
+                      <small
+@@ -247,10 +270,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -128,71 +153,11 @@ exports[`<Packages/> Updates disabled 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -257,10 +281,11 @@
+@@ -412,10 +436,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
                     <input
-                      class=\\"custom-control-input\\"
-+                     disabled=\\"\\"
-                      id=\\"9\\"
-                      type=\\"checkbox\\"
-                    />
-                    <label
-                      class=\\"custom-control-label\\"
-@@ -285,10 +310,11 @@
-                  <div
-                    class=\\"custom-control custom-checkbox \\"
-                  >
-                    <input
-                      class=\\"custom-control-input\\"
-+                     disabled=\\"\\"
-                      id=\\"10\\"
-                      type=\\"checkbox\\"
-                    />
-                    <label
-                      class=\\"custom-control-label\\"
-@@ -313,10 +339,11 @@
-                  <div
-                    class=\\"custom-control custom-checkbox \\"
-                  >
-                    <input
-                      class=\\"custom-control-input\\"
-+                     disabled=\\"\\"
-                      id=\\"11\\"
-                      type=\\"checkbox\\"
-                    />
-                    <label
-                      class=\\"custom-control-label\\"
-@@ -341,10 +368,11 @@
-                  <div
-                    class=\\"custom-control custom-checkbox \\"
-                  >
-                    <input
-                      class=\\"custom-control-input\\"
-+                     disabled=\\"\\"
-                      id=\\"12\\"
-                      type=\\"checkbox\\"
-                    />
-                    <label
-                      class=\\"custom-control-label\\"
-@@ -369,10 +397,11 @@
-                  <div
-                    class=\\"custom-control custom-checkbox \\"
-                  >
-                    <input
-                      class=\\"custom-control-input\\"
-+                     disabled=\\"\\"
-                      id=\\"13\\"
-                      type=\\"checkbox\\"
-                    />
-                    <label
-                      class=\\"custom-control-label\\"
-@@ -412,10 +441,11 @@
-                    class=\\"custom-control custom-checkbox \\"
-                  >
-                    <input
-                      checked=\\"\\"
                       class=\\"custom-control-input\\"
 +                     disabled=\\"\\"
                       id=\\"14\\"
@@ -200,7 +165,7 @@ exports[`<Packages/> Updates disabled 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -435,10 +465,11 @@
+@@ -440,10 +465,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -212,7 +177,7 @@ exports[`<Packages/> Updates disabled 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -458,10 +489,11 @@
+@@ -468,10 +494,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -224,7 +189,7 @@ exports[`<Packages/> Updates disabled 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -481,10 +513,11 @@
+@@ -496,10 +523,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -236,7 +201,7 @@ exports[`<Packages/> Updates disabled 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -504,10 +537,11 @@
+@@ -524,10 +552,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -248,88 +213,13 @@ exports[`<Packages/> Updates disabled 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -527,10 +561,11 @@
-                  <div
-                    class=\\"custom-control custom-checkbox \\"
-                  >
-                    <input
-                      class=\\"custom-control-input\\"
-+                     disabled=\\"\\"
-                      id=\\"19\\"
-                      type=\\"checkbox\\"
-                    />
-                    <label
-                      class=\\"custom-control-label\\"
-@@ -550,10 +585,11 @@
-                  <div
-                    class=\\"custom-control custom-checkbox \\"
-                  >
-                    <input
-                      class=\\"custom-control-input\\"
-+                     disabled=\\"\\"
-                      id=\\"20\\"
-                      type=\\"checkbox\\"
-                    />
-                    <label
-                      class=\\"custom-control-label\\"
-@@ -573,10 +609,11 @@
-                  <div
-                    class=\\"custom-control custom-checkbox \\"
-                  >
-                    <input
-                      class=\\"custom-control-input\\"
-+                     disabled=\\"\\"
-                      id=\\"21\\"
-                      type=\\"checkbox\\"
-                    />
-                    <label
-                      class=\\"custom-control-label\\"
-@@ -596,10 +633,11 @@
-                  <div
-                    class=\\"custom-control custom-checkbox \\"
-                  >
-                    <input
-                      class=\\"custom-control-input\\"
-+                     disabled=\\"\\"
-                      id=\\"22\\"
-                      type=\\"checkbox\\"
-                    />
-                    <label
-                      class=\\"custom-control-label\\"
-@@ -619,10 +657,11 @@
-                  <div
-                    class=\\"custom-control custom-checkbox \\"
-                  >
-                    <input
-                      class=\\"custom-control-input\\"
-+                     disabled=\\"\\"
-                      id=\\"23\\"
-                      type=\\"checkbox\\"
-                    />
-                    <label
-                      class=\\"custom-control-label\\"
-@@ -642,29 +681,32 @@
-                  <div
-                    class=\\"custom-control custom-checkbox \\"
-                  >
-                    <input
-                      class=\\"custom-control-input\\"
-+                     disabled=\\"\\"
-                      id=\\"24\\"
-                      type=\\"checkbox\\"
-                    />
-                    <label
-                      class=\\"custom-control-label\\"
-                      for=\\"24\\"
-                    >
-                      NB
-                    </label>
-+                 </div>
+@@ -543,15 +572,17 @@
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
++       </div>
         <div
           class=\\"text-right\\"
         >
@@ -343,7 +233,7 @@ exports[`<Packages/> Updates disabled 1`] = `
         </div>"
 `;
 
-exports[`<Packages/> Updates enabled 1`] = `
+exports[`<Packages/> Should render: updates enabled. 1`] = `
 <DocumentFragment>
   <h1>
     Packages
@@ -367,10 +257,10 @@ been installed manually or using opkg is not affected.
         class="container"
       >
         <div
-          class="row justify-content-start"
+          class="packages-list"
         >
           <div
-            class="col-12 col-lg-6"
+            class="package"
           >
             <div
               class="form-group"
@@ -392,14 +282,14 @@ been installed manually or using opkg is not affected.
                   <small
                     class="form-text text-muted"
                   >
-                    Enabled package msg
+                    Enabled package description
                   </small>
                 </label>
               </div>
             </div>
           </div>
           <div
-            class="col-12 col-lg-6"
+            class="package"
           >
             <div
               class="form-group"
@@ -427,7 +317,7 @@ been installed manually or using opkg is not affected.
             </div>
           </div>
           <div
-            class="col-12 col-lg-6"
+            class="package"
           >
             <div
               class="form-group"
@@ -455,7 +345,7 @@ been installed manually or using opkg is not affected.
             </div>
           </div>
           <div
-            class="col-12 col-lg-6"
+            class="package"
           >
             <div
               class="form-group"
@@ -483,7 +373,7 @@ been installed manually or using opkg is not affected.
             </div>
           </div>
           <div
-            class="col-12 col-lg-6"
+            class="package"
           >
             <div
               class="form-group"
@@ -511,7 +401,7 @@ been installed manually or using opkg is not affected.
             </div>
           </div>
           <div
-            class="col-12 col-lg-6"
+            class="package"
           >
             <div
               class="form-group"
@@ -539,7 +429,7 @@ been installed manually or using opkg is not affected.
             </div>
           </div>
           <div
-            class="col-12 col-lg-6"
+            class="package"
           >
             <div
               class="form-group"
@@ -557,6 +447,24 @@ been installed manually or using opkg is not affected.
                   for="7"
                 >
                   LXC utilities
+                  <span
+                    class="badge badge-primary"
+                    title="Using external storage is highly suggested for this package list usage. Software it contains can wear out flash storages as it performs increased amount of writes."
+                  >
+                    External storage
+                  </span>
+                  <span
+                    class="badge badge-info"
+                    title="Software in this package list consumes possibly higher amount of RAM to run. It is not suggested to use it with small memory."
+                  >
+                    High memory usage
+                  </span>
+                  <span
+                    class="badge badge-secondary"
+                    title="This functionality is usable only for advanced users."
+                  >
+                    Advanced users
+                  </span>
                   <small
                     class="form-text text-muted"
                   >
@@ -567,7 +475,7 @@ been installed manually or using opkg is not affected.
             </div>
           </div>
           <div
-            class="col-12 col-lg-6"
+            class="package"
           >
             <div
               class="form-group"
@@ -593,9 +501,146 @@ been installed manually or using opkg is not affected.
                 </label>
               </div>
             </div>
+            <div
+              class="option"
+            >
+              <div
+                class="form-group"
+              >
+                <div
+                  class="custom-control custom-checkbox "
+                >
+                  <input
+                    checked=""
+                    class="custom-control-input"
+                    disabled=""
+                    id="9"
+                    type="checkbox"
+                  />
+                  <label
+                    class="custom-control-label"
+                    for="9"
+                  >
+                    Samba
+                    <small
+                      class="form-text text-muted"
+                    >
+                      Implementation of SMB network protocol.
+                    </small>
+                  </label>
+                </div>
+              </div>
+              <div
+                class="form-group"
+              >
+                <div
+                  class="custom-control custom-checkbox "
+                >
+                  <input
+                    class="custom-control-input"
+                    disabled=""
+                    id="10"
+                    type="checkbox"
+                  />
+                  <label
+                    class="custom-control-label"
+                    for="10"
+                  >
+                    DLNA
+                    <small
+                      class="form-text text-muted"
+                    >
+                      Digital media sharing server.
+                    </small>
+                  </label>
+                </div>
+              </div>
+              <div
+                class="form-group"
+              >
+                <div
+                  class="custom-control custom-checkbox "
+                >
+                  <input
+                    checked=""
+                    class="custom-control-input"
+                    disabled=""
+                    id="11"
+                    type="checkbox"
+                  />
+                  <label
+                    class="custom-control-label"
+                    for="11"
+                  >
+                    Transmission
+                    <small
+                      class="form-text text-muted"
+                    >
+                      BitTorrent client.
+                    </small>
+                  </label>
+                </div>
+              </div>
+              <div
+                class="form-group"
+              >
+                <div
+                  class="custom-control custom-checkbox "
+                >
+                  <input
+                    class="custom-control-input"
+                    disabled=""
+                    id="12"
+                    type="checkbox"
+                  />
+                  <label
+                    class="custom-control-label"
+                    for="12"
+                  >
+                    mdadm RAID
+                    <span
+                      class="badge badge-secondary badge-disabled"
+                      title="This functionality is usable only for advanced users."
+                    >
+                      Advanced users
+                    </span>
+                    <small
+                      class="form-text text-muted"
+                    >
+                      Software RAID storage support using mdadm.
+                    </small>
+                  </label>
+                </div>
+              </div>
+              <div
+                class="form-group"
+              >
+                <div
+                  class="custom-control custom-checkbox "
+                >
+                  <input
+                    class="custom-control-input"
+                    disabled=""
+                    id="13"
+                    type="checkbox"
+                  />
+                  <label
+                    class="custom-control-label"
+                    for="13"
+                  >
+                    Encrypted Storage
+                    <small
+                      class="form-text text-muted"
+                    >
+                      Add support to access encrypted storage devices using dm-crypt.
+                    </small>
+                  </label>
+                </div>
+              </div>
+            </div>
           </div>
           <div
-            class="col-12 col-lg-6"
+            class="package"
           >
             <div
               class="form-group"
@@ -605,12 +650,12 @@ been installed manually or using opkg is not affected.
               >
                 <input
                   class="custom-control-input"
-                  id="9"
+                  id="14"
                   type="checkbox"
                 />
                 <label
                   class="custom-control-label"
-                  for="9"
+                  for="14"
                 >
                   Internet connection speed measurement
                   <small
@@ -623,157 +668,7 @@ been installed manually or using opkg is not affected.
             </div>
           </div>
           <div
-            class="col-12 col-lg-6"
-          >
-            <div
-              class="form-group"
-            >
-              <div
-                class="custom-control custom-checkbox "
-              >
-                <input
-                  class="custom-control-input"
-                  id="10"
-                  type="checkbox"
-                />
-                <label
-                  class="custom-control-label"
-                  for="10"
-                >
-                  OpenVPN
-                  <small
-                    class="form-text text-muted"
-                  >
-                    An easy setup of OpenVPN server from Foris.
-                  </small>
-                </label>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-12 col-lg-6"
-          >
-            <div
-              class="form-group"
-            >
-              <div
-                class="custom-control custom-checkbox "
-              >
-                <input
-                  class="custom-control-input"
-                  id="11"
-                  type="checkbox"
-                />
-                <label
-                  class="custom-control-label"
-                  for="11"
-                >
-                  Pakon
-                  <small
-                    class="form-text text-muted"
-                  >
-                    Software for in depth monitoring of your traffic.
-                  </small>
-                </label>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-12 col-lg-6"
-          >
-            <div
-              class="form-group"
-            >
-              <div
-                class="custom-control custom-checkbox "
-              >
-                <input
-                  class="custom-control-input"
-                  id="12"
-                  type="checkbox"
-                />
-                <label
-                  class="custom-control-label"
-                  for="12"
-                >
-                  Print server
-                  <small
-                    class="form-text text-muted"
-                  >
-                    Services allowing to connect a printer to the router and use it for remote printing.
-                  </small>
-                </label>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-12 col-lg-6"
-          >
-            <div
-              class="form-group"
-            >
-              <div
-                class="custom-control custom-checkbox "
-              >
-                <input
-                  class="custom-control-input"
-                  id="13"
-                  type="checkbox"
-                />
-                <label
-                  class="custom-control-label"
-                  for="13"
-                >
-                  Tor
-                  <small
-                    class="form-text text-muted"
-                  >
-                    Service to increase anonymity on the Internet.
-                  </small>
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <h3>
-        Languages
-      </h3>
-      <p>
-        If you want to use another language than English you can select it from the following list:
-      </p>
-      <div
-        class="container mb-3"
-      >
-        <div
-          class="row justify-content-start"
-        >
-          <div
-            class="col-2 col-lg-1 mr-4"
-          >
-            <div
-              class="form-group"
-            >
-              <div
-                class="custom-control custom-checkbox "
-              >
-                <input
-                  checked=""
-                  class="custom-control-input"
-                  id="14"
-                  type="checkbox"
-                />
-                <label
-                  class="custom-control-label"
-                  for="14"
-                >
-                  CS
-                </label>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-2 col-lg-1 mr-4"
+            class="package"
           >
             <div
               class="form-group"
@@ -790,13 +685,18 @@ been installed manually or using opkg is not affected.
                   class="custom-control-label"
                   for="15"
                 >
-                  DA
+                  OpenVPN
+                  <small
+                    class="form-text text-muted"
+                  >
+                    An easy setup of OpenVPN server from Foris.
+                  </small>
                 </label>
               </div>
             </div>
           </div>
           <div
-            class="col-2 col-lg-1 mr-4"
+            class="package"
           >
             <div
               class="form-group"
@@ -813,13 +713,18 @@ been installed manually or using opkg is not affected.
                   class="custom-control-label"
                   for="16"
                 >
-                  DE
+                  Pakon
+                  <small
+                    class="form-text text-muted"
+                  >
+                    Software for in depth monitoring of your traffic.
+                  </small>
                 </label>
               </div>
             </div>
           </div>
           <div
-            class="col-2 col-lg-1 mr-4"
+            class="package"
           >
             <div
               class="form-group"
@@ -836,13 +741,18 @@ been installed manually or using opkg is not affected.
                   class="custom-control-label"
                   for="17"
                 >
-                  FR
+                  Print server
+                  <small
+                    class="form-text text-muted"
+                  >
+                    Services allowing to connect a printer to the router and use it for remote printing.
+                  </small>
                 </label>
               </div>
             </div>
           </div>
           <div
-            class="col-2 col-lg-1 mr-4"
+            class="package"
           >
             <div
               class="form-group"
@@ -859,145 +769,12 @@ been installed manually or using opkg is not affected.
                   class="custom-control-label"
                   for="18"
                 >
-                  LT
-                </label>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-2 col-lg-1 mr-4"
-          >
-            <div
-              class="form-group"
-            >
-              <div
-                class="custom-control custom-checkbox "
-              >
-                <input
-                  class="custom-control-input"
-                  id="19"
-                  type="checkbox"
-                />
-                <label
-                  class="custom-control-label"
-                  for="19"
-                >
-                  PL
-                </label>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-2 col-lg-1 mr-4"
-          >
-            <div
-              class="form-group"
-            >
-              <div
-                class="custom-control custom-checkbox "
-              >
-                <input
-                  class="custom-control-input"
-                  id="20"
-                  type="checkbox"
-                />
-                <label
-                  class="custom-control-label"
-                  for="20"
-                >
-                  RU
-                </label>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-2 col-lg-1 mr-4"
-          >
-            <div
-              class="form-group"
-            >
-              <div
-                class="custom-control custom-checkbox "
-              >
-                <input
-                  class="custom-control-input"
-                  id="21"
-                  type="checkbox"
-                />
-                <label
-                  class="custom-control-label"
-                  for="21"
-                >
-                  SK
-                </label>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-2 col-lg-1 mr-4"
-          >
-            <div
-              class="form-group"
-            >
-              <div
-                class="custom-control custom-checkbox "
-              >
-                <input
-                  class="custom-control-input"
-                  id="22"
-                  type="checkbox"
-                />
-                <label
-                  class="custom-control-label"
-                  for="22"
-                >
-                  HU
-                </label>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-2 col-lg-1 mr-4"
-          >
-            <div
-              class="form-group"
-            >
-              <div
-                class="custom-control custom-checkbox "
-              >
-                <input
-                  class="custom-control-input"
-                  id="23"
-                  type="checkbox"
-                />
-                <label
-                  class="custom-control-label"
-                  for="23"
-                >
-                  IT
-                </label>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-2 col-lg-1 mr-4"
-          >
-            <div
-              class="form-group"
-            >
-              <div
-                class="custom-control custom-checkbox "
-              >
-                <input
-                  class="custom-control-input"
-                  id="24"
-                  type="checkbox"
-                />
-                <label
-                  class="custom-control-label"
-                  for="24"
-                >
-                  NB
+                  Tor
+                  <small
+                    class="form-text text-muted"
+                  >
+                    Service to increase anonymity on the Internet.
+                  </small>
                 </label>
               </div>
             </div>

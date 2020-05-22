@@ -1,18 +1,17 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
  */
 
 import React from "react";
-import PropTypes from "prop-types";
+
+import { ForisForm } from "foris";
 
 import API_URLs from "common/API";
-import { Alert, ForisURLs, ForisForm } from "foris";
-
-import LanguageForm from "./LanguageForm";
 import PackagesForm from "./PackagesForm";
+import DisableIfUpdaterIsDisabled from "../utils/DisableIfUpdaterIsDisabled";
 
 export default function Packages() {
     return (
@@ -34,68 +33,35 @@ been installed manually or using opkg is not affected.
             >
                 <DisableIfUpdaterIsDisabled>
                     <PackagesForm />
-                    <LanguageForm />
                 </DisableIfUpdaterIsDisabled>
             </ForisForm>
         </>
     );
 }
 
-DisableIfUpdaterIsDisabled.propTypes = {
-    formData: PropTypes.shape({ enabled: PropTypes.bool }),
-    children: PropTypes.oneOfType([
-        PropTypes.arrayOf(PropTypes.node),
-        PropTypes.node,
-    ]),
-};
-
-export function DisableIfUpdaterIsDisabled({ children, formData, ...props }) {
-    const isDisabled = !formData.enabled;
-    const childrenWithFormProps = React.Children.map(
-        children,
-        (child) => React.cloneElement(child, { ...props, formData, disabled: isDisabled }),
-    );
-
-    if (!isDisabled) return childrenWithFormProps;
-
-    return (
-        <>
-            <DisabledUpdaterAlert />
-            <div className="text-muted">
-                {childrenWithFormProps}
-            </div>
-        </>
-    );
-}
-
-function DisabledUpdaterAlert() {
-    const message = _(
-        `Please enable <a href="${ForisURLs.packageManagement.updateSettings}">automatic updates</a> to manage packages and languages.`,
-    );
-    // <Alert /> is used instead of context because warning isn't result of any action on this page
-    return (
-        <Alert type="warning">
-            <span dangerouslySetInnerHTML={{ __html: message }} />
-        </Alert>
-    );
-}
-
 function prepData(formData) {
-    formData.user_lists = formData.user_lists
+    formData.package_lists = formData.package_lists
         .filter((_package) => !_package.hidden);
     return formData;
 }
 
 function prepDataToSubmit(formData) {
-    const packages = formData.user_lists
+    const packages = formData.package_lists
         .filter((_package) => _package.enabled)
-        .map((_package) => _package.name);
+        .map((_package) => {
+            const options = _package.options.map((option) => ({
+                name: option.name,
+                enabled: option.enabled,
+            }));
+            return {
+                name: _package.name,
+                options,
+            };
+        });
 
-    const languages = formData.languages
-        .filter((language) => language.enabled)
-        .map((language) => language.code);
-
-    return { languages, user_lists: packages };
+    return {
+        package_lists: packages,
+    };
 }
 
 // Hack to disable submit button

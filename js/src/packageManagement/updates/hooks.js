@@ -19,7 +19,7 @@ const REFRESH_INTERVAL = 500; // milliseconds
  */
 export function usePending() {
     const [pending, setPending] = useState(false);
-    const [getUpdatesStatusResponse, getUpdatesStatus] = useAPIGet(API_URLs.updatesStatus);
+    const [getUpdatesStatusResponse, getUpdatesStatus] = useAPIGet(API_URLs.updatesRunning);
     useEffect(() => {
         getUpdatesStatus();
     }, [getUpdatesStatus]);
@@ -59,7 +59,7 @@ export function usePendingPolling(onSuccess, pending, setPending) {
     const [setAlert, dismissAlert] = useAlert();
 
     const [checkStatusPollingResponse] = useAPIPolling(
-        API_URLs.updatesStatus,
+        API_URLs.updatesRunning,
         REFRESH_INTERVAL,
         pending,
     );
