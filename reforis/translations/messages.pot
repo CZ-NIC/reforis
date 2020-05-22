@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-03-23 13:30+0100\n"
+"POT-Creation-Date: 2020-05-22 17:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 
-#: js/src/about/About.js:22 js/src/main/pages.js:133
+#: js/src/about/About.js:22 js/src/main/pages.js:140
 msgid "About"
 msgstr ""
 
@@ -41,11 +41,12 @@ msgstr ""
 msgid "Kernel version"
 msgstr ""
 
-#: js/src/common/RebootButton.js:42 js/src/main/pages.js:97
+#: js/src/common/RebootButton.js:42 js/src/main/pages.js:99
 msgid "Reboot"
 msgstr ""
 
 #: js/src/common/RebootButton.js:57 js/src/dns/DNSSECDisableModal.js:32
+#: js/src/notificationsSettings/TestNotification.js:136
 msgid "Warning!"
 msgstr ""
 
@@ -54,6 +55,7 @@ msgid "Are you sure you want to restart the router?"
 msgstr ""
 
 #: js/src/common/RebootButton.js:60 js/src/dns/DNSSECDisableModal.js:42
+#: js/src/notificationsSettings/TestNotification.js:141
 msgid "Cancel"
 msgstr ""
 
@@ -65,7 +67,7 @@ msgstr ""
 msgid "Hostname which will be provided to DHCP server."
 msgstr ""
 
-#: js/src/common/network/DHCPClientForm.js:33
+#: js/src/common/network/DHCPClientForm.js:34
 msgid "DHCP hostname"
 msgstr ""
 
@@ -159,31 +161,31 @@ msgid ""
 "capable of working without it."
 msgstr ""
 
-#: js/src/common/network/StaticIPForm.js:43
+#: js/src/common/network/StaticIPForm.js:44
 msgid "IP address"
 msgstr ""
 
-#: js/src/common/network/StaticIPForm.js:55
-#: js/src/guestNetwork/GuestNetworkForm.js:84 js/src/lan/LANManagedForm.js:61
+#: js/src/common/network/StaticIPForm.js:56
+#: js/src/guestNetwork/GuestNetworkForm.js:85 js/src/lan/LANManagedForm.js:62
 msgid "Network mask"
 msgstr ""
 
-#: js/src/common/network/StaticIPForm.js:67 js/src/wan/WAN6Form.js:230
+#: js/src/common/network/StaticIPForm.js:68 js/src/wan/WAN6Form.js:231
 msgid "Gateway"
 msgstr ""
 
-#: js/src/common/network/StaticIPForm.js:79 js/src/wan/WAN6Form.js:255
+#: js/src/common/network/StaticIPForm.js:80 js/src/wan/WAN6Form.js:256
 msgid "DNS server 1"
 msgstr ""
 
-#: js/src/common/network/StaticIPForm.js:91 js/src/wan/WAN6Form.js:267
+#: js/src/common/network/StaticIPForm.js:92 js/src/wan/WAN6Form.js:268
 msgid "DNS server 2"
 msgstr ""
 
-#: js/src/common/network/StaticIPForm.js:116
-#: js/src/common/network/validators.js:19 js/src/wan/MACForm.js:78
-#: js/src/wan/WAN6Form.js:521 js/src/wan/WAN6Form.js:550
-#: js/src/wan/WAN6Form.js:563 js/src/wan/WANForm.js:177
+#: js/src/common/network/StaticIPForm.js:117
+#: js/src/common/network/validators.js:19 js/src/wan/MACForm.js:79
+#: js/src/wan/WAN6Form.js:522 js/src/wan/WAN6Form.js:551
+#: js/src/wan/WAN6Form.js:564 js/src/wan/WANForm.js:178
 msgid "This field is required."
 msgstr ""
 
@@ -271,19 +273,19 @@ msgid ""
 "\"android-123\" and domain \"my.lan\" will be \"android-123.my.lan\"."
 msgstr ""
 
-#: js/src/dns/DNSForm.js:71
+#: js/src/dns/DNSForm.js:72
 msgid "Use forwarding"
 msgstr ""
 
-#: js/src/dns/DNSForm.js:87
+#: js/src/dns/DNSForm.js:88
 msgid "Enable DNSSEC"
 msgstr ""
 
-#: js/src/dns/DNSForm.js:95
+#: js/src/dns/DNSForm.js:96
 msgid "Enable DHCP clients in DNS"
 msgstr ""
 
-#: js/src/dns/DNSForm.js:106
+#: js/src/dns/DNSForm.js:107
 msgid "Domain of DHCP clients in DNS"
 msgstr ""
 
@@ -410,7 +412,7 @@ msgid "Define at least one of the IP addresses of the forwarder."
 msgstr ""
 
 #: js/src/guestNetwork/GuestNetwork.js:29 js/src/interfaces/Interfaces.js:50
-#: js/src/interfaces/constants.js:11 js/src/main/pages.js:69
+#: js/src/interfaces/constants.js:11 js/src/main/pages.js:71
 msgid "Guest Network"
 msgstr ""
 
@@ -448,15 +450,15 @@ msgstr ""
 msgid "Upload speed in guest network (in kilobits per second)."
 msgstr ""
 
-#: js/src/guestNetwork/GuestNetworkForm.js:58
+#: js/src/guestNetwork/GuestNetworkForm.js:59
 msgid "Enable"
 msgstr ""
 
-#: js/src/guestNetwork/GuestNetworkForm.js:71 js/src/lan/LANManagedForm.js:48
+#: js/src/guestNetwork/GuestNetworkForm.js:72 js/src/lan/LANManagedForm.js:49
 msgid "Router IP address"
 msgstr ""
 
-#: js/src/guestNetwork/GuestNetworkForm.js:96 js/src/lan/LANManagedForm.js:73
+#: js/src/guestNetwork/GuestNetworkForm.js:97 js/src/lan/LANManagedForm.js:74
 msgid "Enable DHCP"
 msgstr ""
 
@@ -464,19 +466,19 @@ msgstr ""
 msgid "Enable QoS"
 msgstr ""
 
-#: js/src/guestNetwork/GuestNetworkForm.js:171
+#: js/src/guestNetwork/GuestNetworkForm.js:172
 msgid "Download"
 msgstr ""
 
-#: js/src/guestNetwork/GuestNetworkForm.js:187
+#: js/src/guestNetwork/GuestNetworkForm.js:188
 msgid "Upload"
 msgstr ""
 
-#: js/src/guestNetwork/GuestNetworkForm.js:208
+#: js/src/guestNetwork/GuestNetworkForm.js:209
 msgid "Download speed must be positive"
 msgstr ""
 
-#: js/src/guestNetwork/GuestNetworkForm.js:211
+#: js/src/guestNetwork/GuestNetworkForm.js:212
 msgid "Upload speed must be positive"
 msgstr ""
 
@@ -623,8 +625,8 @@ msgstr ""
 msgid "Cannot mark guide as finished."
 msgstr ""
 
-#: js/src/guide/steps.js:20 js/src/main/pages.js:82
-#: js/src/notificationsSettings/SMTPCustomForm.js:107
+#: js/src/guide/steps.js:20 js/src/main/pages.js:84
+#: js/src/notificationsSettings/SMTPCustomForm.js:108
 #: js/src/password/Password.js:38
 msgid "Password"
 msgstr ""
@@ -633,31 +635,31 @@ msgstr ""
 msgid "Workflow"
 msgstr ""
 
-#: js/src/guide/steps.js:28 js/src/main/pages.js:64
+#: js/src/guide/steps.js:28 js/src/main/pages.js:66
 msgid "Interfaces"
 msgstr ""
 
-#: js/src/guide/steps.js:32 js/src/regionAndTime/TimeForm.js:109
+#: js/src/guide/steps.js:32 js/src/regionAndTime/TimeForm.js:110
 msgid "Time"
 msgstr ""
 
-#: js/src/guide/steps.js:36 js/src/main/pages.js:59
+#: js/src/guide/steps.js:36 js/src/main/pages.js:61
 msgid "DNS"
 msgstr ""
 
-#: js/src/guide/steps.js:40 js/src/main/pages.js:115
+#: js/src/guide/steps.js:40 js/src/main/pages.js:117
 #: js/src/packageManagement/updates/Updates.js:25
 msgid "Updates"
 msgstr ""
 
 #: js/src/guide/steps.js:44 js/src/interfaces/Interfaces.js:32
-#: js/src/interfaces/constants.js:9 js/src/main/pages.js:49
+#: js/src/interfaces/constants.js:9 js/src/main/pages.js:51
 #: js/src/wan/WAN.js:27
 msgid "WAN"
 msgstr ""
 
 #: js/src/guide/steps.js:48 js/src/interfaces/Interfaces.js:40
-#: js/src/interfaces/constants.js:10 js/src/main/pages.js:54
+#: js/src/interfaces/constants.js:10 js/src/main/pages.js:56
 msgid "LAN"
 msgstr ""
 
@@ -795,7 +797,7 @@ msgstr ""
 msgid "You have to assign at least one interface to this group."
 msgstr ""
 
-#: js/src/interfaces/InterfacesForm.js:53
+#: js/src/interfaces/InterfacesForm.js:54
 msgid ""
 "Ports are open on your WAN interface. It's better to reconfigure your "
 "interface settings to avoid security issues."
@@ -893,11 +895,11 @@ msgstr ""
 msgid "Computer"
 msgstr ""
 
-#: js/src/lan/LANForm.js:75
+#: js/src/lan/LANForm.js:76
 msgid "LAN Settings"
 msgstr ""
 
-#: js/src/lan/LANForm.js:77
+#: js/src/lan/LANForm.js:78
 msgid "LAN mode"
 msgstr ""
 
@@ -918,50 +920,55 @@ msgstr ""
 msgid "Don't connect this device to LAN"
 msgstr ""
 
-#: js/src/lan/LANUnmanagedForm.js:80 js/src/wan/WANForm.js:99
+#: js/src/lan/LANUnmanagedForm.js:81 js/src/wan/WANForm.js:100
 msgid "IPv4 protocol"
 msgstr ""
 
 #: js/src/main/TopBar/NotificationsDropdown/NotificationsDropdownMenu.js:65
-#: js/src/main/pages.js:32
-#: js/src/notifications/Notifications/Notifications.js:76
+#: js/src/main/pages.js:34
+#: js/src/notifications/Notifications/Notifications.js:67
 msgid "Notifications"
 msgstr ""
 
-#: js/src/main/pages.js:38
+#: js/src/main/pages.js:40
 msgid "Network Settings"
 msgstr ""
 
-#: js/src/main/pages.js:44 js/src/wifi/WiFi.js:21
+#: js/src/main/pages.js:46 js/src/wifi/WiFi.js:21
 msgid "Wi-Fi"
 msgstr ""
 
-#: js/src/main/pages.js:76
+#: js/src/main/pages.js:78
 msgid "Administration"
 msgstr ""
 
-#: js/src/main/pages.js:87
+#: js/src/main/pages.js:89
 msgid "Region & Time"
 msgstr ""
 
-#: js/src/main/pages.js:92
+#: js/src/main/pages.js:94
 msgid "Notification Settings"
 msgstr ""
 
-#: js/src/main/pages.js:104
+#: js/src/main/pages.js:106
 msgid "Package Management"
 msgstr ""
 
-#: js/src/main/pages.js:110
+#: js/src/main/pages.js:112
 #: js/src/packageManagement/updateSettings/UpdateSettings.js:28
 msgid "Update Settings"
 msgstr ""
 
-#: js/src/main/pages.js:120 js/src/packageManagement/packages/Packages.js:20
+#: js/src/main/pages.js:122 js/src/packageManagement/packages/Packages.js:19
 msgid "Packages"
 msgstr ""
 
-#: js/src/main/pages.js:127
+#: js/src/main/TopBar/languagesDropdown/LanguagesDropdown.js:44
+#: js/src/main/pages.js:127 js/src/packageManagement/languages/Languages.js:18
+msgid "Languages"
+msgstr ""
+
+#: js/src/main/pages.js:134
 msgid "Advanced Administration"
 msgstr ""
 
@@ -970,18 +977,13 @@ msgid "Logout"
 msgstr ""
 
 #: js/src/main/TopBar/NotificationsDropdown/NotificationsDropdownMenu.js:29
-#: js/src/notifications/Notifications/Notifications.js:64
+#: js/src/notifications/Notifications/Notifications.js:48
 msgid "No notifications"
 msgstr ""
 
 #: js/src/main/TopBar/NotificationsDropdown/NotificationsDropdownMenu.js:90
-#: js/src/notifications/Notifications/Notifications.js:51
+#: js/src/notifications/Notifications/DismissAllButton.js:23
 msgid "Dismiss all"
-msgstr ""
-
-#: js/src/main/TopBar/languagesDropdown/LanguagesDropdown.js:44
-#: js/src/packageManagement/packages/LanguageForm.js:27
-msgid "Languages"
 msgstr ""
 
 #: js/src/main/TopBar/rebootDropdown/RebootDropdown.js:37
@@ -1029,15 +1031,15 @@ msgstr ""
 msgid "Reboot or attention is required or update was installed"
 msgstr ""
 
-#: js/src/notificationsSettings/CommonForm.js:48
+#: js/src/notificationsSettings/CommonForm.js:49
 msgid "Recipient's email"
 msgstr ""
 
-#: js/src/notificationsSettings/CommonForm.js:59
+#: js/src/notificationsSettings/CommonForm.js:60
 msgid "Importance"
 msgstr ""
 
-#: js/src/notificationsSettings/CommonForm.js:70
+#: js/src/notificationsSettings/CommonForm.js:71
 msgid "Send news"
 msgstr ""
 
@@ -1049,19 +1051,19 @@ msgstr ""
 msgid "Custom"
 msgstr ""
 
-#: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:78
+#: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:79
 msgid "Email Notifications"
 msgstr ""
 
-#: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:80
+#: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:81
 msgid "Enable email notifications"
 msgstr ""
 
-#: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:92
+#: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:93
 msgid "SMTP provider"
 msgstr ""
 
-#: js/src/notificationsSettings/NotificationsSettings.js:24
+#: js/src/notificationsSettings/NotificationsSettings.js:25
 msgid "Notifications Settings"
 msgstr ""
 
@@ -1077,32 +1079,58 @@ msgstr ""
 msgid "STARTTLS"
 msgstr ""
 
-#: js/src/notificationsSettings/SMTPCustomForm.js:54
+#: js/src/notificationsSettings/SMTPCustomForm.js:55
 msgid "SMTP Settings"
 msgstr ""
 
-#: js/src/notificationsSettings/SMTPCustomForm.js:56
+#: js/src/notificationsSettings/SMTPCustomForm.js:57
 msgid "Sender address (From)"
 msgstr ""
 
-#: js/src/notificationsSettings/SMTPCustomForm.js:68
+#: js/src/notificationsSettings/SMTPCustomForm.js:69
 msgid "Server address"
 msgstr ""
 
-#: js/src/notificationsSettings/SMTPCustomForm.js:79
+#: js/src/notificationsSettings/SMTPCustomForm.js:80
 msgid "Server port"
 msgstr ""
 
-#: js/src/notificationsSettings/SMTPCustomForm.js:90
+#: js/src/notificationsSettings/SMTPCustomForm.js:91
 msgid "Security"
 msgstr ""
 
-#: js/src/notificationsSettings/SMTPCustomForm.js:99
+#: js/src/notificationsSettings/SMTPCustomForm.js:100
 msgid "User"
 msgstr ""
 
-#: js/src/notificationsSettings/SMTPTurrisForm.js:34
+#: js/src/notificationsSettings/SMTPTurrisForm.js:35
 msgid "Sender's name"
+msgstr ""
+
+#: js/src/notificationsSettings/TestNotification.js:29
+msgid ""
+"There are some unsaved changes in the notifications settings. Do you want"
+" to discard them and test the notifications with the old settings?"
+msgstr ""
+
+#: js/src/notificationsSettings/TestNotification.js:33
+msgid ""
+"You will not receive the testing notification to your email inbox with "
+"current importance level. Please raise the importance level at least to "
+"\"Reboot or attention is required\" and click \"Save\" button if you want"
+" to get this notification by email."
+msgstr ""
+
+#: js/src/notificationsSettings/TestNotification.js:100
+msgid "Test notification"
+msgstr ""
+
+#: js/src/notificationsSettings/TestNotification.js:114
+msgid "Send testing notification"
+msgstr ""
+
+#: js/src/notificationsSettings/TestNotification.js:142
+msgid "Confirm"
 msgstr ""
 
 #: js/src/notificationsSettings/helpTexts.js:9
@@ -1157,13 +1185,13 @@ msgstr ""
 msgid "Minimum port is 1."
 msgstr ""
 
-#: js/src/packageManagement/packages/LanguageForm.js:28
+#: js/src/packageManagement/languages/Languages.js:20
 msgid ""
 "If you want to use another language than English you can select it from "
 "the following list:"
 msgstr ""
 
-#: js/src/packageManagement/packages/Packages.js:22
+#: js/src/packageManagement/packages/Packages.js:21
 msgid ""
 "\n"
 "Apart from the standard installation, you can optionally select bundles "
@@ -1176,14 +1204,7 @@ msgid ""
 "        "
 msgstr ""
 
-#: js/src/packageManagement/packages/Packages.js:72
-msgid ""
-"Please enable <a "
-"href=\"${ForisURLs.packageManagement.updateSettings}\">automatic "
-"updates</a> to manage packages and languages."
-msgstr ""
-
-#: js/src/packageManagement/packages/PackagesForm.js:28
+#: js/src/packageManagement/packages/PackagesForm.js:27
 msgid "Packages List"
 msgstr ""
 
@@ -1270,27 +1291,27 @@ msgstr ""
 msgid "Time of day of automatic reboot in HH:MM format."
 msgstr ""
 
-#: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:43
+#: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:44
 msgid "Automatic Restarts After Software Update"
 msgstr ""
 
-#: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:45
+#: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:46
 msgid "Delay (days)"
 msgstr ""
 
-#: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:57
+#: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:58
 msgid "Reboot time"
 msgstr ""
 
-#: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:87
+#: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:88
 msgid "Time should be in HH:MM format."
 msgstr ""
 
-#: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:90
+#: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:91
 msgid "Restart can be delayed by at most 10 days"
 msgstr ""
 
-#: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:93
+#: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:94
 msgid "Delay must be a positive number"
 msgstr ""
 
@@ -1320,11 +1341,11 @@ msgstr ""
 msgid "You have to approve the updates, otherwise they won't be installed."
 msgstr ""
 
-#: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:51
+#: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:52
 msgid "Update Approvals"
 msgstr ""
 
-#: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:53
+#: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:54
 msgid ""
 "Update approvals can be useful when you want to make sure that updates "
 "won't harm your specific\n"
@@ -1336,15 +1357,15 @@ msgid ""
 "package installation."
 msgstr ""
 
-#: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:73
+#: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:74
 msgid "Delayed updates (hours)"
 msgstr ""
 
-#: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:93
+#: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:94
 msgid "Updates must be delayed by least 1 hour and at most by 168 hours"
 msgstr ""
 
-#: js/src/packageManagement/updateSettings/forms/UpdatesForm.js:39
+#: js/src/packageManagement/updateSettings/forms/UpdatesForm.js:40
 msgid "Enable automatic updates (recommended)"
 msgstr ""
 
@@ -1412,27 +1433,34 @@ msgstr ""
 msgid "Cannot fetch updater status."
 msgstr ""
 
-#: js/src/password/CurrentForisPasswordForm.js:24
+#: js/src/packageManagement/utils/DisabledUpdaterAlert.js:12
+msgid ""
+"Please enable <a "
+"href=\"${ForisURLs.packageManagement.updateSettings}\">automatic "
+"updates</a> to manage packages and languages."
+msgstr ""
+
+#: js/src/password/CurrentForisPasswordForm.js:25
 msgid "Current Foris password"
 msgstr ""
 
-#: js/src/password/ForisPasswordForm.js:35
+#: js/src/password/ForisPasswordForm.js:36
 msgid "Foris Password"
 msgstr ""
 
-#: js/src/password/ForisPasswordForm.js:36
+#: js/src/password/ForisPasswordForm.js:37
 msgid "Set your password for this administration interface."
 msgstr ""
 
-#: js/src/password/ForisPasswordForm.js:39
+#: js/src/password/ForisPasswordForm.js:40
 msgid "New Foris password"
 msgstr ""
 
-#: js/src/password/ForisPasswordForm.js:50
+#: js/src/password/ForisPasswordForm.js:51
 msgid "Use same password for advanced administration (root)"
 msgstr ""
 
-#: js/src/password/ForisPasswordForm.js:51
+#: js/src/password/ForisPasswordForm.js:52
 msgid ""
 "Same password would be used for accessing this administration interface, "
 "for root user in LuCI web interface and for SSH login. Use a strong "
@@ -1461,11 +1489,11 @@ msgstr ""
 msgid "Password should have max 128 symbols."
 msgstr ""
 
-#: js/src/password/RootPasswordForm.js:32
+#: js/src/password/RootPasswordForm.js:33
 msgid "Advanced Administration (root) Password"
 msgstr ""
 
-#: js/src/password/RootPasswordForm.js:35
+#: js/src/password/RootPasswordForm.js:36
 #, python-format
 msgid ""
 "In order to access the advanced configuration options which are not "
@@ -1475,7 +1503,7 @@ msgid ""
 "through the <a href=\"%s\">LuCI web interface</a> or via SSH."
 msgstr ""
 
-#: js/src/password/RootPasswordForm.js:44
+#: js/src/password/RootPasswordForm.js:45
 msgid "New advanced administration password"
 msgstr ""
 
@@ -1539,29 +1567,29 @@ msgstr ""
 msgid "Manually"
 msgstr ""
 
-#: js/src/regionAndTime/TimeForm.js:94
+#: js/src/regionAndTime/TimeForm.js:95
 msgid "Time Settings"
 msgstr ""
 
-#: js/src/regionAndTime/TimeForm.js:95
+#: js/src/regionAndTime/TimeForm.js:96
 msgid ""
 "Time should be up-to-date otherwise DNS and other services might not work"
 " properly."
 msgstr ""
 
-#: js/src/regionAndTime/TimeForm.js:97
+#: js/src/regionAndTime/TimeForm.js:98
 msgid "How to set time"
 msgstr ""
 
-#: js/src/regionAndTime/TimeForm.js:152
+#: js/src/regionAndTime/TimeForm.js:151
 msgid "Hide NTP servers list"
 msgstr ""
 
-#: js/src/regionAndTime/TimeForm.js:152
+#: js/src/regionAndTime/TimeForm.js:151
 msgid "Show NTP servers list"
 msgstr ""
 
-#: js/src/regionAndTime/TimeForm.js:156
+#: js/src/regionAndTime/TimeForm.js:155
 msgid "NTP Servers"
 msgstr ""
 
@@ -1614,15 +1642,15 @@ msgstr ""
 msgid "Colon is used as a separator, for example 00:11:22:33:44:55"
 msgstr ""
 
-#: js/src/wan/MACForm.js:44
+#: js/src/wan/MACForm.js:45
 msgid "MAC"
 msgstr ""
 
-#: js/src/wan/MACForm.js:46
+#: js/src/wan/MACForm.js:47
 msgid "Custom MAC address"
 msgstr ""
 
-#: js/src/wan/MACForm.js:59
+#: js/src/wan/MACForm.js:60
 msgid "MAC address"
 msgstr ""
 
@@ -1720,63 +1748,63 @@ msgstr ""
 msgid "6in4 (public IPv4 address required)"
 msgstr ""
 
-#: js/src/wan/WAN6Form.js:145
+#: js/src/wan/WAN6Form.js:146
 msgid "WAN IPv6"
 msgstr ""
 
-#: js/src/wan/WAN6Form.js:147
+#: js/src/wan/WAN6Form.js:148
 msgid "IPv6 protocol"
 msgstr ""
 
-#: js/src/wan/WAN6Form.js:178
+#: js/src/wan/WAN6Form.js:179
 msgid "Custom DUID"
 msgstr ""
 
-#: js/src/wan/WAN6Form.js:217
+#: js/src/wan/WAN6Form.js:218
 msgid "Address"
 msgstr ""
 
-#: js/src/wan/WAN6Form.js:242
+#: js/src/wan/WAN6Form.js:243
 msgid "Prefix"
 msgstr ""
 
-#: js/src/wan/WAN6Form.js:297
+#: js/src/wan/WAN6Form.js:298
 msgid "Public IPv4"
 msgstr ""
 
-#: js/src/wan/WAN6Form.js:336
+#: js/src/wan/WAN6Form.js:337
 msgid "Provider IPv4"
 msgstr ""
 
-#: js/src/wan/WAN6Form.js:349
+#: js/src/wan/WAN6Form.js:350
 msgid "Routed IPv6 prefix"
 msgstr ""
 
-#: js/src/wan/WAN6Form.js:362
+#: js/src/wan/WAN6Form.js:363
 msgid "MTU"
 msgstr ""
 
-#: js/src/wan/WAN6Form.js:427
+#: js/src/wan/WAN6Form.js:428
 msgid "Tunnel ID"
 msgstr ""
 
-#: js/src/wan/WAN6Form.js:444
+#: js/src/wan/WAN6Form.js:445
 msgid "Username"
 msgstr ""
 
-#: js/src/wan/WAN6Form.js:460
+#: js/src/wan/WAN6Form.js:461
 msgid "Key"
 msgstr ""
 
-#: js/src/wan/WAN6Form.js:530
+#: js/src/wan/WAN6Form.js:531
 msgid "Public IPv4 address is required."
 msgstr ""
 
-#: js/src/wan/WAN6Form.js:545
+#: js/src/wan/WAN6Form.js:546
 msgid "MTU should be a number in range of 1280-1500."
 msgstr ""
 
-#: js/src/wan/WAN6Form.js:546
+#: js/src/wan/WAN6Form.js:547
 msgid "MTU should be in range of 1280-1500."
 msgstr ""
 
@@ -1784,15 +1812,15 @@ msgstr ""
 msgid "PPPoE (for DSL bridges, Modem Turris, etc.)"
 msgstr ""
 
-#: js/src/wan/WANForm.js:97
+#: js/src/wan/WANForm.js:98
 msgid "WAN IPv4"
 msgstr ""
 
-#: js/src/wan/WANForm.js:129
+#: js/src/wan/WANForm.js:130
 msgid "PAP/CHAP username"
 msgstr ""
 
-#: js/src/wan/WANForm.js:141
+#: js/src/wan/WANForm.js:142
 msgid "PAP/CHAP password"
 msgstr ""
 
@@ -1826,6 +1854,25 @@ msgstr ""
 msgid "Wrong current password."
 msgstr ""
 
+#: reforis/foris_controller_api/modules/router_notifications.py:112
+msgid ""
+"\n"
+"This is a testing notification. Please note you should receive this to "
+"your e-mail inbox only if you set the importance\n"
+"level on \"Reboot or attention is required\" or higher.\n"
+"            "
+msgstr ""
+
+#: reforis/foris_controller_api/modules/router_notifications.py:122
+msgid "Testing message was sent, please check your inbox."
+msgstr ""
+
+#: reforis/foris_controller_api/modules/router_notifications.py:125
+msgid ""
+"Sending of the testing message failed, your configuration is possibly "
+"wrong."
+msgstr ""
+
 #: reforis/foris_controller_api/modules/updater.py:60
 msgid "Cannot change automatic restart settings."
 msgstr ""
@@ -1838,12 +1885,12 @@ msgstr ""
 msgid "Cannot rollback automatic restart settings."
 msgstr ""
 
-#: reforis/foris_controller_api/modules/updater.py:160
-msgid "You can't set packages with disabled automatic updates."
+#: reforis/foris_controller_api/modules/updater.py:170
+msgid "Cannot start updater"
 msgstr ""
 
-#: reforis/foris_controller_api/modules/updater.py:171
-msgid "Cannot start updater"
+#: reforis/foris_controller_api/modules/updater.py:199
+msgid "You can't set it with disabled automatic updates."
 msgstr ""
 
 #: reforis/templates/guide.html:14
