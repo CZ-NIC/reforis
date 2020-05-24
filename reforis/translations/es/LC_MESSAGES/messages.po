@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2020-02-20 17:21+0100\n"
-"PO-Revision-Date: 2019-10-29 06:53+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"PO-Revision-Date: 2020-05-25 12:41+0000\n"
+"Last-Translator: Eduardo Cuthbert <elguber@gmail.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/turris/reforis/"
+"es/>\n"
 "Language: es\n"
-"Language-Team: Spanish "
-"<https://hosted.weblate.org/projects/turris/reforis/es/>\n"
-"Plural-Forms: nplurals=2; plural=n != 1\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.1-dev\n"
 "Generated-By: Babel 2.7.0\n"
 
 #: js/src/about/About.js:22 js/src/main/pages.js:133
@@ -37,7 +38,7 @@ msgstr "Versión de Turris OS"
 
 #: js/src/about/About.js:52
 msgid "Turris OS branch"
-msgstr ""
+msgstr "Rama de la version de Turris OS"
 
 #: js/src/about/About.js:61
 msgid "Kernel version"
@@ -73,7 +74,7 @@ msgstr "Nombre de anfitrión DHCP"
 
 #: js/src/common/network/DHCPClientsList.js:19
 msgid "DHCP Clients"
-msgstr ""
+msgstr "Clientes DHCP"
 
 #: js/src/common/network/DHCPClientsList.js:22
 msgid "No DHCP clients found."
@@ -117,7 +118,7 @@ msgstr "Máximo de concesiones de DHCP"
 
 #: js/src/common/network/DHCPServerForm.js:54
 msgid "Maximum number of addresses available for DHCP clients."
-msgstr ""
+msgstr "Màximo nùmero de direcciones DHCP disponibles para clientes."
 
 #: js/src/common/network/DHCPServerForm.js:67
 msgid "Lease time (hours)"
@@ -125,37 +126,41 @@ msgstr "Tiempo de concesión (horas)"
 
 #: js/src/common/network/DHCPValidators.js:57
 msgid "Value must be a number."
-msgstr ""
+msgstr "Valor debe ser un nùmero."
 
 #: js/src/common/network/DHCPValidators.js:59
 msgid "Value must be positive."
-msgstr ""
+msgstr "Valor debe ser positivo."
 
 #: js/src/common/network/DHCPValidators.js:69
 msgid "Invalid network settings. DHCP settings can't be validated."
-msgstr ""
+msgstr "Opciones de red invàlidas. Las opciones DHCP no puede ser validadas."
 
 #: js/src/common/network/DHCPValidators.js:79
 msgid "Minimum lease time is 1 hour."
-msgstr ""
+msgstr "El tiempo de uso mìnimo es de 1 hora."
 
 #: js/src/common/network/DHCPValidators.js:90
 msgid "Address is outside current network."
-msgstr ""
+msgstr "Direccion està fuera de la red actual."
 
 #: js/src/common/network/DHCPValidators.js:92
 msgid "Address is already reserved for other purposes."
-msgstr ""
+msgstr "Direcciòn està reservada para otros propòsitos."
 
 #: js/src/common/network/DHCPValidators.js:95
 msgid "Too many addresses requested. Set a lower number or change DHCP start."
 msgstr ""
+"Demasiadas direcciones solicitadas. Ponga un nùmeor inferior o cambie el "
+"inicio del DHCP."
 
 #: js/src/common/network/DHCPValidators.js:97
 msgid ""
 "The only DHCP lease is the same as router's address. Increase limit or "
 "change start address."
 msgstr ""
+"La ùnica direccòn disponible es la misma que la del router. Aumente el "
+"lìmite o cambie la direcciòn de inicio."
 
 #: js/src/common/network/StaticIPForm.js:14 js/src/wan/WAN6Form.js:29
 msgid ""
@@ -195,7 +200,7 @@ msgstr "Este campo es obligatorio."
 
 #: js/src/common/network/validators.js:12
 msgid "This is not a valid network mask."
-msgstr ""
+msgstr "Eso no es una màscara de red vàlida."
 
 #: js/src/connectionTest/ConnectionTestButton.js:23
 msgid "Test is running..."
@@ -250,6 +255,29 @@ msgid ""
 "this is a serious flaw on their side.\n"
 "            "
 msgstr ""
+"\n"
+"El router Turris usa su propio DNS con soporte DNSSEC . Es capaz de trabajar "
+"independientemente o \n"
+"puede enviar sus peteciones DNS al servidor DNS de su proveedor de internet. "
+"\n"
+"<br/><br/>\n"
+"Las siguientes opciones determinan el comportamiento del traductor DNS. "
+"Normalmente,  es mejor usar\n"
+"el de su proveedor de internet en redes donde funciona correctamente. Si no "
+"fuciona por la razòn que sea, \n"
+"es necesario usar resolutor directo sin reenvio. \n"
+"<br/><br/>\n"
+"En casos raros, que el proveedor de internet tenga mal configurada la red lo "
+"cual interfiere con la validaciòn DNSSEC\n"
+"Si tiene problemas con el DNS, usted puede <b>temporalmente</b> desactivar "
+"la validaciòn DNSSEC para \n"
+"determinar la fuente del problema.Sin embargo, tenga en cuenta que sin "
+"validaciòn DNSSEC, usted es vulnerable a \n"
+"ataques de falseo de DNS! Por consiguiente,<b> recomendamos mantener DNSSEC "
+"activado</b> y resolver la \n"
+"situaciòn con su proveedor de servicios de internet ya que esto es un fallo "
+"serio de su parte.\n"
+"            "
 
 #: js/src/dns/DNS.js:63 js/src/wan/WAN.js:50
 msgid "Connection Test"
@@ -264,6 +292,12 @@ msgid ""
 "changed your forwarder setting.\n"
 "        "
 msgstr ""
+"\n"
+"Aquì puede testear su conexiòn de internet. Este test es tambièn ùtil cuando "
+"necesite chequear que su resolutor DNS funciona como esperaba.\n"
+"Recuerde hacer click en el botòn  <b>Salvar</b> si usted cambiò sus opciones "
+"de reenvio.\n"
+"        "
 
 #: js/src/dns/DNSForm.js:17
 msgid ""
@@ -323,20 +357,20 @@ msgstr "Desactivar DNSSEC"
 
 #: js/src/dns/Forwarders/Forwarders.js:79
 msgid "Edit forwarder"
-msgstr ""
+msgstr "Editar reenviador"
 
 #: js/src/dns/Forwarders/Forwarders.js:79
 #: js/src/dns/Forwarders/Forwarders.js:94
 msgid "Add custom forwarder"
-msgstr ""
+msgstr "Añadir reenviador personalizado"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:32
 msgid "Forwarders"
-msgstr ""
+msgstr "Reenviadores"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:33
 msgid "Actions"
-msgstr ""
+msgstr "Acciones"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:40
 msgid "Use provider's DNS resolver"
@@ -344,76 +378,76 @@ msgstr "Utilizar resolución DNS del proveedor"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:132
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:139
 msgid "Delete"
-msgstr ""
+msgstr "Borrar"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:24
 msgid "base64 encoded sha256."
-msgstr ""
+msgstr "base64 codificado sha246."
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:49
 #: js/src/packageManagement/updates/UpdateApproval.js:98
 msgid "Name"
-msgstr ""
+msgstr "Nombre"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:59
 msgid "IPv4"
-msgstr ""
+msgstr "IPv4"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:69
 msgid "IPv6"
-msgstr ""
+msgstr "IPv6"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:79
 msgid "TLS type"
-msgstr ""
+msgstr "TLS tipo"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:100
 msgid "TLS hostname"
-msgstr ""
+msgstr "TLS nombre de equipo"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:113
 msgid "TLS pin"
-msgstr ""
+msgstr "TLS pin"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:129
 msgid "Save forwarder"
-msgstr ""
+msgstr "Salvar reenviador"
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:37
 msgid "Forwarder saved successfully."
-msgstr ""
+msgstr "Reenviador salvado satisfactoriamente."
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:39
 msgid "Can't save forwarder."
-msgstr ""
+msgstr "No se puede salvar el reenviador."
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:46
 msgid "Forwarder added successfully."
-msgstr ""
+msgstr "Reenviador añadido satisfactoriamente."
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:48
 msgid "Can't add new forwarder."
-msgstr ""
+msgstr "No se puede añadir nuevo reenviador."
 
 #: js/src/dns/Forwarders/Forwarder/validator.js:19
 msgid "Define at least one of the IP addresses of the forwarder."
-msgstr ""
+msgstr "Defina al menos una de las direcciones IP del reenviador."
 
 #: js/src/dns/Forwarders/Forwarder/validator.js:24
 msgid "Forwarder name should have at least one symbol."
-msgstr ""
+msgstr "Nombre del reenviador deberìa tener al menos un sìmbolo."
 
 #: js/src/dns/Forwarders/Forwarder/validator.js:33
 msgid "Hostname should have at least one symbol."
-msgstr ""
+msgstr "Nombre del equipo deberìa tener al menos un sìmbolo."
 
 #: js/src/dns/Forwarders/Forwarder/validator.js:37
 msgid "TLS pin should have at least one symbol."
-msgstr ""
+msgstr "TLS pin deberìa tener al menos un sìmbolo."
 
 #: js/src/guestNetwork/GuestNetwork.js:29 js/src/interfaces/Interfaces.js:49
 #: js/src/interfaces/constants.js:11 js/src/main/pages.js:69
@@ -491,11 +525,11 @@ msgstr "Carga"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:208
 msgid "Download speed must be positive"
-msgstr ""
+msgstr "Velocidad de descarga deberìa ser positiva"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:211
 msgid "Upload speed must be positive"
-msgstr ""
+msgstr "Velocidad de subida deberìa ser positiva"
 
 #: js/src/guide/GuideFinish.js:18
 msgid "Guide Finished"
@@ -515,6 +549,17 @@ msgid ""
 "dynamic updates to your firewall to block all already known attackers.\n"
 "            "
 msgstr ""
+"\n"
+"Felicidades! Has llegado satisfactoriamente al final de esta guìa. Una vez "
+"abandone esta guìa se le permitirà el acceso \n"
+"al interfaz con la configuraciòn completa de este equipo.\n"
+"\n"
+"Para mejorar aùn màs su seguridad considere habilitar la coleccion de datos("
+"inicie seleccionando en la pestaña de actualizaciòn).\n"
+"Esto le permitira ser parte de nuestra investigaciòn sobre seguridad  para "
+"descubrir nuevos atacantes . Esto le dara acceso a actualizaciones\n"
+"dinàmicas a su firewall para bloquear todos los attacantes ya conocidos.\n"
+"            "
 
 #: js/src/guide/GuideFinish.js:31
 msgid "Continue"
@@ -531,6 +576,10 @@ msgid ""
 "other devices within your local network (e.g. act as a network-attached "
 "storage)."
 msgstr ""
+"Este flujo de trabajo le ayudarà a configurar su dispositivo para actuar "
+"como servidor local. Esto significa que el equipo proveerà algùn tipo de "
+"servicio a otros equipos en su red local(ejemplo: unidad de almacenamiento "
+"de red)."
 
 #: js/src/guide/WorkflowSelect.js:22
 msgid ""
@@ -538,16 +587,22 @@ msgid ""
 " functional router. It assumes that you want to have more or less "
 "standard network setup."
 msgstr ""
+"Despuès de finalizar este flujo de trabajo, su equipo serà capaz de actuar "
+"como un router. Se\n"
+"asume que usted quiere tener mas o menos una configuraciòn estàndar."
 
 #: js/src/guide/WorkflowSelect.js:23
 msgid ""
 "Just set your password and you are ready to go. This workflow is aimed to"
 " more advanced users who intend not to use the web GUI."
 msgstr ""
+"Simplemente establezca su contraseña y estarà listo para comenzar. Este "
+"flujo de trabajo està pensado para usuarios mas avanzados que no utilizan el "
+"interfaz web."
 
 #: js/src/guide/WorkflowSelect.js:27
 msgid "Local Server"
-msgstr ""
+msgstr "Servidor local"
 
 #: js/src/guide/WorkflowSelect.js:28 js/src/lan/LANForm.js:29
 msgid "Router"
@@ -555,15 +610,15 @@ msgstr "Enrutador"
 
 #: js/src/guide/WorkflowSelect.js:29
 msgid "Minimal"
-msgstr ""
+msgstr "Mìnimo"
 
 #: js/src/guide/WorkflowSelect.js:45
 msgid "Cannot set workflow."
-msgstr ""
+msgstr "No se puede configurar flujo de trabajo."
 
 #: js/src/guide/WorkflowSelect.js:55
 msgid "Guide Workflow"
-msgstr ""
+msgstr "Guìa del flujo de trabajo"
 
 #: js/src/guide/WorkflowSelect.js:56
 msgid ""
@@ -659,12 +714,17 @@ msgid ""
 "configuration interface unless you restart the network on your current "
 "device."
 msgstr ""
+"Ahora deberìa configurar su interfaz LAN. Note que cuando cambie su "
+"configuraciòn de red, puede que no pueda conectar con el interfaz de "
+"configuraciòn a no ser que reinicie la red en su dispositivo actual."
 
 #: js/src/guide/constants.js:39
 msgid ""
 "You've configured your LAN interface. Try to test whether settings work "
 "properly and if so you can safely proceed to the next step."
 msgstr ""
+"Ha configurado el interfaz LAN. Intente probar que las opciones funcionan "
+"correctamente. Si es asì, puede proceder con el siguiente paso."
 
 #: js/src/guide/constants.js:48
 msgid ""
@@ -684,6 +744,9 @@ msgid ""
 " put any interfaces to your WAN and Guest Network. So it is a good idea "
 "to assign all interfaces to LAN."
 msgstr ""
+"Ha elegido actuar como servidor local, lo que significa que no tiene sentido "
+"poner ningùn interfaz a su WAN y a su red de invitados. Con lo caul, es una "
+"buena idea asignar todos los interfazes a la LAN."
 
 #: js/src/guide/constants.js:68
 msgid ""
@@ -692,6 +755,10 @@ msgid ""
 "probably want to act as a client here thus select "
 "<strong>Computer</strong> mode here."
 msgstr ""
+"Para actuar como servidor locak, no es necesario administrar LAN (si todavìa "
+"quiere administrar, reinicia la guìa y elija el flujo de trabajo del router)"
+". Probablemente quiere actuar como cliente aqui, por lo cual, seleccione "
+"modo de <strong>Equipo </strong>aqui."
 
 #: js/src/guide/constants.js:69
 msgid ""
@@ -699,6 +766,9 @@ msgid ""
 "IP addresses are entered correctly otherwise you won't be able to access "
 "this configuration interface when the new settings are applied."
 msgstr ""
+"Si seleccionò configuraciòn<strong>estàtica</strong>, asegùreseque las "
+"direcciones IP son correctas ya que de no serlo, no serà posible acceder a "
+"la configuraciòn del interface cuando la nueva configuraciòn sea aplicada."
 
 #: js/src/guide/constants.js:70
 msgid ""
@@ -707,12 +777,18 @@ msgid ""
 "server which is managing your LAN. Then you need to connect to the new IP"
 " address to proceed the guide."
 msgstr ""
+"Si seleccionò el mètodo <strong>DHCP</strong>, probablemente necesite "
+"obtener una nueva direcciòn IP de este dispositivo. Puede obtenerlo del "
+"servidor DHCP, el cual es administrado en su LAN. Entonces necesitarà "
+"contectar a la nueva direcciòn IP para proceder con la guìa."
 
 #: js/src/guide/constants.js:71
 msgid ""
 "Note that either way you might need to re-plug your ethernet cables after"
 " you update the settings here."
 msgstr ""
+"Note que en cualquier caso necesitarà re-conectar sus cables ethernet "
+"despuès de la actualizaciòn de los parametros aqui."
 
 #: js/src/guide/constants.js:73
 msgid ""
@@ -887,7 +963,7 @@ msgstr "Velocidad de enlace"
 
 #: js/src/interfaces/SelectedInterface.js:106
 msgid "N/A"
-msgstr ""
+msgstr "No disponible"
 
 #: js/src/interfaces/constants.js:12
 msgid "Unassigned"
@@ -1518,7 +1594,7 @@ msgstr ""
 
 #: js/src/rebootDropdown/RebootDropdown.js:42
 msgid "Details"
-msgstr ""
+msgstr "Detalles"
 
 #: js/src/regionAndTime/RegionAndTime.js:30
 msgid "Region and Time"
@@ -1986,4 +2062,3 @@ msgstr ""
 #~ "in the console of your web browser"
 #~ " (available by pressing F12)."
 #~ msgstr ""
-
