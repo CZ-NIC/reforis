@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2020-02-20 17:21+0100\n"
-"PO-Revision-Date: 2020-05-13 08:41+0000\n"
-"Last-Translator: Florian <floflr@zaclys.net>\n"
+"PO-Revision-Date: 2020-06-03 14:41+0000\n"
+"Last-Translator: XoD DarK <xod@xoddark.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/turris/reforis/fr/"
 ">\n"
 "Language: fr\n"
@@ -358,16 +358,17 @@ msgstr "Désactiver DNSSEC"
 
 #: js/src/dns/Forwarders/Forwarders.js:79
 msgid "Edit forwarder"
-msgstr ""
+msgstr "Modifier l'expéditeur"
 
 #: js/src/dns/Forwarders/Forwarders.js:79
 #: js/src/dns/Forwarders/Forwarders.js:94
 msgid "Add custom forwarder"
-msgstr ""
+msgstr "Ajouter un expéditeur personnalisé"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:32
+#, fuzzy
 msgid "Forwarders"
-msgstr ""
+msgstr "Expéditeurs"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:33
 msgid "Actions"
@@ -416,31 +417,32 @@ msgstr "Broche TLS"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:129
 msgid "Save forwarder"
-msgstr ""
+msgstr "Enregistrer l’expéditeur"
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:37
 msgid "Forwarder saved successfully."
-msgstr ""
+msgstr "Transitaire enregistré avec succès."
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:39
 msgid "Can't save forwarder."
-msgstr ""
+msgstr "Impossible d'enregistrer le transitaire."
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:46
+#, fuzzy
 msgid "Forwarder added successfully."
-msgstr ""
+msgstr "Transitaire enregistré avec succès."
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:48
 msgid "Can't add new forwarder."
-msgstr ""
+msgstr "Impossible d'ajouter un nouveau transitaire."
 
 #: js/src/dns/Forwarders/Forwarder/validator.js:19
 msgid "Define at least one of the IP addresses of the forwarder."
-msgstr ""
+msgstr "Définissez au moins une des adresses IP du transitaire."
 
 #: js/src/dns/Forwarders/Forwarder/validator.js:24
 msgid "Forwarder name should have at least one symbol."
-msgstr ""
+msgstr "Le nom du transitaire doit avoir au moins un symbole."
 
 #: js/src/dns/Forwarders/Forwarder/validator.js:33
 msgid "Hostname should have at least one symbol."
