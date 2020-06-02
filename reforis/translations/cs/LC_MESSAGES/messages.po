@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2020-02-20 17:21+0100\n"
-"PO-Revision-Date: 2019-09-29 15:56+0000\n"
-"Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
+"PO-Revision-Date: 2020-05-05 15:11+0000\n"
+"Last-Translator: Lukas Jelinek <lukas.jelinek@nic.cz>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/turris/reforis/cs/>"
+"\n"
 "Language: cs\n"
-"Language-Team: Czech "
-"<https://hosted.weblate.org/projects/turris/reforis/cs/>\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 4.1-dev\n"
 "Generated-By: Babel 2.7.0\n"
 
 #: js/src/about/About.js:22 js/src/main/pages.js:133
@@ -37,11 +38,11 @@ msgstr "Verze Turris OS"
 
 #: js/src/about/About.js:52
 msgid "Turris OS branch"
-msgstr ""
+msgstr "Větev Turris OS"
 
 #: js/src/about/About.js:61
 msgid "Kernel version"
-msgstr "Verze jádra systému"
+msgstr "Verze kernelu"
 
 #: js/src/common/RebootButton.js:42 js/src/main/pages.js:97
 msgid "Reboot"
@@ -117,7 +118,7 @@ msgstr "Nejvýše DHCP zápůjček"
 
 #: js/src/common/network/DHCPServerForm.js:54
 msgid "Maximum number of addresses available for DHCP clients."
-msgstr ""
+msgstr "Maximální počet adres dostupných pro DHCP klienty."
 
 #: js/src/common/network/DHCPServerForm.js:67
 msgid "Lease time (hours)"
@@ -125,37 +126,41 @@ msgstr "Zápůjční doba (hodiny)"
 
 #: js/src/common/network/DHCPValidators.js:57
 msgid "Value must be a number."
-msgstr ""
+msgstr "Hodnota musí být číslo."
 
 #: js/src/common/network/DHCPValidators.js:59
 msgid "Value must be positive."
-msgstr ""
+msgstr "Hodnota musí být kladná."
 
 #: js/src/common/network/DHCPValidators.js:69
 msgid "Invalid network settings. DHCP settings can't be validated."
-msgstr ""
+msgstr "Neplatné nastavení sítě. Nelze ověřit nastavení DHCP."
 
 #: js/src/common/network/DHCPValidators.js:79
 msgid "Minimum lease time is 1 hour."
-msgstr ""
+msgstr "Minimální lease time je 1 hodina."
 
 #: js/src/common/network/DHCPValidators.js:90
 msgid "Address is outside current network."
-msgstr ""
+msgstr "Adresa je mimo aktuální síť."
 
 #: js/src/common/network/DHCPValidators.js:92
 msgid "Address is already reserved for other purposes."
-msgstr ""
+msgstr "Adresa je už rezervována pro jiné účely."
 
 #: js/src/common/network/DHCPValidators.js:95
 msgid "Too many addresses requested. Set a lower number or change DHCP start."
 msgstr ""
+"Požadováno příliš mnoho adres. Nastavte nižší číslo nebo změňte začátek "
+"rozsahu pro DHCP."
 
 #: js/src/common/network/DHCPValidators.js:97
 msgid ""
 "The only DHCP lease is the same as router's address. Increase limit or "
 "change start address."
 msgstr ""
+"Jediná DHCP zápůjčka je stejná jako adresa směrovače. Zvyšte limit nebo "
+"změňte počáteční adresu."
 
 #: js/src/common/network/StaticIPForm.js:14 js/src/wan/WAN6Form.js:29
 msgid ""
@@ -195,7 +200,7 @@ msgstr "Tuto kolonku je třeba vyplnit."
 
 #: js/src/common/network/validators.js:12
 msgid "This is not a valid network mask."
-msgstr ""
+msgstr "Toto není správná síťová maska."
 
 #: js/src/connectionTest/ConnectionTestButton.js:23
 msgid "Test is running..."
@@ -411,7 +416,7 @@ msgstr "Uložit přeposílání"
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:37
 msgid "Forwarder saved successfully."
-msgstr ""
+msgstr "Nastavení přeposílání DNS dotazů bylo úspěšně uloženo."
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:39
 msgid "Can't save forwarder."
@@ -419,7 +424,7 @@ msgstr "Přeposílání se nedaří uložit."
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:46
 msgid "Forwarder added successfully."
-msgstr ""
+msgstr "Přeposílání DNS dotazů bylo úspěšně přidáno."
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:48
 msgid "Can't add new forwarder."
@@ -444,7 +449,7 @@ msgstr "TLS pin by měl obsahovat alespoň jeden symbol."
 #: js/src/guestNetwork/GuestNetwork.js:29 js/src/interfaces/Interfaces.js:49
 #: js/src/interfaces/constants.js:11 js/src/main/pages.js:69
 msgid "Guest Network"
-msgstr "Síť Pro Hosty"
+msgstr "Síť pro hosty"
 
 #: js/src/guestNetwork/GuestNetwork.js:31
 msgid ""
@@ -809,7 +814,7 @@ msgstr ""
 
 #: js/src/guide/hooks.js:23
 msgid "Cannot mark guide as finished."
-msgstr ""
+msgstr "Nelze označit průvodce jako dokončený."
 
 #: js/src/guide/steps.js:20 js/src/main/pages.js:82
 #: js/src/notificationsSettings/SMTPCustomForm.js:107
@@ -855,7 +860,7 @@ msgstr "Dokončit"
 
 #: js/src/interfaces/Interfaces.js:24
 msgid "Network Interfaces"
-msgstr "Síťová Rozhraní"
+msgstr "Síťová rozhraní"
 
 #: js/src/interfaces/Interfaces.js:26
 msgid ""
@@ -932,7 +937,7 @@ msgstr ""
 
 #: js/src/interfaces/Interfaces.js:77
 msgid "You have to assign at least one interface to this group."
-msgstr ""
+msgstr "Musíte této skupině přiřadit alespoň jedno rozhraní."
 
 #: js/src/interfaces/InterfacesForm.js:53
 msgid ""
@@ -944,11 +949,11 @@ msgstr ""
 
 #: js/src/interfaces/Network.js:40
 msgid "There are no interfaces in this group."
-msgstr ""
+msgstr "Ve skupině nejsou žádná rozhraní."
 
 #: js/src/interfaces/Network.js:61
 msgid "Base module"
-msgstr ""
+msgstr "Základní modul"
 
 #: js/src/interfaces/Network.js:61
 #, python-format
@@ -978,11 +983,7 @@ msgstr "Slot"
 
 #: js/src/interfaces/SelectedInterface.js:93
 msgid "Interface ID"
-msgstr ""
-"Identifikátor rozhraní\n"
-"Nemáte žádné rozhraní přiřazené do LAN sítě.<br/>\n"
-"Chcete <strong>otevřít porty 22, 80 a 443 na WAN síti</strong>, abyste "
-"mohli přistupovat ke správnímu rozhraní svého routeru?"
+msgstr "ID Rozhraní"
 
 #: js/src/interfaces/SelectedInterface.js:97
 msgid "Type"
@@ -998,7 +999,7 @@ msgstr "Rychlost linky"
 
 #: js/src/interfaces/SelectedInterface.js:106
 msgid "N/A"
-msgstr ""
+msgstr "N/A"
 
 #: js/src/interfaces/constants.js:12
 msgid "Unassigned"
@@ -1092,13 +1093,13 @@ msgstr "Protokol IPv4"
 #: js/src/languagesDropdown/LanguagesDropdown.js:36
 #: js/src/packageManagement/packages/LanguageForm.js:27
 msgid "Languages"
-msgstr ""
+msgstr "Jazyky"
 
 #: js/src/main/pages.js:32
 #: js/src/notifications/Notifications/NotificationsCenter.js:76
 #: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:65
 msgid "Notifications"
-msgstr "Oznámení"
+msgstr "Notifikace"
 
 #: js/src/main/pages.js:38
 msgid "Network Settings"
@@ -1145,7 +1146,7 @@ msgstr "Zahodit vše"
 #: js/src/notifications/Notifications/NotificationsCenter.js:64
 #: js/src/notifications/NotificationsDropdown/NotificationsDropdownMenu.js:29
 msgid "No notifications"
-msgstr "Žádná oznámení"
+msgstr "Žádné nové notifikace"
 
 #: js/src/notificationsSettings/CommonForm.js:17
 msgid "Reboot is required"
@@ -1181,7 +1182,7 @@ msgstr "Uživatelsky určené"
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:78
 msgid "Email Notifications"
-msgstr "Oznamování E-mailem"
+msgstr "Oznamování e-mailem"
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:80
 msgid "Enable email notifications"
@@ -1193,7 +1194,7 @@ msgstr "Poskytovat SMTP"
 
 #: js/src/notificationsSettings/NotificationsSettings.js:24
 msgid "Notifications Settings"
-msgstr "Nastavení Oznamování"
+msgstr "Nastavení oznamování"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:18
 msgid "None"
@@ -1209,7 +1210,7 @@ msgstr "STARTTLS"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:54
 msgid "SMTP Settings"
-msgstr ""
+msgstr "Nastavení SMTP"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:56
 msgid "Sender address (From)"
@@ -1253,7 +1254,7 @@ msgstr "E-mailová adresa příjemce. Vícero adres oddělujte čárkami."
 
 #: js/src/notificationsSettings/helpTexts.js:14
 msgid "Send emails about new features."
-msgstr "Zasílat upozornění na nové funkce."
+msgstr "Zasílat notifikace e-mailem na nové funkce."
 
 #: js/src/notificationsSettings/helpTexts.js:17
 msgid ""
@@ -1265,7 +1266,7 @@ msgstr ""
 
 #: js/src/notificationsSettings/helpTexts.js:20
 msgid "This is the address notifications are send from."
-msgstr "Toto je adresa ze které jsou odesílána oznámení."
+msgstr "Toto je adresa ze které jsou odesílány notifikace."
 
 #: js/src/notificationsSettings/validator.js:21
 msgid "Can't be empty."
@@ -1316,11 +1317,11 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"Krom standardní instalace můžete zvolit také sady dodatečného software, "
-"který na tento router nainstalovat. \n"
-"Tento software je možné vybrat z následujícího seznamu. Poznamenejme, že "
-"pouze software, který je součástí \n"
-"TurrisOS nebo který byl nainstalován ze seznamu balíčků je spravován "
+"Krom standardní instalace můžete zvolit také sady dodatečného softwaru, "
+"které je možné na tento router nainstalovat. \n"
+"Software je možné vybrat z následujícího seznamu. Poznamenejme, že pouze "
+"software, který je součástí \n"
+"Turris OS nebo který byl nainstalován ze seznamu balíčků je spravován "
 "automatickými aktualizacemi. Software,\n"
 "který byl nainstalován ručně nebo pomocí opkg se toto netýká.\n"
 "        "
@@ -1546,15 +1547,15 @@ msgstr "Zapnout automatické aktualizace (doporučeno)"
 #: js/src/packageManagement/updates/UpdateApproval.js:30
 #: js/src/updatesDropdown/UpdatesDropdown.js:108
 msgid "Cannot install updates."
-msgstr ""
+msgstr "Nelze nainstalovat aktualizace."
 
 #: js/src/packageManagement/updates/UpdateApproval.js:33
 msgid "Updates will be installed shortly."
-msgstr ""
+msgstr "Aktualizace budou nainstalovány v nejbližší době."
 
 #: js/src/packageManagement/updates/UpdateApproval.js:46
 msgid "There are no updates awaiting your approval."
-msgstr ""
+msgstr "Neexistují žádné aktualizace čekající na schválení."
 
 #: js/src/packageManagement/updates/UpdateApproval.js:50
 #, python-format
@@ -1613,7 +1614,7 @@ msgstr "Zkontrolovat a nainstalovat aktualizace"
 
 #: js/src/packageManagement/updates/Updates.js:50
 msgid "Manually check for updates and install them immediately."
-msgstr "Ručně zjistiti dostupnost případných aktualizací a hned je nainstalovat."
+msgstr "Ručně zjistit dostupnost případných aktualizací a hned je nainstalovat."
 
 #: js/src/packageManagement/updates/Updates.js:53
 msgid "Check updates"
@@ -1633,7 +1634,7 @@ msgstr "Stávající heslo do Foris"
 
 #: js/src/password/ForisPasswordForm.js:35
 msgid "Foris Password"
-msgstr ""
+msgstr "Foris heslo"
 
 #: js/src/password/ForisPasswordForm.js:36
 msgid "Set your password for this administration interface."
@@ -1667,7 +1668,7 @@ msgstr "Heslo úspěšně změněno."
 
 #: js/src/password/Password.js:115
 msgid "Password Settings"
-msgstr ""
+msgstr "Nastavení hesla"
 
 #: js/src/password/Password.js:158
 msgid "Password can't be empty."
@@ -1683,7 +1684,7 @@ msgstr "Heslo by mělo být nejvýše 128 znaků dlouhé."
 
 #: js/src/password/RootPasswordForm.js:32
 msgid "Advanced Administration (root) Password"
-msgstr ""
+msgstr "Heslo pro pokročilou správu (root)"
 
 #: js/src/password/RootPasswordForm.js:35
 #, python-format
@@ -1701,7 +1702,7 @@ msgstr "Nové heslo pro pokročilou správu"
 
 #: js/src/reboot/Reboot.js:16
 msgid "Device Reboot"
-msgstr "Restart Zařízení"
+msgstr "Restart zařízení"
 
 #: js/src/reboot/Reboot.js:18
 msgid ""
@@ -1722,7 +1723,7 @@ msgstr "Podrobnosti"
 
 #: js/src/regionAndTime/RegionAndTime.js:30
 msgid "Region and Time"
-msgstr ""
+msgstr "Oblast a čas"
 
 #: js/src/regionAndTime/RegionAndTime.js:32
 msgid ""
@@ -1739,7 +1740,7 @@ msgstr "Čas by měl být ve formátu RRRR-MM-DD HH:MM:SS."
 
 #: js/src/regionAndTime/RegionForm.js:62
 msgid "Region Settings"
-msgstr "Nastavení Regionu"
+msgstr "Nastavení oblasti"
 
 #: js/src/regionAndTime/RegionForm.js:64
 msgid ""
@@ -1832,19 +1833,23 @@ msgstr ""
 
 #: js/src/utils/ErrorBoundary.js:36
 msgid "An Error Occurred"
-msgstr ""
+msgstr "Došlo k chybě"
 
 #: js/src/utils/ErrorBoundary.js:40
 msgid ""
 "More detailed information is available in the console of your web browser"
 " - on most browsers accessible after pressing Ctrl+Shift+J or F12."
 msgstr ""
+"Podrobnější informace jsou k dispozici v konzole vašeho webového prohlížeče –"
+" ve většině prohlížečů je dostupná stisknutím Ctrl+Shift+J nebo F12."
 
 #: js/src/utils/ErrorBoundary.js:41
 msgid ""
 "Please report this error to our support team via e-mail: <a "
 "href=\"mailto:tech.support@turris.cz\">tech.support@turris.cz</a>."
 msgstr ""
+"Nahlaste, prosím, tuto chybu naší technické podpoře prostřednictvím e-mailu <"
+"a href=\"mailto:tech.support@turris.cz\">tech.support@turris.cz</a>."
 
 #: js/src/wan/MACForm.js:14
 msgid ""
@@ -2083,19 +2088,19 @@ msgstr "Nesprávné stávající heslo."
 
 #: reforis/foris_controller_api/modules/updater.py:60
 msgid "Cannot change automatic restart settings."
-msgstr ""
+msgstr "Nelze změnit nastavení automatického restartu."
 
 #: reforis/foris_controller_api/modules/updater.py:75
 msgid "Cannot update approvals settings."
-msgstr ""
+msgstr "Nelze nastavit schvalování aktualizací."
 
 #: reforis/foris_controller_api/modules/updater.py:79
 msgid "Cannot rollback automatic restart settings."
-msgstr ""
+msgstr "Nelze vrátit zpět nastavení automatického restartu."
 
 #: reforis/foris_controller_api/modules/updater.py:160
 msgid "You can't set packages with disabled automatic updates."
-msgstr ""
+msgstr "Nelze nainstalovat balíčky s vypnutými automatickými aktualizacemi."
 
 #: reforis/foris_controller_api/modules/updater.py:171
 msgid "Cannot start updater"
@@ -2119,7 +2124,7 @@ msgstr "Přejít do rozhraní LuCI"
 
 #: reforis/templates/errors/403.html:4
 msgid "403 - Forbidden"
-msgstr "403 – odepřeno"
+msgstr "403 – Přístup zamítnut"
 
 #: reforis/templates/errors/403.html:9
 msgid "Forbidden You don't have permission to access"
@@ -2132,11 +2137,11 @@ msgstr "Chcete se <a href=\"%(link)s\">přihlásit</a>?"
 
 #: reforis/templates/errors/404.html:4
 msgid "404 - Page not found"
-msgstr "404 – stránka nenalezena"
+msgstr "404 – Stránka nenalezena"
 
 #: reforis/templates/errors/404.html:9
 msgid "Page not found :("
-msgstr "Stránka nenalezena :("
+msgstr "Stránka nenalezena. :("
 
 #: reforis/templates/errors/500.html:4
 msgid "Server error"
@@ -2144,7 +2149,7 @@ msgstr "Chyba serveru"
 
 #: reforis/templates/errors/500.html:8
 msgid "500 -- Server error"
-msgstr "500 – chyba serveru"
+msgstr "500 – Chyba serveru"
 
 #: reforis/templates/errors/500.html:9
 msgid "Error:"
@@ -2152,11 +2157,11 @@ msgstr "Chyba:"
 
 #: reforis/templates/errors/500.html:12
 msgid "Extra:"
-msgstr "Další:"
+msgstr "Extra:"
 
 #: reforis/templates/errors/500.html:16
 msgid "Trace:"
-msgstr ""
+msgstr "Trace:"
 
 #: reforis/templates/includes/top-bar.html:4
 msgid "Logout"
@@ -2334,4 +2339,3 @@ msgstr "Odhlásit"
 #~ "možné nastavit na panelu „Síť pro "
 #~ "hosty“.\n"
 #~ "        "
-
