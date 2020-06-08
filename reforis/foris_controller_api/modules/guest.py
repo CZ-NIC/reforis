@@ -21,7 +21,8 @@ def guest_network():
             response['dhcp']['lease_time'] /= 3600
     elif request.method == 'POST':
         data = request.json
-        if data['dhcp']['enabled'] is True:
+        # if enabled=False other 'dhcp' part is missing
+        if data['enabled'] and data['dhcp']['enabled'] is True:
             # Convert hours to seconds
             data['dhcp']['lease_time'] *= 3600
         response = current_app.backend.perform('guest', 'update_settings', data)
