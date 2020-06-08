@@ -24,5 +24,3 @@ def log_error(message):
     Report error using logger from current application. Request URL and data are added to the message.
     """
     current_app.logger.error('%s; URL: %s; data: %s', message, request.url, request.data)
-
-
