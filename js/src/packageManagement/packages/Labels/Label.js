@@ -7,8 +7,9 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-
+import ReactTooltip from "react-tooltip";
 import "./Label.css";
+import {maxWidth} from "react-styleguidist/lib/client/styles/theme";
 
 Label.propTypes = {
     title: PropTypes.string.isRequired,
@@ -23,11 +24,21 @@ export default function Label({
     title, description, severity, disabled,
 }) {
     return (
-        <span
-            title={description}
-            className={`badge badge-${severity}${disabled ? " badge-disabled" : ""}`}
-        >
-            {title}
-        </span>
+        <React.Fragment>
+            <span
+                data-tip
+                data-for={title}
+                className={`badge badge-${severity}${disabled ? " badge-disabled" : ""}`}
+            >
+                {title}
+            </span>
+            <ReactTooltip
+                id={title}
+                multiline={true}
+                className="badge-tooltip"
+            >
+                {description}
+            </ReactTooltip>
+        </React.Fragment>
     );
 }
