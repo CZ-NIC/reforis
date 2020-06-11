@@ -9,7 +9,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import ReactTooltip from "react-tooltip";
 import "./Label.css";
-import {maxWidth} from "react-styleguidist/lib/client/styles/theme";
+import { useUID } from "react-uid";
 
 Label.propTypes = {
     title: PropTypes.string.isRequired,
@@ -23,22 +23,23 @@ Label.propTypes = {
 export default function Label({
     title, description, severity, disabled,
 }) {
+    const uid = useUID();
     return (
-        <React.Fragment>
+        <>
             <span
                 data-tip
-                data-for={title}
+                data-for={uid}
                 className={`badge badge-${severity}${disabled ? " badge-disabled" : ""}`}
             >
                 {title}
             </span>
             <ReactTooltip
-                id={title}
-                multiline={true}
+                id={uid}
+                multiline
                 className="badge-tooltip"
             >
                 {description}
             </ReactTooltip>
-        </React.Fragment>
+        </>
     );
 }

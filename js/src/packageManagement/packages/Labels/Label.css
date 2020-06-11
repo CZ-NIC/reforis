@@ -14,5 +14,11 @@
 }
 
 .badge-tooltip {
-    max-width: 23%;
+    max-width: 25%;
+}
+
+@media only screen and (max-width: 600px) {
+    .badge-tooltip {
+        max-width: 65%;
+    }
 }
