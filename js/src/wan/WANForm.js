@@ -8,7 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Select, TextInput } from "foris";
+import { Select, TextInput, PasswordInput } from "foris";
 
 import DHCPClientForm, { validateDHCPForm } from "common/network/DHCPClientForm";
 import StaticIPForm, { validateStaticForm } from "common/network/StaticIPForm";
@@ -138,7 +138,8 @@ function PPPoEForm({
 
                 disabled={disabled}
             />
-            <TextInput
+            <PasswordInput
+                withEye
                 label={_("PAP/CHAP password")}
                 value={formData.password || ""}
                 error={(formErrors || {}).password || null}
