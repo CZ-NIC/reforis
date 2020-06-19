@@ -49,11 +49,25 @@ function AboutTable({ deviceDetails }) {
                     <td>{deviceDetails.os_version}</td>
                 </tr>
                 <tr>
-                    <th>{_("Turris OS branch")}</th>
+                    <th>
+                        {_("Turris OS branch")}
+                        <i
+                            className="text-muted fas fa-question-circle ml-1 help"
+                            title={_(
+                                "Turris OS is currently released in various branches, which have different functions and varying stability - you can pick, which branch you want to test.",
+                            )}
+                        />
+                    </th>
                     <td>
-                        {deviceDetails.os_branch.value.toUpperCase()}
-                        <a href="https://docs.turris.cz/geek/testing/#branches-available" className="text-muted">
-                            <i className="fas fa-question-circle ml-2" />
+                        <a
+                            href="https://docs.turris.cz/geek/testing/#branches-available"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {deviceDetails.os_branch.value.toUpperCase()}
+                            <sup>
+                                <i className="fas fa-external-link-alt ml-1" />
+                            </sup>
                         </a>
                     </td>
                 </tr>
@@ -66,4 +80,6 @@ function AboutTable({ deviceDetails }) {
     );
 }
 
-const AboutTableWithErrorAndSpinner = withSpinnerOnSending(withErrorMessage(AboutTable));
+const AboutTableWithErrorAndSpinner = withSpinnerOnSending(
+    withErrorMessage(AboutTable),
+);
