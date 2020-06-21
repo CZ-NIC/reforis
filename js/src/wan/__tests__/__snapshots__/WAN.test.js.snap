@@ -5,7 +5,7 @@ exports[`<WAN/> Snapshot WAN IPv4 (pppoe). 1`] = `
 - First value
 + Second value
 
-@@ -47,29 +47,55 @@
+@@ -47,30 +47,69 @@
         </div>
         <div
           class=\\"form-group\\"
@@ -13,34 +13,9 @@ exports[`<WAN/> Snapshot WAN IPv4 (pppoe). 1`] = `
           <label
 -           for=\\"2\\"
 +           for=\\"6\\"
-+         >
-+           PAP/CHAP username
-+         </label>
-+         <div
-+           class=\\"input-group\\"
-+         >
-+           <input
-+             class=\\"form-control  is-invalid\\"
-+             id=\\"6\\"
-+             required=\\"\\"
-+             type=\\"text\\"
-+             value=\\"\\"
-+           />
-+         </div>
-+         <div
-+           class=\\"invalid-feedback\\"
-+         >
-+           This field is required.
-+         </div>
-+       </div>
-+       <div
-+         class=\\"form-group\\"
-        >
+          >
 -           DHCP hostname
-+         <label
-+           for=\\"7\\"
-+         >
-+           PAP/CHAP password
++           PAP/CHAP username
           </label>
           <div
             class=\\"input-group\\"
@@ -49,7 +24,7 @@ exports[`<WAN/> Snapshot WAN IPv4 (pppoe). 1`] = `
 -             class=\\"form-control\\"
 -             id=\\"2\\"
 +             class=\\"form-control  is-invalid\\"
-+             id=\\"7\\"
++             id=\\"6\\"
 +             required=\\"\\"
               type=\\"text\\"
               value=\\"\\"
@@ -64,12 +39,51 @@ exports[`<WAN/> Snapshot WAN IPv4 (pppoe). 1`] = `
 -         </small>
 +           This field is required.
 +         </div>
-        </div>
++       </div>
++       <div
++         class=\\"form-group\\"
++       >
++         <label
++           for=\\"7\\"
++         >
++           PAP/CHAP password
++         </label>
++         <div
++           class=\\"input-group\\"
++         >
++           <input
++             autocomplete=\\"new-password\\"
++             class=\\"form-control  is-invalid\\"
++             id=\\"7\\"
++             required=\\"\\"
++             type=\\"password\\"
++             value=\\"\\"
++           />
++           <div
++             class=\\"input-group-append\\"
++           >
++             <button
++               class=\\"input-group-text\\"
++               type=\\"button\\"
++             >
++               <i
++                 class=\\"fa fa-eye\\"
++               />
++             </button>
++           </div>
+          </div>
++         <div
++           class=\\"invalid-feedback\\"
++         >
++           This field is required.
++         </div>
++       </div>
         <h3>
           WAN IPv6
         </h3>
         <div
-@@ -141,10 +167,11 @@
+          class=\\"form-group\\"
+@@ -141,10 +180,11 @@
         <div
           class=\\"text-right\\"
         >
