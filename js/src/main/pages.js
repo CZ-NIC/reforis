@@ -31,6 +31,15 @@ import { addWeightsToPages, plug } from "./utils";
 
 const PAGES = [
     {
+<<<<<<< Updated upstream
+=======
+        name: _("Overview"),
+        path: "/overview",
+        icon: "chart-line",
+        component: Overview,
+    },
+    {
+>>>>>>> Stashed changes
         name: _("Notifications"),
         path: "/notifications",
         icon: "bell",
