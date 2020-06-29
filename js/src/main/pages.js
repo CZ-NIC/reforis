@@ -24,6 +24,7 @@ import Reboot from "reboot/Reboot";
 
 import Notifications from "notifications/Notifications/Notifications";
 import About from "about/About";
+import Overview from "overview/Overview";
 
 import { ForisURLs } from "foris";
 
@@ -31,15 +32,12 @@ import { addWeightsToPages, plug } from "./utils";
 
 const PAGES = [
     {
-<<<<<<< Updated upstream
-=======
         name: _("Overview"),
         path: "/overview",
         icon: "chart-line",
         component: Overview,
     },
     {
->>>>>>> Stashed changes
         name: _("Notifications"),
         path: "/notifications",
         icon: "bell",
