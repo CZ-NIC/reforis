@@ -6,4 +6,4 @@
  */
 
 // eslint-disable-next-line import/prefer-default-export
-export const REDIRECT_404_PAGE = "/notifications";
+export const REDIRECT_404_PAGE = "/overview";
