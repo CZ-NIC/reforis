@@ -19,9 +19,9 @@ function mockBrokenComponent() {
 jest.mock("../pages", () => {
     return () => [
         {
-            name: "Notifications",
-            path: "/notifications",
-            icon: "bell",
+            name: "Overview",
+            path: "/overview",
+            icon: "chart-line",
             component: mockBrokenComponent,
         },
     ];
