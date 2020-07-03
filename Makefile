@@ -110,6 +110,8 @@ lint-web: venv
 test: test-js test-web
 test-js:
 	cd $(JS_DIR); npm test
+test-js-watch:
+	cd $(JS_DIR); npm test -- --watch
 test-web: venv
 	$(VENV_BIN)/$(PYTHON) -m pytest -vv tests
 test-js-update-snapshots:
