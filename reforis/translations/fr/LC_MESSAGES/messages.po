@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2020-02-20 17:21+0100\n"
-"PO-Revision-Date: 2020-06-25 19:41+0000\n"
+"PO-Revision-Date: 2020-07-07 20:41+0000\n"
 "Last-Translator: Éfrit <efrit@posteo.net>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/turris/reforis/fr/"
 ">\n"
@@ -257,26 +257,27 @@ msgid ""
 "            "
 msgstr ""
 "\n"
-"Le routeur Turris utilise son propre résolveur DNS avec prise en charge "
-"DNSSEC. Il est capable de travailler indépendamment ou\n"
-"peut transmettre vos requêtes DNS au résolveur DNS de votre fournisseur de "
-"services Internet.\n"
+"Le routeur Turris utilise son propre résolveur DNS avec la prise en charge "
+"de DNSSEC. Il est capable de travailler\n"
+"indépendamment ou peut transmettre vos requêtes DNS au résolveur DNS de "
+"votre fournisseur d’accès à Internet.\n"
 "<br/><br/>\n"
 "Le paramètre suivant détermine le comportement du résolveur DNS. "
 "Habituellement, il vaut mieux utiliser\n"
 "le résolveur du FAI dans les réseaux où il fonctionne correctement. Si cela "
 "ne fonctionne pas pour une raison quelconque,\n"
-"il est nécessaire d'utiliser la résolution directe sans transfert.\n"
+"il est nécessaire d’utiliser la résolution directe sans transmission.\n"
 "<br/><br/>\n"
 "Dans de rares cas, les FAI ont un réseau mal configuré qui interfère avec la "
-"validation DNSSEC. Si vous\n"
-"rencontrez des problèmes de DNS, vous pouvez <b>temporairement</b> "
-"désactiver la validation DNSSEC pour déterminer la source\n"
-"du problème. Cependant, gardez à l'esprit que sans validation DNSSEC, vous "
-"êtes vulnérable au attaque par usurpation DNS! Par conséquent, nous <b>"
-"recommandons de garder DNSSEC activé</b> et de résoudre la situation avec "
-"votre FAI parce que\n"
-"c'est un grave défaut de leur côté.\n"
+"validation DNSSEC.\n"
+"Si vous rencontrez des problèmes de DNS, vous pouvez <b>temporairement</b> "
+"désactiver la validation DNSSEC\n"
+"pour déterminer la source du problème. Cependant, gardez à l’esprit que sans "
+"validation DNSSEC,\n"
+"vous êtes vulnérable aux attaques par usurpation DNS ! Par conséquent, "
+"<b>nous recommandons de garder DNSSEC activé</b>\n"
+"et de résoudre la situation avec votre FAI car c’est un grave défaut de leur "
+"côté.\n"
 "            "
 
 #: js/src/dns/DNS.js:63 js/src/wan/WAN.js:50
@@ -428,9 +429,8 @@ msgid "Can't save forwarder."
 msgstr "Impossible d'enregistrer le transitaire."
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:46
-#, fuzzy
 msgid "Forwarder added successfully."
-msgstr "Transitaire enregistré avec succès."
+msgstr "Transitaire ajouté avec succès."
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:48
 msgid "Can't add new forwarder."
@@ -450,7 +450,7 @@ msgstr "Le nom d'hôte doit comporter au moins un symbole."
 
 #: js/src/dns/Forwarders/Forwarder/validator.js:37
 msgid "TLS pin should have at least one symbol."
-msgstr ""
+msgstr "L’épingle TLS devrait avoir au moins un symbole."
 
 #: js/src/guestNetwork/GuestNetwork.js:29 js/src/interfaces/Interfaces.js:49
 #: js/src/interfaces/constants.js:11 js/src/main/pages.js:69
@@ -468,6 +468,15 @@ msgid ""
 "in LAN.\n"
 "        "
 msgstr ""
+"\n"
+"Le réseau invité est utilisé pour les <a href=\"${ForisURLs.wifi}\">invités "
+"Wi-Fi</a>.\n"
+"Il est séparé de votre réseau local ordinaire. Les appareils connectés à ce "
+"réseau sont autorisés\n"
+"à accéder à Internet, mais pas à l’interface de configuration de cet "
+"appareil\n"
+"ni à ceux du réseau local.\n"
+"        "
 
 #: js/src/guestNetwork/GuestNetworkForm.js:18
 msgid "Router's IP address in the guest inner network."
@@ -1471,19 +1480,19 @@ msgid ""
 msgstr ""
 "\n"
 "Une des fonctionnalités les plus importantes du routeur Turris est la mise à "
-"jour automatique du système. Grâce à cette fonction\n"
-"votre routeur reste à jour et offre une meilleur protection contre les "
-"attaques provenant d'Internet.\n"
+"jour automatique du système. Grâce à cette fonction,\n"
+"votre routeur reste à jour et offre une meilleure protection contre les "
+"attaques provenant d’Internet.\n"
 "<br/>\n"
-"Il est <b>hautement recommandé</b> d'activer cette fonctionnalité. Si vous "
-"décidez de la désactiver, soyez\n"
+"Il est <b>hautement recommandé</b> d’avoir cette fonctionnalité <b>activée</"
+"b>. Si vous décidez de la désactiver, soyez\n"
 "averti que cela pourrait affaiblir la sécurité de votre routeur et de votre "
 "réseau en cas de découverte de failles\n"
-"dans le logiciel.\n"
+"dans le système.\n"
 "<br/>\n"
 "En activant les mises à jour automatiques, vous acceptez le contrat de "
-"licence de cette fonctionnalité. Plus d'informations sont\n"
-"disponible <a href=\"\" data-toggle=\"modal\" data-target=\"#licenceModal\""
+"licence de cette fonctionnalité. Plus d’informations sont\n"
+"disponibles <a href=\"\" data-toggle=\"modal\" data-target=\"#licenceModal\""
 ">ici</a>.\n"
 "            "
 
@@ -2166,26 +2175,22 @@ msgid "Wrong password."
 msgstr "Mot de passe incorrect."
 
 #: reforis/foris_controller_api/modules/dns.py:41
-#, fuzzy
 msgid "Can't add new DNS forwarder."
-msgstr "Impossible d'ajouter un nouveau redirecteur DNS."
+msgstr "Impossible d’ajouter un nouveau transitaire DNS."
 
 #: reforis/foris_controller_api/modules/dns.py:47
-#, fuzzy
 msgid "Can't set DNS forwarder."
-msgstr "Impossible de définir le redirecteur DNS."
+msgstr "Impossible de définir le transitaire DNS."
 
 #: reforis/foris_controller_api/modules/dns.py:52
-#, fuzzy
 msgid "Can't delete DNS forwarder."
-msgstr "Impossible de supprimer le redirecteur DNS."
+msgstr "Impossible de supprimer le transitaire DNS."
 
 #: reforis/foris_controller_api/modules/password.py:41
 msgid "Wrong current password."
 msgstr "Mot de passe actuel incorrect."
 
 #: reforis/foris_controller_api/modules/updater.py:60
-#, fuzzy
 msgid "Cannot change automatic restart settings."
 msgstr "Impossible de modifier les paramètres de redémarrage automatique."
 
