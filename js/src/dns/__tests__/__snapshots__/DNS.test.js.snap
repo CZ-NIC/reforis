@@ -363,6 +363,46 @@ works as expected. Remember to click on the
         
   </p>
   <form>
+    <table
+      class="table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12"
+    >
+      <tbody>
+        <tr>
+          <th
+            scope="row"
+          >
+            DNS
+          </th>
+          <td>
+            <div
+              class="spinner-border spinner-border-sm text-secondary"
+              role="status"
+            >
+              <span
+                class="sr-only"
+              />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th
+            scope="row"
+          >
+            DNSSEC
+          </th>
+          <td>
+            <div
+              class="spinner-border spinner-border-sm text-secondary"
+              role="status"
+            >
+              <span
+                class="sr-only"
+              />
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
     <div
       class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3 text-right"
     >
