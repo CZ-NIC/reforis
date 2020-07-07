@@ -6,8 +6,15 @@
  */
 
 import React from "react";
+import PropTypes from "prop-types";
+import ConnectionTest from "../connectionTest/ConnectionTest";
+import "./Overview.css";
 
-export default function Overview() {
+Overview.propTypes = {
+    ws: PropTypes.object.isRequired,
+};
+
+export default function Overview({ ws }) {
     const icon = <i className="fas fa-check-circle float-right mr-2 mt-1" />;
     return (
         <>
@@ -34,6 +41,13 @@ export default function Overview() {
                     <div className="text-center">
                         <a href="javascript;" className="btn btn-primary mt-2">Test connection</a>
                     </div>
+                </div>
+            </div>
+
+            <div className="card border-secondary mb-3" style={{ maxWidth: "18rem" }}>
+                <h5 className="card-header">Connection Test</h5>
+                <div className="card-body">
+                    <ConnectionTest ws={ws} type="wan" />
                 </div>
             </div>
         </>
