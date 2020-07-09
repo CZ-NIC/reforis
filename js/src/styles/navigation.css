@@ -10,8 +10,21 @@
         display: block;
     }
 
+    #navigation-collapse-toggle button {
+        background-color: #ff5d1d;
+        border-color: #ff5d1d;
+        color: #000;
+    }
+
     #navigation-container {
         width: 100%;
+    }
+
+    #top-bar {
+        position: relative;
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
     }
 }
 
@@ -21,6 +34,6 @@
     }
 
     #navigation-container-collapse.collapse:not(.show) {
-         display: block !important;
+        display: block !important;
     }
 }

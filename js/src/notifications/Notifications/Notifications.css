@@ -31,9 +31,9 @@
 }
 
 #notifications-center .fa-newspaper,
-#notifications-center .fa-sync,
+#notifications-center .fa-sync-alt,
 .notification-item > .fa-newspaper,
-.notification-item > .fa-sync {
+.notification-item > .fa-sync-alt {
     color: #00a2e2;
     opacity: .8;
 }
