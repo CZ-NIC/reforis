@@ -57,8 +57,20 @@ const API_URLs = new Proxy({
     controllerID: "/controller_id",
     about: "/about",
 },
-{
-    get: (target, name) => `${API_URL_PREFIX}${target[name]}`,
-});
+    {
+        get: (target, name) => `${API_URL_PREFIX}${target[name]}`,
+    });
 
 export default API_URLs;
+
+
+const API_URL_MODULES_PREFIX = `${REFORIS_URL_PREFIX}`;
+
+export const API_MODULE_URLs = new Proxy({
+    // Packages
+    dataCollection: "/data-collection/api/settings",
+},
+    {
+        get: (target, name) => `${API_URL_MODULES_PREFIX}${target[name]}`,
+    },
+);

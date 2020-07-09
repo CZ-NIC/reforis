@@ -22,7 +22,9 @@ Notifications.propTypes = {
 };
 
 function Notifications({ ws, history }) {
-    const [notifications, dismiss, dismissAll, isLoading] = useNotifications(ws);
+    const [notifications, dismiss, dismissAll, isLoading] = useNotifications(
+        ws
+    );
     const [currentNotification, setCurrentNotification] = useState();
 
     function getIDFromSearch(search) {
@@ -34,25 +36,27 @@ function Notifications({ ws, history }) {
         // Set initial notification
         setCurrentNotification(getIDFromSearch(window.location.search));
         // Listen to changes
-        return history.listen(
-            (location) => {
-                setCurrentNotification(getIDFromSearch(location.search));
-            },
-        );
+        return history.listen((location) => {
+            setCurrentNotification(getIDFromSearch(location.search));
+        });
     }, [history, setCurrentNotification]);
 
     let componentContent;
     if (isLoading) {
         componentContent = <Spinner />;
     } else if (notifications.length === 0) {
-        componentContent = <p className="text-muted text-center">{_("No notifications")}</p>;
+        componentContent = (
+            <p className="text-muted text-center">{_("No notifications")}</p>
+        );
     } else {
-        const dismissableNotificationsCount = notifications
-            .filter((notification) => !NOT_DISMISSABLE.includes(notification.severity))
-            .length;
+        const dismissableNotificationsCount = notifications.filter(
+            (notification) => !NOT_DISMISSABLE.includes(notification.severity)
+        ).length;
         componentContent = (
             <>
-                { dismissableNotificationsCount > 0 && <DismissAllButton dismissAll={dismissAll} />}
+                {dismissableNotificationsCount > 0 && (
+                    <DismissAllButton dismissAll={dismissAll} />
+                )}
                 <NotificationsList
                     currentNotification={currentNotification}
                     notifications={notifications}
@@ -63,10 +67,10 @@ function Notifications({ ws, history }) {
     }
 
     return (
-        <div id="notifications-center">
+        <>
             <h1>{_("Notifications")}</h1>
-            {componentContent}
-        </div>
+            <div id="notifications-center">{componentContent}</div>
+        </>
     );
 }
 

@@ -20,7 +20,7 @@ in LAN.
         
   </p>
   <div
-    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
+    class="col-sm-12 col-lg-12 p-0 mb-3"
   >
     <form>
       <div
@@ -46,7 +46,7 @@ in LAN.
         class="text-right"
       >
         <button
-          class="btn btn-primary  col-sm-12 col-lg-3"
+          class="btn btn-primary  col-sm-12 col-lg-2"
           type="submit"
         >
            
@@ -82,7 +82,7 @@ in LAN.
         
   </p>
   <div
-    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
+    class="col-sm-12 col-lg-12 p-0 mb-3"
   >
     <form>
       <div
@@ -312,7 +312,7 @@ in LAN.
         class="text-right"
       >
         <button
-          class="btn btn-primary  col-sm-12 col-lg-3"
+          class="btn btn-primary  col-sm-12 col-lg-2"
           type="submit"
         >
            
@@ -355,7 +355,7 @@ in LAN.
         
   </p>
   <div
-    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
+    class="col-sm-12 col-lg-12 p-0 mb-3"
   >
     <form>
       <div
@@ -580,7 +580,7 @@ in LAN.
         class="text-right"
       >
         <button
-          class="btn btn-primary  col-sm-12 col-lg-3"
+          class="btn btn-primary  col-sm-12 col-lg-2"
           type="submit"
         >
            
@@ -616,7 +616,7 @@ in LAN.
         
   </p>
   <div
-    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
+    class="col-sm-12 col-lg-12 p-0 mb-3"
   >
     <form>
       <div
@@ -735,7 +735,7 @@ in LAN.
         class="text-right"
       >
         <button
-          class="btn btn-primary  col-sm-12 col-lg-3"
+          class="btn btn-primary  col-sm-12 col-lg-2"
           type="submit"
         >
            
