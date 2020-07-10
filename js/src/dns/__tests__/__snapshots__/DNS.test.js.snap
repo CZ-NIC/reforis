@@ -375,11 +375,10 @@ works as expected. Remember to click on the
           </th>
           <td>
             <div
-              class="spinner-border spinner-border-sm text-secondary"
-              role="status"
+              class="text-secondary"
             >
-              <span
-                class="sr-only"
+              <i
+                class="fas fa-minus"
               />
             </div>
           </td>
@@ -392,11 +391,10 @@ works as expected. Remember to click on the
           </th>
           <td>
             <div
-              class="spinner-border spinner-border-sm text-secondary"
-              role="status"
+              class="text-secondary"
             >
-              <span
-                class="sr-only"
+              <i
+                class="fas fa-minus"
               />
             </div>
           </td>

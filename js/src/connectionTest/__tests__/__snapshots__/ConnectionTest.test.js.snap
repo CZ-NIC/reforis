@@ -175,11 +175,10 @@ exports[`<ConnectionTest/> Snapshot before connection test. 1`] = `
           </th>
           <td>
             <div
-              class="spinner-border spinner-border-sm text-secondary"
-              role="status"
+              class="text-secondary"
             >
-              <span
-                class="sr-only"
+              <i
+                class="fas fa-minus"
               />
             </div>
           </td>
@@ -192,11 +191,10 @@ exports[`<ConnectionTest/> Snapshot before connection test. 1`] = `
           </th>
           <td>
             <div
-              class="spinner-border spinner-border-sm text-secondary"
-              role="status"
+              class="text-secondary"
             >
-              <span
-                class="sr-only"
+              <i
+                class="fas fa-minus"
               />
             </div>
           </td>
@@ -209,11 +207,10 @@ exports[`<ConnectionTest/> Snapshot before connection test. 1`] = `
           </th>
           <td>
             <div
-              class="spinner-border spinner-border-sm text-secondary"
-              role="status"
+              class="text-secondary"
             >
-              <span
-                class="sr-only"
+              <i
+                class="fas fa-minus"
               />
             </div>
           </td>
@@ -226,11 +223,10 @@ exports[`<ConnectionTest/> Snapshot before connection test. 1`] = `
           </th>
           <td>
             <div
-              class="spinner-border spinner-border-sm text-secondary"
-              role="status"
+              class="text-secondary"
             >
-              <span
-                class="sr-only"
+              <i
+                class="fas fa-minus"
               />
             </div>
           </td>

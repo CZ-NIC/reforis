@@ -1017,11 +1017,10 @@ wait for a while before running this test.
           </th>
           <td>
             <div
-              class="spinner-border spinner-border-sm text-secondary"
-              role="status"
+              class="text-secondary"
             >
-              <span
-                class="sr-only"
+              <i
+                class="fas fa-minus"
               />
             </div>
           </td>
@@ -1034,11 +1033,10 @@ wait for a while before running this test.
           </th>
           <td>
             <div
-              class="spinner-border spinner-border-sm text-secondary"
-              role="status"
+              class="text-secondary"
             >
-              <span
-                class="sr-only"
+              <i
+                class="fas fa-minus"
               />
             </div>
           </td>
@@ -1051,11 +1049,10 @@ wait for a while before running this test.
           </th>
           <td>
             <div
-              class="spinner-border spinner-border-sm text-secondary"
-              role="status"
+              class="text-secondary"
             >
-              <span
-                class="sr-only"
+              <i
+                class="fas fa-minus"
               />
             </div>
           </td>
@@ -1068,11 +1065,10 @@ wait for a while before running this test.
           </th>
           <td>
             <div
-              class="spinner-border spinner-border-sm text-secondary"
-              role="status"
+              class="text-secondary"
             >
-              <span
-                class="sr-only"
+              <i
+                class="fas fa-minus"
               />
             </div>
           </td>
