@@ -28,7 +28,7 @@ export default function ConnectionTest({ ws, type }) {
 
     return (
         <form>
-            <ConnectionTestResults {...testResults} />
+            <ConnectionTestResults state={state} {...testResults} />
             <div className={`${formFieldsSize} text-right`}>
                 <ConnectionTestButton state={state} onClick={onSubmit} />
             </div>
