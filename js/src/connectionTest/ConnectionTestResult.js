@@ -7,8 +7,8 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-
 import { SpinnerElement } from "foris";
+import { TEST_STATES } from "./hooks";
 
 const TEST_TYPES = {
     ipv4: _("IPv4 connectivity"),
@@ -26,21 +26,22 @@ ConnectionTestResults.propTypes = {
     ipv6_gateway: PropTypes.bool,
     dns: PropTypes.bool,
     dnssec: PropTypes.bool,
+    state: PropTypes.object,
 };
 
-export default function ConnectionTestResults({ ...tests }) {
+export default function ConnectionTestResults({ state, ...tests }) {
     return (
         <table className="table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12">
             <tbody>
-                {Object.keys(TEST_TYPES).map(
-                    (type) => (tests[type] !== undefined
-                        ? (
-                            <ConnectionTestResultItem
-                                key={type}
-                                type={TEST_TYPES[type]}
-                                result={tests[type]}
-                            />
-                        ) : null),
+                {Object.keys(TEST_TYPES).map((type) =>
+                    tests[type] !== undefined ? (
+                        <ConnectionTestResultItem
+                            key={type}
+                            type={TEST_TYPES[type]}
+                            result={tests[type]}
+                            state={state}
+                        />
+                    ) : null
                 )}
             </tbody>
         </table>
@@ -50,16 +51,19 @@ export default function ConnectionTestResults({ ...tests }) {
 ConnectionTestResultItem.propTypes = {
     type: PropTypes.string.isRequired,
     result: PropTypes.bool,
+    state: PropTypes.object,
 };
 
-function ConnectionTestResultItem({ type, result }) {
+function ConnectionTestResultItem({ type, result, state }) {
     return (
         <tr>
             <th scope="row">{type}</th>
             <td>
-                {result === null
-                    ? <SpinnerElement small className="text-secondary" />
-                    : <ConnectionTestIcon result={result} />}
+                {state === TEST_STATES.RUNNING ? (
+                    <SpinnerElement small className="text-secondary" />
+                ) : (
+                    <ConnectionTestIcon result={result} />
+                )}
             </td>
         </tr>
     );
@@ -70,9 +74,25 @@ ConnectionTestIcon.propTypes = {
 };
 
 function ConnectionTestIcon({ result }) {
+    let icon;
+    let iconColor;
+
+    switch (result) {
+        case true:
+            icon = "check";
+            iconColor = "success";
+            break;
+        case false:
+            icon = "times";
+            iconColor = "danger";
+            break;
+        default:
+            icon = "minus";
+            iconColor = "secondary";
+    }
     return (
-        <div className={result ? "text-success" : "text-danger"}>
-            <i className={`fas ${result ? "fa-check" : "fa-times"}`} />
+        <div className={`text-${iconColor}`}>
+            <i className={`fas fa-${icon}`} />
         </div>
     );
 }

@@ -2,3 +2,7 @@
     margin-left: 0;
     max-width: none;
 }
+
+.card-body form button {
+    max-width: none;
+}
