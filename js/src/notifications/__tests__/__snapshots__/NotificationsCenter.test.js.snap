@@ -1,125 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<NotificationsCenter/> Test with snapshot. 1`] = `
-<div
-  id="notifications-center"
->
-  <h1>
-    Notifications
-  </h1>
-  <button
-    class="btn btn-outline-danger float-right"
-    id="btn-dismiss-all"
-    type="button"
-  >
-    Dismiss all
-  </button>
-  <div
-    class="card bg-light border-info sm-10"
-  >
-    <div
-      class="card-header"
-    >
-      <i
-        class="fa fa-newspaper fa-2x"
-      />
-      <p
-        class="text-muted align-middle m-0"
-      >
-        February 1, 2000 12:00 AM
-      </p>
-      <button
-        class="close"
-        type="button"
-      >
-        ×
-      </button>
-    </div>
-    <div
-      class="card-body"
-    >
-      <p
-        class="card-text"
-      >
-        Notification message.
-      </p>
-    </div>
-  </div>
-  <div
-    class="card bg-light border-danger sm-10"
-  >
-    <div
-      class="card-header"
-    >
-      <i
-        class="fa fa-exclamation-circle fa-2x"
-      />
-      <p
-        class="text-muted align-middle m-0"
-      >
-        February 1, 2000 12:00 AM
-      </p>
-      <button
-        class="close"
-        type="button"
-      >
-        ×
-      </button>
-    </div>
-    <div
-      class="card-body"
-    >
-      <p
-        class="card-text"
-      >
-        Second notification message.
-      </p>
-    </div>
-  </div>
-  <div
-    class="card bg-light border-danger sm-10"
-  >
-    <div
-      class="card-header"
-    >
-      <i
-        class="fa fa-power-off fa-2x"
-      />
-      <p
-        class="text-muted align-middle m-0"
-      >
-        February 1, 2000 12:00 AM
-      </p>
-    </div>
-    <div
-      class="card-body"
-    >
-      <p
-        class="card-text"
-      >
-        Third notification message.
-      </p>
-    </div>
-    <button
-      class="btn btn-danger"
-      type="button"
-    >
-       
-       
-      Reboot
-    </button>
-  </div>
-</div>
+<h1>
+  Notifications
+</h1>
 `;
 
 exports[`<NotificationsCenter/> Test with spinner. 1`] = `
 <div>
+  <h1>
+    Notifications
+  </h1>
   <div
     id="notifications-center"
   >
-    <h1>
-      Notifications
-    </h1>
     <div
       class="spinner-wrapper my-3 text-center"
     >
