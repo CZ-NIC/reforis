@@ -26,7 +26,7 @@ ConnectionTestResults.propTypes = {
     ipv6_gateway: PropTypes.bool,
     dns: PropTypes.bool,
     dnssec: PropTypes.bool,
-    state: PropTypes.object,
+    state: PropTypes.number,
 };
 
 export default function ConnectionTestResults({ state, ...tests }) {
@@ -51,7 +51,7 @@ export default function ConnectionTestResults({ state, ...tests }) {
 ConnectionTestResultItem.propTypes = {
     type: PropTypes.string.isRequired,
     result: PropTypes.bool,
-    state: PropTypes.object,
+    state: PropTypes.number,
 };
 
 function ConnectionTestResultItem({ type, result, state }) {
