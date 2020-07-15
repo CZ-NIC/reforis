@@ -17,19 +17,19 @@ NotificationIcon.propTypes = {
 export default function NotificationIcon({ severity, className }) {
     let iconName = null;
     switch (severity) {
-    case SEVERITIES.NEWS:
-        iconName = "newspaper";
-        break;
-    case SEVERITIES.RESTART:
-        iconName = "power-off";
-        break;
-    case SEVERITIES.ERROR:
-        iconName = "exclamation-circle";
-        break;
-    case SEVERITIES.UPDATE:
-        iconName = "sync";
-        break;
-    default:
+        case SEVERITIES.NEWS:
+            iconName = "newspaper";
+            break;
+        case SEVERITIES.RESTART:
+            iconName = "power-off";
+            break;
+        case SEVERITIES.ERROR:
+            iconName = "exclamation-circle";
+            break;
+        case SEVERITIES.UPDATE:
+            iconName = "sync-alt";
+            break;
+        default:
     }
 
     return <i className={`fa fa-${iconName} ${className}`} />;
