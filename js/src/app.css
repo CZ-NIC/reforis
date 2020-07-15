@@ -26,9 +26,12 @@ html {
     overflow-x: hidden;
 }
 
+h1{
+    font-size: 2.5rem;
+}
+
 #content-container h1:first-child {
     margin-top: -0.9rem;
-    font-size: 2.5rem;
 }
 
 a,
