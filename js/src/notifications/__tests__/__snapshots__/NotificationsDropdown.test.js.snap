@@ -3,7 +3,7 @@
 exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
 <div>
   <div
-    class="dropdown btn-group"
+    class="dropdown"
     id="notifications"
   >
     <button
