@@ -12,6 +12,9 @@
 
 #top-bar {
     align-items: center;
+    position: absolute;
+    right: 30px;
+    z-index: 1000;
 }
 
 #top-bar-container {
@@ -27,6 +30,8 @@
 @media (max-width: 768px) {
     #top-bar {
         justify-content: center;
+        position: initial;
+        margin-bottom: 1rem;
     }
 }
 
