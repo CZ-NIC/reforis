@@ -37,7 +37,7 @@ function DataCollectionCard({ details: { eula } }) {
                         </div>
                         <div className="col-auto">
                             <span className={`h2 mb-0 text-${eula === 1 ? "success" : "danger"}`}>
-                                <i className="fas fa-check" />
+                                <i className={`fas fa-${eula === 1 ? "check" : "times"}`} />
                             </span>
                         </div>
                     </div>
