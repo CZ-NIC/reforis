@@ -10,6 +10,7 @@ import PropTypes from "prop-types";
 import ConnectionTest from "../connectionTest/ConnectionTest";
 import Notifications from "../notifications/Notifications/Notifications";
 import DataCollectionCard from "./Cards/DataCollectionCard";
+import Netmetr from "./Cards/NetmetrCard";
 import "./Overview.css";
 
 Overview.propTypes = {
@@ -17,7 +18,6 @@ Overview.propTypes = {
 };
 
 export default function Overview({ ws }) {
-    const icon = <i className="fas fa-check-circle float-right mr-2 mt-1" />;
     return (
         <>
             <h1>Overview</h1>
@@ -61,48 +61,7 @@ export default function Overview({ ws }) {
                         </div>
                     </div>
                 </div>
-                <div className="col mb-4">
-                    <div className="card h-100">
-                        <div className="card-body">
-                            <h6 className="text-uppercase text-muted mb-2">
-                                NetMetr
-                                <a href="javasript;" className="text-secondary">
-                                    <i className="fas fa-ellipsis-v float-right" />
-                                </a>
-                            </h6>
-                            <form>
-                                <table className="table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12">
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">
-                                                <span>Ping</span>
-                                            </th>
-                                            <td style={{ textAlign: "right" }}>
-                                                <span>-1</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <span>Upload</span>
-                                            </th>
-                                            <td style={{ textAlign: "right" }}>
-                                                <span>921.155 Mb/s</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <span>Download</span>
-                                            </th>
-                                            <td style={{ textAlign: "right" }}>
-                                                <span>918.788 Mb/s</span>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                <Netmetr />
                 <div className="col mb-4">
                     <div className="card h-100">
                         <div className="card-body">

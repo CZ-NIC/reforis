@@ -9,68 +9,71 @@ import { REFORIS_URL_PREFIX } from "foris";
 
 const API_URL_PREFIX = `${REFORIS_URL_PREFIX}/api`;
 
-const API_URLs = new Proxy({
-    // Notifications
-    notifications: "/notifications",
-    notificationsSettings: "/notifications-settings",
-    sendTestNotification: "/send-test-notification",
+const API_URLs = new Proxy(
+    {
+        // Notifications
+        notifications: "/notifications",
+        notificationsSettings: "/notifications-settings",
+        sendTestNotification: "/send-test-notification",
 
-    // Languages
-    language: "/language",
-    languages: "/languages",
+        // Languages
+        language: "/language",
+        languages: "/languages",
 
-    // Network
-    wifi: "/wifi",
-    wifiReset: "/wifi-reset",
-    wan: "/wan",
-    lan: "/lan",
-    interfaces: "/interfaces",
-    guestNetwork: "/guest-network",
-    dns: "/dns",
-    dnsForwarders: "/dns/forwarders",
-    connectionTest: "/connection-test",
-    dnsTest: "/dns/test",
+        // Network
+        wifi: "/wifi",
+        wifiReset: "/wifi-reset",
+        wan: "/wan",
+        lan: "/lan",
+        interfaces: "/interfaces",
+        guestNetwork: "/guest-network",
+        dns: "/dns",
+        dnsForwarders: "/dns/forwarders",
+        connectionTest: "/connection-test",
+        dnsTest: "/dns/test",
 
-    // Administration
-    password: "/password",
-    regionAndTime: "/region-and-time",
-    ntpUpdate: "/ntp-update",
-    reboot: "/reboot",
+        // Administration
+        password: "/password",
+        regionAndTime: "/region-and-time",
+        ntpUpdate: "/ntp-update",
+        reboot: "/reboot",
 
-    // Updater
-    approvals: "/approvals",
-    updates: "/updates",
-    runUpdates: "/updates/run",
-    updatesRunning: "/updates/running",
-    updatesEnabled: "/updates/enabled",
-    packages: "/packages",
-    languagePackages: "/language-packages",
+        // Updater
+        approvals: "/approvals",
+        updates: "/updates",
+        runUpdates: "/updates/run",
+        updatesRunning: "/updates/running",
+        updatesEnabled: "/updates/enabled",
+        packages: "/packages",
+        languagePackages: "/language-packages",
 
-    // Guide
-    guide: "/guide",
-    finishGuide: "/finish-guide",
-    guideWorkflow: "/guide-workflow",
+        // Guide
+        guide: "/guide",
+        finishGuide: "/finish-guide",
+        guideWorkflow: "/guide-workflow",
 
-    // Other
-    logout: "/logout",
-    healthCheck: "/health-check",
-    controllerID: "/controller_id",
-    about: "/about",
-},
+        // Other
+        logout: "/logout",
+        healthCheck: "/health-check",
+        controllerID: "/controller_id",
+        about: "/about",
+    },
     {
         get: (target, name) => `${API_URL_PREFIX}${target[name]}`,
-    });
+    }
+);
 
 export default API_URLs;
 
-
 const API_URL_MODULES_PREFIX = `${REFORIS_URL_PREFIX}`;
 
-export const API_MODULE_URLs = new Proxy({
-    // Packages
-    dataCollection: "/data-collection/api/settings",
-},
+export const API_MODULE_URLs = new Proxy(
+    {
+        // Packages
+        dataCollection: "/data-collection/api/settings",
+        netmetr: "/netmetr/api/data",
+    },
     {
         get: (target, name) => `${API_URL_MODULES_PREFIX}${target[name]}`,
-    },
+    }
 );
