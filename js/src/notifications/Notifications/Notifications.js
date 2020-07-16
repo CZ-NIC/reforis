@@ -42,33 +42,36 @@ function Notifications({ ws, history }) {
     }, [history, setCurrentNotification]);
 
     let componentContent;
+    const dismissableNotificationsCount = notifications.filter(
+        (notification) => !NOT_DISMISSABLE.includes(notification.severity)
+    ).length;
+
     if (isLoading) {
         componentContent = <Spinner />;
     } else if (notifications.length === 0) {
         componentContent = (
-            <p className="text-muted text-center">{_("No notifications")}</p>
+            <p className="text-muted text-center">
+                {_("No notifications")}
+            </p>
         );
     } else {
-        const dismissableNotificationsCount = notifications.filter(
-            (notification) => !NOT_DISMISSABLE.includes(notification.severity)
-        ).length;
         componentContent = (
-            <>
-                {dismissableNotificationsCount > 0 && (
-                    <DismissAllButton dismissAll={dismissAll} />
-                )}
-                <NotificationsList
-                    currentNotification={currentNotification}
-                    notifications={notifications}
-                    dismiss={dismiss}
-                />
-            </>
+            <NotificationsList
+                currentNotification={currentNotification}
+                notifications={notifications}
+                dismiss={dismiss}
+            />
         );
     }
 
     return (
         <>
-            <h1>{_("Notifications")}</h1>
+            <h1>
+                {_("Notifications")}
+                {dismissableNotificationsCount > 0 && (
+                    <DismissAllButton dismissAll={dismissAll} />
+                )}
+            </h1>
             <div id="notifications-center">{componentContent}</div>
         </>
     );
