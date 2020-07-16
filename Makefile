@@ -78,9 +78,9 @@ install-with-lighttpd:
 	opkg update
 	opkg install git git-http
 	opkg install reforis
-	easy_install-3 pip
-	pip uninstall reforis -y
-	pip install -e .
+	opkg install python3-pip
+	pip3 uninstall reforis -y
+	pip3 install -e .
 	rm -rf $(REFORIS_STATIC_PATH)
 	ln -sf /tmp/reforis/reforis_static $(REFORIS_STATIC_PATH)
 	/etc/init.d/lighttpd restart

@@ -1,0 +1,16 @@
+.card {
+    box-shadow: 0 0.75rem 1.5rem rgba(18,38,63,.03);
+}
+
+.card-header {
+    background-color: white;
+}
+
+.card-body form table.table {
+    margin-left: 0;
+    max-width: none;
+}
+
+.card-body form button {
+    max-width: none;
+}
