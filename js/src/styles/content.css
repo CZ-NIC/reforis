@@ -16,6 +16,7 @@
     flex: 5;
     flex-direction: column;
     padding: 2em;
+    padding-left: calc(312.2px + 2em);
     height: 100%;
 }
 
@@ -37,6 +38,13 @@
         padding: 1rem;
     }
 }
+
+@media screen and (max-width: 768px) {
+    #content {
+        padding-left: 2em;
+    }
+}
+
 
 @media screen and (max-width: 480px) {
     #content {
