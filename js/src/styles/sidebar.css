@@ -6,8 +6,7 @@
  */
 
 #sidebar {
-    flex: 2;
-    background: #f2f2f2;
+    background: #313a46;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -17,11 +16,11 @@
 }
 
 #sidebar ul li a {
-    padding: .5rem 2rem;
+    padding: 0.5rem 2rem;
     font-size: 1.1em;
     display: block;
-    color: #000;
-    white-space: nowrap
+    color: #fff;
+    white-space: nowrap;
 }
 
 #sidebar img {
@@ -30,9 +29,9 @@
 }
 
 #sidebar a svg {
-    color: gray;
+    color: white;
     /* Fill is used for custom svg sprite icons */
-    fill: gray;
+    fill: white;
     /* Keep custom icons in the same size as fa icon */
     height: 1em;
     width: 1em;
@@ -51,18 +50,19 @@
 }
 
 #sidebar a:hover svg {
-    color: grey;
+    color: white;
     /* Fill is used for custom svg sprite icons */
-    fill: grey;
+    fill: white;
 }
 
 #sidebar ul li a:hover {
-    color: #000;
-    background: #cbe8f5;
+    color: white;
+    background: #00a2e275;
     text-decoration: none;
 }
 
-#sidebar ul li ul li a { /* Nested menu */
+#sidebar ul li ul li a {
+    /* Nested menu */
     text-align: center;
 }
 
@@ -70,17 +70,23 @@
     background: rgba(0, 0, 0, 0.05);
 }
 
+#sidebar a.dropdown-toggle + ul.show {
+    background: rgba(0, 0, 0, 0.16);
+}
+
 #sidebar-header {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     padding: 1em;
-    margin-top: 4rem;
-    background: #f2f2f2;
-    white-space: nowrap
+    margin-top: 1em;
+    margin-right: 36.5px;
+    white-space: nowrap;
+    filter: invert(1);
 }
 
 .sidebar-header-version {
+    margin-bottom: 0;
     text-align: right;
 }
 
