@@ -8,6 +8,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import ConnectionTest from "../connectionTest/ConnectionTest";
+import Notifications from "../notifications/Notifications/Notifications";
+import DataCollectionCard from "./Cards/DataCollectionCard";
 import "./Overview.css";
 
 Overview.propTypes = {
@@ -19,37 +21,151 @@ export default function Overview({ ws }) {
     return (
         <>
             <h1>Overview</h1>
-            <div className="card border-secondary mb-3" style={{ maxWidth: "18rem" }}>
-                <h5 className="card-header">Connection Test</h5>
-                <div className="card-body">
-                    <p className="card-text">
-                        IPv4 connectivity
-                        {icon}
-                    </p>
-                    <p className="card-text">
-                        IPv4 gateway connectivity
-                        {icon}
-                    </p>
-                    <p className="card-text">
-                        IPv6 connectivity
-                        {icon}
-                    </p>
-                    <p className="card-text">
-                        IPv6 gateway connectivity
-                        {icon}
-                    </p>
-                    <div className="text-center">
-                        <a href="javascript;" className="btn btn-primary mt-2">Test connection</a>
+            <div className="row row-cols-1 row-cols-md-3 mt-4">
+                <div className="col mb-4">
+                    <div className="card">
+                        <div className="card-body">
+                            <div className="row align-items-center">
+                                <div className="col">
+                                    <h6 className="text-uppercase text-muted mb-2">
+                                        VPN
+                                    </h6>
+                                    <span className="h3 mb-0">Activated</span>
+                                </div>
+                                <div className="col-auto">
+                                    <span className="h2 mb-0 text-success">
+                                        <i className="fas fa-check" />
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <DataCollectionCard />
+                <div className="col mb-4">
+                    <div className="card">
+                        <div className="card-body">
+                            <div className="row align-items-center">
+                                <div className="col">
+                                    <h6 className="text-uppercase text-muted mb-2">
+                                        Automatic Updates
+                                    </h6>
+                                    <span className="h3 mb-0">Disabled</span>
+                                </div>
+                                <div className="col-auto">
+                                    <span className="h2 mb-0 text-danger">
+                                        <i className="fas fa-times" />
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="col mb-4">
+                    <div className="card h-100">
+                        <div className="card-body">
+                            <h6 className="text-uppercase text-muted mb-2">
+                                NetMetr
+                                <a href="javasript;" className="text-secondary">
+                                    <i className="fas fa-ellipsis-v float-right" />
+                                </a>
+                            </h6>
+                            <form>
+                                <table className="table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">
+                                                <span>Ping</span>
+                                            </th>
+                                            <td style={{ textAlign: "right" }}>
+                                                <span>-1</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                <span>Upload</span>
+                                            </th>
+                                            <td style={{ textAlign: "right" }}>
+                                                <span>921.155 Mb/s</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                <span>Download</span>
+                                            </th>
+                                            <td style={{ textAlign: "right" }}>
+                                                <span>918.788 Mb/s</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div className="col mb-4">
+                    <div className="card h-100">
+                        <div className="card-body">
+                            <h6 className="text-uppercase text-muted mb-2">
+                                Connection Test
+                                <a href="javasript;" className="text-secondary">
+                                    <i className="fas fa-cog float-right" />
+                                </a>
+                            </h6>
+                            <ConnectionTest ws={ws} type="wan" />
+                        </div>
+                    </div>
+                </div>
+                <div className="col mb-4">
+                    <div className="card h-100">
+                        <div className="card-body">
+                            <h6 className="text-uppercase text-muted mb-2">
+                                Open VPN
+                                <a href="javasript;" className="text-secondary">
+                                    <i className="fas fa-cog float-right" />
+                                </a>
+                            </h6>
+                            <form>
+                                <table className="table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">
+                                                <span>Turris Omnia</span>
+                                            </th>
+                                            <td style={{ textAlign: "center" }}>
+                                                <span className="text-success">
+                                                    <i className="fas fa-check" />
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                <span>Turris MOX Home</span>
+                                            </th>
+                                            <td style={{ textAlign: "center" }}>
+                                                <span className="text-success">
+                                                    <i className="fas fa-check" />
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                <span>Turris Omnia Work</span>
+                                            </th>
+                                            <td style={{ textAlign: "center" }}>
+                                                <span className="text-danger">
+                                                    <i className="fas fa-times" />
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div className="card border-secondary mb-3" style={{ maxWidth: "18rem" }}>
-                <h5 className="card-header">Connection Test</h5>
-                <div className="card-body">
-                    <ConnectionTest ws={ws} type="wan" />
-                </div>
-            </div>
+            <Notifications ws={ws} />
         </>
     );
 }
