@@ -22,7 +22,7 @@ export default function DismissAllButton({ dismissAll }) {
             title={_("Dismiss all")}
         >
             <i className="fas fa-trash" />
-            {_("Dismiss all")}
+            {" "}{_("Dismiss all")}
         </button>
     );
 }
