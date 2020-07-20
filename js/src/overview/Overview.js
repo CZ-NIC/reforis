@@ -10,6 +10,8 @@ import PropTypes from "prop-types";
 import ConnectionTest from "../connectionTest/ConnectionTest";
 import Notifications from "../notifications/Notifications/Notifications";
 import DataCollectionCard from "./Cards/DataCollectionCard";
+import AutomaticUpdatesCard from "./Cards/AutomaticUpdatesCard";
+
 import "./Overview.css";
 
 Overview.propTypes = {
@@ -30,8 +32,8 @@ export default function Overview({ ws }) {
                                     <span className="h3 mb-0">Activated</span>
                                 </div>
                                 <div className="col-auto">
-                                    <span className="h2 mb-0 text-success">
-                                        <i className="fas fa-check" />
+                                    <span className="h2 mb-0 text-warning">
+                                        <i class="fas fa-exclamation-triangle" />
                                     </span>
                                 </div>
                             </div>
@@ -39,23 +41,7 @@ export default function Overview({ ws }) {
                     </div>
                 </div>
                 <DataCollectionCard />
-                <div className="col mb-4">
-                    <div className="card">
-                        <div className="card-body">
-                            <div className="row align-items-center">
-                                <div className="col">
-                                    <h6 className="text-uppercase text-muted mb-2">Automatic Updates</h6>
-                                    <span className="h3 mb-0">Disabled</span>
-                                </div>
-                                <div className="col-auto">
-                                    <span className="h2 mb-0 text-danger">
-                                        <i className="fas fa-times" />
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <AutomaticUpdatesCard />
                 <div className="col mb-4">
                     <div className="card h-100">
                         <div className="card-body">
