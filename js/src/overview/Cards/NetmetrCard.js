@@ -34,7 +34,7 @@ function NetmetrCard({ tests }) {
     const time = moment
         .unix(lastTest.time)
         .locale(ForisTranslations.locale)
-        .format("l LT");
+        .format("HH:mm DD.MM.YYYY");
 
     return (
         <>
