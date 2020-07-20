@@ -72,6 +72,7 @@ export const API_MODULE_URLs = new Proxy(
         // Packages
         dataCollection: "/data-collection/api/settings",
         openvpn: "/openvpn/api/server-settings",
+        openvpnClients: "/openvpn/api/clients",
     },
     {
         get: (target, name) => `${API_URL_MODULES_PREFIX}${target[name]}`,

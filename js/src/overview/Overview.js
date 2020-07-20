@@ -12,6 +12,7 @@ import Notifications from "../notifications/Notifications/Notifications";
 import OpenVPNCard from "./Cards/OpenVPNCard";
 import DataCollectionCard from "./Cards/DataCollectionCard";
 import AutomaticUpdatesCard from "./Cards/AutomaticUpdatesCard";
+import OpenVPNClientsCard from "./Cards/OpenVPNClientsCard";
 
 import "./Overview.css";
 
@@ -82,54 +83,7 @@ export default function Overview({ ws }) {
                         </div>
                     </div>
                 </div>
-                <div className="col mb-4">
-                    <div className="card h-100">
-                        <div className="card-body">
-                            <h6 className="text-uppercase text-muted mb-2">
-                                Open VPN
-                                <a href="javasript;" className="text-secondary">
-                                    <i className="fas fa-cog float-right" />
-                                </a>
-                            </h6>
-                            <form>
-                                <table className="table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12">
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">
-                                                <span>Turris Omnia</span>
-                                            </th>
-                                            <td style={{ textAlign: "center" }}>
-                                                <span className="text-success">
-                                                    <i className="fas fa-check" />
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <span>Turris MOX Home</span>
-                                            </th>
-                                            <td style={{ textAlign: "center" }}>
-                                                <span className="text-success">
-                                                    <i className="fas fa-check" />
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <span>Turris Omnia Work</span>
-                                            </th>
-                                            <td style={{ textAlign: "center" }}>
-                                                <span className="text-danger">
-                                                    <i className="fas fa-times" />
-                                                </span>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                <OpenVPNClientsCard />
             </div>
             <Notifications ws={ws} />
         </>
