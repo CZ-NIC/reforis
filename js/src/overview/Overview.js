@@ -39,9 +39,11 @@ export default function Overview({ ws }) {
 }
 
 function displayCard(packages, cardName) {
-    const enabledPackages = packages.package_lists.map((item) => {
-        return item.enabled ? item.name : null;
-    });
+    const enabledPackages = packages.package_lists
+        .filter((item) => item.enabled)
+        .map((item) => {
+            return item.name;
+        });
     return enabledPackages.includes(cardName);
 }
 
