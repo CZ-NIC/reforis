@@ -35,7 +35,6 @@ function NetmetrCard({ tests }) {
         .unix(lastTest.time)
         .locale(ForisTranslations.locale)
         .format("HH:mm DD.MM.YYYY");
-    console.log(lastTest);
     return (
         <>
             <div className="col mb-4">

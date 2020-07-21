@@ -5,15 +5,17 @@
  * See /LICENSE for more information.
  */
 
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-import ConnectionTest from "../connectionTest/ConnectionTest";
-import Notifications from "../notifications/Notifications/Notifications";
+import { useAPIGet, withSpinnerOnSending, withErrorMessage } from "foris";
+import API_URLs from "../common/API";
 import OpenVPNCard from "./Cards/OpenVPNCard";
 import DataCollectionCard from "./Cards/DataCollectionCard";
 import AutomaticUpdatesCard from "./Cards/AutomaticUpdatesCard";
 import NetmetrCard from "./Cards/NetmetrCard";
+import ConnectionTest from "../connectionTest/ConnectionTest";
 import OpenVPNClientsCard from "./Cards/OpenVPNClientsCard";
+import Notifications from "../notifications/Notifications/Notifications";
 
 import "./Overview.css";
 
@@ -22,6 +24,33 @@ Overview.propTypes = {
 };
 
 export default function Overview({ ws }) {
+    const [packageList, getPackageList] = useAPIGet(API_URLs.packages);
+    useEffect(() => {
+        getPackageList();
+    }, [getPackageList]);
+
+    return (
+        <OverviewWithErrorAndSpinner
+            apiState={packageList.state}
+            packages={packageList.data || {}}
+            ws={ws}
+        />
+    );
+}
+
+function displayCard(packages, cardName) {
+    const enabledPackages = packages.package_lists.map((item) => {
+        return item.enabled ? item.name : null;
+    });
+    return enabledPackages.includes(cardName);
+}
+
+OverviewCards.propTypes = {
+    packages: PropTypes.object.isRequired,
+    ws: PropTypes.object.isRequired,
+};
+
+function OverviewCards({ packages, ws }) {
     return (
         <>
             <h1>Overview</h1>
@@ -29,7 +58,9 @@ export default function Overview({ ws }) {
                 <OpenVPNCard />
                 <DataCollectionCard />
                 <AutomaticUpdatesCard />
-                <NetmetrCard />
+                {displayCard(packages, "net_monitoring") ? (
+                    <NetmetrCard />
+                ) : null}
                 <div className="col mb-4">
                     <div className="card h-100">
                         <div className="card-body">
@@ -43,9 +74,15 @@ export default function Overview({ ws }) {
                         </div>
                     </div>
                 </div>
-                <OpenVPNClientsCard />
+                {displayCard(packages, "openvpn") ? (
+                    <OpenVPNClientsCard />
+                ) : null}
             </div>
             <Notifications ws={ws} />
         </>
     );
 }
+
+const OverviewWithErrorAndSpinner = withSpinnerOnSending(
+    withErrorMessage(OverviewCards)
+);

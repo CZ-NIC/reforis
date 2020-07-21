@@ -61,7 +61,9 @@ function ConnectionTestResultItem({ type, result, state }) {
             <td className="text-center">
                 {state === TEST_STATES.RUNNING ? (
                     <SpinnerElement small className="text-secondary" />
-                ) : (<ConnectionTestIcon result={result} />)}
+                ) : (
+                    <ConnectionTestIcon result={result} />
+                )}
             </td>
         </tr>
     );
