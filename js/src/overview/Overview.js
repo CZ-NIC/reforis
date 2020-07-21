@@ -12,6 +12,7 @@ import Notifications from "../notifications/Notifications/Notifications";
 import OpenVPNCard from "./Cards/OpenVPNCard";
 import DataCollectionCard from "./Cards/DataCollectionCard";
 import AutomaticUpdatesCard from "./Cards/AutomaticUpdatesCard";
+import NetmetrCard from "./Cards/NetmetrCard";
 import OpenVPNClientsCard from "./Cards/OpenVPNClientsCard";
 
 import "./Overview.css";
@@ -28,48 +29,7 @@ export default function Overview({ ws }) {
                 <OpenVPNCard />
                 <DataCollectionCard />
                 <AutomaticUpdatesCard />
-                <div className="col mb-4">
-                    <div className="card h-100">
-                        <div className="card-body">
-                            <h6 className="text-uppercase text-muted mb-2">
-                                NetMetr
-                                <a href="javasript;" className="text-secondary">
-                                    <i className="fas fa-ellipsis-v float-right" />
-                                </a>
-                            </h6>
-                            <form>
-                                <table className="table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12">
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">
-                                                <span>Ping</span>
-                                            </th>
-                                            <td style={{ textAlign: "right" }}>
-                                                <span>-1</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <span>Upload</span>
-                                            </th>
-                                            <td style={{ textAlign: "right" }}>
-                                                <span>921.155 Mb/s</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <span>Download</span>
-                                            </th>
-                                            <td style={{ textAlign: "right" }}>
-                                                <span>918.788 Mb/s</span>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                <NetmetrCard />
                 <div className="col mb-4">
                     <div className="card h-100">
                         <div className="card-body">
