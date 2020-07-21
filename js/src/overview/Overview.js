@@ -5,19 +5,48 @@
  * See /LICENSE for more information.
  */
 
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
+import { useAPIGet, withSpinnerOnSending, withErrorMessage } from "foris";
 import ConnectionTest from "../connectionTest/ConnectionTest";
 import Notifications from "../notifications/Notifications/Notifications";
 import DataCollectionCard from "./Cards/DataCollectionCard";
 import Netmetr from "./Cards/NetmetrCard";
 import "./Overview.css";
+import API_URLs from "../common/API";
 
 Overview.propTypes = {
     ws: PropTypes.object.isRequired,
 };
 
 export default function Overview({ ws }) {
+    const [packageList, getPackageList] = useAPIGet(API_URLs.packages);
+    useEffect(() => {
+        getPackageList();
+    }, [getPackageList]);
+
+    return (
+        <OverviewWithErrorAndSpinner
+            apiState={packageList.state}
+            packages={packageList.data || {}}
+            ws={ws}
+        />
+    );
+}
+
+function displayCard(packages, cardName) {
+    const enabledPackages = packages.package_lists.map((item) => {
+        return item.enabled ? item.name : null;
+    });
+    return enabledPackages.includes(cardName);
+}
+
+OverviewCards.propTypes = {
+    packages: PropTypes.object.isRequired,
+    ws: PropTypes.object.isRequired,
+};
+
+function OverviewCards({ packages, ws }) {
     return (
         <>
             <h1>Overview</h1>
@@ -41,7 +70,9 @@ export default function Overview({ ws }) {
                         </div>
                     </div>
                 </div>
-                <DataCollectionCard />
+                {displayCard(packages, "datacollect") ? (
+                    <DataCollectionCard />
+                ) : null}
                 <div className="col mb-4">
                     <div className="card">
                         <div className="card-body">
@@ -61,7 +92,7 @@ export default function Overview({ ws }) {
                         </div>
                     </div>
                 </div>
-                <Netmetr />
+                {displayCard(packages, "net_monitoring") ? <Netmetr /> : null}
                 <div className="col mb-4">
                     <div className="card h-100">
                         <div className="card-body">
@@ -128,3 +159,7 @@ export default function Overview({ ws }) {
         </>
     );
 }
+
+const OverviewWithErrorAndSpinner = withSpinnerOnSending(
+    withErrorMessage(OverviewCards)
+);
