@@ -19,10 +19,9 @@ export default function DismissAllButton({ dismissAll }) {
             id="btn-dismiss-all"
             className="btn btn-outline-danger mt-2 float-right"
             onClick={dismissAll}
-            title={_("Dismiss all")}
         >
             <i className="fas fa-trash" />
-            {" "}{_("Dismiss all")}
+            {_("Dismiss all")}
         </button>
     );
 }
