@@ -30,11 +30,15 @@ NetmetrCard.propTypes = {
 };
 
 function NetmetrCard({ tests }) {
-    const lastTest = tests.performed_tests[0];
-    const time = moment
-        .unix(lastTest.time)
-        .locale(ForisTranslations.locale)
-        .format("HH:mm DD.MM.YYYY");
+    const testsCount = tests.performed_tests.length;
+    const lastTest = testsCount > 0 ? tests.performed_tests[0] : null;
+    const time =
+        testsCount > 0
+            ? moment
+                  .unix(lastTest.time)
+                  .locale(ForisTranslations.locale)
+                  .format("HH:mm DD.MM.YYYY")
+            : null;
 
     return (
         <div className="col mb-4">
@@ -48,56 +52,66 @@ function NetmetrCard({ tests }) {
                     </h6>
                     <form>
                         <table className="table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12">
-                            <tbody>
-                                <tr>
-                                    <th scope="row">
-                                        <span>Download [Mb/s]</span>
-                                    </th>
-                                    <td style={{ textAlign: "right" }}>
-                                        <span>{lastTest.speed_download}</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        <span>Upload [Mb/s]</span>
-                                    </th>
-                                    <td style={{ textAlign: "right" }}>
-                                        <span>{lastTest.speed_upload}</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        <span>Ping [ms]</span>
-                                    </th>
-                                    <td style={{ textAlign: "right" }}>
-                                        <span>{lastTest.ping}</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        <span>Date</span>
-                                    </th>
-                                    <td style={{ textAlign: "right" }}>
-                                        <span>{time}</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        <span>Link</span>
-                                    </th>
-                                    <td style={{ textAlign: "right" }}>
-                                        <a
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            href={`https://www.netmetr.cz/en/detail.html?${lastTest.test_uuid}`}
-                                        >
-                                            {_("Details")}
-                                            &nbsp;
-                                            <i className="fas fa-external-link-alt" />
-                                        </a>
-                                    </td>
-                                </tr>
-                            </tbody>
+                            {lastTest != null ? (
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">
+                                            <span>Download [Mb/s]</span>
+                                        </th>
+                                        <td style={{ textAlign: "right" }}>
+                                            <span>
+                                                {lastTest.speed_download}
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">
+                                            <span>Upload [Mb/s]</span>
+                                        </th>
+                                        <td style={{ textAlign: "right" }}>
+                                            <span>{lastTest.speed_upload}</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">
+                                            <span>Ping [ms]</span>
+                                        </th>
+                                        <td style={{ textAlign: "right" }}>
+                                            <span>{lastTest.ping}</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">
+                                            <span>Date</span>
+                                        </th>
+                                        <td style={{ textAlign: "right" }}>
+                                            <span>{time}</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">
+                                            <span>Link</span>
+                                        </th>
+                                        <td style={{ textAlign: "right" }}>
+                                            <a
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                href={`https://www.netmetr.cz/en/detail.html?${lastTest.test_uuid}`}
+                                            >
+                                                {_("Details")}
+                                                &nbsp;
+                                                <i className="fas fa-external-link-alt" />
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            ) : (
+                                <tbody>
+                                    <tr>
+                                        <td>No test has been pefromed yet.</td>
+                                    </tr>
+                                </tbody>
+                            )}
                         </table>
                     </form>
                 </div>
