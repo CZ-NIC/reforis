@@ -21,12 +21,11 @@ export default function OpenVPNClients() {
     );
 }
 
-OpenVPNClients.propTypes = {
+OpenVPNClientsCard.propTypes = {
     clients: PropTypes.object.isRequired,
 };
 
 function OpenVPNClientsCard({ clients }) {
-    console.log(clients);
     return (
         <div className="col mb-4">
             <div className="card h-100">
