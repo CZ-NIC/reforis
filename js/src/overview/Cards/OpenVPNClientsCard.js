@@ -39,39 +39,30 @@ function OpenVPNClientsCard({ clients }) {
                     <form>
                         <table className="table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12">
                             <tbody>
-                                {clients
-                                    .slice(0, 5)
-                                    .filter(
-                                        (client) =>
-                                            client.status === "revoked" ||
-                                            client.status === "valid"
-                                    )
-                                    .map((client) => (
-                                        <tr key={client.id}>
-                                            <th scope="row">
-                                                <span>{client.name}</span>
-                                            </th>
-                                            <td style={{ textAlign: "center" }}>
-                                                <span
-                                                    className={`text-${
-                                                        client.status ===
-                                                        "valid"
-                                                            ? "success"
-                                                            : "warning"
+                                {clients.slice(0, 5).map((client) => (
+                                    <tr key={client.id}>
+                                        <th scope="row">
+                                            <span>{client.id}</span>
+                                        </th>
+                                        <td style={{ textAlign: "center" }}>
+                                            <span
+                                                className={`text-${
+                                                    client.enabled
+                                                        ? "success"
+                                                        : "danger"
+                                                }`}
+                                            >
+                                                <i
+                                                    className={`fas fa-${
+                                                        client.enabled
+                                                            ? "check"
+                                                            : "times"
                                                     }`}
-                                                >
-                                                    <i
-                                                        className={`fas fa-${
-                                                            client.status ===
-                                                            "valid"
-                                                                ? "check"
-                                                                : "exclamation-triangle"
-                                                        }`}
-                                                    />
-                                                </span>
-                                            </td>
-                                        </tr>
-                                    ))}
+                                                />
+                                            </span>
+                                        </td>
+                                    </tr>
+                                ))}
                             </tbody>
                         </table>
                     </form>

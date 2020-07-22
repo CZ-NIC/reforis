@@ -72,7 +72,7 @@ export const API_MODULE_URLs = new Proxy(
         // Packages
         dataCollection: "/data-collection/api/settings",
         openvpn: "/openvpn/api/server-settings",
-        openvpnClients: "/openvpn/api/clients",
+        openvpnClients: "/openvpn/api/client-settings",
         netmetr: "/netmetr/api/data",
     },
     {
