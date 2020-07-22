@@ -6,7 +6,6 @@ exports[`<NotificationsCenter/> Test with snapshot. 1`] = `
   <button
     class="btn btn-outline-danger mt-2 float-right"
     id="btn-dismiss-all"
-    title="Dismiss all"
     type="button"
   >
     <i
