@@ -31,7 +31,7 @@ function OpenVPNCard({ details: { enabled } }) {
                     <div className="row align-items-center">
                         <div className="col">
                             <h6 className="text-uppercase text-muted mb-2">
-                                OpenVPN
+                                OpenVPN Server
                             </h6>
                             <span className="h3 mb-0">
                                 {enabled ? "Activated" : "Disabled"}
