@@ -47,7 +47,7 @@ function NetmetrCard({ tests }) {
                     <h6 className="text-uppercase text-muted mb-2">
                         NetMetr
                         <a
-                            href="javasript;"
+                            href="/reforis/netmetr/speed-test"
                             className="text-secondary"
                             title="Go to Netmetr"
                         >

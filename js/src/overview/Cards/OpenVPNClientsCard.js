@@ -33,9 +33,9 @@ function OpenVPNClientsCard({ clients }) {
                     <h6 className="text-uppercase text-muted mb-2">
                         OpenVPN Clients
                         <a
-                            href="javasript;"
+                            href="/reforis/openvpn/client-settings"
                             className="text-secondary"
-                            title="Go to OpenVPN"
+                            title="Go to OpenVPN Client Settings"
                         >
                             <i className="fas fa-external-link-alt float-right" />
                         </a>

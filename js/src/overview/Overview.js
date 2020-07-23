@@ -69,9 +69,9 @@ function OverviewCards({ packages, ws }) {
                             <h6 className="text-uppercase text-muted mb-2">
                                 Connection Test
                                 <a
-                                    href="javasript;"
+                                    href="/reforis/network-settings/wan"
                                     className="text-secondary"
-                                    title="Go to Connection Test"
+                                    title="Go to Connection Settings"
                                 >
                                     <i className="fas fa-external-link-alt float-right" />
                                 </a>
