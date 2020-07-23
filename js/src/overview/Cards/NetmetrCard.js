@@ -50,9 +50,9 @@ function NetmetrCard({ tests }) {
                             <i className="fas fa-ellipsis-v float-right" />
                         </a>
                     </h6>
-                    <form>
-                        <table className="table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12">
-                            {lastTest != null ? (
+                    {lastTest != null ? (
+                        <form>
+                            <table className="table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12">
                                 <tbody>
                                     <tr>
                                         <th scope="row">
@@ -119,19 +119,13 @@ function NetmetrCard({ tests }) {
                                         </td>
                                     </tr>
                                 </tbody>
-                            ) : (
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            {_(
-                                                "No tests have been performed lately."
-                                            )}
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            )}
-                        </table>
-                    </form>
+                            </table>
+                        </form>
+                    ) : (
+                        <p className="text-muted p-2">
+                            {_("No tests have been performed lately.")}
+                        </p>
+                    )}
                 </div>
             </div>
         </div>

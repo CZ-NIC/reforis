@@ -36,36 +36,42 @@ function OpenVPNClientsCard({ clients }) {
                             <i className="fas fa-cog float-right" />
                         </a>
                     </h6>
-                    <form>
-                        <table className="table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12">
-                            <tbody>
-                                {clients.slice(0, 5).map((client) => (
-                                    <tr key={client.id}>
-                                        <th scope="row">
-                                            <span>{client.id}</span>
-                                        </th>
-                                        <td className="text-right">
-                                            <span
-                                                className={`text-${
-                                                    client.enabled
-                                                        ? "success"
-                                                        : "danger"
-                                                }`}
-                                            >
-                                                <i
-                                                    className={`fas fa-${
+                    {clients.length !== 0 ? (
+                        <form>
+                            <table className="table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12">
+                                <tbody>
+                                    {clients.slice(0, 5).map((client) => (
+                                        <tr key={client.id}>
+                                            <th scope="row">
+                                                <span>{client.id}</span>
+                                            </th>
+                                            <td className="text-right">
+                                                <span
+                                                    className={`text-${
                                                         client.enabled
-                                                            ? "check"
-                                                            : "times"
+                                                            ? "success"
+                                                            : "danger"
                                                     }`}
-                                                />
-                                            </span>
-                                        </td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </form>
+                                                >
+                                                    <i
+                                                        className={`fas fa-${
+                                                            client.enabled
+                                                                ? "check"
+                                                                : "times"
+                                                        }`}
+                                                    />
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </form>
+                    ) : (
+                        <p className="text-muted p-2">
+                            {_("There are no client devices added yet.")}
+                        </p>
+                    )}
                 </div>
             </div>
         </div>
