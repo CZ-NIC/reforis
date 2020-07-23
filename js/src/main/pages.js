@@ -22,7 +22,6 @@ import RegionAndTime from "regionAndTime/RegionAndTime";
 import NotificationsSettings from "notificationsSettings/NotificationsSettings";
 import Reboot from "reboot/Reboot";
 
-import Notifications from "notifications/Notifications/Notifications";
 import About from "about/About";
 import Overview from "overview/Overview";
 
@@ -36,12 +35,6 @@ const PAGES = [
         path: "/overview",
         icon: "chart-line",
         component: Overview,
-    },
-    {
-        name: _("Notifications"),
-        path: "/notifications",
-        icon: "bell",
-        component: Notifications,
     },
     {
         name: _("Network Settings"),
