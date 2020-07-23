@@ -1016,7 +1016,7 @@ wait for a while before running this test.
             IPv4 connectivity
           </th>
           <td
-            class="text-center"
+            class="text-right"
           >
             <div
               class="text-secondary"
@@ -1034,7 +1034,7 @@ wait for a while before running this test.
             IPv4 gateway connectivity
           </th>
           <td
-            class="text-center"
+            class="text-right"
           >
             <div
               class="text-secondary"
@@ -1052,7 +1052,7 @@ wait for a while before running this test.
             IPv6 connectivity
           </th>
           <td
-            class="text-center"
+            class="text-right"
           >
             <div
               class="text-secondary"
@@ -1070,7 +1070,7 @@ wait for a while before running this test.
             IPv6 gateway connectivity
           </th>
           <td
-            class="text-center"
+            class="text-right"
           >
             <div
               class="text-secondary"
