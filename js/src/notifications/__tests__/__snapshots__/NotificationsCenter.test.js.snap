@@ -9,7 +9,7 @@ exports[`<NotificationsCenter/> Test with snapshot. 1`] = `
     type="button"
   >
     <i
-      class="fas fa-trash"
+      class="fas fa-trash mr-1"
     />
     Dismiss all
   </button>
