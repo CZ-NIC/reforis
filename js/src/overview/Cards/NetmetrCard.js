@@ -56,43 +56,35 @@ function NetmetrCard({ tests }) {
                                 <tbody>
                                     <tr>
                                         <th scope="row">
-                                            <span>Download [Mb/s]</span>
+                                            {_("Download [Mb/s]")}
                                         </th>
-                                        <td style={{ textAlign: "right" }}>
-                                            <span>
-                                                {lastTest.speed_download}
-                                            </span>
+                                        <td className="text-right">
+                                            {lastTest.speed_download}
                                         </td>
                                     </tr>
                                     <tr>
                                         <th scope="row">
-                                            <span>Upload [Mb/s]</span>
+                                            {_("Upload [Mb/s]")}
                                         </th>
-                                        <td style={{ textAlign: "right" }}>
+                                        <td className="text-right">
                                             <span>{lastTest.speed_upload}</span>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">
-                                            <span>Ping [ms]</span>
-                                        </th>
-                                        <td style={{ textAlign: "right" }}>
+                                        <th scope="row">{_("Ping [ms]")}</th>
+                                        <td className="text-right">
                                             <span>{lastTest.ping}</span>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">
-                                            <span>Date</span>
-                                        </th>
-                                        <td style={{ textAlign: "right" }}>
+                                        <th scope="row">{_("Date")}</th>
+                                        <td className="text-right">
                                             <span>{time}</span>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">
-                                            <span>Link</span>
-                                        </th>
-                                        <td style={{ textAlign: "right" }}>
+                                        <th scope="row">{_("Link")}</th>
+                                        <td className="text-right">
                                             <a
                                                 target="_blank"
                                                 rel="noopener noreferrer"
@@ -100,7 +92,9 @@ function NetmetrCard({ tests }) {
                                             >
                                                 {_("Details")}
                                                 &nbsp;
-                                                <i className="fas fa-external-link-alt" />
+                                                <sup>
+                                                    <i className="fas fa-external-link-alt" />
+                                                </sup>
                                             </a>
                                         </td>
                                     </tr>
@@ -108,7 +102,11 @@ function NetmetrCard({ tests }) {
                             ) : (
                                 <tbody>
                                     <tr>
-                                        <td>No test has been pefromed yet.</td>
+                                        <td>
+                                            {_(
+                                                "No tests have been performed lately."
+                                            )}
+                                        </td>
                                     </tr>
                                 </tbody>
                             )}
