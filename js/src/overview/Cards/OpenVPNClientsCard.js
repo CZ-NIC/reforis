@@ -44,7 +44,7 @@ function OpenVPNClientsCard({ clients }) {
                                         <th scope="row">
                                             <span>{client.id}</span>
                                         </th>
-                                        <td style={{ textAlign: "center" }}>
+                                        <td className="text-right">
                                             <span
                                                 className={`text-${
                                                     client.enabled

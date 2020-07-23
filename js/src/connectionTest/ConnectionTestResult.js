@@ -58,7 +58,7 @@ function ConnectionTestResultItem({ type, result, state }) {
     return (
         <tr>
             <th scope="row">{type}</th>
-            <td className="text-center">
+            <td className="text-right">
                 {state === TEST_STATES.RUNNING ? (
                     <SpinnerElement small className="text-secondary" />
                 ) : (
