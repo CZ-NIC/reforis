@@ -56,7 +56,13 @@ function NetmetrCard({ tests }) {
                                 <tbody>
                                     <tr>
                                         <th scope="row">
-                                            {_("Download [Mb/s]")}
+                                            {_("Download")}
+                                            <span
+                                                className="badge badge-secondary"
+                                                title={_("Megabit per second")}
+                                            >
+                                                Mb/s
+                                            </span>
                                         </th>
                                         <td className="text-right">
                                             {lastTest.speed_download}
@@ -64,14 +70,28 @@ function NetmetrCard({ tests }) {
                                     </tr>
                                     <tr>
                                         <th scope="row">
-                                            {_("Upload [Mb/s]")}
+                                            {_("Upload")}
+                                            <span
+                                                className="badge badge-secondary"
+                                                title={_("Megabit per second")}
+                                            >
+                                                Mb/s
+                                            </span>
                                         </th>
                                         <td className="text-right">
                                             <span>{lastTest.speed_upload}</span>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">{_("Ping [ms]")}</th>
+                                        <th scope="row">
+                                            {_("Ping")}
+                                            <span
+                                                className="badge badge-secondary"
+                                                title={_("Millisecond")}
+                                            >
+                                                ms
+                                            </span>
+                                        </th>
                                         <td className="text-right">
                                             <span>{lastTest.ping}</span>
                                         </td>
