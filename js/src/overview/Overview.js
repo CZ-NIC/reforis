@@ -68,8 +68,12 @@ function OverviewCards({ packages, ws }) {
                         <div className="card-body">
                             <h6 className="text-uppercase text-muted mb-2">
                                 Connection Test
-                                <a href="javasript;" className="text-secondary">
-                                    <i className="fas fa-cog float-right" />
+                                <a
+                                    href="javasript;"
+                                    className="text-secondary"
+                                    title="Go to Connection Test"
+                                >
+                                    <i className="fas fa-external-link-alt float-right" />
                                 </a>
                             </h6>
                             <ConnectionTest ws={ws} type="wan" />

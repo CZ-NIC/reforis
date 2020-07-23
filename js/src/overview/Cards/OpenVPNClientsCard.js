@@ -32,8 +32,12 @@ function OpenVPNClientsCard({ clients }) {
                 <div className="card-body">
                     <h6 className="text-uppercase text-muted mb-2">
                         OpenVPN Clients
-                        <a href="javasript;" className="text-secondary">
-                            <i className="fas fa-cog float-right" />
+                        <a
+                            href="javasript;"
+                            className="text-secondary"
+                            title="Go to OpenVPN"
+                        >
+                            <i className="fas fa-external-link-alt float-right" />
                         </a>
                     </h6>
                     {clients.length !== 0 ? (

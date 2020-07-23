@@ -46,8 +46,12 @@ function NetmetrCard({ tests }) {
                 <div className="card-body">
                     <h6 className="text-uppercase text-muted mb-2">
                         NetMetr
-                        <a href="javasript;" className="text-secondary">
-                            <i className="fas fa-ellipsis-v float-right" />
+                        <a
+                            href="javasript;"
+                            className="text-secondary"
+                            title="Go to Netmetr"
+                        >
+                            <i className="fas fa-external-link-alt float-right" />
                         </a>
                     </h6>
                     {lastTest != null ? (
