@@ -57,9 +57,9 @@ function OverviewCards({ packages, ws }) {
         <>
             <h1>Overview</h1>
             <div className="row row-cols-1 row-cols-md-3 mt-4">
-                <OpenVPNCard />
-                <DataCollectionCard />
                 <AutomaticUpdatesCard />
+                <DataCollectionCard />
+                {displayCard(packages, "openvpn") ? <OpenVPNCard /> : null}
                 {displayCard(packages, "net_monitoring") ? (
                     <NetmetrCard />
                 ) : null}
