@@ -28,7 +28,7 @@ exports[`<Guide/>  Snapshot. Just check if render correct page. 1`] = `
           en
         </button>
         <div
-          class="dropdown-menu"
+          class="dropdown-menu dropdown-menu-right"
           id="languages-dropdown-menu"
         >
           <div
