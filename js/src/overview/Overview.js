@@ -56,7 +56,7 @@ function OverviewCards({ packages, ws }) {
     return (
         <>
             <h1>Overview</h1>
-            <div className="row row-cols-1 row-cols-lg-3 mt-4">
+            <div className="row row-cols-1 row-cols-lg-3">
                 <AutomaticUpdatesCard />
                 <DataCollectionCard />
                 {displayCard(packages, "openvpn") ? <OpenVPNCard /> : null}
