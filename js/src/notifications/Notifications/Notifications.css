@@ -35,7 +35,7 @@
 .notification-item > .fa-newspaper,
 .notification-item > .fa-sync-alt {
     color: #00a2e2;
-    opacity: .8;
+    opacity: 0.8;
 }
 
 #notifications-center .fa-power-off,
@@ -43,5 +43,13 @@
 .notification-item > .fa-power-off,
 .notification-item > .fa-exclamation-circle {
     color: #e74c3c;
-    opacity: .8;
+    opacity: 0.8;
+}
+
+@media screen and (max-width: 402px) {
+    #btn-dismiss-all {
+        position: relative;
+        width: 100%;
+        float: none !important;
+    }
 }
