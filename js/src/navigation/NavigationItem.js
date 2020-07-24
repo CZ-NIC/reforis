@@ -19,6 +19,8 @@ NavigationItem.propTypes = {
     ]),
 };
 
+const SMALL_SCREEN_WIDTH = 768;
+
 export default function NavigationItem({ path, children, isLinkOutside }) {
     if (isLinkOutside) {
         return (
@@ -32,10 +34,15 @@ export default function NavigationItem({ path, children, isLinkOutside }) {
     }
 
     return (
-        <li>
-            <NavLink to={path}>
-                {children}
-            </NavLink>
+        <li
+            {...(window.outerWidth <= SMALL_SCREEN_WIDTH
+                ? {
+                      "data-toggle": "collapse",
+                      "data-target": "#navigation-container-collapse",
+                  }
+                : {})}
+        >
+            <NavLink to={path}>{children}</NavLink>
         </li>
     );
 }
