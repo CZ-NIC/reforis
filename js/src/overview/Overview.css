@@ -14,3 +14,20 @@
 .card-body form button {
     max-width: none;
 }
+
+@media screen and (max-width: 1312px) {
+    .row-cols-lg-3 > * {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+@media screen and (max-width: 1010px) {
+    .row-cols-lg-3 > * {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
