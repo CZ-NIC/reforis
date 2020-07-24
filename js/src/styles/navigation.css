@@ -10,12 +10,6 @@
         display: block;
     }
 
-    #navigation-collapse-toggle button {
-        background-color: #ff5d1d;
-        border-color: #ff5d1d;
-        color: #000;
-    }
-
     #navigation-container {
         width: 100%;
     }
