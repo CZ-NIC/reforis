@@ -39,13 +39,16 @@ export default function LanguagesDropdown({ ws, className }) {
                 {currentLang || <SpinnerElement small />}
             </button>
 
-            <div className="dropdown-menu" id="languages-dropdown-menu">
+            <div
+                className="dropdown-menu dropdown-menu-right"
+                id="languages-dropdown-menu"
+            >
                 <div className="dropdown-header">
                     <h5>{_("Languages")}</h5>
                 </div>
                 <div className="dropdown-divider" />
-                {langsList
-                    ? langsList.map((lang) => (
+                {langsList ? (
+                    langsList.map((lang) => (
                         <button
                             type="button"
                             key={lang}
@@ -55,7 +58,9 @@ export default function LanguagesDropdown({ ws, className }) {
                             {lang}
                         </button>
                     ))
-                    : <SpinnerElement small />}
+                ) : (
+                    <SpinnerElement small />
+                )}
             </div>
         </div>
     );
