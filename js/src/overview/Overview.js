@@ -38,13 +38,25 @@ export default function Overview({ ws }) {
     );
 }
 
-function displayCard(packages, cardName) {
-    const enabledPackages = packages.package_lists
+function displayCard({ package_lists: packages }, cardName) {
+    const enabledPackagesNames = [];
+    packages
         .filter((item) => item.enabled)
         .map((item) => {
-            return item.name;
+            enabledPackagesNames.push(item.name);
+            return null;
         });
-    return enabledPackages.includes(cardName);
+    packages.map((item) => {
+        item.options
+            .filter((option) => option.enabled)
+            .map((option) => {
+                enabledPackagesNames.push(option.name);
+                return null;
+            });
+        return null;
+    });
+
+    return enabledPackagesNames.includes(cardName);
 }
 
 OverviewCards.propTypes = {
@@ -56,7 +68,13 @@ function OverviewCards({ packages, ws }) {
     return (
         <>
             <h1>Overview</h1>
+<<<<<<< HEAD
             <div className="row row-cols-1 row-cols-lg-3">
+=======
+            <div className="row row-cols-1 row-cols-md-3 mt-4">
+                <OpenVPNCard activated={displayCard(packages, "dynfw")} />
+                <DataCollectionCard />
+>>>>>>> Add cards displaying as per packages options
                 <AutomaticUpdatesCard />
                 <DataCollectionCard />
                 {displayCard(packages, "openvpn") ? <OpenVPNCard /> : null}
