@@ -68,13 +68,7 @@ function OverviewCards({ packages, ws }) {
     return (
         <>
             <h1>Overview</h1>
-<<<<<<< HEAD
-            <div className="row row-cols-1 row-cols-lg-3">
-=======
-            <div className="row row-cols-1 row-cols-md-3 mt-4">
-                <OpenVPNCard activated={displayCard(packages, "dynfw")} />
-                <DataCollectionCard />
->>>>>>> Add cards displaying as per packages options
+            <div className="row row-cols-1 row-cols-lg-3 mt-4">
                 <AutomaticUpdatesCard />
                 <DataCollectionCard />
                 {displayCard(packages, "openvpn") ? <OpenVPNCard /> : null}
