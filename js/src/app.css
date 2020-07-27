@@ -36,6 +36,10 @@ h1 {
     margin-bottom: 1.9rem;
 }
 
+h2 {
+    font-size: 2.2rem;
+}
+
 a,
 .btn-link {
     color: #00a2e2;
