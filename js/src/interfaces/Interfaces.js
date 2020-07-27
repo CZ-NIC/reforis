@@ -29,33 +29,6 @@ Here you can configure the settings of the network interfaces on your device. Yo
 network interfaces among networks. If you are unsure what to set here use the default settings.
         `)}
             </p>
-            <h4>{_("WAN")}</h4>
-            <p>
-                {_(`
-It acts as an external network connection. Firewall rules should be applied here. It can only contain a
-single interface.
-        `)}
-            </p>
-
-            <h4>{_("LAN")}</h4>
-            <p>
-                {_(`
-It acts as a local network connection. LAN should contain devices which are under your control and you
-trust them. These devices can see each other and can access this web interface. It is recommended that the
-LAN should contain at least one interface otherwise you might not be able to configure this device in an
-easy way.
-        `)}
-            </p>
-
-            <h4>{_("Guest Network")}</h4>
-            <p>
-                {_(`
-It acts as a local network connection. Unlike LAN the devices in the guest network can't access
-the configuration interface of this device and are only able to access WAN (internet). This network should
-be used for devices which you don't fully trust. Note that you can also limit download/upload speed of the
-devices connected to the guest network.
-        `)}
-            </p>
             <ForisForm
                 ws={ws}
                 forisConfig={{
@@ -75,7 +48,9 @@ function validateInterfaces(formData) {
     if (formData.networks.lan.length < 1) {
         return {
             networks: {
-                lan: _("You have to assign at least one interface to this group."),
+                lan: _(
+                    "You have to assign at least one interface to this group."
+                ),
             },
         };
     }
