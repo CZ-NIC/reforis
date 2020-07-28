@@ -71,3 +71,25 @@ form > button {
 .user-select-none {
     user-select: none !important;
 }
+
+html {
+    --scrollbarBG: rgba(245, 245, 245, 0.52);
+    --thumbBG: #9c9ea0;
+}
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: inset var(--scrollbarBG);
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG);
+    border-radius: 6px;
+}
