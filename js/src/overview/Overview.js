@@ -44,18 +44,12 @@ function displayCard({ package_lists: packages }, cardName) {
         .filter((item) => item.enabled)
         .map((item) => {
             enabledPackagesNames.push(item.name);
-            return null;
+            item.options
+                .filter((option) => option.enabled)
+                .map((option) => {
+                    enabledPackagesNames.push(option.name);
+                });
         });
-    packages.map((item) => {
-        item.options
-            .filter((option) => option.enabled)
-            .map((option) => {
-                enabledPackagesNames.push(option.name);
-                return null;
-            });
-        return null;
-    });
-
     return enabledPackagesNames.includes(cardName);
 }
 
