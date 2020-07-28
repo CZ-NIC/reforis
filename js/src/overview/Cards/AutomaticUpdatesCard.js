@@ -3,9 +3,10 @@ import PropTypes from "prop-types";
 import { useAPIGet, withSpinnerOnSending, withErrorMessage } from "foris";
 import API_URLs from "../../common/API";
 
-
 export default function AutomaticUpdates() {
-    const [getAutomaticUpdatesResponse, getAutomaticUpdates] = useAPIGet(API_URLs.updatesEnabled);
+    const [getAutomaticUpdatesResponse, getAutomaticUpdates] = useAPIGet(
+        API_URLs.updatesEnabled
+    );
     useEffect(() => {
         getAutomaticUpdates();
     }, [getAutomaticUpdates]);
@@ -16,7 +17,6 @@ export default function AutomaticUpdates() {
                 apiState={getAutomaticUpdatesResponse.state}
                 details={getAutomaticUpdatesResponse.data || {}}
             />
-
         </>
     );
 }
@@ -32,20 +32,33 @@ function AutomaticUpdatesCard({ details: { enabled } }) {
                 <div className="card-body">
                     <div className="row align-items-center">
                         <div className="col">
-                            <h6 className="text-uppercase text-muted mb-2">Automatic Updates</h6>
-                            <span className="h3 mb-0">{enabled ? "Activated" : "Disabled"}</span>
+                            <h6 className="text-uppercase text-muted mb-2 user-select-none">
+                                Automatic Updates
+                            </h6>
+                            <span className="h3 mb-0 user-select-none">
+                                {enabled ? "Activated" : "Disabled"}
+                            </span>
                         </div>
                         <div className="col-auto">
-                            <span className={`h2 mb-0 text-${enabled ? "success" : "danger"}`}>
-                                <i className={`fas fa-${enabled ? "check" : "times"}`} />
+                            <span
+                                className={`h2 mb-0 text-${
+                                    enabled ? "success" : "danger"
+                                }`}
+                            >
+                                <i
+                                    className={`fas fa-${
+                                        enabled ? "check" : "times"
+                                    }`}
+                                />
                             </span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
-const AutomaticUpdatesCardWithErrorAndSpinner = withSpinnerOnSending(withErrorMessage(AutomaticUpdatesCard));
-
+const AutomaticUpdatesCardWithErrorAndSpinner = withSpinnerOnSending(
+    withErrorMessage(AutomaticUpdatesCard)
+);

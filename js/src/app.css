@@ -67,3 +67,7 @@ form > button {
 .form-control {
     color: black;
 }
+
+.user-select-none {
+    user-select: none !important;
+}
