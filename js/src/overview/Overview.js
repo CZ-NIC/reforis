@@ -9,7 +9,7 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { useAPIGet, withSpinnerOnSending, withErrorMessage } from "foris";
 import API_URLs from "../common/API";
-import OpenVPNCard from "./Cards/OpenVPNCard";
+import DynamicFirewallCard from "./Cards/DynamicFirewallCard";
 import DataCollectionCard from "./Cards/DataCollectionCard";
 import AutomaticUpdatesCard from "./Cards/AutomaticUpdatesCard";
 import NetmetrCard from "./Cards/NetmetrCard";
@@ -48,7 +48,9 @@ function displayCard({ package_lists: packages }, cardName) {
                 .filter((option) => option.enabled)
                 .map((option) => {
                     enabledPackagesNames.push(option.name);
+                    return null;
                 });
+            return null;
         });
     return enabledPackagesNames.includes(cardName);
 }
@@ -65,7 +67,9 @@ function OverviewCards({ packages, ws }) {
             <div className="row row-cols-1 row-cols-lg-3 mt-4">
                 <AutomaticUpdatesCard />
                 <DataCollectionCard />
-                {displayCard(packages, "openvpn") ? <OpenVPNCard /> : null}
+                <DynamicFirewallCard
+                    activated={() => displayCard(packages, "dynfw")}
+                />
                 {displayCard(packages, "net_monitoring") ? (
                     <NetmetrCard />
                 ) : null}
