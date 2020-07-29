@@ -54,6 +54,12 @@ export const HELP_CONTENT = {
             initial: _("Minimal device setup is finished. Note that you probably need to perform some further configuration updates to fit the device to your needs."),
         },
     },
+    bare: {
+        ...HELP_CONTENT_DEFAULTS,
+        finished: {
+            initial: _("Your device is now ready to be used. You can tweak the rest of the setting in administration interface."),
+        },
+    },
     bridge: {
         ...HELP_CONTENT_DEFAULTS,
         networks: {
