@@ -63,7 +63,7 @@ OverviewCards.propTypes = {
 function OverviewCards({ packages, ws }) {
     return (
         <>
-            <h1>Overview</h1>
+            <h1>{_("Overview")}</h1>
             <div className="row row-cols-1 row-cols-lg-3 mt-4">
                 <AutomaticUpdatesCard />
                 <DataCollectionCard />
@@ -77,7 +77,7 @@ function OverviewCards({ packages, ws }) {
                     <div className="card h-100 user-select-none">
                         <div className="card-body">
                             <h6 className="text-uppercase text-muted mb-2">
-                                Connection Test
+                                {_("Connection Test")}
                                 <a
                                     href="/reforis/network-settings/wan"
                                     className="text-secondary"

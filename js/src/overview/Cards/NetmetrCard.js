@@ -45,7 +45,7 @@ function NetmetrCard({ tests }) {
             <div className="card h-100 user-select-none">
                 <div className="card-body">
                     <h6 className="text-uppercase text-muted mb-2">
-                        NetMetr
+                        {_("NetMetr")}
                         <a
                             href="/reforis/netmetr/speed-test"
                             className="text-secondary"

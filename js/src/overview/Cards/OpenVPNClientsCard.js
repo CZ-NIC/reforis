@@ -31,7 +31,7 @@ function OpenVPNClientsCard({ clients }) {
             <div className="card h-100 user-select-none">
                 <div className="card-body">
                     <h6 className="text-uppercase text-muted mb-2">
-                        OpenVPN Clients
+                        {_("OpenVPN Clients")}
                         <a
                             href="/reforis/openvpn/client-settings"
                             className="text-secondary"

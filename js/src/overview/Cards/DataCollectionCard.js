@@ -33,10 +33,10 @@ function DataCollectionCard({ details: { eula } }) {
                     <div className="row align-items-center">
                         <div className="col">
                             <h6 className="text-uppercase text-muted mb-2">
-                                Data Collection
+                                {_("Data Collection")}
                             </h6>
                             <span className="h3 mb-0">
-                                {eula === 1 ? "Activated" : "Disabled"}
+                                {eula === 1 ? _("Activated") : _("Disabled")}
                             </span>
                         </div>
                         <div className="col-auto">

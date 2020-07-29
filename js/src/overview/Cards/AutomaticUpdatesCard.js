@@ -33,10 +33,10 @@ function AutomaticUpdatesCard({ details: { enabled } }) {
                     <div className="row align-items-center">
                         <div className="col">
                             <h6 className="text-uppercase text-muted mb-2 ">
-                                Automatic Updates
+                                {_("Automatic Updates")}
                             </h6>
                             <span className="h3 mb-0">
-                                {enabled ? "Activated" : "Disabled"}
+                                {enabled ? _("Activated") : _("Disabled")}
                             </span>
                         </div>
                         <div className="col-auto">
