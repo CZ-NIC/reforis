@@ -74,7 +74,7 @@ function OverviewCards({ packages, ws }) {
                     <NetmetrCard />
                 ) : null}
                 <div className="col mb-4">
-                    <div className="card h-100">
+                    <div className="card h-100 user-select-none">
                         <div className="card-body">
                             <h6 className="text-uppercase text-muted mb-2">
                                 Connection Test

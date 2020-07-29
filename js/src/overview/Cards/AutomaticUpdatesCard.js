@@ -28,14 +28,14 @@ AutomaticUpdatesCard.propTypes = {
 function AutomaticUpdatesCard({ details: { enabled } }) {
     return (
         <div className="col mb-4">
-            <div className="card">
+            <div className="card user-select-none">
                 <div className="card-body">
                     <div className="row align-items-center">
                         <div className="col">
-                            <h6 className="text-uppercase text-muted mb-2 user-select-none">
+                            <h6 className="text-uppercase text-muted mb-2 ">
                                 Automatic Updates
                             </h6>
-                            <span className="h3 mb-0 user-select-none">
+                            <span className="h3 mb-0">
                                 {enabled ? "Activated" : "Disabled"}
                             </span>
                         </div>

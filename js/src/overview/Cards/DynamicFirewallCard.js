@@ -15,7 +15,7 @@ DynamicFirewallCard.propTypes = {
 export default function DynamicFirewallCard({ activated }) {
     return (
         <div className="col mb-4">
-            <div className="card">
+            <div className="card user-select-none">
                 <div className="card-body">
                     <div className="row align-items-center">
                         <div className="col">
