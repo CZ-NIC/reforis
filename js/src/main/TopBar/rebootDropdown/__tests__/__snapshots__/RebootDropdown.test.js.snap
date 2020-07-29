@@ -31,7 +31,7 @@ exports[`<RebootDropdown/> Test with snapshot 1`] = `
         class="dropdown-item"
       >
         <a
-          href="/notifications?id=808-909"
+          href="/overview?id=808-909"
         >
           <button
             class="btn btn-primary mr-3"
