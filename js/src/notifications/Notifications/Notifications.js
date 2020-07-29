@@ -5,7 +5,7 @@
  * See /LICENSE for more information.
  */
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 import { Spinner } from "foris";
@@ -27,6 +27,8 @@ function Notifications({ ws, history }) {
     );
     const [currentNotification, setCurrentNotification] = useState();
 
+    const [notificationSection, setNotificationSection] = useState();
+
     function getIDFromSearch(search) {
         const params = new URLSearchParams(search);
         return params.get("id");
@@ -41,6 +43,22 @@ function Notifications({ ws, history }) {
         });
     }, [history, setCurrentNotification]);
 
+    const notificationSectionRef = useRef(null);
+
+    useEffect(() => {
+        setNotificationSection(window.location.hash);
+
+        if (notificationSection && notificationSectionRef.current) {
+            notificationSectionRef.current.scrollIntoView({
+                block: "start",
+                behavior: "smooth",
+            });
+        }
+        return history.listen((location) => {
+            setNotificationSection(location.hash);
+        });
+    }, [notificationSection, history]);
+
     let componentContent;
     const dismissableNotificationsCount = notifications.filter(
         (notification) => !NOT_DISMISSABLE.includes(notification.severity)
@@ -50,9 +68,7 @@ function Notifications({ ws, history }) {
         componentContent = <Spinner />;
     } else if (notifications.length === 0) {
         componentContent = (
-            <p className="text-muted text-center">
-                {_("No notifications")}
-            </p>
+            <p className="text-muted text-center">{_("No notifications")}</p>
         );
     } else {
         componentContent = (
@@ -66,7 +82,7 @@ function Notifications({ ws, history }) {
 
     return (
         <>
-            <h1>
+            <h1 ref={notificationSectionRef}>
                 {_("Notifications")}
                 {dismissableNotificationsCount > 0 && (
                     <DismissAllButton dismissAll={dismissAll} />

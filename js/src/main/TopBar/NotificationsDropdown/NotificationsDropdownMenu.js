@@ -63,7 +63,12 @@ function NotificationsDropdownHeader() {
     return (
         <>
             <div id="notifications-header" className="dropdown-header">
-                <Link to={ForisURLs.notifications}>
+                <Link
+                    to={{
+                        pathname: ForisURLs.overview,
+                        hash: `#notifications`,
+                    }}
+                >
                     <h5>{_("Notifications")}</h5>
                 </Link>
                 <Link
