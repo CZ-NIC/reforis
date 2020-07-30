@@ -38,7 +38,7 @@ export default function RebootDropdown({ ws }) {
             >
                 <i className="fas fa-power-off fa-lg" />
             </button>
-            <div className="dropdown-menu">
+            <div className="dropdown-menu dropdown-menu-right">
                 <div className="dropdown-header">
                     <h5>{_("Reboot Required")}</h5>
                 </div>
