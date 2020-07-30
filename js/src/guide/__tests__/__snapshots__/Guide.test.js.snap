@@ -3,94 +3,100 @@
 exports[`<Guide/>  Snapshot. Just check if render correct page. 1`] = `
 <div>
   <div
-    class="card guide-card"
+    class="card guide-card bg-info text-white mb-4"
   >
     <div
-      class="card-body"
-    >
-      <p>
-        Here you need to decide which interfaces belong to which network.
-      </p>
-      <p>
-        If you are in doubt use the current settings.
-      </p>
-    </div>
-    <div
-      class="guide-controls"
+      class="card-body row"
     >
       <div
-        class="dropdown"
+        class="col-lg-8 col-md-12 col-sm-12 d-flex flex-column justify-content-center align-items-sm-center text-center"
       >
-        <button
-          class="nav-item btn guide-controls-button btn-primary"
-          type="button"
-        >
-          en
-        </button>
+        <p>
+          Here you need to decide which interfaces belong to which network.
+        </p>
+        <p>
+          If you are in doubt use the current settings.
+        </p>
+      </div>
+      <div
+        class="guide-controls col-lg-4 col-md-12 col-sm-12 mt-md-2"
+      >
         <div
-          class="dropdown-menu dropdown-menu-right"
-          id="languages-dropdown-menu"
+          class="dropdown"
         >
-          <div
-            class="dropdown-header"
-          >
-            <h5>
-              Languages
-            </h5>
-          </div>
-          <div
-            class="dropdown-divider"
-          />
           <button
-            class="dropdown-item"
+            class="nav-item btn guide-controls-button btn-light"
             type="button"
           >
             en
           </button>
-          <button
-            class="dropdown-item"
-            type="button"
+          <div
+            class="dropdown-menu dropdown-menu-right"
+            id="languages-dropdown-menu"
           >
-            cs
-          </button>
-          <button
-            class="dropdown-item"
-            type="button"
-          >
-            ru
-          </button>
+            <div
+              class="dropdown-header"
+            >
+              <h5>
+                Languages
+              </h5>
+            </div>
+            <div
+              class="dropdown-divider"
+            />
+            <button
+              class="dropdown-item"
+              type="button"
+            >
+              en
+            </button>
+            <button
+              class="dropdown-item"
+              type="button"
+            >
+              cs
+            </button>
+            <button
+              class="dropdown-item"
+              type="button"
+            >
+              ru
+            </button>
+          </div>
         </div>
+        <button
+          class="btn guide-controls-button btn btn-warning "
+          style="pointer-events: not-allowed;"
+          type="button"
+        >
+           
+           
+          <span
+            class="d-none d-sm-block"
+          >
+            Skip guide
+             
+          </span>
+          <i
+            class="fas fa-forward"
+          />
+        </button>
+        <a
+          class="guide-controls-button btn btn-success disabled"
+          disabled=""
+          href="/reforis/guide/networks"
+        >
+          <span
+            class="d-none d-sm-block"
+          >
+            Next step
+             
+          </span>
+          <i
+            class="fas fa-step-forward"
+          />
+        </a>
       </div>
-      <button
-        class="btn guide-controls-button btn btn-warning"
-        type="button"
-      >
-         
-         
-        <div
-          class="d-none d-sm-block"
-        >
-          Skip guide
-           
-        </div>
-        <i
-          class="fas fa-forward"
-        />
-      </button>
-      <a
-        class="guide-controls-button btn btn-primary disabled"
-        disabled=""
-        href="/reforis/guide/networks"
-      >
-        <div
-          class="d-none d-sm-block"
-        >
-          Next step
-        </div>
-        <i
-          class="fas fa-step-forward"
-        />
-      </a>
     </div>
   </div>
   <h1>

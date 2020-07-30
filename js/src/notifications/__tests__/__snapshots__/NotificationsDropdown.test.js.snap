@@ -37,7 +37,7 @@ exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
         id="notifications-header"
       >
         <a
-          href="/overview#notifications"
+          href="/#notifications"
         >
           <h5>
             Notifications
@@ -68,7 +68,7 @@ exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
             class="notifications-info"
           >
             <a
-              href="/overview?id=123-123"
+              href="/?id=123-123"
             >
               <small
                 class="text-muted"
@@ -102,7 +102,7 @@ exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
             class="notifications-info"
           >
             <a
-              href="/overview?id=123-124"
+              href="/?id=123-124"
             >
               <small
                 class="text-muted"
@@ -136,7 +136,7 @@ exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
             class="notifications-info"
           >
             <a
-              href="/overview?id=808-909"
+              href="/?id=808-909"
             >
               <small
                 class="text-muted"

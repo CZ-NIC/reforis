@@ -15,7 +15,7 @@ exports[`<RebootDropdown/> Test with snapshot 1`] = `
       />
     </button>
     <div
-      class="dropdown-menu"
+      class="dropdown-menu dropdown-menu-right"
     >
       <div
         class="dropdown-header"
@@ -31,7 +31,7 @@ exports[`<RebootDropdown/> Test with snapshot 1`] = `
         class="dropdown-item"
       >
         <a
-          href="/overview?id=808-909"
+          href="/?id=808-909"
         >
           <button
             class="btn btn-primary mr-3"
