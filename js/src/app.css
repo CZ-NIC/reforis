@@ -72,6 +72,13 @@ form > button {
     user-select: none !important;
 }
 
+a.disabled,
+button:disabled {
+    cursor: not-allowed;
+    pointer-events: all !important;
+}
+/* Custom Scrollbar */
+
 html {
     --scrollbarBG: rgba(245, 245, 245, 0.52);
     --thumbBG: #9c9ea0;
