@@ -9,7 +9,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import "./GuideControls.css";
-import SkipGuideButton from "./SkipGuideButton";
+import SkipGuideButtonWithRouter from "./SkipGuideButton";
 import NextStepButtonWithRouter from "./NextStepButton";
 import LanguagesDropdown from "../../main/TopBar/languagesDropdown/LanguagesDropdown";
 
@@ -25,7 +25,7 @@ export default function GuideControls({ ws, next_step }) {
                 ws={ws}
                 className="guide-controls-button btn-light"
             />
-            <SkipGuideButton />
+            <SkipGuideButtonWithRouter />
             <NextStepButtonWithRouter next_step={next_step} />
         </div>
     );
