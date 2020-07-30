@@ -20,8 +20,11 @@ GuideControls.propTypes = {
 
 export default function GuideControls({ ws, next_step }) {
     return (
-        <div className="guide-controls">
-            <LanguagesDropdown ws={ws} className="guide-controls-button btn-primary" />
+        <div className="guide-controls col-lg-4 col-md-12 col-sm-12 mt-md-2">
+            <LanguagesDropdown
+                ws={ws}
+                className="guide-controls-button btn-light"
+            />
             <SkipGuideButton />
             <NextStepButtonWithRouter next_step={next_step} />
         </div>

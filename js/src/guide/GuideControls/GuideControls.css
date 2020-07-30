@@ -8,8 +8,8 @@
 .guide-controls {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    margin-bottom: 1rem;
+    justify-content: center;
+    align-items: center;
 }
 
 .guide-controls-button {

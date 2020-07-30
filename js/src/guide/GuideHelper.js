@@ -24,25 +24,38 @@ GuideHelper.defaultProps = {
 };
 
 export default function GuideHelper({
-    ws, workflow, step, next_step, completed,
+    ws,
+    workflow,
+    step,
+    next_step,
+    completed,
 }) {
     const stepContent = HELP_CONTENT[workflow][step];
     if (!stepContent) {
         return null;
     }
 
-    const isCompletedVisible = stepContent && completed && stepContent.completed;
+    const isCompletedVisible =
+        stepContent && completed && stepContent.completed;
     if (!(stepContent.initial || isCompletedVisible)) {
         return null;
     }
 
     return (
-        <div className="card guide-card">
-            <div className="card-body">
-                {stepContent.initial && <ParagraphsArray content={stepContent.initial} />}
-                {isCompletedVisible && <p className="font-weight-bold">{ stepContent.completed }</p>}
+        <div className="card guide-card bg-info text-white mb-4">
+            <div className="card-body row">
+                <div className="col-lg-8 col-md-12 col-sm-12 d-flex flex-column justify-content-center align-items-sm-center text-center">
+                    {stepContent.initial && (
+                        <ParagraphsArray content={stepContent.initial} />
+                    )}
+                    {isCompletedVisible && (
+                        <p className="font-weight-bold mb-sm-3 mb-md-0">
+                            {stepContent.completed}
+                        </p>
+                    )}
+                </div>
+                <GuideControls ws={ws} next_step={next_step} />
             </div>
-            <GuideControls ws={ws} next_step={next_step} />
         </div>
     );
 }
@@ -55,8 +68,12 @@ ParagraphsArray.propTypes = {
 };
 
 function ParagraphsArray({ content }) {
-    return Array.isArray(content)
+    return Array.isArray(content) ? (
         // eslint-disable-next-line react/no-array-index-key
-        ? content.map((line, index) => <p key={index} dangerouslySetInnerHTML={{ __html: line }} />)
-        : <p dangerouslySetInnerHTML={{ __html: content }} />;
+        content.map((line, index) => (
+            <p key={index} dangerouslySetInnerHTML={{ __html: line }} />
+        ))
+    ) : (
+        <p dangerouslySetInnerHTML={{ __html: content }} />
+    );
 }
