@@ -539,14 +539,14 @@ it has opened ports for configuration interface and other services.
             DHCP (automatic configuration)
           </option>
           <option
-            value="static"
-          >
-            Static IP address (manual configuration)
-          </option>
-          <option
             value="none"
           >
             Don't connect this device to LAN
+          </option>
+          <option
+            value="static"
+          >
+            Static IP address (manual configuration)
           </option>
         </select>
       </div>
@@ -687,14 +687,14 @@ it has opened ports for configuration interface and other services.
             DHCP (automatic configuration)
           </option>
           <option
-            value="static"
-          >
-            Static IP address (manual configuration)
-          </option>
-          <option
             value="none"
           >
             Don't connect this device to LAN
+          </option>
+          <option
+            value="static"
+          >
+            Static IP address (manual configuration)
           </option>
         </select>
       </div>
@@ -811,14 +811,14 @@ it has opened ports for configuration interface and other services.
             DHCP (automatic configuration)
           </option>
           <option
-            value="static"
-          >
-            Static IP address (manual configuration)
-          </option>
-          <option
             value="none"
           >
             Don't connect this device to LAN
+          </option>
+          <option
+            value="static"
+          >
+            Static IP address (manual configuration)
           </option>
         </select>
       </div>

@@ -248,14 +248,14 @@ devices connected to the guest network.
           id="1"
         >
           <option
-            value="lan"
-          >
-            LAN
-          </option>
-          <option
             value="guest"
           >
             Guest Network
+          </option>
+          <option
+            value="lan"
+          >
+            LAN
           </option>
           <option
             value="none"
@@ -596,14 +596,14 @@ devices connected to the guest network.
           id="1"
         >
           <option
-            value="lan"
-          >
-            LAN
-          </option>
-          <option
             value="guest"
           >
             Guest Network
+          </option>
+          <option
+            value="lan"
+          >
+            LAN
           </option>
           <option
             value="none"
@@ -1221,14 +1221,14 @@ devices connected to the guest network.
           id="1"
         >
           <option
-            value="lan"
-          >
-            LAN
-          </option>
-          <option
             value="guest"
           >
             Guest Network
+          </option>
+          <option
+            value="lan"
+          >
+            LAN
           </option>
           <option
             value="none"

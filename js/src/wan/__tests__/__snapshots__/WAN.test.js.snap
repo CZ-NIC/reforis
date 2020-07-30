@@ -363,7 +363,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
 
 @@ -109,10 +109,143 @@
             >
-              6in4 (public IPv4 address required)
+              Static IP address (manual configuration)
             </option>
           </select>
         </div>
@@ -526,7 +526,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6to4). 1`] = `
 
 @@ -109,10 +109,40 @@
             >
-              6in4 (public IPv4 address required)
+              Static IP address (manual configuration)
             </option>
           </select>
         </div>
@@ -586,7 +586,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (dhcpv6). 1`] = `
 
 @@ -109,10 +109,34 @@
             >
-              6in4 (public IPv4 address required)
+              Static IP address (manual configuration)
             </option>
           </select>
         </div>
@@ -628,7 +628,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
 
 @@ -109,10 +109,143 @@
             >
-              6in4 (public IPv4 address required)
+              Static IP address (manual configuration)
             </option>
           </select>
         </div>
@@ -874,14 +874,14 @@ router to the network, it is usually not necessary to change this setting.
             DHCP (automatic configuration)
           </option>
           <option
-            value="static"
-          >
-            Static IP address (manual configuration)
-          </option>
-          <option
             value="pppoe"
           >
             PPPoE (for DSL bridges, Modem Turris, etc.)
+          </option>
+          <option
+            value="static"
+          >
+            Static IP address (manual configuration)
           </option>
         </select>
       </div>
@@ -925,19 +925,9 @@ router to the network, it is usually not necessary to change this setting.
           id="3"
         >
           <option
-            value="none"
+            value="6in4"
           >
-            Disable IPv6
-          </option>
-          <option
-            value="dhcpv6"
-          >
-            DHCPv6 (automatic configuration)
-          </option>
-          <option
-            value="static"
-          >
-            Static IP address (manual configuration)
+            6in4 (public IPv4 address required)
           </option>
           <option
             value="6to4"
@@ -945,9 +935,19 @@ router to the network, it is usually not necessary to change this setting.
             6to4 (public IPv4 address required)
           </option>
           <option
-            value="6in4"
+            value="dhcpv6"
           >
-            6in4 (public IPv4 address required)
+            DHCPv6 (automatic configuration)
+          </option>
+          <option
+            value="none"
+          >
+            Disable IPv6
+          </option>
+          <option
+            value="static"
+          >
+            Static IP address (manual configuration)
           </option>
         </select>
       </div>

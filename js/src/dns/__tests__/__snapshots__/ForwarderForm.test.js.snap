@@ -102,14 +102,14 @@ exports[`<ForwarderForm/>: existed forwarder. Test with snapshot. 1`] = `
       id="4"
     >
       <option
-        value="no"
-      >
-        No TLS
-      </option>
-      <option
         value="hostname"
       >
         Hostname
+      </option>
+      <option
+        value="no"
+      >
+        No TLS
       </option>
       <option
         value="pin"
@@ -246,14 +246,14 @@ exports[`<ForwarderForm/>: new forwarder. Test with snapshot. 1`] = `
       id="4"
     >
       <option
-        value="no"
-      >
-        No TLS
-      </option>
-      <option
         value="hostname"
       >
         Hostname
+      </option>
+      <option
+        value="no"
+      >
+        No TLS
       </option>
       <option
         value="pin"
