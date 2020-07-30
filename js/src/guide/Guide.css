@@ -174,6 +174,19 @@
     margin-bottom: 0;
 }
 
+.wrapper-guide #alert-container {
+    margin-left: 16.6666666667% !important;
+    max-width: 66.6666666667%;
+}
+
+@media only screen and (max-width: 922px) {
+    .wrapper-guide #alert-container {
+        margin-left: 0 !important;
+        margin-bottom: 0;
+        max-width: 100%;
+    }
+}
+
 /* Safari 4.0 - 8.0 */
 @keyframes blinking {
     0% {
