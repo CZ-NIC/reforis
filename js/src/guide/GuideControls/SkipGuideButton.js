@@ -8,6 +8,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import { Button } from "foris";
+import PropTypes from "prop-types";
 
 import useGuideFinish from "../hooks";
 

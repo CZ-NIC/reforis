@@ -24,7 +24,10 @@ export function NextStepButton({ next_step, location }) {
             to={`/${next_step}`}
             disabled={disabled}
         >
-            <span className="d-none d-sm-block">{_("Next step")}&nbsp;</span>
+            <span className="d-none d-sm-block">
+                {_("Next step")}
+                &nbsp;
+            </span>
             <i className="fas fa-step-forward" />
         </Link>
     );

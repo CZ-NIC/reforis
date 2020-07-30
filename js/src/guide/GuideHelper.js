@@ -70,8 +70,8 @@ ParagraphsArray.propTypes = {
 function ParagraphsArray({ content }) {
     return Array.isArray(content) ? (
         // eslint-disable-next-line react/no-array-index-key
-        content.map((line, index) => (
-            <p key={index} dangerouslySetInnerHTML={{ __html: line }} />
+        content.map((line) => (
+            <p key={line.length} dangerouslySetInnerHTML={{ __html: line }} />
         ))
     ) : (
         <p dangerouslySetInnerHTML={{ __html: content }} />
