@@ -16,29 +16,30 @@ GuideNavigationItem.propTypes = {
     next: PropTypes.bool.isRequired,
 };
 
-export default function GuideNavigationItem({
-    name, url, next, passed,
-}) {
+export default function GuideNavigationItem({ name, url, next, passed }) {
     const passedClassName = passed ? "passed" : "";
     const nextClassName = next ? "next" : "";
 
     const content = (
         <>
-            <i className="fas fa-arrow-right mr-2" />
+            <i className="fas fa-angle-right mr-2" />
             {name}
         </>
     );
 
     return (
         <li>
-            {passed || next
-                ? (
-                    <NavLink className={`${passedClassName} ${nextClassName}`} to={url}>
-                        {content}
-                    </NavLink>
-                )
+            {passed || next ? (
+                <NavLink
+                    className={`${passedClassName} ${nextClassName}`}
+                    to={url}
+                >
+                    {content}
+                </NavLink>
+            ) : (
                 // eslint-disable-next-line jsx-a11y/anchor-is-valid
-                : <a>{content}</a>}
+                <a>{content}</a>
+            )}
         </li>
     );
 }

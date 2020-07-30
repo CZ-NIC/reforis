@@ -19,7 +19,7 @@
 #guide-nav-container {
     flex: 0.2;
     width: 100%;
-    background: #f2f2f2;
+    background: #313a46;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -31,15 +31,20 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    padding: 1em;
-    background: #f2f2f2;
+    padding: 2em;
+    background: #313a46;
     white-space: nowrap;
+}
+
+#stepsbar-header img {
+    width: 260px;
 }
 
 #stepsbar ul {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -48,13 +53,13 @@
     font-size: 1.1em;
     display: block;
     color: #787878;
-
+    background-color: #29313b;
     white-space: nowrap;
     flex-basis: 100%;
 }
 
 #stepsbar ul li a:hover {
-    background: #cbe8f5;
+    background: #00a2e275;
     text-decoration: none;
 }
 
@@ -68,7 +73,7 @@
 }
 
 #stepsbar a.passed {
-    color: #000;
+    color: #787878;
 }
 
 #stepsbar a.passed.active {
@@ -77,7 +82,7 @@
 }
 
 #stepsbar a.next {
-    color: #00a2e2;
+    color: #fff;
 }
 
 #stepsbar ul a.next.active {
@@ -88,6 +93,7 @@
 @media screen and (max-width: 575px) {
     #stepsbar ul {
         flex-direction: column;
+        align-items: stretch;
     }
 }
 
