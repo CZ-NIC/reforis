@@ -382,14 +382,14 @@ procedure of SSL certificate verification might not work correctly.
           id="4"
         >
           <option
-            value="ntp"
-          >
-            Via NTP
-          </option>
-          <option
             value="manual"
           >
             Manually
+          </option>
+          <option
+            value="ntp"
+          >
+            Via NTP
           </option>
         </select>
       </div>
