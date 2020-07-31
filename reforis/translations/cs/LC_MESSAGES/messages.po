@@ -740,6 +740,14 @@ msgstr ""
 "přizpůsobení zařízení vašim potřebám bude nejspíš třeba provést v "
 "nastavení ještě další změny."
 
+#: js/src/guide/constants.js:59
+msgid ""
+"Your device is now ready to be used. You can tweak the rest of the "
+"setting in administration interface."
+msgstr ""
+"Vaše zařízení je nyní připraveno k použití. Další nastavení naleznete "
+"v administračním rozhraní"
+
 #: js/src/guide/constants.js:63
 msgid ""
 "You chose to act as local server this means that it doesn't make sense to"
