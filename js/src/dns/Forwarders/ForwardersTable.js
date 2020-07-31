@@ -23,10 +23,14 @@ ForwardersTable.propTypes = {
 };
 
 export default function ForwardersTable({
-    forwarders, selectedForwarder, setFormValue, editForwarder, disabled,
+    forwarders,
+    selectedForwarder,
+    setFormValue,
+    editForwarder,
+    disabled,
 }) {
     return (
-        <table className="table offset-lg-1 col-lg-10">
+        <table className="table col-12">
             <thead>
                 <tr>
                     <th>{_("Forwarders")}</th>
@@ -43,18 +47,16 @@ export default function ForwardersTable({
                     setFormValue={setFormValue}
                     disabled={disabled}
                 />
-                {forwarders.map(
-                    (forwarder) => (
-                        <ForwardersTableRow
-                            key={forwarder.name}
-                            forwarder={forwarder}
-                            active={forwarder.name === selectedForwarder}
-                            setFormValue={setFormValue}
-                            editForwarder={editForwarder}
-                            disabled={disabled}
-                        />
-                    ),
-                )}
+                {forwarders.map((forwarder) => (
+                    <ForwardersTableRow
+                        key={forwarder.name}
+                        forwarder={forwarder}
+                        active={forwarder.name === selectedForwarder}
+                        setFormValue={setFormValue}
+                        editForwarder={editForwarder}
+                        disabled={disabled}
+                    />
+                ))}
             </tbody>
         </table>
     );
@@ -70,7 +72,12 @@ ForwardersTableRow.propTypes = {
 };
 
 function ForwardersTableRow({
-    forwarder, active, setFormValue, editForwarder, deleteForwarder, disabled,
+    forwarder,
+    active,
+    setFormValue,
+    editForwarder,
+    deleteForwarder,
+    disabled,
 }) {
     return (
         <tr className={active ? "table-secondary" : ""}>
@@ -83,7 +90,9 @@ function ForwardersTableRow({
                         value={forwarder.name}
                         name="dns-forwarders"
                         className="custom-control-input"
-                        onChange={setFormValue((value) => ({ forwarder: { $set: value } }))}
+                        onChange={setFormValue((value) => ({
+                            forwarder: { $set: value },
+                        }))}
                         disabled={disabled}
                     />
                     <label
@@ -113,14 +122,12 @@ ForwarderActions.propTypes = {
     disabled: PropTypes.bool,
 };
 
-function ForwarderActions({
-    forwarder, editForwarder, disabled,
-}) {
-    const [
-        deleteForwarderResponse,
-        deleteForwarder,
-    ] = useAPIDelete(`${API_URLs.dnsForwarders}/${forwarder.name}`);
-    const buttonDisabled = disabled || deleteForwarderResponse.state === API_STATE.SENDING;
+function ForwarderActions({ forwarder, editForwarder, disabled }) {
+    const [deleteForwarderResponse, deleteForwarder] = useAPIDelete(
+        `${API_URLs.dnsForwarders}/${forwarder.name}`
+    );
+    const buttonDisabled =
+        disabled || deleteForwarderResponse.state === API_STATE.SENDING;
 
     return (
         <div className="btn-group" role="group">

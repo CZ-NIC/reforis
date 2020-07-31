@@ -8,7 +8,10 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import {
-    Button, WebSockets, withSpinnerOnSending, withErrorMessage,
+    Button,
+    WebSockets,
+    withSpinnerOnSending,
+    withErrorMessage,
 } from "foris";
 
 import ForwardersTable from "./ForwardersTable";
@@ -22,9 +25,7 @@ Forwarders.propTypes = {
     disabled: PropTypes.bool,
 };
 
-export default function Forwarders({
-    value, setFormValue, ws, disabled,
-}) {
+export default function Forwarders({ value, setFormValue, ws, disabled }) {
     const [forwarderList, forwarderListState] = useForwardersList(ws);
     return (
         <ForwardersFormWithErrorAndSpinner
@@ -44,9 +45,7 @@ ForwardersForm.propTypes = {
     disabled: PropTypes.bool,
 };
 
-function ForwardersForm({
-    forwarderList, value, setFormValue, disabled,
-}) {
+function ForwardersForm({ forwarderList, value, setFormValue, disabled }) {
     const [forwarderToEdit, setForwarderToEdit] = useState(null);
     const [forwarderModalShown, setForwarderModalShown] = useState(false);
 
@@ -76,13 +75,19 @@ function ForwardersForm({
                 shown={forwarderModalShown}
                 setShown={setForwarderModalShown}
                 forwarder={forwarderToEdit}
-                title={forwarderToEdit ? _("Edit forwarder") : _("Add custom forwarder")}
+                title={
+                    forwarderToEdit
+                        ? _("Edit forwarder")
+                        : _("Add custom forwarder")
+                }
             />
         </>
     );
 }
 
-const ForwardersFormWithErrorAndSpinner = withSpinnerOnSending(withErrorMessage(ForwardersForm));
+const ForwardersFormWithErrorAndSpinner = withSpinnerOnSending(
+    withErrorMessage(ForwardersForm)
+);
 
 AddForwarderButton.propTypes = {
     onClick: PropTypes.func,
@@ -90,7 +95,11 @@ AddForwarderButton.propTypes = {
 
 function AddForwarderButton({ onClick }) {
     return (
-        <Button forisFormSize className="btn-outline-success btn-sm" onClick={onClick}>
+        <Button
+            forisFormSize
+            className="btn-outline-success btn mb-3 mb-sm-2 mb-md-0"
+            onClick={onClick}
+        >
             {_("Add custom forwarder")}
         </Button>
     );
