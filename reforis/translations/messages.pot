@@ -571,6 +571,12 @@ msgid ""
 "some further configuration updates to fit the device to your needs."
 msgstr ""
 
+#: js/src/guide/constants.js:59
+msgid ""
+"Your device is now ready to be used. You can tweak the rest of the "
+"setting in administration interface."
+msgstr ""
+
 #: js/src/guide/constants.js:63
 msgid ""
 "You chose to act as local server this means that it doesn't make sense to"
