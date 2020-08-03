@@ -9,7 +9,14 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 
 import {
-    ForisURLs, useAPIGet, useAPIPost, SpinnerElement, Button, API_STATE, withEither, withSending,
+    ForisURLs,
+    useAPIGet,
+    useAPIPost,
+    SpinnerElement,
+    Button,
+    API_STATE,
+    withEither,
+    withSending,
 } from "foris";
 import API_URLs from "common/API";
 
@@ -59,9 +66,13 @@ function DropdownContent({ update, onSuccess }) {
     return (
         <>
             <button type="button" className="nav-item btn btn-link">
-                <i className={`fa fa-sync fa-lg ${updateFailed ? "text-danger" : ""}`.trim()} />
+                <i
+                    className={`fa fa-sync fa-lg ${
+                        updateFailed ? "text-danger" : ""
+                    }`.trim()}
+                />
             </button>
-            <div className="dropdown-menu">
+            <div className="dropdown-menu dropdown-menu-right">
                 <div className="dropdown-header">
                     <h5>{_("Approve Update")}</h5>
                 </div>
@@ -75,13 +86,11 @@ function DropdownContent({ update, onSuccess }) {
     );
 }
 
-const withSmallSpinner = withSending(
-    () => (
-        <button type="button" className="nav-item btn btn-link">
-            <SpinnerElement small />
-        </button>
-    ),
-);
+const withSmallSpinner = withSending(() => (
+    <button type="button" className="nav-item btn btn-link">
+        <SpinnerElement small />
+    </button>
+));
 const DropdownContentWithSpinner = withSmallSpinner(DropdownContent);
 
 ManageUpdate.propTypes = {
@@ -93,11 +102,25 @@ function ManageUpdate({ resolveUpdate }) {
         <>
             <span
                 className="dropdown-item"
-                dangerouslySetInnerHTML={{ __html: _(`See details in <a href=${ForisURLs.packageManagement.updates}>Updates</a> page.`) }}
+                dangerouslySetInnerHTML={{
+                    __html: _(
+                        `See details in <a href=${ForisURLs.packageManagement.updates}>Updates</a> page.`
+                    ),
+                }}
             />
             <div className="dropdown-item" id="updates-dropdown-actions">
-                <Button className="btn-warning mr-3" onClick={() => resolveUpdate("deny")}>{_("Ignore")}</Button>
-                <Button className="btn-primary" onClick={() => resolveUpdate("grant")}>{_("Install now")}</Button>
+                <Button
+                    className="btn-warning mr-3"
+                    onClick={() => resolveUpdate("deny")}
+                >
+                    {_("Ignore")}
+                </Button>
+                <Button
+                    className="btn-primary"
+                    onClick={() => resolveUpdate("grant")}
+                >
+                    {_("Install now")}
+                </Button>
             </div>
         </>
     );
@@ -105,6 +128,10 @@ function ManageUpdate({ resolveUpdate }) {
 
 const withUpdateFailed = withEither(
     (props) => props.updateFailed,
-    () => <span className="dropdown-item text-danger">{_("Cannot install updates.")}</span>,
+    () => (
+        <span className="dropdown-item text-danger">
+            {_("Cannot install updates.")}
+        </span>
+    )
 );
 const ManageUpdateWithError = withUpdateFailed(ManageUpdate);
