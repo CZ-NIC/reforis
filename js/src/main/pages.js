@@ -43,11 +43,6 @@ const PAGES = [
         icon: "network-wired",
         pages: [
             {
-                name: _("Wi-Fi"),
-                path: "/wifi",
-                component: WiFi,
-            },
-            {
                 name: _("WAN"),
                 path: "/wan",
                 component: WAN,
@@ -61,16 +56,6 @@ const PAGES = [
                 name: _("DNS"),
                 path: "/dns",
                 component: DNS,
-            },
-            {
-                name: _("Interfaces"),
-                path: "/interfaces",
-                component: Interfaces,
-            },
-            {
-                name: _("Guest Network"),
-                path: "/guest-network",
-                component: GuestNetwork,
             },
         ],
     },
@@ -103,37 +88,9 @@ const PAGES = [
         ],
     },
     {
-        name: _("Package Management"),
-        submenuId: "package-management",
-        path: "/package-management",
-        icon: "box",
-        pages: [
-            {
-                name: _("Update Settings"),
-                path: "/update-settings",
-                component: UpdateSettings,
-            },
-            {
-                name: _("Updates"),
-                path: "/updates",
-                component: Updates,
-            },
-            {
-                name: _("Packages"),
-                path: "/packages",
-                component: Packages,
-            },
-            {
-                name: _("Languages"),
-                path: "/languages",
-                component: Languages,
-            },
-        ],
-    },
-    {
-        name: _("Advanced Administration"),
-        path: ForisURLs.luci,
-        icon: "cog",
+        name: _("Global Threat Statistics"),
+        path: "https://view.sentinel.turris.cz",
+        icon: "chart-line",
         isLinkOutside: true,
     },
     {
