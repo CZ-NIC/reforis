@@ -38,7 +38,7 @@ exports[`<UpdatesDropdown/> Updates awaiting - snapshot 1`] = `
       />
     </button>
     <div
-      class="dropdown-menu"
+      class="dropdown-menu dropdown-menu-right"
     >
       <div
         class="dropdown-header"
