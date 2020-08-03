@@ -187,10 +187,34 @@ in LAN.
           <input
             class="form-control"
             id="11"
+            max="106"
+            min="2"
             required=""
-            type="text"
-            value="10.111.222.100"
+            type="number"
+            value="100"
           />
+          <div
+            class="input-group-append"
+          >
+            <button
+              aria-label="Increase"
+              class="btn btn-outline-secondary"
+              type="button"
+            >
+              <i
+                class="fas fa-plus"
+              />
+            </button>
+            <button
+              aria-label="Decrease"
+              class="btn btn-outline-secondary"
+              type="button"
+            >
+              <i
+                class="fas fa-minus"
+              />
+            </button>
+          </div>
         </div>
       </div>
       <div
