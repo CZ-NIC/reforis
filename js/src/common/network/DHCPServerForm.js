@@ -8,9 +8,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { NumberInput, TextInput } from "foris";
+import { NumberInput } from "foris";
 
-export const HELP_TEXT = _("Enable this option to automatically assign IP addresses to the devices connected to the router.");
+export const HELP_TEXT = _(
+    "Enable this option to automatically assign IP addresses to the devices connected to the router.",
+);
 
 DHCPServerForm.propTypes = {
     formData: PropTypes.shape({
@@ -33,34 +35,34 @@ DHCPServerForm.defaultProps = {
 };
 
 export default function DHCPServerForm({
-    formData, formErrors, updateRule, setFormValue, disabled,
+    formData,
+    formErrors,
+    updateRule,
+    setFormValue,
+    disabled,
 }) {
     return (
         <>
-            <TextInput
+            <NumberInput
                 label={_("DHCP start")}
                 value={formData.start}
                 error={formErrors.start}
+                min="2"
+                max="106"
                 required
-
-                onChange={setFormValue(
-                    (value) => updateRule({ start: { $set: value } }),
-                )}
-
+                onChange={setFormValue((value) => updateRule({ start: { $set: value } }))}
                 disabled={disabled}
             />
             <NumberInput
                 label={_("DHCP max leases")}
-                helpText={_("Maximum number of addresses available for DHCP clients.")}
+                helpText={_(
+                    "Maximum number of addresses available for DHCP clients.",
+                )}
                 value={formData.limit}
                 error={formErrors.limit}
                 min="1"
                 required
-
-                onChange={setFormValue(
-                    (value) => updateRule({ limit: { $set: value } }),
-                )}
-
+                onChange={setFormValue((value) => updateRule({ limit: { $set: value } }))}
                 disabled={disabled}
             />
             <NumberInput
@@ -69,11 +71,7 @@ export default function DHCPServerForm({
                 error={formErrors.lease_time}
                 min="1"
                 required
-
-                onChange={setFormValue(
-                    (value) => updateRule({ lease_time: { $set: value } }),
-                )}
-
+                onChange={setFormValue((value) => updateRule({ lease_time: { $set: value } }))}
                 disabled={disabled}
             />
         </>
