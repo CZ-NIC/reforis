@@ -11,7 +11,6 @@ import PropTypes from "prop-types";
 import API_URLs from "common/API";
 import { ForisForm } from "foris";
 
-import { getDHCPStart } from "common/network/utils";
 import LANForm, { LAN_MODES } from "./LANForm";
 import { validateManaged } from "./LANManagedForm";
 import { validateUnmanaged } from "./LANUnmanagedForm";
@@ -25,8 +24,9 @@ export default function LAN({ ws }) {
     return (
         <>
             <h1>LAN</h1>
-            <p dangerouslySetInnerHTML={{
-                __html: _(`
+            <p
+                dangerouslySetInnerHTML={{
+                    __html: _(`
 This section contains settings for the local network (LAN). The provided defaults are suitable for most
 networks.
 <br/>
@@ -36,7 +36,7 @@ recommended to disconnect and reconnect all LAN cables after submitting your cha
 The next page will not load until you obtain a new IP from DHCP (if DHCP enabled) and you might need to
 <b>refresh the page</b> in your browser.
             `),
-            }}
+                }}
             />
             <ForisForm
                 ws={ws}
@@ -60,12 +60,6 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
 function prepData(formData) {
     // Be sure to convert start address only once.
     // eslint-disable-next-line no-restricted-globals
-    if (formData.mode === LAN_MODES.managed && !isNaN(formData.mode_managed.dhcp.start)) {
-        formData.mode_managed.dhcp.start = getDHCPStart(
-            formData.mode_managed.router_ip,
-            formData.mode_managed.dhcp.start,
-        ).toString();
-    }
     return formData;
 }
 
