@@ -54,10 +54,10 @@ export const HELP_CONTENT = {
             initial: _("Minimal device setup is finished. Note that you probably need to perform some further configuration updates to fit the device to your needs."),
         },
     },
-    bare: {
+    shield: {
         ...HELP_CONTENT_DEFAULTS,
         finished: {
-            initial: _("Your device is now ready to be used. You can tweak the rest of the setting in administration interface."),
+            initial: _("Your device is now ready to be used. You can tweak the rest of the setting in administration interface. Once you finish the guide, your Shield will try to connect to the Internet and you'll end up in administration interface."),
         },
     },
     bridge: {
