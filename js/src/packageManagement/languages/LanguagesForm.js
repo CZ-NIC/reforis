@@ -12,10 +12,12 @@ import { CheckBox } from "foris";
 
 LanguagesForm.propTypes = {
     formData: PropTypes.shape({
-        languages: PropTypes.arrayOf(PropTypes.shape({
-            code: PropTypes.string.isRequired,
-            enabled: PropTypes.bool.isRequired,
-        })).isRequired,
+        languages: PropTypes.arrayOf(
+            PropTypes.shape({
+                code: PropTypes.string.isRequired,
+                enabled: PropTypes.bool.isRequired,
+            })
+        ).isRequired,
     }),
     setFormValue: PropTypes.func,
     disabled: PropTypes.bool,
@@ -23,7 +25,7 @@ LanguagesForm.propTypes = {
 
 export default function LanguagesForm({ formData, setFormValue, disabled }) {
     return (
-        <div className="container mb-3">
+        <div className="container-fluid mb-3">
             <div className="row justify-content-start">
                 {formData.languages.map((language, idx) => (
                     <div className="col-2 col-lg-1 mr-4" key={language.code}>
@@ -31,9 +33,10 @@ export default function LanguagesForm({ formData, setFormValue, disabled }) {
                             label={language.code.toUpperCase()}
                             checked={language.enabled}
                             disabled={disabled}
-
                             onChange={setFormValue((value) => ({
-                                languages: { [idx]: { enabled: { $set: value } } },
+                                languages: {
+                                    [idx]: { enabled: { $set: value } },
+                                },
                             }))}
                         />
                     </div>

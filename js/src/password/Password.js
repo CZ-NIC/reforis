@@ -9,8 +9,16 @@ import React, { useCallback, useEffect } from "react";
 import PropTypes from "prop-types";
 
 import {
-    SUBMIT_BUTTON_STATES, useForm, useAPIGet, useAPIPost, API_STATE, useAlert, ALERT_TYPES,
-    withErrorMessage, withSpinnerOnSending, formFieldsSize,
+    SUBMIT_BUTTON_STATES,
+    useForm,
+    useAPIGet,
+    useAPIPost,
+    API_STATE,
+    useAlert,
+    ALERT_TYPES,
+    withErrorMessage,
+    withSpinnerOnSending,
+    formFieldsSize,
 } from "foris";
 
 import API_URLs from "common/API";
@@ -71,7 +79,10 @@ function PasswordForm({ postCallback, currentPassword }) {
     useEffect(() => {
         if (postState.data) {
             if (postState.state === API_STATE.SUCCESS) {
-                setAlert(_("Password changed successfully."), ALERT_TYPES.SUCCESS);
+                setAlert(
+                    _("Password changed successfully."),
+                    ALERT_TYPES.SUCCESS
+                );
                 postCallback();
             } else if (postState.state === API_STATE.ERROR) {
                 setAlert(postState.data);
@@ -91,7 +102,8 @@ function PasswordForm({ postCallback, currentPassword }) {
             foris_current_password: formState.data.currentForisPassword,
             foris_password: formState.data.newForisPassword,
         };
-        if (formState.data.sameForRoot) data.root_password = formState.data.newForisPassword;
+        if (formState.data.sameForRoot)
+            data.root_password = formState.data.newForisPassword;
         post({ data });
     }
 
@@ -112,7 +124,7 @@ function PasswordForm({ postCallback, currentPassword }) {
 
     return (
         <div className={formFieldsSize}>
-            <h3>{_("Password Settings")}</h3>
+            <h2>{_("Password Settings")}</h2>
             {currentPassword.password_set && (
                 <CurrentForisPasswordForm
                     formData={formState.data}
@@ -125,7 +137,6 @@ function PasswordForm({ postCallback, currentPassword }) {
                 formErrors={formState.errors}
                 submitButtonState={submitButtonState}
                 disabled={isSending}
-
                 setFormValue={onFormChangeHandler}
                 postForisPassword={postForisPassword}
             />
@@ -135,7 +146,6 @@ function PasswordForm({ postCallback, currentPassword }) {
                     formErrors={formState.errors}
                     submitButtonState={submitButtonState}
                     disabled={isSending}
-
                     setFormValue={onFormChangeHandler}
                     postRootPassword={postRootPassword}
                 />
@@ -147,7 +157,9 @@ function PasswordForm({ postCallback, currentPassword }) {
 function validator(formData) {
     const errors = {
         newForisPassword: validatePassword(formData.newForisPassword),
-        newRootPassword: !formData.sameForRoot ? validatePassword(formData.newRootPassword) : null,
+        newRootPassword: !formData.sameForRoot
+            ? validatePassword(formData.newRootPassword)
+            : null,
     };
 
     if (errors.newForisPassword || errors.newRootPassword) return errors;
@@ -159,9 +171,12 @@ function validatePassword(password) {
 
     if (password.length < 6) return _("Password should have min 6 symbols.");
 
-    if (password.length > 128) return _("Password should have max 128 symbols.");
+    if (password.length > 128)
+        return _("Password should have max 128 symbols.");
 
     return null;
 }
 
-const PasswordFormWithErrorAndSpinner = withSpinnerOnSending(withErrorMessage(PasswordForm));
+const PasswordFormWithErrorAndSpinner = withSpinnerOnSending(
+    withErrorMessage(PasswordForm)
+);

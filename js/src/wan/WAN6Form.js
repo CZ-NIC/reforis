@@ -11,7 +11,10 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import {
-    Select, TextInput, CheckBox, NumberInput,
+    Select,
+    TextInput,
+    CheckBox,
+    NumberInput,
     validateDUID,
     validateIPv4Address,
     validateIPv6Address,
@@ -24,27 +27,45 @@ const HELP_TEXTS = {
     },
 
     static: {
-        ip: _("IPv6 address and prefix length for WAN interface e.g. 2001:db8:be13:37da::1/64"),
-        network: _("Address range for local network, e.g. 2001:db8:be13:37da::/64"),
-        dns: _("DNS server address is not required as the built-in DNS resolver is capable of working without it."),
+        ip: _(
+            "IPv6 address and prefix length for WAN interface e.g. 2001:db8:be13:37da::1/64"
+        ),
+        network: _(
+            "Address range for local network, e.g. 2001:db8:be13:37da::/64"
+        ),
+        dns: _(
+            "DNS server address is not required as the built-in DNS resolver is capable of working without it."
+        ),
     },
 
     "6to4": {
-        ipv4_address: _("In order to use 6to4 protocol, you might need to specify your public IPv4 address "
-            + "manually (e.g. when your WAN interface has a private address which is mapped to public IP)."),
+        ipv4_address: _(
+            "In order to use 6to4 protocol, you might need to specify your public IPv4 address " +
+                "manually (e.g. when your WAN interface has a private address which is mapped to public IP)."
+        ),
     },
 
     "6in4": {
-        server_ipv4: _("This address will be used as a endpoint of the tunnel on the provider's side."),
+        server_ipv4: _(
+            "This address will be used as a endpoint of the tunnel on the provider's side."
+        ),
         ipv6_prefix: _("IPv6 addresses which will be routed to your network."),
         mtu: _("Maximum Transmission Unit in the tunnel (in bytes)."),
 
         dynamic_ipv4: {
-            enabled: _("Some tunnel providers allow you to have public dynamic IPv4. Note that you need to "
-                + "fill in some extra fields to make it work."),
-            tunnel_id: _("ID of your tunnel which was assigned to you by the provider."),
-            username: _("Username which will be used to provide credentials to your tunnel provider."),
-            password_or_key: _("Key which will be used to provide credentials to your tunnel provider."),
+            enabled: _(
+                "Some tunnel providers allow you to have public dynamic IPv4. Note that you need to " +
+                    "fill in some extra fields to make it work."
+            ),
+            tunnel_id: _(
+                "ID of your tunnel which was assigned to you by the provider."
+            ),
+            username: _(
+                "Username which will be used to provide credentials to your tunnel provider."
+            ),
+            password_or_key: _(
+                "Key which will be used to provide credentials to your tunnel provider."
+            ),
         },
     },
 };
@@ -78,14 +99,17 @@ WAN6Form.propTypes = {
 };
 
 WAN6Form.defaultProps = {
-    setFormValue: () => {
-    },
+    setFormValue: () => {},
     formData: {},
 };
 
 export default function WAN6Form({
-    formData, formErrors, setFormValue, disabled,
-}) { /* eslint-disable react/prop-types */
+    formData,
+    formErrors,
+    setFormValue,
+    disabled,
+}) {
+    /* eslint-disable react/prop-types */
     const wan6Settings = formData.wan6_settings;
     const wan6Type = wan6Settings.wan6_type;
     const { last_seen_duid } = wan6Settings;
@@ -98,9 +122,7 @@ export default function WAN6Form({
                 formData={wan6Settings.wan6_dhcpv6}
                 formErrors={errors.wan6_dhcpv6}
                 last_seen_duid={last_seen_duid}
-
                 disabled={disabled}
-
                 setFormValue={setFormValue}
             />
         );
@@ -109,9 +131,7 @@ export default function WAN6Form({
             <StaticForm
                 formData={wan6Settings.wan6_static}
                 formErrors={errors.wan6_static}
-
                 setFormValue={setFormValue}
-
                 disabled={disabled}
             />
         );
@@ -121,9 +141,7 @@ export default function WAN6Form({
             <_6to4Form
                 formData={wan6Settings.wan6_6to4}
                 formErrors={errors.wan6_6to4}
-
                 setFormValue={setFormValue}
-
                 disabled={disabled}
             />
         );
@@ -133,9 +151,7 @@ export default function WAN6Form({
             <_6in4Form
                 formData={wan6Settings.wan6_6in4}
                 formErrors={errors.wan6_6in4}
-
                 setFormValue={setFormValue}
-
                 disabled={disabled}
             />
         );
@@ -143,16 +159,14 @@ export default function WAN6Form({
 
     return (
         <>
-            <h3>{_("WAN IPv6")}</h3>
+            <h2>{_("WAN IPv6")}</h2>
             <Select
                 label={_("IPv6 protocol")}
                 value={wan6Type}
                 choices={WAN6_CHOICES}
-
-                onChange={setFormValue(
-                    (value) => ({ wan6_settings: { wan6_type: { $set: value } } }),
-                )}
-
+                onChange={setFormValue((value) => ({
+                    wan6_settings: { wan6_type: { $set: value } },
+                }))}
                 disabled={disabled}
             />
             {wanForm}
@@ -172,7 +186,11 @@ DHCPv6Form.defaultProps = {
 };
 
 function DHCPv6Form({
-    formData, last_seen_duid, formErrors, setFormValue, disabled,
+    formData,
+    last_seen_duid,
+    formErrors,
+    setFormValue,
+    disabled,
 }) {
     return (
         <TextInput
@@ -181,11 +199,9 @@ function DHCPv6Form({
             error={formErrors.duid || null}
             helpText={HELP_TEXTS.dhcpv6.duid}
             placeholder={last_seen_duid}
-
-            onChange={setFormValue(
-                (value) => ({ wan6_settings: { wan6_dhcpv6: { duid: { $set: value } } } }),
-            )}
-
+            onChange={setFormValue((value) => ({
+                wan6_settings: { wan6_dhcpv6: { duid: { $set: value } } },
+            }))}
             disabled={disabled}
         />
     );
@@ -209,9 +225,7 @@ StaticForm.defaultProps = {
     formErrors: {},
 };
 
-function StaticForm({
-    formData, formErrors, setFormValue, disabled,
-}) {
+function StaticForm({ formData, formErrors, setFormValue, disabled }) {
     return (
         <>
             <TextInput
@@ -220,11 +234,9 @@ function StaticForm({
                 helpText={HELP_TEXTS.static.ip}
                 error={formErrors.ip || null}
                 required
-
-                onChange={setFormValue(
-                    (value) => ({ wan6_settings: { wan6_static: { ip: { $set: value } } } }),
-                )}
-
+                onChange={setFormValue((value) => ({
+                    wan6_settings: { wan6_static: { ip: { $set: value } } },
+                }))}
                 disabled={disabled}
             />
             <TextInput
@@ -232,11 +244,11 @@ function StaticForm({
                 value={formData.gateway || ""}
                 error={formErrors.gateway || null}
                 required
-
-                onChange={setFormValue(
-                    (value) => ({ wan6_settings: { wan6_static: { gateway: { $set: value } } } }),
-                )}
-
+                onChange={setFormValue((value) => ({
+                    wan6_settings: {
+                        wan6_static: { gateway: { $set: value } },
+                    },
+                }))}
                 disabled={disabled}
             />
             <TextInput
@@ -245,11 +257,11 @@ function StaticForm({
                 helpText={HELP_TEXTS.static.network}
                 error={formErrors.network || null}
                 required
-
-                onChange={setFormValue(
-                    (value) => ({ wan6_settings: { wan6_static: { network: { $set: value } } } }),
-                )}
-
+                onChange={setFormValue((value) => ({
+                    wan6_settings: {
+                        wan6_static: { network: { $set: value } },
+                    },
+                }))}
                 disabled={disabled}
             />
             <TextInput
@@ -257,11 +269,9 @@ function StaticForm({
                 value={formData.dns1 || ""}
                 error={formErrors.dns1 || null}
                 helpText={HELP_TEXTS.static.dns}
-
-                onChange={setFormValue(
-                    (value) => ({ wan6_settings: { wan6_static: { dns1: { $set: value } } } }),
-                )}
-
+                onChange={setFormValue((value) => ({
+                    wan6_settings: { wan6_static: { dns1: { $set: value } } },
+                }))}
                 disabled={disabled}
             />
             <TextInput
@@ -269,11 +279,9 @@ function StaticForm({
                 value={formData.dns2 || ""}
                 error={formErrors.dns2 || null}
                 helpText={HELP_TEXTS.static.dns}
-
-                onChange={setFormValue(
-                    (value) => ({ wan6_settings: { wan6_static: { dns2: { $set: value } } } }),
-                )}
-
+                onChange={setFormValue((value) => ({
+                    wan6_settings: { wan6_static: { dns2: { $set: value } } },
+                }))}
                 disabled={disabled}
             />
         </>
@@ -290,9 +298,7 @@ _6to4Form.defaultProps = {
     formErrors: {},
 };
 
-function _6to4Form({
-    formData, formErrors, setFormValue, disabled,
-}) {
+function _6to4Form({ formData, formErrors, setFormValue, disabled }) {
     return (
         <TextInput
             label={_("Public IPv4")}
@@ -300,11 +306,9 @@ function _6to4Form({
             helpText={HELP_TEXTS["6to4"].ipv4_address}
             error={formErrors.ipv4_address || null}
             required
-
-            onChange={setFormValue(
-                (value) => ({ wan6_settings: { wan6_6to4: { ipv4_address: { $set: value } } } }),
-            )}
-
+            onChange={setFormValue((value) => ({
+                wan6_settings: { wan6_6to4: { ipv4_address: { $set: value } } },
+            }))}
             disabled={disabled}
         />
     );
@@ -328,9 +332,7 @@ _6in4Form.defaultProps = {
     formErrors: {},
 };
 
-function _6in4Form({
-    formData, formErrors, setFormValue, disabled,
-}) {
+function _6in4Form({ formData, formErrors, setFormValue, disabled }) {
     return (
         <>
             <TextInput
@@ -339,11 +341,11 @@ function _6in4Form({
                 helpText={HELP_TEXTS["6in4"].server_ipv4}
                 error={formErrors.server_ipv4 || null}
                 required
-
-                onChange={setFormValue(
-                    (value) => ({ wan6_settings: { wan6_6in4: { server_ipv4: { $set: value } } } }),
-                )}
-
+                onChange={setFormValue((value) => ({
+                    wan6_settings: {
+                        wan6_6in4: { server_ipv4: { $set: value } },
+                    },
+                }))}
                 disabled={disabled}
             />
             <TextInput
@@ -352,11 +354,11 @@ function _6in4Form({
                 helpText={HELP_TEXTS["6in4"].ipv6_prefix}
                 error={formErrors.ipv6_prefix || null}
                 required
-
-                onChange={setFormValue(
-                    (value) => ({ wan6_settings: { wan6_6in4: { ipv6_prefix: { $set: value } } } }),
-                )}
-
+                onChange={setFormValue((value) => ({
+                    wan6_settings: {
+                        wan6_6in4: { ipv6_prefix: { $set: value } },
+                    },
+                }))}
                 disabled={disabled}
             />
             <NumberInput
@@ -366,39 +368,32 @@ function _6in4Form({
                 min="1280"
                 max="1500"
                 required
-
-                onChange={setFormValue(
-                    (value) => ({ wan6_settings: { wan6_6in4: { mtu: { $set: value } } } }),
-                )}
-
+                onChange={setFormValue((value) => ({
+                    wan6_settings: { wan6_6in4: { mtu: { $set: value } } },
+                }))}
                 disabled={disabled}
             />
             <CheckBox
                 label="Dynamic IPv4 handling"
                 checked={formData.dynamic_ipv4.enabled || false}
                 helpText={HELP_TEXTS["6in4"].dynamic_ipv4.enabled}
-
-                onChange={setFormValue(
-                    (value) => ({
-                        wan6_settings:
-                            { wan6_6in4: { dynamic_ipv4: { enabled: { $set: value } } } },
-                    }),
-                )}
-
+                onChange={setFormValue((value) => ({
+                    wan6_settings: {
+                        wan6_6in4: {
+                            dynamic_ipv4: { enabled: { $set: value } },
+                        },
+                    },
+                }))}
                 disabled={disabled}
             />
-            {formData.dynamic_ipv4.enabled
-                ? (
-                    <DynamicIPv4Form
-                        formData={formData.dynamic_ipv4}
-                        formErrors={formErrors.dynamic_ipv4}
-
-                        setFormValue={setFormValue}
-
-                        disabled={disabled}
-                    />
-                )
-                : null}
+            {formData.dynamic_ipv4.enabled ? (
+                <DynamicIPv4Form
+                    formData={formData.dynamic_ipv4}
+                    formErrors={formErrors.dynamic_ipv4}
+                    setFormValue={setFormValue}
+                    disabled={disabled}
+                />
+            ) : null}
         </>
     );
 }
@@ -419,9 +414,7 @@ DynamicIPv4Form.defaultProps = {
     formErrors: {},
 };
 
-function DynamicIPv4Form({
-    formData, formErrors, setFormValue, disabled,
-}) {
+function DynamicIPv4Form({ formData, formErrors, setFormValue, disabled }) {
     return (
         <>
             <TextInput
@@ -430,15 +423,13 @@ function DynamicIPv4Form({
                 helpText={HELP_TEXTS["6in4"].dynamic_ipv4.tunnel_id}
                 error={formErrors.tunnel_id || null}
                 required
-
-                onChange={setFormValue(
-                    (value) => ({
-                        wan6_settings: {
-                            wan6_6in4: { dynamic_ipv4: { tunnel_id: { $set: value } } },
+                onChange={setFormValue((value) => ({
+                    wan6_settings: {
+                        wan6_6in4: {
+                            dynamic_ipv4: { tunnel_id: { $set: value } },
                         },
-                    }),
-                )}
-
+                    },
+                }))}
                 disabled={disabled}
             />
             <TextInput
@@ -447,14 +438,13 @@ function DynamicIPv4Form({
                 helpText={HELP_TEXTS["6in4"].dynamic_ipv4.username}
                 error={formErrors.username || null}
                 required
-
-                onChange={setFormValue(
-                    (value) => ({
-                        wan6_settings:
-                            { wan6_6in4: { dynamic_ipv4: { username: { $set: value } } } },
-                    }),
-                )}
-
+                onChange={setFormValue((value) => ({
+                    wan6_settings: {
+                        wan6_6in4: {
+                            dynamic_ipv4: { username: { $set: value } },
+                        },
+                    },
+                }))}
                 disabled={disabled}
             />
             <TextInput
@@ -463,15 +453,13 @@ function DynamicIPv4Form({
                 helpText={HELP_TEXTS["6in4"].dynamic_ipv4.password_or_key}
                 error={formErrors.password_or_key || null}
                 required
-
-                onChange={setFormValue(
-                    (value) => ({
-                        wan6_settings: {
-                            wan6_6in4: { dynamic_ipv4: { password_or_key: { $set: value } } },
+                onChange={setFormValue((value) => ({
+                    wan6_settings: {
+                        wan6_6in4: {
+                            dynamic_ipv4: { password_or_key: { $set: value } },
                         },
-                    }),
-                )}
-
+                    },
+                }))}
                 disabled={disabled}
             />
         </>
@@ -481,19 +469,19 @@ function DynamicIPv4Form({
 export function validateWAN6Form(formData) {
     const errors = {};
     switch (formData.wan6_type) {
-    case "dhcpv6":
-        errors.wan6_dhcpv6 = validateDHCPv6Form(formData.wan6_dhcpv6);
-        break;
-    case "static":
-        errors.wan6_static = validateStaticForm(formData.wan6_static);
-        break;
-    case "6to4":
-        errors.wan6_6to4 = validate6to4Form(formData.wan6_6to4);
-        break;
-    case "6in4":
-        errors.wan6_6in4 = validate6in4Form(formData.wan6_6in4);
-        break;
-    default:
+        case "dhcpv6":
+            errors.wan6_dhcpv6 = validateDHCPv6Form(formData.wan6_dhcpv6);
+            break;
+        case "static":
+            errors.wan6_static = validateStaticForm(formData.wan6_static);
+            break;
+        case "6to4":
+            errors.wan6_6to4 = validate6to4Form(formData.wan6_6to4);
+            break;
+        case "6in4":
+            errors.wan6_6in4 = validate6in4Form(formData.wan6_6in4);
+            break;
+        default:
     }
     return errors[`wan6_${formData.wan6_type}`] ? errors : null;
 }
@@ -505,30 +493,26 @@ function validateDHCPv6Form(wan6_dhcpv6) {
 
 function validateStaticForm(wan6_static) {
     const errors = {};
-    ["ip", "network"].forEach(
-        (field) => {
-            const error = validateIPv6Prefix(wan6_static[field]);
-            if (error) errors[field] = error;
-        },
-    );
-    ["gateway", "dns1", "dns2"].forEach(
-        (field) => {
-            const error = validateIPv6Address(wan6_static[field]);
-            if (error) errors[field] = error;
-        },
-    );
-    ["ip", "network", "gateway"].forEach(
-        (field) => {
-            if (!wan6_static[field] || wan6_static[field] === "") errors[field] = _("This field is required.");
-        },
-    );
+    ["ip", "network"].forEach((field) => {
+        const error = validateIPv6Prefix(wan6_static[field]);
+        if (error) errors[field] = error;
+    });
+    ["gateway", "dns1", "dns2"].forEach((field) => {
+        const error = validateIPv6Address(wan6_static[field]);
+        if (error) errors[field] = error;
+    });
+    ["ip", "network", "gateway"].forEach((field) => {
+        if (!wan6_static[field] || wan6_static[field] === "")
+            errors[field] = _("This field is required.");
+    });
 
     return JSON.stringify(errors) !== "{}" ? errors : null;
 }
 
 function validate6to4Form(wan6_6to4) {
     let error;
-    if (!wan6_6to4.ipv4_address || wan6_6to4.ipv4_address === "") error = _("Public IPv4 address is required.");
+    if (!wan6_6to4.ipv4_address || wan6_6to4.ipv4_address === "")
+        error = _("Public IPv4 address is required.");
     else error = validateIPv4Address(wan6_6to4.ipv4_address);
     return error ? { ipv4_address: error } : null;
 }
@@ -540,17 +524,19 @@ function validate6in4Form(wan6_6in4) {
         dynamic_ipv4: validateDynamicIPv4Form(wan6_6in4.dynamic_ipv4),
     };
 
-    if (!errors.server_ipv4 && !errors.ipv6_prefix && !errors.dynamic_ipv4) errors = {};
+    if (!errors.server_ipv4 && !errors.ipv6_prefix && !errors.dynamic_ipv4)
+        errors = {};
 
     const mtu = parseInt(wan6_6in4.mtu);
-    if (Number.isNaN(mtu)) errors.mtu = _("MTU should be a number in range of 1280-1500.");
-    else if (!(mtu >= 1280 && mtu <= 1500)) errors.mtu = _("MTU should be in range of 1280-1500.");
+    if (Number.isNaN(mtu))
+        errors.mtu = _("MTU should be a number in range of 1280-1500.");
+    else if (!(mtu >= 1280 && mtu <= 1500))
+        errors.mtu = _("MTU should be in range of 1280-1500.");
 
-    ["mtu", "server_ipv4", "ipv6_prefix", "dynamic_ipv4"].forEach(
-        (field) => {
-            if (!wan6_6in4[field] || wan6_6in4[field] === "") errors[field] = _("This field is required.");
-        },
-    );
+    ["mtu", "server_ipv4", "ipv6_prefix", "dynamic_ipv4"].forEach((field) => {
+        if (!wan6_6in4[field] || wan6_6in4[field] === "")
+            errors[field] = _("This field is required.");
+    });
 
     return JSON.stringify(errors) !== "{}" ? errors : null;
 }
@@ -559,10 +545,9 @@ function validateDynamicIPv4Form(dynamic_ipv4) {
     if (!dynamic_ipv4.enabled) return null;
 
     const errors = {};
-    ["tunnel_id", "username", "password_or_key"].forEach(
-        (field) => {
-            if (!dynamic_ipv4[field] || dynamic_ipv4[field] === "") errors[field] = _("This field is required.");
-        },
-    );
+    ["tunnel_id", "username", "password_or_key"].forEach((field) => {
+        if (!dynamic_ipv4[field] || dynamic_ipv4[field] === "")
+            errors[field] = _("This field is required.");
+    });
     return JSON.stringify(errors) !== "{}" ? errors : null;
 }

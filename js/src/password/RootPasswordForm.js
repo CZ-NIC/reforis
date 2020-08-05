@@ -9,15 +9,18 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import {
-    ForisURLs, PasswordInput, SubmitButton, SUBMIT_BUTTON_STATES,
+    ForisURLs,
+    PasswordInput,
+    SubmitButton,
+    SUBMIT_BUTTON_STATES,
 } from "foris";
 
 RootPasswordForm.propTypes = {
-    formData: PropTypes.shape(
-        { newRootPassword: PropTypes.string },
-    ).isRequired,
+    formData: PropTypes.shape({ newRootPassword: PropTypes.string }).isRequired,
     submitButtonState: PropTypes.oneOf(
-        Object.keys(SUBMIT_BUTTON_STATES).map((key) => SUBMIT_BUTTON_STATES[key]),
+        Object.keys(SUBMIT_BUTTON_STATES).map(
+            (key) => SUBMIT_BUTTON_STATES[key]
+        )
     ).isRequired,
     formErrors: PropTypes.shape({ newRootPassword: PropTypes.string }),
     setFormValue: PropTypes.func.isRequired,
@@ -26,18 +29,26 @@ RootPasswordForm.propTypes = {
 };
 
 export default function RootPasswordForm({
-    formData, formErrors, setFormValue, submitButtonState, postRootPassword, disabled,
+    formData,
+    formErrors,
+    setFormValue,
+    submitButtonState,
+    postRootPassword,
+    disabled,
 }) {
     return (
         <form onSubmit={postRootPassword} className="mt-3">
-            <h4>{_("Advanced Administration (root) Password")}</h4>
+            <h3>{_("Advanced Administration (root) Password")}</h3>
             <p
                 dangerouslySetInnerHTML={{
-                    __html: babel.format(_(
-                        `In order to access the advanced configuration options which are not available here, you must
+                    __html: babel.format(
+                        _(
+                            `In order to access the advanced configuration options which are not available here, you must
 set the root user's password. The advanced configuration options can be managed either 
-through the <a href="%s">LuCI web interface</a> or via SSH.`,
-                    ), ForisURLs.luci),
+through the <a href="%s">LuCI web interface</a> or via SSH.`
+                        ),
+                        ForisURLs.luci
+                    ),
                 }}
             />
             <PasswordInput
@@ -45,11 +56,9 @@ through the <a href="%s">LuCI web interface</a> or via SSH.`,
                 label={_("New advanced administration password")}
                 value={formData.newRootPassword}
                 error={formErrors.newRootPassword}
-
-                onChange={setFormValue(
-                    (value) => ({ newRootPassword: { $set: value } }),
-                )}
-
+                onChange={setFormValue((value) => ({
+                    newRootPassword: { $set: value },
+                }))}
                 disabled={disabled}
             />
             <div className="text-right">

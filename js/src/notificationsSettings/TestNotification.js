@@ -27,11 +27,11 @@ import API_URLs from "../common/API";
 import { SEVERITY_OPTIONS } from "./CommonForm";
 
 const UNSAVED_CHANGES_MODAL_MESSAGE = _(
-    "There are some unsaved changes in the notifications settings. Do you want to discard them and test the notifications with the old settings?",
+    "There are some unsaved changes in the notifications settings. Do you want to discard them and test the notifications with the old settings?"
 );
 
 const SEVERITY_ALERT_MESSAGE = _(
-    "You will not receive the testing notification to your email inbox with current importance level. Please raise the importance level at least to \"Reboot or attention is required\" and click \"Save\" button if you want to get this notification by email.",
+    'You will not receive the testing notification to your email inbox with current importance level. Please raise the importance level at least to "Reboot or attention is required" and click "Save" button if you want to get this notification by email.'
 );
 
 TestNotification.propTypes = {
@@ -39,8 +39,7 @@ TestNotification.propTypes = {
         enabled: PropTypes.bool,
         common: PropTypes.shape({
             severity_filter: PropTypes.oneOf(
-                Object.keys(SEVERITY_OPTIONS)
-                    .map((key) => parseInt(key)),
+                Object.keys(SEVERITY_OPTIONS).map((key) => parseInt(key))
             ).isRequired,
         }),
     }).isRequired,
@@ -48,8 +47,7 @@ TestNotification.propTypes = {
         enabled: PropTypes.bool,
         common: PropTypes.shape({
             severity_filter: PropTypes.oneOf(
-                Object.keys(SEVERITY_OPTIONS)
-                    .map((key) => parseInt(key)),
+                Object.keys(SEVERITY_OPTIONS).map((key) => parseInt(key))
             ).isRequired,
         }),
     }).isRequired,
@@ -61,7 +59,11 @@ TestNotification.defaultProps = {
     initialData: {},
 };
 
-export default function TestNotification({ formData, formErrors, initialData }) {
+export default function TestNotification({
+    formData,
+    formErrors,
+    initialData,
+}) {
     const [postState, post] = useAPIPost(API_URLs.sendTestNotification);
     const [setAlert] = useAlert();
     const [modalShown, setModalShown] = useState(false);
@@ -92,12 +94,14 @@ export default function TestNotification({ formData, formErrors, initialData }) 
     }
 
     const postIsSending = postState.state === API_STATE.SENDING;
-    const showSeverityAlert = initialData ? initialData.common.severity_filter < 2 : false;
+    const showSeverityAlert = initialData
+        ? initialData.common.severity_filter < 2
+        : false;
 
     return (
         <>
             <Portal containerId="test-notification">
-                <h3>{_("Test notification")}</h3>
+                <h2>{_("Test notification")}</h2>
                 {showSeverityAlert && (
                     <Alert type={ALERT_TYPES.WARNING}>
                         {SEVERITY_ALERT_MESSAGE}
@@ -108,7 +112,6 @@ export default function TestNotification({ formData, formErrors, initialData }) 
                         forisFormSize
                         loading={postIsSending}
                         disabled={postIsSending || formErrors}
-
                         onClick={onTestNotificationHandler}
                     >
                         {_("Send testing notification")}
@@ -139,7 +142,9 @@ function UnsavedChangesWarningModal({ shown, setShown, callback }) {
             </ModalBody>
             <ModalFooter>
                 <Button onClick={() => setShown(false)}>{_("Cancel")}</Button>
-                <Button className="btn-danger" onClick={callback}>{_("Confirm")}</Button>
+                <Button className="btn-danger" onClick={callback}>
+                    {_("Confirm")}
+                </Button>
             </ModalFooter>
         </Modal>
     );

@@ -25,12 +25,16 @@ LAN_DHCP_ClientsList.propTypes = {
 };
 
 export default function LAN_DHCP_ClientsList({ formData }) {
-    if (formData.mode !== LAN_MODES.managed || !formData.mode_managed.dhcp.enabled) return null;
+    if (
+        formData.mode !== LAN_MODES.managed ||
+        !formData.mode_managed.dhcp.enabled
+    )
+        return null;
 
     const lanContainer = document.getElementById("dhcp-clients-container");
 
     return ReactDOM.createPortal(
         <DHCPClientsList clients={formData.mode_managed.dhcp.clients} />,
-        lanContainer,
+        lanContainer
     );
 }

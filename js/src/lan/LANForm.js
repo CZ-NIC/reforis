@@ -45,7 +45,10 @@ LANForm.propTypes = {
 };
 
 export default function LANForm({
-    formData, formErrors, setFormValue, disabled,
+    formData,
+    formErrors,
+    setFormValue,
+    disabled,
 }) {
     const errors = formErrors || {};
     const lanMode = formData.mode;
@@ -73,15 +76,13 @@ export default function LANForm({
 
     return (
         <>
-            <h3>{_("LAN Settings")}</h3>
+            <h2>{_("LAN Settings")}</h2>
             <Select
                 label={_("LAN mode")}
                 value={formData.mode}
                 choices={LAN_MOD_CHOICES}
                 helpText={HELP_TEXTS.mode}
-
                 onChange={setFormValue((value) => ({ mode: { $set: value } }))}
-
                 disabled={disabled}
             />
             {lanForm}

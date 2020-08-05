@@ -16,7 +16,7 @@ DHCPClientsList.propTypes = {
 export default function DHCPClientsList({ clients }) {
     return (
         <>
-            <h3>{_("DHCP Clients")}</h3>
+            <h2>{_("DHCP Clients")}</h2>
             {clients.length === 0 ? (
                 <p>{_("No DHCP clients found.")}</p>
             ) : (

@@ -10,7 +10,11 @@ import PropTypes from "prop-types";
 import moment from "moment/moment";
 
 import {
-    Select, DataTimeInput, SpinnerElement, Button, API_STATE,
+    Select,
+    DataTimeInput,
+    SpinnerElement,
+    Button,
+    API_STATE,
 } from "foris";
 
 import useNTPDate from "./hooks";
@@ -51,28 +55,34 @@ TimeForm.propTypes = {
 TimeForm.defaultProps = {
     formData: { time_settings: {} },
     formErrors: { time_settings: {} },
-    setFormValue: () => {
-    },
+    setFormValue: () => {},
 };
 
 export default function TimeForm({
-    ws, formData, formErrors, setFormValue, disabled,
+    ws,
+    formData,
+    formErrors,
+    setFormValue,
+    disabled,
 }) {
     const [ntpData, triggerNTP] = useNTPDate(ws);
     useEffect(() => {
         if (ntpData.data) {
             const { time } = ntpData.data;
-            const momentTime = moment(time).isValid() ? moment(time).format(TIME_FORMAT) : time;
-            setFormValue(
-                (value) => ({ time_settings: { time: { $set: value } } }),
-            )({ target: { value: momentTime } });
+            const momentTime = moment(time).isValid()
+                ? moment(time).format(TIME_FORMAT)
+                : time;
+            setFormValue((value) => ({
+                time_settings: { time: { $set: value } },
+            }))({ target: { value: momentTime } });
         }
     }, [setFormValue, ntpData.data]);
 
     function updateTimeFromBrowser(e) {
         e.preventDefault();
-        setFormValue((value) => (
-            { time_settings: { time: { $set: value } } }))({ target: { value: moment() } });
+        setFormValue((value) => ({
+            time_settings: { time: { $set: value } },
+        }))({ target: { value: moment() } });
     }
 
     const data = formData.time_settings;
@@ -81,48 +91,63 @@ export default function TimeForm({
     function onDataTimeChangeHandler(value) {
         // Dirty hack to get DataTime library work
         if (typeof value === "string") {
-            return setFormValue(
-                (formValue) => ({ time_settings: { time: { $set: formValue } } }),
-            )({ target: { value } });
+            return setFormValue((formValue) => ({
+                time_settings: { time: { $set: formValue } },
+            }))({ target: { value } });
         }
-        return setFormValue(
-            (formValue) => ({ time_settings: { time: { $set: formValue } } }),
-        )({ target: { value: value.format(TIME_FORMAT) } });
+        return setFormValue((formValue) => ({
+            time_settings: { time: { $set: formValue } },
+        }))({ target: { value: value.format(TIME_FORMAT) } });
     }
 
     return (
         <>
-            <h4>{_("Time Settings")}</h4>
-            <p>{_("Time should be up-to-date otherwise DNS and other services might not work properly.")}</p>
+            <h2>{_("Time Settings")}</h2>
+            <p>
+                {_(
+                    "Time should be up-to-date otherwise DNS and other services might not work properly."
+                )}
+            </p>
             <Select
                 label={_("How to set time")}
                 choices={TIME_SETTING_TYPE_CHOICES}
                 value={data.how_to_set_time}
-
-                onChange={setFormValue(
-                    (value) => ({ time_settings: { how_to_set_time: { $set: value } } }),
-                )}
-
+                onChange={setFormValue((value) => ({
+                    time_settings: { how_to_set_time: { $set: value } },
+                }))}
                 disabled={disabled}
             />
-            {data.how_to_set_time === "ntp" ? <NTPServersList servers={data.ntp_servers} /> : null}
+            {data.how_to_set_time === "ntp" ? (
+                <NTPServersList servers={data.ntp_servers} />
+            ) : null}
             <DataTimeInput
                 label={_("Time")}
-                value={moment(data.time).isValid() ? moment(data.time) : data.time}
+                value={
+                    moment(data.time).isValid() ? moment(data.time) : data.time
+                }
                 error={errors.time}
-
                 onChange={onDataTimeChangeHandler}
-
-                disabled={data.how_to_set_time !== "manual" || ntpData.state === API_STATE.SENDING}
+                disabled={
+                    data.how_to_set_time !== "manual" ||
+                    ntpData.state === API_STATE.SENDING
+                }
             >
                 <div className="input-group-append">
                     <button
                         type="button"
                         className="input-group-text"
-                        onClick={data.how_to_set_time === "ntp" ? triggerNTP : updateTimeFromBrowser}
+                        onClick={
+                            data.how_to_set_time === "ntp"
+                                ? triggerNTP
+                                : updateTimeFromBrowser
+                        }
                         disabled={ntpData.state === API_STATE.SENDING}
                     >
-                        {ntpData.state === API_STATE.SENDING ? <SpinnerElement small /> : <i className="fas fa-sync-alt" />}
+                        {ntpData.state === API_STATE.SENDING ? (
+                            <SpinnerElement small />
+                        ) : (
+                            <i className="fas fa-sync-alt" />
+                        )}
                     </button>
                 </div>
             </DataTimeInput>
@@ -148,13 +173,17 @@ function NTPServersList({ servers }) {
                     setShown(!shown);
                 }}
             >
-                {shown ? _("Hide NTP servers list") : _("Show NTP servers list")}
+                {shown
+                    ? _("Hide NTP servers list")
+                    : _("Show NTP servers list")}
             </Button>
 
             <div className="collapse" id="collapseNTPServers">
                 <h5>{_("NTP Servers")}</h5>
                 <div id="ntpServersList">
-                    {servers.map((server) => <p key={server}>{server}</p>)}
+                    {servers.map((server) => (
+                        <p key={server}>{server}</p>
+                    ))}
                 </div>
             </div>
         </>
