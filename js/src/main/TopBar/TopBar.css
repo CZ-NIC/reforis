@@ -11,6 +11,14 @@
     justify-content: flex-end;
 }
 
+#top-bar-container button.nav-item:hover {
+    cursor: default;
+}
+
+#top-bar-container button.nav-item:hover:last-child {
+    cursor: pointer;
+}
+
 #top-bar {
     align-items: center;
     position: absolute;
