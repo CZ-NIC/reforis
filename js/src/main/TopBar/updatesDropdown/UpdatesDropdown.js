@@ -110,16 +110,16 @@ function ManageUpdate({ resolveUpdate }) {
             />
             <div className="dropdown-item" id="updates-dropdown-actions">
                 <Button
-                    className="btn-warning mr-3"
-                    onClick={() => resolveUpdate("deny")}
-                >
-                    {_("Ignore")}
-                </Button>
-                <Button
                     className="btn-primary"
                     onClick={() => resolveUpdate("grant")}
                 >
                     {_("Install now")}
+                </Button>
+                <Button
+                    className="btn-warning mr-3"
+                    onClick={() => resolveUpdate("deny")}
+                >
+                    {_("Ignore")}
                 </Button>
             </div>
         </>
