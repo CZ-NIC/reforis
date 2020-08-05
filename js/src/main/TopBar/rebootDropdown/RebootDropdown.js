@@ -40,7 +40,13 @@ export default function RebootDropdown({ ws }) {
             </button>
             <div className="dropdown-menu dropdown-menu-right">
                 <div className="dropdown-header">
-                    <h5>{_("Reboot Required")}</h5>
+                    <Link
+                        to={{
+                            pathname: ForisURLs.rebootPage,
+                        }}
+                    >
+                        <h5>{_("Reboot Required")}</h5>
+                    </Link>
                 </div>
                 <div className="dropdown-divider" />
                 <div className="dropdown-item">

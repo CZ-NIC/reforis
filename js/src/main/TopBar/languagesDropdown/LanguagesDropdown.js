@@ -7,8 +7,9 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
-import { SpinnerElement, useAPIPost } from "foris";
+import { SpinnerElement, useAPIPost, ForisURLs } from "foris";
 
 import API_URLs from "common/API";
 
@@ -44,7 +45,13 @@ export default function LanguagesDropdown({ ws, className }) {
                 id="languages-dropdown-menu"
             >
                 <div className="dropdown-header">
-                    <h5>{_("Languages")}</h5>
+                    <Link
+                        to={{
+                            pathname: ForisURLs.languages,
+                        }}
+                    >
+                        <h5>{_("Languages")}</h5>
+                    </Link>
                 </div>
                 <div className="dropdown-divider" />
                 {langsList ? (
