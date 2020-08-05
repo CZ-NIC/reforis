@@ -2,9 +2,9 @@
 
 exports[`<DHCPClientsList/> Test with snapshot. 1`] = `
 <div>
-  <h3>
+  <h2>
     DHCP Clients
-  </h3>
+  </h2>
   <div
     class="table-responsive"
   >

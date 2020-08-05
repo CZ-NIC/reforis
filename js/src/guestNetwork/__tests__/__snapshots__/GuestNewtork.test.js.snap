@@ -325,9 +325,9 @@ in LAN.
   <div
     id="dhcp-clients-container"
   >
-    <h3>
+    <h2>
       DHCP Clients
-    </h3>
+    </h2>
     <p>
       No DHCP clients found.
     </p>

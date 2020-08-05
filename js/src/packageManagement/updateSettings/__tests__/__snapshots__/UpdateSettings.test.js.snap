@@ -169,9 +169,9 @@ available
           </label>
         </div>
       </div>
-      <h4>
+      <h2>
         Automatic Restarts After Software Update
-      </h4>
+      </h2>
       <div
         class="form-group"
       >
@@ -382,9 +382,9 @@ exports[`<UpdateSettings/> Test with snapshot enabled, delayed. 1`] = `
 +           </div>
 +         </div>
 +       </div>
-        <h4>
+        <h2>
           Automatic Restarts After Software Update
-        </h4>
+        </h2>
         <div
           class=\\"form-group\\""
 `;
@@ -399,9 +399,9 @@ exports[`<UpdateSettings/> Test with snapshot enabled. 1`] = `
             </label>
           </div>
         </div>
-        <h4>
+        <h2>
 +         Update Approvals
-+       </h4>
++       </h2>
 +       <p>
 +         Update approvals can be useful when you want to make sure that updates won't harm your specific
 +             configuration. You can e.g. install updates when you're prepared for a possible rollback to a previous
@@ -479,9 +479,9 @@ exports[`<UpdateSettings/> Test with snapshot enabled. 1`] = `
 +           </small>
 +         </div>
 +       </div>
-+       <h4>
++       <h2>
           Automatic Restarts After Software Update
-        </h4>
+        </h2>
         <div
           class=\\"form-group\\"
         >"

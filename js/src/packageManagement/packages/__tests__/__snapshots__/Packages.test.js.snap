@@ -27,11 +27,11 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
 +       <div
 +         class=\\"text-muted\\"
 +       >
-          <h3>
+          <h2>
             Packages List
-          </h3>
+          </h2>
           <div
-            class=\\"container\\"
+            class=\\"container-fluid\\"
 @@ -33,10 +49,11 @@
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -250,11 +250,11 @@ been installed manually or using opkg is not affected.
     class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
   >
     <form>
-      <h3>
+      <h2>
         Packages List
-      </h3>
+      </h2>
       <div
-        class="container"
+        class="container-fluid"
       >
         <div
           class="packages-list"

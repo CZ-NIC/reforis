@@ -15,9 +15,9 @@ procedure of SSL certificate verification might not work correctly.
     class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
   >
     <form>
-      <h4>
+      <h2>
         Region Settings
-      </h4>
+      </h2>
       <p>
         Please select the timezone the router is being operated in. Correct setting is required to display the right time and for related functions.
       </p>
@@ -363,9 +363,9 @@ procedure of SSL certificate verification might not work correctly.
           </option>
         </select>
       </div>
-      <h4>
+      <h2>
         Time Settings
-      </h4>
+      </h2>
       <p>
         Time should be up-to-date otherwise DNS and other services might not work properly.
       </p>

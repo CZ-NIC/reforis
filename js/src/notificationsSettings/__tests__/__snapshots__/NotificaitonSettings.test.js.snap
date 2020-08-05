@@ -9,9 +9,9 @@ exports[`<NotificationsSettings/> Disabled 1`] = `
     class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
   >
     <form>
-      <h3>
+      <h2>
         Email Notifications
-      </h3>
+      </h2>
       <div
         class="form-group"
       >
@@ -61,9 +61,9 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
     class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
   >
     <form>
-      <h3>
+      <h2>
         Email Notifications
-      </h3>
+      </h2>
       <div
         class="form-group"
       >
@@ -403,9 +403,9 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
   <div
     id="test-notification"
   >
-    <h3>
+    <h2>
       Test notification
-    </h3>
+    </h2>
     <div
       class="alert alert-dismissible alert-warning"
     >
@@ -436,9 +436,9 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
     class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
   >
     <form>
-      <h3>
+      <h2>
         Email Notifications
-      </h3>
+      </h2>
       <div
         class="form-group"
       >
@@ -629,9 +629,9 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
   <div
     id="test-notification"
   >
-    <h3>
+    <h2>
       Test notification
-    </h3>
+    </h2>
     <div
       class="alert alert-dismissible alert-warning"
     >
