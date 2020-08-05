@@ -7,6 +7,7 @@
 
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 import {
     ForisURLs,
@@ -74,7 +75,13 @@ function DropdownContent({ update, onSuccess }) {
             </button>
             <div className="dropdown-menu dropdown-menu-right">
                 <div className="dropdown-header">
-                    <h5>{_("Approve Update")}</h5>
+                    <Link
+                        to={{
+                            pathname: ForisURLs.approveUpdates,
+                        }}
+                    >
+                        <h5>{_("Approve Update")}</h5>
+                    </Link>
                 </div>
                 <div className="dropdown-divider" />
                 <ManageUpdateWithError
@@ -116,7 +123,7 @@ function ManageUpdate({ resolveUpdate }) {
                     {_("Install now")}
                 </Button>
                 <Button
-                    className="btn-warning mr-3"
+                    className="btn-warning"
                     onClick={() => resolveUpdate("deny")}
                 >
                     {_("Ignore")}
