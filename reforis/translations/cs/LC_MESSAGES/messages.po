@@ -742,11 +742,14 @@ msgstr ""
 
 #: js/src/guide/constants.js:59
 msgid ""
-"Your device is now ready to be used. You can tweak the rest of the "
-"setting in administration interface."
+"Your device is now ready to be used. You can tweak the rest of the setting "
+"in administration interface. Once you finish the guide, your Shield will "
+"try to connect to the Internet and you'll end up in administration interface."
 msgstr ""
 "Vaše zařízení je nyní připraveno k použití. Další nastavení naleznete "
-"v administračním rozhraní"
+"v administračním rozhraní. Jakmile dokončíte tohoto průvodce, váš Shield "
+"se pokusí připojit na Internet a budete přesměrování do administračního "
+"rozhraní."
 
 #: js/src/guide/constants.js:63
 msgid ""
