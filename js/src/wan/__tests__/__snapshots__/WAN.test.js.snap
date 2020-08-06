@@ -1004,95 +1004,99 @@ Note that sometimes it takes a while before the connection is fully initialized.
 wait for a while before running this test.
         
   </p>
-  <form>
-    <table
-      class="table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12"
-    >
-      <tbody>
-        <tr>
-          <th
-            scope="row"
-          >
-            IPv4 connectivity
-          </th>
-          <td
-            class="text-right"
-          >
-            <div
-              class="text-secondary"
-            >
-              <i
-                class="fas fa-minus"
-              />
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th
-            scope="row"
-          >
-            IPv4 gateway connectivity
-          </th>
-          <td
-            class="text-right"
-          >
-            <div
-              class="text-secondary"
-            >
-              <i
-                class="fas fa-minus"
-              />
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th
-            scope="row"
-          >
-            IPv6 connectivity
-          </th>
-          <td
-            class="text-right"
-          >
-            <div
-              class="text-secondary"
-            >
-              <i
-                class="fas fa-minus"
-              />
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th
-            scope="row"
-          >
-            IPv6 gateway connectivity
-          </th>
-          <td
-            class="text-right"
-          >
-            <div
-              class="text-secondary"
-            >
-              <i
-                class="fas fa-minus"
-              />
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <div
-      class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3 text-right"
-    >
-      <button
-        class="btn btn-primary col-sm-12 col-lg-3"
-        type="submit"
+  <div
+    class="card p-4"
+  >
+    <form>
+      <table
+        class="table table-borderless table-hover col-sm-12"
       >
-          Test connection
-      </button>
-    </div>
-  </form>
+        <tbody>
+          <tr>
+            <th
+              scope="row"
+            >
+              IPv4 connectivity
+            </th>
+            <td
+              class="text-right"
+            >
+              <div
+                class="text-secondary"
+              >
+                <i
+                  class="fas fa-minus"
+                />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th
+              scope="row"
+            >
+              IPv4 gateway connectivity
+            </th>
+            <td
+              class="text-right"
+            >
+              <div
+                class="text-secondary"
+              >
+                <i
+                  class="fas fa-minus"
+                />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th
+              scope="row"
+            >
+              IPv6 connectivity
+            </th>
+            <td
+              class="text-right"
+            >
+              <div
+                class="text-secondary"
+              >
+                <i
+                  class="fas fa-minus"
+                />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th
+              scope="row"
+            >
+              IPv6 gateway connectivity
+            </th>
+            <td
+              class="text-right"
+            >
+              <div
+                class="text-secondary"
+              >
+                <i
+                  class="fas fa-minus"
+                />
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div
+        class="undefined text-right"
+      >
+        <button
+          class="btn btn-primary col-sm-12 col-lg-3"
+          type="submit"
+        >
+            Test connection
+        </button>
+      </div>
+    </form>
+  </div>
 </DocumentFragment>
 `;

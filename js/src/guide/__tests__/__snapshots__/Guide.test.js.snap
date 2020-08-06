@@ -37,9 +37,13 @@ exports[`<Guide/>  Snapshot. Just check if render correct page. 1`] = `
             <div
               class="dropdown-header"
             >
-              <h5>
-                Languages
-              </h5>
+              <a
+                href="/reforis/guide/"
+              >
+                <h5>
+                  Languages
+                </h5>
+              </a>
             </div>
             <div
               class="dropdown-divider"

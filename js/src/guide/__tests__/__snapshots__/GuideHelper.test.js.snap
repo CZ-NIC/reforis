@@ -45,9 +45,13 @@ exports[`<GuideHelp/> displays lan help with completed message 1`] = `
           <div
             class="dropdown-header"
           >
-            <h5>
-              Languages
-            </h5>
+            <a
+              href="/"
+            >
+              <h5>
+                Languages
+              </h5>
+            </a>
           </div>
           <div
             class="dropdown-divider"
@@ -159,9 +163,13 @@ exports[`<GuideHelp/> displays lan help without completed message - server workf
           <div
             class="dropdown-header"
           >
-            <h5>
-              Languages
-            </h5>
+            <a
+              href="/"
+            >
+              <h5>
+                Languages
+              </h5>
+            </a>
           </div>
           <div
             class="dropdown-divider"
@@ -252,9 +260,13 @@ exports[`<GuideHelp/> displays lan help without completed message 1`] = `
           <div
             class="dropdown-header"
           >
-            <h5>
-              Languages
-            </h5>
+            <a
+              href="/"
+            >
+              <h5>
+                Languages
+              </h5>
+            </a>
           </div>
           <div
             class="dropdown-divider"
@@ -347,9 +359,13 @@ exports[`<GuideHelp/> doesn't display completed message if it doesn't exist 1`] 
           <div
             class="dropdown-header"
           >
-            <h5>
-              Languages
-            </h5>
+            <a
+              href="/"
+            >
+              <h5>
+                Languages
+              </h5>
+            </a>
           </div>
           <div
             class="dropdown-divider"
