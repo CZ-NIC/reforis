@@ -25,7 +25,6 @@ import API_URLs from "common/API";
 
 import CurrentForisPasswordForm from "./CurrentForisPasswordForm";
 import ForisPasswordForm from "./ForisPasswordForm";
-import RootPasswordForm from "./RootPasswordForm";
 
 Password.propTypes = {
     postCallback: PropTypes.func,
@@ -65,8 +64,6 @@ function PasswordForm({ postCallback, currentPassword }) {
         resetFormData({
             currentForisPassword: "",
             newForisPassword: "",
-            sameForRoot: false,
-            newRootPassword: "",
         });
     }, [resetFormData]);
 
@@ -123,8 +120,7 @@ function PasswordForm({ postCallback, currentPassword }) {
             foris_current_password: formState.data.currentForisPassword,
             foris_password: formState.data.newForisPassword,
         };
-        if (formState.data.sameForRoot)
-            data.root_password = formState.data.newForisPassword;
+        data.root_password = formState.data.newForisPassword;
         post({ data });
     }
 
@@ -161,29 +157,16 @@ function PasswordForm({ postCallback, currentPassword }) {
                 setFormValue={onFormChangeHandler}
                 postForisPassword={postForisPassword}
             />
-            {!formState.data.sameForRoot && (
-                <RootPasswordForm
-                    formData={formState.data}
-                    formErrors={formState.errors}
-                    submitButtonState={submitButtonState}
-                    disabled={isSending}
-                    setFormValue={onFormChangeHandler}
-                    postRootPassword={postRootPassword}
-                />
-            )}
         </div>
     );
 }
 
 function validator(formData) {
     const errors = {
-        newForisPassword: validatePassword(formData.newForisPassword),
-        newRootPassword: !formData.sameForRoot
-            ? validatePassword(formData.newRootPassword)
-            : null,
+        newForisPassword: validatePassword(formData.newForisPassword)
     };
 
-    if (errors.newForisPassword || errors.newRootPassword) return errors;
+    if (errors.newForisPassword) return errors;
     return {};
 }
 

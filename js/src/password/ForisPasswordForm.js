@@ -18,7 +18,6 @@ import {
 ForisPasswordForm.propTypes = {
     formData: PropTypes.shape({
         newForisPassword: PropTypes.string,
-        sameForRoot: PropTypes.bool,
     }).isRequired,
     submitButtonState: PropTypes.oneOf(
         Object.keys(SUBMIT_BUTTON_STATES).map(
@@ -50,22 +49,6 @@ export default function ForisPasswordForm({
                 error={formErrors.newForisPassword}
                 onChange={setFormValue((value) => ({
                     newForisPassword: { $set: value },
-                }))}
-                disabled={disabled}
-            />
-            <CheckBox
-                label={_(
-                    "Use same password for advanced administration (root)"
-                )}
-                helpText={_(
-                    "Same password would be used for accessing this administration interface, for root user in " +
-                        "LuCI web interface and for SSH login. Use a strong password! (If you choose not to set the password " +
-                        "for advanced configuration here, you will have the option to do so later. Until then, the root account " +
-                        "will be blocked.)"
-                )}
-                checked={formData.sameForRoot}
-                onChange={setFormValue((value) => ({
-                    sameForRoot: { $set: value },
                 }))}
                 disabled={disabled}
             />
