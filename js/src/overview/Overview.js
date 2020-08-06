@@ -86,7 +86,7 @@ function OverviewCards({ packages, ws }) {
                                     <i className="fas fa-external-link-alt float-right" />
                                 </a>
                             </h6>
-                            <ConnectionTest ws={ws} type="wan" />
+                            <ConnectionTest ws={ws} type="wan" overview />
                         </div>
                     </div>
                 </div>

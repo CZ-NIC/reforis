@@ -12,31 +12,33 @@ import { Button } from "foris";
 import { TEST_STATES } from "./hooks";
 
 ConnectionTestButton.propTypes = {
-    state: PropTypes.oneOf(Object.keys(TEST_STATES).map((key) => TEST_STATES[key])).isRequired,
+    state: PropTypes.oneOf(
+        Object.keys(TEST_STATES).map((key) => TEST_STATES[key])
+    ).isRequired,
+    overview: PropTypes.bool.isRequired,
 };
 
-export default function ConnectionTestButton({ state, ...props }) {
+export default function ConnectionTestButton({ state, overview, ...props }) {
     const isRunning = state === TEST_STATES.RUNNING;
     let labelSubmitButton;
     switch (state) {
-    case TEST_STATES.RUNNING:
-        labelSubmitButton = _("Test is running...");
-        break;
-    case TEST_STATES.FINISHED:
-        labelSubmitButton = _("Test connection again");
-        break;
-    default:
-        labelSubmitButton = _("Test connection");
+        case TEST_STATES.RUNNING:
+            labelSubmitButton = _("Test is running...");
+            break;
+        case TEST_STATES.FINISHED:
+            labelSubmitButton = _("Test connection again");
+            break;
+        default:
+            labelSubmitButton = _("Test connection");
     }
 
     return (
         <Button
             type="submit"
-            className="btn-primary"
+            className={`${overview ? "btn-outline-primary" : "btn-primary"}`}
             loading={isRunning}
             disabled={isRunning}
             forisFormSize
-
             {...props}
         >
             {labelSubmitButton}
