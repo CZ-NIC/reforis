@@ -31,7 +31,7 @@ ConnectionTestResults.propTypes = {
 
 export default function ConnectionTestResults({ state, ...tests }) {
     return (
-        <table className="table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12">
+        <table className="table table-borderless table-hover col-sm-12">
             <tbody>
                 {Object.keys(TEST_TYPES).map((type) =>
                     tests[type] !== undefined ? (
