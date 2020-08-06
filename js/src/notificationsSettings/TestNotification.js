@@ -11,7 +11,7 @@ import PropTypes from "prop-types";
 import {
     ALERT_TYPES,
     API_STATE,
-    formFieldsSize,
+    buttonFormFieldsSize,
     Alert,
     Button,
     Portal,
@@ -107,7 +107,7 @@ export default function TestNotification({
                         {SEVERITY_ALERT_MESSAGE}
                     </Alert>
                 )}
-                <div className={`${formFieldsSize} text-right`}>
+                <div className={`${buttonFormFieldsSize} text-right`}>
                     <Button
                         forisFormSize
                         loading={postIsSending}
