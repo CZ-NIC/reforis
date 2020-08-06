@@ -27,7 +27,7 @@ exports[`<Updates/> should display spinner while check is pending 1`] = `
   </h1>
   Manually check for updates and install them immediately.
   <div
-    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3 text-right"
+    class="undefined text-right"
   >
     <button
       class="btn btn-primary mb-3 col-sm-12 col-lg-3"
@@ -61,7 +61,7 @@ exports[`<Updates/> should display spinner while check is pending 2`] = `
   </h1>
   Manually check for updates and install them immediately.
   <div
-    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3 text-right"
+    class="undefined text-right"
   >
     <button
       class="btn btn-primary mb-3 col-sm-12 col-lg-3"
@@ -95,7 +95,7 @@ exports[`<Updates/> should handle approvable updates 1`] = `
   </h1>
   Manually check for updates and review them immediately.
   <div
-    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3 text-right"
+    class="undefined text-right"
   >
     <button
       class="btn btn-primary mb-3 col-sm-12 col-lg-3"
@@ -203,7 +203,7 @@ exports[`<Updates/> should handle automatic updates (no delays/approvals) 1`] = 
   </h1>
   Manually check for updates and install them immediately.
   <div
-    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3 text-right"
+    class="undefined text-right"
   >
     <button
       class="btn btn-primary mb-3 col-sm-12 col-lg-3"

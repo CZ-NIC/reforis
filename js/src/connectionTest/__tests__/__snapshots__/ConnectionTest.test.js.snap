@@ -2,362 +2,378 @@
 
 exports[`<ConnectionTest/> Snapshot after trigger DNS connection test. 1`] = `
 <DocumentFragment>
-  <form>
-    <table
-      class="table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12"
-    >
-      <tbody>
-        <tr>
-          <th
-            scope="row"
-          >
-            DNS
-          </th>
-          <td
-            class="text-right"
-          >
-            <div
-              class="spinner-border spinner-border-sm text-secondary"
-              role="status"
-            >
-              <span
-                class="sr-only"
-              />
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th
-            scope="row"
-          >
-            DNSSEC
-          </th>
-          <td
-            class="text-right"
-          >
-            <div
-              class="spinner-border spinner-border-sm text-secondary"
-              role="status"
-            >
-              <span
-                class="sr-only"
-              />
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <div
-      class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3 text-right"
-    >
-      <button
-        class="btn btn-primary col-sm-12 col-lg-3"
-        disabled=""
-        type="submit"
+  <div
+    class="card p-4"
+  >
+    <form>
+      <table
+        class="table table-borderless table-hover col-sm-12"
       >
-        <span
-          aria-hidden="true"
-          class="spinner-border spinner-border-sm"
-          role="status"
-        />
-           Test is running...
-      </button>
-    </div>
-  </form>
+        <tbody>
+          <tr>
+            <th
+              scope="row"
+            >
+              DNS
+            </th>
+            <td
+              class="text-right"
+            >
+              <div
+                class="spinner-border spinner-border-sm text-secondary"
+                role="status"
+              >
+                <span
+                  class="sr-only"
+                />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th
+              scope="row"
+            >
+              DNSSEC
+            </th>
+            <td
+              class="text-right"
+            >
+              <div
+                class="spinner-border spinner-border-sm text-secondary"
+                role="status"
+              >
+                <span
+                  class="sr-only"
+                />
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div
+        class="undefined text-right"
+      >
+        <button
+          class="btn btn-primary col-sm-12 col-lg-3"
+          disabled=""
+          type="submit"
+        >
+          <span
+            aria-hidden="true"
+            class="spinner-border spinner-border-sm"
+            role="status"
+          />
+             Test is running...
+        </button>
+      </div>
+    </form>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`<ConnectionTest/> Snapshot after trigger WAN connection test. 1`] = `
 <DocumentFragment>
-  <form>
-    <table
-      class="table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12"
-    >
-      <tbody>
-        <tr>
-          <th
-            scope="row"
-          >
-            IPv4 connectivity
-          </th>
-          <td
-            class="text-right"
-          >
-            <div
-              class="spinner-border spinner-border-sm text-secondary"
-              role="status"
-            >
-              <span
-                class="sr-only"
-              />
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th
-            scope="row"
-          >
-            IPv4 gateway connectivity
-          </th>
-          <td
-            class="text-right"
-          >
-            <div
-              class="spinner-border spinner-border-sm text-secondary"
-              role="status"
-            >
-              <span
-                class="sr-only"
-              />
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th
-            scope="row"
-          >
-            IPv6 connectivity
-          </th>
-          <td
-            class="text-right"
-          >
-            <div
-              class="spinner-border spinner-border-sm text-secondary"
-              role="status"
-            >
-              <span
-                class="sr-only"
-              />
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th
-            scope="row"
-          >
-            IPv6 gateway connectivity
-          </th>
-          <td
-            class="text-right"
-          >
-            <div
-              class="spinner-border spinner-border-sm text-secondary"
-              role="status"
-            >
-              <span
-                class="sr-only"
-              />
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <div
-      class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3 text-right"
-    >
-      <button
-        class="btn btn-primary col-sm-12 col-lg-3"
-        disabled=""
-        type="submit"
+  <div
+    class="card p-4"
+  >
+    <form>
+      <table
+        class="table table-borderless table-hover col-sm-12"
       >
-        <span
-          aria-hidden="true"
-          class="spinner-border spinner-border-sm"
-          role="status"
-        />
-           Test is running...
-      </button>
-    </div>
-  </form>
+        <tbody>
+          <tr>
+            <th
+              scope="row"
+            >
+              IPv4 connectivity
+            </th>
+            <td
+              class="text-right"
+            >
+              <div
+                class="spinner-border spinner-border-sm text-secondary"
+                role="status"
+              >
+                <span
+                  class="sr-only"
+                />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th
+              scope="row"
+            >
+              IPv4 gateway connectivity
+            </th>
+            <td
+              class="text-right"
+            >
+              <div
+                class="spinner-border spinner-border-sm text-secondary"
+                role="status"
+              >
+                <span
+                  class="sr-only"
+                />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th
+              scope="row"
+            >
+              IPv6 connectivity
+            </th>
+            <td
+              class="text-right"
+            >
+              <div
+                class="spinner-border spinner-border-sm text-secondary"
+                role="status"
+              >
+                <span
+                  class="sr-only"
+                />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th
+              scope="row"
+            >
+              IPv6 gateway connectivity
+            </th>
+            <td
+              class="text-right"
+            >
+              <div
+                class="spinner-border spinner-border-sm text-secondary"
+                role="status"
+              >
+                <span
+                  class="sr-only"
+                />
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div
+        class="undefined text-right"
+      >
+        <button
+          class="btn btn-primary col-sm-12 col-lg-3"
+          disabled=""
+          type="submit"
+        >
+          <span
+            aria-hidden="true"
+            class="spinner-border spinner-border-sm"
+            role="status"
+          />
+             Test is running...
+        </button>
+      </div>
+    </form>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`<ConnectionTest/> Snapshot before connection test. 1`] = `
 <DocumentFragment>
-  <form>
-    <table
-      class="table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12"
-    >
-      <tbody>
-        <tr>
-          <th
-            scope="row"
-          >
-            IPv4 connectivity
-          </th>
-          <td
-            class="text-right"
-          >
-            <div
-              class="text-secondary"
-            >
-              <i
-                class="fas fa-minus"
-              />
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th
-            scope="row"
-          >
-            IPv4 gateway connectivity
-          </th>
-          <td
-            class="text-right"
-          >
-            <div
-              class="text-secondary"
-            >
-              <i
-                class="fas fa-minus"
-              />
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th
-            scope="row"
-          >
-            IPv6 connectivity
-          </th>
-          <td
-            class="text-right"
-          >
-            <div
-              class="text-secondary"
-            >
-              <i
-                class="fas fa-minus"
-              />
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th
-            scope="row"
-          >
-            IPv6 gateway connectivity
-          </th>
-          <td
-            class="text-right"
-          >
-            <div
-              class="text-secondary"
-            >
-              <i
-                class="fas fa-minus"
-              />
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <div
-      class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3 text-right"
-    >
-      <button
-        class="btn btn-primary col-sm-12 col-lg-3"
-        type="submit"
+  <div
+    class="card p-4"
+  >
+    <form>
+      <table
+        class="table table-borderless table-hover col-sm-12"
       >
-          Test connection
-      </button>
-    </div>
-  </form>
+        <tbody>
+          <tr>
+            <th
+              scope="row"
+            >
+              IPv4 connectivity
+            </th>
+            <td
+              class="text-right"
+            >
+              <div
+                class="text-secondary"
+              >
+                <i
+                  class="fas fa-minus"
+                />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th
+              scope="row"
+            >
+              IPv4 gateway connectivity
+            </th>
+            <td
+              class="text-right"
+            >
+              <div
+                class="text-secondary"
+              >
+                <i
+                  class="fas fa-minus"
+                />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th
+              scope="row"
+            >
+              IPv6 connectivity
+            </th>
+            <td
+              class="text-right"
+            >
+              <div
+                class="text-secondary"
+              >
+                <i
+                  class="fas fa-minus"
+                />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th
+              scope="row"
+            >
+              IPv6 gateway connectivity
+            </th>
+            <td
+              class="text-right"
+            >
+              <div
+                class="text-secondary"
+              >
+                <i
+                  class="fas fa-minus"
+                />
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div
+        class="undefined text-right"
+      >
+        <button
+          class="btn btn-primary col-sm-12 col-lg-3"
+          type="submit"
+        >
+            Test connection
+        </button>
+      </div>
+    </form>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`<ConnectionTest/> Snapshots with connection test results. 1`] = `
 <DocumentFragment>
-  <form>
-    <table
-      class="table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12"
-    >
-      <tbody>
-        <tr>
-          <th
-            scope="row"
-          >
-            IPv4 connectivity
-          </th>
-          <td
-            class="text-right"
-          >
-            <div
-              class="text-success"
-            >
-              <i
-                class="fas fa-check"
-              />
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th
-            scope="row"
-          >
-            IPv4 gateway connectivity
-          </th>
-          <td
-            class="text-right"
-          >
-            <div
-              class="text-success"
-            >
-              <i
-                class="fas fa-check"
-              />
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th
-            scope="row"
-          >
-            IPv6 connectivity
-          </th>
-          <td
-            class="text-right"
-          >
-            <div
-              class="text-success"
-            >
-              <i
-                class="fas fa-check"
-              />
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th
-            scope="row"
-          >
-            IPv6 gateway connectivity
-          </th>
-          <td
-            class="text-right"
-          >
-            <div
-              class="text-success"
-            >
-              <i
-                class="fas fa-check"
-              />
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <div
-      class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3 text-right"
-    >
-      <button
-        class="btn btn-primary col-sm-12 col-lg-3"
-        type="submit"
+  <div
+    class="card p-4"
+  >
+    <form>
+      <table
+        class="table table-borderless table-hover col-sm-12"
       >
-          Test connection again
-      </button>
-    </div>
-  </form>
+        <tbody>
+          <tr>
+            <th
+              scope="row"
+            >
+              IPv4 connectivity
+            </th>
+            <td
+              class="text-right"
+            >
+              <div
+                class="text-success"
+              >
+                <i
+                  class="fas fa-check"
+                />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th
+              scope="row"
+            >
+              IPv4 gateway connectivity
+            </th>
+            <td
+              class="text-right"
+            >
+              <div
+                class="text-success"
+              >
+                <i
+                  class="fas fa-check"
+                />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th
+              scope="row"
+            >
+              IPv6 connectivity
+            </th>
+            <td
+              class="text-right"
+            >
+              <div
+                class="text-success"
+              >
+                <i
+                  class="fas fa-check"
+                />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th
+              scope="row"
+            >
+              IPv6 gateway connectivity
+            </th>
+            <td
+              class="text-right"
+            >
+              <div
+                class="text-success"
+              >
+                <i
+                  class="fas fa-check"
+                />
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div
+        class="undefined text-right"
+      >
+        <button
+          class="btn btn-primary col-sm-12 col-lg-3"
+          type="submit"
+        >
+            Test connection again
+        </button>
+      </div>
+    </form>
+  </div>
 </DocumentFragment>
 `;

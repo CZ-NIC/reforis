@@ -43,9 +43,13 @@ exports[`<UpdatesDropdown/> Updates awaiting - snapshot 1`] = `
       <div
         class="dropdown-header"
       >
-        <h5>
-          Approve Update
-        </h5>
+        <a
+          href="/"
+        >
+          <h5>
+            Approve Update
+          </h5>
+        </a>
       </div>
       <div
         class="dropdown-divider"
@@ -66,20 +70,20 @@ exports[`<UpdatesDropdown/> Updates awaiting - snapshot 1`] = `
         id="updates-dropdown-actions"
       >
         <button
-          class="btn btn-warning mr-3"
-          type="button"
-        >
-           
-           
-          Ignore
-        </button>
-        <button
           class="btn btn-primary"
           type="button"
         >
            
            
           Install now
+        </button>
+        <button
+          class="btn btn-warning"
+          type="button"
+        >
+           
+           
+          Ignore
         </button>
       </div>
     </div>
