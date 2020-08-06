@@ -78,7 +78,29 @@ function PasswordForm({ postCallback, currentPassword }) {
     const [postState, post] = useAPIPost(API_URLs.password);
     useEffect(() => {
         if (postState.data) {
-            if (postState.state === API_STATE.SUCCESS) {
+            const forisPassword = postState.data.foris_password
+                ? postState.data.foris_password
+                : false;
+            const rootPassword = postState.data.root_password
+                ? postState.data.root_password
+                : false;
+            if (
+                postState.state === API_STATE.SUCCESS &&
+                (forisPassword.result === false ||
+                    rootPassword.result === false)
+            ) {
+                setAlert(
+                    _(
+                        `The password you've entered has been compromised. It appears ${
+                            forisPassword.count || rootPassword.count
+                        } times in ${
+                            forisPassword.list || rootPassword.list
+                        } list.`
+                    ),
+                    ALERT_TYPES.ERROR
+                );
+                postCallback();
+            } else if (postState.state === API_STATE.SUCCESS) {
                 setAlert(
                     _("Password changed successfully."),
                     ALERT_TYPES.SUCCESS
@@ -124,7 +146,7 @@ function PasswordForm({ postCallback, currentPassword }) {
 
     return (
         <div className={formFieldsSize}>
-            <h2>{_("Password Settings")}</h2>
+            <h3>{_("Password Settings")}</h3>
             {currentPassword.password_set && (
                 <CurrentForisPasswordForm
                     formData={formState.data}
