@@ -5,6 +5,15 @@ exports[`<GuestNetwork/> Snapshot disabled. 1`] = `
   <h1>
     Guest Network
   </h1>
+  <div
+    id="guest-notification"
+  >
+    <div
+      class="alert alert-dismissible alert-warning"
+    >
+      All network interfaces of this network are currently down.
+    </div>
+  </div>
   <p>
     
 Guest network is used for 
@@ -67,6 +76,15 @@ exports[`<GuestNetwork/> Snapshot enabled DHCP. 1`] = `
   <h1>
     Guest Network
   </h1>
+  <div
+    id="guest-notification"
+  >
+    <div
+      class="alert alert-dismissible alert-warning"
+    >
+      All network interfaces of this network are currently down.
+    </div>
+  </div>
   <p>
     
 Guest network is used for 
@@ -340,6 +358,15 @@ exports[`<GuestNetwork/> Snapshot enabled QoS. 1`] = `
   <h1>
     Guest Network
   </h1>
+  <div
+    id="guest-notification"
+  >
+    <div
+      class="alert alert-dismissible alert-warning"
+    >
+      All network interfaces of this network are currently down.
+    </div>
+  </div>
   <p>
     
 Guest network is used for 
@@ -601,6 +628,15 @@ exports[`<GuestNetwork/> Snapshot enabled. 1`] = `
   <h1>
     Guest Network
   </h1>
+  <div
+    id="guest-notification"
+  >
+    <div
+      class="alert alert-dismissible alert-warning"
+    >
+      All network interfaces of this network are currently down.
+    </div>
+  </div>
   <p>
     
 Guest network is used for 
