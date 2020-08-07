@@ -70,10 +70,10 @@ export default function WorkflowSelect({ workflows, next_step }) {
                     "Here you can set the guide walkthrough which will guide you through the basic configuration of your device."
                 )}
             </p>
-            <div id="workflow-selector" className="card p-4">
+            <div id="workflow-selector" className="card p-4 text-center">
                 {workflows.map((workflow) => (
                     <div key={workflow} className="workflow">
-                        <h3>{WORKFLOW_NAMES[workflow]}</h3>
+                        <h2>{WORKFLOW_NAMES[workflow]}</h2>
                         <button
                             type="button"
                             className="btn btn-outline-secondary"
