@@ -8,7 +8,11 @@
 import React, { useEffect } from "react";
 
 import {
-    useAPIPost, ForisURLs, REFORIS_URL_PREFIX, API_STATE, useAlert,
+    useAPIPost,
+    ForisURLs,
+    REFORIS_URL_PREFIX,
+    API_STATE,
+    useAlert,
 } from "foris";
 import API_URLs from "common/API";
 
@@ -18,9 +22,15 @@ import { GUIDE_URL_PREFIX } from "../constants";
 const IMG_STATIC_URL = `${ForisURLs.static}/imgs`;
 
 const WORKFLOW_DESCRIPTIONS = {
-    bridge: _("This workflow will help you to setup your device to act as a local server. It means that the device will provide some kind of service to other devices within your local network (e.g. act as a network-attached storage)."),
-    router: _("After you finish this workflow your device will be able to act as a fully functional router. It assumes that you want to have more or less standard network setup."),
-    min: _("Just set your password and you are ready to go. This workflow is aimed to more advanced users who intend not to use the web GUI."),
+    bridge: _(
+        "This workflow will help you to setup your device to act as a local server. It means that the device will provide some kind of service to other devices within your local network (e.g. act as a network-attached storage)."
+    ),
+    router: _(
+        "After you finish this workflow your device will be able to act as a fully functional router. It assumes that you want to have more or less standard network setup."
+    ),
+    min: _(
+        "Just set your password and you are ready to go. This workflow is aimed to more advanced users who intend not to use the web GUI."
+    ),
 };
 
 const WORKFLOW_NAMES = {
@@ -40,7 +50,9 @@ export default function WorkflowSelect({ workflows, next_step }) {
 
     useEffect(() => {
         if (postWorkflowData.state === API_STATE.SUCCESS) {
-            window.location.assign(`${REFORIS_URL_PREFIX}${GUIDE_URL_PREFIX}/${next_step}`);
+            window.location.assign(
+                `${REFORIS_URL_PREFIX}${GUIDE_URL_PREFIX}/${next_step}`
+            );
         } else if (postWorkflowData.state === API_STATE.ERROR) {
             setAlert(_("Cannot set workflow."));
         }
@@ -53,8 +65,12 @@ export default function WorkflowSelect({ workflows, next_step }) {
     return (
         <>
             <h1>{_("Guide Workflow")}</h1>
-            <p>{_("Here you can set the guide walkthrough which will guide you through the basic configuration of your device.")}</p>
-            <div id="workflow-selector">
+            <p>
+                {_(
+                    "Here you can set the guide walkthrough which will guide you through the basic configuration of your device."
+                )}
+            </p>
+            <div id="workflow-selector" className="card p-4">
                 {workflows.map((workflow) => (
                     <div key={workflow} className="workflow">
                         <h3>{WORKFLOW_NAMES[workflow]}</h3>
@@ -63,7 +79,10 @@ export default function WorkflowSelect({ workflows, next_step }) {
                             className="btn btn-outline-secondary"
                             onClick={() => onWorkflowChangeHandler(workflow)}
                         >
-                            <img src={`${IMG_STATIC_URL}/workflow-${workflow}.svg`} alt={workflow} />
+                            <img
+                                src={`${IMG_STATIC_URL}/workflow-${workflow}.svg`}
+                                alt={workflow}
+                            />
                         </button>
                         <p>{WORKFLOW_DESCRIPTIONS[workflow]}</p>
                     </div>
