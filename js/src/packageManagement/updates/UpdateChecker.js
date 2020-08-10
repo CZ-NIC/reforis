@@ -22,14 +22,17 @@ UpdateChecker.propTypes = {
 };
 
 export default function UpdateChecker({
-    onSuccess, pending, setPending, children,
+    onSuccess,
+    pending,
+    setPending,
+    children,
 }) {
     usePendingPolling(onSuccess, pending, setPending);
     const refreshUpdates = useCheckUpdates(setPending);
 
     return (
         <Button
-            className="btn-primary mb-3"
+            className="btn-primary mt-3 mt-lg-0 mb-4"
             forisFormSize
             onClick={refreshUpdates}
             disabled={pending}

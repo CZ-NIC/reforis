@@ -54,11 +54,7 @@ function UpdateManager({
         approvalComponent = <ErrorMessage />;
     } else if (getApprovalsResponse.state === API_STATE.SUCCESS) {
         approvalComponent = (
-            <UpdateApproval
-                update={updateToApprove}
-                onSuccess={getApprovals}
-                className="mt-4"
-            />
+            <UpdateApproval update={updateToApprove} onSuccess={getApprovals} />
         );
     }
 
