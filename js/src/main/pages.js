@@ -27,7 +27,7 @@ import Overview from "overview/Overview";
 
 import { ForisURLs } from "foris";
 
-import { addWeightsToPages, plug } from "./utils";
+import { addWeightsToPages, insert } from "./utils";
 
 const PAGES = [
     {
@@ -145,21 +145,6 @@ const PAGES = [
 ];
 
 export default function getPages() {
-    let pagesWithWeight = addWeightsToPages(PAGES);
-    const waitingPluginsList = [];
-    ForisPlugins.forEach((plugin) => {
-        try {
-            pagesWithWeight = plug(pagesWithWeight, plugin);
-        } catch (e) {
-            if (e.name === "TypeError") {
-                waitingPluginsList.push(plugin);
-            }
-        }
-    });
-
-    waitingPluginsList.forEach((plugin) => {
-        pagesWithWeight = plug(pagesWithWeight, plugin);
-    });
-
-    return pagesWithWeight;
+    const itemsWithWeight = addWeightsToPages(insert(PAGES, 4, ForisPlugins));
+    return itemsWithWeight;
 }
