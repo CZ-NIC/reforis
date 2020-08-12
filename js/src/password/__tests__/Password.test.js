@@ -23,7 +23,7 @@ describe("<Password/>", () => {
     beforeEach(async () => {
         const { container } = render(<Password />);
         mockAxios.mockResponse({ data: { password_set: true } });
-        await wait(() => getByText(container, "Advanced Administration (root) Password"));
+        await wait(() => getByText(container, "New Foris password"));
         passwordContainer = container;
     });
 
@@ -34,11 +34,6 @@ describe("<Password/>", () => {
     });
 
     it("Snapshot", () => {
-        expect(passwordContainer).toMatchSnapshot();
-    });
-
-    it("Snapshot: same password for root", () => {
-        fireEvent.click(getByText(passwordContainer, "Use same password for advanced administration (root)"));
         expect(passwordContainer).toMatchSnapshot();
     });
 
@@ -58,7 +53,7 @@ describe("<Password/>", () => {
             fireEvent.click(getAllByText(passwordContainer, "Save")[0]);
             expect(mockAxios.post).toBeCalledWith(
                 "/reforis/api/password",
-                { foris_current_password: "foobar", foris_password: "foobar" },
+                { foris_current_password: "foobar", foris_password: "foobar", root_password: "foobar" },
                 expect.anything(),
             );
         });
