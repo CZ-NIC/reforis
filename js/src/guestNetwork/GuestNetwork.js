@@ -22,7 +22,6 @@ import {
     validateRequiredField,
 } from "common/network/validators";
 import validateDHCP from "common/network/DHCPValidators";
-import { getDHCPStart } from "common/network/utils";
 import GuestNetworkForm, { validateQoS } from "./GuestNetworkForm";
 import GuestNetworkDHCPClientsList from "./GuestNetworkDHCPClientsList";
 import GuestNetworkNotification from "./GuestNetworkNotification";
@@ -66,14 +65,6 @@ in LAN.
 }
 
 function prepData(formData) {
-    // eslint-disable-next-line no-restricted-globals
-    if (!isNaN(formData.dhcp.start)) {
-        // Be sure to convert start address only once.
-        formData.dhcp.start = getDHCPStart(
-            formData.ip,
-            formData.dhcp.start,
-        ).toString();
-    }
     return formData;
 }
 
@@ -93,13 +84,11 @@ export function prepDataToSubmit(formData) {
 
 export function validator(formData) {
     const errors = {
-        ip:
-            validateRequiredField(formData.ip)
-            || validateIPv4Address(formData.ip),
+        ip: validateRequiredField(formData.ip) || validateIPv4Address(formData.ip),
         netmask:
-            validateRequiredField(formData.netmask)
-            || validateIPv4Address(formData.netmask)
-            || validateNetworkMask(formData.netmask),
+      validateRequiredField(formData.netmask)
+      || validateIPv4Address(formData.netmask)
+      || validateNetworkMask(formData.netmask),
     };
 
     if (formData.qos.enabled) {
