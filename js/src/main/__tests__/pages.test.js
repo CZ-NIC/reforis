@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -15,8 +15,9 @@ describe("Test plugging in the menu.", () => {
             pluginInExistedSubmenu("nonexisted-submenu", 1),
         ];
         const pages = getPages();
-        expect(pages[0].submenuId).toBe("nonexisted-submenu");
-        expect(pages[0].pages[0].name).toBe("Plugin in submenu");
+
+        expect(pages[4].submenuId).toBe("nonexisted-submenu");
+        expect(pages[4].pages[0].name).toBe("Plugin in submenu");
     });
 
     it("Slave plugin first, master second (reversed order).", () => {
@@ -25,7 +26,7 @@ describe("Test plugging in the menu.", () => {
             newSubmenu("nonexisted-submenu", 1),
         ];
         const pages = getPages();
-        expect(pages[0].submenuId).toBe("nonexisted-submenu");
-        expect(pages[0].pages[0].name).toBe("Plugin in submenu");
+        expect(pages[4].submenuId).toBe("nonexisted-submenu");
+        expect(pages[4].pages[0].name).toBe("Plugin in submenu");
     });
 });
