@@ -54,15 +54,15 @@ export default function NotificationsDropdownItem({
                         {message}
                     </Link>
                 </div>
-                {isDisableable && (
-                    <button
-                        type="button"
-                        className="btn btn-link dismiss"
-                        onClick={dismiss}
-                    >
-                        <i className="fas fa-times" />
-                    </button>
-                )}
+                <button
+                    type="button"
+                    className={`btn btn-link dismiss${
+                        !isDisableable ? " invisible" : ""
+                    }`}
+                    onClick={dismiss}
+                >
+                    <i className="fas fa-times" />
+                </button>
             </div>
             {divider ? <div className="dropdown-divider" /> : null}
         </>
