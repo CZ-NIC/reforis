@@ -63,9 +63,7 @@ function NotificationsCenterItem({ notification, isCurrent, dismiss }) {
     return (
         <div
             ref={notificationRef}
-            className={`card bg-light ${
-                BORDER_TYPES[notification.severity]
-            } sm-10`}
+            className={`card bg-light ${BORDER_TYPES[notification.severity]}`}
         >
             <div className="card-header">
                 <NotificationIcon
