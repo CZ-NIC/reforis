@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<NotificationsCenter/> Test with snapshot. 1`] = `
-<h1>
+<h2>
   Notifications
   <button
-    class="btn btn-outline-danger mt-2 float-right"
+    class="btn btn-outline-danger float-right"
     id="btn-dismiss-all"
     type="button"
   >
@@ -13,14 +13,14 @@ exports[`<NotificationsCenter/> Test with snapshot. 1`] = `
     />
     Dismiss all
   </button>
-</h1>
+</h2>
 `;
 
 exports[`<NotificationsCenter/> Test with spinner. 1`] = `
 <div>
-  <h1>
+  <h2>
     Notifications
-  </h1>
+  </h2>
   <div
     id="notifications-center"
   >

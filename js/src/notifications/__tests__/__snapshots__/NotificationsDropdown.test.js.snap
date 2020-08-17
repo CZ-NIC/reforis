@@ -148,6 +148,14 @@ exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
               </p>
             </a>
           </div>
+          <button
+            class="btn btn-link dismiss invisible"
+            type="button"
+          >
+            <i
+              class="fas fa-times"
+            />
+          </button>
         </div>
       </div>
       <div
