@@ -75,11 +75,13 @@ function NotificationsCenterItem({ notification, isCurrent, dismiss }) {
                 <p className="text-muted align-middle m-0">
                     {toLocaleDateString(notification.created_at)}
                 </p>
-                {isDisableable && (
-                    <button type="button" className="close" onClick={dismiss}>
-                        ×
-                    </button>
-                )}
+                <button
+                    type="button"
+                    className={`close ${!isDisableable ? "invisible" : ""}`}
+                    onClick={dismiss}
+                >
+                    ×
+                </button>
             </div>
 
             <div className="card-body">
