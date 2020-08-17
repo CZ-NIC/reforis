@@ -35,13 +35,13 @@ function AutomaticUpdatesCard({ details: { enabled } }) {
                             <h6 className="text-uppercase text-muted mb-2 ">
                                 {_("Automatic Updates")}
                             </h6>
-                            <span className="h3 mb-0">
+                            <span className="status">
                                 {enabled ? _("Activated") : _("Disabled")}
                             </span>
                         </div>
                         <div className="col-auto">
                             <span
-                                className={`h2 mb-0 text-${
+                                className={`h2 text-${
                                     enabled ? "success" : "danger"
                                 }`}
                             >

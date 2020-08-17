@@ -15,6 +15,10 @@
     max-width: none;
 }
 
+.card-body .row .status {
+    font-size: 1.7rem;
+}
+
 @media screen and (max-width: 1312px) {
     .row-cols-lg-3 > * {
         -webkit-box-flex: 0;

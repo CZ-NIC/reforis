@@ -22,13 +22,13 @@ export default function DynamicFirewallCard({ activated }) {
                             <h6 className="text-uppercase text-muted mb-2">
                                 {_("Dynamic Firewall")}
                             </h6>
-                            <span className="h3 mb-0">
+                            <span className="status">
                                 {activated ? _("Activated") : _("Disabled")}
                             </span>
                         </div>
                         <div className="col-auto">
                             <span
-                                className={`h2 mb-0 text-${
+                                className={`h2 text-${
                                     activated ? "success" : "danger"
                                 }`}
                             >
