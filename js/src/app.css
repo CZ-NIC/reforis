@@ -112,6 +112,7 @@ button:disabled {
     cursor: not-allowed;
     pointer-events: all !important;
 }
+
 /* Custom Scrollbar */
 
 html {
@@ -125,7 +126,7 @@ html {
 }
 
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
 }
 
 ::-webkit-scrollbar-track {
