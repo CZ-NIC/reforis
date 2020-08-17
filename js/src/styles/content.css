@@ -57,3 +57,7 @@
     /* Just above bootstrap's defaults */
     z-index: 1004;
 }
+
+#alert-container .alert {
+    margin-bottom: 0;
+}
