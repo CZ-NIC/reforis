@@ -91,7 +91,7 @@ const PAGES = [
                 component: RegionAndTime,
             },
             {
-                name: _("Notification Settings"),
+                name: _("Notifications Settings"),
                 path: "/notifications-settings",
                 component: NotificationsSettings,
             },
