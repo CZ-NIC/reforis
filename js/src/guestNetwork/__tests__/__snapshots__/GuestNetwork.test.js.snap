@@ -810,3 +810,33 @@ in LAN.
   />
 </div>
 `;
+
+exports[`Displaying of interface warning messages Interface up & snapshot 1`] = `
+<div
+  id="guest-notification"
+/>
+`;
+
+exports[`Displaying of interface warning messages No interface & snapshot 1`] = `
+<div
+  id="guest-notification"
+>
+  <div
+    class="alert alert-dismissible alert-warning"
+  >
+    This network currently doesn't contain any devices. The changes you make here will become fully functional after you assign a network interface to this network.
+  </div>
+</div>
+`;
+
+exports[`Displaying of interface warning messages No interface up & snapshot 1`] = `
+<div
+  id="guest-notification"
+>
+  <div
+    class="alert alert-dismissible alert-warning"
+  >
+    All network interfaces of this network are currently down.
+  </div>
+</div>
+`;
