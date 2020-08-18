@@ -9,11 +9,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Portal, Alert, ALERT_TYPES } from "foris";
 
-const NO_INTERFACE_WARNING = _(
+export const NO_INTERFACE_WARNING = _(
     "This network currently doesn't contain any devices. The changes you make here will become fully functional after you assign a network interface to this network.",
 );
 
-const NO_INTERFACE_UP_WARNING = _(
+export const NO_INTERFACE_UP_WARNING = _(
     "All network interfaces of this network are currently down.",
 );
 
