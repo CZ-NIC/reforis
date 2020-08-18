@@ -135,3 +135,18 @@ html {
 .help {
     cursor: help;
 }
+
+/* Custom Switch */
+
+.custom-switch.switch-heading .custom-control-label:before {
+    top: 10px;
+}
+
+.custom-switch.switch-heading .custom-control-label:after {
+    top: 12px;
+}
+
+.custom-control-input:checked ~ .custom-control-label:before {
+    border-color: #00a2e2;
+    background-color: #00a2e2;
+}
