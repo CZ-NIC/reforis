@@ -107,7 +107,7 @@ export default function TestNotification({
                         {SEVERITY_ALERT_MESSAGE}
                     </Alert>
                 )}
-                <div className={`${buttonFormFieldsSize} text-right`}>
+                <div className={`${buttonFormFieldsSize} text-right mb-3`}>
                     <Button
                         forisFormSize
                         loading={postIsSending}

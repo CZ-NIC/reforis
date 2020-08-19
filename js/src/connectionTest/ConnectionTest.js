@@ -27,7 +27,7 @@ export default function ConnectionTest({ ws, type, overview }) {
         triggerTest();
     }
 
-    const insideCard = overview ? "" : "card p-4";
+    const insideCard = overview ? "" : "card p-4 mb-3";
 
     return (
         <div className={insideCard}>
