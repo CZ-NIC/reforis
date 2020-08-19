@@ -22,7 +22,7 @@ export default function DataCollection() {
 }
 
 DataCollectionCard.propTypes = {
-    details: PropTypes.string.isRequired,
+    details: PropTypes.object.isRequired,
 };
 
 function DataCollectionCard({ details: { eula } }) {
