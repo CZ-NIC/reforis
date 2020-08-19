@@ -18,7 +18,9 @@ export default function DHCPClientsList({ clients }) {
         <>
             <h2>{_("DHCP Clients")}</h2>
             {clients.length === 0 ? (
-                <p>{_("No DHCP clients found.")}</p>
+                <p className="text-muted text-center">
+                    {_("No DHCP clients found.")}
+                </p>
             ) : (
                 <div className="table-responsive">
                     <table className="table table-hover">
