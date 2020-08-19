@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -23,7 +23,6 @@ import {
 
 import API_URLs from "common/API";
 
-import CurrentForisPasswordForm from "./CurrentForisPasswordForm";
 import ForisPasswordForm from "./ForisPasswordForm";
 import RootPasswordForm from "./RootPasswordForm";
 
@@ -145,14 +144,6 @@ function PasswordForm({ postCallback, currentPassword }) {
 
     return (
         <div className={formFieldsSize}>
-            <h3>{_("Password Settings")}</h3>
-            {currentPassword.password_set && (
-                <CurrentForisPasswordForm
-                    formData={formState.data}
-                    disabled={isSending}
-                    setFormValue={onFormChangeHandler}
-                />
-            )}
             <ForisPasswordForm
                 formData={formState.data}
                 formErrors={formState.errors}
@@ -160,6 +151,7 @@ function PasswordForm({ postCallback, currentPassword }) {
                 disabled={isSending}
                 setFormValue={onFormChangeHandler}
                 postForisPassword={postForisPassword}
+                passwordSet={currentPassword.password_set}
             />
             {!formState.data.sameForRoot && (
                 <RootPasswordForm
