@@ -3,7 +3,7 @@
 exports[`<NotificationsSettings/> Disabled 1`] = `
 <div>
   <h1>
-    Notifications Settings
+    Notifications
   </h1>
   <div
     class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
@@ -55,7 +55,7 @@ exports[`<NotificationsSettings/> Disabled 1`] = `
 exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
 <div>
   <h1>
-    Notifications Settings
+    Notifications
   </h1>
   <div
     class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
@@ -430,7 +430,7 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
 exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
 <div>
   <h1>
-    Notifications Settings
+    Notifications
   </h1>
   <div
     class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
