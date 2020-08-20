@@ -67,10 +67,6 @@
 }
 
 #sidebar a.dropdown-toggle + ul {
-    background: rgba(0, 0, 0, 0.05);
-}
-
-#sidebar a.dropdown-toggle + ul.show {
     background: rgba(0, 0, 0, 0.16);
 }
 
