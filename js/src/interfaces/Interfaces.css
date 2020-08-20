@@ -26,7 +26,7 @@
 .network .interface {
     display: flex;
     flex-direction: column;
-    margin: 1rem;
+    margin: 0.5rem;
     align-items: center;
     cursor: pointer;
     background: transparent;
@@ -47,7 +47,7 @@
 
 .network .interface-selected svg {
     animation-name: interfaceSelectedFade;
-    animation-duration: .3s;
+    animation-duration: 0.3s;
     -webkit-filter: drop-shadow(0 0 0.5rem #00a2e2);
     filter: drop-shadow(0 0 0.25rem #00a2e2);
 }
