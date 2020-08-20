@@ -6,7 +6,7 @@
  */
 
 import React from "react";
-import { buttonFormFieldSize } from "foris";
+import { buttonFormFieldsSize } from "foris";
 
 import RebootButton from "common/RebootButton";
 
@@ -20,7 +20,7 @@ If you need to reboot the device, click on the following button. The reboot proc
 will be required to log in again after the reboot.
     `)}
             </p>
-            <div className={`${buttonFormFieldSize} text-right`}>
+            <div className={`${buttonFormFieldsSize} text-right`}>
                 <RebootButton forisFormSize />
             </div>
         </>
