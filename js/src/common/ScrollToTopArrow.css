@@ -1,0 +1,37 @@
+/*
+ * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See /LICENSE for more information.
+ */
+
+.scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 8px;
+    align-items: flex-end;
+    font-size: 2.5em;
+    justify-content: center;
+    z-index: 1000;
+    cursor: pointer;
+    animation: fadeIn 0.3s;
+    transition: opacity 0.4s;
+    opacity: 0.5;
+    width: 40px;
+    background-color: black;
+    color: white;
+    border-radius: 3px;
+}
+
+.scrollToTop:hover {
+    opacity: 1;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
