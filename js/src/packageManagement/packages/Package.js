@@ -18,12 +18,21 @@ Package.propTypes = {
     labels: PropTypes.arrayOf(PropTypes.object).isRequired,
     options: PropTypes.array.isRequired,
     index: PropTypes.number.isRequired,
+    url: PropTypes.string,
     setFormValue: PropTypes.func,
     disabled: PropTypes.bool,
 };
 
 export default function Package({
-    title, description, enabled, labels, options, disabled, setFormValue, index,
+    title,
+    description,
+    enabled,
+    labels,
+    options,
+    index,
+    url,
+    setFormValue,
+    disabled,
 }) {
     return (
         <div className="package" key={title}>
@@ -33,20 +42,19 @@ export default function Package({
                 helpText={description}
                 checked={enabled}
                 disabled={disabled}
-
+                url={url}
                 onChange={setFormValue((value) => ({
                     package_lists: { [index]: { enabled: { $set: value } } },
                 }))}
             />
-            {options && options.length > 0
-                ? (
-                    <UserOptions
-                        packageIndex={index}
-                        options={options}
-                        setFormValue={setFormValue}
-                        disabled={disabled || !enabled}
-                    />
-                ) : null}
+            {options && options.length > 0 ? (
+                <UserOptions
+                    packageIndex={index}
+                    options={options}
+                    setFormValue={setFormValue}
+                    disabled={disabled || !enabled}
+                />
+            ) : null}
         </div>
     );
 }

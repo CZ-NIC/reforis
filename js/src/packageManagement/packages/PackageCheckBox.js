@@ -13,6 +13,7 @@ import Labels from "./Labels/Labels";
 PackageCheckBox.propTypes = {
     name: PropTypes.string.isRequired,
     labels: PropTypes.arrayOf(PropTypes.object).isRequired,
+    url: PropTypes.string,
     helpText: PropTypes.string,
     disabled: PropTypes.bool,
 };
@@ -22,7 +23,12 @@ PackageCheckBox.defaultProps = {
 };
 
 export default function PackageCheckBox({
-    name, labels, helpText, disabled, ...props
+    name,
+    labels,
+    url,
+    helpText,
+    disabled,
+    ...props
 }) {
     const uid = useUID();
     return (
@@ -33,14 +39,28 @@ export default function PackageCheckBox({
                     type="checkbox"
                     id={uid}
                     disabled={disabled}
-
                     {...props}
                 />
                 <label className="custom-control-label" htmlFor={uid}>
                     {name}
-                    <Labels labels={labels} disabled={disabled} />
-                    {helpText && <small className="form-text text-muted">{helpText}</small>}
                 </label>
+                {url && (
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={url}
+                        className="ml-1"
+                        title={_("More details")}
+                    >
+                        <sup>
+                            <i className="fas fa-external-link-alt" />
+                        </sup>
+                    </a>
+                )}
+                <Labels labels={labels} disabled={disabled} />
+                {helpText && (
+                    <small className="form-text text-muted">{helpText}</small>
+                )}
             </div>
         </div>
     );
