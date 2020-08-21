@@ -84,7 +84,7 @@ function OverviewCards({ packages, ws }) {
                                         pathname: "/network-settings/wan",
                                     }}
                                     className="text-secondary"
-                                    title="Go to Connection Settings"
+                                    title={_("Go to Connection Settings")}
                                 >
                                     <i className="fas fa-external-link-alt float-right" />
                                 </Link>

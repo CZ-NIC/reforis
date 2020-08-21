@@ -45,7 +45,7 @@ function OpenVPNClientsCard({ clients }) {
                                 pathname: "/openvpn/client-settings",
                             }}
                             className="text-secondary"
-                            title="Go to OpenVPN Client Settings"
+                            title={_("Go to OpenVPN Client Settings")}
                         >
                             <i className="fas fa-external-link-alt float-right" />
                         </Link>

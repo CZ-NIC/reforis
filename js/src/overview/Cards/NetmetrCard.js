@@ -52,7 +52,7 @@ function NetmetrCard({ tests }) {
                                 pathname: "/netmetr/speed-test",
                             }}
                             className="text-secondary"
-                            title="Go to Netmetr"
+                            title={_("Go to Netmetr")}
                         >
                             <i className="fas fa-external-link-alt float-right" />
                         </Link>
