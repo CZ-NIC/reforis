@@ -11,21 +11,24 @@
 @import "styles/navigation.css";
 @import "styles/sidebar.css";
 
-html, body {
+html,
+body {
     height: 100%;
 }
 
 /* Fixing twinks due to scroll bar appearing */
 html {
-    width:100vw;
-    overflow-x:hidden;
+    width: 100vw;
+    overflow-x: hidden;
 }
 
-a, .btn-link {
+a,
+.btn-link {
     color: #00a2e2;
 }
 
-a:hover, .btn-link:hover {
+a:hover,
+.btn-link:hover {
     color: #0056b3;
 }
 
@@ -45,4 +48,8 @@ form > button {
 
 .form-control {
     color: black;
+}
+
+.help {
+    cursor: help;
 }
