@@ -16,7 +16,7 @@ export const HELP_TEXT = _(
 
 DHCPServerForm.propTypes = {
     formData: PropTypes.shape({
-        start: PropTypes.string,
+        start: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
         limit: PropTypes.number,
         lease_time: PropTypes.number,
     }).isRequired,

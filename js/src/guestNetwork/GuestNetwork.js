@@ -24,6 +24,7 @@ import {
 import validateDHCP from "common/network/DHCPValidators";
 import GuestNetworkForm, { validateQoS } from "./GuestNetworkForm";
 import GuestNetworkDHCPClientsList from "./GuestNetworkDHCPClientsList";
+import GuestNetworkNotification from "./GuestNetworkNotification";
 
 GuestNetwork.propTypes = {
     ws: PropTypes.object.isRequired,
@@ -33,6 +34,7 @@ export default function GuestNetwork({ ws }) {
     return (
         <>
             <h1>{_("Guest Network")}</h1>
+            <div id="guest-notification" />
             <p
                 dangerouslySetInnerHTML={{
                     __html: _(`
@@ -55,6 +57,7 @@ in LAN.
             >
                 <GuestNetworkForm />
                 <GuestNetworkDHCPClientsList />
+                <GuestNetworkNotification />
             </ForisForm>
             <div id="dhcp-clients-container" />
         </>
@@ -62,8 +65,6 @@ in LAN.
 }
 
 function prepData(formData) {
-    delete formData.interface_count;
-    delete formData.interface_up_count;
     return formData;
 }
 
@@ -83,13 +84,11 @@ export function prepDataToSubmit(formData) {
 
 export function validator(formData) {
     const errors = {
-        ip:
-            validateRequiredField(formData.ip)
-            || validateIPv4Address(formData.ip),
+        ip: validateRequiredField(formData.ip) || validateIPv4Address(formData.ip),
         netmask:
-            validateRequiredField(formData.netmask)
-            || validateIPv4Address(formData.netmask)
-            || validateNetworkMask(formData.netmask),
+      validateRequiredField(formData.netmask)
+      || validateIPv4Address(formData.netmask)
+      || validateNetworkMask(formData.netmask),
     };
 
     if (formData.qos.enabled) {
