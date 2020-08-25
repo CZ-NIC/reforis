@@ -41,7 +41,6 @@ h4 {
     font-size: 1.3rem;
 }
 
-a,
 .btn-link {
     color: #00a2e2;
 }
@@ -130,4 +129,8 @@ html {
 ::-webkit-scrollbar-thumb {
     background-color: var(--thumbBG);
     border-radius: 6px;
+}
+
+.help {
+    cursor: help;
 }
