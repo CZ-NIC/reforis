@@ -9,7 +9,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import "./GuideControls.css";
-import SkipGuideButton from "./SkipGuideButton";
+import SkipGuideButtonWithRouter from "./SkipGuideButton";
 import NextStepButtonWithRouter from "./NextStepButton";
 import LanguagesDropdown from "../../main/TopBar/languagesDropdown/LanguagesDropdown";
 
@@ -20,9 +20,12 @@ GuideControls.propTypes = {
 
 export default function GuideControls({ ws, next_step }) {
     return (
-        <div className="guide-controls">
-            <LanguagesDropdown ws={ws} className="guide-controls-button btn-primary" />
-            <SkipGuideButton />
+        <div className="guide-controls col-lg-4 col-md-12 col-sm-12 mt-md-2">
+            <LanguagesDropdown
+                ws={ws}
+                className="guide-controls-button btn-light"
+            />
+            <SkipGuideButtonWithRouter />
             <NextStepButtonWithRouter next_step={next_step} />
         </div>
     );

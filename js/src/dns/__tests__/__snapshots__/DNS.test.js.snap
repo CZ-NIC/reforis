@@ -54,7 +54,7 @@ exports[`<DNS/> Test with snapshot forwarding. 1`] = `
           </div>
         </div>
 +       <table
-+         class=\\"table offset-lg-1 col-lg-10\\"
++         class=\\"table col-12\\"
 +       >
 +         <thead>
 +           <tr>
@@ -222,7 +222,7 @@ exports[`<DNS/> Test with snapshot forwarding. 1`] = `
 +         class=\\"text-right\\"
 +       >
 +         <button
-+           class=\\"btn btn-outline-success btn-sm col-sm-12 col-lg-3\\"
++           class=\\"btn btn-outline-success btn mb-3 mb-sm-2 mb-md-0 col-sm-12 col-lg-3\\"
 +           type=\\"button\\"
 +         >
 +             Add custom forwarder
@@ -349,9 +349,9 @@ this is a serious flaw on their side.
       </div>
     </form>
   </div>
-  <h1>
+  <h2>
     Connection Test
-  </h1>
+  </h2>
   <p>
     
 Here you can test your internet connection. This test is also useful when you need to check that your DNS resolving 
@@ -362,17 +362,63 @@ works as expected. Remember to click on the
      if you changed your forwarder setting.
         
   </p>
-  <form>
-    <div
-      class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3 text-right"
-    >
-      <button
-        class="btn btn-primary col-sm-12 col-lg-3"
-        type="submit"
+  <div
+    class="card p-4"
+  >
+    <form>
+      <table
+        class="table table-borderless table-hover col-sm-12"
       >
-          Test connection
-      </button>
-    </div>
-  </form>
+        <tbody>
+          <tr>
+            <th
+              scope="row"
+            >
+              DNS
+            </th>
+            <td
+              class="text-right"
+            >
+              <div
+                class="text-secondary"
+              >
+                <i
+                  class="fas fa-minus"
+                />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th
+              scope="row"
+            >
+              DNSSEC
+            </th>
+            <td
+              class="text-right"
+            >
+              <div
+                class="text-secondary"
+              >
+                <i
+                  class="fas fa-minus"
+                />
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div
+        class="undefined text-right"
+      >
+        <button
+          class="btn btn-primary col-sm-12 col-lg-3"
+          type="submit"
+        >
+            Test connection
+        </button>
+      </div>
+    </form>
+  </div>
 </DocumentFragment>
 `;

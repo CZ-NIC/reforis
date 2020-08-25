@@ -21,7 +21,11 @@ NotificationsDropdownMenu.propTypes = {
     dismissAll: PropTypes.func.isRequired,
 };
 
-export default function NotificationsDropdownMenu({ notifications, dismiss, dismissAll }) {
+export default function NotificationsDropdownMenu({
+    notifications,
+    dismiss,
+    dismissAll,
+}) {
     function getNotifications() {
         if (notifications.length === 0) {
             return (
@@ -31,25 +35,23 @@ export default function NotificationsDropdownMenu({ notifications, dismiss, dism
             );
         }
 
-        return notifications.map(
-            (notification, idx) => (
-                <NotificationsDropdownItem
-                    key={notification.id}
-                    notification={notification}
-                    divider={idx + 1 !== notifications.length} // Don't show last divider
-
-                    dismiss={() => dismiss(notification.id)}
-                />
-            ),
-        );
+        return notifications.map((notification, idx) => (
+            <NotificationsDropdownItem
+                key={notification.id}
+                notification={notification}
+                divider={idx + 1 !== notifications.length} // Don't show last divider
+                dismiss={() => dismiss(notification.id)}
+            />
+        ));
     }
 
-    const footer = notifications.length !== 0
-        ? <NotificationsDropdownFooter dismissAll={dismissAll} />
-        : null;
+    const footer =
+        notifications.length !== 0 ? (
+            <NotificationsDropdownFooter dismissAll={dismissAll} />
+        ) : null;
 
     return (
-        <div className="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
+        <div className="dropdown-menu dropdown-menu-right">
             <NotificationsDropdownHeader />
             <div className="scrollable-menu">{getNotifications()}</div>
             {footer}
@@ -61,10 +63,18 @@ function NotificationsDropdownHeader() {
     return (
         <>
             <div id="notifications-header" className="dropdown-header">
-                <Link to={ForisURLs.notifications}>
+                <Link
+                    to={{
+                        pathname: ForisURLs.overview,
+                        hash: `#notifications`,
+                    }}
+                >
                     <h5>{_("Notifications")}</h5>
                 </Link>
-                <Link to={ForisURLs.notificationsSettings} className="btn btn-link">
+                <Link
+                    to={ForisURLs.notificationsSettings}
+                    className="btn btn-link"
+                >
                     <i className="fas fa-cog fa-fw" />
                 </Link>
             </div>

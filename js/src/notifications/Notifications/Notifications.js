@@ -5,7 +5,7 @@
  * See /LICENSE for more information.
  */
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 import { Spinner } from "foris";
@@ -22,8 +22,12 @@ Notifications.propTypes = {
 };
 
 function Notifications({ ws, history }) {
-    const [notifications, dismiss, dismissAll, isLoading] = useNotifications(ws);
+    const [notifications, dismiss, dismissAll, isLoading] = useNotifications(
+        ws
+    );
     const [currentNotification, setCurrentNotification] = useState();
+
+    const [notificationSection, setNotificationSection] = useState();
 
     function getIDFromSearch(search) {
         const params = new URLSearchParams(search);
@@ -34,39 +38,58 @@ function Notifications({ ws, history }) {
         // Set initial notification
         setCurrentNotification(getIDFromSearch(window.location.search));
         // Listen to changes
-        return history.listen(
-            (location) => {
-                setCurrentNotification(getIDFromSearch(location.search));
-            },
-        );
+        return history.listen((location) => {
+            setCurrentNotification(getIDFromSearch(location.search));
+        });
     }, [history, setCurrentNotification]);
 
+    const notificationSectionRef = useRef(null);
+
+    useEffect(() => {
+        setNotificationSection(window.location.hash);
+
+        if (notificationSection && notificationSectionRef.current) {
+            notificationSectionRef.current.scrollIntoView({
+                block: "start",
+                behavior: "smooth",
+            });
+        }
+        return history.listen((location) => {
+            setNotificationSection(location.hash);
+        });
+    }, [notificationSection, history]);
+
     let componentContent;
+    const dismissableNotificationsCount = notifications.filter(
+        (notification) => !NOT_DISMISSABLE.includes(notification.severity)
+    ).length;
+
     if (isLoading) {
         componentContent = <Spinner />;
     } else if (notifications.length === 0) {
-        componentContent = <p className="text-muted text-center">{_("No notifications")}</p>;
-    } else {
-        const dismissableNotificationsCount = notifications
-            .filter((notification) => !NOT_DISMISSABLE.includes(notification.severity))
-            .length;
         componentContent = (
-            <>
-                { dismissableNotificationsCount > 0 && <DismissAllButton dismissAll={dismissAll} />}
-                <NotificationsList
-                    currentNotification={currentNotification}
-                    notifications={notifications}
-                    dismiss={dismiss}
-                />
-            </>
+            <p className="text-muted text-center">{_("No notifications")}</p>
+        );
+    } else {
+        componentContent = (
+            <NotificationsList
+                currentNotification={currentNotification}
+                notifications={notifications}
+                dismiss={dismiss}
+            />
         );
     }
 
     return (
-        <div id="notifications-center">
-            <h1>{_("Notifications")}</h1>
-            {componentContent}
-        </div>
+        <>
+            <h2 ref={notificationSectionRef}>
+                {_("Notifications")}
+                {dismissableNotificationsCount > 0 && (
+                    <DismissAllButton dismissAll={dismissAll} />
+                )}
+            </h2>
+            <div id="notifications-center">{componentContent}</div>
+        </>
     );
 }
 

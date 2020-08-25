@@ -29,8 +29,9 @@ export default function DNS({ ws, postCallback }) {
     return (
         <>
             <h1>DNS</h1>
-            <p dangerouslySetInnerHTML={{
-                __html: _(`
+            <p
+                dangerouslySetInnerHTML={{
+                    __html: _(`
 Router Turris uses its own DNS resolver with DNSSEC support. It is capable of working independently or it
 can forward your DNS queries your internet service provider's DNS resolver.
 <br/><br/>
@@ -44,7 +45,7 @@ of the problem. However, keep in mind that without DNSSEC validation, you are vu
 attacks! Therefore we <b>recommend keeping DNSSEC turned on</b> and resolving the situation with your ISP as
 this is a serious flaw on their side.
             `),
-            }}
+                }}
             />
             <ForisForm
                 ws={ws}
@@ -60,7 +61,7 @@ this is a serious flaw on their side.
                 <DNSForm ws={ws} />
             </ForisForm>
 
-            <h1>{_("Connection Test")}</h1>
+            <h2>{_("Connection Test")}</h2>
             <p
                 dangerouslySetInnerHTML={{
                     __html: _(`
@@ -77,7 +78,9 @@ works as expected. Remember to click on the <b>Save button</b> if you changed yo
 function validator(formData) {
     const error = {};
     if (formData.dns_from_dhcp_enabled) {
-        error.dns_from_dhcp_domain = validateDomain(formData.dns_from_dhcp_domain);
+        error.dns_from_dhcp_domain = validateDomain(
+            formData.dns_from_dhcp_domain
+        );
     }
     return error.dns_from_dhcp_domain ? error : undefined;
 }

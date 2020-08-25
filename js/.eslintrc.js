@@ -1,3 +1,3 @@
 module.exports = {
-    "extends": "eslint-config-reforis",
+    extends: ["eslint-config-reforis", "prettier"],
 };

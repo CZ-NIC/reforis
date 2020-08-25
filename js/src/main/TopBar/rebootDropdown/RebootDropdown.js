@@ -22,24 +22,43 @@ RebootDropdown.propTypes = {
 export default function RebootDropdown({ ws }) {
     const [notifications] = useNotifications(ws);
 
-    const rebootNotification = notifications.find((notification) => notification.severity === "restart");
+    const rebootNotification = notifications.find(
+        (notification) => notification.severity === "restart"
+    );
     if (!rebootNotification) {
         return null;
     }
 
     return (
         <div className="dropdown">
-            <button type="button" id="reboot-dropdown-toggle" className="nav-item btn btn-link">
+            <button
+                type="button"
+                id="reboot-dropdown-toggle"
+                className="nav-item btn btn-link"
+            >
                 <i className="fas fa-power-off fa-lg" />
             </button>
-            <div className="dropdown-menu">
+            <div className="dropdown-menu dropdown-menu-right">
                 <div className="dropdown-header">
-                    <h5>{_("Reboot Required")}</h5>
+                    <Link
+                        to={{
+                            pathname: ForisURLs.rebootPage,
+                        }}
+                    >
+                        <h5>{_("Reboot Required")}</h5>
+                    </Link>
                 </div>
                 <div className="dropdown-divider" />
                 <div className="dropdown-item">
-                    <Link to={{ pathname: ForisURLs.notifications, search: `?id=${rebootNotification.id}` }}>
-                        <button type="button" className="btn btn-primary mr-3">{_("Details")}</button>
+                    <Link
+                        to={{
+                            pathname: ForisURLs.overview,
+                            search: `?id=${rebootNotification.id}`,
+                        }}
+                    >
+                        <button type="button" className="btn btn-primary mr-3">
+                            {_("Details")}
+                        </button>
                     </Link>
                     <RebootButton />
                 </div>

@@ -27,7 +27,7 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
 +         class=\\"text-muted\\"
 +       >
 +         <div
-            class=\\"container mb-3\\"
+            class=\\"container-fluid mb-3\\"
           >
             <div
               class=\\"row justify-content-start\\"
@@ -197,7 +197,7 @@ exports[`<Packages/> Should render: updates enabled. 1`] = `
   >
     <form>
       <div
-        class="container mb-3"
+        class="container-fluid mb-3"
       >
         <div
           class="row justify-content-start"

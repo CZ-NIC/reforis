@@ -13,9 +13,11 @@ import Package from "./Package";
 
 PackagesForm.propTypes = {
     formData: PropTypes.shape({
-        package_lists: PropTypes.arrayOf(PropTypes.shape({
-            title: PropTypes.string.isRequired,
-        })),
+        package_lists: PropTypes.arrayOf(
+            PropTypes.shape({
+                title: PropTypes.string.isRequired,
+            })
+        ),
     }),
     setFormValue: PropTypes.func,
     disabled: PropTypes.bool,
@@ -24,20 +26,18 @@ PackagesForm.propTypes = {
 export default function PackagesForm({ formData, setFormValue, disabled }) {
     return (
         <>
-            <h3>{_("Packages List")}</h3>
-            <div className="container">
+            <h2>{_("Packages List")}</h2>
+            <div className="container-fluid">
                 <div className="packages-list">
-                    {formData.package_lists.map(
-                        (_package, index) => (
-                            <Package
-                                {..._package}
-                                index={index}
-                                setFormValue={setFormValue}
-                                disabled={disabled}
-                                key={_package.title}
-                            />
-                        ),
-                    )}
+                    {formData.package_lists.map((_package, index) => (
+                        <Package
+                            {..._package}
+                            index={index}
+                            setFormValue={setFormValue}
+                            disabled={disabled}
+                            key={_package.title}
+                        />
+                    ))}
                 </div>
             </div>
         </>

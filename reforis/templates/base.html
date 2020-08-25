@@ -1,39 +1,48 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ locale }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='reforis/imgs/favicon.ico') }}">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link
+            rel="shortcut icon"
+            href="{{ url_for('static', filename='reforis/imgs/favicon.ico') }}"
+        />
 
-    {# CSS #}
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'reforis/css/app.css') }}"/>
+        {# CSS #}
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename = 'reforis/css/app.css') }}"
+        />
 
-    {# JS #}
-    {% include 'includes/locale.html' %}
-    {% include 'includes/plugins.html' %}
-    <script type="text/javascript" src="{{ url_for('static', filename = 'reforis/js/app.min.js') }}"></script>
-    {% block js %}{% endblock %}
+        {# JS #} {% include 'includes/locale.html' %} {% include
+        'includes/plugins.html' %}
+        <script
+            type="text/javascript"
+            src="{{ url_for('static', filename = 'reforis/js/app.min.js') }}"
+        ></script>
+        {% block js %}{% endblock %}
 
-    <title>{% block title %}{% endblock %} - Foris</title>
-</head>
+        <title>{% block title %}{% endblock %} - Foris</title>
+    </head>
 
-<body>
-<div id="app-container"></div>
-<div class="wrapper {% block wrapper_class %}{% endblock %}">
-    {% block navigation %}{% include "includes/navigation.html" %}{% endblock %}
-    <div id="content">
-        <div class="col-lg-8 col-sm-12">
-            {% include "includes/top-bar.html" %}
-            <div id="alert-container" class="mt-3"></div>
-            {% block content %}{% endblock %}
+    <body>
+        <div id="app-container"></div>
+        <div class="wrapper {% block wrapper_class %}{% endblock %}">
+            {% block navigation %}{% include "includes/navigation.html" %}{%
+            endblock %}
+            <div id="content">
+                <div class="col-lg-12 col-sm-12">
+                    <div id="alert-container" class="ml-3 mr-3"></div>
+                    {% include "includes/top-bar.html" %} {% block content %}{%
+                    endblock %}
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
-{# Helpers #}
-<div id="router-state-handler"></div>
-<div id="modal-container"></div>
-
-</body>
+        {# Helpers #}
+        <div id="router-state-handler"></div>
+        <div id="scroll-to-top"></div>
+        <div id="modal-container"></div>
+    </body>
 </html>

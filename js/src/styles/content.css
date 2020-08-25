@@ -16,6 +16,7 @@
     flex: 5;
     flex-direction: column;
     padding: 2em;
+    padding-left: calc(312.2px + 2em);
     height: 100%;
 }
 
@@ -38,6 +39,12 @@
     }
 }
 
+@media screen and (max-width: 768px) {
+    #content {
+        padding-left: 2em;
+    }
+}
+
 @media screen and (max-width: 480px) {
     #content {
         padding: 1rem 0 0 0;
@@ -48,5 +55,9 @@
     position: sticky;
     top: 1rem;
     /* Just above bootstrap's defaults */
-    z-index: 4;
+    z-index: 1004;
+}
+
+#alert-container .alert {
+    margin-bottom: 0;
 }

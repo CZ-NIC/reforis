@@ -7,18 +7,19 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import { formFieldsSize } from "foris";
+import { buttonFormFieldsSize } from "foris";
 
-import useConnectionTest, { TEST_STATES } from "./hooks";
+import useConnectionTest from "./hooks";
 import ConnectionTestResults from "./ConnectionTestResult";
 import ConnectionTestButton from "./ConnectionTestButton";
 
 ConnectionTest.propTypes = {
     ws: PropTypes.object.isRequired,
     type: PropTypes.oneOf(["wan", "dns"]).isRequired,
+    overview: PropTypes.bool,
 };
 
-export default function ConnectionTest({ ws, type }) {
+export default function ConnectionTest({ ws, type, overview }) {
     const [state, testResults, triggerTest] = useConnectionTest(ws, type);
 
     function onSubmit(e) {
@@ -26,13 +27,20 @@ export default function ConnectionTest({ ws, type }) {
         triggerTest();
     }
 
+    const insideCard = overview ? "" : "card p-4";
+
     return (
-        <form onSubmit={onSubmit}>
-            {state !== TEST_STATES.NOT_RUNNING
-                && <ConnectionTestResults {...testResults} />}
-            <div className={`${formFieldsSize} text-right`}>
-                <ConnectionTestButton state={state} />
-            </div>
-        </form>
+        <div className={insideCard}>
+            <form>
+                <ConnectionTestResults state={state} {...testResults} />
+                <div className={`${buttonFormFieldsSize} text-right`}>
+                    <ConnectionTestButton
+                        state={state}
+                        onClick={onSubmit}
+                        overview={overview}
+                    />
+                </div>
+            </form>
+        </div>
     );
 }

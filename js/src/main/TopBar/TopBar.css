@@ -5,13 +5,25 @@
  * See /LICENSE for more information.
  */
 
-#top-bar, #top-bar-container {
+#top-bar,
+#top-bar-container {
     display: flex;
     justify-content: flex-end;
 }
 
+#top-bar-container button.nav-item:hover {
+    cursor: default;
+}
+
+#top-bar-container button.nav-item:hover:last-child {
+    cursor: pointer;
+}
+
 #top-bar {
     align-items: center;
+    position: absolute;
+    right: 30px;
+    z-index: 1000;
 }
 
 #top-bar-container {
@@ -27,6 +39,12 @@
 @media (max-width: 768px) {
     #top-bar {
         justify-content: center;
+        position: initial;
+        margin-bottom: 1rem;
+    }
+    #content-container h1:first-child {
+        margin-top: 3.1rem;
+        margin-bottom: 0.5rem;
     }
 }
 
@@ -35,12 +53,13 @@
     color: #00a2e2;
 }
 
-#top-bar .dropdown-header, #top-bar .dropdown-header a {
+#top-bar .dropdown-header,
+#top-bar .dropdown-header a {
     color: #333333;
 }
 
 #top-bar .dropdown-header h5 {
-    margin-bottom: 0
+    margin-bottom: 0;
 }
 
 #top-bar .dropdown:hover .dropdown-menu {

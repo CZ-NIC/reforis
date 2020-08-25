@@ -1,31 +1,24 @@
-{% extends 'base.html' %}
-
-{% block js %}
-    <script type="text/javascript">
-        ForisTranslations.load({{ babel_tzinfo_catalog | safe }});
-    </script>
-{% endblock %}
-
-{% block css %}
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'reforis/css/guide.css') }}"/>
-{% endblock %}
-
-{% block title %}
-    {% trans %}Guide{% endtrans %}
-{% endblock %}
-
+{% extends 'base.html' %} {% block js %}
+<script type="text/javascript">
+    ForisTranslations.load({{ babel_tzinfo_catalog | safe }});
+</script>
+{% endblock %} {% block css %}
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename = 'reforis/css/guide.css') }}"
+/>
+{% endblock %} {% block title %} {% trans %}Guide{% endtrans %} {% endblock %}
 {% block navigation %}
-    <nav id="stepsbar">
-        <div id="stepsbar-header">
-            <img class="card-img-top" src="{{ url_for('static', filename = 'reforis/imgs/logo-turris.svg') }}">
-            <p>reForis{% if version is defined %} version {{ version }}{% endif %}</p>
-        </div>
-        <div id="guide-nav-container"></div>
-    </nav>
-{% endblock %}
-
-{% block wrapper_class %}wrapper-guide{% endblock %}
-
-{% block content %}
-    <div id="guide-container"></div>
+<nav id="stepsbar">
+    <div id="stepsbar-header">
+        <img
+            src="{{ url_for('static', filename = 'reforis/imgs/logo-turris-white.svg') }}"
+            alt="Turris Logo"
+        />
+    </div>
+    <div id="guide-nav-container"></div>
+</nav>
+{% endblock %} {% block wrapper_class %}wrapper-guide{% endblock %} {% block
+content %}
+<div id="guide-container" class="col-lg-8 offset-lg-2 col-sm-12"></div>
 {% endblock content %}

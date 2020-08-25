@@ -35,7 +35,7 @@ setuptools.setup(
 
     description='The reForis, redesigned Foris router configuration web interface.',
     long_description='',
-    url='https://gitlab.labs.nic.cz/turris/reforis/reforis',
+    url='https://gitlab.nic.cz/turris/reforis/reforis',
     author='CZ.NIC, z. s. p. o.',
     author_email='bogdan.bodnar@nic.cz',
 
@@ -52,7 +52,7 @@ setuptools.setup(
         'reforis_distutils',
     ],
     dependency_links=[
-        "git+https://gitlab.labs.nic.cz/turris/reforis/reforis-distutils.git#egg=reforis-distutils",
+        'git+https://gitlab.nic.cz/turris/reforis/reforis-distutils.git#egg=reforis-distutils',
     ],
 
     # Do not use test_require or build_require, because then it's not installed and is
@@ -67,7 +67,7 @@ setuptools.setup(
             'pycodestyle==2.5.0',
             'pylint==2.3.1',
             'pylint-quotes==0.2.1',
-            'foris-client @ git+https://gitlab.labs.nic.cz/turris/foris-controller/foris-client@master#egg=foris-client',
+            'foris-client @ git+https://gitlab.nic.cz/turris/foris-controller/foris-client@master#egg=foris-client',
             'paho-mqtt==1.5.0',
         ],
         'build': [

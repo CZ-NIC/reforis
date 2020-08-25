@@ -1,4 +1,5 @@
 import os
+import pkg_resources
 
 from flask import current_app, jsonify
 
@@ -11,6 +12,9 @@ def about():
     """
     data = current_app.backend.perform('about', 'get')
     data['serial'] = int(data['serial'], 16)
+    # additional reforis version info
+    dist = pkg_resources.get_distribution('reforis')
+    data['reforis_version'] = dist.version if dist else 'Unknown'
     return jsonify(data)
 
 

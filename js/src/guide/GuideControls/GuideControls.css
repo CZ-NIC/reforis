@@ -8,8 +8,8 @@
 .guide-controls {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    margin-bottom: 1rem;
+    justify-content: center;
+    align-items: center;
 }
 
 .guide-controls-button {
@@ -18,6 +18,10 @@
     align-items: center;
     justify-content: center;
     margin-right: 1rem;
+}
+
+.guide-controls-button:last-child {
+    margin-right: 0;
 }
 
 .dropdown:hover .dropdown-menu {

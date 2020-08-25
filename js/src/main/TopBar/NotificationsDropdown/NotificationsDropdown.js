@@ -21,7 +21,7 @@ export default function NotificationsDropdown({ ws }) {
     const [notifications, dismiss, dismissAll, isLoading] = useNotifications(ws);
     const newNotification = useNewNotification(ws);
     return (
-        <div id="notifications" className="dropdown btn-group">
+        <div id="notifications" className="dropdown">
             <NotificationsDropdownButton
                 notificationsCount={notifications.length}
                 newNotification={newNotification}

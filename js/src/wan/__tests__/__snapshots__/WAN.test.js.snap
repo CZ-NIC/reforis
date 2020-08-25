@@ -78,9 +78,9 @@ exports[`<WAN/> Snapshot WAN IPv4 (pppoe). 1`] = `
 +           This field is required.
 +         </div>
 +       </div>
-        <h3>
+        <h2>
           WAN IPv6
-        </h3>
+        </h2>
         <div
           class=\\"form-group\\"
 @@ -141,10 +180,11 @@
@@ -231,9 +231,9 @@ exports[`<WAN/> Snapshot WAN IPv4 (static). 1`] = `
 +           DNS server address is not required as the built-in DNS resolver is capable of working without it.
           </small>
         </div>
-        <h3>
+        <h2>
           WAN IPv6
-        </h3>
+        </h2>
 @@ -141,10 +240,11 @@
         <div
           class=\\"text-right\\"
@@ -349,9 +349,9 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled. 1`] = `
 +           Key which will be used to provide credentials to your tunnel provider.
 +         </small>
 +       </div>
-        <h3>
+        <h2>
           MAC
-        </h3>
+        </h2>
         <div
           class=\\"form-group\\""
 `;
@@ -500,9 +500,9 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
 +           </label>
 +         </div>
 +       </div>
-        <h3>
+        <h2>
           MAC
-        </h3>
+        </h2>
         <div
           class=\\"form-group\\"
 @@ -141,10 +274,11 @@
@@ -560,9 +560,9 @@ exports[`<WAN/> Snapshot WAN IPv6 (6to4). 1`] = `
 +           In order to use 6to4 protocol, you might need to specify your public IPv4 address manually (e.g. when your WAN interface has a private address which is mapped to public IP).
 +         </small>
 +       </div>
-        <h3>
+        <h2>
           MAC
-        </h3>
+        </h2>
         <div
           class=\\"form-group\\"
 @@ -141,10 +171,11 @@
@@ -614,9 +614,9 @@ exports[`<WAN/> Snapshot WAN IPv6 (dhcpv6). 1`] = `
 +           DUID which will be provided to the DHCPv6 server.
 +         </small>
 +       </div>
-        <h3>
+        <h2>
           MAC
-        </h3>
+        </h2>
         <div
           class=\\"form-group\\""
 `;
@@ -765,9 +765,9 @@ exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
 +           DNS server address is not required as the built-in DNS resolver is capable of working without it.
 +         </small>
 +       </div>
-        <h3>
+        <h2>
           MAC
-        </h3>
+        </h2>
         <div
           class=\\"form-group\\"
 @@ -141,10 +274,11 @@
@@ -853,9 +853,9 @@ router to the network, it is usually not necessary to change this setting.
     class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
   >
     <form>
-      <h3>
+      <h2>
         WAN IPv4
-      </h3>
+      </h2>
       <div
         class="form-group"
       >
@@ -909,9 +909,9 @@ router to the network, it is usually not necessary to change this setting.
           Hostname which will be provided to DHCP server.
         </small>
       </div>
-      <h3>
+      <h2>
         WAN IPv6
-      </h3>
+      </h2>
       <div
         class="form-group"
       >
@@ -951,9 +951,9 @@ router to the network, it is usually not necessary to change this setting.
           </option>
         </select>
       </div>
-      <h3>
+      <h2>
         MAC
-      </h3>
+      </h2>
       <div
         class="form-group"
       >
@@ -990,9 +990,9 @@ router to the network, it is usually not necessary to change this setting.
       </div>
     </form>
   </div>
-  <h1>
+  <h2>
     Connection Test
-  </h1>
+  </h2>
   <p>
     
 Here you can test you connection settings. Remember to click on the 
@@ -1004,17 +1004,99 @@ Note that sometimes it takes a while before the connection is fully initialized.
 wait for a while before running this test.
         
   </p>
-  <form>
-    <div
-      class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3 text-right"
-    >
-      <button
-        class="btn btn-primary col-sm-12 col-lg-3"
-        type="submit"
+  <div
+    class="card p-4"
+  >
+    <form>
+      <table
+        class="table table-borderless table-hover col-sm-12"
       >
-          Test connection
-      </button>
-    </div>
-  </form>
+        <tbody>
+          <tr>
+            <th
+              scope="row"
+            >
+              IPv4 connectivity
+            </th>
+            <td
+              class="text-right"
+            >
+              <div
+                class="text-secondary"
+              >
+                <i
+                  class="fas fa-minus"
+                />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th
+              scope="row"
+            >
+              IPv4 gateway connectivity
+            </th>
+            <td
+              class="text-right"
+            >
+              <div
+                class="text-secondary"
+              >
+                <i
+                  class="fas fa-minus"
+                />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th
+              scope="row"
+            >
+              IPv6 connectivity
+            </th>
+            <td
+              class="text-right"
+            >
+              <div
+                class="text-secondary"
+              >
+                <i
+                  class="fas fa-minus"
+                />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th
+              scope="row"
+            >
+              IPv6 gateway connectivity
+            </th>
+            <td
+              class="text-right"
+            >
+              <div
+                class="text-secondary"
+              >
+                <i
+                  class="fas fa-minus"
+                />
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div
+        class="undefined text-right"
+      >
+        <button
+          class="btn btn-primary col-sm-12 col-lg-3"
+          type="submit"
+        >
+            Test connection
+        </button>
+      </div>
+    </form>
+  </div>
 </DocumentFragment>
 `;

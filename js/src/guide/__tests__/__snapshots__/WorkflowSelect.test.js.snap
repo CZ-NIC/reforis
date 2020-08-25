@@ -9,14 +9,15 @@ exports[`<WorkflowSelect/> Snapshot. 1`] = `
     Here you can set the guide walkthrough which will guide you through the basic configuration of your device.
   </p>
   <div
+    class="card p-4 text-center"
     id="workflow-selector"
   >
     <div
       class="workflow"
     >
-      <h3>
+      <h2>
         Router
-      </h3>
+      </h2>
       <button
         class="btn btn-outline-secondary"
         type="button"
@@ -33,9 +34,9 @@ exports[`<WorkflowSelect/> Snapshot. 1`] = `
     <div
       class="workflow"
     >
-      <h3>
+      <h2>
         Minimal
-      </h3>
+      </h2>
       <button
         class="btn btn-outline-secondary"
         type="button"
@@ -52,9 +53,9 @@ exports[`<WorkflowSelect/> Snapshot. 1`] = `
     <div
       class="workflow"
     >
-      <h3>
+      <h2>
         Local Server
-      </h3>
+      </h2>
       <button
         class="btn btn-outline-secondary"
         type="button"

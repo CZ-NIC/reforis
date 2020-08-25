@@ -48,7 +48,8 @@ export default function RegionForm({ formData, setFormValue, disabled }) {
 
     function getCityChoices() {
         const countries = TIMEZONES[formData.region];
-        const cities = countries[formData.country] || countries[Object.keys(countries)[0]];
+        const cities =
+            countries[formData.country] || countries[Object.keys(countries)[0]];
         return Object.keys(cities)
             .sort()
             .reduce((obj, city) => {
@@ -59,51 +60,46 @@ export default function RegionForm({ formData, setFormValue, disabled }) {
 
     return (
         <>
-            <h4>{_("Region Settings")}</h4>
+            <h2>{_("Region Settings")}</h2>
             <p>
-                {_("Please select the timezone the router is being operated in. Correct setting is required to display "
-            + "the right time and for related functions.")}
+                {_(
+                    "Please select the timezone the router is being operated in. Correct setting is required to display " +
+                        "the right time and for related functions."
+                )}
             </p>
             <Select
                 choices={getRegionChoices()}
                 label={_("Continent or ocean")}
                 value={formData.region}
                 disabled={disabled}
-
-                onChange={setFormValue(
-                    (value) => {
-                        const country = Object.keys(TIMEZONES[value])[0];
-                        const city = Object.keys(TIMEZONES[value][country])[0];
-                        return {
-                            region: { $set: value },
-                            country: { $set: country },
-                            city: { $set: city },
-                        };
-                    },
-                )}
+                onChange={setFormValue((value) => {
+                    const country = Object.keys(TIMEZONES[value])[0];
+                    const city = Object.keys(TIMEZONES[value][country])[0];
+                    return {
+                        region: { $set: value },
+                        country: { $set: country },
+                        city: { $set: city },
+                    };
+                })}
             />
             <Select
                 choices={getCountryChoices()}
                 label={_("Country")}
                 value={formData.country || ""}
                 disabled={disabled}
-
-                onChange={setFormValue(
-                    (value) => ({
-                        country: { $set: value },
-                        city: { $set: Object.keys(TIMEZONES[formData.region][value])[0] },
-                    }),
-                )}
+                onChange={setFormValue((value) => ({
+                    country: { $set: value },
+                    city: {
+                        $set: Object.keys(TIMEZONES[formData.region][value])[0],
+                    },
+                }))}
             />
             <Select
                 choices={getCityChoices()}
                 label={_("Timezone")}
                 value={formData.city || ""}
                 disabled={disabled}
-
-                onChange={setFormValue(
-                    (value) => ({ city: { $set: value } }),
-                )}
+                onChange={setFormValue((value) => ({ city: { $set: value } }))}
             />
         </>
     );

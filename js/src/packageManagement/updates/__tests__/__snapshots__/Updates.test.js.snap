@@ -27,10 +27,10 @@ exports[`<Updates/> should display spinner while check is pending 1`] = `
   </h1>
   Manually check for updates and install them immediately.
   <div
-    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3 text-right"
+    class="undefined text-right"
   >
     <button
-      class="btn btn-primary mb-3 col-sm-12 col-lg-3"
+      class="btn btn-primary mt-3 mt-lg-0 mb-4 col-sm-12 col-lg-3"
       disabled=""
       type="button"
     >
@@ -61,10 +61,10 @@ exports[`<Updates/> should display spinner while check is pending 2`] = `
   </h1>
   Manually check for updates and install them immediately.
   <div
-    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3 text-right"
+    class="undefined text-right"
   >
     <button
-      class="btn btn-primary mb-3 col-sm-12 col-lg-3"
+      class="btn btn-primary mt-3 mt-lg-0 mb-4 col-sm-12 col-lg-3"
       disabled=""
       type="button"
     >
@@ -95,10 +95,10 @@ exports[`<Updates/> should handle approvable updates 1`] = `
   </h1>
   Manually check for updates and review them immediately.
   <div
-    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3 text-right"
+    class="undefined text-right"
   >
     <button
-      class="btn btn-primary mb-3 col-sm-12 col-lg-3"
+      class="btn btn-primary mt-3 mt-lg-0 mb-4 col-sm-12 col-lg-3"
       type="button"
     >
        
@@ -107,7 +107,7 @@ exports[`<Updates/> should handle approvable updates 1`] = `
     </button>
   </div>
   <div
-    class="mt-4"
+    class="card p-4 mb-4"
   >
     <h3>
       Approve Update From %s
@@ -129,69 +129,75 @@ exports[`<Updates/> should handle approvable updates 1`] = `
       data-testid="plan-wrapper"
       id="plan-wrapper"
     >
-      <table
-        class="table table-hover"
+      <div
+        class="table-responsive"
       >
-        <thead>
-          <tr>
-            <th
-              scope="col"
-            >
-              Action
-            </th>
-            <th
-              scope="col"
-            >
-              Name
-            </th>
-            <th
-              scope="col"
-            >
-              Current
-            </th>
-            <th
-              scope="col"
-            >
-              New
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              install
-            </td>
-            <td>
-              PACKAGE
-            </td>
-            <td>
-              1.0
-            </td>
-            <td>
-              2.0
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        <table
+          class="table table-hover"
+        >
+          <thead>
+            <tr>
+              <th
+                scope="col"
+              >
+                Action
+              </th>
+              <th
+                scope="col"
+              >
+                Name
+              </th>
+              <th
+                scope="col"
+              >
+                Current
+              </th>
+              <th
+                scope="col"
+              >
+                New
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                install
+              </td>
+              <td>
+                PACKAGE
+              </td>
+              <td>
+                1.0
+              </td>
+              <td>
+                2.0
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-    <button
-      class="btn btn-warning offset-lg-1 col-lg-4 col-sm-12"
-      style="margin-bottom: 1rem;"
-      type="button"
+    <div
+      class="row justify-content-around"
     >
-       
-       
-      Ignore
-    </button>
-    <button
-      class="btn btn-primary col-sm-12 col-lg-4 offset-lg-2 col-lg-3"
-      style="margin-bottom: 1rem;"
-      type="button"
-    >
-       
-       
-      Install now
-    </button>
+      <button
+        class="btn btn-primary col-sm-12 col-md-5 col-lg-3 mt-3 mt-lg-0"
+        type="button"
+      >
+         
+         
+        Install now
+      </button>
+      <button
+        class="btn btn-warning col-sm-12 col-md-5 col-lg-3 mt-3 mt-lg-0"
+        type="button"
+      >
+         
+         
+        Ignore
+      </button>
+    </div>
   </div>
 </div>
 `;
@@ -203,10 +209,10 @@ exports[`<Updates/> should handle automatic updates (no delays/approvals) 1`] = 
   </h1>
   Manually check for updates and install them immediately.
   <div
-    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3 text-right"
+    class="undefined text-right"
   >
     <button
-      class="btn btn-primary mb-3 col-sm-12 col-lg-3"
+      class="btn btn-primary mt-3 mt-lg-0 mb-4 col-sm-12 col-lg-3"
       type="button"
     >
        

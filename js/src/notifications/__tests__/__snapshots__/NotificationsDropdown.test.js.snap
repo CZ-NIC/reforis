@@ -3,7 +3,7 @@
 exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
 <div>
   <div
-    class="dropdown btn-group"
+    class="dropdown"
     id="notifications"
   >
     <button
@@ -30,14 +30,14 @@ exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
       </span>
     </button>
     <div
-      class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left"
+      class="dropdown-menu dropdown-menu-right"
     >
       <div
         class="dropdown-header"
         id="notifications-header"
       >
         <a
-          href="/notifications"
+          href="/#notifications"
         >
           <h5>
             Notifications
@@ -68,7 +68,7 @@ exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
             class="notifications-info"
           >
             <a
-              href="/notifications?id=123-123"
+              href="/?id=123-123"
             >
               <small
                 class="text-muted"
@@ -102,7 +102,7 @@ exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
             class="notifications-info"
           >
             <a
-              href="/notifications?id=123-124"
+              href="/?id=123-124"
             >
               <small
                 class="text-muted"
@@ -136,7 +136,7 @@ exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
             class="notifications-info"
           >
             <a
-              href="/notifications?id=808-909"
+              href="/?id=808-909"
             >
               <small
                 class="text-muted"
@@ -148,6 +148,14 @@ exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
               </p>
             </a>
           </div>
+          <button
+            class="btn btn-link dismiss invisible"
+            type="button"
+          >
+            <i
+              class="fas fa-times"
+            />
+          </button>
         </div>
       </div>
       <div

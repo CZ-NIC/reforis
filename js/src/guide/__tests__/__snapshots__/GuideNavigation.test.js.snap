@@ -11,7 +11,7 @@ exports[`<GuideNavigation/> Snapshot. 1`] = `
         href="/password"
       >
         <i
-          class="fas fa-arrow-right mr-2"
+          class="fas fa-angle-right mr-2"
         />
         Password
       </a>
@@ -22,7 +22,7 @@ exports[`<GuideNavigation/> Snapshot. 1`] = `
         href="/profile"
       >
         <i
-          class="fas fa-arrow-right mr-2"
+          class="fas fa-angle-right mr-2"
         />
         Workflow
       </a>
@@ -33,7 +33,7 @@ exports[`<GuideNavigation/> Snapshot. 1`] = `
         href="/networks"
       >
         <i
-          class="fas fa-arrow-right mr-2"
+          class="fas fa-angle-right mr-2"
         />
         Interfaces
       </a>
@@ -41,7 +41,7 @@ exports[`<GuideNavigation/> Snapshot. 1`] = `
     <li>
       <a>
         <i
-          class="fas fa-arrow-right mr-2"
+          class="fas fa-angle-right mr-2"
         />
         WAN
       </a>
@@ -49,7 +49,7 @@ exports[`<GuideNavigation/> Snapshot. 1`] = `
     <li>
       <a>
         <i
-          class="fas fa-arrow-right mr-2"
+          class="fas fa-angle-right mr-2"
         />
         Time
       </a>
@@ -57,7 +57,7 @@ exports[`<GuideNavigation/> Snapshot. 1`] = `
     <li>
       <a>
         <i
-          class="fas fa-arrow-right mr-2"
+          class="fas fa-angle-right mr-2"
         />
         DNS
       </a>
@@ -65,7 +65,7 @@ exports[`<GuideNavigation/> Snapshot. 1`] = `
     <li>
       <a>
         <i
-          class="fas fa-arrow-right mr-2"
+          class="fas fa-angle-right mr-2"
         />
         Updates
       </a>
@@ -73,7 +73,7 @@ exports[`<GuideNavigation/> Snapshot. 1`] = `
     <li>
       <a>
         <i
-          class="fas fa-arrow-right mr-2"
+          class="fas fa-angle-right mr-2"
         />
         Finish
       </a>

@@ -39,9 +39,9 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
     class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
   >
     <form>
-      <h3>
+      <h2>
         LAN Settings
-      </h3>
+      </h2>
       <div
         class="form-group"
       >
@@ -296,9 +296,9 @@ it has opened ports for configuration interface and other services.
   <div
     id="dhcp-clients-container"
   >
-    <h3>
+    <h2>
       DHCP Clients
-    </h3>
+    </h2>
     <p>
       No DHCP clients found.
     </p>
@@ -345,9 +345,9 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
     class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
   >
     <form>
-      <h3>
+      <h2>
         LAN Settings
-      </h3>
+      </h2>
       <div
         class="form-group"
       >
@@ -509,9 +509,9 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
     class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
   >
     <form>
-      <h3>
+      <h2>
         LAN Settings
-      </h3>
+      </h2>
       <div
         class="form-group"
       >
@@ -657,9 +657,9 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
     class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
   >
     <form>
-      <h3>
+      <h2>
         LAN Settings
-      </h3>
+      </h2>
       <div
         class="form-group"
       >
@@ -781,9 +781,9 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
     class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
   >
     <form>
-      <h3>
+      <h2>
         LAN Settings
-      </h3>
+      </h2>
       <div
         class="form-group"
       >

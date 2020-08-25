@@ -13,6 +13,13 @@
     #navigation-container {
         width: 100%;
     }
+
+    #top-bar {
+        position: relative;
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
 }
 
 @media screen and (min-width: 769px) {
@@ -21,6 +28,6 @@
     }
 
     #navigation-container-collapse.collapse:not(.show) {
-         display: block !important;
+        display: block !important;
     }
 }

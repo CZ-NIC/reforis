@@ -12,7 +12,9 @@ exports[`<UpdateApproval/> No updates awaiting 1`] = `
 
 exports[`<UpdateApproval/> Updates awaiting - snapshot 1`] = `
 <div>
-  <div>
+  <div
+    class="card p-4 mb-4"
+  >
     <h3>
       Approve Update From %s
     </h3>
@@ -33,69 +35,75 @@ exports[`<UpdateApproval/> Updates awaiting - snapshot 1`] = `
       data-testid="plan-wrapper"
       id="plan-wrapper"
     >
-      <table
-        class="table table-hover"
+      <div
+        class="table-responsive"
       >
-        <thead>
-          <tr>
-            <th
-              scope="col"
-            >
-              Action
-            </th>
-            <th
-              scope="col"
-            >
-              Name
-            </th>
-            <th
-              scope="col"
-            >
-              Current
-            </th>
-            <th
-              scope="col"
-            >
-              New
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              install
-            </td>
-            <td>
-              PACKAGE
-            </td>
-            <td>
-              1.0
-            </td>
-            <td>
-              2.0
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        <table
+          class="table table-hover"
+        >
+          <thead>
+            <tr>
+              <th
+                scope="col"
+              >
+                Action
+              </th>
+              <th
+                scope="col"
+              >
+                Name
+              </th>
+              <th
+                scope="col"
+              >
+                Current
+              </th>
+              <th
+                scope="col"
+              >
+                New
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                install
+              </td>
+              <td>
+                PACKAGE
+              </td>
+              <td>
+                1.0
+              </td>
+              <td>
+                2.0
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-    <button
-      class="btn btn-warning offset-lg-1 col-lg-4 col-sm-12"
-      style="margin-bottom: 1rem;"
-      type="button"
+    <div
+      class="row justify-content-around"
     >
-       
-       
-      Ignore
-    </button>
-    <button
-      class="btn btn-primary col-sm-12 col-lg-4 offset-lg-2 col-lg-3"
-      style="margin-bottom: 1rem;"
-      type="button"
-    >
-       
-       
-      Install now
-    </button>
+      <button
+        class="btn btn-primary col-sm-12 col-md-5 col-lg-3 mt-3 mt-lg-0"
+        type="button"
+      >
+         
+         
+        Install now
+      </button>
+      <button
+        class="btn btn-warning col-sm-12 col-md-5 col-lg-3 mt-3 mt-lg-0"
+        type="button"
+      >
+         
+         
+        Ignore
+      </button>
+    </div>
   </div>
 </div>
 `;

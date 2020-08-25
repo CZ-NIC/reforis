@@ -6,22 +6,21 @@
  */
 
 #sidebar {
-    flex: 2;
-    background: #f2f2f2;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    position: relative;
+    background: #313a46;
+    position: fixed;
+    top: 0;
     bottom: 0;
     min-height: 100%;
+    overflow-y: auto;
+    width: 312px;
 }
 
 #sidebar ul li a {
-    padding: .5rem 2rem;
+    padding: 0.5rem 1.5rem;
     font-size: 1.1em;
     display: block;
-    color: #000;
-    white-space: nowrap
+    color: #fff;
+    white-space: nowrap;
 }
 
 #sidebar img {
@@ -30,9 +29,9 @@
 }
 
 #sidebar a svg {
-    color: gray;
+    color: white;
     /* Fill is used for custom svg sprite icons */
-    fill: gray;
+    fill: white;
     /* Keep custom icons in the same size as fa icon */
     height: 1em;
     width: 1em;
@@ -51,49 +50,48 @@
 }
 
 #sidebar a:hover svg {
-    color: grey;
+    color: white;
     /* Fill is used for custom svg sprite icons */
-    fill: grey;
+    fill: white;
 }
 
 #sidebar ul li a:hover {
-    color: #000;
-    background: #cbe8f5;
+    color: white;
+    background: #00a2e275;
     text-decoration: none;
 }
 
-#sidebar ul li ul li a { /* Nested menu */
+#sidebar ul li ul li a {
+    /* Nested menu */
     text-align: center;
 }
 
 #sidebar a.dropdown-toggle + ul {
-    background: rgba(0, 0, 0, 0.05);
+    background: rgba(0, 0, 0, 0.16);
 }
 
 #sidebar-header {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    padding: 1em;
-    margin-top: 4rem;
-    background: #f2f2f2;
-    white-space: nowrap
+    justify-content: center;
+    padding: 2em 1em;
+    white-space: nowrap;
 }
 
 .sidebar-header-version {
+    margin-bottom: 0;
     text-align: right;
 }
 
 @media (max-width: 768px) {
     #sidebar {
         flex: initial;
+        position: relative;
+        width: 100%;
     }
-
     #sidebar img {
         width: auto;
         min-width: 3rem;
     }
-
     #sidebar-header {
         align-items: center;
         margin: 0;
@@ -102,7 +100,6 @@
         justify-content: space-between;
         padding: 1rem 2em;
     }
-
     .sidebar-header-version {
         display: none;
     }

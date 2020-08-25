@@ -14,10 +14,7 @@ import getIconElement from "./utils";
 
 NavigationToggle.propTypes = {
     name: PropTypes.string.isRequired,
-    icon: PropTypes.oneOfType([
-        PropTypes.string.isRequired,
-        PropTypes.node,
-    ]),
+    icon: PropTypes.oneOfType([PropTypes.string.isRequired, PropTypes.node]),
     active: PropTypes.bool.isRequired,
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.node),
@@ -25,16 +22,14 @@ NavigationToggle.propTypes = {
     ]),
 };
 
-export function NavigationToggle({
-    name, icon, active, children,
-}) {
+export function NavigationToggle({ name, icon, active, children }) {
     const uid = useUID();
     const iconElement = getIconElement(icon);
 
     return (
         <li>
             <a
-                className={`dropdown-toggle ${active ? "active" : ""}`}
+                className="dropdown-toggle"
                 href={`#nav-toggle-${uid}`}
                 data-toggle="collapse"
             >
@@ -47,7 +42,6 @@ export function NavigationToggle({
             >
                 {children}
             </ul>
-
         </li>
     );
 }

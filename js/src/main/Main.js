@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -18,6 +18,7 @@ import TopBar from "./TopBar/TopBar";
 import RouteWithSubRoutes from "./routing";
 import getPages from "./pages";
 import { REDIRECT_404_PAGE } from "./constants";
+import ScrollToTopArrow from "../common/ScrollToTopArrow";
 
 Main.propTypes = {
     ws: PropTypes.object.isRequired,
@@ -36,13 +37,19 @@ export default function Main({ ws }) {
                     <Portal containerId="top-bar-container">
                         <TopBar ws={ws} />
                     </Portal>
-
+                    <Portal containerId="scroll-to-top">
+                        <ScrollToTopArrow />
+                    </Portal>
                     {/* Handle errors and display Navigation and TopBar. */}
                     <ErrorBoundary>
                         <Switch>
-                            {pages.map(
-                                (route) => <RouteWithSubRoutes key={route} ws={ws} {...route} />,
-                            )}
+                            {pages.map((route) => (
+                                <RouteWithSubRoutes
+                                    key={route}
+                                    ws={ws}
+                                    {...route}
+                                />
+                            ))}
                             <Redirect to={REDIRECT_404_PAGE} />
                         </Switch>
                     </ErrorBoundary>

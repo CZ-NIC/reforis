@@ -6,23 +6,37 @@
  */
 
 import React from "react";
+import { withRouter } from "react-router-dom";
 import { Button } from "foris";
+import PropTypes from "prop-types";
 
 import useGuideFinish from "../hooks";
 
-export default function SkipGuideButton() {
-    const onGuideFinishHandler = useGuideFinish();
+SkipGuideButton.propTypes = {
+    location: PropTypes.object.isRequired,
+};
 
+export function SkipGuideButton({ location }) {
+    const onGuideFinishHandler = useGuideFinish();
+    const disabled = location.pathname === `/password`;
     return (
         <Button
-            className="guide-controls-button btn btn-warning"
+            className={`guide-controls-button btn btn-warning ${
+                disabled ? "disabled" : ""
+            }`}
+            style={{ pointerEvents: "not-allowed" }}
             onClick={onGuideFinishHandler}
+            disabled={disabled}
         >
-            <div className="d-none d-sm-block">
+            <span className="d-none d-sm-block">
                 {_("Skip guide")}
                 &nbsp;
-            </div>
+            </span>
             <i className="fas fa-forward" />
         </Button>
     );
 }
+
+const SkipGuideButtonWithRouter = withRouter(SkipGuideButton);
+
+export default SkipGuideButtonWithRouter;

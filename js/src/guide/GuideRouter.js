@@ -6,9 +6,7 @@
  */
 
 import React from "react";
-import {
-    BrowserRouter, Redirect, Route, Switch,
-} from "react-router-dom";
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import PropTypes from "prop-types";
 import {
     AlertContextProvider,
@@ -48,7 +46,6 @@ function GuideRouter({ ws, guideData, getGuideData }) {
                                     ws={ws}
                                     step={step}
                                     getGuideData={getGuideData}
-
                                     {...guideData}
                                 />
                             )}
@@ -61,6 +58,8 @@ function GuideRouter({ ws, guideData, getGuideData }) {
     );
 }
 
-const GuideRouterWithErrorAndSpinner = withSpinnerOnSending(withErrorMessage(GuideRouter));
+const GuideRouterWithErrorAndSpinner = withSpinnerOnSending(
+    withErrorMessage(GuideRouter)
+);
 
 export default GuideRouterWithErrorAndSpinner;

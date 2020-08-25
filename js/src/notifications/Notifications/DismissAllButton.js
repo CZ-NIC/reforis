@@ -20,6 +20,7 @@ export default function DismissAllButton({ dismissAll }) {
             className="btn btn-outline-danger float-right"
             onClick={dismissAll}
         >
+            <i className="fas fa-trash mr-1" />
             {_("Dismiss all")}
         </button>
     );

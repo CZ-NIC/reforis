@@ -19,12 +19,16 @@ const UPDATE_APPROVALS_CHOICES = [
     {
         value: "delayed",
         label: _("Delayed updates"),
-        helpText: _("Updates will be installed with an adjustable delay. You can also approve them manually."),
+        helpText: _(
+            "Updates will be installed with an adjustable delay. You can also approve them manually."
+        ),
     },
     {
         value: "on",
         label: _("Update approval needed"),
-        helpText: _("You have to approve the updates, otherwise they won't be installed."),
+        helpText: _(
+            "You have to approve the updates, otherwise they won't be installed."
+        ),
     },
 ];
 
@@ -45,28 +49,29 @@ UpdateApprovalForm.defaultProps = {
 };
 
 export default function UpdateApprovalForm({
-    formData, formErrors, setFormValue, disabled,
+    formData,
+    formErrors,
+    setFormValue,
+    disabled,
 }) {
     return (
         <>
-            <h4>{_("Update Approvals")}</h4>
+            <h2>{_("Update Approvals")}</h2>
             <p>
                 {_(
                     `Update approvals can be useful when you want to make sure that updates won't harm your specific
             configuration. You can e.g. install updates when you're prepared for a possible rollback to a previous
             snapshot and deny the questionable update temporarily. It isn't possible to decline the update forever an
-            it will be offered to you again together with the next package installation.`,
+            it will be offered to you again together with the next package installation.`
                 )}
             </p>
             <RadioSet
                 value={formData.status}
                 name="approvals"
                 choices={UPDATE_APPROVALS_CHOICES}
-
-                onChange={
-                    setFormValue((value) => ({ approval_settings: { status: { $set: value } } }))
-                }
-
+                onChange={setFormValue((value) => ({
+                    approval_settings: { status: { $set: value } },
+                }))}
                 disabled={disabled}
             />
             {formData.status === "delayed" ? (
@@ -76,11 +81,9 @@ export default function UpdateApprovalForm({
                     error={formErrors.delay}
                     min="1"
                     max="168"
-
-                    onChange={
-                        setFormValue((value) => ({ approval_settings: { delay: { $set: value } } }))
-                    }
-
+                    onChange={setFormValue((value) => ({
+                        approval_settings: { delay: { $set: value } },
+                    }))}
                     disabled={disabled}
                 />
             ) : null}
@@ -91,7 +94,9 @@ export default function UpdateApprovalForm({
 export function validateUpdateApproval(formData) {
     const errors = {};
     if (formData.delay < 1 || formData.delay > 168) {
-        errors.delay = _("Updates must be delayed by least 1 hour and at most by 168 hours");
+        errors.delay = _(
+            "Updates must be delayed by least 1 hour and at most by 168 hours"
+        );
     }
     return undefinedIfEmpty(errors);
 }

@@ -45,6 +45,10 @@ function AboutTable({ deviceDetails }) {
                     <td>{deviceDetails.serial}</td>
                 </tr>
                 <tr>
+                    <th>{_("reForis version")}</th>
+                    <td>{deviceDetails.reforis_version}</td>
+                </tr>
+                <tr>
                     <th>{_("Turris OS version")}</th>
                     <td>{deviceDetails.os_version}</td>
                 </tr>
@@ -54,7 +58,7 @@ function AboutTable({ deviceDetails }) {
                         <i
                             className="text-muted fas fa-question-circle ml-1 help"
                             title={_(
-                                "Turris OS is currently released in various branches, which have different functions and varying stability - you can pick, which branch you want to test.",
+                                "Turris OS is currently released in various branches, which have different functions and varying stability - you can pick, which branch you want to test."
                             )}
                         />
                     </th>
@@ -81,5 +85,5 @@ function AboutTable({ deviceDetails }) {
 }
 
 const AboutTableWithErrorAndSpinner = withSpinnerOnSending(
-    withErrorMessage(AboutTable),
+    withErrorMessage(AboutTable)
 );

@@ -11,44 +11,19 @@ Here you can configure the settings of the network interfaces on your device. Yo
 network interfaces among networks. If you are unsure what to set here use the default settings.
         
   </p>
-  <h4>
-    WAN
-  </h4>
-  <p>
-    
-It acts as an external network connection. Firewall rules should be applied here. It can only contain a
-single interface.
-        
-  </p>
-  <h4>
-    LAN
-  </h4>
-  <p>
-    
-It acts as a local network connection. LAN should contain devices which are under your control and you
-trust them. These devices can see each other and can access this web interface. It is recommended that the
-LAN should contain at least one interface otherwise you might not be able to configure this device in an
-easy way.
-        
-  </p>
-  <h4>
-    Guest Network
-  </h4>
-  <p>
-    
-It acts as a local network connection. Unlike LAN the devices in the guest network can't access
-the configuration interface of this device and are only able to access WAN (internet). This network should
-be used for devices which you don't fully trust. Note that you can also limit download/upload speed of the
-devices connected to the guest network.
-        
-  </p>
   <div
     class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
   >
     <form>
-      <h3>
+      <h2>
         WAN
-      </h3>
+      </h2>
+      <p>
+        
+It acts as an external network connection. Firewall rules should be applied here. It can only contain a
+single interface.
+        
+      </p>
       <div
         class="network mb-3"
       >
@@ -77,9 +52,17 @@ devices connected to the guest network.
           </button>
         </div>
       </div>
-      <h3>
+      <h2>
         LAN
-      </h3>
+      </h2>
+      <p>
+        
+It acts as a local network connection. LAN should contain devices which are under your control and you
+trust them. These devices can see each other and can access this web interface. It is recommended that the
+LAN should contain at least one interface otherwise you might not be able to configure this device in an
+easy way.
+        
+      </p>
       <div
         class="network mb-3"
       >
@@ -130,9 +113,17 @@ devices connected to the guest network.
           </button>
         </div>
       </div>
-      <h3>
+      <h2>
         Guest Network
-      </h3>
+      </h2>
+      <p>
+        
+It acts as a local network connection. Unlike LAN the devices in the guest network can't access
+the configuration interface of this device and are only able to access WAN (internet). This network should
+be used for devices which you don't fully trust. Note that you can also limit download/upload speed of the
+devices connected to the guest network.
+        
+      </p>
       <div
         class="network mb-3"
       >
@@ -162,9 +153,9 @@ devices connected to the guest network.
           </button>
         </div>
       </div>
-      <h3>
+      <h2>
         Unassigned
-      </h3>
+      </h2>
       <div
         class="network mb-3"
       >
@@ -368,44 +359,19 @@ Here you can configure the settings of the network interfaces on your device. Yo
 network interfaces among networks. If you are unsure what to set here use the default settings.
         
   </p>
-  <h4>
-    WAN
-  </h4>
-  <p>
-    
-It acts as an external network connection. Firewall rules should be applied here. It can only contain a
-single interface.
-        
-  </p>
-  <h4>
-    LAN
-  </h4>
-  <p>
-    
-It acts as a local network connection. LAN should contain devices which are under your control and you
-trust them. These devices can see each other and can access this web interface. It is recommended that the
-LAN should contain at least one interface otherwise you might not be able to configure this device in an
-easy way.
-        
-  </p>
-  <h4>
-    Guest Network
-  </h4>
-  <p>
-    
-It acts as a local network connection. Unlike LAN the devices in the guest network can't access
-the configuration interface of this device and are only able to access WAN (internet). This network should
-be used for devices which you don't fully trust. Note that you can also limit download/upload speed of the
-devices connected to the guest network.
-        
-  </p>
   <div
     class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
   >
     <form>
-      <h3>
+      <h2>
         WAN
-      </h3>
+      </h2>
+      <p>
+        
+It acts as an external network connection. Firewall rules should be applied here. It can only contain a
+single interface.
+        
+      </p>
       <div
         class="network mb-3"
       >
@@ -434,9 +400,17 @@ devices connected to the guest network.
           </button>
         </div>
       </div>
-      <h3>
+      <h2>
         LAN
-      </h3>
+      </h2>
+      <p>
+        
+It acts as a local network connection. LAN should contain devices which are under your control and you
+trust them. These devices can see each other and can access this web interface. It is recommended that the
+LAN should contain at least one interface otherwise you might not be able to configure this device in an
+easy way.
+        
+      </p>
       <div
         class="network mb-3"
       >
@@ -466,9 +440,17 @@ devices connected to the guest network.
           </button>
         </div>
       </div>
-      <h3>
+      <h2>
         Guest Network
-      </h3>
+      </h2>
+      <p>
+        
+It acts as a local network connection. Unlike LAN the devices in the guest network can't access
+the configuration interface of this device and are only able to access WAN (internet). This network should
+be used for devices which you don't fully trust. Note that you can also limit download/upload speed of the
+devices connected to the guest network.
+        
+      </p>
       <div
         class="network mb-3"
       >
@@ -519,9 +501,9 @@ devices connected to the guest network.
           </button>
         </div>
       </div>
-      <h3>
+      <h2>
         Unassigned
-      </h3>
+      </h2>
       <div
         class="network mb-3"
       >
@@ -725,44 +707,19 @@ Here you can configure the settings of the network interfaces on your device. Yo
 network interfaces among networks. If you are unsure what to set here use the default settings.
         
   </p>
-  <h4>
-    WAN
-  </h4>
-  <p>
-    
-It acts as an external network connection. Firewall rules should be applied here. It can only contain a
-single interface.
-        
-  </p>
-  <h4>
-    LAN
-  </h4>
-  <p>
-    
-It acts as a local network connection. LAN should contain devices which are under your control and you
-trust them. These devices can see each other and can access this web interface. It is recommended that the
-LAN should contain at least one interface otherwise you might not be able to configure this device in an
-easy way.
-        
-  </p>
-  <h4>
-    Guest Network
-  </h4>
-  <p>
-    
-It acts as a local network connection. Unlike LAN the devices in the guest network can't access
-the configuration interface of this device and are only able to access WAN (internet). This network should
-be used for devices which you don't fully trust. Note that you can also limit download/upload speed of the
-devices connected to the guest network.
-        
-  </p>
   <div
     class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
   >
     <form>
-      <h3>
+      <h2>
         WAN
-      </h3>
+      </h2>
+      <p>
+        
+It acts as an external network connection. Firewall rules should be applied here. It can only contain a
+single interface.
+        
+      </p>
       <div
         class="network mb-3"
       >
@@ -791,9 +748,17 @@ devices connected to the guest network.
           </button>
         </div>
       </div>
-      <h3>
+      <h2>
         LAN
-      </h3>
+      </h2>
+      <p>
+        
+It acts as a local network connection. LAN should contain devices which are under your control and you
+trust them. These devices can see each other and can access this web interface. It is recommended that the
+LAN should contain at least one interface otherwise you might not be able to configure this device in an
+easy way.
+        
+      </p>
       <div
         class="network mb-3"
       >
@@ -823,9 +788,17 @@ devices connected to the guest network.
           </button>
         </div>
       </div>
-      <h3>
+      <h2>
         Guest Network
-      </h3>
+      </h2>
+      <p>
+        
+It acts as a local network connection. Unlike LAN the devices in the guest network can't access
+the configuration interface of this device and are only able to access WAN (internet). This network should
+be used for devices which you don't fully trust. Note that you can also limit download/upload speed of the
+devices connected to the guest network.
+        
+      </p>
       <div
         class="network mb-3"
       >
@@ -876,9 +849,9 @@ devices connected to the guest network.
           </button>
         </div>
       </div>
-      <h3>
+      <h2>
         Unassigned
-      </h3>
+      </h2>
       <div
         class="network mb-3"
       >
@@ -983,44 +956,19 @@ Here you can configure the settings of the network interfaces on your device. Yo
 network interfaces among networks. If you are unsure what to set here use the default settings.
         
   </p>
-  <h4>
-    WAN
-  </h4>
-  <p>
-    
-It acts as an external network connection. Firewall rules should be applied here. It can only contain a
-single interface.
-        
-  </p>
-  <h4>
-    LAN
-  </h4>
-  <p>
-    
-It acts as a local network connection. LAN should contain devices which are under your control and you
-trust them. These devices can see each other and can access this web interface. It is recommended that the
-LAN should contain at least one interface otherwise you might not be able to configure this device in an
-easy way.
-        
-  </p>
-  <h4>
-    Guest Network
-  </h4>
-  <p>
-    
-It acts as a local network connection. Unlike LAN the devices in the guest network can't access
-the configuration interface of this device and are only able to access WAN (internet). This network should
-be used for devices which you don't fully trust. Note that you can also limit download/upload speed of the
-devices connected to the guest network.
-        
-  </p>
   <div
     class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
   >
     <form>
-      <h3>
+      <h2>
         WAN
-      </h3>
+      </h2>
+      <p>
+        
+It acts as an external network connection. Firewall rules should be applied here. It can only contain a
+single interface.
+        
+      </p>
       <div
         class="network mb-3"
       >
@@ -1049,9 +997,17 @@ devices connected to the guest network.
           </button>
         </div>
       </div>
-      <h3>
+      <h2>
         LAN
-      </h3>
+      </h2>
+      <p>
+        
+It acts as a local network connection. LAN should contain devices which are under your control and you
+trust them. These devices can see each other and can access this web interface. It is recommended that the
+LAN should contain at least one interface otherwise you might not be able to configure this device in an
+easy way.
+        
+      </p>
       <div
         class="network mb-3"
       >
@@ -1116,9 +1072,17 @@ devices connected to the guest network.
           </div>
         </div>
       </div>
-      <h3>
+      <h2>
         Guest Network
-      </h3>
+      </h2>
+      <p>
+        
+It acts as a local network connection. Unlike LAN the devices in the guest network can't access
+the configuration interface of this device and are only able to access WAN (internet). This network should
+be used for devices which you don't fully trust. Note that you can also limit download/upload speed of the
+devices connected to the guest network.
+        
+      </p>
       <div
         class="network mb-3"
       >
@@ -1183,9 +1147,9 @@ devices connected to the guest network.
           </div>
         </div>
       </div>
-      <h3>
+      <h2>
         Unassigned
-      </h3>
+      </h2>
       <div
         class="network mb-3"
       >
@@ -1368,44 +1332,19 @@ Here you can configure the settings of the network interfaces on your device. Yo
 network interfaces among networks. If you are unsure what to set here use the default settings.
         
   </p>
-  <h4>
-    WAN
-  </h4>
-  <p>
-    
-It acts as an external network connection. Firewall rules should be applied here. It can only contain a
-single interface.
-        
-  </p>
-  <h4>
-    LAN
-  </h4>
-  <p>
-    
-It acts as a local network connection. LAN should contain devices which are under your control and you
-trust them. These devices can see each other and can access this web interface. It is recommended that the
-LAN should contain at least one interface otherwise you might not be able to configure this device in an
-easy way.
-        
-  </p>
-  <h4>
-    Guest Network
-  </h4>
-  <p>
-    
-It acts as a local network connection. Unlike LAN the devices in the guest network can't access
-the configuration interface of this device and are only able to access WAN (internet). This network should
-be used for devices which you don't fully trust. Note that you can also limit download/upload speed of the
-devices connected to the guest network.
-        
-  </p>
   <div
     class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
   >
     <form>
-      <h3>
+      <h2>
         WAN
-      </h3>
+      </h2>
+      <p>
+        
+It acts as an external network connection. Firewall rules should be applied here. It can only contain a
+single interface.
+        
+      </p>
       <div
         class="network mb-3"
       >
@@ -1434,9 +1373,17 @@ devices connected to the guest network.
           </button>
         </div>
       </div>
-      <h3>
+      <h2>
         LAN
-      </h3>
+      </h2>
+      <p>
+        
+It acts as a local network connection. LAN should contain devices which are under your control and you
+trust them. These devices can see each other and can access this web interface. It is recommended that the
+LAN should contain at least one interface otherwise you might not be able to configure this device in an
+easy way.
+        
+      </p>
       <div
         class="network mb-3"
       >
@@ -1501,9 +1448,17 @@ devices connected to the guest network.
           </div>
         </div>
       </div>
-      <h3>
+      <h2>
         Guest Network
-      </h3>
+      </h2>
+      <p>
+        
+It acts as a local network connection. Unlike LAN the devices in the guest network can't access
+the configuration interface of this device and are only able to access WAN (internet). This network should
+be used for devices which you don't fully trust. Note that you can also limit download/upload speed of the
+devices connected to the guest network.
+        
+      </p>
       <div
         class="network mb-3"
       >
@@ -1568,9 +1523,9 @@ devices connected to the guest network.
           </div>
         </div>
       </div>
-      <h3>
+      <h2>
         Unassigned
-      </h3>
+      </h2>
       <div
         class="network mb-3"
       >

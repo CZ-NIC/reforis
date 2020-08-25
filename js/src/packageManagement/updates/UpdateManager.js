@@ -9,7 +9,12 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import {
-    API_STATE, ErrorMessage, Spinner, withErrorMessage, withSpinnerOnSending, formFieldsSize,
+    API_STATE,
+    ErrorMessage,
+    Spinner,
+    withErrorMessage,
+    withSpinnerOnSending,
+    buttonFormFieldsSize,
 } from "foris";
 import UpdateChecker from "./UpdateChecker";
 import UpdateApproval from "./UpdateApproval";
@@ -19,7 +24,9 @@ UpdateManager.propTypes = {
     displayChecker: PropTypes.bool.isRequired,
     checkerLabel: (props, propName) => {
         if (props.displayChecker === true && !props[propName]) {
-            return new Error("checkerLabel is required if displayChecker is set to true");
+            return new Error(
+                "checkerLabel is required if displayChecker is set to true"
+            );
         }
     },
     displayApproval: PropTypes.bool.isRequired,
@@ -27,7 +34,10 @@ UpdateManager.propTypes = {
 };
 
 function UpdateManager({
-    displayChecker, checkerLabel, displayApproval, description,
+    displayChecker,
+    checkerLabel,
+    displayApproval,
+    description,
 }) {
     const [pending, setPending] = usePending();
     const [
@@ -44,20 +54,15 @@ function UpdateManager({
         approvalComponent = <ErrorMessage />;
     } else if (getApprovalsResponse.state === API_STATE.SUCCESS) {
         approvalComponent = (
-            <UpdateApproval
-                update={updateToApprove}
-                onSuccess={getApprovals}
-                className="mt-4"
-            />
+            <UpdateApproval update={updateToApprove} onSuccess={getApprovals} />
         );
     }
 
     return (
         <>
             {description}
-            {displayChecker
-            && (
-                <div className={`${formFieldsSize} text-right`}>
+            {displayChecker && (
+                <div className={`${buttonFormFieldsSize} text-right`}>
                     <UpdateChecker
                         onSuccess={getUpdateToApprove}
                         pending={pending}

@@ -20,17 +20,19 @@ NotificationsList.propTypes = {
     dismiss: PropTypes.func.isRequired,
 };
 
-export default function NotificationsList({ notifications, dismiss, currentNotification }) {
-    return notifications.map(
-        (notification) => (
-            <NotificationsCenterItem
-                key={notification.id}
-                notification={notification}
-                isCurrent={notification.id === currentNotification}
-                dismiss={() => dismiss(notification.id)}
-            />
-        ),
-    );
+export default function NotificationsList({
+    notifications,
+    dismiss,
+    currentNotification,
+}) {
+    return notifications.map((notification) => (
+        <NotificationsCenterItem
+            key={notification.id}
+            notification={notification}
+            isCurrent={notification.id === currentNotification}
+            dismiss={() => dismiss(notification.id)}
+        />
+    ));
 }
 
 const BORDER_TYPES = {
@@ -51,16 +53,33 @@ function NotificationsCenterItem({ notification, isCurrent, dismiss }) {
 
     useEffect(() => {
         if (isCurrent && notificationRef.current) {
-            notificationRef.current.scrollIntoView({ block: "start", behavior: "smooth" });
+            notificationRef.current.scrollIntoView({
+                block: "start",
+                behavior: "smooth",
+            });
         }
     });
     const isDisableable = !NOT_DISMISSABLE.includes(notification.severity);
     return (
-        <div ref={notificationRef} className={`card bg-light ${BORDER_TYPES[notification.severity]} sm-10`}>
+        <div
+            ref={notificationRef}
+            className={`card bg-light ${BORDER_TYPES[notification.severity]}`}
+        >
             <div className="card-header">
-                <NotificationIcon severity={notification.severity} className="fa-2x" />
-                <p className="text-muted align-middle m-0">{toLocaleDateString(notification.created_at)}</p>
-                {isDisableable && <button type="button" className="close" onClick={dismiss}>×</button>}
+                <NotificationIcon
+                    severity={notification.severity}
+                    className="fa-lg"
+                />
+                <p className="text-muted align-middle m-0">
+                    {toLocaleDateString(notification.created_at)}
+                </p>
+                <button
+                    type="button"
+                    className={`close ${!isDisableable ? "invisible" : ""}`}
+                    onClick={dismiss}
+                >
+                    ×
+                </button>
             </div>
 
             <div className="card-body">

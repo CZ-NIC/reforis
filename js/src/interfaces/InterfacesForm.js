@@ -42,7 +42,10 @@ InterfacesForm.defaultProps = {
 };
 
 export default function InterfacesForm({
-    formData, formErrors, setFormValue, disabled,
+    formData,
+    formErrors,
+    setFormValue,
+    disabled,
 }) {
     const [selectedID, setSelectedID] = useState(null);
     const [setAlert, dismissAlert] = useAlert();
@@ -50,8 +53,17 @@ export default function InterfacesForm({
     useEffect(() => {
         const { firewall } = formData;
         const hasWAN = formData.networks.wan.length > 0;
-        if (hasWAN && (firewall.http_on_wan || firewall.https_on_wan || firewall.ssh_on_wan)) {
-            setAlert(_("Ports are open on your WAN interface. It's better to reconfigure your interface settings to avoid security issues."));
+        if (
+            hasWAN &&
+            (firewall.http_on_wan ||
+                firewall.https_on_wan ||
+                firewall.ssh_on_wan)
+        ) {
+            setAlert(
+                _(
+                    "Ports are open on your WAN interface. It's better to reconfigure your interface settings to avoid security issues."
+                )
+            );
         } else {
             dismissAlert();
         }
@@ -62,9 +74,15 @@ export default function InterfacesForm({
 
         // eslint-disable-next-line no-unused-vars, no-restricted-syntax
         for (const network of NETWORKS_TYPES) {
-            const interfaceIdx = formData.networks[network].findIndex((i) => i.id === id);
+            const interfaceIdx = formData.networks[network].findIndex(
+                (i) => i.id === id
+            );
             if (interfaceIdx !== -1) {
-                return [formData.networks[network][interfaceIdx], network, interfaceIdx];
+                return [
+                    formData.networks[network][interfaceIdx],
+                    network,
+                    interfaceIdx,
+                ];
             }
         }
     }
@@ -76,44 +94,66 @@ export default function InterfacesForm({
     ] = getInterfaceById(selectedID);
 
     function handleNetworkChange(e) {
-        setFormValue(
-            (value) => ({
-                networks: {
-                    [value]: { $push: [selectedInterface] },
-                    [selectedInterfaceNetwork]: { $splice: [[selectedInterfaceIdx, 1]] },
+        setFormValue((value) => ({
+            networks: {
+                [value]: { $push: [selectedInterface] },
+                [selectedInterfaceNetwork]: {
+                    $splice: [[selectedInterfaceIdx, 1]],
                 },
-            }),
-        )(e);
+            },
+        }))(e);
     }
 
     return (
         <>
-            <h3>{NETWORKS_CHOICES.wan}</h3>
+            <h2>{NETWORKS_CHOICES.wan}</h2>
+            <p>
+                {_(`
+It acts as an external network connection. Firewall rules should be applied here. It can only contain a
+single interface.
+        `)}
+            </p>
             <Network
                 interfaces={formData.networks.wan}
                 selected={selectedID}
                 setSelected={setSelectedID}
                 disabled={disabled}
             />
-            <h3>{NETWORKS_CHOICES.lan}</h3>
-            {formErrors && formErrors.networks && formErrors.networks.lan
-                ? <p className="text-danger">{formErrors.networks.lan}</p>
-                : (
-                    <Network
-                        interfaces={formData.networks.lan}
-                        selected={selectedID}
-                        setSelected={setSelectedID}
-                        disabled={disabled}
-                    />
-                )}
-            <h3>{NETWORKS_CHOICES.guest}</h3>
+            <h2>{NETWORKS_CHOICES.lan}</h2>
+            <p>
+                {_(`
+It acts as a local network connection. LAN should contain devices which are under your control and you
+trust them. These devices can see each other and can access this web interface. It is recommended that the
+LAN should contain at least one interface otherwise you might not be able to configure this device in an
+easy way.
+        `)}
+            </p>
+            {formErrors && formErrors.networks && formErrors.networks.lan ? (
+                <p className="text-danger">{formErrors.networks.lan}</p>
+            ) : (
+                <Network
+                    interfaces={formData.networks.lan}
+                    selected={selectedID}
+                    setSelected={setSelectedID}
+                    disabled={disabled}
+                />
+            )}
+            <h2>{NETWORKS_CHOICES.guest}</h2>
+            <p>
+                {_(`
+It acts as a local network connection. Unlike LAN the devices in the guest network can't access
+the configuration interface of this device and are only able to access WAN (internet). This network should
+be used for devices which you don't fully trust. Note that you can also limit download/upload speed of the
+devices connected to the guest network.
+        `)}
+            </p>
             <Network
                 interfaces={formData.networks.guest}
                 selected={selectedID}
                 setSelected={setSelectedID}
                 disabled={disabled}
             />
-            <h3>{NETWORKS_CHOICES.none}</h3>
+            <h2>{NETWORKS_CHOICES.none}</h2>
             <Network
                 interfaces={formData.networks.none}
                 selected={selectedID}

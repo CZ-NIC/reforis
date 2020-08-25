@@ -3,94 +3,100 @@
 exports[`<Guide/>  Snapshot. Just check if render correct page. 1`] = `
 <div>
   <div
-    class="card guide-card"
+    class="card guide-card bg-info text-white mb-4"
   >
     <div
-      class="card-body"
-    >
-      <p>
-        Here you need to decide which interfaces belong to which network.
-      </p>
-      <p>
-        If you are in doubt use the current settings.
-      </p>
-    </div>
-    <div
-      class="guide-controls"
+      class="card-body row"
     >
       <div
-        class="dropdown"
+        class="col-lg-8 col-md-12 col-sm-12 d-flex flex-column justify-content-center align-items-sm-center text-center"
       >
-        <button
-          class="nav-item btn guide-controls-button btn-primary"
-          type="button"
-        >
-          en
-        </button>
+        <p>
+          Here you need to decide which interfaces belong to which network.
+        </p>
+        <p>
+          If you are in doubt use the current settings.
+        </p>
+      </div>
+      <div
+        class="guide-controls col-lg-4 col-md-12 col-sm-12 mt-md-2"
+      >
         <div
-          class="dropdown-menu"
-          id="languages-dropdown-menu"
+          class="dropdown"
         >
-          <div
-            class="dropdown-header"
-          >
-            <h5>
-              Languages
-            </h5>
-          </div>
-          <div
-            class="dropdown-divider"
-          />
           <button
-            class="dropdown-item"
+            class="nav-item btn guide-controls-button btn-light"
             type="button"
           >
             en
           </button>
-          <button
-            class="dropdown-item"
-            type="button"
+          <div
+            class="dropdown-menu dropdown-menu-right"
+            id="languages-dropdown-menu"
           >
-            cs
-          </button>
-          <button
-            class="dropdown-item"
-            type="button"
-          >
-            ru
-          </button>
+            <div
+              class="dropdown-header"
+            >
+              <h5>
+                Languages
+              </h5>
+            </div>
+            <div
+              class="dropdown-divider"
+            />
+            <button
+              class="dropdown-item"
+              type="button"
+            >
+              en
+            </button>
+            <button
+              class="dropdown-item"
+              type="button"
+            >
+              cs
+            </button>
+            <button
+              class="dropdown-item"
+              type="button"
+            >
+              ru
+            </button>
+          </div>
         </div>
+        <button
+          class="btn guide-controls-button btn btn-warning "
+          style="pointer-events: not-allowed;"
+          type="button"
+        >
+           
+           
+          <span
+            class="d-none d-sm-block"
+          >
+            Skip guide
+             
+          </span>
+          <i
+            class="fas fa-forward"
+          />
+        </button>
+        <a
+          class="guide-controls-button btn btn-success disabled"
+          disabled=""
+          href="/reforis/guide/networks"
+        >
+          <span
+            class="d-none d-sm-block"
+          >
+            Next step
+             
+          </span>
+          <i
+            class="fas fa-step-forward"
+          />
+        </a>
       </div>
-      <button
-        class="btn guide-controls-button btn btn-warning"
-        type="button"
-      >
-         
-         
-        <div
-          class="d-none d-sm-block"
-        >
-          Skip guide
-           
-        </div>
-        <i
-          class="fas fa-forward"
-        />
-      </button>
-      <a
-        class="guide-controls-button btn btn-primary disabled"
-        disabled=""
-        href="/reforis/guide/networks"
-      >
-        <div
-          class="d-none d-sm-block"
-        >
-          Next step
-        </div>
-        <i
-          class="fas fa-step-forward"
-        />
-      </a>
     </div>
   </div>
   <h1>
@@ -102,44 +108,19 @@ Here you can configure the settings of the network interfaces on your device. Yo
 network interfaces among networks. If you are unsure what to set here use the default settings.
         
   </p>
-  <h4>
-    WAN
-  </h4>
-  <p>
-    
-It acts as an external network connection. Firewall rules should be applied here. It can only contain a
-single interface.
-        
-  </p>
-  <h4>
-    LAN
-  </h4>
-  <p>
-    
-It acts as a local network connection. LAN should contain devices which are under your control and you
-trust them. These devices can see each other and can access this web interface. It is recommended that the
-LAN should contain at least one interface otherwise you might not be able to configure this device in an
-easy way.
-        
-  </p>
-  <h4>
-    Guest Network
-  </h4>
-  <p>
-    
-It acts as a local network connection. Unlike LAN the devices in the guest network can't access
-the configuration interface of this device and are only able to access WAN (internet). This network should
-be used for devices which you don't fully trust. Note that you can also limit download/upload speed of the
-devices connected to the guest network.
-        
-  </p>
   <div
     class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
   >
     <form>
-      <h3>
+      <h2>
         WAN
-      </h3>
+      </h2>
+      <p>
+        
+It acts as an external network connection. Firewall rules should be applied here. It can only contain a
+single interface.
+        
+      </p>
       <div
         class="network mb-3"
       >
@@ -168,9 +149,17 @@ devices connected to the guest network.
           </button>
         </div>
       </div>
-      <h3>
+      <h2>
         LAN
-      </h3>
+      </h2>
+      <p>
+        
+It acts as a local network connection. LAN should contain devices which are under your control and you
+trust them. These devices can see each other and can access this web interface. It is recommended that the
+LAN should contain at least one interface otherwise you might not be able to configure this device in an
+easy way.
+        
+      </p>
       <div
         class="network mb-3"
       >
@@ -200,9 +189,17 @@ devices connected to the guest network.
           </button>
         </div>
       </div>
-      <h3>
+      <h2>
         Guest Network
-      </h3>
+      </h2>
+      <p>
+        
+It acts as a local network connection. Unlike LAN the devices in the guest network can't access
+the configuration interface of this device and are only able to access WAN (internet). This network should
+be used for devices which you don't fully trust. Note that you can also limit download/upload speed of the
+devices connected to the guest network.
+        
+      </p>
       <div
         class="network mb-3"
       >
@@ -253,9 +250,9 @@ devices connected to the guest network.
           </button>
         </div>
       </div>
-      <h3>
+      <h2>
         Unassigned
-      </h3>
+      </h2>
       <div
         class="network mb-3"
       >

@@ -22,7 +22,11 @@ NotificationsDropdownItem.propTypes = {
     dismiss: PropTypes.func.isRequired,
 };
 
-export default function NotificationsDropdownItem({ notification, divider, dismiss }) {
+export default function NotificationsDropdownItem({
+    notification,
+    divider,
+    dismiss,
+}) {
     const date = toLocaleDateString(notification.created_at);
 
     const message = (
@@ -36,17 +40,29 @@ export default function NotificationsDropdownItem({ notification, divider, dismi
     return (
         <>
             <div className="dropdown-item notification-item">
-                <NotificationIcon severity={notification.severity} className="fa-2x" />
+                <NotificationIcon
+                    severity={notification.severity}
+                    className="fa-2x"
+                />
                 <div className="notifications-info">
-                    <Link to={{ pathname: ForisURLs.notifications, search: `?id=${notification.id}` }}>
+                    <Link
+                        to={{
+                            pathname: ForisURLs.overview,
+                            search: `?id=${notification.id}`,
+                        }}
+                    >
                         {message}
                     </Link>
                 </div>
-                {isDisableable && (
-                    <button type="button" className="btn btn-link dismiss" onClick={dismiss}>
-                        <i className="fas fa-times" />
-                    </button>
-                )}
+                <button
+                    type="button"
+                    className={`btn btn-link dismiss${
+                        !isDisableable ? " invisible" : ""
+                    }`}
+                    onClick={dismiss}
+                >
+                    <i className="fas fa-times" />
+                </button>
             </div>
             {divider ? <div className="dropdown-divider" /> : null}
         </>

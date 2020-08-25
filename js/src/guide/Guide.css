@@ -12,12 +12,14 @@
 .wrapper-guide #content {
     display: flex;
     align-items: center;
+    padding: 2em;
 }
 
-#stepsbar, #guide-nav-container {
-    flex: 0.2;
+#stepsbar,
+#guide-nav-container {
+    padding: 0 2em;
     width: 100%;
-    background: #f2f2f2;
+    background: #313a46;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -25,35 +27,44 @@
     justify-content: center;
 }
 
+#guide-nav-container .list-unstyled {
+    margin: 0;
+    width: 100%;
+}
+
 #stepsbar-header {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    padding: 1em;
-    background: #f2f2f2;
+    padding: 2em;
+    background: #313a46;
     white-space: nowrap;
 }
 
+#stepsbar-header img {
+    width: 260px;
+}
 
 #stepsbar ul {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
 #stepsbar ul li a {
-    padding: .5rem 2rem;
+    padding: 0.5rem 2rem;
     font-size: 1.1em;
     display: block;
     color: #787878;
-
+    background-color: #29313b;
     white-space: nowrap;
     flex-basis: 100%;
 }
 
 #stepsbar ul li a:hover {
-    background: #cbe8f5;
+    background: #00a2e275;
     text-decoration: none;
 }
 
@@ -67,7 +78,7 @@
 }
 
 #stepsbar a.passed {
-    color: #000;
+    color: #787878;
 }
 
 #stepsbar a.passed.active {
@@ -76,7 +87,8 @@
 }
 
 #stepsbar a.next {
-    color: #00a2e2;
+    color: #fff;
+    background-color: #18bc9c;
 }
 
 #stepsbar ul a.next.active {
@@ -85,8 +97,32 @@
 }
 
 @media screen and (max-width: 575px) {
+    #stepsbar-header img {
+        width: 180px;
+    }
+
+    .wrapper-guide #content {
+        padding: 1em;
+    }
+
     #stepsbar ul {
+        text-align: center;
         flex-direction: column;
+        align-items: stretch;
+    }
+
+    .guide-controls a,
+    .guide-controls button {
+        height: 100%;
+    }
+
+    #guide-container .guide-controls {
+        margin-top: 1em;
+    }
+
+    #guide-nav-container,
+    #stepsbar {
+        padding: 0;
     }
 }
 
@@ -124,7 +160,7 @@
 }
 
 .blinking {
-    background-color: #00a2e2;
+    background-color: #18bc9c;
     color: white;
     -webkit-animation-name: blinking;
     -webkit-animation-duration: 1.8s;
@@ -134,16 +170,25 @@
     animation-iteration-count: infinite;
 }
 
-.guide-card {
-    background-color: #cbe8f5;
-}
-
 .guide-card p:last-of-type {
     margin-bottom: 0;
 }
 
+.wrapper-guide #alert-container {
+    margin-left: 17.5% !important;
+    max-width: 65%;
+}
+
+@media only screen and (max-width: 922px) {
+    .wrapper-guide #alert-container {
+        margin-left: 0 !important;
+        margin-bottom: 0;
+        max-width: 100%;
+    }
+}
+
 /* Safari 4.0 - 8.0 */
-@-webkit-keyframes blinking {
+@keyframes blinking {
     0% {
         opacity: 1;
     }

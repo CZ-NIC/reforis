@@ -10,7 +10,9 @@ import PropTypes from "prop-types";
 
 import { Select, TextInput, PasswordInput } from "foris";
 
-import DHCPClientForm, { validateDHCPForm } from "common/network/DHCPClientForm";
+import DHCPClientForm, {
+    validateDHCPForm,
+} from "common/network/DHCPClientForm";
 import StaticIPForm, { validateStaticForm } from "common/network/StaticIPForm";
 
 const WAN_TYPES = {
@@ -49,8 +51,12 @@ WANForm.defaultProps = {
 };
 
 export default function WANForm({
-    formData, formErrors, setFormValue, disabled,
-}) { /* eslint-disable react/prop-types */
+    formData,
+    formErrors,
+    setFormValue,
+    disabled,
+}) {
+    /* eslint-disable react/prop-types */
     const wanSettings = formData.wan_settings;
     const errors = (formErrors || {}).wan_settings || {};
     const wanType = wanSettings.wan_type;
@@ -61,10 +67,8 @@ export default function WANForm({
             <DHCPClientForm
                 formData={wanSettings.wan_dhcp}
                 formErrors={errors.wan_dhcp}
-
                 updateRule={(value) => ({ wan_settings: { wan_dhcp: value } })}
                 setFormValue={setFormValue}
-
                 disabled={disabled}
             />
         );
@@ -73,10 +77,10 @@ export default function WANForm({
             <StaticIPForm
                 formData={wanSettings.wan_static}
                 formErrors={errors.wan_static || {}}
-
-                updateRule={(value) => ({ wan_settings: { wan_static: value } })}
+                updateRule={(value) => ({
+                    wan_settings: { wan_static: value },
+                })}
                 setFormValue={setFormValue}
-
                 disabled={disabled}
             />
         );
@@ -85,9 +89,7 @@ export default function WANForm({
             <PPPoEForm
                 formData={wanSettings.wan_pppoe}
                 formErrors={errors.wan_pppoe}
-
                 setFormValue={setFormValue}
-
                 disabled={disabled}
             />
         );
@@ -95,16 +97,14 @@ export default function WANForm({
 
     return (
         <>
-            <h3>{_("WAN IPv4")}</h3>
+            <h2>{_("WAN IPv4")}</h2>
             <Select
                 label={_("IPv4 protocol")}
                 value={wanType}
                 choices={WAN_TYPE_CHOICES}
-
-                onChange={setFormValue(
-                    (value) => ({ wan_settings: { wan_type: { $set: value } } }),
-                )}
-
+                onChange={setFormValue((value) => ({
+                    wan_settings: { wan_type: { $set: value } },
+                }))}
                 disabled={disabled}
             />
             {wanForm}
@@ -121,9 +121,7 @@ PPPoEForm.defaultProps = {
     formErrors: {},
 };
 
-function PPPoEForm({
-    formData, formErrors, setFormValue, disabled,
-}) {
+function PPPoEForm({ formData, formErrors, setFormValue, disabled }) {
     return (
         <>
             <TextInput
@@ -131,11 +129,9 @@ function PPPoEForm({
                 value={formData.username || ""}
                 error={(formErrors || {}).username || null}
                 required
-
-                onChange={setFormValue(
-                    (value) => ({ wan_settings: { wan_pppoe: { username: { $set: value } } } }),
-                )}
-
+                onChange={setFormValue((value) => ({
+                    wan_settings: { wan_pppoe: { username: { $set: value } } },
+                }))}
                 disabled={disabled}
             />
             <PasswordInput
@@ -144,11 +140,9 @@ function PPPoEForm({
                 value={formData.password || ""}
                 error={(formErrors || {}).password || null}
                 required
-
-                onChange={setFormValue(
-                    (value) => ({ wan_settings: { wan_pppoe: { password: { $set: value } } } }),
-                )}
-
+                onChange={setFormValue((value) => ({
+                    wan_settings: { wan_pppoe: { password: { $set: value } } },
+                }))}
                 disabled={disabled}
             />
         </>
@@ -158,26 +152,25 @@ function PPPoEForm({
 export function validateWANForm(formData) {
     const errors = {};
     switch (formData.wan_type) {
-    case WAN_TYPES.dhcp:
-        errors.wan_dhcp = validateDHCPForm(formData.wan_dhcp);
-        break;
-    case WAN_TYPES.static:
-        errors.wan_static = validateStaticForm(formData.wan_static);
-        break;
-    case WAN_TYPES.pppoe:
-        errors.wan_pppoe = validatePPPoEForm(formData.wan_pppoe);
-        break;
-    default:
+        case WAN_TYPES.dhcp:
+            errors.wan_dhcp = validateDHCPForm(formData.wan_dhcp);
+            break;
+        case WAN_TYPES.static:
+            errors.wan_static = validateStaticForm(formData.wan_static);
+            break;
+        case WAN_TYPES.pppoe:
+            errors.wan_pppoe = validatePPPoEForm(formData.wan_pppoe);
+            break;
+        default:
     }
     return errors[`wan_${formData.wan_type}`] ? errors : null;
 }
 
 function validatePPPoEForm(wan_pppoe) {
     const errors = {};
-    ["username", "password"].forEach(
-        (field) => {
-            if (!wan_pppoe[field] || wan_pppoe[field] === "") errors[field] = _("This field is required.");
-        },
-    );
+    ["username", "password"].forEach((field) => {
+        if (!wan_pppoe[field] || wan_pppoe[field] === "")
+            errors[field] = _("This field is required.");
+    });
     return JSON.stringify(errors) !== "{}" ? errors : null;
 }

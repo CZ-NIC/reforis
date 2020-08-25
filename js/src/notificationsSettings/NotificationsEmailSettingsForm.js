@@ -44,14 +44,16 @@ NotificationsEmailSettingsForm.propTypes = {
 };
 
 NotificationsEmailSettingsForm.defaultProps = {
-    setFormValue: () => {
-    },
+    setFormValue: () => {},
     formData: {},
     formErrors: {},
 };
 
 export default function NotificationsEmailSettingsForm({
-    formData, formErrors, setFormValue, disabled,
+    formData,
+    formErrors,
+    setFormValue,
+    disabled,
 }) {
     let smtpForm = null;
     if (formData.smtp_type === "turris") {
@@ -76,43 +78,37 @@ export default function NotificationsEmailSettingsForm({
 
     return (
         <>
-            <h3>{_("Email Notifications")}</h3>
+            <h2>{_("Email Notifications")}</h2>
             <CheckBox
                 label={_("Enable email notifications")}
                 checked={formData.enabled}
-                onChange={setFormValue(
-                    (value) => ({ enabled: { $set: value } }),
-                )}
-
+                onChange={setFormValue((value) => ({
+                    enabled: { $set: value },
+                }))}
                 disabled={disabled}
             />
-            {formData.enabled
-                ? (
-                    <>
-                        <RadioSet
-                            label={_("SMTP provider")}
-                            name="smtp_provider"
-                            choices={SMTP_TYPE_CHOICES}
-                            value={formData.smtp_type}
-                            helpText={HELP_TEXTS.smtp_type}
-
-                            onChange={setFormValue(
-                                (value) => ({ smtp_type: { $set: value } }),
-                            )}
-
-                            disabled={disabled}
-                        />
-                        <CommonForm
-                            formData={formData.common}
-                            formErrors={formErrors.common}
-                            setFormValue={setFormValue}
-
-                            disabled={disabled}
-                        />
-                        {smtpForm}
-                    </>
-                )
-                : null}
+            {formData.enabled ? (
+                <>
+                    <RadioSet
+                        label={_("SMTP provider")}
+                        name="smtp_provider"
+                        choices={SMTP_TYPE_CHOICES}
+                        value={formData.smtp_type}
+                        helpText={HELP_TEXTS.smtp_type}
+                        onChange={setFormValue((value) => ({
+                            smtp_type: { $set: value },
+                        }))}
+                        disabled={disabled}
+                    />
+                    <CommonForm
+                        formData={formData.common}
+                        formErrors={formErrors.common}
+                        setFormValue={setFormValue}
+                        disabled={disabled}
+                    />
+                    {smtpForm}
+                </>
+            ) : null}
         </>
     );
 }

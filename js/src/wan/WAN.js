@@ -47,7 +47,7 @@ router to the network, it is usually not necessary to change this setting.
                 <MACForm />
             </ForisForm>
 
-            <h1>{_("Connection Test")}</h1>
+            <h2>{_("Connection Test")}</h2>
             <p
                 dangerouslySetInnerHTML={{
                     __html: _(`
@@ -77,7 +77,9 @@ function prepData(formData) {
             wan_pppoe: { $set: formData.wan_settings.wan_pppoe || {} },
         },
         wan6_settings: {
-            wan6_dhcpv6: { $set: formData.wan6_settings.wan6_dhcpv6 || { duid: "" } },
+            wan6_dhcpv6: {
+                $set: formData.wan6_settings.wan6_dhcpv6 || { duid: "" },
+            },
             wan6_static: { $set: formData.wan6_settings.wan6_static || {} },
             wan6_6to4: { $set: formData.wan6_settings.wan6_6to4 || {} },
             wan6_6in4: { $set: wan6_6in4 },
@@ -89,22 +91,24 @@ function prepDataToSubmit(formData) {
     const dataToSubmit = {
         wan_settings: deleteUnnecessarySettings(
             formData.wan_settings.wan_type,
-            formData.wan_settings,
+            formData.wan_settings
         ),
         wan6_settings: deleteUnnecessarySettings(
             formData.wan6_settings.wan6_type,
-            formData.wan6_settings,
+            formData.wan6_settings
         ),
         mac_settings: formData.mac_settings,
     };
 
-    if (formData.wan6_settings.wan6_type === "6in4"
-        && !formData.wan6_settings.wan6_6in4.dynamic_ipv4.enabled
+    if (
+        formData.wan6_settings.wan6_type === "6in4" &&
+        !formData.wan6_settings.wan6_6in4.dynamic_ipv4.enabled
     ) {
         formData.wan6_settings.wan6_6in4.dynamic_ipv4 = { enabled: false };
     }
 
-    if (!formData.mac_settings.custom_mac_enabled) delete dataToSubmit.mac_settings.custom_mac;
+    if (!formData.mac_settings.custom_mac_enabled)
+        delete dataToSubmit.mac_settings.custom_mac;
 
     return dataToSubmit;
 }
@@ -113,10 +117,11 @@ function deleteUnnecessarySettings(type, settings) {
     return Object.keys(settings)
         .filter((setting) => setting.endsWith(type) || setting.endsWith("type"))
         .reduce(
-            (accumulator, currentValue) => (
-                { ...accumulator, [currentValue]: settings[currentValue] }
-            ),
-            {},
+            (accumulator, currentValue) => ({
+                ...accumulator,
+                [currentValue]: settings[currentValue],
+            }),
+            {}
         );
 }
 
@@ -126,6 +131,7 @@ function validator(formData) {
         wan6_settings: validateWAN6Form(formData.wan6_settings),
         mac_settings: validateMACForm(formData.mac_settings),
     };
-    if (errors.wan_settings || errors.wan6_settings || errors.mac_settings) return errors;
+    if (errors.wan_settings || errors.wan6_settings || errors.mac_settings)
+        return errors;
     return null;
 }

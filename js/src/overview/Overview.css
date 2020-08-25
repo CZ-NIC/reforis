@@ -1,0 +1,44 @@
+/*
+ * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See /LICENSE for more information.
+ */
+
+.card {
+    box-shadow: 0 0.75rem 1.5rem rgba(18, 38, 63, 0.03);
+}
+
+.card-header {
+    background-color: white;
+}
+
+.card-body form table.table {
+    margin-left: 0;
+    max-width: none;
+}
+
+.card-body form button {
+    max-width: none;
+}
+
+.card-body .row .status {
+    font-size: 1.7rem;
+}
+
+@media screen and (max-width: 1312px) {
+    .row-cols-lg-3 > * {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+@media screen and (max-width: 1010px) {
+    .row-cols-lg-3 > * {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
