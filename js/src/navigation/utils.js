@@ -9,8 +9,6 @@ import React from "react";
 
 import FaIcon from "./FaIcon";
 
-export const SMALL_SCREEN_WIDTH = 768;
-
 export default function getIconElement(icon) {
     let iconElement = null;
     if (typeof icon === "string") {

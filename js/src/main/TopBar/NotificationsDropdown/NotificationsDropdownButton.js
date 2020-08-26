@@ -6,14 +6,14 @@
  */
 
 import React from "react";
+
 import PropTypes from "prop-types";
-
 import { ForisURLs, SpinnerElement } from "foris";
-
-import "./NotificationsDropdownButton.css";
 import { useHistory } from "react-router-dom";
 
-const SMALL_SCREEN_WIDTH = 768;
+import smallScreenWidth from "../../../utils/constants";
+
+import "./NotificationsDropdownButton.css";
 
 NotificationsDropdownButton.propTypes = {
     notificationsCount: PropTypes.number.isRequired,
@@ -22,14 +22,16 @@ NotificationsDropdownButton.propTypes = {
 };
 
 export default function NotificationsDropdownButton({
-    notificationsCount, newNotification, isLoading,
+    notificationsCount,
+    newNotification,
+    isLoading,
 }) {
     const history = useHistory();
 
     function redirectToNotificationCenter(e) {
         // We don't want to show dropdown on the small devices.
         // So just make redirect to notification center
-        if (window.outerWidth > SMALL_SCREEN_WIDTH) return;
+        if (window.outerWidth > smallScreenWidth) return;
         e.preventDefault();
         e.stopPropagation();
         history.push(ForisURLs.notifications);
@@ -42,14 +44,12 @@ export default function NotificationsDropdownButton({
         componentContent = (
             <span className="fa-stack">
                 <i className="fas fa-bell fa-stack-1x" />
-                {notificationsCount !== 0
-                    ? (
-                        <NotificationCounter
-                            notificationsCount={notificationsCount}
-                            newNotification={newNotification}
-                        />
-                    )
-                    : null}
+                {notificationsCount !== 0 ? (
+                    <NotificationCounter
+                        notificationsCount={notificationsCount}
+                        newNotification={newNotification}
+                    />
+                ) : null}
             </span>
         );
     }
@@ -77,7 +77,9 @@ function NotificationCounter({ notificationsCount, newNotification }) {
             id="notifications-counter"
             className={newNotification ? "jump" : ""}
         >
-            <div className="number">{notificationsCount < 99 ? notificationsCount : "..."}</div>
+            <div className="number">
+                {notificationsCount < 99 ? notificationsCount : "..."}
+            </div>
         </div>
     );
 }
