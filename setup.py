@@ -29,7 +29,7 @@ class CustomBuild(build_py):
 
 setuptools.setup(
     name='reforis',
-    version='0.9.3',
+    version='0.9.9',
     packages=setuptools.find_packages(exclude=['tests']),
     include_package_data=True,
 
