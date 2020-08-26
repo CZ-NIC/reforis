@@ -5,32 +5,47 @@
  * See /LICENSE for more information.
  */
 
-export function addWeightsToPages(pages) {
+export const addWeightsToPages = (pages) => {
     const step = Math.floor(100 / pages.length);
     let i = 0;
     return pages.map((page) => {
-        if (Object.prototype.hasOwnProperty.call(page, "pages")) page.pages = addWeightsToPages(page.pages);
+        if (Object.hasOwnProperty.call(page, "pages")) page.pages = addWeightsToPages(page.pages);
         i++;
         return { ...page, weight: i * step };
     });
-}
+};
 
-export function plug(pages, plugin) {
-    const menuToPlug = getMenuToPlug(pages, plugin);
-    if (Object.hasOwnProperty.call(plugin, "pages")) {
-        plugin.pages = addWeightsToPages(plugin.pages);
-    }
-    menuToPlug.push(plugin);
-    menuToPlug.sort((a, b) => a.weight - b.weight);
-    return pages;
-}
-
-function getMenuToPlug(pages, plugin) {
-    if (Object.hasOwnProperty.call(plugin, "pages")) {
-        return pages;
-    }
-    if (Object.hasOwnProperty.call(plugin, "submenuId")) {
-        return pages.find((item) => item.submenuId === plugin.submenuId).pages;
-    }
-    return pages;
-}
+export const insert = (pages, startIndex, plugins) => {
+    plugins.map((plugin) => {
+        // Handle plugins inside submenu
+        if (
+            !Object.hasOwnProperty.call(plugin, "pages")
+            && Object.hasOwnProperty.call(plugin, "submenuId")
+        ) {
+            plugins
+                .filter(
+                    (item) => item.submenuId === plugin.submenuId
+                        && Object.hasOwnProperty.call(item, "pages"),
+                )
+                .map((element) => (plugin.weight > 50
+                    ? element.pages.push(plugin)
+                    : element.pages.unshift(plugin)));
+        }
+        // Handle plugins itself
+        if (Object.hasOwnProperty.call(plugin, "submenuId")) {
+            pages
+                .filter((item) => item.submenuId === plugin.submenuId)
+                .map((page) => (plugin.weight > 50
+                    ? page.pages.push(plugin)
+                    : page.pages.unshift(plugin)));
+        }
+        return null;
+    });
+    return [
+        ...pages.slice(0, startIndex),
+        ...plugins
+            .sort((a, b) => a.name.length - b.name.length)
+            .filter((item) => Object.hasOwnProperty.call(item, "icon")),
+        ...pages.slice(startIndex),
+    ];
+};
