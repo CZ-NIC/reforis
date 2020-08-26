@@ -21,7 +21,7 @@ exports[`<RebootDropdown/> Test with snapshot 1`] = `
         class="dropdown-header"
       >
         <a
-          href="/"
+          href="/reforis/administration/reboot"
         >
           <h5>
             Reboot Required
@@ -35,7 +35,7 @@ exports[`<RebootDropdown/> Test with snapshot 1`] = `
         class="dropdown-item"
       >
         <a
-          href="/?id=808-909"
+          href="/overview?id=808-909"
         >
           <button
             class="btn btn-primary mr-3"
@@ -48,8 +48,6 @@ exports[`<RebootDropdown/> Test with snapshot 1`] = `
           class="btn btn-danger"
           type="button"
         >
-           
-           
           Reboot
         </button>
       </div>

@@ -91,16 +91,12 @@ exports[`<UpdateApproval/> Updates awaiting - snapshot 1`] = `
         class="btn btn-primary col-sm-12 col-md-5 col-lg-3 mt-3 mt-lg-0"
         type="button"
       >
-         
-         
         Install now
       </button>
       <button
         class="btn btn-warning col-sm-12 col-md-5 col-lg-3 mt-3 mt-lg-0"
         type="button"
       >
-         
-         
         Ignore
       </button>
     </div>
