@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -30,35 +30,37 @@ export default function ForwardersTable({
     disabled,
 }) {
     return (
-        <table className="table col-12">
-            <thead>
-                <tr>
-                    <th>{_("Forwarders")}</th>
-                    <th aria-label={_("Actions")} />
-                </tr>
-            </thead>
-            <tbody>
-                <ForwardersTableRow
-                    forwarder={{
-                        name: PROVIDER_FORWARDER,
-                        description: _("Use provider's DNS resolver"),
-                    }}
-                    active={selectedForwarder === PROVIDER_FORWARDER}
-                    setFormValue={setFormValue}
-                    disabled={disabled}
-                />
-                {forwarders.map((forwarder) => (
+        <div className="table-responsive">
+            <table className="table col-12">
+                <thead className="thead-light">
+                    <tr>
+                        <th>{_("Forwarders")}</th>
+                        <th aria-label={_("Actions")} />
+                    </tr>
+                </thead>
+                <tbody>
                     <ForwardersTableRow
-                        key={forwarder.name}
-                        forwarder={forwarder}
-                        active={forwarder.name === selectedForwarder}
+                        forwarder={{
+                            name: PROVIDER_FORWARDER,
+                            description: _("Use provider's DNS resolver"),
+                        }}
+                        active={selectedForwarder === PROVIDER_FORWARDER}
                         setFormValue={setFormValue}
-                        editForwarder={editForwarder}
                         disabled={disabled}
                     />
-                ))}
-            </tbody>
-        </table>
+                    {forwarders.map((forwarder) => (
+                        <ForwardersTableRow
+                            key={forwarder.name}
+                            forwarder={forwarder}
+                            active={forwarder.name === selectedForwarder}
+                            setFormValue={setFormValue}
+                            editForwarder={editForwarder}
+                            disabled={disabled}
+                        />
+                    ))}
+                </tbody>
+            </table>
+        </div>
     );
 }
 
@@ -80,7 +82,7 @@ function ForwardersTableRow({
     disabled,
 }) {
     return (
-        <tr className={active ? "table-secondary" : ""}>
+        <tr>
             <td>
                 <div className="custom-control custom-radio">
                     <input
@@ -103,7 +105,7 @@ function ForwardersTableRow({
                     </label>
                 </div>
             </td>
-            <td align="center">
+            <td align="right">
                 {forwarder.editable && (
                     <ForwarderActions
                         forwarder={forwarder}
@@ -130,12 +132,13 @@ function ForwarderActions({ forwarder, editForwarder, disabled }) {
         disabled || deleteForwarderResponse.state === API_STATE.SENDING;
 
     return (
-        <div className="btn-group" role="group">
+        <div className="btn-group mb-0" role="group">
             <Button
                 onClick={() => editForwarder(forwarder)}
                 className="btn-primary btn-sm"
                 disabled={buttonDisabled}
             >
+                <i className="fas fa-edit fa-sm mr-1" />
                 {_("Edit")}
             </Button>
             <Button
@@ -143,6 +146,7 @@ function ForwarderActions({ forwarder, editForwarder, disabled }) {
                 className="btn-danger btn-sm"
                 disabled={buttonDisabled}
             >
+                <i className="fas fa-trash fa-sm mr-1" />
                 {_("Delete")}
             </Button>
         </div>

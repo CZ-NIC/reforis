@@ -47,7 +47,7 @@ function OpenVPNClientsCard({ clients }) {
                             className="text-secondary"
                             title={_("Go to OpenVPN Client Settings")}
                         >
-                            <i className="fas fa-external-link-alt float-right" />
+                            <i className="fas fa-chevron-right float-right" />
                         </Link>
                     </h6>
                     {clients.length !== 0 ? (

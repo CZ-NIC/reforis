@@ -154,7 +154,7 @@ available
         class="form-group"
       >
         <div
-          class="custom-control custom-checkbox "
+          class="custom-control custom-switch custom-control-inline"
         >
           <input
             class="custom-control-input"

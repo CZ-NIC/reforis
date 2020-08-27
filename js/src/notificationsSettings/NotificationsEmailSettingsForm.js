@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -8,7 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { CheckBox, RadioSet } from "foris";
+import { Switch, RadioSet } from "foris";
 
 import HELP_TEXTS from "./helpTexts";
 import CommonForm from "./CommonForm";
@@ -79,7 +79,7 @@ export default function NotificationsEmailSettingsForm({
     return (
         <>
             <h2>{_("Email Notifications")}</h2>
-            <CheckBox
+            <Switch
                 label={_("Enable email notifications")}
                 checked={formData.enabled}
                 onChange={setFormValue((value) => ({

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -8,7 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { CheckBox, TextInput, validateMAC } from "foris";
+import { Switch, TextInput, validateMAC } from "foris";
 
 const HELP_TEXTS = {
     custom_mac_enabled: _(
@@ -49,7 +49,7 @@ export default function MACForm({
     return (
         <>
             <h2>{_("MAC")}</h2>
-            <CheckBox
+            <Switch
                 label={_("Custom MAC address")}
                 checked={macSettings.custom_mac_enabled}
                 helpText={HELP_TEXTS.custom_mac_enabled}

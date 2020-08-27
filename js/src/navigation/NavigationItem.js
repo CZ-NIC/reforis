@@ -6,9 +6,12 @@
  */
 
 import React from "react";
+
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
-import { SMALL_SCREEN_WIDTH } from "./utils";
+
+import smallScreenWidth from "../utils/constants";
+
 import "./NavigationItem.css";
 
 NavigationItem.propTypes = {
@@ -42,7 +45,7 @@ export default function NavigationItem({ path, children, isLinkOutside }) {
 
     return (
         <li
-            {...(window.outerWidth <= SMALL_SCREEN_WIDTH
+            {...(window.outerWidth <= smallScreenWidth
                 ? {
                       "data-toggle": "collapse",
                       "data-target": "#navigation-container-collapse",

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -7,9 +7,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import {
-    Button, Select, Spinner, TextInput, API_STATE,
-} from "foris";
+import { Button, Select, Spinner, TextInput, API_STATE } from "foris";
 
 import forwarderPropTypes from "../propTypes";
 import useForwarderForm from "./hooks";
@@ -50,10 +48,9 @@ export default function ForwarderForm({ forwarder, saveForwarderCallback }) {
                 label={_("Name")}
                 value={formData.description}
                 error={formErrors.description}
-
-                onChange={setFormValue(
-                    (value) => ({ description: { $set: value } }),
-                )}
+                onChange={setFormValue((value) => ({
+                    description: { $set: value },
+                }))}
                 disabled={disabled}
             />
             <IPAddressesForm
@@ -74,20 +71,16 @@ export default function ForwarderForm({ forwarder, saveForwarderCallback }) {
                 label={_("TLS type")}
                 value={formData.tls_type}
                 choices={TLS_TYPES}
-
-                onChange={setFormValue(
-                    (value) => {
-                        const fieldsToAdd = {
-                            hostname: "tls_hostname",
-                            pin: "tls_pin",
-                        };
-                        return {
-                            tls_type: { $set: value },
-                            [fieldsToAdd[value]]: { $set: "" },
-                        };
-                    },
-                )}
-
+                onChange={setFormValue((value) => {
+                    const fieldsToAdd = {
+                        hostname: "tls_hostname",
+                        pin: "tls_pin",
+                    };
+                    return {
+                        tls_type: { $set: value },
+                        [fieldsToAdd[value]]: { $set: "" },
+                    };
+                })}
                 disabled={disabled}
             />
             {formData.tls_type === "hostname" && (
@@ -95,10 +88,9 @@ export default function ForwarderForm({ forwarder, saveForwarderCallback }) {
                     label={_("TLS hostname")}
                     value={formData.tls_hostname || ""}
                     error={formErrors.tls_hostname}
-
-                    onChange={setFormValue(
-                        (value) => ({ tls_hostname: { $set: value } }),
-                    )}
+                    onChange={setFormValue((value) => ({
+                        tls_hostname: { $set: value },
+                    }))}
                     disabled={disabled}
                 />
             )}
@@ -109,19 +101,19 @@ export default function ForwarderForm({ forwarder, saveForwarderCallback }) {
                     value={formData.tls_pin || ""}
                     error={formErrors.tls_pin}
                     helpText={HELP_TEXTS.tls_pin}
-
-                    onChange={setFormValue(
-                        (value) => ({ tls_pin: { $set: value } }),
-                    )}
+                    onChange={setFormValue((value) => ({
+                        tls_pin: { $set: value },
+                    }))}
                     disabled={disabled}
                 />
             )}
             <Button
                 onClick={saveForwarder}
                 forisFormSize
+                className="btn-primary col-lg-12 col-md-12"
                 disabled={!!formState.errors}
             >
-                {_("Save forwarder")}
+                {_("Save")}
             </Button>
         </>
     );

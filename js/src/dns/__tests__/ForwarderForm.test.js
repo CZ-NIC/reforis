@@ -24,15 +24,16 @@ describe("<ForwarderForm/>: new forwarder.", () => {
 
     beforeEach(() => {
         saveForwarderCallback = jest.fn();
-        const renderRes = render(<ForwarderForm saveForwarderCallback={saveForwarderCallback}/>);
+        const renderRes = render(
+            <ForwarderForm saveForwarderCallback={saveForwarderCallback} />
+        );
         getByText = renderRes.getByText;
         getByLabelText = renderRes.getByLabelText;
         container = renderRes.container;
     });
 
     it("Test with snapshot.", () => {
-        expect(container)
-            .toMatchSnapshot();
+        expect(container).toMatchSnapshot();
     });
 
     it("Test add new forwarder - handle success.", async () => {
@@ -40,10 +41,9 @@ describe("<ForwarderForm/>: new forwarder.", () => {
         userEvent.type(getByLabelText("IPv4 #1"), "1.2.3.4");
         fireEvent.click(getByText(/Add IPv4 address/));
         userEvent.type(getByLabelText("IPv4 #2"), "2.2.2.2");
-        fireEvent.click(getByText(/Save forwarder/));
+        fireEvent.click(getByText(/Save/));
 
-        expect(mockAxios.post)
-            .toBeCalled();
+        expect(mockAxios.post).toBeCalled();
         const data = {
             description: "Custom forwarder",
             ipaddresses: {
@@ -52,27 +52,30 @@ describe("<ForwarderForm/>: new forwarder.", () => {
             },
             tls_type: "no",
         };
-        expect(mockAxios.post)
-            .toHaveBeenCalledWith("/reforis/api/dns/forwarders", data, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith(
+            "/reforis/api/dns/forwarders",
+            data,
+            expect.anything()
+        );
         mockAxios.mockResponse({ data: {} });
 
         // Handle success
         await wait(() => {
-            expect(saveForwarderCallback)
-                .toBeCalled();
+            expect(saveForwarderCallback).toBeCalled();
         });
-        expect(mockSetAlert)
-            .toBeCalledWith("Forwarder saved successfully.", ALERT_TYPES.SUCCESS);
+        expect(mockSetAlert).toBeCalledWith(
+            "Forwarder saved successfully.",
+            ALERT_TYPES.SUCCESS
+        );
     });
 
     it("Test add new forwarder - handle error.", async () => {
         userEvent.type(getByLabelText("Name"), "Custom forwarder");
         userEvent.type(getByLabelText("IPv4 #1"), "1.2.3.4");
-        fireEvent.click(getByText(/Save forwarder/));
+        fireEvent.click(getByText(/Save/));
         mockJSONError();
         await wait(() => {
-            expect(mockSetAlert)
-                .toBeCalledWith("Can't save forwarder.");
+            expect(mockSetAlert).toBeCalledWith("Can't save forwarder.");
         });
     });
 });
@@ -88,22 +91,20 @@ describe("<ForwarderForm/>: existed forwarder.", () => {
             <ForwarderForm
                 forwarder={forwardersFixture.forwarders[0]}
                 saveForwarderCallback={saveForwarderCallback}
-            />,
+            />
         );
         getByText = renderRes.getByText;
         container = renderRes.container;
     });
 
     it("Test with snapshot.", () => {
-        expect(container)
-            .toMatchSnapshot();
+        expect(container).toMatchSnapshot();
     });
 
     it("Test edit forwarder - handle success..", async () => {
-        fireEvent.click(getByText(/Save forwarder/));
+        fireEvent.click(getByText(/Save/));
 
-        expect(mockAxios.put)
-            .toBeCalled();
+        expect(mockAxios.put).toBeCalled();
         const data = {
             description: "Google",
             ipaddresses: {
@@ -112,25 +113,28 @@ describe("<ForwarderForm/>: existed forwarder.", () => {
             },
             tls_type: "no",
         };
-        expect(mockAxios.put)
-            .toHaveBeenCalledWith("/reforis/api/dns/forwarders/99_google", data, expect.anything());
+        expect(mockAxios.put).toHaveBeenCalledWith(
+            "/reforis/api/dns/forwarders/99_google",
+            data,
+            expect.anything()
+        );
         mockAxios.mockResponse({ data: {} });
 
         // Handle success
         await wait(() => {
-            expect(saveForwarderCallback)
-                .toBeCalled();
+            expect(saveForwarderCallback).toBeCalled();
         });
-        expect(mockSetAlert)
-            .toBeCalledWith("Forwarder added successfully.", ALERT_TYPES.SUCCESS);
+        expect(mockSetAlert).toBeCalledWith(
+            "Forwarder added successfully.",
+            ALERT_TYPES.SUCCESS
+        );
     });
 
     it("Test edit forwarder - handle error.", async () => {
-        fireEvent.click(getByText(/Save forwarder/));
+        fireEvent.click(getByText(/Save/));
         mockJSONError();
         await wait(() => {
-            expect(mockSetAlert)
-                .toBeCalledWith("Can't add new forwarder.");
+            expect(mockSetAlert).toBeCalledWith("Can't add new forwarder.");
         });
     });
 });

@@ -115,10 +115,10 @@ exports[`<ForwarderForm/>: existed forwarder. Test with snapshot. 1`] = `
     </select>
   </div>
   <button
-    class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
+    class="btn btn-primary col-lg-12 col-md-12 col-sm-12 col-md-3 col-lg-2"
     type="button"
   >
-    Save forwarder
+    Save
   </button>
 </div>
 `;
@@ -253,11 +253,11 @@ exports[`<ForwarderForm/>: new forwarder. Test with snapshot. 1`] = `
     </select>
   </div>
   <button
-    class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
+    class="btn btn-primary col-lg-12 col-md-12 col-sm-12 col-md-3 col-lg-2"
     disabled=""
     type="button"
   >
-    Save forwarder
+    Save
   </button>
 </div>
 `;
