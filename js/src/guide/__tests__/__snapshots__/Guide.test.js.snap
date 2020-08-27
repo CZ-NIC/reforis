@@ -19,7 +19,7 @@ exports[`<Guide/>  Snapshot. Just check if render correct page. 1`] = `
         </p>
       </div>
       <div
-        class="guide-controls col-lg-4 col-md-12 col-sm-12 mt-md-2"
+        class="guide-controls col-lg-4 col-md-12 col-sm-12 mt-md-2 mt-lg-0"
       >
         <div
           class="dropdown"
