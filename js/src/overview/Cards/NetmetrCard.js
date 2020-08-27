@@ -54,7 +54,7 @@ function NetmetrCard({ tests }) {
                             className="text-secondary"
                             title={_("Go to Netmetr")}
                         >
-                            <i className="fas fa-external-link-alt float-right" />
+                            <i className="fas fa-chevron-right float-right" />
                         </Link>
                     </h6>
                     {lastTest != null ? (

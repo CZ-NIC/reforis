@@ -86,7 +86,7 @@ function OverviewCards({ packages, ws }) {
                                     className="text-secondary"
                                     title={_("Go to Connection Settings")}
                                 >
-                                    <i className="fas fa-external-link-alt float-right" />
+                                    <i className="fas fa-chevron-right float-right" />
                                 </Link>
                             </h6>
                             <ConnectionTest ws={ws} type="wan" overview />
