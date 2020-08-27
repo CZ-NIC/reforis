@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -7,7 +7,6 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import { buttonFormFieldsSize } from "foris";
 
 import useConnectionTest from "./hooks";
 import ConnectionTestResults from "./ConnectionTestResult";
@@ -33,7 +32,7 @@ export default function ConnectionTest({ ws, type, overview }) {
         <div className={insideCard}>
             <form>
                 <ConnectionTestResults state={state} {...testResults} />
-                <div className={`${buttonFormFieldsSize} text-right`}>
+                <div className="col-sm-12 col-lg-12 p-0 mb-0 text-right">
                     <ConnectionTestButton
                         state={state}
                         onClick={onSubmit}
