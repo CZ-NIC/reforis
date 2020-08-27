@@ -38,7 +38,7 @@ export default function GuideNavigationItem({ name, url, next, passed }) {
                 </NavLink>
             ) : (
                 // eslint-disable-next-line jsx-a11y/anchor-is-valid
-                <a>{content}</a>
+                <a className="disabled user-select-none">{content}</a>
             )}
         </li>
     );
