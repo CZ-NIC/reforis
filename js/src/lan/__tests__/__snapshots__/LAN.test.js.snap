@@ -124,7 +124,7 @@ it has opened ports for configuration interface and other services.
         class="form-group"
       >
         <div
-          class="custom-control custom-checkbox "
+          class="custom-control custom-switch"
         >
           <input
             class="custom-control-input"
@@ -136,12 +136,12 @@ it has opened ports for configuration interface and other services.
             for="7"
           >
             Enable DHCP
-            <small
-              class="form-text text-muted"
-            >
-              Enable this option to automatically assign IP addresses to the devices connected to the router.
-            </small>
           </label>
+          <small
+            class="form-text text-muted mt-0 mb-3"
+          >
+            Enable this option to automatically assign IP addresses to the devices connected to the router.
+          </small>
         </div>
       </div>
       <div
@@ -297,7 +297,9 @@ it has opened ports for configuration interface and other services.
     <h2>
       DHCP Clients
     </h2>
-    <p>
+    <p
+      class="text-muted text-center"
+    >
       No DHCP clients found.
     </p>
   </div>
@@ -428,7 +430,7 @@ it has opened ports for configuration interface and other services.
         class="form-group"
       >
         <div
-          class="custom-control custom-checkbox "
+          class="custom-control custom-switch"
         >
           <input
             class="custom-control-input"
@@ -440,12 +442,12 @@ it has opened ports for configuration interface and other services.
             for="7"
           >
             Enable DHCP
-            <small
-              class="form-text text-muted"
-            >
-              Enable this option to automatically assign IP addresses to the devices connected to the router.
-            </small>
           </label>
+          <small
+            class="form-text text-muted mt-0 mb-3"
+          >
+            Enable this option to automatically assign IP addresses to the devices connected to the router.
+          </small>
         </div>
       </div>
       <div

@@ -3,7 +3,7 @@
 exports[`<ConnectionTest/> Snapshot after trigger DNS connection test. 1`] = `
 <DocumentFragment>
   <div
-    class="card p-4"
+    class="card p-4 mb-3"
   >
     <form>
       <table
@@ -51,7 +51,7 @@ exports[`<ConnectionTest/> Snapshot after trigger DNS connection test. 1`] = `
         </tbody>
       </table>
       <div
-        class="col-sm-12 col-lg-12 p-0 mb-3 text-right"
+        class="col-sm-12 col-lg-12 p-0 mb-0 text-right"
       >
         <button
           class="btn btn-primary col-sm-12 col-md-3 col-lg-2"
@@ -74,7 +74,7 @@ exports[`<ConnectionTest/> Snapshot after trigger DNS connection test. 1`] = `
 exports[`<ConnectionTest/> Snapshot after trigger WAN connection test. 1`] = `
 <DocumentFragment>
   <div
-    class="card p-4"
+    class="card p-4 mb-3"
   >
     <form>
       <table
@@ -160,7 +160,7 @@ exports[`<ConnectionTest/> Snapshot after trigger WAN connection test. 1`] = `
         </tbody>
       </table>
       <div
-        class="col-sm-12 col-lg-12 p-0 mb-3 text-right"
+        class="col-sm-12 col-lg-12 p-0 mb-0 text-right"
       >
         <button
           class="btn btn-primary col-sm-12 col-md-3 col-lg-2"
@@ -183,7 +183,7 @@ exports[`<ConnectionTest/> Snapshot after trigger WAN connection test. 1`] = `
 exports[`<ConnectionTest/> Snapshot before connection test. 1`] = `
 <DocumentFragment>
   <div
-    class="card p-4"
+    class="card p-4 mb-3"
   >
     <form>
       <table
@@ -265,7 +265,7 @@ exports[`<ConnectionTest/> Snapshot before connection test. 1`] = `
         </tbody>
       </table>
       <div
-        class="col-sm-12 col-lg-12 p-0 mb-3 text-right"
+        class="col-sm-12 col-lg-12 p-0 mb-0 text-right"
       >
         <button
           class="btn btn-primary col-sm-12 col-md-3 col-lg-2"
@@ -282,7 +282,7 @@ exports[`<ConnectionTest/> Snapshot before connection test. 1`] = `
 exports[`<ConnectionTest/> Snapshots with connection test results. 1`] = `
 <DocumentFragment>
   <div
-    class="card p-4"
+    class="card p-4 mb-3"
   >
     <form>
       <table
@@ -364,7 +364,7 @@ exports[`<ConnectionTest/> Snapshots with connection test results. 1`] = `
         </tbody>
       </table>
       <div
-        class="col-sm-12 col-lg-12 p-0 mb-3 text-right"
+        class="col-sm-12 col-lg-12 p-0 mb-0 text-right"
       >
         <button
           class="btn btn-primary col-sm-12 col-md-3 col-lg-2"

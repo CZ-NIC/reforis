@@ -790,8 +790,8 @@ exports[`<WAN/> Snapshot: MAC enabled 1`] = `
 + Second value
 
 @@ -137,14 +137,45 @@
-              </small>
-            </label>
+              Useful in cases, when a specific MAC address is required by your internet service provider.
+            </small>
           </div>
         </div>
         <div
@@ -958,7 +958,7 @@ router to the network, it is usually not necessary to change this setting.
         class="form-group"
       >
         <div
-          class="custom-control custom-checkbox "
+          class="custom-control custom-switch"
         >
           <input
             class="custom-control-input"
@@ -970,12 +970,12 @@ router to the network, it is usually not necessary to change this setting.
             for="4"
           >
             Custom MAC address
-            <small
-              class="form-text text-muted"
-            >
-              Useful in cases, when a specific MAC address is required by your internet service provider.
-            </small>
           </label>
+          <small
+            class="form-text text-muted mt-0 mb-3"
+          >
+            Useful in cases, when a specific MAC address is required by your internet service provider.
+          </small>
         </div>
       </div>
       <div
@@ -1005,7 +1005,7 @@ wait for a while before running this test.
         
   </p>
   <div
-    class="card p-4"
+    class="card p-4 mb-3"
   >
     <form>
       <table
@@ -1087,7 +1087,7 @@ wait for a while before running this test.
         </tbody>
       </table>
       <div
-        class="col-sm-12 col-lg-12 p-0 mb-3 text-right"
+        class="col-sm-12 col-lg-12 p-0 mb-0 text-right"
       >
         <button
           class="btn btn-primary col-sm-12 col-md-3 col-lg-2"

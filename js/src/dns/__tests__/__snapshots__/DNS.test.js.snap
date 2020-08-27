@@ -6,8 +6,8 @@ exports[`<DNS/> Test with snapshot DHCP. 1`] = `
 + Second value
 
 @@ -98,10 +98,34 @@
-              </small>
-            </label>
+              This will enable your DNS resolver to place DHCP client's names among the local DNS records.
+            </small>
           </div>
         </div>
         <div
@@ -47,177 +47,178 @@ exports[`<DNS/> Test with snapshot forwarding. 1`] = `
 - First value
 + Second value
 
-@@ -53,10 +53,185 @@
-            >
+@@ -54,10 +54,187 @@
               Use forwarding
             </label>
           </div>
         </div>
-+       <table
-+         class=\\"table col-12\\"
+        <div
++         class=\\"table-responsive\\"
 +       >
-+         <thead>
-+           <tr>
-+             <th>
-+               Forwarders
-+             </th>
-+             <th
-+               aria-label=\\"Actions\\"
-+             />
-+           </tr>
-+         </thead>
-+         <tbody>
-+           <tr
-+             class=\\"table-secondary\\"
++         <table
++           class=\\"table col-12\\"
++         >
++           <thead
++             class=\\"thead-light\\"
 +           >
-+             <td>
-+               <div
-+                 class=\\"custom-control custom-radio\\"
++             <tr>
++               <th>
++                 Forwarders
++               </th>
++               <th
++                 aria-label=\\"Actions\\"
++               />
++             </tr>
++           </thead>
++           <tbody>
++             <tr>
++               <td>
++                 <div
++                   class=\\"custom-control custom-radio\\"
++                 >
++                   <input
++                     checked=\\"\\"
++                     class=\\"custom-control-input\\"
++                     id=\\"provider_forwarder\\"
++                     name=\\"dns-forwarders\\"
++                     type=\\"radio\\"
++                     value=\\"provider_forwarder\\"
++                   />
++                   <label
++                     class=\\"custom-control-label\\"
++                     for=\\"provider_forwarder\\"
++                   >
++                     Use provider's DNS resolver
++                   </label>
++                 </div>
++               </td>
++               <td
++                 align=\\"right\\"
++               />
++             </tr>
++             <tr>
++               <td>
++                 <div
++                   class=\\"custom-control custom-radio\\"
++                 >
++                   <input
++                     class=\\"custom-control-input\\"
++                     id=\\"00_odvr-cznic\\"
++                     name=\\"dns-forwarders\\"
++                     type=\\"radio\\"
++                     value=\\"00_odvr-cznic\\"
++                   />
++                   <label
++                     class=\\"custom-control-label\\"
++                     for=\\"00_odvr-cznic\\"
++                   >
++                     CZ.NIC (TLS)
++                   </label>
++                 </div>
++               </td>
++               <td
++                 align=\\"right\\"
++               />
++             </tr>
++             <tr>
++               <td>
++                 <div
++                   class=\\"custom-control custom-radio\\"
++                 >
++                   <input
++                     class=\\"custom-control-input\\"
++                     id=\\"99_cloudflare\\"
++                     name=\\"dns-forwarders\\"
++                     type=\\"radio\\"
++                     value=\\"99_cloudflare\\"
++                   />
++                   <label
++                     class=\\"custom-control-label\\"
++                     for=\\"99_cloudflare\\"
++                   >
++                     Cloudflare (TLS)
++                   </label>
++                 </div>
++               </td>
++               <td
++                 align=\\"right\\"
++               />
++             </tr>
++             <tr>
++               <td>
++                 <div
++                   class=\\"custom-control custom-radio\\"
++                 >
++                   <input
++                     class=\\"custom-control-input\\"
++                     id=\\"99_google\\"
++                     name=\\"dns-forwarders\\"
++                     type=\\"radio\\"
++                     value=\\"99_google\\"
++                   />
++                   <label
++                     class=\\"custom-control-label\\"
++                     for=\\"99_google\\"
++                   >
++                     Google
++                   </label>
++                 </div>
++               </td>
++               <td
++                 align=\\"right\\"
++               />
++             </tr>
++             <tr>
++               <td>
++                 <div
++                   class=\\"custom-control custom-radio\\"
++                 >
++                   <input
++                     class=\\"custom-control-input\\"
++                     id=\\"custom_fwd\\"
++                     name=\\"dns-forwarders\\"
++                     type=\\"radio\\"
++                     value=\\"custom_fwd\\"
++                   />
++                   <label
++                     class=\\"custom-control-label\\"
++                     for=\\"custom_fwd\\"
++                   >
++                     Custom forwarder
++                   </label>
++                 </div>
++               </td>
++               <td
++                 align=\\"right\\"
 +               >
-+                 <input
-+                   checked=\\"\\"
-+                   class=\\"custom-control-input\\"
-+                   id=\\"provider_forwarder\\"
-+                   name=\\"dns-forwarders\\"
-+                   type=\\"radio\\"
-+                   value=\\"provider_forwarder\\"
-+                 />
-+                 <label
-+                   class=\\"custom-control-label\\"
-+                   for=\\"provider_forwarder\\"
++                 <div
++                   class=\\"btn-group mb-0\\"
++                   role=\\"group\\"
 +                 >
-+                   Use provider's DNS resolver
-+                 </label>
-+               </div>
-+             </td>
-+             <td
-+               align=\\"center\\"
-+             />
-+           </tr>
-+           <tr
-+             class=\\"\\"
-+           >
-+             <td>
-+               <div
-+                 class=\\"custom-control custom-radio\\"
-+               >
-+                 <input
-+                   class=\\"custom-control-input\\"
-+                   id=\\"00_odvr-cznic\\"
-+                   name=\\"dns-forwarders\\"
-+                   type=\\"radio\\"
-+                   value=\\"00_odvr-cznic\\"
-+                 />
-+                 <label
-+                   class=\\"custom-control-label\\"
-+                   for=\\"00_odvr-cznic\\"
-+                 >
-+                   CZ.NIC (TLS)
-+                 </label>
-+               </div>
-+             </td>
-+             <td
-+               align=\\"center\\"
-+             />
-+           </tr>
-+           <tr
-+             class=\\"\\"
-+           >
-+             <td>
-+               <div
-+                 class=\\"custom-control custom-radio\\"
-+               >
-+                 <input
-+                   class=\\"custom-control-input\\"
-+                   id=\\"99_cloudflare\\"
-+                   name=\\"dns-forwarders\\"
-+                   type=\\"radio\\"
-+                   value=\\"99_cloudflare\\"
-+                 />
-+                 <label
-+                   class=\\"custom-control-label\\"
-+                   for=\\"99_cloudflare\\"
-+                 >
-+                   Cloudflare (TLS)
-+                 </label>
-+               </div>
-+             </td>
-+             <td
-+               align=\\"center\\"
-+             />
-+           </tr>
-+           <tr
-+             class=\\"\\"
-+           >
-+             <td>
-+               <div
-+                 class=\\"custom-control custom-radio\\"
-+               >
-+                 <input
-+                   class=\\"custom-control-input\\"
-+                   id=\\"99_google\\"
-+                   name=\\"dns-forwarders\\"
-+                   type=\\"radio\\"
-+                   value=\\"99_google\\"
-+                 />
-+                 <label
-+                   class=\\"custom-control-label\\"
-+                   for=\\"99_google\\"
-+                 >
-+                   Google
-+                 </label>
-+               </div>
-+             </td>
-+             <td
-+               align=\\"center\\"
-+             />
-+           </tr>
-+           <tr
-+             class=\\"\\"
-+           >
-+             <td>
-+               <div
-+                 class=\\"custom-control custom-radio\\"
-+               >
-+                 <input
-+                   class=\\"custom-control-input\\"
-+                   id=\\"custom_fwd\\"
-+                   name=\\"dns-forwarders\\"
-+                   type=\\"radio\\"
-+                   value=\\"custom_fwd\\"
-+                 />
-+                 <label
-+                   class=\\"custom-control-label\\"
-+                   for=\\"custom_fwd\\"
-+                 >
-+                   Custom forwarder
-+                 </label>
-+               </div>
-+             </td>
-+             <td
-+               align=\\"center\\"
-+             >
-+               <div
-+                 class=\\"btn-group\\"
-+                 role=\\"group\\"
-+               >
-+                 <button
-+                   class=\\"btn btn-primary btn-sm\\"
-+                   type=\\"button\\"
-+                 >
-+                   Edit
-+                 </button>
-+                 <button
-+                   class=\\"btn btn-danger btn-sm\\"
-+                   type=\\"button\\"
-+                 >
-+                   Delete
-+                 </button>
-+               </div>
-+             </td>
-+           </tr>
-+         </tbody>
-+       </table>
++                   <button
++                     class=\\"btn btn-primary btn-sm\\"
++                     type=\\"button\\"
++                   >
++                     <i
++                       class=\\"fas fa-edit fa-sm mr-1\\"
++                     />
++                     Edit
++                   </button>
++                   <button
++                     class=\\"btn btn-danger btn-sm\\"
++                     type=\\"button\\"
++                   >
++                     <i
++                       class=\\"fas fa-trash fa-sm mr-1\\"
++                     />
++                     Delete
++                   </button>
++                 </div>
++               </td>
++             </tr>
++           </tbody>
++         </table>
++       </div>
 +       <div
 +         class=\\"text-right\\"
 +       >
@@ -228,11 +229,12 @@ exports[`<DNS/> Test with snapshot forwarding. 1`] = `
 +           Add custom forwarder
 +         </button>
 +       </div>
-        <div
++       <div
           class=\\"form-group\\"
         >
           <div
-            class=\\"custom-control custom-checkbox \\""
+            class=\\"custom-control custom-checkbox \\"
+          >"
 `;
 
 exports[`<DNS/> Test with snapshot. 1`] = `
@@ -278,7 +280,7 @@ this is a serious flaw on their side.
         class="form-group"
       >
         <div
-          class="custom-control custom-checkbox "
+          class="custom-control custom-switch custom-control-inline"
         >
           <input
             class="custom-control-input"
@@ -317,7 +319,7 @@ this is a serious flaw on their side.
         class="form-group"
       >
         <div
-          class="custom-control custom-checkbox "
+          class="custom-control custom-switch"
         >
           <input
             class="custom-control-input"
@@ -329,12 +331,12 @@ this is a serious flaw on their side.
             for="3"
           >
             Enable DHCP clients in DNS
-            <small
-              class="form-text text-muted"
-            >
-              This will enable your DNS resolver to place DHCP client's names among the local DNS records.
-            </small>
           </label>
+          <small
+            class="form-text text-muted mt-0 mb-3"
+          >
+            This will enable your DNS resolver to place DHCP client's names among the local DNS records.
+          </small>
         </div>
       </div>
       <div
@@ -363,7 +365,7 @@ works as expected. Remember to click on the
         
   </p>
   <div
-    class="card p-4"
+    class="card p-4 mb-3"
   >
     <form>
       <table
@@ -409,7 +411,7 @@ works as expected. Remember to click on the
         </tbody>
       </table>
       <div
-        class="col-sm-12 col-lg-12 p-0 mb-3 text-right"
+        class="col-sm-12 col-lg-12 p-0 mb-0 text-right"
       >
         <button
           class="btn btn-primary col-sm-12 col-md-3 col-lg-2"
