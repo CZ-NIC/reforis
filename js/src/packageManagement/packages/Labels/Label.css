@@ -12,3 +12,7 @@
 .badge-disabled {
     opacity: 0.5;
 }
+
+span.badge {
+    cursor: help;
+}
