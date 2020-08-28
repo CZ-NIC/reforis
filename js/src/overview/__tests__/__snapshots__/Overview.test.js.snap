@@ -1,0 +1,552 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Overview Snapshot of the whole page 1`] = `
+<div>
+  <h1>
+    Overview
+  </h1>
+  <div
+    class="row row-cols-1 row-cols-lg-3 mt-4"
+  >
+    <div
+      class="col mb-4"
+    >
+      <div
+        class="card user-select-none"
+      >
+        <div
+          class="card-body"
+        >
+          <div
+            class="row align-items-center"
+          >
+            <div
+              class="col"
+            >
+              <h6
+                class="text-uppercase text-muted mb-2 "
+              >
+                Automatic Updates
+              </h6>
+              <span
+                class="status"
+              >
+                Activated
+              </span>
+            </div>
+            <div
+              class="col-auto"
+            >
+              <span
+                class="h2 text-success"
+              >
+                <i
+                  class="fas fa-check"
+                />
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="col mb-4"
+    >
+      <div
+        class="card user-select-none"
+      >
+        <div
+          class="card-body"
+        >
+          <div
+            class="row align-items-center"
+          >
+            <div
+              class="col"
+            >
+              <h6
+                class="text-uppercase text-muted mb-2"
+              >
+                Data Collection
+              </h6>
+              <span
+                class="status"
+              >
+                Activated
+              </span>
+            </div>
+            <div
+              class="col-auto"
+            >
+              <span
+                class="h2 text-success"
+              >
+                <i
+                  class="fas fa-check"
+                />
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="col mb-4"
+    >
+      <div
+        class="card user-select-none"
+      >
+        <div
+          class="card-body"
+        >
+          <div
+            class="row align-items-center"
+          >
+            <div
+              class="col"
+            >
+              <h6
+                class="text-uppercase text-muted mb-2"
+              >
+                Dynamic Firewall
+              </h6>
+              <span
+                class="status"
+              >
+                Activated
+              </span>
+            </div>
+            <div
+              class="col-auto"
+            >
+              <span
+                class="h2 text-success"
+              >
+                <i
+                  class="fas fa-check"
+                />
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="col mb-4"
+    >
+      <div
+        class="card h-100 user-select-none"
+      >
+        <div
+          class="card-body"
+        >
+          <h6
+            class="text-uppercase text-muted mb-2"
+          >
+            NetMetr
+            <a
+              class="text-secondary"
+              href="/netmetr/speed-test"
+              title="Go to Netmetr"
+            >
+              <i
+                class="fas fa-chevron-right float-right"
+              />
+            </a>
+          </h6>
+          <form>
+            <table
+              class="table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12"
+            >
+              <tbody>
+                <tr>
+                  <th
+                    scope="row"
+                  >
+                    Download
+                    <span
+                      class="badge badge-secondary"
+                      title="Megabit per second"
+                    >
+                      Mb/s
+                    </span>
+                  </th>
+                  <td
+                    class="text-right"
+                  >
+                    930
+                  </td>
+                </tr>
+                <tr>
+                  <th
+                    scope="row"
+                  >
+                    Upload
+                    <span
+                      class="badge badge-secondary"
+                      title="Megabit per second"
+                    >
+                      Mb/s
+                    </span>
+                  </th>
+                  <td
+                    class="text-right"
+                  >
+                    <span>
+                      930
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <th
+                    scope="row"
+                  >
+                    Ping
+                    <span
+                      class="badge badge-secondary"
+                      title="Millisecond"
+                    >
+                      ms
+                    </span>
+                  </th>
+                  <td
+                    class="text-right"
+                  >
+                    <span>
+                      -1
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <th
+                    scope="row"
+                  >
+                    Link
+                  </th>
+                  <td
+                    class="text-right"
+                  >
+                    <a
+                      href="https://www.netmetr.cz/en/detail.html?c7a6f82d-5128-47f3-a3f9-d7e9d9af64bd"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      Details
+                      <sup>
+                        <i
+                          class="fas fa-external-link-alt ml-1"
+                        />
+                      </sup>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+          <p
+            class="card-text"
+          >
+            <small
+              class="text-muted"
+            >
+              Performed
+               
+              in 2 years
+            </small>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="col mb-4"
+    >
+      <div
+        class="card h-100 user-select-none"
+      >
+        <div
+          class="card-body"
+        >
+          <h6
+            class="text-uppercase text-muted mb-2"
+          >
+            Connection Test
+            <a
+              class="text-secondary"
+              href="/network-settings/wan"
+              title="Go to Connection Settings"
+            >
+              <i
+                class="fas fa-chevron-right float-right"
+              />
+            </a>
+          </h6>
+          <div
+            class=""
+          >
+            <form>
+              <table
+                class="table table-borderless table-hover col-sm-12"
+              >
+                <tbody>
+                  <tr>
+                    <th
+                      scope="row"
+                    >
+                      IPv4 connectivity
+                    </th>
+                    <td
+                      class="text-right"
+                    >
+                      <div
+                        class="text-secondary"
+                      >
+                        <i
+                          class="fas fa-minus"
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th
+                      scope="row"
+                    >
+                      IPv4 gateway connectivity
+                    </th>
+                    <td
+                      class="text-right"
+                    >
+                      <div
+                        class="text-secondary"
+                      >
+                        <i
+                          class="fas fa-minus"
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th
+                      scope="row"
+                    >
+                      IPv6 connectivity
+                    </th>
+                    <td
+                      class="text-right"
+                    >
+                      <div
+                        class="text-secondary"
+                      >
+                        <i
+                          class="fas fa-minus"
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th
+                      scope="row"
+                    >
+                      IPv6 gateway connectivity
+                    </th>
+                    <td
+                      class="text-right"
+                    >
+                      <div
+                        class="text-secondary"
+                      >
+                        <i
+                          class="fas fa-minus"
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div
+                class="col-sm-12 col-lg-12 p-0 mb-0 text-right"
+              >
+                <button
+                  class="btn btn-outline-primary col-sm-12 col-md-3 col-lg-2"
+                  type="submit"
+                >
+                  Test connection
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="col mb-4"
+    >
+      <div
+        class="card h-100 user-select-none"
+      >
+        <div
+          class="card-body"
+        >
+          <h6
+            class="text-uppercase text-muted mb-2"
+          >
+            OpenVPN Clients
+            <a
+              class="text-secondary"
+              href="/openvpn/client-settings"
+              title="Go to OpenVPN Client Settings"
+            >
+              <i
+                class="fas fa-chevron-right float-right"
+              />
+            </a>
+          </h6>
+          <form>
+            <table
+              class="table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12"
+            >
+              <tbody>
+                <tr>
+                  <th
+                    scope="row"
+                  >
+                    <span>
+                      turris
+                    </span>
+                  </th>
+                  <td
+                    class="text-right"
+                  >
+                    <span
+                      class="text-success"
+                    >
+                      <i
+                        class="fas fa-check"
+                      />
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h2>
+    Notifications
+    <button
+      class="btn btn-outline-danger float-right"
+      id="btn-dismiss-all"
+      type="button"
+    >
+      <i
+        class="fas fa-trash mr-1"
+      />
+      Dismiss all
+    </button>
+  </h2>
+  <div
+    id="notifications-center"
+  >
+    <div
+      class="card bg-light border-info"
+    >
+      <div
+        class="card-header"
+      >
+        <i
+          class="fa fa-newspaper fa-lg"
+        />
+        <p
+          class="text-muted align-middle m-0"
+        >
+          February 1, 2000 12:00 AM
+        </p>
+        <button
+          class="close "
+          type="button"
+        >
+          ×
+        </button>
+      </div>
+      <div
+        class="card-body"
+      >
+        <p
+          class="card-text"
+        >
+          Notification message.
+        </p>
+      </div>
+    </div>
+    <div
+      class="card bg-light border-danger"
+    >
+      <div
+        class="card-header"
+      >
+        <i
+          class="fa fa-exclamation-circle fa-lg"
+        />
+        <p
+          class="text-muted align-middle m-0"
+        >
+          February 1, 2000 12:00 AM
+        </p>
+        <button
+          class="close "
+          type="button"
+        >
+          ×
+        </button>
+      </div>
+      <div
+        class="card-body"
+      >
+        <p
+          class="card-text"
+        >
+          Second notification message.
+        </p>
+      </div>
+    </div>
+    <div
+      class="card bg-light border-danger"
+    >
+      <div
+        class="card-header"
+      >
+        <i
+          class="fa fa-power-off fa-lg"
+        />
+        <p
+          class="text-muted align-middle m-0"
+        >
+          February 1, 2000 12:00 AM
+        </p>
+        <button
+          class="close invisible"
+          type="button"
+        >
+          ×
+        </button>
+      </div>
+      <div
+        class="card-body"
+      >
+        <p
+          class="card-text"
+        >
+          Third notification message.
+        </p>
+      </div>
+      <button
+        class="btn btn-danger"
+        type="button"
+      >
+        Reboot
+      </button>
+    </div>
+  </div>
+</div>
+`;
