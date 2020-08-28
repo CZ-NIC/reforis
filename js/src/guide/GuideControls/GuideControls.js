@@ -20,7 +20,7 @@ GuideControls.propTypes = {
 
 export default function GuideControls({ ws, next_step }) {
     return (
-        <div className="guide-controls col-lg-4 col-md-12 col-sm-12 mt-md-2">
+        <div className="guide-controls col-lg-4 col-md-12 col-sm-12 mt-md-2 mt-lg-0">
             <LanguagesDropdown
                 ws={ws}
                 className="guide-controls-button btn-light"

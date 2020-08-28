@@ -86,11 +86,6 @@
     background: #00a2e2;
 }
 
-#stepsbar a.next {
-    color: #fff;
-    background-color: #18bc9c;
-}
-
 #stepsbar ul a.next.active {
     color: #fff;
     background: #00a2e2;
@@ -177,6 +172,7 @@
 .wrapper-guide #alert-container {
     margin-left: 17.5% !important;
     max-width: 65%;
+    margin-bottom: 0.5rem;
 }
 
 @media only screen and (max-width: 922px) {

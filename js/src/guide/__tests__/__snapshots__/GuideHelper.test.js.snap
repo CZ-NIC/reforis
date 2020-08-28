@@ -20,7 +20,7 @@ exports[`<GuideHelp/> displays lan help with completed message 1`] = `
       </p>
     </div>
     <div
-      class="guide-controls col-lg-4 col-md-12 col-sm-12 mt-md-2"
+      class="guide-controls col-lg-4 col-md-12 col-sm-12 mt-md-2 mt-lg-0"
     >
       <div
         class="dropdown"
@@ -132,7 +132,7 @@ exports[`<GuideHelp/> displays lan help without completed message - server workf
       </p>
     </div>
     <div
-      class="guide-controls col-lg-4 col-md-12 col-sm-12 mt-md-2"
+      class="guide-controls col-lg-4 col-md-12 col-sm-12 mt-md-2 mt-lg-0"
     >
       <div
         class="dropdown"
@@ -223,7 +223,7 @@ exports[`<GuideHelp/> displays lan help without completed message 1`] = `
       </p>
     </div>
     <div
-      class="guide-controls col-lg-4 col-md-12 col-sm-12 mt-md-2"
+      class="guide-controls col-lg-4 col-md-12 col-sm-12 mt-md-2 mt-lg-0"
     >
       <div
         class="dropdown"
@@ -316,7 +316,7 @@ exports[`<GuideHelp/> doesn't display completed message if it doesn't exist 1`] 
       </p>
     </div>
     <div
-      class="guide-controls col-lg-4 col-md-12 col-sm-12 mt-md-2"
+      class="guide-controls col-lg-4 col-md-12 col-sm-12 mt-md-2 mt-lg-0"
     >
       <div
         class="dropdown"

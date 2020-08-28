@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -20,14 +20,22 @@ export default function LicenceModal() {
             <div className="modal-dialog" role="document">
                 <div className="modal-content">
                     <div className="modal-header">
-                        <h5 className="modal-title">{_("Most Important License Agreement Points")}</h5>
-                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                        <h5 className="modal-title">
+                            {_("Most Important License Agreement Points")}
+                        </h5>
+                        <button
+                            type="button"
+                            className="close"
+                            data-dismiss="modal"
+                            aria-label="Close"
+                        >
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div className="modal-body">
-                        <ul dangerouslySetInnerHTML={{
-                            __html: _(`
+                        <ul
+                            dangerouslySetInnerHTML={{
+                                __html: _(`
                     <li>Automatic updates are offered to the Turris router owners free of charge.</li>
                     <li>Updates are prepared exclusively by CZ.NIC, z. s. p. o.</li>
                     <li>
@@ -53,9 +61,15 @@ export default function LicenceModal() {
                         responsible for any damages caused by the automatic updates.
                     </li>
                   `),
-                        }}
+                            }}
                         />
-                        <b dangerouslySetInnerHTML={{ __html: _("By enabling of the automatic updates, you confirm that you are the owner of this Turris router and you agree with the full text of the <a href=\"https://www.turris.cz/omnia-updater-eula\">license agreement</a>.") }} />
+                        <b
+                            dangerouslySetInnerHTML={{
+                                __html: _(
+                                    'By enabling of the automatic updates, you confirm that you are the owner of this Turris router and you agree with the full text of the <a href="https://www.turris.cz/omnia-updater-eula" target="_blank" rel="noopener noreferrer">license agreement</a>.'
+                                ),
+                            }}
+                        />
                     </div>
                 </div>
             </div>
