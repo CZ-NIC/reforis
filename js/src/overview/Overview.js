@@ -39,7 +39,7 @@ export default function Overview({ ws }) {
     );
 }
 
-function displayCard({ package_lists: packages }, cardName) {
+export function displayCard({ package_lists: packages }, cardName) {
     const enabledPackagesNames = [];
     packages
         .filter((item) => item.enabled)
