@@ -15,7 +15,7 @@ def lan():
     """
     response = None
     if request.method == 'GET':
-        response = current_app.backend.perform('lan', 'get_settings')
+        response = current_app.backend.perform('lan', 'get_settings_v2')
         if response['mode'] == 'managed' and response['mode_managed']['dhcp']['enabled']:  # Router mode
             # Convert seconds to hours
             response['mode_managed']['dhcp']['lease_time'] /= 3600
