@@ -50,7 +50,7 @@ function OpenVPNClientsCard({ clients }) {
                             <i className="fas fa-chevron-right float-right" />
                         </Link>
                     </h6>
-                    {clients.length !== 0 ? (
+                    {typeof clients === "object" && clients.length !== 0 ? (
                         <form>
                             <table className="table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12">
                                 <tbody>
@@ -83,7 +83,7 @@ function OpenVPNClientsCard({ clients }) {
                         </form>
                     ) : (
                         <p className="text-muted p-2">
-                            {_("There are no client devices added yet.")}
+                            {_("There are no clients added yet.")}
                         </p>
                     )}
                 </div>

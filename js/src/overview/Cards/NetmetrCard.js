@@ -30,9 +30,9 @@ NetmetrCard.propTypes = {
     tests: PropTypes.object.isRequired,
 };
 
-function NetmetrCard({ tests }) {
-    const testsCount = tests.performed_tests.length;
-    const lastTest = testsCount > 0 ? tests.performed_tests[0] : null;
+function NetmetrCard({ tests: { performed_tests: tests } }) {
+    const testsCount = typeof tests !== "undefined" ? tests.length : null;
+    const lastTest = testsCount > 0 ? tests[0] : null;
     const timeFromNow =
         testsCount > 0
             ? moment(
@@ -127,7 +127,7 @@ function NetmetrCard({ tests }) {
                                 </table>
                             </form>
                             <p className="card-text">
-                                <small className="text-muted text-center">
+                                <small className="text-muted">
                                     {_("Performed")} 
                                     {' '}
                                     {timeFromNow}
@@ -135,7 +135,7 @@ function NetmetrCard({ tests }) {
                             </p>
                         </>
                     ) : (
-                        <p className="text-muted p-2 text-center">
+                        <p className="text-muted p-2">
                             {_("No tests have been performed lately.")}
                         </p>
                     )}
