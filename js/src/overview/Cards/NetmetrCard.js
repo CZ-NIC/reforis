@@ -30,17 +30,15 @@ NetmetrCard.propTypes = {
     tests: PropTypes.object.isRequired,
 };
 
-function NetmetrCard({ tests }) {
-    const testsCount = tests.performed_tests.length;
-    const lastTest = testsCount > 0 ? tests.performed_tests[0] : null;
-    const time =
+function NetmetrCard({ tests: { performed_tests: tests } }) {
+    const testsCount = typeof tests !== "undefined" ? tests.length : null;
+    const lastTest = testsCount > 0 ? tests[0] : null;
+    const timeFromNow =
         testsCount > 0
-            ? moment
-                  .unix(lastTest.time)
-                  .locale(ForisTranslations.locale)
-                  .format("HH:mm DD.MM.YYYY")
+            ? moment(
+                  moment.unix(lastTest.time).locale(ForisTranslations.locale)
+              ).fromNow()
             : null;
-
     return (
         <div className="col mb-4">
             <div className="card h-100 user-select-none">
@@ -58,76 +56,84 @@ function NetmetrCard({ tests }) {
                         </Link>
                     </h6>
                     {lastTest != null ? (
-                        <form>
-                            <table className="table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12">
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">
-                                            {_("Download")}
-                                            <span
-                                                className="badge badge-secondary"
-                                                title={_("Megabit per second")}
-                                            >
-                                                Mb/s
-                                            </span>
-                                        </th>
-                                        <td className="text-right">
-                                            {lastTest.speed_download}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">
-                                            {_("Upload")}
-                                            <span
-                                                className="badge badge-secondary"
-                                                title={_("Megabit per second")}
-                                            >
-                                                Mb/s
-                                            </span>
-                                        </th>
-                                        <td className="text-right">
-                                            <span>{lastTest.speed_upload}</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">
-                                            {_("Ping")}
-                                            <span
-                                                className="badge badge-secondary"
-                                                title={_("Millisecond")}
-                                            >
-                                                ms
-                                            </span>
-                                        </th>
-                                        <td className="text-right">
-                                            <span>{lastTest.ping}</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">{_("Date")}</th>
-                                        <td className="text-right">
-                                            <span>{time}</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">{_("Link")}</th>
-                                        <td className="text-right">
-                                            <a
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                href={`https://www.netmetr.cz/en/detail.html?${lastTest.test_uuid}`}
-                                            >
-                                                {_("Details")}
-                                                &nbsp;
-                                                <sup>
-                                                    <i className="fas fa-external-link-alt" />
-                                                </sup>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </form>
+                        <>
+                            <form>
+                                <table className="table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">
+                                                {_("Download")}
+                                                <span
+                                                    className="badge badge-secondary"
+                                                    title={_(
+                                                        "Megabit per second"
+                                                    )}
+                                                >
+                                                    Mb/s
+                                                </span>
+                                            </th>
+                                            <td className="text-right">
+                                                {lastTest.speed_download}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                {_("Upload")}
+                                                <span
+                                                    className="badge badge-secondary"
+                                                    title={_(
+                                                        "Megabit per second"
+                                                    )}
+                                                >
+                                                    Mb/s
+                                                </span>
+                                            </th>
+                                            <td className="text-right">
+                                                <span>
+                                                    {lastTest.speed_upload}
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                {_("Ping")}
+                                                <span
+                                                    className="badge badge-secondary"
+                                                    title={_("Millisecond")}
+                                                >
+                                                    ms
+                                                </span>
+                                            </th>
+                                            <td className="text-right">
+                                                <span>{lastTest.ping}</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">{_("Link")}</th>
+                                            <td className="text-right">
+                                                <a
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    href={`https://www.netmetr.cz/en/detail.html?${lastTest.test_uuid}`}
+                                                >
+                                                    {_("Details")}
+                                                    <sup>
+                                                        <i className="fas fa-external-link-alt ml-1" />
+                                                    </sup>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </form>
+                            <p className="card-text">
+                                <small className="text-muted">
+                                    {_("Performed")} 
+                                    {' '}
+                                    {timeFromNow}
+                                </small>
+                            </p>
+                        </>
                     ) : (
                         <p className="text-muted p-2">
                             {_("No tests have been performed lately.")}

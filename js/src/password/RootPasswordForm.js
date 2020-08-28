@@ -45,7 +45,7 @@ export default function RootPasswordForm({
                         _(
                             `In order to access the advanced configuration options which are not available here, you must
 set the root user's password. The advanced configuration options can be managed either 
-through the <a href="%s">LuCI web interface</a> or via SSH.`
+through the <a href="%s" target="_blank" rel="noopener noreferrer">LuCI web interface</a> or via SSH.`
                         ),
                         ForisURLs.luci
                     ),
