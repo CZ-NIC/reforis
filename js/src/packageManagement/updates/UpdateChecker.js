@@ -32,7 +32,7 @@ export default function UpdateChecker({
 
     return (
         <Button
-            className="btn-primary mt-3 mt-lg-0 mb-4"
+            className="btn-primary mt-3 mt-lg-0 mb-3"
             forisFormSize
             onClick={refreshUpdates}
             disabled={pending}
