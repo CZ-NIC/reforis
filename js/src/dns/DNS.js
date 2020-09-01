@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -29,21 +29,19 @@ export default function DNS({ ws, postCallback }) {
     return (
         <>
             <h1>DNS</h1>
-            <p
+            <div
                 dangerouslySetInnerHTML={{
                     __html: _(`
-Router Turris uses its own DNS resolver with DNSSEC support. It is capable of working independently or it
-can forward your DNS queries your internet service provider's DNS resolver.
-<br/><br/>
-The following setting determines the behavior of the DNS resolver. Usually, it is better to use the ISP's
+<p>Router Turris uses its own DNS resolver with DNSSEC support. It is capable of working independently or it
+can forward your DNS queries your internet service provider's DNS resolver.<p/>
+<p>The following setting determines the behavior of the DNS resolver. Usually, it is better to use the ISP's
 resolver in networks where it works properly. If it does not work for some reason, it is necessary to use
-direct resolving without forwarding.
-<br/><br/>
-In rare cases ISP's have improperly configured network which interferes with DNSSEC validation. If you
+direct resolving without forwarding.<p/>
+<p>In rare cases ISP's have improperly configured network which interferes with DNSSEC validation. If you
 experience problems with DNS, you can <b>temporarily</b> disable DNSSEC validation to determine the source
 of the problem. However, keep in mind that without DNSSEC validation, you are vulnerable to DNS spoofing
 attacks! Therefore we <b>recommend keeping DNSSEC turned on</b> and resolving the situation with your ISP as
-this is a serious flaw on their side.
+this is a serious flaw on their side.</p>
             `),
                 }}
             />

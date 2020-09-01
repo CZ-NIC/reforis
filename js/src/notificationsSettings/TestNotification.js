@@ -26,12 +26,12 @@ import {
 import API_URLs from "../common/API";
 import { SEVERITY_OPTIONS } from "./CommonForm";
 
-const UNSAVED_CHANGES_MODAL_MESSAGE = _(
+export const UNSAVED_CHANGES_MODAL_MESSAGE = _(
     "There are some unsaved changes in the notifications settings. Do you want to discard them and test the notifications with the old settings?"
 );
 
-const SEVERITY_ALERT_MESSAGE = _(
-    'You will not receive the testing notification to your email inbox with current importance level. Please raise the importance level at least to "Reboot or attention is required" and click "Save" button if you want to get this notification by email.'
+export const SEVERITY_ALERT_MESSAGE = _(
+    'You will not receive the test notification to your email inbox with current importance level. Please raise the importance level at least to "Reboot or attention is required" and click "Save" button if you want to get this notification by email.'
 );
 
 TestNotification.propTypes = {
@@ -114,7 +114,7 @@ export default function TestNotification({
                         disabled={postIsSending || formErrors}
                         onClick={onTestNotificationHandler}
                     >
-                        {_("Send testing notification")}
+                        {_("Send test notification")}
                     </Button>
                 </div>
             </Portal>
