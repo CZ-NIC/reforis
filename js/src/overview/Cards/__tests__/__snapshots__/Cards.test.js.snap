@@ -1,0 +1,539 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Cards/> <AutomaticUpdatesCard/> Snapshot: activated 1`] = `
+<div>
+  <div
+    class="col mb-4"
+  >
+    <div
+      class="card user-select-none"
+    >
+      <div
+        class="card-body"
+      >
+        <div
+          class="row align-items-center"
+        >
+          <div
+            class="col"
+          >
+            <h6
+              class="text-uppercase text-muted mb-2 "
+            >
+              Automatic Updates
+            </h6>
+            <span
+              class="status"
+            >
+              Activated
+            </span>
+          </div>
+          <div
+            class="col-auto"
+          >
+            <span
+              class="h2 text-success"
+            >
+              <i
+                class="fas fa-check"
+              />
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Cards/> <AutomaticUpdatesCard/> Snapshot: disabled 1`] = `
+<div>
+  <div
+    class="col mb-4"
+  >
+    <div
+      class="card user-select-none"
+    >
+      <div
+        class="card-body"
+      >
+        <div
+          class="row align-items-center"
+        >
+          <div
+            class="col"
+          >
+            <h6
+              class="text-uppercase text-muted mb-2 "
+            >
+              Automatic Updates
+            </h6>
+            <span
+              class="status"
+            >
+              Disabled
+            </span>
+          </div>
+          <div
+            class="col-auto"
+          >
+            <span
+              class="h2 text-danger"
+            >
+              <i
+                class="fas fa-times"
+              />
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Cards/> <DataCollectionCard/> Snapshot: activated 1`] = `
+<div>
+  <div
+    class="col mb-4"
+  >
+    <div
+      class="card user-select-none"
+    >
+      <div
+        class="card-body"
+      >
+        <div
+          class="row align-items-center"
+        >
+          <div
+            class="col"
+          >
+            <h6
+              class="text-uppercase text-muted mb-2"
+            >
+              Data Collection
+            </h6>
+            <span
+              class="status"
+            >
+              Activated
+            </span>
+          </div>
+          <div
+            class="col-auto"
+          >
+            <span
+              class="h2 text-success"
+            >
+              <i
+                class="fas fa-check"
+              />
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Cards/> <DataCollectionCard/> Snapshot: disabled 1`] = `
+<div>
+  <div
+    class="col mb-4"
+  >
+    <div
+      class="card user-select-none"
+    >
+      <div
+        class="card-body"
+      >
+        <div
+          class="row align-items-center"
+        >
+          <div
+            class="col"
+          >
+            <h6
+              class="text-uppercase text-muted mb-2"
+            >
+              Data Collection
+            </h6>
+            <span
+              class="status"
+            >
+              Disabled
+            </span>
+          </div>
+          <div
+            class="col-auto"
+          >
+            <span
+              class="h2 text-danger"
+            >
+              <i
+                class="fas fa-times"
+              />
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Cards/> <DynamicFirewallCard/> Snapshot: activated 1`] = `
+<div>
+  <div
+    class="col mb-4"
+  >
+    <div
+      class="card user-select-none"
+    >
+      <div
+        class="card-body"
+      >
+        <div
+          class="row align-items-center"
+        >
+          <div
+            class="col"
+          >
+            <h6
+              class="text-uppercase text-muted mb-2"
+            >
+              Dynamic Firewall
+            </h6>
+            <span
+              class="status"
+            >
+              Activated
+            </span>
+          </div>
+          <div
+            class="col-auto"
+          >
+            <span
+              class="h2 text-success"
+            >
+              <i
+                class="fas fa-check"
+              />
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Cards/> <DynamicFirewallCard/> Snapshot: disabled 1`] = `
+<div>
+  <div
+    class="col mb-4"
+  >
+    <div
+      class="card user-select-none"
+    >
+      <div
+        class="card-body"
+      >
+        <div
+          class="row align-items-center"
+        >
+          <div
+            class="col"
+          >
+            <h6
+              class="text-uppercase text-muted mb-2"
+            >
+              Dynamic Firewall
+            </h6>
+            <span
+              class="status"
+            >
+              Activated
+            </span>
+          </div>
+          <div
+            class="col-auto"
+          >
+            <span
+              class="h2 text-success"
+            >
+              <i
+                class="fas fa-check"
+              />
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Cards/> <NetmetrCard/> Snapshot: contains tests 1`] = `
+<div>
+  <div
+    class="col mb-4"
+  >
+    <div
+      class="card h-100 user-select-none"
+    >
+      <div
+        class="card-body"
+      >
+        <h6
+          class="text-uppercase text-muted mb-2"
+        >
+          NetMetr
+          <a
+            class="text-secondary"
+            href="/netmetr/speed-test"
+            title="Go to NetMetr"
+          >
+            <i
+              class="fas fa-chevron-right float-right"
+            />
+          </a>
+        </h6>
+        <form>
+          <table
+            class="table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12"
+          >
+            <tbody>
+              <tr>
+                <th
+                  scope="row"
+                >
+                  Download
+                  <span
+                    class="badge badge-secondary"
+                    title="Megabit per second"
+                  >
+                    Mb/s
+                  </span>
+                </th>
+                <td
+                  class="text-right"
+                >
+                  930
+                </td>
+              </tr>
+              <tr>
+                <th
+                  scope="row"
+                >
+                  Upload
+                  <span
+                    class="badge badge-secondary"
+                    title="Megabit per second"
+                  >
+                    Mb/s
+                  </span>
+                </th>
+                <td
+                  class="text-right"
+                >
+                  <span>
+                    930
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th
+                  scope="row"
+                >
+                  Ping
+                  <span
+                    class="badge badge-secondary"
+                    title="Millisecond"
+                  >
+                    ms
+                  </span>
+                </th>
+                <td
+                  class="text-right"
+                >
+                  <span>
+                    -1
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th
+                  scope="row"
+                >
+                  Link
+                </th>
+                <td
+                  class="text-right"
+                >
+                  <a
+                    href="https://www.netmetr.cz/en/detail.html?c7a6f82d-5128-47f3-a3f9-d7e9d9af64bd"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Details
+                    <sup>
+                      <i
+                        class="fas fa-external-link-alt ml-1"
+                      />
+                    </sup>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+        <p
+          class="card-text"
+        >
+          <small
+            class="text-muted"
+          >
+            Performed
+             
+            in 2 years
+          </small>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Cards/> <NetmetrCard/> Snapshot: empty 1`] = `
+<div>
+  <div
+    class="col mb-4"
+  >
+    <div
+      class="card h-100 user-select-none"
+    >
+      <div
+        class="card-body"
+      >
+        <h6
+          class="text-uppercase text-muted mb-2"
+        >
+          NetMetr
+          <a
+            class="text-secondary"
+            href="/netmetr/speed-test"
+            title="Go to NetMetr"
+          >
+            <i
+              class="fas fa-chevron-right float-right"
+            />
+          </a>
+        </h6>
+        <p
+          class="text-muted p-2"
+        >
+          No tests have been performed lately.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Cards/> <OpenVPNClientsCard/> Snapshot: contains clients 1`] = `
+<div>
+  <div
+    class="col mb-4"
+  >
+    <div
+      class="card h-100 user-select-none"
+    >
+      <div
+        class="card-body"
+      >
+        <h6
+          class="text-uppercase text-muted mb-2"
+        >
+          OpenVPN Clients
+          <a
+            class="text-secondary"
+            href="/openvpn/client-settings"
+            title="Go to OpenVPN Client Settings"
+          >
+            <i
+              class="fas fa-chevron-right float-right"
+            />
+          </a>
+        </h6>
+        <form>
+          <table
+            class="table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12"
+          >
+            <tbody>
+              <tr>
+                <th
+                  scope="row"
+                >
+                  <span>
+                    turris
+                  </span>
+                </th>
+                <td
+                  class="text-right"
+                >
+                  <span
+                    class="text-success"
+                  >
+                    <i
+                      class="fas fa-check"
+                    />
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Cards/> <OpenVPNClientsCard/> Snapshot: empty 1`] = `
+<div>
+  <div
+    class="col mb-4"
+  >
+    <div
+      class="card h-100 user-select-none"
+    >
+      <div
+        class="card-body"
+      >
+        <h6
+          class="text-uppercase text-muted mb-2"
+        >
+          OpenVPN Clients
+          <a
+            class="text-secondary"
+            href="/openvpn/client-settings"
+            title="Go to OpenVPN Client Settings"
+          >
+            <i
+              class="fas fa-chevron-right float-right"
+            />
+          </a>
+        </h6>
+        <p
+          class="text-muted p-2"
+        >
+          There are no clients added yet.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
