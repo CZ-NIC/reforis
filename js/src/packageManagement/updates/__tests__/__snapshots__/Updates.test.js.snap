@@ -30,7 +30,7 @@ exports[`<Updates/> should display spinner while check is pending 1`] = `
     class="col-sm-12 col-lg-12 p-0 mb-3 text-right"
   >
     <button
-      class="btn btn-primary mt-3 mt-lg-0 mb-4 col-sm-12 col-md-3 col-lg-2"
+      class="btn btn-primary mt-3 mt-lg-0 mb-3 col-sm-12 col-md-3 col-lg-2"
       disabled=""
       type="button"
     >
@@ -62,7 +62,7 @@ exports[`<Updates/> should display spinner while check is pending 2`] = `
     class="col-sm-12 col-lg-12 p-0 mb-3 text-right"
   >
     <button
-      class="btn btn-primary mt-3 mt-lg-0 mb-4 col-sm-12 col-md-3 col-lg-2"
+      class="btn btn-primary mt-3 mt-lg-0 mb-3 col-sm-12 col-md-3 col-lg-2"
       disabled=""
       type="button"
     >
@@ -94,7 +94,7 @@ exports[`<Updates/> should handle approvable updates 1`] = `
     class="col-sm-12 col-lg-12 p-0 mb-3 text-right"
   >
     <button
-      class="btn btn-primary mt-3 mt-lg-0 mb-4 col-sm-12 col-md-3 col-lg-2"
+      class="btn btn-primary mt-3 mt-lg-0 mb-3 col-sm-12 col-md-3 col-lg-2"
       type="button"
     >
       Check updates
@@ -202,7 +202,7 @@ exports[`<Updates/> should handle automatic updates (no delays/approvals) 1`] = 
     class="col-sm-12 col-lg-12 p-0 mb-3 text-right"
   >
     <button
-      class="btn btn-primary mt-3 mt-lg-0 mb-4 col-sm-12 col-md-3 col-lg-2"
+      class="btn btn-primary mt-3 mt-lg-0 mb-3 col-sm-12 col-md-3 col-lg-2"
       type="button"
     >
       Check and install updates

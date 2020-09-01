@@ -1,5 +1,133 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<NotificationsSettings/> <TestNotification/> Displaying test notification importance warning (severity: 1) 1`] = `
+<div
+  id="test-notification"
+>
+  <h2>
+    Test notification
+  </h2>
+  <div
+    class="alert alert-dismissible alert-warning"
+  >
+    You will not receive the test notification to your email inbox with current importance level. Please raise the importance level at least to "Reboot or attention is required" and click "Save" button if you want to get this notification by email.
+  </div>
+  <div
+    class="col-sm-12 col-lg-12 p-0 mb-3 text-right mb-3"
+  >
+    <button
+      class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
+      type="button"
+    >
+      Send test notification
+    </button>
+  </div>
+</div>
+`;
+
+exports[`<NotificationsSettings/> <TestNotification/> No test notification importance warning (severity: 2) 1`] = `
+<div
+  id="test-notification"
+>
+  <h2>
+    Test notification
+  </h2>
+  <div
+    class="col-sm-12 col-lg-12 p-0 mb-3 text-right mb-3"
+  >
+    <button
+      class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
+      type="button"
+    >
+      Send test notification
+    </button>
+  </div>
+</div>
+`;
+
+exports[`<NotificationsSettings/> <TestNotification/> No test notification importance warning (severity: 3) 1`] = `
+<div
+  id="test-notification"
+>
+  <h2>
+    Test notification
+  </h2>
+  <div
+    class="col-sm-12 col-lg-12 p-0 mb-3 text-right mb-3"
+  >
+    <button
+      class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
+      type="button"
+    >
+      Send test notification
+    </button>
+  </div>
+</div>
+`;
+
+exports[`<NotificationsSettings/> <TestNotification/> Should toggle unsaved changes warning modal 1`] = `
+<div
+  id="modal-container"
+>
+  <div
+    class="modal fade show"
+    role="dialog"
+  >
+    <div
+      class="modal-dialog modal-dialog-centered"
+      role="document"
+    >
+      <div
+        class="modal-content"
+      >
+        <div
+          class="modal-header"
+        >
+          <h5
+            class="modal-title"
+          >
+            Warning!
+          </h5>
+          <button
+            class="close"
+            type="button"
+          >
+            <span
+              aria-hidden="true"
+            >
+              ×
+            </span>
+          </button>
+        </div>
+        <div
+          class="modal-body"
+        >
+          <p>
+            There are some unsaved changes in the notifications settings. Do you want to discard them and test the notifications with the old settings?
+          </p>
+        </div>
+        <div
+          class="modal-footer"
+        >
+          <button
+            class="btn btn-primary "
+            type="button"
+          >
+            Cancel
+          </button>
+          <button
+            class="btn btn-danger"
+            type="button"
+          >
+            Confirm
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`<NotificationsSettings/> Disabled 1`] = `
 <div>
   <h1>
@@ -46,6 +174,9 @@ exports[`<NotificationsSettings/> Disabled 1`] = `
   </div>
   <div
     id="test-notification"
+  />
+  <div
+    id="modal-container"
   />
 </div>
 `;
@@ -405,7 +536,7 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
     <div
       class="alert alert-dismissible alert-warning"
     >
-      You will not receive the testing notification to your email inbox with current importance level. Please raise the importance level at least to "Reboot or attention is required" and click "Save" button if you want to get this notification by email.
+      You will not receive the test notification to your email inbox with current importance level. Please raise the importance level at least to "Reboot or attention is required" and click "Save" button if you want to get this notification by email.
     </div>
     <div
       class="col-sm-12 col-lg-12 p-0 mb-3 text-right mb-3"
@@ -414,8 +545,68 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
         class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
         type="button"
       >
-        Send testing notification
+        Send test notification
       </button>
+    </div>
+  </div>
+  <div
+    id="modal-container"
+  >
+    <div
+      class="modal fade "
+      role="dialog"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered"
+        role="document"
+      >
+        <div
+          class="modal-content"
+        >
+          <div
+            class="modal-header"
+          >
+            <h5
+              class="modal-title"
+            >
+              Warning!
+            </h5>
+            <button
+              class="close"
+              type="button"
+            >
+              <span
+                aria-hidden="true"
+              >
+                ×
+              </span>
+            </button>
+          </div>
+          <div
+            class="modal-body"
+          >
+            <p>
+              There are some unsaved changes in the notifications settings. Do you want to discard them and test the notifications with the old settings?
+            </p>
+          </div>
+          <div
+            class="modal-footer"
+          >
+            <button
+              class="btn btn-primary "
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              class="btn btn-danger"
+              type="button"
+            >
+              Confirm
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -627,7 +818,7 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
     <div
       class="alert alert-dismissible alert-warning"
     >
-      You will not receive the testing notification to your email inbox with current importance level. Please raise the importance level at least to "Reboot or attention is required" and click "Save" button if you want to get this notification by email.
+      You will not receive the test notification to your email inbox with current importance level. Please raise the importance level at least to "Reboot or attention is required" and click "Save" button if you want to get this notification by email.
     </div>
     <div
       class="col-sm-12 col-lg-12 p-0 mb-3 text-right mb-3"
@@ -636,8 +827,68 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
         class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
         type="button"
       >
-        Send testing notification
+        Send test notification
       </button>
+    </div>
+  </div>
+  <div
+    id="modal-container"
+  >
+    <div
+      class="modal fade "
+      role="dialog"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered"
+        role="document"
+      >
+        <div
+          class="modal-content"
+        >
+          <div
+            class="modal-header"
+          >
+            <h5
+              class="modal-title"
+            >
+              Warning!
+            </h5>
+            <button
+              class="close"
+              type="button"
+            >
+              <span
+                aria-hidden="true"
+              >
+                ×
+              </span>
+            </button>
+          </div>
+          <div
+            class="modal-body"
+          >
+            <p>
+              There are some unsaved changes in the notifications settings. Do you want to discard them and test the notifications with the old settings?
+            </p>
+          </div>
+          <div
+            class="modal-footer"
+          >
+            <button
+              class="btn btn-primary "
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              class="btn btn-danger"
+              type="button"
+            >
+              Confirm
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
