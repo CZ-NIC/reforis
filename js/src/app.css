@@ -151,3 +151,7 @@ html {
     border-color: #00a2e2;
     background-color: #00a2e2;
 }
+
+form div.form-group.switch {
+    margin-bottom: 0;
+}
