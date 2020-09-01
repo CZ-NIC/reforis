@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -56,12 +56,20 @@ const packageListsFixture = {
     ],
 };
 
+const automaticUpdatesCardFixture = {
+    enabled: true,
+};
+
+const automaticUpdatesCardFixture2 = {
+    enabled: false,
+};
+
 const dataCollectionCardFixture = {
     eula: 1,
 };
 
-const automaticUpdatesCardFixture = {
-    enabled: true,
+const dataCollectionCardFixture2 = {
+    eula: 0,
 };
 
 const netmetrCardFixture = {
@@ -77,6 +85,8 @@ const netmetrCardFixture = {
     status: "ready",
 };
 
+const netmetrCardFixture2 = {};
+
 const openVPNClientsCardFixture = [
     {
         enabled: true,
@@ -84,10 +94,17 @@ const openVPNClientsCardFixture = [
         running: true,
     },
 ];
+
+const openVPNClientsCardFixture2 = [];
+
 export {
     packageListsFixture,
-    dataCollectionCardFixture,
     automaticUpdatesCardFixture,
+    automaticUpdatesCardFixture2,
+    dataCollectionCardFixture,
+    dataCollectionCardFixture2,
     netmetrCardFixture,
+    netmetrCardFixture2,
     openVPNClientsCardFixture,
+    openVPNClientsCardFixture2,
 };
