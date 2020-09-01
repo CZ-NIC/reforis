@@ -42,6 +42,13 @@ const BORDER_TYPES = {
     error: "border-danger",
 };
 
+const HIGHLIGHT_TYPES = {
+    news: "highlight-info",
+    update: "highlight-info",
+    restart: "highlight-danger",
+    error: "highlight-danger",
+};
+
 NotificationsCenterItem.propTypes = {
     notification: NOTIFICATION_PROP_TYPES,
     isCurrent: PropTypes.bool.isRequired,
@@ -65,7 +72,15 @@ function NotificationsCenterItem({ notification, isCurrent, dismiss }) {
             ref={notificationRef}
             className={`card bg-light ${BORDER_TYPES[notification.severity]}`}
         >
-            <div className="card-header">
+            <div
+                className={
+                    isCurrent && notificationRef.current
+                        ? `card-header ${
+                              HIGHLIGHT_TYPES[notification.severity]
+                          }`
+                        : "card-header"
+                }
+            >
                 <NotificationIcon
                     severity={notification.severity}
                     className="fa-lg"

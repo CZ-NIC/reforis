@@ -57,3 +57,11 @@
         float: none !important;
     }
 }
+
+#notifications-center .highlight-danger {
+    background-color: #e74c3c38;
+}
+
+#notifications-center .highlight-info {
+    background-color: #3498db33;
+}
