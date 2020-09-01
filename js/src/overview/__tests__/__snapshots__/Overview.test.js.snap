@@ -147,7 +147,7 @@ exports[`Overview Snapshot of the whole page 1`] = `
             <a
               class="text-secondary"
               href="/netmetr/speed-test"
-              title="Go to Netmetr"
+              title="Go to NetMetr"
             >
               <i
                 class="fas fa-chevron-right float-right"
