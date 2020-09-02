@@ -45,8 +45,12 @@ function Notifications({ ws, history }) {
 
     const notificationSectionRef = useRef(null);
 
+    function getHashFromURL(hash) {
+        setNotificationSection(hash);
+    }
+
     useEffect(() => {
-        setNotificationSection(window.location.hash);
+        getHashFromURL(window.location.hash);
 
         if (notificationSection && notificationSectionRef.current) {
             notificationSectionRef.current.scrollIntoView({
@@ -54,10 +58,7 @@ function Notifications({ ws, history }) {
                 behavior: "smooth",
             });
         }
-        return history.listen((location) => {
-            setNotificationSection(location.hash);
-        });
-    }, [notificationSection, history]);
+    });
 
     let componentContent;
     const dismissableNotificationsCount = notifications.filter(
