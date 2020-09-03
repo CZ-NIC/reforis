@@ -8,67 +8,69 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2020-02-20 17:21+0100\n"
-"PO-Revision-Date: 2019-02-19 13:34+0100\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2020-09-04 11:36+0000\n"
+"Last-Translator: 4L3XK <alex@h0sta.de>\n"
+"Language-Team: Greek <https://hosted.weblate.org/projects/turris/reforis/el/>"
+"\n"
 "Language: el\n"
-"Language-Team: el <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.3-dev\n"
 "Generated-By: Babel 2.7.0\n"
 
 #: js/src/about/About.js:22 js/src/main/pages.js:133
 msgid "About"
-msgstr ""
+msgstr "Πληροφορίες"
 
 #: js/src/about/About.js:40
 msgid "Device"
-msgstr ""
+msgstr "Συσκευή"
 
 #: js/src/about/About.js:44
 msgid "Serial number"
-msgstr ""
+msgstr "Αυξάνων αριθμός"
 
 #: js/src/about/About.js:48
 msgid "Turris OS version"
-msgstr ""
+msgstr "Εκδοχή Turris OS"
 
 #: js/src/about/About.js:52
 msgid "Turris OS branch"
-msgstr ""
+msgstr "Υποκατάστημα Turris OS"
 
 #: js/src/about/About.js:61
 msgid "Kernel version"
-msgstr ""
+msgstr "Εκδοχή Kernel"
 
 #: js/src/common/RebootButton.js:42 js/src/main/pages.js:97
 msgid "Reboot"
-msgstr ""
+msgstr "Ξαναξεκινήση"
 
 #: js/src/common/RebootButton.js:57 js/src/dns/DNSSECDisableModal.js:32
 msgid "Warning!"
-msgstr ""
+msgstr "Προσοχή!"
 
 #: js/src/common/RebootButton.js:58
 msgid "Are you sure you want to restart the router?"
-msgstr ""
+msgstr "Είσται σίγουροι ότι θέλετε να ξαναξεκινήστε το δρομολογητή;"
 
 #: js/src/common/RebootButton.js:60 js/src/dns/DNSSECDisableModal.js:42
 msgid "Cancel"
-msgstr ""
+msgstr "Διακοπή"
 
 #: js/src/common/RebootButton.js:61
 msgid "Confirm reboot"
-msgstr ""
+msgstr "Επιβεβαιώση ξαναξεκινήσης"
 
 #: js/src/common/network/DHCPClientForm.js:14
 msgid "Hostname which will be provided to DHCP server."
-msgstr ""
+msgstr "Όνομα κεντρικού υπολογιστή παρέχεται στον διακομιστή DHCP."
 
 #: js/src/common/network/DHCPClientForm.js:33
 msgid "DHCP hostname"
-msgstr ""
+msgstr "Όνομα κεντρικού υπολογιστή DHCP"
 
 #: js/src/common/network/DHCPClientsList.js:19
 msgid "DHCP Clients"
@@ -1930,4 +1932,3 @@ msgstr ""
 #~ "in the console of your web browser"
 #~ " (available by pressing F12)."
 #~ msgstr ""
-
