@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -7,22 +7,29 @@
 
 import React from "react";
 import {
-    render, waitForElement, wait, fireEvent,
+    render,
+    waitForElement,
+    wait,
+    fireEvent,
 } from "foris/testUtils/customTestRender";
 import mockAxios from "jest-mock-axios";
+import { WebSockets } from "foris";
 import { mockJSONError } from "foris/testUtils/network";
 
 import UpdatesDropdown from "../UpdatesDropdown";
 
 describe("<UpdatesDropdown/>", () => {
-    let container; let getByText; let getByTestId; let
-        queryByTestId;
+    let container;
+    let getByText;
+    let getByTestId;
+    let queryByTestId;
     const exampleHash = "303808909";
 
     beforeEach(() => {
-        ({
-            container, getByText, getByTestId, queryByTestId,
-        } = render(<UpdatesDropdown />));
+        const webSockets = new WebSockets();
+        ({ container, getByText, getByTestId, queryByTestId } = render(
+            <UpdatesDropdown ws={webSockets} />
+        ));
     });
 
     it("Loading (spinner visible)", async () => {
@@ -36,18 +43,26 @@ describe("<UpdatesDropdown/>", () => {
     });
 
     it("Updates awaiting - snapshot", async () => {
-        mockAxios.mockResponse({ data: { hash: exampleHash, approvable: true } });
+        mockAxios.mockResponse({
+            data: { hash: exampleHash, approvable: true },
+        });
         await waitForElement(() => getByText("Approve Update"));
         expect(container).toMatchSnapshot();
     });
 
     it("Updates awaiting - install now", async () => {
-        mockAxios.mockResponse({ data: { hash: exampleHash, approvable: true } });
+        mockAxios.mockResponse({
+            data: { hash: exampleHash, approvable: true },
+        });
         await waitForElement(() => getByText("Approve Update"));
 
         fireEvent.click(getByText("Install now"));
         expect(mockAxios.post).toBeCalled();
-        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/approvals", { hash: exampleHash, solution: "grant" }, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith(
+            "/reforis/api/approvals",
+            { hash: exampleHash, solution: "grant" },
+            expect.anything()
+        );
 
         // Reload approvals when resolution is successful
         await wait(() => expect(mockAxios.get).toBeCalledTimes(1));
@@ -56,16 +71,24 @@ describe("<UpdatesDropdown/>", () => {
     });
 
     it("Updates awaiting - ignore", async () => {
-        mockAxios.mockResponse({ data: { hash: exampleHash, approvable: true } });
+        mockAxios.mockResponse({
+            data: { hash: exampleHash, approvable: true },
+        });
         await waitForElement(() => getByText("Approve Update"));
 
         fireEvent.click(getByText("Ignore"));
         expect(mockAxios.post).toBeCalled();
-        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/approvals", { hash: exampleHash, solution: "deny" }, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith(
+            "/reforis/api/approvals",
+            { hash: exampleHash, solution: "deny" },
+            expect.anything()
+        );
     });
 
     it("Updates resolution - display error", async () => {
-        mockAxios.mockResponse({ data: { hash: exampleHash, approvable: true } });
+        mockAxios.mockResponse({
+            data: { hash: exampleHash, approvable: true },
+        });
         await waitForElement(() => getByText("Approve Update"));
         fireEvent.click(getByText("Install now"));
         mockJSONError();
