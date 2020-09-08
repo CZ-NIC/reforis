@@ -10,9 +10,15 @@
     position: fixed;
     top: 0;
     bottom: 0;
-    min-height: 100%;
-    overflow-y: auto;
     width: 312px;
+    padding-top: 7.5em;
+    transition: all 0.2s ease-out;
+}
+
+#sidebar .logo {
+    line-height: 7.5em;
+    position: fixed;
+    top: 0;
 }
 
 #sidebar ul li a {
@@ -73,7 +79,6 @@
 #sidebar-header {
     display: flex;
     justify-content: center;
-    padding: 2em 1em;
     white-space: nowrap;
 }
 

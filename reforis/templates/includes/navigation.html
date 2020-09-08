@@ -1,14 +1,13 @@
 <nav id="sidebar">
     <div id="sidebar-header">
-        <div>
-            <a href="/reforis/">
-                <img
-                    src="{{ url_for('static', filename = 'reforis/imgs/logo-turris-white.svg') }}"
-                />
-            </a>
-        </div>
+        <a href="/reforis/" class="logo">
+            <img
+                src="{{ url_for('static', filename = 'reforis/imgs/logo-turris-white.svg') }}"
+                alt="Turris Logo"
+            />
+        </a>
         <div id="navigation-collapse-toggle"></div>
     </div>
 
-    <div id="navigation-container"></div>
+    <div id="navigation-container" class="h-100"></div>
 </nav>
