@@ -92,6 +92,12 @@
         flex: initial;
         position: relative;
         width: 100%;
+        padding-top: 0;
+    }
+    #sidebar .logo {
+        line-height: 0;
+        position: relative;
+        top: 0;
     }
     #sidebar img {
         width: auto;
