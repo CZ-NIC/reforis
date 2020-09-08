@@ -122,7 +122,7 @@ html {
 }
 
 ::-webkit-scrollbar {
-    width: 6px;
+    width: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -135,6 +135,10 @@ html {
 
 .help {
     cursor: help;
+}
+
+.simplebar-scrollbar::before {
+    background: white !important;
 }
 
 /* Custom Switch */
