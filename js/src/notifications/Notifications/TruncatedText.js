@@ -23,7 +23,12 @@ export default function TruncatedText({ text, charLimit, threshold }) {
             cardText = text.substring(0, charLimit).replace(/(\s|\W)$/, "");
             cardText = `${cardText}...`;
         }
-        toggleCollapse = <ToggleCollapse collapseFn={setCollapsed} shouldCollapse={!collapsed} />;
+        toggleCollapse = (
+            <ToggleCollapse
+                collapseFn={setCollapsed}
+                shouldCollapse={!collapsed}
+            />
+        );
     }
 
     return (

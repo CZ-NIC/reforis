@@ -6,7 +6,12 @@
  */
 
 import React from "react";
-import { render, wait, getByText, getAllByText, } from "foris/testUtils/customTestRender";
+import {
+    render,
+    wait,
+    getByText,
+    getAllByText,
+} from "foris/testUtils/customTestRender";
 import { WebSockets } from "foris";
 import { mockJSONError } from "foris/testUtils/network";
 import mockAxios from "jest-mock-axios";
@@ -42,6 +47,8 @@ describe("<Guide/> ", () => {
         const webSockets = new WebSockets();
         const { container } = render(<Guide ws={webSockets} />);
         mockJSONError();
-        await wait(() => getByText(container, "An error occurred while fetching data."));
+        await wait(() =>
+            getByText(container, "An error occurred while fetching data.")
+        );
     });
 });

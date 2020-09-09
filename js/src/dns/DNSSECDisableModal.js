@@ -8,9 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import {
-    Modal, ModalBody, ModalFooter, ModalHeader, Button,
-} from "foris";
+import { Modal, ModalBody, ModalFooter, ModalHeader, Button } from "foris";
 
 const DNSSEC_DISABLE_MESSAGE = _(`
 DNSSEC is a security technology that protects the DNS communication against attacks on the DNS infrastructure.
@@ -30,14 +28,15 @@ export default function DNSSECDisableModal({ shown, setShown, callback }) {
     return (
         <Modal setShown={setShown} shown={shown}>
             <ModalHeader setShown={setShown} title={_("Warning!")} />
-            <ModalBody><p>{DNSSEC_DISABLE_MESSAGE}</p></ModalBody>
+            <ModalBody>
+                <p>{DNSSEC_DISABLE_MESSAGE}</p>
+            </ModalBody>
             <ModalFooter>
-                <Button onClick={
-                    (e) => {
+                <Button
+                    onClick={(e) => {
                         e.preventDefault();
                         setShown(false);
-                    }
-                }
+                    }}
                 >
                     {_("Cancel")}
                 </Button>

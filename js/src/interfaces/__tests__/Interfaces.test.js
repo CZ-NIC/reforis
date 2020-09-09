@@ -7,7 +7,12 @@
 
 import React from "react";
 import {
-    fireEvent, getByLabelText, getByText, getAllByText, render, wait,
+    fireEvent,
+    getByLabelText,
+    getByText,
+    getAllByText,
+    render,
+    wait,
 } from "foris/testUtils/customTestRender";
 
 import { WebSockets } from "foris";
@@ -15,7 +20,10 @@ import { mockJSONError } from "foris/testUtils/network";
 import mockAxios from "jest-mock-axios";
 import Interfaces from "../Interfaces";
 
-import { interfacesFixture, interfacesWithVariousModules } from "./__fixtures__/interfaces";
+import {
+    interfacesFixture,
+    interfacesWithVariousModules,
+} from "./__fixtures__/interfaces";
 
 describe("<Interfaces/>", () => {
     let interfacesContainer;
@@ -33,7 +41,9 @@ describe("<Interfaces/>", () => {
         const { container } = render(<Interfaces ws={webSockets} />);
         mockJSONError();
         await wait(() => {
-            expect(getByText(container, "An error occurred while fetching data.")).toBeTruthy();
+            expect(
+                getByText(container, "An error occurred while fetching data.")
+            ).toBeTruthy();
         });
     });
 
@@ -48,33 +58,55 @@ describe("<Interfaces/>", () => {
 
     it("Snapshot after interface moving.", () => {
         fireEvent.click(getByText(interfacesContainer, "LAN1"));
-        fireEvent.change(getByLabelText(interfacesContainer, "Network"), { target: { value: "lan" } });
+        fireEvent.change(getByLabelText(interfacesContainer, "Network"), {
+            target: { value: "lan" },
+        });
         expect(interfacesContainer).toMatchSnapshot();
     });
 
     it("Test post.", async () => {
         fireEvent.click(getByText(interfacesContainer, "LAN1"));
-        fireEvent.change(getByLabelText(interfacesContainer, "Network"), { target: { value: "lan" } });
+        fireEvent.change(getByLabelText(interfacesContainer, "Network"), {
+            target: { value: "lan" },
+        });
         fireEvent.click(getByText(interfacesContainer, "Save"));
 
         expect(mockAxios.post).toBeCalled();
         const data = {
-            firewall: { http_on_wan: false, https_on_wan: false, ssh_on_wan: false },
+            firewall: {
+                http_on_wan: false,
+                https_on_wan: false,
+                ssh_on_wan: false,
+            },
             networks: {
-                guest: ["lan4"], lan: ["lan3", "lan1"], none: ["lan0", "lan2"], wan: ["eth2"],
+                guest: ["lan4"],
+                lan: ["lan3", "lan1"],
+                none: ["lan0", "lan2"],
+                wan: ["eth2"],
             },
         };
-        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/interfaces", data, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith(
+            "/reforis/api/interfaces",
+            data,
+            expect.anything()
+        );
     });
 
     it("Test if form is invalid when no interfaces are in LAN group.", () => {
         fireEvent.click(getByText(interfacesContainer, "LAN3"));
-        fireEvent.change(getByLabelText(interfacesContainer, "Network"), { target: { value: "none" } });
+        fireEvent.change(getByLabelText(interfacesContainer, "Network"), {
+            target: { value: "none" },
+        });
 
         const saveButton = getByText(interfacesContainer, "Save");
         expect(saveButton.disabled).toBe(true);
-        expect(getByText(interfacesContainer, "You have to assign at least one interface to this group.")).toBeDefined();
-    })
+        expect(
+            getByText(
+                interfacesContainer,
+                "You have to assign at least one interface to this group."
+            )
+        ).toBeDefined();
+    });
 });
 
 describe("<Interfaces/> with various modules", () => {
@@ -82,8 +114,8 @@ describe("<Interfaces/> with various modules", () => {
 
     beforeEach(async () => {
         const webSockets = new WebSockets();
-        const {container} = render(<Interfaces ws={webSockets}/>);
-        mockAxios.mockResponse({data: interfacesWithVariousModules});
+        const { container } = render(<Interfaces ws={webSockets} />);
+        mockAxios.mockResponse({ data: interfacesWithVariousModules });
         await wait(() => getByText(container, "LAN0"));
         interfacesContainer = container;
     });

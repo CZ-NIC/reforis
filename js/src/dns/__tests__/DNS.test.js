@@ -10,7 +10,10 @@ import diffSnapshot from "snapshot-diff";
 import mockAxios from "jest-mock-axios";
 
 import {
-    fireEvent, render, wait, waitForElement,
+    fireEvent,
+    render,
+    wait,
+    waitForElement,
 } from "foris/testUtils/customTestRender";
 import { WebSockets } from "foris";
 import { mockJSONError } from "foris/testUtils/network";
@@ -43,7 +46,9 @@ describe("<DNS/>", () => {
         const { getByText } = render(<DNS ws={webSockets} />);
         mockJSONError();
         await wait(() => {
-            expect(getByText("An error occurred while fetching data.")).toBeTruthy();
+            expect(
+                getByText("An error occurred while fetching data.")
+            ).toBeTruthy();
         });
     });
 
@@ -55,14 +60,12 @@ describe("<DNS/>", () => {
         fireEvent.click(getByText("Use forwarding"));
         mockAxios.mockResponse({ data: forwardersFixture });
         await waitForElement(() => getByLabelText(/Custom forwarder/));
-        expect(diffSnapshot(firstRender, asFragment()))
-            .toMatchSnapshot();
+        expect(diffSnapshot(firstRender, asFragment())).toMatchSnapshot();
     });
 
     it("Test with snapshot DHCP.", () => {
         fireEvent.click(getByText("Enable DHCP clients in DNS"));
-        expect(diffSnapshot(firstRender, asFragment()))
-            .toMatchSnapshot();
+        expect(diffSnapshot(firstRender, asFragment())).toMatchSnapshot();
     });
 
     it("Test post.", () => {
@@ -70,8 +73,7 @@ describe("<DNS/>", () => {
         fireEvent.click(getByText("Enable DHCP clients in DNS"));
         fireEvent.click(getByText("Save"));
 
-        expect(mockAxios.post)
-            .toBeCalled();
+        expect(mockAxios.post).toBeCalled();
         const data = {
             dns_from_dhcp_domain: "lan",
             dns_from_dhcp_enabled: true,
@@ -79,7 +81,10 @@ describe("<DNS/>", () => {
             forwarder: "",
             forwarding_enabled: true,
         };
-        expect(mockAxios.post)
-            .toHaveBeenCalledWith("/reforis/api/dns", data, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith(
+            "/reforis/api/dns",
+            data,
+            expect.anything()
+        );
     });
 });

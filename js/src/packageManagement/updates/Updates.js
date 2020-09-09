@@ -13,7 +13,9 @@ import API_URLs from "common/API";
 import UpdateManager from "./UpdateManager";
 
 export default function Updates() {
-    const [updateSettingsResponse, getUpdateSettings] = useAPIGet(API_URLs.updates);
+    const [updateSettingsResponse, getUpdateSettings] = useAPIGet(
+        API_URLs.updates
+    );
     const updateSettings = updateSettingsResponse.data || {};
     useEffect(() => {
         getUpdateSettings();
@@ -36,7 +38,9 @@ function getManagerProps(updateSettings) {
         displayChecker: false,
         checkerLabel: "",
         displayApproval: false,
-        description: _("Automatic updates are disabled. Please enable delayed or approval-requiring updates to review them."),
+        description: _(
+            "Automatic updates are disabled. Please enable delayed or approval-requiring updates to review them."
+        ),
     };
 
     if (!updateSettings || !updateSettings.enabled) {
@@ -47,12 +51,16 @@ function getManagerProps(updateSettings) {
     if (updateSettings.approval_settings.status === "off") {
         // Automatically installed updates
         managerProps.checkerLabel = _("Check and install updates");
-        managerProps.description = _("Manually check for updates and install them immediately.");
+        managerProps.description = _(
+            "Manually check for updates and install them immediately."
+        );
     } else {
         // Updates that are delayed or need approval
         managerProps.checkerLabel = _("Check updates");
         managerProps.displayApproval = true;
-        managerProps.description = _("Manually check for updates and review them immediately.");
+        managerProps.description = _(
+            "Manually check for updates and review them immediately."
+        );
     }
     return managerProps;
 }

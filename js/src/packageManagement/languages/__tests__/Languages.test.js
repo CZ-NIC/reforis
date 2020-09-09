@@ -8,7 +8,12 @@
 import React from "react";
 import diffSnapshot from "snapshot-diff";
 
-import { cleanup, render, wait, fireEvent } from "foris/testUtils/customTestRender";
+import {
+    cleanup,
+    render,
+    wait,
+    fireEvent,
+} from "foris/testUtils/customTestRender";
 import { mockJSONError } from "foris/testUtils/network";
 import mockAxios from "jest-mock-axios";
 
@@ -23,54 +28,58 @@ describe("<Packages/>", () => {
 
     beforeEach(async () => {
         let asFragment;
-        ({
-            queryByText,
-            getByLabelText,
-            getByText,
-            asFragment
-        } = render(<Languages/>));
-        await wait(() => expect(mockAxios.get)
-            .toBeCalledWith("/reforis/api/language-packages", expect.anything()));
+        ({ queryByText, getByLabelText, getByText, asFragment } = render(
+            <Languages />
+        ));
+        await wait(() =>
+            expect(mockAxios.get).toBeCalledWith(
+                "/reforis/api/language-packages",
+                expect.anything()
+            )
+        );
         mockAxios.mockResponse({ data: languagesFixture(true) });
         await wait(() => getByText("CS"));
         firstRender = asFragment();
     });
 
     it("Should handle error.", async () => {
-        const { getByText } = render(<Languages/>);
+        const { getByText } = render(<Languages />);
         mockJSONError();
         await wait(() => {
-            expect(getByText("An error occurred while fetching data."))
-                .toBeTruthy();
+            expect(
+                getByText("An error occurred while fetching data.")
+            ).toBeTruthy();
         });
     });
 
     it("Should render: updates enabled.", () => {
-        expect(firstRender)
-            .toMatchSnapshot();
+        expect(firstRender).toMatchSnapshot();
     });
 
     it("Should render: updates disabled.", async () => {
         cleanup();
-        const { getByText, asFragment } = render(<Languages/>);
-        await wait(() => expect(mockAxios.get)
-            .toBeCalledWith("/reforis/api/language-packages", expect.anything()));
+        const { getByText, asFragment } = render(<Languages />);
+        await wait(() =>
+            expect(mockAxios.get).toBeCalledWith(
+                "/reforis/api/language-packages",
+                expect.anything()
+            )
+        );
         mockAxios.mockResponse({ data: languagesFixture(false) });
 
         await wait(() => getByText("CS"));
 
-        expect(diffSnapshot(firstRender, asFragment()))
-            .toMatchSnapshot();
+        expect(diffSnapshot(firstRender, asFragment())).toMatchSnapshot();
     });
-
 
     it("Send languages.", () => {
         fireEvent.click(getByText("Save"));
-        expect(mockAxios.post)
-            .toHaveBeenCalledWith("/reforis/api/language-packages", {
-                "languages": [
-                    "cs",
-                ],
-            }, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith(
+            "/reforis/api/language-packages",
+            {
+                languages: ["cs"],
+            },
+            expect.anything()
+        );
     });
 });

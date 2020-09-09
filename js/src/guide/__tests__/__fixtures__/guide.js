@@ -6,18 +6,11 @@
  */
 
 export const guideFixtures = {
-    available_workflows: [
-        "router",
-        "min",
-        "bridge",
-    ],
+    available_workflows: ["router", "min", "bridge"],
     current_workflow: "router",
     enabled: true,
     next_step: "networks",
-    passed: [
-        "password",
-        "profile",
-    ],
+    passed: ["password", "profile"],
     recommended_workflow: "router",
     workflow: "router",
     workflow_steps: [

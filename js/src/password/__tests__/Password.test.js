@@ -8,7 +8,12 @@
 import React from "react";
 
 import {
-    fireEvent, getByLabelText, getByText, getAllByText, render, wait,
+    fireEvent,
+    getByLabelText,
+    getByText,
+    getAllByText,
+    render,
+    wait,
 } from "foris/testUtils/customTestRender";
 import mockAxios from "jest-mock-axios";
 import { ALERT_TYPES } from "foris";
@@ -23,14 +28,18 @@ describe("<Password/>", () => {
     beforeEach(async () => {
         const { container } = render(<Password />);
         mockAxios.mockResponse({ data: { password_set: true } });
-        await wait(() => getByText(container, "Advanced Administration (root) Password"));
+        await wait(() =>
+            getByText(container, "Advanced Administration (root) Password")
+        );
         passwordContainer = container;
     });
 
     it("should handle error", async () => {
         const { container } = render(<Password />);
         mockJSONError();
-        await wait(() => getByText(container, "An error occurred while fetching data."));
+        await wait(() =>
+            getByText(container, "An error occurred while fetching data.")
+        );
     });
 
     it("Snapshot", () => {
@@ -38,7 +47,12 @@ describe("<Password/>", () => {
     });
 
     it("Snapshot: same password for root", () => {
-        fireEvent.click(getByText(passwordContainer, "Use same password for advanced administration (root)"));
+        fireEvent.click(
+            getByText(
+                passwordContainer,
+                "Use same password for advanced administration (root)"
+            )
+        );
         expect(passwordContainer).toMatchSnapshot();
     });
 
@@ -47,11 +61,11 @@ describe("<Password/>", () => {
             // Fill form data
             fireEvent.change(
                 getByLabelText(passwordContainer, "Current Foris password"),
-                { target: { value: "foobar" } },
+                { target: { value: "foobar" } }
             );
             fireEvent.change(
                 getByLabelText(passwordContainer, "New Foris password"),
-                { target: { value: "foobar" } },
+                { target: { value: "foobar" } }
             );
 
             // Save form
@@ -59,13 +73,18 @@ describe("<Password/>", () => {
             expect(mockAxios.post).toBeCalledWith(
                 "/reforis/api/password",
                 { foris_current_password: "foobar", foris_password: "foobar" },
-                expect.anything(),
+                expect.anything()
             );
         });
 
         it("on success", async () => {
             mockAxios.mockResponse({ data: { foo: "bar" } });
-            await wait(() => expect(mockSetAlert).toBeCalledWith("Password changed successfully.", ALERT_TYPES.SUCCESS));
+            await wait(() =>
+                expect(mockSetAlert).toBeCalledWith(
+                    "Password changed successfully.",
+                    ALERT_TYPES.SUCCESS
+                )
+            );
         });
 
         it("on error", async () => {

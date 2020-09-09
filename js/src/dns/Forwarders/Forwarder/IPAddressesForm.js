@@ -23,23 +23,27 @@ IPAddressesForm.propTypes = {
 };
 
 export default function IPAddressesForm({
-    ipVersion, ipaddresses, setFormValue, errors, disabled,
+    ipVersion,
+    ipaddresses,
+    setFormValue,
+    errors,
+    disabled,
 }) {
     const label = LABELS[ipVersion];
-    const addIP = setFormValue(
-        () => ({ ipaddresses: { [ipVersion]: { $push: [""] } } }),
-    );
+    const addIP = setFormValue(() => ({
+        ipaddresses: { [ipVersion]: { $push: [""] } },
+    }));
 
     function deleteIPByIndex(index) {
-        return setFormValue(
-            () => ({ ipaddresses: { [ipVersion]: { $splice: [[index, 1]] } } }),
-        );
+        return setFormValue(() => ({
+            ipaddresses: { [ipVersion]: { $splice: [[index, 1]] } },
+        }));
     }
 
     function setIPByIndex(index) {
-        return setFormValue(
-            (value) => ({ ipaddresses: { [ipVersion]: { [index]: { $set: value } } } }),
-        );
+        return setFormValue((value) => ({
+            ipaddresses: { [ipVersion]: { [index]: { $set: value } } },
+        }));
     }
 
     return (
@@ -52,7 +56,6 @@ export default function IPAddressesForm({
                         label={_(`${label} #${index + 1}`)}
                         value={ipaddress}
                         error={(errors || [])[index]}
-
                         onChange={setIPByIndex(index)}
                         disabled={disabled}
                     >
@@ -69,12 +72,14 @@ export default function IPAddressesForm({
                         )}
                     </TextInput>
                 ))}
-                { ipaddresses.length < 2
-                    && (
-                        <Button className="btn-outline-success btn-sm col-12 mb-2" onClick={addIP}>
-                            {_(`Add ${label} address`)}
-                        </Button>
-                    )}
+                {ipaddresses.length < 2 && (
+                    <Button
+                        className="btn-outline-success btn-sm col-12 mb-2"
+                        onClick={addIP}
+                    >
+                        {_(`Add ${label} address`)}
+                    </Button>
+                )}
             </div>
         </>
     );

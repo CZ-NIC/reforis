@@ -11,7 +11,7 @@ import PropTypes from "prop-types";
 import { NumberInput } from "foris";
 
 export const HELP_TEXT = _(
-    "Enable this option to automatically assign IP addresses to the devices connected to the router.",
+    "Enable this option to automatically assign IP addresses to the devices connected to the router."
 );
 
 DHCPServerForm.propTypes = {
@@ -50,19 +50,23 @@ export default function DHCPServerForm({
                 min="2"
                 max="106"
                 required
-                onChange={setFormValue((value) => updateRule({ start: { $set: value } }))}
+                onChange={setFormValue((value) =>
+                    updateRule({ start: { $set: value } })
+                )}
                 disabled={disabled}
             />
             <NumberInput
                 label={_("DHCP max leases")}
                 helpText={_(
-                    "Maximum number of addresses available for DHCP clients.",
+                    "Maximum number of addresses available for DHCP clients."
                 )}
                 value={formData.limit}
                 error={formErrors.limit}
                 min="1"
                 required
-                onChange={setFormValue((value) => updateRule({ limit: { $set: value } }))}
+                onChange={setFormValue((value) =>
+                    updateRule({ limit: { $set: value } })
+                )}
                 disabled={disabled}
             />
             <NumberInput
@@ -71,7 +75,9 @@ export default function DHCPServerForm({
                 error={formErrors.lease_time}
                 min="1"
                 required
-                onChange={setFormValue((value) => updateRule({ lease_time: { $set: value } }))}
+                onChange={setFormValue((value) =>
+                    updateRule({ lease_time: { $set: value } })
+                )}
                 disabled={disabled}
             />
         </>

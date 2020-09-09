@@ -9,7 +9,11 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import {
-    Select, TextInput, NumberInput, PasswordInput, EmailInput,
+    Select,
+    TextInput,
+    NumberInput,
+    PasswordInput,
+    EmailInput,
 } from "foris";
 
 import HELP_TEXTS from "./helpTexts";
@@ -41,14 +45,16 @@ SMTPCustomForm.propTypes = {
 };
 
 SMTPCustomForm.defaultProps = {
-    setFormValue: () => {
-    },
+    setFormValue: () => {},
     formData: {},
     formErrors: {},
 };
 
 export default function SMTPCustomForm({
-    formData, formErrors, setFormValue, disabled,
+    formData,
+    formErrors,
+    setFormValue,
+    disabled,
 }) {
     return (
         <>
@@ -60,9 +66,9 @@ export default function SMTPCustomForm({
                 helpText={HELP_TEXTS.smtp_custom.from}
                 placeholder="router@example.com"
                 required
-
-                onChange={setFormValue((value) => ({ smtp_custom: { from: { $set: value } } }))}
-
+                onChange={setFormValue((value) => ({
+                    smtp_custom: { from: { $set: value } },
+                }))}
                 disabled={disabled}
             />
             <TextInput
@@ -71,9 +77,9 @@ export default function SMTPCustomForm({
                 error={formErrors.host}
                 placeholder="example.com"
                 required
-
-                onChange={setFormValue((value) => ({ smtp_custom: { host: { $set: value } } }))}
-
+                onChange={setFormValue((value) => ({
+                    smtp_custom: { host: { $set: value } },
+                }))}
                 disabled={disabled}
             />
             <NumberInput
@@ -82,37 +88,37 @@ export default function SMTPCustomForm({
                 error={formErrors.port}
                 min={1}
                 max={65535}
-
-                onChange={setFormValue((value) => ({ smtp_custom: { port: { $set: value } } }))}
-
+                onChange={setFormValue((value) => ({
+                    smtp_custom: { port: { $set: value } },
+                }))}
                 disabled={disabled}
             />
             <Select
                 label={_("Security")}
                 value={formData.security}
                 choices={SECURITY_CHOICES}
-
-                onChange={setFormValue((value) => ({ smtp_custom: { security: { $set: value } } }))}
-
+                onChange={setFormValue((value) => ({
+                    smtp_custom: { security: { $set: value } },
+                }))}
                 disabled={disabled}
             />
             <TextInput
                 label={_("User")}
                 value={formData.user || ""}
-
-                onChange={setFormValue((value) => ({ smtp_custom: { user: { $set: value } } }))}
-
+                onChange={setFormValue((value) => ({
+                    smtp_custom: { user: { $set: value } },
+                }))}
                 disabled={disabled}
             />
             <PasswordInput
                 label={_("Password")}
                 withEye
                 value={formData.password || ""}
-                onChange={setFormValue((value) => ({ smtp_custom: { password: { $set: value } } }))}
-
+                onChange={setFormValue((value) => ({
+                    smtp_custom: { password: { $set: value } },
+                }))}
                 disabled={disabled}
             />
-
         </>
     );
 }

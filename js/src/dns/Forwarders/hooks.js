@@ -16,7 +16,9 @@ const MODULE = "dns";
 export default function useForwardersList(ws) {
     const [forwarders, setForwarders] = useState([]);
 
-    const [forwardersListState, getForwardersList] = useAPIGet(API_URLs.dnsForwarders);
+    const [forwardersListState, getForwardersList] = useAPIGet(
+        API_URLs.dnsForwarders
+    );
     useEffect(() => {
         getForwardersList();
     }, [getForwardersList]);
@@ -45,7 +47,10 @@ function useForwardersWS(ws, setForwarders) {
     function useForwarderWSAction(action, func) {
         const [wsForwarderData] = useWSForisModule(ws, MODULE, action);
         useEffect(() => {
-            if (wsForwarderData) setForwarders((forwarders) => func(forwarders, wsForwarderData));
+            if (wsForwarderData)
+                setForwarders((forwarders) =>
+                    func(forwarders, wsForwarderData)
+                );
         }, [func, wsForwarderData]);
     }
 
@@ -59,15 +64,17 @@ function addForwarder(forwarders, forwarder) {
 }
 
 function setForwarder(forwarders, forwarder) {
-    const forwarderIndex = forwarders.findIndex((fwd) => (fwd.name === forwarder.name));
-    return update(
-        forwarders, { $splice: [[forwarderIndex, 1, { editable: true, ...forwarder }]] },
+    const forwarderIndex = forwarders.findIndex(
+        (fwd) => fwd.name === forwarder.name
     );
+    return update(forwarders, {
+        $splice: [[forwarderIndex, 1, { editable: true, ...forwarder }]],
+    });
 }
 
 function deleteForwarder(forwarders, forwarder) {
-    const forwarderIndex = forwarders.findIndex((fwd) => (fwd.name === forwarder.name));
-    return update(
-        forwarders, { $splice: [[forwarderIndex, 1]] },
+    const forwarderIndex = forwarders.findIndex(
+        (fwd) => fwd.name === forwarder.name
     );
+    return update(forwarders, { $splice: [[forwarderIndex, 1]] });
 }

@@ -7,7 +7,6 @@
     }
 }
 
-
 #reboot-dropdown-toggle {
     animation-name: rebootFade;
     animation-duration: 1.5s;
@@ -16,5 +15,5 @@
 }
 
 #reboot-dropdown-toggle svg {
-    color: red
+    color: red;
 }

@@ -84,11 +84,13 @@ export function prepDataToSubmit(formData) {
 
 export function validator(formData) {
     const errors = {
-        ip: validateRequiredField(formData.ip) || validateIPv4Address(formData.ip),
+        ip:
+            validateRequiredField(formData.ip) ||
+            validateIPv4Address(formData.ip),
         netmask:
-      validateRequiredField(formData.netmask)
-      || validateIPv4Address(formData.netmask)
-      || validateNetworkMask(formData.netmask),
+            validateRequiredField(formData.netmask) ||
+            validateIPv4Address(formData.netmask) ||
+            validateNetworkMask(formData.netmask),
     };
 
     if (formData.qos.enabled) {
@@ -100,7 +102,7 @@ export function validator(formData) {
             formData.dhcp,
             formData.ip,
             formData.netmask,
-            errors.ip || errors.netmask,
+            errors.ip || errors.netmask
         );
     }
 

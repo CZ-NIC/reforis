@@ -10,7 +10,10 @@ import PropTypes from "prop-types";
 
 import { Select } from "foris";
 import {
-    BUSES, INTERFACE_STATES, INTERFACE_TYPES, NETWORKS_CHOICES,
+    BUSES,
+    INTERFACE_STATES,
+    INTERFACE_TYPES,
+    NETWORKS_CHOICES,
 } from "./constants";
 
 SelectedInterface.propTypes = {
@@ -68,7 +71,6 @@ export default function SelectedInterface({
                 label={_("Network")}
                 value={network}
                 disabled={!configurable}
-
                 onChange={onNetworkChange}
             />
             <table ref={myRef} className="table table-hover">
@@ -77,7 +79,10 @@ export default function SelectedInterface({
                         <th>{_("State")}</th>
                         <td>
                             <span key={`${id}-${state}`}>
-                                <i className={`fa fa-lg ${stateIconClass}`} title={state} />
+                                <i
+                                    className={`fa fa-lg ${stateIconClass}`}
+                                    title={state}
+                                />
                             </span>
                         </td>
                     </tr>
@@ -103,7 +108,9 @@ export default function SelectedInterface({
                     </tr>
                     <tr>
                         <th>{_("Link speed")}</th>
-                        <td>{link_speed > 0 ? `${link_speed} Mbit/s` : _("N/A")}</td>
+                        <td>
+                            {link_speed > 0 ? `${link_speed} Mbit/s` : _("N/A")}
+                        </td>
                     </tr>
                 </tbody>
             </table>

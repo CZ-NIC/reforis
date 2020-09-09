@@ -13,89 +13,85 @@ export function interfacesFixture(portsOpen = false) {
             ssh_on_wan: portsOpen,
         },
         networks: {
-            guest:
-                [
-                    {
-                        bus: "eth",
-                        configurable: true,
-                        id: "lan1",
-                        link_speed: 0,
-                        module_id: 0,
-                        slot: "LAN1",
-                        state: "down",
-                        type: "eth",
-                    },
-                    {
-                        bus: "eth",
-                        configurable: true,
-                        id: "lan4",
-                        link_speed: 0,
-                        module_id: 0,
-                        slot: "LAN4",
-                        state: "down",
-                        type: "eth",
-                    },
-                ],
-            lan:
-                [
-                    {
-                        bus: "eth",
-                        configurable: true,
-                        id: "lan3",
-                        link_speed: 0,
-                        module_id: 0,
-                        slot: "LAN3",
-                        state: "down",
-                        type: "eth",
-                    },
-                ],
-            none:
-                [
-                    {
-                        bus: "eth",
-                        configurable: true,
-                        id: "lan0",
-                        link_speed: 0,
-                        module_id: 0,
-                        slot: "LAN0",
-                        state: "down",
-                        type: "eth",
-                    },
-                    {
-                        bus: "eth",
-                        configurable: true,
-                        id: "lan2",
-                        link_speed: 0,
-                        module_id: 0,
-                        slot: "LAN2",
-                        state: "down",
-                        type: "eth",
-                    },
-                    {
-                        bus: "pci",
-                        configurable: false,
-                        id: "wlan1",
-                        link_speed: 0,
-                        module_id: 0,
-                        slot: "1",
-                        ssid: "",
-                        state: "down",
-                        type: "wifi",
-                    },
-                ],
-            wan:
-                [
-                    {
-                        bus: "eth",
-                        configurable: true,
-                        id: "eth2",
-                        link_speed: 1000,
-                        module_id: 0,
-                        slot: "WAN",
-                        state: "up",
-                        type: "eth",
-                    },
-                ],
+            guest: [
+                {
+                    bus: "eth",
+                    configurable: true,
+                    id: "lan1",
+                    link_speed: 0,
+                    module_id: 0,
+                    slot: "LAN1",
+                    state: "down",
+                    type: "eth",
+                },
+                {
+                    bus: "eth",
+                    configurable: true,
+                    id: "lan4",
+                    link_speed: 0,
+                    module_id: 0,
+                    slot: "LAN4",
+                    state: "down",
+                    type: "eth",
+                },
+            ],
+            lan: [
+                {
+                    bus: "eth",
+                    configurable: true,
+                    id: "lan3",
+                    link_speed: 0,
+                    module_id: 0,
+                    slot: "LAN3",
+                    state: "down",
+                    type: "eth",
+                },
+            ],
+            none: [
+                {
+                    bus: "eth",
+                    configurable: true,
+                    id: "lan0",
+                    link_speed: 0,
+                    module_id: 0,
+                    slot: "LAN0",
+                    state: "down",
+                    type: "eth",
+                },
+                {
+                    bus: "eth",
+                    configurable: true,
+                    id: "lan2",
+                    link_speed: 0,
+                    module_id: 0,
+                    slot: "LAN2",
+                    state: "down",
+                    type: "eth",
+                },
+                {
+                    bus: "pci",
+                    configurable: false,
+                    id: "wlan1",
+                    link_speed: 0,
+                    module_id: 0,
+                    slot: "1",
+                    ssid: "",
+                    state: "down",
+                    type: "wifi",
+                },
+            ],
+            wan: [
+                {
+                    bus: "eth",
+                    configurable: true,
+                    id: "eth2",
+                    link_speed: 1000,
+                    module_id: 0,
+                    slot: "WAN",
+                    state: "up",
+                    type: "eth",
+                },
+            ],
         },
     };
 }
@@ -107,89 +103,85 @@ export const interfacesWithVariousModules = {
         ssh_on_wan: false,
     },
     networks: {
-        guest:
-            [
-                {
-                    bus: "eth",
-                    configurable: true,
-                    id: "lan1",
-                    link_speed: 0,
-                    module_id: 0,
-                    slot: "1",
-                    state: "down",
-                    type: "eth"
-                },
-                {
-                    bus: "eth",
-                    configurable: true,
-                    id: "lan4",
-                    link_speed: 0,
-                    module_id: 1,
-                    slot: "1",
-                    state: "down",
-                    type: "eth"
-                }
-            ],
-        lan:
-            [
-                {
-                    bus: "eth",
-                    configurable: true,
-                    id: "lan3",
-                    link_speed: 0,
-                    module_id: 1,
-                    slot: "2",
-                    state: "down",
-                    type: "eth"
-                },
-                {
-                    bus: "eth",
-                    configurable: true,
-                    id: "lan2",
-                    link_speed: 0,
-                    module_id: 0,
-                    slot: "2",
-                    state: "down",
-                    type: "eth"
-                },
-            ],
-        none:
-            [
-                {
-                    bus: "eth",
-                    configurable: true,
-                    id: "lan0",
-                    link_speed: 0,
-                    module_id: 0,
-                    slot: "LAN0",
-                    state: "down",
-                    type: "eth"
-                },
+        guest: [
+            {
+                bus: "eth",
+                configurable: true,
+                id: "lan1",
+                link_speed: 0,
+                module_id: 0,
+                slot: "1",
+                state: "down",
+                type: "eth",
+            },
+            {
+                bus: "eth",
+                configurable: true,
+                id: "lan4",
+                link_speed: 0,
+                module_id: 1,
+                slot: "1",
+                state: "down",
+                type: "eth",
+            },
+        ],
+        lan: [
+            {
+                bus: "eth",
+                configurable: true,
+                id: "lan3",
+                link_speed: 0,
+                module_id: 1,
+                slot: "2",
+                state: "down",
+                type: "eth",
+            },
+            {
+                bus: "eth",
+                configurable: true,
+                id: "lan2",
+                link_speed: 0,
+                module_id: 0,
+                slot: "2",
+                state: "down",
+                type: "eth",
+            },
+        ],
+        none: [
+            {
+                bus: "eth",
+                configurable: true,
+                id: "lan0",
+                link_speed: 0,
+                module_id: 0,
+                slot: "LAN0",
+                state: "down",
+                type: "eth",
+            },
 
-                {
-                    bus: "pci",
-                    configurable: false,
-                    id: "wlan1",
-                    link_speed: 0,
-                    module_id: 0,
-                    slot: "1",
-                    ssid: "",
-                    state: "down",
-                    type: "wifi"
-                }
-            ],
-        wan:
-            [
-                {
-                    bus: "eth",
-                    configurable: true,
-                    id: "eth2",
-                    link_speed: 1000,
-                    module_id: 0,
-                    slot: "WAN",
-                    state: "up",
-                    type: "eth"
-                }
-            ],
+            {
+                bus: "pci",
+                configurable: false,
+                id: "wlan1",
+                link_speed: 0,
+                module_id: 0,
+                slot: "1",
+                ssid: "",
+                state: "down",
+                type: "wifi",
+            },
+        ],
+        wan: [
+            {
+                bus: "eth",
+                configurable: true,
+                id: "eth2",
+                link_speed: 1000,
+                module_id: 0,
+                slot: "WAN",
+                state: "up",
+                type: "eth",
+            },
+        ],
     },
 };

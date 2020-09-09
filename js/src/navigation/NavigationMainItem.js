@@ -12,10 +12,7 @@ import NavigationItem from "./NavigationItem";
 import getIconElement from "./utils";
 
 NavigationMainItem.propTypes = {
-    icon: PropTypes.oneOfType([
-        PropTypes.string.isRequired,
-        PropTypes.node,
-    ]),
+    icon: PropTypes.oneOfType([PropTypes.string.isRequired, PropTypes.node]),
     name: PropTypes.string.isRequired,
 };
 

@@ -22,7 +22,13 @@ GuidePage.propTypes = {
 };
 
 export default function GuidePage({
-    ws, step, next_step, current_workflow, available_workflows, passed, getGuideData,
+    ws,
+    step,
+    next_step,
+    current_workflow,
+    available_workflows,
+    passed,
+    getGuideData,
 }) {
     const Component = STEPS[step].component;
     return (

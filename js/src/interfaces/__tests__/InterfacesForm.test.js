@@ -15,6 +15,8 @@ import InterfacesForm from "../InterfacesForm";
 describe("<InterfacesForm/>", () => {
     it("should display alert on open ports", () => {
         render(<InterfacesForm formData={interfacesFixture(true)} />);
-        expect(mockSetAlert).toBeCalledWith("Ports are open on your WAN interface. It's better to reconfigure your interface settings to avoid security issues.");
+        expect(mockSetAlert).toBeCalledWith(
+            "Ports are open on your WAN interface. It's better to reconfigure your interface settings to avoid security issues."
+        );
     });
 });

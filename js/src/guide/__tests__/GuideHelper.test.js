@@ -22,8 +22,7 @@ describe("<GuideHelp/>", () => {
                 next_step="some"
             />
         );
-        expect(container.firstChild)
-            .toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     it("displays lan help with completed message", () => {
@@ -36,8 +35,7 @@ describe("<GuideHelp/>", () => {
                 completed
             />
         );
-        expect(container.firstChild)
-            .toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     it("displays lan help without completed message - server workflow", () => {
@@ -49,8 +47,7 @@ describe("<GuideHelp/>", () => {
                 next_step="some"
             />
         );
-        expect(container.firstChild)
-            .toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     it("doesn't display completed message if it doesn't exist", () => {
@@ -63,8 +60,7 @@ describe("<GuideHelp/>", () => {
                 completed
             />
         );
-        expect(container.firstChild)
-            .toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     it("doesn't display anything if step doesn't exist", () => {
@@ -77,8 +73,7 @@ describe("<GuideHelp/>", () => {
                 completed
             />
         );
-        expect(container.firstChild)
-            .toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     it("doesn't display initial message if it doesn't exist", () => {
@@ -90,7 +85,6 @@ describe("<GuideHelp/>", () => {
                 next_step="some"
             />
         );
-        expect(container.firstChild)
-            .toMatchSnapshot();
+        expect(container.firstChild).toMatchSnapshot();
     });
 });
