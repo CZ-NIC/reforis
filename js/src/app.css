@@ -155,3 +155,9 @@ html {
 form div.form-group.switch {
     margin-bottom: 0;
 }
+
+/* Custom React Tooltip */
+
+.__react_component_tooltip {
+    padding: 3px 10px !important;
+}
