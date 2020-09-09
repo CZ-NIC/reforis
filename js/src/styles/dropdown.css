@@ -9,6 +9,13 @@
     margin: 0;
     /* Just below spinner-fs-background */
     z-index: 1099;
+    opacity: 0;
+    visibility: hidden;
+    transform-origin: top;
+    animation-fill-mode: forwards;
+    transform: scale(0.9, 0.7) translateY(-20px);
+    display: block;
+    transition: all 80ms ease;
 }
 
 .dropdown-item:hover {
