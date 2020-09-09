@@ -15,5 +15,7 @@ Labels.propTypes = {
 };
 
 export default function Labels({ labels, disabled }) {
-    return labels.map((label) => <Label {...label} key={label.name} disabled={disabled} />);
+    return labels.map((label) => (
+        <Label {...label} key={label.name} disabled={disabled} />
+    ));
 }

@@ -8,9 +8,7 @@
 import { useEffect, useState } from "react";
 
 import API_URLs from "common/API";
-import {
-    useWSForisModule, useAPIGet, useAPIPost, API_STATE,
-} from "foris";
+import { useWSForisModule, useAPIGet, useAPIPost, API_STATE } from "foris";
 import { NOT_DISMISSABLE } from "./constants";
 
 const WS_MODULE = "router_notifications";
@@ -24,8 +22,9 @@ export default function useNotifications(ws) {
     }, [get]);
     useEffect(() => {
         if (getState.state === API_STATE.SUCCESS) {
-            const nonDisplayedNotifications = getState.data.notifications
-                .filter((notification) => !notification.displayed);
+            const nonDisplayedNotifications = getState.data.notifications.filter(
+                (notification) => !notification.displayed
+            );
             setNotifications(nonDisplayedNotifications);
         }
     }, [getState]);
@@ -39,7 +38,11 @@ export default function useNotifications(ws) {
     }, [WSCreateData, get]);
 
     // Mark as displayed
-    const [WSMarkAsDisplayedData] = useWSForisModule(ws, WS_MODULE, "mark_as_displayed");
+    const [WSMarkAsDisplayedData] = useWSForisModule(
+        ws,
+        WS_MODULE,
+        "mark_as_displayed"
+    );
     useEffect(() => {
         if (!WSMarkAsDisplayedData) {
             return;
@@ -47,9 +50,12 @@ export default function useNotifications(ws) {
         if (WSMarkAsDisplayedData.new_count === 0) {
             setNotifications([]);
         } else if (WSMarkAsDisplayedData.ids.length === 1) {
-            setNotifications((currentNotifications) => currentNotifications.filter(
-                (notification) => notification.id !== WSMarkAsDisplayedData.ids[0],
-            ));
+            setNotifications((currentNotifications) =>
+                currentNotifications.filter(
+                    (notification) =>
+                        notification.id !== WSMarkAsDisplayedData.ids[0]
+                )
+            );
         }
     }, [WSMarkAsDisplayedData, setNotifications]);
 
@@ -57,24 +63,32 @@ export default function useNotifications(ws) {
 
     function dismiss(notificationId) {
         post({ data: { ids: [notificationId] } });
-        setNotifications((currentNotifications) => currentNotifications.filter(
-            (notification) => notification.id !== notificationId,
-        ));
+        setNotifications((currentNotifications) =>
+            currentNotifications.filter(
+                (notification) => notification.id !== notificationId
+            )
+        );
     }
 
     function dismissAll() {
         const idsToDismiss = notifications
-            .filter((notification) => !NOT_DISMISSABLE.includes(notification.severity))
+            .filter(
+                (notification) =>
+                    !NOT_DISMISSABLE.includes(notification.severity)
+            )
             .map((notification) => notification.id);
         if (idsToDismiss.length >= 1) {
-            const notificationsToLeave = notifications
-                .filter((notification) => NOT_DISMISSABLE.includes(notification.severity));
+            const notificationsToLeave = notifications.filter((notification) =>
+                NOT_DISMISSABLE.includes(notification.severity)
+            );
             post({ data: { ids: idsToDismiss } });
             setNotifications(notificationsToLeave);
         }
     }
 
-    const isLoading = [API_STATE.INIT, API_STATE.SENDING].includes(getState.state);
+    const isLoading = [API_STATE.INIT, API_STATE.SENDING].includes(
+        getState.state
+    );
     return [notifications, dismiss, dismissAll, isLoading];
 }
 
@@ -86,7 +100,7 @@ export function useNewNotification(ws) {
         if (newNotification) {
             setTimeout(
                 () => setNewNotification(false),
-                NEW_NOTIFICATION_ANIMATION_DURATION * 1000,
+                NEW_NOTIFICATION_ANIMATION_DURATION * 1000
             );
         }
     }, [newNotification]);

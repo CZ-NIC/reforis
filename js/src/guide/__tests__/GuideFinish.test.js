@@ -7,7 +7,10 @@
 
 import React from "react";
 import {
-    fireEvent, getByText, render, wait,
+    fireEvent,
+    getByText,
+    render,
+    wait,
 } from "foris/testUtils/customTestRender";
 import { mockJSONError } from "foris/testUtils/network";
 import { mockSetAlert } from "foris/testUtils/alertContextMock";
@@ -29,12 +32,20 @@ describe("<GuideFinish/> and useGuideFinish hook", () => {
 
     it("useGuideFinish hook", () => {
         fireEvent.click(getByText(guideFinishContainer, "Continue"));
-        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/finish-guide", undefined, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith(
+            "/reforis/api/finish-guide",
+            undefined,
+            expect.anything()
+        );
     });
 
     it("handle POST error", async () => {
         fireEvent.click(getByText(guideFinishContainer, "Continue"));
         mockJSONError();
-        await wait(() => expect(mockSetAlert).toBeCalledWith("Cannot mark guide as finished."));
+        await wait(() =>
+            expect(mockSetAlert).toBeCalledWith(
+                "Cannot mark guide as finished."
+            )
+        );
     });
 });

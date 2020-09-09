@@ -13,19 +13,26 @@ import "./Label.css";
 Label.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    severity: PropTypes.oneOf(
-        ["danger", "warning", "info", "success", "primary", "secondary", "light", "dark"],
-    ).isRequired,
+    severity: PropTypes.oneOf([
+        "danger",
+        "warning",
+        "info",
+        "success",
+        "primary",
+        "secondary",
+        "light",
+        "dark",
+    ]).isRequired,
     disabled: PropTypes.bool,
 };
 
-export default function Label({
-    title, description, severity, disabled,
-}) {
+export default function Label({ title, description, severity, disabled }) {
     return (
         <span
             title={description}
-            className={`badge badge-${severity}${disabled ? " badge-disabled" : ""}`}
+            className={`badge badge-${severity}${
+                disabled ? " badge-disabled" : ""
+            }`}
         >
             {title}
         </span>

@@ -11,7 +11,10 @@ import diffSnapshot from "snapshot-diff";
 
 import { WebSockets } from "foris";
 import {
-    fireEvent, render, waitForElement, wait,
+    fireEvent,
+    render,
+    waitForElement,
+    wait,
 } from "foris/testUtils/customTestRender";
 import { mockJSONError } from "foris/testUtils/network";
 
@@ -41,7 +44,9 @@ describe("<WAN/>", () => {
         const { getByText } = render(<WAN ws={webSockets} />);
         mockJSONError();
         await wait(() => {
-            expect(getByText("An error occurred while fetching data.")).toBeTruthy();
+            expect(
+                getByText("An error occurred while fetching data.")
+            ).toBeTruthy();
         });
     });
 
@@ -50,37 +55,51 @@ describe("<WAN/>", () => {
     });
 
     it("Snapshot WAN IPv4 (static).", () => {
-        fireEvent.change(getByLabelText("IPv4 protocol"), { target: { value: "static" } });
+        fireEvent.change(getByLabelText("IPv4 protocol"), {
+            target: { value: "static" },
+        });
         expect(diffSnapshot(firstRender, asFragment())).toMatchSnapshot();
     });
 
     it("Snapshot WAN IPv4 (pppoe).", () => {
-        fireEvent.change(getByLabelText("IPv4 protocol"), { target: { value: "pppoe" } });
+        fireEvent.change(getByLabelText("IPv4 protocol"), {
+            target: { value: "pppoe" },
+        });
         expect(diffSnapshot(firstRender, asFragment())).toMatchSnapshot();
     });
 
     it("Snapshot WAN IPv6 (dhcpv6).", () => {
-        fireEvent.change(getByLabelText("IPv6 protocol"), { target: { value: "dhcpv6" } });
+        fireEvent.change(getByLabelText("IPv6 protocol"), {
+            target: { value: "dhcpv6" },
+        });
         expect(diffSnapshot(firstRender, asFragment())).toMatchSnapshot();
     });
 
     it("Snapshot WAN IPv6 (static).", () => {
-        fireEvent.change(getByLabelText("IPv6 protocol"), { target: { value: "static" } });
+        fireEvent.change(getByLabelText("IPv6 protocol"), {
+            target: { value: "static" },
+        });
         expect(diffSnapshot(firstRender, asFragment())).toMatchSnapshot();
     });
 
     it("Snapshot WAN IPv6 (6to4).", () => {
-        fireEvent.change(getByLabelText("IPv6 protocol"), { target: { value: "6to4" } });
+        fireEvent.change(getByLabelText("IPv6 protocol"), {
+            target: { value: "6to4" },
+        });
         expect(diffSnapshot(firstRender, asFragment())).toMatchSnapshot();
     });
 
     it("Snapshot WAN IPv6 (6in4).", () => {
-        fireEvent.change(getByLabelText("IPv6 protocol"), { target: { value: "6in4" } });
+        fireEvent.change(getByLabelText("IPv6 protocol"), {
+            target: { value: "6in4" },
+        });
         expect(diffSnapshot(firstRender, asFragment())).toMatchSnapshot();
     });
 
     it("Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled.", () => {
-        fireEvent.change(getByLabelText("IPv6 protocol"), { target: { value: "6in4" } });
+        fireEvent.change(getByLabelText("IPv6 protocol"), {
+            target: { value: "6in4" },
+        });
         firstRender = asFragment();
 
         fireEvent.click(getByText("Dynamic IPv4 handling"));
@@ -101,25 +120,35 @@ describe("<WAN/>", () => {
             wan6_settings: { wan6_type: "none" },
             wan_settings: { wan_dhcp: {}, wan_type: "dhcp" },
         };
-        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/wan", data, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith(
+            "/reforis/api/wan",
+            data,
+            expect.anything()
+        );
     });
 
     it("Post WAN IPv4 (static).", () => {
-        fireEvent.change(getByLabelText("IPv4 protocol"), { target: { value: "static" } });
+        fireEvent.change(getByLabelText("IPv4 protocol"), {
+            target: { value: "static" },
+        });
         fireEvent.click(getByText("Save"));
         // IP address value is invalid, button is disabled.
         expect(mockAxios.post).toHaveBeenCalledTimes(0);
     });
 
     it("Post WAN IPv4 (pppoe).", () => {
-        fireEvent.change(getByLabelText("IPv4 protocol"), { target: { value: "pppoe" } });
+        fireEvent.change(getByLabelText("IPv4 protocol"), {
+            target: { value: "pppoe" },
+        });
         fireEvent.click(getByText("Save"));
         // IP address value is invalid, button is disabled.
         expect(mockAxios.post).toHaveBeenCalledTimes(0);
     });
 
     it("Post WAN IPv6 (dhcpv6).", () => {
-        fireEvent.change(getByLabelText("IPv6 protocol"), { target: { value: "dhcpv6" } });
+        fireEvent.change(getByLabelText("IPv6 protocol"), {
+            target: { value: "dhcpv6" },
+        });
         fireEvent.click(getByText("Save"));
         expect(mockAxios.post).toBeCalled();
         const data = {
@@ -127,32 +156,44 @@ describe("<WAN/>", () => {
             wan6_settings: { wan6_dhcpv6: { duid: "" }, wan6_type: "dhcpv6" },
             wan_settings: { wan_dhcp: {}, wan_type: "dhcp" },
         };
-        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/wan", data, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith(
+            "/reforis/api/wan",
+            data,
+            expect.anything()
+        );
     });
 
     it("Post WAN IPv6 (static).", () => {
-        fireEvent.change(getByLabelText("IPv6 protocol"), { target: { value: "static" } });
+        fireEvent.change(getByLabelText("IPv6 protocol"), {
+            target: { value: "static" },
+        });
         fireEvent.click(getByText("Save"));
         // IP address value is invalid, button is disabled.
         expect(mockAxios.post).toHaveBeenCalledTimes(0);
     });
 
     it("Post WAN IPv6 (6to4).", () => {
-        fireEvent.change(getByLabelText("IPv6 protocol"), { target: { value: "6to4" } });
+        fireEvent.change(getByLabelText("IPv6 protocol"), {
+            target: { value: "6to4" },
+        });
         fireEvent.click(getByText("Save"));
         // Values is invalid, button is disabled.
         expect(mockAxios.post).toHaveBeenCalledTimes(0);
     });
 
     it("Post WAN IPv6 (6in4).", () => {
-        fireEvent.change(getByLabelText("IPv6 protocol"), { target: { value: "6in4" } });
+        fireEvent.change(getByLabelText("IPv6 protocol"), {
+            target: { value: "6in4" },
+        });
         fireEvent.click(getByText("Save"));
         // Values is invalid, button is disabled.
         expect(mockAxios.post).toHaveBeenCalledTimes(0);
     });
 
     it("Post WAN IPv6 (6in4), dynamic IPv4 handling enabled.", () => {
-        fireEvent.change(getByLabelText("IPv6 protocol"), { target: { value: "6in4" } });
+        fireEvent.change(getByLabelText("IPv6 protocol"), {
+            target: { value: "6in4" },
+        });
         fireEvent.click(getByText("Dynamic IPv4 handling"));
         fireEvent.click(getByText("Save"));
         // IP address value is invalid, button is disabled.

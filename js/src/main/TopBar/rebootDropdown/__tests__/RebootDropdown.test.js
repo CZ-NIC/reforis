@@ -19,7 +19,9 @@ describe("<RebootDropdown/>", () => {
 
     beforeEach(async () => {
         const webSockets = new WebSockets();
-        const { container, getByText } = render(<RebootDropdown ws={webSockets} />);
+        const { container, getByText } = render(
+            <RebootDropdown ws={webSockets} />
+        );
         mockAxios.mockResponse({ data: notificationsFixture });
         rebootDropdownContainer = container;
         await wait(() => {

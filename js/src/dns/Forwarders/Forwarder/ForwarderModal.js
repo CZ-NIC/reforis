@@ -18,20 +18,14 @@ ForwarderModal.propTypes = {
     title: PropTypes.string,
 };
 
-export default function ForwarderModal({
-    shown, setShown, forwarder, title,
-}) {
-    const postCallback = useCallback(
-        () => { setShown(false); },
-        [setShown],
-    );
+export default function ForwarderModal({ shown, setShown, forwarder, title }) {
+    const postCallback = useCallback(() => {
+        setShown(false);
+    }, [setShown]);
 
     return (
         <Modal scrollable shown={shown} setShown={setShown}>
-            <ModalHeader
-                setShown={setShown}
-                title={title}
-            />
+            <ModalHeader setShown={setShown} title={title} />
             <ModalBody>
                 <ForwarderForm
                     forwarder={forwarder}

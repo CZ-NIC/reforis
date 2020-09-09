@@ -7,7 +7,10 @@
 
 import React from "react";
 import {
-    render, fireEvent, getByText, wait,
+    render,
+    fireEvent,
+    getByText,
+    wait,
 } from "foris/testUtils/customTestRender";
 import mockAxios from "jest-mock-axios";
 
@@ -23,14 +26,19 @@ describe("<UpdateApproval/>", () => {
 
     function renderUpdateApproval(update = exampleUpdate) {
         const { container } = render(
-            <UpdateApproval update={update} onSuccess={onSuccess} />,
+            <UpdateApproval update={update} onSuccess={onSuccess} />
         );
         return container;
     }
 
     it("No updates awaiting", () => {
-        const container = renderUpdateApproval({ ...exampleUpdate, approvable: false });
-        expect(getByText(container, "There are no updates awaiting your approval.")).toBeTruthy();
+        const container = renderUpdateApproval({
+            ...exampleUpdate,
+            approvable: false,
+        });
+        expect(
+            getByText(container, "There are no updates awaiting your approval.")
+        ).toBeTruthy();
         expect(container).toMatchSnapshot();
     });
 
@@ -42,19 +50,30 @@ describe("<UpdateApproval/>", () => {
     it("Updates resolution - install now", async () => {
         const container = renderUpdateApproval();
         fireEvent.click(getByText(container, "Install now"));
-        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/approvals", { hash: exampleHash, solution: "grant" }, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith(
+            "/reforis/api/approvals",
+            { hash: exampleHash, solution: "grant" },
+            expect.anything()
+        );
 
         // Reload approvals when resolution is successful
         expect(onSuccess).not.toBeCalled();
         mockAxios.mockResponse({ data: {} });
         await wait(() => expect(onSuccess).toBeCalled());
-        expect(mockSetAlert).toBeCalledWith("Updates will be installed shortly.", ALERT_TYPES.SUCCESS);
+        expect(mockSetAlert).toBeCalledWith(
+            "Updates will be installed shortly.",
+            ALERT_TYPES.SUCCESS
+        );
     });
 
     it("Updates resolution - ignore", () => {
         const container = renderUpdateApproval();
         fireEvent.click(getByText(container, "Ignore"));
-        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/approvals", { hash: exampleHash, solution: "deny" }, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith(
+            "/reforis/api/approvals",
+            { hash: exampleHash, solution: "deny" },
+            expect.anything()
+        );
     });
 
     it("Updates resolution - spinner", async () => {
@@ -67,6 +86,8 @@ describe("<UpdateApproval/>", () => {
         const container = renderUpdateApproval();
         fireEvent.click(getByText(container, "Ignore"));
         mockJSONError();
-        await wait(() => expect(mockSetAlert).toBeCalledWith("Cannot install updates."));
+        await wait(() =>
+            expect(mockSetAlert).toBeCalledWith("Cannot install updates.")
+        );
     });
 });

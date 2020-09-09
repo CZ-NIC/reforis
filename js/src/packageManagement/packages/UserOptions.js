@@ -17,29 +17,31 @@ UserOptions.propTypes = {
 };
 
 export default function UserOptions({
-    packageIdx, options, setFormValue, disabled,
+    packageIdx,
+    options,
+    setFormValue,
+    disabled,
 }) {
     return (
         <div className="option">
-            {options.map(
-                (_option, idx) => (
-                    <CheckBox
-                        key={_option.name}
-                        label={_option.title}
-                        helpText={_option.description}
-                        checked={_option.enabled}
-                        disabled={disabled}
-
-                        onChange={setFormValue((value) => ({
-                            package_lists: {
-                                [packageIdx]: {
-                                    options: { [idx]: { enabled: { $set: value } } },
+            {options.map((_option, idx) => (
+                <CheckBox
+                    key={_option.name}
+                    label={_option.title}
+                    helpText={_option.description}
+                    checked={_option.enabled}
+                    disabled={disabled}
+                    onChange={setFormValue((value) => ({
+                        package_lists: {
+                            [packageIdx]: {
+                                options: {
+                                    [idx]: { enabled: { $set: value } },
                                 },
                             },
-                        }))}
-                    />
-                ),
-            )}
+                        },
+                    }))}
+                />
+            ))}
         </div>
     );
 }

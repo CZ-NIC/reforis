@@ -7,7 +7,10 @@
 
 import React from "react";
 import {
-    fireEvent, render, waitForElement, wait,
+    fireEvent,
+    render,
+    waitForElement,
+    wait,
 } from "foris/testUtils/customTestRender";
 import { mockJSONError } from "foris/testUtils/network";
 
@@ -31,7 +34,9 @@ describe("<UpdateSettings/>", () => {
         getByLabelText = renderRes.getByLabelText;
         getByText = renderRes.getByText;
 
-        await waitForElement(() => renderRes.getByLabelText(ENABLE_CHECKBOX_LABEL));
+        await waitForElement(() =>
+            renderRes.getByLabelText(ENABLE_CHECKBOX_LABEL)
+        );
         firstRender = renderRes.asFragment();
     });
 
@@ -39,7 +44,9 @@ describe("<UpdateSettings/>", () => {
         const { getByText } = render(<UpdateSettings />);
         mockJSONError();
         await wait(() => {
-            expect(getByText("An error occurred while fetching data.")).toBeTruthy();
+            expect(
+                getByText("An error occurred while fetching data.")
+            ).toBeTruthy();
         });
     });
 
@@ -76,6 +83,10 @@ describe("<UpdateSettings/>", () => {
                 time: "04:30",
             },
         };
-        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/updates", data, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith(
+            "/reforis/api/updates",
+            data,
+            expect.anything()
+        );
     });
 });

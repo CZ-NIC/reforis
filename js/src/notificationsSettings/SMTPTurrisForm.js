@@ -20,14 +20,16 @@ SMTPTurrisForm.propTypes = {
 };
 
 SMTPTurrisForm.defaultProps = {
-    setFormValue: () => {
-    },
+    setFormValue: () => {},
     formData: {},
     formErrors: {},
 };
 
 export default function SMTPTurrisForm({
-    formData, formErrors, setFormValue, disabled,
+    formData,
+    formErrors,
+    setFormValue,
+    disabled,
 }) {
     return (
         <>
@@ -36,11 +38,9 @@ export default function SMTPTurrisForm({
                 value={formData.sender_name || ""}
                 error={formErrors.sender_name}
                 helpText={HELP_TEXTS.smtp_turris.sender_name}
-
-                onChange={setFormValue(
-                    (value) => ({ smtp_turris: { sender_name: { $set: value } } }),
-                )}
-
+                onChange={setFormValue((value) => ({
+                    smtp_turris: { sender_name: { $set: value } },
+                }))}
                 disabled={disabled}
             />
         </>

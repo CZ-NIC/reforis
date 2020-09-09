@@ -24,16 +24,19 @@ export default function NetworkRestartHandler({ ws, controllerID }) {
 
     let message;
     switch (rebootState) {
-    case STATES.TRIGGERED:
-        message = babel.format(_("Network restart after %d sec."), remains || 0);
-        break;
-    case STATES.IN_PROGRESS:
-        message = _("Network restarting");
-        break;
-    case STATES.DONE:
-        message = _("Reconnecting");
-        break;
-    default:
+        case STATES.TRIGGERED:
+            message = babel.format(
+                _("Network restart after %d sec."),
+                remains || 0
+            );
+            break;
+        case STATES.IN_PROGRESS:
+            message = _("Network restarting");
+            break;
+        case STATES.DONE:
+            message = _("Reconnecting");
+            break;
+        default:
     }
 
     return (

@@ -20,7 +20,9 @@ RouterStateHandler.propTypes = {
 
 export default function RouterStateHandler({ ws }) {
     const [controllerID, setControllerID] = useState();
-    const [getControllerIDResponse, getControllerID] = useAPIGet(API_URLs.controllerID);
+    const [getControllerIDResponse, getControllerID] = useAPIGet(
+        API_URLs.controllerID
+    );
     useEffect(() => {
         getControllerID();
     }, [getControllerID]);
@@ -30,7 +32,9 @@ export default function RouterStateHandler({ ws }) {
             setControllerID(getControllerIDResponse.data);
         } else if (getControllerIDResponse.state === API_STATE.ERROR) {
             // eslint-disable-next-line no-console
-            console.error("Cannot get controller ID. Filtering WebSocket messages is disabled.");
+            console.error(
+                "Cannot get controller ID. Filtering WebSocket messages is disabled."
+            );
         }
     }, [getControllerIDResponse]);
 

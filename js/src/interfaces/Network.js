@@ -37,14 +37,14 @@ export default function Network({ interfaces, selected, setSelected }) {
             );
         }
     } else {
-        componentContent = <p className="text-muted">{_("There are no interfaces in this group.")}</p>;
+        componentContent = (
+            <p className="text-muted">
+                {_("There are no interfaces in this group.")}
+            </p>
+        );
     }
 
-    return (
-        <div className="network mb-3">
-            {componentContent}
-        </div>
-    );
+    return <div className="network mb-3">{componentContent}</div>;
 }
 
 ModulesList.propTypes = {
@@ -58,7 +58,10 @@ function ModulesList({ interfaces, selected, setSelected }) {
     const modules = Object.keys(groupedByModules);
 
     return modules.map((moduleID) => {
-        const moduleName = moduleID === "0" ? _("Base module") : babel.format(_("Module %s"), moduleID);
+        const moduleName =
+            moduleID === "0"
+                ? _("Base module")
+                : babel.format(_("Module %s"), moduleID);
         return (
             <div key={moduleID}>
                 <h4>{moduleName}</h4>
@@ -79,21 +82,15 @@ InterfaceList.propTypes = {
 };
 
 function InterfaceList({ interfaces, selected, setSelected }) {
-    const interfaceComponents = interfaces.map(
-        (networkInterface) => (
-            <Interface
-                key={networkInterface.id}
-                onClick={() => setSelected(networkInterface.id)}
-                isSelected={selected === networkInterface.id}
-                {...networkInterface}
-            />
-        ),
-    );
-    return (
-        <div className="scrollable">
-            {interfaceComponents}
-        </div>
-    );
+    const interfaceComponents = interfaces.map((networkInterface) => (
+        <Interface
+            key={networkInterface.id}
+            onClick={() => setSelected(networkInterface.id)}
+            isSelected={selected === networkInterface.id}
+            {...networkInterface}
+        />
+    ));
+    return <div className="scrollable">{interfaceComponents}</div>;
 }
 
 function getModulesNumber(interfaces) {

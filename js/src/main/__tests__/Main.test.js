@@ -38,7 +38,7 @@ describe("<Main/>", () => {
             <>
                 <div id="content-container" />
                 <Main ws={webSockets} />
-            </>,
+            </>
         );
         expect(console.error).toBeCalled();
         console.error = originalError;

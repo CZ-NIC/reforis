@@ -58,9 +58,7 @@ function Navigation({ pages, location }) {
                 </button>
             </Portal>
             <div id="navigation-container-collapse" className="collapse">
-                <ul className="list-unstyled">
-                    {navigationContent}
-                </ul>
+                <ul className="list-unstyled">{navigationContent}</ul>
             </div>
         </div>
     );

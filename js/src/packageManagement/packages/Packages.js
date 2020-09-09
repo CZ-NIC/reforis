@@ -40,8 +40,9 @@ been installed manually or using opkg is not affected.
 }
 
 function prepData(formData) {
-    formData.package_lists = formData.package_lists
-        .filter((_package) => !_package.hidden);
+    formData.package_lists = formData.package_lists.filter(
+        (_package) => !_package.hidden
+    );
     return formData;
 }
 

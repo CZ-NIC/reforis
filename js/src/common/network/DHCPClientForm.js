@@ -27,7 +27,11 @@ DHCPClientForm.propTypes = {
 };
 
 export default function DHCPClientForm({
-    formData, formErrors, setFormValue, updateRule, disabled,
+    formData,
+    formErrors,
+    setFormValue,
+    updateRule,
+    disabled,
 }) {
     return (
         <TextInput
@@ -35,11 +39,9 @@ export default function DHCPClientForm({
             value={formData.hostname || ""}
             error={(formErrors || {}).hostname || null}
             helpText={HELP_TEXTS.hostname}
-
-            onChange={setFormValue(
-                (value) => updateRule({ hostname: { $set: value } }),
+            onChange={setFormValue((value) =>
+                updateRule({ hostname: { $set: value } })
             )}
-
             disabled={disabled}
         />
     );

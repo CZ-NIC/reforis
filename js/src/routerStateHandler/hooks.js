@@ -12,7 +12,12 @@ import { ForisURLs, useWSForisModule } from "foris";
 import { tryReconnect, waitForDown } from "./utils";
 
 export function useNetworkRestart(ws, controllerID) {
-    return useDeviceState(ws, "network-restart", window.location.pathname, controllerID);
+    return useDeviceState(
+        ws,
+        "network-restart",
+        window.location.pathname,
+        controllerID
+    );
 }
 
 export function useReboot(ws, controllerID) {

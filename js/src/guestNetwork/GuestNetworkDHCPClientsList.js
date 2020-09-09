@@ -26,6 +26,6 @@ export default function GuestNetworkDHCPClientsList({ formData }) {
     const container = document.getElementById("dhcp-clients-container");
     return ReactDOM.createPortal(
         <DHCPClientsList clients={formData.dhcp.clients} />,
-        container,
+        container
     );
 }

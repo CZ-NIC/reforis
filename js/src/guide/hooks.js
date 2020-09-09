@@ -7,13 +7,13 @@
 
 import { useEffect } from "react";
 
-import {
-    useAPIPost, REFORIS_URL_PREFIX, API_STATE, useAlert,
-} from "foris";
+import { useAPIPost, REFORIS_URL_PREFIX, API_STATE, useAlert } from "foris";
 import API_URLs from "common/API";
 
 export default function useGuideFinish() {
-    const [finishGuidePostData, finishGuidePost] = useAPIPost(API_URLs.finishGuide);
+    const [finishGuidePostData, finishGuidePost] = useAPIPost(
+        API_URLs.finishGuide
+    );
     const [setAlert] = useAlert();
 
     useEffect(() => {

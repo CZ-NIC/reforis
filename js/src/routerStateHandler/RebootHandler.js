@@ -23,16 +23,16 @@ export default function RebootHandler({ ws, controllerID }) {
 
     let message;
     switch (rebootState) {
-    case STATES.TRIGGERED:
-        message = babel.format(_("Reboot after %d sec."), remains || 0);
-        break;
-    case STATES.IN_PROGRESS:
-        message = _("Rebooting");
-        break;
-    case STATES.DONE:
-        message = _("Reconnecting");
-        break;
-    default:
+        case STATES.TRIGGERED:
+            message = babel.format(_("Reboot after %d sec."), remains || 0);
+            break;
+        case STATES.IN_PROGRESS:
+            message = _("Rebooting");
+            break;
+        case STATES.DONE:
+            message = _("Reconnecting");
+            break;
+        default:
     }
 
     return (

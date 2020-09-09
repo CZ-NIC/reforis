@@ -7,7 +7,11 @@
 
 import React from "react";
 import {
-    fireEvent, getByAltText, getByText, render, wait,
+    fireEvent,
+    getByAltText,
+    getByText,
+    render,
+    wait,
 } from "foris/testUtils/customTestRender";
 import mockAxios from "jest-mock-axios";
 import { mockJSONError } from "foris/testUtils/network";
@@ -20,7 +24,9 @@ describe("<WorkflowSelect/>", () => {
     let workflowSelectContainer;
 
     beforeEach(async () => {
-        const { container } = render(<WorkflowSelect workflows={workflowFixture} next_step="password" />);
+        const { container } = render(
+            <WorkflowSelect workflows={workflowFixture} next_step="password" />
+        );
         await wait(() => getByText(container, "Guide Workflow"));
         workflowSelectContainer = container;
         window.location.assign = jest.fn();
@@ -32,22 +38,36 @@ describe("<WorkflowSelect/>", () => {
 
     it("Select min.", () => {
         fireEvent.click(getByAltText(workflowSelectContainer, "min"));
-        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/guide-workflow", { workflow: "min" }, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith(
+            "/reforis/api/guide-workflow",
+            { workflow: "min" },
+            expect.anything()
+        );
     });
 
     it("Select router.", () => {
         fireEvent.click(getByAltText(workflowSelectContainer, "router"));
-        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/guide-workflow", { workflow: "router" }, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith(
+            "/reforis/api/guide-workflow",
+            { workflow: "router" },
+            expect.anything()
+        );
     });
 
     it("Select local server.", () => {
         fireEvent.click(getByAltText(workflowSelectContainer, "bridge"));
-        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/guide-workflow", {workflow: "bridge"}, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith(
+            "/reforis/api/guide-workflow",
+            { workflow: "bridge" },
+            expect.anything()
+        );
     });
 
     it("handle POST error", async () => {
         fireEvent.click(getByAltText(workflowSelectContainer, "min"));
         mockJSONError();
-        await wait(() => expect(mockSetAlert).toBeCalledWith("Cannot set workflow."));
+        await wait(() =>
+            expect(mockSetAlert).toBeCalledWith("Cannot set workflow.")
+        );
     });
 });

@@ -18,24 +18,23 @@ UserOptions.propTypes = {
 };
 
 export default function UserOptions({
-    packageIndex, options, setFormValue, disabled,
+    packageIndex,
+    options,
+    setFormValue,
+    disabled,
 }) {
     return (
         <div className="option">
-            {options.map(
-                (option, index) => (
-                    <UserOption
-                        {...option}
-
-                        index={index}
-                        packageIndex={packageIndex}
-                        setFormValue={setFormValue}
-                        disabled={disabled}
-
-                        key={option.name}
-                    />
-                ),
-            )}
+            {options.map((option, index) => (
+                <UserOption
+                    {...option}
+                    index={index}
+                    packageIndex={packageIndex}
+                    setFormValue={setFormValue}
+                    disabled={disabled}
+                    key={option.name}
+                />
+            ))}
         </div>
     );
 }

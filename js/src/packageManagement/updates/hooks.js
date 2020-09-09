@@ -6,7 +6,11 @@
  */
 
 import {
-    API_STATE, useAlert, useAPIGet, useAPIPolling, useAPIPost,
+    API_STATE,
+    useAlert,
+    useAPIGet,
+    useAPIPolling,
+    useAPIPost,
 } from "foris";
 import { useCallback, useEffect, useState } from "react";
 
@@ -19,7 +23,9 @@ const REFRESH_INTERVAL = 500; // milliseconds
  */
 export function usePending() {
     const [pending, setPending] = useState(false);
-    const [getUpdatesStatusResponse, getUpdatesStatus] = useAPIGet(API_URLs.updatesRunning);
+    const [getUpdatesStatusResponse, getUpdatesStatus] = useAPIGet(
+        API_URLs.updatesRunning
+    );
     useEffect(() => {
         getUpdatesStatus();
     }, [getUpdatesStatus]);
@@ -48,7 +54,12 @@ export function useApprovals(displayApproval) {
         getUpdateToApprove();
     }, [getUpdateToApprove]);
 
-    return [getApprovalsResponse, getApprovals, updateToApprove, getUpdateToApprove];
+    return [
+        getApprovalsResponse,
+        getApprovals,
+        updateToApprove,
+        getUpdateToApprove,
+    ];
 }
 
 /*
@@ -61,7 +72,7 @@ export function usePendingPolling(onSuccess, pending, setPending) {
     const [checkStatusPollingResponse] = useAPIPolling(
         API_URLs.updatesRunning,
         REFRESH_INTERVAL,
-        pending,
+        pending
     );
 
     useEffect(() => {
@@ -76,8 +87,13 @@ export function usePendingPolling(onSuccess, pending, setPending) {
             setPending(false);
             setAlert(_("Cannot fetch updater status."));
         }
-    },
-    [checkStatusPollingResponse, onSuccess, setPending, setAlert, dismissAlert]);
+    }, [
+        checkStatusPollingResponse,
+        onSuccess,
+        setPending,
+        setAlert,
+        dismissAlert,
+    ]);
 }
 
 /*

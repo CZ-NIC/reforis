@@ -16,7 +16,9 @@ import NotificationsCenter from "../Notifications/Notifications";
 describe("<NotificationsCenter/>", () => {
     it("Test with snapshot.", async () => {
         const webSockets = new WebSockets();
-        const { container, getByText } = render(<NotificationsCenter ws={webSockets} />);
+        const { container, getByText } = render(
+            <NotificationsCenter ws={webSockets} />
+        );
         mockAxios.mockResponse({ data: notificationsFixture });
         await wait(() => {
             getByText("Notification message.");

@@ -10,20 +10,27 @@ import { render } from "foris/testUtils/customTestRender";
 import TruncatedText from "../Notifications/TruncatedText";
 
 describe("<TruncatedText/>", () => {
-    const ipsum = "Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.";
+    const ipsum =
+        "Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.";
 
     it("displays text without show more/less button", () => {
-        const { container } = render(<TruncatedText text={ipsum} charLimit={200} />);
+        const { container } = render(
+            <TruncatedText text={ipsum} charLimit={200} />
+        );
         expect(container).toMatchSnapshot();
     });
 
     it("displays text with show more/less button", () => {
-        const { container } = render(<TruncatedText text={ipsum} charLimit={50} />);
+        const { container } = render(
+            <TruncatedText text={ipsum} charLimit={50} />
+        );
         expect(container).toMatchSnapshot();
     });
 
     it("doesn't truncate the text then limit is exceeded below threshold", () => {
-        const { container } = render(<TruncatedText text={ipsum} charLimit={130} />);
+        const { container } = render(
+            <TruncatedText text={ipsum} charLimit={130} />
+        );
         expect(container).toMatchSnapshot();
     });
 });

@@ -25,6 +25,8 @@ export function useLanguages() {
 export function useWSSetLanguageRefresh(ws) {
     useEffect(() => {
         const module = "web";
-        ws.subscribe(module).bind(module, "set_language", () => window.location.reload());
+        ws.subscribe(module).bind(module, "set_language", () =>
+            window.location.reload()
+        );
     }, [ws]);
 }

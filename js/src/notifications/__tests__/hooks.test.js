@@ -6,7 +6,12 @@
  */
 import React from "react";
 import {
-    fireEvent, getByText, queryByText, render, wait, act,
+    fireEvent,
+    getByText,
+    queryByText,
+    render,
+    wait,
+    act,
 } from "foris/testUtils/customTestRender";
 
 import { WebSockets } from "foris";
@@ -29,32 +34,53 @@ describe("useNotifications hook.", () => {
 
     it("Fetch notifications.", () => {
         expect(mockAxios.get).toHaveBeenCalledTimes(1);
-        expect(mockAxios.get).toHaveBeenCalledWith("/reforis/api/notifications", expect.anything());
+        expect(mockAxios.get).toHaveBeenCalledWith(
+            "/reforis/api/notifications",
+            expect.anything()
+        );
     });
 
     it("Render notifications.", () => {
-        const HTMLNotificationMessage = queryByText(notificationsContainer, "Notification message.");
+        const HTMLNotificationMessage = queryByText(
+            notificationsContainer,
+            "Notification message."
+        );
         expect(HTMLNotificationMessage).not.toBeNull();
     });
 
     it("Don't show displayed notifications.", () => {
-        const HTMLnotificationMessage = queryByText(notificationsContainer, "Displayed notification me...");
+        const HTMLnotificationMessage = queryByText(
+            notificationsContainer,
+            "Displayed notification me..."
+        );
         expect(HTMLnotificationMessage).toBeNull();
     });
 
     it("Dismiss notification.", () => {
         expect(mockAxios.post).toHaveBeenCalledTimes(0);
-        fireEvent.click(notificationsContainer.querySelector("[class='fas fa-times']"));
+        fireEvent.click(
+            notificationsContainer.querySelector("[class='fas fa-times']")
+        );
         expect(mockAxios.post).toHaveBeenCalledTimes(1);
 
         const notificationToDismiss = notificationsFixture.notifications[0];
-        const wsMessage = { module: "router_notifications", action: "mark_as_displayed", data: { ids: [notificationToDismiss.id], new_count: 2 } };
+        const wsMessage = {
+            module: "router_notifications",
+            action: "mark_as_displayed",
+            data: { ids: [notificationToDismiss.id], new_count: 2 },
+        };
         // Simulate receiving message from WS server
         act(() => webSockets.dispatch(wsMessage));
 
-        let HTMLnotificationMessage = queryByText(notificationsContainer, notificationToDismiss.msg);
+        let HTMLnotificationMessage = queryByText(
+            notificationsContainer,
+            notificationToDismiss.msg
+        );
         expect(HTMLnotificationMessage).toBeNull();
-        HTMLnotificationMessage = queryByText(notificationsContainer, "Second notification message.");
+        HTMLnotificationMessage = queryByText(
+            notificationsContainer,
+            "Second notification message."
+        );
         expect(HTMLnotificationMessage).not.toBeNull();
     });
 
@@ -63,15 +89,31 @@ describe("useNotifications hook.", () => {
 
         fireEvent.click(getByText(notificationsContainer, "Dismiss all"));
         expect(mockAxios.post).toHaveBeenCalledTimes(1);
-        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/notifications", { ids: ["123-123", "123-124"] }, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith(
+            "/reforis/api/notifications",
+            { ids: ["123-123", "123-124"] },
+            expect.anything()
+        );
 
         // Simulate receiving message from WS server
-        act(() => webSockets.dispatch({ module: "router_notifications", action: "mark_as_displayed", data: { ids: ["123-123", "123-124", "808-909"], new_count: 0 } }));
+        act(() =>
+            webSockets.dispatch({
+                module: "router_notifications",
+                action: "mark_as_displayed",
+                data: { ids: ["123-123", "123-124", "808-909"], new_count: 0 },
+            })
+        );
 
-        let HTMLnotificationMessage = queryByText(notificationsContainer, "Notification message.");
+        let HTMLnotificationMessage = queryByText(
+            notificationsContainer,
+            "Notification message."
+        );
         expect(HTMLnotificationMessage).toBeNull();
 
-        HTMLnotificationMessage = queryByText(notificationsContainer, "Second notification message.");
+        HTMLnotificationMessage = queryByText(
+            notificationsContainer,
+            "Second notification message."
+        );
         expect(HTMLnotificationMessage).toBeNull();
     });
 });

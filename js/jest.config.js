@@ -7,10 +7,7 @@
 
 // https://jestjs.io/docs/en/configuration.html
 module.exports = {
-    moduleDirectories: [
-        "node_modules",
-        "<rootDir>/src/",
-    ],
+    moduleDirectories: ["node_modules", "<rootDir>/src/"],
     moduleNameMapper: {
         "\\.(css|less)$": "<rootDir>/src/__mocks__/styleMock.js",
     },

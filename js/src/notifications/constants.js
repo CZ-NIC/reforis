@@ -12,6 +12,4 @@ export const SEVERITIES = {
     UPDATE: "update",
 };
 
-export const NOT_DISMISSABLE = [
-    SEVERITIES.RESTART,
-];
+export const NOT_DISMISSABLE = [SEVERITIES.RESTART];

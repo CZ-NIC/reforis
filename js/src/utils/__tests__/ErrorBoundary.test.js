@@ -10,14 +10,14 @@ import React, { useEffect } from "react";
 import { useAPIGet } from "foris";
 import { render } from "foris/testUtils/customTestRender";
 
-import ErrorBoundary from  "../ErrorBoundary";
+import ErrorBoundary from "../ErrorBoundary";
 
 function mockBrokenGET() {
     throw new Error("This API request is broken!");
 }
 
 jest.mock("foris/api/utils", () => ({
-    ...jest.requireActual('foris/api/utils'),
+    ...jest.requireActual("foris/api/utils"),
     API_METHODS: {
         GET: mockBrokenGET,
     },

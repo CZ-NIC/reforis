@@ -66,9 +66,7 @@ module.exports = {
             usageMode: "expand",
         },
     ],
-    require: [
-        "./src/docsUtils/setup.js",
-    ],
+    require: ["./src/docsUtils/setup.js"],
     webpackConfig: {
         resolve: {
             modules: [
@@ -82,10 +80,12 @@ module.exports = {
                     test: /\.js$/,
                     exclude: /node_modules/,
                     loader: "babel-loader",
-                }, {
+                },
+                {
                     test: /\.css$/,
                     use: ["style-loader", "css-loader"],
-                }, {
+                },
+                {
                     test: /\.(jpg|jpeg|png|woff|woff2|eot|ttf|svg)$/,
                     loader: "file-loader",
                 },

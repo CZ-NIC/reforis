@@ -29,7 +29,10 @@ export const TIMEZONES = {
         UG: { Kampala: ["Africa/Kampala", "EAT-3"] },
         SD: { Khartoum: ["Africa/Khartoum", "EAT-3"] },
         RW: { Kigali: ["Africa/Kigali", "CAT-2"] },
-        CD: { Kinshasa: ["Africa/Kinshasa", "WAT-1"], Lubumbashi: ["Africa/Lubumbashi", "CAT-2"] },
+        CD: {
+            Kinshasa: ["Africa/Kinshasa", "WAT-1"],
+            Lubumbashi: ["Africa/Lubumbashi", "CAT-2"],
+        },
         NG: { Lagos: ["Africa/Lagos", "WAT-1"] },
         GA: { Libreville: ["Africa/Libreville", "WAT-1"] },
         TG: { Lome: ["Africa/Lome", "GMT0"] },
@@ -60,25 +63,61 @@ export const TIMEZONES = {
             Chicago: ["America/Chicago", "CST6CDT,M3.2.0,M11.1.0"],
             Denver: ["America/Denver", "MST7MDT,M3.2.0,M11.1.0"],
             Detroit: ["America/Detroit", "EST5EDT,M3.2.0,M11.1.0"],
-            Indianapolis: ["America/Indiana/Indianapolis", "EST5EDT,M3.2.0,M11.1.0"],
+            Indianapolis: [
+                "America/Indiana/Indianapolis",
+                "EST5EDT,M3.2.0,M11.1.0",
+            ],
             "Knox, Indiana": ["America/Indiana/Knox", "CST6CDT,M3.2.0,M11.1.0"],
-            "Marengo, Indiana": ["America/Indiana/Marengo", "EST5EDT,M3.2.0,M11.1.0"],
-            "Petersburg, Indiana": ["America/Indiana/Petersburg", "EST5EDT,M3.2.0,M11.1.0"],
-            "Tell City, Indiana": ["America/Indiana/Tell City", "CST6CDT,M3.2.0,M11.1.0"],
-            "Vevay, Indiana": ["America/Indiana/Vevay", "EST5EDT,M3.2.0,M11.1.0"],
-            "Vincennes, Indiana": ["America/Indiana/Vincennes", "EST5EDT,M3.2.0,M11.1.0"],
-            "Winamac, Indiana": ["America/Indiana/Winamac", "EST5EDT,M3.2.0,M11.1.0"],
+            "Marengo, Indiana": [
+                "America/Indiana/Marengo",
+                "EST5EDT,M3.2.0,M11.1.0",
+            ],
+            "Petersburg, Indiana": [
+                "America/Indiana/Petersburg",
+                "EST5EDT,M3.2.0,M11.1.0",
+            ],
+            "Tell City, Indiana": [
+                "America/Indiana/Tell City",
+                "CST6CDT,M3.2.0,M11.1.0",
+            ],
+            "Vevay, Indiana": [
+                "America/Indiana/Vevay",
+                "EST5EDT,M3.2.0,M11.1.0",
+            ],
+            "Vincennes, Indiana": [
+                "America/Indiana/Vincennes",
+                "EST5EDT,M3.2.0,M11.1.0",
+            ],
+            "Winamac, Indiana": [
+                "America/Indiana/Winamac",
+                "EST5EDT,M3.2.0,M11.1.0",
+            ],
             Juneau: ["America/Juneau", "AKST9AKDT,M3.2.0,M11.1.0"],
-            Louisville: ["America/Kentucky/Louisville", "EST5EDT,M3.2.0,M11.1.0"],
-            "Monticello, Kentucky": ["America/Kentucky/Monticello", "EST5EDT,M3.2.0,M11.1.0"],
+            Louisville: [
+                "America/Kentucky/Louisville",
+                "EST5EDT,M3.2.0,M11.1.0",
+            ],
+            "Monticello, Kentucky": [
+                "America/Kentucky/Monticello",
+                "EST5EDT,M3.2.0,M11.1.0",
+            ],
             "Los Angeles": ["America/Los Angeles", "PST8PDT,M3.2.0,M11.1.0"],
             Menominee: ["America/Menominee", "CST6CDT,M3.2.0,M11.1.0"],
             Metlakatla: ["America/Metlakatla", "PST8"],
             "New York": ["America/New York", "EST5EDT,M3.2.0,M11.1.0"],
             Nome: ["America/Nome", "AKST9AKDT,M3.2.0,M11.1.0"],
-            "Beulah, North Dakota": ["America/North Dakota/Beulah", "CST6CDT,M3.2.0,M11.1.0"],
-            "Center, North Dakota": ["America/North Dakota/Center", "CST6CDT,M3.2.0,M11.1.0"],
-            "New Salem, North Dakota": ["America/North Dakota/New Salem", "CST6CDT,M3.2.0,M11.1.0"],
+            "Beulah, North Dakota": [
+                "America/North Dakota/Beulah",
+                "CST6CDT,M3.2.0,M11.1.0",
+            ],
+            "Center, North Dakota": [
+                "America/North Dakota/Center",
+                "CST6CDT,M3.2.0,M11.1.0",
+            ],
+            "New Salem, North Dakota": [
+                "America/North Dakota/New Salem",
+                "CST6CDT,M3.2.0,M11.1.0",
+            ],
             Phoenix: ["America/Phoenix", "MST7"],
             Sitka: ["America/Sitka", "AKST9AKDT,M3.2.0,M11.1.0"],
             Yakutat: ["America/Yakutat", "AKST9AKDT,M3.2.0,M11.1.0"],
@@ -90,7 +129,10 @@ export const TIMEZONES = {
             Bahia: ["America/Bahia", "BRT3"],
             Belem: ["America/Belem", "BRT3"],
             "Boa Vista": ["America/Boa Vista", "AMT4"],
-            "Campo Grande": ["America/Campo Grande", "AMT4AMST,M10.3.0/0,M2.3.0/0"],
+            "Campo Grande": [
+                "America/Campo Grande",
+                "AMT4AMST,M10.3.0/0,M2.3.0/0",
+            ],
             Cuiaba: ["America/Cuiaba", "AMT4AMST,M10.3.0/0,M2.3.0/0"],
             Eirunepe: ["America/Eirunepe", "ACT5"],
             Fortaleza: ["America/Fortaleza", "BRT3"],
@@ -122,7 +164,10 @@ export const TIMEZONES = {
         CA: {
             Atikokan: ["America/Atikokan", "EST5"],
             "Blanc-Sablon": ["America/Blanc-Sablon", "AST4"],
-            "Cambridge Bay": ["America/Cambridge Bay", "MST7MDT,M3.2.0,M11.1.0"],
+            "Cambridge Bay": [
+                "America/Cambridge Bay",
+                "MST7MDT,M3.2.0,M11.1.0",
+            ],
             Creston: ["America/Creston", "MST7"],
             Dawson: ["America/Dawson", "PST8PDT,M3.2.0,M11.1.0"],
             "Dawson Creek": ["America/Dawson Creek", "MST7"],
@@ -150,7 +195,10 @@ export const TIMEZONES = {
             Yellowknife: ["America/Yellowknife", "MST7MDT,M3.2.0,M11.1.0"],
         },
         MX: {
-            "Bahia Banderas": ["America/Bahia Banderas", "CST6CDT,M4.1.0,M10.5.0"],
+            "Bahia Banderas": [
+                "America/Bahia Banderas",
+                "CST6CDT,M4.1.0,M10.5.0",
+            ],
             Cancun: ["America/Cancun", "EST5"],
             Chihuahua: ["America/Chihuahua", "MST7MDT,M4.1.0,M10.5.0"],
             Hermosillo: ["America/Hermosillo", "MST7"],
@@ -174,7 +222,10 @@ export const TIMEZONES = {
         GL: {
             Danmarkshavn: ["America/Danmarkshavn", "GMT0"],
             Nuuk: ["America/Godthab", "WGT3WGST,M3.5.0/-2,M10.5.0/-1"],
-            Ittoqqortoormiit: ["America/Scoresbysund", "EGT1EGST,M3.5.0/0,M10.5.0/1"],
+            Ittoqqortoormiit: [
+                "America/Scoresbysund",
+                "EGT1EGST,M3.5.0/0,M10.5.0/1",
+            ],
             Thule: ["America/Thule", "AST4ADT,M3.2.0,M11.1.0"],
         },
         DM: { Dominica: ["America/Dominica", "AST4"] },
@@ -201,7 +252,12 @@ export const TIMEZONES = {
         PA: { Panama: ["America/Panama", "EST5"] },
         SR: { Paramaribo: ["America/Paramaribo", "SRT3"] },
         TT: { "Port of Spain": ["America/Port of Spain", "AST4"] },
-        HT: { "Port-au-Prince": ["America/Port-au-Prince", "EST5EDT,M3.2.0,M11.1.0"] },
+        HT: {
+            "Port-au-Prince": [
+                "America/Port-au-Prince",
+                "EST5EDT,M3.2.0,M11.1.0",
+            ],
+        },
         PR: { "Puerto Rico": ["America/Puerto Rico", "AST4"] },
         CL: { Santiago: ["America/Santiago", "CLT3"] },
         DO: { "Santo Domingo": ["America/Santo Domingo", "AST4"] },
@@ -228,7 +284,11 @@ export const TIMEZONES = {
         },
         AU: { "Macquarie Island": ["Antarctica/Macquarie", "MIST-11"] },
     },
-    Arctic: { SJ: { Longyearbyen: ["Arctic/Longyearbyen", "CET-1CEST,M3.5.0,M10.5.0/3"] } },
+    Arctic: {
+        SJ: {
+            Longyearbyen: ["Arctic/Longyearbyen", "CET-1CEST,M3.5.0,M10.5.0/3"],
+        },
+    },
     Asia: {
         YE: { Aden: ["Asia/Aden", "AST-3"] },
         KZ: {
@@ -293,7 +353,10 @@ export const TIMEZONES = {
         PK: { Karachi: ["Asia/Karachi", "PKT-5"] },
         NP: { Kathmandu: ["Asia/Kathmandu", "NPT-5:45"] },
         IN: { Kolkata: ["Asia/Kolkata", "IST-5:30"] },
-        MY: { "Kuala Lumpur": ["Asia/Kuala Lumpur", "MYT-8"], Kuching: ["Asia/Kuching", "MYT-8"] },
+        MY: {
+            "Kuala Lumpur": ["Asia/Kuala Lumpur", "MYT-8"],
+            Kuching: ["Asia/Kuching", "MYT-8"],
+        },
         KW: { Kuwait: ["Asia/Kuwait", "AST-3"] },
         MO: { Macau: ["Asia/Macau", "CST-8"] },
         PH: { Manila: ["Asia/Manila", "PHT-8"] },
@@ -304,9 +367,15 @@ export const TIMEZONES = {
         QA: { Qatar: ["Asia/Qatar", "AST-3"] },
         MM: { Yangon: ["Asia/Rangoon", "MMT-6:30"] },
         SA: { Riyadh: ["Asia/Riyadh", "AST-3"] },
-        UZ: { Samarkand: ["Asia/Samarkand", "UZT-5"], Tashkent: ["Asia/Tashkent", "UZT-5"] },
+        UZ: {
+            Samarkand: ["Asia/Samarkand", "UZT-5"],
+            Tashkent: ["Asia/Tashkent", "UZT-5"],
+        },
         KR: { Seoul: ["Asia/Seoul", "KST-9"] },
-        CN: { Shanghai: ["Asia/Shanghai", "CST-8"], Urumqi: ["Asia/Urumqi", "XJT-6"] },
+        CN: {
+            Shanghai: ["Asia/Shanghai", "CST-8"],
+            Urumqi: ["Asia/Urumqi", "XJT-6"],
+        },
         SG: { Singapore: ["Asia/Singapore", "SGT-8"] },
         TW: { Taipei: ["Asia/Taipei", "CST-8"] },
         GE: { Tbilisi: ["Asia/Tbilisi", "GET-4"] },
@@ -333,13 +402,19 @@ export const TIMEZONES = {
         AU: {
             Adelaide: ["Australia/Adelaide", "ACST-9:30ACDT,M10.1.0,M4.1.0/3"],
             Brisbane: ["Australia/Brisbane", "AEST-10"],
-            "Broken Hill": ["Australia/Broken Hill", "ACST-9:30ACDT,M10.1.0,M4.1.0/3"],
+            "Broken Hill": [
+                "Australia/Broken Hill",
+                "ACST-9:30ACDT,M10.1.0,M4.1.0/3",
+            ],
             Currie: ["Australia/Currie", "AEST-10AEDT,M10.1.0,M4.1.0/3"],
             Darwin: ["Australia/Darwin", "ACST-9:30"],
             Eucla: ["Australia/Eucla", "ACWST-8:45"],
             Hobart: ["Australia/Hobart", "AEST-10AEDT,M10.1.0,M4.1.0/3"],
             Lindeman: ["Australia/Lindeman", "AEST-10"],
-            "Lord Howe": ["Australia/Lord Howe", "LHST-10:30LHDT-11,M10.1.0,M4.1.0"],
+            "Lord Howe": [
+                "Australia/Lord Howe",
+                "LHST-10:30LHDT-11,M10.1.0,M4.1.0",
+            ],
             Melbourne: ["Australia/Melbourne", "AEST-10AEDT,M10.1.0,M4.1.0/3"],
             Perth: ["Australia/Perth", "AWST-8"],
             Sydney: ["Australia/Sydney", "AEST-10AEDT,M10.1.0,M4.1.0/3"],
@@ -364,7 +439,9 @@ export const TIMEZONES = {
         GI: { Gibraltar: ["Europe/Gibraltar", "CET-1CEST,M3.5.0,M10.5.0/3"] },
         GG: { Guernsey: ["Europe/Guernsey", "GMT0BST,M3.5.0/1,M10.5.0"] },
         FI: { Helsinki: ["Europe/Helsinki", "EET-2EEST,M3.5.0/3,M10.5.0/4"] },
-        IM: { "Isle of Man": ["Europe/Isle of Man", "GMT0BST,M3.5.0/1,M10.5.0"] },
+        IM: {
+            "Isle of Man": ["Europe/Isle of Man", "GMT0BST,M3.5.0/1,M10.5.0"],
+        },
         TR: { Istanbul: ["Europe/Istanbul", "EET-2EEST,M3.5.0/3,M10.5.0/4"] },
         JE: { Jersey: ["Europe/Jersey", "GMT0BST,M3.5.0/1,M10.5.0"] },
         RU: {
@@ -394,7 +471,9 @@ export const TIMEZONES = {
         CZ: { Prague: ["Europe/Prague", "CET-1CEST,M3.5.0,M10.5.0/3"] },
         LV: { Riga: ["Europe/Riga", "EET-2EEST,M3.5.0/3,M10.5.0/4"] },
         IT: { Rome: ["Europe/Rome", "CET-1CEST,M3.5.0,M10.5.0/3"] },
-        SM: { "San Marino": ["Europe/San Marino", "CET-1CEST,M3.5.0,M10.5.0/3"] },
+        SM: {
+            "San Marino": ["Europe/San Marino", "CET-1CEST,M3.5.0,M10.5.0/3"],
+        },
         BA: { Sarajevo: ["Europe/Sarajevo", "CET-1CEST,M3.5.0,M10.5.0/3"] },
         MK: { Skopje: ["Europe/Skopje", "CET-1CEST,M3.5.0,M10.5.0/3"] },
         BG: { Sofia: ["Europe/Sofia", "EET-2EEST,M3.5.0/3,M10.5.0/4"] },
@@ -426,7 +505,10 @@ export const TIMEZONES = {
         WS: { Apia: ["Pacific/Apia", "WSST-13WSDT,M9.5.0/3,M4.1.0/4"] },
         NZ: {
             Auckland: ["Pacific/Auckland", "NZST-12NZDT,M9.5.0,M4.1.0/3"],
-            Chatham: ["Pacific/Chatham", "CHAST-12:45CHADT,M9.5.0/2:45,M4.1.0/3:45"],
+            Chatham: [
+                "Pacific/Chatham",
+                "CHAST-12:45CHADT,M9.5.0/2:45,M4.1.0/3:45",
+            ],
         },
         PG: {
             "Bougainville Island": ["Pacific/Bougainville", "BST-11"],
@@ -455,9 +537,18 @@ export const TIMEZONES = {
         },
         SB: { Guadalcanal: ["Pacific/Guadalcanal", "SBT-11"] },
         GU: { Guam: ["Pacific/Guam", "ChST-10"] },
-        US: { Honolulu: ["Pacific/Honolulu", "HST10"], Johnston: ["Pacific/Johnston", "HST10"] },
-        MH: { Kwajalein: ["Pacific/Kwajalein", "MHT-12"], Majuro: ["Pacific/Majuro", "MHT-12"] },
-        UM: { Midway: ["Pacific/Midway", "SST11"], Wake: ["Pacific/Wake", "WAKT-12"] },
+        US: {
+            Honolulu: ["Pacific/Honolulu", "HST10"],
+            Johnston: ["Pacific/Johnston", "HST10"],
+        },
+        MH: {
+            Kwajalein: ["Pacific/Kwajalein", "MHT-12"],
+            Majuro: ["Pacific/Majuro", "MHT-12"],
+        },
+        UM: {
+            Midway: ["Pacific/Midway", "SST11"],
+            Wake: ["Pacific/Wake", "WAKT-12"],
+        },
         NR: { Nauru: ["Pacific/Nauru", "NRT-12"] },
         NU: { Niue: ["Pacific/Niue", "NUT11"] },
         NF: { Norfolk: ["Pacific/Norfolk", "NFT-11"] },

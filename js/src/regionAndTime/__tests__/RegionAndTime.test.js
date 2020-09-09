@@ -8,7 +8,10 @@
 import React from "react";
 
 import {
-    fireEvent, getByText, render, wait,
+    fireEvent,
+    getByText,
+    render,
+    wait,
 } from "foris/testUtils/customTestRender";
 import { mockJSONError } from "foris/testUtils/network";
 import mockAxios from "jest-mock-axios";
@@ -34,13 +37,18 @@ describe("<RegionAndTime/>", () => {
         const { container } = render(<RegionAndTime ws={webSockets} />);
         mockJSONError();
         await wait(() => {
-            expect(getByText(container, "An error occurred while fetching data.")).toBeTruthy();
+            expect(
+                getByText(container, "An error occurred while fetching data.")
+            ).toBeTruthy();
         });
     });
 
     it("Snapshot", () => {
         expect(mockAxios.get).toHaveBeenCalledTimes(1);
-        expect(mockAxios.get).toHaveBeenCalledWith(API_URLs.regionAndTime, expect.anything());
+        expect(mockAxios.get).toHaveBeenCalledWith(
+            API_URLs.regionAndTime,
+            expect.anything()
+        );
         expect(regionAndTimeContainer).toMatchSnapshot();
     });
 
@@ -55,6 +63,10 @@ describe("<RegionAndTime/>", () => {
             time_settings: { how_to_set_time: "ntp" },
             timezone: "CET-1CEST,M3.5.0,M10.5.0/3",
         };
-        expect(mockAxios.post).toHaveBeenCalledWith("/reforis/api/region-and-time", data, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith(
+            "/reforis/api/region-and-time",
+            data,
+            expect.anything()
+        );
     });
 });

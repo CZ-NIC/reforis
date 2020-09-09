@@ -24,7 +24,10 @@ export default class ErrorBoundary extends React.Component {
 
     componentDidCatch(error, errorInfo) {
         // eslint-disable-next-line no-console
-        console.error(`An error ocurred in reForis: "${error}", see details below.`, errorInfo.componentStack);
+        console.error(
+            `An error ocurred in reForis: "${error}", see details below.`,
+            errorInfo.componentStack
+        );
     }
 
     render() {
@@ -37,8 +40,18 @@ export default class ErrorBoundary extends React.Component {
                     <code className="error-boundary-description p-3 my-3">
                         {error.toString()}
                     </code>
-                    <p>{_("More detailed information is available in the console of your web browser - on most browsers accessible after pressing Ctrl+Shift+J or F12.")}</p>
-                    <p dangerouslySetInnerHTML={{ __html: _("Please report this error to our support team via e-mail: <a href=\"mailto:tech.support@turris.cz\">tech.support@turris.cz</a>.") }} />
+                    <p>
+                        {_(
+                            "More detailed information is available in the console of your web browser - on most browsers accessible after pressing Ctrl+Shift+J or F12."
+                        )}
+                    </p>
+                    <p
+                        dangerouslySetInnerHTML={{
+                            __html: _(
+                                'Please report this error to our support team via e-mail: <a href="mailto:tech.support@turris.cz">tech.support@turris.cz</a>.'
+                            ),
+                        }}
+                    />
                 </Portal>
             );
         }

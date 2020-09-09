@@ -10,7 +10,7 @@ import React from "react";
 
 export default function DisabledUpdaterAlert() {
     const message = _(
-        `Please enable <a href="${ForisURLs.packageManagement.updateSettings}">automatic updates</a> to manage packages and languages.`,
+        `Please enable <a href="${ForisURLs.packageManagement.updateSettings}">automatic updates</a> to manage packages and languages.`
     );
     // <Alert /> is used instead of context because warning isn't result of any action on this page
     return (

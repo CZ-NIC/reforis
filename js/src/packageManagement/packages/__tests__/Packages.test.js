@@ -8,7 +8,12 @@
 import React from "react";
 import diffSnapshot from "snapshot-diff";
 
-import { cleanup, render, wait, fireEvent } from "foris/testUtils/customTestRender";
+import {
+    cleanup,
+    render,
+    wait,
+    fireEvent,
+} from "foris/testUtils/customTestRender";
 import { mockJSONError } from "foris/testUtils/network";
 import mockAxios from "jest-mock-axios";
 
@@ -23,15 +28,14 @@ describe("<Packages/>", () => {
 
     beforeEach(async () => {
         let asFragment;
-        ({
-            queryByText,
-            getByLabelText,
-            getByText,
-            asFragment
-        } = render(<Packages/>));
-        await wait(
-            () => expect(mockAxios.get)
-                .toBeCalledWith("/reforis/api/packages", expect.anything())
+        ({ queryByText, getByLabelText, getByText, asFragment } = render(
+            <Packages />
+        ));
+        await wait(() =>
+            expect(mockAxios.get).toBeCalledWith(
+                "/reforis/api/packages",
+                expect.anything()
+            )
         );
         mockAxios.mockResponse({ data: packagesFixture(true) });
         await wait(() => getByText("Enabled package title"));
@@ -39,51 +43,56 @@ describe("<Packages/>", () => {
     });
 
     it("Should handle error.", async () => {
-        const { getByText } = render(<Packages/>);
+        const { getByText } = render(<Packages />);
         mockJSONError();
         await wait(() => {
-            expect(getByText("An error occurred while fetching data."))
-                .toBeTruthy();
+            expect(
+                getByText("An error occurred while fetching data.")
+            ).toBeTruthy();
         });
     });
 
     it("Should render: updates enabled.", () => {
-        expect(firstRender)
-            .toMatchSnapshot();
+        expect(firstRender).toMatchSnapshot();
     });
 
     it("Should render: updates disabled.", async () => {
         cleanup();
-        const { getByText, asFragment } = render(<Packages/>);
-        await wait(
-            () => expect(mockAxios.get)
-                .toBeCalledWith("/reforis/api/packages", expect.anything())
+        const { getByText, asFragment } = render(<Packages />);
+        await wait(() =>
+            expect(mockAxios.get).toBeCalledWith(
+                "/reforis/api/packages",
+                expect.anything()
+            )
         );
         mockAxios.mockResponse({ data: packagesFixture(false) });
 
         await wait(() => getByText("Enabled package title"));
 
-        expect(diffSnapshot(firstRender, asFragment()))
-            .toMatchSnapshot();
+        expect(diffSnapshot(firstRender, asFragment())).toMatchSnapshot();
     });
 
     it("Should not render hidden package.", () => {
-        const HTMLHiddenPackageMessage = queryByText("Hidden package description");
-        expect(HTMLHiddenPackageMessage)
-            .toBeNull();
+        const HTMLHiddenPackageMessage = queryByText(
+            "Hidden package description"
+        );
+        expect(HTMLHiddenPackageMessage).toBeNull();
     });
 
     it("Send packages.", () => {
         fireEvent.click(getByText("Save"));
-        expect(mockAxios.post)
-            .toHaveBeenCalledWith("/reforis/api/packages", {
-                "package_lists": [
+        expect(mockAxios.post).toHaveBeenCalledWith(
+            "/reforis/api/packages",
+            {
+                package_lists: [
                     {
-                        "name": "enabled-package",
-                        "options": [],
+                        name: "enabled-package",
+                        options: [],
                     },
                 ],
-            }, expect.anything());
+            },
+            expect.anything()
+        );
     });
 
     it("Send packages with options.", () => {
@@ -92,40 +101,42 @@ describe("<Packages/>", () => {
         fireEvent.click(getByText("DLNA"));
 
         fireEvent.click(getByText("Save"));
-        expect(mockAxios.post)
-            .toHaveBeenCalledWith("/reforis/api/packages", {
-                "package_lists": [
+        expect(mockAxios.post).toHaveBeenCalledWith(
+            "/reforis/api/packages",
+            {
+                package_lists: [
                     {
-                        "name": "enabled-package",
-                        "options": []
+                        name: "enabled-package",
+                        options: [],
                     },
                     {
-                        "name": "nas",
-                        "options": [
+                        name: "nas",
+                        options: [
                             {
-                                "enabled": false,
-                                "name": "samba",
+                                enabled: false,
+                                name: "samba",
                             },
                             {
-                                "enabled": true,
-                                "name": "dlna",
+                                enabled: true,
+                                name: "dlna",
                             },
                             {
-                                "enabled": true,
-                                "name": "transmission",
+                                enabled: true,
+                                name: "transmission",
                             },
                             {
-                                "enabled": false,
-                                "name": "raid",
+                                enabled: false,
+                                name: "raid",
                             },
                             {
-                                "enabled": false,
-                                "name": "encrypt",
+                                enabled: false,
+                                name: "encrypt",
                             },
-
                         ],
                     },
                 ],
-            }, expect.anything());
+            },
+            expect.anything()
+        );
     });
 });

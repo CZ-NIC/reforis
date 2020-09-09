@@ -20,7 +20,10 @@ export default function useNTPDate(ws) {
     const [updateTimeState, updateTime] = useAPIPost(API_URLs.ntpUpdate);
     useEffect(() => {
         if (updateTimeState.data) {
-            setState((prevState) => ({ ...prevState, id: updateTimeState.data.id }));
+            setState((prevState) => ({
+                ...prevState,
+                id: updateTimeState.data.id,
+            }));
         }
     }, [updateTimeState.data]);
 
@@ -34,7 +37,10 @@ export default function useNTPDate(ws) {
         ws.subscribe(module)
             .bind(module, "ntpdate_started", (msg) => {
                 if (state.id === msg.data.id) {
-                    setState((prevState) => ({ ...prevState, isLoading: true }));
+                    setState((prevState) => ({
+                        ...prevState,
+                        isLoading: true,
+                    }));
                 }
             })
             .bind(module, "ntpdate_finished", (msg) => {

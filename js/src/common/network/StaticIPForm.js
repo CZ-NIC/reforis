@@ -11,7 +11,9 @@ import PropTypes from "prop-types";
 import { TextInput, validateIPv4Address } from "foris";
 
 const HELP_TEXTS = {
-    dns: _("DNS server address is not required as the built-in DNS resolver is capable of working without it."),
+    dns: _(
+        "DNS server address is not required as the built-in DNS resolver is capable of working without it."
+    ),
 };
 
 const FIELDS_PROP_TYPES = {
@@ -36,7 +38,11 @@ StaticIPForm.defaultProps = {
 };
 
 export default function StaticIPForm({
-    formData, formErrors, updateRule, setFormValue, disabled,
+    formData,
+    formErrors,
+    updateRule,
+    setFormValue,
+    disabled,
 }) {
     return (
         <>
@@ -45,11 +51,9 @@ export default function StaticIPForm({
                 value={formData.ip || ""}
                 error={formErrors.ip || null}
                 required
-
-                onChange={setFormValue(
-                    (value) => updateRule({ ip: { $set: value } }),
+                onChange={setFormValue((value) =>
+                    updateRule({ ip: { $set: value } })
                 )}
-
                 disabled={disabled}
             />
             <TextInput
@@ -57,11 +61,9 @@ export default function StaticIPForm({
                 value={formData.netmask || ""}
                 error={formErrors.netmask || null}
                 required
-
-                onChange={setFormValue(
-                    (value) => updateRule({ netmask: { $set: value } }),
+                onChange={setFormValue((value) =>
+                    updateRule({ netmask: { $set: value } })
                 )}
-
                 disabled={disabled}
             />
             <TextInput
@@ -69,11 +71,9 @@ export default function StaticIPForm({
                 value={formData.gateway || ""}
                 error={formErrors.gateway || null}
                 required
-
-                onChange={setFormValue(
-                    (value) => updateRule({ gateway: { $set: value } }),
+                onChange={setFormValue((value) =>
+                    updateRule({ gateway: { $set: value } })
                 )}
-
                 disabled={disabled}
             />
             <TextInput
@@ -81,11 +81,9 @@ export default function StaticIPForm({
                 value={formData.dns1 || ""}
                 error={formErrors.dns1 || null}
                 helpText={HELP_TEXTS.dns}
-
-                onChange={setFormValue(
-                    (value) => updateRule({ dns1: { $set: value } }),
+                onChange={setFormValue((value) =>
+                    updateRule({ dns1: { $set: value } })
                 )}
-
                 disabled={disabled}
             />
             <TextInput
@@ -93,11 +91,9 @@ export default function StaticIPForm({
                 value={formData.dns2 || ""}
                 error={formErrors.dns2 || null}
                 helpText={HELP_TEXTS.dns}
-
-                onChange={setFormValue(
-                    (value) => updateRule({ dns2: { $set: value } }),
+                onChange={setFormValue((value) =>
+                    updateRule({ dns2: { $set: value } })
                 )}
-
                 disabled={disabled}
             />
         </>
@@ -106,17 +102,14 @@ export default function StaticIPForm({
 
 export function validateStaticForm(formData) {
     const errors = {};
-    ["ip", "netmask", "gateway", "dns1", "dns2"].forEach(
-        (field) => {
-            const error = validateIPv4Address(formData[field]);
-            if (error) errors[field] = error;
-        },
-    );
-    ["ip", "netmask", "gateway"].forEach(
-        (field) => {
-            if (!formData[field] || formData[field] === "") errors[field] = _("This field is required.");
-        },
-    );
+    ["ip", "netmask", "gateway", "dns1", "dns2"].forEach((field) => {
+        const error = validateIPv4Address(formData[field]);
+        if (error) errors[field] = error;
+    });
+    ["ip", "netmask", "gateway"].forEach((field) => {
+        if (!formData[field] || formData[field] === "")
+            errors[field] = _("This field is required.");
+    });
 
     return JSON.stringify(errors) !== "{}" ? errors : null;
 }

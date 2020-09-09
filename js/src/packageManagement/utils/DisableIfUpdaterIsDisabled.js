@@ -18,11 +18,14 @@ DisableIfUpdaterIsDisabled.propTypes = {
     ]),
 };
 
-export default function DisableIfUpdaterIsDisabled({ children, formData, ...props }) {
+export default function DisableIfUpdaterIsDisabled({
+    children,
+    formData,
+    ...props
+}) {
     const isDisabled = !formData.enabled;
-    const childrenWithFormProps = React.Children.map(
-        children,
-        (child) => React.cloneElement(child, { ...props, formData, disabled: isDisabled }),
+    const childrenWithFormProps = React.Children.map(children, (child) =>
+        React.cloneElement(child, { ...props, formData, disabled: isDisabled })
     );
 
     if (!isDisabled) return childrenWithFormProps;
@@ -30,9 +33,7 @@ export default function DisableIfUpdaterIsDisabled({ children, formData, ...prop
     return (
         <>
             <DisabledUpdaterAlert />
-            <div className="text-muted">
-                {childrenWithFormProps}
-            </div>
+            <div className="text-muted">{childrenWithFormProps}</div>
         </>
     );
 }

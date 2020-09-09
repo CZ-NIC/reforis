@@ -50,12 +50,18 @@ procedure of SSL certificate verification might not work correctly.
 }
 
 function validator(formData) {
-    if (!moment(formData.time_settings.time).isValid()) return { time_settings: { time: _("Time should be in YYYY-MM-DD HH:MM:SS format.") } };
+    if (!moment(formData.time_settings.time).isValid())
+        return {
+            time_settings: {
+                time: _("Time should be in YYYY-MM-DD HH:MM:SS format."),
+            },
+        };
     return undefined;
 }
 
 function prepDataToSubmit(formData) {
     delete formData.time_settings.ntp_servers;
-    if (formData.time_settings.how_to_set_time === "ntp") delete formData.time_settings.time;
+    if (formData.time_settings.how_to_set_time === "ntp")
+        delete formData.time_settings.time;
     return formData;
 }

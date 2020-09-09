@@ -26,10 +26,11 @@ export function waitForDown(callback) {
     }
 
     function poll() {
-        axios.get(API_URLs.healthCheck, {
-            headers: REQUEST_HEADERS,
-            timeout: HEALTH_CHECK_TIMEOUT,
-        })
+        axios
+            .get(API_URLs.healthCheck, {
+                headers: REQUEST_HEADERS,
+                timeout: HEALTH_CHECK_TIMEOUT,
+            })
             .catch(stopPolling);
     }
 
@@ -40,10 +41,12 @@ export function waitForDown(callback) {
 
 export function tryReconnect(ips, reconnectUrlPath) {
     ips.forEach(async (ip) => {
-        const port = window.location.port === "" ? "" : `:${window.location.port}`;
+        const port =
+            window.location.port === "" ? "" : `:${window.location.port}`;
         const { protocol } = window.location;
         const baseURL = `${protocol}//${ip}${port}`;
-        const callback = () => window.location.replace(`${baseURL}${reconnectUrlPath}`);
+        const callback = () =>
+            window.location.replace(`${baseURL}${reconnectUrlPath}`);
         waitForUpPolling(`${baseURL}${API_URLs.healthCheck}`, callback);
     });
 }
@@ -58,10 +61,11 @@ function waitForUpPolling(url, callback) {
     }
 
     function poll() {
-        axios.get(url, {
-            headers: REQUEST_HEADERS,
-            timeout: HEALTH_CHECK_TIMEOUT,
-        })
+        axios
+            .get(url, {
+                headers: REQUEST_HEADERS,
+                timeout: HEALTH_CHECK_TIMEOUT,
+            })
             .then(stopPolling);
     }
 }

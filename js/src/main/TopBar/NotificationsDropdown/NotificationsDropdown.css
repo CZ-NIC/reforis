@@ -26,7 +26,7 @@
 }
 
 #notifications ::-webkit-scrollbar {
-    width: .5rem;
+    width: 0.5rem;
 }
 
 #notifications ::-webkit-scrollbar-thumb {
