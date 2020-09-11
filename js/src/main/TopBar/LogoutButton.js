@@ -8,6 +8,7 @@
 import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { API_STATE, ForisURLs, useAPIPost } from "foris";
+import ReactTooltip from "react-tooltip";
 
 import API_URLs from "common/API";
 
@@ -23,12 +24,18 @@ export default function LogoutButton() {
 
     return (
         <div>
+            <ReactTooltip id="logout" place="bottom">
+                <span>{_("Logout")}</span>
+            </ReactTooltip>
             <button
                 className="nav-item btn btn-link"
                 type="button"
                 onClick={postLogout}
+                data-tip
+                data-for="logout"
+                data-arrow-color="transparent"
             >
-                {_("Logout")}
+                <i className="fas fa-sign-out-alt fa-lg" />
             </button>
         </div>
     );
