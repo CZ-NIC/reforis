@@ -24,7 +24,7 @@ export default function TopBar({ ws }) {
     return (
         <>
             <RebootDropdown ws={ws} />
-            <UpdatesDropdown />
+            <UpdatesDropdown ws={ws} />
             <NotificationsDropdown ws={ws} />
             <LanguagesDropdown ws={ws} />
             <LogoutButton />

@@ -1,11 +1,11 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
  */
 
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
@@ -22,13 +22,30 @@ import {
 import API_URLs from "common/API";
 
 import "./UpdatesDropdown.css";
+import { useNewNotification } from "../../../notifications/hooks";
 
-export default function UpdatesDropdown() {
+UpdatesDropdown.propTypes = {
+    ws: PropTypes.object.isRequired,
+};
+
+export default function UpdatesDropdown({ ws }) {
     const [getApprovalsResponse, getApprovals] = useAPIGet(API_URLs.approvals);
     const update = getApprovalsResponse.data || {};
     useEffect(() => {
         getApprovals();
     }, [getApprovals]);
+
+    const newNotification = useNewNotification(ws);
+
+    const updateWithNotification = useCallback(() => {
+        if (newNotification) {
+            return getApprovals();
+        }
+    }, [newNotification, getApprovals]);
+
+    useEffect(() => {
+        updateWithNotification();
+    }, [updateWithNotification]);
 
     if (update.approvable === false) {
         return null;
