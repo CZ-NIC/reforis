@@ -9,7 +9,12 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 import {
-    Modal, ModalBody, ModalFooter, ModalHeader, Button, useAPIPost,
+    Modal,
+    ModalBody,
+    ModalFooter,
+    ModalHeader,
+    Button,
+    useAPIPost,
 } from "foris";
 
 import API_URLs from "./API";
@@ -31,7 +36,11 @@ export default function RebootButton({ forisFormSize }) {
 
     return (
         <>
-            <RebootModal shown={modalShown} setShown={setModalShown} callback={rebootHandler} />
+            <RebootModal
+                shown={modalShown}
+                setShown={setModalShown}
+                callback={rebootHandler}
+            />
             <Button
                 forisFormSize={forisFormSize}
                 className="btn-danger"
@@ -55,10 +64,14 @@ function RebootModal({ shown, setShown, callback }) {
     return (
         <Modal shown={shown} setShown={setShown}>
             <ModalHeader setShown={setShown} title={_("Warning!")} />
-            <ModalBody><p>{_("Are you sure you want to restart the router?")}</p></ModalBody>
+            <ModalBody>
+                <p>{_("Are you sure you want to restart the router?")}</p>
+            </ModalBody>
             <ModalFooter>
                 <Button onClick={() => setShown(false)}>{_("Cancel")}</Button>
-                <Button className="btn-danger" onClick={callback}>{_("Confirm reboot")}</Button>
+                <Button className="btn-danger" onClick={callback}>
+                    {_("Confirm reboot")}
+                </Button>
             </ModalFooter>
         </Modal>
     );

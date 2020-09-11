@@ -35,17 +35,23 @@ const ws = new WebSockets();
 
 window.AlertContext = React.createContext();
 
-window.addEventListener("load", () => {
-    const guideContainer = document.getElementById("guide-container");
-    const mainContainer = document.getElementById("app-container");
-    if (guideContainer) {
-        render(<Guide ws={ws} />, guideContainer);
-    } else if (mainContainer) {
-        render(<Main ws={ws} />, mainContainer);
-    }
+window.addEventListener(
+    "load",
+    () => {
+        const guideContainer = document.getElementById("guide-container");
+        const mainContainer = document.getElementById("app-container");
+        if (guideContainer) {
+            render(<Guide ws={ws} />, guideContainer);
+        } else if (mainContainer) {
+            render(<Main ws={ws} />, mainContainer);
+        }
 
-    const routerStateHandlerContainer = document.getElementById("router-state-handler");
-    if (routerStateHandlerContainer) {
-        render(<RouterStateHandler ws={ws} />, routerStateHandlerContainer);
-    }
-}, false);
+        const routerStateHandlerContainer = document.getElementById(
+            "router-state-handler"
+        );
+        if (routerStateHandlerContainer) {
+            render(<RouterStateHandler ws={ws} />, routerStateHandlerContainer);
+        }
+    },
+    false
+);

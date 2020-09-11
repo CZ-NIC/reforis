@@ -28,7 +28,6 @@ export default function Guide({ ws }) {
     return (
         <GuideRouterWithErrorAndSpinner
             ws={ws}
-
             apiState={guideData.state}
             guideData={guideData.data}
             getGuideData={getGuideData}

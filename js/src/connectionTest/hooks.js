@@ -5,9 +5,7 @@
  * See /LICENSE for more information.
  */
 
-import {
-    useCallback, useEffect, useMemo, useState,
-} from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 import API_URLs from "common/API";
 import { useAPIPost, useWSForisModule } from "foris";
@@ -30,36 +28,41 @@ export const TEST_STATES = {
 
 export default function useConnectionTest(ws, type) {
     const initialResults = useMemo(
-        () => TESTS_TYPES[type]
-            .reduce((tests, test) => {
+        () =>
+            TESTS_TYPES[type].reduce((tests, test) => {
                 tests[test] = null;
                 return tests;
             }, {}),
-        [type],
+        [type]
     );
 
     const [state, setState] = useState(TEST_STATES.NOT_RUNNING);
     const [id, setId] = useState(null);
     const [results, setResults] = useState(initialResults);
 
-    const updateResults = useCallback((data) => {
-        if (data && data.test_id === id) {
-            setResults(
-                (prevTestResults) => ({
+    const updateResults = useCallback(
+        (data) => {
+            if (data && data.test_id === id) {
+                setResults((prevTestResults) => ({
                     ...prevTestResults,
                     ...filterResults(data.data, type),
-                }),
-            );
-            if (data.passed) setState(TEST_STATES.FINISHED);
-        }
-    }, [id, type]);
+                }));
+                if (data.passed) setState(TEST_STATES.FINISHED);
+            }
+        },
+        [id, type]
+    );
 
     const wsModule = "wan";
     const [wsData] = useWSForisModule(ws, wsModule, "connection_test");
     useEffect(() => {
         updateResults(wsData);
     }, [wsData, id, type, updateResults]);
-    const [wsFinishedData] = useWSForisModule(ws, wsModule, "connection_test_finished");
+    const [wsFinishedData] = useWSForisModule(
+        ws,
+        wsModule,
+        "connection_test_finished"
+    );
     useEffect(() => {
         updateResults(wsFinishedData);
     }, [wsFinishedData, id, type, updateResults]);

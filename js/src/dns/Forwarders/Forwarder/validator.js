@@ -15,26 +15,36 @@ import {
 
 export default function validator(formData) {
     const errors = {
-        description: formData.description.length < 1 ? _("Forwarder name should have at least one symbol.") : undefined,
+        description:
+            formData.description.length < 1
+                ? _("Forwarder name should have at least one symbol.")
+                : undefined,
         ipaddresses: validateIPAddresses(formData.ipaddresses),
     };
 
     if (formData.tls_type === "hostname") {
-        errors.tls_hostname = formData.tls_hostname.length < 1
-            ? _("Hostname should have at least one symbol.")
-            : validateDomain(formData.tls_hostname);
+        errors.tls_hostname =
+            formData.tls_hostname.length < 1
+                ? _("Hostname should have at least one symbol.")
+                : validateDomain(formData.tls_hostname);
     } else if (formData.tls_type === "pin") {
-        errors.tls_pin = formData.tls_pin.length < 1
-            ? _("TLS pin should have at least one symbol.") : undefined;
+        errors.tls_pin =
+            formData.tls_pin.length < 1
+                ? _("TLS pin should have at least one symbol.")
+                : undefined;
     }
 
     return undefinedIfEmpty(withoutUndefinedKeys(errors));
 }
 
 function validateIPAddresses(ipaddresses) {
-    if (ipaddresses.ipv4.filter((ipaddress) => ipaddress.length).length === 0
-        && ipaddresses.ipv6.filter((ipaddress) => ipaddress.length).length === 0) {
-        const message = _("Define at least one of the IP addresses of the forwarder.");
+    if (
+        ipaddresses.ipv4.filter((ipaddress) => ipaddress.length).length === 0 &&
+        ipaddresses.ipv6.filter((ipaddress) => ipaddress.length).length === 0
+    ) {
+        const message = _(
+            "Define at least one of the IP addresses of the forwarder."
+        );
         return {
             ipv4: [message],
             ipv6: [message],
@@ -42,10 +52,12 @@ function validateIPAddresses(ipaddresses) {
     }
 
     const errors = {
-        ipv4: ipaddresses.ipv4
-            .map((ipaddress) => validateIPv4Address(ipaddress)),
-        ipv6: ipaddresses.ipv6
-            .map((ipaddress) => validateIPv6Address(ipaddress)),
+        ipv4: ipaddresses.ipv4.map((ipaddress) =>
+            validateIPv4Address(ipaddress)
+        ),
+        ipv6: ipaddresses.ipv6.map((ipaddress) =>
+            validateIPv6Address(ipaddress)
+        ),
     };
 
     if (errors.ipv4.filter((ipaddress) => !!ipaddress).length === 0) {

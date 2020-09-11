@@ -26,8 +26,9 @@ export default function UpdateSettings({ postCallback }) {
     return (
         <>
             <h1>{_("Update Settings")}</h1>
-            <p dangerouslySetInnerHTML={{
-                __html: _(`
+            <p
+                dangerouslySetInnerHTML={{
+                    __html: _(`
 One of the most important features of router Turris are automatic system updates. Thanks to this function
 your router's software stays up to date and offers better protection against attacks from the Internet.
 <br/>
@@ -38,7 +39,7 @@ found.
 By turning the automatic updates on, you agree to this feature's license agreement. More information is
 available <a href="" data-toggle="modal" data-target="#licenceModal">here</a>.
             `),
-            }}
+                }}
             />
             <LicenceModal />
             <ForisForm
@@ -66,6 +67,7 @@ function prepDataToSubmit(formData) {
         delete formData.approval_settings;
         delete formData.languages;
         delete formData.package_lists;
-    } else if (formData.approval_settings.status !== "delayed") delete formData.approval_settings.delay;
+    } else if (formData.approval_settings.status !== "delayed")
+        delete formData.approval_settings.delay;
     return formData;
 }

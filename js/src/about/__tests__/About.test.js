@@ -15,7 +15,10 @@ import About from "../About";
 describe("About", () => {
     it("should handle errors", async () => {
         const { getByText } = render(<About />);
-        expect(mockAxios.get).toBeCalledWith("/reforis/api/about", expect.anything());
+        expect(mockAxios.get).toBeCalledWith(
+            "/reforis/api/about",
+            expect.anything()
+        );
         mockJSONError();
         await wait(() => getByText("An error occurred while fetching data."));
     });

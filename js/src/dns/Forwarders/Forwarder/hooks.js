@@ -8,7 +8,12 @@
 import { useEffect } from "react";
 import update from "immutability-helper";
 import {
-    ALERT_TYPES, API_STATE, useAlert, useAPIPost, useAPIPut, useForm,
+    ALERT_TYPES,
+    API_STATE,
+    useAlert,
+    useAPIPost,
+    useAPIPut,
+    useForm,
 } from "foris";
 import API_URLs from "common/API";
 import validator from "./validator";
@@ -26,7 +31,9 @@ const EMPTY_FORWARDER = {
 export default function useForwarderForm(forwarder, saveForwarderCallback) {
     const [formState, setFormValue, initForm] = useForm(validator);
     const [postState, post] = useAPIPost(API_URLs.dnsForwarders);
-    const [putState, put] = useAPIPut(`${API_URLs.dnsForwarders}/${(forwarder || {}).name}`);
+    const [putState, put] = useAPIPut(
+        `${API_URLs.dnsForwarders}/${(forwarder || {}).name}`
+    );
 
     const [setAlert, dismissAlert] = useAlert();
 
@@ -67,12 +74,7 @@ export default function useForwarderForm(forwarder, saveForwarderCallback) {
         }
     }
 
-    return [
-        formState,
-        setFormValue,
-        postState,
-        saveForwarder,
-    ];
+    return [formState, setFormValue, postState, saveForwarder];
 }
 
 function prepDataToSubmit(forwarder) {
@@ -81,7 +83,9 @@ function prepDataToSubmit(forwarder) {
         hostname: ["tls_pin"],
         pin: ["tls_hostname"],
     };
-    const fieldsToUnset = ["name", "editable"].concat(tlsUnsetRules[forwarder.tls_type]);
+    const fieldsToUnset = ["name", "editable"].concat(
+        tlsUnsetRules[forwarder.tls_type]
+    );
     const ipAddresses = filterEmptyIPAddresses(forwarder.ipaddresses);
     return update(forwarder, {
         $unset: fieldsToUnset,

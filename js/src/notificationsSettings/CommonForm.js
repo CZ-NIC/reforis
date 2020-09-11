@@ -23,8 +23,7 @@ CommonForm.propTypes = {
     formData: PropTypes.shape({
         to: PropTypes.string,
         severity_filter: PropTypes.oneOf(
-            Object.keys(SEVERITY_OPTIONS)
-                .map((key) => parseInt(key)),
+            Object.keys(SEVERITY_OPTIONS).map((key) => parseInt(key))
         ).isRequired,
         send_news: PropTypes.bool.isRequired,
     }).isRequired,
@@ -34,14 +33,16 @@ CommonForm.propTypes = {
 };
 
 CommonForm.defaultProps = {
-    setFormValue: () => {
-    },
+    setFormValue: () => {},
     formData: {},
     formErrors: {},
 };
 
 export default function CommonForm({
-    formData, formErrors, setFormValue, disabled,
+    formData,
+    formErrors,
+    setFormValue,
+    disabled,
 }) {
     return (
         <>
@@ -51,29 +52,27 @@ export default function CommonForm({
                 error={formErrors.to}
                 helpText={HELP_TEXTS.common.to}
                 required
-
-                onChange={setFormValue((value) => ({ common: { to: { $set: value } } }))}
-
+                onChange={setFormValue((value) => ({
+                    common: { to: { $set: value } },
+                }))}
                 disabled={disabled}
             />
             <Select
                 label={_("Importance")}
                 value={formData.severity_filter}
                 choices={SEVERITY_OPTIONS}
-
-                onChange={setFormValue(
-                    (value) => ({ common: { severity_filter: { $set: parseInt(value) } } }),
-                )}
-
+                onChange={setFormValue((value) => ({
+                    common: { severity_filter: { $set: parseInt(value) } },
+                }))}
                 disabled={disabled}
             />
             <CheckBox
                 label={_("Send news")}
                 checked={formData.send_news}
                 helpText={HELP_TEXTS.common.send_news}
-
-                onChange={setFormValue((value) => ({ common: { send_news: { $set: value } } }))}
-
+                onChange={setFormValue((value) => ({
+                    common: { send_news: { $set: value } },
+                }))}
                 disabled={disabled}
             />
         </>

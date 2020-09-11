@@ -46,23 +46,21 @@ function Navigation({ pages, location }) {
     });
 
     return (
-        <SimpleBar className="mh-100">
-            <div>
-                <Portal containerId="navigation-collapse-toggle">
-                    <button
-                        type="button"
-                        className="btn btn-lg btn-primary"
-                        data-toggle="collapse"
-                        data-target="#navigation-container-collapse"
-                        aria-expanded="false"
-                        aria-controls="navigation-container-collapse"
-                    >
-                        <i className="fas fa-bars" />
-                    </button>
-                </Portal>
-                <div id="navigation-container-collapse" className="collapse">
-                    <ul className="list-unstyled">{navigationContent}</ul>
-                </div>
+        <SimpleBar>
+            <Portal containerId="navigation-collapse-toggle">
+                <button
+                    type="button"
+                    className="btn btn-lg btn-primary"
+                    data-toggle="collapse"
+                    data-target="#navigation-container-collapse"
+                    aria-expanded="false"
+                    aria-controls="navigation-container-collapse"
+                >
+                    <i className="fas fa-bars" />
+                </button>
+            </Portal>
+            <div id="navigation-container-collapse" className="collapse">
+                <ul className="list-unstyled">{navigationContent}</ul>
             </div>
         </SimpleBar>
     );

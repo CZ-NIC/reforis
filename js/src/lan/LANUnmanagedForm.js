@@ -9,7 +9,9 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Select } from "foris";
-import DHCPClientForm, { validateDHCPForm } from "common/network/DHCPClientForm";
+import DHCPClientForm, {
+    validateDHCPForm,
+} from "common/network/DHCPClientForm";
 import StaticIPForm, { validateStaticForm } from "common/network/StaticIPForm";
 
 const LAN_TYPES = {
@@ -44,7 +46,10 @@ LANUnmanagedForm.defaultProps = {
 };
 
 export default function LANUnmanagedForm({
-    formData, formErrors, setFormValue, disabled,
+    formData,
+    formErrors,
+    setFormValue,
+    disabled,
 }) {
     const lanType = formData.lan_type;
 
@@ -54,10 +59,10 @@ export default function LANUnmanagedForm({
             <DHCPClientForm
                 formData={formData.lan_dhcp}
                 formErrors={formErrors.lan_dhcp}
-
-                updateRule={(value) => ({ mode_unmanaged: { lan_dhcp: value } })}
+                updateRule={(value) => ({
+                    mode_unmanaged: { lan_dhcp: value },
+                })}
                 setFormValue={setFormValue}
-
                 disabled={disabled}
             />
         );
@@ -66,10 +71,10 @@ export default function LANUnmanagedForm({
             <StaticIPForm
                 formData={formData.lan_static}
                 formErrors={formErrors.lan_static}
-
-                updateRule={(value) => ({ mode_unmanaged: { lan_static: value } })}
+                updateRule={(value) => ({
+                    mode_unmanaged: { lan_static: value },
+                })}
                 setFormValue={setFormValue}
-
                 disabled={disabled}
             />
         );
@@ -81,11 +86,9 @@ export default function LANUnmanagedForm({
                 label={_("IPv4 protocol")}
                 value={lanType}
                 choices={LAN_TYPE_CHOICES}
-
-                onChange={setFormValue(
-                    (value) => ({ mode_unmanaged: { lan_type: { $set: value } } }),
-                )}
-
+                onChange={setFormValue((value) => ({
+                    mode_unmanaged: { lan_type: { $set: value } },
+                }))}
                 disabled={disabled}
             />
             {lanForm}

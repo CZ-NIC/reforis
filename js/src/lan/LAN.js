@@ -70,7 +70,8 @@ function prepDataToSubmit(formData) {
     if (formData.mode === LAN_MODES.managed) {
         delete formData.mode_unmanaged;
         delete formData.mode_managed.dhcp.clients;
-        if (!formData.mode_managed.dhcp.enabled) formData.mode_managed.dhcp = { enabled: false };
+        if (!formData.mode_managed.dhcp.enabled)
+            formData.mode_managed.dhcp = { enabled: false };
     } else if (formData.mode === LAN_MODES.unmanaged) {
         delete formData.mode_managed;
         const lanType = formData.mode_unmanaged.lan_type;

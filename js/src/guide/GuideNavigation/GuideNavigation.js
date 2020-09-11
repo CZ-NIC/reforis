@@ -18,23 +18,19 @@ GuideNavigation.propTypes = {
 };
 
 export default function GuideNavigation({ workflow_steps, passed, next_step }) {
-    const navigationItems = workflow_steps.map(
-        (step) => (
-            <GuideNavigationItem
-                key={step}
-                name={STEPS[step].name}
-                passed={passed.includes(step)}
-                url={`/${step}`}
-                next={step === next_step}
-            />
-        ),
-    );
+    const navigationItems = workflow_steps.map((step) => (
+        <GuideNavigationItem
+            key={step}
+            name={STEPS[step].name}
+            passed={passed.includes(step)}
+            url={`/${step}`}
+            next={step === next_step}
+        />
+    ));
 
     return (
         <>
-            <ul className="list-unstyled">
-                {navigationItems}
-            </ul>
+            <ul className="list-unstyled">{navigationItems}</ul>
         </>
     );
 }

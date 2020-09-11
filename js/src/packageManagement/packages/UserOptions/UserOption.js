@@ -25,7 +25,15 @@ UserOption.propTypes = {
 };
 
 export default function UserOption({
-    name, title, description, enabled, disabled, labels, index, packageIndex, setFormValue,
+    name,
+    title,
+    description,
+    enabled,
+    disabled,
+    labels,
+    index,
+    packageIndex,
+    setFormValue,
 }) {
     return (
         <PackageCheckBox
@@ -34,7 +42,6 @@ export default function UserOption({
             helpText={description}
             checked={enabled}
             disabled={disabled}
-
             onChange={setFormValue((value) => ({
                 package_lists: {
                     [packageIndex]: {
@@ -42,7 +49,6 @@ export default function UserOption({
                     },
                 },
             }))}
-
             key={name}
         />
     );
