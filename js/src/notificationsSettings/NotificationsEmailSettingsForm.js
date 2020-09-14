@@ -95,6 +95,7 @@ export default function NotificationsEmailSettingsForm({
                         choices={SMTP_TYPE_CHOICES}
                         value={formData.smtp_type}
                         helpText={HELP_TEXTS.smtp_type}
+                        inline
                         onChange={setFormValue((value) => ({
                             smtp_type: { $set: value },
                         }))}

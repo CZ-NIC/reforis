@@ -160,6 +160,10 @@ form div.form-group.switch {
     margin-bottom: 0;
 }
 
+.custom-control-label {
+    vertical-align: -webkit-baseline-middle;
+}
+
 /* Custom React Tooltip */
 
 .__react_component_tooltip {
