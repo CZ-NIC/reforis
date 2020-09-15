@@ -116,6 +116,12 @@ def foris_controller_error(e):
         'extra': '%s' % json.dumps(e.query),
         'trace': e.remote_stacktrace,
     }
+
+    if e.remote_description.startswith('Incorrect input.'):
+        # indicates incorrect input, not actually a server error
+        # but a client error so we'll return more appropriate status code
+        return render_template('errors/400.html', **error), 400
+
     return render_template('errors/500.html', **error), 500
 
 

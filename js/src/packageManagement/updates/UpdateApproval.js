@@ -9,17 +9,22 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 
 import {
-    useAPIPost, Button, Spinner, useAlert, API_STATE, ALERT_TYPES, toLocaleDateString,
+    useAPIPost,
+    Button,
+    Spinner,
+    useAlert,
+    API_STATE,
+    ALERT_TYPES,
+    toLocaleDateString,
 } from "foris";
 import API_URLs from "common/API";
 
 UpdateApproval.propTypes = {
     update: PropTypes.object.isRequired,
     onSuccess: PropTypes.func.isRequired,
-    className: PropTypes.string,
 };
 
-export default function UpdateApproval({ update, onSuccess, className }) {
+export default function UpdateApproval({ update, onSuccess }) {
     const [setAlert, dismissAlert] = useAlert();
 
     const [postState, post] = useAPIPost(API_URLs.approvals);
@@ -29,7 +34,10 @@ export default function UpdateApproval({ update, onSuccess, className }) {
             setAlert(_("Cannot install updates."));
         } else if (postState.state === API_STATE.SUCCESS) {
             onSuccess();
-            setAlert(_("Updates will be installed shortly."), ALERT_TYPES.SUCCESS);
+            setAlert(
+                _("Updates will be installed shortly."),
+                ALERT_TYPES.SUCCESS
+            );
         }
     }, [postState, onSuccess, setAlert]);
 
@@ -42,44 +50,59 @@ export default function UpdateApproval({ update, onSuccess, className }) {
         return <Spinner className="text-center" />;
     }
     if (!update.approvable) {
-        return <p className="text-center text-muted">{_("There are no updates awaiting your approval.")}</p>;
+        return (
+            <p className="text-center text-muted">
+                {_("There are no updates awaiting your approval.")}
+            </p>
+        );
     }
 
     const packagesNumber = babel.format(
         ngettext(
             "There is %d package to be updated.",
             "There are %d packages to be updated.",
-            update.plan.length,
+            update.plan.length
         ),
-        update.plan.length,
+        update.plan.length
     );
     const details = _(
-        "See <a data-toggle=\"collapse\" href=\"#plan-wrapper\" role=\"button\" aria-expanded=\"false\" aria-controls=\"plan-wrapper\">details</a>",
+        'See <a data-toggle="collapse" href="#plan-wrapper" role="button" aria-expanded="false" aria-controls="plan-wrapper">details</a>'
     );
 
-    const buttonMargin = { marginBottom: "1rem" };
-
     return (
-        <div className={className}>
-            <h3>{babel.format(_("Approve Update From %s"), toLocaleDateString(update.time))}</h3>
-            <p dangerouslySetInnerHTML={{ __html: `${packagesNumber} ${details}` }} />
-            <div className="collapse" id="plan-wrapper" data-testid="plan-wrapper">
+        <div className="card p-4 mb-4">
+            <h3>
+                {babel.format(
+                    _("Approve Update From %s"),
+                    toLocaleDateString(update.time)
+                )}
+            </h3>
+            <p
+                dangerouslySetInnerHTML={{
+                    __html: `${packagesNumber} ${details}`,
+                }}
+            />
+            <div
+                className="collapse"
+                id="plan-wrapper"
+                data-testid="plan-wrapper"
+            >
                 <Plan plan={update.plan} />
             </div>
-            <Button
-                style={buttonMargin}
-                className="btn-warning offset-lg-1 col-lg-4 col-sm-12"
-                onClick={() => resolveUpdate("deny")}
-            >
-                {_("Ignore")}
-            </Button>
-            <Button
-                style={buttonMargin}
-                className="btn-primary col-sm-12 col-lg-4 offset-lg-2 col-lg-3"
-                onClick={() => resolveUpdate("grant")}
-            >
-                {_("Install now")}
-            </Button>
+            <div className="row justify-content-around">
+                <Button
+                    className="btn-primary col-sm-12 col-md-5 col-lg-3 mt-3 mt-lg-0"
+                    onClick={() => resolveUpdate("grant")}
+                >
+                    {_("Install now")}
+                </Button>
+                <Button
+                    className="btn-warning col-sm-12 col-md-5 col-lg-3 mt-3 mt-lg-0"
+                    onClick={() => resolveUpdate("deny")}
+                >
+                    {_("Ignore")}
+                </Button>
+            </div>
         </div>
     );
 }
@@ -90,19 +113,23 @@ Plan.propTypes = {
 
 function Plan({ plan }) {
     return (
-        <table className="table table-hover">
-            <thead>
-                <tr>
-                    <th scope="col">{_("Action")}</th>
-                    <th scope="col">{_("Name")}</th>
-                    <th scope="col">{_("Current")}</th>
-                    <th scope="col">{_("New")}</th>
-                </tr>
-            </thead>
-            <tbody>
-                {plan.map((item) => <PlanItem key={item.name} {...item} />)}
-            </tbody>
-        </table>
+        <div className="table-responsive">
+            <table className="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">{_("Action")}</th>
+                        <th scope="col">{_("Name")}</th>
+                        <th scope="col">{_("Current")}</th>
+                        <th scope="col">{_("New")}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {plan.map((item) => (
+                        <PlanItem key={item.name} {...item} />
+                    ))}
+                </tbody>
+            </table>
+        </div>
     );
 }
 
@@ -113,9 +140,7 @@ PlanItem.propTypes = {
     cur_ver: PropTypes.string,
 };
 
-function PlanItem({
-    name, op, new_ver, cur_ver,
-}) {
+function PlanItem({ name, op, new_ver, cur_ver }) {
     return (
         <tr>
             <td>{op}</td>

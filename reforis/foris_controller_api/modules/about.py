@@ -13,7 +13,8 @@ def about():
     data = current_app.backend.perform('about', 'get')
     data['serial'] = int(data['serial'], 16)
     # additional reforis version info
-    data['reforis_version'] = pkg_resources.get_distribution('reforis').version
+    dist = pkg_resources.get_distribution('reforis')
+    data['reforis_version'] = dist.version if dist else 'Unknown'
     return jsonify(data)
 
 

@@ -45,7 +45,6 @@
     }
 }
 
-
 @media screen and (max-width: 480px) {
     #content {
         padding: 1rem 0 0 0;
@@ -56,5 +55,9 @@
     position: sticky;
     top: 1rem;
     /* Just above bootstrap's defaults */
-    z-index: 4;
+    z-index: 1004;
+}
+
+#alert-container .alert {
+    margin-bottom: 0;
 }

@@ -5,6 +5,15 @@ exports[`<GuestNetwork/> Snapshot disabled. 1`] = `
   <h1>
     Guest Network
   </h1>
+  <div
+    id="guest-notification"
+  >
+    <div
+      class="alert alert-dismissible alert-warning"
+    >
+      All network interfaces of this network are currently down.
+    </div>
+  </div>
   <p>
     
 Guest network is used for 
@@ -20,7 +29,7 @@ in LAN.
         
   </p>
   <div
-    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-3"
   >
     <form>
       <div
@@ -46,11 +55,9 @@ in LAN.
         class="text-right"
       >
         <button
-          class="btn btn-primary  col-sm-12 col-lg-3"
+          class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
           type="submit"
         >
-           
-           
           Save
         </button>
       </div>
@@ -67,6 +74,15 @@ exports[`<GuestNetwork/> Snapshot enabled DHCP. 1`] = `
   <h1>
     Guest Network
   </h1>
+  <div
+    id="guest-notification"
+  >
+    <div
+      class="alert alert-dismissible alert-warning"
+    >
+      All network interfaces of this network are currently down.
+    </div>
+  </div>
   <p>
     
 Guest network is used for 
@@ -82,7 +98,7 @@ in LAN.
         
   </p>
   <div
-    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-3"
   >
     <form>
       <div
@@ -336,11 +352,9 @@ in LAN.
         class="text-right"
       >
         <button
-          class="btn btn-primary  col-sm-12 col-lg-3"
+          class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
           type="submit"
         >
-           
-           
           Save
         </button>
       </div>
@@ -364,6 +378,15 @@ exports[`<GuestNetwork/> Snapshot enabled QoS. 1`] = `
   <h1>
     Guest Network
   </h1>
+  <div
+    id="guest-notification"
+  >
+    <div
+      class="alert alert-dismissible alert-warning"
+    >
+      All network interfaces of this network are currently down.
+    </div>
+  </div>
   <p>
     
 Guest network is used for 
@@ -379,7 +402,7 @@ in LAN.
         
   </p>
   <div
-    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-3"
   >
     <form>
       <div
@@ -604,11 +627,9 @@ in LAN.
         class="text-right"
       >
         <button
-          class="btn btn-primary  col-sm-12 col-lg-3"
+          class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
           type="submit"
         >
-           
-           
           Save
         </button>
       </div>
@@ -625,6 +646,15 @@ exports[`<GuestNetwork/> Snapshot enabled. 1`] = `
   <h1>
     Guest Network
   </h1>
+  <div
+    id="guest-notification"
+  >
+    <div
+      class="alert alert-dismissible alert-warning"
+    >
+      All network interfaces of this network are currently down.
+    </div>
+  </div>
   <p>
     
 Guest network is used for 
@@ -640,7 +670,7 @@ in LAN.
         
   </p>
   <div
-    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-3"
   >
     <form>
       <div
@@ -759,11 +789,9 @@ in LAN.
         class="text-right"
       >
         <button
-          class="btn btn-primary  col-sm-12 col-lg-3"
+          class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
           type="submit"
         >
-           
-           
           Save
         </button>
       </div>
@@ -772,5 +800,35 @@ in LAN.
   <div
     id="dhcp-clients-container"
   />
+</div>
+`;
+
+exports[`Displaying of interface warning messages Interface up & snapshot 1`] = `
+<div
+  id="guest-notification"
+/>
+`;
+
+exports[`Displaying of interface warning messages No interface & snapshot 1`] = `
+<div
+  id="guest-notification"
+>
+  <div
+    class="alert alert-dismissible alert-warning"
+  >
+    This network currently doesn't contain any devices. The changes you make here will become fully functional after you assign a network interface to this network.
+  </div>
+</div>
+`;
+
+exports[`Displaying of interface warning messages No interface up & snapshot 1`] = `
+<div
+  id="guest-notification"
+>
+  <div
+    class="alert alert-dismissible alert-warning"
+  >
+    All network interfaces of this network are currently down.
+  </div>
 </div>
 `;

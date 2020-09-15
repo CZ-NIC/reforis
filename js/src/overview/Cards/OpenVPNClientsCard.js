@@ -1,5 +1,13 @@
+/*
+ * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See /LICENSE for more information.
+ */
+
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import { useAPIGet, withSpinnerOnSending, withErrorMessage } from "foris";
 import { API_MODULE_URLs } from "../../common/API";
 
@@ -22,7 +30,7 @@ export default function OpenVPNClients() {
 }
 
 OpenVPNClientsCard.propTypes = {
-    clients: PropTypes.object.isRequired,
+    clients: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 function OpenVPNClientsCard({ clients }) {
@@ -32,13 +40,15 @@ function OpenVPNClientsCard({ clients }) {
                 <div className="card-body">
                     <h6 className="text-uppercase text-muted mb-2">
                         {_("OpenVPN Clients")}
-                        <a
-                            href="/reforis/openvpn/client-settings"
+                        <Link
+                            to={{
+                                pathname: "/openvpn/client-settings",
+                            }}
                             className="text-secondary"
-                            title="Go to OpenVPN Client Settings"
+                            title={_("Go to OpenVPN Client Settings")}
                         >
                             <i className="fas fa-external-link-alt float-right" />
-                        </a>
+                        </Link>
                     </h6>
                     {clients.length !== 0 ? (
                         <form>

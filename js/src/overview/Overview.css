@@ -1,3 +1,10 @@
+/*
+ * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See /LICENSE for more information.
+ */
+
 .card {
     box-shadow: 0 0.75rem 1.5rem rgba(18, 38, 63, 0.03);
 }
@@ -13,6 +20,10 @@
 
 .card-body form button {
     max-width: none;
+}
+
+.card-body .row .status {
+    font-size: 1.7rem;
 }
 
 @media screen and (max-width: 1312px) {

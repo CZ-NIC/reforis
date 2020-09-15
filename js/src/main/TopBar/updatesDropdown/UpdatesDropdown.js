@@ -68,7 +68,7 @@ function DropdownContent({ update, onSuccess }) {
         <>
             <button type="button" className="nav-item btn btn-link">
                 <i
-                    className={`fa fa-sync fa-lg ${
+                    className={`fa fa-sync-alt fa-lg ${
                         updateFailed ? "text-danger" : ""
                     }`.trim()}
                 />

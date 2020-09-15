@@ -82,12 +82,12 @@ function Notifications({ ws, history }) {
 
     return (
         <>
-            <h1 ref={notificationSectionRef}>
+            <h2 ref={notificationSectionRef}>
                 {_("Notifications")}
                 {dismissableNotificationsCount > 0 && (
                     <DismissAllButton dismissAll={dismissAll} />
                 )}
-            </h1>
+            </h2>
             <div id="notifications-center">{componentContent}</div>
         </>
     );

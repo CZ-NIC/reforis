@@ -18,7 +18,16 @@ import { WebSockets } from "foris";
 import { mockJSONError } from "foris/testUtils/network";
 import mockAxios from "jest-mock-axios";
 import GuestNetwork from "../GuestNetwork";
-import guestNetworkFixture from "./__fixtures__/guestNetwork";
+import {
+    guestNetworkFixture,
+    noInterfaceFixture,
+    noInterfaceUpFixture,
+    interfaceUpFixture,
+} from "./__fixtures__/guestNetwork";
+import {
+    NO_INTERFACE_WARNING,
+    NO_INTERFACE_UP_WARNING,
+} from "../GuestNetworkNotification";
 
 describe("<GuestNetwork/>", () => {
     let guestNetworkContainer;
@@ -84,7 +93,9 @@ describe("<GuestNetwork/>", () => {
             changeStart = (value) =>
                 fireEvent.change(
                     getByLabelText(guestNetworkContainer, "DHCP start"),
-                    { target: { value } }
+                    {
+                        target: { value },
+                    }
                 );
         });
 
@@ -100,6 +111,8 @@ describe("<GuestNetwork/>", () => {
                     start: 100,
                 },
                 enabled: true,
+                interface_count: 2,
+                interface_up_count: 0,
                 ip: "10.111.222.1",
                 netmask: "255.255.255.0",
                 qos: {
@@ -211,5 +224,45 @@ describe("<GuestNetwork/>", () => {
         //         expect(getByText(guestNetworkContainer, "The only DHCP lease is the same as router's address. Increase limit or change start address.")).toBeDefined();
         //     });
         // });
+    });
+});
+
+describe("Displaying of interface warning messages", () => {
+    let guestNetworkContainer;
+    let container;
+
+    beforeEach(async () => {
+        const webSockets = new WebSockets();
+        ({ container } = render(
+            <GuestNetwork ws={webSockets} setFormValue={jest.fn()} />
+        ));
+    });
+
+    it("No interface & snapshot", async () => {
+        mockAxios.mockResponse({ data: noInterfaceFixture });
+        await wait(() => getByLabelText(container, "Enable"));
+        guestNetworkContainer = container;
+        expect(
+            guestNetworkContainer.childNodes[1].firstChild.innerHTML
+        ).toEqual(NO_INTERFACE_WARNING);
+        expect(guestNetworkContainer.childNodes[1]).toMatchSnapshot();
+    });
+
+    it("No interface up & snapshot", async () => {
+        mockAxios.mockResponse({ data: noInterfaceUpFixture });
+        await wait(() => getByLabelText(container, "Enable"));
+        guestNetworkContainer = container;
+        expect(
+            guestNetworkContainer.childNodes[1].firstChild.innerHTML
+        ).toEqual(NO_INTERFACE_UP_WARNING);
+        expect(guestNetworkContainer.childNodes[1]).toMatchSnapshot();
+    });
+
+    it("Interface up & snapshot", async () => {
+        mockAxios.mockResponse({ data: interfaceUpFixture });
+        await wait(() => getByLabelText(container, "Enable"));
+        guestNetworkContainer = container;
+        expect(guestNetworkContainer.childNodes[1].firstChild).toEqual(null);
+        expect(guestNetworkContainer.childNodes[1]).toMatchSnapshot();
     });
 });

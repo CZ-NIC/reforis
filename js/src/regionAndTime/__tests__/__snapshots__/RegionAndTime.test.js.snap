@@ -12,7 +12,7 @@ procedure of SSL certificate verification might not work correctly.
         
   </p>
   <div
-    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-3"
   >
     <form>
       <h2>
@@ -382,25 +382,23 @@ procedure of SSL certificate verification might not work correctly.
           id="4"
         >
           <option
-            value="ntp"
-          >
-            Via NTP
-          </option>
-          <option
             value="manual"
           >
             Manually
           </option>
+          <option
+            value="ntp"
+          >
+            Via NTP
+          </option>
         </select>
       </div>
       <button
-        class="btn btn-outline-primary col-sm-12 col-lg-3"
+        class="btn btn-outline-primary col-sm-12 col-md-3 col-lg-2"
         data-toggle="collapse"
         href="#collapseNTPServers"
         type="button"
       >
-         
-         
         Show NTP servers list
       </button>
       <div
@@ -832,11 +830,9 @@ procedure of SSL certificate verification might not work correctly.
         class="text-right"
       >
         <button
-          class="btn btn-primary  col-sm-12 col-lg-3"
+          class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
           type="submit"
         >
-           
-           
           Save
         </button>
       </div>

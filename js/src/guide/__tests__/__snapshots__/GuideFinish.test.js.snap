@@ -12,14 +12,12 @@ exports[`<GuideFinish/> and useGuideFinish hook Snapshot. 1`] = `
     To further improve your security consider installing data collection plugin (via Package Management). This will allow you to be part of our security research to discover new attackers and give you access to dynamic firewall updates blocking known attackers.
   </p>
   <div
-    class="undefined text-right"
+    class="col-sm-12 col-lg-12 p-0 mb-3 text-right"
   >
     <button
-      class="btn btn-primary  col-sm-12 col-lg-3"
+      class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
       type="button"
     >
-       
-       
       Continue
     </button>
   </div>

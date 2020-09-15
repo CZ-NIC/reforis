@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -18,13 +18,6 @@ body {
 
 body {
     background-color: #f5f5f5;
-}
-
-/* Fixing twinks due to scroll bar appearing */
-
-html {
-    width: 100vw;
-    overflow-x: hidden;
 }
 
 h1 {
@@ -107,11 +100,14 @@ form > button {
     user-select: none !important;
 }
 
+/* Fix disabled buttons */
+
 a.disabled,
 button:disabled {
     cursor: not-allowed;
     pointer-events: all !important;
 }
+
 /* Custom Scrollbar */
 
 html {
@@ -125,7 +121,7 @@ html {
 }
 
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -134,4 +130,8 @@ html {
 ::-webkit-scrollbar-thumb {
     background-color: var(--thumbBG);
     border-radius: 6px;
+}
+
+.help {
+    cursor: help;
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -38,7 +38,7 @@ export default function RootPasswordForm({
 }) {
     return (
         <form onSubmit={postRootPassword} className="mt-3">
-            <h3>{_("Advanced Administration (root) Password")}</h3>
+            <h2>{_("Advanced Administration (root) Password")}</h2>
             <p
                 dangerouslySetInnerHTML={{
                     __html: babel.format(

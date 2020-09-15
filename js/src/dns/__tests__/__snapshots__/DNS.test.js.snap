@@ -38,7 +38,7 @@ exports[`<DNS/> Test with snapshot DHCP. 1`] = `
           class=\\"text-right\\"
         >
           <button
-            class=\\"btn btn-primary  col-sm-12 col-lg-3\\"
+            class=\\"btn btn-primary  col-sm-12 col-md-3 col-lg-2\\"
             type=\\"submit\\""
 `;
 
@@ -205,13 +205,13 @@ exports[`<DNS/> Test with snapshot forwarding. 1`] = `
 +                   class=\\"btn btn-primary btn-sm\\"
 +                   type=\\"button\\"
 +                 >
-+                     Edit
++                   Edit
 +                 </button>
 +                 <button
 +                   class=\\"btn btn-danger btn-sm\\"
 +                   type=\\"button\\"
 +                 >
-+                     Delete
++                   Delete
 +                 </button>
 +               </div>
 +             </td>
@@ -222,10 +222,10 @@ exports[`<DNS/> Test with snapshot forwarding. 1`] = `
 +         class=\\"text-right\\"
 +       >
 +         <button
-+           class=\\"btn btn-outline-success btn mb-3 mb-sm-2 mb-md-0 col-sm-12 col-lg-3\\"
++           class=\\"btn btn-outline-success btn mb-3 mb-sm-2 mb-md-0 col-sm-12 col-md-3 col-lg-2\\"
 +           type=\\"button\\"
 +         >
-+             Add custom forwarder
++           Add custom forwarder
 +         </button>
 +       </div>
         <div
@@ -271,7 +271,7 @@ this is a serious flaw on their side.
             
   </p>
   <div
-    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-3"
   >
     <form>
       <div
@@ -341,10 +341,10 @@ this is a serious flaw on their side.
         class="text-right"
       >
         <button
-          class="btn btn-primary  col-sm-12 col-lg-3"
+          class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
           type="submit"
         >
-            Save
+          Save
         </button>
       </div>
     </form>
@@ -409,13 +409,13 @@ works as expected. Remember to click on the
         </tbody>
       </table>
       <div
-        class="undefined text-right"
+        class="col-sm-12 col-lg-12 p-0 mb-3 text-right"
       >
         <button
-          class="btn btn-primary col-sm-12 col-lg-3"
+          class="btn btn-primary col-sm-12 col-md-3 col-lg-2"
           type="submit"
         >
-            Test connection
+          Test connection
         </button>
       </div>
     </form>

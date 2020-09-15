@@ -7,6 +7,10 @@
     white-space: pre-wrap;
 }
 
+#notifications-center .card-body + button {
+    border-radius: 0 0 0.25rem 0.25rem;
+}
+
 #notifications-center .card {
     margin-bottom: 1rem;
 }
