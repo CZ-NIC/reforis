@@ -53,7 +53,7 @@ export default function NotificationsDropdownMenu({
         ) : null;
 
     return (
-        <div className="dropdown-menu dropdown-menu-right">
+        <div className="dropdown-menu dropdown-menu-right shadow-sm">
             <NotificationsDropdownHeader />
             <SimpleBar className="scrollable-menu" autoHide={false}>
                 {getNotifications()}
