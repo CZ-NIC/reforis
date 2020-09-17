@@ -71,22 +71,40 @@ export default function WorkflowSelect({ workflows, next_step }) {
                 )}
             </p>
             <div id="workflow-selector" className="card p-4 text-center">
-                {workflows.map((workflow) => (
-                    <div key={workflow} className="workflow">
-                        <h2>{WORKFLOW_NAMES[workflow]}</h2>
-                        <button
-                            type="button"
-                            className="btn btn-outline-secondary"
-                            onClick={() => onWorkflowChangeHandler(workflow)}
-                        >
-                            <img
-                                src={`${IMG_STATIC_URL}/workflow-${workflow}.svg`}
-                                alt={workflow}
-                            />
-                        </button>
-                        <p>{WORKFLOW_DESCRIPTIONS[workflow]}</p>
-                    </div>
-                ))}
+                <div className="row row-cols-3">
+                    {workflows.map((workflow) => (
+                        <div className="col-12 col-lg-4" key={workflow}>
+                            <div className="workflow">
+                                <div>
+                                    <span className="h3 align-middle">
+                                        {WORKFLOW_NAMES[workflow]}
+                                    </span>
+                                    {workflow === "router" && (
+                                        <span className="badge badge-success align-middle">
+                                            {_("Recommended").toLowerCase()}
+                                        </span>
+                                    )}
+                                </div>
+
+                                <button
+                                    type="button"
+                                    className="btn btn-outline-secondary"
+                                    onClick={
+                                        () => onWorkflowChangeHandler(workflow)
+                                        /* eslint-disable react/jsx-curly-newline */
+                                    }
+                                >
+                                    <img
+                                        className="img-fluid"
+                                        src={`${IMG_STATIC_URL}/workflow-${workflow}.svg`}
+                                        alt={workflow}
+                                    />
+                                </button>
+                                <p>{WORKFLOW_DESCRIPTIONS[workflow]}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
         </>
     );
