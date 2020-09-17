@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -10,6 +10,8 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 import { ForisURLs } from "foris";
+import SimpleBar from "simplebar-react";
+import "simplebar-react/dist/simplebar.min.css";
 
 import NOTIFICATION_PROP_TYPES from "../../../notifications/utils";
 import NotificationsDropdownItem from "./NotificationsDropdownItem";
@@ -53,7 +55,9 @@ export default function NotificationsDropdownMenu({
     return (
         <div className="dropdown-menu dropdown-menu-right">
             <NotificationsDropdownHeader />
-            <div className="scrollable-menu">{getNotifications()}</div>
+            <SimpleBar className="scrollable-menu" autoHide={false}>
+                {getNotifications()}
+            </SimpleBar>
             {footer}
         </div>
     );

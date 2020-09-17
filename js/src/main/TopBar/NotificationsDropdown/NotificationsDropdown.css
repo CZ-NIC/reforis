@@ -19,23 +19,12 @@
     margin-top: 0;
 }
 
+#notifications .simplebar-scrollbar::before {
+    background: black !important;
+}
+
 #notifications .scrollable-menu {
-    height: auto;
     max-height: 20rem;
-    overflow-x: hidden;
-}
-
-#notifications ::-webkit-scrollbar {
-    width: 0.5rem;
-}
-
-#notifications ::-webkit-scrollbar-thumb {
-    background: #95a5a6;
-    border-radius: 0.2em;
-}
-
-#notifications ::-webkit-scrollbar-thumb:hover {
-    background: #4e5a5b;
 }
 
 @media (max-width: 769px) {

@@ -46,7 +46,7 @@ function Navigation({ pages, location }) {
     });
 
     return (
-        <SimpleBar className="mh-100">
+        <SimpleBar className="mh-100" autoHide={false}>
             <Portal containerId="navigation-collapse-toggle">
                 <button
                     type="button"

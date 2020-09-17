@@ -5,6 +5,10 @@
  * See /LICENSE for more information.
  */
 
+#navigation-container .simplebar-scrollbar::before {
+    background: white !important;
+}
+
 @media screen and (max-width: 768px) {
     #navigation-collapse-toggle {
         display: block;
