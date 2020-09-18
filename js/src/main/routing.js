@@ -73,7 +73,7 @@ function RouteWithTitle({ title, render, ...props }) {
     return (
         <Route
             render={() => {
-                document.title = `${title} - Foris`;
+                document.title = `${title} - Foris | Turris`;
                 return render();
             }}
             {...props}
