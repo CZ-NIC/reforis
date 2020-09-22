@@ -164,11 +164,11 @@ describe("<NotificationsSettings/>", () => {
 
         it("Displaying test notification importance warning (severity: 1)", () => {
             expect(
-                NotificationsSettingsContainer.childNodes[2].childNodes[1]
+                NotificationsSettingsContainer.childNodes[3].childNodes[1]
                     .innerHTML
             ).toEqual(SEVERITY_ALERT_MESSAGE);
             expect(
-                NotificationsSettingsContainer.childNodes[2]
+                NotificationsSettingsContainer.childNodes[3]
             ).toMatchSnapshot();
         });
 
@@ -186,7 +186,7 @@ describe("<NotificationsSettings/>", () => {
                 expect.anything()
             );
             expect(
-                NotificationsSettingsContainer.childNodes[2]
+                NotificationsSettingsContainer.childNodes[3]
             ).toMatchSnapshot();
         });
 
@@ -204,7 +204,7 @@ describe("<NotificationsSettings/>", () => {
                 expect.anything()
             );
             expect(
-                NotificationsSettingsContainer.childNodes[2]
+                NotificationsSettingsContainer.childNodes[3]
             ).toMatchSnapshot();
         });
 
