@@ -43,6 +43,11 @@ export default function Password({ postCallback }) {
     return (
         <>
             <h1>{_("Password")}</h1>
+            <p>
+                {_(
+                    `Here you can set passwords for Foris and optionally for advanced features (LuCI and SSH). Make sure to set secure password which is long and uncommon.`
+                )}
+            </p>
             <PasswordFormWithErrorAndSpinner
                 apiState={getPasswordResponse.state}
                 currentPassword={getPasswordResponse.data || {}}
