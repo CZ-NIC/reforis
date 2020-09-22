@@ -20,6 +20,11 @@ export default function About() {
     return (
         <>
             <h1>{_("About")}</h1>
+            <p>
+                {_(
+                    `Here you can find some information about your device. Please include it into your message if you contact our customer support.`
+                )}
+            </p>
             <AboutTableWithErrorAndSpinner
                 apiState={getAboutResponse.state}
                 deviceDetails={getAboutResponse.data || {}}

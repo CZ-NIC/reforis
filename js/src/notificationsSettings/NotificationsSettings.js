@@ -23,6 +23,11 @@ export default function NotificationsSettings({ ws }) {
     return (
         <>
             <h1>{_("Notifications")}</h1>
+            <p>
+                {_(
+                    `Your device can send you e-mail notifications about required reboots, important events, installed updates and new features according to your settings. When done with configuration, you can test it by pressing Send test notification.`
+                )}
+            </p>
             <ForisForm
                 ws={ws}
                 forisConfig={{
