@@ -67,63 +67,25 @@ exports[`<NotificationsSettings/> <TestNotification/> No test notification impor
 
 exports[`<NotificationsSettings/> <TestNotification/> Should toggle unsaved changes warning modal 1`] = `
 <div
-  id="modal-container"
+  id="test-notification"
 >
+  <h2>
+    Test notification
+  </h2>
   <div
-    class="modal fade show"
-    role="dialog"
+    class="alert alert-dismissible alert-warning"
   >
-    <div
-      class="modal-dialog modal-dialog-centered"
-      role="document"
+    You will not receive the test notification to your email inbox with current importance level. Please raise the importance level at least to "Reboot or attention is required" and click "Save" button if you want to get this notification by email.
+  </div>
+  <div
+    class="col-sm-12 col-lg-12 p-0 mb-3 text-right mb-3"
+  >
+    <button
+      class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
+      type="button"
     >
-      <div
-        class="modal-content"
-      >
-        <div
-          class="modal-header"
-        >
-          <h5
-            class="modal-title"
-          >
-            Warning!
-          </h5>
-          <button
-            class="close"
-            type="button"
-          >
-            <span
-              aria-hidden="true"
-            >
-              ×
-            </span>
-          </button>
-        </div>
-        <div
-          class="modal-body"
-        >
-          <p>
-            There are some unsaved changes in the notifications settings. Do you want to discard them and test the notifications with the old settings?
-          </p>
-        </div>
-        <div
-          class="modal-footer"
-        >
-          <button
-            class="btn btn-primary "
-            type="button"
-          >
-            Cancel
-          </button>
-          <button
-            class="btn btn-danger"
-            type="button"
-          >
-            Confirm
-          </button>
-        </div>
-      </div>
-    </div>
+      Send test notification
+    </button>
   </div>
 </div>
 `;
@@ -133,6 +95,9 @@ exports[`<NotificationsSettings/> Disabled 1`] = `
   <h1>
     Notifications
   </h1>
+  <p>
+    Your device can send you e-mail notifications about required reboots, important events, installed updates and new features according to your settings. When done with configuration, you can test it by pressing Send test notification.
+  </p>
   <div
     class="card p-4 col-sm-12 col-lg-12 p-0 mb-3"
   >
@@ -186,6 +151,9 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
   <h1>
     Notifications
   </h1>
+  <p>
+    Your device can send you e-mail notifications about required reboots, important events, installed updates and new features according to your settings. When done with configuration, you can test it by pressing Send test notification.
+  </p>
   <div
     class="card p-4 col-sm-12 col-lg-12 p-0 mb-3"
   >
@@ -617,6 +585,9 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
   <h1>
     Notifications
   </h1>
+  <p>
+    Your device can send you e-mail notifications about required reboots, important events, installed updates and new features according to your settings. When done with configuration, you can test it by pressing Send test notification.
+  </p>
   <div
     class="card p-4 col-sm-12 col-lg-12 p-0 mb-3"
   >
