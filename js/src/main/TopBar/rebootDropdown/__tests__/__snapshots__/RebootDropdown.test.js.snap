@@ -15,7 +15,7 @@ exports[`<RebootDropdown/> Test with snapshot 1`] = `
       />
     </button>
     <div
-      class="dropdown-menu dropdown-menu-right"
+      class="dropdown-menu dropdown-menu-right shadow-sm"
     >
       <div
         class="dropdown-header"

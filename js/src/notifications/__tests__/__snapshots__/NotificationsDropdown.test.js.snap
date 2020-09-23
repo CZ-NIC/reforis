@@ -30,7 +30,7 @@ exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
       </span>
     </button>
     <div
-      class="dropdown-menu dropdown-menu-right"
+      class="dropdown-menu dropdown-menu-right shadow-sm"
     >
       <div
         class="dropdown-header"
@@ -57,105 +57,157 @@ exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
       />
       <div
         class="scrollable-menu"
+        data-simplebar="init"
       >
         <div
-          class="dropdown-item notification-item"
+          class="simplebar-wrapper"
         >
-          <i
-            class="fa fa-newspaper fa-2x"
-          />
           <div
-            class="notifications-info"
+            class="simplebar-height-auto-observer-wrapper"
           >
-            <a
-              href="/overview?id=123-123"
-            >
-              <small
-                class="text-muted"
-              >
-                February 1, 2000 12:00 AM
-              </small>
-              <p>
-                Notification message.
-              </p>
-            </a>
-          </div>
-          <button
-            class="btn btn-link dismiss"
-            type="button"
-          >
-            <i
-              class="fas fa-times"
+            <div
+              class="simplebar-height-auto-observer"
             />
-          </button>
+          </div>
+          <div
+            class="simplebar-mask"
+          >
+            <div
+              class="simplebar-offset"
+              style="right: 0px; bottom: 0px;"
+            >
+              <div
+                class="simplebar-content-wrapper"
+                style="height: auto; overflow-x: hidden; overflow-y: hidden;"
+              >
+                <div
+                  class="simplebar-content"
+                >
+                  <div
+                    class="dropdown-item notification-item"
+                  >
+                    <i
+                      class="fa fa-newspaper fa-2x"
+                    />
+                    <div
+                      class="notifications-info"
+                    >
+                      <a
+                        href="/overview?id=123-123"
+                      >
+                        <small
+                          class="text-muted"
+                        >
+                          February 1, 2000 12:00 AM
+                        </small>
+                        <p>
+                          Notification message.
+                        </p>
+                      </a>
+                    </div>
+                    <button
+                      class="btn btn-link dismiss"
+                      type="button"
+                    >
+                      <i
+                        class="fas fa-times"
+                      />
+                    </button>
+                  </div>
+                  <div
+                    class="dropdown-divider"
+                  />
+                  <div
+                    class="dropdown-item notification-item"
+                  >
+                    <i
+                      class="fa fa-exclamation-circle fa-2x"
+                    />
+                    <div
+                      class="notifications-info"
+                    >
+                      <a
+                        href="/overview?id=123-124"
+                      >
+                        <small
+                          class="text-muted"
+                        >
+                          February 1, 2000 12:00 AM
+                        </small>
+                        <p>
+                          Second notification message.
+                        </p>
+                      </a>
+                    </div>
+                    <button
+                      class="btn btn-link dismiss"
+                      type="button"
+                    >
+                      <i
+                        class="fas fa-times"
+                      />
+                    </button>
+                  </div>
+                  <div
+                    class="dropdown-divider"
+                  />
+                  <div
+                    class="dropdown-item notification-item"
+                  >
+                    <i
+                      class="fa fa-power-off fa-2x"
+                    />
+                    <div
+                      class="notifications-info"
+                    >
+                      <a
+                        href="/overview?id=808-909"
+                      >
+                        <small
+                          class="text-muted"
+                        >
+                          February 1, 2000 12:00 AM
+                        </small>
+                        <p>
+                          Third notification message.
+                        </p>
+                      </a>
+                    </div>
+                    <button
+                      class="btn btn-link dismiss invisible"
+                      type="button"
+                    >
+                      <i
+                        class="fas fa-times"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="simplebar-placeholder"
+            style="width: 0px; height: 0px;"
+          />
         </div>
         <div
-          class="dropdown-divider"
-        />
-        <div
-          class="dropdown-item notification-item"
+          class="simplebar-track simplebar-horizontal"
+          style="visibility: hidden;"
         >
-          <i
-            class="fa fa-exclamation-circle fa-2x"
-          />
           <div
-            class="notifications-info"
-          >
-            <a
-              href="/overview?id=123-124"
-            >
-              <small
-                class="text-muted"
-              >
-                February 1, 2000 12:00 AM
-              </small>
-              <p>
-                Second notification message.
-              </p>
-            </a>
-          </div>
-          <button
-            class="btn btn-link dismiss"
-            type="button"
-          >
-            <i
-              class="fas fa-times"
-            />
-          </button>
+            class="simplebar-scrollbar simplebar-visible"
+            style="width: 0px; display: none;"
+          />
         </div>
         <div
-          class="dropdown-divider"
-        />
-        <div
-          class="dropdown-item notification-item"
+          class="simplebar-track simplebar-vertical"
+          style="visibility: hidden;"
         >
-          <i
-            class="fa fa-power-off fa-2x"
-          />
           <div
-            class="notifications-info"
-          >
-            <a
-              href="/overview?id=808-909"
-            >
-              <small
-                class="text-muted"
-              >
-                February 1, 2000 12:00 AM
-              </small>
-              <p>
-                Third notification message.
-              </p>
-            </a>
-          </div>
-          <button
-            class="btn btn-link dismiss invisible"
-            type="button"
-          >
-            <i
-              class="fas fa-times"
-            />
-          </button>
+            class="simplebar-scrollbar simplebar-visible"
+            style="height: 0px; display: none;"
+          />
         </div>
       </div>
       <div

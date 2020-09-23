@@ -39,7 +39,7 @@ exports[`<GuideHelp/> displays lan help with completed message 1`] = `
           </div>
         </button>
         <div
-          class="dropdown-menu dropdown-menu-right"
+          class="dropdown-menu dropdown-menu-right shadow-sm"
           id="languages-dropdown-menu"
         >
           <div
@@ -151,7 +151,7 @@ exports[`<GuideHelp/> displays lan help without completed message - server workf
           </div>
         </button>
         <div
-          class="dropdown-menu dropdown-menu-right"
+          class="dropdown-menu dropdown-menu-right shadow-sm"
           id="languages-dropdown-menu"
         >
           <div
@@ -242,7 +242,7 @@ exports[`<GuideHelp/> displays lan help without completed message 1`] = `
           </div>
         </button>
         <div
-          class="dropdown-menu dropdown-menu-right"
+          class="dropdown-menu dropdown-menu-right shadow-sm"
           id="languages-dropdown-menu"
         >
           <div
@@ -335,7 +335,7 @@ exports[`<GuideHelp/> doesn't display completed message if it doesn't exist 1`] 
           </div>
         </button>
         <div
-          class="dropdown-menu dropdown-menu-right"
+          class="dropdown-menu dropdown-menu-right shadow-sm"
           id="languages-dropdown-menu"
         >
           <div

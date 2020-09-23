@@ -31,7 +31,7 @@ exports[`<Guide/>  Snapshot. Just check if render correct page. 1`] = `
             en
           </button>
           <div
-            class="dropdown-menu dropdown-menu-right"
+            class="dropdown-menu dropdown-menu-right shadow-sm"
             id="languages-dropdown-menu"
           >
             <div
