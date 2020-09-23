@@ -13,61 +13,97 @@ exports[`<WorkflowSelect/> Snapshot. 1`] = `
     id="workflow-selector"
   >
     <div
-      class="workflow"
+      class="row row-cols-3"
     >
-      <h2>
-        Router
-      </h2>
-      <button
-        class="btn btn-outline-secondary"
-        type="button"
+      <div
+        class="col-12 col-lg-4"
       >
-        <img
-          alt="router"
-          src="/reforis/static/reforis/imgs/workflow-router.svg"
-        />
-      </button>
-      <p>
-        After you finish this workflow your device will be able to act as a fully functional router. It assumes that you want to have more or less standard network setup.
-      </p>
-    </div>
-    <div
-      class="workflow"
-    >
-      <h2>
-        Minimal
-      </h2>
-      <button
-        class="btn btn-outline-secondary"
-        type="button"
+        <div
+          class="workflow"
+        >
+          <div>
+            <span
+              class="h3 align-middle"
+            >
+              Router
+            </span>
+            <span
+              class="badge badge-success align-middle"
+            >
+              recommended
+            </span>
+          </div>
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+          >
+            <img
+              alt="router"
+              class="img-fluid"
+              src="/reforis/static/reforis/imgs/workflow-router.svg"
+            />
+          </button>
+          <p>
+            After you finish this workflow your device will be able to act as a fully functional router. It assumes that you want to have more or less standard network setup.
+          </p>
+        </div>
+      </div>
+      <div
+        class="col-12 col-lg-4"
       >
-        <img
-          alt="min"
-          src="/reforis/static/reforis/imgs/workflow-min.svg"
-        />
-      </button>
-      <p>
-        Just set your password and you are ready to go. This workflow is aimed to more advanced users who intend not to use the web GUI.
-      </p>
-    </div>
-    <div
-      class="workflow"
-    >
-      <h2>
-        Local Server
-      </h2>
-      <button
-        class="btn btn-outline-secondary"
-        type="button"
+        <div
+          class="workflow"
+        >
+          <div>
+            <span
+              class="h3 align-middle"
+            >
+              Minimal
+            </span>
+          </div>
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+          >
+            <img
+              alt="min"
+              class="img-fluid"
+              src="/reforis/static/reforis/imgs/workflow-min.svg"
+            />
+          </button>
+          <p>
+            Just set your password and you are ready to go. This workflow is aimed to more advanced users who intend not to use the web GUI.
+          </p>
+        </div>
+      </div>
+      <div
+        class="col-12 col-lg-4"
       >
-        <img
-          alt="bridge"
-          src="/reforis/static/reforis/imgs/workflow-bridge.svg"
-        />
-      </button>
-      <p>
-        This workflow will help you to setup your device to act as a local server. It means that the device will provide some kind of service to other devices within your local network (e.g. act as a network-attached storage).
-      </p>
+        <div
+          class="workflow"
+        >
+          <div>
+            <span
+              class="h3 align-middle"
+            >
+              Local Server
+            </span>
+          </div>
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+          >
+            <img
+              alt="bridge"
+              class="img-fluid"
+              src="/reforis/static/reforis/imgs/workflow-bridge.svg"
+            />
+          </button>
+          <p>
+            This workflow will help you to setup your device to act as a local server. It means that the device will provide some kind of service to other devices within your local network (e.g. act as a network-attached storage).
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>

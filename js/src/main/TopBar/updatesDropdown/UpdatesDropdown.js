@@ -90,7 +90,7 @@ function DropdownContent({ update, onSuccess }) {
                     }`.trim()}
                 />
             </button>
-            <div className="dropdown-menu dropdown-menu-right">
+            <div className="dropdown-menu dropdown-menu-right shadow-sm">
                 <div className="dropdown-header">
                     <Link
                         to={{

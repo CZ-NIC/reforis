@@ -29,7 +29,9 @@ describe("<WorkflowSelect/>", () => {
         );
         await wait(() => getByText(container, "Guide Workflow"));
         workflowSelectContainer = container;
-        window.location.assign = jest.fn();
+        window.location = {
+            assign: jest.fn(),
+        };
     });
 
     it("Snapshot.", () => {

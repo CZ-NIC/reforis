@@ -20,11 +20,13 @@ export default function About() {
     return (
         <>
             <h1>{_("About")}</h1>
-            <p>
-                {_(
-                    `Here you can find some information about your device. Please include it into your message if you contact our customer support.`
-                )}
-            </p>
+            <p
+                dangerouslySetInnerHTML={{
+                    __html: _(
+                        `Here you can find some information about your device. Please include it into your message if you contact our <a href="mailto:tech.support@turris.cz" target="_blank">customer support</a>.`
+                    ),
+                }}
+            />
             <AboutTableWithErrorAndSpinner
                 apiState={getAboutResponse.state}
                 deviceDetails={getAboutResponse.data || {}}
@@ -39,53 +41,55 @@ AboutTable.propTypes = {
 
 function AboutTable({ deviceDetails }) {
     return (
-        <table className="table table-hover">
-            <tbody>
-                <tr>
-                    <th>{_("Device")}</th>
-                    <td>{deviceDetails.model}</td>
-                </tr>
-                <tr>
-                    <th>{_("Serial number")}</th>
-                    <td>{deviceDetails.serial}</td>
-                </tr>
-                <tr>
-                    <th>{_("reForis version")}</th>
-                    <td>{deviceDetails.reforis_version}</td>
-                </tr>
-                <tr>
-                    <th>{_("Turris OS version")}</th>
-                    <td>{deviceDetails.os_version}</td>
-                </tr>
-                <tr>
-                    <th>
-                        {_("Turris OS branch")}
-                        <i
-                            className="text-muted fas fa-question-circle ml-1 help"
-                            title={_(
-                                "Turris OS is currently released in various branches, which have different functions and varying stability - you can pick, which branch you want to test."
-                            )}
-                        />
-                    </th>
-                    <td>
-                        <a
-                            href="https://docs.turris.cz/geek/testing/#branches-available"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            {deviceDetails.os_branch.value.toUpperCase()}
-                            <sup>
-                                <i className="fas fa-external-link-alt ml-1" />
-                            </sup>
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <th>{_("Kernel version")}</th>
-                    <td>{deviceDetails.kernel}</td>
-                </tr>
-            </tbody>
-        </table>
+        <div className="card p-4 table-responsive">
+            <table className="table table-borderless table-hover mb-0">
+                <tbody>
+                    <tr>
+                        <th>{_("Device")}</th>
+                        <td>{deviceDetails.model}</td>
+                    </tr>
+                    <tr>
+                        <th>{_("Serial number")}</th>
+                        <td>{deviceDetails.serial}</td>
+                    </tr>
+                    <tr>
+                        <th>{_("reForis version")}</th>
+                        <td>{deviceDetails.reforis_version}</td>
+                    </tr>
+                    <tr>
+                        <th>{_("Turris OS version")}</th>
+                        <td>{deviceDetails.os_version}</td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {_("Turris OS branch")}
+                            <i
+                                className="text-muted fas fa-question-circle ml-1 help"
+                                title={_(
+                                    "Turris OS is currently released in various branches, which have different functions and varying stability - you can pick, which branch you want to test."
+                                )}
+                            />
+                        </th>
+                        <td>
+                            <a
+                                href="https://docs.turris.cz/geek/testing/#branches-available"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {deviceDetails.os_branch.value.toUpperCase()}
+                                <sup>
+                                    <i className="fas fa-external-link-alt ml-1" />
+                                </sup>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>{_("Kernel version")}</th>
+                        <td>{deviceDetails.kernel}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     );
 }
 

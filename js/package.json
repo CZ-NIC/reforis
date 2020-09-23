@@ -46,7 +46,7 @@
         "eslint-plugin-prettier": "^3.1.4",
         "expose-loader": "^0.7.5",
         "file-loader": "^4.3.0",
-        "jest": "^24.9.0",
+        "jest": "^26.4.2",
         "jest-mock-axios": "^3.2.0",
         "mini-css-extract-plugin": "^0.8.2",
         "moment-timezone": "^0.5.28",

@@ -43,7 +43,7 @@ export default function RebootDropdown({ ws }) {
             <div
                 className={`dropdown-menu dropdown-menu-${
                     window.outerWidth > smallScreenWidth ? "right" : "left"
-                }`}
+                } shadow-sm`}
             >
                 <div className="dropdown-header">
                     <Link
