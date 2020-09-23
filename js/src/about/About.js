@@ -20,11 +20,13 @@ export default function About() {
     return (
         <>
             <h1>{_("About")}</h1>
-            <p>
-                {_(
-                    `Here you can find some information about your device. Please include it into your message if you contact our customer support.`
-                )}
-            </p>
+            <p
+                dangerouslySetInnerHTML={{
+                    __html: _(
+                        `Here you can find some information about your device. Please include it into your message if you contact our <a href="mailto:tech.support@turris.cz" target="_blank">customer support</a>.`
+                    ),
+                }}
+            />
             <AboutTableWithErrorAndSpinner
                 apiState={getAboutResponse.state}
                 deviceDetails={getAboutResponse.data || {}}
