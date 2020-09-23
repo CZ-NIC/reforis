@@ -26,8 +26,9 @@ describe("<UpdatesDropdown/>", () => {
     const exampleHash = "303808909";
 
     beforeEach(() => {
+        const webSockets = new WebSockets();
         ({ container, getByText, getByTestId, queryByTestId } = render(
-            <UpdatesDropdown />
+            <UpdatesDropdown ws={webSockets} />
         ));
     });
 
