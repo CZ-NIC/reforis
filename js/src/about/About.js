@@ -19,7 +19,7 @@ export default function About() {
 
     return (
         <>
-            <h1>{_("About")}</h1>
+            <h1>{_("Aboutt")}</h1>
             <p
                 dangerouslySetInnerHTML={{
                     __html: _(
