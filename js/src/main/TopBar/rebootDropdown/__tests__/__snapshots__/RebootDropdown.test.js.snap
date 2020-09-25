@@ -21,7 +21,7 @@ exports[`<RebootDropdown/> Test with snapshot 1`] = `
         class="dropdown-header"
       >
         <a
-          href="/reforis/administration/reboot"
+          href="/administration/reboot"
         >
           <h5>
             Reboot Required

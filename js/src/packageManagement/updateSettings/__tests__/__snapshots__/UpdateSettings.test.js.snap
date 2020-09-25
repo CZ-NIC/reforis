@@ -345,7 +345,7 @@ exports[`<UpdateSettings/> Test with snapshot enabled, delayed. 1`] = `
 +         class=\\"form-group\\"
 +       >
 +         <label
-+           for=\\"10\\"
++           for=\\"11\\"
 +         >
 +           Delayed updates (hours)
 +         </label>
@@ -354,7 +354,7 @@ exports[`<UpdateSettings/> Test with snapshot enabled, delayed. 1`] = `
 +         >
 +           <input
 +             class=\\"form-control\\"
-+             id=\\"10\\"
++             id=\\"11\\"
 +             max=\\"168\\"
 +             min=\\"1\\"
 +             type=\\"number\\"
