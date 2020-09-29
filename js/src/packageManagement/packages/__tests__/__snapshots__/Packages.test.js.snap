@@ -12,7 +12,7 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
     >
       <form>
 +       <div
-+         class=\\"alert alert-dismissible alert-warning\\"
++         class=\\"alert  alert-warning\\"
 +       >
 +         <span>
 +           Please enable 

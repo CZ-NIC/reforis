@@ -6,7 +6,7 @@
         "url": "https://gitlab.nic.cz/turris/reforis/reforis.git"
     },
     "license": "GPL-3.0",
-    "version": "0.9.9",
+    "version": "1.0.0",
     "description": "Turris routers web configuration interface.",
     "main": "./src/app.js",
     "dependencies": {
@@ -14,7 +14,7 @@
         "axios": "^0.19.2",
         "bootstrap": "4.4.1",
         "bootswatch": "4.4.1",
-        "foris": "^5.1.0",
+        "foris": "^5.1.5",
         "immutability-helper": "3.0.1",
         "ipaddr": "npm:ipaddr.js@^1.9.1",
         "jquery": "^3.5.1",
@@ -23,7 +23,7 @@
         "popper.js": "^1.16.1",
         "prop-types": "15.7.2",
         "react": "16.9.0",
-        "react-datetime": "^2.16.3",
+        "react-datetime": "^3.0.4",
         "react-dom": "16.9.0",
         "react-router-dom": "^5.1.2",
         "react-tooltip": "^4.2.9",
