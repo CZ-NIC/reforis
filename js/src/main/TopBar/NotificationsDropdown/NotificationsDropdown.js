@@ -10,20 +10,23 @@ import PropTypes from "prop-types";
 
 import NotificationsDropdownButton from "./NotificationsDropdownButton";
 import NotificationsDropdownMenu from "./NotificationsDropdownMenu";
-import useNotifications, {
-    useNewNotification,
-} from "../../../notifications/hooks";
 import "./NotificationsDropdown.css";
 
 NotificationsDropdown.propTypes = {
-    ws: PropTypes.object.isRequired,
+    notifications: PropTypes.array.isRequired,
+    newNotification: PropTypes.bool.isRequired,
+    isLoading: PropTypes.bool.isRequired,
+    dismiss: PropTypes.func.isRequired,
+    dismissAll: PropTypes.func.isRequired,
 };
 
-export default function NotificationsDropdown({ ws }) {
-    const [notifications, dismiss, dismissAll, isLoading] = useNotifications(
-        ws
-    );
-    const newNotification = useNewNotification(ws);
+export default function NotificationsDropdown({
+    notifications,
+    dismiss,
+    dismissAll,
+    isLoading,
+    newNotification,
+}) {
     return (
         <div id="notifications" className="dropdown">
             <NotificationsDropdownButton

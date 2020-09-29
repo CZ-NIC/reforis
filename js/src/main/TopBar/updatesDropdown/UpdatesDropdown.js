@@ -22,20 +22,17 @@ import {
 import API_URLs from "common/API";
 
 import "./UpdatesDropdown.css";
-import { useNewNotification } from "../../../notifications/hooks";
 
 UpdatesDropdown.propTypes = {
-    ws: PropTypes.object.isRequired,
+    newNotification: PropTypes.bool.isRequired,
 };
 
-export default function UpdatesDropdown({ ws }) {
+export default function UpdatesDropdown({ newNotification }) {
     const [getApprovalsResponse, getApprovals] = useAPIGet(API_URLs.approvals);
     const update = getApprovalsResponse.data || {};
     useEffect(() => {
         getApprovals();
     }, [getApprovals]);
-
-    const newNotification = useNewNotification(ws);
 
     const updateWithNotification = useCallback(() => {
         if (newNotification) {
