@@ -27,15 +27,13 @@ exports[`<Updates/> should display spinner while check is pending 1`] = `
   </h1>
   Manually check for updates and install them immediately.
   <div
-    class="undefined text-right"
+    class="col-sm-12 col-lg-12 p-0 mb-3 text-right"
   >
     <button
-      class="btn btn-primary mb-3 col-sm-12 col-lg-3"
+      class="btn btn-primary mb-3 col-sm-12 col-md-3 col-lg-2"
       disabled=""
       type="button"
     >
-       
-       
       Check and install updates
     </button>
   </div>
@@ -61,15 +59,13 @@ exports[`<Updates/> should display spinner while check is pending 2`] = `
   </h1>
   Manually check for updates and install them immediately.
   <div
-    class="undefined text-right"
+    class="col-sm-12 col-lg-12 p-0 mb-3 text-right"
   >
     <button
-      class="btn btn-primary mb-3 col-sm-12 col-lg-3"
+      class="btn btn-primary mb-3 col-sm-12 col-md-3 col-lg-2"
       disabled=""
       type="button"
     >
-       
-       
       Check and install updates
     </button>
   </div>
@@ -95,14 +91,12 @@ exports[`<Updates/> should handle approvable updates 1`] = `
   </h1>
   Manually check for updates and review them immediately.
   <div
-    class="undefined text-right"
+    class="col-sm-12 col-lg-12 p-0 mb-3 text-right"
   >
     <button
-      class="btn btn-primary mb-3 col-sm-12 col-lg-3"
+      class="btn btn-primary mb-3 col-sm-12 col-md-3 col-lg-2"
       type="button"
     >
-       
-       
       Check updates
     </button>
   </div>
@@ -179,8 +173,6 @@ exports[`<Updates/> should handle approvable updates 1`] = `
       style="margin-bottom: 1rem;"
       type="button"
     >
-       
-       
       Ignore
     </button>
     <button
@@ -188,8 +180,6 @@ exports[`<Updates/> should handle approvable updates 1`] = `
       style="margin-bottom: 1rem;"
       type="button"
     >
-       
-       
       Install now
     </button>
   </div>
@@ -203,14 +193,12 @@ exports[`<Updates/> should handle automatic updates (no delays/approvals) 1`] = 
   </h1>
   Manually check for updates and install them immediately.
   <div
-    class="undefined text-right"
+    class="col-sm-12 col-lg-12 p-0 mb-3 text-right"
   >
     <button
-      class="btn btn-primary mb-3 col-sm-12 col-lg-3"
+      class="btn btn-primary mb-3 col-sm-12 col-md-3 col-lg-2"
       type="button"
     >
-       
-       
       Check and install updates
     </button>
   </div>

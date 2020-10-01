@@ -8,11 +8,11 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
 @@ -12,10 +12,26 @@
     </p>
     <div
-      class=\\"col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3\\"
+      class=\\"card p-4 col-sm-12 col-lg-12 p-0 mb-3\\"
     >
       <form>
 +       <div
-+         class=\\"alert alert-dismissible alert-warning\\"
++         class=\\"alert  alert-warning\\"
 +       >
 +         <span>
 +           Please enable 
@@ -224,11 +224,11 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
           class=\\"text-right\\"
         >
           <button
-            class=\\"btn btn-primary  col-sm-12 col-lg-3\\"
+            class=\\"btn btn-primary  col-sm-12 col-md-3 col-lg-2\\"
 +           disabled=\\"\\"
             type=\\"submit\\"
           >
-              Save
+            Save
           </button>
         </div>"
 `;
@@ -247,7 +247,7 @@ been installed manually or using opkg is not affected.
         
   </p>
   <div
-    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-3"
   >
     <form>
       <h2>
@@ -785,10 +785,10 @@ been installed manually or using opkg is not affected.
         class="text-right"
       >
         <button
-          class="btn btn-primary  col-sm-12 col-lg-3"
+          class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
           type="submit"
         >
-            Save
+          Save
         </button>
       </div>
     </form>

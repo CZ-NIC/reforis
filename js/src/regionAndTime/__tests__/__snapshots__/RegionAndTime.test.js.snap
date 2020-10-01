@@ -12,7 +12,7 @@ procedure of SSL certificate verification might not work correctly.
         
   </p>
   <div
-    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-3"
   >
     <form>
       <h2>
@@ -382,25 +382,23 @@ procedure of SSL certificate verification might not work correctly.
           id="4"
         >
           <option
-            value="ntp"
-          >
-            Via NTP
-          </option>
-          <option
             value="manual"
           >
             Manually
           </option>
+          <option
+            value="ntp"
+          >
+            Via NTP
+          </option>
         </select>
       </div>
       <button
-        class="btn btn-outline-primary col-sm-12 col-lg-3"
+        class="btn btn-outline-primary col-sm-12 col-md-3 col-lg-2"
         data-toggle="collapse"
         href="#collapseNTPServers"
         type="button"
       >
-         
-         
         Show NTP servers list
       </button>
       <div
@@ -552,43 +550,57 @@ procedure of SSL certificate verification might not work correctly.
                 <tr>
                   <td
                     class="rdtDay rdtOld"
+                    data-month="2"
                     data-value="31"
+                    data-year="2019"
                   >
                     31
                   </td>
                   <td
                     class="rdtDay"
+                    data-month="3"
                     data-value="1"
+                    data-year="2019"
                   >
                     1
                   </td>
                   <td
                     class="rdtDay"
+                    data-month="3"
                     data-value="2"
+                    data-year="2019"
                   >
                     2
                   </td>
                   <td
                     class="rdtDay"
+                    data-month="3"
                     data-value="3"
+                    data-year="2019"
                   >
                     3
                   </td>
                   <td
                     class="rdtDay"
+                    data-month="3"
                     data-value="4"
+                    data-year="2019"
                   >
                     4
                   </td>
                   <td
                     class="rdtDay"
+                    data-month="3"
                     data-value="5"
+                    data-year="2019"
                   >
                     5
                   </td>
                   <td
                     class="rdtDay"
+                    data-month="3"
                     data-value="6"
+                    data-year="2019"
                   >
                     6
                   </td>
@@ -596,43 +608,57 @@ procedure of SSL certificate verification might not work correctly.
                 <tr>
                   <td
                     class="rdtDay"
+                    data-month="3"
                     data-value="7"
+                    data-year="2019"
                   >
                     7
                   </td>
                   <td
                     class="rdtDay"
+                    data-month="3"
                     data-value="8"
+                    data-year="2019"
                   >
                     8
                   </td>
                   <td
                     class="rdtDay"
+                    data-month="3"
                     data-value="9"
+                    data-year="2019"
                   >
                     9
                   </td>
                   <td
                     class="rdtDay"
+                    data-month="3"
                     data-value="10"
+                    data-year="2019"
                   >
                     10
                   </td>
                   <td
                     class="rdtDay"
+                    data-month="3"
                     data-value="11"
+                    data-year="2019"
                   >
                     11
                   </td>
                   <td
                     class="rdtDay"
+                    data-month="3"
                     data-value="12"
+                    data-year="2019"
                   >
                     12
                   </td>
                   <td
                     class="rdtDay"
+                    data-month="3"
                     data-value="13"
+                    data-year="2019"
                   >
                     13
                   </td>
@@ -640,43 +666,57 @@ procedure of SSL certificate verification might not work correctly.
                 <tr>
                   <td
                     class="rdtDay"
+                    data-month="3"
                     data-value="14"
+                    data-year="2019"
                   >
                     14
                   </td>
                   <td
                     class="rdtDay"
+                    data-month="3"
                     data-value="15"
+                    data-year="2019"
                   >
                     15
                   </td>
                   <td
                     class="rdtDay"
+                    data-month="3"
                     data-value="16"
+                    data-year="2019"
                   >
                     16
                   </td>
                   <td
                     class="rdtDay"
+                    data-month="3"
                     data-value="17"
+                    data-year="2019"
                   >
                     17
                   </td>
                   <td
                     class="rdtDay"
+                    data-month="3"
                     data-value="18"
+                    data-year="2019"
                   >
                     18
                   </td>
                   <td
                     class="rdtDay"
+                    data-month="3"
                     data-value="19"
+                    data-year="2019"
                   >
                     19
                   </td>
                   <td
                     class="rdtDay"
+                    data-month="3"
                     data-value="20"
+                    data-year="2019"
                   >
                     20
                   </td>
@@ -684,43 +724,57 @@ procedure of SSL certificate verification might not work correctly.
                 <tr>
                   <td
                     class="rdtDay"
+                    data-month="3"
                     data-value="21"
+                    data-year="2019"
                   >
                     21
                   </td>
                   <td
                     class="rdtDay"
+                    data-month="3"
                     data-value="22"
+                    data-year="2019"
                   >
                     22
                   </td>
                   <td
                     class="rdtDay"
+                    data-month="3"
                     data-value="23"
+                    data-year="2019"
                   >
                     23
                   </td>
                   <td
                     class="rdtDay rdtActive"
+                    data-month="3"
                     data-value="24"
+                    data-year="2019"
                   >
                     24
                   </td>
                   <td
                     class="rdtDay"
+                    data-month="3"
                     data-value="25"
+                    data-year="2019"
                   >
                     25
                   </td>
                   <td
                     class="rdtDay"
+                    data-month="3"
                     data-value="26"
+                    data-year="2019"
                   >
                     26
                   </td>
                   <td
                     class="rdtDay"
+                    data-month="3"
                     data-value="27"
+                    data-year="2019"
                   >
                     27
                   </td>
@@ -728,43 +782,57 @@ procedure of SSL certificate verification might not work correctly.
                 <tr>
                   <td
                     class="rdtDay"
+                    data-month="3"
                     data-value="28"
+                    data-year="2019"
                   >
                     28
                   </td>
                   <td
                     class="rdtDay"
+                    data-month="3"
                     data-value="29"
+                    data-year="2019"
                   >
                     29
                   </td>
                   <td
                     class="rdtDay"
+                    data-month="3"
                     data-value="30"
+                    data-year="2019"
                   >
                     30
                   </td>
                   <td
                     class="rdtDay rdtNew"
+                    data-month="4"
                     data-value="1"
+                    data-year="2019"
                   >
                     1
                   </td>
                   <td
                     class="rdtDay rdtNew"
+                    data-month="4"
                     data-value="2"
+                    data-year="2019"
                   >
                     2
                   </td>
                   <td
                     class="rdtDay rdtNew"
+                    data-month="4"
                     data-value="3"
+                    data-year="2019"
                   >
                     3
                   </td>
                   <td
                     class="rdtDay rdtNew"
+                    data-month="4"
                     data-value="4"
+                    data-year="2019"
                   >
                     4
                   </td>
@@ -772,43 +840,57 @@ procedure of SSL certificate verification might not work correctly.
                 <tr>
                   <td
                     class="rdtDay rdtNew"
+                    data-month="4"
                     data-value="5"
+                    data-year="2019"
                   >
                     5
                   </td>
                   <td
                     class="rdtDay rdtNew"
+                    data-month="4"
                     data-value="6"
+                    data-year="2019"
                   >
                     6
                   </td>
                   <td
                     class="rdtDay rdtNew"
+                    data-month="4"
                     data-value="7"
+                    data-year="2019"
                   >
                     7
                   </td>
                   <td
                     class="rdtDay rdtNew"
+                    data-month="4"
                     data-value="8"
+                    data-year="2019"
                   >
                     8
                   </td>
                   <td
                     class="rdtDay rdtNew"
+                    data-month="4"
                     data-value="9"
+                    data-year="2019"
                   >
                     9
                   </td>
                   <td
                     class="rdtDay rdtNew"
+                    data-month="4"
                     data-value="10"
+                    data-year="2019"
                   >
                     10
                   </td>
                   <td
                     class="rdtDay rdtNew"
+                    data-month="4"
                     data-value="11"
+                    data-year="2019"
                   >
                     11
                   </td>
@@ -832,11 +914,9 @@ procedure of SSL certificate verification might not work correctly.
         class="text-right"
       >
         <button
-          class="btn btn-primary  col-sm-12 col-lg-3"
+          class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
           type="submit"
         >
-           
-           
           Save
         </button>
       </div>

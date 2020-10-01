@@ -6,7 +6,7 @@ exports[`<NotificationsSettings/> Disabled 1`] = `
     Notifications Settings
   </h1>
   <div
-    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-3"
   >
     <form>
       <h2>
@@ -36,11 +36,9 @@ exports[`<NotificationsSettings/> Disabled 1`] = `
         class="text-right"
       >
         <button
-          class="btn btn-primary  col-sm-12 col-lg-3"
+          class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
           type="submit"
         >
-           
-           
           Save
         </button>
       </div>
@@ -58,7 +56,7 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
     Notifications Settings
   </h1>
   <div
-    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-3"
   >
     <form>
       <h2>
@@ -94,7 +92,7 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
           SMTP provider
         </label>
         <div
-          class="custom-control custom-radio custom-control-inline"
+          class="custom-control custom-radio"
         >
           <input
             class="custom-control-input"
@@ -111,7 +109,7 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
           </label>
         </div>
         <div
-          class="custom-control custom-radio custom-control-inline"
+          class="custom-control custom-radio"
         >
           <input
             checked=""
@@ -390,11 +388,9 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
         class="text-right"
       >
         <button
-          class="btn btn-primary  col-sm-12 col-lg-3"
+          class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
           type="submit"
         >
-           
-           
           Save
         </button>
       </div>
@@ -407,19 +403,17 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
       Test notification
     </h2>
     <div
-      class="alert alert-dismissible alert-warning"
+      class="alert  alert-warning"
     >
       You will not receive the testing notification to your email inbox with current importance level. Please raise the importance level at least to "Reboot or attention is required" and click "Save" button if you want to get this notification by email.
     </div>
     <div
-      class="undefined text-right"
+      class="col-sm-12 col-lg-12 p-0 mb-3 text-right"
     >
       <button
-        class="btn btn-primary  col-sm-12 col-lg-3"
+        class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
         type="button"
       >
-         
-         
         Send testing notification
       </button>
     </div>
@@ -433,7 +427,7 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
     Notifications Settings
   </h1>
   <div
-    class="col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-3"
   >
     <form>
       <h2>
@@ -469,7 +463,7 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
           SMTP provider
         </label>
         <div
-          class="custom-control custom-radio custom-control-inline"
+          class="custom-control custom-radio"
         >
           <input
             class="custom-control-input"
@@ -486,7 +480,7 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
           </label>
         </div>
         <div
-          class="custom-control custom-radio custom-control-inline"
+          class="custom-control custom-radio"
         >
           <input
             checked=""
@@ -616,11 +610,9 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
         class="text-right"
       >
         <button
-          class="btn btn-primary  col-sm-12 col-lg-3"
+          class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
           type="submit"
         >
-           
-           
           Save
         </button>
       </div>
@@ -633,19 +625,17 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
       Test notification
     </h2>
     <div
-      class="alert alert-dismissible alert-warning"
+      class="alert  alert-warning"
     >
       You will not receive the testing notification to your email inbox with current importance level. Please raise the importance level at least to "Reboot or attention is required" and click "Save" button if you want to get this notification by email.
     </div>
     <div
-      class="undefined text-right"
+      class="col-sm-12 col-lg-12 p-0 mb-3 text-right"
     >
       <button
-        class="btn btn-primary  col-sm-12 col-lg-3"
+        class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
         type="button"
       >
-         
-         
         Send testing notification
       </button>
     </div>

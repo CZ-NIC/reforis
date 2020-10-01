@@ -83,8 +83,6 @@ exports[`<UpdateApproval/> Updates awaiting - snapshot 1`] = `
       style="margin-bottom: 1rem;"
       type="button"
     >
-       
-       
       Ignore
     </button>
     <button
@@ -92,8 +90,6 @@ exports[`<UpdateApproval/> Updates awaiting - snapshot 1`] = `
       style="margin-bottom: 1rem;"
       type="button"
     >
-       
-       
       Install now
     </button>
   </div>

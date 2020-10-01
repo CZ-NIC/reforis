@@ -51,10 +51,10 @@ exports[`<ConnectionTest/> Snapshot after trigger DNS connection test. 1`] = `
         </tbody>
       </table>
       <div
-        class="undefined text-right"
+        class="col-sm-12 col-lg-12 p-0 mb-3 text-right"
       >
         <button
-          class="btn btn-primary col-sm-12 col-lg-3"
+          class="btn btn-primary col-sm-12 col-md-3 col-lg-2"
           disabled=""
           type="submit"
         >
@@ -63,7 +63,7 @@ exports[`<ConnectionTest/> Snapshot after trigger DNS connection test. 1`] = `
             class="spinner-border spinner-border-sm"
             role="status"
           />
-             Test is running...
+           Test is running...
         </button>
       </div>
     </form>
@@ -160,10 +160,10 @@ exports[`<ConnectionTest/> Snapshot after trigger WAN connection test. 1`] = `
         </tbody>
       </table>
       <div
-        class="undefined text-right"
+        class="col-sm-12 col-lg-12 p-0 mb-3 text-right"
       >
         <button
-          class="btn btn-primary col-sm-12 col-lg-3"
+          class="btn btn-primary col-sm-12 col-md-3 col-lg-2"
           disabled=""
           type="submit"
         >
@@ -172,7 +172,7 @@ exports[`<ConnectionTest/> Snapshot after trigger WAN connection test. 1`] = `
             class="spinner-border spinner-border-sm"
             role="status"
           />
-             Test is running...
+           Test is running...
         </button>
       </div>
     </form>
@@ -265,13 +265,13 @@ exports[`<ConnectionTest/> Snapshot before connection test. 1`] = `
         </tbody>
       </table>
       <div
-        class="undefined text-right"
+        class="col-sm-12 col-lg-12 p-0 mb-3 text-right"
       >
         <button
-          class="btn btn-primary col-sm-12 col-lg-3"
+          class="btn btn-primary col-sm-12 col-md-3 col-lg-2"
           type="submit"
         >
-            Test connection
+          Test connection
         </button>
       </div>
     </form>
@@ -364,13 +364,13 @@ exports[`<ConnectionTest/> Snapshots with connection test results. 1`] = `
         </tbody>
       </table>
       <div
-        class="undefined text-right"
+        class="col-sm-12 col-lg-12 p-0 mb-3 text-right"
       >
         <button
-          class="btn btn-primary col-sm-12 col-lg-3"
+          class="btn btn-primary col-sm-12 col-md-3 col-lg-2"
           type="submit"
         >
-            Test connection again
+          Test connection again
         </button>
       </div>
     </form>
