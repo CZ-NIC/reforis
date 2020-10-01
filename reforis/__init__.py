@@ -93,6 +93,18 @@ def create_app(config):
             version = None
         return {'version': version}
 
+    @app.template_filter('autoversion')
+    def autoversion_filter(filename):
+        try:
+            version = pkg_resources.get_distribution('reforis').version
+        except pkg_resources.DistributionNotFound:
+            version = None
+        if version:
+            newfilename = '{0}?v={1}'.format(filename, version)
+        else:
+            newfilename = '{0}'.format(filename)
+        return newfilename
+
     return app
 
 

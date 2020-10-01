@@ -12,7 +12,7 @@
         {# CSS #}
         <link
             rel="stylesheet"
-            href="{{ url_for('static', filename = 'reforis/css/app.css') }}"
+            href="{{ url_for('static', filename = 'reforis/css/app.css') | autoversion }}"
         />
 
         {# JS #} {% include 'includes/locale.html' %} {% include
