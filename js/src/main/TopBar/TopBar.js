@@ -8,24 +8,37 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "./TopBar.css";
-
+import useNotifications, {
+    useNewNotification,
+} from "../../notifications/hooks";
 import RebootDropdown from "./rebootDropdown/RebootDropdown";
 import UpdatesDropdown from "./updatesDropdown/UpdatesDropdown";
 import NotificationsDropdown from "./NotificationsDropdown/NotificationsDropdown";
 import LanguagesDropdown from "./languagesDropdown/LanguagesDropdown";
 import LogoutButton from "./LogoutButton";
 
+import "./TopBar.css";
+
 TopBar.propTypes = {
     ws: PropTypes.object.isRequired,
 };
 
 export default function TopBar({ ws }) {
+    const [notifications, dismiss, dismissAll, isLoading] = useNotifications(
+        ws
+    );
+    const newNotification = useNewNotification(ws);
     return (
         <>
-            <RebootDropdown ws={ws} />
-            <UpdatesDropdown ws={ws} />
-            <NotificationsDropdown ws={ws} />
+            <RebootDropdown notifications={notifications} />
+            <UpdatesDropdown newNotification={newNotification} />
+            <NotificationsDropdown
+                notifications={notifications}
+                dismiss={dismiss}
+                dismissAll={dismissAll}
+                isLoading={isLoading}
+                newNotification={newNotification}
+            />
             <LanguagesDropdown ws={ws} />
             <LogoutButton />
         </>

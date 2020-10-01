@@ -13,9 +13,8 @@ import {
     fireEvent,
 } from "foris/testUtils/customTestRender";
 import mockAxios from "jest-mock-axios";
-import { WebSockets } from "foris";
 import { mockJSONError } from "foris/testUtils/network";
-
+import { newNotification } from "../../../../notifications/__tests__/__fixtures__/notifications";
 import UpdatesDropdown from "../UpdatesDropdown";
 
 describe("<UpdatesDropdown/>", () => {
@@ -26,9 +25,8 @@ describe("<UpdatesDropdown/>", () => {
     const exampleHash = "303808909";
 
     beforeEach(() => {
-        const webSockets = new WebSockets();
         ({ container, getByText, getByTestId, queryByTestId } = render(
-            <UpdatesDropdown ws={webSockets} />
+            <UpdatesDropdown newNotification={newNotification} />
         ));
     });
 

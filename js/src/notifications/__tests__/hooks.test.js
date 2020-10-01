@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -18,7 +18,7 @@ import { WebSockets } from "foris";
 import mockAxios from "jest-mock-axios";
 
 import { notificationsFixture } from "./__fixtures__/notifications";
-import NotificationsDropdown from "../../main/TopBar/NotificationsDropdown/NotificationsDropdown";
+import Notifications from "../Notifications/Notifications";
 
 describe("useNotifications hook.", () => {
     let webSockets;
@@ -26,9 +26,10 @@ describe("useNotifications hook.", () => {
 
     beforeEach(async () => {
         webSockets = new WebSockets();
-        const { container } = render(<NotificationsDropdown ws={webSockets} />);
+        const { container } = render(<Notifications ws={webSockets} />);
         mockAxios.mockResponse({ data: notificationsFixture });
-        await wait(() => getByText(container, "Notifications"));
+
+        await wait(() => getByText(container, "Notification message."));
         notificationsContainer = container;
     });
 
@@ -58,9 +59,7 @@ describe("useNotifications hook.", () => {
 
     it("Dismiss notification.", () => {
         expect(mockAxios.post).toHaveBeenCalledTimes(0);
-        fireEvent.click(
-            notificationsContainer.querySelector("[class='fas fa-times']")
-        );
+        fireEvent.click(notificationsContainer.querySelector("button.close"));
         expect(mockAxios.post).toHaveBeenCalledTimes(1);
 
         const notificationToDismiss = notificationsFixture.notifications[0];

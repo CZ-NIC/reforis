@@ -11,19 +11,16 @@ import PropTypes from "prop-types";
 import { ForisURLs } from "foris";
 import { Link } from "react-router-dom";
 
-import useNotifications from "notifications/hooks";
 import RebootButton from "common/RebootButton";
 import smallScreenWidth from "../../../utils/constants";
 
 import "./RebootDropdown.css";
 
 RebootDropdown.propTypes = {
-    ws: PropTypes.object.isRequired,
+    notifications: PropTypes.array.isRequired,
 };
 
-export default function RebootDropdown({ ws }) {
-    const [notifications] = useNotifications(ws);
-
+export default function RebootDropdown({ notifications }) {
     const rebootNotification = notifications.find(
         (notification) => notification.severity === "restart"
     );
