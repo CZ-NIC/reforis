@@ -24,7 +24,7 @@ exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
           <div
             class="number"
           >
-            3
+            4
           </div>
         </div>
       </span>
@@ -175,6 +175,40 @@ exports[`<NotificationsDropdown/> Test with snapshot 1`] = `
                     </div>
                     <button
                       class="btn btn-link dismiss invisible"
+                      type="button"
+                    >
+                      <i
+                        class="fas fa-times"
+                      />
+                    </button>
+                  </div>
+                  <div
+                    class="dropdown-divider"
+                  />
+                  <div
+                    class="dropdown-item notification-item"
+                  >
+                    <i
+                      class="fa fa-exclamation-circle fa-2x"
+                    />
+                    <div
+                      class="notifications-info"
+                    >
+                      <a
+                        href="/overview?id=123-125"
+                      >
+                        <small
+                          class="text-muted"
+                        >
+                          February 1, 2000 12:00 AM
+                        </small>
+                        <p>
+                          Displayed notification message.
+                        </p>
+                      </a>
+                    </div>
+                    <button
+                      class="btn btn-link dismiss"
                       type="button"
                     >
                       <i
