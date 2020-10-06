@@ -20,7 +20,7 @@ import GuestNetwork from "guestNetwork/GuestNetwork";
 import Password from "password/Password";
 import RegionAndTime from "regionAndTime/RegionAndTime";
 import NotificationsSettings from "notificationsSettings/NotificationsSettings";
-import Reboot from "reboot/Reboot";
+import Maintenance from "maintenance/Maintenance";
 
 import About from "about/About";
 import Overview from "overview/Overview";
@@ -96,9 +96,9 @@ const PAGES = [
                 component: NotificationsSettings,
             },
             {
-                name: _("Reboot"),
-                path: "/reboot",
-                component: Reboot,
+                name: _("Maintenance"),
+                path: "/maintenance",
+                component: Maintenance,
             },
         ],
     },
