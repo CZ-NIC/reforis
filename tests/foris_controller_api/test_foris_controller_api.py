@@ -15,7 +15,17 @@ from reforis.test_utils import _test_api_endpoint_foris_controller_call
         ('wifi', 'wifi', 'get_settings', None),
         ('dns', 'dns', 'get_settings', None),
         ('dns/forwarders', 'dns', 'list_forwarders', None),
-        ('guest-network', 'guest', 'get_settings', {'dhcp': {'enabled': True, 'lease_time': 7200}}),
+        ('guest-network', 'guest', 'get_settings', {
+            'dhcp': {
+                'enabled': True,
+                'lease_time': 7200,
+                'start': 0,
+                'limit': 255
+            },
+            'ip': '192.168.2.4',
+            'netmask': '255.255.255.0'
+            }
+        ),
         ('interfaces', 'networks', 'get_settings', {'device': ''}),
 
         ('notifications', 'router_notifications', 'list', {'notifications': []}),
