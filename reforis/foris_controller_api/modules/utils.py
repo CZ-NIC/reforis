@@ -13,27 +13,23 @@ from reforis.utils import APIError
 
 def process_dhcp_get(dhcp, ip, netmask):
     network = ipaddress.IPv4Network(f'{ip}/{netmask}', strict=False)
-    start = network.network_address + dhcp['start']
-    limit = start + dhcp['limit']
+    start = network.network_address + int(dhcp['start'])
     return {
         **dhcp,
         # Convert seconds to hours
         'lease_time': dhcp['lease_time'] / 3600,
-        'start': str(start),
-        'limit': str(limit),
+        'start': str(start)
     }
 
 
 def process_dhcp_post(dhcp, ip, netmask):
     network = ipaddress.IPv4Network(f'{ip}/{netmask}', strict=False)
     start = int(ipaddress.IPv4Address(dhcp['start'])) - int(network.network_address)
-    limit = int(ipaddress.IPv4Address(dhcp['limit'])) - int(ipaddress.IPv4Address(dhcp['start']))
     return {
         **dhcp,
         # Convert hours to seconds
         'lease_time': dhcp['lease_time'] * 3600,
-        'start': start,
-        'limit': limit,
+        'start': start
     }
 
 
