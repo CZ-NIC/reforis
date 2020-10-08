@@ -190,7 +190,7 @@ exports[`<Packages/> Should render: updates enabled. 1`] = `
     Languages
   </h1>
   <p>
-    If you want to use another language than English you can select it from the following list:
+    If you want to use another language other than English you can select it from the following list:
   </p>
   <div
     class="card p-4 col-sm-12 col-lg-12 p-0 mb-3"
