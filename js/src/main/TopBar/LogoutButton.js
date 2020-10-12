@@ -6,22 +6,19 @@
  */
 
 import React, { useEffect } from "react";
-import { useHistory } from "react-router-dom";
 import { API_STATE, ForisURLs, useAPIPost } from "foris";
 import ReactTooltip from "react-tooltip";
 
 import API_URLs from "common/API";
 
 export default function LogoutButton() {
-    const history = useHistory();
     const [logout, postLogout] = useAPIPost(API_URLs.logout);
 
     useEffect(() => {
         if (logout.state === API_STATE.SUCCESS) {
-            history.push(ForisURLs.login);
+            window.location.replace(ForisURLs.login);
         }
-    }, [history, logout.state]);
-
+    }, [logout.state]);
     return (
         <div>
             <ReactTooltip id="logout" place="bottom">
