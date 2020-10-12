@@ -129,6 +129,7 @@ function NetmetrCard({ tests: { performed_tests: tests } }) {
                             <p className="card-text">
                                 <small className="text-muted">
                                     {_("Performed")}
+                                    &nbsp;
                                     {timeFromNow}
                                 </small>
                             </p>

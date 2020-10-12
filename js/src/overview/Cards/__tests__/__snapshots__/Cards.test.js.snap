@@ -397,6 +397,7 @@ exports[`<Cards/> <NetmetrCard/> Snapshot: contains tests 1`] = `
             class="text-muted"
           >
             Performed
+             
             in 2 years
           </small>
         </p>
