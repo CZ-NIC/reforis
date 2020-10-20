@@ -20,7 +20,7 @@ const IMG_STATIC_URL = `${ForisURLs.static}/imgs`;
 const WORKFLOW_DESCRIPTIONS = {
     bridge: _("This workflow will help you to setup your device to act as a local server. It means that the device will provide some kind of service to other devices within your local network (e.g. act as a network-attached storage)."),
     router: _("After you finish this workflow your device will be able to act as a fully functional router. It assumes that you want to have more or less standard network setup."),
-    min: _("Just set your password and you are ready to go. This workflow is aimed to more advanced users who intend not to use the web GUI."),
+    min: _("Just set your password and you are ready to go. This workflow is aimed to more advanced users who intend to set everything manually."),
 };
 
 const WORKFLOW_NAMES = {
