@@ -29,7 +29,7 @@ const WORKFLOW_DESCRIPTIONS = {
         "After you finish this workflow your device will be able to act as a fully functional router. It assumes that you want to have more or less standard network setup."
     ),
     min: _(
-        "Just set your password and you are ready to go. This workflow is aimed to more advanced users who intend not to use the web GUI."
+        "Just set your password and you are ready to go. This workflow is aimed to more advanced users who intend to set everything manually."
     ),
 };
 
