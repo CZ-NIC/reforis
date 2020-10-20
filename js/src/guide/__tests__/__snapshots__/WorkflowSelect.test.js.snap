@@ -72,7 +72,7 @@ exports[`<WorkflowSelect/> Snapshot. 1`] = `
             />
           </button>
           <p>
-            Just set your password and you are ready to go. This workflow is aimed to more advanced users who intend not to use the web GUI.
+            Just set your password and you are ready to go. This workflow is aimed to more advanced users who intend to set everything manually.
           </p>
         </div>
       </div>
