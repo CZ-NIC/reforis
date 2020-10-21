@@ -29,11 +29,12 @@ FORIS_CONTROLLER_MODULES = [
     'networks',
     'password',
     'router_notifications',
+    'system',
     'time',
     'updater',
     'wan',
     'web',
-    'wifi'
+    'wifi',
 ]
 
 # pylint: disable=invalid-name

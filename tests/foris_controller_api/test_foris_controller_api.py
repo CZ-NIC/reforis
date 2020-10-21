@@ -54,6 +54,7 @@ from reforis.test_utils import _test_api_endpoint_foris_controller_call
 
         ('guide', 'web', 'get_data', {'guide': {}, 'password_ready': False}),
         ('haas', 'haas', 'get_settings', {'token': '', 'enabled': False}),
+        ('system/hostname', 'system', 'get_hostname', {'hostname': ''})
     ]
 )
 def test_api_get_endpoint_foris_controller_calls(client, endpoint, module, action, response_data):
@@ -72,6 +73,7 @@ def test_api_get_endpoint_foris_controller_calls(client, endpoint, module, actio
         ('dns/test', 'wan', 'connection_test_trigger', {}),
         ('ntp-update', 'time', 'ntpdate_trigger', {}),
         ('reboot', 'maintain', 'reboot', {}),
+        ('system/hostname', 'system', 'set_hostname', {'hostname': 'moxeek'}),
         ('updates/run', 'updater', 'run', {}),
         ('guest-network', 'guest', 'update_settings',
             {
