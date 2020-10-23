@@ -37,6 +37,7 @@ const API_URLs = new Proxy(
         regionAndTime: "/region-and-time",
         ntpUpdate: "/ntp-update",
         reboot: "/reboot",
+        hostname: "/system/hostname",
 
         // Updater
         approvals: "/approvals",
