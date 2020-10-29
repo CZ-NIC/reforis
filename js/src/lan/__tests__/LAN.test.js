@@ -80,6 +80,7 @@ describe("<LAN/>", () => {
         fireEvent.click(getByText(lanContainer, "Save"));
         expect(mockAxios.post).toBeCalled();
         const data = {
+            lan_redirect: true,
             mode: "unmanaged",
             mode_unmanaged: { lan_dhcp: {}, lan_type: "dhcp" },
         };
@@ -97,6 +98,7 @@ describe("<LAN/>", () => {
         fireEvent.click(getByText(lanContainer, "Save"));
         expect(mockAxios.post).toBeCalled();
         const data = {
+            lan_redirect: true,
             mode: "unmanaged",
             mode_unmanaged: {
                 lan_type: "static",
@@ -121,6 +123,7 @@ describe("<LAN/>", () => {
         fireEvent.click(getByText(lanContainer, "Save"));
         expect(mockAxios.post).toBeCalled();
         const data = {
+            lan_redirect: true,
             mode: "unmanaged",
             mode_unmanaged: { lan_none: undefined, lan_type: "none" },
         };
@@ -138,6 +141,7 @@ describe("<LAN/>", () => {
         fireEvent.click(getByText(lanContainer, "Save"));
         expect(mockAxios.post).toBeCalled();
         const data = {
+            lan_redirect: true,
             mode: "managed",
             mode_managed: {
                 dhcp: { enabled: false },
@@ -177,6 +181,7 @@ describe("<LAN/>", () => {
             fireEvent.click(getByText(lanContainer, "Save"));
             expect(mockAxios.post).toBeCalled();
             const data = {
+                lan_redirect: true,
                 mode: "managed",
                 mode_managed: {
                     dhcp: {
