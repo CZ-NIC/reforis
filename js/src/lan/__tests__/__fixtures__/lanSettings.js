@@ -8,6 +8,7 @@
 const lanSettingsFixture = {
     interface_count: 5,
     interface_up_count: 0,
+    lan_redirect: true,
     mode: "unmanaged",
     mode_managed: {
         dhcp: {

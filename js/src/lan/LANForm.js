@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -8,7 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Select } from "foris";
+import { CheckBox, Select } from "foris";
 import LANManagedForm from "./LANManagedForm";
 import LANUnmanagedForm from "./LANUnmanagedForm";
 
@@ -35,6 +35,7 @@ LANForm.propTypes = {
         mode: PropTypes.string.isRequired,
         mode_managed: PropTypes.object,
         mode_unmanaged: PropTypes.object,
+        lan_redirect: PropTypes.bool,
     }),
     formErrors: PropTypes.shape({
         mode_managed: PropTypes.object,
@@ -73,7 +74,6 @@ export default function LANForm({
             />
         );
     }
-
     return (
         <>
             <h2>{_("LAN Settings")}</h2>
@@ -85,6 +85,17 @@ export default function LANForm({
                 onChange={setFormValue((value) => ({ mode: { $set: value } }))}
                 disabled={disabled}
             />
+            {Object.hasOwnProperty.call(formData, "lan_redirect") && (
+                <CheckBox
+                    label={_("Redirect to 192.168.1.1")}
+                    checked={formData.lan_redirect}
+                    onChange={setFormValue((value) => ({
+                        lan_redirect: { $set: value },
+                    }))}
+                    disabled={disabled}
+                />
+            )}
+
             {lanForm}
         </>
     );

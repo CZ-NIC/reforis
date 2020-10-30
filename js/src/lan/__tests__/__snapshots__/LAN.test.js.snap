@@ -78,8 +78,28 @@ it has opened ports for configuration interface and other services.
       <div
         class="form-group"
       >
+        <div
+          class="custom-control custom-checkbox "
+        >
+          <input
+            checked=""
+            class="custom-control-input"
+            id="2"
+            type="checkbox"
+          />
+          <label
+            class="custom-control-label"
+            for="2"
+          >
+            Redirect to 192.168.1.1
+          </label>
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
         <label
-          for="5"
+          for="7"
         >
           Router IP address
         </label>
@@ -88,7 +108,7 @@ it has opened ports for configuration interface and other services.
         >
           <input
             class="form-control"
-            id="5"
+            id="7"
             required=""
             type="text"
             value="192.168.1.4"
@@ -104,7 +124,7 @@ it has opened ports for configuration interface and other services.
         class="form-group"
       >
         <label
-          for="6"
+          for="8"
         >
           Network mask
         </label>
@@ -113,7 +133,7 @@ it has opened ports for configuration interface and other services.
         >
           <input
             class="form-control"
-            id="6"
+            id="8"
             required=""
             type="text"
             value="255.255.255.0"
@@ -128,12 +148,12 @@ it has opened ports for configuration interface and other services.
         >
           <input
             class="custom-control-input"
-            id="7"
+            id="9"
             type="checkbox"
           />
           <label
             class="custom-control-label"
-            for="7"
+            for="9"
           >
             Enable DHCP
           </label>
@@ -148,7 +168,7 @@ it has opened ports for configuration interface and other services.
         class="form-group"
       >
         <label
-          for="12"
+          for="15"
         >
           DHCP start
         </label>
@@ -157,7 +177,7 @@ it has opened ports for configuration interface and other services.
         >
           <input
             class="form-control"
-            id="12"
+            id="15"
             max="106"
             min="2"
             required=""
@@ -192,7 +212,7 @@ it has opened ports for configuration interface and other services.
         class="form-group"
       >
         <label
-          for="13"
+          for="16"
         >
           DHCP max leases
         </label>
@@ -201,7 +221,7 @@ it has opened ports for configuration interface and other services.
         >
           <input
             class="form-control"
-            id="13"
+            id="16"
             min="1"
             required=""
             type="number"
@@ -240,7 +260,7 @@ it has opened ports for configuration interface and other services.
         class="form-group"
       >
         <label
-          for="14"
+          for="17"
         >
           Lease time (hours)
         </label>
@@ -249,7 +269,7 @@ it has opened ports for configuration interface and other services.
         >
           <input
             class="form-control"
-            id="14"
+            id="17"
             min="1"
             required=""
             type="number"
@@ -384,8 +404,28 @@ it has opened ports for configuration interface and other services.
       <div
         class="form-group"
       >
+        <div
+          class="custom-control custom-checkbox "
+        >
+          <input
+            checked=""
+            class="custom-control-input"
+            id="2"
+            type="checkbox"
+          />
+          <label
+            class="custom-control-label"
+            for="2"
+          >
+            Redirect to 192.168.1.1
+          </label>
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
         <label
-          for="5"
+          for="7"
         >
           Router IP address
         </label>
@@ -394,7 +434,7 @@ it has opened ports for configuration interface and other services.
         >
           <input
             class="form-control"
-            id="5"
+            id="7"
             required=""
             type="text"
             value="192.168.1.4"
@@ -410,7 +450,7 @@ it has opened ports for configuration interface and other services.
         class="form-group"
       >
         <label
-          for="6"
+          for="8"
         >
           Network mask
         </label>
@@ -419,7 +459,7 @@ it has opened ports for configuration interface and other services.
         >
           <input
             class="form-control"
-            id="6"
+            id="8"
             required=""
             type="text"
             value="255.255.255.0"
@@ -434,12 +474,12 @@ it has opened ports for configuration interface and other services.
         >
           <input
             class="custom-control-input"
-            id="7"
+            id="9"
             type="checkbox"
           />
           <label
             class="custom-control-label"
-            for="7"
+            for="9"
           >
             Enable DHCP
           </label>
@@ -546,14 +586,34 @@ it has opened ports for configuration interface and other services.
       <div
         class="form-group"
       >
+        <div
+          class="custom-control custom-checkbox "
+        >
+          <input
+            checked=""
+            class="custom-control-input"
+            id="2"
+            type="checkbox"
+          />
+          <label
+            class="custom-control-label"
+            for="2"
+          >
+            Redirect to 192.168.1.1
+          </label>
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
         <label
-          for="2"
+          for="3"
         >
           IPv4 protocol
         </label>
         <select
           class="custom-select"
-          id="2"
+          id="3"
         >
           <option
             value="dhcp"
@@ -576,7 +636,7 @@ it has opened ports for configuration interface and other services.
         class="form-group"
       >
         <label
-          for="3"
+          for="4"
         >
           DHCP hostname
         </label>
@@ -585,7 +645,7 @@ it has opened ports for configuration interface and other services.
         >
           <input
             class="form-control"
-            id="3"
+            id="4"
             type="text"
             value=""
           />
@@ -692,14 +752,34 @@ it has opened ports for configuration interface and other services.
       <div
         class="form-group"
       >
+        <div
+          class="custom-control custom-checkbox "
+        >
+          <input
+            checked=""
+            class="custom-control-input"
+            id="2"
+            type="checkbox"
+          />
+          <label
+            class="custom-control-label"
+            for="2"
+          >
+            Redirect to 192.168.1.1
+          </label>
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
         <label
-          for="2"
+          for="3"
         >
           IPv4 protocol
         </label>
         <select
           class="custom-select"
-          id="2"
+          id="3"
         >
           <option
             value="dhcp"
@@ -814,14 +894,34 @@ it has opened ports for configuration interface and other services.
       <div
         class="form-group"
       >
+        <div
+          class="custom-control custom-checkbox "
+        >
+          <input
+            checked=""
+            class="custom-control-input"
+            id="2"
+            type="checkbox"
+          />
+          <label
+            class="custom-control-label"
+            for="2"
+          >
+            Redirect to 192.168.1.1
+          </label>
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
         <label
-          for="2"
+          for="3"
         >
           IPv4 protocol
         </label>
         <select
           class="custom-select"
-          id="2"
+          id="3"
         >
           <option
             value="dhcp"
@@ -844,49 +944,9 @@ it has opened ports for configuration interface and other services.
         class="form-group"
       >
         <label
-          for="6"
-        >
-          IP address
-        </label>
-        <div
-          class="input-group"
-        >
-          <input
-            class="form-control"
-            id="6"
-            required=""
-            type="text"
-            value="192.168.1.4"
-          />
-        </div>
-      </div>
-      <div
-        class="form-group"
-      >
-        <label
-          for="7"
-        >
-          Network mask
-        </label>
-        <div
-          class="input-group"
-        >
-          <input
-            class="form-control"
-            id="7"
-            required=""
-            type="text"
-            value="255.255.255.0"
-          />
-        </div>
-      </div>
-      <div
-        class="form-group"
-      >
-        <label
           for="8"
         >
-          Gateway
+          IP address
         </label>
         <div
           class="input-group"
@@ -906,7 +966,7 @@ it has opened ports for configuration interface and other services.
         <label
           for="9"
         >
-          DNS server 1
+          Network mask
         </label>
         <div
           class="input-group"
@@ -914,6 +974,46 @@ it has opened ports for configuration interface and other services.
           <input
             class="form-control"
             id="9"
+            required=""
+            type="text"
+            value="255.255.255.0"
+          />
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
+        <label
+          for="10"
+        >
+          Gateway
+        </label>
+        <div
+          class="input-group"
+        >
+          <input
+            class="form-control"
+            id="10"
+            required=""
+            type="text"
+            value="192.168.1.4"
+          />
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
+        <label
+          for="11"
+        >
+          DNS server 1
+        </label>
+        <div
+          class="input-group"
+        >
+          <input
+            class="form-control"
+            id="11"
             type="text"
             value=""
           />
@@ -928,7 +1028,7 @@ it has opened ports for configuration interface and other services.
         class="form-group"
       >
         <label
-          for="10"
+          for="12"
         >
           DNS server 2
         </label>
@@ -937,7 +1037,7 @@ it has opened ports for configuration interface and other services.
         >
           <input
             class="form-control"
-            id="10"
+            id="12"
             type="text"
             value=""
           />
