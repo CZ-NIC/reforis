@@ -1763,7 +1763,7 @@ msgid "MTU should be in range of 1280-1500."
 msgstr ""
 
 #: js/src/wan/WANForm.js:25
-msgid "PPPoE (for DSL bridges, Modem Turris, etc.)"
+msgid "PPPoE (for DSL bridges, etc.)"
 msgstr ""
 
 #: js/src/wan/WANForm.js:97

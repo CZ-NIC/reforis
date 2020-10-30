@@ -24,7 +24,7 @@ const WAN_TYPES = {
 const WAN_TYPE_CHOICES = {
     dhcp: _("DHCP (automatic configuration)"),
     static: _("Static IP address (manual configuration)"),
-    pppoe: _("PPPoE (for DSL bridges, Modem Turris, etc.)"),
+    pppoe: _("PPPoE (for DSL bridges, etc.)"),
 };
 
 const FIELDS_PROP_TYPES = {

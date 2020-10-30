@@ -876,7 +876,7 @@ router to the network, it is usually not necessary to change this setting.
           <option
             value="pppoe"
           >
-            PPPoE (for DSL bridges, Modem Turris, etc.)
+            PPPoE (for DSL bridges, etc.)
           </option>
           <option
             value="static"
