@@ -1,114 +1,108 @@
-# re**Foris**
-Re**Foris** (it means redesigned Foris) is router configuration web interface. Original Foris repository is
-[here](https://gitlab.labs.nic.cz/turris/foris).
+<div align="center">
+   <p>
+      <a href="https://gitlab.nic.cz/turris/reforis/">
+      <img src="docs/assets/reforis_logo.png" width="150" alt="reForis logo">
+      </a>
+   </p>
+</div>
+<div align="center">
+   <p>
+      <strong>
+      A simple web interface for <a href="https://docs.turris.cz/basics/models/" target="_blank">Turris</a> routers
+      </strong>
+   </p>
+</div>
+<div align="center">
+   <p>
+      <a href="https://gitlab.nic.cz/turris/reforis/reforis/-/jobs/">
+         <img
+            src="https://gitlab.nic.cz/turris/reforis/reforis/badges/master/pipeline.svg"
+            alt="Build Status"
+         />
+      </a>
+      <a href="https://hosted.weblate.org/projects/turris/reforis/">
+         <img
+            src="https://hosted.weblate.org/widgets/turris/-/reforis/svg-badge.svg" 
+            alt="Weblate - continuous localization"
+         />
+      </a>
+      <a href="https://github.com/prettier/prettier">
+         <img
+            src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg" 
+            alt="Code style: Prettier"
+         />
+      </a>
+   </p>
+</div>
+<div align="center">
+   <p>
+      reForis means redesigned Foris, and it is the latest and the most user-friendly interface for Turris routers.
+   </p>
+</div>
+<div align="center">
+   <p>
+      <a href="docs/assets/reforis_screenshot.png" target="_blank">
+      <img src="docs/assets/reforis_screenshot.png" width="700" />
+      </a>
+   </p>
+</div>
 
-## State
-Re**Foris** is not production-ready yet. It's on the tested stage and we believe it will be ready soon.
+## Features
 
-## Development installation
-Installation of re**Foris** is possible only on Turris devices due to specific software and hardware usage. It's
-possible that some environment (Docker container) with Turris routers hardware emulation will be created in the future.
+-   **Modern architecture** — reForis underlying codebase is built with a tiny
+    layer of Flask, React.js, Bootstrap 4 as a base for styling, and is compiled
+    with Webpack, bringing excellent possibilities for extension and
+    customization.
 
-### 1. Transfer and synchronize reForis source code to the router
-Use your favorite tools to keep the code synchronized with your local machine. You can automatize all these processes
-and code transferring with your favorite tools (e.g., `rsync` or built-in IDE solution).
+-   **Modular** — the interface of reForis is modular, supporting various
+    plugins that can be installed over time by users to broaden the
+    possibilities of what they can do with their router.
 
-#### 1.1 SSHFS and SFTP
-One of the possible solutions is using SSHFS or SFTP. It's very comfortable to use it with some IDE, it may allow you to
-watch the changes and synchronize only changed parts.
+-   **Responsive** — built from the ground up to work on all sorts of devices –
+    from mobile phones to widescreens. The underlying fluid layout will always
+    adapt perfectly to the available screen space.
 
-##### PyCharm
-PyCharm has a builtin tool for [remote server configuration](https://www.jetbrains.com/help/pycharm/creating-a-remote-server-configuration.html).
-##### VS Code
-It's also possible to setup remote server and synchronization with VS Code and
-[SFTP plugin](https://marketplace.visualstudio.com/items?itemName=liximomo.sftp).
-##### rsync
-You can also use any other IDE or text editor and synchronize code with SSHFS or SFTP using rsync.
+-   **International** — thanks to many contributors, reForis includes
+    translations for more than 10 languages and offers community [to contribute](https://docs.turris.cz/geek/contributing/translation/)
+    via web-based continuous localization tool Weblate.
 
-#### 1.2 Ignore unnecessary paths
-It's better to not synchronize subsequent directories with a router:
- * `js`
- * `venv`
- * `pytest_cache`
+-   **Accessible** — reForis provides extensible keyboard navigation and
+    semantic markup, including role attributes and landmarks. Furthermore, the
+    layout is entirely based on `rem` values, respecting the user's default font
+    size.
 
-So just exclude it.
+## Supported Devices
 
-#### Remark
-eMMC can only sustain 3–10K rewrite cycles before it starts to cause bit errors. In this regard, it’s better to send the
-code to the RAM (`/tmp` or `/var` directories are mapped to the RAM).
+-   [x] Turris Shield
+-   [x] Turris Omnia
+-   [x] Turris MOX
+-   [x] Turris 1.x
 
-### 2. Check Python version
-Minimal required Python version is **3.6**.
+## Development
 
-Please check if you have the same Python versions in Makefile (variable `$ROUTER_PYTHON`) and on the system installed.
-If not then correct the version in Makefile.
-
-### 3. Install reForis application with production server (lighttpd)
-**On the router!**
-```bash
-$ make install-with-lighttpd
-```
-
-### 4. Build JS
-**You have to build JS sources on some other machine with `node-npm` installed!**
-
-```bash
-$ make prepare-dev
-$ make build-js
-```
-Then don't forget to transfer it to the `/tmp/reforis/reforis_static/reforis/js/app.min.js`.
-#### Note
-If you've made some changes in JS part of code then it has to be rebuilt and sent to the router.
-
-### 5. Compile translations
-**On the local computer!**
-```bash
-$ make compile-messages
-```
-Then transfer it to the router.
-
-### 6. Restart the lighttpd server
-**On the router!**
-```bash
-/etc/init.d/lighttpd restart
-```
-or
-```bash
-service lighttpd restart
-```
-#### Note
-The lighttpd server has to be restarted after any changes in Python code were made.
-
-## Developing foris JS library
-
-In case you need to see changes in foris JS immediately, use `npm link` command. As a result, reForis will use sources from local directory. When a change is made, reForis is rebuilt with that adjustment applied.
-
-Following commands assume that reForis and foris JS repositories are in the same directory.
-
-```bash
-# Start in root of the repository
-cd js
-npm link ../../foris-js
-cd ..
-# Start build in watch mode
-make watch-js
-```
-
-The same principle applies to plugins.
+The development of reForis is possible only on Turris devices due to specific
+software and hardware usage. Some environment (Docker container), with Turris
+routers hardware emulation, may be created in the future.
 
 ## Documentation
-reForis has extensive documentation. It's simple to build docs via:
+
+reForis has extensive documentation. It's simple to build via:
+
 ```bash
-$ make docs
+make prepare-docs
+make docs
 ```
+
 Then you can open HTML documentation in `./docs/build/index.html`.
 
 ## Plugins
-It's possible to extend re**Foris** functionality with plugins. For more information about plugins development see
-re**Foris** docs and [`reforis_diagnostics` demonstration plugin](https://gitlab.labs.nic.cz/turris/reforis/reforis-diagnostics).
 
-## Supported devices
- * [X] Turris Omnia
- * [X] Turris 1.0
- * [X] Turris 1.1
- * [ ] MOX
+It is also possible to extend reForis functionality with plugins.\
+For more information about the development of plugins, see [reForis
+documentation](#documentation) and [`reforis_diagnostics` demonstration
+plugin](https://gitlab.nic.cz/turris/reforis/reforis-diagnostics).
+
+## Contributing
+
+All contributions are welcome!\
+Please take a look at [CONTRIBUTING.md](CONTRIBUTING.md)
