@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2020-11-10 10:38+0100\n"
-"PO-Revision-Date: 2020-07-09 23:41+0000\n"
+"PO-Revision-Date: 2020-11-11 11:28+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/turris/"
+"reforis/nb_NO/>\n"
 "Language: nb\n"
-"Language-Team: Norwegian Bokmål "
-"<https://hosted.weblate.org/projects/turris/reforis/nb_NO/>\n"
-"Plural-Forms: nplurals=2; plural=n != 1\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.4-dev\n"
 "Generated-By: Babel 2.8.0\n"
 
 #: js/src/about/About.js:22 js/src/main/pages.js:140
@@ -152,11 +153,11 @@ msgstr "Tildelningstid (timer)"
 
 #: js/src/common/network/DHCPValidators.js:15
 msgid "Value must be a number."
-msgstr ""
+msgstr "Verdi må være et nummer."
 
 #: js/src/common/network/DHCPValidators.js:18
 msgid "Value must be positive."
-msgstr ""
+msgstr "Verdi må være positiv."
 
 #: js/src/common/network/DHCPValidators.js:29
 msgid "Minimum lease time is 1 hour."
@@ -200,7 +201,7 @@ msgstr "Dette feltet er påkrevd."
 
 #: js/src/common/network/validators.js:12
 msgid "This is not a valid network mask."
-msgstr ""
+msgstr "Dette er ikke en gyldig nettverksmaske."
 
 #: js/src/connectionTest/ConnectionTestButton.js:26
 #, fuzzy
@@ -283,7 +284,7 @@ msgstr ""
 
 #: js/src/dns/DNSForm.js:83
 msgid "Use forwarding"
-msgstr ""
+msgstr "Bruk videresending"
 
 #: js/src/dns/DNSForm.js:99
 msgid "Enable DNSSEC"
@@ -324,7 +325,7 @@ msgstr ""
 
 #: js/src/dns/Forwarders/ForwardersTable.js:37
 msgid "Forwarders"
-msgstr ""
+msgstr "Videresendere"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:38
 msgid "Actions"
@@ -332,7 +333,7 @@ msgstr "Handlinger"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:45
 msgid "Use provider's DNS resolver"
-msgstr ""
+msgstr "Bruk tilbyderens DNS-utleder"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:142
 msgid "Edit"
@@ -389,27 +390,27 @@ msgstr ""
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:44
 msgid "Forwarder saved successfully."
-msgstr ""
+msgstr "Videresender lagret."
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:46
 msgid "Can't save forwarder."
-msgstr ""
+msgstr "Kan ikke lagre videresender."
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:53
 msgid "Forwarder added successfully."
-msgstr ""
+msgstr "Videresender lagt til."
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:55
 msgid "Can't add new forwarder."
-msgstr ""
+msgstr "Kan ikke legge til ny videresender."
 
 #: js/src/dns/Forwarders/Forwarder/validator.js:20
 msgid "Forwarder name should have at least one symbol."
-msgstr ""
+msgstr "Videresendernavn må han minst ett symbol."
 
 #: js/src/dns/Forwarders/Forwarder/validator.js:28
 msgid "Hostname should have at least one symbol."
-msgstr ""
+msgstr "Vertsnavn må ha minst ett symbol."
 
 #: js/src/dns/Forwarders/Forwarder/validator.js:33
 msgid "TLS pin should have at least one symbol."
@@ -666,7 +667,7 @@ msgstr ""
 
 #: js/src/guide/steps.js:28 js/src/main/pages.js:66
 msgid "Interfaces"
-msgstr ""
+msgstr "Grensesnitt"
 
 #: js/src/guide/steps.js:32 js/src/regionAndTime/TimeForm.js:124
 msgid "Time"
@@ -698,15 +699,15 @@ msgstr "Fullfør"
 
 #: js/src/guide/GuideControls/NextStepButton.js:28
 msgid "Next step"
-msgstr ""
+msgstr "Neste steg"
 
 #: js/src/guide/GuideControls/SkipGuideButton.js:32
 msgid "Skip guide"
-msgstr ""
+msgstr "Hopp over veiledning"
 
 #: js/src/guide/GuidePages/GuideFinish.js:18
 msgid "Guide Finished"
-msgstr ""
+msgstr "Veiledning fullført"
 
 #: js/src/guide/GuidePages/GuideFinish.js:20
 msgid ""
@@ -749,7 +750,7 @@ msgstr ""
 
 #: js/src/guide/GuidePages/WorkflowSelect.js:37
 msgid "Local Server"
-msgstr ""
+msgstr "Lokal tjener"
 
 #: js/src/guide/GuidePages/WorkflowSelect.js:38 js/src/lan/LANForm.js:29
 msgid "Router"
@@ -757,7 +758,7 @@ msgstr "Ruter"
 
 #: js/src/guide/GuidePages/WorkflowSelect.js:39
 msgid "Minimal"
-msgstr ""
+msgstr "Minimal"
 
 #: js/src/guide/GuidePages/WorkflowSelect.js:57
 msgid "Cannot set workflow."
@@ -852,7 +853,7 @@ msgstr ""
 #: js/src/interfaces/SelectedInterface.js:68
 #, python-format
 msgid "Interface %s %s"
-msgstr ""
+msgstr "Grensesnitt %s %s"
 
 #: js/src/interfaces/SelectedInterface.js:71
 msgid "Network"
@@ -872,7 +873,7 @@ msgstr ""
 
 #: js/src/interfaces/SelectedInterface.js:98
 msgid "Interface ID"
-msgstr ""
+msgstr "Grensesnitts-ID"
 
 #: js/src/interfaces/SelectedInterface.js:102
 msgid "Type"
@@ -888,11 +889,11 @@ msgstr "Lenkehastighet"
 
 #: js/src/interfaces/SelectedInterface.js:112
 msgid "N/A"
-msgstr ""
+msgstr "I/T"
 
 #: js/src/interfaces/constants.js:12
 msgid "Unassigned"
-msgstr ""
+msgstr "Ikke tildelt"
 
 #: js/src/lan/LAN.js:29
 msgid ""
@@ -1006,7 +1007,7 @@ msgstr "Pakker"
 #: js/src/main/TopBar/languagesDropdown/LanguagesDropdown.js:47
 #: js/src/main/pages.js:127 js/src/packageManagement/languages/Languages.js:18
 msgid "Languages"
-msgstr ""
+msgstr "Språk"
 
 #: js/src/main/pages.js:134
 msgid "Advanced Administration"
@@ -1030,7 +1031,7 @@ msgstr "Forkast alt"
 
 #: js/src/main/TopBar/rebootDropdown/RebootDropdown.js:51
 msgid "Reboot Required"
-msgstr ""
+msgstr "Omstart kreves"
 
 #: js/src/main/TopBar/rebootDropdown/RebootDropdown.js:63
 #: js/src/overview/Cards/NetmetrCard.js:119
@@ -1039,7 +1040,7 @@ msgstr "Detaljer"
 
 #: js/src/main/TopBar/updatesDropdown/UpdatesDropdown.js:97
 msgid "Approve Update"
-msgstr ""
+msgstr "Godkjenn oppgradering"
 
 #: js/src/main/TopBar/updatesDropdown/UpdatesDropdown.js:127
 msgid ""
@@ -1060,7 +1061,7 @@ msgstr "Ignorer"
 #: js/src/main/TopBar/updatesDropdown/UpdatesDropdown.js:154
 #: js/src/packageManagement/updates/UpdateApproval.js:34
 msgid "Cannot install updates."
-msgstr ""
+msgstr "Kan ikke installere oppgraderinger."
 
 #: js/src/notificationsSettings/CommonForm.js:17
 msgid "Reboot is required"
@@ -1096,7 +1097,7 @@ msgstr "Egendefinert"
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:81
 msgid "Email Notifications"
-msgstr ""
+msgstr "E-postmerknader"
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:83
 msgid "Enable email notifications"
@@ -1128,7 +1129,7 @@ msgstr "STARTTLS"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:61
 msgid "SMTP Settings"
-msgstr ""
+msgstr "SMTP-innstillinger"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:63
 msgid "Sender address (From)"
@@ -1178,7 +1179,7 @@ msgstr ""
 
 #: js/src/notificationsSettings/TestNotification.js:146
 msgid "Confirm"
-msgstr ""
+msgstr "Bekreft"
 
 #: js/src/notificationsSettings/helpTexts.js:9
 #, fuzzy
@@ -1341,7 +1342,7 @@ msgstr ""
 
 #: js/src/packageManagement/packages/PackagesForm.js:29
 msgid "Packages List"
-msgstr ""
+msgstr "Pakkeliste"
 
 #: js/src/packageManagement/updateSettings/LicenceModal.js:24
 msgid "Most Important License Agreement Points"
@@ -1433,11 +1434,11 @@ msgstr ""
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:51
 msgid "Delay (days)"
-msgstr ""
+msgstr "Forsinkelse (dager)"
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:63
 msgid "Reboot time"
-msgstr ""
+msgstr "Omstartstid"
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:88
 msgid "Time should be in HH:MM format."
@@ -1461,13 +1462,15 @@ msgstr ""
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:21
 msgid "Delayed updates"
-msgstr ""
+msgstr "Utsatte oppgraderinger"
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:22
 msgid ""
 "Updates will be installed with an adjustable delay. You can also approve "
 "them manually."
 msgstr ""
+"Oppgraderinger vil bli installert med justerbar forsinkelse. Du kan også "
+"godkjenne dem manuelt."
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:28
 msgid "Update approval needed"
@@ -1551,7 +1554,7 @@ msgstr ""
 
 #: js/src/packageManagement/updates/Updates.js:53
 msgid "Check and install updates"
-msgstr ""
+msgstr "Sjekk og installer oppgraderinger"
 
 #: js/src/packageManagement/updates/Updates.js:54
 msgid "Manually check for updates and install them immediately."
@@ -1578,7 +1581,7 @@ msgstr ""
 
 #: js/src/password/ForisPasswordForm.js:48
 msgid "Foris Password"
-msgstr ""
+msgstr "Foris-passord"
 
 #: js/src/password/ForisPasswordForm.js:50
 msgid "Set your password for this administration interface."
@@ -1628,7 +1631,7 @@ msgstr ""
 
 #: js/src/password/Password.js:108
 msgid "Password changed successfully."
-msgstr ""
+msgstr "Passord endret."
 
 #: js/src/password/Password.js:188
 msgid "Password can't be empty."
@@ -1664,7 +1667,7 @@ msgstr "Nytt avansert administrasjonspassord"
 
 #: js/src/reboot/Reboot.js:16
 msgid "Device Reboot"
-msgstr ""
+msgstr "Enhetsomstart"
 
 #: js/src/reboot/Reboot.js:18
 msgid ""
@@ -1677,7 +1680,7 @@ msgstr ""
 
 #: js/src/regionAndTime/RegionAndTime.js:30
 msgid "Region and Time"
-msgstr ""
+msgstr "Sted og tid"
 
 #: js/src/regionAndTime/RegionAndTime.js:32
 msgid ""
@@ -1694,7 +1697,7 @@ msgstr ""
 
 #: js/src/regionAndTime/RegionForm.js:63
 msgid "Region Settings"
-msgstr ""
+msgstr "Stedsinnstillinger"
 
 #: js/src/regionAndTime/RegionForm.js:65
 msgid ""
@@ -1704,27 +1707,27 @@ msgstr ""
 
 #: js/src/regionAndTime/RegionForm.js:72
 msgid "Continent or ocean"
-msgstr ""
+msgstr "Kontinent eller hav"
 
 #: js/src/regionAndTime/RegionForm.js:87
 msgid "Country"
-msgstr ""
+msgstr "Land"
 
 #: js/src/regionAndTime/RegionForm.js:99
 msgid "Timezone"
-msgstr ""
+msgstr "Tidssone"
 
 #: js/src/regionAndTime/TimeForm.js:27
 msgid "Via NTP"
-msgstr ""
+msgstr "Via NTP"
 
 #: js/src/regionAndTime/TimeForm.js:28
 msgid "Manually"
-msgstr ""
+msgstr "Manuelt"
 
 #: js/src/regionAndTime/TimeForm.js:105
 msgid "Time Settings"
-msgstr ""
+msgstr "Tidsinnstillinger"
 
 #: js/src/regionAndTime/TimeForm.js:107
 msgid ""
@@ -1741,12 +1744,13 @@ msgid "Hide NTP servers list"
 msgstr ""
 
 #: js/src/regionAndTime/TimeForm.js:178
+#, fuzzy
 msgid "Show NTP servers list"
-msgstr ""
+msgstr "Vis NTP-tjenerliste"
 
 #: js/src/regionAndTime/TimeForm.js:182
 msgid "NTP Servers"
-msgstr ""
+msgstr "NTP-tjenere"
 
 #: js/src/routerStateHandler/NetworkRestartHandler.js:29
 #, python-format
@@ -2020,15 +2024,15 @@ msgstr "Feil passord."
 
 #: reforis/foris_controller_api/modules/dns.py:41
 msgid "Can't add new DNS forwarder."
-msgstr ""
+msgstr "Kan ikke legge til ny DNS-videresender."
 
 #: reforis/foris_controller_api/modules/dns.py:47
 msgid "Can't set DNS forwarder."
-msgstr ""
+msgstr "Kan ikke sette DNS-videresender."
 
 #: reforis/foris_controller_api/modules/dns.py:52
 msgid "Can't delete DNS forwarder."
-msgstr ""
+msgstr "Kan ikke slette DNS-videresender."
 
 #: reforis/foris_controller_api/modules/password.py:41
 msgid "Wrong current password."
@@ -2067,7 +2071,7 @@ msgstr ""
 
 #: reforis/foris_controller_api/modules/updater.py:170
 msgid "Cannot start updater"
-msgstr ""
+msgstr "Kan ikke starte oppgraderer"
 
 #: reforis/foris_controller_api/modules/updater.py:199
 msgid "You can't set it with disabled automatic updates."
@@ -2075,7 +2079,7 @@ msgstr ""
 
 #: reforis/templates/guide.html:10
 msgid "Guide"
-msgstr ""
+msgstr "Veiledning"
 
 #: reforis/templates/login.html:32
 msgid "Log in"
@@ -2111,7 +2115,7 @@ msgstr ""
 
 #: reforis/templates/errors/403.html:4
 msgid "403 - Forbidden"
-msgstr ""
+msgstr "403 - Forbudt"
 
 #: reforis/templates/errors/403.html:9
 msgid "Forbidden You don't have permission to access"
@@ -2124,11 +2128,11 @@ msgstr "Ønsker du å <a href=\"%(link)s\">logge inn</a>?"
 
 #: reforis/templates/errors/404.html:4
 msgid "404 - Page not found"
-msgstr ""
+msgstr "404 - Fant ikke siden"
 
 #: reforis/templates/errors/404.html:9
 msgid "Page not found :("
-msgstr ""
+msgstr "Fant ikke siden :("
 
 #: reforis/templates/errors/500.html:4
 msgid "Server error"
@@ -2136,7 +2140,7 @@ msgstr "Tjenerfeil"
 
 #: reforis/templates/errors/500.html:8
 msgid "500 - Server error"
-msgstr ""
+msgstr "500 - Tjenerfeil"
 
 #~ msgid ""
 #~ "\n"
@@ -2414,4 +2418,3 @@ msgstr ""
 
 #~ msgid "Foris"
 #~ msgstr "Foris"
-
