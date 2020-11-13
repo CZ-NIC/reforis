@@ -6,9 +6,10 @@
  */
 
 import React from "react";
-
+import { isPluginInstalled } from "foris";
 import Reboot from "./Reboot";
 import FactoryReset from "./FactoryReset";
+import Syslog from "./Syslog/Syslog";
 
 export default function Maintenance() {
     return (
@@ -22,6 +23,7 @@ export default function Maintenance() {
 
             <Reboot />
             <FactoryReset />
+            {isPluginInstalled("Storage") ? <Syslog /> : null}
         </>
     );
 }
