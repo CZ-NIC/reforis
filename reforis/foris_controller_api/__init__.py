@@ -25,6 +25,7 @@ FORIS_CONTROLLER_MODULES = [
     'networks',
     'password',
     'router_notifications',
+    'system',
     'time',
     'updater',
     'wan',

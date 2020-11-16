@@ -44,6 +44,7 @@ from reforis.test_utils import _test_api_endpoint_foris_controller_call
 
         ('guide', 'web', 'get_data', {'guide': {}, 'password_ready': False}),
         ('haas', 'haas', 'get_settings', {'token': '', 'enabled': False}),
+        ('system/customization', 'system', 'get_customization', {'customization': 'shield'}),
     ]
 )
 def test_api_get_endpoint_foris_controller_calls(client, endpoint, module, action, response_data):
