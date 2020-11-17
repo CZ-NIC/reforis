@@ -8,16 +8,17 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2020-11-10 10:38+0100\n"
-"PO-Revision-Date: 2020-08-02 01:41+0000\n"
-"Last-Translator: Daniel <dan.ef1999@gmail.com>\n"
+"PO-Revision-Date: 2020-11-18 10:02+0000\n"
+"Last-Translator: Artem <KovalevArtem.ru@gmail.com>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/turris/reforis/"
+"ru/>\n"
 "Language: ru\n"
-"Language-Team: Russian "
-"<https://hosted.weblate.org/projects/turris/reforis/ru/>\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.4-dev\n"
 "Generated-By: Babel 2.8.0\n"
 
 #: js/src/about/About.js:22 js/src/main/pages.js:140
@@ -42,7 +43,7 @@ msgstr "Серийный номер"
 
 #: js/src/about/About.js:56
 msgid "reForis version"
-msgstr ""
+msgstr "Версия reForis"
 
 #: js/src/about/About.js:60
 msgid "Turris OS version"
@@ -87,7 +88,7 @@ msgstr "Подтвердите перезагрузку"
 
 #: js/src/common/ScrollToTopArrow.js:30
 msgid "Go to top"
-msgstr ""
+msgstr "Наверх"
 
 #: js/src/common/network/DHCPClientForm.js:14
 msgid "Hostname which will be provided to DHCP server."
@@ -384,7 +385,7 @@ msgstr "Код TLS"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:116
 msgid "Save"
-msgstr ""
+msgstr "Сохранить"
 
 #: js/src/dns/Forwarders/Forwarder/IPAddressesForm.js:13
 msgid "IPv4"
@@ -396,15 +397,15 @@ msgstr "IPv6"
 
 #: js/src/dns/Forwarders/Forwarder/IPAddressesForm.js:51
 msgid "${label} Addresses"
-msgstr ""
+msgstr "${label} Адреса"
 
 #: js/src/dns/Forwarders/Forwarder/IPAddressesForm.js:56
 msgid "${label} #${index + 1}"
-msgstr ""
+msgstr "${label} #${index + 1}"
 
 #: js/src/dns/Forwarders/Forwarder/IPAddressesForm.js:80
 msgid "Add ${label} address"
-msgstr ""
+msgstr "Добавить ${label} адрес"
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:44
 msgid "Forwarder saved successfully."
@@ -529,7 +530,7 @@ msgstr ""
 
 #: js/src/guestNetwork/GuestNetworkNotification.js:16
 msgid "All network interfaces of this network are currently down."
-msgstr ""
+msgstr "Все сетевые интерфейсы этой сети в настоящее время недоступны."
 
 #: js/src/guide/constants.js:13
 msgid ""
@@ -632,10 +633,11 @@ msgstr ""
 #: js/src/guide/constants.js:64
 msgid "Now you need to configure automatic updates on your device."
 msgstr ""
+"Теперь необходимо настроить автоматические обновления на вашем устройстве."
 
 #: js/src/guide/constants.js:67
 msgid "Please wait till the updater finishes its run."
-msgstr ""
+msgstr "Подождите, пока сервис обновлений запустится."
 
 #: js/src/guide/constants.js:76
 msgid ""
@@ -769,7 +771,7 @@ msgstr "Завершить"
 
 #: js/src/guide/GuideControls/NextStepButton.js:28
 msgid "Next step"
-msgstr ""
+msgstr "Следующий шаг"
 
 #: js/src/guide/GuideControls/SkipGuideButton.js:32
 msgid "Skip guide"
@@ -855,11 +857,11 @@ msgstr ""
 
 #: js/src/guide/GuidePages/WorkflowSelect.js:84
 msgid "Recommended"
-msgstr ""
+msgstr "Рекомендуемые"
 
 #: js/src/interfaces/Interfaces.js:25
 msgid "Network Interfaces"
-msgstr "Сетевые Интерфейсы"
+msgstr "Сетевые интерфейсы"
 
 #: js/src/interfaces/Interfaces.js:27
 msgid ""
@@ -1058,7 +1060,7 @@ msgstr "Режим локальной сети"
 
 #: js/src/lan/LANForm.js:90
 msgid "Redirect to 192.168.1.1"
-msgstr ""
+msgstr "Перенаправление на 192.168.1.1"
 
 #: js/src/lan/LANManagedForm.js:29
 msgid "Router's IP address in the inner network."
@@ -1083,7 +1085,7 @@ msgstr "Протокол IPv4"
 
 #: js/src/main/pages.js:34 js/src/overview/Overview.js:67
 msgid "Overview"
-msgstr ""
+msgstr "Обзор"
 
 #: js/src/main/pages.js:40
 msgid "Network Settings"
@@ -1288,15 +1290,15 @@ msgstr ""
 
 #: js/src/notificationsSettings/TestNotification.js:104
 msgid "Test notification"
-msgstr ""
+msgstr "Тестовое уведомление"
 
 #: js/src/notificationsSettings/TestNotification.js:117
 msgid "Send test notification"
-msgstr ""
+msgstr "Отправить тестовое уведомление"
 
 #: js/src/notificationsSettings/TestNotification.js:146
 msgid "Confirm"
-msgstr ""
+msgstr "Подтвердить"
 
 #: js/src/notificationsSettings/helpTexts.js:9
 msgid ""
@@ -1364,68 +1366,68 @@ msgstr ""
 
 #: js/src/overview/Cards/AutomaticUpdatesCard.js:43
 msgid "Automatic Updates"
-msgstr ""
+msgstr "Автоматические обновления"
 
 #: js/src/overview/Cards/AutomaticUpdatesCard.js:46
 #: js/src/overview/Cards/DataCollectionCard.js:46
 #: js/src/overview/Cards/DynamicFirewallCard.js:26
 msgid "Activated"
-msgstr ""
+msgstr "Активирован"
 
 #: js/src/overview/Cards/AutomaticUpdatesCard.js:46
 #: js/src/overview/Cards/DataCollectionCard.js:46
 #: js/src/overview/Cards/DynamicFirewallCard.js:26
 msgid "Disabled"
-msgstr ""
+msgstr "Отключён"
 
 #: js/src/overview/Cards/DataCollectionCard.js:43
 msgid "Data Collection"
-msgstr ""
+msgstr "Сбор данных"
 
 #: js/src/overview/Cards/DynamicFirewallCard.js:23
 msgid "Dynamic Firewall"
-msgstr ""
+msgstr "Динамический межсетевой экран"
 
 #: js/src/overview/Cards/NetmetrCard.js:47
 msgid "NetMetr"
-msgstr ""
+msgstr "NetMetr"
 
 #: js/src/overview/Cards/NetmetrCard.js:53
 msgid "Go to NetMetr"
-msgstr ""
+msgstr "Перейти в NetMetr"
 
 #: js/src/overview/Cards/NetmetrCard.js:68
 #: js/src/overview/Cards/NetmetrCard.js:84
 msgid "Megabit per second"
-msgstr ""
+msgstr "Мегабит в секунду"
 
 #: js/src/overview/Cards/NetmetrCard.js:99
 msgid "Ping"
-msgstr ""
+msgstr "Пинг"
 
 #: js/src/overview/Cards/NetmetrCard.js:102
 msgid "Millisecond"
-msgstr ""
+msgstr "Миллисекунд"
 
 #: js/src/overview/Cards/NetmetrCard.js:112
 msgid "Link"
-msgstr ""
+msgstr "Ссылка"
 
 #: js/src/overview/Cards/NetmetrCard.js:131
 msgid "Performed"
-msgstr ""
+msgstr "Выполнено"
 
 #: js/src/overview/Cards/NetmetrCard.js:139
 msgid "No tests have been performed lately."
-msgstr ""
+msgstr "В последнее время никаких тестов не проводилось."
 
 #: js/src/overview/Cards/OpenVPNClientsCard.js:42
 msgid "OpenVPN Clients"
-msgstr ""
+msgstr "Клиенты OpenVPN"
 
 #: js/src/overview/Cards/OpenVPNClientsCard.js:48
 msgid "Go to OpenVPN Client Settings"
-msgstr ""
+msgstr "Перейдите в настройки клиента OpenVPN"
 
 #: js/src/overview/Cards/OpenVPNClientsCard.js:86
 msgid "There are no clients added yet."
@@ -1439,7 +1441,7 @@ msgstr ""
 
 #: js/src/packageManagement/packages/PackageCheckBox.js:53
 msgid "More details"
-msgstr ""
+msgstr "Дополнительная информация"
 
 #: js/src/packageManagement/packages/Packages.js:21
 msgid ""
@@ -2226,13 +2228,14 @@ msgstr ""
 
 #: reforis/foris_controller_api/modules/router_notifications.py:122
 msgid "Testing message was sent, please check your inbox."
-msgstr ""
+msgstr "Тестовое сообщение отправлено, проверьте вашу почту."
 
 #: reforis/foris_controller_api/modules/router_notifications.py:125
 msgid ""
 "Sending of the testing message failed, your configuration is possibly "
 "wrong."
 msgstr ""
+"Не удалось отправить тестовое сообщение, возможно, ошибка в конфигурации."
 
 #: reforis/foris_controller_api/modules/updater.py:60
 msgid "Cannot change automatic restart settings."
@@ -2255,6 +2258,7 @@ msgstr "Не удается запустить Сервис обновлений
 #: reforis/foris_controller_api/modules/updater.py:199
 msgid "You can't set it with disabled automatic updates."
 msgstr ""
+"Вы не можете установить его с отключенными автоматическими обновлениями."
 
 #: reforis/templates/guide.html:10
 msgid "Guide"
@@ -2270,11 +2274,11 @@ msgstr "Перейти к LuCI"
 
 #: reforis/templates/login.html:33
 msgid "or"
-msgstr ""
+msgstr "или"
 
 #: reforis/templates/login.html:34
 msgid "back to select"
-msgstr ""
+msgstr "вернуться к выбору"
 
 #: reforis/templates/errors/400.html:4 reforis/templates/errors/400.html:8
 msgid "400 - Bad Request"
@@ -2319,7 +2323,7 @@ msgstr "Ошибка сервера"
 
 #: reforis/templates/errors/500.html:8
 msgid "500 - Server error"
-msgstr ""
+msgstr "500 - Ошибка сервера"
 
 #~ msgid ""
 #~ "\n"
@@ -2710,4 +2714,3 @@ msgstr ""
 
 #~ msgid "Foris"
 #~ msgstr "Foris"
-
