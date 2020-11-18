@@ -310,9 +310,9 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
           </label>
         </div>
       </div>
-      <h4>
+      <h3>
         SMTP Settings
-      </h4>
+      </h3>
       <div
         class="form-group"
       >
@@ -438,7 +438,7 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
         <label
           for="10"
         >
-          User
+          Username
         </label>
         <div
           class="input-group"
@@ -447,7 +447,7 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
             class="form-control"
             id="10"
             type="text"
-            value=""
+            value="root"
           />
         </div>
       </div>

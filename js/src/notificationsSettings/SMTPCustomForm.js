@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2019-2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -30,14 +30,14 @@ SMTPCustomForm.propTypes = {
         host: PropTypes.string,
         port: PropTypes.number,
         security: PropTypes.oneOf(["none", "ssl", "starttls"]),
-        user: PropTypes.string,
+        username: PropTypes.string,
         password: PropTypes.string,
     }).isRequired,
     formErrors: PropTypes.shape({
         from: PropTypes.string,
         host: PropTypes.string,
         port: PropTypes.string,
-        user: PropTypes.string,
+        username: PropTypes.string,
         password: PropTypes.string,
     }),
     setFormValue: PropTypes.func.isRequired,
@@ -58,7 +58,7 @@ export default function SMTPCustomForm({
 }) {
     return (
         <>
-            <h4>{_("SMTP Settings")}</h4>
+            <h3>{_("SMTP Settings")}</h3>
             <EmailInput
                 label={_("Sender address (From)")}
                 value={formData.from || ""}
@@ -103,10 +103,10 @@ export default function SMTPCustomForm({
                 disabled={disabled}
             />
             <TextInput
-                label={_("User")}
-                value={formData.user || ""}
+                label={_("Username")}
+                value={formData.username || ""}
                 onChange={setFormValue((value) => ({
-                    smtp_custom: { user: { $set: value } },
+                    smtp_custom: { username: { $set: value } },
                 }))}
                 disabled={disabled}
             />
