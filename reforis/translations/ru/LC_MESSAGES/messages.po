@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2020-11-10 10:38+0100\n"
-"PO-Revision-Date: 2020-11-18 10:02+0000\n"
-"Last-Translator: Artem <KovalevArtem.ru@gmail.com>\n"
+"PO-Revision-Date: 2020-11-19 15:51+0000\n"
+"Last-Translator: Алексей Леньшин <alenshin@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/turris/reforis/"
 "ru/>\n"
 "Language: ru\n"
@@ -32,6 +32,9 @@ msgid ""
 "href=\"mailto:tech.support@turris.cz\" target=\"_blank\">customer "
 "support</a>."
 msgstr ""
+"Здесь вы можете найти некоторую информацию о вашем устройстве. Включите его "
+"в свое сообщение, если вы обратитесь в нашу <a href=\"mailto:tech."
+"support@turris.cz\" target=\"_blank\"> службу поддержки </a>."
 
 #: js/src/about/About.js:48
 msgid "Device"
@@ -59,6 +62,9 @@ msgid ""
 " functions and varying stability - you can pick, which branch you want to"
 " test."
 msgstr ""
+"ОС Turris в настоящее время выпускается в различных ветках, которые имеют "
+"разные функции и разную стабильность - вы можете выбрать, какую ветку хотите "
+"протестировать."
 
 #: js/src/about/About.js:87
 msgid "Kernel version"
@@ -253,6 +259,22 @@ msgid ""
 "this is a serious flaw on their side.</p>\n"
 "            "
 msgstr ""
+"\n"
+"<p> Маршрутизатор Turris использует собственное разрешение DNS с поддержкой "
+"DNSSEC. Оно может работать независимо или может пересылать ваши DNS-запросы "
+"вашему интернет-провайдеру. <p/>\n"
+"<p> Следующий параметр определяет поведение DNS-преобразователя. Обычно "
+"разрешение DNS провайдера лучше использовать в сетях, где онО работает "
+"должным образом. Если по какой-то причине это не работает, необходимо "
+"использовать прямое разрешение без пересылки. <p/> \n"
+"<p> В редких случаях интернет-провайдеры имеют неправильно настроенную сеть, "
+"что мешает проверке DNSSEC. Если у вас возникли проблемы с DNS, вы можете "
+"<b> временно </b> отключить проверку DNSSEC, чтобы определить источник "
+"проблемы. Однако имейте в виду, что без проверки DNSSEC вы уязвимы для атак "
+"с подменой DNS! Поэтому мы <b> рекомендуем оставить DNSSEC включенным </b> и "
+"разрешить ситуацию с вашим интернет-провайдером, поскольку это серьезная "
+"ошибка с их стороны. </p>\n"
+"            "
 
 #: js/src/dns/DNS.js:62 js/src/overview/Overview.js:81 js/src/wan/WAN.js:50
 msgid "Connection Test"
@@ -527,6 +549,9 @@ msgid ""
 "here will become fully functional after you assign a network interface to"
 " this network."
 msgstr ""
+"В настоящее время эта сеть не содержит никаких устройств. Внесенные "
+"изменения станут полностью работоспособными после назначения сетевого "
+"интерфейса к этой сети."
 
 #: js/src/guestNetwork/GuestNetworkNotification.js:16
 msgid "All network interfaces of this network are currently down."
@@ -644,6 +669,8 @@ msgid ""
 "Congratulations! Now your device is able to act as a router and route "
 "network traffic among LAN, WAN and guest network."
 msgstr ""
+"Поздравляем! Теперь ваше устройство может действовать как маршрутизатор и "
+"направлять сетевой трафик между LAN, WAN и гостевой сетью."
 
 #: js/src/guide/constants.js:84
 msgid ""
@@ -723,6 +750,8 @@ msgid ""
 "Congratulations! Now your device should be able to act as a server on "
 "your local network."
 msgstr ""
+"Поздравляем! Теперь ваше устройство должно работать как сервер в вашей "
+"локальной сети."
 
 #: js/src/guide/hooks.js:23
 msgid "Cannot mark guide as finished."
@@ -786,6 +815,8 @@ msgid ""
 "Once you leave this guide you'll be granted access to the full "
 "configuration interface of this device."
 msgstr ""
+"После выхода из этого руководства вам будет предоставлен доступ к полному "
+"интерфейсу настройки этого устройства."
 
 #: js/src/guide/GuidePages/GuideFinish.js:25
 msgid ""
@@ -794,6 +825,11 @@ msgid ""
 "security research to discover new attackers and give you access to "
 "dynamic firewall updates blocking known attackers."
 msgstr ""
+"Для дальнейшего повышения безопасности рассмотрите возможность установки "
+"плагина сбора данных (через Управление пакетами). Это позволит вам принять "
+"участие в наших исследованиях безопасности для обнаружения новых атак и "
+"предоставить вам доступ к динамическим обновлениям брандмауэра, блокирующим "
+"известные атаки."
 
 #: js/src/guide/GuidePages/GuideFinish.js:31
 msgid "Continue"
@@ -826,6 +862,8 @@ msgid ""
 "Just set your password and you are ready to go. This workflow is aimed to"
 " more advanced users who intend to set everything manually."
 msgstr ""
+"Просто установите свой пароль, и все готово. Это руководство предназначено "
+"для более опытных пользователей, которые собираются настраивать все вручную."
 
 #: js/src/guide/GuidePages/WorkflowSelect.js:37
 msgid "Local Server"
@@ -1045,6 +1083,13 @@ msgid ""
 "it has opened ports for configuration interface and other services.\n"
 "        "
 msgstr ""
+"\n"
+"Режим маршрутизатора означает, что это устройство управляет локальной сетью ("
+"действует как маршрутизатор, может назначать IP-адреса и т. Д.). Режим "
+"компьютера означает, что это устройство действует как клиент в этой сети. Он "
+"действует аналогично WAN, но имеет открытые порты для интерфейса "
+"конфигурации и других служб.\n"
+"        "
 
 #: js/src/lan/LANForm.js:30
 msgid "Computer"
@@ -1233,6 +1278,10 @@ msgid ""
 "settings. When done with configuration, you can test it by pressing Send "
 "test notification."
 msgstr ""
+"Ваше устройство может отправлять вам по электронной почте уведомления о "
+"необходимых перезагрузках, важных событиях, установленных обновлениях и "
+"новых функциях в соответствии с вашими настройками. По завершении настройки "
+"вы можете проверить ее, нажав \"Отправить тестовое уведомление\"."
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:22
 msgid "None"
@@ -1279,6 +1328,8 @@ msgid ""
 "There are some unsaved changes in the notifications settings. Do you want"
 " to discard them and test the notifications with the old settings?"
 msgstr ""
+"В настройках уведомлений есть несохраненные изменения. Отменить их и "
+"протестировать уведомления со старыми настройками?"
 
 #: js/src/notificationsSettings/TestNotification.js:33
 msgid ""
@@ -1287,6 +1338,10 @@ msgid ""
 "\"Reboot or attention is required\" and click \"Save\" button if you want"
 " to get this notification by email."
 msgstr ""
+"Вы не получите тестовое уведомление с текущим уровнем важности на свой "
+"почтовый ящик. Повысьте уровень важности как минимум до «Перезагрузка или "
+"требуется внимание» и нажмите кнопку «Сохранить», если вы хотите получить "
+"это уведомление по электронной почте."
 
 #: js/src/notificationsSettings/TestNotification.js:104
 msgid "Test notification"
@@ -1362,7 +1417,7 @@ msgstr "Минимальный порт 1."
 
 #: js/src/overview/Overview.js:87
 msgid "Go to Connection Settings"
-msgstr ""
+msgstr "Зайдите в настройки подключения"
 
 #: js/src/overview/Cards/AutomaticUpdatesCard.js:43
 msgid "Automatic Updates"
@@ -1431,13 +1486,15 @@ msgstr "Перейдите в настройки клиента OpenVPN"
 
 #: js/src/overview/Cards/OpenVPNClientsCard.js:86
 msgid "There are no clients added yet."
-msgstr ""
+msgstr "Еще нет добавленных клиентов."
 
 #: js/src/packageManagement/languages/Languages.js:20
 msgid ""
 "If you want to use another language other than English you can select it "
 "from the following list:"
 msgstr ""
+"Если вы хотите использовать другой язык, кроме английского, вы можете "
+"выбрать его из следующего списка:"
 
 #: js/src/packageManagement/packages/PackageCheckBox.js:53
 msgid "More details"
@@ -1455,6 +1512,14 @@ msgid ""
 "by Turris team.\n"
 "        "
 msgstr ""
+"\n"
+"Помимо стандартной установки, вы можете дополнительно выбрать комплекты "
+"дополнительного программного обеспечения, которое будет установлено на "
+"роутер. Это программное обеспечение можно выбрать из следующего списка. "
+"Обратите внимание, что команда Turris на самом деле поддерживает только "
+"программное обеспечение, которое является частью TurrisOS или которое было "
+"установлено из списка пакетов и не помечено как поддерживаемое сообществом.\n"
+"        "
 
 #: js/src/packageManagement/packages/PackagesForm.js:29
 msgid "Packages List"
@@ -1529,6 +1594,10 @@ msgid ""
 "href=\"https://www.turris.cz/omnia-updater-eula\" target=\"_blank\" "
 "rel=\"noopener noreferrer\">license agreement</a>."
 msgstr ""
+"Включая автоматические обновления, вы подтверждаете, что являетесь "
+"владельцем этого маршрутизатора Turris, и соглашаетесь с полным текстом <a "
+"href = \"https://www.turris.cz/omnia-updater-eula\" target = \"_blank\" rel "
+"= \"noopener noreferrer\"> лицензионного соглашения </a>."
 
 #: js/src/packageManagement/updateSettings/UpdateSettings.js:31
 msgid ""
@@ -1781,6 +1850,9 @@ msgid ""
 " (LuCI and SSH). Make sure to set secure password which is long and "
 "uncommon."
 msgstr ""
+"Здесь вы можете установить пароли для Foris и, при необходимости, для "
+"расширенных функций (LuCI и SSH). Убедитесь, что вы установили надежный "
+"пароль, который должен быть длинным и уникальным."
 
 #: js/src/password/Password.js:97
 msgid ""
@@ -1790,6 +1862,11 @@ msgid ""
 "                            forisPassword.list || rootPassword.list\n"
 "                        } list."
 msgstr ""
+"Введенный вами пароль был взломан. Похоже, $\n"
+" {forisPassword.count || rootPassword.count} \n"
+"раз в \n"
+"$ {forisPassword.list || rootPassword.list}\n"
+" список."
 
 #: js/src/password/Password.js:108
 msgid "Password changed successfully."
@@ -1821,6 +1898,11 @@ msgid ""
 "through the <a href=\"%s\" target=\"_blank\" rel=\"noopener "
 "noreferrer\">LuCI web interface</a> or via SSH."
 msgstr ""
+"Чтобы получить доступ к расширенным параметрам конфигурации, которые здесь "
+"недоступны, вы должны установить пароль пользователя root. Дополнительными "
+"параметрами конфигурации можно управлять либо через <a href=\"%s\" target="
+"\"_blank\" rel=\"noopener noreferrer\"> веб-интерфейс LuCI </a>, либо через "
+"SSH."
 
 #: js/src/password/RootPasswordForm.js:56
 msgid "New advanced administration password"
@@ -2005,6 +2087,12 @@ msgid ""
 "setting.\n"
 "        "
 msgstr ""
+"\n"
+"Здесь вы указываете настройки вашего порта WAN. Обычно вы можете оставить "
+"эти параметры без изменений, если иное не указано вашим поставщиком интернет-"
+"услуг. Кроме того, если маршрутизатор подключен к сети с помощью кабельного "
+"или DSL-модема, обычно нет необходимости изменять этот параметр.\n"
+"        "
 
 #: js/src/wan/WAN.js:53
 msgid ""
@@ -2167,7 +2255,7 @@ msgstr "MTU должен быть в диапазоне 1280-1500."
 
 #: js/src/wan/WANForm.js:27
 msgid "PPPoE (for DSL bridges, etc.)"
-msgstr ""
+msgstr "PPPoE (для мостов DSL и т. д.)"
 
 #: js/src/wan/WANForm.js:100
 msgid "WAN IPv4"
@@ -2225,6 +2313,11 @@ msgid ""
 "level on \"Reboot or attention is required\" or higher.\n"
 "            "
 msgstr ""
+"\n"
+"Это уведомление о тестировании. Обратите внимание, что вы должны получить "
+"это на свой почтовый ящик, только если вы указали важность уровень «"
+"Перезагрузка или требуется внимание» или выше.\n"
+"            "
 
 #: reforis/foris_controller_api/modules/router_notifications.py:122
 msgid "Testing message was sent, please check your inbox."
@@ -2282,7 +2375,7 @@ msgstr "вернуться к выбору"
 
 #: reforis/templates/errors/400.html:4 reforis/templates/errors/400.html:8
 msgid "400 - Bad Request"
-msgstr ""
+msgstr "400, неверный запрос"
 
 #: reforis/templates/errors/400.html:9 reforis/templates/errors/500.html:9
 msgid "Error:"
