@@ -69,7 +69,7 @@ function OverviewCards({ packages, ws }) {
                 <AutomaticUpdatesCard />
                 <DataCollectionCard />
                 <DynamicFirewallCard
-                    activated={() => displayCard(packages, "dynfw")}
+                    activated={displayCard(packages, "dynfw")}
                 />
                 {displayCard(packages, "net_monitoring") ? (
                     <NetmetrCard />
