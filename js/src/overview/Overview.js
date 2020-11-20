@@ -19,6 +19,7 @@ import OpenVPNClientsCard from "./Cards/OpenVPNClientsCard";
 import Notifications from "../notifications/Notifications/Notifications";
 
 import "./Overview.css";
+import displayCard from "./utils";
 
 Overview.propTypes = {
     ws: PropTypes.object.isRequired,
@@ -37,23 +38,6 @@ export default function Overview({ ws }) {
             ws={ws}
         />
     );
-}
-
-export function displayCard({ package_lists: packages }, cardName) {
-    const enabledPackagesNames = [];
-    packages
-        .filter((item) => item.enabled)
-        .map((item) => {
-            enabledPackagesNames.push(item.name);
-            item.options
-                .filter((option) => option.enabled)
-                .map((option) => {
-                    enabledPackagesNames.push(option.name);
-                    return null;
-                });
-            return null;
-        });
-    return enabledPackagesNames.includes(cardName);
 }
 
 OverviewCards.propTypes = {
