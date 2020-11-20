@@ -71,9 +71,7 @@ function OverviewCards({ packages, ws }) {
                 <DynamicFirewallCard
                     activated={displayCard(packages, "dynfw")}
                 />
-                {displayCard(packages, "net_monitoring") ? (
-                    <NetmetrCard />
-                ) : null}
+                {displayCard(packages, "netmetr") ? <NetmetrCard /> : null}
                 <div className="col mb-4">
                     <div className="card h-100 user-select-none">
                         <div className="card-body">
