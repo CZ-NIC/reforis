@@ -36,7 +36,7 @@ const packageListsFixture = {
                 {
                     description:
                         "Actively measures speed of Internet connection using netmetr.cz service.",
-                    enabled: false,
+                    enabled: true,
                     labels: [],
                     name: "netmetr",
                     title: "Internet connection speed measurement",

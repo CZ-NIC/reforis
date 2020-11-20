@@ -69,14 +69,14 @@ describe("<Cards/>", () => {
 
         it("Snapshot: activated", () => {
             const { container } = render(
-                <DynamicFirewallCard activated={() => activated()} />
+                <DynamicFirewallCard activated={activated()} />
             );
             expect(container).toMatchSnapshot();
         });
 
         it("Snapshot: disabled", () => {
             const { container } = render(
-                <DynamicFirewallCard activated={() => disabled()} />
+                <DynamicFirewallCard activated={disabled()} />
             );
             expect(container).toMatchSnapshot();
         });
