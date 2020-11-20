@@ -1,4 +1,4 @@
-#  Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+#  Copyright (C) 2019-2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
 #
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
@@ -50,7 +50,12 @@ def login():
         if login_to_foris(password):
             return redirect(url_for('Views.index'))
         error_message = _('Wrong password.')
-    return render_template('login.html', error_message=error_message)
+
+    # Check if this is turris shield
+    response = current_app.backend.perform('about', 'get')
+    customization = response.get('customization')
+
+    return render_template('login.html', error_message=error_message, customization=customization)
 
 
 @views.route('/logout', methods=['GET'])
