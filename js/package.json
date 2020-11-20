@@ -10,7 +10,7 @@
     "description": "Turris routers web configuration interface.",
     "main": "./src/app.js",
     "dependencies": {
-        "@fortawesome/fontawesome-free": "^5.12.1",
+        "@fortawesome/fontawesome-free": "^5.15.1",
         "axios": "^0.19.2",
         "bootstrap": "4.4.1",
         "bootswatch": "4.4.1",
