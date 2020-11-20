@@ -9,7 +9,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 DynamicFirewallCard.propTypes = {
-    activated: PropTypes.func.isRequired,
+    activated: PropTypes.bool.isRequired,
 };
 
 export default function DynamicFirewallCard({ activated }) {

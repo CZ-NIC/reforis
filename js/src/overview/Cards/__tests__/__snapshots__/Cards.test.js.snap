@@ -255,17 +255,17 @@ exports[`<Cards/> <DynamicFirewallCard/> Snapshot: disabled 1`] = `
             <span
               class="status"
             >
-              Activated
+              Disabled
             </span>
           </div>
           <div
             class="col-auto"
           >
             <span
-              class="h2 text-success"
+              class="h2 text-danger"
             >
               <i
-                class="fas fa-check"
+                class="fas fa-times"
               />
             </span>
           </div>

@@ -6,9 +6,11 @@
  */
 
 import React from "react";
-import Overview, { displayCard } from "../Overview";
 import { WebSockets } from "foris";
 import mockAxios from "jest-mock-axios";
+
+import Overview from "../Overview";
+import displayCard from "../utils";
 import {
     packageListsFixture,
     dataCollectionCardFixture,

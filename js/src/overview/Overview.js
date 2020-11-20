@@ -19,6 +19,7 @@ import OpenVPNClientsCard from "./Cards/OpenVPNClientsCard";
 import Notifications from "../notifications/Notifications/Notifications";
 
 import "./Overview.css";
+import displayCard from "./utils";
 
 Overview.propTypes = {
     ws: PropTypes.object.isRequired,
@@ -39,23 +40,6 @@ export default function Overview({ ws }) {
     );
 }
 
-export function displayCard({ package_lists: packages }, cardName) {
-    const enabledPackagesNames = [];
-    packages
-        .filter((item) => item.enabled)
-        .map((item) => {
-            enabledPackagesNames.push(item.name);
-            item.options
-                .filter((option) => option.enabled)
-                .map((option) => {
-                    enabledPackagesNames.push(option.name);
-                    return null;
-                });
-            return null;
-        });
-    return enabledPackagesNames.includes(cardName);
-}
-
 OverviewCards.propTypes = {
     packages: PropTypes.object.isRequired,
     ws: PropTypes.object.isRequired,
@@ -69,11 +53,9 @@ function OverviewCards({ packages, ws }) {
                 <AutomaticUpdatesCard />
                 <DataCollectionCard />
                 <DynamicFirewallCard
-                    activated={() => displayCard(packages, "dynfw")}
+                    activated={displayCard(packages, "dynfw")}
                 />
-                {displayCard(packages, "net_monitoring") ? (
-                    <NetmetrCard />
-                ) : null}
+                {displayCard(packages, "netmetr") ? <NetmetrCard /> : null}
                 <div className="col mb-4">
                     <div className="card h-100 user-select-none">
                         <div className="card-body">

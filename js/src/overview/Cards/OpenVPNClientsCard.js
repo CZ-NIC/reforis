@@ -30,7 +30,10 @@ export default function OpenVPNClients() {
 }
 
 OpenVPNClientsCard.propTypes = {
-    clients: PropTypes.arrayOf(PropTypes.object).isRequired,
+    clients: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.arrayOf(PropTypes.object),
+    ]).isRequired,
 };
 
 function OpenVPNClientsCard({ clients }) {
