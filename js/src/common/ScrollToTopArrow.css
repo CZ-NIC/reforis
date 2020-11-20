@@ -9,8 +9,9 @@
     position: fixed;
     bottom: 20px;
     right: 8px;
-    align-items: flex-end;
     font-size: 2.5em;
+    line-height: 0;
+    align-items: flex-end;
     justify-content: center;
     z-index: 1000;
     cursor: pointer;

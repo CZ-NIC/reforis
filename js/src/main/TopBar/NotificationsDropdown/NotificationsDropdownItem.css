@@ -1,4 +1,4 @@
-.notification-item svg {
+.notification-item i svg {
     display: flex;
 }
 
@@ -28,7 +28,7 @@
     color: #95a5a6;
 }
 
-.notification-item:hover > svg {
+.notification-item:hover i > svg {
     opacity: 0.7;
 }
 
@@ -45,6 +45,6 @@
     margin-bottom: 0.3em;
 }
 
-.dismiss svg {
+.dismiss i svg {
     margin: 0 auto;
 }

@@ -14,6 +14,6 @@
     animation-direction: alternate;
 }
 
-#reboot-dropdown-toggle svg {
+#reboot-dropdown-toggle i svg {
     color: red;
 }
