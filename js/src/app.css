@@ -137,3 +137,9 @@ form div.form-group.switch {
 .__react_component_tooltip {
     padding: 3px 10px !important;
 }
+
+/* FontAwesome SVG icons */
+
+i svg {
+    vertical-align: middle !important;
+}
