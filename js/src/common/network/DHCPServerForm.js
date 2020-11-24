@@ -8,7 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { NumberInput } from "foris";
+import { NumberInput, TextInput } from "foris";
 
 export const HELP_TEXT = _(
     "Enable this option to automatically assign IP addresses to the devices connected to the router."
@@ -43,12 +43,10 @@ export default function DHCPServerForm({
 }) {
     return (
         <>
-            <NumberInput
+            <TextInput
                 label={_("DHCP start")}
                 value={formData.start}
                 error={formErrors.start}
-                min="2"
-                max="106"
                 required
                 onChange={setFormValue((value) =>
                     updateRule({ start: { $set: value } })
