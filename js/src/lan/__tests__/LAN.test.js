@@ -222,6 +222,12 @@ describe("<LAN/>", () => {
                     getByText(lanContainer, "This is not a valid IPv4 address.")
                 ).toBeDefined();
             });
+            expect(
+                getByText(
+                    lanContainer,
+                    "Invalid network settings. DHCP settings can't be validated."
+                )
+            ).toBeDefined();
         });
 
         it("should validate network mask", async () => {
@@ -249,6 +255,12 @@ describe("<LAN/>", () => {
                     getByText(lanContainer, "This is not a valid network mask.")
                 ).toBeDefined();
             });
+            expect(
+                getByText(
+                    lanContainer,
+                    "Invalid network settings. DHCP settings can't be validated."
+                )
+            ).toBeDefined();
         });
 
         it("should validate lease time", async () => {
@@ -271,6 +283,86 @@ describe("<LAN/>", () => {
             await wait(() => {
                 expect(
                     getByText(lanContainer, "This field is required.")
+                ).toBeDefined();
+            });
+
+            changeStart("999.999.999.999");
+            await wait(() => {
+                expect(
+                    getByText(lanContainer, "This is not a valid IPv4 address.")
+                ).toBeDefined();
+            });
+            changeStart;
+
+            changeStart("9.9.9.9");
+            await wait(() => {
+                expect(
+                    getByText(
+                        lanContainer,
+                        "Address is outside current network."
+                    )
+                ).toBeDefined();
+            });
+
+            changeStart("192.168.1.0");
+            await wait(() => {
+                expect(
+                    getByText(
+                        lanContainer,
+                        "Address is already reserved for other purposes."
+                    )
+                ).toBeDefined();
+            });
+            changeStart("192.168.1.255");
+            await wait(() => {
+                expect(
+                    getByText(
+                        lanContainer,
+                        "Address is already reserved for other purposes."
+                    )
+                ).toBeDefined();
+            });
+        });
+
+        it("should validate max lease", async () => {
+            changeMaxLeases(-1);
+            await wait(() => {
+                expect(
+                    getByText(lanContainer, "Value must be positive.")
+                ).toBeDefined();
+            });
+
+            const originalError = console.error;
+            console.error = jest.fn();
+            changeMaxLeases("foobar");
+            await wait(() => {
+                expect(
+                    getByText(lanContainer, "Value must be a number.")
+                ).toBeDefined();
+            });
+            expect(console.error).toBeCalled();
+            console.error = originalError;
+
+            changeMaxLeases(300);
+            await wait(() => {
+                expect(
+                    getByText(
+                        lanContainer,
+                        "Too many addresses requested. Set a lower number or change DHCP start."
+                    )
+                ).toBeDefined();
+            });
+        });
+
+        it("one lease, start address the same as router's", async () => {
+            changeMaxLeases(1);
+            changeStart(lanSettingsFixture.mode_managed.router_ip);
+            await wait(() => {
+                expect(
+                    getByText(
+                        lanContainer,
+                        "The only DHCP lease is the same as router's address. Increase limit or change start address."
+                    )
                 ).toBeDefined();
             });
         });
