@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2020-11-10 10:38+0100\n"
-"PO-Revision-Date: 2020-11-11 11:28+0000\n"
+"PO-Revision-Date: 2020-11-27 00:29+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/turris/"
 "reforis/nb_NO/>\n"
@@ -42,7 +42,7 @@ msgstr "Serienummer"
 
 #: js/src/about/About.js:56
 msgid "reForis version"
-msgstr ""
+msgstr "reForis-versjon"
 
 #: js/src/about/About.js:60
 msgid "Turris OS version"
@@ -87,7 +87,7 @@ msgstr "Bekreft omstart"
 
 #: js/src/common/ScrollToTopArrow.js:30
 msgid "Go to top"
-msgstr ""
+msgstr "Til toppen"
 
 #: js/src/common/network/DHCPClientForm.js:14
 msgid "Hostname which will be provided to DHCP server."
@@ -316,12 +316,12 @@ msgstr "Skru av DNSSEC"
 
 #: js/src/dns/Forwarders/Forwarders.js:80
 msgid "Edit forwarder"
-msgstr ""
+msgstr "Rediger videresender"
 
 #: js/src/dns/Forwarders/Forwarders.js:81
 #: js/src/dns/Forwarders/Forwarders.js:103
 msgid "Add custom forwarder"
-msgstr ""
+msgstr "Legg til egendefinert videresender"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:37
 msgid "Forwarders"
@@ -366,7 +366,7 @@ msgstr ""
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:116
 msgid "Save"
-msgstr ""
+msgstr "Lagre"
 
 #: js/src/dns/Forwarders/Forwarder/IPAddressesForm.js:13
 msgid "IPv4"
@@ -776,7 +776,7 @@ msgstr ""
 
 #: js/src/guide/GuidePages/WorkflowSelect.js:84
 msgid "Recommended"
-msgstr ""
+msgstr "Anbefalt"
 
 #: js/src/interfaces/Interfaces.js:25
 msgid "Network Interfaces"
@@ -843,12 +843,12 @@ msgstr ""
 
 #: js/src/interfaces/Network.js:63
 msgid "Base module"
-msgstr ""
+msgstr "Grunnmodul"
 
 #: js/src/interfaces/Network.js:64
 #, python-format
 msgid "Module %s"
-msgstr ""
+msgstr "Modul %s"
 
 #: js/src/interfaces/SelectedInterface.js:68
 #, python-format
@@ -939,7 +939,7 @@ msgstr "LAN-modus"
 
 #: js/src/lan/LANForm.js:90
 msgid "Redirect to 192.168.1.1"
-msgstr ""
+msgstr "Videresend til 192.168.1.1"
 
 #: js/src/lan/LANManagedForm.js:29
 msgid "Router's IP address in the inner network."
@@ -966,11 +966,11 @@ msgstr "IPv4-protokoll"
 
 #: js/src/main/pages.js:34 js/src/overview/Overview.js:67
 msgid "Overview"
-msgstr ""
+msgstr "Oversikt"
 
 #: js/src/main/pages.js:40
 msgid "Network Settings"
-msgstr ""
+msgstr "Nettverksinnstillinger"
 
 #: js/src/main/pages.js:46 js/src/wifi/WiFi.js:21
 msgid "Wi-Fi"
@@ -981,8 +981,9 @@ msgid "Administration"
 msgstr "Administrasjon"
 
 #: js/src/main/pages.js:89
+#, fuzzy
 msgid "Region & Time"
-msgstr ""
+msgstr "Tid og sted"
 
 #: js/src/main/TopBar/NotificationsDropdown/NotificationsDropdownMenu.js:76
 #: js/src/main/pages.js:94
@@ -1171,11 +1172,11 @@ msgstr ""
 
 #: js/src/notificationsSettings/TestNotification.js:104
 msgid "Test notification"
-msgstr ""
+msgstr "Testmerknad"
 
 #: js/src/notificationsSettings/TestNotification.js:117
 msgid "Send test notification"
-msgstr ""
+msgstr "Send testmerknad"
 
 #: js/src/notificationsSettings/TestNotification.js:146
 msgid "Confirm"
@@ -1246,39 +1247,42 @@ msgstr "Minimumsport er 1."
 
 #: js/src/overview/Overview.js:87
 msgid "Go to Connection Settings"
-msgstr ""
+msgstr "Gå til «Tilkoblingsinnstillinger»"
 
 #: js/src/overview/Cards/AutomaticUpdatesCard.js:43
+#, fuzzy
 msgid "Automatic Updates"
-msgstr ""
+msgstr "Automatiske oppdateringer"
 
 #: js/src/overview/Cards/AutomaticUpdatesCard.js:46
 #: js/src/overview/Cards/DataCollectionCard.js:46
 #: js/src/overview/Cards/DynamicFirewallCard.js:26
+#, fuzzy
 msgid "Activated"
-msgstr ""
+msgstr "Påskrudd"
 
 #: js/src/overview/Cards/AutomaticUpdatesCard.js:46
 #: js/src/overview/Cards/DataCollectionCard.js:46
 #: js/src/overview/Cards/DynamicFirewallCard.js:26
+#, fuzzy
 msgid "Disabled"
-msgstr ""
+msgstr "Avskrudd"
 
 #: js/src/overview/Cards/DataCollectionCard.js:43
 msgid "Data Collection"
-msgstr ""
+msgstr "Datainnsamling"
 
 #: js/src/overview/Cards/DynamicFirewallCard.js:23
 msgid "Dynamic Firewall"
-msgstr ""
+msgstr "Dynamisk brannmur"
 
 #: js/src/overview/Cards/NetmetrCard.js:47
 msgid "NetMetr"
-msgstr ""
+msgstr "NetMetr"
 
 #: js/src/overview/Cards/NetmetrCard.js:53
 msgid "Go to NetMetr"
-msgstr ""
+msgstr "Gå til NetMetr"
 
 #: js/src/overview/Cards/NetmetrCard.js:68
 #: js/src/overview/Cards/NetmetrCard.js:84
@@ -1307,7 +1311,7 @@ msgstr ""
 
 #: js/src/overview/Cards/OpenVPNClientsCard.js:42
 msgid "OpenVPN Clients"
-msgstr ""
+msgstr "OpenVPN-klienter"
 
 #: js/src/overview/Cards/OpenVPNClientsCard.js:48
 msgid "Go to OpenVPN Client Settings"
@@ -1325,7 +1329,7 @@ msgstr ""
 
 #: js/src/packageManagement/packages/PackageCheckBox.js:53
 msgid "More details"
-msgstr ""
+msgstr "Flere detaljer"
 
 #: js/src/packageManagement/packages/Packages.js:21
 msgid ""
