@@ -27,7 +27,7 @@ export default function Netmetr() {
 }
 
 NetmetrCard.propTypes = {
-    tests: PropTypes.object.isRequired,
+    tests: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
 };
 
 function NetmetrCard({ tests: { performed_tests: tests } }) {
