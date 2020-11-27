@@ -88,6 +88,9 @@ export function prepDataToSubmit(formData) {
 
     if (!formData.qos.enabled) formData.qos = { enabled: false };
 
+    delete formData.interface_count;
+    delete formData.interface_up_count;
+
     return formData;
 }
 

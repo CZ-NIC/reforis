@@ -111,8 +111,6 @@ describe("<GuestNetwork/>", () => {
                     start: "10.111.222.100",
                 },
                 enabled: true,
-                interface_count: 2,
-                interface_up_count: 0,
                 ip: "10.111.222.1",
                 netmask: "255.255.255.0",
                 qos: {
