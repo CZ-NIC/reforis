@@ -135,7 +135,7 @@ function NetmetrCard({ tests: { performed_tests: tests } }) {
                             </p>
                         </>
                     ) : (
-                        <p className="text-muted p-2">
+                        <p className="text-muted">
                             {_("No tests have been performed lately.")}
                         </p>
                     )}

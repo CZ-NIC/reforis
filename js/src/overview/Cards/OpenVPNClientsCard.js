@@ -85,7 +85,7 @@ function OpenVPNClientsCard({ clients }) {
                             </table>
                         </form>
                     ) : (
-                        <p className="text-muted p-2">
+                        <p className="text-muted">
                             {_("There are no clients added yet.")}
                         </p>
                     )}
