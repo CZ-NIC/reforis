@@ -521,11 +521,11 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
     id="modal-container"
   >
     <div
-      class="modal fade "
+      class="modal fade"
       role="dialog"
     >
       <div
-        class="modal-dialog modal-dialog-centered"
+        class="modal-dialog  modal-dialog-centered"
         role="document"
       >
         <div
@@ -806,11 +806,11 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
     id="modal-container"
   >
     <div
-      class="modal fade "
+      class="modal fade"
       role="dialog"
     >
       <div
-        class="modal-dialog modal-dialog-centered"
+        class="modal-dialog  modal-dialog-centered"
         role="document"
       >
         <div
