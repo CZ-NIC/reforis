@@ -28,14 +28,19 @@ describe("<Password/>", () => {
     beforeEach(async () => {
         const { container } = render(<Password />);
         mockAxios.mockResponse({ data: { password_set: true } });
+        mockAxios.mockResponse({
+            data: {},
+        });
         await wait(() =>
-            getByText(container, "Advanced Administration (root) Password")
+            getByText(container, "New advanced administration password")
         );
+
         passwordContainer = container;
     });
 
     it("should handle error", async () => {
         const { container } = render(<Password />);
+        mockJSONError();
         mockJSONError();
         await wait(() =>
             getByText(container, "An error occurred while fetching data.")
@@ -53,6 +58,73 @@ describe("<Password/>", () => {
                 "Use same password for advanced administration (root)"
             )
         );
+        expect(passwordContainer).toMatchSnapshot();
+    });
+
+    describe("should notify user", () => {
+        beforeEach(() => {
+            // Fill form data
+            fireEvent.change(
+                getByLabelText(passwordContainer, "Current Foris password"),
+                { target: { value: "foobar" } }
+            );
+            fireEvent.change(
+                getByLabelText(passwordContainer, "New Foris password"),
+                { target: { value: "foobar" } }
+            );
+
+            // Save form
+            fireEvent.click(getAllByText(passwordContainer, "Save")[0]);
+            expect(mockAxios.post).toBeCalledWith(
+                "/reforis/api/password",
+                { foris_current_password: "foobar", foris_password: "foobar" },
+                expect.anything()
+            );
+        });
+
+        it("on success", async () => {
+            mockAxios.mockResponse({ data: { foo: "bar" } });
+            await wait(() =>
+                expect(mockSetAlert).toBeCalledWith(
+                    "Password changed successfully.",
+                    ALERT_TYPES.SUCCESS
+                )
+            );
+        });
+
+        it("on error", async () => {
+            const errorMessage = "Something went wrong";
+            mockJSONError(errorMessage);
+            await wait(() => expect(mockSetAlert).toBeCalledWith(errorMessage));
+        });
+    });
+});
+
+describe("Customized <Password/>", () => {
+    let passwordContainer;
+
+    beforeEach(async () => {
+        const { container } = render(<Password />);
+        mockAxios.mockResponse({ data: { password_set: true } });
+        mockAxios.mockResponse({
+            data: { customization: "shield" },
+        });
+
+        await wait(() => getByText(container, "Foris Password"));
+
+        passwordContainer = container;
+    });
+
+    it("should handle error", async () => {
+        const { container } = render(<Password />);
+        mockJSONError();
+        mockJSONError();
+        await wait(() =>
+            getByText(container, "An error occurred while fetching data.")
+        );
+    });
+
+    it("Snapshot", () => {
         expect(passwordContainer).toMatchSnapshot();
     });
 

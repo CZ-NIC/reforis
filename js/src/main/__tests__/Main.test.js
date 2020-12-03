@@ -7,8 +7,9 @@
 
 import React from "react";
 
-import { render } from "foris/testUtils/customTestRender";
+import { render, wait, getByText } from "foris/testUtils/customTestRender";
 import { WebSockets } from "foris";
+import mockAxios from "jest-mock-axios";
 
 import Main from "../Main";
 
@@ -28,7 +29,7 @@ jest.mock("../pages", () => {
 });
 
 describe("<Main/>", () => {
-    it("should use error boundary when cannot render component", () => {
+    it("should use error boundary when cannot render component", async () => {
         global.ForisPlugins = [];
         const webSockets = new WebSockets();
         const originalError = console.error;
@@ -40,6 +41,8 @@ describe("<Main/>", () => {
                 <Main ws={webSockets} />
             </>
         );
+        mockAxios.mockResponse({ data: {} });
+        await wait(() => getByText(container, "An Error Occurred"));
         expect(console.error).toBeCalled();
         console.error = originalError;
 
