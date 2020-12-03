@@ -5,15 +5,22 @@
  * See /LICENSE for more information.
  */
 
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Redirect, Switch } from "react-router-dom";
 import PropTypes from "prop-types";
 
-import { REFORIS_URL_PREFIX, Portal, AlertContextProvider } from "foris";
+import {
+    REFORIS_URL_PREFIX,
+    Portal,
+    AlertContextProvider,
+    useAPIGet,
+    withSpinnerOnSending,
+    withErrorMessage,
+} from "foris";
 
 import Navigation from "navigation/Navigation";
-
 import ErrorBoundary from "utils/ErrorBoundary";
+import API_URLs from "../common/API";
 import TopBar from "./TopBar/TopBar";
 import RouteWithSubRoutes from "./routing";
 import getPages from "./pages";
@@ -25,7 +32,30 @@ Main.propTypes = {
 };
 
 export default function Main({ ws }) {
-    const pages = getPages();
+    const [getCustomizationResponse, getCustomization] = useAPIGet(
+        API_URLs.about
+    );
+
+    useEffect(() => {
+        getCustomization();
+    }, [getCustomization]);
+
+    return (
+        <CustomizationWithErrorAndSpinner
+            apiState={getCustomizationResponse.state}
+            deviceDetails={getCustomizationResponse.data || {}}
+            ws={ws}
+        />
+    );
+}
+
+MainWrapper.propTypes = {
+    ws: PropTypes.object.isRequired,
+    deviceDetails: PropTypes.object.isRequired,
+};
+
+function MainWrapper({ deviceDetails, ws }) {
+    const pages = getPages(deviceDetails);
     // Outer ErrorBoundary catches errors outside content container
     return (
         <ErrorBoundary>
@@ -58,3 +88,7 @@ export default function Main({ ws }) {
         </ErrorBoundary>
     );
 }
+
+const CustomizationWithErrorAndSpinner = withSpinnerOnSending(
+    withErrorMessage(MainWrapper)
+);
