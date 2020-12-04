@@ -1,8 +1,9 @@
-from flask import jsonify, current_app, request
+from flask import current_app, jsonify, request
 from flask_babel import gettext as _
-
 from reforis.auth import _decode_password_to_base64, check_password
-from reforis.foris_controller_api.utils import APIError, validate_json
+from reforis.utils import APIError
+
+from .utils import validate_json
 
 
 def password():

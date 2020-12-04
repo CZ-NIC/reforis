@@ -2,9 +2,9 @@ from http import HTTPStatus
 
 from flask import current_app, jsonify, request
 from flask_babel import gettext as _
-
 from reforis import _get_locale_from_backend
-from reforis.foris_controller_api.utils import APIError
+
+from .utils import APIError
 
 
 def updates():
@@ -89,7 +89,7 @@ def approvals():
     .. http:post:: /api/approvals
         Update or dismiss `update approvals`.
         See ``resolve_approval`` action in the `foris-controller updater module JSON schema
-        <https://gitlab.labs.nic.cz/turris/foris-controller/foris-controller/blob/master/foris_controller_modules/updater/schema/updater.json>`_.
+        <https://gitlab.nic.cz/turris/foris-controller/foris-controller/blob/master/foris_controller_modules/updater/schema/updater.json>`_.
 
         **Example request**:
 
@@ -137,7 +137,7 @@ def packages_get():
     .. http:get:: /api/packages
         Get `packages` router settings.
         See ``get_package_lists`` action in the `foris-controller updater module JSON schema
-        <https://gitlab.labs.nic.cz/turris/foris-controller/foris-controller/blob/master/foris_controller_modules/updater/schema/updater.json>`_.
+        <https://gitlab.nic.cz/turris/foris-controller/foris-controller/blob/master/foris_controller_modules/updater/schema/updater.json>`_.
     """
     updater_is_enabled = current_app.backend.perform('updater', 'get_enabled')
 
@@ -155,7 +155,7 @@ def packages_set():
         Set `packages` router settings.
         **It's not possible to change some `packages` settings if updater is disabled.**
         See ``update_package_lists`` action in the `foris-controller updater module JSON schema
-        <https://gitlab.labs.nic.cz/turris/foris-controller/foris-controller/blob/master/foris_controller_modules/updater/schema/updater.json>`_.
+        <https://gitlab.nic.cz/turris/foris-controller/foris-controller/blob/master/foris_controller_modules/updater/schema/updater.json>`_.
     """
     _check_updater_enabled()
 
