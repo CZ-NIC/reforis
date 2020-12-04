@@ -10,10 +10,9 @@ configurations has two actions: ``get_settings`` and ``set_settings``. These end
 HTTP endpoint with ``GET`` and ``POST`` methods by appropriate actions.
 """
 
-from http import HTTPStatus
 from importlib import import_module
 
-from flask import Blueprint, jsonify
+from flask import Blueprint
 
 FORIS_CONTROLLER_MODULES = [
     'about',

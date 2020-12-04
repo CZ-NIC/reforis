@@ -1,4 +1,4 @@
-#  Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+#  Copyright (C) 2019-2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
 #
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
@@ -67,7 +67,7 @@ def create_app(config):
     from .backend import ExceptionInBackend
     app.register_error_handler(ExceptionInBackend, foris_controller_error)
     # Handle API errors
-    from .foris_controller_api.utils import log_error, APIError
+    from .utils import log_error, APIError
 
     def handle_api_error(error):
         if error.status_code == HTTPStatus.INTERNAL_SERVER_ERROR:

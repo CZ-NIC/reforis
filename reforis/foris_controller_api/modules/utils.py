@@ -1,17 +1,40 @@
+#  Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+#
+#  This is free software, licensed under the GNU General Public License v3.
+#  See /LICENSE for more information.
+
+import ipaddress
 from http import HTTPStatus
 
 from flask import request, current_app, jsonify
 
+from reforis.utils import APIError
 
-class APIError(Exception):
-    """
-    Raised when an error occurred during processing request.
-    """
 
-    def __init__(self, data, status_code=HTTPStatus.BAD_REQUEST):
-        super().__init__(self)
-        self.data = data
-        self.status_code = status_code
+def process_dhcp_get(dhcp, ip, netmask):
+    network = ipaddress.IPv4Network(f'{ip}/{netmask}', strict=False)
+    start = network.network_address + dhcp['start']
+    limit = start + dhcp['limit']
+    return {
+        **dhcp,
+        # Convert seconds to hours
+        'lease_time': dhcp['lease_time'] / 3600,
+        'start': str(start),
+        'limit': str(limit),
+    }
+
+
+def process_dhcp_post(dhcp, ip, netmask):
+    network = ipaddress.IPv4Network(f'{ip}/{netmask}', strict=False)
+    start = int(ipaddress.IPv4Address(dhcp['start'])) - int(network.network_address)
+    limit = int(ipaddress.IPv4Address(dhcp['limit'])) - int(ipaddress.IPv4Address(dhcp['start']))
+    return {
+        **dhcp,
+        # Convert hours to seconds
+        'lease_time': dhcp['lease_time'] * 3600,
+        'start': start,
+        'limit': limit,
+    }
 
 
 def _foris_controller_settings_call(module):
@@ -27,13 +50,6 @@ def _foris_controller_settings_call(module):
         data = request.json
         response = current_app.backend.perform(module, 'update_settings', data)
     return jsonify(response)
-
-
-def log_error(message):
-    """
-    Report error using logger from current application. Request URL and data are added to the message.
-    """
-    current_app.logger.error('%s; URL: %s; data: %s', message, request.url, request.data)
 
 
 def validate_json(json_data, expected_fields=None):
