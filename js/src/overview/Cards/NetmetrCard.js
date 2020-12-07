@@ -27,7 +27,7 @@ export default function Netmetr() {
 }
 
 NetmetrCard.propTypes = {
-    tests: PropTypes.object.isRequired,
+    tests: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
 };
 
 function NetmetrCard({ tests: { performed_tests: tests } }) {
@@ -135,7 +135,7 @@ function NetmetrCard({ tests: { performed_tests: tests } }) {
                             </p>
                         </>
                     ) : (
-                        <p className="text-muted p-2">
+                        <p className="text-muted">
                             {_("No tests have been performed lately.")}
                         </p>
                     )}

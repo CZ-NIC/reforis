@@ -108,11 +108,9 @@ describe("<GuestNetwork/>", () => {
                     enabled: true,
                     lease_time: 3600,
                     limit: 150,
-                    start: 100,
+                    start: "10.111.222.100",
                 },
                 enabled: true,
-                interface_count: 2,
-                interface_up_count: 0,
                 ip: "10.111.222.1",
                 netmask: "255.255.255.0",
                 qos: {
@@ -152,6 +150,12 @@ describe("<GuestNetwork/>", () => {
                     )
                 ).toBeDefined();
             });
+            expect(
+                getByText(
+                    guestNetworkContainer,
+                    "Invalid network settings. DHCP settings can't be validated."
+                )
+            ).toBeDefined();
         });
 
         it("should validate network mask", async () => {
@@ -188,6 +192,12 @@ describe("<GuestNetwork/>", () => {
                     )
                 ).toBeDefined();
             });
+            expect(
+                getByText(
+                    guestNetworkContainer,
+                    "Invalid network settings. DHCP settings can't be validated."
+                )
+            ).toBeDefined();
         });
 
         it("should validate lease time", async () => {
@@ -213,6 +223,76 @@ describe("<GuestNetwork/>", () => {
             await wait(() => {
                 expect(
                     getByText(guestNetworkContainer, "This field is required.")
+                ).toBeDefined();
+            });
+
+            changeStart("999.999.999.999");
+            await wait(() => {
+                expect(
+                    getByText(
+                        guestNetworkContainer,
+                        "This is not a valid IPv4 address."
+                    )
+                ).toBeDefined();
+            });
+            changeStart;
+
+            changeStart("9.9.9.9");
+            await wait(() => {
+                expect(
+                    getByText(
+                        guestNetworkContainer,
+                        "Address is outside current network."
+                    )
+                ).toBeDefined();
+            });
+
+            changeStart("10.111.222.0");
+            await wait(() => {
+                expect(
+                    getByText(
+                        guestNetworkContainer,
+                        "Address is already reserved for other purposes."
+                    )
+                ).toBeDefined();
+            });
+            changeStart("10.111.222.255");
+            await wait(() => {
+                expect(
+                    getByText(
+                        guestNetworkContainer,
+                        "Address is already reserved for other purposes."
+                    )
+                ).toBeDefined();
+            });
+        });
+
+        it("should validate max lease", async () => {
+            changeMaxLeases(-1);
+            await wait(() => {
+                expect(
+                    getByText(guestNetworkContainer, "Value must be positive.")
+                ).toBeDefined();
+            });
+
+            const originalError = console.error;
+            console.error = jest.fn();
+            changeMaxLeases("foobar");
+            await wait(() => {
+                expect(
+                    getByText(guestNetworkContainer, "Value must be a number.")
+                ).toBeDefined();
+            });
+            expect(console.error).toBeCalled();
+            console.error = originalError;
+
+            changeMaxLeases(300);
+            await wait(() => {
+                expect(
+                    getByText(
+                        guestNetworkContainer,
+                        "Too many addresses requested. Set a lower number or change DHCP start."
+                    )
                 ).toBeDefined();
             });
         });

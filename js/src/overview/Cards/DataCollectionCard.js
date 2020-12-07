@@ -29,7 +29,8 @@ export default function DataCollection() {
 }
 
 DataCollectionCard.propTypes = {
-    details: PropTypes.object.isRequired,
+    details: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
+        .isRequired,
 };
 
 function DataCollectionCard({ details: { eula } }) {
