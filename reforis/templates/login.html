@@ -30,8 +30,10 @@
         <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" autofocus
             required>
         <button class="btn btn-primary btn-block mb-3" type="submit">{% trans %}Log in{% endtrans %}</button>
+        {% if customization != 'shield' %}
         <a href="/cgi-bin/luci">{% trans %}Go to LuCI{% endtrans %}</a> {% trans %}or{% endtrans %}
         <a href="/">{% trans %}back to select{% endtrans %}</a>
+        {% endif %}
     </form>
 </body>
 </body>
