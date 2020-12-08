@@ -29,122 +29,203 @@ import { ForisURLs } from "foris";
 
 import { addWeightsToPages, insert } from "./utils";
 
-const PAGES = [
-    {
-        name: _("Overview"),
-        path: "/overview",
-        icon: "chart-line",
-        component: Overview,
-    },
-    {
-        name: _("Network Settings"),
-        submenuId: "network-settings",
-        path: "/network-settings",
-        icon: "network-wired",
-        pages: [
-            {
-                name: _("Wi-Fi"),
-                path: "/wifi",
-                component: WiFi,
-            },
-            {
-                name: _("WAN"),
-                path: "/wan",
-                component: WAN,
-            },
-            {
-                name: _("LAN"),
-                path: "/lan",
-                component: LAN,
-            },
-            {
-                name: _("DNS"),
-                path: "/dns",
-                component: DNS,
-            },
-            {
-                name: _("Interfaces"),
-                path: "/interfaces",
-                component: Interfaces,
-            },
-            {
-                name: _("Guest Network"),
-                path: "/guest-network",
-                component: GuestNetwork,
-            },
-        ],
-    },
-    {
-        name: _("Administration"),
-        submenuId: "administration",
-        path: "/administration",
-        icon: "user-cog",
-        pages: [
-            {
-                name: _("Password"),
-                path: "/password",
-                component: Password,
-            },
-            {
-                name: _("Region & Time"),
-                path: "/region-and-time",
-                component: RegionAndTime,
-            },
-            {
-                name: _("Notifications"),
-                path: "/notifications-settings",
-                component: NotificationsSettings,
-            },
-            {
-                name: _("Maintenance"),
-                path: "/maintenance",
-                component: Maintenance,
-            },
-        ],
-    },
-    {
-        name: _("Package Management"),
-        submenuId: "package-management",
-        path: "/package-management",
-        icon: "box",
-        pages: [
-            {
-                name: _("Update Settings"),
-                path: "/update-settings",
-                component: UpdateSettings,
-            },
-            {
-                name: _("Updates"),
-                path: "/updates",
-                component: Updates,
-            },
-            {
-                name: _("Packages"),
-                path: "/packages",
-                component: Packages,
-            },
-            {
-                name: _("Languages"),
-                path: "/languages",
-                component: Languages,
-            },
-        ],
-    },
-    {
-        name: _("Advanced Administration"),
-        path: ForisURLs.luci,
-        icon: "cog",
-        isLinkOutside: true,
-    },
-    {
-        name: _("About"),
-        path: "/about",
-        icon: "info-circle",
-        component: About,
-    },
-];
+export default function getPages(deviceDetails) {
+    const customization =
+        Object.hasOwnProperty.call(deviceDetails, "customization") &&
+        deviceDetails.customization === "shield";
 
-export default function getPages() {
-    const itemsWithWeight = addWeightsToPages(insert(PAGES, 4, ForisPlugins));
+    const PAGES = customization
+        ? [
+              {
+                  name: _("Overview"),
+                  path: "/overview",
+                  icon: "chart-line",
+                  component: Overview,
+              },
+              {
+                  name: _("Network Settings"),
+                  submenuId: "network-settings",
+                  path: "/network-settings",
+                  icon: "network-wired",
+                  pages: [
+                      {
+                          name: _("WAN"),
+                          path: "/wan",
+                          component: WAN,
+                      },
+                      {
+                          name: _("LAN"),
+                          path: "/lan",
+                          component: LAN,
+                      },
+                      {
+                          name: _("DNS"),
+                          path: "/dns",
+                          component: DNS,
+                      },
+                  ],
+              },
+              {
+                  name: _("Administration"),
+                  submenuId: "administration",
+                  path: "/administration",
+                  icon: "user-cog",
+                  pages: [
+                      {
+                          name: _("Password"),
+                          path: "/password",
+                          component: Password,
+                      },
+                      {
+                          name: _("Region & Time"),
+                          path: "/region-and-time",
+                          component: RegionAndTime,
+                      },
+                      {
+                          name: _("Notifications"),
+                          path: "/notifications-settings",
+                          component: NotificationsSettings,
+                      },
+                      {
+                          name: _("Maintenance"),
+                          path: "/maintenance",
+                          component: Maintenance,
+                      },
+                  ],
+              },
+              {
+                  name: _("Global Threat Statistics"),
+                  path: "https://view.sentinel.turris.cz",
+                  icon: "chart-line",
+                  isLinkOutside: true,
+              },
+              {
+                  name: _("About"),
+                  path: "/about",
+                  icon: "info-circle",
+                  component: About,
+              },
+          ]
+        : [
+              {
+                  name: _("Overview"),
+                  path: "/overview",
+                  icon: "chart-line",
+                  component: Overview,
+              },
+              {
+                  name: _("Network Settings"),
+                  submenuId: "network-settings",
+                  path: "/network-settings",
+                  icon: "network-wired",
+                  pages: [
+                      {
+                          name: _("Wi-Fi"),
+                          path: "/wifi",
+                          component: WiFi,
+                      },
+                      {
+                          name: _("WAN"),
+                          path: "/wan",
+                          component: WAN,
+                      },
+                      {
+                          name: _("LAN"),
+                          path: "/lan",
+                          component: LAN,
+                      },
+                      {
+                          name: _("DNS"),
+                          path: "/dns",
+                          component: DNS,
+                      },
+                      {
+                          name: _("Interfaces"),
+                          path: "/interfaces",
+                          component: Interfaces,
+                      },
+                      {
+                          name: _("Guest Network"),
+                          path: "/guest-network",
+                          component: GuestNetwork,
+                      },
+                  ],
+              },
+              {
+                  name: _("Administration"),
+                  submenuId: "administration",
+                  path: "/administration",
+                  icon: "user-cog",
+                  pages: [
+                      {
+                          name: _("Password"),
+                          path: "/password",
+                          component: Password,
+                      },
+                      {
+                          name: _("Region & Time"),
+                          path: "/region-and-time",
+                          component: RegionAndTime,
+                      },
+                      {
+                          name: _("Notifications"),
+                          path: "/notifications-settings",
+                          component: NotificationsSettings,
+                      },
+                      {
+                          name: _("Maintenance"),
+                          path: "/maintenance",
+                          component: Maintenance,
+                      },
+                  ],
+              },
+              {
+                  name: _("Package Management"),
+                  submenuId: "package-management",
+                  path: "/package-management",
+                  icon: "box",
+                  pages: [
+                      {
+                          name: _("Update Settings"),
+                          path: "/update-settings",
+                          component: UpdateSettings,
+                      },
+                      {
+                          name: _("Updates"),
+                          path: "/updates",
+                          component: Updates,
+                      },
+                      {
+                          name: _("Packages"),
+                          path: "/packages",
+                          component: Packages,
+                      },
+                      {
+                          name: _("Languages"),
+                          path: "/languages",
+                          component: Languages,
+                      },
+                  ],
+              },
+              {
+                  name: _("Advanced Administration"),
+                  path: ForisURLs.luci,
+                  icon: "cog",
+                  isLinkOutside: true,
+              },
+              {
+                  name: _("About"),
+                  path: "/about",
+                  icon: "info-circle",
+                  component: About,
+              },
+          ];
+
+    const insertPluginsAfterTab = customization ? 3 : 4;
+
+    const itemsWithWeight = addWeightsToPages(
+        insert(PAGES, insertPluginsAfterTab, ForisPlugins)
+    );
+
     return itemsWithWeight;
 }

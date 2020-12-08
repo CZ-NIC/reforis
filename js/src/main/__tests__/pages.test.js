@@ -9,12 +9,14 @@ import getPages from "../pages";
 import { newSubmenu, pluginInExistedSubmenu } from "./__fixtures__/plugins";
 
 describe("Test plugging in the menu.", () => {
+    let deviceDetails = {};
+
     it("Master plugin first, slave second (normal order).", () => {
         global.ForisPlugins = [
             newSubmenu("nonexisted-submenu", 1),
             pluginInExistedSubmenu("nonexisted-submenu", 1),
         ];
-        const pages = getPages();
+        const pages = getPages(deviceDetails);
 
         expect(pages[4].submenuId).toBe("nonexisted-submenu");
         expect(pages[4].pages[0].name).toBe("Plugin in submenu");
@@ -25,7 +27,7 @@ describe("Test plugging in the menu.", () => {
             pluginInExistedSubmenu("nonexisted-submenu", 1),
             newSubmenu("nonexisted-submenu", 1),
         ];
-        const pages = getPages();
+        const pages = getPages(deviceDetails);
         expect(pages[4].submenuId).toBe("nonexisted-submenu");
         expect(pages[4].pages[0].name).toBe("Plugin in submenu");
     });

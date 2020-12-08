@@ -30,6 +30,7 @@ ForisPasswordForm.propTypes = {
     setFormValue: PropTypes.func.isRequired,
     postForisPassword: PropTypes.func.isRequired,
     passwordSet: PropTypes.bool.isRequired,
+    deviceDetails: PropTypes.object.isRequired,
     disabled: PropTypes.bool,
 };
 
@@ -41,14 +42,13 @@ export default function ForisPasswordForm({
     postForisPassword,
     disabled,
     passwordSet,
+    deviceDetails,
 }) {
     return (
         <>
+            <h2>{_("Foris Password")}</h2>
+            <p>{_("Set your password for this administration interface.")}</p>
             <form onSubmit={postForisPassword}>
-                <h2>{_("Foris Password")}</h2>
-                <p>
-                    {_("Set your password for this administration interface.")}
-                </p>
                 {passwordSet && (
                     <PasswordInput
                         withEye
@@ -70,22 +70,30 @@ export default function ForisPasswordForm({
                     }))}
                     disabled={disabled}
                 />
-                <CheckBox
-                    label={_(
-                        "Use same password for advanced administration (root)"
-                    )}
-                    helpText={_(
-                        "Same password would be used for accessing this administration interface, for root user in " +
-                            "LuCI web interface and for SSH login. Use a strong password! (If you choose not to set the password " +
-                            "for advanced configuration here, you will have the option to do so later. Until then, the root account " +
-                            "will be blocked.)"
-                    )}
-                    checked={formData.sameForRoot}
-                    onChange={setFormValue((value) => ({
-                        sameForRoot: { $set: value },
-                    }))}
-                    disabled={disabled}
-                />
+
+                {!(
+                    Object.hasOwnProperty.call(
+                        deviceDetails,
+                        "customization"
+                    ) && deviceDetails.customization === "shield"
+                ) && (
+                    <CheckBox
+                        label={_(
+                            "Use same password for advanced administration (root)"
+                        )}
+                        helpText={_(
+                            "Same password would be used for accessing this administration interface, for root user in " +
+                                "LuCI web interface and for SSH login. Use a strong password! (If you choose not to set the password " +
+                                "for advanced configuration here, you will have the option to do so later. Until then, the root account " +
+                                "will be blocked.)"
+                        )}
+                        checked={formData.sameForRoot}
+                        onChange={setFormValue((value) => ({
+                            sameForRoot: { $set: value },
+                        }))}
+                        disabled={disabled}
+                    />
+                )}
                 <div className="text-right">
                     <SubmitButton
                         state={submitButtonState}

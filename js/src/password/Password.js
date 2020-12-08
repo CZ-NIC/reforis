@@ -16,9 +16,9 @@ import {
     API_STATE,
     useAlert,
     ALERT_TYPES,
-    withErrorMessage,
-    withSpinnerOnSending,
+    ErrorMessage,
     formFieldsSize,
+    Spinner,
 } from "foris";
 
 import API_URLs from "common/API";
@@ -27,7 +27,7 @@ import ForisPasswordForm from "./ForisPasswordForm";
 import RootPasswordForm from "./RootPasswordForm";
 
 Password.propTypes = {
-    postCallback: PropTypes.func,
+    postCallback: PropTypes.func.isRequired,
 };
 
 Password.defaultProps = {
@@ -36,33 +36,13 @@ Password.defaultProps = {
 
 export default function Password({ postCallback }) {
     const [getPasswordResponse, getPassword] = useAPIGet(API_URLs.password);
+    const [getAboutResponse, getAbout] = useAPIGet(API_URLs.about);
+
     useEffect(() => {
         getPassword();
-    }, [getPassword]);
+        getAbout();
+    }, [getAbout, getPassword]);
 
-    return (
-        <>
-            <h1>{_("Password")}</h1>
-            <p>
-                {_(
-                    `Here you can set passwords for Foris and optionally for advanced features (LuCI and SSH). Make sure to set secure password which is long and uncommon.`
-                )}
-            </p>
-            <PasswordFormWithErrorAndSpinner
-                apiState={getPasswordResponse.state}
-                currentPassword={getPasswordResponse.data || {}}
-                postCallback={postCallback}
-            />
-        </>
-    );
-}
-
-PasswordForm.propTypes = {
-    postCallback: PropTypes.func.isRequired,
-    currentPassword: PropTypes.object.isRequired,
-};
-
-function PasswordForm({ postCallback, currentPassword }) {
     const [formState, onFormChangeHandler, resetFormData] = useForm(validator);
 
     const resetPasswordForm = useCallback(() => {
@@ -147,28 +127,61 @@ function PasswordForm({ postCallback, currentPassword }) {
         ? SUBMIT_BUTTON_STATES.SAVING
         : SUBMIT_BUTTON_STATES.READY;
 
-    return (
-        <div className={formFieldsSize}>
-            <ForisPasswordForm
-                formData={formState.data}
-                formErrors={formState.errors}
-                submitButtonState={submitButtonState}
-                disabled={isSending}
-                setFormValue={onFormChangeHandler}
-                postForisPassword={postForisPassword}
-                passwordSet={currentPassword.password_set}
-            />
-            {!formState.data.sameForRoot && (
-                <RootPasswordForm
+    const isPending =
+        getPasswordResponse.state === API_STATE.SENDING ||
+        getAboutResponse.state === API_STATE.SENDING;
+
+    const onError =
+        getPasswordResponse.state === API_STATE.ERROR ||
+        getAboutResponse.state === API_STATE.ERROR;
+
+    const onSuccess =
+        getPasswordResponse.state === API_STATE.SUCCESS &&
+        getAboutResponse.state === API_STATE.SUCCESS;
+
+    let passwordComponent;
+
+    if (isPending) {
+        passwordComponent = <Spinner />;
+    } else if (onError) {
+        passwordComponent = <ErrorMessage />;
+    } else if (onSuccess) {
+        passwordComponent = (
+            <div className={formFieldsSize}>
+                <ForisPasswordForm
                     formData={formState.data}
                     formErrors={formState.errors}
                     submitButtonState={submitButtonState}
                     disabled={isSending}
                     setFormValue={onFormChangeHandler}
-                    postRootPassword={postRootPassword}
+                    postForisPassword={postForisPassword}
+                    passwordSet={getPasswordResponse.data.password_set}
+                    deviceDetails={getAboutResponse.data}
                 />
-            )}
-        </div>
+                {!formState.data.sameForRoot && (
+                    <RootPasswordForm
+                        formData={formState.data}
+                        formErrors={formState.errors}
+                        submitButtonState={submitButtonState}
+                        disabled={isSending}
+                        setFormValue={onFormChangeHandler}
+                        postRootPassword={postRootPassword}
+                        deviceDetails={getAboutResponse.data}
+                    />
+                )}
+            </div>
+        );
+    }
+    return (
+        <>
+            <h1>{_("Password")}</h1>
+            <p>
+                {_(
+                    `Here you can set passwords for Foris and optionally for advanced features (LuCI and SSH). Make sure to set secure password which is long and uncommon.`
+                )}
+            </p>
+            {passwordComponent}
+        </>
     );
 }
 
@@ -194,7 +207,3 @@ function validatePassword(password) {
 
     return null;
 }
-
-const PasswordFormWithErrorAndSpinner = withSpinnerOnSending(
-    withErrorMessage(PasswordForm)
-);

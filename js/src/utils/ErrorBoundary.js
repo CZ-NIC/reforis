@@ -33,7 +33,7 @@ export default class ErrorBoundary extends React.Component {
     render() {
         const { error } = this.state;
         if (error) {
-            document.title = "An Error Occurred - Foris";
+            document.title = "An Error Occurred - reForis";
             return (
                 <Portal containerId="content-container">
                     <h1>{_("An Error Occurred")}</h1>
