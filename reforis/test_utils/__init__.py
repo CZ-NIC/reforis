@@ -1,4 +1,4 @@
-#  Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+#  Copyright (C) 2019-2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
 #
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
@@ -22,7 +22,8 @@ def _test_api_endpoint_foris_controller_call(
         url, method,
         module, action,
         request_data=None,
-        response_data=None
+        response_data=None,
+        response_code=200
 ):
     """
     response_data is returned by backend call with `module` and `action` specified in arguments. If another backend
@@ -50,7 +51,7 @@ def _test_api_endpoint_foris_controller_call(
     with mock_backend_response(response_mock_data) as mock_send:
         response = getattr(client, method)(url, json=request_data)
 
-    assert response.status_code == 200
+    assert response.status_code == response_code
     _check_called_foris_controller_module(mock_send, module, action)
 
 
