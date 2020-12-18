@@ -75,6 +75,7 @@ export const API_MODULE_URLs = new Proxy(
         openvpnClients: "/openvpn/api/client-settings",
         netmetr: "/netmetr/api/data",
         schnapps: "/snapshots/api/snapshots/factory_reset",
+        storage: "/storage/api/settings",
     },
     {
         get: (target, name) => `${API_URL_MODULES_PREFIX}${target[name]}`,
