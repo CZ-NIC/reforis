@@ -8,16 +8,17 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2020-11-10 10:38+0100\n"
-"PO-Revision-Date: 2019-08-15 06:23+0000\n"
-"Last-Translator: Krzysztof Kulesza <github@cmza.pl>\n"
+"PO-Revision-Date: 2020-12-23 13:29+0000\n"
+"Last-Translator: Adam Stańczyk <a.stanczyk@onet.pl>\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/turris/reforis/pl/"
+">\n"
 "Language: pl\n"
-"Language-Team: Polish "
-"<https://hosted.weblate.org/projects/turris/reforis/pl/>\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && "
-"(n%100<10 || n%100>=20) ? 1 : 2\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.4.1-dev\n"
 "Generated-By: Babel 2.8.0\n"
 
 #: js/src/about/About.js:22 js/src/main/pages.js:140
@@ -34,7 +35,7 @@ msgstr ""
 
 #: js/src/about/About.js:48
 msgid "Device"
-msgstr ""
+msgstr "Urządzenie"
 
 #: js/src/about/About.js:52
 msgid "Serial number"
@@ -50,7 +51,7 @@ msgstr ""
 
 #: js/src/about/About.js:65
 msgid "Turris OS branch"
-msgstr ""
+msgstr "Gałąź Turris OS"
 
 #: js/src/about/About.js:68
 msgid ""
@@ -334,7 +335,7 @@ msgstr ""
 
 #: js/src/dns/Forwarders/ForwardersTable.js:150
 msgid "Delete"
-msgstr ""
+msgstr "Usunąć"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:23
 msgid "base64 encoded sha256."
@@ -359,7 +360,7 @@ msgstr ""
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:116
 msgid "Save"
-msgstr ""
+msgstr "Zapisz"
 
 #: js/src/dns/Forwarders/Forwarder/IPAddressesForm.js:13
 msgid "IPv4"
@@ -416,7 +417,7 @@ msgstr ""
 #: js/src/guestNetwork/GuestNetwork.js:36 js/src/interfaces/constants.js:11
 #: js/src/main/pages.js:71
 msgid "Guest Network"
-msgstr ""
+msgstr "Sieć gościa"
 
 #: js/src/guestNetwork/GuestNetwork.js:40
 msgid ""
@@ -503,6 +504,10 @@ msgid ""
 "device. Firstly it is required to set your password. Note the security of"
 " your home network is in your hands, so try not to use weak passwords."
 msgstr ""
+"Witamy w interfejsie internetowym Foris. Ten przewodnik pomoże Ci "
+"skonfigurować urządzenie. Najpierw należy ustawić hasło. Pamiętaj, że "
+"bezpieczeństwo sieci domowej jest w twoich rękach, więc staraj się nie "
+"używać słabych haseł."
 
 #: js/src/guide/constants.js:17
 msgid "Your password is set. You may proceed to the next step."
@@ -510,25 +515,28 @@ msgstr ""
 
 #: js/src/guide/constants.js:20
 msgid "The workflow was set. You may proceed to next step."
-msgstr ""
+msgstr "Przepływ pracy został ustawiony. Możesz przejść do następnego kroku."
 
 #: js/src/guide/constants.js:24
 msgid "Here you need to decide which interfaces belong to which network."
-msgstr ""
+msgstr "Tutaj musisz zdecydować, które interfejsy należą do której sieci."
 
 #: js/src/guide/constants.js:27
 msgid "If you are in doubt use the current settings."
-msgstr ""
+msgstr "W razie wątpliwości użyj bieżących ustawień."
 
 #: js/src/guide/constants.js:29
 msgid ""
 "You've configured your network interfaces. It seems that you didn't break"
 " any crucial network settings so you can safely proceed to the next step."
 msgstr ""
+"Skonfigurowałeś swoje interfejsy sieciowe. Wygląda na to, że prawidłowo "
+"podałeś kluczowe ustawienia sieci, więc możesz bezpiecznie przejść do "
+"następnego kroku."
 
 #: js/src/guide/constants.js:34
 msgid "Now you need to set the time and timezone of your device."
-msgstr ""
+msgstr "Teraz musisz ustawić godzinę i strefę czasową swojego urządzenia."
 
 #: js/src/guide/constants.js:35
 msgid ""
@@ -542,6 +550,8 @@ msgid ""
 "A proper DNS resolving is one of the key security features of your "
 "device. Let's configure it now."
 msgstr ""
+"Prawidłowe rozwiązywanie DNS jest jedną z kluczowych funkcji bezpieczeństwa "
+"twojego urządzenia. Skonfigurujmy to teraz."
 
 #: js/src/guide/constants.js:43
 msgid ""
@@ -551,7 +561,7 @@ msgstr ""
 
 #: js/src/guide/constants.js:48
 msgid "In order to access the internet, you need to configure your WAN interface."
-msgstr ""
+msgstr "Aby uzyskać dostęp do Internetu, musisz skonfigurować interfejs WAN."
 
 #: js/src/guide/constants.js:51
 msgid ""
@@ -559,6 +569,9 @@ msgid ""
 "whether it is working properly and if so you can safely proceed to the "
 "next step."
 msgstr ""
+"Skonfigurowałeś interfejs WAN. Spróbuj uruchomić test połączenia, aby "
+"sprawdzić, czy działa poprawnie, a jeśli tak, możesz bezpiecznie przejść do "
+"następnego kroku."
 
 #: js/src/guide/constants.js:56
 msgid ""
@@ -567,12 +580,18 @@ msgid ""
 "configuration interface unless you restart the network on your current "
 "device."
 msgstr ""
+"Teraz powinieneś skonfigurować interfejs LAN. Zwróć uwagę, że po zmianie "
+"ustawień sieciowych prawdopodobnie nie będziesz w stanie połączyć się z "
+"interfejsem konfiguracyjnym, chyba że ponownie uruchomisz sieć na obecnym "
+"urządzeniu."
 
 #: js/src/guide/constants.js:59
 msgid ""
 "You've configured your LAN interface. Try to test whether settings work "
 "properly and if so you can safely proceed to the next step."
 msgstr ""
+"Skonfigurowałeś interfejs LAN. Spróbuj sprawdzić, czy ustawienia działają "
+"poprawnie, a jeśli tak, możesz bezpiecznie przejść do następnego kroku."
 
 #: js/src/guide/constants.js:64
 msgid "Now you need to configure automatic updates on your device."
@@ -869,7 +888,7 @@ msgstr ""
 
 #: js/src/interfaces/SelectedInterface.js:102
 msgid "Type"
-msgstr ""
+msgstr "Rodzaj"
 
 #: js/src/interfaces/SelectedInterface.js:106
 msgid "Bus"
@@ -1243,7 +1262,7 @@ msgstr ""
 
 #: js/src/overview/Cards/DataCollectionCard.js:43
 msgid "Data Collection"
-msgstr ""
+msgstr "Gromadzenie danych"
 
 #: js/src/overview/Cards/DynamicFirewallCard.js:23
 msgid "Dynamic Firewall"
@@ -2336,4 +2355,3 @@ msgstr ""
 
 #~ msgid "Foris"
 #~ msgstr ""
-
