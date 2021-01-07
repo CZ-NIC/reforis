@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2020-11-10 10:38+0100\n"
-"PO-Revision-Date: 2021-01-07 01:26+0000\n"
+"PO-Revision-Date: 2021-01-08 14:32+0000\n"
 "Last-Translator: Zoli <boritek@gmail.com>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/turris/reforis/"
 "hu/>\n"
@@ -529,7 +529,7 @@ msgstr "QoS engedélyezése"
 #: js/src/guestNetwork/GuestNetworkForm.js:158
 #: js/src/overview/Cards/NetmetrCard.js:65
 msgid "Download"
-msgstr "Letöltés"
+msgstr "Letölt"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:171
 #: js/src/overview/Cards/NetmetrCard.js:81
@@ -603,7 +603,7 @@ msgid ""
 "matches the time on your computer if not try to update it via NTP or "
 "manually."
 msgstr ""
-"Az idő  és időzóna beállítva. Ellenőrizze, hogy az idő megegyezik a "
+"Az idő és időzóna beállítva. Ellenőrizze, hogy az idő megegyezik a "
 "számítógépe idejével, ha nem, akkor frissítse azt ntp-vel vagy manuálisan."
 
 #: js/src/guide/constants.js:40
@@ -611,7 +611,7 @@ msgid ""
 "A proper DNS resolving is one of the key security features of your "
 "device. Let's configure it now."
 msgstr ""
-"A megfelelő DNS-feloldás  a készülék legfontosabb biztonsági funkcióinak "
+"A megfelelő DNS-feloldás a készülék legfontosabb biztonsági funkcióinak "
 "egyike. Állítsuk be most."
 
 #: js/src/guide/constants.js:43
@@ -620,7 +620,7 @@ msgid ""
 "whether your DNS resolver is properly set."
 msgstr ""
 "DNS beállítások frissítve. Futtasson csatlakozási tesztet, hogy kiderüljön a "
-"DNS feloldás megfelelően van-e beállítva"
+"DNS feloldás megfelelően van-e beállítva."
 
 #: js/src/guide/constants.js:48
 msgid "In order to access the internet, you need to configure your WAN interface."
@@ -699,7 +699,7 @@ msgstr ""
 "A helyi kiszolgáló szerinti működés nem igényli a LAN kezelését (ha mégis "
 "kezelni szeretné, kezdje újra az útmutatót és válassza az Útválasztó "
 "munkafolyamatot). Valószínűleg ügyfélként szeretne működni most, ezért "
-"válassza a <strong>Számítógép</strong> módot itt"
+"válassza a <strong>Számítógép</strong> módot itt."
 
 #: js/src/guide/constants.js:105
 msgid ""
@@ -1691,7 +1691,7 @@ msgstr "Az újraindítás maximum 10 nappal késleltethető"
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:94
 msgid "Delay must be a positive number"
-msgstr "A késleltetésnek pozitív számnak kell lennie."
+msgstr "A késleltetésnek pozitív számnak kell lennie"
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:16
 msgid "Automatic installation"
@@ -2011,83 +2011,92 @@ msgid ""
 "Time should be up-to-date otherwise DNS and other services might not work"
 " properly."
 msgstr ""
+"Az időnek naprakésznek kell lennie, különben előfordulhat, hogy a DNS és más "
+"szolgáltatások nem működnek megfelelően."
 
 #: js/src/regionAndTime/TimeForm.js:112
 msgid "How to set time"
-msgstr ""
+msgstr "Hogyan állítsuk be a pontos időt"
 
 #: js/src/regionAndTime/TimeForm.js:177
 msgid "Hide NTP servers list"
-msgstr ""
+msgstr "NTP-kiszolgálók listájának elrejtése"
 
 #: js/src/regionAndTime/TimeForm.js:178
 msgid "Show NTP servers list"
-msgstr ""
+msgstr "NTP-kiszolgálók listájának megjelenítése"
 
 #: js/src/regionAndTime/TimeForm.js:182
 msgid "NTP Servers"
-msgstr ""
+msgstr "NTP-kiszolgálók"
 
 #: js/src/routerStateHandler/NetworkRestartHandler.js:29
 #, python-format
 msgid "Network restart after %d sec."
-msgstr ""
+msgstr "A hálózat újraindítása %d mp után."
 
 #: js/src/routerStateHandler/NetworkRestartHandler.js:34
 msgid "Network restarting"
-msgstr ""
+msgstr "Hálózat újraindítása"
 
 #: js/src/routerStateHandler/NetworkRestartHandler.js:37
 #: js/src/routerStateHandler/RebootHandler.js:33
 msgid "Reconnecting"
-msgstr ""
+msgstr "Újracsatlakozás"
 
 #: js/src/routerStateHandler/RebootHandler.js:27
 #, python-format
 msgid "Reboot after %d sec."
-msgstr ""
+msgstr "Újraindítás %d másodperc után."
 
 #: js/src/routerStateHandler/RebootHandler.js:30
 msgid "Rebooting"
-msgstr ""
+msgstr "Újraindítás"
 
 #: js/src/utils/ErrorBoundary.js:39
 msgid "An Error Occurred"
-msgstr ""
+msgstr "Hiba történt"
 
 #: js/src/utils/ErrorBoundary.js:44
 msgid ""
 "More detailed information is available in the console of your web browser"
 " - on most browsers accessible after pressing Ctrl+Shift+J or F12."
 msgstr ""
+"Részletesebb információ a webböngésző konzolján érhető el - amely a legtöbb "
+"böngészőben a Ctrl+Shift+J vagy az F12 billentyűkombináció lenyomása után "
+"érhető el."
 
 #: js/src/utils/ErrorBoundary.js:50
 msgid ""
 "Please report this error to our support team via e-mail: <a "
 "href=\"mailto:tech.support@turris.cz\">tech.support@turris.cz</a>."
 msgstr ""
+"Kérjük, jelentse ezt a hibát ügyfélszolgálatunknak e-mailben: <a href="
+"\"mailto:tech.support@turris.cz\">tech.support@turris.cz</a>."
 
 #: js/src/wan/MACForm.js:14
 msgid ""
 "Useful in cases, when a specific MAC address is required by your internet"
 " service provider."
 msgstr ""
+"Hasznos olyan esetekben, amikor egy adott MAC-címet vár el az internet-"
+"szolgáltató."
 
 #: js/src/wan/MACForm.js:17
 msgid "Colon is used as a separator, for example 00:11:22:33:44:55"
-msgstr ""
+msgstr "A kettőspont elválasztóként használatos, például 00:11:22:33:44:55"
 
 #: js/src/wan/MACForm.js:51
 msgid "MAC"
-msgstr ""
+msgstr "MAC"
 
 #: js/src/wan/MACForm.js:53
 msgid "Custom MAC address"
-msgstr ""
+msgstr "Egyéni MAC-cím"
 
 #: js/src/wan/MACForm.js:63
 msgid "MAC address"
-msgstr ""
+msgstr "MAC-cím"
 
 #: js/src/wan/WAN.js:29
 msgid ""
@@ -2100,6 +2109,14 @@ msgid ""
 "setting.\n"
 "        "
 msgstr ""
+"\n"
+"Itt adhatja meg a WAN-port beállításait. Ezeket a beállításokat általában "
+"érintetlenül hagyhatja, hacsak\n"
+"az internetszolgáltatója mást nem mond. Abban az esetben is, ha kábel vagy "
+"DSL modem csatlakoztatja\n"
+"az útválasztót a hálózatra, általában nem szükséges megváltoztatni ezt a "
+"beállítást.\n"
+"        "
 
 #: js/src/wan/WAN.js:53
 msgid ""
@@ -2111,20 +2128,28 @@ msgid ""
 "wait for a while before running this test.\n"
 "        "
 msgstr ""
+"\n"
+"Itt tesztelheti a csatlakozási beállításokat. Ne felejtsen el a <b>Mentés "
+"gombra</b> kattintani a teszt futtatása előtt.\n"
+"Ne feledje, hogy néha eltart egy ideig, amíg a kapcsolat teljesen "
+"inicializálódik. Ezért hasznos lehet, hogy\n"
+"várjon egy kicsit, mielőtt futtatja ezt a tesztet.\n"
+"        "
 
 #: js/src/wan/WAN6Form.js:26
 msgid "DUID which will be provided to the DHCPv6 server."
-msgstr ""
+msgstr "DUID, amelyet a DHCPv6-kiszolgálónak biztosítunk."
 
 #: js/src/wan/WAN6Form.js:30
 msgid ""
 "IPv6 address and prefix length for WAN interface e.g. "
 "2001:db8:be13:37da::1/64"
 msgstr ""
+"IPv6-cím és előtag méret a WAN-interfészhez, pl. 2001:db8:be13:37da::1 / 64"
 
 #: js/src/wan/WAN6Form.js:33
 msgid "Address range for local network, e.g. 2001:db8:be13:37da::/64"
-msgstr ""
+msgstr "Címtartomány a helyi hálózaton, például a 2001:db8:be13:37da::/64"
 
 #: js/src/wan/WAN6Form.js:42
 msgid ""
@@ -2132,132 +2157,137 @@ msgid ""
 " address manually (e.g. when your WAN interface has a private address "
 "which is mapped to public IP)."
 msgstr ""
+"A 6to4 protokollt használatához, szükség lehet a nyilvános IPv4-címének "
+"megadására (például, ha a WAN interfésznek privát címe van, amely a publikus "
+"IP-hez van társítva)."
 
 #: js/src/wan/WAN6Form.js:49
 msgid ""
 "This address will be used as a endpoint of the tunnel on the provider's "
 "side."
-msgstr ""
+msgstr "A cím, mint a szolgáltató oldali alagútvégpont lesz használva."
 
 #: js/src/wan/WAN6Form.js:52
 msgid "IPv6 addresses which will be routed to your network."
-msgstr ""
+msgstr "IPv6-címek, amelyek a hálózatához lesznek irányítva."
 
 #: js/src/wan/WAN6Form.js:53
 msgid "Maximum Transmission Unit in the tunnel (in bytes)."
-msgstr ""
+msgstr "Maximális Átviteli Egység az alagútban (byte-ban)."
 
 #: js/src/wan/WAN6Form.js:56
 msgid ""
 "Some tunnel providers allow you to have public dynamic IPv4. Note that "
 "you need to fill in some extra fields to make it work."
 msgstr ""
+"Néhány alagút szolgáltató lehetővé teszi, hogy a nyilvános dinamikus IPv4 "
+"címe legyen. Ehhez további mezőket kell kitölteni, hogy működjön."
 
 #: js/src/wan/WAN6Form.js:60
 msgid "ID of your tunnel which was assigned to you by the provider."
-msgstr ""
+msgstr "Az alagút azonosítója, amelyet a szolgáltatója adott önnek."
 
 #: js/src/wan/WAN6Form.js:63
 msgid ""
 "Username which will be used to provide credentials to your tunnel "
 "provider."
-msgstr ""
+msgstr "Felhasználónév az alagútszolgáltató felé szükséges azonosításhoz."
 
 #: js/src/wan/WAN6Form.js:66
 msgid "Key which will be used to provide credentials to your tunnel provider."
-msgstr ""
+msgstr "Azonosításhoz szükséges kulcs az alagútszolgáltató felé."
 
 #: js/src/wan/WAN6Form.js:74
 msgid "Disable IPv6"
-msgstr ""
+msgstr "IPv6 letiltása"
 
 #: js/src/wan/WAN6Form.js:75
 msgid "DHCPv6 (automatic configuration)"
-msgstr ""
+msgstr "DHCPv6 (automatikus beállítás)"
 
 #: js/src/wan/WAN6Form.js:77
 msgid "6to4 (public IPv4 address required)"
-msgstr ""
+msgstr "6to4 (nyilvános IPv4-cím szükséges)"
 
 #: js/src/wan/WAN6Form.js:78
 msgid "6in4 (public IPv4 address required)"
-msgstr ""
+msgstr "6in4 (nyilvános IPv4-cím szükséges)"
 
 #: js/src/wan/WAN6Form.js:162
 msgid "WAN IPv6"
-msgstr ""
+msgstr "WAN IPv6"
 
 #: js/src/wan/WAN6Form.js:164
 msgid "IPv6 protocol"
-msgstr ""
+msgstr "IPv6 protokoll"
 
 #: js/src/wan/WAN6Form.js:197
 msgid "Custom DUID"
-msgstr ""
+msgstr "Egyéni DUID"
 
 #: js/src/wan/WAN6Form.js:232
 msgid "Address"
-msgstr ""
+msgstr "Cím"
 
 #: js/src/wan/WAN6Form.js:255
 msgid "Prefix"
-msgstr ""
+msgstr "Előtag"
 
 #: js/src/wan/WAN6Form.js:304
 msgid "Public IPv4"
-msgstr ""
+msgstr "Nyilvános IPv4"
 
 #: js/src/wan/WAN6Form.js:339
 msgid "Provider IPv4"
-msgstr ""
+msgstr "Szolgáltató IPv4 címe"
 
 #: js/src/wan/WAN6Form.js:352
 msgid "Routed IPv6 prefix"
-msgstr ""
+msgstr "Útválasztásos IPv6-előtag"
 
 #: js/src/wan/WAN6Form.js:365
 msgid "MTU"
-msgstr ""
+msgstr "MTU"
 
 #: js/src/wan/WAN6Form.js:421
 msgid "Tunnel ID"
-msgstr ""
+msgstr "Alagútazonosító"
 
 #: js/src/wan/WAN6Form.js:436
 msgid "Username"
-msgstr ""
+msgstr "Felhasználónév"
 
 #: js/src/wan/WAN6Form.js:451
 msgid "Key"
-msgstr ""
+msgstr "Kulcs"
 
 #: js/src/wan/WAN6Form.js:515
 msgid "Public IPv4 address is required."
-msgstr ""
+msgstr "Nyilvános IPv4-cím szükséges."
 
 #: js/src/wan/WAN6Form.js:532
 msgid "MTU should be a number in range of 1280-1500."
-msgstr ""
+msgstr "Az MTU-nak 1280-1500 tartományban lévő számnak kell lennie."
 
 #: js/src/wan/WAN6Form.js:534
 msgid "MTU should be in range of 1280-1500."
-msgstr ""
+msgstr "Az MTU-nak 1280-1500 tartományban lévő számnak kell lennie."
 
 #: js/src/wan/WANForm.js:27
 msgid "PPPoE (for DSL bridges, etc.)"
-msgstr ""
+msgstr "PPPoE (DSL-hidakhoz stb.)"
 
 #: js/src/wan/WANForm.js:100
 msgid "WAN IPv4"
-msgstr ""
+msgstr "WAN IPv4"
 
 #: js/src/wan/WANForm.js:128
 msgid "PAP/CHAP username"
-msgstr ""
+msgstr "PAP/CHAP felhasználónév"
 
 #: js/src/wan/WANForm.js:139
 msgid "PAP/CHAP password"
-msgstr ""
+msgstr "PAP/CHAP jelszó"
 
 #: js/src/wifi/WiFi.js:23
 msgid ""
@@ -2268,26 +2298,32 @@ msgid ""
 "devices, using the QR code available within the form.\n"
 "            "
 msgstr ""
+"\n"
+"Ha az útválasztót Wi-Fi hozzáférési pontkénr szeretné használni, akkor itt "
+"kell a Wi-Fi-t bekapcsolni és az SSID-jét (a hozzáférési pont nevét), \n"
+"illetve megfelelő jelszót kitölteni. Ezután mobil eszközei is beállíthatók a "
+"mezők melletti QR-kód segítségével.\n"
+"            "
 
 #: reforis/views.py:52
 msgid "Wrong password."
-msgstr ""
+msgstr "Rossz jelszó."
 
 #: reforis/foris_controller_api/modules/dns.py:41
 msgid "Can't add new DNS forwarder."
-msgstr ""
+msgstr "Nem lehet új DNS továbbítót hozzáadni."
 
 #: reforis/foris_controller_api/modules/dns.py:47
 msgid "Can't set DNS forwarder."
-msgstr ""
+msgstr "A DNS-továbbító nem állítható be."
 
 #: reforis/foris_controller_api/modules/dns.py:52
 msgid "Can't delete DNS forwarder."
-msgstr ""
+msgstr "A DNS-továbbító nem törölhető."
 
 #: reforis/foris_controller_api/modules/password.py:41
 msgid "Wrong current password."
-msgstr ""
+msgstr "Rossz jelenlegi jelszó."
 
 #: reforis/foris_controller_api/modules/router_notifications.py:112
 msgid ""
@@ -2297,101 +2333,107 @@ msgid ""
 "level on \"Reboot or attention is required\" or higher.\n"
 "            "
 msgstr ""
+"\n"
+"Ez egy tesztértesítés. Kérjük, vegye figyelembe, hogy ezt csak akkor kell "
+"megkapnia az e-mail postafiókjába, ha\n"
+"a fontossága \"Újraindítás vagy figyelem szükségs\" szintű vagy magasabb.\n"
+"            "
 
 #: reforis/foris_controller_api/modules/router_notifications.py:122
 msgid "Testing message was sent, please check your inbox."
-msgstr ""
+msgstr "Tesztüzenet elküldve, ellenőrizze a postaládáját."
 
 #: reforis/foris_controller_api/modules/router_notifications.py:125
 msgid ""
 "Sending of the testing message failed, your configuration is possibly "
 "wrong."
 msgstr ""
+"Tesztüzenet elküldése nem sikerült, a beállítás valószínűleg nem megfelelő."
 
 #: reforis/foris_controller_api/modules/updater.py:60
 msgid "Cannot change automatic restart settings."
-msgstr ""
+msgstr "Az automatikus újraindítási beállítások nem módosíthatók."
 
 #: reforis/foris_controller_api/modules/updater.py:75
 msgid "Cannot update approvals settings."
-msgstr ""
+msgstr "A jóváhagyási beállítások nem frissíthetők."
 
 #: reforis/foris_controller_api/modules/updater.py:79
 msgid "Cannot rollback automatic restart settings."
-msgstr ""
+msgstr "Az automatikus újraindítási beállítások nem visszaállíthatók."
 
 #: reforis/foris_controller_api/modules/updater.py:170
 msgid "Cannot start updater"
-msgstr ""
+msgstr "Nem lehet elindítani a Frissítéskezelőt"
 
 #: reforis/foris_controller_api/modules/updater.py:199
 msgid "You can't set it with disabled automatic updates."
-msgstr ""
+msgstr "A letiltott automatikus frissítésekkel nem állítható be."
 
 #: reforis/templates/guide.html:10
 msgid "Guide"
-msgstr ""
+msgstr "Útmutató"
 
 #: reforis/templates/login.html:32
 msgid "Log in"
-msgstr ""
+msgstr "Bejelentkezés"
 
 #: reforis/templates/login.html:33
 msgid "Go to LuCI"
-msgstr ""
+msgstr "Ugrás a LuCI-ra"
 
 #: reforis/templates/login.html:33
 msgid "or"
-msgstr ""
+msgstr "vagy"
 
 #: reforis/templates/login.html:34
 msgid "back to select"
-msgstr ""
+msgstr "vissza a kijelöléshez"
 
 #: reforis/templates/errors/400.html:4 reforis/templates/errors/400.html:8
 msgid "400 - Bad Request"
-msgstr ""
+msgstr "400 - Rossz kérés"
 
 #: reforis/templates/errors/400.html:9 reforis/templates/errors/500.html:9
 msgid "Error:"
-msgstr ""
+msgstr "Hiba:"
 
 #: reforis/templates/errors/400.html:12 reforis/templates/errors/500.html:12
 msgid "Extra:"
-msgstr ""
+msgstr "Extra:"
 
 #: reforis/templates/errors/400.html:16 reforis/templates/errors/500.html:16
 msgid "Trace:"
-msgstr ""
+msgstr "Nyomkövetés:"
 
 #: reforis/templates/errors/403.html:4
 msgid "403 - Forbidden"
-msgstr ""
+msgstr "403 - Tiltott"
 
 #: reforis/templates/errors/403.html:9
 msgid "Forbidden You don't have permission to access"
-msgstr ""
+msgstr "Tiltva. Nincs engedélye a hozzáférésre"
 
 #: reforis/templates/errors/403.html:10
 #, python-format
 msgid "Do you want to <a href=\"%(link)s\">log in</a>?"
-msgstr ""
+msgstr "Szeretne <a href=\"%(link)s\">bejelentkezni</a>?"
 
 #: reforis/templates/errors/404.html:4
 msgid "404 - Page not found"
-msgstr ""
+msgstr "404 - Az oldal nem található"
 
 #: reforis/templates/errors/404.html:9
 msgid "Page not found :("
-msgstr ""
+msgstr "Az oldal nem található :("
 
 #: reforis/templates/errors/500.html:4
 msgid "Server error"
-msgstr ""
+msgstr "Kiszolgálói hiba"
 
 #: reforis/templates/errors/500.html:8
 msgid "500 - Server error"
-msgstr ""
+msgstr "500 - Kiszolgálóhiba"
 
 #~ msgid ""
 #~ "\n"
