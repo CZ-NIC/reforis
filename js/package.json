@@ -11,7 +11,7 @@
     "main": "./src/app.js",
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.1",
-        "axios": "^0.19.2",
+        "axios": "^0.21.1",
         "bootstrap": "4.4.1",
         "bootswatch": "4.4.1",
         "foris": "^5.1.7",
