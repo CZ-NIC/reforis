@@ -18,7 +18,7 @@ SyslogForm.propTypes = {
         noDiskMounted: PropTypes.string,
     }),
     formData: PropTypes.shape({
-        persistent_logs: PropTypes.bool.isRequired,
+        persistent_logs: PropTypes.bool,
     }),
     setFormValue: PropTypes.func,
 };
