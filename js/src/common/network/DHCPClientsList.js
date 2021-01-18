@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2019-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -8,6 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import moment from "moment";
+import { formFieldsSize } from "foris";
 
 DHCPClientsList.propTypes = {
     clients: PropTypes.arrayOf(PropTypes.object),
@@ -15,6 +16,7 @@ DHCPClientsList.propTypes = {
 
 export default function DHCPClientsList({ clients }) {
     return (
+        <div className={formFieldsSize}>
             <h2>{_("DHCP Client List")}</h2>
             <p>
                 {_(
@@ -23,12 +25,12 @@ export default function DHCPClientsList({ clients }) {
             </p>
             {clients.length === 0 ? (
                 <p className="text-muted text-center">
-                    {_("No DHCP clients found.")}
+                    {_("No clients found.")}
                 </p>
             ) : (
                 <div className="table-responsive">
                     <table className="table table-hover">
-                        <thead>
+                        <thead className="thead-light">
                             <tr className="text-center">
                                 <th>{_("Expires")}</th>
                                 <th>{_("IP Address")}</th>
@@ -48,7 +50,7 @@ export default function DHCPClientsList({ clients }) {
                     </table>
                 </div>
             )}
-        </>
+        </div>
     );
 }
 

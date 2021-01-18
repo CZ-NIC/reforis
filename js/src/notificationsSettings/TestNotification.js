@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -11,7 +11,6 @@ import PropTypes from "prop-types";
 import {
     ALERT_TYPES,
     API_STATE,
-    buttonFormFieldsSize,
     Alert,
     Button,
     Portal,
@@ -21,6 +20,7 @@ import {
     ModalFooter,
     useAlert,
     useAPIPost,
+    formFieldsSize,
 } from "foris";
 
 import API_URLs from "../common/API";
@@ -106,6 +106,7 @@ export default function TestNotification({
                         {SEVERITY_ALERT_MESSAGE}
                     </Alert>
                 )}
+                <div className={formFieldsSize}>
                     <h2>{_("Test Notification")}</h2>
                     <p>
                         {_(
