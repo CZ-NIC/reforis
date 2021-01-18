@@ -4,23 +4,30 @@ exports[`<NotificationsSettings/> <TestNotification/> Displaying test notificati
 <div
   id="test-notification"
 >
-  <h2>
-    Test notification
-  </h2>
   <div
     class="alert  alert-warning"
   >
     You will not receive the test notification to your email inbox with current importance level. Please raise the importance level at least to "Reboot or attention is required" and click "Save" button if you want to get this notification by email.
   </div>
   <div
-    class="col-sm-12 col-lg-12 p-0 mb-3 text-right mb-3"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
   >
-    <button
-      class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
-      type="button"
+    <h2>
+      Test Notification
+    </h2>
+    <p>
+      Here you can verify whether SMTP is configured correctly by sending a test notification to your email inbox.
+    </p>
+    <div
+      class="text-right"
     >
-      Send test notification
-    </button>
+      <button
+        class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
+        type="button"
+      >
+        Send test notification
+      </button>
+    </div>
   </div>
 </div>
 `;
@@ -29,18 +36,25 @@ exports[`<NotificationsSettings/> <TestNotification/> No test notification impor
 <div
   id="test-notification"
 >
-  <h2>
-    Test notification
-  </h2>
   <div
-    class="col-sm-12 col-lg-12 p-0 mb-3 text-right mb-3"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
   >
-    <button
-      class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
-      type="button"
+    <h2>
+      Test Notification
+    </h2>
+    <p>
+      Here you can verify whether SMTP is configured correctly by sending a test notification to your email inbox.
+    </p>
+    <div
+      class="text-right"
     >
-      Send test notification
-    </button>
+      <button
+        class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
+        type="button"
+      >
+        Send test notification
+      </button>
+    </div>
   </div>
 </div>
 `;
@@ -49,18 +63,25 @@ exports[`<NotificationsSettings/> <TestNotification/> No test notification impor
 <div
   id="test-notification"
 >
-  <h2>
-    Test notification
-  </h2>
   <div
-    class="col-sm-12 col-lg-12 p-0 mb-3 text-right mb-3"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
   >
-    <button
-      class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
-      type="button"
+    <h2>
+      Test Notification
+    </h2>
+    <p>
+      Here you can verify whether SMTP is configured correctly by sending a test notification to your email inbox.
+    </p>
+    <div
+      class="text-right"
     >
-      Send test notification
-    </button>
+      <button
+        class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
+        type="button"
+      >
+        Send test notification
+      </button>
+    </div>
   </div>
 </div>
 `;
@@ -69,23 +90,30 @@ exports[`<NotificationsSettings/> <TestNotification/> Should toggle unsaved chan
 <div
   id="test-notification"
 >
-  <h2>
-    Test notification
-  </h2>
   <div
     class="alert  alert-warning"
   >
     You will not receive the test notification to your email inbox with current importance level. Please raise the importance level at least to "Reboot or attention is required" and click "Save" button if you want to get this notification by email.
   </div>
   <div
-    class="col-sm-12 col-lg-12 p-0 mb-3 text-right mb-3"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
   >
-    <button
-      class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
-      type="button"
+    <h2>
+      Test Notification
+    </h2>
+    <p>
+      Here you can verify whether SMTP is configured correctly by sending a test notification to your email inbox.
+    </p>
+    <div
+      class="text-right"
     >
-      Send test notification
-    </button>
+      <button
+        class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
+        type="button"
+      >
+        Send test notification
+      </button>
+    </div>
   </div>
 </div>
 `;
@@ -99,7 +127,7 @@ exports[`<NotificationsSettings/> Disabled 1`] = `
     Your device can send you e-mail notifications about required reboots, important events, installed updates and new features according to your settings. When done with configuration, you can test it by pressing Send test notification.
   </p>
   <div
-    class="card p-4 col-sm-12 col-lg-12 p-0 mb-3"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
   >
     <form>
       <h2>
@@ -155,7 +183,7 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
     Your device can send you e-mail notifications about required reboots, important events, installed updates and new features according to your settings. When done with configuration, you can test it by pressing Send test notification.
   </p>
   <div
-    class="card p-4 col-sm-12 col-lg-12 p-0 mb-3"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
   >
     <form>
       <h2>
@@ -498,23 +526,30 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
   <div
     id="test-notification"
   >
-    <h2>
-      Test notification
-    </h2>
     <div
       class="alert  alert-warning"
     >
       You will not receive the test notification to your email inbox with current importance level. Please raise the importance level at least to "Reboot or attention is required" and click "Save" button if you want to get this notification by email.
     </div>
     <div
-      class="col-sm-12 col-lg-12 p-0 mb-3 text-right mb-3"
+      class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
     >
-      <button
-        class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
-        type="button"
+      <h2>
+        Test Notification
+      </h2>
+      <p>
+        Here you can verify whether SMTP is configured correctly by sending a test notification to your email inbox.
+      </p>
+      <div
+        class="text-right"
       >
-        Send test notification
-      </button>
+        <button
+          class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
+          type="button"
+        >
+          Send test notification
+        </button>
+      </div>
     </div>
   </div>
   <div
@@ -525,7 +560,7 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
       role="dialog"
     >
       <div
-        class="modal-dialog  modal-dialog-centered"
+        class="modal-dialog modal-dialog-centered"
         role="document"
       >
         <div
@@ -589,7 +624,7 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
     Your device can send you e-mail notifications about required reboots, important events, installed updates and new features according to your settings. When done with configuration, you can test it by pressing Send test notification.
   </p>
   <div
-    class="card p-4 col-sm-12 col-lg-12 p-0 mb-3"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
   >
     <form>
       <h2>
@@ -783,23 +818,30 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
   <div
     id="test-notification"
   >
-    <h2>
-      Test notification
-    </h2>
     <div
       class="alert  alert-warning"
     >
       You will not receive the test notification to your email inbox with current importance level. Please raise the importance level at least to "Reboot or attention is required" and click "Save" button if you want to get this notification by email.
     </div>
     <div
-      class="col-sm-12 col-lg-12 p-0 mb-3 text-right mb-3"
+      class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
     >
-      <button
-        class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
-        type="button"
+      <h2>
+        Test Notification
+      </h2>
+      <p>
+        Here you can verify whether SMTP is configured correctly by sending a test notification to your email inbox.
+      </p>
+      <div
+        class="text-right"
       >
-        Send test notification
-      </button>
+        <button
+          class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
+          type="button"
+        >
+          Send test notification
+        </button>
+      </div>
     </div>
   </div>
   <div
@@ -810,7 +852,7 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
       role="dialog"
     >
       <div
-        class="modal-dialog  modal-dialog-centered"
+        class="modal-dialog modal-dialog-centered"
         role="document"
       >
         <div

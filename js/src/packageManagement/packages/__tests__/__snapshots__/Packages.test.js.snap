@@ -8,7 +8,7 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
 @@ -12,10 +12,26 @@
     </p>
     <div
-      class=\\"card p-4 col-sm-12 col-lg-12 p-0 mb-3\\"
+      class=\\"card p-4 col-sm-12 col-lg-12 p-0 mb-4\\"
     >
       <form>
 +       <div
@@ -248,7 +248,7 @@ by Turris team.
         
   </p>
   <div
-    class="card p-4 col-sm-12 col-lg-12 p-0 mb-3"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
   >
     <form>
       <h2>

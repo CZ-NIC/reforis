@@ -2,81 +2,90 @@
 
 exports[`<DHCPClientsList/> Test with snapshot. 1`] = `
 <div>
-  <h2>
-    DHCP Clients
-  </h2>
   <div
-    class="table-responsive"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
   >
-    <table
-      class="table table-hover"
+    <h2>
+      DHCP Client List
+    </h2>
+    <p>
+      This list contains all devices that are connected to the network through wired or wireless connections.
+    </p>
+    <div
+      class="table-responsive"
     >
-      <thead>
-        <tr
-          class="text-center"
+      <table
+        class="table table-hover"
+      >
+        <thead
+          class="thead-light"
         >
-          <th>
-            Expires
-          </th>
-          <th>
-            IP Address
-          </th>
-          <th>
-            MAC Address
-          </th>
-          <th>
-            Hostname
-          </th>
-          <th>
-            Active
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr
-          class="text-center"
-        >
-          <td>
-            2018-10-12 13:16
-          </td>
-          <td>
-            192.168.1.1
-          </td>
-          <td>
-            11:22:33:44:55:66
-          </td>
-          <td>
-            first
-          </td>
-          <td>
-            <i
-              class="fas fa-check"
-            />
-          </td>
-        </tr>
-        <tr
-          class="text-center"
-        >
-          <td>
-            2018-10-12 13:16
-          </td>
-          <td>
-            192.168.2.1
-          </td>
-          <td>
-            99:88:77:66:55:44
-          </td>
-          <td>
-            *
-          </td>
-          <td>
-            <i
-              class="fas fa-times"
-            />
-          </td>
-        </tr>
-      </tbody>
-    </table>
+          <tr
+            class="text-center"
+          >
+            <th>
+              Expires
+            </th>
+            <th>
+              IP Address
+            </th>
+            <th>
+              MAC Address
+            </th>
+            <th>
+              Hostname
+            </th>
+            <th>
+              Active
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            class="text-center"
+          >
+            <td>
+              2018-10-12 13:16
+            </td>
+            <td>
+              192.168.1.1
+            </td>
+            <td>
+              11:22:33:44:55:66
+            </td>
+            <td>
+              first
+            </td>
+            <td>
+              <i
+                class="fas fa-check"
+              />
+            </td>
+          </tr>
+          <tr
+            class="text-center"
+          >
+            <td>
+              2018-10-12 13:16
+            </td>
+            <td>
+              192.168.2.1
+            </td>
+            <td>
+              99:88:77:66:55:44
+            </td>
+            <td>
+              *
+            </td>
+            <td>
+              <i
+                class="fas fa-times"
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 `;
