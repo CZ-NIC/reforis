@@ -56,7 +56,7 @@ export default function UpdateApprovalForm({
 }) {
     return (
         <>
-            <h2>{_("Update Approvals")}</h2>
+            <h3>{_("Update Approvals")}</h3>
             <p>
                 {_(
                     `Update approvals can be useful when you want to make sure that updates won't harm your specific

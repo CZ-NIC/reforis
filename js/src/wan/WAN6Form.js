@@ -159,7 +159,7 @@ export default function WAN6Form({
 
     return (
         <>
-            <h2>{_("WAN IPv6")}</h2>
+            <h2>IPv6</h2>
             <Select
                 label={_("IPv6 protocol")}
                 value={wan6Type}

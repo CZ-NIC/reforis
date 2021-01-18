@@ -97,7 +97,7 @@ export default function WANForm({
 
     return (
         <>
-            <h2>{_("WAN IPv4")}</h2>
+            <h2>IPv4</h2>
             <Select
                 label={_("IPv4 protocol")}
                 value={wanType}

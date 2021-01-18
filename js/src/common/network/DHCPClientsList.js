@@ -15,8 +15,12 @@ DHCPClientsList.propTypes = {
 
 export default function DHCPClientsList({ clients }) {
     return (
-        <>
-            <h2>{_("DHCP Clients")}</h2>
+            <h2>{_("DHCP Client List")}</h2>
+            <p>
+                {_(
+                    "This list contains all devices that are connected to the network through wired or wireless connections."
+                )}
+            </p>
             {clients.length === 0 ? (
                 <p className="text-muted text-center">
                     {_("No DHCP clients found.")}

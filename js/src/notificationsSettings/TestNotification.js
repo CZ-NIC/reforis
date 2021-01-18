@@ -101,21 +101,27 @@ export default function TestNotification({
     return (
         <>
             <Portal containerId="test-notification">
-                <h2>{_("Test notification")}</h2>
                 {showSeverityAlert && (
                     <Alert type={ALERT_TYPES.WARNING}>
                         {SEVERITY_ALERT_MESSAGE}
                     </Alert>
                 )}
-                <div className={`${buttonFormFieldsSize} text-right mb-3`}>
-                    <Button
-                        forisFormSize
-                        loading={postIsSending}
-                        disabled={postIsSending || formErrors}
-                        onClick={onTestNotificationHandler}
-                    >
-                        {_("Send test notification")}
-                    </Button>
+                    <h2>{_("Test Notification")}</h2>
+                    <p>
+                        {_(
+                            "Here you can verify whether SMTP is configured correctly by sending a test notification to your email inbox."
+                        )}
+                    </p>
+                    <div className="text-right">
+                        <Button
+                            forisFormSize
+                            loading={postIsSending}
+                            disabled={postIsSending || formErrors}
+                            onClick={onTestNotificationHandler}
+                        >
+                            {_("Send test notification")}
+                        </Button>
+                    </div>
                 </div>
             </Portal>
             <UnsavedChangesWarningModal
