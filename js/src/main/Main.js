@@ -14,7 +14,6 @@ import {
     Portal,
     AlertContextProvider,
     useAPIGet,
-    withSpinnerOnSending,
     withErrorMessage,
 } from "foris";
 
@@ -41,7 +40,7 @@ export default function Main({ ws }) {
     }, [getCustomization]);
 
     return (
-        <CustomizationWithErrorAndSpinner
+        <CustomizationWithError
             apiState={getCustomizationResponse.state}
             deviceDetails={getCustomizationResponse.data || {}}
             ws={ws}
@@ -89,6 +88,4 @@ function MainWrapper({ deviceDetails, ws }) {
     );
 }
 
-const CustomizationWithErrorAndSpinner = withSpinnerOnSending(
-    withErrorMessage(MainWrapper)
-);
+const CustomizationWithError = withErrorMessage(MainWrapper);
