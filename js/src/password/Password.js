@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -49,6 +49,7 @@ export default function Password({ postCallback }) {
         resetFormData({
             currentForisPassword: "",
             newForisPassword: "",
+            newForisPasswordRepeat: "",
             sameForRoot: false,
             newRootPassword: "",
         });
@@ -177,7 +178,7 @@ export default function Password({ postCallback }) {
             <h1>{_("Password")}</h1>
             <p>
                 {_(
-                    `Here you can set passwords for Foris and optionally for advanced features (LuCI and SSH). Make sure to set secure password which is long and uncommon.`
+                    `Here you can set passwords for Foris and optionally for advanced features (LuCI and SSH). Make sure to set a secure password which is long and uncommon.`
                 )}
             </p>
             {passwordComponent}
@@ -191,9 +192,18 @@ function validator(formData) {
         newRootPassword: !formData.sameForRoot
             ? validatePassword(formData.newRootPassword)
             : null,
+        newForisPasswordRepeat:
+            formData.newForisPasswordRepeat !== formData.newForisPassword
+                ? _("The password confirmation does not match.")
+                : null,
     };
 
-    if (errors.newForisPassword || errors.newRootPassword) return errors;
+    if (
+        errors.newForisPassword ||
+        errors.newRootPassword ||
+        errors.newForisPasswordRepeat
+    )
+        return errors;
     return {};
 }
 

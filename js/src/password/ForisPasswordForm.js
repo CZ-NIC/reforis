@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -19,6 +19,7 @@ ForisPasswordForm.propTypes = {
     formData: PropTypes.shape({
         currentForisPassword: PropTypes.string,
         newForisPassword: PropTypes.string,
+        newForisPasswordRepeat: PropTypes.string,
         sameForRoot: PropTypes.bool,
     }).isRequired,
     submitButtonState: PropTypes.oneOf(
@@ -26,7 +27,10 @@ ForisPasswordForm.propTypes = {
             (key) => SUBMIT_BUTTON_STATES[key]
         )
     ).isRequired,
-    formErrors: PropTypes.shape({ newForisPassword: PropTypes.string }),
+    formErrors: PropTypes.shape({
+        newForisPassword: PropTypes.string,
+        newForisPasswordRepeat: PropTypes.string,
+    }),
     setFormValue: PropTypes.func.isRequired,
     postForisPassword: PropTypes.func.isRequired,
     passwordSet: PropTypes.bool.isRequired,
@@ -46,13 +50,13 @@ export default function ForisPasswordForm({
 }) {
     return (
         <>
-            <h2>{_("Foris Password")}</h2>
+            <h2>{_("Password Settings")}</h2>
             <p>{_("Set your password for this administration interface.")}</p>
             <form onSubmit={postForisPassword}>
                 {passwordSet && (
                     <PasswordInput
                         withEye
-                        label={_("Current Foris password")}
+                        label={_("Current password")}
                         value={formData.currentForisPassword}
                         onChange={setFormValue((value) => ({
                             currentForisPassword: { $set: value },
@@ -62,11 +66,22 @@ export default function ForisPasswordForm({
                 )}
                 <PasswordInput
                     withEye
-                    label={_("New Foris password")}
+                    label={_("New password")}
                     value={formData.newForisPassword}
                     error={formErrors.newForisPassword}
                     onChange={setFormValue((value) => ({
                         newForisPassword: { $set: value },
+                    }))}
+                    disabled={disabled}
+                />
+
+                <PasswordInput
+                    withEye
+                    label={_("Confirm new password")}
+                    value={formData.newForisPasswordRepeat}
+                    error={formErrors.newForisPasswordRepeat}
+                    onChange={setFormValue((value) => ({
+                        newForisPasswordRepeat: { $set: value },
                     }))}
                     disabled={disabled}
                 />
@@ -79,7 +94,7 @@ export default function ForisPasswordForm({
                 ) && (
                     <CheckBox
                         label={_(
-                            "Use same password for advanced administration (root)"
+                            "Use the same password for advanced administration (root)"
                         )}
                         helpText={_(
                             "Same password would be used for accessing this administration interface, for root user in " +
@@ -97,7 +112,10 @@ export default function ForisPasswordForm({
                 <div className="text-right">
                     <SubmitButton
                         state={submitButtonState}
-                        disabled={!!formErrors.newForisPassword}
+                        disabled={
+                            !!formErrors.newForisPassword ||
+                            !!formErrors.newForisPasswordRepeat
+                        }
                     />
                 </div>
             </form>
