@@ -1,9 +1,9 @@
-#  Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+#  Copyright (C) 2020-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
 #
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
 
-# pylint: disable=import-error
+# pylint: disable=import-error,import-outside-toplevel
 
 """
 Backend communication helpers.
@@ -61,9 +61,9 @@ class Backend(ABC):
                 msg = {'module': module, 'action': action, 'kind': 'request'}
                 if data is not None:
                     msg['data'] = data
-                raise ExceptionInBackend(msg, error['stacktrace'], error['description'])
-        except TimeoutError:
-            raise BackendTimeoutError
+                raise ExceptionInBackend(msg, error['stacktrace'], error['description']) from e
+        except TimeoutError as e:
+            raise BackendTimeoutError from e
         except RuntimeError as e:
             # This may occure when e.g. calling function is not present in backend
             current_app.logger.error('RuntimeError occurred during the communication with backend. (%s)', e)

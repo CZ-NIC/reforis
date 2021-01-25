@@ -1,9 +1,9 @@
-#  Copyright (C) 2019-2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+#  Copyright (C) 2019-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
 #
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
 
-# pylint: disable=unused-variable,unused-argument
+# pylint: disable=unused-variable,unused-argument,import-outside-toplevel
 
 """
 The application factory approach is used in this project.
