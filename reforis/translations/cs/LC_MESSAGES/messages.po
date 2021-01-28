@@ -7,20 +7,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-11-10 10:38+0100\n"
+"POT-Creation-Date: 2021-01-28 10:24+0100\n"
 "PO-Revision-Date: 2020-11-17 12:29+0000\n"
 "Last-Translator: Lukas Jelinek <lukas.jelinek@nic.cz>\n"
-"Language-Team: Czech <https://hosted.weblate.org/projects/turris/reforis/cs/>"
-"\n"
 "Language: cs\n"
+"Language-Team: Czech "
+"<https://hosted.weblate.org/projects/turris/reforis/cs/>\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.4-dev\n"
-"Generated-By: Babel 2.8.0\n"
+"Generated-By: Babel 2.9.0\n"
 
-#: js/src/about/About.js:22 js/src/main/pages.js:140
+#: js/src/about/About.js:22 js/src/main/pages.js:103 js/src/main/pages.js:217
 msgid "About"
 msgstr "O zařízení"
 
@@ -32,8 +31,9 @@ msgid ""
 "support</a>."
 msgstr ""
 "Zde najdete některé informace o svém zařízení. Přiložte je prosím ke své "
-"zprávě, pokud budete kontaktovat naši <a href=\"mailto:tech.support@turris."
-"cz\" target=\"_blank\">zákaznickou podporu</a>."
+"zprávě, pokud budete kontaktovat naši <a "
+"href=\"mailto:tech.support@turris.cz\" target=\"_blank\">zákaznickou "
+"podporu</a>."
 
 #: js/src/about/About.js:48
 msgid "Device"
@@ -61,30 +61,45 @@ msgid ""
 " functions and varying stability - you can pick, which branch you want to"
 " test."
 msgstr ""
-"Turris OS je aktuálně vydáván v různých větvích, které mají různé funkce a "
-"různou stabilitu – můžete si vybrat, kterou větev chcete otestovat."
+"Turris OS je aktuálně vydáván v různých větvích, které mají různé funkce "
+"a různou stabilitu – můžete si vybrat, kterou větev chcete otestovat."
 
 #: js/src/about/About.js:87
 msgid "Kernel version"
 msgstr "Verze kernelu"
 
-#: js/src/common/RebootButton.js:51 js/src/main/pages.js:99
-msgid "Reboot"
-msgstr "Restartovat"
+#: js/src/common/FactoryResetButton.js:51
+msgid "Reset"
+msgstr ""
 
-#: js/src/common/RebootButton.js:66 js/src/dns/DNSSECDisableModal.js:30
+#: js/src/common/FactoryResetButton.js:66 js/src/common/RebootButton.js:66
+#: js/src/dns/DNSSECDisableModal.js:30
 #: js/src/notificationsSettings/TestNotification.js:139
 msgid "Warning!"
 msgstr "Varování!"
 
-#: js/src/common/RebootButton.js:68
-msgid "Are you sure you want to restart the router?"
+#: js/src/common/FactoryResetButton.js:68
+#, fuzzy
+msgid "Are you sure you want to reset the router?"
 msgstr "Opravdu chcete router restartovat?"
 
-#: js/src/common/RebootButton.js:71 js/src/dns/DNSSECDisableModal.js:41
+#: js/src/common/FactoryResetButton.js:71 js/src/common/RebootButton.js:71
+#: js/src/dns/DNSSECDisableModal.js:41
 #: js/src/notificationsSettings/TestNotification.js:144
 msgid "Cancel"
 msgstr "Storno"
+
+#: js/src/common/FactoryResetButton.js:73
+msgid "Confirm factory reset"
+msgstr ""
+
+#: js/src/common/RebootButton.js:51 js/src/maintenance/Reboot.js:16
+msgid "Reboot"
+msgstr "Restartovat"
+
+#: js/src/common/RebootButton.js:68
+msgid "Are you sure you want to restart the router?"
+msgstr "Opravdu chcete router restartovat?"
 
 #: js/src/common/RebootButton.js:73
 msgid "Confirm reboot"
@@ -142,29 +157,52 @@ msgstr ""
 msgid "DHCP start"
 msgstr "Začátek IP rozsahu pro DHCP"
 
-#: js/src/common/network/DHCPServerForm.js:59
+#: js/src/common/network/DHCPServerForm.js:57
 msgid "DHCP max leases"
 msgstr "Nejvýše DHCP zápůjček"
 
-#: js/src/common/network/DHCPServerForm.js:60
+#: js/src/common/network/DHCPServerForm.js:58
 msgid "Maximum number of addresses available for DHCP clients."
 msgstr "Maximální počet adres dostupných pro DHCP klienty."
 
-#: js/src/common/network/DHCPServerForm.js:73
+#: js/src/common/network/DHCPServerForm.js:71
 msgid "Lease time (hours)"
 msgstr "Zápůjční doba (hodiny)"
 
-#: js/src/common/network/DHCPValidators.js:15
+#: js/src/common/network/DHCPValidators.js:71
 msgid "Value must be a number."
 msgstr "Hodnota musí být číslo."
 
-#: js/src/common/network/DHCPValidators.js:18
+#: js/src/common/network/DHCPValidators.js:74
 msgid "Value must be positive."
 msgstr "Hodnota musí být kladná."
 
-#: js/src/common/network/DHCPValidators.js:29
+#: js/src/common/network/DHCPValidators.js:87
+msgid "Invalid network settings. DHCP settings can't be validated."
+msgstr ""
+
+#: js/src/common/network/DHCPValidators.js:100
 msgid "Minimum lease time is 1 hour."
 msgstr "Minimální lease time je 1 hodina."
+
+#: js/src/common/network/DHCPValidators.js:116
+#, fuzzy
+msgid "Address is outside current network."
+msgstr "IP adresa routeru ve vnitřní síti pro hosty."
+
+#: js/src/common/network/DHCPValidators.js:120
+msgid "Address is already reserved for other purposes."
+msgstr ""
+
+#: js/src/common/network/DHCPValidators.js:131
+msgid "Too many addresses requested. Set a lower number or change DHCP start."
+msgstr ""
+
+#: js/src/common/network/DHCPValidators.js:138
+msgid ""
+"The only DHCP lease is the same as router's address. Increase limit or "
+"change start address."
+msgstr ""
 
 #: js/src/common/network/StaticIPForm.js:14 js/src/wan/WAN6Form.js:36
 msgid ""
@@ -267,10 +305,10 @@ msgstr ""
 "pokud pracuje správně. Pokud z nějakých důvodů správně nefunguje, je "
 "nezbytné použít přímé\n"
 "vyhodnocování dotazů bez přeposílání.<p/>\n"
-"<p>Ve vzácných případech má ISP špatně nakonfigurovanou síť, která nefunguje "
-"s validací DNSSEC.\n"
-"Pokud zaznamenáváte problémy s DNS, můžete <b>dočasně</b> vypnout validaci "
-"DNSSEC, abyste zjistili\n"
+"<p>Ve vzácných případech má ISP špatně nakonfigurovanou síť, která "
+"nefunguje s validací DNSSEC.\n"
+"Pokud zaznamenáváte problémy s DNS, můžete <b>dočasně</b> vypnout "
+"validaci DNSSEC, abyste zjistili\n"
 "zdroj problémů. Nezapomeňte však, že bez validace DNSSEC budete ohroženi "
 "útoky ve formě podvrhávání\n"
 "DNS odpovědí! Proto <b>doporučujeme nechávat DNSSEC zapnuté</b> a řešit "
@@ -278,7 +316,7 @@ msgstr ""
 "o závažný bezpečnostní problém na jeho straně.</p>\n"
 "            "
 
-#: js/src/dns/DNS.js:62 js/src/overview/Overview.js:81 js/src/wan/WAN.js:50
+#: js/src/dns/DNS.js:62 js/src/overview/Overview.js:63 js/src/wan/WAN.js:50
 msgid "Connection Test"
 msgstr "Test připojení"
 
@@ -458,12 +496,12 @@ msgstr "TLS pin by měl obsahovat alespoň jeden symbol."
 msgid "Define at least one of the IP addresses of the forwarder."
 msgstr "Zadejte alespoň jednu z IP adres přeposílání."
 
-#: js/src/guestNetwork/GuestNetwork.js:36 js/src/interfaces/constants.js:11
-#: js/src/main/pages.js:71
+#: js/src/guestNetwork/GuestNetwork.js:37 js/src/interfaces/constants.js:11
+#: js/src/main/pages.js:148
 msgid "Guest Network"
 msgstr "Síť pro hosty"
 
-#: js/src/guestNetwork/GuestNetwork.js:40
+#: js/src/guestNetwork/GuestNetwork.js:41
 msgid ""
 "\n"
 "Guest network is used for <a href=\"${ForisURLs.wifi}\">guest Wi-Fi</a>.\n"
@@ -475,9 +513,10 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"Síť pro hosty souží pro <a href=\"${ForisURLs.wifi}\">Wi-Fi pro hosty</a>.\n"
-"Je oddělená od vaší běžné LAN. Zařízením připojených do této sítě je umožněn "
-"přístup do Internetu,\n"
+"Síť pro hosty souží pro <a href=\"${ForisURLs.wifi}\">Wi-Fi pro "
+"hosty</a>.\n"
+"Je oddělená od vaší běžné LAN. Zařízením připojených do této sítě je "
+"umožněn přístup do Internetu,\n"
 "ale už ne ke správnímu rozhraní tohoto routeru ani ostatním zařízením\n"
 "v LAN.\n"
 "        "
@@ -664,8 +703,8 @@ msgid ""
 "Congratulations! Now your device is able to act as a router and route "
 "network traffic among LAN, WAN and guest network."
 msgstr ""
-"Gratulujeme! Nyní je vaše zařízení schopné fungovat jako router a směrovat "
-"síťový provoz mezi LAN, WAN a sítí pro hosty."
+"Gratulujeme! Nyní je vaše zařízení schopné fungovat jako router a "
+"směrovat síťový provoz mezi LAN, WAN a sítí pro hosty."
 
 #: js/src/guide/constants.js:84
 msgid ""
@@ -745,16 +784,16 @@ msgid ""
 "Congratulations! Now your device should be able to act as a server on "
 "your local network."
 msgstr ""
-"Gratulujeme! Nyní by vaše zařízení mělo být schopné fungovat jako server v "
-"místní síti."
+"Gratulujeme! Nyní by vaše zařízení mělo být schopné fungovat jako server "
+"v místní síti."
 
 #: js/src/guide/hooks.js:23
 msgid "Cannot mark guide as finished."
 msgstr "Nelze označit průvodce jako dokončený."
 
-#: js/src/guide/steps.js:20 js/src/main/pages.js:84
+#: js/src/guide/steps.js:20 js/src/main/pages.js:75 js/src/main/pages.js:161
 #: js/src/notificationsSettings/SMTPCustomForm.js:114
-#: js/src/password/Password.js:45 reforis/templates/login.html:29
+#: js/src/password/Password.js:177 reforis/templates/login.html:29
 msgid "Password"
 msgstr "Heslo"
 
@@ -762,7 +801,7 @@ msgstr "Heslo"
 msgid "Workflow"
 msgstr "Scénář"
 
-#: js/src/guide/steps.js:28 js/src/main/pages.js:66
+#: js/src/guide/steps.js:28 js/src/main/pages.js:143
 msgid "Interfaces"
 msgstr "Rozhraní"
 
@@ -770,22 +809,22 @@ msgstr "Rozhraní"
 msgid "Time"
 msgstr "Čas"
 
-#: js/src/guide/steps.js:36 js/src/main/pages.js:61
+#: js/src/guide/steps.js:36 js/src/main/pages.js:62 js/src/main/pages.js:138
 msgid "DNS"
 msgstr "DNS"
 
-#: js/src/guide/steps.js:40 js/src/main/pages.js:117
+#: js/src/guide/steps.js:40 js/src/main/pages.js:194
 #: js/src/packageManagement/updates/Updates.js:27
 msgid "Updates"
 msgstr "Aktualizace"
 
 #: js/src/guide/steps.js:44 js/src/interfaces/constants.js:9
-#: js/src/main/pages.js:51 js/src/wan/WAN.js:27
+#: js/src/main/pages.js:52 js/src/main/pages.js:128 js/src/wan/WAN.js:27
 msgid "WAN"
 msgstr "WAN"
 
 #: js/src/guide/steps.js:48 js/src/interfaces/constants.js:10
-#: js/src/main/pages.js:56
+#: js/src/main/pages.js:57 js/src/main/pages.js:133
 msgid "LAN"
 msgstr "LAN"
 
@@ -820,10 +859,11 @@ msgid ""
 "security research to discover new attackers and give you access to "
 "dynamic firewall updates blocking known attackers."
 msgstr ""
-"Chcete-li dále zlepšit své zabezpečení, zvažte instalaci pluginu Sběr dat ("
-"prostřednictvím správy balíčků). To vám umožní být součástí našeho výzkumu "
-"zabezpečení, abychom objevili nové útočníky a poskytli vám přístup k "
-"dynamickým aktualizacím brány firewall, které blokují známé útočníky."
+"Chcete-li dále zlepšit své zabezpečení, zvažte instalaci pluginu Sběr dat"
+" (prostřednictvím správy balíčků). To vám umožní být součástí našeho "
+"výzkumu zabezpečení, abychom objevili nové útočníky a poskytli vám "
+"přístup k dynamickým aktualizacím brány firewall, které blokují známé "
+"útočníky."
 
 #: js/src/guide/GuidePages/GuideFinish.js:31
 msgid "Continue"
@@ -950,12 +990,12 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"Slouží jako připojení do místní sítě. LAN by měla obsahovat zařízení, která "
-"jsou pod vaší zprávou a věříte jim\n"
-"Tato zařízení se mohou vidět navzájem a mohou přistupovat k tomuto webovému "
-"rozhraní. je doporučeno,\n"
-"aby LAN obsahovala alespoň jedno rozhraní, jinak nebude kudy toto zařízení "
-"nastavovat (přinejmenším\n"
+"Slouží jako připojení do místní sítě. LAN by měla obsahovat zařízení, "
+"která jsou pod vaší zprávou a věříte jim\n"
+"Tato zařízení se mohou vidět navzájem a mohou přistupovat k tomuto "
+"webovému rozhraní. je doporučeno,\n"
+"aby LAN obsahovala alespoň jedno rozhraní, jinak nebude kudy toto "
+"zařízení nastavovat (přinejmenším\n"
 "nijak jednoduše).\n"
 "        "
 
@@ -1039,7 +1079,7 @@ msgstr "N/A"
 msgid "Unassigned"
 msgstr "Nepřiřazeno"
 
-#: js/src/lan/LAN.js:29
+#: js/src/lan/LAN.js:30
 msgid ""
 "\n"
 "This section contains settings for the local network (LAN). The provided "
@@ -1084,10 +1124,10 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"Režim Směrovač znamená, že toto zařízení spravuje LAN (slouží jako směrovač, "
-"může přidělovat IP adresy, …).\n"
-"Režim Počítač znamená, že toto zařízení funguje na síti jako klient. Chová "
-"se podobně jako WAN,\n"
+"Režim Směrovač znamená, že toto zařízení spravuje LAN (slouží jako "
+"směrovač, může přidělovat IP adresy, …).\n"
+"Režim Počítač znamená, že toto zařízení funguje na síti jako klient. "
+"Chová se podobně jako WAN,\n"
 "ale má otevřené porty pro své rozhraní pro nastavování a ostatní služby.\n"
 "        "
 
@@ -1128,52 +1168,62 @@ msgstr "Nepřipojovat toto zařízení do LAN"
 msgid "IPv4 protocol"
 msgstr "Protokol IPv4"
 
-#: js/src/main/pages.js:34 js/src/overview/Overview.js:67
+#: js/src/main/pages.js:40 js/src/main/pages.js:111
+#: js/src/overview/Overview.js:51
 msgid "Overview"
 msgstr "Přehled"
 
-#: js/src/main/pages.js:40
+#: js/src/main/pages.js:46 js/src/main/pages.js:117
 msgid "Network Settings"
 msgstr "Nastavení sítě"
 
-#: js/src/main/pages.js:46 js/src/wifi/WiFi.js:21
-msgid "Wi-Fi"
-msgstr "Wi-Fi"
-
-#: js/src/main/pages.js:78
+#: js/src/main/pages.js:69 js/src/main/pages.js:155
 msgid "Administration"
 msgstr "Správa"
 
-#: js/src/main/pages.js:89
+#: js/src/main/pages.js:80 js/src/main/pages.js:166
 msgid "Region & Time"
 msgstr "Oblast a čas"
 
 #: js/src/main/TopBar/NotificationsDropdown/NotificationsDropdownMenu.js:76
-#: js/src/main/pages.js:94
+#: js/src/main/pages.js:85 js/src/main/pages.js:171
 #: js/src/notifications/Notifications/Notifications.js:87
 #: js/src/notificationsSettings/NotificationsSettings.js:25
 msgid "Notifications"
 msgstr "Notifikace"
 
-#: js/src/main/pages.js:106
+#: js/src/main/pages.js:90 js/src/main/pages.js:176
+#: js/src/maintenance/Maintenance.js:17
+msgid "Maintenance"
+msgstr ""
+
+#: js/src/main/pages.js:97
+msgid "Global Threat Statistics"
+msgstr ""
+
+#: js/src/main/pages.js:123 js/src/wifi/WiFi.js:21
+msgid "Wi-Fi"
+msgstr "Wi-Fi"
+
+#: js/src/main/pages.js:183
 msgid "Package Management"
 msgstr "Správa balíčků"
 
-#: js/src/main/pages.js:112
+#: js/src/main/pages.js:189
 #: js/src/packageManagement/updateSettings/UpdateSettings.js:28
 msgid "Update Settings"
 msgstr "Nastavení aktualizace"
 
-#: js/src/main/pages.js:122 js/src/packageManagement/packages/Packages.js:19
+#: js/src/main/pages.js:199 js/src/packageManagement/packages/Packages.js:19
 msgid "Packages"
 msgstr "Balíčky"
 
 #: js/src/main/TopBar/languagesDropdown/LanguagesDropdown.js:47
-#: js/src/main/pages.js:127 js/src/packageManagement/languages/Languages.js:18
+#: js/src/main/pages.js:204 js/src/packageManagement/languages/Languages.js:18
 msgid "Languages"
 msgstr "Jazyky"
 
-#: js/src/main/pages.js:134
+#: js/src/main/pages.js:211
 msgid "Advanced Administration"
 msgstr "Pokročilá správa"
 
@@ -1227,6 +1277,62 @@ msgstr "Ignorovat"
 msgid "Cannot install updates."
 msgstr "Nelze nainstalovat aktualizace."
 
+#: js/src/maintenance/FactoryReset.js:16
+msgid "Factory Reset"
+msgstr ""
+
+#: js/src/maintenance/FactoryReset.js:18
+msgid ""
+"Doing a factory reset on the Turris device will remove all the packages \n"
+"                installed on the device along with the data associated "
+"with them. This brings\n"
+"                back all the default settings of the device as it was "
+"when the router was new,\n"
+"                giving you a clean slate to start all over again.\n"
+"    "
+msgstr ""
+
+#: js/src/maintenance/Maintenance.js:19
+msgid ""
+"The Maintenance tab allows you to reboot the router or bring back all the"
+" default settings by performing a factory reset."
+msgstr ""
+
+#: js/src/maintenance/Reboot.js:18
+msgid ""
+"\n"
+"If you need to reboot the device, click on the following button. The "
+"reboot process takes approximately 30 seconds, you\n"
+"will be required to log in again after the reboot.\n"
+"    "
+msgstr ""
+"\n"
+"Pokud potřebujete restartovat zařízení, stiskněte následující tlačítko. "
+"Proces restartu bude trvat přibližně 30 sekund,\n"
+"po restartu se budete muset znovu přihlásit.\n"
+"    "
+
+#: js/src/maintenance/Syslog/Syslog.js:46
+msgid "A drive has to be configured first."
+msgstr ""
+
+#: js/src/maintenance/Syslog/SyslogForm.js:29
+msgid "System logs retention"
+msgstr ""
+
+#: js/src/maintenance/Syslog/SyslogForm.js:32
+msgid ""
+"During device reboot, system logs are lost by default. This option allows"
+" to save system logs using Storage plugin. Logs are saved into "
+"/srv/log/messages. To enable this option, you have to configure a storage"
+" in the <a href=\"${ForisURLs.storage}\" title=\"Go to Storage "
+"plugin\">Storage plugin</a> first."
+msgstr ""
+
+#: js/src/maintenance/Syslog/SyslogForm.js:38
+msgid "Enable system logs retention"
+msgstr ""
+
 #: js/src/notificationsSettings/CommonForm.js:17
 msgid "Reboot is required"
 msgstr "Vyžadován restart"
@@ -1278,8 +1384,8 @@ msgid ""
 "settings. When done with configuration, you can test it by pressing Send "
 "test notification."
 msgstr ""
-"Vaše zařízení vám může podle vašich nastavení zasílat e-mailová oznámení o "
-"požadovaných restartech, důležitých událostech, nainstalovaných "
+"Vaše zařízení vám může podle vašich nastavení zasílat e-mailová oznámení "
+"o požadovaných restartech, důležitých událostech, nainstalovaných "
 "aktualizacích a nových funkcích. Po dokončení konfigurace to můžete "
 "otestovat stisknutím Odeslat testovací oznámení."
 
@@ -1316,8 +1422,9 @@ msgid "Security"
 msgstr "Zabezpečení"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:106
-msgid "User"
-msgstr "Uživatel"
+#: js/src/wan/WAN6Form.js:436
+msgid "Username"
+msgstr "Uživatelské jméno"
 
 #: js/src/notificationsSettings/SMTPTurrisForm.js:37
 msgid "Sender's name"
@@ -1328,8 +1435,9 @@ msgid ""
 "There are some unsaved changes in the notifications settings. Do you want"
 " to discard them and test the notifications with the old settings?"
 msgstr ""
-"V nastavení upozorňování byly provedeny změny, které doposud nebyly uloženy. "
-"Chcete je zahodit a odeslat testovací zprávu s původními nastaveními?"
+"V nastavení upozorňování byly provedeny změny, které doposud nebyly "
+"uloženy. Chcete je zahodit a odeslat testovací zprávu s původními "
+"nastaveními?"
 
 #: js/src/notificationsSettings/TestNotification.js:33
 msgid ""
@@ -1338,10 +1446,10 @@ msgid ""
 "\"Reboot or attention is required\" and click \"Save\" button if you want"
 " to get this notification by email."
 msgstr ""
-"S aktuální úrovní důležitosti nedostanete testovací oznámení do své e-"
-"mailové schránky. Zvyšte úroveň důležitosti alespoň na „Restartovat nebo je "
-"třeba věnovat pozornost“ a pokud chcete dostávat toto upozornění e-mailem, "
-"klikněte na tlačítko „Uložit“."
+"S aktuální úrovní důležitosti nedostanete testovací oznámení do své "
+"e-mailové schránky. Zvyšte úroveň důležitosti alespoň na „Restartovat "
+"nebo je třeba věnovat pozornost“ a pokud chcete dostávat toto upozornění "
+"e-mailem, klikněte na tlačítko „Uložit“."
 
 #: js/src/notificationsSettings/TestNotification.js:104
 msgid "Test notification"
@@ -1415,31 +1523,31 @@ msgstr "Nejvyšší možný port je 65535."
 msgid "Minimum port is 1."
 msgstr "Nejnižší možný port je 1."
 
-#: js/src/overview/Overview.js:87
+#: js/src/overview/Overview.js:69
 msgid "Go to Connection Settings"
 msgstr "Přejít na Nastavení připojení"
 
-#: js/src/overview/Cards/AutomaticUpdatesCard.js:43
+#: js/src/overview/Cards/AutomaticUpdatesCard.js:44
 msgid "Automatic Updates"
 msgstr "Automatické aktualizace"
 
-#: js/src/overview/Cards/AutomaticUpdatesCard.js:46
-#: js/src/overview/Cards/DataCollectionCard.js:46
-#: js/src/overview/Cards/DynamicFirewallCard.js:26
+#: js/src/overview/Cards/AutomaticUpdatesCard.js:47
+#: js/src/overview/Cards/DataCollectionCard.js:47
+#: js/src/overview/Cards/DynamicFirewallCard.js:27
 msgid "Activated"
 msgstr "Aktivováno"
 
-#: js/src/overview/Cards/AutomaticUpdatesCard.js:46
-#: js/src/overview/Cards/DataCollectionCard.js:46
-#: js/src/overview/Cards/DynamicFirewallCard.js:26
+#: js/src/overview/Cards/AutomaticUpdatesCard.js:47
+#: js/src/overview/Cards/DataCollectionCard.js:47
+#: js/src/overview/Cards/DynamicFirewallCard.js:27
 msgid "Disabled"
 msgstr "Vypnuto"
 
-#: js/src/overview/Cards/DataCollectionCard.js:43
+#: js/src/overview/Cards/DataCollectionCard.js:44
 msgid "Data Collection"
 msgstr "Sběr dat"
 
-#: js/src/overview/Cards/DynamicFirewallCard.js:23
+#: js/src/overview/Cards/DynamicFirewallCard.js:24
 msgid "Dynamic Firewall"
 msgstr "Dynamický Firewall"
 
@@ -1476,15 +1584,15 @@ msgstr "Provedeno"
 msgid "No tests have been performed lately."
 msgstr "V poslední době nebyly provedeny žádné testy."
 
-#: js/src/overview/Cards/OpenVPNClientsCard.js:42
+#: js/src/overview/Cards/OpenVPNClientsCard.js:45
 msgid "OpenVPN Clients"
 msgstr "Klienti OpenVPN"
 
-#: js/src/overview/Cards/OpenVPNClientsCard.js:48
+#: js/src/overview/Cards/OpenVPNClientsCard.js:51
 msgid "Go to OpenVPN Client Settings"
 msgstr "Přejít na Nastavení klientů OpenVPN"
 
-#: js/src/overview/Cards/OpenVPNClientsCard.js:86
+#: js/src/overview/Cards/OpenVPNClientsCard.js:89
 msgid "There are no clients added yet."
 msgstr "Zatím nejsou přidáni žádní klienti."
 
@@ -1513,10 +1621,10 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"Kromě standardní instalace můžete volitelně vybrat balíčky dalšího softwaru, "
-"které by byly nainstalovány na\n"
-"směrovač. Tento software lze vybrat z následujícího seznamu. Vezměte prosím "
-"na vědomí, že týmem Turris\n"
+"Kromě standardní instalace můžete volitelně vybrat balíčky dalšího "
+"softwaru, které by byly nainstalovány na\n"
+"směrovač. Tento software lze vybrat z následujícího seznamu. Vezměte "
+"prosím na vědomí, že týmem Turris\n"
 "je podporován pouze software, který je součástí TurrisOS nebo který byl "
 "nainstalován ze seznamu balíčků\n"
 "a není označen jako podporovaný komunitou.\n"
@@ -1615,10 +1723,10 @@ msgid ""
 "href=\"https://www.turris.cz/omnia-updater-eula\" target=\"_blank\" "
 "rel=\"noopener noreferrer\">license agreement</a>."
 msgstr ""
-"Povolením automatických aktualizací potvrzujete, že jste vlastníkem tohoto "
-"routeru Turris, a souhlasíte s úplným zněním <a href=\"https://www.turris.cz/"
-"omnia-updater-eula\" target=\"_blank\" rel=\"noopener noreferrer\">licenční "
-"smlouvy</a>."
+"Povolením automatických aktualizací potvrzujete, že jste vlastníkem "
+"tohoto routeru Turris, a souhlasíte s úplným zněním <a "
+"href=\"https://www.turris.cz/omnia-updater-eula\" target=\"_blank\" "
+"rel=\"noopener noreferrer\">licenční smlouvy</a>."
 
 #: js/src/packageManagement/updateSettings/UpdateSettings.js:31
 msgid ""
@@ -1834,7 +1942,7 @@ msgstr ""
 "href=\"${ForisURLs.packageManagement.updateSettings}\">automatické "
 "aktualizace</a>."
 
-#: js/src/password/ForisPasswordForm.js:48
+#: js/src/password/ForisPasswordForm.js:49
 msgid "Foris Password"
 msgstr "Foris heslo"
 
@@ -1850,11 +1958,11 @@ msgstr "Stávající heslo do Foris"
 msgid "New Foris password"
 msgstr "Nové heslo do Foris"
 
-#: js/src/password/ForisPasswordForm.js:74
+#: js/src/password/ForisPasswordForm.js:81
 msgid "Use same password for advanced administration (root)"
 msgstr "Použít stejné heslo pro pokročilou zprávu (účet root)"
 
-#: js/src/password/ForisPasswordForm.js:77
+#: js/src/password/ForisPasswordForm.js:84
 msgid ""
 "Same password would be used for accessing this administration interface, "
 "for root user in LuCI web interface and for SSH login. Use a strong "
@@ -1868,17 +1976,7 @@ msgstr ""
 "správu zde, budete mít možnost učinit tak později. Do té doby bude účet "
 "root zablokován.)"
 
-#: js/src/password/Password.js:47
-msgid ""
-"Here you can set passwords for Foris and optionally for advanced features"
-" (LuCI and SSH). Make sure to set secure password which is long and "
-"uncommon."
-msgstr ""
-"Zde můžete nastavit hesla pro Foris a volitelně pro pokročilé funkce (LuCI a "
-"SSH). Ujistěte se, že jste nastavili bezpečné heslo, které je dlouhé a "
-"neobvyklé."
-
-#: js/src/password/Password.js:97
+#: js/src/password/Password.js:77
 msgid ""
 "The password you've entered has been compromised. It appears ${\n"
 "                            forisPassword.count || rootPassword.count\n"
@@ -1892,27 +1990,37 @@ msgstr ""
 "                            forisPassword.list || rootPassword.list\n"
 "                        }."
 
-#: js/src/password/Password.js:108
+#: js/src/password/Password.js:88
 msgid "Password changed successfully."
 msgstr "Heslo úspěšně změněno."
 
-#: js/src/password/Password.js:188
+#: js/src/password/Password.js:179
+msgid ""
+"Here you can set passwords for Foris and optionally for advanced features"
+" (LuCI and SSH). Make sure to set secure password which is long and "
+"uncommon."
+msgstr ""
+"Zde můžete nastavit hesla pro Foris a volitelně pro pokročilé funkce "
+"(LuCI a SSH). Ujistěte se, že jste nastavili bezpečné heslo, které je "
+"dlouhé a neobvyklé."
+
+#: js/src/password/Password.js:201
 msgid "Password can't be empty."
 msgstr "Heslo nemůže být prázdné."
 
-#: js/src/password/Password.js:190
+#: js/src/password/Password.js:203
 msgid "Password should have min 6 symbols."
 msgstr "Heslo by mělo být alespoň 6 znaků dlouhé."
 
-#: js/src/password/Password.js:193
+#: js/src/password/Password.js:206
 msgid "Password should have max 128 symbols."
 msgstr "Heslo by mělo být nejvýše 128 znaků dlouhé."
 
-#: js/src/password/RootPasswordForm.js:41
+#: js/src/password/RootPasswordForm.js:48
 msgid "Advanced Administration (root) Password"
 msgstr "Heslo pro pokročilou správu (root)"
 
-#: js/src/password/RootPasswordForm.js:45
+#: js/src/password/RootPasswordForm.js:52
 #, python-format
 msgid ""
 "In order to access the advanced configuration options which are not "
@@ -1922,34 +2030,16 @@ msgid ""
 "through the <a href=\"%s\" target=\"_blank\" rel=\"noopener "
 "noreferrer\">LuCI web interface</a> or via SSH."
 msgstr ""
-"Abyste měli přístup k pokročilým možnostem konfigurace, které zde nejsou k "
-"dispozici, musíte\n"
-"nastavit heslo uživatele root. Pokročilé možnosti konfigurace lze spravovat "
-"buď \n"
+"Abyste měli přístup k pokročilým možnostem konfigurace, které zde nejsou "
+"k dispozici, musíte\n"
+"nastavit heslo uživatele root. Pokročilé možnosti konfigurace lze "
+"spravovat buď \n"
 "přes webové rozhraní <a href=\"%s\" target=\"_blank\" rel=\"noopener "
 "noreferrer\">LuCI</a> nebo prostřednictvím SSH."
 
-#: js/src/password/RootPasswordForm.js:56
+#: js/src/password/RootPasswordForm.js:63
 msgid "New advanced administration password"
 msgstr "Nové heslo pro pokročilou správu"
-
-#: js/src/reboot/Reboot.js:16
-msgid "Device Reboot"
-msgstr "Restart zařízení"
-
-#: js/src/reboot/Reboot.js:18
-msgid ""
-"\n"
-"If you need to reboot the device, click on the following button. The "
-"reboot process takes approximately 30 seconds, you\n"
-"will be required to log in again after the reboot.\n"
-"    "
-msgstr ""
-"\n"
-"Pokud potřebujete restartovat zařízení, stiskněte následující tlačítko. "
-"Proces restartu bude trvat přibližně 30 sekund,\n"
-"po restartu se budete muset znovu přihlásit.\n"
-"    "
 
 #: js/src/regionAndTime/RegionAndTime.js:30
 msgid "Region and Time"
@@ -2114,8 +2204,8 @@ msgstr ""
 "\n"
 "Zde zadáte nastavení portu WAN. Obvykle můžete tyto možnosti nechat "
 "nedotčené, pokud od poskytovatele\n"
-"přístupu k Internetu nedostanete jiné instrukce. Tedy v případě, že je váš "
-"router připojen do sítě přes\n"
+"přístupu k Internetu nedostanete jiné instrukce. Tedy v případě, že je "
+"váš router připojen do sítě přes\n"
 "kabelový nebo DSL modem, obvykle není nutné toto nastavení měnit.\n"
 "        "
 
@@ -2259,10 +2349,6 @@ msgstr "MTU"
 msgid "Tunnel ID"
 msgstr "Identifikátor tunelu"
 
-#: js/src/wan/WAN6Form.js:436
-msgid "Username"
-msgstr "Uživatelské jméno"
-
 #: js/src/wan/WAN6Form.js:451
 msgid "Key"
 msgstr "Klíč"
@@ -2315,23 +2401,23 @@ msgstr ""
 msgid "Wrong password."
 msgstr "Nesprávné heslo."
 
-#: reforis/foris_controller_api/modules/dns.py:41
+#: reforis/foris_controller_api/modules/dns.py:46
 msgid "Can't add new DNS forwarder."
 msgstr "Nedaří se přidat nové DNS přeposílání."
 
-#: reforis/foris_controller_api/modules/dns.py:47
+#: reforis/foris_controller_api/modules/dns.py:52
 msgid "Can't set DNS forwarder."
 msgstr "Nedaří se nastavit DNS přeposílání."
 
-#: reforis/foris_controller_api/modules/dns.py:52
+#: reforis/foris_controller_api/modules/dns.py:57
 msgid "Can't delete DNS forwarder."
 msgstr "Nedaří se smazat DNS přeposílání."
 
-#: reforis/foris_controller_api/modules/password.py:41
+#: reforis/foris_controller_api/modules/password.py:47
 msgid "Wrong current password."
 msgstr "Nesprávné stávající heslo."
 
-#: reforis/foris_controller_api/modules/router_notifications.py:112
+#: reforis/foris_controller_api/modules/router_notifications.py:117
 msgid ""
 "\n"
 "This is a testing notification. Please note you should receive this to "
@@ -2340,43 +2426,43 @@ msgid ""
 "            "
 msgstr ""
 "\n"
-"Toto je testování oznámení. Vezměte prosím na vědomí, že tuto zprávu byste "
-"měli obdržet do své e-mailové\n"
+"Toto je testování oznámení. Vezměte prosím na vědomí, že tuto zprávu "
+"byste měli obdržet do své e-mailové\n"
 "schránky pouze v případě, že je úroveň \"Restartovat nebo je vyžádována "
 "pozornost\" nebo vyšší.\n"
 "            "
 
-#: reforis/foris_controller_api/modules/router_notifications.py:122
+#: reforis/foris_controller_api/modules/router_notifications.py:127
 msgid "Testing message was sent, please check your inbox."
 msgstr ""
 "Testovací zpráva byla odeslána, podívejte se prosím do své e-mailové "
 "schránky."
 
-#: reforis/foris_controller_api/modules/router_notifications.py:125
+#: reforis/foris_controller_api/modules/router_notifications.py:130
 msgid ""
 "Sending of the testing message failed, your configuration is possibly "
 "wrong."
 msgstr ""
-"Odeslání testovací zprávy se nezdařilo – je možné, že vaše nastavení nejsou "
-"správná."
+"Odeslání testovací zprávy se nezdařilo – je možné, že vaše nastavení "
+"nejsou správná."
 
-#: reforis/foris_controller_api/modules/updater.py:60
+#: reforis/foris_controller_api/modules/updater.py:65
 msgid "Cannot change automatic restart settings."
 msgstr "Nelze změnit nastavení automatického restartu."
 
-#: reforis/foris_controller_api/modules/updater.py:75
+#: reforis/foris_controller_api/modules/updater.py:80
 msgid "Cannot update approvals settings."
 msgstr "Nelze nastavit schvalování aktualizací."
 
-#: reforis/foris_controller_api/modules/updater.py:79
+#: reforis/foris_controller_api/modules/updater.py:84
 msgid "Cannot rollback automatic restart settings."
 msgstr "Nelze vrátit zpět nastavení automatického restartu."
 
-#: reforis/foris_controller_api/modules/updater.py:170
+#: reforis/foris_controller_api/modules/updater.py:175
 msgid "Cannot start updater"
 msgstr "Nástroj pro aktualizaci není možné spustit"
 
-#: reforis/foris_controller_api/modules/updater.py:199
+#: reforis/foris_controller_api/modules/updater.py:204
 msgid "You can't set it with disabled automatic updates."
 msgstr "Nelze nastavit s vypnutými automatickými aktualizacemi."
 
@@ -2388,15 +2474,15 @@ msgstr "Příručka"
 msgid "Log in"
 msgstr "Přihlásit se"
 
-#: reforis/templates/login.html:33
+#: reforis/templates/login.html:34
 msgid "Go to LuCI"
 msgstr "Přejít do rozhraní LuCI"
 
-#: reforis/templates/login.html:33
+#: reforis/templates/login.html:34
 msgid "or"
 msgstr "nebo"
 
-#: reforis/templates/login.html:34
+#: reforis/templates/login.html:35
 msgid "back to select"
 msgstr "zpět k výběru"
 
@@ -2941,3 +3027,10 @@ msgstr "500 - Server error"
 
 #~ msgid "Foris"
 #~ msgstr "Foris"
+
+#~ msgid "User"
+#~ msgstr "Uživatel"
+
+#~ msgid "Device Reboot"
+#~ msgstr "Restart zařízení"
+

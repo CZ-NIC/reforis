@@ -7,20 +7,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-11-10 10:38+0100\n"
+"POT-Creation-Date: 2021-01-28 10:24+0100\n"
 "PO-Revision-Date: 2020-11-30 23:29+0000\n"
 "Last-Translator: Johan van de Wetering <mail@jvdwetering.nl>\n"
-"Language-Team: Dutch <https://hosted.weblate.org/projects/turris/reforis/nl/>"
-"\n"
 "Language: nl\n"
+"Language-Team: Dutch "
+"<https://hosted.weblate.org/projects/turris/reforis/nl/>\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4-dev\n"
-"Generated-By: Babel 2.8.0\n"
+"Generated-By: Babel 2.9.0\n"
 
-#: js/src/about/About.js:22 js/src/main/pages.js:140
+#: js/src/about/About.js:22 js/src/main/pages.js:103 js/src/main/pages.js:217
 msgid "About"
 msgstr "Over"
 
@@ -32,8 +31,9 @@ msgid ""
 "support</a>."
 msgstr ""
 "Hier kunt u informatie vinden over uw apparaat. Wij verzoeken u deze "
-"informatie bij te voegen indien u contact opneemt met onze <a href=\"mailto"
-":tech.support@turris.cz\" target=\"_blank\">technische ondersteuning </a> ."
+"informatie bij te voegen indien u contact opneemt met onze <a "
+"href=\"mailto:tech.support@turris.cz\" target=\"_blank\">technische "
+"ondersteuning </a> ."
 
 #: js/src/about/About.js:48
 msgid "Device"
@@ -62,30 +62,45 @@ msgid ""
 " test."
 msgstr ""
 "Turris OS is momenteel vrijgegeven in verschillende takken, elk met "
-"verschillende functies en variërende stabiliteit - u kunt zelf kiezen welke "
-"tak u wilt testen."
+"verschillende functies en variërende stabiliteit - u kunt zelf kiezen "
+"welke tak u wilt testen."
 
 #: js/src/about/About.js:87
 msgid "Kernel version"
 msgstr "Kernel versie"
 
-#: js/src/common/RebootButton.js:51 js/src/main/pages.js:99
-msgid "Reboot"
-msgstr "Opnieuw opstarten"
+#: js/src/common/FactoryResetButton.js:51
+msgid "Reset"
+msgstr ""
 
-#: js/src/common/RebootButton.js:66 js/src/dns/DNSSECDisableModal.js:30
+#: js/src/common/FactoryResetButton.js:66 js/src/common/RebootButton.js:66
+#: js/src/dns/DNSSECDisableModal.js:30
 #: js/src/notificationsSettings/TestNotification.js:139
 msgid "Warning!"
 msgstr "Waarschuwing!"
 
-#: js/src/common/RebootButton.js:68
-msgid "Are you sure you want to restart the router?"
+#: js/src/common/FactoryResetButton.js:68
+#, fuzzy
+msgid "Are you sure you want to reset the router?"
 msgstr "Weet u zeker dat u de router opnieuw wilt opstarten?"
 
-#: js/src/common/RebootButton.js:71 js/src/dns/DNSSECDisableModal.js:41
+#: js/src/common/FactoryResetButton.js:71 js/src/common/RebootButton.js:71
+#: js/src/dns/DNSSECDisableModal.js:41
 #: js/src/notificationsSettings/TestNotification.js:144
 msgid "Cancel"
 msgstr "Annuleren"
+
+#: js/src/common/FactoryResetButton.js:73
+msgid "Confirm factory reset"
+msgstr ""
+
+#: js/src/common/RebootButton.js:51 js/src/maintenance/Reboot.js:16
+msgid "Reboot"
+msgstr "Opnieuw opstarten"
+
+#: js/src/common/RebootButton.js:68
+msgid "Are you sure you want to restart the router?"
+msgstr "Weet u zeker dat u de router opnieuw wilt opstarten?"
 
 #: js/src/common/RebootButton.js:73
 msgid "Confirm reboot"
@@ -143,29 +158,52 @@ msgstr ""
 msgid "DHCP start"
 msgstr "DHCP-start"
 
-#: js/src/common/network/DHCPServerForm.js:59
+#: js/src/common/network/DHCPServerForm.js:57
 msgid "DHCP max leases"
 msgstr "DHCP max. aantal leases"
 
-#: js/src/common/network/DHCPServerForm.js:60
+#: js/src/common/network/DHCPServerForm.js:58
 msgid "Maximum number of addresses available for DHCP clients."
 msgstr "Maximum aantal addressen beschikbaar voor DHCP-clients."
 
-#: js/src/common/network/DHCPServerForm.js:73
+#: js/src/common/network/DHCPServerForm.js:71
 msgid "Lease time (hours)"
 msgstr "Leasetijd (uur)"
 
-#: js/src/common/network/DHCPValidators.js:15
+#: js/src/common/network/DHCPValidators.js:71
 msgid "Value must be a number."
 msgstr "Waarde moet een getal zijn."
 
-#: js/src/common/network/DHCPValidators.js:18
+#: js/src/common/network/DHCPValidators.js:74
 msgid "Value must be positive."
 msgstr "Waarde moet een positief getal zijn."
 
-#: js/src/common/network/DHCPValidators.js:29
+#: js/src/common/network/DHCPValidators.js:87
+msgid "Invalid network settings. DHCP settings can't be validated."
+msgstr ""
+
+#: js/src/common/network/DHCPValidators.js:100
 msgid "Minimum lease time is 1 hour."
 msgstr "Minimum lease tijd is 1 uur."
+
+#: js/src/common/network/DHCPValidators.js:116
+#, fuzzy
+msgid "Address is outside current network."
+msgstr "Het IP adres van de router in het gastnetwerk."
+
+#: js/src/common/network/DHCPValidators.js:120
+msgid "Address is already reserved for other purposes."
+msgstr ""
+
+#: js/src/common/network/DHCPValidators.js:131
+msgid "Too many addresses requested. Set a lower number or change DHCP start."
+msgstr ""
+
+#: js/src/common/network/DHCPValidators.js:138
+msgid ""
+"The only DHCP lease is the same as router's address. Increase limit or "
+"change start address."
+msgstr ""
 
 #: js/src/common/network/StaticIPForm.js:14 js/src/wan/WAN6Form.js:36
 msgid ""
@@ -263,23 +301,23 @@ msgstr ""
 "ondersteuning. Deze is in staat om \n"
 "onafhankelijk te opereren óf uw DNS verzoeken door te sturen naar de DNS "
 "resovler van uw internetprovider.<p/>\n"
-"<p>De volgende instellingen bepalen het gedrag van de DNS resolver. Over het "
-"algemeen is het beter om de resolver \n"
-"van uw internetprovider te gebruiken wanneer dit goed werkt. Indien dit om "
-"wat voor reden dan ook niet werkt, \n"
+"<p>De volgende instellingen bepalen het gedrag van de DNS resolver. Over "
+"het algemeen is het beter om de resolver \n"
+"van uw internetprovider te gebruiken wanneer dit goed werkt. Indien dit "
+"om wat voor reden dan ook niet werkt, \n"
 "kan het nodig zijn om DNS verzoeken niet meer door te sturen.</p>\n"
-"<p>In zeldzame gevallen kunnen er, door netwerk configuratiefouten bij uw "
-"internetprovider, problemen ontstaan\n"
+"<p>In zeldzame gevallen kunnen er, door netwerk configuratiefouten bij uw"
+" internetprovider, problemen ontstaan\n"
 "met de DNSSEC validatie. Als u problemen ondervindt met DNS, kunt u "
 "<b>tijdelijk</b> DNSSEC validatie uitschakelen \n"
-"om de aard van de problemen te onderzoeken. Houd er echter rekening mee dat "
-"u zonder DNSSEC validatie kwetsbaar \n"
+"om de aard van de problemen te onderzoeken. Houd er echter rekening mee "
+"dat u zonder DNSSEC validatie kwetsbaar \n"
 "bent voor 'DNS spoofing' aanvallen! Daarom raden wij aan om <b>DNSSEC "
 "ingeschakeld te houden</b> en de situatie met uw \n"
 "internetprovider te bespreken en op te lossen.</p>\n"
 "            "
 
-#: js/src/dns/DNS.js:62 js/src/overview/Overview.js:81 js/src/wan/WAN.js:50
+#: js/src/dns/DNS.js:62 js/src/overview/Overview.js:63 js/src/wan/WAN.js:50
 msgid "Connection Test"
 msgstr "Verbindingstest"
 
@@ -295,8 +333,8 @@ msgstr ""
 "\n"
 "Hier kunt u uw internetconnectie testen. Deze test is ook nuttig om te "
 "controleren of uw DNS verzoeken naar verwachting \n"
-"worden verwerkt. Vergeet niet om op <b>Opslaan</b> te klikken indien u de "
-"DNS instellingen hebt gewijzigd.\n"
+"worden verwerkt. Vergeet niet om op <b>Opslaan</b> te klikken indien u de"
+" DNS instellingen hebt gewijzigd.\n"
 "        "
 
 #: js/src/dns/DNSForm.js:17
@@ -304,16 +342,16 @@ msgid ""
 "This will enable your DNS resolver to place DHCP client's names among the"
 " local DNS records."
 msgstr ""
-"Hiermee kan de DNS-resolver de namen van de DHCP-clients tussen de lokale "
-"DNS-records plaatsen."
+"Hiermee kan de DNS-resolver de namen van de DHCP-clients tussen de lokale"
+" DNS-records plaatsen."
 
 #: js/src/dns/DNSForm.js:20
 msgid ""
 "This domain will be used as suffix. E.g. The result for client "
 "\"android-123\" and domain \"my.lan\" will be \"android-123.my.lan\"."
 msgstr ""
-"Dit domein wordt gebruikt als suffix. Bijvoorbeeld het resultaat voor client "
-"\"android-123\" en domein \"my.lan\" wordt \"android-123.my.lan\"."
+"Dit domein wordt gebruikt als suffix. Bijvoorbeeld het resultaat voor "
+"client \"android-123\" en domein \"my.lan\" wordt \"android-123.my.lan\"."
 
 #: js/src/dns/DNSForm.js:83
 msgid "Use forwarding"
@@ -345,8 +383,8 @@ msgstr ""
 "\n"
 "DNSSEC is een beveiligingstechnologie die de DNS communicatie beveiligt "
 "tegen aanvallen op de DNS infrastructuur.\n"
-"Wij raden u dringend aan om DNSSEC validatie in te schakelen tenzij u weet "
-"wat u doet en beseft dat u uw apparaat in \n"
+"Wij raden u dringend aan om DNSSEC validatie in te schakelen tenzij u "
+"weet wat u doet en beseft dat u uw apparaat in \n"
 "een netwerk verbindt waarin DNSSEC niet functioneert.\n"
 "\n"
 "Weet u zeker dat u wilt doorgaan en deze beveiliging wilt uitschakelen?\n"
@@ -461,12 +499,12 @@ msgstr "TLS pin moet minstens één symbool bevatten."
 msgid "Define at least one of the IP addresses of the forwarder."
 msgstr "Geef tenminste één van de IP adressen van de forwarder op."
 
-#: js/src/guestNetwork/GuestNetwork.js:36 js/src/interfaces/constants.js:11
-#: js/src/main/pages.js:71
+#: js/src/guestNetwork/GuestNetwork.js:37 js/src/interfaces/constants.js:11
+#: js/src/main/pages.js:148
 msgid "Guest Network"
 msgstr "Gastnetwerk"
 
-#: js/src/guestNetwork/GuestNetwork.js:40
+#: js/src/guestNetwork/GuestNetwork.js:41
 msgid ""
 "\n"
 "Guest network is used for <a href=\"${ForisURLs.wifi}\">guest Wi-Fi</a>.\n"
@@ -500,8 +538,9 @@ msgid ""
 "This option enables you to set a bandwidth limit for the guest network, "
 "so that your main network doesn't get slowed-down by it."
 msgstr ""
-"Deze instelling biedt de mogelijkheid om de hoevelheid bandbreedte voor het "
-"gastennetwerk te beperken zodat het hoofnetwerk daar geen last van heeft."
+"Deze instelling biedt de mogelijkheid om de hoevelheid bandbreedte voor "
+"het gastennetwerk te beperken zodat het hoofnetwerk daar geen last van "
+"heeft."
 
 #: js/src/guestNetwork/GuestNetworkForm.js:25
 msgid "Download speed in guest network (in kilobits per second)."
@@ -551,9 +590,9 @@ msgid ""
 "here will become fully functional after you assign a network interface to"
 " this network."
 msgstr ""
-"Dit netwerk heeft momenteel geen netwerkinterface. Wijzigingen die u hier "
-"maakt worden volledig functioneel zodra u een netwerkinterface toekent aan "
-"dit netwerk."
+"Dit netwerk heeft momenteel geen netwerkinterface. Wijzigingen die u hier"
+" maakt worden volledig functioneel zodra u een netwerkinterface toekent "
+"aan dit netwerk."
 
 #: js/src/guestNetwork/GuestNetworkNotification.js:16
 msgid "All network interfaces of this network are currently down."
@@ -565,10 +604,10 @@ msgid ""
 "device. Firstly it is required to set your password. Note the security of"
 " your home network is in your hands, so try not to use weak passwords."
 msgstr ""
-"Welkom op de Foris web interface. Dit stappenplan helpt u om uw apparaat in "
-"te stellen. Als eerste is het van belang dat u een wachtwoord instelt. Besef "
-"dat de beveiliging van het netwerk in uw handen ligt. Probeer daarom zwakke "
-"wachtwoorden te voorkomen."
+"Welkom op de Foris web interface. Dit stappenplan helpt u om uw apparaat "
+"in te stellen. Als eerste is het van belang dat u een wachtwoord instelt."
+" Besef dat de beveiliging van het netwerk in uw handen ligt. Probeer "
+"daarom zwakke wachtwoorden te voorkomen."
 
 #: js/src/guide/constants.js:17
 msgid "Your password is set. You may proceed to the next step."
@@ -592,8 +631,8 @@ msgid ""
 " any crucial network settings so you can safely proceed to the next step."
 msgstr ""
 "U heeft de netwerkinterfaces ingesteld. Het lijkt erop dat de cruciale "
-"netwerkinstellingen goed zijn ingesteld. U kunt nu veilig verdergaan met de "
-"volgende stap."
+"netwerkinstellingen goed zijn ingesteld. U kunt nu veilig verdergaan met "
+"de volgende stap."
 
 #: js/src/guide/constants.js:34
 msgid "Now you need to set the time and timezone of your device."
@@ -605,9 +644,9 @@ msgid ""
 "matches the time on your computer if not try to update it via NTP or "
 "manually."
 msgstr ""
-"Uw tijd en tijdzone zijn ingesteld. Zorg ervoor dat de tijd van uw apparaat "
-"overeenkomt met de tijd op uw computer. Zo niet, probeer de tijd dan bij te "
-"werken via NTP of werk de tijd handmatig bij."
+"Uw tijd en tijdzone zijn ingesteld. Zorg ervoor dat de tijd van uw "
+"apparaat overeenkomt met de tijd op uw computer. Zo niet, probeer de tijd"
+" dan bij te werken via NTP of werk de tijd handmatig bij."
 
 #: js/src/guide/constants.js:40
 msgid ""
@@ -637,8 +676,8 @@ msgid ""
 "whether it is working properly and if so you can safely proceed to the "
 "next step."
 msgstr ""
-"U heeft uw WAN-interface geconfigureerd. Probeer een connectietest uit te "
-"voeren om te kijken of de WAN-verbinding goed werkt. Zo ja, dan kunt u "
+"U heeft uw WAN-interface geconfigureerd. Probeer een connectietest uit te"
+" voeren om te kijken of de WAN-verbinding goed werkt. Zo ja, dan kunt u "
 "veilig door naar de volgende stap."
 
 #: js/src/guide/constants.js:56
@@ -658,8 +697,9 @@ msgid ""
 "You've configured your LAN interface. Try to test whether settings work "
 "properly and if so you can safely proceed to the next step."
 msgstr ""
-"U heeft uw LAN-interface geconfigureerd. Probeer de instelingen te testen. "
-"Als uw netwerk goed functioneert, kunt u veilig door naar de volgende stap."
+"U heeft uw LAN-interface geconfigureerd. Probeer de instelingen te "
+"testen. Als uw netwerk goed functioneert, kunt u veilig door naar de "
+"volgende stap."
 
 #: js/src/guide/constants.js:64
 msgid "Now you need to configure automatic updates on your device."
@@ -674,8 +714,8 @@ msgid ""
 "Congratulations! Now your device is able to act as a router and route "
 "network traffic among LAN, WAN and guest network."
 msgstr ""
-"Gefeliciteerd! Nu is uw apparaat klaar om gebruikt te worden als router en "
-"uw netwerkverkeer te begeleiden over het LAN, WAN en gastnetwerk."
+"Gefeliciteerd! Nu is uw apparaat klaar om gebruikt te worden als router "
+"en uw netwerkverkeer te begeleiden over het LAN, WAN en gastnetwerk."
 
 #: js/src/guide/constants.js:84
 msgid ""
@@ -692,9 +732,10 @@ msgid ""
 " put any interfaces to your WAN and Guest Network. So it is a good idea "
 "to assign all interfaces to LAN."
 msgstr ""
-"U heeft ervoor gekozen om het apparaat in te stellen als lokale server. Dit "
-"betekent dat het niet zinnig is om interfaces te koppelen aan het WAN en "
-"gastnetwerk. Het is een goed idee om alle interfaces te koppelen aan LAN."
+"U heeft ervoor gekozen om het apparaat in te stellen als lokale server. "
+"Dit betekent dat het niet zinnig is om interfaces te koppelen aan het WAN"
+" en gastnetwerk. Het is een goed idee om alle interfaces te koppelen aan "
+"LAN."
 
 #: js/src/guide/constants.js:102
 msgid ""
@@ -703,11 +744,11 @@ msgid ""
 "probably want to act as a client here thus select "
 "<strong>Computer</strong> mode here."
 msgstr ""
-"Er is geen noodzaak om het LAN te beheren als uw apparaat functioneert als "
-"locale server. U wilt waarschijnlijk verbinden met het netwerk als client. "
-"Selecteer daarom <strong>Computer</strong> mode. Als u nog steeds het "
-"netwerk wilt beheren, start het stappenplan dan opnieuw en kies de router "
-"workflow."
+"Er is geen noodzaak om het LAN te beheren als uw apparaat functioneert "
+"als locale server. U wilt waarschijnlijk verbinden met het netwerk als "
+"client. Selecteer daarom <strong>Computer</strong> mode. Als u nog steeds"
+" het netwerk wilt beheren, start het stappenplan dan opnieuw en kies de "
+"router workflow."
 
 #: js/src/guide/constants.js:105
 msgid ""
@@ -715,10 +756,10 @@ msgid ""
 "IP addresses are entered correctly otherwise you won't be able to access "
 "this configuration interface when the new settings are applied."
 msgstr ""
-"Als u de <strong>static</strong> configuratie kiest, zorg er dan voor dat de "
-"IP adressen correct zijn ingesteld om te voorkomen dat u geen toegang meer "
-"kunt krijgen tot deze configuratie-interface na het opslaan van de nieuwe "
-"instellingen."
+"Als u de <strong>static</strong> configuratie kiest, zorg er dan voor dat"
+" de IP adressen correct zijn ingesteld om te voorkomen dat u geen toegang"
+" meer kunt krijgen tot deze configuratie-interface na het opslaan van de "
+"nieuwe instellingen."
 
 #: js/src/guide/constants.js:108
 msgid ""
@@ -728,16 +769,17 @@ msgid ""
 " address to proceed the guide."
 msgstr ""
 "Als u de <strong>DHCP</strong> methode kiest, moet u waarschijnlijk een "
-"nieuw IP-adres toekennen. U kunt dit IP-adres verkrijgen bij de DHCP-server "
-"van uw LAN. Vervolgens gebruikt u het nieuwe IP-adres om verder te gaan."
+"nieuw IP-adres toekennen. U kunt dit IP-adres verkrijgen bij de DHCP-"
+"server van uw LAN. Vervolgens gebruikt u het nieuwe IP-adres om verder te"
+" gaan."
 
 #: js/src/guide/constants.js:111
 msgid ""
 "Note that either way you might need to re-plug your ethernet cables after"
 " you update the settings here."
 msgstr ""
-"In ieder geval moet u waarschijnlijk de netwerkkabels loskoppelen en opnieuw "
-"aankoppelen nadat u de instellingen heeft veranderd."
+"In ieder geval moet u waarschijnlijk de netwerkkabels loskoppelen en "
+"opnieuw aankoppelen nadat u de instellingen heeft veranderd."
 
 #: js/src/guide/constants.js:115
 msgid ""
@@ -746,26 +788,26 @@ msgid ""
 " your device is able to access the internet (you can use the connection "
 "test below)."
 msgstr ""
-"Gelieve de ingevoerde instellingen te testen om te kijken of deze correct "
-"werken. Dit betekent dat u toegang heeft tot de configuratie-interface van "
-"uw apparaat en uw appraat en deze in staat is om het internet te bereiken (u "
-"kunt dit testen door onderstaande connectietest)."
+"Gelieve de ingevoerde instellingen te testen om te kijken of deze correct"
+" werken. Dit betekent dat u toegang heeft tot de configuratie-interface "
+"van uw apparaat en uw appraat en deze in staat is om het internet te "
+"bereiken (u kunt dit testen door onderstaande connectietest)."
 
 #: js/src/guide/constants.js:120
 msgid ""
 "Congratulations! Now your device should be able to act as a server on "
 "your local network."
 msgstr ""
-"Gefeliciteerd! Uw apparaat is nu ingesteld om te fungeren als server op uw "
-"locale netwerk."
+"Gefeliciteerd! Uw apparaat is nu ingesteld om te fungeren als server op "
+"uw locale netwerk."
 
 #: js/src/guide/hooks.js:23
 msgid "Cannot mark guide as finished."
 msgstr "Kan het stappenplan niet markeren als afgerond."
 
-#: js/src/guide/steps.js:20 js/src/main/pages.js:84
+#: js/src/guide/steps.js:20 js/src/main/pages.js:75 js/src/main/pages.js:161
 #: js/src/notificationsSettings/SMTPCustomForm.js:114
-#: js/src/password/Password.js:45 reforis/templates/login.html:29
+#: js/src/password/Password.js:177 reforis/templates/login.html:29
 msgid "Password"
 msgstr "Wachtwoord"
 
@@ -773,7 +815,7 @@ msgstr "Wachtwoord"
 msgid "Workflow"
 msgstr "Workflow"
 
-#: js/src/guide/steps.js:28 js/src/main/pages.js:66
+#: js/src/guide/steps.js:28 js/src/main/pages.js:143
 msgid "Interfaces"
 msgstr "Interfaces"
 
@@ -781,22 +823,22 @@ msgstr "Interfaces"
 msgid "Time"
 msgstr "Tijd"
 
-#: js/src/guide/steps.js:36 js/src/main/pages.js:61
+#: js/src/guide/steps.js:36 js/src/main/pages.js:62 js/src/main/pages.js:138
 msgid "DNS"
 msgstr "DNS"
 
-#: js/src/guide/steps.js:40 js/src/main/pages.js:117
+#: js/src/guide/steps.js:40 js/src/main/pages.js:194
 #: js/src/packageManagement/updates/Updates.js:27
 msgid "Updates"
 msgstr "Updates"
 
 #: js/src/guide/steps.js:44 js/src/interfaces/constants.js:9
-#: js/src/main/pages.js:51 js/src/wan/WAN.js:27
+#: js/src/main/pages.js:52 js/src/main/pages.js:128 js/src/wan/WAN.js:27
 msgid "WAN"
 msgstr "WAN"
 
 #: js/src/guide/steps.js:48 js/src/interfaces/constants.js:10
-#: js/src/main/pages.js:56
+#: js/src/main/pages.js:57 js/src/main/pages.js:133
 msgid "LAN"
 msgstr "LAN"
 
@@ -832,8 +874,8 @@ msgid ""
 "dynamic firewall updates blocking known attackers."
 msgstr ""
 "Om uw veiligheid verder te verbeteren kunt u de installatie van de data "
-"collection plugin overwegen (via Package Management). Dit stelt u in staat "
-"om onderdeel uit te maken van ons veiligheidsonderzoek naar nieuwe "
+"collection plugin overwegen (via Package Management). Dit stelt u in "
+"staat om onderdeel uit te maken van ons veiligheidsonderzoek naar nieuwe "
 "aanvallers en geeft u toegang tot dynamische firewall updates waarmee "
 "bekende aanvallers worden geblokkeerd."
 
@@ -848,10 +890,10 @@ msgid ""
 "other devices within your local network (e.g. act as a network-attached "
 "storage)."
 msgstr ""
-"Deze workflow helpt u om uw apparaat in te stellen als lokale server. Dit "
-"betekent dat het apparaat ten dienste staat van andere apparaten in uw eigen "
-"lokale netwerk (bijvoorbeeld als een Network Attached Storage, oftewel een "
-"NAS)."
+"Deze workflow helpt u om uw apparaat in te stellen als lokale server. Dit"
+" betekent dat het apparaat ten dienste staat van andere apparaten in uw "
+"eigen lokale netwerk (bijvoorbeeld als een Network Attached Storage, "
+"oftewel een NAS)."
 
 #: js/src/guide/GuidePages/WorkflowSelect.js:28
 msgid ""
@@ -859,17 +901,18 @@ msgid ""
 " functional router. It assumes that you want to have more or less "
 "standard network setup."
 msgstr ""
-"Nadat deze workflow is afgesloten zal het apparaat als router functioneren. "
-"Er wordt van een min-of-meer standaard netwerkconfiguratie uitgegaan."
+"Nadat deze workflow is afgesloten zal het apparaat als router "
+"functioneren. Er wordt van een min-of-meer standaard netwerkconfiguratie "
+"uitgegaan."
 
 #: js/src/guide/GuidePages/WorkflowSelect.js:31
 msgid ""
 "Just set your password and you are ready to go. This workflow is aimed to"
 " more advanced users who intend to set everything manually."
 msgstr ""
-"Alleen uw wachtwoord instellen en u bent klaar. Deze workflow is gericht op "
-"de meer geavanceerde gebruikers die van plan zijn om alles handmatig in te "
-"stellen."
+"Alleen uw wachtwoord instellen en u bent klaar. Deze workflow is gericht "
+"op de meer geavanceerde gebruikers die van plan zijn om alles handmatig "
+"in te stellen."
 
 #: js/src/guide/GuidePages/WorkflowSelect.js:37
 msgid "Local Server"
@@ -919,8 +962,8 @@ msgstr ""
 "\n"
 "Hier kunt u de instellingen configureren van de netwerkinterfaces van uw "
 "apparaat. U kunt de fysieke \n"
-"netwerkinterfaces koppelen aan verschillende netwerken. Als u niet weet wat "
-"u hier moet instellen gebruikt u\n"
+"netwerkinterfaces koppelen aan verschillende netwerken. Als u niet weet "
+"wat u hier moet instellen gebruikt u\n"
 "de standaard instellingen.\n"
 "        "
 
@@ -945,8 +988,8 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"Het fungeert als een externe netwerkconnectie. Firewall regels dienen hier "
-"ingesteld te worden. Dit kan\n"
+"Het fungeert als een externe netwerkconnectie. Firewall regels dienen "
+"hier ingesteld te worden. Dit kan\n"
 "alleen een enkele interface bevatten.\n"
 "        "
 
@@ -963,10 +1006,10 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"Het fungeert als een lokale netwerkconnectie. Het LAN dient alleen apparaten "
-"te verbinden die onder uw\n"
-"toezicht staan en u kunt vertrouwen. Deze apparaten kunnen elkaar zien en "
-"kunnen deze web-interface \n"
+"Het fungeert als een lokale netwerkconnectie. Het LAN dient alleen "
+"apparaten te verbinden die onder uw\n"
+"toezicht staan en u kunt vertrouwen. Deze apparaten kunnen elkaar zien en"
+" kunnen deze web-interface \n"
 "benaderen. Het is aanbevolen dat het LAN-netwerk in ieder geval één "
 "netwerkinterface bevat, anders\n"
 "kunt u dit apparaat niet op een gemakkelijke manier configureren.\n"
@@ -985,12 +1028,12 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"Het fungeert als een lokale netwerkconnectie. In tegenstelling tot het LAN-"
-"netwerk kunnen de apparaten in \n"
-"het gastnetwerk niet de configuratie-interface van dit apparaat benaderen. "
-"Deze apparaten kunnen alleen het \n"
-"WAN (internet) benaderen. Dit netwerk is daarom geschikt voor apparaten die "
-"u niet volledig vertrouwd.\n"
+"Het fungeert als een lokale netwerkconnectie. In tegenstelling tot het "
+"LAN-netwerk kunnen de apparaten in \n"
+"het gastnetwerk niet de configuratie-interface van dit apparaat "
+"benaderen. Deze apparaten kunnen alleen het \n"
+"WAN (internet) benaderen. Dit netwerk is daarom geschikt voor apparaten "
+"die u niet volledig vertrouwd.\n"
 "Merk op dat u ook de download- en uploadsnelheid van de aangesloten "
 "apparaten op het gastnetwerk kunt\n"
 "beperken.\n"
@@ -1055,7 +1098,7 @@ msgstr "N.v.t."
 msgid "Unassigned"
 msgstr "Niet toegewezen"
 
-#: js/src/lan/LAN.js:29
+#: js/src/lan/LAN.js:30
 msgid ""
 "\n"
 "This section contains settings for the local network (LAN). The provided "
@@ -1074,16 +1117,16 @@ msgid ""
 "            "
 msgstr ""
 "\n"
-"Deze pagina bevat de instellingen voor het lokale netwerk (LAN). De reeds "
-"ingevulde standaardinstellingen\n"
+"Deze pagina bevat de instellingen voor het lokale netwerk (LAN). De reeds"
+" ingevulde standaardinstellingen\n"
 "zijn geschikt voor de meeste netwerken.\n"
 "<br/>\n"
-"<b>Noot:</b>Als u het IP adres van de router wijzigt, dienen alle computers "
-"in het LAN-netwerk (inclusief \n"
-"degene die u momenteel gebruikt) een <b>nieuw IP adres</b> te verkrijgen. "
-"Dit gebeurt niet <b> direct</b>.\n"
-"Het is daarom aanbevolen om alle LAN kabels even los te halen en opnieuw te "
-"verbinden om dit proces\n"
+"<b>Noot:</b>Als u het IP adres van de router wijzigt, dienen alle "
+"computers in het LAN-netwerk (inclusief \n"
+"degene die u momenteel gebruikt) een <b>nieuw IP adres</b> te verkrijgen."
+" Dit gebeurt niet <b> direct</b>.\n"
+"Het is daarom aanbevolen om alle LAN kabels even los te halen en opnieuw "
+"te verbinden om dit proces\n"
 "te forceren nadat de wijzigingen zijn opgeslagen. De volgende pagina zal "
 "niet laden totdat u een nieuw IP-adres\n"
 "heeft verkregen van de DHCP-server (als DHCP is ingeschakeld). U moet "
@@ -1102,11 +1145,12 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"Router mode betekent dat dit apparaat het LAN-netwerk beheert (acteert als "
-"een router, kan IP adressen toekennen, ...).\n"
-"Computer mode betekent dat dit apparaat als een client fungeert binnen dit "
-"LAN-netwerk. Hij acteert soortgelijk als WAN,\n"
-"maar heeft open poorten voor de configuratie-interface en andere services.\n"
+"Router mode betekent dat dit apparaat het LAN-netwerk beheert (acteert "
+"als een router, kan IP adressen toekennen, ...).\n"
+"Computer mode betekent dat dit apparaat als een client fungeert binnen "
+"dit LAN-netwerk. Hij acteert soortgelijk als WAN,\n"
+"maar heeft open poorten voor de configuratie-interface en andere "
+"services.\n"
 "        "
 
 #: js/src/lan/LANForm.js:30
@@ -1146,52 +1190,62 @@ msgstr "Sluit dit apparaat niet aan op het LAN"
 msgid "IPv4 protocol"
 msgstr "IPv4-protocol"
 
-#: js/src/main/pages.js:34 js/src/overview/Overview.js:67
+#: js/src/main/pages.js:40 js/src/main/pages.js:111
+#: js/src/overview/Overview.js:51
 msgid "Overview"
 msgstr "Overzicht"
 
-#: js/src/main/pages.js:40
+#: js/src/main/pages.js:46 js/src/main/pages.js:117
 msgid "Network Settings"
 msgstr "Netwerkinstellingen"
 
-#: js/src/main/pages.js:46 js/src/wifi/WiFi.js:21
-msgid "Wi-Fi"
-msgstr "WiFi"
-
-#: js/src/main/pages.js:78
+#: js/src/main/pages.js:69 js/src/main/pages.js:155
 msgid "Administration"
 msgstr "Beheer"
 
-#: js/src/main/pages.js:89
+#: js/src/main/pages.js:80 js/src/main/pages.js:166
 msgid "Region & Time"
 msgstr "Regio en Tijd"
 
 #: js/src/main/TopBar/NotificationsDropdown/NotificationsDropdownMenu.js:76
-#: js/src/main/pages.js:94
+#: js/src/main/pages.js:85 js/src/main/pages.js:171
 #: js/src/notifications/Notifications/Notifications.js:87
 #: js/src/notificationsSettings/NotificationsSettings.js:25
 msgid "Notifications"
 msgstr "Meldingen"
 
-#: js/src/main/pages.js:106
+#: js/src/main/pages.js:90 js/src/main/pages.js:176
+#: js/src/maintenance/Maintenance.js:17
+msgid "Maintenance"
+msgstr ""
+
+#: js/src/main/pages.js:97
+msgid "Global Threat Statistics"
+msgstr ""
+
+#: js/src/main/pages.js:123 js/src/wifi/WiFi.js:21
+msgid "Wi-Fi"
+msgstr "WiFi"
+
+#: js/src/main/pages.js:183
 msgid "Package Management"
 msgstr "Pakketbeheer"
 
-#: js/src/main/pages.js:112
+#: js/src/main/pages.js:189
 #: js/src/packageManagement/updateSettings/UpdateSettings.js:28
 msgid "Update Settings"
 msgstr "Update-instellingen"
 
-#: js/src/main/pages.js:122 js/src/packageManagement/packages/Packages.js:19
+#: js/src/main/pages.js:199 js/src/packageManagement/packages/Packages.js:19
 msgid "Packages"
 msgstr "Pakketten"
 
 #: js/src/main/TopBar/languagesDropdown/LanguagesDropdown.js:47
-#: js/src/main/pages.js:127 js/src/packageManagement/languages/Languages.js:18
+#: js/src/main/pages.js:204 js/src/packageManagement/languages/Languages.js:18
 msgid "Languages"
 msgstr "Talen"
 
-#: js/src/main/pages.js:134
+#: js/src/main/pages.js:211
 msgid "Advanced Administration"
 msgstr "Geavanceerde instellingen"
 
@@ -1244,6 +1298,62 @@ msgstr "Negeren"
 #: js/src/packageManagement/updates/UpdateApproval.js:34
 msgid "Cannot install updates."
 msgstr "Kan updates niet installeren."
+
+#: js/src/maintenance/FactoryReset.js:16
+msgid "Factory Reset"
+msgstr ""
+
+#: js/src/maintenance/FactoryReset.js:18
+msgid ""
+"Doing a factory reset on the Turris device will remove all the packages \n"
+"                installed on the device along with the data associated "
+"with them. This brings\n"
+"                back all the default settings of the device as it was "
+"when the router was new,\n"
+"                giving you a clean slate to start all over again.\n"
+"    "
+msgstr ""
+
+#: js/src/maintenance/Maintenance.js:19
+msgid ""
+"The Maintenance tab allows you to reboot the router or bring back all the"
+" default settings by performing a factory reset."
+msgstr ""
+
+#: js/src/maintenance/Reboot.js:18
+msgid ""
+"\n"
+"If you need to reboot the device, click on the following button. The "
+"reboot process takes approximately 30 seconds, you\n"
+"will be required to log in again after the reboot.\n"
+"    "
+msgstr ""
+"\n"
+"Als u het apparaat opnieuw moet opstarten, klikt u op de volgende knop. "
+"Het reboot proces kan ongeveer 30 seconden in\n"
+"beslag nemen. U dient nadien opnieuw in te loggen.\n"
+"    "
+
+#: js/src/maintenance/Syslog/Syslog.js:46
+msgid "A drive has to be configured first."
+msgstr ""
+
+#: js/src/maintenance/Syslog/SyslogForm.js:29
+msgid "System logs retention"
+msgstr ""
+
+#: js/src/maintenance/Syslog/SyslogForm.js:32
+msgid ""
+"During device reboot, system logs are lost by default. This option allows"
+" to save system logs using Storage plugin. Logs are saved into "
+"/srv/log/messages. To enable this option, you have to configure a storage"
+" in the <a href=\"${ForisURLs.storage}\" title=\"Go to Storage "
+"plugin\">Storage plugin</a> first."
+msgstr ""
+
+#: js/src/maintenance/Syslog/SyslogForm.js:38
+msgid "Enable system logs retention"
+msgstr ""
 
 #: js/src/notificationsSettings/CommonForm.js:17
 msgid "Reboot is required"
@@ -1298,8 +1408,8 @@ msgid ""
 msgstr ""
 "Uw apparaat kan e-mail meldingen versturen over vereiste herstarts, "
 "belangrijke gebeurtenissen, geïnstalleerde updates en nieuwe features "
-"conform uw instellingen. Nadat u de configuratie heeft afgerond, kunt u de "
-"meldingen testen door op 'Verzend testmelding' te klikken."
+"conform uw instellingen. Nadat u de configuratie heeft afgerond, kunt u "
+"de meldingen testen door op 'Verzend testmelding' te klikken."
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:22
 msgid "None"
@@ -1334,8 +1444,9 @@ msgid "Security"
 msgstr "Beveiliging"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:106
-msgid "User"
-msgstr "Gebruiker"
+#: js/src/wan/WAN6Form.js:436
+msgid "Username"
+msgstr "Gebruikersnaam"
 
 #: js/src/notificationsSettings/SMTPTurrisForm.js:37
 msgid "Sender's name"
@@ -1346,9 +1457,9 @@ msgid ""
 "There are some unsaved changes in the notifications settings. Do you want"
 " to discard them and test the notifications with the old settings?"
 msgstr ""
-"Er zijn niet-opgeslagen wijzigingen aangebracht in het configuratiescherm "
-"van de meldingen. Wilt u de wijzigingen verwerpen en de meldingen testen met "
-"de oude instellingen?"
+"Er zijn niet-opgeslagen wijzigingen aangebracht in het configuratiescherm"
+" van de meldingen. Wilt u de wijzigingen verwerpen en de meldingen testen"
+" met de oude instellingen?"
 
 #: js/src/notificationsSettings/TestNotification.js:33
 msgid ""
@@ -1389,8 +1500,8 @@ msgstr ""
 #: js/src/notificationsSettings/helpTexts.js:15
 msgid "Email address of recipient. Separate multiple addresses by comma."
 msgstr ""
-"E-mail adres van ontvanger. Meerdere adressen scheiden door middel van een "
-"komma."
+"E-mail adres van ontvanger. Meerdere adressen scheiden door middel van "
+"een komma."
 
 #: js/src/notificationsSettings/helpTexts.js:18
 msgid "Send emails about new features."
@@ -1436,31 +1547,31 @@ msgstr "Maximale poort is 65535."
 msgid "Minimum port is 1."
 msgstr "Minimale poort is 1."
 
-#: js/src/overview/Overview.js:87
+#: js/src/overview/Overview.js:69
 msgid "Go to Connection Settings"
 msgstr "Ga naar Connectie Instellingen"
 
-#: js/src/overview/Cards/AutomaticUpdatesCard.js:43
+#: js/src/overview/Cards/AutomaticUpdatesCard.js:44
 msgid "Automatic Updates"
 msgstr "Automatische Updates"
 
-#: js/src/overview/Cards/AutomaticUpdatesCard.js:46
-#: js/src/overview/Cards/DataCollectionCard.js:46
-#: js/src/overview/Cards/DynamicFirewallCard.js:26
+#: js/src/overview/Cards/AutomaticUpdatesCard.js:47
+#: js/src/overview/Cards/DataCollectionCard.js:47
+#: js/src/overview/Cards/DynamicFirewallCard.js:27
 msgid "Activated"
 msgstr "Geactiveerd"
 
-#: js/src/overview/Cards/AutomaticUpdatesCard.js:46
-#: js/src/overview/Cards/DataCollectionCard.js:46
-#: js/src/overview/Cards/DynamicFirewallCard.js:26
+#: js/src/overview/Cards/AutomaticUpdatesCard.js:47
+#: js/src/overview/Cards/DataCollectionCard.js:47
+#: js/src/overview/Cards/DynamicFirewallCard.js:27
 msgid "Disabled"
 msgstr "Uitgeschakeld"
 
-#: js/src/overview/Cards/DataCollectionCard.js:43
+#: js/src/overview/Cards/DataCollectionCard.js:44
 msgid "Data Collection"
 msgstr "Gegevensverzameling"
 
-#: js/src/overview/Cards/DynamicFirewallCard.js:23
+#: js/src/overview/Cards/DynamicFirewallCard.js:24
 msgid "Dynamic Firewall"
 msgstr "Dynamische Firewall"
 
@@ -1497,15 +1608,15 @@ msgstr "Uitgevoerd"
 msgid "No tests have been performed lately."
 msgstr "Er zijn onlangs geen tests uitgevoerd."
 
-#: js/src/overview/Cards/OpenVPNClientsCard.js:42
+#: js/src/overview/Cards/OpenVPNClientsCard.js:45
 msgid "OpenVPN Clients"
 msgstr "OpenVPN Clients"
 
-#: js/src/overview/Cards/OpenVPNClientsCard.js:48
+#: js/src/overview/Cards/OpenVPNClientsCard.js:51
 msgid "Go to OpenVPN Client Settings"
 msgstr "Ga naar OpenVPN Client Instellingen"
 
-#: js/src/overview/Cards/OpenVPNClientsCard.js:86
+#: js/src/overview/Cards/OpenVPNClientsCard.js:89
 msgid "There are no clients added yet."
 msgstr "Er zijn nog geen clients toegevoegd."
 
@@ -1534,12 +1645,12 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"Los van de standaard installatie kunt u optioneel bundels van aanvullende "
-"software selecteren om te installeren op de \n"
-"router. Deze software kan worden geselecteerd vanuit de volgende lijst. Merk "
-"op dat het Turris team alleen software\n"
-"ondersteund welke onderdeel is van TurrisOS of geïnstalleerd is vanuit de "
-"lijst met pakketten maar niet is gemarkeerd als\n"
+"Los van de standaard installatie kunt u optioneel bundels van aanvullende"
+" software selecteren om te installeren op de \n"
+"router. Deze software kan worden geselecteerd vanuit de volgende lijst. "
+"Merk op dat het Turris team alleen software\n"
+"ondersteund welke onderdeel is van TurrisOS of geïnstalleerd is vanuit de"
+" lijst met pakketten maar niet is gemarkeerd als\n"
 "'community-supported'.\n"
 "        "
 
@@ -1592,32 +1703,32 @@ msgid ""
 "                  "
 msgstr ""
 "\n"
-"                    <li>Automatische updates worden gratis aangeboden aan de "
-"eigenaren van een Turris router.</li>\n"
-"                    <li>Updates worden exclusief door CZ.NIC, z. s. p. o. "
-"samengesteld.</li>\n"
+"                    <li>Automatische updates worden gratis aangeboden aan"
+" de eigenaren van een Turris router.</li>\n"
+"                    <li>Updates worden exclusief door CZ.NIC, z. s. p. o."
+" samengesteld.</li>\n"
 "                    <li>\n"
 "                        Het inschakelen van automatische updates is een "
 "voorwaarde voor de aanvullende\n"
 "                        beveiligingseigenschappen van de Turris router.\n"
 "                    </li>\n"
 "                    <li>\n"
-"                        Automatische updates worden uitgevoerd op het moment "
-"van vrijkomen. Het moment van de\n"
+"                        Automatische updates worden uitgevoerd op het "
+"moment van vrijkomen. Het moment van de\n"
 "                        installatie kan niet door de gebruiker worden "
 "beïnvloed.\n"
 "                    </li>\n"
 "                    <li>\n"
 "                        Het inschakelen van automatische updates kan "
 "resulteren in toegenomen internetverkeer op uw\n"
-"                        router. Eventuele aanvullende internetkosten zijn "
-"voor uw rekening.\n"
+"                        router. Eventuele aanvullende internetkosten zijn"
+" voor uw rekening.\n"
 "                    </li>\n"
 "                    <li>\n"
-"                        Automatische updates kunnen u niet beschermen tegen "
-"alle aanvallen vanaf het internet.\n"
-"                        Vergeet alstublieft niet om uw computers en andere "
-"apparaten te beveiligen met antivirus\n"
+"                        Automatische updates kunnen u niet beschermen "
+"tegen alle aanvallen vanaf het internet.\n"
+"                        Vergeet alstublieft niet om uw computers en "
+"andere apparaten te beveiligen met antivirus\n"
 "                        software en leg aan uw gezinsleden uit hoe deze "
 "veilig moeten blijven op het internet.\n"
 "                    </li>\n"
@@ -1636,10 +1747,10 @@ msgid ""
 "href=\"https://www.turris.cz/omnia-updater-eula\" target=\"_blank\" "
 "rel=\"noopener noreferrer\">license agreement</a>."
 msgstr ""
-"Door automatische updates in te schakelen bevestigt u dat u de eigenaar bent "
-"van deze Turris router en stemt u in met de volledige tekst van de <a href="
-"\"https://www.turris.cz/omnia-updater-eula\" target=\"_blank\" rel=\"noopener"
-" noreferrer\">gebruikersovereenkomst</a>."
+"Door automatische updates in te schakelen bevestigt u dat u de eigenaar "
+"bent van deze Turris router en stemt u in met de volledige tekst van de "
+"<a href=\"https://www.turris.cz/omnia-updater-eula\" target=\"_blank\" "
+"rel=\"noopener noreferrer\">gebruikersovereenkomst</a>."
 
 #: js/src/packageManagement/updateSettings/UpdateSettings.js:31
 msgid ""
@@ -1662,22 +1773,22 @@ msgid ""
 "            "
 msgstr ""
 "\n"
-"Eén van de belangrijkste eigenschappen van de Turris router is het ontvangen "
-"van automatische updates. \n"
-"Dankzij deze functie is de software van uw rouer altijd up-to-date en wordt "
-"u beter beschermd tegen\n"
+"Eén van de belangrijkste eigenschappen van de Turris router is het "
+"ontvangen van automatische updates. \n"
+"Dankzij deze functie is de software van uw rouer altijd up-to-date en "
+"wordt u beter beschermd tegen\n"
 "aanvallen vanaf het internet. \n"
 "<br/>\n"
-"Het wordt <b>sterk aanbevolen</b> deze functie <b>in te schakelen</b>. Als u "
-"besluit om geen gebruik\n"
-"te maken van de functie, realiseer u dat de veiligheid van uw router en uw "
-"netwerk kan worden verzwakt\n"
+"Het wordt <b>sterk aanbevolen</b> deze functie <b>in te schakelen</b>. "
+"Als u besluit om geen gebruik\n"
+"te maken van de functie, realiseer u dat de veiligheid van uw router en "
+"uw netwerk kan worden verzwakt\n"
 "in het geval er fouten worden gevonden in de software. \n"
 "<br/>\n"
 "Door gebruik te maken van automatische updates stemt u in met de "
 "gebruikersovereenkomst van deze functie. \n"
-"Meer informatie is <a href=\"\" data-toggle=\"modal\" data-target=\"#"
-"licenceModal\">hier</a> beschikbaar.\n"
+"Meer informatie is <a href=\"\" data-toggle=\"modal\" data-"
+"target=\"#licenceModal\">hier</a> beschikbaar.\n"
 "            "
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:17
@@ -1685,8 +1796,8 @@ msgid ""
 "Number of days that must pass between receiving the request for restart "
 "and the automatic restart itself."
 msgstr ""
-"Aantal dagen die voorbij moeten gaan tussen het ontvangen van een verzoek om "
-"herstart en de automatisch herstart."
+"Aantal dagen die voorbij moeten gaan tussen het ontvangen van een verzoek"
+" om herstart en de automatisch herstart."
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:20
 msgid "Time of day of automatic reboot in HH:MM format."
@@ -1733,8 +1844,8 @@ msgid ""
 "Updates will be installed with an adjustable delay. You can also approve "
 "them manually."
 msgstr ""
-"Updates worden geïnstalleerd na een instelbare tijd. Handmatig goedkeuren is "
-"ook mogelijk."
+"Updates worden geïnstalleerd na een instelbare tijd. Handmatig goedkeuren"
+" is ook mogelijk."
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:28
 msgid "Update approval needed"
@@ -1759,12 +1870,12 @@ msgid ""
 "            it will be offered to you again together with the next "
 "package installation."
 msgstr ""
-"Update goedkeuring kan nuttig zijn wanneer je zeker wilt zijn dat updates "
-"geen schade berokkenen aan uw specifieke \n"
-"configuratie. U kunt bijvoorbeeld updates uitstellen tot u voorbereid bent "
-"op een mogelijke roll-back naar een \n"
-"vorige snapshot en de betreffende update nu tijdelijk wilt weigeren. Het is "
-"niet mogelijk om de update voor altijd te weigeren. \n"
+"Update goedkeuring kan nuttig zijn wanneer je zeker wilt zijn dat updates"
+" geen schade berokkenen aan uw specifieke \n"
+"configuratie. U kunt bijvoorbeeld updates uitstellen tot u voorbereid "
+"bent op een mogelijke roll-back naar een \n"
+"vorige snapshot en de betreffende update nu tijdelijk wilt weigeren. Het "
+"is niet mogelijk om de update voor altijd te weigeren. \n"
 "Deze wordt opnieuw aangeboden bij de volgende pakket installatie."
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:79
@@ -1774,7 +1885,8 @@ msgstr "Uitstel van updates (uren)"
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:97
 msgid "Updates must be delayed by least 1 hour and at most by 168 hours"
 msgstr ""
-"Updates kunnen minimaal voor 1 uur en maximaal voor 168 uur worden uitgesteld"
+"Updates kunnen minimaal voor 1 uur en maximaal voor 168 uur worden "
+"uitgesteld"
 
 #: js/src/packageManagement/updateSettings/forms/UpdatesForm.js:47
 msgid "Enable automatic updates (recommended)"
@@ -1800,8 +1912,8 @@ msgid ""
 "See <a data-toggle=\"collapse\" href=\"#plan-wrapper\" role=\"button\" "
 "aria-expanded=\"false\" aria-controls=\"plan-wrapper\">details</a>"
 msgstr ""
-"Zie <a data-toggle=\"collapse\" href=\"#plan-wrapper\" role=\"button\" aria-"
-"expanded=\"false\" aria-controls=\"plan-wrapper\">details</a>"
+"Zie <a data-toggle=\"collapse\" href=\"#plan-wrapper\" role=\"button\" "
+"aria-expanded=\"false\" aria-controls=\"plan-wrapper\">details</a>"
 
 #: js/src/packageManagement/updates/UpdateApproval.js:76
 #, python-format
@@ -1854,10 +1966,11 @@ msgid ""
 "href=\"${ForisURLs.packageManagement.updateSettings}\">automatic "
 "updates</a> to manage packages and languages."
 msgstr ""
-"Schakel <a href=\"${ForisURLs.packageManagement.updateSettings}\""
-">automatische updates</a> in om pakketten en talen te beheren."
+"Schakel <a "
+"href=\"${ForisURLs.packageManagement.updateSettings}\">automatische "
+"updates</a> in om pakketten en talen te beheren."
 
-#: js/src/password/ForisPasswordForm.js:48
+#: js/src/password/ForisPasswordForm.js:49
 msgid "Foris Password"
 msgstr "Foris-wachtwoord"
 
@@ -1873,11 +1986,11 @@ msgstr "Huidig Foris-wachtwoord"
 msgid "New Foris password"
 msgstr "Nieuw Foris-wachtwoord"
 
-#: js/src/password/ForisPasswordForm.js:74
+#: js/src/password/ForisPasswordForm.js:81
 msgid "Use same password for advanced administration (root)"
 msgstr "Gebruik hetzelfde wachtwoord voor geavanceerd beheer (root)"
 
-#: js/src/password/ForisPasswordForm.js:77
+#: js/src/password/ForisPasswordForm.js:84
 msgid ""
 "Same password would be used for accessing this administration interface, "
 "for root user in LuCI web interface and for SSH login. Use a strong "
@@ -1886,23 +1999,13 @@ msgid ""
 "the root account will be blocked.)"
 msgstr ""
 "Hetzelfde wachtwoord zal worden gebruikt voor toegang tot deze "
-"beheerinterface, voor de root-gebruiker in de LuCI-webinterface en voor de "
-"SSH-login. Gebruik een sterk wachtwoord! (Als u ervoor kiest om het "
-"wachtwoord voor geavanceerde configuratie hier niet in te stellen, dan heeft "
-"u de mogelijkheid om dit later te doen. Tot die tijd wordt het root account "
-"geblokkeerd.)"
+"beheerinterface, voor de root-gebruiker in de LuCI-webinterface en voor "
+"de SSH-login. Gebruik een sterk wachtwoord! (Als u ervoor kiest om het "
+"wachtwoord voor geavanceerde configuratie hier niet in te stellen, dan "
+"heeft u de mogelijkheid om dit later te doen. Tot die tijd wordt het root"
+" account geblokkeerd.)"
 
-#: js/src/password/Password.js:47
-msgid ""
-"Here you can set passwords for Foris and optionally for advanced features"
-" (LuCI and SSH). Make sure to set secure password which is long and "
-"uncommon."
-msgstr ""
-"Hier kunt u de wachtwoorden voor Foris en optioneel voor geavanceerde "
-"onderdelen (LuCI en SSH) instellen. Zorg ervoor dat uw wachtwoorden veilig "
-"zijn (lang en willekeurig)."
-
-#: js/src/password/Password.js:97
+#: js/src/password/Password.js:77
 msgid ""
 "The password you've entered has been compromised. It appears ${\n"
 "                            forisPassword.count || rootPassword.count\n"
@@ -1910,33 +2013,44 @@ msgid ""
 "                            forisPassword.list || rootPassword.list\n"
 "                        } list."
 msgstr ""
-"De wachtwoorden die u heeft ingevuld zijn gecompromitteerd. Deze komen ${\n"
+"De wachtwoorden die u heeft ingevuld zijn gecompromitteerd. Deze komen ${"
+"\n"
 "                            forisPassword.count || rootPassword.count\n"
 "                        } maal voor in de ${\n"
 "                            forisPassword.list || rootPassword.list\n"
 "                        } lijst."
 
-#: js/src/password/Password.js:108
+#: js/src/password/Password.js:88
 msgid "Password changed successfully."
 msgstr "Wachtwoord succesvol gewijzigd."
 
-#: js/src/password/Password.js:188
+#: js/src/password/Password.js:179
+msgid ""
+"Here you can set passwords for Foris and optionally for advanced features"
+" (LuCI and SSH). Make sure to set secure password which is long and "
+"uncommon."
+msgstr ""
+"Hier kunt u de wachtwoorden voor Foris en optioneel voor geavanceerde "
+"onderdelen (LuCI en SSH) instellen. Zorg ervoor dat uw wachtwoorden "
+"veilig zijn (lang en willekeurig)."
+
+#: js/src/password/Password.js:201
 msgid "Password can't be empty."
 msgstr "Wachtwoord mag niet leeg zijn."
 
-#: js/src/password/Password.js:190
+#: js/src/password/Password.js:203
 msgid "Password should have min 6 symbols."
 msgstr "Wachtwoord moet min. 6 tekens hebben."
 
-#: js/src/password/Password.js:193
+#: js/src/password/Password.js:206
 msgid "Password should have max 128 symbols."
 msgstr "Wachtwoord mag max. 128 tekens lang zijn."
 
-#: js/src/password/RootPasswordForm.js:41
+#: js/src/password/RootPasswordForm.js:48
 msgid "Advanced Administration (root) Password"
 msgstr "Geavanceerd beheer (root) wachtwoord"
 
-#: js/src/password/RootPasswordForm.js:45
+#: js/src/password/RootPasswordForm.js:52
 #, python-format
 msgid ""
 "In order to access the advanced configuration options which are not "
@@ -1953,27 +2067,9 @@ msgstr ""
 "de <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">LuCI web-"
 "interface</a> of via SSH."
 
-#: js/src/password/RootPasswordForm.js:56
+#: js/src/password/RootPasswordForm.js:63
 msgid "New advanced administration password"
 msgstr "Nieuw wachtwoord voor geavanceerd beheer"
-
-#: js/src/reboot/Reboot.js:16
-msgid "Device Reboot"
-msgstr "Apparaat herstart"
-
-#: js/src/reboot/Reboot.js:18
-msgid ""
-"\n"
-"If you need to reboot the device, click on the following button. The "
-"reboot process takes approximately 30 seconds, you\n"
-"will be required to log in again after the reboot.\n"
-"    "
-msgstr ""
-"\n"
-"Als u het apparaat opnieuw moet opstarten, klikt u op de volgende knop. Het "
-"reboot proces kan ongeveer 30 seconden in\n"
-"beslag nemen. U dient nadien opnieuw in te loggen.\n"
-"    "
 
 #: js/src/regionAndTime/RegionAndTime.js:30
 msgid "Region and Time"
@@ -1988,10 +2084,10 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"Het is belangrijk om de tijd van uw apparaat correct in te stellen. Als de "
-"tijd van uw apparaat is \n"
-"vertraagd, kan de procedure voor SSL-certificaat verificatie mogelijk niet "
-"goed werken.\n"
+"Het is belangrijk om de tijd van uw apparaat correct in te stellen. Als "
+"de tijd van uw apparaat is \n"
+"vertraagd, kan de procedure voor SSL-certificaat verificatie mogelijk "
+"niet goed werken.\n"
 "        "
 
 #: js/src/regionAndTime/RegionAndTime.js:56
@@ -2039,8 +2135,8 @@ msgid ""
 "Time should be up-to-date otherwise DNS and other services might not work"
 " properly."
 msgstr ""
-"De klok moet gelijk lopen, anders kunnen services zoals DNS mogelijk niet "
-"goed werken."
+"De klok moet gelijk lopen, anders kunnen services zoals DNS mogelijk niet"
+" goed werken."
 
 #: js/src/regionAndTime/TimeForm.js:112
 msgid "How to set time"
@@ -2099,8 +2195,8 @@ msgid ""
 "href=\"mailto:tech.support@turris.cz\">tech.support@turris.cz</a>."
 msgstr ""
 "Wij verzoeken u deze foutmelding aan onze technische ondersteuning te "
-"rapporteren via e-mail: <a href=\"mailto:tech.support@turris.cz\">tech."
-"support@turris.cz</a>."
+"rapporteren via e-mail: <a "
+"href=\"mailto:tech.support@turris.cz\">tech.support@turris.cz</a>."
 
 #: js/src/wan/MACForm.js:14
 msgid ""
@@ -2142,10 +2238,10 @@ msgstr ""
 "\n"
 "Hier kunt u uw WAN-poort instellingen configureren. Meestal kunt u deze "
 "opties ongewijzigd laten tenzij uw\n"
-"internetprovider u anders instrueert. Wanneer u gebruik maakt van een kabel "
-"of DSL modem voor de aansluiting\n"
-"van het internet is het meestal niet nodig om aanpassingen te doen aan de "
-"instellingen.\n"
+"internetprovider u anders instrueert. Wanneer u gebruik maakt van een "
+"kabel of DSL modem voor de aansluiting\n"
+"van het internet is het meestal niet nodig om aanpassingen te doen aan de"
+" instellingen.\n"
 "        "
 
 #: js/src/wan/WAN.js:53
@@ -2159,10 +2255,10 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"Hier kunt u uw connectie-instellingen testen. Let erop dat u op <b>Opslaan</"
-"b> klikt voordat u de test uitvoert.\n"
-"Merk tevens op dat het soms een tijdje duurt voordat de connectie volledig "
-"is geïnitialiseerd. Het kan dus nuttig zijn\n"
+"Hier kunt u uw connectie-instellingen testen. Let erop dat u op "
+"<b>Opslaan</b> klikt voordat u de test uitvoert.\n"
+"Merk tevens op dat het soms een tijdje duurt voordat de connectie "
+"volledig is geïnitialiseerd. Het kan dus nuttig zijn\n"
 "om even te wachten voor u de test uitvoert.\n"
 "        "
 
@@ -2188,9 +2284,9 @@ msgid ""
 " address manually (e.g. when your WAN interface has a private address "
 "which is mapped to public IP)."
 msgstr ""
-"Om gebruik te kunnen maken van het 6to4-protocol moet het publieke IPv4-"
-"adres handmatig worden opgegeven (bijvoorbeeld als de WAN-interface een "
-"privé-adres heeft dat wordt ‘gemapt’ naar een publiek adres)."
+"Om gebruik te kunnen maken van het 6to4-protocol moet het publieke "
+"IPv4-adres handmatig worden opgegeven (bijvoorbeeld als de WAN-interface "
+"een privé-adres heeft dat wordt ‘gemapt’ naar een publiek adres)."
 
 #: js/src/wan/WAN6Form.js:49
 msgid ""
@@ -2213,8 +2309,8 @@ msgid ""
 "Some tunnel providers allow you to have public dynamic IPv4. Note that "
 "you need to fill in some extra fields to make it work."
 msgstr ""
-"Sommige tunnel-providers ondersteunen dynamische publieke IPv4-adressen. Om "
-"dit te kunnen laten werken moet extra informatie worden opgegeven."
+"Sommige tunnel-providers ondersteunen dynamische publieke IPv4-adressen. "
+"Om dit te kunnen laten werken moet extra informatie worden opgegeven."
 
 #: js/src/wan/WAN6Form.js:60
 msgid "ID of your tunnel which was assigned to you by the provider."
@@ -2230,8 +2326,7 @@ msgstr ""
 
 #: js/src/wan/WAN6Form.js:66
 msgid "Key which will be used to provide credentials to your tunnel provider."
-msgstr ""
-"Sleutel die wordt gebruikt om toegang te krijgen bij de tunnel-provider."
+msgstr "Sleutel die wordt gebruikt om toegang te krijgen bij de tunnel-provider."
 
 #: js/src/wan/WAN6Form.js:74
 msgid "Disable IPv6"
@@ -2289,10 +2384,6 @@ msgstr "MTU"
 msgid "Tunnel ID"
 msgstr "Tunnel-ID"
 
-#: js/src/wan/WAN6Form.js:436
-msgid "Username"
-msgstr "Gebruikersnaam"
-
 #: js/src/wan/WAN6Form.js:451
 msgid "Key"
 msgstr "Sleutel"
@@ -2335,10 +2426,10 @@ msgid ""
 "            "
 msgstr ""
 "\n"
-"Als u uw router wilt gebruiken als een WiFi toegangspunt, schakelt u hier "
-"WiFi in en vult u een SSID (de naam van het toegangspunt)\n"
-"in met een bijbehorend wachtwoord. U kunt vervolgens uw mobiele apparaten "
-"toegang verschaffen door middel van de QR-code die\n"
+"Als u uw router wilt gebruiken als een WiFi toegangspunt, schakelt u hier"
+" WiFi in en vult u een SSID (de naam van het toegangspunt)\n"
+"in met een bijbehorend wachtwoord. U kunt vervolgens uw mobiele apparaten"
+" toegang verschaffen door middel van de QR-code die\n"
 "beschikbaar is op deze pagina.\n"
 "            "
 
@@ -2346,23 +2437,23 @@ msgstr ""
 msgid "Wrong password."
 msgstr "Verkeerd wachtwoord."
 
-#: reforis/foris_controller_api/modules/dns.py:41
+#: reforis/foris_controller_api/modules/dns.py:46
 msgid "Can't add new DNS forwarder."
 msgstr "Kan geen nieuwe DNS-forwarder toevoegen."
 
-#: reforis/foris_controller_api/modules/dns.py:47
+#: reforis/foris_controller_api/modules/dns.py:52
 msgid "Can't set DNS forwarder."
 msgstr "Kan DNS-forwarder niet instellen."
 
-#: reforis/foris_controller_api/modules/dns.py:52
+#: reforis/foris_controller_api/modules/dns.py:57
 msgid "Can't delete DNS forwarder."
 msgstr "Kan DNS-forwarder niet verwijderen."
 
-#: reforis/foris_controller_api/modules/password.py:41
+#: reforis/foris_controller_api/modules/password.py:47
 msgid "Wrong current password."
 msgstr "Verkeerd huidig wachtwoord."
 
-#: reforis/foris_controller_api/modules/router_notifications.py:112
+#: reforis/foris_controller_api/modules/router_notifications.py:117
 msgid ""
 "\n"
 "This is a testing notification. Please note you should receive this to "
@@ -2371,40 +2462,40 @@ msgid ""
 "            "
 msgstr ""
 "\n"
-"Dit is een testmelding. Merk op dat u deze melding alleen in uw e-mail inbox "
-"ziet als u de prioriteit heeft ingesteld op \"Opnieuw opstarten \n"
+"Dit is een testmelding. Merk op dat u deze melding alleen in uw e-mail "
+"inbox ziet als u de prioriteit heeft ingesteld op \"Opnieuw opstarten \n"
 "of aandacht is vereist\" of hoger.\n"
 "            "
 
-#: reforis/foris_controller_api/modules/router_notifications.py:122
+#: reforis/foris_controller_api/modules/router_notifications.py:127
 msgid "Testing message was sent, please check your inbox."
 msgstr "Het testbericht is verzonden, controleer uw e-mail."
 
-#: reforis/foris_controller_api/modules/router_notifications.py:125
+#: reforis/foris_controller_api/modules/router_notifications.py:130
 msgid ""
 "Sending of the testing message failed, your configuration is possibly "
 "wrong."
 msgstr ""
-"Het verzenden van het testbericht is mislukt. Uw configuratie is mogelijk "
-"onjuist."
+"Het verzenden van het testbericht is mislukt. Uw configuratie is mogelijk"
+" onjuist."
 
-#: reforis/foris_controller_api/modules/updater.py:60
+#: reforis/foris_controller_api/modules/updater.py:65
 msgid "Cannot change automatic restart settings."
 msgstr "Kan instelling van automatische herstart niet wijzigen."
 
-#: reforis/foris_controller_api/modules/updater.py:75
+#: reforis/foris_controller_api/modules/updater.py:80
 msgid "Cannot update approvals settings."
 msgstr "Kan goedkeuringsinstellingen niet updaten."
 
-#: reforis/foris_controller_api/modules/updater.py:79
+#: reforis/foris_controller_api/modules/updater.py:84
 msgid "Cannot rollback automatic restart settings."
 msgstr "Kan automatische herstart instellingen niet terugzetten."
 
-#: reforis/foris_controller_api/modules/updater.py:170
+#: reforis/foris_controller_api/modules/updater.py:175
 msgid "Cannot start updater"
 msgstr "Kan de updater niet starten"
 
-#: reforis/foris_controller_api/modules/updater.py:199
+#: reforis/foris_controller_api/modules/updater.py:204
 msgid "You can't set it with disabled automatic updates."
 msgstr "U kunt dit niet instellen met uitgeschakelde automatische updates."
 
@@ -2416,15 +2507,15 @@ msgstr "Stappenplan"
 msgid "Log in"
 msgstr "Inloggen"
 
-#: reforis/templates/login.html:33
+#: reforis/templates/login.html:34
 msgid "Go to LuCI"
 msgstr "Ga naar LuCI"
 
-#: reforis/templates/login.html:33
+#: reforis/templates/login.html:34
 msgid "or"
 msgstr "of"
 
-#: reforis/templates/login.html:34
+#: reforis/templates/login.html:35
 msgid "back to select"
 msgstr "Terug naar selecteren"
 
@@ -2723,3 +2814,10 @@ msgstr "500 - Serverfout"
 
 #~ msgid "Foris"
 #~ msgstr ""
+
+#~ msgid "User"
+#~ msgstr "Gebruiker"
+
+#~ msgid "Device Reboot"
+#~ msgstr "Apparaat herstart"
+
