@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-11-10 10:38+0100\n"
+"POT-Creation-Date: 2021-01-28 10:24+0100\n"
 "PO-Revision-Date: 2019-10-17 09:28+0000\n"
 "Last-Translator: Scott Anecito <scott.anecito@protonmail.com>\n"
 "Language: en\n"
@@ -17,9 +17,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.8.0\n"
+"Generated-By: Babel 2.9.0\n"
 
-#: js/src/about/About.js:22 js/src/main/pages.js:140
+#: js/src/about/About.js:22 js/src/main/pages.js:103 js/src/main/pages.js:217
 msgid "About"
 msgstr ""
 
@@ -62,22 +62,36 @@ msgstr ""
 msgid "Kernel version"
 msgstr ""
 
-#: js/src/common/RebootButton.js:51 js/src/main/pages.js:99
-msgid "Reboot"
-msgstr "Reboot"
+#: js/src/common/FactoryResetButton.js:51
+msgid "Reset"
+msgstr ""
 
-#: js/src/common/RebootButton.js:66 js/src/dns/DNSSECDisableModal.js:30
+#: js/src/common/FactoryResetButton.js:66 js/src/common/RebootButton.js:66
+#: js/src/dns/DNSSECDisableModal.js:30
 #: js/src/notificationsSettings/TestNotification.js:139
 msgid "Warning!"
 msgstr ""
 
-#: js/src/common/RebootButton.js:68
-msgid "Are you sure you want to restart the router?"
+#: js/src/common/FactoryResetButton.js:68
+msgid "Are you sure you want to reset the router?"
 msgstr ""
 
-#: js/src/common/RebootButton.js:71 js/src/dns/DNSSECDisableModal.js:41
+#: js/src/common/FactoryResetButton.js:71 js/src/common/RebootButton.js:71
+#: js/src/dns/DNSSECDisableModal.js:41
 #: js/src/notificationsSettings/TestNotification.js:144
 msgid "Cancel"
+msgstr ""
+
+#: js/src/common/FactoryResetButton.js:73
+msgid "Confirm factory reset"
+msgstr ""
+
+#: js/src/common/RebootButton.js:51 js/src/maintenance/Reboot.js:16
+msgid "Reboot"
+msgstr "Reboot"
+
+#: js/src/common/RebootButton.js:68
+msgid "Are you sure you want to restart the router?"
 msgstr ""
 
 #: js/src/common/RebootButton.js:73
@@ -136,28 +150,51 @@ msgstr ""
 msgid "DHCP start"
 msgstr "DHCP start"
 
-#: js/src/common/network/DHCPServerForm.js:59
+#: js/src/common/network/DHCPServerForm.js:57
 msgid "DHCP max leases"
 msgstr "DHCP max leases"
 
-#: js/src/common/network/DHCPServerForm.js:60
+#: js/src/common/network/DHCPServerForm.js:58
 msgid "Maximum number of addresses available for DHCP clients."
 msgstr ""
 
-#: js/src/common/network/DHCPServerForm.js:73
+#: js/src/common/network/DHCPServerForm.js:71
 msgid "Lease time (hours)"
 msgstr "Lease time (hours)"
 
-#: js/src/common/network/DHCPValidators.js:15
+#: js/src/common/network/DHCPValidators.js:71
 msgid "Value must be a number."
 msgstr ""
 
-#: js/src/common/network/DHCPValidators.js:18
+#: js/src/common/network/DHCPValidators.js:74
 msgid "Value must be positive."
 msgstr ""
 
-#: js/src/common/network/DHCPValidators.js:29
+#: js/src/common/network/DHCPValidators.js:87
+msgid "Invalid network settings. DHCP settings can't be validated."
+msgstr ""
+
+#: js/src/common/network/DHCPValidators.js:100
 msgid "Minimum lease time is 1 hour."
+msgstr ""
+
+#: js/src/common/network/DHCPValidators.js:116
+#, fuzzy
+msgid "Address is outside current network."
+msgstr "Router's IP address in the inner network."
+
+#: js/src/common/network/DHCPValidators.js:120
+msgid "Address is already reserved for other purposes."
+msgstr ""
+
+#: js/src/common/network/DHCPValidators.js:131
+msgid "Too many addresses requested. Set a lower number or change DHCP start."
+msgstr ""
+
+#: js/src/common/network/DHCPValidators.js:138
+msgid ""
+"The only DHCP lease is the same as router's address. Increase limit or "
+"change start address."
 msgstr ""
 
 #: js/src/common/network/StaticIPForm.js:14 js/src/wan/WAN6Form.js:36
@@ -252,7 +289,7 @@ msgid ""
 "            "
 msgstr ""
 
-#: js/src/dns/DNS.js:62 js/src/overview/Overview.js:81 js/src/wan/WAN.js:50
+#: js/src/dns/DNS.js:62 js/src/overview/Overview.js:63 js/src/wan/WAN.js:50
 msgid "Connection Test"
 msgstr "Connection Test"
 
@@ -416,12 +453,12 @@ msgstr ""
 msgid "Define at least one of the IP addresses of the forwarder."
 msgstr ""
 
-#: js/src/guestNetwork/GuestNetwork.js:36 js/src/interfaces/constants.js:11
-#: js/src/main/pages.js:71
+#: js/src/guestNetwork/GuestNetwork.js:37 js/src/interfaces/constants.js:11
+#: js/src/main/pages.js:148
 msgid "Guest Network"
 msgstr ""
 
-#: js/src/guestNetwork/GuestNetwork.js:40
+#: js/src/guestNetwork/GuestNetwork.js:41
 msgid ""
 "\n"
 "Guest network is used for <a href=\"${ForisURLs.wifi}\">guest Wi-Fi</a>.\n"
@@ -651,9 +688,9 @@ msgstr ""
 msgid "Cannot mark guide as finished."
 msgstr ""
 
-#: js/src/guide/steps.js:20 js/src/main/pages.js:84
+#: js/src/guide/steps.js:20 js/src/main/pages.js:75 js/src/main/pages.js:161
 #: js/src/notificationsSettings/SMTPCustomForm.js:114
-#: js/src/password/Password.js:45 reforis/templates/login.html:29
+#: js/src/password/Password.js:177 reforis/templates/login.html:29
 msgid "Password"
 msgstr "Password"
 
@@ -661,7 +698,7 @@ msgstr "Password"
 msgid "Workflow"
 msgstr ""
 
-#: js/src/guide/steps.js:28 js/src/main/pages.js:66
+#: js/src/guide/steps.js:28 js/src/main/pages.js:143
 msgid "Interfaces"
 msgstr ""
 
@@ -669,22 +706,22 @@ msgstr ""
 msgid "Time"
 msgstr ""
 
-#: js/src/guide/steps.js:36 js/src/main/pages.js:61
+#: js/src/guide/steps.js:36 js/src/main/pages.js:62 js/src/main/pages.js:138
 msgid "DNS"
 msgstr ""
 
-#: js/src/guide/steps.js:40 js/src/main/pages.js:117
+#: js/src/guide/steps.js:40 js/src/main/pages.js:194
 #: js/src/packageManagement/updates/Updates.js:27
 msgid "Updates"
 msgstr ""
 
 #: js/src/guide/steps.js:44 js/src/interfaces/constants.js:9
-#: js/src/main/pages.js:51 js/src/wan/WAN.js:27
+#: js/src/main/pages.js:52 js/src/main/pages.js:128 js/src/wan/WAN.js:27
 msgid "WAN"
 msgstr ""
 
 #: js/src/guide/steps.js:48 js/src/interfaces/constants.js:10
-#: js/src/main/pages.js:56
+#: js/src/main/pages.js:57 js/src/main/pages.js:133
 msgid "LAN"
 msgstr ""
 
@@ -890,7 +927,7 @@ msgstr ""
 msgid "Unassigned"
 msgstr ""
 
-#: js/src/lan/LAN.js:29
+#: js/src/lan/LAN.js:30
 msgid ""
 "\n"
 "This section contains settings for the local network (LAN). The provided "
@@ -957,52 +994,62 @@ msgstr "Don't connect this device to LAN"
 msgid "IPv4 protocol"
 msgstr "IPv4 protocol"
 
-#: js/src/main/pages.js:34 js/src/overview/Overview.js:67
+#: js/src/main/pages.js:40 js/src/main/pages.js:111
+#: js/src/overview/Overview.js:51
 msgid "Overview"
 msgstr ""
 
-#: js/src/main/pages.js:40
+#: js/src/main/pages.js:46 js/src/main/pages.js:117
 msgid "Network Settings"
 msgstr ""
 
-#: js/src/main/pages.js:46 js/src/wifi/WiFi.js:21
-msgid "Wi-Fi"
-msgstr ""
-
-#: js/src/main/pages.js:78
+#: js/src/main/pages.js:69 js/src/main/pages.js:155
 msgid "Administration"
 msgstr "Administration"
 
-#: js/src/main/pages.js:89
+#: js/src/main/pages.js:80 js/src/main/pages.js:166
 msgid "Region & Time"
 msgstr ""
 
 #: js/src/main/TopBar/NotificationsDropdown/NotificationsDropdownMenu.js:76
-#: js/src/main/pages.js:94
+#: js/src/main/pages.js:85 js/src/main/pages.js:171
 #: js/src/notifications/Notifications/Notifications.js:87
 #: js/src/notificationsSettings/NotificationsSettings.js:25
 msgid "Notifications"
 msgstr "Notifications"
 
-#: js/src/main/pages.js:106
+#: js/src/main/pages.js:90 js/src/main/pages.js:176
+#: js/src/maintenance/Maintenance.js:17
+msgid "Maintenance"
+msgstr ""
+
+#: js/src/main/pages.js:97
+msgid "Global Threat Statistics"
+msgstr ""
+
+#: js/src/main/pages.js:123 js/src/wifi/WiFi.js:21
+msgid "Wi-Fi"
+msgstr ""
+
+#: js/src/main/pages.js:183
 msgid "Package Management"
 msgstr ""
 
-#: js/src/main/pages.js:112
+#: js/src/main/pages.js:189
 #: js/src/packageManagement/updateSettings/UpdateSettings.js:28
 msgid "Update Settings"
 msgstr ""
 
-#: js/src/main/pages.js:122 js/src/packageManagement/packages/Packages.js:19
+#: js/src/main/pages.js:199 js/src/packageManagement/packages/Packages.js:19
 msgid "Packages"
 msgstr ""
 
 #: js/src/main/TopBar/languagesDropdown/LanguagesDropdown.js:47
-#: js/src/main/pages.js:127 js/src/packageManagement/languages/Languages.js:18
+#: js/src/main/pages.js:204 js/src/packageManagement/languages/Languages.js:18
 msgid "Languages"
 msgstr ""
 
-#: js/src/main/pages.js:134
+#: js/src/main/pages.js:211
 msgid "Advanced Administration"
 msgstr ""
 
@@ -1052,6 +1099,57 @@ msgstr ""
 #: js/src/main/TopBar/updatesDropdown/UpdatesDropdown.js:154
 #: js/src/packageManagement/updates/UpdateApproval.js:34
 msgid "Cannot install updates."
+msgstr ""
+
+#: js/src/maintenance/FactoryReset.js:16
+msgid "Factory Reset"
+msgstr ""
+
+#: js/src/maintenance/FactoryReset.js:18
+msgid ""
+"Doing a factory reset on the Turris device will remove all the packages \n"
+"                installed on the device along with the data associated "
+"with them. This brings\n"
+"                back all the default settings of the device as it was "
+"when the router was new,\n"
+"                giving you a clean slate to start all over again.\n"
+"    "
+msgstr ""
+
+#: js/src/maintenance/Maintenance.js:19
+msgid ""
+"The Maintenance tab allows you to reboot the router or bring back all the"
+" default settings by performing a factory reset."
+msgstr ""
+
+#: js/src/maintenance/Reboot.js:18
+msgid ""
+"\n"
+"If you need to reboot the device, click on the following button. The "
+"reboot process takes approximately 30 seconds, you\n"
+"will be required to log in again after the reboot.\n"
+"    "
+msgstr ""
+
+#: js/src/maintenance/Syslog/Syslog.js:46
+msgid "A drive has to be configured first."
+msgstr ""
+
+#: js/src/maintenance/Syslog/SyslogForm.js:29
+msgid "System logs retention"
+msgstr ""
+
+#: js/src/maintenance/Syslog/SyslogForm.js:32
+msgid ""
+"During device reboot, system logs are lost by default. This option allows"
+" to save system logs using Storage plugin. Logs are saved into "
+"/srv/log/messages. To enable this option, you have to configure a storage"
+" in the <a href=\"${ForisURLs.storage}\" title=\"Go to Storage "
+"plugin\">Storage plugin</a> first."
+msgstr ""
+
+#: js/src/maintenance/Syslog/SyslogForm.js:38
+msgid "Enable system logs retention"
 msgstr ""
 
 #: js/src/notificationsSettings/CommonForm.js:17
@@ -1139,8 +1237,9 @@ msgid "Security"
 msgstr "Security"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:106
-msgid "User"
-msgstr "User"
+#: js/src/wan/WAN6Form.js:436
+msgid "Username"
+msgstr "Username"
 
 #: js/src/notificationsSettings/SMTPTurrisForm.js:37
 msgid "Sender's name"
@@ -1232,31 +1331,31 @@ msgstr "Maximum port is 65535."
 msgid "Minimum port is 1."
 msgstr "Minimum port is 1."
 
-#: js/src/overview/Overview.js:87
+#: js/src/overview/Overview.js:69
 msgid "Go to Connection Settings"
 msgstr ""
 
-#: js/src/overview/Cards/AutomaticUpdatesCard.js:43
+#: js/src/overview/Cards/AutomaticUpdatesCard.js:44
 msgid "Automatic Updates"
 msgstr ""
 
-#: js/src/overview/Cards/AutomaticUpdatesCard.js:46
-#: js/src/overview/Cards/DataCollectionCard.js:46
-#: js/src/overview/Cards/DynamicFirewallCard.js:26
+#: js/src/overview/Cards/AutomaticUpdatesCard.js:47
+#: js/src/overview/Cards/DataCollectionCard.js:47
+#: js/src/overview/Cards/DynamicFirewallCard.js:27
 msgid "Activated"
 msgstr ""
 
-#: js/src/overview/Cards/AutomaticUpdatesCard.js:46
-#: js/src/overview/Cards/DataCollectionCard.js:46
-#: js/src/overview/Cards/DynamicFirewallCard.js:26
+#: js/src/overview/Cards/AutomaticUpdatesCard.js:47
+#: js/src/overview/Cards/DataCollectionCard.js:47
+#: js/src/overview/Cards/DynamicFirewallCard.js:27
 msgid "Disabled"
 msgstr ""
 
-#: js/src/overview/Cards/DataCollectionCard.js:43
+#: js/src/overview/Cards/DataCollectionCard.js:44
 msgid "Data Collection"
 msgstr ""
 
-#: js/src/overview/Cards/DynamicFirewallCard.js:23
+#: js/src/overview/Cards/DynamicFirewallCard.js:24
 msgid "Dynamic Firewall"
 msgstr ""
 
@@ -1293,15 +1392,15 @@ msgstr ""
 msgid "No tests have been performed lately."
 msgstr ""
 
-#: js/src/overview/Cards/OpenVPNClientsCard.js:42
+#: js/src/overview/Cards/OpenVPNClientsCard.js:45
 msgid "OpenVPN Clients"
 msgstr ""
 
-#: js/src/overview/Cards/OpenVPNClientsCard.js:48
+#: js/src/overview/Cards/OpenVPNClientsCard.js:51
 msgid "Go to OpenVPN Client Settings"
 msgstr ""
 
-#: js/src/overview/Cards/OpenVPNClientsCard.js:86
+#: js/src/overview/Cards/OpenVPNClientsCard.js:89
 msgid "There are no clients added yet."
 msgstr ""
 
@@ -1565,7 +1664,7 @@ msgid ""
 "updates</a> to manage packages and languages."
 msgstr ""
 
-#: js/src/password/ForisPasswordForm.js:48
+#: js/src/password/ForisPasswordForm.js:49
 msgid "Foris Password"
 msgstr ""
 
@@ -1581,11 +1680,11 @@ msgstr "Current Foris password"
 msgid "New Foris password"
 msgstr "New Foris password"
 
-#: js/src/password/ForisPasswordForm.js:74
+#: js/src/password/ForisPasswordForm.js:81
 msgid "Use same password for advanced administration (root)"
 msgstr "Use same password for advanced administration (root)"
 
-#: js/src/password/ForisPasswordForm.js:77
+#: js/src/password/ForisPasswordForm.js:84
 msgid ""
 "Same password would be used for accessing this administration interface, "
 "for root user in LuCI web interface and for SSH login. Use a strong "
@@ -1599,14 +1698,7 @@ msgstr ""
 "configuration here, you will have the option to do so later. Until then, "
 "the root account will be blocked.)"
 
-#: js/src/password/Password.js:47
-msgid ""
-"Here you can set passwords for Foris and optionally for advanced features"
-" (LuCI and SSH). Make sure to set secure password which is long and "
-"uncommon."
-msgstr ""
-
-#: js/src/password/Password.js:97
+#: js/src/password/Password.js:77
 msgid ""
 "The password you've entered has been compromised. It appears ${\n"
 "                            forisPassword.count || rootPassword.count\n"
@@ -1615,27 +1707,34 @@ msgid ""
 "                        } list."
 msgstr ""
 
-#: js/src/password/Password.js:108
+#: js/src/password/Password.js:88
 msgid "Password changed successfully."
 msgstr ""
 
-#: js/src/password/Password.js:188
+#: js/src/password/Password.js:179
+msgid ""
+"Here you can set passwords for Foris and optionally for advanced features"
+" (LuCI and SSH). Make sure to set secure password which is long and "
+"uncommon."
+msgstr ""
+
+#: js/src/password/Password.js:201
 msgid "Password can't be empty."
 msgstr "Password can't be empty."
 
-#: js/src/password/Password.js:190
+#: js/src/password/Password.js:203
 msgid "Password should have min 6 symbols."
 msgstr "Password should have min 6 symbols."
 
-#: js/src/password/Password.js:193
+#: js/src/password/Password.js:206
 msgid "Password should have max 128 symbols."
 msgstr "Password should have max 128 symbols."
 
-#: js/src/password/RootPasswordForm.js:41
+#: js/src/password/RootPasswordForm.js:48
 msgid "Advanced Administration (root) Password"
 msgstr ""
 
-#: js/src/password/RootPasswordForm.js:45
+#: js/src/password/RootPasswordForm.js:52
 #, python-format
 msgid ""
 "In order to access the advanced configuration options which are not "
@@ -1646,22 +1745,9 @@ msgid ""
 "noreferrer\">LuCI web interface</a> or via SSH."
 msgstr ""
 
-#: js/src/password/RootPasswordForm.js:56
+#: js/src/password/RootPasswordForm.js:63
 msgid "New advanced administration password"
 msgstr "New advanced administration password"
-
-#: js/src/reboot/Reboot.js:16
-msgid "Device Reboot"
-msgstr ""
-
-#: js/src/reboot/Reboot.js:18
-msgid ""
-"\n"
-"If you need to reboot the device, click on the following button. The "
-"reboot process takes approximately 30 seconds, you\n"
-"will be required to log in again after the reboot.\n"
-"    "
-msgstr ""
 
 #: js/src/regionAndTime/RegionAndTime.js:30
 msgid "Region and Time"
@@ -1944,10 +2030,6 @@ msgstr "MTU"
 msgid "Tunnel ID"
 msgstr "Tunnel ID"
 
-#: js/src/wan/WAN6Form.js:436
-msgid "Username"
-msgstr "Username"
-
 #: js/src/wan/WAN6Form.js:451
 msgid "Key"
 msgstr "Key"
@@ -1994,23 +2076,23 @@ msgstr ""
 msgid "Wrong password."
 msgstr ""
 
-#: reforis/foris_controller_api/modules/dns.py:41
+#: reforis/foris_controller_api/modules/dns.py:46
 msgid "Can't add new DNS forwarder."
 msgstr ""
 
-#: reforis/foris_controller_api/modules/dns.py:47
+#: reforis/foris_controller_api/modules/dns.py:52
 msgid "Can't set DNS forwarder."
 msgstr ""
 
-#: reforis/foris_controller_api/modules/dns.py:52
+#: reforis/foris_controller_api/modules/dns.py:57
 msgid "Can't delete DNS forwarder."
 msgstr ""
 
-#: reforis/foris_controller_api/modules/password.py:41
+#: reforis/foris_controller_api/modules/password.py:47
 msgid "Wrong current password."
 msgstr ""
 
-#: reforis/foris_controller_api/modules/router_notifications.py:112
+#: reforis/foris_controller_api/modules/router_notifications.py:117
 msgid ""
 "\n"
 "This is a testing notification. Please note you should receive this to "
@@ -2019,33 +2101,33 @@ msgid ""
 "            "
 msgstr ""
 
-#: reforis/foris_controller_api/modules/router_notifications.py:122
+#: reforis/foris_controller_api/modules/router_notifications.py:127
 msgid "Testing message was sent, please check your inbox."
 msgstr ""
 
-#: reforis/foris_controller_api/modules/router_notifications.py:125
+#: reforis/foris_controller_api/modules/router_notifications.py:130
 msgid ""
 "Sending of the testing message failed, your configuration is possibly "
 "wrong."
 msgstr ""
 
-#: reforis/foris_controller_api/modules/updater.py:60
+#: reforis/foris_controller_api/modules/updater.py:65
 msgid "Cannot change automatic restart settings."
 msgstr ""
 
-#: reforis/foris_controller_api/modules/updater.py:75
+#: reforis/foris_controller_api/modules/updater.py:80
 msgid "Cannot update approvals settings."
 msgstr ""
 
-#: reforis/foris_controller_api/modules/updater.py:79
+#: reforis/foris_controller_api/modules/updater.py:84
 msgid "Cannot rollback automatic restart settings."
 msgstr ""
 
-#: reforis/foris_controller_api/modules/updater.py:170
+#: reforis/foris_controller_api/modules/updater.py:175
 msgid "Cannot start updater"
 msgstr ""
 
-#: reforis/foris_controller_api/modules/updater.py:199
+#: reforis/foris_controller_api/modules/updater.py:204
 msgid "You can't set it with disabled automatic updates."
 msgstr ""
 
@@ -2057,15 +2139,15 @@ msgstr ""
 msgid "Log in"
 msgstr ""
 
-#: reforis/templates/login.html:33
+#: reforis/templates/login.html:34
 msgid "Go to LuCI"
 msgstr ""
 
-#: reforis/templates/login.html:33
+#: reforis/templates/login.html:34
 msgid "or"
 msgstr ""
 
-#: reforis/templates/login.html:34
+#: reforis/templates/login.html:35
 msgid "back to select"
 msgstr ""
 
@@ -2363,5 +2445,11 @@ msgstr ""
 #~ msgstr "PPPoE (for DSL bridges, Modem Turris, etc.)"
 
 #~ msgid "Foris"
+#~ msgstr ""
+
+#~ msgid "User"
+#~ msgstr "User"
+
+#~ msgid "Device Reboot"
 #~ msgstr ""
 
