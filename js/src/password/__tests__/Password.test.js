@@ -10,6 +10,7 @@ import React from "react";
 import {
     fireEvent,
     getByLabelText,
+    getAllByLabelText,
     getByText,
     getAllByText,
     render,
@@ -32,7 +33,7 @@ describe("<Password/>", () => {
             data: {},
         });
         await wait(() =>
-            getByText(container, "New advanced administration password")
+            getByText(container, "Advanced Administration Password")
         );
 
         passwordContainer = container;
@@ -55,8 +56,36 @@ describe("<Password/>", () => {
         fireEvent.click(
             getByText(
                 passwordContainer,
-                "Use same password for advanced administration (root)"
+                "Use the same password for advanced administration (root)"
             )
+        );
+        expect(passwordContainer).toMatchSnapshot();
+    });
+
+    it("Snapshot: wrong password confirmation", () => {
+        fireEvent.change(
+            getAllByLabelText(passwordContainer, "New password")[0],
+            {
+                target: { value: "testing" },
+            }
+        );
+        fireEvent.change(
+            getAllByLabelText(passwordContainer, "Confirm new password")[0],
+            { target: { value: "testingg" } }
+        );
+        expect(passwordContainer).toMatchSnapshot();
+    });
+
+    it("Snapshot: wrong root password confirmation", () => {
+        fireEvent.change(
+            getAllByLabelText(passwordContainer, "New password")[1],
+            {
+                target: { value: "testing" },
+            }
+        );
+        fireEvent.change(
+            getAllByLabelText(passwordContainer, "Confirm new password")[1],
+            { target: { value: "testingg" } }
         );
         expect(passwordContainer).toMatchSnapshot();
     });
@@ -65,11 +94,15 @@ describe("<Password/>", () => {
         beforeEach(() => {
             // Fill form data
             fireEvent.change(
-                getByLabelText(passwordContainer, "Current Foris password"),
+                getByLabelText(passwordContainer, "Current password"),
                 { target: { value: "foobar" } }
             );
             fireEvent.change(
-                getByLabelText(passwordContainer, "New Foris password"),
+                getAllByLabelText(passwordContainer, "New password")[0],
+                { target: { value: "foobar" } }
+            );
+            fireEvent.change(
+                getAllByLabelText(passwordContainer, "Confirm new password")[0],
                 { target: { value: "foobar" } }
             );
 
@@ -110,7 +143,7 @@ describe("Customized <Password/>", () => {
             data: { customization: "shield" },
         });
 
-        await wait(() => getByText(container, "Foris Password"));
+        await wait(() => getByText(container, "Password Settings"));
 
         passwordContainer = container;
     });
@@ -132,11 +165,15 @@ describe("Customized <Password/>", () => {
         beforeEach(() => {
             // Fill form data
             fireEvent.change(
-                getByLabelText(passwordContainer, "Current Foris password"),
+                getByLabelText(passwordContainer, "Current password"),
                 { target: { value: "foobar" } }
             );
             fireEvent.change(
-                getByLabelText(passwordContainer, "New Foris password"),
+                getByLabelText(passwordContainer, "New password"),
+                { target: { value: "foobar" } }
+            );
+            fireEvent.change(
+                getByLabelText(passwordContainer, "Confirm new password"),
                 { target: { value: "foobar" } }
             );
 
