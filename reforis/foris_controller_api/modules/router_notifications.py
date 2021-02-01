@@ -115,8 +115,10 @@ def send_test_notification():
         'create',
         {
             'msg': _('''
-This is a testing notification. Please note you should receive this to your e-mail inbox only if you set the importance
-level on "Reboot or attention is required" or higher.
+This is a testing notification.
+
+Please note it would be send to your e-mail address only if you set
+the importance level to "Reboot or attention is required" or higher.
             '''),
             'severity': 'error',
             'immediate': True,
