@@ -75,7 +75,7 @@ export default function Password({ postCallback }) {
             ) {
                 setAlert(
                     _(
-                        `The password you've entered has been compromised and it was not saved. It appears ${
+                        `The password you've entered has not been saved. It has been compromised and appears ${
                             forisPassword.count || rootPassword.count
                         } times in ${
                             forisPassword.list || rootPassword.list
