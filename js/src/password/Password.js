@@ -75,11 +75,11 @@ export default function Password({ postCallback }) {
             ) {
                 setAlert(
                     _(
-                        `The password you've entered has been compromised. It appears ${
+                        `The password you've entered has been compromised and it was not saved. It appears ${
                             forisPassword.count || rootPassword.count
                         } times in ${
                             forisPassword.list || rootPassword.list
-                        } list.`
+                        } list. Please enter another, more secure password.`
                     ),
                     ALERT_TYPES.ERROR
                 );
