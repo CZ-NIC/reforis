@@ -114,17 +114,17 @@ def send_test_notification():
         'router_notifications',
         'create',
         {
-            'msg': _('''
-This is a testing notification. Please note you should receive this to your e-mail inbox only if you set the importance
-level on "Reboot or attention is required" or higher.
-            '''),
+            'msg': _('''This is a testing notification.
+
+Please note it would be sent to your e-mail address only if you set
+the importance level to "Reboot or attention is required" or higher.'''),
             'severity': 'error',
             'immediate': True,
         },
     )
 
     if response['result']:
-        return jsonify(_('Testing message was sent, please check your inbox.')), HTTPStatus.OK
+        return jsonify(_('The testing message has been sent, please check your inbox.')), HTTPStatus.OK
 
     return jsonify(
         _('Sending of the testing message failed, your configuration is possibly wrong.')
