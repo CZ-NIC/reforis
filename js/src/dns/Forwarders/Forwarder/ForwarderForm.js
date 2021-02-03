@@ -20,7 +20,7 @@ const TLS_TYPES = {
 };
 
 const HELP_TEXTS = {
-    tls_pin: _("base64 encoded sha256."),
+    tls_pin: _("Base 64 encoded SHA-256."),
 };
 
 ForwarderForm.propTypes = {
