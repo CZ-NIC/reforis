@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-02-01 12:17+0100\n"
-"PO-Revision-Date: 2020-11-27 00:29+0000\n"
+"PO-Revision-Date: 2021-02-03 14:15+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
-"Language: nb\n"
-"Language-Team: Norwegian Bokmål "
-"<https://hosted.weblate.org/projects/turris/reforis/nb_NO/>\n"
-"Plural-Forms: nplurals=2; plural=n != 1\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/turris/"
+"reforis/nb_NO/>\n"
+"Language: nb_NO\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.5-dev\n"
 "Generated-By: Babel 2.9.0\n"
 
 #: js/src/about/About.js:22 js/src/main/pages.js:103 js/src/main/pages.js:217
@@ -30,6 +31,9 @@ msgid ""
 "href=\"mailto:tech.support@turris.cz\" target=\"_blank\">customer "
 "support</a>."
 msgstr ""
+"Her kan du finne litt info om enheten din. Inkluder det i meldingen hvis du "
+"kontakter vår <a href=\"mailto:tech.support@turris.cz\" target=\"_blank\""
+">brukerstøtte</a>."
 
 #: js/src/about/About.js:48
 msgid "Device"
@@ -57,6 +61,8 @@ msgid ""
 " functions and varying stability - you can pick, which branch you want to"
 " test."
 msgstr ""
+"Turris OS gis for tiden ut i forskjellige grener, noe som betyr at de har "
+"forskjellige funksjoner og stabilitet. Du kan velge hvilken du vil teste."
 
 #: js/src/about/About.js:87
 msgid "Kernel version"
@@ -64,7 +70,7 @@ msgstr "Kjerneversjon"
 
 #: js/src/common/FactoryResetButton.js:51
 msgid "Reset"
-msgstr ""
+msgstr "Tilbakestill"
 
 #: js/src/common/FactoryResetButton.js:66 js/src/common/RebootButton.js:66
 #: js/src/dns/DNSSECDisableModal.js:30
@@ -85,7 +91,7 @@ msgstr "Avbryt"
 
 #: js/src/common/FactoryResetButton.js:73
 msgid "Confirm factory reset"
-msgstr ""
+msgstr "Bekreft tilbakestilling til fabrikkinnstillinger"
 
 #: js/src/common/RebootButton.js:51 js/src/maintenance/Reboot.js:16
 msgid "Reboot"
@@ -158,7 +164,7 @@ msgstr "Maks DHCP-tildelinger"
 
 #: js/src/common/network/DHCPServerForm.js:58
 msgid "Maximum number of addresses available for DHCP clients."
-msgstr ""
+msgstr "Maksimalt antall adresser tilgjengelige for DHCP-klienter."
 
 #: js/src/common/network/DHCPServerForm.js:71
 #, fuzzy
@@ -174,12 +180,13 @@ msgid "Value must be positive."
 msgstr "Verdi må være positiv."
 
 #: js/src/common/network/DHCPValidators.js:87
+#, fuzzy
 msgid "Invalid network settings. DHCP settings can't be validated."
-msgstr ""
+msgstr "Ugyldige nettverksinnstillinger. DHCP-innstillinger kan ikke bekreftes."
 
 #: js/src/common/network/DHCPValidators.js:100
 msgid "Minimum lease time is 1 hour."
-msgstr ""
+msgstr "Minimumsleietid er 1 time."
 
 #: js/src/common/network/DHCPValidators.js:116
 #, fuzzy
@@ -187,18 +194,23 @@ msgid "Address is outside current network."
 msgstr "Ruterens IP-adresse i internnettverket."
 
 #: js/src/common/network/DHCPValidators.js:120
+#, fuzzy
 msgid "Address is already reserved for other purposes."
-msgstr ""
+msgstr "Adresse allerede reservert til andre formål."
 
 #: js/src/common/network/DHCPValidators.js:131
+#, fuzzy
 msgid "Too many addresses requested. Set a lower number or change DHCP start."
 msgstr ""
+"For mange adresser forespurt. Sett et lavere tall, eller endre DHCP-start."
 
 #: js/src/common/network/DHCPValidators.js:138
 msgid ""
 "The only DHCP lease is the same as router's address. Increase limit or "
 "change start address."
 msgstr ""
+"Den eneste HDCP-leiekontrakten er ruterens adresse. Øk grensen eller endre "
+"startadresse."
 
 #: js/src/common/network/StaticIPForm.js:14 js/src/wan/WAN6Form.js:36
 msgid ""
@@ -312,12 +324,17 @@ msgid ""
 "This will enable your DNS resolver to place DHCP client's names among the"
 " local DNS records."
 msgstr ""
+"Dette vil la din DNS-utleder plassere DHCP-klienters navn i de lokale DNS-"
+"oppføringene."
 
 #: js/src/dns/DNSForm.js:20
+#, fuzzy
 msgid ""
 "This domain will be used as suffix. E.g. The result for client "
 "\"android-123\" and domain \"my.lan\" will be \"android-123.my.lan\"."
 msgstr ""
+"Dette domenet vil bli brukt som endelse. F.eks vil resultatet for klienten "
+"\"android-123\" og domenet \"my.lan\" bli \"android-123.my.lan\"."
 
 #: js/src/dns/DNSForm.js:83
 msgid "Use forwarding"
@@ -381,8 +398,9 @@ msgid "Delete"
 msgstr "Slett"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:23
+#, fuzzy
 msgid "base64 encoded sha256."
-msgstr ""
+msgstr "Base 64-kodet SHA-256"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:48
 #: js/src/packageManagement/updates/UpdateApproval.js:121
@@ -399,7 +417,7 @@ msgstr "TLS-vertsnavn"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:100
 msgid "TLS pin"
-msgstr ""
+msgstr "TLS-tilordning"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:116
 msgid "Save"
@@ -415,7 +433,7 @@ msgstr "IPv6"
 
 #: js/src/dns/Forwarders/Forwarder/IPAddressesForm.js:51
 msgid "${label} Addresses"
-msgstr ""
+msgstr "${label}-adresser"
 
 #: js/src/dns/Forwarders/Forwarder/IPAddressesForm.js:56
 msgid "${label} #${index + 1}"
@@ -423,7 +441,7 @@ msgstr ""
 
 #: js/src/dns/Forwarders/Forwarder/IPAddressesForm.js:80
 msgid "Add ${label} address"
-msgstr ""
+msgstr "Legg til ${label}-adresse"
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:44
 msgid "Forwarder saved successfully."
@@ -450,12 +468,14 @@ msgid "Hostname should have at least one symbol."
 msgstr "Vertsnavn må ha minst ett symbol."
 
 #: js/src/dns/Forwarders/Forwarder/validator.js:33
+#, fuzzy
 msgid "TLS pin should have at least one symbol."
-msgstr ""
+msgstr "TLS-tilordning skal ha minst ett symbol."
 
 #: js/src/dns/Forwarders/Forwarder/validator.js:45
+#, fuzzy
 msgid "Define at least one of the IP addresses of the forwarder."
-msgstr ""
+msgstr "Definer minst én av IP-adressene til videresenderen."
 
 #: js/src/guestNetwork/GuestNetwork.js:37 js/src/interfaces/constants.js:11
 #: js/src/main/pages.js:148
@@ -463,6 +483,7 @@ msgid "Guest Network"
 msgstr "Gjestenettverk"
 
 #: js/src/guestNetwork/GuestNetwork.js:41
+#, fuzzy
 msgid ""
 "\n"
 "Guest network is used for <a href=\"${ForisURLs.wifi}\">guest Wi-Fi</a>.\n"
@@ -473,6 +494,14 @@ msgid ""
 "in LAN.\n"
 "        "
 msgstr ""
+"\n"
+"Gjestenettverk brukes for <a href=\"${ForisURLs.wifi}\">gjeste-Wi-Fi</a>.\n"
+"Det er adskilt fra ditt ordinære lokalnett. Enheter tilkoblet dette "
+"nettverket tillates adgang til Internett,\n"
+"men tillates ikke tilgang til oppsettsgrensesnittet på hverken enheten eller "
+"enhetene i\n"
+"lokalnettet.\n"
+"        "
 
 #: js/src/guestNetwork/GuestNetworkForm.js:18
 msgid "Router's IP address in the guest inner network."
@@ -490,11 +519,11 @@ msgstr ""
 
 #: js/src/guestNetwork/GuestNetworkForm.js:25
 msgid "Download speed in guest network (in kilobits per second)."
-msgstr ""
+msgstr "Nedlastingshastighet i gjestenettverk (i kilobit per sekund)."
 
 #: js/src/guestNetwork/GuestNetworkForm.js:28
 msgid "Upload speed in guest network (in kilobits per second)."
-msgstr ""
+msgstr "Opplastingshastighet i gjestenettverk (i kilobit per sekund)."
 
 #: js/src/guestNetwork/GuestNetworkForm.js:66
 msgid "Enable"
@@ -536,73 +565,98 @@ msgid ""
 "here will become fully functional after you assign a network interface to"
 " this network."
 msgstr ""
+"Dette nettverket inneholder foreløpig ingen enheter. Endringer du gjør her "
+"vil bli funksjonelle etter at du tildeler et nettverksgrensesnitt til dette "
+"nettverket."
 
 #: js/src/guestNetwork/GuestNetworkNotification.js:16
 msgid "All network interfaces of this network are currently down."
-msgstr ""
+msgstr "Alle nettverksgrensesnitt på dette nettverket er nede for tiden."
 
 #: js/src/guide/constants.js:13
+#, fuzzy
 msgid ""
 "Welcome to Foris web interface. This guide will help you to setup your "
 "device. Firstly it is required to set your password. Note the security of"
 " your home network is in your hands, so try not to use weak passwords."
 msgstr ""
+"Velkommen til Foris-vevgrensesnittet. Denne guiden hjelper deg å sette opp "
+"din enhet. Først må du sette opp passordet ditt. Merk at sikkerheten til "
+"ditt hjemmenettverk i dine hender, så ikke bruk et usikkert passord."
 
 #: js/src/guide/constants.js:17
 msgid "Your password is set. You may proceed to the next step."
-msgstr ""
+msgstr "Passordet ditt er satt. Du kan gå videre til neste steg."
 
 #: js/src/guide/constants.js:20
 msgid "The workflow was set. You may proceed to next step."
-msgstr ""
+msgstr "Arbeidsflyt oppsatt. Du kan gå videre til neste steg."
 
 #: js/src/guide/constants.js:24
+#, fuzzy
 msgid "Here you need to decide which interfaces belong to which network."
-msgstr ""
+msgstr "Her kan du avgjøre hvilke grensesnitt som tilhører hvilke nettverk."
 
 #: js/src/guide/constants.js:27
 msgid "If you are in doubt use the current settings."
-msgstr ""
+msgstr "Bruk nåværende innstillinger hvis du er i tvil."
 
 #: js/src/guide/constants.js:29
 msgid ""
 "You've configured your network interfaces. It seems that you didn't break"
 " any crucial network settings so you can safely proceed to the next step."
 msgstr ""
+"Du har satt opp dine nettverksgrensesnitt. Det ser ut til at ingen viktige "
+"nettverksinnstillinger tok skade av det, så du kan trygt gå videre til neste "
+"steg."
 
 #: js/src/guide/constants.js:34
+#, fuzzy
 msgid "Now you need to set the time and timezone of your device."
-msgstr ""
+msgstr "Du må nå sette tid og tidssone for enheten din."
 
 #: js/src/guide/constants.js:35
+#, fuzzy
 msgid ""
 "Your time and timezone seem to be set. Please make sure that the time "
 "matches the time on your computer if not try to update it via NTP or "
 "manually."
 msgstr ""
+"Klokken og tidssone ser ut til å være satt. Forsikre deg om at tiden "
+"samsvarer med klokken på datamaskinen din. Hvis ikke kan du oppdatere via "
+"NTP, eller manuelt."
 
 #: js/src/guide/constants.js:40
 msgid ""
 "A proper DNS resolving is one of the key security features of your "
 "device. Let's configure it now."
 msgstr ""
+"Ordentlig DNS-utledelse er én av de viktigste funksjonene på enheten din. La "
+"oss sette det opp nå."
 
 #: js/src/guide/constants.js:43
 msgid ""
 "You've updated your DNS configuration. Try to run connection test to see "
 "whether your DNS resolver is properly set."
 msgstr ""
+"Du har oppdatert ditt DNS-oppsett. Prøv å kjøre tilkoblingstest for å se "
+"hvorvidt din DNS-utleder er satt opp ordentlig."
 
 #: js/src/guide/constants.js:48
+#, fuzzy
 msgid "In order to access the internet, you need to configure your WAN interface."
-msgstr ""
+msgstr "For å få tilgang til Internett må du sette opp ditt WAN-grensesnitt."
 
 #: js/src/guide/constants.js:51
+#, fuzzy
 msgid ""
 "You've configured your WAN interface. Try to run connection test to see "
 "whether it is working properly and if so you can safely proceed to the "
 "next step."
 msgstr ""
+"Du har satt opp ditt WAN-grensesnitt. Prøv å kjøre en tilkoblingstest for å "
+"se hvorvidt det fungerer ordentlig. Hvis så er tilfelle kan du gå videre til "
+"neste steg."
 
 #: js/src/guide/constants.js:56
 msgid ""
@@ -611,32 +665,45 @@ msgid ""
 "configuration interface unless you restart the network on your current "
 "device."
 msgstr ""
+"Nå skal du kunne sette opp ditt LAN-grensesnitt. Merk deg at når du endrer "
+"dine nettverksinnstillinger vil du antagelig ikke kunne koble til "
+"oppsettsgrensesnittet, med mindre du starter nettverket på din enheten på "
+"nytt."
 
 #: js/src/guide/constants.js:59
 msgid ""
 "You've configured your LAN interface. Try to test whether settings work "
 "properly and if so you can safely proceed to the next step."
 msgstr ""
+"Du har satt opp dit lokalnettgrensesnitt. Prøv å teste hvorvidt "
+"innstillingene fungerer ordentlig, og hvis de gjør det kan du trygt "
+"fortsette til neste steg."
 
 #: js/src/guide/constants.js:64
 msgid "Now you need to configure automatic updates on your device."
-msgstr ""
+msgstr "Nå må du sette opp automatiske oppgraderinger på enheten din."
 
 #: js/src/guide/constants.js:67
+#, fuzzy
 msgid "Please wait till the updater finishes its run."
-msgstr ""
+msgstr "Vent til oppdatereren er ferdigkjørt."
 
 #: js/src/guide/constants.js:76
 msgid ""
 "Congratulations! Now your device is able to act as a router and route "
 "network traffic among LAN, WAN and guest network."
 msgstr ""
+"Din enhet kan nå fungere som ruter og sende nettverkstrafikk mellom "
+"lokalnett, WAN og gjestenettverk."
 
 #: js/src/guide/constants.js:84
+#, fuzzy
 msgid ""
 "Minimal device setup is finished. Note that you probably need to perform "
 "some further configuration updates to fit the device to your needs."
 msgstr ""
+"Minimalt enhetsoppsett fullført. Merk deg at du antagelig må utføre "
+"ytterligere oppsett for å tilpasse enheten til dine behov."
 
 #: js/src/guide/constants.js:95
 msgid ""
@@ -687,10 +754,11 @@ msgid ""
 "Congratulations! Now your device should be able to act as a server on "
 "your local network."
 msgstr ""
+"Din enhet skal nå være klar til å fungere som tjener i ditt lokalnettverk."
 
 #: js/src/guide/hooks.js:23
 msgid "Cannot mark guide as finished."
-msgstr ""
+msgstr "Kan ikke markere guide som fullført."
 
 #: js/src/guide/steps.js:20 js/src/main/pages.js:75 js/src/main/pages.js:161
 #: js/src/notificationsSettings/SMTPCustomForm.js:114
@@ -700,7 +768,7 @@ msgstr "Passord"
 
 #: js/src/guide/steps.js:24
 msgid "Workflow"
-msgstr ""
+msgstr "Arbeidsflyt"
 
 #: js/src/guide/steps.js:28 js/src/main/pages.js:143
 msgid "Interfaces"
@@ -799,17 +867,19 @@ msgstr "Minimal"
 
 #: js/src/guide/GuidePages/WorkflowSelect.js:57
 msgid "Cannot set workflow."
-msgstr ""
+msgstr "Kan ikke sette arbeidsflyt."
 
 #: js/src/guide/GuidePages/WorkflowSelect.js:67
 msgid "Guide Workflow"
-msgstr ""
+msgstr "Guide-arbeidsflyt"
 
 #: js/src/guide/GuidePages/WorkflowSelect.js:69
 msgid ""
 "Here you can set the guide walkthrough which will guide you through the "
 "basic configuration of your device."
 msgstr ""
+"Her kan du sette guide-arbeidsflyten som vil geleide deg gjennom "
+"grunnleggende oppsett av enheten din."
 
 #: js/src/guide/GuidePages/WorkflowSelect.js:84
 msgid "Recommended"
@@ -831,7 +901,7 @@ msgstr ""
 
 #: js/src/interfaces/Interfaces.js:51
 msgid "You have to assign at least one interface to this group."
-msgstr ""
+msgstr "Du må nå tildele denne gruppen minst ett grensesnitt."
 
 #: js/src/interfaces/InterfacesForm.js:63
 msgid ""
@@ -876,7 +946,7 @@ msgstr ""
 
 #: js/src/interfaces/Network.js:42
 msgid "There are no interfaces in this group."
-msgstr ""
+msgstr "Det er ingen grensesnitt i denne gruppen."
 
 #: js/src/interfaces/Network.js:63
 msgid "Base module"
@@ -906,7 +976,7 @@ msgstr "Modul-ID"
 
 #: js/src/interfaces/SelectedInterface.js:94
 msgid "Slot"
-msgstr ""
+msgstr "Plass"
 
 #: js/src/interfaces/SelectedInterface.js:98
 msgid "Interface ID"
@@ -1029,11 +1099,11 @@ msgstr "Merknader"
 #: js/src/main/pages.js:90 js/src/main/pages.js:176
 #: js/src/maintenance/Maintenance.js:17
 msgid "Maintenance"
-msgstr ""
+msgstr "Vedlikehold"
 
 #: js/src/main/pages.js:97
 msgid "Global Threat Statistics"
-msgstr ""
+msgstr "Global trusselstatistikk"
 
 #: js/src/main/pages.js:123 js/src/wifi/WiFi.js:21
 msgid "Wi-Fi"
@@ -1147,7 +1217,7 @@ msgstr ""
 
 #: js/src/maintenance/Syslog/SyslogForm.js:29
 msgid "System logs retention"
-msgstr ""
+msgstr "Ivaretagelse av systemlogger"
 
 #: js/src/maintenance/Syslog/SyslogForm.js:32
 msgid ""
@@ -1160,7 +1230,7 @@ msgstr ""
 
 #: js/src/maintenance/Syslog/SyslogForm.js:38
 msgid "Enable system logs retention"
-msgstr ""
+msgstr "Skru på ivaretagelse av systemlogger"
 
 #: js/src/notificationsSettings/CommonForm.js:17
 msgid "Reboot is required"
@@ -1260,6 +1330,8 @@ msgid ""
 "There are some unsaved changes in the notifications settings. Do you want"
 " to discard them and test the notifications with the old settings?"
 msgstr ""
+"Det er ulagrede endringer i merknadsinnstillingene. Ønsker du å forkaste dem "
+"og teste merknadene med de gamle innstillingene?"
 
 #: js/src/notificationsSettings/TestNotification.js:33
 msgid ""
@@ -1386,27 +1458,29 @@ msgstr "Gå til NetMetr"
 #: js/src/overview/Cards/NetmetrCard.js:68
 #: js/src/overview/Cards/NetmetrCard.js:84
 msgid "Megabit per second"
-msgstr ""
+msgstr "Megabit per sekund"
 
 #: js/src/overview/Cards/NetmetrCard.js:99
+#, fuzzy
 msgid "Ping"
-msgstr ""
+msgstr "Nettverksforsinkelsesforespørsel"
 
 #: js/src/overview/Cards/NetmetrCard.js:102
 msgid "Millisecond"
-msgstr ""
+msgstr "Millisekund"
 
 #: js/src/overview/Cards/NetmetrCard.js:112
+#, fuzzy
 msgid "Link"
-msgstr ""
+msgstr "Lenke"
 
 #: js/src/overview/Cards/NetmetrCard.js:131
 msgid "Performed"
-msgstr ""
+msgstr "Utført"
 
 #: js/src/overview/Cards/NetmetrCard.js:139
 msgid "No tests have been performed lately."
-msgstr ""
+msgstr "Ingen tester har blitt utført i det siste."
 
 #: js/src/overview/Cards/OpenVPNClientsCard.js:45
 msgid "OpenVPN Clients"
@@ -1414,17 +1488,19 @@ msgstr "OpenVPN-klienter"
 
 #: js/src/overview/Cards/OpenVPNClientsCard.js:51
 msgid "Go to OpenVPN Client Settings"
-msgstr ""
+msgstr "Gå til OpenVPN-klientinnstillinger"
 
 #: js/src/overview/Cards/OpenVPNClientsCard.js:89
 msgid "There are no clients added yet."
-msgstr ""
+msgstr "Ingen klienter lagt til enda."
 
 #: js/src/packageManagement/languages/Languages.js:20
 msgid ""
 "If you want to use another language other than English you can select it "
 "from the following list:"
 msgstr ""
+"Hvis du ønsker å bruke et annet språk enn engelsk kan du velge det i denne "
+"listen:"
 
 #: js/src/packageManagement/packages/PackageCheckBox.js:53
 msgid "More details"
@@ -1449,7 +1525,7 @@ msgstr "Pakkeliste"
 
 #: js/src/packageManagement/updateSettings/LicenceModal.js:24
 msgid "Most Important License Agreement Points"
-msgstr ""
+msgstr "De viktigste lisensgodkjennelsespunketene"
 
 #: js/src/packageManagement/updateSettings/LicenceModal.js:38
 msgid ""
@@ -1493,12 +1569,17 @@ msgid ""
 msgstr ""
 
 #: js/src/packageManagement/updateSettings/LicenceModal.js:68
+#, fuzzy
 msgid ""
 "By enabling of the automatic updates, you confirm that you are the owner "
 "of this Turris router and you agree with the full text of the <a "
 "href=\"https://www.turris.cz/omnia-updater-eula\" target=\"_blank\" "
 "rel=\"noopener noreferrer\">license agreement</a>."
 msgstr ""
+"Ved å skru på automatiske oppgraderinger bekrefter du at du eier denne "
+"Turris-ruteren og at du samtykker med hele teksten i <a href=\"https://www."
+"turris.cz/omnia-updater-eula\" target=\"_blank\" rel=\"noopener noreferrer\""
+">lisenssamtykket</a>."
 
 #: js/src/packageManagement/updateSettings/UpdateSettings.js:31
 msgid ""
@@ -1529,11 +1610,11 @@ msgstr ""
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:20
 msgid "Time of day of automatic reboot in HH:MM format."
-msgstr ""
+msgstr "Tidspunkt for automatisk omstart i TT:MM-format."
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:49
 msgid "Automatic Restarts After Software Update"
-msgstr ""
+msgstr "Utfører omstart etter systemoppgradering automatisk"
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:51
 msgid "Delay (days)"
@@ -1545,11 +1626,11 @@ msgstr "Omstartstid"
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:88
 msgid "Time should be in HH:MM format."
-msgstr ""
+msgstr "Tid må settes i TT:MM-format."
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:91
 msgid "Restart can be delayed by at most 10 days"
-msgstr ""
+msgstr "Omstart kan utsettes i opptil 10 dager"
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:94
 msgid "Delay must be a positive number"
@@ -1561,7 +1642,7 @@ msgstr "Automatisk installasjon"
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:17
 msgid "Updates will be installed without user's intervention."
-msgstr ""
+msgstr "Oppgraderinger vil bli installert uten innvirkning fra brukeren."
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:21
 msgid "Delayed updates"
@@ -1581,11 +1662,11 @@ msgstr ""
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:29
 msgid "You have to approve the updates, otherwise they won't be installed."
-msgstr ""
+msgstr "Du må godkjenne oppgraderingene, ellers vil de ikke bli installert."
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:59
 msgid "Update Approvals"
-msgstr ""
+msgstr "Oppgraderingsgodkjenninger"
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:61
 msgid ""
@@ -1601,41 +1682,44 @@ msgstr ""
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:79
 msgid "Delayed updates (hours)"
-msgstr ""
+msgstr "Utsatte oppgraderinger (timer)"
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:97
 msgid "Updates must be delayed by least 1 hour and at most by 168 hours"
 msgstr ""
 
 #: js/src/packageManagement/updateSettings/forms/UpdatesForm.js:47
+#, fuzzy
 msgid "Enable automatic updates (recommended)"
-msgstr ""
+msgstr "Skru på automatiske oppgraderinger (anbefales)"
 
 #: js/src/packageManagement/updates/UpdateApproval.js:38
 msgid "Updates will be installed shortly."
-msgstr ""
+msgstr "Oppgraderinger vil snart bli installert."
 
 #: js/src/packageManagement/updates/UpdateApproval.js:55
 msgid "There are no updates awaiting your approval."
-msgstr ""
+msgstr "Ingen oppgraderinger venter på godkjenning."
 
 #: js/src/packageManagement/updates/UpdateApproval.js:61
 #, python-format
 msgid "There is %d package to be updated."
 msgid_plural "There are %d packages to be updated."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Én pakke venter på å bli oppgradert."
+msgstr[1] "%d pakker venter på oppgradering."
 
 #: js/src/packageManagement/updates/UpdateApproval.js:68
 msgid ""
 "See <a data-toggle=\"collapse\" href=\"#plan-wrapper\" role=\"button\" "
 "aria-expanded=\"false\" aria-controls=\"plan-wrapper\">details</a>"
 msgstr ""
+"Vis <a data-toggle=\"collapse\" href=\"#plan-wrapper\" role=\"button\" aria-"
+"expanded=\"false\" aria-controls=\"plan-wrapper\">detaljer</a>"
 
 #: js/src/packageManagement/updates/UpdateApproval.js:76
 #, python-format
 msgid "Approve Update From %s"
-msgstr ""
+msgstr "Godta oppgradering fra %s"
 
 #: js/src/packageManagement/updates/UpdateApproval.js:120
 msgid "Action"
@@ -1650,10 +1734,13 @@ msgid "New"
 msgstr "Ny"
 
 #: js/src/packageManagement/updates/Updates.js:41
+#, fuzzy
 msgid ""
 "Automatic updates are disabled. Please enable delayed or approval-"
 "requiring updates to review them."
 msgstr ""
+"Automatiske oppgraderinger er avskrudd. Skru på utsatte eller godkjennings-"
+"påkrevde oppgradering for å vurdere dem."
 
 #: js/src/packageManagement/updates/Updates.js:53
 msgid "Check and install updates"
@@ -1661,15 +1748,15 @@ msgstr "Sjekk og installer oppgraderinger"
 
 #: js/src/packageManagement/updates/Updates.js:54
 msgid "Manually check for updates and install them immediately."
-msgstr ""
+msgstr "Se etter oppgraderinger og installer dem umiddelbart"
 
 #: js/src/packageManagement/updates/Updates.js:59
 msgid "Check updates"
-msgstr ""
+msgstr "Se etter oppgraderinger"
 
 #: js/src/packageManagement/updates/Updates.js:61
 msgid "Manually check for updates and review them immediately."
-msgstr ""
+msgstr "Se etter oppgraderinger manuelt og vurder dem umiddelbart."
 
 #: js/src/packageManagement/updates/hooks.js:88
 msgid "Cannot fetch updater status."
@@ -1751,7 +1838,7 @@ msgstr "Passordet bør ha maksimalt 128 tegn."
 
 #: js/src/password/RootPasswordForm.js:48
 msgid "Advanced Administration (root) Password"
-msgstr ""
+msgstr "(Rot-) passord for avansert administrasjon"
 
 #: js/src/password/RootPasswordForm.js:52
 #, python-format
@@ -1827,11 +1914,12 @@ msgstr ""
 
 #: js/src/regionAndTime/TimeForm.js:112
 msgid "How to set time"
-msgstr ""
+msgstr "Hvordan stille klokka"
 
 #: js/src/regionAndTime/TimeForm.js:177
+#, fuzzy
 msgid "Hide NTP servers list"
-msgstr ""
+msgstr "Skjul NTP-tjenerliste"
 
 #: js/src/regionAndTime/TimeForm.js:178
 #, fuzzy
@@ -1845,29 +1933,33 @@ msgstr "NTP-tjenere"
 #: js/src/routerStateHandler/NetworkRestartHandler.js:29
 #, python-format
 msgid "Network restart after %d sec."
-msgstr ""
+msgstr "Nettverksomstart etter %d sek."
 
 #: js/src/routerStateHandler/NetworkRestartHandler.js:34
+#, fuzzy
 msgid "Network restarting"
-msgstr ""
+msgstr "Nettverket starter på ny …"
 
 #: js/src/routerStateHandler/NetworkRestartHandler.js:37
 #: js/src/routerStateHandler/RebootHandler.js:33
+#, fuzzy
 msgid "Reconnecting"
-msgstr ""
+msgstr "Kobler til igjen …"
 
 #: js/src/routerStateHandler/RebootHandler.js:27
 #, python-format
 msgid "Reboot after %d sec."
-msgstr ""
+msgstr "Omstart etter %d sek."
 
 #: js/src/routerStateHandler/RebootHandler.js:30
+#, fuzzy
 msgid "Rebooting"
-msgstr ""
+msgstr "Starter på ny …"
 
 #: js/src/utils/ErrorBoundary.js:39
+#, fuzzy
 msgid "An Error Occurred"
-msgstr ""
+msgstr "En feil inntraff"
 
 #: js/src/utils/ErrorBoundary.js:44
 msgid ""
@@ -2079,7 +2171,7 @@ msgstr "MTU skal være i rekkevidden 1280-1500."
 
 #: js/src/wan/WANForm.js:27
 msgid "PPPoE (for DSL bridges, etc.)"
-msgstr ""
+msgstr "PPPoE (for DSL-broer, osv.)"
 
 #: js/src/wan/WANForm.js:100
 #, fuzzy
@@ -2134,26 +2226,31 @@ msgid ""
 msgstr ""
 
 #: reforis/foris_controller_api/modules/router_notifications.py:127
+#, fuzzy
 msgid "Testing message was sent, please check your inbox."
-msgstr ""
+msgstr "Testmelding sendt, sjekk innboksen din."
 
 #: reforis/foris_controller_api/modules/router_notifications.py:130
+#, fuzzy
 msgid ""
 "Sending of the testing message failed, your configuration is possibly "
 "wrong."
 msgstr ""
+"Forsendelse av testmelding mislyktes. Oppsettet ditt er antageligvis galt."
 
 #: reforis/foris_controller_api/modules/updater.py:65
 msgid "Cannot change automatic restart settings."
-msgstr ""
+msgstr "Kan ikke endre automatiske omstartsinnstillinger."
 
 #: reforis/foris_controller_api/modules/updater.py:80
+#, fuzzy
 msgid "Cannot update approvals settings."
-msgstr ""
+msgstr "Kan ikke oppdatere godkjenningsinnstillinger."
 
 #: reforis/foris_controller_api/modules/updater.py:84
+#, fuzzy
 msgid "Cannot rollback automatic restart settings."
-msgstr ""
+msgstr "Kan ikke rulle tilbake automatiske omstartsinnstillinger."
 
 #: reforis/foris_controller_api/modules/updater.py:175
 msgid "Cannot start updater"
@@ -2177,7 +2274,7 @@ msgstr "Gå til LuCI"
 
 #: reforis/templates/login.html:34
 msgid "or"
-msgstr ""
+msgstr "eller"
 
 #: reforis/templates/login.html:35
 msgid "back to select"
@@ -2185,7 +2282,7 @@ msgstr ""
 
 #: reforis/templates/errors/400.html:4 reforis/templates/errors/400.html:8
 msgid "400 - Bad Request"
-msgstr ""
+msgstr "400 - Feilaktig forespørsel"
 
 #: reforis/templates/errors/400.html:9 reforis/templates/errors/500.html:9
 msgid "Error:"
@@ -2204,8 +2301,9 @@ msgid "403 - Forbidden"
 msgstr "403 - Forbudt"
 
 #: reforis/templates/errors/403.html:9
+#, fuzzy
 msgid "Forbidden You don't have permission to access"
-msgstr ""
+msgstr "Forbudt. Du har ikke adgangstilgang"
 
 #: reforis/templates/errors/403.html:10
 #, python-format
@@ -2510,4 +2608,3 @@ msgstr "500 - Tjenerfeil"
 
 #~ msgid "Device Reboot"
 #~ msgstr "Enhetsomstart"
-
