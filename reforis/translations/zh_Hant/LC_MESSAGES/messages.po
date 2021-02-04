@@ -8,18 +8,21 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-02-01 12:17+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2021-02-04 09:13+0000\n"
+"Last-Translator: 10A David <meeting0022@gmail.com>\n"
+"Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/"
+"turris/reforis/zh_Hant/>\n"
 "Language: zh_Hant\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.5-dev\n"
 "Generated-By: Babel 2.9.0\n"
 
 #: js/src/about/About.js:22 js/src/main/pages.js:103 js/src/main/pages.js:217
 msgid "About"
-msgstr ""
+msgstr "關於"
 
 #: js/src/about/About.js:25
 msgid ""
@@ -28,235 +31,237 @@ msgid ""
 "href=\"mailto:tech.support@turris.cz\" target=\"_blank\">customer "
 "support</a>."
 msgstr ""
+"這裏可以提供關於你產品更多資訊. 如需要更多協助請把產品的資訊提供並以電子郵件方式與我們的 <a href=\"mailto:tech."
+"support@turris.cz\" target=\"_blank\">產品服務部同事聯繫 </a>."
 
 #: js/src/about/About.js:48
 msgid "Device"
-msgstr ""
+msgstr "產品資訊"
 
 #: js/src/about/About.js:52
 msgid "Serial number"
-msgstr ""
+msgstr "產品序號"
 
 #: js/src/about/About.js:56
 msgid "reForis version"
-msgstr ""
+msgstr "reForis版本編號"
 
 #: js/src/about/About.js:60
 msgid "Turris OS version"
-msgstr ""
+msgstr "Turris OS作業系統編號"
 
 #: js/src/about/About.js:65
 msgid "Turris OS branch"
-msgstr ""
+msgstr "Turris OS系統分枝"
 
 #: js/src/about/About.js:68
 msgid ""
 "Turris OS is currently released in various branches, which have different"
 " functions and varying stability - you can pick, which branch you want to"
 " test."
-msgstr ""
+msgstr "當前Turris OS在各個不同分支中已經發布,但它們具有不同的功能和不同的穩定性-您可以選擇要進行的測試分枝."
 
 #: js/src/about/About.js:87
 msgid "Kernel version"
-msgstr ""
+msgstr "內核號碼"
 
 #: js/src/common/FactoryResetButton.js:51
 msgid "Reset"
-msgstr ""
+msgstr "重置"
 
 #: js/src/common/FactoryResetButton.js:66 js/src/common/RebootButton.js:66
 #: js/src/dns/DNSSECDisableModal.js:30
 #: js/src/notificationsSettings/TestNotification.js:139
 msgid "Warning!"
-msgstr ""
+msgstr "警告!"
 
 #: js/src/common/FactoryResetButton.js:68
 msgid "Are you sure you want to reset the router?"
-msgstr ""
+msgstr "請你確定是否進行路由器重置?"
 
 #: js/src/common/FactoryResetButton.js:71 js/src/common/RebootButton.js:71
 #: js/src/dns/DNSSECDisableModal.js:41
 #: js/src/notificationsSettings/TestNotification.js:144
 msgid "Cancel"
-msgstr ""
+msgstr "取消"
 
 #: js/src/common/FactoryResetButton.js:73
 msgid "Confirm factory reset"
-msgstr ""
+msgstr "原廠設定重置"
 
 #: js/src/common/RebootButton.js:51 js/src/maintenance/Reboot.js:16
 msgid "Reboot"
-msgstr ""
+msgstr "重啟"
 
 #: js/src/common/RebootButton.js:68
 msgid "Are you sure you want to restart the router?"
-msgstr ""
+msgstr "請你確定是否重啟路由器?"
 
 #: js/src/common/RebootButton.js:73
 msgid "Confirm reboot"
-msgstr ""
+msgstr "確定重啟"
 
 #: js/src/common/ScrollToTopArrow.js:30
 msgid "Go to top"
-msgstr ""
+msgstr "返回最上頁"
 
 #: js/src/common/network/DHCPClientForm.js:14
 msgid "Hostname which will be provided to DHCP server."
-msgstr ""
+msgstr "將提供給DHCP服務器的主機名."
 
 #: js/src/common/network/DHCPClientForm.js:38
 msgid "DHCP hostname"
-msgstr ""
+msgstr "DHCP主機名"
 
 #: js/src/common/network/DHCPClientsList.js:19
 msgid "DHCP Clients"
-msgstr ""
+msgstr "DHCP客戶端"
 
 #: js/src/common/network/DHCPClientsList.js:22
 msgid "No DHCP clients found."
-msgstr ""
+msgstr "找不到DHCP客戶端."
 
 #: js/src/common/network/DHCPClientsList.js:29
 msgid "Expires"
-msgstr ""
+msgstr "無效"
 
 #: js/src/common/network/DHCPClientsList.js:30
 msgid "IP Address"
-msgstr ""
+msgstr "IP地址"
 
 #: js/src/common/network/DHCPClientsList.js:31
 msgid "MAC Address"
-msgstr ""
+msgstr "MAC 地址"
 
 #: js/src/common/network/DHCPClientsList.js:32
 msgid "Hostname"
-msgstr ""
+msgstr "主機名"
 
 #: js/src/common/network/DHCPClientsList.js:33
 msgid "Active"
-msgstr ""
+msgstr "激活"
 
 #: js/src/common/network/DHCPServerForm.js:13
 msgid ""
 "Enable this option to automatically assign IP addresses to the devices "
 "connected to the router."
-msgstr ""
+msgstr "啟用此選項可自動將IP地址分配已連接的路由器設備."
 
 #: js/src/common/network/DHCPServerForm.js:47
 msgid "DHCP start"
-msgstr ""
+msgstr "DHCP啟動"
 
 #: js/src/common/network/DHCPServerForm.js:57
 msgid "DHCP max leases"
-msgstr ""
+msgstr "DHCP最大租約"
 
 #: js/src/common/network/DHCPServerForm.js:58
 msgid "Maximum number of addresses available for DHCP clients."
-msgstr ""
+msgstr "DHCP客戶端可用的最大地址數."
 
 #: js/src/common/network/DHCPServerForm.js:71
 msgid "Lease time (hours)"
-msgstr ""
+msgstr "租賃時間（小時）"
 
 #: js/src/common/network/DHCPValidators.js:71
 msgid "Value must be a number."
-msgstr ""
+msgstr "值必須是數字."
 
 #: js/src/common/network/DHCPValidators.js:74
 msgid "Value must be positive."
-msgstr ""
+msgstr "值必須為正數."
 
 #: js/src/common/network/DHCPValidators.js:87
 msgid "Invalid network settings. DHCP settings can't be validated."
-msgstr ""
+msgstr "無效的網絡設置. 無法驗證DHCP設置."
 
 #: js/src/common/network/DHCPValidators.js:100
 msgid "Minimum lease time is 1 hour."
-msgstr ""
+msgstr "最小租賃時間為1小時."
 
 #: js/src/common/network/DHCPValidators.js:116
 msgid "Address is outside current network."
-msgstr ""
+msgstr "地址在當前網絡之外."
 
 #: js/src/common/network/DHCPValidators.js:120
 msgid "Address is already reserved for other purposes."
-msgstr ""
+msgstr "地址已被保留用於其他目的."
 
 #: js/src/common/network/DHCPValidators.js:131
 msgid "Too many addresses requested. Set a lower number or change DHCP start."
-msgstr ""
+msgstr "請求的地址數量太多. 設置一個較小的數量或更改DHCP的運作方式."
 
 #: js/src/common/network/DHCPValidators.js:138
 msgid ""
 "The only DHCP lease is the same as router's address. Increase limit or "
 "change start address."
-msgstr ""
+msgstr "唯一的DHCP租約與路由器的地址相同. 增加上限或更改起始地址."
 
 #: js/src/common/network/StaticIPForm.js:14 js/src/wan/WAN6Form.js:36
 msgid ""
 "DNS server address is not required as the built-in DNS resolver is "
 "capable of working without it."
-msgstr ""
+msgstr "不需要DNS服務器地址,因為內置DNS解析器無需它即可工作."
 
 #: js/src/common/network/StaticIPForm.js:50
 msgid "IP address"
-msgstr ""
+msgstr "IP地址"
 
 #: js/src/common/network/StaticIPForm.js:60
 #: js/src/guestNetwork/GuestNetworkForm.js:87 js/src/lan/LANManagedForm.js:72
 msgid "Network mask"
-msgstr ""
+msgstr "網絡遮罩"
 
 #: js/src/common/network/StaticIPForm.js:70 js/src/wan/WAN6Form.js:243
 msgid "Gateway"
-msgstr ""
+msgstr "網關"
 
 #: js/src/common/network/StaticIPForm.js:80 js/src/wan/WAN6Form.js:268
 msgid "DNS server 1"
-msgstr ""
+msgstr "DNS服務器1"
 
 #: js/src/common/network/StaticIPForm.js:90 js/src/wan/WAN6Form.js:278
 msgid "DNS server 2"
-msgstr ""
+msgstr "DNS服務器2"
 
 #: js/src/common/network/StaticIPForm.js:111
 #: js/src/common/network/validators.js:19 js/src/wan/MACForm.js:83
 #: js/src/wan/WAN6Form.js:506 js/src/wan/WAN6Form.js:538
 #: js/src/wan/WAN6Form.js:550 js/src/wan/WANForm.js:173
 msgid "This field is required."
-msgstr ""
+msgstr "此字段是必需的."
 
 #: js/src/common/network/validators.js:12
 msgid "This is not a valid network mask."
-msgstr ""
+msgstr "這不是有效的網絡遮罩."
 
 #: js/src/connectionTest/ConnectionTestButton.js:26
 msgid "Test is running..."
-msgstr ""
+msgstr "測試進行中..."
 
 #: js/src/connectionTest/ConnectionTestButton.js:29
 msgid "Test connection again"
-msgstr ""
+msgstr "再次測試連接"
 
 #: js/src/connectionTest/ConnectionTestButton.js:32
 msgid "Test connection"
-msgstr ""
+msgstr "測試連接"
 
 #: js/src/connectionTest/ConnectionTestResult.js:14
 msgid "IPv4 connectivity"
-msgstr ""
+msgstr "IPv4連接"
 
 #: js/src/connectionTest/ConnectionTestResult.js:15
 msgid "IPv4 gateway connectivity"
-msgstr ""
+msgstr "IPv4網關連接"
 
 #: js/src/connectionTest/ConnectionTestResult.js:16
 msgid "IPv6 connectivity"
-msgstr ""
+msgstr "IPv6連接"
 
 #: js/src/connectionTest/ConnectionTestResult.js:17
 msgid "IPv6 gateway connectivity"
-msgstr ""
+msgstr "IPv6網關連接"
 
 #: js/src/dns/DNS.js:34
 msgid ""
@@ -281,10 +286,23 @@ msgid ""
 "this is a serious flaw on their side.</p>\n"
 "            "
 msgstr ""
+"\n"
+"<p>Turris路由器預設情況僅提供支持使用DNSSEC加密簽章的DNS供應商. 預設情況下可以提供不同選擇, "
+"當然你亦可以選擇將您的DNS查詢引導至你的網絡服務供應商以對DNS進行解析。<p/>\n"
+"\n"
+"<p>預設情況下取決於DNS供應商的誠信。通常最好使用你的網絡服務供應商以提供恰當的DNS解析。\n"
+"但如果出於某方面原因無法使用，\n"
+"則必須使用直接DNS解析而不是轉發DNS解析。<p/>\n"
+"\n"
+"<p>在極少數情況下，你的網絡服務供應商因為網絡配置不當，導致DNSSEC無法被驗證，\n"
+"所以如果你遇到DNS問題，您可以<b>暫時</ b>禁用DNSSEC驗證以確定根源性無法驗證問題。但是，請記住，如果沒有保持DNSSEC驗證啟用，\n"
+"則很容易受到DNS欺騙的攻擊！ 因此，我們<b>强烈建議預設情況保持DNSSEC開啟</b>，並與你的網絡服務供應商一同解決無法驗證的情況，\n"
+"因為他們存在這方面嚴重的安全缺陷。</p>\n"
+"            "
 
 #: js/src/dns/DNS.js:62 js/src/overview/Overview.js:63 js/src/wan/WAN.js:50
 msgid "Connection Test"
-msgstr ""
+msgstr "連接測試"
 
 #: js/src/dns/DNS.js:65
 msgid ""
@@ -295,34 +313,38 @@ msgid ""
 "changed your forwarder setting.\n"
 "        "
 msgstr ""
+"\n"
+"在這裡提供互聯網連接的正常測試。對於測試DNS供應商運作是否正常這一工具則提供十分有用的參考。\n"
+"但請記得如果更改了DNS供應商的設置，請確定已經點擊了<b>保存按鈕</b> 。\n"
+"        "
 
 #: js/src/dns/DNSForm.js:17
 msgid ""
 "This will enable your DNS resolver to place DHCP client's names among the"
 " local DNS records."
-msgstr ""
+msgstr "這將使您的DNS解析器可以將DHCP客戶端的名稱放在本地DNS記錄中。"
 
 #: js/src/dns/DNSForm.js:20
 msgid ""
 "This domain will be used as suffix. E.g. The result for client "
 "\"android-123\" and domain \"my.lan\" will be \"android-123.my.lan\"."
-msgstr ""
+msgstr "該域將用作後綴。 例如。 客戶端“ android-123”和域“ my.lan”的結果將是“ android-123.my.lan”。"
 
 #: js/src/dns/DNSForm.js:83
 msgid "Use forwarding"
-msgstr ""
+msgstr "使用轉發"
 
 #: js/src/dns/DNSForm.js:99
 msgid "Enable DNSSEC"
-msgstr ""
+msgstr "啟用DNSSEC加密簽章"
 
 #: js/src/dns/DNSForm.js:105
 msgid "Enable DHCP clients in DNS"
-msgstr ""
+msgstr "在DNS中啟用DHCP客戶端"
 
 #: js/src/dns/DNSForm.js:115
 msgid "Domain of DHCP clients in DNS"
-msgstr ""
+msgstr "DHCP客戶端在DNS中的域"
 
 #: js/src/dns/DNSSECDisableModal.js:13
 msgid ""
@@ -335,121 +357,127 @@ msgid ""
 "\n"
 "Do you still want to continue and stay unprotected?\n"
 msgstr ""
+"\n"
+"DNSSEC是一項安全技術，可保護DNS通信免受DNS基礎結構的攻擊。\n"
+"\n"
+"強烈建議您啟用DNSSEC驗證，除非您確定要在DNSSEC失效的網絡仍選擇進行網絡連線。\n"
+"\n"
+"您是否仍要繼續並不接受保護？\n"
 
 #: js/src/dns/DNSSECDisableModal.js:50
 msgid "Disable DNSSEC"
-msgstr ""
+msgstr "禁用DNSSEC"
 
 #: js/src/dns/Forwarders/Forwarders.js:80
 msgid "Edit forwarder"
-msgstr ""
+msgstr "編輯轉發器"
 
 #: js/src/dns/Forwarders/Forwarders.js:81
 #: js/src/dns/Forwarders/Forwarders.js:103
 msgid "Add custom forwarder"
-msgstr ""
+msgstr "添加自定義轉發器"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:37
 msgid "Forwarders"
-msgstr ""
+msgstr "轉發器"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:38
 msgid "Actions"
-msgstr ""
+msgstr "運行"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:45
 msgid "Use provider's DNS resolver"
-msgstr ""
+msgstr "使用網絡服務供應商的DNS解析器"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:142
 msgid "Edit"
-msgstr ""
+msgstr "編輯"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:150
 msgid "Delete"
-msgstr ""
+msgstr "刪除"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:23
 msgid "base64 encoded sha256."
-msgstr ""
+msgstr "以sha256進行base64的編碼設定."
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:48
 #: js/src/packageManagement/updates/UpdateApproval.js:121
 msgid "Name"
-msgstr ""
+msgstr "名稱"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:71
 msgid "TLS type"
-msgstr ""
+msgstr "TLS類型"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:88
 msgid "TLS hostname"
-msgstr ""
+msgstr "TLS主機名"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:100
 msgid "TLS pin"
-msgstr ""
+msgstr "TLS pin碼"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:116
 msgid "Save"
-msgstr ""
+msgstr "保存"
 
 #: js/src/dns/Forwarders/Forwarder/IPAddressesForm.js:13
 msgid "IPv4"
-msgstr ""
+msgstr "IPv4"
 
 #: js/src/dns/Forwarders/Forwarder/IPAddressesForm.js:14
 msgid "IPv6"
-msgstr ""
+msgstr "IPv6"
 
 #: js/src/dns/Forwarders/Forwarder/IPAddressesForm.js:51
 msgid "${label} Addresses"
-msgstr ""
+msgstr "${標題} Addresses"
 
 #: js/src/dns/Forwarders/Forwarder/IPAddressesForm.js:56
 msgid "${label} #${index + 1}"
-msgstr ""
+msgstr "${標題} #${索引 + 1}"
 
 #: js/src/dns/Forwarders/Forwarder/IPAddressesForm.js:80
 msgid "Add ${label} address"
-msgstr ""
+msgstr "Add ${標題} address"
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:44
 msgid "Forwarder saved successfully."
-msgstr ""
+msgstr "轉發器已成功保存。"
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:46
 msgid "Can't save forwarder."
-msgstr ""
+msgstr "無法保存轉發器。"
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:53
 msgid "Forwarder added successfully."
-msgstr ""
+msgstr "轉發器已成功添加。"
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:55
 msgid "Can't add new forwarder."
-msgstr ""
+msgstr "無法添加新的轉發器。"
 
 #: js/src/dns/Forwarders/Forwarder/validator.js:20
 msgid "Forwarder name should have at least one symbol."
-msgstr ""
+msgstr "轉發器名稱應至少包含一個符號。"
 
 #: js/src/dns/Forwarders/Forwarder/validator.js:28
 msgid "Hostname should have at least one symbol."
-msgstr ""
+msgstr "主機名應至少包含一個符號。"
 
 #: js/src/dns/Forwarders/Forwarder/validator.js:33
 msgid "TLS pin should have at least one symbol."
-msgstr ""
+msgstr "TLS pin 應至少包含一個符號。"
 
 #: js/src/dns/Forwarders/Forwarder/validator.js:45
 msgid "Define at least one of the IP addresses of the forwarder."
-msgstr ""
+msgstr "定義forwarder至少一個IP地址。"
 
 #: js/src/guestNetwork/GuestNetwork.js:37 js/src/interfaces/constants.js:11
 #: js/src/main/pages.js:148
 msgid "Guest Network"
-msgstr ""
+msgstr "訪客網絡"
 
 #: js/src/guestNetwork/GuestNetwork.js:41
 msgid ""
@@ -462,32 +490,38 @@ msgid ""
 "in LAN.\n"
 "        "
 msgstr ""
+"\n"
+"來賓網絡用於<a href=\"${ForisURLs.wifi}\">來賓Wi-Fi </a>。\n"
+"它與您的普通LAN分開。 允許連接到該網絡的設備訪問\n"
+"互聯網，但不允許訪問此設備或設備的配置界面\n"
+"在局域網中。\n"
+"        "
 
 #: js/src/guestNetwork/GuestNetworkForm.js:18
 msgid "Router's IP address in the guest inner network."
-msgstr ""
+msgstr "訪客內部網絡中路由器的IP地址。"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:19
 msgid "Network mask of the guest inner network."
-msgstr ""
+msgstr "訪客內部網絡的網絡遮罩。"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:22
 msgid ""
 "This option enables you to set a bandwidth limit for the guest network, "
 "so that your main network doesn't get slowed-down by it."
-msgstr ""
+msgstr "此選項使您可以為來賓網絡設置帶寬限制，以免主網絡網速變慢。"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:25
 msgid "Download speed in guest network (in kilobits per second)."
-msgstr ""
+msgstr "來賓網絡中的下載速度（以每秒千比特為單位）。"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:28
 msgid "Upload speed in guest network (in kilobits per second)."
-msgstr ""
+msgstr "訪客網絡中的上傳速度（以每秒千比特為單位）。"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:66
 msgid "Enable"
-msgstr ""
+msgstr "啟用"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:76 js/src/lan/LANManagedForm.js:61
 msgid "Router IP address"
