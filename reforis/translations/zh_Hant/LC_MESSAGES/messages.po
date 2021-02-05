@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-02-01 12:17+0100\n"
-"PO-Revision-Date: 2021-02-04 09:13+0000\n"
+"PO-Revision-Date: 2021-02-07 07:50+0000\n"
 "Last-Translator: 10A David <meeting0022@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/"
 "turris/reforis/zh_Hant/>\n"
@@ -525,63 +525,63 @@ msgstr "啟用"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:76 js/src/lan/LANManagedForm.js:61
 msgid "Router IP address"
-msgstr ""
+msgstr "路由器IP地址"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:97 js/src/lan/LANManagedForm.js:82
 msgid "Enable DHCP"
-msgstr ""
+msgstr "啟用DHCP"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:115
 msgid "Enable QoS"
-msgstr ""
+msgstr "啟用QoS"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:158
 #: js/src/overview/Cards/NetmetrCard.js:65
 msgid "Download"
-msgstr ""
+msgstr "下載"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:171
 #: js/src/overview/Cards/NetmetrCard.js:81
 msgid "Upload"
-msgstr ""
+msgstr "上載"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:190
 msgid "Download speed must be positive"
-msgstr ""
+msgstr "下載速度必須為正的數字"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:193
 msgid "Upload speed must be positive"
-msgstr ""
+msgstr "上載速度必須為正的數字"
 
 #: js/src/guestNetwork/GuestNetworkNotification.js:12
 msgid ""
 "This network currently doesn't contain any devices. The changes you make "
 "here will become fully functional after you assign a network interface to"
 " this network."
-msgstr ""
+msgstr "該網絡當前不包含任何設備。 將網絡接口分配給該網絡後，您在此處所做的更改將完全起作用。"
 
 #: js/src/guestNetwork/GuestNetworkNotification.js:16
 msgid "All network interfaces of this network are currently down."
-msgstr ""
+msgstr "該網絡的所有網絡接口當前均處於關閉狀態。"
 
 #: js/src/guide/constants.js:13
 msgid ""
 "Welcome to Foris web interface. This guide will help you to setup your "
 "device. Firstly it is required to set your password. Note the security of"
 " your home network is in your hands, so try not to use weak passwords."
-msgstr ""
+msgstr "歡迎使用Foris網站界面。 本指南將幫助您設置設備。 首先，需要設置您的密碼。 請注意，家庭網絡的安全性掌握在您手中，因此請不要使用弱密碼。"
 
 #: js/src/guide/constants.js:17
 msgid "Your password is set. You may proceed to the next step."
-msgstr ""
+msgstr "您的密碼已設置。 請進行下一頁的設定。"
 
 #: js/src/guide/constants.js:20
 msgid "The workflow was set. You may proceed to next step."
-msgstr ""
+msgstr "工作流程已設置。 您可以繼續下一步。"
 
 #: js/src/guide/constants.js:24
 msgid "Here you need to decide which interfaces belong to which network."
-msgstr ""
+msgstr "在這裡您需要確定哪些接口屬於哪個網絡。"
 
 #: js/src/guide/constants.js:27
 msgid "If you are in doubt use the current settings."
