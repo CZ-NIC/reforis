@@ -8,16 +8,17 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-02-01 12:17+0100\n"
-"PO-Revision-Date: 2020-12-14 23:29+0000\n"
+"PO-Revision-Date: 2021-02-07 07:50+0000\n"
 "Last-Translator: Artem <KovalevArtem.ru@gmail.com>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/turris/reforis/"
+"ru/>\n"
 "Language: ru\n"
-"Language-Team: Russian "
-"<https://hosted.weblate.org/projects/turris/reforis/ru/>\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.5-dev\n"
 "Generated-By: Babel 2.9.0\n"
 
 #: js/src/about/About.js:22 js/src/main/pages.js:103 js/src/main/pages.js:217
@@ -72,7 +73,7 @@ msgstr "Версия ядра"
 
 #: js/src/common/FactoryResetButton.js:51
 msgid "Reset"
-msgstr ""
+msgstr "Сброс"
 
 #: js/src/common/FactoryResetButton.js:66 js/src/common/RebootButton.js:66
 #: js/src/dns/DNSSECDisableModal.js:30
@@ -81,9 +82,8 @@ msgid "Warning!"
 msgstr "Предупреждение!"
 
 #: js/src/common/FactoryResetButton.js:68
-#, fuzzy
 msgid "Are you sure you want to reset the router?"
-msgstr "Вы действительно хотите перезагрузить маршрутизатор?"
+msgstr "Вы уверены, что хотите перезагрузить маршрутизатор?"
 
 #: js/src/common/FactoryResetButton.js:71 js/src/common/RebootButton.js:71
 #: js/src/dns/DNSSECDisableModal.js:41
@@ -93,7 +93,7 @@ msgstr "Отмена"
 
 #: js/src/common/FactoryResetButton.js:73
 msgid "Confirm factory reset"
-msgstr ""
+msgstr "Подтвердить сброс до заводских настроек"
 
 #: js/src/common/RebootButton.js:51 js/src/maintenance/Reboot.js:16
 msgid "Reboot"
@@ -101,7 +101,7 @@ msgstr "Перезагрузка"
 
 #: js/src/common/RebootButton.js:68
 msgid "Are you sure you want to restart the router?"
-msgstr "Вы действительно хотите перезагрузить маршрутизатор?"
+msgstr "Вы уверены, что хотите перезагрузить маршрутизатор?"
 
 #: js/src/common/RebootButton.js:73
 msgid "Confirm reboot"
@@ -181,7 +181,7 @@ msgstr "Значение должно быть положительным."
 
 #: js/src/common/network/DHCPValidators.js:87
 msgid "Invalid network settings. DHCP settings can't be validated."
-msgstr ""
+msgstr "Неверные сетевые настройки. Настройки DHCP не могут быть проверены."
 
 #: js/src/common/network/DHCPValidators.js:100
 msgid "Minimum lease time is 1 hour."
@@ -194,7 +194,7 @@ msgstr "IP-адрес маршрутизатора во внутренней г�
 
 #: js/src/common/network/DHCPValidators.js:120
 msgid "Address is already reserved for other purposes."
-msgstr ""
+msgstr "Адрес уже зарезервирован для других целей."
 
 #: js/src/common/network/DHCPValidators.js:131
 msgid "Too many addresses requested. Set a lower number or change DHCP start."
@@ -1191,11 +1191,11 @@ msgstr "Уведомления"
 #: js/src/main/pages.js:90 js/src/main/pages.js:176
 #: js/src/maintenance/Maintenance.js:17
 msgid "Maintenance"
-msgstr ""
+msgstr "Обслуживания"
 
 #: js/src/main/pages.js:97
 msgid "Global Threat Statistics"
-msgstr ""
+msgstr "Статистика глобальных угроз"
 
 #: js/src/main/pages.js:123 js/src/wifi/WiFi.js:21
 msgid "Wi-Fi"
@@ -1275,7 +1275,7 @@ msgstr "Не удаётся установить обновление."
 
 #: js/src/maintenance/FactoryReset.js:16
 msgid "Factory Reset"
-msgstr ""
+msgstr "Сброс к заводским настройкам"
 
 #: js/src/maintenance/FactoryReset.js:18
 msgid ""
@@ -1314,7 +1314,7 @@ msgstr ""
 
 #: js/src/maintenance/Syslog/SyslogForm.js:29
 msgid "System logs retention"
-msgstr ""
+msgstr "Хранение системных журналов"
 
 #: js/src/maintenance/Syslog/SyslogForm.js:32
 msgid ""
@@ -1327,7 +1327,7 @@ msgstr ""
 
 #: js/src/maintenance/Syslog/SyslogForm.js:38
 msgid "Enable system logs retention"
-msgstr ""
+msgstr "Включить сохранение системных журналов"
 
 #: js/src/notificationsSettings/CommonForm.js:17
 msgid "Reboot is required"
@@ -2895,4 +2895,3 @@ msgstr "500 - Ошибка сервера"
 
 #~ msgid "Device Reboot"
 #~ msgstr "Перезагрузка Устройства"
-
