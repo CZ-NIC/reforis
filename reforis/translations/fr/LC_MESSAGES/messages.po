@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-02-01 12:17+0100\n"
-"PO-Revision-Date: 2020-07-07 20:41+0000\n"
-"Last-Translator: Éfrit <efrit@posteo.net>\n"
+"PO-Revision-Date: 2021-02-08 14:44+0000\n"
+"Last-Translator: Yuraï Slovaque <assistance@simplix.fr>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/turris/reforis/fr/"
+">\n"
 "Language: fr\n"
-"Language-Team: French "
-"<https://hosted.weblate.org/projects/turris/reforis/fr/>\n"
-"Plural-Forms: nplurals=2; plural=n > 1\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.5-dev\n"
 "Generated-By: Babel 2.9.0\n"
 
 #: js/src/about/About.js:22 js/src/main/pages.js:103 js/src/main/pages.js:217
@@ -30,6 +31,9 @@ msgid ""
 "href=\"mailto:tech.support@turris.cz\" target=\"_blank\">customer "
 "support</a>."
 msgstr ""
+"Ici vous trouverez des informations à propos de votre appareil. Veuillez "
+"l'inclure dans votre message lorsque vous contactez notre <a href=\"mailto"
+":tech.support@turris.cz\" target=\"_blank\"> service client </a>."
 
 #: js/src/about/About.js:48
 msgid "Device"
@@ -41,7 +45,7 @@ msgstr "Numéro de série"
 
 #: js/src/about/About.js:56
 msgid "reForis version"
-msgstr ""
+msgstr "Version reForis"
 
 #: js/src/about/About.js:60
 msgid "Turris OS version"
@@ -57,6 +61,9 @@ msgid ""
 " functions and varying stability - you can pick, which branch you want to"
 " test."
 msgstr ""
+"Turris OS est actuellement publié dans diverses branches, qui ont "
+"différentes fonctions et une stabilité variable - vous pouvez choisir la "
+"branche que vous souhaitez à tester."
 
 #: js/src/about/About.js:87
 msgid "Kernel version"
@@ -64,7 +71,7 @@ msgstr "Version du noyau"
 
 #: js/src/common/FactoryResetButton.js:51
 msgid "Reset"
-msgstr ""
+msgstr "Réinitialiser"
 
 #: js/src/common/FactoryResetButton.js:66 js/src/common/RebootButton.js:66
 #: js/src/dns/DNSSECDisableModal.js:30
@@ -73,9 +80,8 @@ msgid "Warning!"
 msgstr "Attention !"
 
 #: js/src/common/FactoryResetButton.js:68
-#, fuzzy
 msgid "Are you sure you want to reset the router?"
-msgstr "Êtes-vous sûr de vouloir redémarrer le routeur ?"
+msgstr "Êtes-vous sûr de vouloir réinitialiser le routeur ?"
 
 #: js/src/common/FactoryResetButton.js:71 js/src/common/RebootButton.js:71
 #: js/src/dns/DNSSECDisableModal.js:41
@@ -85,7 +91,7 @@ msgstr "Annuler"
 
 #: js/src/common/FactoryResetButton.js:73
 msgid "Confirm factory reset"
-msgstr ""
+msgstr "Confirmer la réinitialisation d'usine"
 
 #: js/src/common/RebootButton.js:51 js/src/maintenance/Reboot.js:16
 msgid "Reboot"
@@ -93,7 +99,7 @@ msgstr "Redémarrer"
 
 #: js/src/common/RebootButton.js:68
 msgid "Are you sure you want to restart the router?"
-msgstr "Êtes-vous sûr de vouloir redémarrer le routeur ?"
+msgstr "Voulez-vous vraiment redémarrer le routeur ?"
 
 #: js/src/common/RebootButton.js:73
 msgid "Confirm reboot"
@@ -101,7 +107,7 @@ msgstr "Confirmer le redémarrage"
 
 #: js/src/common/ScrollToTopArrow.js:30
 msgid "Go to top"
-msgstr ""
+msgstr "Haut de la page"
 
 #: js/src/common/network/DHCPClientForm.js:14
 msgid "Hostname which will be provided to DHCP server."
@@ -174,23 +180,27 @@ msgstr "La valeur doit être positive."
 #: js/src/common/network/DHCPValidators.js:87
 msgid "Invalid network settings. DHCP settings can't be validated."
 msgstr ""
+"Paramètres réseau non valides. Les paramètres DHCP ne peuvent pas être "
+"validés."
 
 #: js/src/common/network/DHCPValidators.js:100
 msgid "Minimum lease time is 1 hour."
 msgstr "La durée de bail minimale est de 1 heure."
 
 #: js/src/common/network/DHCPValidators.js:116
-#, fuzzy
 msgid "Address is outside current network."
-msgstr "Adresse IP du routeur dans le réseau interne invité."
+msgstr "L'adresse est en dehors du réseau actuel."
 
 #: js/src/common/network/DHCPValidators.js:120
 msgid "Address is already reserved for other purposes."
-msgstr ""
+msgstr "L'adresse est déjà réservée à d'autres fins."
 
 #: js/src/common/network/DHCPValidators.js:131
+#, fuzzy
 msgid "Too many addresses requested. Set a lower number or change DHCP start."
 msgstr ""
+"Trop d'adresses demandées. Définissez un nombre inférieur ou modifiez le "
+"début DHCP."
 
 #: js/src/common/network/DHCPValidators.js:138
 msgid ""
@@ -379,7 +389,7 @@ msgstr "Ajouter un expéditeur personnalisé"
 #: js/src/dns/Forwarders/ForwardersTable.js:37
 #, fuzzy
 msgid "Forwarders"
-msgstr "Expéditeurs"
+msgstr "Ré-expéditeurs"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:38
 msgid "Actions"
@@ -420,7 +430,7 @@ msgstr "Broche TLS"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:116
 msgid "Save"
-msgstr ""
+msgstr "Enregistrer"
 
 #: js/src/dns/Forwarders/Forwarder/IPAddressesForm.js:13
 msgid "IPv4"
@@ -884,8 +894,9 @@ msgid "Router"
 msgstr "Routeur"
 
 #: js/src/guide/GuidePages/WorkflowSelect.js:39
+#, fuzzy
 msgid "Minimal"
-msgstr "Minimal"
+msgstr "Minimale"
 
 #: js/src/guide/GuidePages/WorkflowSelect.js:57
 msgid "Cannot set workflow."
@@ -1506,19 +1517,20 @@ msgstr ""
 #: js/src/overview/Cards/DataCollectionCard.js:47
 #: js/src/overview/Cards/DynamicFirewallCard.js:27
 msgid "Disabled"
-msgstr ""
+msgstr "Désactivé"
 
 #: js/src/overview/Cards/DataCollectionCard.js:44
 msgid "Data Collection"
-msgstr ""
+msgstr "Collecte de données"
 
 #: js/src/overview/Cards/DynamicFirewallCard.js:24
 msgid "Dynamic Firewall"
 msgstr ""
 
 #: js/src/overview/Cards/NetmetrCard.js:47
+#, fuzzy
 msgid "NetMetr"
-msgstr ""
+msgstr "NetMetr"
 
 #: js/src/overview/Cards/NetmetrCard.js:53
 msgid "Go to NetMetr"
@@ -1539,7 +1551,7 @@ msgstr ""
 
 #: js/src/overview/Cards/NetmetrCard.js:112
 msgid "Link"
-msgstr ""
+msgstr "Lien"
 
 #: js/src/overview/Cards/NetmetrCard.js:131
 msgid "Performed"
@@ -2964,4 +2976,3 @@ msgstr ""
 
 #~ msgid "Device Reboot"
 #~ msgstr "Redémarrage de l'appareil"
-
