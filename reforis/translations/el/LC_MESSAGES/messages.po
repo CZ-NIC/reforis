@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-02-01 12:17+0100\n"
-"PO-Revision-Date: 2021-02-07 07:50+0000\n"
+"PO-Revision-Date: 2021-02-09 16:50+0000\n"
 "Last-Translator: Michalis <michalisntovas@yahoo.gr>\n"
 "Language-Team: Greek <https://hosted.weblate.org/projects/turris/reforis/el/>"
 "\n"
@@ -85,7 +85,7 @@ msgstr "Είσται σίγουροι ότι θέλετε να ξαναξεκι�
 #: js/src/dns/DNSSECDisableModal.js:41
 #: js/src/notificationsSettings/TestNotification.js:144
 msgid "Cancel"
-msgstr "Ακύρωση"
+msgstr "Άκυρο"
 
 #: js/src/common/FactoryResetButton.js:73
 msgid "Confirm factory reset"
@@ -757,7 +757,7 @@ msgstr ""
 
 #: js/src/guide/GuidePages/GuideFinish.js:31
 msgid "Continue"
-msgstr ""
+msgstr "Συνέχεια"
 
 #: js/src/guide/GuidePages/WorkflowSelect.js:25
 msgid ""
