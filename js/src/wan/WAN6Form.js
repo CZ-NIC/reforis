@@ -353,7 +353,6 @@ function _6in4Form({ formData, formErrors, setFormValue, disabled }) {
                 value={formData.ipv6_prefix || ""}
                 helpText={HELP_TEXTS["6in4"].ipv6_prefix}
                 error={formErrors.ipv6_prefix || null}
-                required
                 onChange={setFormValue((value) => ({
                     wan6_settings: {
                         wan6_6in4: { ipv6_prefix: { $set: value } },
@@ -533,7 +532,7 @@ function validate6in4Form(wan6_6in4) {
     else if (!(mtu >= 1280 && mtu <= 1500))
         errors.mtu = _("MTU should be in range of 1280-1500.");
 
-    ["mtu", "server_ipv4", "ipv6_prefix", "dynamic_ipv4"].forEach((field) => {
+    ["mtu", "server_ipv4", "dynamic_ipv4"].forEach((field) => {
         if (!wan6_6in4[field] || wan6_6in4[field] === "")
             errors[field] = _("This field is required.");
     });

@@ -253,7 +253,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled. 1`] = `
 - First value
 + Second value
 
-@@ -242,10 +242,100 @@
+@@ -236,10 +236,100 @@
                 Some tunnel providers allow you to have public dynamic IPv4. Note that you need to fill in some extra fields to make it work.
               </small>
             </label>
@@ -361,7 +361,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
 - First value
 + Second value
 
-@@ -109,10 +109,143 @@
+@@ -109,10 +109,137 @@
             >
               Static IP address (manual configuration)
             </option>
@@ -409,17 +409,11 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
 +           class=\\"input-group\\"
 +         >
 +           <input
-+             class=\\"form-control  is-invalid\\"
++             class=\\"form-control\\"
 +             id=\\"9\\"
-+             required=\\"\\"
 +             type=\\"text\\"
 +             value=\\"\\"
 +           />
-+         </div>
-+         <div
-+           class=\\"invalid-feedback\\"
-+         >
-+           This field is required.
 +         </div>
 +         <small
 +           class=\\"form-text text-muted\\"
@@ -505,7 +499,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
         </h2>
         <div
           class=\\"form-group\\"
-@@ -141,10 +274,11 @@
+@@ -141,10 +268,11 @@
         <div
           class=\\"text-right\\"
         >
