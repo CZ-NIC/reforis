@@ -17,7 +17,7 @@ BUSES_CONF = {
         'host': 'localhost',
         'port': os.environ.get('MQTT_PORT', 11883),
         'controller_id': os.environ.get('CONTROLLER_ID'),
-        'credentials_file': '/etc/fosquitto/credentials.plain',
+        'credentials_file': os.environ.get('MQTT_PASSWORD_FILE', '/etc/fosquitto/credentials.plain'),
         'timeout': 30000,
     },
     'ubus': {
