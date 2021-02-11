@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-#  Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+#  Copyright (C) 2019-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
 #
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
@@ -46,6 +46,8 @@ setuptools.setup(
         'Flask-SeaSurf',
         'flup',
         'cachelib',
+        'foris-client @ git+https://gitlab.nic.cz/turris/foris-controller/foris-client.git',
+        'paho-mqtt==1.5.0',
     ],
     setup_requires=[
         'Babel',
@@ -67,8 +69,6 @@ setuptools.setup(
             'pycodestyle==2.5.0',
             'pylint==2.3.1',
             'pylint-quotes==0.2.1',
-            'foris-client @ git+https://gitlab.nic.cz/turris/foris-controller/foris-client@master#egg=foris-client',
-            'paho-mqtt==1.5.0',
         ],
         'build': [
             'Sphinx==2.1.2',
