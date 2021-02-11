@@ -14,6 +14,7 @@ import {
     Portal,
     AlertContextProvider,
     useAPIGet,
+    withSending,
     withErrorMessage,
 } from "foris";
 
@@ -88,4 +89,6 @@ function MainWrapper({ deviceDetails, ws }) {
     );
 }
 
-const CustomizationWithError = withErrorMessage(MainWrapper);
+const withoutSpinner = withSending(() => null);
+
+const CustomizationWithError = withoutSpinner(withErrorMessage(MainWrapper));
