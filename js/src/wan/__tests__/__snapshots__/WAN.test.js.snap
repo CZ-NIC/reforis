@@ -79,7 +79,7 @@ exports[`<WAN/> Snapshot WAN IPv4 (pppoe). 1`] = `
 +         </div>
 +       </div>
         <h2>
-          WAN IPv6
+          IPv6
         </h2>
         <div
           class=\\"form-group\\"
@@ -232,7 +232,7 @@ exports[`<WAN/> Snapshot WAN IPv4 (static). 1`] = `
           </small>
         </div>
         <h2>
-          WAN IPv6
+          IPv6
         </h2>
 @@ -141,10 +240,11 @@
         <div
@@ -844,11 +844,11 @@ router to the network, it is usually not necessary to change this setting.
         
   </p>
   <div
-    class="card p-4 col-sm-12 col-lg-12 p-0 mb-3"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
   >
     <form>
       <h2>
-        WAN IPv4
+        IPv4
       </h2>
       <div
         class="form-group"
@@ -904,7 +904,7 @@ router to the network, it is usually not necessary to change this setting.
         </small>
       </div>
       <h2>
-        WAN IPv6
+        IPv6
       </h2>
       <div
         class="form-group"

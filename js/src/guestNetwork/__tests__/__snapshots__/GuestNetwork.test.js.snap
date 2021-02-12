@@ -29,9 +29,12 @@ in LAN.
         
   </p>
   <div
-    class="card p-4 col-sm-12 col-lg-12 p-0 mb-3"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
   >
     <form>
+      <h2>
+        Guest Network Settings
+      </h2>
       <div
         class="form-group"
       >
@@ -98,9 +101,12 @@ in LAN.
         
   </p>
   <div
-    class="card p-4 col-sm-12 col-lg-12 p-0 mb-3"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
   >
     <form>
+      <h2>
+        Guest Network Settings
+      </h2>
       <div
         class="form-group"
       >
@@ -339,14 +345,21 @@ in LAN.
   <div
     id="dhcp-clients-container"
   >
-    <h2>
-      DHCP Clients
-    </h2>
-    <p
-      class="text-muted text-center"
+    <div
+      class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
     >
-      No DHCP clients found.
-    </p>
+      <h2>
+        DHCP Client List
+      </h2>
+      <p>
+        This list contains all devices that are connected to the network through wired or wireless connections.
+      </p>
+      <p
+        class="text-muted text-center"
+      >
+        No clients found.
+      </p>
+    </div>
   </div>
 </div>
 `;
@@ -380,9 +393,12 @@ in LAN.
         
   </p>
   <div
-    class="card p-4 col-sm-12 col-lg-12 p-0 mb-3"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
   >
     <form>
+      <h2>
+        Guest Network Settings
+      </h2>
       <div
         class="form-group"
       >
@@ -648,9 +664,12 @@ in LAN.
         
   </p>
   <div
-    class="card p-4 col-sm-12 col-lg-12 p-0 mb-3"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
   >
     <form>
+      <h2>
+        Guest Network Settings
+      </h2>
       <div
         class="form-group"
       >

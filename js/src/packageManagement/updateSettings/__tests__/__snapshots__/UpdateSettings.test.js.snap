@@ -149,9 +149,12 @@ available
     </div>
   </div>
   <div
-    class="card p-4 col-sm-12 col-lg-12 p-0 mb-3"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
   >
     <form>
+      <h2>
+        Automatic Update Settings
+      </h2>
       <div
         class="form-group"
       >
@@ -335,7 +338,7 @@ exports[`<UpdateSettings/> Test with snapshot enabled, delayed. 1`] = `
 - First value
 + Second value
 
-@@ -246,10 +246,53 @@
+@@ -249,10 +249,53 @@
             >
               You have to approve the updates, otherwise they won't be installed.
             </small>
@@ -396,14 +399,15 @@ exports[`<UpdateSettings/> Test with snapshot enabled. 1`] = `
 - First value
 + Second value
 
-@@ -167,10 +167,90 @@
+@@ -169,10 +169,90 @@
+            >
               Enable automatic updates (recommended)
             </label>
           </div>
         </div>
-        <h2>
++       <h3>
 +         Update Approvals
-+       </h2>
++       </h3>
 +       <p>
 +         Update approvals can be useful when you want to make sure that updates won't harm your specific
 +             configuration. You can e.g. install updates when you're prepared for a possible rollback to a previous
@@ -481,10 +485,9 @@ exports[`<UpdateSettings/> Test with snapshot enabled. 1`] = `
 +           </small>
 +         </div>
 +       </div>
-+       <h2>
+        <h2>
           Automatic Restarts After Software Update
         </h2>
         <div
-          class=\\"form-group\\"
-        >"
+          class=\\"form-group\\""
 `;

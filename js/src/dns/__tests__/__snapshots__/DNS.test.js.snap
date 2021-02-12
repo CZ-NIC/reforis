@@ -5,7 +5,7 @@ exports[`<DNS/> Test with snapshot DHCP. 1`] = `
 - First value
 + Second value
 
-@@ -106,10 +106,34 @@
+@@ -109,10 +109,34 @@
               This will enable your DNS resolver to place DHCP client's names among the local DNS records.
             </small>
           </div>
@@ -47,7 +47,7 @@ exports[`<DNS/> Test with snapshot forwarding. 1`] = `
 - First value
 + Second value
 
-@@ -62,10 +62,187 @@
+@@ -65,10 +65,187 @@
               Use forwarding
             </label>
           </div>
@@ -281,9 +281,12 @@ this is a serious flaw on their side.
             
   </div>
   <div
-    class="card p-4 col-sm-12 col-lg-12 p-0 mb-3"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
   >
     <form>
+      <h2>
+        DNS Settings
+      </h2>
       <div
         class="form-group"
       >

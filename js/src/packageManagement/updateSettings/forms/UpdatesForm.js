@@ -43,6 +43,7 @@ export default function UpdatesForm({
 }) {
     return (
         <>
+            <h2>{_("Automatic Update Settings")}</h2>
             <Switch
                 label={_("Enable automatic updates (recommended)")}
                 checked={formData.enabled || false}

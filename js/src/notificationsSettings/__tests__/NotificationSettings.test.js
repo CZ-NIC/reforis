@@ -164,7 +164,7 @@ describe("<NotificationsSettings/>", () => {
 
         it("Displaying test notification importance warning (severity: 1)", () => {
             expect(
-                NotificationsSettingsContainer.childNodes[3].childNodes[1]
+                NotificationsSettingsContainer.childNodes[3].childNodes[0]
                     .innerHTML
             ).toEqual(SEVERITY_ALERT_MESSAGE);
             expect(

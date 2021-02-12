@@ -5,12 +5,13 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
 - First value
 + Second value
 
-@@ -8,10 +8,26 @@
+@@ -7,10 +7,26 @@
+    </p>
     <div
-      class=\\"card p-4 col-sm-12 col-lg-12 p-0 mb-3\\"
+      class=\\"card p-4 col-sm-12 col-lg-12 p-0 mb-4\\"
     >
       <form>
-        <div
++       <div
 +         class=\\"alert  alert-warning\\"
 +       >
 +         <span>
@@ -26,13 +27,12 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
 +       <div
 +         class=\\"text-muted\\"
 +       >
-+         <div
+          <h2>
+            Languages List
+          </h2>
+          <div
             class=\\"container-fluid mb-3\\"
-          >
-            <div
-              class=\\"row justify-content-start\\"
-            >
-@@ -25,10 +41,11 @@
+@@ -28,10 +44,11 @@
                     class=\\"custom-control custom-checkbox \\"
                   >
                     <input
@@ -44,7 +44,7 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -48,10 +65,11 @@
+@@ -51,10 +68,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -56,7 +56,7 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -71,10 +89,11 @@
+@@ -74,10 +92,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -68,7 +68,7 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -94,10 +113,11 @@
+@@ -97,10 +116,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -80,7 +80,7 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -117,10 +137,11 @@
+@@ -120,10 +140,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -92,7 +92,7 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -140,10 +161,11 @@
+@@ -143,10 +164,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -104,7 +104,7 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -163,10 +185,11 @@
+@@ -166,10 +188,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -116,7 +116,7 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -186,10 +209,11 @@
+@@ -189,10 +212,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -128,7 +128,7 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -209,10 +233,11 @@
+@@ -212,10 +236,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -140,7 +140,7 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -232,10 +257,11 @@
+@@ -235,10 +260,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -152,7 +152,7 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -255,10 +281,11 @@
+@@ -258,10 +284,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -164,7 +164,7 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -269,15 +296,17 @@
+@@ -272,15 +299,17 @@
                   </div>
                 </div>
               </div>
@@ -193,9 +193,12 @@ exports[`<Packages/> Should render: updates enabled. 1`] = `
     If you want to use another language other than English you can select it from the following list:
   </p>
   <div
-    class="card p-4 col-sm-12 col-lg-12 p-0 mb-3"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
   >
     <form>
+      <h2>
+        Languages List
+      </h2>
       <div
         class="container-fluid mb-3"
       >

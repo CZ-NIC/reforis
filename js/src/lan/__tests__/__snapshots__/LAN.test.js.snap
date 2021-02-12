@@ -36,7 +36,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
             
   </p>
   <div
-    class="card p-4 col-sm-12 col-lg-12 p-0 mb-3"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
   >
     <form>
       <h2>
@@ -290,14 +290,21 @@ it has opened ports for configuration interface and other services.
   <div
     id="dhcp-clients-container"
   >
-    <h2>
-      DHCP Clients
-    </h2>
-    <p
-      class="text-muted text-center"
+    <div
+      class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
     >
-      No DHCP clients found.
-    </p>
+      <h2>
+        DHCP Client List
+      </h2>
+      <p>
+        This list contains all devices that are connected to the network through wired or wireless connections.
+      </p>
+      <p
+        class="text-muted text-center"
+      >
+        No clients found.
+      </p>
+    </div>
   </div>
 </div>
 `;
@@ -338,7 +345,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
             
   </p>
   <div
-    class="card p-4 col-sm-12 col-lg-12 p-0 mb-3"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
   >
     <form>
       <h2>
@@ -520,7 +527,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
             
   </p>
   <div
-    class="card p-4 col-sm-12 col-lg-12 p-0 mb-3"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
   >
     <form>
       <h2>
@@ -686,7 +693,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
             
   </p>
   <div
-    class="card p-4 col-sm-12 col-lg-12 p-0 mb-3"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
   >
     <form>
       <h2>
@@ -828,7 +835,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
             
   </p>
   <div
-    class="card p-4 col-sm-12 col-lg-12 p-0 mb-3"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
   >
     <form>
       <h2>
