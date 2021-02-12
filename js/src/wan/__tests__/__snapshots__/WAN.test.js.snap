@@ -518,7 +518,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6to4). 1`] = `
 - First value
 + Second value
 
-@@ -109,10 +109,40 @@
+@@ -109,10 +109,34 @@
             >
               Static IP address (manual configuration)
             </option>
@@ -536,17 +536,11 @@ exports[`<WAN/> Snapshot WAN IPv6 (6to4). 1`] = `
 +           class=\\"input-group\\"
 +         >
 +           <input
-+             class=\\"form-control  is-invalid\\"
++             class=\\"form-control\\"
 +             id=\\"8\\"
-+             required=\\"\\"
 +             type=\\"text\\"
 +             value=\\"\\"
 +           />
-+         </div>
-+         <div
-+           class=\\"invalid-feedback\\"
-+         >
-+           Public IPv4 address is required.
 +         </div>
 +         <small
 +           class=\\"form-text text-muted\\"
@@ -558,19 +552,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6to4). 1`] = `
           MAC
         </h2>
         <div
-          class=\\"form-group\\"
-@@ -141,10 +171,11 @@
-        <div
-          class=\\"text-right\\"
-        >
-          <button
-            class=\\"btn btn-primary  col-sm-12 col-md-3 col-lg-2\\"
-+           disabled=\\"\\"
-            type=\\"submit\\"
-          >
-            Save
-          </button>
-        </div>"
+          class=\\"form-group\\""
 `;
 
 exports[`<WAN/> Snapshot WAN IPv6 (dhcpv6). 1`] = `
