@@ -13,6 +13,10 @@ PYTHON=python3
 JS_DIR=./js
 
 FLASK=flask
+REFORIS_PORT ?= 81
+REFORIS_WS_PORT ?= 9081
+MQTT_PASSWORD_FILE ?= /etc/fosquitto/credentials.plain
+MQTT_PORT ?= 11883
 
 export FLASK_APP=reforis:create_app('dev')
 export FLASK_ENV=development
@@ -88,10 +92,10 @@ install-js: js/package.json
 	cd $(JS_DIR); npm install --save-dev
 
 run:
-	$(FLASK) run --host="0.0.0.0" --port=81
+	$(FLASK) run --host="0.0.0.0" --port=$(REFORIS_PORT)
 run-ws:
-	foris-ws  --host "0.0.0.0" --port 9081 -a filesystem -d mqtt --mqtt-host localhost --mqtt-port 11883 \
-	--mqtt-passwd-file '/etc/fosquitto/credentials.plain';
+	foris-ws --host "0.0.0.0" --port $(REFORIS_WS_PORT) -a filesystem -d mqtt --mqtt-host localhost \
+	--mqtt-port $(MQTT_PORT) --mqtt-passwd-file "$(MQTT_PASSWORD_FILE)";
 
 watch-js:
 	cd $(JS_DIR); npm run-script watch
