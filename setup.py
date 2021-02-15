@@ -47,7 +47,7 @@ setuptools.setup(
         'flup',
         'cachelib',
         'foris-client @ git+https://gitlab.nic.cz/turris/foris-controller/foris-client.git',
-        'paho-mqtt==1.5.0',
+        'paho-mqtt',
     ],
     setup_requires=[
         'Babel',
