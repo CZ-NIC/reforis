@@ -21,6 +21,7 @@ import Password from "password/Password";
 import RegionAndTime from "regionAndTime/RegionAndTime";
 import NotificationsSettings from "notificationsSettings/NotificationsSettings";
 import Maintenance from "maintenance/Maintenance";
+import Hostname from "hostname/Hostname";
 
 import About from "about/About";
 import Overview from "overview/Overview";
@@ -90,6 +91,11 @@ export default function getPages(deviceDetails) {
                           name: _("Maintenance"),
                           path: "/maintenance",
                           component: Maintenance,
+                      },
+                      {
+                          name: _("Hostname"),
+                          path: "/hostname",
+                          component: Hostname,
                       },
                   ],
               },
@@ -176,6 +182,11 @@ export default function getPages(deviceDetails) {
                           name: _("Maintenance"),
                           path: "/maintenance",
                           component: Maintenance,
+                      },
+                      {
+                          name: _("Hostname"),
+                          path: "/hostname",
+                          component: Hostname,
                       },
                   ],
               },
