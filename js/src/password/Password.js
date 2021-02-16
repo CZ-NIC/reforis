@@ -52,6 +52,7 @@ export default function Password({ postCallback }) {
             newForisPasswordRepeat: "",
             sameForRoot: false,
             newRootPassword: "",
+            newRootPasswordRepeat: "",
         });
     }, [resetFormData]);
 
@@ -196,12 +197,17 @@ function validator(formData) {
             formData.newForisPasswordRepeat !== formData.newForisPassword
                 ? _("The password confirmation does not match.")
                 : null,
+        newRootPasswordRepeat:
+            formData.newRootPasswordRepeat !== formData.newRootPassword
+                ? _("The password confirmation does not match.")
+                : null,
     };
 
     if (
         errors.newForisPassword ||
         errors.newRootPassword ||
-        errors.newForisPasswordRepeat
+        errors.newForisPasswordRepeat ||
+        errors.newRootPasswordRepeat
     )
         return errors;
     return {};

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -16,13 +16,19 @@ import {
 } from "foris";
 
 RootPasswordForm.propTypes = {
-    formData: PropTypes.shape({ newRootPassword: PropTypes.string }).isRequired,
+    formData: PropTypes.shape({
+        newRootPassword: PropTypes.string,
+        newRootPasswordRepeat: PropTypes.string,
+    }).isRequired,
     submitButtonState: PropTypes.oneOf(
         Object.keys(SUBMIT_BUTTON_STATES).map(
             (key) => SUBMIT_BUTTON_STATES[key]
         )
     ).isRequired,
-    formErrors: PropTypes.shape({ newRootPassword: PropTypes.string }),
+    formErrors: PropTypes.shape({
+        newRootPassword: PropTypes.string,
+        newRootPasswordRepeat: PropTypes.string,
+    }),
     setFormValue: PropTypes.func.isRequired,
     postRootPassword: PropTypes.func.isRequired,
     deviceDetails: PropTypes.object.isRequired,
@@ -68,10 +74,23 @@ through the <a href="%s" target="_blank" rel="noopener noreferrer">LuCI web inte
                 }))}
                 disabled={disabled}
             />
+            <PasswordInput
+                withEye
+                label={_("Confirm new advanced administration password")}
+                value={formData.newRootPasswordRepeat}
+                error={formErrors.newRootPasswordRepeat}
+                onChange={setFormValue((value) => ({
+                    newRootPasswordRepeat: { $set: value },
+                }))}
+                disabled={disabled}
+            />
             <div className="text-right">
                 <SubmitButton
                     state={submitButtonState}
-                    disabled={!!formErrors.newRootPassword}
+                    disabled={
+                        !!formErrors.newRootPassword ||
+                        !!formErrors.newRootPasswordRepeat
+                    }
                 />
             </div>
         </form>
