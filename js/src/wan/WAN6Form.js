@@ -305,7 +305,6 @@ function _6to4Form({ formData, formErrors, setFormValue, disabled }) {
             value={formData.ipv4_address || ""}
             helpText={HELP_TEXTS["6to4"].ipv4_address}
             error={formErrors.ipv4_address || null}
-            required
             onChange={setFormValue((value) => ({
                 wan6_settings: { wan6_6to4: { ipv4_address: { $set: value } } },
             }))}
@@ -509,10 +508,7 @@ function validateStaticForm(wan6_static) {
 }
 
 function validate6to4Form(wan6_6to4) {
-    let error;
-    if (!wan6_6to4.ipv4_address || wan6_6to4.ipv4_address === "")
-        error = _("Public IPv4 address is required.");
-    else error = validateIPv4Address(wan6_6to4.ipv4_address);
+    const error = validateIPv4Address(wan6_6to4.ipv4_address);
     return error ? { ipv4_address: error } : null;
 }
 

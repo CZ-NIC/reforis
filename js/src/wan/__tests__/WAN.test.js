@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2019-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -177,8 +177,8 @@ describe("<WAN/>", () => {
             target: { value: "6to4" },
         });
         fireEvent.click(getByText("Save"));
-        // Values is invalid, button is disabled.
-        expect(mockAxios.post).toHaveBeenCalledTimes(0);
+
+        expect(mockAxios.post).toHaveBeenCalledTimes(1);
     });
 
     it("Post WAN IPv6 (6in4).", () => {
