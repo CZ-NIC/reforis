@@ -63,6 +63,7 @@ setuptools.setup(
     # next to run dependencies and have it separated by purposes.
     extras_require={
         'devel': [
+            'pytest',
             'l18n==2018.5',
             'pycountry==18.12.8',
             'pytest==3.7.1',
