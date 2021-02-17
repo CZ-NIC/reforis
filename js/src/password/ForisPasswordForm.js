@@ -50,7 +50,6 @@ export default function ForisPasswordForm({
 }) {
     return (
         <>
-            <h2>{_("Password Settings")}</h2>
             <p>{_("Set your password for this administration interface.")}</p>
             <form onSubmit={postForisPassword} className="mb-3 mb-md-0">
                 {passwordSet && (

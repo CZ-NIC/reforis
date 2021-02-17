@@ -150,6 +150,7 @@ export default function Password({ postCallback }) {
     } else if (onSuccess) {
         passwordComponent = (
             <div className={formFieldsSize}>
+                <h2>{_("Password Settings")}</h2>
                 <ForisPasswordForm
                     formData={formState.data}
                     formErrors={formState.errors}
