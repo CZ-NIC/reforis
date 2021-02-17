@@ -4,7 +4,7 @@ stages:
   - test
 
 before_script:
-  - apt-get update && apt-get -y install sudo make curl git
+  - apt-get update && apt-get -y install sudo make curl git tox
 
 test:
   stage: test
