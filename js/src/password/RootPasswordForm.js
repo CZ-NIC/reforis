@@ -66,7 +66,7 @@ through the <a href="%s" target="_blank" rel="noopener noreferrer">LuCI web inte
             />
             <PasswordInput
                 withEye
-                label={_("New advanced administration password")}
+                label={_("New password")}
                 value={formData.newRootPassword}
                 error={formErrors.newRootPassword}
                 onChange={setFormValue((value) => ({
@@ -76,7 +76,7 @@ through the <a href="%s" target="_blank" rel="noopener noreferrer">LuCI web inte
             />
             <PasswordInput
                 withEye
-                label={_("Confirm new advanced administration password")}
+                label={_("Confirm new password")}
                 value={formData.newRootPasswordRepeat}
                 error={formErrors.newRootPasswordRepeat}
                 onChange={setFormValue((value) => ({
