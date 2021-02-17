@@ -1,4 +1,4 @@
-#  Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+#  Copyright (C) 2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
 #
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
@@ -31,7 +31,7 @@ def prepare_tz_related_translations() -> dict:
 
     for timezone_name, data in current_locale.time_zones.items():
         # Store city
-        if 'city' in en_locale.time_zones[timezone_name] and 'city' in data:
+        if 'city' in en_locale.time_zones.get(timezone_name, {}) and 'city' in data:
             result[en_locale.time_zones[timezone_name]['city']] = data['city']
 
         # Store timezone name
