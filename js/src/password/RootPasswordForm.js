@@ -50,7 +50,7 @@ export default function RootPasswordForm({
     )
         return null;
     return (
-        <form onSubmit={postRootPassword} className="mt-3">
+        <form onSubmit={postRootPassword}>
             <h2>{_("Advanced Administration (root) Password")}</h2>
             <p
                 dangerouslySetInnerHTML={{
