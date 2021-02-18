@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -16,13 +16,19 @@ import {
 } from "foris";
 
 RootPasswordForm.propTypes = {
-    formData: PropTypes.shape({ newRootPassword: PropTypes.string }).isRequired,
+    formData: PropTypes.shape({
+        newRootPassword: PropTypes.string,
+        newRootPasswordRepeat: PropTypes.string,
+    }).isRequired,
     submitButtonState: PropTypes.oneOf(
         Object.keys(SUBMIT_BUTTON_STATES).map(
             (key) => SUBMIT_BUTTON_STATES[key]
         )
     ).isRequired,
-    formErrors: PropTypes.shape({ newRootPassword: PropTypes.string }),
+    formErrors: PropTypes.shape({
+        newRootPassword: PropTypes.string,
+        newRootPasswordRepeat: PropTypes.string,
+    }),
     setFormValue: PropTypes.func.isRequired,
     postRootPassword: PropTypes.func.isRequired,
     deviceDetails: PropTypes.object.isRequired,
@@ -44,8 +50,8 @@ export default function RootPasswordForm({
     )
         return null;
     return (
-        <form onSubmit={postRootPassword} className="mt-3">
-            <h2>{_("Advanced Administration (root) Password")}</h2>
+        <form onSubmit={postRootPassword}>
+            <h3>{_("Advanced Administration Password")}</h3>
             <p
                 dangerouslySetInnerHTML={{
                     __html: babel.format(
@@ -60,7 +66,7 @@ through the <a href="%s" target="_blank" rel="noopener noreferrer">LuCI web inte
             />
             <PasswordInput
                 withEye
-                label={_("New advanced administration password")}
+                label={_("New password")}
                 value={formData.newRootPassword}
                 error={formErrors.newRootPassword}
                 onChange={setFormValue((value) => ({
@@ -68,10 +74,23 @@ through the <a href="%s" target="_blank" rel="noopener noreferrer">LuCI web inte
                 }))}
                 disabled={disabled}
             />
+            <PasswordInput
+                withEye
+                label={_("Confirm new password")}
+                value={formData.newRootPasswordRepeat}
+                error={formErrors.newRootPasswordRepeat}
+                onChange={setFormValue((value) => ({
+                    newRootPasswordRepeat: { $set: value },
+                }))}
+                disabled={disabled}
+            />
             <div className="text-right">
                 <SubmitButton
                     state={submitButtonState}
-                    disabled={!!formErrors.newRootPassword}
+                    disabled={
+                        !!formErrors.newRootPassword ||
+                        !!formErrors.newRootPasswordRepeat
+                    }
                 />
             </div>
         </form>
