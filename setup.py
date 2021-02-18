@@ -63,16 +63,16 @@ setuptools.setup(
     # next to run dependencies and have it separated by purposes.
     extras_require={
         'devel': [
-            'l18n==2018.5',
-            'pycountry==18.12.8',
-            'pytest==3.7.1',
-            'pycodestyle==2.5.0',
-            'pylint==2.3.1',
-            'pylint-quotes==0.2.1',
+            'l18n',
+            'pycountry',
+            'pytest',
+            'pycodestyle',
+            'pylint',
+            'pylint-quotes',
         ],
         'build': [
-            'Sphinx==2.1.2',
-            'sphinxcontrib-httpdomain==1.7.0',
+            'Sphinx',
+            'sphinxcontrib-httpdomain',
         ],
     },
 

@@ -69,7 +69,7 @@ class FileSystemSessionInterface(SessionInterface):
 
     session_class = FileSystemSession
 
-    # pylint: disable=too-many-arguments
+    # pylint: disable=too-many-arguments,import-outside-toplevel
     def __init__(self, cache_dir, threshold, mode, key_prefix,
                  use_signer=False, permanent=True):
         from cachelib import FileSystemCache
