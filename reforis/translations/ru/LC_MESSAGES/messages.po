@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-02-01 12:17+0100\n"
-"PO-Revision-Date: 2021-02-07 07:50+0000\n"
-"Last-Translator: Artem <KovalevArtem.ru@gmail.com>\n"
+"PO-Revision-Date: 2021-02-18 11:18+0000\n"
+"Last-Translator: Алексей Леньшин <alenshin@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/turris/reforis/"
 "ru/>\n"
 "Language: ru\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.5-dev\n"
+"X-Generator: Weblate 4.5\n"
 "Generated-By: Babel 2.9.0\n"
 
 #: js/src/about/About.js:22 js/src/main/pages.js:103 js/src/main/pages.js:217
@@ -188,9 +188,8 @@ msgid "Minimum lease time is 1 hour."
 msgstr "Минимальное время аренды 1 час."
 
 #: js/src/common/network/DHCPValidators.js:116
-#, fuzzy
 msgid "Address is outside current network."
-msgstr "IP-адрес маршрутизатора во внутренней гостевой сети."
+msgstr "IP-адрес за пределами текущей сети."
 
 #: js/src/common/network/DHCPValidators.js:120
 msgid "Address is already reserved for other purposes."
@@ -199,12 +198,16 @@ msgstr "Адрес уже зарезервирован для других це�
 #: js/src/common/network/DHCPValidators.js:131
 msgid "Too many addresses requested. Set a lower number or change DHCP start."
 msgstr ""
+"Запрошено слишком много адресов. Установите меньшее число или измените "
+"начало пула DHCP."
 
 #: js/src/common/network/DHCPValidators.js:138
 msgid ""
 "The only DHCP lease is the same as router's address. Increase limit or "
 "change start address."
 msgstr ""
+"Единственный адрес DHCP совпадает с адресом маршрутизатора. Увеличьте лимит "
+"или измените начальный адрес."
 
 #: js/src/common/network/StaticIPForm.js:14 js/src/wan/WAN6Form.js:36
 msgid ""
@@ -1287,12 +1290,21 @@ msgid ""
 "                giving you a clean slate to start all over again.\n"
 "    "
 msgstr ""
+"Восстановление заводских настроек на устройстве Turris приведет к удалению "
+"всех пакетов, установленных на устройстве, вместе с данными, связанными с "
+"ними. Это возвращает все настройки устройства по умолчанию, какими они были, "
+"когда маршрутизатор был новым, давая вам чистый лист, чтобы начать все "
+"сначала.\n"
+"    "
 
 #: js/src/maintenance/Maintenance.js:19
 msgid ""
 "The Maintenance tab allows you to reboot the router or bring back all the"
 " default settings by performing a factory reset."
 msgstr ""
+"Вкладка «Обслуживание» позволяет перезагрузить маршрутизатор или "
+"восстановить все настройки по умолчанию, выполнив сброс настроек до "
+"заводских."
 
 #: js/src/maintenance/Reboot.js:18
 msgid ""
@@ -1310,7 +1322,7 @@ msgstr ""
 
 #: js/src/maintenance/Syslog/Syslog.js:46
 msgid "A drive has to be configured first."
-msgstr ""
+msgstr "Сначала необходимо настроить диск."
 
 #: js/src/maintenance/Syslog/SyslogForm.js:29
 msgid "System logs retention"
@@ -1324,6 +1336,11 @@ msgid ""
 " in the <a href=\"${ForisURLs.storage}\" title=\"Go to Storage "
 "plugin\">Storage plugin</a> first."
 msgstr ""
+"Во время перезагрузки устройства системные журналы теряются по умолчанию. "
+"Эта опция позволяет сохранять системные журналы с помощью плагина Storage. "
+"Журналы сохраняются в /srv/log/messages. Чтобы включить эту опцию, вам "
+"необходимо сначала настроить хранилище в <a href=\"${ForisURLs.storage}\" "
+"title=\"Go to Storage plugin\">Плагине хранилища</a>."
 
 #: js/src/maintenance/Syslog/SyslogForm.js:38
 msgid "Enable system logs retention"
