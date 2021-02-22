@@ -68,21 +68,6 @@ describe("<UpdatesDropdown/>", () => {
         await wait(() => expect(mockAxios.get).toBeCalledTimes(2));
     });
 
-    it("Updates awaiting - ignore", async () => {
-        mockAxios.mockResponse({
-            data: { hash: exampleHash, approvable: true },
-        });
-        await waitForElement(() => getByText("Approve Update"));
-
-        fireEvent.click(getByText("Ignore"));
-        expect(mockAxios.post).toBeCalled();
-        expect(mockAxios.post).toHaveBeenCalledWith(
-            "/reforis/api/approvals",
-            { hash: exampleHash, solution: "deny" },
-            expect.anything()
-        );
-    });
-
     it("Updates resolution - display error", async () => {
         mockAxios.mockResponse({
             data: { hash: exampleHash, approvable: true },

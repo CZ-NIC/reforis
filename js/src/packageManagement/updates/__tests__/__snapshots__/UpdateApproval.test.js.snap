@@ -30,6 +30,23 @@ exports[`<UpdateApproval/> Updates awaiting - snapshot 1`] = `
         details
       </a>
     </p>
+    <p>
+      The updates are not going to be automatically installed before February 20, 2020 3:02 PM.
+    </p>
+    <p>
+      If you don't want the updates to be installed at all, go to 
+      <a
+        href="/reforis/package-management/update-settings"
+        title="Go to Update Settings"
+      >
+        Update Settings
+      </a>
+       and choose the option 
+      <i>
+        Update approval needed
+      </i>
+      .
+    </p>
     <div
       class="collapse"
       data-testid="plan-wrapper"
@@ -85,19 +102,13 @@ exports[`<UpdateApproval/> Updates awaiting - snapshot 1`] = `
       </div>
     </div>
     <div
-      class="row justify-content-around"
+      class="text-right"
     >
       <button
-        class="btn btn-primary col-sm-12 col-md-5 col-lg-3 mt-3 mt-lg-0"
+        class="btn btn-primary col-sm-12 col-md-3 col-lg-2 mt-3 mt-lg-0"
         type="button"
       >
         Install now
-      </button>
-      <button
-        class="btn btn-warning col-sm-12 col-md-5 col-lg-3 mt-3 mt-lg-0"
-        type="button"
-      >
-        Ignore
       </button>
     </div>
   </div>
