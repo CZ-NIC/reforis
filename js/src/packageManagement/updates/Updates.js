@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2019-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -41,6 +41,7 @@ function getManagerProps(updateSettings) {
         description: _(
             "Automatic updates are disabled. Please enable delayed or approval-requiring updates to review them."
         ),
+        delay: 0,
     };
 
     if (!updateSettings || !updateSettings.enabled) {
@@ -61,6 +62,7 @@ function getManagerProps(updateSettings) {
         managerProps.description = _(
             "Manually check for updates and review them immediately."
         );
+        managerProps.delay = updateSettings.approval_settings.delay;
     }
     return managerProps;
 }

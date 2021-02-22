@@ -18,14 +18,16 @@ import {
     toLocaleDateString,
     ForisURLs,
 } from "foris";
+import moment from "moment";
 import API_URLs from "common/API";
 
 UpdateApproval.propTypes = {
     update: PropTypes.object.isRequired,
     onSuccess: PropTypes.func.isRequired,
+    delay: PropTypes.string,
 };
 
-export default function UpdateApproval({ update, onSuccess }) {
+export default function UpdateApproval({ update, onSuccess, delay }) {
     const [setAlert, dismissAlert] = useAlert();
 
     const [postState, post] = useAPIPost(API_URLs.approvals);
@@ -70,6 +72,8 @@ export default function UpdateApproval({ update, onSuccess }) {
         'See <a data-toggle="collapse" href="#plan-wrapper" role="button" aria-expanded="false" aria-controls="plan-wrapper">details</a>'
     );
 
+    const delayedTime = moment(update.time).add(delay, "hour");
+
     return (
         <div className="card p-4 mb-4">
             <h3>
@@ -81,6 +85,15 @@ export default function UpdateApproval({ update, onSuccess }) {
             <p
                 dangerouslySetInnerHTML={{
                     __html: `${packagesNumber} ${details}`,
+                }}
+            />
+            <p
+                dangerouslySetInnerHTML={{
+                    __html: _(
+                        `The updates are not going to be automatically installed before ${toLocaleDateString(
+                            delayedTime
+                        )}.`
+                    ),
                 }}
             />
             <p

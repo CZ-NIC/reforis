@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2019-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -31,6 +31,7 @@ UpdateManager.propTypes = {
     },
     displayApproval: PropTypes.bool.isRequired,
     description: PropTypes.string,
+    delay: PropTypes.string,
 };
 
 function UpdateManager({
@@ -38,6 +39,7 @@ function UpdateManager({
     checkerLabel,
     displayApproval,
     description,
+    delay,
 }) {
     const [pending, setPending] = usePending();
     const [
@@ -54,7 +56,11 @@ function UpdateManager({
         approvalComponent = <ErrorMessage />;
     } else if (getApprovalsResponse.state === API_STATE.SUCCESS) {
         approvalComponent = (
-            <UpdateApproval update={updateToApprove} onSuccess={getApprovals} />
+            <UpdateApproval
+                update={updateToApprove}
+                onSuccess={getApprovals}
+                delay={delay}
+            />
         );
     }
 
