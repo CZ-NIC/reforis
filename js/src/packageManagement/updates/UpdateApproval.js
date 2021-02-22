@@ -16,6 +16,7 @@ import {
     API_STATE,
     ALERT_TYPES,
     toLocaleDateString,
+    ForisURLs,
 } from "foris";
 import API_URLs from "common/API";
 
@@ -80,6 +81,13 @@ export default function UpdateApproval({ update, onSuccess }) {
             <p
                 dangerouslySetInnerHTML={{
                     __html: `${packagesNumber} ${details}`,
+                }}
+            />
+            <p
+                dangerouslySetInnerHTML={{
+                    __html: _(
+                        `If you don't want the updates to be installed at all, go to <a href="${ForisURLs.packageManagement.updateSettings}" title="Go to Update Settings">Update Settings</a> and choose the option <i>Update approval needed</i>.`
+                    ),
                 }}
             />
             <div
