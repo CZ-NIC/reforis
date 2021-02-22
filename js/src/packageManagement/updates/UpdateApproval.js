@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2019-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -89,18 +89,12 @@ export default function UpdateApproval({ update, onSuccess }) {
             >
                 <Plan plan={update.plan} />
             </div>
-            <div className="row justify-content-around">
+            <div className="text-right">
                 <Button
-                    className="btn-primary col-sm-12 col-md-5 col-lg-3 mt-3 mt-lg-0"
+                    className="btn-primary col-sm-12 col-md-3 col-lg-2 mt-3 mt-lg-0"
                     onClick={() => resolveUpdate("grant")}
                 >
                     {_("Install now")}
-                </Button>
-                <Button
-                    className="btn-warning col-sm-12 col-md-5 col-lg-3 mt-3 mt-lg-0"
-                    onClick={() => resolveUpdate("deny")}
-                >
-                    {_("Ignore")}
                 </Button>
             </div>
         </div>

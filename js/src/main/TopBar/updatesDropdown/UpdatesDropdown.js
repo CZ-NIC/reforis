@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -20,8 +20,6 @@ import {
     withSending,
 } from "foris";
 import API_URLs from "common/API";
-
-import "./UpdatesDropdown.css";
 
 UpdatesDropdown.propTypes = {
     newNotification: PropTypes.bool.isRequired,
@@ -129,18 +127,12 @@ function ManageUpdate({ resolveUpdate }) {
                     ),
                 }}
             />
-            <div className="dropdown-item" id="updates-dropdown-actions">
+            <div className="dropdown-item text-center">
                 <Button
                     className="btn-primary"
                     onClick={() => resolveUpdate("grant")}
                 >
                     {_("Install now")}
-                </Button>
-                <Button
-                    className="btn-warning"
-                    onClick={() => resolveUpdate("deny")}
-                >
-                    {_("Ignore")}
                 </Button>
             </div>
         </>
