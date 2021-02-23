@@ -435,7 +435,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
 +           <input
 +             class=\\"form-control  is-invalid\\"
 +             id=\\"10\\"
-+             max=\\"1500\\"
++             max=\\"1480\\"
 +             min=\\"1280\\"
 +             required=\\"\\"
 +             type=\\"number\\"

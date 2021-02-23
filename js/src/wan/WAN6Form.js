@@ -364,7 +364,7 @@ function _6in4Form({ formData, formErrors, setFormValue, disabled }) {
                 value={formData.mtu || ""}
                 error={formErrors.mtu || null}
                 min="1280"
-                max="1500"
+                max="1480"
                 required
                 onChange={setFormValue((value) => ({
                     wan6_settings: { wan6_6in4: { mtu: { $set: value } } },
@@ -372,7 +372,7 @@ function _6in4Form({ formData, formErrors, setFormValue, disabled }) {
                 disabled={disabled}
             />
             <CheckBox
-                label="Dynamic IPv4 handling"
+                label={_("Dynamic IPv4 handling")}
                 checked={formData.dynamic_ipv4.enabled || false}
                 helpText={HELP_TEXTS["6in4"].dynamic_ipv4.enabled}
                 onChange={setFormValue((value) => ({
@@ -524,9 +524,9 @@ function validate6in4Form(wan6_6in4) {
 
     const mtu = parseInt(wan6_6in4.mtu);
     if (Number.isNaN(mtu))
-        errors.mtu = _("MTU should be a number in range of 1280-1500.");
-    else if (!(mtu >= 1280 && mtu <= 1500))
-        errors.mtu = _("MTU should be in range of 1280-1500.");
+        errors.mtu = _("MTU has to be a number in the range of 1280-1480.");
+    else if (!(mtu >= 1280 && mtu <= 1480))
+        errors.mtu = _("MTU has to be in the range of 1280-1480.");
 
     ["mtu", "server_ipv4", "dynamic_ipv4"].forEach((field) => {
         if (!wan6_6in4[field] || wan6_6in4[field] === "")
