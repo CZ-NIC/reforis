@@ -131,16 +131,24 @@ available
                     
             </li>
             
-                  
+                    
           </ul>
           <b>
-            By enabling of the automatic updates, you confirm that you are the owner of this Turris router and you agree with the full text of the 
+            By enabling of the automatic updates, 
+                                    you confirm that you are the owner of this Turris 
+                                    router and you agree with the full text of the 
+                                    
             <a
               href="https://www.turris.cz/omnia-updater-eula"
               rel="noopener noreferrer"
               target="_blank"
             >
-              license agreement
+              license agreement 
+              <sup>
+                <i
+                  class="fas fa-external-link-alt fa-sm"
+                />
+              </sup>
             </a>
             .
           </b>
@@ -338,7 +346,7 @@ exports[`<UpdateSettings/> Test with snapshot enabled, delayed. 1`] = `
 - First value
 + Second value
 
-@@ -249,10 +249,53 @@
+@@ -257,10 +257,53 @@
             >
               You have to approve the updates, otherwise they won't be installed.
             </small>
@@ -399,7 +407,7 @@ exports[`<UpdateSettings/> Test with snapshot enabled. 1`] = `
 - First value
 + Second value
 
-@@ -169,10 +169,90 @@
+@@ -177,10 +177,90 @@
             >
               Enable automatic updates (recommended)
             </label>

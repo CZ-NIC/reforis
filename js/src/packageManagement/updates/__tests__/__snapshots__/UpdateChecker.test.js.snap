@@ -2,11 +2,15 @@
 
 exports[`<UpdateChecker/> should match snapshot 1`] = `
 <div>
-  <button
-    class="btn btn-primary mt-3 mt-lg-0 mb-3 col-sm-12 col-md-3 col-lg-2"
-    type="button"
+  <div
+    class="text-right"
   >
-    Check updates
-  </button>
+    <button
+      class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
+      type="button"
+    >
+      Check updates
+    </button>
+  </div>
 </div>
 `;
