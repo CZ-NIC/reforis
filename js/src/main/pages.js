@@ -197,14 +197,14 @@ export default function getPages(deviceDetails) {
                   icon: "box",
                   pages: [
                       {
-                          name: _("Update Settings"),
-                          path: "/update-settings",
-                          component: UpdateSettings,
-                      },
-                      {
                           name: _("Updates"),
                           path: "/updates",
                           component: Updates,
+                      },
+                      {
+                          name: _("Update Settings"),
+                          path: "/update-settings",
+                          component: UpdateSettings,
                       },
                       {
                           name: _("Packages"),
