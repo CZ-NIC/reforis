@@ -11,9 +11,10 @@ import PropTypes from "prop-types";
 import { SpinnerElement, useAPIPost } from "foris";
 
 import API_URLs from "common/API";
+import smallScreenWidth from "../../../utils/constants";
+import { useLanguages, useWSSetLanguageRefresh } from "./hooks";
 
 import "./LanguagesDropdown.css";
-import { useLanguages, useWSSetLanguageRefresh } from "./hooks";
 
 LanguagesDropdown.propTypes = {
     ws: PropTypes.object.isRequired,
@@ -40,7 +41,9 @@ export default function LanguagesDropdown({ ws, className }) {
             </button>
 
             <div
-                className="dropdown-menu dropdown-menu-right shadow-sm"
+                className={`dropdown-menu dropdown-menu-${
+                    window.outerWidth > smallScreenWidth ? "right" : "left"
+                } shadow-sm`}
                 id="languages-dropdown-menu"
             >
                 <div className="dropdown-header">
