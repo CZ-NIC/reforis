@@ -115,3 +115,4 @@ venv.bak/
 /reforis_static/reforis/js/app.min.js.LICENSE.txt
 /reforis_static/reforis/css/app.css
 /js/styleguide/
+.vscode/**

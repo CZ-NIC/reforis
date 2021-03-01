@@ -109,12 +109,18 @@ def create_app(config):
     return app
 
 
+def _wrap_error(error, code):
+    if isinstance(error, dict):
+        return dict({'status': code}, **error)
+    return {'status': code, 'error': 'Error:{!r}'.format(error)}
+
+
 def not_found_error(error):
-    return render_template('errors/404.html', user_is_logged={'logged': is_user_logged()}), 404
+    return _wrap_error(error, 404)
 
 
 def internal_error(error):
-    return render_template('errors/500.html', error=error, user_is_logged={'logged': is_user_logged()}), 500
+    return _wrap_error(error, 500)
 
 
 def foris_controller_error(e):
@@ -133,9 +139,9 @@ def foris_controller_error(e):
     if e.remote_description.startswith('Incorrect input.'):
         # indicates incorrect input, not actually a server error
         # but a client error so we'll return more appropriate status code
-        return render_template('errors/400.html', user_is_logged={'logged': is_user_logged()}, **error), 400
+        return _wrap_error(error, 400)
 
-    return render_template('errors/500.html', user_is_logged={'logged': is_user_logged()}, **error), 500
+    return _wrap_error(error, 500)
 
 
 def set_backend(app):
