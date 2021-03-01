@@ -60,13 +60,16 @@ export default function LicenceModal() {
                         CZ.NIC, z. s. p. o. does not guarantee the availability of this service and is not
                         responsible for any damages caused by the automatic updates.
                     </li>
-                  `),
+                    `),
                             }}
                         />
                         <b
                             dangerouslySetInnerHTML={{
                                 __html: _(
-                                    'By enabling of the automatic updates, you confirm that you are the owner of this Turris router and you agree with the full text of the <a href="https://www.turris.cz/omnia-updater-eula" target="_blank" rel="noopener noreferrer">license agreement</a>.'
+                                    `By enabling of the automatic updates, 
+                                    you confirm that you are the owner of this Turris 
+                                    router and you agree with the full text of the 
+                                    <a href="https://www.turris.cz/omnia-updater-eula" target="_blank" rel="noopener noreferrer">license agreement <sup><i class="fas fa-external-link-alt fa-sm"></i></sup></a>.`
                                 ),
                             }}
                         />
