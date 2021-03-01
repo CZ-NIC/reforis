@@ -7,6 +7,7 @@
 
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
+import ReactTooltip from "react-tooltip";
 
 import {
     useAPIPost,
@@ -14,6 +15,7 @@ import {
     Spinner,
     useAlert,
     API_STATE,
+    Alert,
     ALERT_TYPES,
     toLocaleDateString,
     ForisURLs,
@@ -24,7 +26,7 @@ import API_URLs from "common/API";
 UpdateApproval.propTypes = {
     update: PropTypes.object.isRequired,
     onSuccess: PropTypes.func.isRequired,
-    delay: PropTypes.string,
+    delay: PropTypes.number,
 };
 
 export default function UpdateApproval({ update, onSuccess, delay }) {
@@ -52,73 +54,87 @@ export default function UpdateApproval({ update, onSuccess, delay }) {
     if (postState.state === API_STATE.SENDING) {
         return <Spinner className="text-center" />;
     }
-    if (!update.approvable) {
-        return (
-            <p className="text-center text-muted">
-                {_("There are no updates awaiting your approval.")}
-            </p>
-        );
-    }
 
-    const packagesNumber = babel.format(
-        ngettext(
-            "There is %d package to be updated.",
-            "There are %d packages to be updated.",
+    const packagesNumber =
+        update.approvable &&
+        babel.format(
+            ngettext(
+                "There is %d package to be updated.",
+                "There are %d packages to be updated.",
+                update.plan.length
+            ),
             update.plan.length
-        ),
-        update.plan.length
-    );
+        );
     const details = _(
         'See <a data-toggle="collapse" href="#plan-wrapper" role="button" aria-expanded="false" aria-controls="plan-wrapper">details</a>'
     );
-
     const delayedTime = moment(update.time).add(delay, "hour");
-
     return (
-        <div className="card p-4 mb-4">
-            <h3>
-                {babel.format(
-                    _("Approve Update From %s"),
-                    toLocaleDateString(update.time)
-                )}
-            </h3>
-            <p
-                dangerouslySetInnerHTML={{
-                    __html: `${packagesNumber} ${details}`,
-                }}
-            />
-            <p
-                dangerouslySetInnerHTML={{
-                    __html: _(
-                        `The updates are not going to be automatically installed before ${toLocaleDateString(
-                            delayedTime
-                        )}.`
-                    ),
-                }}
-            />
-            <p
-                dangerouslySetInnerHTML={{
-                    __html: _(
-                        `If you don't want the updates to be installed at all, go to <a href="${ForisURLs.packageManagement.updateSettings}" title="Go to Update Settings">Update Settings</a> and choose the option <i>Update approval needed</i>.`
-                    ),
-                }}
-            />
-            <div
-                className="collapse"
-                id="plan-wrapper"
-                data-testid="plan-wrapper"
-            >
-                <Plan plan={update.plan} />
-            </div>
-            <div className="text-right">
-                <Button
-                    className="btn-primary col-sm-12 col-md-3 col-lg-2 mt-3 mt-lg-0"
-                    onClick={() => resolveUpdate("grant")}
-                >
-                    {_("Install now")}
-                </Button>
-            </div>
-        </div>
+        <>
+            {update.approvable ? (
+                <>
+                    {delay && (
+                        <Alert type={ALERT_TYPES.SUCCESS}>
+                            <span>
+                                {_(
+                                    `These updates are not going to be 
+                                    automatically installed before 
+                                    ${toLocaleDateString(delayedTime)}.`
+                                )}
+                            </span>
+                            <i
+                                className="fas fa-question-circle ml-1 help"
+                                data-for="delay-tooltip"
+                                data-tip={_(
+                                    `If you don't want the updates to be installed at all, go to
+                                    <a href="${ForisURLs.packageManagement.updateSettings}">Update Settings</a> 
+                                    and choose the option <b>Update approval needed</b>.`
+                                )}
+                                data-event="click focus"
+                                data-html
+                            />
+                            <ReactTooltip
+                                effect="solid"
+                                globalEventOff="click"
+                                clickable
+                                id="delay-tooltip"
+                            />
+                        </Alert>
+                    )}
+                    <h3>
+                        {babel.format(
+                            _("Approve Update From %s"),
+                            toLocaleDateString(update.time)
+                        )}
+                    </h3>
+                    <p
+                        dangerouslySetInnerHTML={{
+                            __html: `${packagesNumber} ${details}`,
+                        }}
+                    />
+                    <div
+                        className="collapse"
+                        id="plan-wrapper"
+                        data-testid="plan-wrapper"
+                    >
+                        <Plan plan={update.plan} />
+                    </div>
+                    <div className="text-right">
+                        <Button
+                            className="btn-primary"
+                            onClick={() => resolveUpdate("grant")}
+                            forisFormSize
+                        >
+                            {_("Install now")}
+                        </Button>
+                    </div>
+                </>
+            ) : (
+                <p className="text-center text-muted">
+                    {_("There are no updates awaiting your approval.")}
+                </p>
+            )}
+        </>
     );
 }
 
@@ -130,7 +146,7 @@ function Plan({ plan }) {
     return (
         <div className="table-responsive">
             <table className="table table-hover">
-                <thead>
+                <thead className="thead-light">
                     <tr>
                         <th scope="col">{_("Action")}</th>
                         <th scope="col">{_("Name")}</th>

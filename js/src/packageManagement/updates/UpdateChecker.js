@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2019-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -31,13 +31,15 @@ export default function UpdateChecker({
     const refreshUpdates = useCheckUpdates(setPending);
 
     return (
-        <Button
-            className="btn-primary mt-3 mt-lg-0 mb-3"
-            forisFormSize
-            onClick={refreshUpdates}
-            disabled={pending}
-        >
-            {children}
-        </Button>
+        <div className="text-right">
+            <Button
+                forisFormSize
+                onClick={refreshUpdates}
+                disabled={pending}
+                loading={pending}
+            >
+                {children}
+            </Button>
+        </div>
     );
 }

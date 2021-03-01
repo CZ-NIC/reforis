@@ -7,7 +7,7 @@
 
 import React, { useEffect } from "react";
 
-import { useAPIGet } from "foris";
+import { useAPIGet, ForisURLs } from "foris";
 
 import API_URLs from "common/API";
 import UpdateManager from "./UpdateManager";
@@ -25,6 +25,12 @@ export default function Updates() {
     return (
         <>
             <h1>{_("Updates")}</h1>
+            <p>
+                {_(
+                    `In Turris OS, you decide when and how to get the latest updates
+                    to keep your device running smoothly and securely.`
+                )}
+            </p>
             <UpdateManager
                 apiState={updateSettingsResponse.state}
                 {...managerProps}
@@ -39,7 +45,9 @@ function getManagerProps(updateSettings) {
         checkerLabel: "",
         displayApproval: false,
         description: _(
-            "Automatic updates are disabled. Please enable delayed or approval-requiring updates to review them."
+            `Automatic updates are disabled. Please enable 
+            <a href="${ForisURLs.packageManagement.updateSettings}">delayed or 
+            approval-requiring updates</a> to review them.`
         ),
         delay: 0,
     };

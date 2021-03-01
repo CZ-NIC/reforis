@@ -10,11 +10,13 @@ import PropTypes from "prop-types";
 
 import {
     API_STATE,
+    Alert,
+    ALERT_TYPES,
     ErrorMessage,
     Spinner,
     withErrorMessage,
     withSpinnerOnSending,
-    buttonFormFieldsSize,
+    formFieldsSize,
 } from "foris";
 import UpdateChecker from "./UpdateChecker";
 import UpdateApproval from "./UpdateApproval";
@@ -31,7 +33,7 @@ UpdateManager.propTypes = {
     },
     displayApproval: PropTypes.bool.isRequired,
     description: PropTypes.string,
-    delay: PropTypes.string,
+    delay: PropTypes.number,
 };
 
 function UpdateManager({
@@ -63,22 +65,39 @@ function UpdateManager({
             />
         );
     }
-
     return (
         <>
-            {description}
-            {displayChecker && (
-                <div className={`${buttonFormFieldsSize} text-right`}>
-                    <UpdateChecker
-                        onSuccess={getUpdateToApprove}
-                        pending={pending}
-                        setPending={setPending}
-                    >
-                        {checkerLabel}
-                    </UpdateChecker>
-                </div>
+            {displayChecker ? (
+                <>
+                    <div className={`${formFieldsSize}`}>
+                        <h2>{_("Updates Check")}</h2>
+                        <p>{description}</p>
+                        <UpdateChecker
+                            onSuccess={getUpdateToApprove}
+                            pending={pending}
+                            setPending={setPending}
+                        >
+                            {checkerLabel}
+                        </UpdateChecker>
+                    </div>
+                    <div className={`${formFieldsSize}`}>
+                        <h2>{_("Available Updates")}</h2>
+                        <p>
+                            {_(`Here you can find and approve available updates for 
+                    Turris OS and other components.`)}
+                        </p>
+                        {approvalComponent || (
+                            <p className="text-center text-muted">
+                                {_("You're up to date.")}
+                            </p>
+                        )}
+                    </div>
+                </>
+            ) : (
+                <Alert type={ALERT_TYPES.WARNING}>
+                    <span dangerouslySetInnerHTML={{ __html: description }} />
+                </Alert>
             )}
-            {approvalComponent}
         </>
     );
 }
