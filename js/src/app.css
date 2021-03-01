@@ -110,7 +110,12 @@ button:disabled {
 }
 
 .help {
-    cursor: help;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.help:hover {
+    opacity: 1;
 }
 
 /* Custom Switch */
