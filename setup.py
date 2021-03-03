@@ -46,7 +46,7 @@ setuptools.setup(
         'Flask-SeaSurf',
         'flup',
         'cachelib',
-        'foris-client @ git+https://gitlab.nic.cz/turris/foris-controller/foris-client.git',
+        'foris-client @ git+https://gitlab.nic.cz/turris/foris-controller/foris-client#egg=foris-client',
         'paho-mqtt',
     ],
     setup_requires=[
