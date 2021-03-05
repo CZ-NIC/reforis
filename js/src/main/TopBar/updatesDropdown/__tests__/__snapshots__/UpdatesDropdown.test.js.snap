@@ -38,7 +38,7 @@ exports[`<UpdatesDropdown/> Updates awaiting - snapshot 1`] = `
       />
     </button>
     <div
-      class="dropdown-menu dropdown-menu-right shadow-sm"
+      class="dropdown-menu dropdown-menu-right  shadow-sm"
     >
       <div
         class="dropdown-header"
@@ -66,20 +66,13 @@ exports[`<UpdatesDropdown/> Updates awaiting - snapshot 1`] = `
          page.
       </span>
       <div
-        class="dropdown-item"
-        id="updates-dropdown-actions"
+        class="dropdown-item text-center"
       >
         <button
-          class="btn btn-primary"
+          class="btn btn-primary w-100"
           type="button"
         >
           Install now
-        </button>
-        <button
-          class="btn btn-warning"
-          type="button"
-        >
-          Ignore
         </button>
       </div>
     </div>

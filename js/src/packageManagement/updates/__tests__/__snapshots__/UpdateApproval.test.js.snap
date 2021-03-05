@@ -1,5 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<UpdateApproval/> Delayed updates awaiting - alert with timestamp 1`] = `
+"These updates are not going to be 
+                                    automatically installed before 
+                                    February 20, 2020 3:02 PM."
+`;
+
 exports[`<UpdateApproval/> No updates awaiting 1`] = `
 <div>
   <p
@@ -12,94 +18,86 @@ exports[`<UpdateApproval/> No updates awaiting 1`] = `
 
 exports[`<UpdateApproval/> Updates awaiting - snapshot 1`] = `
 <div>
+  <h3>
+    Approve Update From %s
+  </h3>
+  <p>
+    There is %d package to be updated. See 
+    <a
+      aria-controls="plan-wrapper"
+      aria-expanded="false"
+      data-toggle="collapse"
+      href="#plan-wrapper"
+      role="button"
+    >
+      details
+    </a>
+  </p>
   <div
-    class="card p-4 mb-4"
+    class="collapse"
+    data-testid="plan-wrapper"
+    id="plan-wrapper"
   >
-    <h3>
-      Approve Update From %s
-    </h3>
-    <p>
-      There is %d package to be updated. See 
-      <a
-        aria-controls="plan-wrapper"
-        aria-expanded="false"
-        data-toggle="collapse"
-        href="#plan-wrapper"
-        role="button"
-      >
-        details
-      </a>
-    </p>
     <div
-      class="collapse"
-      data-testid="plan-wrapper"
-      id="plan-wrapper"
+      class="table-responsive"
     >
-      <div
-        class="table-responsive"
+      <table
+        class="table table-hover"
       >
-        <table
-          class="table table-hover"
+        <thead
+          class="thead-light"
         >
-          <thead>
-            <tr>
-              <th
-                scope="col"
-              >
-                Action
-              </th>
-              <th
-                scope="col"
-              >
-                Name
-              </th>
-              <th
-                scope="col"
-              >
-                Current
-              </th>
-              <th
-                scope="col"
-              >
-                New
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                install
-              </td>
-              <td>
-                PACKAGE
-              </td>
-              <td>
-                1.0
-              </td>
-              <td>
-                2.0
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+          <tr>
+            <th
+              scope="col"
+            >
+              Action
+            </th>
+            <th
+              scope="col"
+            >
+              Name
+            </th>
+            <th
+              scope="col"
+            >
+              Current
+            </th>
+            <th
+              scope="col"
+            >
+              New
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              install
+            </td>
+            <td>
+              PACKAGE
+            </td>
+            <td>
+              1.0
+            </td>
+            <td>
+              2.0
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <div
-      class="row justify-content-around"
+  </div>
+  <div
+    class="text-right"
+  >
+    <button
+      class="btn btn-primary col-sm-12 col-md-3 col-lg-2"
+      type="button"
     >
-      <button
-        class="btn btn-primary col-sm-12 col-md-5 col-lg-3 mt-3 mt-lg-0"
-        type="button"
-      >
-        Install now
-      </button>
-      <button
-        class="btn btn-warning col-sm-12 col-md-5 col-lg-3 mt-3 mt-lg-0"
-        type="button"
-      >
-        Ignore
-      </button>
-    </div>
+      Install now
+    </button>
   </div>
 </div>
 `;

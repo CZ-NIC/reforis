@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -60,13 +60,16 @@ export default function LicenceModal() {
                         CZ.NIC, z. s. p. o. does not guarantee the availability of this service and is not
                         responsible for any damages caused by the automatic updates.
                     </li>
-                  `),
+                    `),
                             }}
                         />
                         <b
                             dangerouslySetInnerHTML={{
                                 __html: _(
-                                    'By enabling of the automatic updates, you confirm that you are the owner of this Turris router and you agree with the full text of the <a href="https://www.turris.cz/omnia-updater-eula" target="_blank" rel="noopener noreferrer">license agreement</a>.'
+                                    `By enabling of the automatic updates, 
+                                    you confirm that you are the owner of this Turris 
+                                    router and you agree with the full text of the 
+                                    <a href="https://www.turris.cz/omnia-updater-eula" target="_blank" rel="noopener noreferrer">license agreement <sup><i class="fas fa-external-link-alt fa-sm"></i></sup></a>.`
                                 ),
                             }}
                         />

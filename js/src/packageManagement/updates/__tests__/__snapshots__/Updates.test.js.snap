@@ -5,6 +5,10 @@ exports[`<Updates/> should display spinner 1`] = `
   <h1>
     Updates
   </h1>
+  <p>
+    In Turris OS, you decide when and how to get the latest updates
+                    to keep your device running smoothly and securely.
+  </p>
   <div
     class="spinner-wrapper my-3 text-center"
   >
@@ -25,28 +29,58 @@ exports[`<Updates/> should display spinner while check is pending 1`] = `
   <h1>
     Updates
   </h1>
-  Manually check for updates and install them immediately.
+  <p>
+    In Turris OS, you decide when and how to get the latest updates
+                    to keep your device running smoothly and securely.
+  </p>
   <div
-    class="col-sm-12 col-lg-12 p-0 mb-3 text-right"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
   >
-    <button
-      class="btn btn-primary mt-3 mt-lg-0 mb-3 col-sm-12 col-md-3 col-lg-2"
-      disabled=""
-      type="button"
+    <h2>
+      Updates Check
+    </h2>
+    <p>
+      Manually check for updates and install them immediately.
+    </p>
+    <div
+      class="text-right"
     >
-      Check and install updates
-    </button>
+      <button
+        class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
+        disabled=""
+        type="button"
+      >
+        <span
+          aria-hidden="true"
+          class="spinner-border spinner-border-sm"
+          role="status"
+        />
+         
+        Check and install updates
+      </button>
+    </div>
   </div>
   <div
-    class="spinner-wrapper text-center"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
   >
+    <h2>
+      Available Updates
+    </h2>
+    <p>
+      Here you can find and approve available updates for 
+                    Turris OS and other components.
+    </p>
     <div
-      class="spinner-border"
-      role="status"
+      class="spinner-wrapper text-center"
     >
-      <span
-        class="sr-only"
-      />
+      <div
+        class="spinner-border"
+        role="status"
+      >
+        <span
+          class="sr-only"
+        />
+      </div>
     </div>
   </div>
 </div>
@@ -57,28 +91,58 @@ exports[`<Updates/> should display spinner while check is pending 2`] = `
   <h1>
     Updates
   </h1>
-  Manually check for updates and install them immediately.
+  <p>
+    In Turris OS, you decide when and how to get the latest updates
+                    to keep your device running smoothly and securely.
+  </p>
   <div
-    class="col-sm-12 col-lg-12 p-0 mb-3 text-right"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
   >
-    <button
-      class="btn btn-primary mt-3 mt-lg-0 mb-3 col-sm-12 col-md-3 col-lg-2"
-      disabled=""
-      type="button"
+    <h2>
+      Updates Check
+    </h2>
+    <p>
+      Manually check for updates and install them immediately.
+    </p>
+    <div
+      class="text-right"
     >
-      Check and install updates
-    </button>
+      <button
+        class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
+        disabled=""
+        type="button"
+      >
+        <span
+          aria-hidden="true"
+          class="spinner-border spinner-border-sm"
+          role="status"
+        />
+         
+        Check and install updates
+      </button>
+    </div>
   </div>
   <div
-    class="spinner-wrapper text-center"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
   >
+    <h2>
+      Available Updates
+    </h2>
+    <p>
+      Here you can find and approve available updates for 
+                    Turris OS and other components.
+    </p>
     <div
-      class="spinner-border"
-      role="status"
+      class="spinner-wrapper text-center"
     >
-      <span
-        class="sr-only"
-      />
+      <div
+        class="spinner-border"
+        role="status"
+      >
+        <span
+          class="sr-only"
+        />
+      </div>
     </div>
   </div>
 </div>
@@ -89,20 +153,40 @@ exports[`<Updates/> should handle approvable updates 1`] = `
   <h1>
     Updates
   </h1>
-  Manually check for updates and review them immediately.
+  <p>
+    In Turris OS, you decide when and how to get the latest updates
+                    to keep your device running smoothly and securely.
+  </p>
   <div
-    class="col-sm-12 col-lg-12 p-0 mb-3 text-right"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
   >
-    <button
-      class="btn btn-primary mt-3 mt-lg-0 mb-3 col-sm-12 col-md-3 col-lg-2"
-      type="button"
+    <h2>
+      Updates Check
+    </h2>
+    <p>
+      Manually check for updates and review them immediately.
+    </p>
+    <div
+      class="text-right"
     >
-      Check updates
-    </button>
+      <button
+        class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
+        type="button"
+      >
+        Check updates
+      </button>
+    </div>
   </div>
   <div
-    class="card p-4 mb-4"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
   >
+    <h2>
+      Available Updates
+    </h2>
+    <p>
+      Here you can find and approve available updates for 
+                    Turris OS and other components.
+    </p>
     <h3>
       Approve Update From %s
     </h3>
@@ -129,7 +213,9 @@ exports[`<Updates/> should handle approvable updates 1`] = `
         <table
           class="table table-hover"
         >
-          <thead>
+          <thead
+            class="thead-light"
+          >
             <tr>
               <th
                 scope="col"
@@ -173,19 +259,13 @@ exports[`<Updates/> should handle approvable updates 1`] = `
       </div>
     </div>
     <div
-      class="row justify-content-around"
+      class="text-right"
     >
       <button
-        class="btn btn-primary col-sm-12 col-md-5 col-lg-3 mt-3 mt-lg-0"
+        class="btn btn-primary col-sm-12 col-md-3 col-lg-2"
         type="button"
       >
         Install now
-      </button>
-      <button
-        class="btn btn-warning col-sm-12 col-md-5 col-lg-3 mt-3 mt-lg-0"
-        type="button"
-      >
-        Ignore
       </button>
     </div>
   </div>
@@ -197,16 +277,45 @@ exports[`<Updates/> should handle automatic updates (no delays/approvals) 1`] = 
   <h1>
     Updates
   </h1>
-  Manually check for updates and install them immediately.
+  <p>
+    In Turris OS, you decide when and how to get the latest updates
+                    to keep your device running smoothly and securely.
+  </p>
   <div
-    class="col-sm-12 col-lg-12 p-0 mb-3 text-right"
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
   >
-    <button
-      class="btn btn-primary mt-3 mt-lg-0 mb-3 col-sm-12 col-md-3 col-lg-2"
-      type="button"
+    <h2>
+      Updates Check
+    </h2>
+    <p>
+      Manually check for updates and install them immediately.
+    </p>
+    <div
+      class="text-right"
     >
-      Check and install updates
-    </button>
+      <button
+        class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
+        type="button"
+      >
+        Check and install updates
+      </button>
+    </div>
+  </div>
+  <div
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
+  >
+    <h2>
+      Available Updates
+    </h2>
+    <p>
+      Here you can find and approve available updates for 
+                    Turris OS and other components.
+    </p>
+    <p
+      class="text-center text-muted"
+    >
+      You're up to date.
+    </p>
   </div>
 </div>
 `;
@@ -216,7 +325,25 @@ exports[`<Updates/> should handle disabled updates 1`] = `
   <h1>
     Updates
   </h1>
-  Automatic updates are disabled. Please enable delayed or approval-requiring updates to review them.
+  <p>
+    In Turris OS, you decide when and how to get the latest updates
+                    to keep your device running smoothly and securely.
+  </p>
+  <div
+    class="alert  alert-warning"
+  >
+    <span>
+      Automatic updates are disabled. Please enable 
+            
+      <a
+        href="/reforis/package-management/update-settings"
+      >
+        delayed or 
+            approval-requiring updates
+      </a>
+       to review them.
+    </span>
+  </div>
 </div>
 `;
 
@@ -225,6 +352,10 @@ exports[`<Updates/> should handle error 1`] = `
   <h1>
     Updates
   </h1>
+  <p>
+    In Turris OS, you decide when and how to get the latest updates
+                    to keep your device running smoothly and securely.
+  </p>
   <p
     class="text-center text-danger"
   >

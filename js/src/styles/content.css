@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -17,6 +17,7 @@
     padding: 2em;
     padding-left: calc(312.2px + 2em);
     height: 100%;
+    background-color: #f5f5f5;
 }
 
 @media (max-width: 768px) {

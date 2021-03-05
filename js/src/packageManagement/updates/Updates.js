@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2019-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -7,7 +7,7 @@
 
 import React, { useEffect } from "react";
 
-import { useAPIGet } from "foris";
+import { useAPIGet, ForisURLs } from "foris";
 
 import API_URLs from "common/API";
 import UpdateManager from "./UpdateManager";
@@ -25,6 +25,12 @@ export default function Updates() {
     return (
         <>
             <h1>{_("Updates")}</h1>
+            <p>
+                {_(
+                    `In Turris OS, you decide when and how to get the latest updates
+                    to keep your device running smoothly and securely.`
+                )}
+            </p>
             <UpdateManager
                 apiState={updateSettingsResponse.state}
                 {...managerProps}
@@ -39,8 +45,11 @@ function getManagerProps(updateSettings) {
         checkerLabel: "",
         displayApproval: false,
         description: _(
-            "Automatic updates are disabled. Please enable delayed or approval-requiring updates to review them."
+            `Automatic updates are disabled. Please enable 
+            <a href="${ForisURLs.packageManagement.updateSettings}">delayed or 
+            approval-requiring updates</a> to review them.`
         ),
+        delay: 0,
     };
 
     if (!updateSettings || !updateSettings.enabled) {
@@ -61,6 +70,7 @@ function getManagerProps(updateSettings) {
         managerProps.description = _(
             "Manually check for updates and review them immediately."
         );
+        managerProps.delay = updateSettings.approval_settings.delay;
     }
     return managerProps;
 }

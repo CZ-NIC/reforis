@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -197,14 +197,14 @@ export default function getPages(deviceDetails) {
                   icon: "box",
                   pages: [
                       {
-                          name: _("Update Settings"),
-                          path: "/update-settings",
-                          component: UpdateSettings,
-                      },
-                      {
                           name: _("Updates"),
                           path: "/updates",
                           component: Updates,
+                      },
+                      {
+                          name: _("Update Settings"),
+                          path: "/update-settings",
+                          component: UpdateSettings,
                       },
                       {
                           name: _("Packages"),
