@@ -146,3 +146,9 @@ form div.form-group.switch {
 .__react_component_tooltip a:hover {
     color: #00a2e2;
 }
+
+@media screen and (max-width: 768px) {
+    div.__react_component_tooltip {
+        max-width: 80%;
+    }
+}
