@@ -1,4 +1,4 @@
-#  Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+#  Copyright (C) 2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
 #
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
@@ -13,11 +13,42 @@ The translations catalog is generated using TranslationsHelper object. It’s a 
 format. Then it is uploaded into JS code with Jinja2 template system.
 """
 
+from babel import Locale
 from babel.messages.plurals import get_plural
 from babel.support import Translations, NullTranslations
+from babel.dates import get_timezone, get_timezone_name
+
 
 from flask import json, current_app
 from flask_babel import get_locale
+
+
+def prepare_tz_related_translations() -> dict:
+    result = {}
+
+    current_locale = get_locale()
+    en_locale = Locale('en', 'GB')  # British english contains the most of timezones
+
+    for timezone_name, data in current_locale.time_zones.items():
+        # Store city
+        if 'city' in en_locale.time_zones.get(timezone_name, {}) and 'city' in data:
+            result[en_locale.time_zones[timezone_name]['city']] = data['city']
+
+        # Store timezone name
+        try:
+            timezone = get_timezone(timezone_name)
+        except LookupError:
+            continue
+        result[get_timezone_name(timezone, locale=en_locale)] = get_timezone_name(
+            timezone, locale=current_locale
+        )
+
+    # Store countries
+    for code, territory in current_locale.territories.items():
+        if code in en_locale.territories:
+            result[en_locale.territories[code]] = territory
+
+    return result
 
 
 class TranslationsHelper(Translations):
@@ -61,7 +92,7 @@ def get_translations():
     return {
         'babel_catalog': _get_translations('messages', with_plugins=True).json_catalog,
         'babel_forisjs_catalog': _get_translations('forisjs').json_catalog,
-        'babel_tzinfo_catalog': _get_translations('tzinfo').json_catalog,
+        'babel_tzinfo_catalog': prepare_tz_related_translations(),
     }
 
 
