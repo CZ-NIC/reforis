@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-02-01 12:17+0100\n"
+"POT-Creation-Date: 2021-03-08 17:14+0100\n"
 "PO-Revision-Date: 2020-09-07 07:36+0000\n"
 "Last-Translator: nautilusx <mail.ka@mailbox.org>\n"
 "Language: de\n"
@@ -19,11 +19,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.0\n"
 
-#: js/src/about/About.js:22 js/src/main/pages.js:103 js/src/main/pages.js:217
+#: js/src/about/About.js:23 js/src/main/pages.js:109 js/src/main/pages.js:228
 msgid "About"
 msgstr "Info"
 
-#: js/src/about/About.js:25
+#: js/src/about/About.js:26
 msgid ""
 "Here you can find some information about your device. Please include it "
 "into your message if you contact our <a "
@@ -31,34 +31,36 @@ msgid ""
 "support</a>."
 msgstr ""
 
-#: js/src/about/About.js:48
+#: js/src/about/About.js:49
 msgid "Device"
 msgstr "Gerät"
 
-#: js/src/about/About.js:52
+#: js/src/about/About.js:53
 msgid "Serial number"
 msgstr "Seriennummer"
 
-#: js/src/about/About.js:56
+#: js/src/about/About.js:57
 msgid "reForis version"
 msgstr ""
 
-#: js/src/about/About.js:60
+#: js/src/about/About.js:61
 msgid "Turris OS version"
 msgstr "Turris OS Version"
 
-#: js/src/about/About.js:65
+#: js/src/about/About.js:66
 msgid "Turris OS branch"
 msgstr "Turris OS Branch"
 
-#: js/src/about/About.js:68
+#: js/src/about/About.js:69
 msgid ""
-"Turris OS is currently released in various branches, which have different"
-" functions and varying stability - you can pick, which branch you want to"
-" test."
+"Turris OS is currently released in various branches,\n"
+"                                    which have different functions and "
+"varying stability\n"
+"                                    - you can pick, which branch you want"
+" to test."
 msgstr ""
 
-#: js/src/about/About.js:87
+#: js/src/about/About.js:97
 msgid "Kernel version"
 msgstr "Kernel-Version"
 
@@ -68,7 +70,7 @@ msgstr ""
 
 #: js/src/common/FactoryResetButton.js:66 js/src/common/RebootButton.js:66
 #: js/src/dns/DNSSECDisableModal.js:30
-#: js/src/notificationsSettings/TestNotification.js:139
+#: js/src/notificationsSettings/TestNotification.js:146
 msgid "Warning!"
 msgstr "Warnung!"
 
@@ -79,7 +81,7 @@ msgstr "Wollen Sie den Router wirklich neu starten?"
 
 #: js/src/common/FactoryResetButton.js:71 js/src/common/RebootButton.js:71
 #: js/src/dns/DNSSECDisableModal.js:41
-#: js/src/notificationsSettings/TestNotification.js:144
+#: js/src/notificationsSettings/TestNotification.js:151
 msgid "Cancel"
 msgstr "Abbrechen"
 
@@ -111,31 +113,39 @@ msgstr "Hostname, der dem DHCP-Server zur Verfügung gestellt wird."
 msgid "DHCP hostname"
 msgstr "DHCP Hostname"
 
-#: js/src/common/network/DHCPClientsList.js:19
-msgid "DHCP Clients"
-msgstr "DHCP-Clients"
+#: js/src/common/network/DHCPClientsList.js:20
+msgid "DHCP Client List"
+msgstr ""
 
 #: js/src/common/network/DHCPClientsList.js:22
-msgid "No DHCP clients found."
+msgid ""
+"This list contains all devices that are connected to the network through "
+"wired or wireless connections."
+msgstr ""
+
+#: js/src/common/network/DHCPClientsList.js:28
+#, fuzzy
+msgid "No clients found."
 msgstr "Keine DHCP-Clients gefunden."
 
-#: js/src/common/network/DHCPClientsList.js:29
+#: js/src/common/network/DHCPClientsList.js:35
 msgid "Expires"
 msgstr "Verfällt"
 
-#: js/src/common/network/DHCPClientsList.js:30
+#: js/src/common/network/DHCPClientsList.js:36
 msgid "IP Address"
 msgstr "IP-Adresse"
 
-#: js/src/common/network/DHCPClientsList.js:31
+#: js/src/common/network/DHCPClientsList.js:37
 msgid "MAC Address"
 msgstr "MAC-Adresse"
 
-#: js/src/common/network/DHCPClientsList.js:32
+#: js/src/common/network/DHCPClientsList.js:38 js/src/hostname/Hostname.js:21
+#: js/src/main/pages.js:96 js/src/main/pages.js:187
 msgid "Hostname"
 msgstr "Rechnername"
 
-#: js/src/common/network/DHCPClientsList.js:33
+#: js/src/common/network/DHCPClientsList.js:39
 msgid "Active"
 msgstr "Aktiv"
 
@@ -211,7 +221,7 @@ msgid "IP address"
 msgstr "IP-Adresse"
 
 #: js/src/common/network/StaticIPForm.js:60
-#: js/src/guestNetwork/GuestNetworkForm.js:87 js/src/lan/LANManagedForm.js:72
+#: js/src/guestNetwork/GuestNetworkForm.js:88 js/src/lan/LANManagedForm.js:72
 msgid "Network mask"
 msgstr "Netzwerkmaske"
 
@@ -229,8 +239,8 @@ msgstr "DNS-Server 2"
 
 #: js/src/common/network/StaticIPForm.js:111
 #: js/src/common/network/validators.js:19 js/src/wan/MACForm.js:83
-#: js/src/wan/WAN6Form.js:506 js/src/wan/WAN6Form.js:538
-#: js/src/wan/WAN6Form.js:550 js/src/wan/WANForm.js:173
+#: js/src/wan/WAN6Form.js:504 js/src/wan/WAN6Form.js:533
+#: js/src/wan/WAN6Form.js:545 js/src/wan/WANForm.js:173
 msgid "This field is required."
 msgstr "Dieses Feld ist erforderlich."
 
@@ -326,19 +336,24 @@ msgstr ""
 "Diese Domäne wird als Präfix genutzt. Z. B. für das Gerät \"android-123\""
 " und der Domäne \"my.lan\" wäre das Ergebnis dann \"android-123.my.lan\"."
 
-#: js/src/dns/DNSForm.js:83
+#: js/src/dns/DNSForm.js:67
+#, fuzzy
+msgid "DNS Settings"
+msgstr "LAN-Einstellungen"
+
+#: js/src/dns/DNSForm.js:84
 msgid "Use forwarding"
 msgstr "Weiterleitung benutzen"
 
-#: js/src/dns/DNSForm.js:99
+#: js/src/dns/DNSForm.js:100
 msgid "Enable DNSSEC"
 msgstr "DNSSEC aktivieren"
 
-#: js/src/dns/DNSForm.js:105
+#: js/src/dns/DNSForm.js:106
 msgid "Enable DHCP clients in DNS"
 msgstr "DHCP auf DNS-Geräten aktivieren"
 
-#: js/src/dns/DNSForm.js:115
+#: js/src/dns/DNSForm.js:116
 msgid "Domain of DHCP clients in DNS"
 msgstr "Domäne der DHCP-Geräte im DNS"
 
@@ -388,11 +403,11 @@ msgid "Delete"
 msgstr "Löschen"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:23
-msgid "base64 encoded sha256."
+msgid "Base 64 encoded SHA-256."
 msgstr ""
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:48
-#: js/src/packageManagement/updates/UpdateApproval.js:121
+#: js/src/packageManagement/updates/UpdateApproval.js:152
 msgid "Name"
 msgstr "Name"
 
@@ -465,7 +480,7 @@ msgid "Define at least one of the IP addresses of the forwarder."
 msgstr ""
 
 #: js/src/guestNetwork/GuestNetwork.js:37 js/src/interfaces/constants.js:11
-#: js/src/main/pages.js:148
+#: js/src/main/pages.js:154
 msgid "Guest Network"
 msgstr "Gastnetzwerk"
 
@@ -505,37 +520,42 @@ msgstr "Downloadgeschwindigkeit im Gastnetzwerk (kbit/s)."
 msgid "Upload speed in guest network (in kilobits per second)."
 msgstr "Uploadgeschwindigkeit im Gastnetzwerk (kbit/s)."
 
-#: js/src/guestNetwork/GuestNetworkForm.js:66
+#: js/src/guestNetwork/GuestNetworkForm.js:65
+#, fuzzy
+msgid "Guest Network Settings"
+msgstr "Gastnetzwerk"
+
+#: js/src/guestNetwork/GuestNetworkForm.js:67
 msgid "Enable"
 msgstr "Aktivieren"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:76 js/src/lan/LANManagedForm.js:61
+#: js/src/guestNetwork/GuestNetworkForm.js:77 js/src/lan/LANManagedForm.js:61
 msgid "Router IP address"
 msgstr "IP-Adresse des Routers"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:97 js/src/lan/LANManagedForm.js:82
+#: js/src/guestNetwork/GuestNetworkForm.js:98 js/src/lan/LANManagedForm.js:82
 msgid "Enable DHCP"
 msgstr "DHCP aktivieren"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:115
+#: js/src/guestNetwork/GuestNetworkForm.js:116
 msgid "Enable QoS"
 msgstr ""
 
-#: js/src/guestNetwork/GuestNetworkForm.js:158
+#: js/src/guestNetwork/GuestNetworkForm.js:159
 #: js/src/overview/Cards/NetmetrCard.js:65
 msgid "Download"
 msgstr "Herunterladen"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:171
+#: js/src/guestNetwork/GuestNetworkForm.js:172
 #: js/src/overview/Cards/NetmetrCard.js:81
 msgid "Upload"
 msgstr ""
 
-#: js/src/guestNetwork/GuestNetworkForm.js:190
+#: js/src/guestNetwork/GuestNetworkForm.js:191
 msgid "Download speed must be positive"
 msgstr ""
 
-#: js/src/guestNetwork/GuestNetworkForm.js:193
+#: js/src/guestNetwork/GuestNetworkForm.js:194
 msgid "Upload speed must be positive"
 msgstr ""
 
@@ -723,9 +743,9 @@ msgstr ""
 msgid "Cannot mark guide as finished."
 msgstr ""
 
-#: js/src/guide/steps.js:20 js/src/main/pages.js:75 js/src/main/pages.js:161
+#: js/src/guide/steps.js:20 js/src/main/pages.js:76 js/src/main/pages.js:167
 #: js/src/notificationsSettings/SMTPCustomForm.js:114
-#: js/src/password/Password.js:177 reforis/templates/login.html:29
+#: js/src/password/Password.js:180 reforis/templates/login.html:29
 msgid "Password"
 msgstr "Passwort"
 
@@ -733,7 +753,7 @@ msgstr "Passwort"
 msgid "Workflow"
 msgstr ""
 
-#: js/src/guide/steps.js:28 js/src/main/pages.js:143
+#: js/src/guide/steps.js:28 js/src/main/pages.js:149
 msgid "Interfaces"
 msgstr ""
 
@@ -741,22 +761,22 @@ msgstr ""
 msgid "Time"
 msgstr ""
 
-#: js/src/guide/steps.js:36 js/src/main/pages.js:62 js/src/main/pages.js:138
+#: js/src/guide/steps.js:36 js/src/main/pages.js:63 js/src/main/pages.js:144
 msgid "DNS"
 msgstr ""
 
-#: js/src/guide/steps.js:40 js/src/main/pages.js:194
+#: js/src/guide/steps.js:40 js/src/main/pages.js:200
 #: js/src/packageManagement/updates/Updates.js:27
 msgid "Updates"
 msgstr ""
 
 #: js/src/guide/steps.js:44 js/src/interfaces/constants.js:9
-#: js/src/main/pages.js:52 js/src/main/pages.js:128 js/src/wan/WAN.js:27
+#: js/src/main/pages.js:53 js/src/main/pages.js:134 js/src/wan/WAN.js:27
 msgid "WAN"
 msgstr ""
 
 #: js/src/guide/steps.js:48 js/src/interfaces/constants.js:10
-#: js/src/main/pages.js:57 js/src/main/pages.js:133
+#: js/src/main/pages.js:58 js/src/main/pages.js:139
 msgid "LAN"
 msgstr ""
 
@@ -853,6 +873,33 @@ msgstr ""
 #: js/src/guide/GuidePages/WorkflowSelect.js:84
 msgid "Recommended"
 msgstr ""
+
+#: js/src/hostname/Hostname.js:22
+#, fuzzy
+msgid "Here you can check and set the name of your device."
+msgstr "Nun müssen Sie die Zeit und Zeitzone Ihres Gerätes einstellen."
+
+#: js/src/hostname/Hostname.js:41
+#, fuzzy
+msgid ""
+"The hostname can contain only alphanumeric characters, hyphens, "
+"underscores and can't be empty."
+msgstr ""
+"Der Absendername kann nur aus alphanumerischen Zeichen, Punkten und "
+"Unterstrichen bestehen."
+
+#: js/src/hostname/HostnameForm.js:13
+msgid "Rewrite the hostname to set a new one."
+msgstr ""
+
+#: js/src/hostname/HostnameForm.js:33
+msgid "Hostname Settings"
+msgstr ""
+
+#: js/src/hostname/HostnameForm.js:35
+#, fuzzy
+msgid "Device hostname"
+msgstr "DHCP Hostname"
 
 #: js/src/interfaces/Interfaces.js:25
 msgid "Network Interfaces"
@@ -1038,62 +1085,62 @@ msgstr "Verbinden Sie dieses Gerät nicht mit dem LAN"
 msgid "IPv4 protocol"
 msgstr "IPv4-Protokoll"
 
-#: js/src/main/pages.js:40 js/src/main/pages.js:111
+#: js/src/main/pages.js:41 js/src/main/pages.js:117
 #: js/src/overview/Overview.js:51
 msgid "Overview"
 msgstr ""
 
-#: js/src/main/pages.js:46 js/src/main/pages.js:117
+#: js/src/main/pages.js:47 js/src/main/pages.js:123
 msgid "Network Settings"
 msgstr ""
 
-#: js/src/main/pages.js:69 js/src/main/pages.js:155
+#: js/src/main/pages.js:70 js/src/main/pages.js:161
 msgid "Administration"
 msgstr "Verwaltung"
 
-#: js/src/main/pages.js:80 js/src/main/pages.js:166
+#: js/src/main/pages.js:81 js/src/main/pages.js:172
 msgid "Region & Time"
 msgstr ""
 
 #: js/src/main/TopBar/NotificationsDropdown/NotificationsDropdownMenu.js:76
-#: js/src/main/pages.js:85 js/src/main/pages.js:171
+#: js/src/main/pages.js:86 js/src/main/pages.js:177
 #: js/src/notifications/Notifications/Notifications.js:87
 #: js/src/notificationsSettings/NotificationsSettings.js:25
 msgid "Notifications"
 msgstr "Benachrichtigungen"
 
-#: js/src/main/pages.js:90 js/src/main/pages.js:176
+#: js/src/main/pages.js:91 js/src/main/pages.js:182
 #: js/src/maintenance/Maintenance.js:17
 msgid "Maintenance"
 msgstr ""
 
-#: js/src/main/pages.js:97
+#: js/src/main/pages.js:103
 msgid "Global Threat Statistics"
 msgstr ""
 
-#: js/src/main/pages.js:123 js/src/wifi/WiFi.js:21
+#: js/src/main/pages.js:129 js/src/wifi/WiFi.js:21
 msgid "Wi-Fi"
 msgstr ""
 
-#: js/src/main/pages.js:183
+#: js/src/main/pages.js:194
 msgid "Package Management"
 msgstr ""
 
-#: js/src/main/pages.js:189
+#: js/src/main/pages.js:205
 #: js/src/packageManagement/updateSettings/UpdateSettings.js:28
 msgid "Update Settings"
 msgstr ""
 
-#: js/src/main/pages.js:199 js/src/packageManagement/packages/Packages.js:19
+#: js/src/main/pages.js:210 js/src/packageManagement/packages/Packages.js:19
 msgid "Packages"
 msgstr ""
 
-#: js/src/main/TopBar/languagesDropdown/LanguagesDropdown.js:47
-#: js/src/main/pages.js:204 js/src/packageManagement/languages/Languages.js:18
+#: js/src/main/TopBar/languagesDropdown/LanguagesDropdown.js:50
+#: js/src/main/pages.js:215 js/src/packageManagement/languages/Languages.js:18
 msgid "Languages"
 msgstr ""
 
-#: js/src/main/pages.js:211
+#: js/src/main/pages.js:222
 msgid "Advanced Administration"
 msgstr ""
 
@@ -1120,28 +1167,23 @@ msgstr ""
 msgid "Details"
 msgstr ""
 
-#: js/src/main/TopBar/updatesDropdown/UpdatesDropdown.js:97
+#: js/src/main/TopBar/updatesDropdown/UpdatesDropdown.js:100
 msgid "Approve Update"
 msgstr ""
 
-#: js/src/main/TopBar/updatesDropdown/UpdatesDropdown.js:127
+#: js/src/main/TopBar/updatesDropdown/UpdatesDropdown.js:130
 msgid ""
 "See details in <a href=${ForisURLs.packageManagement.updates}>Updates</a>"
 " page."
 msgstr ""
 
-#: js/src/main/TopBar/updatesDropdown/UpdatesDropdown.js:137
-#: js/src/packageManagement/updates/UpdateApproval.js:97
+#: js/src/main/TopBar/updatesDropdown/UpdatesDropdown.js:140
+#: js/src/packageManagement/updates/UpdateApproval.js:128
 msgid "Install now"
 msgstr ""
 
-#: js/src/main/TopBar/updatesDropdown/UpdatesDropdown.js:143
-#: js/src/packageManagement/updates/UpdateApproval.js:103
-msgid "Ignore"
-msgstr ""
-
-#: js/src/main/TopBar/updatesDropdown/UpdatesDropdown.js:154
-#: js/src/packageManagement/updates/UpdateApproval.js:34
+#: js/src/main/TopBar/updatesDropdown/UpdatesDropdown.js:151
+#: js/src/packageManagement/updates/UpdateApproval.js:39
 msgid "Cannot install updates."
 msgstr ""
 
@@ -1283,7 +1325,7 @@ msgid "Security"
 msgstr "Sicherheit"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:106
-#: js/src/wan/WAN6Form.js:436
+#: js/src/wan/WAN6Form.js:434
 msgid "Username"
 msgstr "Benutzername"
 
@@ -1305,15 +1347,22 @@ msgid ""
 " to get this notification by email."
 msgstr ""
 
-#: js/src/notificationsSettings/TestNotification.js:104
-msgid "Test notification"
+#: js/src/notificationsSettings/TestNotification.js:110
+#, fuzzy
+msgid "Test Notification"
+msgstr "Keine Benachrichtigungen"
+
+#: js/src/notificationsSettings/TestNotification.js:112
+msgid ""
+"Here you can verify whether SMTP is configured correctly by sending a "
+"test notification to your email inbox."
 msgstr ""
 
-#: js/src/notificationsSettings/TestNotification.js:117
+#: js/src/notificationsSettings/TestNotification.js:123
 msgid "Send test notification"
 msgstr ""
 
-#: js/src/notificationsSettings/TestNotification.js:146
+#: js/src/notificationsSettings/TestNotification.js:153
 msgid "Confirm"
 msgstr ""
 
@@ -1520,15 +1569,20 @@ msgid ""
 "                        responsible for any damages caused by the "
 "automatic updates.\n"
 "                    </li>\n"
-"                  "
+"                    "
 msgstr ""
 
 #: js/src/packageManagement/updateSettings/LicenceModal.js:68
 msgid ""
-"By enabling of the automatic updates, you confirm that you are the owner "
-"of this Turris router and you agree with the full text of the <a "
-"href=\"https://www.turris.cz/omnia-updater-eula\" target=\"_blank\" "
-"rel=\"noopener noreferrer\">license agreement</a>."
+"By enabling of the automatic updates, \n"
+"                                    you confirm that you are the owner of"
+" this Turris \n"
+"                                    router and you agree with the full "
+"text of the \n"
+"                                    <a href=\"https://www.turris.cz"
+"/omnia-updater-eula\" target=\"_blank\" rel=\"noopener "
+"noreferrer\">license agreement <sup><i class=\"fas fa-external-link-alt "
+"fa-sm\"></i></sup></a>."
 msgstr ""
 
 #: js/src/packageManagement/updateSettings/UpdateSettings.js:31
@@ -1636,16 +1690,16 @@ msgstr ""
 msgid "Updates must be delayed by least 1 hour and at most by 168 hours"
 msgstr ""
 
-#: js/src/packageManagement/updateSettings/forms/UpdatesForm.js:47
+#: js/src/packageManagement/updateSettings/forms/UpdatesForm.js:46
+msgid "Automatic Update Settings"
+msgstr ""
+
+#: js/src/packageManagement/updateSettings/forms/UpdatesForm.js:48
 msgid "Enable automatic updates (recommended)"
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:38
+#: js/src/packageManagement/updates/UpdateApproval.js:43
 msgid "Updates will be installed shortly."
-msgstr ""
-
-#: js/src/packageManagement/updates/UpdateApproval.js:55
-msgid "There are no updates awaiting your approval."
 msgstr ""
 
 #: js/src/packageManagement/updates/UpdateApproval.js:61
@@ -1661,42 +1715,89 @@ msgid ""
 "aria-expanded=\"false\" aria-controls=\"plan-wrapper\">details</a>"
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:76
+#: js/src/packageManagement/updates/UpdateApproval.js:79
+msgid ""
+"These updates are not going to be \n"
+"                                    automatically installed before \n"
+"                                    ${toLocaleDateString(delayedTime)}."
+msgstr ""
+
+#: js/src/packageManagement/updates/UpdateApproval.js:88
+msgid ""
+"If you don't want the updates to be installed at all, go to\n"
+"                                    <a "
+"href=\"${ForisURLs.packageManagement.updateSettings}\">Update "
+"Settings</a> \n"
+"                                    and choose the option <b>Update "
+"approval needed</b>."
+msgstr ""
+
+#: js/src/packageManagement/updates/UpdateApproval.js:106
 #, python-format
 msgid "Approve Update From %s"
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:120
+#: js/src/packageManagement/updates/UpdateApproval.js:134
+msgid "There are no updates awaiting your approval."
+msgstr ""
+
+#: js/src/packageManagement/updates/UpdateApproval.js:151
 msgid "Action"
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:122
+#: js/src/packageManagement/updates/UpdateApproval.js:153
 msgid "Current"
 msgstr ""
 
-#: js/src/packageManagement/updates/UpdateApproval.js:123
+#: js/src/packageManagement/updates/UpdateApproval.js:154
 msgid "New"
 msgstr ""
 
-#: js/src/packageManagement/updates/Updates.js:41
-msgid ""
-"Automatic updates are disabled. Please enable delayed or approval-"
-"requiring updates to review them."
+#: js/src/packageManagement/updates/UpdateManager.js:73
+msgid "Updates Check"
 msgstr ""
 
-#: js/src/packageManagement/updates/Updates.js:53
+#: js/src/packageManagement/updates/UpdateManager.js:84
+msgid "Available Updates"
+msgstr ""
+
+#: js/src/packageManagement/updates/UpdateManager.js:86
+msgid ""
+"Here you can find and approve available updates for \n"
+"                    Turris OS and other components."
+msgstr ""
+
+#: js/src/packageManagement/updates/UpdateManager.js:91
+msgid "You're up to date."
+msgstr ""
+
+#: js/src/packageManagement/updates/Updates.js:29
+msgid ""
+"In Turris OS, you decide when and how to get the latest updates\n"
+"                    to keep your device running smoothly and securely."
+msgstr ""
+
+#: js/src/packageManagement/updates/Updates.js:47
+msgid ""
+"Automatic updates are disabled. Please enable \n"
+"            <a "
+"href=\"${ForisURLs.packageManagement.updateSettings}\">delayed or \n"
+"            approval-requiring updates</a> to review them."
+msgstr ""
+
+#: js/src/packageManagement/updates/Updates.js:62
 msgid "Check and install updates"
 msgstr ""
 
-#: js/src/packageManagement/updates/Updates.js:54
+#: js/src/packageManagement/updates/Updates.js:63
 msgid "Manually check for updates and install them immediately."
 msgstr ""
 
-#: js/src/packageManagement/updates/Updates.js:59
+#: js/src/packageManagement/updates/Updates.js:68
 msgid "Check updates"
 msgstr ""
 
-#: js/src/packageManagement/updates/Updates.js:61
+#: js/src/packageManagement/updates/Updates.js:70
 msgid "Manually check for updates and review them immediately."
 msgstr ""
 
@@ -1711,27 +1812,32 @@ msgid ""
 "updates</a> to manage packages and languages."
 msgstr ""
 
-#: js/src/password/ForisPasswordForm.js:49
-msgid "Foris Password"
-msgstr ""
-
-#: js/src/password/ForisPasswordForm.js:50
+#: js/src/password/ForisPasswordForm.js:53
 msgid "Set your password for this administration interface."
 msgstr "Legen Sie Ihr Kennwort für diese Verwaltungsschnittstelle fest."
 
-#: js/src/password/ForisPasswordForm.js:55
-msgid "Current Foris password"
+#: js/src/password/ForisPasswordForm.js:58
+#, fuzzy
+msgid "Current password"
 msgstr "Aktuelles Foris-Passwort"
 
-#: js/src/password/ForisPasswordForm.js:65
-msgid "New Foris password"
+#: js/src/password/ForisPasswordForm.js:68
+#: js/src/password/RootPasswordForm.js:69
+#, fuzzy
+msgid "New password"
 msgstr "Neues Foris-Passwort"
 
-#: js/src/password/ForisPasswordForm.js:81
-msgid "Use same password for advanced administration (root)"
+#: js/src/password/ForisPasswordForm.js:79
+#: js/src/password/RootPasswordForm.js:79
+msgid "Confirm new password"
+msgstr ""
+
+#: js/src/password/ForisPasswordForm.js:95
+#, fuzzy
+msgid "Use the same password for advanced administration (root)"
 msgstr "Verwenden Des gleichen Kennworts für die erweiterte Verwaltung (Root)"
 
-#: js/src/password/ForisPasswordForm.js:84
+#: js/src/password/ForisPasswordForm.js:98
 msgid ""
 "Same password would be used for accessing this administration interface, "
 "for root user in LuCI web interface and for SSH login. Use a strong "
@@ -1745,43 +1851,54 @@ msgstr ""
 "sich entscheiden kein Kennwort festzulegen, so besteht Option dies später"
 " zu tun. Bis dahin wird der root-Benutzer blockiert.)"
 
-#: js/src/password/Password.js:77
+#: js/src/password/Password.js:79
 msgid ""
-"The password you've entered has been compromised. It appears ${\n"
+"The password you've entered has not been saved. It has been compromised "
+"and appears ${\n"
 "                            forisPassword.count || rootPassword.count\n"
 "                        } times in ${\n"
 "                            forisPassword.list || rootPassword.list\n"
-"                        } list."
+"                        } list. Please enter another, more secure "
+"password."
 msgstr ""
 
-#: js/src/password/Password.js:88
+#: js/src/password/Password.js:90
 msgid "Password changed successfully."
 msgstr ""
 
-#: js/src/password/Password.js:179
+#: js/src/password/Password.js:153
+msgid "Password Settings"
+msgstr ""
+
+#: js/src/password/Password.js:182
 msgid ""
 "Here you can set passwords for Foris and optionally for advanced features"
-" (LuCI and SSH). Make sure to set secure password which is long and "
+" (LuCI and SSH). Make sure to set a secure password which is long and "
 "uncommon."
 msgstr ""
 
-#: js/src/password/Password.js:201
+#: js/src/password/Password.js:199 js/src/password/Password.js:203
+msgid "The password confirmation does not match."
+msgstr ""
+
+#: js/src/password/Password.js:218
 msgid "Password can't be empty."
 msgstr "Das Kennwort darf nicht leer sein."
 
-#: js/src/password/Password.js:203
+#: js/src/password/Password.js:220
 msgid "Password should have min 6 symbols."
 msgstr "Das Passwort sollte mindestens 6 Zeichen haben."
 
-#: js/src/password/Password.js:206
+#: js/src/password/Password.js:223
 msgid "Password should have max 128 symbols."
 msgstr "Das Passwort sollte maximal 128 Zeichen enthalten."
 
-#: js/src/password/RootPasswordForm.js:48
-msgid "Advanced Administration (root) Password"
-msgstr ""
+#: js/src/password/RootPasswordForm.js:54
+#, fuzzy
+msgid "Advanced Administration Password"
+msgstr "Neues erweitertes Administrationskennwort"
 
-#: js/src/password/RootPasswordForm.js:52
+#: js/src/password/RootPasswordForm.js:58
 #, python-format
 msgid ""
 "In order to access the advanced configuration options which are not "
@@ -1791,10 +1908,6 @@ msgid ""
 "through the <a href=\"%s\" target=\"_blank\" rel=\"noopener "
 "noreferrer\">LuCI web interface</a> or via SSH."
 msgstr ""
-
-#: js/src/password/RootPasswordForm.js:63
-msgid "New advanced administration password"
-msgstr "Neues erweitertes Administrationskennwort"
 
 #: js/src/regionAndTime/RegionAndTime.js:30
 msgid "Region and Time"
@@ -2035,10 +2148,6 @@ msgstr "6to4 (öffentliche IPv4-Adresse erforderlich)"
 msgid "6in4 (public IPv4 address required)"
 msgstr "6in4 (öffentliche IPv4-Adresse erforderlich)"
 
-#: js/src/wan/WAN6Form.js:162
-msgid "WAN IPv6"
-msgstr "WAN IPv6"
-
 #: js/src/wan/WAN6Form.js:164
 msgid "IPv6 protocol"
 msgstr "IPv6-Protokoll"
@@ -2059,45 +2168,43 @@ msgstr "Präfix"
 msgid "Public IPv4"
 msgstr "Öffentliche IPv4"
 
-#: js/src/wan/WAN6Form.js:339
+#: js/src/wan/WAN6Form.js:338
 msgid "Provider IPv4"
 msgstr "Anbieter-IPv4"
 
-#: js/src/wan/WAN6Form.js:352
+#: js/src/wan/WAN6Form.js:351
 msgid "Routed IPv6 prefix"
 msgstr "Gerouteter IPv6-Präfix"
 
-#: js/src/wan/WAN6Form.js:365
+#: js/src/wan/WAN6Form.js:363
 msgid "MTU"
 msgstr "MTU"
 
-#: js/src/wan/WAN6Form.js:421
+#: js/src/wan/WAN6Form.js:375
+msgid "Dynamic IPv4 handling"
+msgstr ""
+
+#: js/src/wan/WAN6Form.js:419
 msgid "Tunnel ID"
 msgstr "Tunnel-ID"
 
-#: js/src/wan/WAN6Form.js:451
+#: js/src/wan/WAN6Form.js:449
 msgid "Key"
 msgstr "Schlüssel"
 
-#: js/src/wan/WAN6Form.js:515
-msgid "Public IPv4 address is required."
-msgstr "Eine öffentliche IPv4-Adresse ist erforderlich."
-
-#: js/src/wan/WAN6Form.js:532
-msgid "MTU should be a number in range of 1280-1500."
+#: js/src/wan/WAN6Form.js:527
+#, fuzzy
+msgid "MTU has to be a number in the range of 1280-1480."
 msgstr "Die MTU sollte eine Zahl im Bereich von 1280-1500 sein."
 
-#: js/src/wan/WAN6Form.js:534
-msgid "MTU should be in range of 1280-1500."
+#: js/src/wan/WAN6Form.js:529
+#, fuzzy
+msgid "MTU has to be in the range of 1280-1480."
 msgstr "Die MTU sollte im Bereich von 1280-1500 liegen."
 
 #: js/src/wan/WANForm.js:27
 msgid "PPPoE (for DSL bridges, etc.)"
 msgstr ""
-
-#: js/src/wan/WANForm.js:100
-msgid "WAN IPv4"
-msgstr "WAN IPv4"
 
 #: js/src/wan/WANForm.js:128
 msgid "PAP/CHAP username"
@@ -2139,15 +2246,14 @@ msgstr ""
 
 #: reforis/foris_controller_api/modules/router_notifications.py:117
 msgid ""
+"This is a testing notification.\n"
 "\n"
-"This is a testing notification. Please note you should receive this to "
-"your e-mail inbox only if you set the importance\n"
-"level on \"Reboot or attention is required\" or higher.\n"
-"            "
+"Please note it would be sent to your e-mail address only if you set\n"
+"the importance level to \"Reboot or attention is required\" or higher."
 msgstr ""
 
 #: reforis/foris_controller_api/modules/router_notifications.py:127
-msgid "Testing message was sent, please check your inbox."
+msgid "The testing message has been sent, please check your inbox."
 msgstr ""
 
 #: reforis/foris_controller_api/modules/router_notifications.py:130
@@ -2556,5 +2662,136 @@ msgstr ""
 #~ msgstr "Benutzer"
 
 #~ msgid "Device Reboot"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Turris OS is currently released in "
+#~ "various branches, which have different "
+#~ "functions and varying stability - you"
+#~ " can pick, which branch you want "
+#~ "to test."
+#~ msgstr ""
+
+#~ msgid "DHCP Clients"
+#~ msgstr "DHCP-Clients"
+
+#~ msgid "base64 encoded sha256."
+#~ msgstr ""
+
+#~ msgid "Ignore"
+#~ msgstr ""
+
+#~ msgid "Test notification"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\n"
+#~ "                    <li>Automatic updates are "
+#~ "offered to the Turris router owners "
+#~ "free of charge.</li>\n"
+#~ "                    <li>Updates are prepared "
+#~ "exclusively by CZ.NIC, z. s. p. "
+#~ "o.</li>\n"
+#~ "                    <li>\n"
+#~ "                        Enabling of the "
+#~ "automatic updates is a prerequisite for"
+#~ " additional security features of\n"
+#~ "                        Turris router.\n"
+#~ "                    </li>\n"
+#~ "                    <li>\n"
+#~ "                        Automatic updates take "
+#~ "place at the time of their "
+#~ "release, the time of installation\n"
+#~ "                        cannot be influenced by the user.\n"
+#~ "                    </li>\n"
+#~ "                    <li>\n"
+#~ "                        Having the automatic "
+#~ "updates turned on can result in "
+#~ "increased Internet traffic on your\n"
+#~ "                        router. Expenses related "
+#~ "to this increase are covered by "
+#~ "you.\n"
+#~ "                    </li>\n"
+#~ "                    <li>\n"
+#~ "                        Automatic updates cannot "
+#~ "protect you against every attack coming"
+#~ " from the Internet.\n"
+#~ "                        Please do not forget"
+#~ " to protect your workstations and "
+#~ "other devices by installing\n"
+#~ "                        antivirus software and "
+#~ "explaining to your family members how"
+#~ " to stay safe on the\n"
+#~ "                        Internet.\n"
+#~ "                    </li>\n"
+#~ "                    <li>\n"
+#~ "                        CZ.NIC, z. s. p. "
+#~ "o. does not guarantee the availability"
+#~ " of this service and is not\n"
+#~ "                        responsible for any "
+#~ "damages caused by the automatic updates."
+#~ "\n"
+#~ "                    </li>\n"
+#~ "                  "
+#~ msgstr ""
+
+#~ msgid ""
+#~ "By enabling of the automatic updates,"
+#~ " you confirm that you are the "
+#~ "owner of this Turris router and "
+#~ "you agree with the full text of"
+#~ " the <a href=\"https://www.turris.cz/omnia-"
+#~ "updater-eula\" target=\"_blank\" rel=\"noopener "
+#~ "noreferrer\">license agreement</a>."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Automatic updates are disabled. Please "
+#~ "enable delayed or approval-requiring "
+#~ "updates to review them."
+#~ msgstr ""
+
+#~ msgid "Foris Password"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The password you've entered has been compromised. It appears ${\n"
+#~ "                            forisPassword.count || rootPassword.count\n"
+#~ "                        } times in ${\n"
+#~ "                            forisPassword.list || rootPassword.list\n"
+#~ "                        } list."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Here you can set passwords for "
+#~ "Foris and optionally for advanced "
+#~ "features (LuCI and SSH). Make sure "
+#~ "to set secure password which is "
+#~ "long and uncommon."
+#~ msgstr ""
+
+#~ msgid "Advanced Administration (root) Password"
+#~ msgstr ""
+
+#~ msgid "WAN IPv6"
+#~ msgstr "WAN IPv6"
+
+#~ msgid "Public IPv4 address is required."
+#~ msgstr "Eine öffentliche IPv4-Adresse ist erforderlich."
+
+#~ msgid "WAN IPv4"
+#~ msgstr "WAN IPv4"
+
+#~ msgid ""
+#~ "\n"
+#~ "This is a testing notification. Please"
+#~ " note you should receive this to "
+#~ "your e-mail inbox only if you set"
+#~ " the importance\n"
+#~ "level on \"Reboot or attention is required\" or higher.\n"
+#~ "            "
+#~ msgstr ""
+
+#~ msgid "Testing message was sent, please check your inbox."
 #~ msgstr ""
 

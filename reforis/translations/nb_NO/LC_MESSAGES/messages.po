@@ -7,64 +7,67 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-02-01 12:17+0100\n"
+"POT-Creation-Date: 2021-03-08 17:14+0100\n"
 "PO-Revision-Date: 2021-02-07 07:50+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
-"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/turris/"
-"reforis/nb_NO/>\n"
 "Language: nb_NO\n"
+"Language-Team: Norwegian Bokmål "
+"<https://hosted.weblate.org/projects/turris/reforis/nb_NO/>\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.5-dev\n"
 "Generated-By: Babel 2.9.0\n"
 
-#: js/src/about/About.js:22 js/src/main/pages.js:103 js/src/main/pages.js:217
+#: js/src/about/About.js:23 js/src/main/pages.js:109 js/src/main/pages.js:228
 msgid "About"
 msgstr "Om"
 
-#: js/src/about/About.js:25
+#: js/src/about/About.js:26
 msgid ""
 "Here you can find some information about your device. Please include it "
 "into your message if you contact our <a "
 "href=\"mailto:tech.support@turris.cz\" target=\"_blank\">customer "
 "support</a>."
 msgstr ""
-"Her kan du finne litt info om enheten din. Inkluder det i meldingen hvis du "
-"kontakter vår <a href=\"mailto:tech.support@turris.cz\" target=\"_blank\""
-">brukerstøtte</a>."
+"Her kan du finne litt info om enheten din. Inkluder det i meldingen hvis "
+"du kontakter vår <a href=\"mailto:tech.support@turris.cz\" "
+"target=\"_blank\">brukerstøtte</a>."
 
-#: js/src/about/About.js:48
+#: js/src/about/About.js:49
 msgid "Device"
 msgstr "Enhet"
 
-#: js/src/about/About.js:52
+#: js/src/about/About.js:53
 msgid "Serial number"
 msgstr "Serienummer"
 
-#: js/src/about/About.js:56
+#: js/src/about/About.js:57
 msgid "reForis version"
 msgstr "reForis-versjon"
 
-#: js/src/about/About.js:60
+#: js/src/about/About.js:61
 msgid "Turris OS version"
 msgstr "Turris OS-versjon"
 
-#: js/src/about/About.js:65
+#: js/src/about/About.js:66
 msgid "Turris OS branch"
 msgstr "Turris OS-forgrening"
 
-#: js/src/about/About.js:68
+#: js/src/about/About.js:69
+#, fuzzy
 msgid ""
-"Turris OS is currently released in various branches, which have different"
-" functions and varying stability - you can pick, which branch you want to"
-" test."
+"Turris OS is currently released in various branches,\n"
+"                                    which have different functions and "
+"varying stability\n"
+"                                    - you can pick, which branch you want"
+" to test."
 msgstr ""
-"Turris OS gis for tiden ut i forskjellige grener, noe som betyr at de har "
-"forskjellige funksjoner og stabilitet. Du kan velge hvilken du vil teste."
+"Turris OS gis for tiden ut i forskjellige grener, noe som betyr at de har"
+" forskjellige funksjoner og stabilitet. Du kan velge hvilken du vil "
+"teste."
 
-#: js/src/about/About.js:87
+#: js/src/about/About.js:97
 msgid "Kernel version"
 msgstr "Kjerneversjon"
 
@@ -74,7 +77,7 @@ msgstr "Tilbakestill"
 
 #: js/src/common/FactoryResetButton.js:66 js/src/common/RebootButton.js:66
 #: js/src/dns/DNSSECDisableModal.js:30
-#: js/src/notificationsSettings/TestNotification.js:139
+#: js/src/notificationsSettings/TestNotification.js:146
 msgid "Warning!"
 msgstr "Advarsel!"
 
@@ -85,7 +88,7 @@ msgstr "Er du sikker på at du ønsker å starte ruteren på ny?"
 
 #: js/src/common/FactoryResetButton.js:71 js/src/common/RebootButton.js:71
 #: js/src/dns/DNSSECDisableModal.js:41
-#: js/src/notificationsSettings/TestNotification.js:144
+#: js/src/notificationsSettings/TestNotification.js:151
 msgid "Cancel"
 msgstr "Avbryt"
 
@@ -117,31 +120,39 @@ msgstr "Vertsnavn som skal tilbys til DHCP-tjeneren."
 msgid "DHCP hostname"
 msgstr "DHCP-vertsnavn"
 
-#: js/src/common/network/DHCPClientsList.js:19
-msgid "DHCP Clients"
-msgstr "DHCP-Klienter"
+#: js/src/common/network/DHCPClientsList.js:20
+msgid "DHCP Client List"
+msgstr ""
 
 #: js/src/common/network/DHCPClientsList.js:22
-msgid "No DHCP clients found."
+msgid ""
+"This list contains all devices that are connected to the network through "
+"wired or wireless connections."
+msgstr ""
+
+#: js/src/common/network/DHCPClientsList.js:28
+#, fuzzy
+msgid "No clients found."
 msgstr "Fant ingen DHCP-klienter."
 
-#: js/src/common/network/DHCPClientsList.js:29
+#: js/src/common/network/DHCPClientsList.js:35
 msgid "Expires"
 msgstr "Utløper"
 
-#: js/src/common/network/DHCPClientsList.js:30
+#: js/src/common/network/DHCPClientsList.js:36
 msgid "IP Address"
 msgstr "IP-adresse"
 
-#: js/src/common/network/DHCPClientsList.js:31
+#: js/src/common/network/DHCPClientsList.js:37
 msgid "MAC Address"
 msgstr "MAC-adresse"
 
-#: js/src/common/network/DHCPClientsList.js:32
+#: js/src/common/network/DHCPClientsList.js:38 js/src/hostname/Hostname.js:21
+#: js/src/main/pages.js:96 js/src/main/pages.js:187
 msgid "Hostname"
 msgstr "Vertsnavn"
 
-#: js/src/common/network/DHCPClientsList.js:33
+#: js/src/common/network/DHCPClientsList.js:39
 msgid "Active"
 msgstr "Aktiv"
 
@@ -201,16 +212,15 @@ msgstr "Adresse allerede reservert til andre formål."
 #: js/src/common/network/DHCPValidators.js:131
 #, fuzzy
 msgid "Too many addresses requested. Set a lower number or change DHCP start."
-msgstr ""
-"For mange adresser forespurt. Sett et lavere tall, eller endre DHCP-start."
+msgstr "For mange adresser forespurt. Sett et lavere tall, eller endre DHCP-start."
 
 #: js/src/common/network/DHCPValidators.js:138
 msgid ""
 "The only DHCP lease is the same as router's address. Increase limit or "
 "change start address."
 msgstr ""
-"Den eneste HDCP-leiekontrakten er ruterens adresse. Øk grensen eller endre "
-"startadresse."
+"Den eneste HDCP-leiekontrakten er ruterens adresse. Øk grensen eller "
+"endre startadresse."
 
 #: js/src/common/network/StaticIPForm.js:14 js/src/wan/WAN6Form.js:36
 msgid ""
@@ -225,7 +235,7 @@ msgid "IP address"
 msgstr "IP-adresse"
 
 #: js/src/common/network/StaticIPForm.js:60
-#: js/src/guestNetwork/GuestNetworkForm.js:87 js/src/lan/LANManagedForm.js:72
+#: js/src/guestNetwork/GuestNetworkForm.js:88 js/src/lan/LANManagedForm.js:72
 msgid "Network mask"
 msgstr "Nettverksmaske"
 
@@ -243,8 +253,8 @@ msgstr "DNS-tjener 2"
 
 #: js/src/common/network/StaticIPForm.js:111
 #: js/src/common/network/validators.js:19 js/src/wan/MACForm.js:83
-#: js/src/wan/WAN6Form.js:506 js/src/wan/WAN6Form.js:538
-#: js/src/wan/WAN6Form.js:550 js/src/wan/WANForm.js:173
+#: js/src/wan/WAN6Form.js:504 js/src/wan/WAN6Form.js:533
+#: js/src/wan/WAN6Form.js:545 js/src/wan/WANForm.js:173
 msgid "This field is required."
 msgstr "Dette feltet er påkrevd."
 
@@ -310,19 +320,19 @@ msgstr ""
 "jobbe uavhengig, eller den kan\n"
 "videresende dine DNS-spørringer til DNS-utlederen din Internett-"
 "tjenestetilbyder bruker.<p/>\n"
-"<p>Følgende innstilling bestemmer oppførselen for DNS-utlederen. Vanligvis "
-"er det bedre å bruke'\n"
-"tjeneste-tilbyderens utlder i nettverk der den fungerer som den skal. Hvis "
-"den ikke gjør dette er må man\n"
+"<p>Følgende innstilling bestemmer oppførselen for DNS-utlederen. "
+"Vanligvis er det bedre å bruke'\n"
+"tjeneste-tilbyderens utlder i nettverk der den fungerer som den skal. "
+"Hvis den ikke gjør dette er må man\n"
 "bruke direkte utledelse uten videresending.<p/>\n"
-"<p>I sjeldne tilfeller har tjenestetilbyderen satt opp nettverket sitt feil, "
-"noe som krangler med DNSSEC-bekreftelse.\n"
-"Hvis du opplever problemer med DNS kan du <b>midlertidig</b> skru av DNSSEC-"
-"bekreftelse for å bestemme\n"
+"<p>I sjeldne tilfeller har tjenestetilbyderen satt opp nettverket sitt "
+"feil, noe som krangler med DNSSEC-bekreftelse.\n"
+"Hvis du opplever problemer med DNS kan du <b>midlertidig</b> skru av "
+"DNSSEC-bekreftelse for å bestemme\n"
 "kilden til problemet. Ha dog i minnet at uten DNSSEC-bekreftelse er du "
 "sårbar for DNS-etterligningsangrep!\n"
-"Derfor <b>anbefales det å ha DNSSEC skrudd på</b> og løse situasjonen med "
-"tjenestetilbyderen, siden dette\n"
+"Derfor <b>anbefales det å ha DNSSEC skrudd på</b> og løse situasjonen med"
+" tjenestetilbyderen, siden dette\n"
 "er en alvorlig feil på deres side.</p>\n"
 "            "
 
@@ -340,10 +350,10 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"Her kan du teste din Internett-tilkobling. Denne testen er også nyttig når "
-"du må sjekke at din DNS-utledelse\n"
-"fungerer som forventet. Husk å klikke på <b>Lagre</b>-knappen hvis du har "
-"endret din videresender-innstilling.\n"
+"Her kan du teste din Internett-tilkobling. Denne testen er også nyttig "
+"når du må sjekke at din DNS-utledelse\n"
+"fungerer som forventet. Husk å klikke på <b>Lagre</b>-knappen hvis du har"
+" endret din videresender-innstilling.\n"
 "        "
 
 #: js/src/dns/DNSForm.js:17
@@ -351,8 +361,8 @@ msgid ""
 "This will enable your DNS resolver to place DHCP client's names among the"
 " local DNS records."
 msgstr ""
-"Dette vil la din DNS-utleder plassere DHCP-klienters navn i de lokale DNS-"
-"oppføringene."
+"Dette vil la din DNS-utleder plassere DHCP-klienters navn i de lokale "
+"DNS-oppføringene."
 
 #: js/src/dns/DNSForm.js:20
 #, fuzzy
@@ -360,22 +370,28 @@ msgid ""
 "This domain will be used as suffix. E.g. The result for client "
 "\"android-123\" and domain \"my.lan\" will be \"android-123.my.lan\"."
 msgstr ""
-"Dette domenet vil bli brukt som endelse. F.eks vil resultatet for klienten "
-"\"android-123\" og domenet \"my.lan\" bli \"android-123.my.lan\"."
+"Dette domenet vil bli brukt som endelse. F.eks vil resultatet for "
+"klienten \"android-123\" og domenet \"my.lan\" bli "
+"\"android-123.my.lan\"."
 
-#: js/src/dns/DNSForm.js:83
+#: js/src/dns/DNSForm.js:67
+#, fuzzy
+msgid "DNS Settings"
+msgstr "Oppdateringsinnstillinger"
+
+#: js/src/dns/DNSForm.js:84
 msgid "Use forwarding"
 msgstr "Bruk videresending"
 
-#: js/src/dns/DNSForm.js:99
+#: js/src/dns/DNSForm.js:100
 msgid "Enable DNSSEC"
 msgstr "Skru på DNSSEC"
 
-#: js/src/dns/DNSForm.js:105
+#: js/src/dns/DNSForm.js:106
 msgid "Enable DHCP clients in DNS"
 msgstr "Skru på DHCP-klienter i DNS"
 
-#: js/src/dns/DNSForm.js:115
+#: js/src/dns/DNSForm.js:116
 msgid "Domain of DHCP clients in DNS"
 msgstr "Domene for DHCP-klienter i DNS"
 
@@ -392,10 +408,10 @@ msgid ""
 "Do you still want to continue and stay unprotected?\n"
 msgstr ""
 "\n"
-"DNSSEC er en sikkerhetsteknologi som beskytter DNS-kommunikasjon mot angrep "
-"på DNS-infrastrukturen.\n"
-"Det anbefales sterkt å ha DNSSEC-bekreftelse påskrudd, med mindre du vet at "
-"du kobler til enheten din i\n"
+"DNSSEC er en sikkerhetsteknologi som beskytter DNS-kommunikasjon mot "
+"angrep på DNS-infrastrukturen.\n"
+"Det anbefales sterkt å ha DNSSEC-bekreftelse påskrudd, med mindre du vet "
+"at du kobler til enheten din i\n"
 "nettverket der DNSSEC ikke fungerer.\n"
 "\n"
 "Ønsker du fremdeles å fortsette og forbli ubeskyttet?\n"
@@ -435,11 +451,11 @@ msgstr "Slett"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:23
 #, fuzzy
-msgid "base64 encoded sha256."
+msgid "Base 64 encoded SHA-256."
 msgstr "Base 64-kodet SHA-256"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:48
-#: js/src/packageManagement/updates/UpdateApproval.js:121
+#: js/src/packageManagement/updates/UpdateApproval.js:152
 msgid "Name"
 msgstr "Navn"
 
@@ -515,7 +531,7 @@ msgid "Define at least one of the IP addresses of the forwarder."
 msgstr "Definer minst én av IP-adressene til videresenderen."
 
 #: js/src/guestNetwork/GuestNetwork.js:37 js/src/interfaces/constants.js:11
-#: js/src/main/pages.js:148
+#: js/src/main/pages.js:154
 msgid "Guest Network"
 msgstr "Gjestenettverk"
 
@@ -532,11 +548,12 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"Gjestenettverk brukes for <a href=\"${ForisURLs.wifi}\">gjeste-Wi-Fi</a>.\n"
+"Gjestenettverk brukes for <a href=\"${ForisURLs.wifi}\">gjeste-Wi-Fi</a>."
+"\n"
 "Det er adskilt fra ditt ordinære lokalnett. Enheter tilkoblet dette "
 "nettverket tillates adgang til Internett,\n"
-"men tillates ikke tilgang til oppsettsgrensesnittet på hverken enheten eller "
-"enhetene i\n"
+"men tillates ikke tilgang til oppsettsgrensesnittet på hverken enheten "
+"eller enhetene i\n"
 "lokalnettet.\n"
 "        "
 
@@ -556,8 +573,8 @@ msgid ""
 "This option enables you to set a bandwidth limit for the guest network, "
 "so that your main network doesn't get slowed-down by it."
 msgstr ""
-"Dette valget lar deg sette en båndbreddegrense for gjestenettverket, slik at "
-"hovednevverket ikke blir skadelidende."
+"Dette valget lar deg sette en båndbreddegrense for gjestenettverket, slik"
+" at hovednevverket ikke blir skadelidende."
 
 #: js/src/guestNetwork/GuestNetworkForm.js:25
 msgid "Download speed in guest network (in kilobits per second)."
@@ -567,37 +584,42 @@ msgstr "Nedlastingshastighet i gjestenettverk (i kilobit per sekund)."
 msgid "Upload speed in guest network (in kilobits per second)."
 msgstr "Opplastingshastighet i gjestenettverk (i kilobit per sekund)."
 
-#: js/src/guestNetwork/GuestNetworkForm.js:66
+#: js/src/guestNetwork/GuestNetworkForm.js:65
+#, fuzzy
+msgid "Guest Network Settings"
+msgstr "Nettverksinnstillinger"
+
+#: js/src/guestNetwork/GuestNetworkForm.js:67
 msgid "Enable"
 msgstr "Skru på"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:76 js/src/lan/LANManagedForm.js:61
+#: js/src/guestNetwork/GuestNetworkForm.js:77 js/src/lan/LANManagedForm.js:61
 msgid "Router IP address"
 msgstr "Ruterens IP-adresse"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:97 js/src/lan/LANManagedForm.js:82
+#: js/src/guestNetwork/GuestNetworkForm.js:98 js/src/lan/LANManagedForm.js:82
 msgid "Enable DHCP"
 msgstr "Skru på DHCP"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:115
+#: js/src/guestNetwork/GuestNetworkForm.js:116
 msgid "Enable QoS"
 msgstr "Skru på QoS"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:158
+#: js/src/guestNetwork/GuestNetworkForm.js:159
 #: js/src/overview/Cards/NetmetrCard.js:65
 msgid "Download"
 msgstr "Last ned"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:171
+#: js/src/guestNetwork/GuestNetworkForm.js:172
 #: js/src/overview/Cards/NetmetrCard.js:81
 msgid "Upload"
 msgstr "Last opp"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:190
+#: js/src/guestNetwork/GuestNetworkForm.js:191
 msgid "Download speed must be positive"
 msgstr "Nedlastingshastighet må være positiv"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:193
+#: js/src/guestNetwork/GuestNetworkForm.js:194
 msgid "Upload speed must be positive"
 msgstr "Opplastingshastighet må være positiv"
 
@@ -607,9 +629,9 @@ msgid ""
 "here will become fully functional after you assign a network interface to"
 " this network."
 msgstr ""
-"Dette nettverket inneholder foreløpig ingen enheter. Endringer du gjør her "
-"vil bli funksjonelle etter at du tildeler et nettverksgrensesnitt til dette "
-"nettverket."
+"Dette nettverket inneholder foreløpig ingen enheter. Endringer du gjør "
+"her vil bli funksjonelle etter at du tildeler et nettverksgrensesnitt til"
+" dette nettverket."
 
 #: js/src/guestNetwork/GuestNetworkNotification.js:16
 msgid "All network interfaces of this network are currently down."
@@ -622,9 +644,9 @@ msgid ""
 "device. Firstly it is required to set your password. Note the security of"
 " your home network is in your hands, so try not to use weak passwords."
 msgstr ""
-"Velkommen til Foris-vevgrensesnittet. Denne guiden hjelper deg å sette opp "
-"din enhet. Først må du sette opp passordet ditt. Merk at sikkerheten til "
-"ditt hjemmenettverk i dine hender, så ikke bruk et usikkert passord."
+"Velkommen til Foris-vevgrensesnittet. Denne guiden hjelper deg å sette "
+"opp din enhet. Først må du sette opp passordet ditt. Merk at sikkerheten "
+"til ditt hjemmenettverk i dine hender, så ikke bruk et usikkert passord."
 
 #: js/src/guide/constants.js:17
 msgid "Your password is set. You may proceed to the next step."
@@ -648,9 +670,9 @@ msgid ""
 "You've configured your network interfaces. It seems that you didn't break"
 " any crucial network settings so you can safely proceed to the next step."
 msgstr ""
-"Du har satt opp dine nettverksgrensesnitt. Det ser ut til at ingen viktige "
-"nettverksinnstillinger tok skade av det, så du kan trygt gå videre til neste "
-"steg."
+"Du har satt opp dine nettverksgrensesnitt. Det ser ut til at ingen "
+"viktige nettverksinnstillinger tok skade av det, så du kan trygt gå "
+"videre til neste steg."
 
 #: js/src/guide/constants.js:34
 #, fuzzy
@@ -665,16 +687,16 @@ msgid ""
 "manually."
 msgstr ""
 "Klokken og tidssone ser ut til å være satt. Forsikre deg om at tiden "
-"samsvarer med klokken på datamaskinen din. Hvis ikke kan du oppdatere via "
-"NTP, eller manuelt."
+"samsvarer med klokken på datamaskinen din. Hvis ikke kan du oppdatere via"
+" NTP, eller manuelt."
 
 #: js/src/guide/constants.js:40
 msgid ""
 "A proper DNS resolving is one of the key security features of your "
 "device. Let's configure it now."
 msgstr ""
-"Ordentlig DNS-utledelse er én av de viktigste funksjonene på enheten din. La "
-"oss sette det opp nå."
+"Ordentlig DNS-utledelse er én av de viktigste funksjonene på enheten din."
+" La oss sette det opp nå."
 
 #: js/src/guide/constants.js:43
 msgid ""
@@ -696,9 +718,9 @@ msgid ""
 "whether it is working properly and if so you can safely proceed to the "
 "next step."
 msgstr ""
-"Du har satt opp ditt WAN-grensesnitt. Prøv å kjøre en tilkoblingstest for å "
-"se hvorvidt det fungerer ordentlig. Hvis så er tilfelle kan du gå videre til "
-"neste steg."
+"Du har satt opp ditt WAN-grensesnitt. Prøv å kjøre en tilkoblingstest for"
+" å se hvorvidt det fungerer ordentlig. Hvis så er tilfelle kan du gå "
+"videre til neste steg."
 
 #: js/src/guide/constants.js:56
 msgid ""
@@ -707,10 +729,10 @@ msgid ""
 "configuration interface unless you restart the network on your current "
 "device."
 msgstr ""
-"Nå skal du kunne sette opp ditt LAN-grensesnitt. Merk deg at når du endrer "
-"dine nettverksinnstillinger vil du antagelig ikke kunne koble til "
-"oppsettsgrensesnittet, med mindre du starter nettverket på din enheten på "
-"nytt."
+"Nå skal du kunne sette opp ditt LAN-grensesnitt. Merk deg at når du "
+"endrer dine nettverksinnstillinger vil du antagelig ikke kunne koble til "
+"oppsettsgrensesnittet, med mindre du starter nettverket på din enheten på"
+" nytt."
 
 #: js/src/guide/constants.js:59
 msgid ""
@@ -753,9 +775,9 @@ msgid ""
 " put any interfaces to your WAN and Guest Network. So it is a good idea "
 "to assign all interfaces to LAN."
 msgstr ""
-"Her kan du velge å opptre som lokal tjener, noe som betyr at det ikke gir "
-"mening å velge noe grensesnitt som finnes på ditt WAN- og gjestenett. Det er "
-"en god idé å tildele alle grensesnitt til lokalnett."
+"Her kan du velge å opptre som lokal tjener, noe som betyr at det ikke gir"
+" mening å velge noe grensesnitt som finnes på ditt WAN- og gjestenett. "
+"Det er en god idé å tildele alle grensesnitt til lokalnett."
 
 #: js/src/guide/constants.js:102
 #, fuzzy
@@ -765,10 +787,10 @@ msgid ""
 "probably want to act as a client here thus select "
 "<strong>Computer</strong> mode here."
 msgstr ""
-"For å fungere som lokaltjener, er det inget behov for å håndtere lokalnett ("
-"hvis du fremdeles ønsker å håndtere det kan du tilbakestille veiledningen og "
-"velge ruter-arbeidsflyt). Du ønsker antalgeig klient-oppførsel her, og kan "
-"dermed velge <strong>Datamaskin</strong>-modus her."
+"For å fungere som lokaltjener, er det inget behov for å håndtere "
+"lokalnett (hvis du fremdeles ønsker å håndtere det kan du tilbakestille "
+"veiledningen og velge ruter-arbeidsflyt). Du ønsker antalgeig klient-"
+"oppførsel her, og kan dermed velge <strong>Datamaskin</strong>-modus her."
 
 #: js/src/guide/constants.js:105
 msgid ""
@@ -776,8 +798,8 @@ msgid ""
 "IP addresses are entered correctly otherwise you won't be able to access "
 "this configuration interface when the new settings are applied."
 msgstr ""
-"Hvis du velger <strong>statisk</strong> oppsett må du forsikre deg om at IP-"
-"adresser skrives inn rett. Ellers vil du ikke kunne nå dette "
+"Hvis du velger <strong>statisk</strong> oppsett må du forsikre deg om at "
+"IP-adresser skrives inn rett. Ellers vil du ikke kunne nå dette "
 "oppsettsgrensesnittet når de nye innstillingene er tatt i bruk."
 
 #: js/src/guide/constants.js:108
@@ -787,10 +809,10 @@ msgid ""
 "server which is managing your LAN. Then you need to connect to the new IP"
 " address to proceed the guide."
 msgstr ""
-"Hvis du velger <strong>DHCP</strong>-metoden må du antagelig tilegne deg en "
-"ny IP-adresse for denne enheten. Du kan hente det fra DHCP-tjeneren som "
-"håndterer lokalnettet ditt. Deretter må du koble til den nye IP-adressen for "
-"å fortsette veiledningen."
+"Hvis du velger <strong>DHCP</strong>-metoden må du antagelig tilegne deg "
+"en ny IP-adresse for denne enheten. Du kan hente det fra DHCP-tjeneren "
+"som håndterer lokalnettet ditt. Deretter må du koble til den nye IP-"
+"adressen for å fortsette veiledningen."
 
 #: js/src/guide/constants.js:111
 #, fuzzy
@@ -809,24 +831,23 @@ msgid ""
 " your device is able to access the internet (you can use the connection "
 "test below)."
 msgstr ""
-"Test hvorvidt innstillingene du angav fungerer som de skal. Dette betyr at "
-"du kan nå oppsettsgrensesnittet for din enhet og at din enhet kan nå "
+"Test hvorvidt innstillingene du angav fungerer som de skal. Dette betyr "
+"at du kan nå oppsettsgrensesnittet for din enhet og at din enhet kan nå "
 "Internett (du kan bruke tilkoblingstesten nedenfor)."
 
 #: js/src/guide/constants.js:120
 msgid ""
 "Congratulations! Now your device should be able to act as a server on "
 "your local network."
-msgstr ""
-"Din enhet skal nå være klar til å fungere som tjener i ditt lokalnettverk."
+msgstr "Din enhet skal nå være klar til å fungere som tjener i ditt lokalnettverk."
 
 #: js/src/guide/hooks.js:23
 msgid "Cannot mark guide as finished."
 msgstr "Kan ikke markere guide som fullført."
 
-#: js/src/guide/steps.js:20 js/src/main/pages.js:75 js/src/main/pages.js:161
+#: js/src/guide/steps.js:20 js/src/main/pages.js:76 js/src/main/pages.js:167
 #: js/src/notificationsSettings/SMTPCustomForm.js:114
-#: js/src/password/Password.js:177 reforis/templates/login.html:29
+#: js/src/password/Password.js:180 reforis/templates/login.html:29
 msgid "Password"
 msgstr "Passord"
 
@@ -834,7 +855,7 @@ msgstr "Passord"
 msgid "Workflow"
 msgstr "Arbeidsflyt"
 
-#: js/src/guide/steps.js:28 js/src/main/pages.js:143
+#: js/src/guide/steps.js:28 js/src/main/pages.js:149
 msgid "Interfaces"
 msgstr "Grensesnitt"
 
@@ -842,23 +863,23 @@ msgstr "Grensesnitt"
 msgid "Time"
 msgstr "Tid"
 
-#: js/src/guide/steps.js:36 js/src/main/pages.js:62 js/src/main/pages.js:138
+#: js/src/guide/steps.js:36 js/src/main/pages.js:63 js/src/main/pages.js:144
 msgid "DNS"
 msgstr "DNS"
 
-#: js/src/guide/steps.js:40 js/src/main/pages.js:194
+#: js/src/guide/steps.js:40 js/src/main/pages.js:200
 #: js/src/packageManagement/updates/Updates.js:27
 #, fuzzy
 msgid "Updates"
 msgstr "Oppdateringer"
 
 #: js/src/guide/steps.js:44 js/src/interfaces/constants.js:9
-#: js/src/main/pages.js:52 js/src/main/pages.js:128 js/src/wan/WAN.js:27
+#: js/src/main/pages.js:53 js/src/main/pages.js:134 js/src/wan/WAN.js:27
 msgid "WAN"
 msgstr "WAN"
 
 #: js/src/guide/steps.js:48 js/src/interfaces/constants.js:10
-#: js/src/main/pages.js:57 js/src/main/pages.js:133
+#: js/src/main/pages.js:58 js/src/main/pages.js:139
 msgid "LAN"
 msgstr "LAN"
 
@@ -883,8 +904,8 @@ msgid ""
 "Once you leave this guide you'll be granted access to the full "
 "configuration interface of this device."
 msgstr ""
-"Når du forlater denne veiledningen vil du bli innvilget tilgang til enhetens "
-"fullstendige oppsettsgrensesnitt."
+"Når du forlater denne veiledningen vil du bli innvilget tilgang til "
+"enhetens fullstendige oppsettsgrensesnitt."
 
 #: js/src/guide/GuidePages/GuideFinish.js:25
 msgid ""
@@ -894,10 +915,10 @@ msgid ""
 "dynamic firewall updates blocking known attackers."
 msgstr ""
 "For å ytterligere forbedre sikkerheten din bør du overveie å installere "
-"innsamlingsprogramtillegget (via pakkebehandling). Dette lar deg være en del "
-"av vår sikkerhetsforskning som går ut på å oppdage nye angripere og gir deg "
-"tilgang til en dynamisk brannmur som oppdaterer en blokkliste over kjente "
-"angripere."
+"innsamlingsprogramtillegget (via pakkebehandling). Dette lar deg være en "
+"del av vår sikkerhetsforskning som går ut på å oppdage nye angripere og "
+"gir deg tilgang til en dynamisk brannmur som oppdaterer en blokkliste "
+"over kjente angripere."
 
 #: js/src/guide/GuidePages/GuideFinish.js:31
 msgid "Continue"
@@ -911,8 +932,9 @@ msgid ""
 "storage)."
 msgstr ""
 "Denne arbeidsflyten hjelper deg å sette opp din enhet til bruk som lokal "
-"tjener. Dette betyr at enheten vil yte noen slags tjeneste til andre enheter "
-"i ditt lokalnettverk. (f.eks. opptre som lokalt nettverkstilknyttet lagring)."
+"tjener. Dette betyr at enheten vil yte noen slags tjeneste til andre "
+"enheter i ditt lokalnettverk. (f.eks. opptre som lokalt "
+"nettverkstilknyttet lagring)."
 
 #: js/src/guide/GuidePages/WorkflowSelect.js:28
 msgid ""
@@ -920,17 +942,17 @@ msgid ""
 " functional router. It assumes that you want to have more or less "
 "standard network setup."
 msgstr ""
-"Etter at du fullfører denne arbeidsflyten vil din enhet fungere som en helt "
-"operativ ruter. Det legger til grunn at du har et mer eller mindre vanlig "
-"nettverksoppsett."
+"Etter at du fullfører denne arbeidsflyten vil din enhet fungere som en "
+"helt operativ ruter. Det legger til grunn at du har et mer eller mindre "
+"vanlig nettverksoppsett."
 
 #: js/src/guide/GuidePages/WorkflowSelect.js:31
 msgid ""
 "Just set your password and you are ready to go. This workflow is aimed to"
 " more advanced users who intend to set everything manually."
 msgstr ""
-"Sett passordet og du er klar. Denne arbeidsflyten er myntet mer på avanserte "
-"brukere som vil sette opp alt manuelt."
+"Sett passordet og du er klar. Denne arbeidsflyten er myntet mer på "
+"avanserte brukere som vil sette opp alt manuelt."
 
 #: js/src/guide/GuidePages/WorkflowSelect.js:37
 msgid "Local Server"
@@ -964,6 +986,34 @@ msgstr ""
 msgid "Recommended"
 msgstr "Anbefalt"
 
+#: js/src/hostname/Hostname.js:22
+#, fuzzy
+msgid "Here you can check and set the name of your device."
+msgstr "Du må nå sette tid og tidssone for enheten din."
+
+#: js/src/hostname/Hostname.js:41
+#, fuzzy
+msgid ""
+"The hostname can contain only alphanumeric characters, hyphens, "
+"underscores and can't be empty."
+msgstr ""
+"Avsendernavn kan kun inneholde alfanumeriske tegn, punktum og "
+"understreker."
+
+#: js/src/hostname/HostnameForm.js:13
+msgid "Rewrite the hostname to set a new one."
+msgstr ""
+
+#: js/src/hostname/HostnameForm.js:33
+#, fuzzy
+msgid "Hostname Settings"
+msgstr "Tidsinnstillinger"
+
+#: js/src/hostname/HostnameForm.js:35
+#, fuzzy
+msgid "Device hostname"
+msgstr "TLS-vertsnavn"
+
 #: js/src/interfaces/Interfaces.js:25
 msgid "Network Interfaces"
 msgstr "Nettverksgrensesnitt"
@@ -978,10 +1028,10 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"Her kan du sette opp nettverksgrensesnittene på enheten din. Du kan bytte "
-"fysiske nettverks-grensesnitt\n"
-"mellom nettverkene. Hvis du er usikker på hva du skal sette her kan du bruke "
-"forvalgte innstillinger.\n"
+"Her kan du sette opp nettverksgrensesnittene på enheten din. Du kan bytte"
+" fysiske nettverks-grensesnitt\n"
+"mellom nettverkene. Hvis du er usikker på hva du skal sette her kan du "
+"bruke forvalgte innstillinger.\n"
 "        "
 
 #: js/src/interfaces/Interfaces.js:51
@@ -1006,8 +1056,8 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"Oppfører seg som ekstern nettverkstilkobling. Brannmursregler skal legges "
-"til her. Kan kun inneholde ett\n"
+"Oppfører seg som ekstern nettverkstilkobling. Brannmursregler skal legges"
+" til her. Kan kun inneholde ett\n"
 "grensesnitt.\n"
 "        "
 
@@ -1026,10 +1076,10 @@ msgstr ""
 "\n"
 "Fungerer som lokalnettverkstilkobling. Lokalnettet bør ha enheter du "
 "kontrollerer og har tillit til.\n"
-"Disse enheten kan se hverandre og nå dette vev-grensesnittet. Det anbefales "
-"at lokalnettet skal inneholde\n"
-"minst ett grensesnitt. Ellers vil du ikke kunne sette opp denne enheten på "
-"enkelt vis.\n"
+"Disse enheten kan se hverandre og nå dette vev-grensesnittet. Det "
+"anbefales at lokalnettet skal inneholde\n"
+"minst ett grensesnitt. Ellers vil du ikke kunne sette opp denne enheten "
+"på enkelt vis.\n"
 "        "
 
 #: js/src/interfaces/InterfacesForm.js:143
@@ -1045,12 +1095,12 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"Fungerer som lokalnettverkstilkobling. Ulik lokalnett kan ikke enhetene i "
-"gjestenettet nå oppsettsgrensesnittet\n"
+"Fungerer som lokalnettverkstilkobling. Ulik lokalnett kan ikke enhetene i"
+" gjestenettet nå oppsettsgrensesnittet\n"
 "for denne enhten og kan ikke nå WAN (Internett). Dette nettverket skal "
 "brukes for enheter du ikke har full\n"
-"tiltro til. Merk deg at du også kan begrense opplasting-/"
-"nedlastingshastighet for enhetene tilkoblet\n"
+"tiltro til. Merk deg at du også kan begrense "
+"opplasting-/nedlastingshastighet for enhetene tilkoblet\n"
 "gjestenettverket.\n"
 "        "
 
@@ -1132,18 +1182,18 @@ msgid ""
 "            "
 msgstr ""
 "\n"
-"Denne delen inneholder innstillinger for lokalnettverket (LAN). De angitte "
-"forvalgene fungerer for de\n"
+"Denne delen inneholder innstillinger for lokalnettverket (LAN). De "
+"angitte forvalgene fungerer for de\n"
 "fleste nettverk.\n"
 "<br/>\n"
-"<b>Merk:</b> Hvis du kan endre ruterens IP-adresse, vil alle datamaskinene i "
-"lokalnettet, (antagelig inkludert\n"
-"den du bruker nå) måtte hente en <b>ny IP-adresse</b>, noe som ikke skjer "
-"<b>umiddelbart</b>.\n"
+"<b>Merk:</b> Hvis du kan endre ruterens IP-adresse, vil alle "
+"datamaskinene i lokalnettet, (antagelig inkludert\n"
+"den du bruker nå) måtte hente en <b>ny IP-adresse</b>, noe som ikke skjer"
+" <b>umiddelbart</b>.\n"
 "Det anbefales å koble fra og koble til igjen alle LAN-kablene etter å ha "
 "sendt inn endringene som påtvinger\n"
-"oppdateringen. Den neste siden vil ikke lastes inn med mindre du får en ny "
-"IP-adresse fra DHCP (hvis det er påskrudd)\n"
+"oppdateringen. Den neste siden vil ikke lastes inn med mindre du får en "
+"ny IP-adresse fra DHCP (hvis det er påskrudd)\n"
 "og du vil måtte <b>gjenoppfriske siden</b> i din nettleser.\n"
 "            "
 
@@ -1158,8 +1208,8 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"Rutermodus betyr at denne enheten håndterer lokalnett (fungerer som ruter, "
-"kan tildele IP-adresser, …).\n"
+"Rutermodus betyr at denne enheten håndterer lokalnett (fungerer som "
+"ruter, kan tildele IP-adresser, …).\n"
 "Datamaskinsmodus betyr at denne enheten fungerer som klient i dette "
 "nettverket. Den fungerer lignende WAN,\n"
 "men har åpne porter for oppsettsgrensesnitt og andre tjenester.\n"
@@ -1204,63 +1254,63 @@ msgstr "Ikke koble til denne enheten til LAN"
 msgid "IPv4 protocol"
 msgstr "IPv4-protokoll"
 
-#: js/src/main/pages.js:40 js/src/main/pages.js:111
+#: js/src/main/pages.js:41 js/src/main/pages.js:117
 #: js/src/overview/Overview.js:51
 msgid "Overview"
 msgstr "Oversikt"
 
-#: js/src/main/pages.js:46 js/src/main/pages.js:117
+#: js/src/main/pages.js:47 js/src/main/pages.js:123
 msgid "Network Settings"
 msgstr "Nettverksinnstillinger"
 
-#: js/src/main/pages.js:69 js/src/main/pages.js:155
+#: js/src/main/pages.js:70 js/src/main/pages.js:161
 msgid "Administration"
 msgstr "Administrasjon"
 
-#: js/src/main/pages.js:80 js/src/main/pages.js:166
+#: js/src/main/pages.js:81 js/src/main/pages.js:172
 #, fuzzy
 msgid "Region & Time"
 msgstr "Tid og sted"
 
 #: js/src/main/TopBar/NotificationsDropdown/NotificationsDropdownMenu.js:76
-#: js/src/main/pages.js:85 js/src/main/pages.js:171
+#: js/src/main/pages.js:86 js/src/main/pages.js:177
 #: js/src/notifications/Notifications/Notifications.js:87
 #: js/src/notificationsSettings/NotificationsSettings.js:25
 msgid "Notifications"
 msgstr "Merknader"
 
-#: js/src/main/pages.js:90 js/src/main/pages.js:176
+#: js/src/main/pages.js:91 js/src/main/pages.js:182
 #: js/src/maintenance/Maintenance.js:17
 msgid "Maintenance"
 msgstr "Vedlikehold"
 
-#: js/src/main/pages.js:97
+#: js/src/main/pages.js:103
 msgid "Global Threat Statistics"
 msgstr "Global trusselstatistikk"
 
-#: js/src/main/pages.js:123 js/src/wifi/WiFi.js:21
+#: js/src/main/pages.js:129 js/src/wifi/WiFi.js:21
 msgid "Wi-Fi"
 msgstr "Wi-Fi"
 
-#: js/src/main/pages.js:183
+#: js/src/main/pages.js:194
 msgid "Package Management"
 msgstr "Pakkebehandling"
 
-#: js/src/main/pages.js:189
+#: js/src/main/pages.js:205
 #: js/src/packageManagement/updateSettings/UpdateSettings.js:28
 msgid "Update Settings"
 msgstr "Oppdateringsinnstillinger"
 
-#: js/src/main/pages.js:199 js/src/packageManagement/packages/Packages.js:19
+#: js/src/main/pages.js:210 js/src/packageManagement/packages/Packages.js:19
 msgid "Packages"
 msgstr "Pakker"
 
-#: js/src/main/TopBar/languagesDropdown/LanguagesDropdown.js:47
-#: js/src/main/pages.js:204 js/src/packageManagement/languages/Languages.js:18
+#: js/src/main/TopBar/languagesDropdown/LanguagesDropdown.js:50
+#: js/src/main/pages.js:215 js/src/packageManagement/languages/Languages.js:18
 msgid "Languages"
 msgstr "Språk"
 
-#: js/src/main/pages.js:211
+#: js/src/main/pages.js:222
 msgid "Advanced Administration"
 msgstr "Avansert administrasjon"
 
@@ -1289,31 +1339,26 @@ msgstr "Omstart kreves"
 msgid "Details"
 msgstr "Detaljer"
 
-#: js/src/main/TopBar/updatesDropdown/UpdatesDropdown.js:97
+#: js/src/main/TopBar/updatesDropdown/UpdatesDropdown.js:100
 msgid "Approve Update"
 msgstr "Godkjenn oppgradering"
 
-#: js/src/main/TopBar/updatesDropdown/UpdatesDropdown.js:127
+#: js/src/main/TopBar/updatesDropdown/UpdatesDropdown.js:130
 #, fuzzy
 msgid ""
 "See details in <a href=${ForisURLs.packageManagement.updates}>Updates</a>"
 " page."
 msgstr ""
-"Sjekk detaljer på <a href=${ForisURLs.packageManagement."
-"updates}>oppgraderinger</a>-siden."
+"Sjekk detaljer på <a "
+"href=${ForisURLs.packageManagement.updates}>oppgraderinger</a>-siden."
 
-#: js/src/main/TopBar/updatesDropdown/UpdatesDropdown.js:137
-#: js/src/packageManagement/updates/UpdateApproval.js:97
+#: js/src/main/TopBar/updatesDropdown/UpdatesDropdown.js:140
+#: js/src/packageManagement/updates/UpdateApproval.js:128
 msgid "Install now"
 msgstr "Installer nå"
 
-#: js/src/main/TopBar/updatesDropdown/UpdatesDropdown.js:143
-#: js/src/packageManagement/updates/UpdateApproval.js:103
-msgid "Ignore"
-msgstr "Ignorer"
-
-#: js/src/main/TopBar/updatesDropdown/UpdatesDropdown.js:154
-#: js/src/packageManagement/updates/UpdateApproval.js:34
+#: js/src/main/TopBar/updatesDropdown/UpdatesDropdown.js:151
+#: js/src/packageManagement/updates/UpdateApproval.js:39
 msgid "Cannot install updates."
 msgstr "Kan ikke installere oppgraderinger."
 
@@ -1331,12 +1376,14 @@ msgid ""
 "                giving you a clean slate to start all over again.\n"
 "    "
 msgstr ""
-"Å utføre fabrikktilbakestilling på Turris-enheten vil fjerne alle pakkene\n"
+"Å utføre fabrikktilbakestilling på Turris-enheten vil fjerne alle pakkene"
+"\n"
 "                som er installert på enheten, sammen med all tilknyttet "
 "data. Dette gir\n"
-"                deg alle forvalgte innstillinger som fantes når ruteren var "
-"ny,\n"
-"                noe som gir deg en frisk start for å starte helt på nytt.\n"
+"                deg alle forvalgte innstillinger som fantes når ruteren "
+"var ny,\n"
+"                noe som gir deg en frisk start for å starte helt på nytt."
+"\n"
 "    "
 
 #: js/src/maintenance/Maintenance.js:19
@@ -1379,11 +1426,11 @@ msgid ""
 " in the <a href=\"${ForisURLs.storage}\" title=\"Go to Storage "
 "plugin\">Storage plugin</a> first."
 msgstr ""
-"Ved enhetsomstart går systemlogger tapt som forvalg. Dette valget tillater "
-"lagring av dem ved bruk av lagringsprogramtillegget. Logger lagres i /srv/"
-"log/messages. For å skru dette på må du sette opp et lager i <a href=\""
-"${ForisURLs.storage}\" title=\"Go to Storage plugin\""
-">Lagringsprogramtillegget</a> først."
+"Ved enhetsomstart går systemlogger tapt som forvalg. Dette valget "
+"tillater lagring av dem ved bruk av lagringsprogramtillegget. Logger "
+"lagres i /srv/log/messages. For å skru dette på må du sette opp et lager "
+"i <a href=\"${ForisURLs.storage}\" title=\"Go to Storage "
+"plugin\">Lagringsprogramtillegget</a> først."
 
 #: js/src/maintenance/Syslog/SyslogForm.js:38
 msgid "Enable system logs retention"
@@ -1443,8 +1490,8 @@ msgid ""
 msgstr ""
 "Din enhet kan sende deg e-postmerknader om påkrevde omstarter, viktige "
 "hendelser, installerte oppdateringer og nye funksjoner i henhold til "
-"innstillingene dine. Når du er ferdig med oppsettet kan du teste det ved å "
-"trykke «Send testmerknad»."
+"innstillingene dine. Når du er ferdig med oppsettet kan du teste det ved "
+"å trykke «Send testmerknad»."
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:22
 msgid "None"
@@ -1479,7 +1526,7 @@ msgid "Security"
 msgstr "Sikkerhet"
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:106
-#: js/src/wan/WAN6Form.js:436
+#: js/src/wan/WAN6Form.js:434
 msgid "Username"
 msgstr "Brukernavn"
 
@@ -1492,8 +1539,8 @@ msgid ""
 "There are some unsaved changes in the notifications settings. Do you want"
 " to discard them and test the notifications with the old settings?"
 msgstr ""
-"Det er ulagrede endringer i merknadsinnstillingene. Ønsker du å forkaste dem "
-"og teste merknadene med de gamle innstillingene?"
+"Det er ulagrede endringer i merknadsinnstillingene. Ønsker du å forkaste "
+"dem og teste merknadene med de gamle innstillingene?"
 
 #: js/src/notificationsSettings/TestNotification.js:33
 #, fuzzy
@@ -1503,19 +1550,26 @@ msgid ""
 "\"Reboot or attention is required\" and click \"Save\" button if you want"
 " to get this notification by email."
 msgstr ""
-"Du vil ikke mota testmerknaden i innboksen til e-posten din med nåværende "
-"viktighetsnivå. Øk nivået til minst «Omstart eller foretagende kreves» og "
-"klikk «Lagre»-knappen hvis du ønsker å få denne merknaden per e-post."
+"Du vil ikke mota testmerknaden i innboksen til e-posten din med nåværende"
+" viktighetsnivå. Øk nivået til minst «Omstart eller foretagende kreves» "
+"og klikk «Lagre»-knappen hvis du ønsker å få denne merknaden per e-post."
 
-#: js/src/notificationsSettings/TestNotification.js:104
-msgid "Test notification"
+#: js/src/notificationsSettings/TestNotification.js:110
+#, fuzzy
+msgid "Test Notification"
 msgstr "Testmerknad"
 
-#: js/src/notificationsSettings/TestNotification.js:117
+#: js/src/notificationsSettings/TestNotification.js:112
+msgid ""
+"Here you can verify whether SMTP is configured correctly by sending a "
+"test notification to your email inbox."
+msgstr ""
+
+#: js/src/notificationsSettings/TestNotification.js:123
 msgid "Send test notification"
 msgstr "Send testmerknad"
 
-#: js/src/notificationsSettings/TestNotification.js:146
+#: js/src/notificationsSettings/TestNotification.js:153
 msgid "Confirm"
 msgstr "Bekreft"
 
@@ -1665,8 +1719,8 @@ msgid ""
 "If you want to use another language other than English you can select it "
 "from the following list:"
 msgstr ""
-"Hvis du ønsker å bruke et annet språk enn engelsk kan du velge det i denne "
-"listen:"
+"Hvis du ønsker å bruke et annet språk enn engelsk kan du velge det i "
+"denne listen:"
 
 #: js/src/packageManagement/packages/PackageCheckBox.js:53
 msgid "More details"
@@ -1687,8 +1741,8 @@ msgstr ""
 "\n"
 "Til forskjell fra forvalgsinstallasjonen kan du valgfritt velge "
 "programknipper av forskjellig typer å installere på\n"
-"ruteren. Denne programvaren kan velges fra følgende liste. Ha i minnet at "
-"kun programvare som er en del av\n"
+"ruteren. Denne programvaren kan velges fra følgende liste. Ha i minnet at"
+" kun programvare som er en del av\n"
 "TurrisOS, eller som har blitt installert fra en pakkeliste og ikke er "
 "markert med gemenskapsstøtte faktisk er\n"
 "støttet av Turris-laget.\n"
@@ -1703,6 +1757,7 @@ msgid "Most Important License Agreement Points"
 msgstr "De viktigste lisensgodkjennelsespunketene"
 
 #: js/src/packageManagement/updateSettings/LicenceModal.js:38
+#, fuzzy
 msgid ""
 "\n"
 "                    <li>Automatic updates are offered to the Turris "
@@ -1740,13 +1795,13 @@ msgid ""
 "                        responsible for any damages caused by the "
 "automatic updates.\n"
 "                    </li>\n"
-"                  "
+"                    "
 msgstr ""
 "\n"
-"                    <li>Automatiske oppgraderinger tilbys gratis til Turris-"
-"rutereiere.</li>\n"
-"                    <li>Oppgraderinger forberedes av CZ.NIC, z. s. p. o.</li>"
-"\n"
+"                    <li>Automatiske oppgraderinger tilbys gratis til "
+"Turris-rutereiere.</li>\n"
+"                    <li>Oppgraderinger forberedes av CZ.NIC, z. s. p. "
+"o.</li>\n"
 "                    <li>\n"
 "                        Å skru på automatiske oppgraderinger er "
 "inngangssteget til ytterligere\n"
@@ -1764,8 +1819,8 @@ msgstr ""
 "tilkomme deg.\n"
 "                    </li>\n"
 "                    <li>\n"
-"                        Automatiske oppgraderinger kan ikke beskytte deg mot "
-"alle angrep som kommer fra\n"
+"                        Automatiske oppgraderinger kan ikke beskytte deg "
+"mot alle angrep som kommer fra\n"
 "                        Internett. Ikke glem å beskytte dine "
 "arbeidsstasjoner og andre enheter ved å installere\n"
 "                        antivirus -programvare og ved å forklare dine "
@@ -1783,15 +1838,20 @@ msgstr ""
 #: js/src/packageManagement/updateSettings/LicenceModal.js:68
 #, fuzzy
 msgid ""
-"By enabling of the automatic updates, you confirm that you are the owner "
-"of this Turris router and you agree with the full text of the <a "
-"href=\"https://www.turris.cz/omnia-updater-eula\" target=\"_blank\" "
-"rel=\"noopener noreferrer\">license agreement</a>."
+"By enabling of the automatic updates, \n"
+"                                    you confirm that you are the owner of"
+" this Turris \n"
+"                                    router and you agree with the full "
+"text of the \n"
+"                                    <a href=\"https://www.turris.cz"
+"/omnia-updater-eula\" target=\"_blank\" rel=\"noopener "
+"noreferrer\">license agreement <sup><i class=\"fas fa-external-link-alt "
+"fa-sm\"></i></sup></a>."
 msgstr ""
 "Ved å skru på automatiske oppgraderinger bekrefter du at du eier denne "
-"Turris-ruteren og at du samtykker med hele teksten i <a href=\"https://www."
-"turris.cz/omnia-updater-eula\" target=\"_blank\" rel=\"noopener noreferrer\""
-">lisenssamtykket</a>."
+"Turris-ruteren og at du samtykker med hele teksten i <a "
+"href=\"https://www.turris.cz/omnia-updater-eula\" target=\"_blank\" "
+"rel=\"noopener noreferrer\">lisenssamtykket</a>."
 
 #: js/src/packageManagement/updateSettings/UpdateSettings.js:31
 #, fuzzy
@@ -1821,15 +1881,16 @@ msgstr ""
 "beskyttelse mot angrep fra\n"
 "Internett.\n"
 "<br/>\n"
-"Det <b>anbefales sterkt</b> å ha denne funksjonen <b>påsrkudd</b>. Hvis du "
-"skrur den av, vær\n"
-"advart om at dette kan forringe sikkerheten på ruteren din og nettverket i "
-"fall problemer i programvaren\n"
+"Det <b>anbefales sterkt</b> å ha denne funksjonen <b>påsrkudd</b>. Hvis "
+"du skrur den av, vær\n"
+"advart om at dette kan forringe sikkerheten på ruteren din og nettverket "
+"i fall problemer i programvaren\n"
 "blir funnet.\n"
 "<br/>\n"
 "Ved å skru på automatiske oppdateringer samtykker du til funksjonens "
 "lisensavtale. Mer info er å finne\n"
-"<a href=\"\" data-toggle=\"modal\" data-target=\"#licenceModal\">her</a>.\n"
+"<a href=\"\" data-toggle=\"modal\" data-target=\"#licenceModal\">her</a>."
+"\n"
 "            "
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:17
@@ -1837,8 +1898,8 @@ msgid ""
 "Number of days that must pass between receiving the request for restart "
 "and the automatic restart itself."
 msgstr ""
-"Antall dager som må ha gått mellom mottak av forespørsel om omstart og den "
-"faktiske automatiske omstarten."
+"Antall dager som må ha gått mellom mottak av forespørsel om omstart og "
+"den faktiske automatiske omstarten."
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:20
 msgid "Time of day of automatic reboot in HH:MM format."
@@ -1914,14 +1975,14 @@ msgid ""
 "            it will be offered to you again together with the next "
 "package installation."
 msgstr ""
-"Oppgraderingsgodkjenninger kan være nyttig hvis du ønsker å forsikre deg om "
-"at oppgraderinger ikke vil skade\n"
-"            et spesifikt oppsett. Du kan f.eks. installere oppgraderinger du "
-"har forberedt tilbakerulling av på et tidligere\n"
+"Oppgraderingsgodkjenninger kan være nyttig hvis du ønsker å forsikre deg "
+"om at oppgraderinger ikke vil skade\n"
+"            et spesifikt oppsett. Du kan f.eks. installere oppgraderinger"
+" du har forberedt tilbakerulling av på et tidligere\n"
 "            øyeblikksavbildning og nekte en tvilsom oppgradering "
 "midlertidig. Det er ikke mulig å avslå en oppgradering\n"
-"            i det uendelige, og den vil bli tilbudt igjen sammen med neste "
-"pakkeinstallasjon."
+"            i det uendelige, og den vil bli tilbudt igjen sammen med "
+"neste pakkeinstallasjon."
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:79
 msgid "Delayed updates (hours)"
@@ -1931,18 +1992,19 @@ msgstr "Utsatte oppgraderinger (timer)"
 msgid "Updates must be delayed by least 1 hour and at most by 168 hours"
 msgstr "Oppgraderinger må utsettes i minst én time, og ikke mer enn 168 timer"
 
-#: js/src/packageManagement/updateSettings/forms/UpdatesForm.js:47
+#: js/src/packageManagement/updateSettings/forms/UpdatesForm.js:46
+#, fuzzy
+msgid "Automatic Update Settings"
+msgstr "Automatiske oppdateringer"
+
+#: js/src/packageManagement/updateSettings/forms/UpdatesForm.js:48
 #, fuzzy
 msgid "Enable automatic updates (recommended)"
 msgstr "Skru på automatiske oppgraderinger (anbefales)"
 
-#: js/src/packageManagement/updates/UpdateApproval.js:38
+#: js/src/packageManagement/updates/UpdateApproval.js:43
 msgid "Updates will be installed shortly."
 msgstr "Oppgraderinger vil snart bli installert."
-
-#: js/src/packageManagement/updates/UpdateApproval.js:55
-msgid "There are no updates awaiting your approval."
-msgstr "Ingen oppgraderinger venter på godkjenning."
 
 #: js/src/packageManagement/updates/UpdateApproval.js:61
 #, python-format
@@ -1956,48 +2018,97 @@ msgid ""
 "See <a data-toggle=\"collapse\" href=\"#plan-wrapper\" role=\"button\" "
 "aria-expanded=\"false\" aria-controls=\"plan-wrapper\">details</a>"
 msgstr ""
-"Vis <a data-toggle=\"collapse\" href=\"#plan-wrapper\" role=\"button\" aria-"
-"expanded=\"false\" aria-controls=\"plan-wrapper\">detaljer</a>"
+"Vis <a data-toggle=\"collapse\" href=\"#plan-wrapper\" role=\"button\" "
+"aria-expanded=\"false\" aria-controls=\"plan-wrapper\">detaljer</a>"
 
-#: js/src/packageManagement/updates/UpdateApproval.js:76
+#: js/src/packageManagement/updates/UpdateApproval.js:79
+msgid ""
+"These updates are not going to be \n"
+"                                    automatically installed before \n"
+"                                    ${toLocaleDateString(delayedTime)}."
+msgstr ""
+
+#: js/src/packageManagement/updates/UpdateApproval.js:88
+msgid ""
+"If you don't want the updates to be installed at all, go to\n"
+"                                    <a "
+"href=\"${ForisURLs.packageManagement.updateSettings}\">Update "
+"Settings</a> \n"
+"                                    and choose the option <b>Update "
+"approval needed</b>."
+msgstr ""
+
+#: js/src/packageManagement/updates/UpdateApproval.js:106
 #, python-format
 msgid "Approve Update From %s"
 msgstr "Godta oppgradering fra %s"
 
-#: js/src/packageManagement/updates/UpdateApproval.js:120
+#: js/src/packageManagement/updates/UpdateApproval.js:134
+msgid "There are no updates awaiting your approval."
+msgstr "Ingen oppgraderinger venter på godkjenning."
+
+#: js/src/packageManagement/updates/UpdateApproval.js:151
 msgid "Action"
 msgstr "Handling"
 
-#: js/src/packageManagement/updates/UpdateApproval.js:122
+#: js/src/packageManagement/updates/UpdateApproval.js:153
 msgid "Current"
 msgstr "Nåværende"
 
-#: js/src/packageManagement/updates/UpdateApproval.js:123
+#: js/src/packageManagement/updates/UpdateApproval.js:154
 msgid "New"
 msgstr "Ny"
 
-#: js/src/packageManagement/updates/Updates.js:41
+#: js/src/packageManagement/updates/UpdateManager.js:73
+#, fuzzy
+msgid "Updates Check"
+msgstr "Oppdateringer"
+
+#: js/src/packageManagement/updates/UpdateManager.js:84
+#, fuzzy
+msgid "Available Updates"
+msgstr "Utsatte oppgraderinger"
+
+#: js/src/packageManagement/updates/UpdateManager.js:86
+msgid ""
+"Here you can find and approve available updates for \n"
+"                    Turris OS and other components."
+msgstr ""
+
+#: js/src/packageManagement/updates/UpdateManager.js:91
+msgid "You're up to date."
+msgstr ""
+
+#: js/src/packageManagement/updates/Updates.js:29
+msgid ""
+"In Turris OS, you decide when and how to get the latest updates\n"
+"                    to keep your device running smoothly and securely."
+msgstr ""
+
+#: js/src/packageManagement/updates/Updates.js:47
 #, fuzzy
 msgid ""
-"Automatic updates are disabled. Please enable delayed or approval-"
-"requiring updates to review them."
+"Automatic updates are disabled. Please enable \n"
+"            <a "
+"href=\"${ForisURLs.packageManagement.updateSettings}\">delayed or \n"
+"            approval-requiring updates</a> to review them."
 msgstr ""
-"Automatiske oppgraderinger er avskrudd. Skru på utsatte eller godkjennings-"
-"påkrevde oppgradering for å vurdere dem."
+"Automatiske oppgraderinger er avskrudd. Skru på utsatte eller "
+"godkjennings-påkrevde oppgradering for å vurdere dem."
 
-#: js/src/packageManagement/updates/Updates.js:53
+#: js/src/packageManagement/updates/Updates.js:62
 msgid "Check and install updates"
 msgstr "Sjekk og installer oppgraderinger"
 
-#: js/src/packageManagement/updates/Updates.js:54
+#: js/src/packageManagement/updates/Updates.js:63
 msgid "Manually check for updates and install them immediately."
 msgstr "Se etter oppgraderinger og installer dem umiddelbart"
 
-#: js/src/packageManagement/updates/Updates.js:59
+#: js/src/packageManagement/updates/Updates.js:68
 msgid "Check updates"
 msgstr "Se etter oppgraderinger"
 
-#: js/src/packageManagement/updates/Updates.js:61
+#: js/src/packageManagement/updates/Updates.js:70
 msgid "Manually check for updates and review them immediately."
 msgstr "Se etter oppgraderinger manuelt og vurder dem umiddelbart."
 
@@ -2012,30 +2123,37 @@ msgid ""
 "href=\"${ForisURLs.packageManagement.updateSettings}\">automatic "
 "updates</a> to manage packages and languages."
 msgstr ""
-"Skru på <a href=\"${ForisURLs.packageManagement.updateSettings}\""
-">automatiske oppgraderinger</a> for å håndtere pakker og språk."
+"Skru på <a "
+"href=\"${ForisURLs.packageManagement.updateSettings}\">automatiske "
+"oppgraderinger</a> for å håndtere pakker og språk."
 
-#: js/src/password/ForisPasswordForm.js:49
-msgid "Foris Password"
-msgstr "Foris-passord"
-
-#: js/src/password/ForisPasswordForm.js:50
+#: js/src/password/ForisPasswordForm.js:53
 msgid "Set your password for this administration interface."
 msgstr "Sett ditt passord for dette administrasjonsgrensesnittet."
 
-#: js/src/password/ForisPasswordForm.js:55
-msgid "Current Foris password"
-msgstr "Nåværende Foris-passord"
+#: js/src/password/ForisPasswordForm.js:58
+#, fuzzy
+msgid "Current password"
+msgstr "Feil nåværende passord."
 
-#: js/src/password/ForisPasswordForm.js:65
-msgid "New Foris password"
-msgstr "Nytt Foris-passord"
+#: js/src/password/ForisPasswordForm.js:68
+#: js/src/password/RootPasswordForm.js:69
+#, fuzzy
+msgid "New password"
+msgstr "Feil passord."
 
-#: js/src/password/ForisPasswordForm.js:81
-msgid "Use same password for advanced administration (root)"
+#: js/src/password/ForisPasswordForm.js:79
+#: js/src/password/RootPasswordForm.js:79
+#, fuzzy
+msgid "Confirm new password"
+msgstr "Feil passord."
+
+#: js/src/password/ForisPasswordForm.js:95
+#, fuzzy
+msgid "Use the same password for advanced administration (root)"
 msgstr "Bruk samme passord for avansert administrasjon (root)"
 
-#: js/src/password/ForisPasswordForm.js:84
+#: js/src/password/ForisPasswordForm.js:98
 msgid ""
 "Same password would be used for accessing this administration interface, "
 "for root user in LuCI web interface and for SSH login. Use a strong "
@@ -2049,14 +2167,16 @@ msgstr ""
 " har du valget om å gjøre det senere. Til da vil root-kontoen være "
 "blokkert.)"
 
-#: js/src/password/Password.js:77
+#: js/src/password/Password.js:79
 #, fuzzy
 msgid ""
-"The password you've entered has been compromised. It appears ${\n"
+"The password you've entered has not been saved. It has been compromised "
+"and appears ${\n"
 "                            forisPassword.count || rootPassword.count\n"
 "                        } times in ${\n"
 "                            forisPassword.list || rootPassword.list\n"
-"                        } list."
+"                        } list. Please enter another, more secure "
+"password."
 msgstr ""
 "Passordet du har skrevet inn har kommet andre i hende. Det later til at "
 "finnes ${\n"
@@ -2065,38 +2185,49 @@ msgstr ""
 "                            forisPassword.list || rootPassword.list\n"
 "                        } listen."
 
-#: js/src/password/Password.js:88
+#: js/src/password/Password.js:90
 msgid "Password changed successfully."
 msgstr "Passord endret."
 
-#: js/src/password/Password.js:179
+#: js/src/password/Password.js:153
+#, fuzzy
+msgid "Password Settings"
+msgstr "Nettverksinnstillinger"
+
+#: js/src/password/Password.js:182
+#, fuzzy
 msgid ""
 "Here you can set passwords for Foris and optionally for advanced features"
-" (LuCI and SSH). Make sure to set secure password which is long and "
+" (LuCI and SSH). Make sure to set a secure password which is long and "
 "uncommon."
 msgstr ""
-"Her kan du sette passord for Foris og valgfritt for avanserte funksjoner ("
-"LuCI og SSH). Forsikre deg om at du setter et sikkert passord som er langt "
-"og uvanlig."
+"Her kan du sette passord for Foris og valgfritt for avanserte funksjoner "
+"(LuCI og SSH). Forsikre deg om at du setter et sikkert passord som er "
+"langt og uvanlig."
 
-#: js/src/password/Password.js:201
+#: js/src/password/Password.js:199 js/src/password/Password.js:203
+msgid "The password confirmation does not match."
+msgstr ""
+
+#: js/src/password/Password.js:218
 msgid "Password can't be empty."
 msgstr "Passordet kan ikke være tomt."
 
-#: js/src/password/Password.js:203
+#: js/src/password/Password.js:220
 #, fuzzy
 msgid "Password should have min 6 symbols."
 msgstr "Passordet bør ha minst 6 tegn."
 
-#: js/src/password/Password.js:206
+#: js/src/password/Password.js:223
 msgid "Password should have max 128 symbols."
 msgstr "Passordet bør ha maksimalt 128 tegn."
 
-#: js/src/password/RootPasswordForm.js:48
-msgid "Advanced Administration (root) Password"
-msgstr "(Rot-) passord for avansert administrasjon"
+#: js/src/password/RootPasswordForm.js:54
+#, fuzzy
+msgid "Advanced Administration Password"
+msgstr "Nytt avansert administrasjonspassord"
 
-#: js/src/password/RootPasswordForm.js:52
+#: js/src/password/RootPasswordForm.js:58
 #, fuzzy, python-format
 msgid ""
 "In order to access the advanced configuration options which are not "
@@ -2106,15 +2237,11 @@ msgid ""
 "through the <a href=\"%s\" target=\"_blank\" rel=\"noopener "
 "noreferrer\">LuCI web interface</a> or via SSH."
 msgstr ""
-"For å kunne nå avanserte oppsettsinnstillinger som ikke er tilgjengelige her "
-"må du sette rot-brukerens\n"
+"For å kunne nå avanserte oppsettsinnstillinger som ikke er tilgjengelige "
+"her må du sette rot-brukerens\n"
 "passord. De avanserte oppsettsinnstillingene kan håndteres enten gjennom\n"
 "<a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">LuCI-"
 "vevgrensesnittet</a> eller via SSH."
-
-#: js/src/password/RootPasswordForm.js:63
-msgid "New advanced administration password"
-msgstr "Nytt avansert administrasjonspassord"
 
 #: js/src/regionAndTime/RegionAndTime.js:30
 msgid "Region and Time"
@@ -2148,8 +2275,8 @@ msgid ""
 "Please select the timezone the router is being operated in. Correct "
 "setting is required to display the right time and for related functions."
 msgstr ""
-"Velg tidssonen ruteren din befinner seg i. Riktig innstilling kreves for å "
-"vise rett tid og for relatert funksjonalitet."
+"Velg tidssonen ruteren din befinner seg i. Riktig innstilling kreves for "
+"å vise rett tid og for relatert funksjonalitet."
 
 #: js/src/regionAndTime/RegionForm.js:72
 msgid "Continent or ocean"
@@ -2180,8 +2307,8 @@ msgid ""
 "Time should be up-to-date otherwise DNS and other services might not work"
 " properly."
 msgstr ""
-"Klokka må være oppdatert. Ellers vil DNS og andre tjenester ikke fungere som "
-"de skal."
+"Klokka må være oppdatert. Ellers vil DNS og andre tjenester ikke fungere "
+"som de skal."
 
 #: js/src/regionAndTime/TimeForm.js:112
 msgid "How to set time"
@@ -2238,15 +2365,16 @@ msgid ""
 " - on most browsers accessible after pressing Ctrl+Shift+J or F12."
 msgstr ""
 "Mer detaljert info er å finne i konsollen i din nettlser. På de fleste "
-"nettlesere er dette tilgjengelig etter å ha trykket Ctrl+Shift+J eller F12."
+"nettlesere er dette tilgjengelig etter å ha trykket Ctrl+Shift+J eller "
+"F12."
 
 #: js/src/utils/ErrorBoundary.js:50
 msgid ""
 "Please report this error to our support team via e-mail: <a "
 "href=\"mailto:tech.support@turris.cz\">tech.support@turris.cz</a>."
 msgstr ""
-"Innrapporter denne feilen til vårt brukerstøttelag via e-post til: <a href="
-"\"mailto:tech.support@turris.cz\">tech.support@turris.cz</a>."
+"Innrapporter denne feilen til vårt brukerstøttelag via e-post til: <a "
+"href=\"mailto:tech.support@turris.cz\">tech.support@turris.cz</a>."
 
 #: js/src/wan/MACForm.js:14
 msgid ""
@@ -2286,8 +2414,8 @@ msgstr ""
 "\n"
 "Her kan du angi dine WAN-portinnstillinger. Vanligvis kan du levne disse "
 "innstillingene urørt, med mindre\n"
-"du har fått annen beskjed av din Internett-tjenestetilbyder. I fall er det "
-"et kabel- eller DSL-modem som\n"
+"du har fått annen beskjed av din Internett-tjenestetilbyder. I fall er "
+"det et kabel- eller DSL-modem som\n"
 "kobler din ruter til nettverket, er det vanligvis ikke nødvendig å endre "
 "denne innstillingen.\n"
 "        "
@@ -2303,8 +2431,8 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"Her kan du teste tilkoblingsinnstillinger. Husk å klikke på <b>Lagre</b>-"
-"knappen før du kjører testen.\n"
+"Her kan du teste tilkoblingsinnstillinger. Husk å klikke på "
+"<b>Lagre</b>-knappen før du kjører testen.\n"
 "Merk deg at noen ganger kan det gå en stund før tilkoblingen er helt "
 "igangsatt. Det kan derfor være nyttig å\n"
 "vente en stund før du kjører denne testen.\n"
@@ -2399,10 +2527,6 @@ msgstr "6til4 (offentlig IPv4-adresse kreves)"
 msgid "6in4 (public IPv4 address required)"
 msgstr "6i4 (offentlig IPv4-adresse kreves)"
 
-#: js/src/wan/WAN6Form.js:162
-msgid "WAN IPv6"
-msgstr "WAN IPv6"
-
 #: js/src/wan/WAN6Form.js:164
 msgid "IPv6 protocol"
 msgstr "IPv6-protokoll"
@@ -2423,50 +2547,45 @@ msgstr "Prefiks"
 msgid "Public IPv4"
 msgstr "Offentlig IPv4"
 
-#: js/src/wan/WAN6Form.js:339
+#: js/src/wan/WAN6Form.js:338
 #, fuzzy
 msgid "Provider IPv4"
 msgstr "IPv4-tilbyder"
 
-#: js/src/wan/WAN6Form.js:352
+#: js/src/wan/WAN6Form.js:351
 #, fuzzy
 msgid "Routed IPv6 prefix"
 msgstr "Rutet IPv6-prefiks"
 
-#: js/src/wan/WAN6Form.js:365
+#: js/src/wan/WAN6Form.js:363
 msgid "MTU"
 msgstr "MTU"
 
-#: js/src/wan/WAN6Form.js:421
+#: js/src/wan/WAN6Form.js:375
+msgid "Dynamic IPv4 handling"
+msgstr ""
+
+#: js/src/wan/WAN6Form.js:419
 msgid "Tunnel ID"
 msgstr "Tunnel-ID"
 
-#: js/src/wan/WAN6Form.js:451
+#: js/src/wan/WAN6Form.js:449
 msgid "Key"
 msgstr "Nøkkel"
 
-#: js/src/wan/WAN6Form.js:515
-msgid "Public IPv4 address is required."
-msgstr "Offentlig IPv4-adresse kreves."
-
-#: js/src/wan/WAN6Form.js:532
+#: js/src/wan/WAN6Form.js:527
 #, fuzzy
-msgid "MTU should be a number in range of 1280-1500."
+msgid "MTU has to be a number in the range of 1280-1480."
 msgstr "MTU skal være et tall i rekkevidden 1280-1500."
 
-#: js/src/wan/WAN6Form.js:534
+#: js/src/wan/WAN6Form.js:529
 #, fuzzy
-msgid "MTU should be in range of 1280-1500."
+msgid "MTU has to be in the range of 1280-1480."
 msgstr "MTU skal være i rekkevidden 1280-1500."
 
 #: js/src/wan/WANForm.js:27
 msgid "PPPoE (for DSL bridges, etc.)"
 msgstr "PPPoE (for DSL-broer, osv.)"
-
-#: js/src/wan/WANForm.js:100
-#, fuzzy
-msgid "WAN IPv4"
-msgstr "WAN IPv4"
 
 #: js/src/wan/WANForm.js:128
 msgid "PAP/CHAP username"
@@ -2487,8 +2606,8 @@ msgid ""
 "            "
 msgstr ""
 "\n"
-"Hvis du ønsker å bruke ruteren din som et Wi-Fi-tilgangspunkt skrur du på Wi-"
-"Fi her og fyller inn en SSID (navnet på\n"
+"Hvis du ønsker å bruke ruteren din som et Wi-Fi-tilgangspunkt skrur du på"
+" Wi-Fi her og fyller inn en SSID (navnet på\n"
 "aksesspunktnettet) og et tilegnet passord. Du kan så sette opp dine "
 "mobilenheter ved bruk av QR-koden som er å finne i\n"
 "skjemaet..\n"
@@ -2517,21 +2636,20 @@ msgstr "Feil nåværende passord."
 #: reforis/foris_controller_api/modules/router_notifications.py:117
 #, fuzzy
 msgid ""
+"This is a testing notification.\n"
 "\n"
-"This is a testing notification. Please note you should receive this to "
-"your e-mail inbox only if you set the importance\n"
-"level on \"Reboot or attention is required\" or higher.\n"
-"            "
+"Please note it would be sent to your e-mail address only if you set\n"
+"the importance level to \"Reboot or attention is required\" or higher."
 msgstr ""
 "\n"
-"Dett er en testmerknad. Merk at du kun skal motta denne i din e-postinnboks "
-"hvis du setter viktighetsnivået til\n"
+"Dett er en testmerknad. Merk at du kun skal motta denne i din "
+"e-postinnboks hvis du setter viktighetsnivået til\n"
 "«Omstart eller foretagende kreves» eller høyere.\n"
 "            "
 
 #: reforis/foris_controller_api/modules/router_notifications.py:127
 #, fuzzy
-msgid "Testing message was sent, please check your inbox."
+msgid "The testing message has been sent, please check your inbox."
 msgstr "Testmelding sendt, sjekk innboksen din."
 
 #: reforis/foris_controller_api/modules/router_notifications.py:130
@@ -2539,8 +2657,7 @@ msgstr "Testmelding sendt, sjekk innboksen din."
 msgid ""
 "Sending of the testing message failed, your configuration is possibly "
 "wrong."
-msgstr ""
-"Forsendelse av testmelding mislyktes. Oppsettet ditt er antageligvis galt."
+msgstr "Forsendelse av testmelding mislyktes. Oppsettet ditt er antageligvis galt."
 
 #: reforis/foris_controller_api/modules/updater.py:65
 msgid "Cannot change automatic restart settings."
@@ -2913,3 +3030,31 @@ msgstr "500 - Tjenerfeil"
 
 #~ msgid "Device Reboot"
 #~ msgstr "Enhetsomstart"
+
+#~ msgid "DHCP Clients"
+#~ msgstr "DHCP-Klienter"
+
+#~ msgid "Ignore"
+#~ msgstr "Ignorer"
+
+#~ msgid "Foris Password"
+#~ msgstr "Foris-passord"
+
+#~ msgid "Current Foris password"
+#~ msgstr "Nåværende Foris-passord"
+
+#~ msgid "New Foris password"
+#~ msgstr "Nytt Foris-passord"
+
+#~ msgid "Advanced Administration (root) Password"
+#~ msgstr "(Rot-) passord for avansert administrasjon"
+
+#~ msgid "WAN IPv6"
+#~ msgstr "WAN IPv6"
+
+#~ msgid "Public IPv4 address is required."
+#~ msgstr "Offentlig IPv4-adresse kreves."
+
+#~ msgid "WAN IPv4"
+#~ msgstr "WAN IPv4"
+
