@@ -1,4 +1,4 @@
-#  Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+#  Copyright (C) 2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
 #
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
@@ -125,10 +125,8 @@ create-messages: venv
 	$(VENV_BIN)/pybabel extract -F babel.cfg -o ./reforis/translations/messages.pot .
 update-messages: venv
 	$(VENV_BIN)/pybabel update -i ./reforis/translations/messages.pot -d ./reforis/translations
-	$(VENV_BIN)/pybabel update -i ./reforis/translations/tzinfo.pot -d ./reforis/translations -D tzinfo
 compile-messages: venv install-js
 	$(VENV_BIN)/pybabel compile -f -d ./reforis/translations
-	$(VENV_BIN)/pybabel compile -f -d ./reforis/translations -D tzinfo
 	for file in js/node_modules/foris/translations/* ; do \
 		file_name="$$(basename $$file)" ;\
 		file_path="$${file_name}/LC_MESSAGES/forisjs.po" ;\
