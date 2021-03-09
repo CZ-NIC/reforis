@@ -7,16 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-03-08 17:14+0100\n"
+"POT-Creation-Date: 2021-02-01 12:17+0100\n"
 "PO-Revision-Date: 2021-02-17 13:50+0000\n"
 "Last-Translator: Lukas Jelinek <lukas.jelinek@nic.cz>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/turris/reforis/cs/>"
+"\n"
 "Language: cs\n"
-"Language-Team: Czech "
-"<https://hosted.weblate.org/projects/turris/reforis/cs/>\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 4.5\n"
 "Generated-By: Babel 2.9.0\n"
 
 #: js/src/about/About.js:23 js/src/main/pages.js:109 js/src/main/pages.js:228
@@ -1338,6 +1339,7 @@ msgid ""
 "                giving you a clean slate to start all over again.\n"
 "    "
 msgstr ""
+<<<<<<< HEAD
 "Provedení resetu zařízení Turris do továrního nastavení odstraní všechny"
 " \n"
 "                nainstalované balíčky a všechna data s nimi spojená. "
@@ -1346,6 +1348,15 @@ msgstr ""
 "router nový.\n"
 "                Získáte tím možnost začít s čistým routerem úplně od "
 "začátku.\n"
+=======
+"Provedení resetu zařízení Turris do továrního nastavení odstraní všechny \n"
+"                nainstalované balíčky a všechna data s nimi spojená. Všechno "
+"se\n"
+"                vrátí zpět do výchozích nastavení tak, jako když byl router "
+"nový.\n"
+"                Získáte tím možnost začít s čistým routerem úplně od začátku."
+"\n"
+>>>>>>> weblate/master
 "    "
 
 #: js/src/maintenance/Maintenance.js:19
@@ -1353,8 +1364,13 @@ msgid ""
 "The Maintenance tab allows you to reboot the router or bring back all the"
 " default settings by performing a factory reset."
 msgstr ""
+<<<<<<< HEAD
 "Záložka Údržba vám umožňuje restartovat router nebo ho vrátit do "
 "výchozích nastavení provedením továrního resetu."
+=======
+"Záložka Údržba vám umožňuje restartovat router nebo ho vrátit do výchozích "
+"nastavení provedením továrního resetu."
+>>>>>>> weblate/master
 
 #: js/src/maintenance/Reboot.js:18
 msgid ""
@@ -1386,12 +1402,20 @@ msgid ""
 " in the <a href=\"${ForisURLs.storage}\" title=\"Go to Storage "
 "plugin\">Storage plugin</a> first."
 msgstr ""
+<<<<<<< HEAD
 "Při resetu zařízení se systémové záznamy ve výchozím nastavení ztratí. "
 "Tato volba umožňuje systémové záznamy ukládat pomocí pluginu Storage. "
 "Ukládají se to adresáře /srv/log/messages. K povolení této volby je "
 "potřeba nejdříve nakonfigurovat úložiště pomocí <a "
 "href=\"${ForisURLs.storage}\" title=\"Jít na plugin Storage\">pluginu "
 "Storage</a>."
+=======
+"Při resetu zařízení se systémové záznamy ve výchozím nastavení ztratí. Tato "
+"volba umožňuje systémové záznamy ukládat pomocí pluginu Storage. Ukládají se "
+"to adresáře /srv/log/messages. K povolení této volby je potřeba nejdříve "
+"nakonfigurovat úložiště pomocí <a href=\"${ForisURLs.storage}\" title=\"Jít "
+"na plugin Storage\">pluginu Storage</a>."
+>>>>>>> weblate/master
 
 #: js/src/maintenance/Syslog/SyslogForm.js:38
 msgid "Enable system logs retention"
@@ -3200,4 +3224,3 @@ msgstr "500 - Server error"
 
 #~ msgid "WAN IPv4"
 #~ msgstr "IPv4 adresa WAN"
-

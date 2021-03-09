@@ -736,9 +736,15 @@ msgstr ""
 msgid "Cannot mark guide as finished."
 msgstr ""
 
+<<<<<<< HEAD
 #: js/src/guide/steps.js:20 js/src/main/pages.js:76 js/src/main/pages.js:167
 #: js/src/notificationsSettings/SMTPCustomForm.js:114
 #: js/src/password/Password.js:180 reforis/templates/login.html:29
+=======
+#: js/src/guide/steps.js:20 js/src/main/pages.js:75 js/src/main/pages.js:161
+#: js/src/notificationsSettings/SMTPCustomForm.js:114
+#: js/src/password/Password.js:177 reforis/templates/login.html:29
+>>>>>>> weblate/master
 msgid "Password"
 msgstr ""
 
@@ -1542,15 +1548,10 @@ msgstr ""
 
 #: js/src/packageManagement/updateSettings/LicenceModal.js:68
 msgid ""
-"By enabling of the automatic updates, \n"
-"                                    you confirm that you are the owner of"
-" this Turris \n"
-"                                    router and you agree with the full "
-"text of the \n"
-"                                    <a href=\"https://www.turris.cz"
-"/omnia-updater-eula\" target=\"_blank\" rel=\"noopener "
-"noreferrer\">license agreement <sup><i class=\"fas fa-external-link-alt "
-"fa-sm\"></i></sup></a>."
+"By enabling of the automatic updates, you confirm that you are the owner "
+"of this Turris router and you agree with the full text of the <a "
+"href=\"https://www.turris.cz/omnia-updater-eula\" target=\"_blank\" "
+"rel=\"noopener noreferrer\">license agreement</a>."
 msgstr ""
 
 #: js/src/packageManagement/updateSettings/UpdateSettings.js:31
@@ -2429,4 +2430,3 @@ msgstr ""
 
 #~ msgid "Testing message was sent, please check your inbox."
 #~ msgstr ""
-
