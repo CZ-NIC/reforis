@@ -2012,7 +2012,7 @@ msgstr "Oppgraderinger vil snart bli installert."
 #, python-format
 msgid "There is %d package to be updated."
 msgid_plural "There are %d packages to be updated."
-msgstr[0] "Én pakke venter på å bli oppgradert."
+msgstr[0] "%d pakke venter på å bli oppgradert."
 msgstr[1] "%d pakker venter på oppgradering."
 
 #: js/src/packageManagement/updates/UpdateApproval.js:68

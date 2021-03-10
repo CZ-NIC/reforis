@@ -40,15 +40,12 @@ export function waitForDown(callback) {
 }
 
 export function tryReconnect(ips, reconnectUrlPath) {
-    ips.forEach(async (ip) => {
-        const port =
-            window.location.port === "" ? "" : `:${window.location.port}`;
-        const { protocol } = window.location;
-        const baseURL = `${protocol}//${ip}${port}`;
-        const callback = () =>
-            window.location.replace(`${baseURL}${reconnectUrlPath}`);
-        waitForUpPolling(`${baseURL}${API_URLs.healthCheck}`, callback);
-    });
+    const port = window.location.port === "" ? "" : `:${window.location.port}`;
+    const { protocol } = window.location;
+    const baseURL = `${protocol}//${ips[0]}${port}`;
+    const callback = () =>
+        window.location.replace(`${baseURL}${reconnectUrlPath}`);
+    waitForUpPolling(`${baseURL}${API_URLs.healthCheck}`, callback);
 }
 
 // Waits until foris is up, then call callback
