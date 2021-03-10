@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-03-08 17:14+0100\n"
 "PO-Revision-Date: 2021-03-12 06:02+0000\n"
-"Last-Translator: Алексей Леньшин <alenshin@gmail.com>\n"
+"Last-Translator: Artem <KovalevArtem.ru@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/turris/reforis/"
 "ru/>\n"
 "Language: ru\n"
@@ -123,18 +123,19 @@ msgstr "Имя сервера DHCP"
 
 #: js/src/common/network/DHCPClientsList.js:20
 msgid "DHCP Client List"
-msgstr ""
+msgstr "Список клиентов DHCP"
 
 #: js/src/common/network/DHCPClientsList.js:22
 msgid ""
 "This list contains all devices that are connected to the network through "
 "wired or wireless connections."
 msgstr ""
+"Этот список содержит все устройства, подключенные к сети через проводные или "
+"беспроводные соединения."
 
 #: js/src/common/network/DHCPClientsList.js:28
-#, fuzzy
 msgid "No clients found."
-msgstr "DHCP клиенты не найдены."
+msgstr "Клиенты не найдены."
 
 #: js/src/common/network/DHCPClientsList.js:35
 msgid "Expires"
@@ -365,9 +366,8 @@ msgstr ""
 "«android-123.my.lan»."
 
 #: js/src/dns/DNSForm.js:67
-#, fuzzy
 msgid "DNS Settings"
-msgstr "Обновить настройки"
+msgstr "Настройки DNS"
 
 #: js/src/dns/DNSForm.js:84
 msgid "Use forwarding"
@@ -564,9 +564,8 @@ msgid "Upload speed in guest network (in kilobits per second)."
 msgstr "Скорость передачи в гостевой сети (в килобитах в секунду)."
 
 #: js/src/guestNetwork/GuestNetworkForm.js:65
-#, fuzzy
 msgid "Guest Network Settings"
-msgstr "Сетевые настройки"
+msgstr "Настройки гостевой сети"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:67
 msgid "Enable"
@@ -957,9 +956,8 @@ msgid "Recommended"
 msgstr "Рекомендуемые"
 
 #: js/src/hostname/Hostname.js:22
-#, fuzzy
 msgid "Here you can check and set the name of your device."
-msgstr "Теперь необходимо установить время и часовой пояс вашего устройства."
+msgstr "Здесь вы можете проверить и установить имя вашего устройства."
 
 #: js/src/hostname/Hostname.js:41
 msgid ""
@@ -974,14 +972,12 @@ msgid "Rewrite the hostname to set a new one."
 msgstr "Укажите новое имя хоста."
 
 #: js/src/hostname/HostnameForm.js:33
-#, fuzzy
 msgid "Hostname Settings"
-msgstr "Настройки Времени"
+msgstr "Настройки имени хоста"
 
 #: js/src/hostname/HostnameForm.js:35
-#, fuzzy
 msgid "Device hostname"
-msgstr "Имя хоста TLS"
+msgstr "Имя хоста устройства"
 
 #: js/src/interfaces/Interfaces.js:25
 msgid "Network Interfaces"
@@ -1508,7 +1504,6 @@ msgstr ""
 "получить это уведомление по электронной почте."
 
 #: js/src/notificationsSettings/TestNotification.js:110
-#, fuzzy
 msgid "Test Notification"
 msgstr "Тестовое уведомление"
 
@@ -1979,14 +1974,12 @@ msgid "New"
 msgstr "Новый"
 
 #: js/src/packageManagement/updates/UpdateManager.js:73
-#, fuzzy
 msgid "Updates Check"
-msgstr "Обновления"
+msgstr "Проверка обновлений"
 
 #: js/src/packageManagement/updates/UpdateManager.js:84
-#, fuzzy
 msgid "Available Updates"
-msgstr "Отложенные обновления"
+msgstr "Доступные обновления"
 
 #: js/src/packageManagement/updates/UpdateManager.js:86
 msgid ""
@@ -2054,21 +2047,18 @@ msgid "Set your password for this administration interface."
 msgstr "Установите свой пароль для этого интерфейса администрирования."
 
 #: js/src/password/ForisPasswordForm.js:58
-#, fuzzy
 msgid "Current password"
-msgstr "Неверный текущий пароль."
+msgstr "Текущий пароль"
 
 #: js/src/password/ForisPasswordForm.js:68
 #: js/src/password/RootPasswordForm.js:69
-#, fuzzy
 msgid "New password"
-msgstr "Неверный пароль."
+msgstr "Новый пароль"
 
 #: js/src/password/ForisPasswordForm.js:79
 #: js/src/password/RootPasswordForm.js:79
-#, fuzzy
 msgid "Confirm new password"
-msgstr "Неверный пароль."
+msgstr "Подтвердите новый пароль"
 
 #: js/src/password/ForisPasswordForm.js:95
 msgid "Use the same password for advanced administration (root)"
@@ -2109,9 +2099,8 @@ msgid "Password changed successfully."
 msgstr "Пароль успешно изменен."
 
 #: js/src/password/Password.js:153
-#, fuzzy
 msgid "Password Settings"
-msgstr "Сетевые настройки"
+msgstr "Настройки пароля"
 
 #: js/src/password/Password.js:182
 msgid ""
@@ -2461,7 +2450,7 @@ msgstr "MTU"
 
 #: js/src/wan/WAN6Form.js:375
 msgid "Dynamic IPv4 handling"
-msgstr ""
+msgstr "Динамическая обработка IPv4"
 
 #: js/src/wan/WAN6Form.js:419
 msgid "Tunnel ID"
@@ -2472,14 +2461,12 @@ msgid "Key"
 msgstr "Ключ"
 
 #: js/src/wan/WAN6Form.js:527
-#, fuzzy
 msgid "MTU has to be a number in the range of 1280-1480."
-msgstr "MTU должен быть числом в диапазоне 1280-1500."
+msgstr "MTU должен быть числом в диапазоне 1280-1480."
 
 #: js/src/wan/WAN6Form.js:529
-#, fuzzy
 msgid "MTU has to be in the range of 1280-1480."
-msgstr "MTU должен быть в диапазоне 1280-1500."
+msgstr "MTU должен быть в диапазоне 1280-1480."
 
 #: js/src/wan/WANForm.js:27
 msgid "PPPoE (for DSL bridges, etc.)"
