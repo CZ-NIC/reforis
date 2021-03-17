@@ -10,6 +10,7 @@ STATIC_DIR = '../reforis_static/'
 
 SESSION_FILE_DIR = '/tmp/foris-sessions'
 PERMANENT_SESSION_LIFETIME = timedelta(minutes=10)
+SESSION_COOKIE_SAMESITE = 'Lax'
 
 BUS = 'mqtt'
 BUSES_CONF = {

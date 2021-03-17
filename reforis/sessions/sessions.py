@@ -112,6 +112,8 @@ class FileSystemSessionInterface(SessionInterface):
         httponly = self.get_cookie_httponly(app)
         secure = self.get_cookie_secure(app)
         expires = self.get_expiration_time(app, session)
+        samesite = self.get_cookie_samesite(app)
+
         data = dict(session)
         self.cache.set(self.key_prefix + session.sid, data,
                        total_seconds(app.permanent_session_lifetime))
@@ -121,4 +123,5 @@ class FileSystemSessionInterface(SessionInterface):
             session_id = session.sid
         response.set_cookie(app.session_cookie_name, session_id,
                             expires=expires, httponly=httponly,
-                            domain=domain, path=path, secure=secure)
+                            domain=domain, path=path, secure=secure,
+                            samesite=samesite)
