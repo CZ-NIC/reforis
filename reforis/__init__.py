@@ -112,7 +112,7 @@ def create_app(config):
 def _wrap_error(error, code):
     if isinstance(error, dict):
         return dict({'status': code}, **error)
-    return {'status': code, 'error': 'Error:{!r}'.format(error)}
+    return {'status': code, 'error': 'Error:{!r}'.format(error)}, code
 
 
 def not_found_error(error):
@@ -120,7 +120,7 @@ def not_found_error(error):
 
 
 def internal_error(error):
-    return _wrap_error(error, 500)
+    return render_template('errors/500.html', error=error), 500
 
 
 def foris_controller_error(e):
