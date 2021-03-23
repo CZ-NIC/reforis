@@ -8,7 +8,6 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { useAPIGet, withSpinnerOnSending, withErrorMessage } from "foris";
-import { Link } from "react-router-dom";
 import API_URLs from "../common/API";
 import DynamicFirewallCard from "./Cards/DynamicFirewallCard";
 import DataCollectionCard from "./Cards/DataCollectionCard";
@@ -61,15 +60,6 @@ function OverviewCards({ packages, ws }) {
                         <div className="card-body">
                             <h6 className="text-uppercase text-muted mb-2">
                                 {_("Connection Test")}
-                                <Link
-                                    to={{
-                                        pathname: "/network-settings/wan",
-                                    }}
-                                    className="text-secondary"
-                                    title={_("Go to Connection Settings")}
-                                >
-                                    <i className="fas fa-chevron-right float-right" />
-                                </Link>
                             </h6>
                             <ConnectionTest ws={ws} type="overview" />
                         </div>
