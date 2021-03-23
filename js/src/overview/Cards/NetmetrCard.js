@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -11,6 +11,7 @@ import { useAPIGet, withSpinnerOnSending, withErrorMessage } from "foris";
 import moment from "moment";
 import PropTypes from "prop-types";
 import { API_MODULE_URLs } from "../../common/API";
+import "./NetmetrCard.css";
 
 export default function Netmetr() {
     const [getDataState, getDataRequest] = useAPIGet(API_MODULE_URLs.netmetr);
@@ -57,7 +58,7 @@ function NetmetrCard({ tests: { performed_tests: tests } }) {
                     </h6>
                     {lastTest != null ? (
                         <>
-                            <form>
+                            <form className="mb-4">
                                 <table className="table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12">
                                     <tbody>
                                         <tr>
@@ -126,7 +127,7 @@ function NetmetrCard({ tests: { performed_tests: tests } }) {
                                     </tbody>
                                 </table>
                             </form>
-                            <p className="card-text">
+                            <p className="card-text text-to-bottom">
                                 <small className="text-muted">
                                     {_("Performed")}
                                     &nbsp;
