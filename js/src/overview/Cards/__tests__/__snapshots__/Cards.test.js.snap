@@ -301,7 +301,9 @@ exports[`<Cards/> <NetmetrCard/> Snapshot: contains tests 1`] = `
             />
           </a>
         </h6>
-        <form>
+        <form
+          class="mb-4"
+        >
           <table
             class="table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12"
           >
@@ -391,7 +393,7 @@ exports[`<Cards/> <NetmetrCard/> Snapshot: contains tests 1`] = `
           </table>
         </form>
         <p
-          class="card-text"
+          class="card-text text-to-bottom"
         >
           <small
             class="text-muted"
