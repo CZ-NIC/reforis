@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2019-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -13,11 +13,14 @@ import { useAPIPost, useWSForisModule } from "foris";
 const TESTS_TYPES = {
     wan: ["ipv6", "ipv6_gateway", "ipv4", "ipv4_gateway"],
     dns: ["dns", "dnssec"],
+    overview: ["ipv6", "ipv6_gateway", "ipv4", "ipv4_gateway", "dns", "dnssec"],
 };
 
 const ENDPOINTS = {
     wan: API_URLs.connectionTest,
     dns: API_URLs.dnsTest,
+    // dnsTest is also called for the overview type because it returns both wan and dns results
+    overview: API_URLs.dnsTest,
 };
 
 export const TEST_STATES = {
