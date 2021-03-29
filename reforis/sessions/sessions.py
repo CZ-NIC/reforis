@@ -3,8 +3,8 @@
     ~~~~~~~~~~~~~~~~~~~~~~
 
     Server-side Sessions and SessionInterfaces.
-
     :copyright: (c) 2014 by Shipeng Feng.
+    :copyright: (c) 2021 CZ.NIC z.s.p.o. (https://www.nic.cz/)
     :license: BSD, see LICENSE for more details.
 """
 from uuid import uuid4
