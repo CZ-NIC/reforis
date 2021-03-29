@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2019-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -10,6 +10,7 @@ import PropTypes from "prop-types";
 import ReactDOM from "react-dom";
 
 import DHCPClientsList from "common/network/DHCPClientsList";
+import DHCP6ClientsList from "common/network/DHCP6ClientsList";
 import { LAN_MODES } from "./LANForm";
 
 LAN_DHCP_ClientsList.propTypes = {
@@ -19,6 +20,7 @@ LAN_DHCP_ClientsList.propTypes = {
             dhcp: PropTypes.shape({
                 enabled: PropTypes.bool.isRequired,
                 clients: PropTypes.arrayOf(PropTypes.object).isRequired,
+                ipv6clients: PropTypes.arrayOf(PropTypes.object).isRequired,
             }).isRequired,
         }),
     }),
@@ -34,7 +36,12 @@ export default function LAN_DHCP_ClientsList({ formData }) {
     const lanContainer = document.getElementById("dhcp-clients-container");
 
     return ReactDOM.createPortal(
-        <DHCPClientsList clients={formData.mode_managed.dhcp.clients} />,
+        <>
+            <DHCPClientsList clients={formData.mode_managed.dhcp.clients} />
+            <DHCP6ClientsList
+                ipv6clients={formData.mode_managed.dhcp.ipv6clients}
+            />
+        </>,
         lanContainer
     );
 }
