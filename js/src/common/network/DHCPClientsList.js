@@ -31,12 +31,12 @@ export default function DHCPClientsList({ clients }) {
                 <div className="table-responsive">
                     <table className="table table-hover">
                         <thead className="thead-light">
-                            <tr className="text-center">
-                                <th>{_("Expires")}</th>
-                                <th>{_("IP Address")}</th>
-                                <th>{_("MAC Address")}</th>
+                            <tr className="text-left">
                                 <th>{_("Hostname")}</th>
-                                <th>{_("Active")}</th>
+                                <th>{_("IPv4 Address")}</th>
+                                <th>{_("MAC Address")}</th>
+                                <th className="text-center">{_("Expires")}</th>
+                                <th className="text-center">{_("Active")}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -64,13 +64,24 @@ DHCPClientsListItem.propTypes = {
 
 function DHCPClientsListItem({ ip, expires, mac, hostname, active }) {
     return (
-        <tr className="text-center">
-            <td>{moment.unix(expires).format("YYYY-MM-DD HH:mm")}</td>
+        <tr className="text-left">
+            <td>{hostname}</td>
             <td>{ip}</td>
             <td>{mac}</td>
-            <td>{hostname}</td>
-            <td>
-                <i className={`fas ${active ? "fa-check" : "fa-times"}`} />
+            <td className="text-center">
+                {moment.unix(expires).format("YYYY-MM-DD HH:mm")}
+            </td>
+            <td className="text-center">
+                <i
+                    className={`fas ${
+                        active
+                            ? "fa-check text-success"
+                            : "fa-times text-danger"
+                    }`}
+                    title={
+                        active ? _("Device is active") : _("Device is inactive")
+                    }
+                />
             </td>
         </tr>
     );
