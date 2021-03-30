@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -21,6 +21,7 @@ const TLS_TYPES = {
 
 const HELP_TEXTS = {
     tls_pin: _("Base 64 encoded SHA-256."),
+    no_tls: _(`"No TLS" means that the regular UDP-base DNS protocol is used.`),
 };
 
 ForwarderForm.propTypes = {
@@ -71,6 +72,7 @@ export default function ForwarderForm({ forwarder, saveForwarderCallback }) {
                 label={_("TLS type")}
                 value={formData.tls_type}
                 choices={TLS_TYPES}
+                helpText={formData.tls_type === "no" && HELP_TEXTS.no_tls}
                 onChange={setFormValue((value) => {
                     const fieldsToAdd = {
                         hostname: "tls_hostname",

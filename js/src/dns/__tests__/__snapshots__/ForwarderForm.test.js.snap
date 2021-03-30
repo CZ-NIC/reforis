@@ -113,6 +113,11 @@ exports[`<ForwarderForm/>: existed forwarder. Test with snapshot. 1`] = `
         Pin
       </option>
     </select>
+    <small
+      class="form-text text-muted"
+    >
+      "No TLS" means that the regular UDP-base DNS protocol is used.
+    </small>
   </div>
   <button
     class="btn btn-primary col-lg-12 col-md-12 col-sm-12 col-md-3 col-lg-2"
@@ -251,6 +256,11 @@ exports[`<ForwarderForm/>: new forwarder. Test with snapshot. 1`] = `
         Pin
       </option>
     </select>
+    <small
+      class="form-text text-muted"
+    >
+      "No TLS" means that the regular UDP-base DNS protocol is used.
+    </small>
   </div>
   <button
     class="btn btn-primary col-lg-12 col-md-12 col-sm-12 col-md-3 col-lg-2"
