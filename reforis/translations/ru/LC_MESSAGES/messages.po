@@ -7,18 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-03-08 17:14+0100\n"
+"POT-Creation-Date: 2021-03-31 12:58+0200\n"
 "PO-Revision-Date: 2021-03-12 06:02+0000\n"
 "Last-Translator: Artem <KovalevArtem.ru@gmail.com>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/turris/reforis/"
-"ru/>\n"
 "Language: ru\n"
+"Language-Team: Russian "
+"<https://hosted.weblate.org/projects/turris/reforis/ru/>\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.5.2-dev\n"
 "Generated-By: Babel 2.9.0\n"
 
 #: js/src/about/About.js:23 js/src/main/pages.js:109 js/src/main/pages.js:228
@@ -65,9 +64,9 @@ msgid ""
 "                                    - you can pick, which branch you want"
 " to test."
 msgstr ""
-"ОС Turris в настоящее время выпускается в различных ветках, которые имеют "
-"разные функции и разную стабильность - вы можете выбрать, какую ветку хотите "
-"протестировать."
+"ОС Turris в настоящее время выпускается в различных ветках, которые имеют"
+" разные функции и разную стабильность - вы можете выбрать, какую ветку "
+"хотите протестировать."
 
 #: js/src/about/About.js:97
 msgid "Kernel version"
@@ -130,8 +129,8 @@ msgid ""
 "This list contains all devices that are connected to the network through "
 "wired or wireless connections."
 msgstr ""
-"Этот список содержит все устройства, подключенные к сети через проводные или "
-"беспроводные соединения."
+"Этот список содержит все устройства, подключенные к сети через проводные "
+"или беспроводные соединения."
 
 #: js/src/common/network/DHCPClientsList.js:28
 msgid "No clients found."
@@ -442,24 +441,28 @@ msgstr "Удалить"
 msgid "Base 64 encoded SHA-256."
 msgstr "SHA-256 в кодировке Base 64."
 
-#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:48
+#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:24
+msgid "\"No TLS\" means that the regular UDP-base DNS protocol is used."
+msgstr ""
+
+#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:49
 #: js/src/packageManagement/updates/UpdateApproval.js:152
 msgid "Name"
 msgstr "Имя"
 
-#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:71
+#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:72
 msgid "TLS type"
 msgstr "Протокол защиты транспортного уровня (TLS)"
 
-#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:88
+#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:90
 msgid "TLS hostname"
 msgstr "Имя хоста TLS"
 
-#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:100
+#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:102
 msgid "TLS pin"
 msgstr "Код TLS"
 
-#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:116
+#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:118
 msgid "Save"
 msgstr "Сохранить"
 
@@ -1739,20 +1742,21 @@ msgid ""
 "                    "
 msgstr ""
 "\n"
-"                    <li>Автоматические обновления предлагаются владельцам "
-"маршрутизаторов Turris бесплатно.</li>  <li>Обновления подготовлены "
-"исключительно CZ.NIC, z.s.p.o.</li>  <li>Включение автоматических обновлений "
-"является обязательным условием для дополнительных функций безопасности "
-"маршрутизатора Turris.</li>  <li>Автоматические обновления выполняются во "
-"время их выпуска, пользователь не может влиять на время установки.</li>  "
-"<li>Включение автоматических обновлений может привести к увеличению интернет-"
-"трафика на вашем маршрутизаторе. Расходы, связанные с этим увеличением, "
-"покрываются вами.</li>  <li>Автоматические обновления не могут защитить вас "
-"от каждой атаки, исходящей из Интернета. Пожалуйста, не забудьте защитить "
-"свои рабочие станции и другие устройства, установив антивирусное программное "
-"обеспечение и объяснив членам своей семьи, как оставаться в безопасности в "
-"Интернете.</li>  <li>CZ.NIC, z. s. п. о. не гарантирует доступность этой "
-"услуги и не несет ответственности за любой ущерб, вызванный автоматическими "
+"                    <li>Автоматические обновления предлагаются владельцам"
+" маршрутизаторов Turris бесплатно.</li>  <li>Обновления подготовлены "
+"исключительно CZ.NIC, z.s.p.o.</li>  <li>Включение автоматических "
+"обновлений является обязательным условием для дополнительных функций "
+"безопасности маршрутизатора Turris.</li>  <li>Автоматические обновления "
+"выполняются во время их выпуска, пользователь не может влиять на время "
+"установки.</li>  <li>Включение автоматических обновлений может привести к"
+" увеличению интернет-трафика на вашем маршрутизаторе. Расходы, связанные "
+"с этим увеличением, покрываются вами.</li>  <li>Автоматические обновления"
+" не могут защитить вас от каждой атаки, исходящей из Интернета. "
+"Пожалуйста, не забудьте защитить свои рабочие станции и другие "
+"устройства, установив антивирусное программное обеспечение и объяснив "
+"членам своей семьи, как оставаться в безопасности в Интернете.</li>  "
+"<li>CZ.NIC, z. s. п. о. не гарантирует доступность этой услуги и не несет"
+" ответственности за любой ущерб, вызванный автоматическими "
 "обновлениями.</li>\n"
 "                    "
 
@@ -1769,10 +1773,10 @@ msgid ""
 "fa-sm\"></i></sup></a>."
 msgstr ""
 "Включая автоматические обновления, вы подтверждаете, что являетесь "
-"владельцем этого маршрутизатора Turris, и соглашаетесь с полным текстом <a "
-"href=\"https://www.turris.cz/omnia-updater-eula\" target=\"_blank\" rel="
-"\"noopener noreferrer\">лицензионного соглашения <sup><i class=\"fas fa-"
-"external-link-alt fa-sm\"></i></sup></a>.."
+"владельцем этого маршрутизатора Turris, и соглашаетесь с полным текстом "
+"<a href=\"https://www.turris.cz/omnia-updater-eula\" target=\"_blank\" "
+"rel=\"noopener noreferrer\">лицензионного соглашения <sup><i class=\"fas "
+"fa-external-link-alt fa-sm\"></i></sup></a>.."
 
 #: js/src/packageManagement/updateSettings/UpdateSettings.js:31
 msgid ""
@@ -1936,8 +1940,8 @@ msgid ""
 "                                    automatically installed before \n"
 "                                    ${toLocaleDateString(delayedTime)}."
 msgstr ""
-"Эти обновления не будут автоматически устанавливается до $ {"
-"toLocaleDateString (delayedTime)}."
+"Эти обновления не будут автоматически устанавливается до $ "
+"{toLocaleDateString (delayedTime)}."
 
 #: js/src/packageManagement/updates/UpdateApproval.js:88
 msgid ""
@@ -1948,9 +1952,10 @@ msgid ""
 "                                    and choose the option <b>Update "
 "approval needed</b>."
 msgstr ""
-"Если вы вообще не хотите, чтобы обновления устанавливались, перейдите в <a "
-"href=\"${ForisURLs.packageManagement.updateSettings}\"> Обновить настройки </"
-"a> и выберите вариант <b> Требуется подтверждение обновления </b>."
+"Если вы вообще не хотите, чтобы обновления устанавливались, перейдите в "
+"<a href=\"${ForisURLs.packageManagement.updateSettings}\"> Обновить "
+"настройки </a> и выберите вариант <b> Требуется подтверждение обновления "
+"</b>."
 
 #: js/src/packageManagement/updates/UpdateApproval.js:106
 #, python-format
@@ -1986,8 +1991,8 @@ msgid ""
 "Here you can find and approve available updates for \n"
 "                    Turris OS and other components."
 msgstr ""
-"Здесь вы можете найти и одобрить доступные обновления для ОС Turris и другие "
-"компоненты."
+"Здесь вы можете найти и одобрить доступные обновления для ОС Turris и "
+"другие компоненты."
 
 #: js/src/packageManagement/updates/UpdateManager.js:91
 msgid "You're up to date."
@@ -2008,9 +2013,9 @@ msgid ""
 "href=\"${ForisURLs.packageManagement.updateSettings}\">delayed or \n"
 "            approval-requiring updates</a> to review them."
 msgstr ""
-"Автоматические обновления отключены. Пожалуйста, включите <a href=\""
-"${ForisURLs.packageManagement.updateSettings}\"> отложенные или требующие "
-"одобрения обновления </a>, чтобы просмотреть их."
+"Автоматические обновления отключены. Пожалуйста, включите <a "
+"href=\"${ForisURLs.packageManagement.updateSettings}\"> отложенные или "
+"требующие одобрения обновления </a>, чтобы просмотреть их."
 
 #: js/src/packageManagement/updates/Updates.js:62
 msgid "Check and install updates"
@@ -2088,7 +2093,8 @@ msgid ""
 "                        } list. Please enter another, more secure "
 "password."
 msgstr ""
-"Введенный вами пароль не безопасен. Он был скомпрометирован и встречается $\n"
+"Введенный вами пароль не безопасен. Он был скомпрометирован и встречается"
+" $\n"
 " forisPassword.count || rootPassword.count\n"
 " } раз в $ { \n"
 " forisPassword.list || rootPassword.list\n"
@@ -2524,8 +2530,8 @@ msgid ""
 "the importance level to \"Reboot or attention is required\" or higher."
 msgstr ""
 "Это уведомление о тестировании. Обратите внимание, что сообщение будет "
-"отправлено на ваш адрес электронной почты, только если вы установите уровень "
-"важности «Перезагрузка или требуется внимание» или выше."
+"отправлено на ваш адрес электронной почты, только если вы установите "
+"уровень важности «Перезагрузка или требуется внимание» или выше."
 
 #: reforis/foris_controller_api/modules/router_notifications.py:127
 msgid "The testing message has been sent, please check your inbox."
@@ -3046,3 +3052,4 @@ msgstr "500 - Ошибка сервера"
 
 #~ msgid "WAN IPv4"
 #~ msgstr "WAN IPv4"
+
