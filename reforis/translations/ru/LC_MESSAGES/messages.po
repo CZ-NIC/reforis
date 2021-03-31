@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-03-08 17:14+0100\n"
-"PO-Revision-Date: 2021-02-18 11:18+0000\n"
-"Last-Translator: Алексей Леньшин <alenshin@gmail.com>\n"
+"POT-Creation-Date: 2021-03-31 12:58+0200\n"
+"PO-Revision-Date: 2021-03-12 06:02+0000\n"
+"Last-Translator: Artem <KovalevArtem.ru@gmail.com>\n"
 "Language: ru\n"
 "Language-Team: Russian "
 "<https://hosted.weblate.org/projects/turris/reforis/ru/>\n"
@@ -57,7 +57,6 @@ msgid "Turris OS branch"
 msgstr "Ветка Turris OS"
 
 #: js/src/about/About.js:69
-#, fuzzy
 msgid ""
 "Turris OS is currently released in various branches,\n"
 "                                    which have different functions and "
@@ -123,18 +122,19 @@ msgstr "Имя сервера DHCP"
 
 #: js/src/common/network/DHCPClientsList.js:20
 msgid "DHCP Client List"
-msgstr ""
+msgstr "Список клиентов DHCP"
 
 #: js/src/common/network/DHCPClientsList.js:22
 msgid ""
 "This list contains all devices that are connected to the network through "
 "wired or wireless connections."
 msgstr ""
+"Этот список содержит все устройства, подключенные к сети через проводные "
+"или беспроводные соединения."
 
 #: js/src/common/network/DHCPClientsList.js:28
-#, fuzzy
 msgid "No clients found."
-msgstr "DHCP клиенты не найдены."
+msgstr "Клиенты не найдены."
 
 #: js/src/common/network/DHCPClientsList.js:35
 msgid "Expires"
@@ -365,9 +365,8 @@ msgstr ""
 "«android-123.my.lan»."
 
 #: js/src/dns/DNSForm.js:67
-#, fuzzy
 msgid "DNS Settings"
-msgstr "Обновить настройки"
+msgstr "Настройки DNS"
 
 #: js/src/dns/DNSForm.js:84
 msgid "Use forwarding"
@@ -439,28 +438,31 @@ msgid "Delete"
 msgstr "Удалить"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:23
-#, fuzzy
 msgid "Base 64 encoded SHA-256."
-msgstr "закодированный в base64 sha256."
+msgstr "SHA-256 в кодировке Base 64."
 
-#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:48
+#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:24
+msgid "\"No TLS\" means that the regular UDP-base DNS protocol is used."
+msgstr ""
+
+#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:49
 #: js/src/packageManagement/updates/UpdateApproval.js:152
 msgid "Name"
 msgstr "Имя"
 
-#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:71
+#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:72
 msgid "TLS type"
 msgstr "Протокол защиты транспортного уровня (TLS)"
 
-#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:88
+#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:90
 msgid "TLS hostname"
 msgstr "Имя хоста TLS"
 
-#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:100
+#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:102
 msgid "TLS pin"
 msgstr "Код TLS"
 
-#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:116
+#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:118
 msgid "Save"
 msgstr "Сохранить"
 
@@ -565,9 +567,8 @@ msgid "Upload speed in guest network (in kilobits per second)."
 msgstr "Скорость передачи в гостевой сети (в килобитах в секунду)."
 
 #: js/src/guestNetwork/GuestNetworkForm.js:65
-#, fuzzy
 msgid "Guest Network Settings"
-msgstr "Сетевые настройки"
+msgstr "Настройки гостевой сети"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:67
 msgid "Enable"
@@ -958,32 +959,28 @@ msgid "Recommended"
 msgstr "Рекомендуемые"
 
 #: js/src/hostname/Hostname.js:22
-#, fuzzy
 msgid "Here you can check and set the name of your device."
-msgstr "Теперь необходимо установить время и часовой пояс вашего устройства."
+msgstr "Здесь вы можете проверить и установить имя вашего устройства."
 
 #: js/src/hostname/Hostname.js:41
-#, fuzzy
 msgid ""
 "The hostname can contain only alphanumeric characters, hyphens, "
 "underscores and can't be empty."
 msgstr ""
-"Имя отправителя может содержать только буквы латинского алфавита, цифры, "
-"точки и подчеркивания."
+"Имя хоста может содержать только буквенно-цифровые символы, дефисы, "
+"подчеркивания и не может быть пустым."
 
 #: js/src/hostname/HostnameForm.js:13
 msgid "Rewrite the hostname to set a new one."
-msgstr ""
+msgstr "Укажите новое имя хоста."
 
 #: js/src/hostname/HostnameForm.js:33
-#, fuzzy
 msgid "Hostname Settings"
-msgstr "Настройки Времени"
+msgstr "Настройки имени хоста"
 
 #: js/src/hostname/HostnameForm.js:35
-#, fuzzy
 msgid "Device hostname"
-msgstr "Имя хоста TLS"
+msgstr "Имя хоста устройства"
 
 #: js/src/interfaces/Interfaces.js:25
 msgid "Network Interfaces"
@@ -1510,7 +1507,6 @@ msgstr ""
 "получить это уведомление по электронной почте."
 
 #: js/src/notificationsSettings/TestNotification.js:110
-#, fuzzy
 msgid "Test Notification"
 msgstr "Тестовое уведомление"
 
@@ -1519,6 +1515,8 @@ msgid ""
 "Here you can verify whether SMTP is configured correctly by sending a "
 "test notification to your email inbox."
 msgstr ""
+"Здесь вы можете проверить, правильно ли настроен SMTP, отправив тестовое "
+"уведомление на свой почтовый ящик."
 
 #: js/src/notificationsSettings/TestNotification.js:123
 msgid "Send test notification"
@@ -1704,7 +1702,6 @@ msgid "Most Important License Agreement Points"
 msgstr "Наиболее Важные Пункты Лицензионного Соглашения"
 
 #: js/src/packageManagement/updateSettings/LicenceModal.js:38
-#, fuzzy
 msgid ""
 "\n"
 "                    <li>Automatic updates are offered to the Turris "
@@ -1745,25 +1742,25 @@ msgid ""
 "                    "
 msgstr ""
 "\n"
-"                    Автоматические обновления предлагаются владельцам "
-"маршрутизаторов Turris бесплатно. Обновления подготовлены исключительно "
-"CZ.NIC, z.s.p.o. Включение автоматических обновлений является "
-"обязательным условием для дополнительных функций безопасности "
-"маршрутизатора Turris. Автоматические обновления выполняются во время их "
-"выпуска, пользователь не может влиять на время установки. Включение "
-"автоматических обновлений может привести к увеличению интернет-трафика на"
-" вашем маршрутизаторе. Расходы, связанные с этим увеличением, покрываются"
-" вами. Автоматические обновления не могут защитить вас от каждой атаки, "
-"исходящей из Интернета. Пожалуйста, не забудьте защитить свои рабочие "
-"станции и другие устройства, установив антивирусное программное "
-"обеспечение и объяснив членам своей семьи, как оставаться в безопасности "
-"в Интернете. CZ.NIC, z. s. п. о. не гарантирует доступность этой услуги и"
-" не несет ответственности за любой ущерб, вызванный автоматическими "
-"обновлениями.\n"
-"                  "
+"                    <li>Автоматические обновления предлагаются владельцам"
+" маршрутизаторов Turris бесплатно.</li>  <li>Обновления подготовлены "
+"исключительно CZ.NIC, z.s.p.o.</li>  <li>Включение автоматических "
+"обновлений является обязательным условием для дополнительных функций "
+"безопасности маршрутизатора Turris.</li>  <li>Автоматические обновления "
+"выполняются во время их выпуска, пользователь не может влиять на время "
+"установки.</li>  <li>Включение автоматических обновлений может привести к"
+" увеличению интернет-трафика на вашем маршрутизаторе. Расходы, связанные "
+"с этим увеличением, покрываются вами.</li>  <li>Автоматические обновления"
+" не могут защитить вас от каждой атаки, исходящей из Интернета. "
+"Пожалуйста, не забудьте защитить свои рабочие станции и другие "
+"устройства, установив антивирусное программное обеспечение и объяснив "
+"членам своей семьи, как оставаться в безопасности в Интернете.</li>  "
+"<li>CZ.NIC, z. s. п. о. не гарантирует доступность этой услуги и не несет"
+" ответственности за любой ущерб, вызванный автоматическими "
+"обновлениями.</li>\n"
+"                    "
 
 #: js/src/packageManagement/updateSettings/LicenceModal.js:68
-#, fuzzy
 msgid ""
 "By enabling of the automatic updates, \n"
 "                                    you confirm that you are the owner of"
@@ -1777,8 +1774,9 @@ msgid ""
 msgstr ""
 "Включая автоматические обновления, вы подтверждаете, что являетесь "
 "владельцем этого маршрутизатора Turris, и соглашаетесь с полным текстом "
-"<a href = \"https://www.turris.cz/omnia-updater-eula\" target = "
-"\"_blank\" rel = \"noopener noreferrer\"> лицензионного соглашения </a>."
+"<a href=\"https://www.turris.cz/omnia-updater-eula\" target=\"_blank\" "
+"rel=\"noopener noreferrer\">лицензионного соглашения <sup><i class=\"fas "
+"fa-external-link-alt fa-sm\"></i></sup></a>.."
 
 #: js/src/packageManagement/updateSettings/UpdateSettings.js:31
 msgid ""
@@ -1908,9 +1906,8 @@ msgstr ""
 "168 часов"
 
 #: js/src/packageManagement/updateSettings/forms/UpdatesForm.js:46
-#, fuzzy
 msgid "Automatic Update Settings"
-msgstr "Автоматические обновления"
+msgstr "Настройки автоматического обновления"
 
 #: js/src/packageManagement/updateSettings/forms/UpdatesForm.js:48
 msgid "Enable automatic updates (recommended)"
@@ -1943,6 +1940,8 @@ msgid ""
 "                                    automatically installed before \n"
 "                                    ${toLocaleDateString(delayedTime)}."
 msgstr ""
+"Эти обновления не будут автоматически устанавливается до $ "
+"{toLocaleDateString (delayedTime)}."
 
 #: js/src/packageManagement/updates/UpdateApproval.js:88
 msgid ""
@@ -1953,6 +1952,10 @@ msgid ""
 "                                    and choose the option <b>Update "
 "approval needed</b>."
 msgstr ""
+"Если вы вообще не хотите, чтобы обновления устанавливались, перейдите в "
+"<a href=\"${ForisURLs.packageManagement.updateSettings}\"> Обновить "
+"настройки </a> и выберите вариант <b> Требуется подтверждение обновления "
+"</b>."
 
 #: js/src/packageManagement/updates/UpdateApproval.js:106
 #, python-format
@@ -1976,41 +1979,43 @@ msgid "New"
 msgstr "Новый"
 
 #: js/src/packageManagement/updates/UpdateManager.js:73
-#, fuzzy
 msgid "Updates Check"
-msgstr "Обновления"
+msgstr "Проверка обновлений"
 
 #: js/src/packageManagement/updates/UpdateManager.js:84
-#, fuzzy
 msgid "Available Updates"
-msgstr "Отложенные обновления"
+msgstr "Доступные обновления"
 
 #: js/src/packageManagement/updates/UpdateManager.js:86
 msgid ""
 "Here you can find and approve available updates for \n"
 "                    Turris OS and other components."
 msgstr ""
+"Здесь вы можете найти и одобрить доступные обновления для ОС Turris и "
+"другие компоненты."
 
 #: js/src/packageManagement/updates/UpdateManager.js:91
 msgid "You're up to date."
-msgstr ""
+msgstr "Обновления не требуются."
 
 #: js/src/packageManagement/updates/Updates.js:29
 msgid ""
 "In Turris OS, you decide when and how to get the latest updates\n"
 "                    to keep your device running smoothly and securely."
 msgstr ""
+"В ОС Turris вы решаете, когда и как получать последние обновления. чтобы "
+"ваше устройство работало бесперебойно и надежно."
 
 #: js/src/packageManagement/updates/Updates.js:47
-#, fuzzy
 msgid ""
 "Automatic updates are disabled. Please enable \n"
 "            <a "
 "href=\"${ForisURLs.packageManagement.updateSettings}\">delayed or \n"
 "            approval-requiring updates</a> to review them."
 msgstr ""
-"Автоматические обновления отключены. Пожалуйста, включите отложенные или "
-"требующие одобрения обновления, чтобы просмотреть их."
+"Автоматические обновления отключены. Пожалуйста, включите <a "
+"href=\"${ForisURLs.packageManagement.updateSettings}\"> отложенные или "
+"требующие одобрения обновления </a>, чтобы просмотреть их."
 
 #: js/src/packageManagement/updates/Updates.js:62
 msgid "Check and install updates"
@@ -2047,24 +2052,20 @@ msgid "Set your password for this administration interface."
 msgstr "Установите свой пароль для этого интерфейса администрирования."
 
 #: js/src/password/ForisPasswordForm.js:58
-#, fuzzy
 msgid "Current password"
-msgstr "Неверный текущий пароль."
+msgstr "Текущий пароль"
 
 #: js/src/password/ForisPasswordForm.js:68
 #: js/src/password/RootPasswordForm.js:69
-#, fuzzy
 msgid "New password"
-msgstr "Неверный пароль."
+msgstr "Новый пароль"
 
 #: js/src/password/ForisPasswordForm.js:79
 #: js/src/password/RootPasswordForm.js:79
-#, fuzzy
 msgid "Confirm new password"
-msgstr "Неверный пароль."
+msgstr "Подтвердите новый пароль"
 
 #: js/src/password/ForisPasswordForm.js:95
-#, fuzzy
 msgid "Use the same password for advanced administration (root)"
 msgstr "Использовать тот же пароль для расширенного администрирования (root)"
 
@@ -2083,7 +2084,6 @@ msgstr ""
 "этого момента аккаунт root будет заблокирован.)"
 
 #: js/src/password/Password.js:79
-#, fuzzy
 msgid ""
 "The password you've entered has not been saved. It has been compromised "
 "and appears ${\n"
@@ -2093,23 +2093,22 @@ msgid ""
 "                        } list. Please enter another, more secure "
 "password."
 msgstr ""
-"Введенный вами пароль был взломан. Похоже, $\n"
-" {forisPassword.count || rootPassword.count} \n"
-"раз в \n"
-"$ {forisPassword.list || rootPassword.list}\n"
-" список."
+"Введенный вами пароль не безопасен. Он был скомпрометирован и встречается"
+" $\n"
+" forisPassword.count || rootPassword.count\n"
+" } раз в $ { \n"
+" forisPassword.list || rootPassword.list\n"
+" } списке. Пожалуйста, введите другой, более надежный пароль."
 
 #: js/src/password/Password.js:90
 msgid "Password changed successfully."
 msgstr "Пароль успешно изменен."
 
 #: js/src/password/Password.js:153
-#, fuzzy
 msgid "Password Settings"
-msgstr "Сетевые настройки"
+msgstr "Настройки пароля"
 
 #: js/src/password/Password.js:182
-#, fuzzy
 msgid ""
 "Here you can set passwords for Foris and optionally for advanced features"
 " (LuCI and SSH). Make sure to set a secure password which is long and "
@@ -2117,11 +2116,11 @@ msgid ""
 msgstr ""
 "Здесь вы можете установить пароли для Foris и, при необходимости, для "
 "расширенных функций (LuCI и SSH). Убедитесь, что вы установили надежный "
-"пароль, который должен быть длинным и уникальным."
+"пароль, который является длинным и уникальным."
 
 #: js/src/password/Password.js:199 js/src/password/Password.js:203
 msgid "The password confirmation does not match."
-msgstr ""
+msgstr "Подтверждение пароля не совпадает."
 
 #: js/src/password/Password.js:218
 msgid "Password can't be empty."
@@ -2136,9 +2135,8 @@ msgid "Password should have max 128 symbols."
 msgstr "Пароль должен содержать не более 128 символов."
 
 #: js/src/password/RootPasswordForm.js:54
-#, fuzzy
 msgid "Advanced Administration Password"
-msgstr "Новый пароль расширенного администрирования"
+msgstr "Пароль расширенного администрирования"
 
 #: js/src/password/RootPasswordForm.js:58
 #, python-format
@@ -2458,7 +2456,7 @@ msgstr "MTU"
 
 #: js/src/wan/WAN6Form.js:375
 msgid "Dynamic IPv4 handling"
-msgstr ""
+msgstr "Динамическая обработка IPv4"
 
 #: js/src/wan/WAN6Form.js:419
 msgid "Tunnel ID"
@@ -2469,14 +2467,12 @@ msgid "Key"
 msgstr "Ключ"
 
 #: js/src/wan/WAN6Form.js:527
-#, fuzzy
 msgid "MTU has to be a number in the range of 1280-1480."
-msgstr "MTU должен быть числом в диапазоне 1280-1500."
+msgstr "MTU должен быть числом в диапазоне 1280-1480."
 
 #: js/src/wan/WAN6Form.js:529
-#, fuzzy
 msgid "MTU has to be in the range of 1280-1480."
-msgstr "MTU должен быть в диапазоне 1280-1500."
+msgstr "MTU должен быть в диапазоне 1280-1480."
 
 #: js/src/wan/WANForm.js:27
 msgid "PPPoE (for DSL bridges, etc.)"
@@ -2527,23 +2523,19 @@ msgid "Wrong current password."
 msgstr "Неверный текущий пароль."
 
 #: reforis/foris_controller_api/modules/router_notifications.py:117
-#, fuzzy
 msgid ""
 "This is a testing notification.\n"
 "\n"
 "Please note it would be sent to your e-mail address only if you set\n"
 "the importance level to \"Reboot or attention is required\" or higher."
 msgstr ""
-"\n"
-"Это уведомление о тестировании. Обратите внимание, что вы должны получить"
-" это на свой почтовый ящик, только если вы указали важность уровень "
-"«Перезагрузка или требуется внимание» или выше.\n"
-"            "
+"Это уведомление о тестировании. Обратите внимание, что сообщение будет "
+"отправлено на ваш адрес электронной почты, только если вы установите "
+"уровень важности «Перезагрузка или требуется внимание» или выше."
 
 #: reforis/foris_controller_api/modules/router_notifications.py:127
-#, fuzzy
 msgid "The testing message has been sent, please check your inbox."
-msgstr "Тестовое сообщение отправлено, проверьте вашу почту."
+msgstr "Тестовое сообщение отправлено, проверьте свой почтовый ящик."
 
 #: reforis/foris_controller_api/modules/router_notifications.py:130
 msgid ""

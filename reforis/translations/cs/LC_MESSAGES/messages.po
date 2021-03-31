@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-03-08 17:14+0100\n"
-"PO-Revision-Date: 2021-02-17 13:50+0000\n"
-"Last-Translator: Lukas Jelinek <lukas.jelinek@nic.cz>\n"
+"POT-Creation-Date: 2021-03-31 12:58+0200\n"
+"PO-Revision-Date: 2021-03-26 22:29+0000\n"
+"Last-Translator: Filip Hron <filip.hron@gmail.com>\n"
 "Language: cs\n"
 "Language-Team: Czech "
 "<https://hosted.weblate.org/projects/turris/reforis/cs/>\n"
@@ -56,7 +56,6 @@ msgid "Turris OS branch"
 msgstr "Větev Turris OS"
 
 #: js/src/about/About.js:69
-#, fuzzy
 msgid ""
 "Turris OS is currently released in various branches,\n"
 "                                    which have different functions and "
@@ -64,8 +63,9 @@ msgid ""
 "                                    - you can pick, which branch you want"
 " to test."
 msgstr ""
-"Turris OS je aktuálně vydáván v různých větvích, které mají různé funkce "
-"a různou stabilitu – můžete si vybrat, kterou větev chcete otestovat."
+"Turris OS je aktuálně vydáván v různých větvích,\n"
+"které mají různé funkce a různou stabilitu – můžete\n"
+"si vybrat, kterou větev chcete otestovat."
 
 #: js/src/about/About.js:97
 msgid "Kernel version"
@@ -121,13 +121,15 @@ msgstr "Název stroje pro DHCP"
 
 #: js/src/common/network/DHCPClientsList.js:20
 msgid "DHCP Client List"
-msgstr ""
+msgstr "Seznam klientů DHCP"
 
 #: js/src/common/network/DHCPClientsList.js:22
 msgid ""
 "This list contains all devices that are connected to the network through "
 "wired or wireless connections."
 msgstr ""
+"Tento seznam obsahuje všechna zařízení, která jsou připojena k síti přes "
+"drátová nebo bezdrátová připojení."
 
 #: js/src/common/network/DHCPClientsList.js:28
 #, fuzzy
@@ -364,9 +366,8 @@ msgstr ""
 "doménu „my.lan“ bude výsledek „android-123.my.lan“."
 
 #: js/src/dns/DNSForm.js:67
-#, fuzzy
 msgid "DNS Settings"
-msgstr "Nastavení aktualizace"
+msgstr "Nastavení DNS"
 
 #: js/src/dns/DNSForm.js:84
 msgid "Use forwarding"
@@ -438,28 +439,31 @@ msgid "Delete"
 msgstr "Smazat"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:23
-#, fuzzy
 msgid "Base 64 encoded SHA-256."
-msgstr "sha256 v base64 kódování."
+msgstr "SHA-256 v kódování Base64."
 
-#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:48
+#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:24
+msgid "\"No TLS\" means that the regular UDP-base DNS protocol is used."
+msgstr ""
+
+#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:49
 #: js/src/packageManagement/updates/UpdateApproval.js:152
 msgid "Name"
 msgstr "Název"
 
-#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:71
+#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:72
 msgid "TLS type"
 msgstr "Typ TLS"
 
-#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:88
+#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:90
 msgid "TLS hostname"
-msgstr "TLS název hostitele"
+msgstr "Síťový název pro TLS"
 
-#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:100
+#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:102
 msgid "TLS pin"
 msgstr "TLS pin"
 
-#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:116
+#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:118
 msgid "Save"
 msgstr "Uložit"
 
@@ -565,9 +569,8 @@ msgid "Upload speed in guest network (in kilobits per second)."
 msgstr "Rychlost odesílání v síti pro hosty (v kilobitech za sekundu)."
 
 #: js/src/guestNetwork/GuestNetworkForm.js:65
-#, fuzzy
 msgid "Guest Network Settings"
-msgstr "Nastavení sítě"
+msgstr "Nastavení sítě pro hosty"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:67
 msgid "Enable"
@@ -956,32 +959,28 @@ msgid "Recommended"
 msgstr "Doporučeno"
 
 #: js/src/hostname/Hostname.js:22
-#, fuzzy
 msgid "Here you can check and set the name of your device."
-msgstr "Nyní je třeba nastavit čas a časové pásmo, ve kterém se zařízení nachází."
+msgstr "Zde můžete zkontrolovat a nastavit název svého zařízení."
 
 #: js/src/hostname/Hostname.js:41
-#, fuzzy
 msgid ""
 "The hostname can contain only alphanumeric characters, hyphens, "
 "underscores and can't be empty."
 msgstr ""
-"Jméno odesilatele může obsahovat pouze písmena a číslice, tečky a "
-"podtržítka."
+"Síťový název může obsahovat pouze písmena a číslice, tečky a podtržítka. "
+"Nesmí být prázdný."
 
 #: js/src/hostname/HostnameForm.js:13
 msgid "Rewrite the hostname to set a new one."
-msgstr ""
+msgstr "Přepsat síťový název na nový."
 
 #: js/src/hostname/HostnameForm.js:33
-#, fuzzy
 msgid "Hostname Settings"
-msgstr "Nastavení času"
+msgstr "Nastavení síťového názvu"
 
 #: js/src/hostname/HostnameForm.js:35
-#, fuzzy
 msgid "Device hostname"
-msgstr "TLS název hostitele"
+msgstr "Síťový název zařízení"
 
 #: js/src/interfaces/Interfaces.js:25
 msgid "Network Interfaces"
@@ -1516,7 +1515,6 @@ msgstr ""
 "e-mailem, klikněte na tlačítko „Uložit“."
 
 #: js/src/notificationsSettings/TestNotification.js:110
-#, fuzzy
 msgid "Test Notification"
 msgstr "Testovací oznámení"
 
@@ -1525,6 +1523,8 @@ msgid ""
 "Here you can verify whether SMTP is configured correctly by sending a "
 "test notification to your email inbox."
 msgstr ""
+"Zde můžete zkontrolovat, zda je komunikace SMTP správně nakonfigurována, "
+"odesláním testovací notifikace do své e-mailové schránky."
 
 #: js/src/notificationsSettings/TestNotification.js:123
 msgid "Send test notification"
@@ -1710,7 +1710,6 @@ msgid "Most Important License Agreement Points"
 msgstr "Nejdůležitější body z licenčního ujednání"
 
 #: js/src/packageManagement/updateSettings/LicenceModal.js:38
-#, fuzzy
 msgid ""
 "\n"
 "                    <li>Automatic updates are offered to the Turris "
@@ -1786,10 +1785,9 @@ msgstr ""
 "                        za jakékoli škody, způsobené automatickými "
 "aktualizacemi.\n"
 "                    </li>\n"
-"                  "
+"                    "
 
 #: js/src/packageManagement/updateSettings/LicenceModal.js:68
-#, fuzzy
 msgid ""
 "By enabling of the automatic updates, \n"
 "                                    you confirm that you are the owner of"
@@ -1801,9 +1799,10 @@ msgid ""
 "noreferrer\">license agreement <sup><i class=\"fas fa-external-link-alt "
 "fa-sm\"></i></sup></a>."
 msgstr ""
-"Povolením automatických aktualizací potvrzujete, že jste vlastníkem "
-"tohoto routeru Turris, a souhlasíte s úplným zněním <a "
-"href=\"https://www.turris.cz/omnia-updater-eula\" target=\"_blank\" "
+"Povolením automatických aktualizací\n"
+"potvrzujete, že jste vlastníkem tohoto routeru\n"
+"Turris, a souhlasíte s úplným zněním\n"
+"<a href=\"https://www.turris.cz/omnia-updater-eula\" target=\"_blank\" "
 "rel=\"noopener noreferrer\">licenční smlouvy</a>."
 
 #: js/src/packageManagement/updateSettings/UpdateSettings.js:31
@@ -1938,9 +1937,8 @@ msgid "Updates must be delayed by least 1 hour and at most by 168 hours"
 msgstr "Aktualizace lze odložit o nejméně jednu hodinu a nejdéle 168 hodin (týden)"
 
 #: js/src/packageManagement/updateSettings/forms/UpdatesForm.js:46
-#, fuzzy
 msgid "Automatic Update Settings"
-msgstr "Automatické aktualizace"
+msgstr "Nastavení automatických aktualizací"
 
 #: js/src/packageManagement/updateSettings/forms/UpdatesForm.js:48
 msgid "Enable automatic updates (recommended)"
@@ -1972,6 +1970,9 @@ msgid ""
 "                                    automatically installed before \n"
 "                                    ${toLocaleDateString(delayedTime)}."
 msgstr ""
+"Tyto aktualizace se nebudou \n"
+"                                    automaticky instalovat před \n"
+"                                    ${toLocaleDateString(delayedTime)}."
 
 #: js/src/packageManagement/updates/UpdateApproval.js:88
 msgid ""
@@ -1982,6 +1983,12 @@ msgid ""
 "                                    and choose the option <b>Update "
 "approval needed</b>."
 msgstr ""
+"Pokud nechce, aby se aktualizace vůbec instalovaly,\n"
+"                                    přejděte na <a "
+"href=\"${ForisURLs.packageManagement.updateSettings}\">Nastavení "
+"aktualizací</a> \n"
+"                                    a vyberte volbu  <b>Aktualizace bude "
+"třeba schvalovat</b>."
 
 #: js/src/packageManagement/updates/UpdateApproval.js:106
 #, python-format
@@ -2005,41 +2012,43 @@ msgid "New"
 msgstr "Nová"
 
 #: js/src/packageManagement/updates/UpdateManager.js:73
-#, fuzzy
 msgid "Updates Check"
-msgstr "Aktualizace"
+msgstr "Kontrola aktualizací"
 
 #: js/src/packageManagement/updates/UpdateManager.js:84
-#, fuzzy
 msgid "Available Updates"
-msgstr "Odložené aktualizace"
+msgstr "Dostupné aktualizace"
 
 #: js/src/packageManagement/updates/UpdateManager.js:86
 msgid ""
 "Here you can find and approve available updates for \n"
 "                    Turris OS and other components."
 msgstr ""
+"Zde můžete najít a schválit dostupné aktualizace \n"
+"                    pro Turris OS a jiné komponenty."
 
 #: js/src/packageManagement/updates/UpdateManager.js:91
 msgid "You're up to date."
-msgstr ""
+msgstr "Váš systém je aktuální."
 
 #: js/src/packageManagement/updates/Updates.js:29
 msgid ""
 "In Turris OS, you decide when and how to get the latest updates\n"
 "                    to keep your device running smoothly and securely."
 msgstr ""
+"V Turris OS rozhodnete, kdy a jak získávat nejnovější aktualizace,\n"
+"                    aby vaše zařízení fungovalo hladce a bezpečně."
 
 #: js/src/packageManagement/updates/Updates.js:47
-#, fuzzy
 msgid ""
 "Automatic updates are disabled. Please enable \n"
 "            <a "
 "href=\"${ForisURLs.packageManagement.updateSettings}\">delayed or \n"
 "            approval-requiring updates</a> to review them."
 msgstr ""
-"Automatické aktualizace jsou vypnuté. Pro jejich přehled tedy zapněte "
-"odložené nebo schválení vyžadující aktualizace."
+"Automatické aktualizace jsou vypnuté. Pro jejich\n"
+"přehled tedy zapněte odložené nebo schválení\n"
+"vyžadující aktualizace."
 
 #: js/src/packageManagement/updates/Updates.js:62
 msgid "Check and install updates"
@@ -2076,24 +2085,20 @@ msgid "Set your password for this administration interface."
 msgstr "Nastavte si své heslo do tohoto rozhraní pro správu."
 
 #: js/src/password/ForisPasswordForm.js:58
-#, fuzzy
 msgid "Current password"
-msgstr "Nesprávné stávající heslo."
+msgstr "Stávající heslo"
 
 #: js/src/password/ForisPasswordForm.js:68
 #: js/src/password/RootPasswordForm.js:69
-#, fuzzy
 msgid "New password"
-msgstr "Nesprávné heslo."
+msgstr "Nové heslo"
 
 #: js/src/password/ForisPasswordForm.js:79
 #: js/src/password/RootPasswordForm.js:79
-#, fuzzy
 msgid "Confirm new password"
-msgstr "Nesprávné heslo."
+msgstr "Potvrdit nové heslo"
 
 #: js/src/password/ForisPasswordForm.js:95
-#, fuzzy
 msgid "Use the same password for advanced administration (root)"
 msgstr "Použít stejné heslo pro pokročilou zprávu (účet root)"
 
@@ -2112,7 +2117,6 @@ msgstr ""
 "root zablokován.)"
 
 #: js/src/password/Password.js:79
-#, fuzzy
 msgid ""
 "The password you've entered has not been saved. It has been compromised "
 "and appears ${\n"
@@ -2122,7 +2126,7 @@ msgid ""
 "                        } list. Please enter another, more secure "
 "password."
 msgstr ""
-"Zadané heslo bylo prolomeno. Objevuje se $\n"
+"Zadané heslo nebylo uloženo. Bylo prolomeno a objevuje se $\n"
 "                            forisPassword.count || rootPassword.count\n"
 "                        } krát v seznamu $ {\n"
 "                            forisPassword.list || rootPassword.list\n"
@@ -2133,12 +2137,10 @@ msgid "Password changed successfully."
 msgstr "Heslo úspěšně změněno."
 
 #: js/src/password/Password.js:153
-#, fuzzy
 msgid "Password Settings"
-msgstr "Nastavení sítě"
+msgstr "Nastavení hesla"
 
 #: js/src/password/Password.js:182
-#, fuzzy
 msgid ""
 "Here you can set passwords for Foris and optionally for advanced features"
 " (LuCI and SSH). Make sure to set a secure password which is long and "
@@ -2150,7 +2152,7 @@ msgstr ""
 
 #: js/src/password/Password.js:199 js/src/password/Password.js:203
 msgid "The password confirmation does not match."
-msgstr ""
+msgstr "Potvrzení hesla nesouhlasí s heslem."
 
 #: js/src/password/Password.js:218
 msgid "Password can't be empty."
@@ -2165,9 +2167,8 @@ msgid "Password should have max 128 symbols."
 msgstr "Heslo by mělo být nejvýše 128 znaků dlouhé."
 
 #: js/src/password/RootPasswordForm.js:54
-#, fuzzy
 msgid "Advanced Administration Password"
-msgstr "Nové heslo pro pokročilou správu"
+msgstr "Heslo pro pokročilou správu"
 
 #: js/src/password/RootPasswordForm.js:58
 #, python-format
@@ -2488,7 +2489,7 @@ msgstr "MTU"
 
 #: js/src/wan/WAN6Form.js:375
 msgid "Dynamic IPv4 handling"
-msgstr ""
+msgstr "Dynamická správa IPv4"
 
 #: js/src/wan/WAN6Form.js:419
 msgid "Tunnel ID"
@@ -2499,14 +2500,12 @@ msgid "Key"
 msgstr "Klíč"
 
 #: js/src/wan/WAN6Form.js:527
-#, fuzzy
 msgid "MTU has to be a number in the range of 1280-1480."
-msgstr "MTU by mělo být číslo z rozsahu 1280-1500."
+msgstr "MTU by mělo být číslo z rozsahu 1280-1480."
 
 #: js/src/wan/WAN6Form.js:529
-#, fuzzy
 msgid "MTU has to be in the range of 1280-1480."
-msgstr "MTU by mělo být z rozsahu 1280-1500."
+msgstr "MTU by mělo být z rozsahu 1280-1480."
 
 #: js/src/wan/WANForm.js:27
 msgid "PPPoE (for DSL bridges, etc.)"
@@ -2557,22 +2556,19 @@ msgid "Wrong current password."
 msgstr "Nesprávné stávající heslo."
 
 #: reforis/foris_controller_api/modules/router_notifications.py:117
-#, fuzzy
 msgid ""
 "This is a testing notification.\n"
 "\n"
 "Please note it would be sent to your e-mail address only if you set\n"
 "the importance level to \"Reboot or attention is required\" or higher."
 msgstr ""
+"Toto je testování oznámení.\n"
 "\n"
-"Toto je testování oznámení. Vezměte prosím na vědomí, že tuto zprávu "
-"byste měli obdržet do své e-mailové\n"
-"schránky pouze v případě, že je úroveň \"Restartovat nebo je vyžádována "
-"pozornost\" nebo vyšší.\n"
-"            "
+"Vezměte prosím na vědomí, že tuto zprávu byste měli obdržet\n"
+"do své e-mailové schránky pouze v případě, že je úroveň\n"
+"\"Restartovat nebo je vyžádována pozornost\" nebo vyšší."
 
 #: reforis/foris_controller_api/modules/router_notifications.py:127
-#, fuzzy
 msgid "The testing message has been sent, please check your inbox."
 msgstr ""
 "Testovací zpráva byla odeslána, podívejte se prosím do své e-mailové "

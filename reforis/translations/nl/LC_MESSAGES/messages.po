@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-03-08 17:14+0100\n"
+"POT-Creation-Date: 2021-03-31 12:58+0200\n"
 "PO-Revision-Date: 2020-11-30 23:29+0000\n"
 "Last-Translator: Johan van de Wetering <mail@jvdwetering.nl>\n"
 "Language: nl\n"
@@ -443,24 +443,28 @@ msgstr "Verwijderen"
 msgid "Base 64 encoded SHA-256."
 msgstr "base64 gecodeerde sha256."
 
-#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:48
+#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:24
+msgid "\"No TLS\" means that the regular UDP-base DNS protocol is used."
+msgstr ""
+
+#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:49
 #: js/src/packageManagement/updates/UpdateApproval.js:152
 msgid "Name"
 msgstr "Naam"
 
-#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:71
+#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:72
 msgid "TLS type"
 msgstr "TLS type"
 
-#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:88
+#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:90
 msgid "TLS hostname"
 msgstr "TLS hostnaam"
 
-#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:100
+#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:102
 msgid "TLS pin"
 msgstr "TLS pin"
 
-#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:116
+#: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:118
 msgid "Save"
 msgstr "Opslaan"
 
