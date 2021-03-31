@@ -188,9 +188,8 @@ msgid "Minimum lease time is 1 hour."
 msgstr ""
 
 #: js/src/common/network/DHCPValidators.js:116
-#, fuzzy
 msgid "Address is outside current network."
-msgstr "Router's IP address in the inner network."
+msgstr ""
 
 #: js/src/common/network/DHCPValidators.js:120
 msgid "Address is already reserved for other purposes."
@@ -325,9 +324,8 @@ msgid ""
 msgstr ""
 
 #: js/src/dns/DNSForm.js:67
-#, fuzzy
 msgid "DNS Settings"
-msgstr "LAN Settings"
+msgstr ""
 
 #: js/src/dns/DNSForm.js:84
 msgid "Use forwarding"
@@ -833,13 +831,11 @@ msgid "Here you can check and set the name of your device."
 msgstr ""
 
 #: js/src/hostname/Hostname.js:41
-#, fuzzy
 msgid ""
 "The hostname can contain only alphanumeric characters, hyphens, "
 "underscores and can't be empty."
 msgstr ""
-"Sender's name can contain only alphanumeric characters, dots and "
-"underscores."
+""
 
 #: js/src/hostname/HostnameForm.js:13
 msgid "Rewrite the hostname to set a new one."
@@ -850,9 +846,8 @@ msgid "Hostname Settings"
 msgstr ""
 
 #: js/src/hostname/HostnameForm.js:35
-#, fuzzy
 msgid "Device hostname"
-msgstr "DHCP hostname"
+msgstr ""
 
 #: js/src/interfaces/Interfaces.js:25
 msgid "Network Interfaces"
@@ -1299,9 +1294,8 @@ msgid ""
 msgstr ""
 
 #: js/src/notificationsSettings/TestNotification.js:110
-#, fuzzy
 msgid "Test Notification"
-msgstr "No notifications"
+msgstr ""
 
 #: js/src/notificationsSettings/TestNotification.js:112
 msgid ""
@@ -1767,15 +1761,13 @@ msgid "Set your password for this administration interface."
 msgstr "Set your password for this administration interface."
 
 #: js/src/password/ForisPasswordForm.js:58
-#, fuzzy
 msgid "Current password"
-msgstr "Current Foris password"
+msgstr ""
 
 #: js/src/password/ForisPasswordForm.js:68
 #: js/src/password/RootPasswordForm.js:69
-#, fuzzy
 msgid "New password"
-msgstr "New Foris password"
+msgstr ""
 
 #: js/src/password/ForisPasswordForm.js:79
 #: js/src/password/RootPasswordForm.js:79
@@ -1783,9 +1775,8 @@ msgid "Confirm new password"
 msgstr ""
 
 #: js/src/password/ForisPasswordForm.js:95
-#, fuzzy
 msgid "Use the same password for advanced administration (root)"
-msgstr "Use same password for advanced administration (root)"
+msgstr ""
 
 #: js/src/password/ForisPasswordForm.js:98
 msgid ""
@@ -1844,9 +1835,8 @@ msgid "Password should have max 128 symbols."
 msgstr "Password should have max 128 symbols."
 
 #: js/src/password/RootPasswordForm.js:54
-#, fuzzy
 msgid "Advanced Administration Password"
-msgstr "New advanced administration password"
+msgstr ""
 
 #: js/src/password/RootPasswordForm.js:58
 #, python-format
@@ -2145,14 +2135,12 @@ msgid "Key"
 msgstr "Key"
 
 #: js/src/wan/WAN6Form.js:527
-#, fuzzy
 msgid "MTU has to be a number in the range of 1280-1480."
-msgstr "MTU should be a number in range of 1280-1500."
+msgstr ""
 
 #: js/src/wan/WAN6Form.js:529
-#, fuzzy
 msgid "MTU has to be in the range of 1280-1480."
-msgstr "MTU should be in range of 1280-1500."
+msgstr ""
 
 #: js/src/wan/WANForm.js:27
 msgid "PPPoE (for DSL bridges, etc.)"
