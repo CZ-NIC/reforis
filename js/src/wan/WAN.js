@@ -70,6 +70,8 @@ function prepData(formData) {
                 .dynamic_ipv4 || { enabled: false },
         },
     });
+    if (formData.wan_settings.wan_type === "none")
+        formData.wan_settings.wan_type = "dhcp";
     return update(formData, {
         wan_settings: {
             wan_dhcp: { $set: formData.wan_settings.wan_dhcp || {} },
