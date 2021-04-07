@@ -59,6 +59,7 @@ available <a href="" data-toggle="modal" data-target="#licenceModal">here</a>.
 
 function prepData(formData) {
     if (!formData.approval_settings.delay) formData.approval_settings.delay = 1;
+    if (formData.enabled === null) formData.enabled = true;
     return formData;
 }
 
