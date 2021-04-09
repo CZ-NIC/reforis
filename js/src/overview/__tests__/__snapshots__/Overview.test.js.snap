@@ -154,7 +154,9 @@ exports[`Overview Snapshot of the whole page 1`] = `
               />
             </a>
           </h6>
-          <form>
+          <form
+            class="mb-4"
+          >
             <table
               class="table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12"
             >
@@ -244,7 +246,7 @@ exports[`Overview Snapshot of the whole page 1`] = `
             </table>
           </form>
           <p
-            class="card-text"
+            class="card-text text-to-bottom"
           >
             <small
               class="text-muted"
@@ -270,15 +272,6 @@ exports[`Overview Snapshot of the whole page 1`] = `
             class="text-uppercase text-muted mb-2"
           >
             Connection Test
-            <a
-              class="text-secondary"
-              href="/network-settings/wan"
-              title="Go to Connection Settings"
-            >
-              <i
-                class="fas fa-chevron-right float-right"
-              />
-            </a>
           </h6>
           <div
             class=""
@@ -360,13 +353,49 @@ exports[`Overview Snapshot of the whole page 1`] = `
                       </div>
                     </td>
                   </tr>
+                  <tr>
+                    <th
+                      scope="row"
+                    >
+                      DNS
+                    </th>
+                    <td
+                      class="text-right"
+                    >
+                      <div
+                        class="text-secondary"
+                      >
+                        <i
+                          class="fas fa-minus"
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th
+                      scope="row"
+                    >
+                      DNSSEC
+                    </th>
+                    <td
+                      class="text-right"
+                    >
+                      <div
+                        class="text-secondary"
+                      >
+                        <i
+                          class="fas fa-minus"
+                        />
+                      </div>
+                    </td>
+                  </tr>
                 </tbody>
               </table>
               <div
                 class="col-sm-12 col-lg-12 p-0 mb-0 text-right"
               >
                 <button
-                  class="btn btn-outline-primary col-sm-12 col-md-3 col-lg-2"
+                  class="btn btn-outline-primary mw-100 col-sm-12 col-md-3 col-lg-2"
                   type="submit"
                 >
                   Test connection

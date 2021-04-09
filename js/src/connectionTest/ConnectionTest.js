@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -14,11 +14,10 @@ import ConnectionTestButton from "./ConnectionTestButton";
 
 ConnectionTest.propTypes = {
     ws: PropTypes.object.isRequired,
-    type: PropTypes.oneOf(["wan", "dns"]).isRequired,
-    overview: PropTypes.bool,
+    type: PropTypes.oneOf(["wan", "dns", "overview"]).isRequired,
 };
 
-export default function ConnectionTest({ ws, type, overview }) {
+export default function ConnectionTest({ ws, type }) {
     const [state, testResults, triggerTest] = useConnectionTest(ws, type);
 
     function onSubmit(e) {
@@ -26,7 +25,7 @@ export default function ConnectionTest({ ws, type, overview }) {
         triggerTest();
     }
 
-    const insideCard = overview ? "" : "card p-4 mb-3";
+    const insideCard = type === "overview" ? "" : "card p-4 mb-3";
 
     return (
         <div className={insideCard}>
@@ -36,7 +35,7 @@ export default function ConnectionTest({ ws, type, overview }) {
                     <ConnectionTestButton
                         state={state}
                         onClick={onSubmit}
-                        overview={overview}
+                        type={type}
                     />
                 </div>
             </form>
