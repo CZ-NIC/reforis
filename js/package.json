@@ -52,7 +52,7 @@
         "moment-timezone": "^0.5.28",
         "optimize-css-assets-webpack-plugin": "^5.0.3",
         "prettier": "^2.1.1",
-        "react-styleguidist": "^10.6.2",
+        "react-styleguidist": "^11.1.6",
         "snapshot-diff": "^0.5.1",
         "string-replace-loader": "^2.2.0",
         "style-loader": "^0.23.1",
