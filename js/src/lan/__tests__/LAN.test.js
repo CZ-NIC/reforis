@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2019-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -17,7 +17,10 @@ import {
 import { WebSockets } from "foris";
 import { mockJSONError } from "foris/testUtils/network";
 import mockAxios from "jest-mock-axios";
-import lanSettingsFixture from "./__fixtures__/lanSettings";
+import {
+    lanSettingsFixture,
+    lanCustomSettingsFixture,
+} from "./__fixtures__/lanSettings";
 
 import LAN from "../LAN";
 
@@ -28,7 +31,9 @@ describe("<LAN/>", () => {
         const webSockets = new WebSockets();
         const { container } = render(<LAN ws={webSockets} />);
         mockAxios.mockResponse({ data: lanSettingsFixture });
-        await wait(() => getByText(container, "Save"));
+        await wait(() => getByText(container, "LAN Settings"));
+        mockAxios.mockResponse({ data: {} });
+        await wait(() => getByText(container, "LAN mode"));
         lanContainer = container;
     });
 
@@ -80,7 +85,6 @@ describe("<LAN/>", () => {
         fireEvent.click(getByText(lanContainer, "Save"));
         expect(mockAxios.post).toBeCalled();
         const data = {
-            lan_redirect: true,
             mode: "unmanaged",
             mode_unmanaged: { lan_dhcp: {}, lan_type: "dhcp" },
         };
@@ -98,7 +102,6 @@ describe("<LAN/>", () => {
         fireEvent.click(getByText(lanContainer, "Save"));
         expect(mockAxios.post).toBeCalled();
         const data = {
-            lan_redirect: true,
             mode: "unmanaged",
             mode_unmanaged: {
                 lan_type: "static",
@@ -123,7 +126,6 @@ describe("<LAN/>", () => {
         fireEvent.click(getByText(lanContainer, "Save"));
         expect(mockAxios.post).toBeCalled();
         const data = {
-            lan_redirect: true,
             mode: "unmanaged",
             mode_unmanaged: { lan_none: undefined, lan_type: "none" },
         };
@@ -141,7 +143,6 @@ describe("<LAN/>", () => {
         fireEvent.click(getByText(lanContainer, "Save"));
         expect(mockAxios.post).toBeCalled();
         const data = {
-            lan_redirect: true,
             mode: "managed",
             mode_managed: {
                 dhcp: { enabled: false },
@@ -181,7 +182,6 @@ describe("<LAN/>", () => {
             fireEvent.click(getByText(lanContainer, "Save"));
             expect(mockAxios.post).toBeCalled();
             const data = {
-                lan_redirect: true,
                 mode: "managed",
                 mode_managed: {
                     dhcp: {
@@ -366,5 +366,39 @@ describe("<LAN/>", () => {
                 ).toBeDefined();
             });
         });
+    });
+});
+
+describe("Customized <LAN/>", () => {
+    let lanContainer;
+
+    beforeEach(async () => {
+        const webSockets = new WebSockets();
+        const { container } = render(<LAN ws={webSockets} />);
+        mockAxios.mockResponse({ data: lanCustomSettingsFixture });
+        await wait(() => getByText(container, "LAN Settings"));
+        mockAxios.mockResponse({ data: { customization: "shield" } });
+        await wait(() => getByText(container, "Router IP address"));
+        lanContainer = container;
+    });
+
+    it("should handle error", async () => {
+        const webSockets = new WebSockets();
+        const { container } = render(<LAN ws={webSockets} />);
+        mockJSONError();
+        await wait(() => {
+            expect(
+                getByText(container, "An error occurred while fetching data.")
+            ).toBeTruthy();
+        });
+    });
+
+    it("Snapshot managed.", () => {
+        expect(lanContainer).toMatchSnapshot();
+    });
+
+    it("Snapshot managed with enabled DHCP.", () => {
+        fireEvent.click(getByText(lanContainer, "Enable DHCP"));
+        expect(lanContainer).toMatchSnapshot();
     });
 });
