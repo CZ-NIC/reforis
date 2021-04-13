@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-03-31 12:58+0200\n"
+"POT-Creation-Date: 2021-04-09 14:51+0200\n"
 "PO-Revision-Date: 2021-02-09 16:50+0000\n"
 "Last-Translator: Michalis <michalisntovas@yahoo.gr>\n"
 "Language: el\n"
@@ -655,14 +655,22 @@ msgid ""
 "some further configuration updates to fit the device to your needs."
 msgstr ""
 
-#: js/src/guide/constants.js:95
+#: js/src/guide/constants.js:92
+msgid ""
+"Your device is now ready to be used. You can tweak the rest of the "
+"setting in the administration interface. Once you finish the guide, your "
+"Shield will try to connect to the Internet, and you will end up in the "
+"administration interface."
+msgstr ""
+
+#: js/src/guide/constants.js:103
 msgid ""
 "You chose to act as local server this means that it doesn't make sense to"
 " put any interfaces to your WAN and Guest Network. So it is a good idea "
 "to assign all interfaces to LAN."
 msgstr ""
 
-#: js/src/guide/constants.js:102
+#: js/src/guide/constants.js:110
 msgid ""
 "To act as a local server, there's no need to manage LAN (if you still "
 "want to manage it reset the guide and choose the Router workflow). You "
@@ -670,14 +678,14 @@ msgid ""
 "<strong>Computer</strong> mode here."
 msgstr ""
 
-#: js/src/guide/constants.js:105
+#: js/src/guide/constants.js:113
 msgid ""
 "If you select the <strong>static</strong> configuration be sure that the "
 "IP addresses are entered correctly otherwise you won't be able to access "
 "this configuration interface when the new settings are applied."
 msgstr ""
 
-#: js/src/guide/constants.js:108
+#: js/src/guide/constants.js:116
 msgid ""
 "If you select the <strong>DHCP</strong> method you probably you need to "
 "obtain a new IP address of this device. You can obtain it from the DHCP "
@@ -685,13 +693,13 @@ msgid ""
 " address to proceed the guide."
 msgstr ""
 
-#: js/src/guide/constants.js:111
+#: js/src/guide/constants.js:119
 msgid ""
 "Note that either way you might need to re-plug your ethernet cables after"
 " you update the settings here."
 msgstr ""
 
-#: js/src/guide/constants.js:115
+#: js/src/guide/constants.js:123
 msgid ""
 "Please test whether the settings you provided are correctly working. This"
 " means that you can access the configuration interface of your device and"
@@ -699,7 +707,7 @@ msgid ""
 "test below)."
 msgstr ""
 
-#: js/src/guide/constants.js:120
+#: js/src/guide/constants.js:128
 msgid ""
 "Congratulations! Now your device should be able to act as a server on "
 "your local network."

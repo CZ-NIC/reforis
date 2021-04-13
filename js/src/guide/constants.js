@@ -86,6 +86,14 @@ export const HELP_CONTENT = {
             ),
         },
     },
+    shield: {
+        ...HELP_CONTENT_DEFAULTS,
+        finished: {
+            initial: _(
+                "Your device is now ready to be used. You can tweak the rest of the setting in the administration interface. Once you finish the guide, your Shield will try to connect to the Internet, and you will end up in the administration interface."
+            ),
+        },
+    },
     bridge: {
         ...HELP_CONTENT_DEFAULTS,
         networks: {
