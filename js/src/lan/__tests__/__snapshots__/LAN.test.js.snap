@@ -68,38 +68,14 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         <small
           class="form-text text-muted"
         >
-          
-Router mode means that this device manages the LAN (acts as a router, can assign IP addresses, ...).
-Computer mode means that this device acts as a client in this network. It acts in a similar way as WAN, but
-it has opened ports for configuration interface and other services.
-        
+          Router mode means that this device manages the LAN (acts as a router, can assign IP addresses, etc.).
         </small>
       </div>
       <div
         class="form-group"
       >
-        <div
-          class="custom-control custom-checkbox "
-        >
-          <input
-            checked=""
-            class="custom-control-input"
-            id="2"
-            type="checkbox"
-          />
-          <label
-            class="custom-control-label"
-            for="2"
-          >
-            Redirect to 192.168.1.1
-          </label>
-        </div>
-      </div>
-      <div
-        class="form-group"
-      >
         <label
-          for="7"
+          for="5"
         >
           Router IP address
         </label>
@@ -108,7 +84,7 @@ it has opened ports for configuration interface and other services.
         >
           <input
             class="form-control"
-            id="7"
+            id="5"
             required=""
             type="text"
             value="192.168.1.4"
@@ -124,7 +100,7 @@ it has opened ports for configuration interface and other services.
         class="form-group"
       >
         <label
-          for="8"
+          for="6"
         >
           Network mask
         </label>
@@ -133,7 +109,7 @@ it has opened ports for configuration interface and other services.
         >
           <input
             class="form-control"
-            id="8"
+            id="6"
             required=""
             type="text"
             value="255.255.255.0"
@@ -148,12 +124,12 @@ it has opened ports for configuration interface and other services.
         >
           <input
             class="custom-control-input"
-            id="9"
+            id="7"
             type="checkbox"
           />
           <label
             class="custom-control-label"
-            for="9"
+            for="7"
           >
             Enable DHCP
           </label>
@@ -168,7 +144,7 @@ it has opened ports for configuration interface and other services.
         class="form-group"
       >
         <label
-          for="15"
+          for="12"
         >
           DHCP start
         </label>
@@ -177,7 +153,7 @@ it has opened ports for configuration interface and other services.
         >
           <input
             class="form-control"
-            id="15"
+            id="12"
             required=""
             type="text"
             value="192.168.1.10"
@@ -188,7 +164,7 @@ it has opened ports for configuration interface and other services.
         class="form-group"
       >
         <label
-          for="16"
+          for="13"
         >
           DHCP max leases
         </label>
@@ -197,7 +173,7 @@ it has opened ports for configuration interface and other services.
         >
           <input
             class="form-control"
-            id="16"
+            id="13"
             min="1"
             required=""
             type="number"
@@ -236,7 +212,7 @@ it has opened ports for configuration interface and other services.
         class="form-group"
       >
         <label
-          for="17"
+          for="14"
         >
           Lease time (hours)
         </label>
@@ -245,7 +221,7 @@ it has opened ports for configuration interface and other services.
         >
           <input
             class="form-control"
-            id="17"
+            id="14"
             min="1"
             required=""
             type="number"
@@ -377,38 +353,14 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         <small
           class="form-text text-muted"
         >
-          
-Router mode means that this device manages the LAN (acts as a router, can assign IP addresses, ...).
-Computer mode means that this device acts as a client in this network. It acts in a similar way as WAN, but
-it has opened ports for configuration interface and other services.
-        
+          Router mode means that this device manages the LAN (acts as a router, can assign IP addresses, etc.).
         </small>
       </div>
       <div
         class="form-group"
       >
-        <div
-          class="custom-control custom-checkbox "
-        >
-          <input
-            checked=""
-            class="custom-control-input"
-            id="2"
-            type="checkbox"
-          />
-          <label
-            class="custom-control-label"
-            for="2"
-          >
-            Redirect to 192.168.1.1
-          </label>
-        </div>
-      </div>
-      <div
-        class="form-group"
-      >
         <label
-          for="7"
+          for="5"
         >
           Router IP address
         </label>
@@ -417,7 +369,7 @@ it has opened ports for configuration interface and other services.
         >
           <input
             class="form-control"
-            id="7"
+            id="5"
             required=""
             type="text"
             value="192.168.1.4"
@@ -433,7 +385,7 @@ it has opened ports for configuration interface and other services.
         class="form-group"
       >
         <label
-          for="8"
+          for="6"
         >
           Network mask
         </label>
@@ -442,7 +394,7 @@ it has opened ports for configuration interface and other services.
         >
           <input
             class="form-control"
-            id="8"
+            id="6"
             required=""
             type="text"
             value="255.255.255.0"
@@ -457,12 +409,12 @@ it has opened ports for configuration interface and other services.
         >
           <input
             class="custom-control-input"
-            id="9"
+            id="7"
             type="checkbox"
           />
           <label
             class="custom-control-label"
-            for="9"
+            for="7"
           >
             Enable DHCP
           </label>
@@ -559,44 +511,21 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         <small
           class="form-text text-muted"
         >
-          
-Router mode means that this device manages the LAN (acts as a router, can assign IP addresses, ...).
-Computer mode means that this device acts as a client in this network. It acts in a similar way as WAN, but
-it has opened ports for configuration interface and other services.
-        
+          Computer mode means that this device acts as a client in this network.
+It acts similarly to WAN, but it has opened ports for configuration interfaces and other services.
         </small>
       </div>
       <div
         class="form-group"
       >
-        <div
-          class="custom-control custom-checkbox "
-        >
-          <input
-            checked=""
-            class="custom-control-input"
-            id="2"
-            type="checkbox"
-          />
-          <label
-            class="custom-control-label"
-            for="2"
-          >
-            Redirect to 192.168.1.1
-          </label>
-        </div>
-      </div>
-      <div
-        class="form-group"
-      >
         <label
-          for="3"
+          for="2"
         >
           IPv4 protocol
         </label>
         <select
           class="custom-select"
-          id="3"
+          id="2"
         >
           <option
             value="dhcp"
@@ -619,7 +548,7 @@ it has opened ports for configuration interface and other services.
         class="form-group"
       >
         <label
-          for="4"
+          for="3"
         >
           DHCP hostname
         </label>
@@ -628,7 +557,7 @@ it has opened ports for configuration interface and other services.
         >
           <input
             class="form-control"
-            id="4"
+            id="3"
             type="text"
             value=""
           />
@@ -725,44 +654,21 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         <small
           class="form-text text-muted"
         >
-          
-Router mode means that this device manages the LAN (acts as a router, can assign IP addresses, ...).
-Computer mode means that this device acts as a client in this network. It acts in a similar way as WAN, but
-it has opened ports for configuration interface and other services.
-        
+          Computer mode means that this device acts as a client in this network.
+It acts similarly to WAN, but it has opened ports for configuration interfaces and other services.
         </small>
       </div>
       <div
         class="form-group"
       >
-        <div
-          class="custom-control custom-checkbox "
-        >
-          <input
-            checked=""
-            class="custom-control-input"
-            id="2"
-            type="checkbox"
-          />
-          <label
-            class="custom-control-label"
-            for="2"
-          >
-            Redirect to 192.168.1.1
-          </label>
-        </div>
-      </div>
-      <div
-        class="form-group"
-      >
         <label
-          for="3"
+          for="2"
         >
           IPv4 protocol
         </label>
         <select
           class="custom-select"
-          id="3"
+          id="2"
         >
           <option
             value="dhcp"
@@ -867,44 +773,21 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         <small
           class="form-text text-muted"
         >
-          
-Router mode means that this device manages the LAN (acts as a router, can assign IP addresses, ...).
-Computer mode means that this device acts as a client in this network. It acts in a similar way as WAN, but
-it has opened ports for configuration interface and other services.
-        
+          Computer mode means that this device acts as a client in this network.
+It acts similarly to WAN, but it has opened ports for configuration interfaces and other services.
         </small>
       </div>
       <div
         class="form-group"
       >
-        <div
-          class="custom-control custom-checkbox "
-        >
-          <input
-            checked=""
-            class="custom-control-input"
-            id="2"
-            type="checkbox"
-          />
-          <label
-            class="custom-control-label"
-            for="2"
-          >
-            Redirect to 192.168.1.1
-          </label>
-        </div>
-      </div>
-      <div
-        class="form-group"
-      >
         <label
-          for="3"
+          for="2"
         >
           IPv4 protocol
         </label>
         <select
           class="custom-select"
-          id="3"
+          id="2"
         >
           <option
             value="dhcp"
@@ -927,9 +810,49 @@ it has opened ports for configuration interface and other services.
         class="form-group"
       >
         <label
-          for="8"
+          for="6"
         >
           IP address
+        </label>
+        <div
+          class="input-group"
+        >
+          <input
+            class="form-control"
+            id="6"
+            required=""
+            type="text"
+            value="192.168.1.4"
+          />
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
+        <label
+          for="7"
+        >
+          Network mask
+        </label>
+        <div
+          class="input-group"
+        >
+          <input
+            class="form-control"
+            id="7"
+            required=""
+            type="text"
+            value="255.255.255.0"
+          />
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
+        <label
+          for="8"
+        >
+          Gateway
         </label>
         <div
           class="input-group"
@@ -949,7 +872,7 @@ it has opened ports for configuration interface and other services.
         <label
           for="9"
         >
-          Network mask
+          DNS server 1
         </label>
         <div
           class="input-group"
@@ -957,6 +880,159 @@ it has opened ports for configuration interface and other services.
           <input
             class="form-control"
             id="9"
+            type="text"
+            value=""
+          />
+        </div>
+        <small
+          class="form-text text-muted"
+        >
+          DNS server address is not required as the built-in DNS resolver is capable of working without it.
+        </small>
+      </div>
+      <div
+        class="form-group"
+      >
+        <label
+          for="10"
+        >
+          DNS server 2
+        </label>
+        <div
+          class="input-group"
+        >
+          <input
+            class="form-control"
+            id="10"
+            type="text"
+            value=""
+          />
+        </div>
+        <small
+          class="form-text text-muted"
+        >
+          DNS server address is not required as the built-in DNS resolver is capable of working without it.
+        </small>
+      </div>
+      <div
+        class="text-right"
+      >
+        <button
+          class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
+          type="submit"
+        >
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+  <div
+    id="dhcp-clients-container"
+  />
+</div>
+`;
+
+exports[`Customized <LAN/> Snapshot managed with enabled DHCP. 1`] = `
+<div>
+  <h1>
+    LAN
+  </h1>
+  <p>
+    
+This section contains settings for the local network (LAN). The provided defaults are suitable for most
+networks.
+
+    <br />
+    
+
+    <b>
+      Note:
+    </b>
+     If you change the router IP address, all computers in LAN, probably including the one you are
+using now, will need to obtain a 
+    <b>
+      new IP address
+    </b>
+     which does not happen 
+    <b>
+      immediately
+    </b>
+    . It is
+recommended to disconnect and reconnect all LAN cables after submitting your changes to force the update.
+The next page will not load until you obtain a new IP from DHCP (if DHCP enabled) and you might need to
+
+    <b>
+      refresh the page
+    </b>
+     in your browser.
+            
+  </p>
+  <div
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
+  >
+    <form>
+      <h2>
+        LAN Settings
+      </h2>
+      <div
+        class="form-group"
+      >
+        <div
+          class="custom-control custom-checkbox "
+        >
+          <input
+            checked=""
+            class="custom-control-input"
+            id="1"
+            type="checkbox"
+          />
+          <label
+            class="custom-control-label"
+            for="1"
+          >
+            Redirect to 192.168.1.1
+          </label>
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
+        <label
+          for="2"
+        >
+          Router IP address
+        </label>
+        <div
+          class="input-group"
+        >
+          <input
+            class="form-control"
+            id="2"
+            required=""
+            type="text"
+            value="192.168.1.4"
+          />
+        </div>
+        <small
+          class="form-text text-muted"
+        >
+          Router's IP address in the inner network.
+        </small>
+      </div>
+      <div
+        class="form-group"
+      >
+        <label
+          for="3"
+        >
+          Network mask
+        </label>
+        <div
+          class="input-group"
+        >
+          <input
+            class="form-control"
+            id="3"
             required=""
             type="text"
             value="255.255.255.0"
@@ -966,10 +1042,54 @@ it has opened ports for configuration interface and other services.
       <div
         class="form-group"
       >
+        <div
+          class="custom-control custom-switch"
+        >
+          <input
+            class="custom-control-input"
+            id="4"
+            type="checkbox"
+          />
+          <label
+            class="custom-control-label"
+            for="4"
+          >
+            Enable DHCP
+          </label>
+          <small
+            class="form-text text-muted mt-0 mb-3"
+          >
+            Enable this option to automatically assign IP addresses to the devices connected to the router.
+          </small>
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
+        <label
+          for="9"
+        >
+          DHCP start
+        </label>
+        <div
+          class="input-group"
+        >
+          <input
+            class="form-control"
+            id="9"
+            required=""
+            type="text"
+            value="192.168.1.10"
+          />
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
         <label
           for="10"
         >
-          Gateway
+          DHCP max leases
         </label>
         <div
           class="input-group"
@@ -977,11 +1097,39 @@ it has opened ports for configuration interface and other services.
           <input
             class="form-control"
             id="10"
+            min="1"
             required=""
-            type="text"
-            value="192.168.1.4"
+            type="number"
+            value="150"
           />
+          <div
+            class="input-group-append"
+          >
+            <button
+              aria-label="Increase"
+              class="btn btn-outline-secondary"
+              type="button"
+            >
+              <i
+                class="fas fa-plus"
+              />
+            </button>
+            <button
+              aria-label="Decrease"
+              class="btn btn-outline-secondary"
+              type="button"
+            >
+              <i
+                class="fas fa-minus"
+              />
+            </button>
+          </div>
         </div>
+        <small
+          class="form-text text-muted"
+        >
+          Maximum number of addresses available for DHCP clients.
+        </small>
       </div>
       <div
         class="form-group"
@@ -989,7 +1137,7 @@ it has opened ports for configuration interface and other services.
         <label
           for="11"
         >
-          DNS server 1
+          Lease time (hours)
         </label>
         <div
           class="input-group"
@@ -997,39 +1145,199 @@ it has opened ports for configuration interface and other services.
           <input
             class="form-control"
             id="11"
-            type="text"
-            value=""
+            min="1"
+            required=""
+            type="number"
+            value="43200"
           />
+          <div
+            class="input-group-append"
+          >
+            <button
+              aria-label="Increase"
+              class="btn btn-outline-secondary"
+              type="button"
+            >
+              <i
+                class="fas fa-plus"
+              />
+            </button>
+            <button
+              aria-label="Decrease"
+              class="btn btn-outline-secondary"
+              type="button"
+            >
+              <i
+                class="fas fa-minus"
+              />
+            </button>
+          </div>
         </div>
-        <small
-          class="form-text text-muted"
+      </div>
+      <div
+        class="text-right"
+      >
+        <button
+          class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
+          type="submit"
         >
-          DNS server address is not required as the built-in DNS resolver is capable of working without it.
-        </small>
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+  <div
+    id="dhcp-clients-container"
+  >
+    <div
+      class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
+    >
+      <h2>
+        DHCP Client List
+      </h2>
+      <p>
+        This list contains all devices that are connected to the network through wired or wireless connections.
+      </p>
+      <p
+        class="text-muted text-center"
+      >
+        No clients found.
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Customized <LAN/> Snapshot managed. 1`] = `
+<div>
+  <h1>
+    LAN
+  </h1>
+  <p>
+    
+This section contains settings for the local network (LAN). The provided defaults are suitable for most
+networks.
+
+    <br />
+    
+
+    <b>
+      Note:
+    </b>
+     If you change the router IP address, all computers in LAN, probably including the one you are
+using now, will need to obtain a 
+    <b>
+      new IP address
+    </b>
+     which does not happen 
+    <b>
+      immediately
+    </b>
+    . It is
+recommended to disconnect and reconnect all LAN cables after submitting your changes to force the update.
+The next page will not load until you obtain a new IP from DHCP (if DHCP enabled) and you might need to
+
+    <b>
+      refresh the page
+    </b>
+     in your browser.
+            
+  </p>
+  <div
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
+  >
+    <form>
+      <h2>
+        LAN Settings
+      </h2>
+      <div
+        class="form-group"
+      >
+        <div
+          class="custom-control custom-checkbox "
+        >
+          <input
+            checked=""
+            class="custom-control-input"
+            id="1"
+            type="checkbox"
+          />
+          <label
+            class="custom-control-label"
+            for="1"
+          >
+            Redirect to 192.168.1.1
+          </label>
+        </div>
       </div>
       <div
         class="form-group"
       >
         <label
-          for="12"
+          for="2"
         >
-          DNS server 2
+          Router IP address
         </label>
         <div
           class="input-group"
         >
           <input
             class="form-control"
-            id="12"
+            id="2"
+            required=""
             type="text"
-            value=""
+            value="192.168.1.4"
           />
         </div>
         <small
           class="form-text text-muted"
         >
-          DNS server address is not required as the built-in DNS resolver is capable of working without it.
+          Router's IP address in the inner network.
         </small>
+      </div>
+      <div
+        class="form-group"
+      >
+        <label
+          for="3"
+        >
+          Network mask
+        </label>
+        <div
+          class="input-group"
+        >
+          <input
+            class="form-control"
+            id="3"
+            required=""
+            type="text"
+            value="255.255.255.0"
+          />
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
+        <div
+          class="custom-control custom-switch"
+        >
+          <input
+            class="custom-control-input"
+            id="4"
+            type="checkbox"
+          />
+          <label
+            class="custom-control-label"
+            for="4"
+          >
+            Enable DHCP
+          </label>
+          <small
+            class="form-text text-muted mt-0 mb-3"
+          >
+            Enable this option to automatically assign IP addresses to the devices connected to the router.
+          </small>
+        </div>
       </div>
       <div
         class="text-right"
