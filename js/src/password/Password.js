@@ -187,7 +187,8 @@ export default function Password({ postCallback }) {
             <h1>{_("Password")}</h1>
             <p>
                 {_(
-                    `Here you can set passwords for Foris and optionally for advanced features (LuCI and SSH). Make sure to set a secure password which is long and uncommon.`
+                    `Here you can set password for the administration interface.
+Make sure to set a secure password that is long and unique.`
                 )}
             </p>
             {passwordComponent}
