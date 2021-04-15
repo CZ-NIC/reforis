@@ -29,9 +29,7 @@ describe("<Password/>", () => {
     beforeEach(async () => {
         const { container } = render(<Password />);
         mockAxios.mockResponse({ data: { password_set: true } });
-        mockAxios.mockResponse({
-            data: {},
-        });
+        mockAxios.mockResponse({ data: {} });
         await wait(() =>
             getByText(container, "Advanced Administration Password")
         );
@@ -63,11 +61,17 @@ describe("<Password/>", () => {
     });
 
     it("Snapshot: wrong password confirmation", () => {
+        fireEvent.focus(
+            getAllByLabelText(passwordContainer, "New password")[0]
+        );
         fireEvent.change(
             getAllByLabelText(passwordContainer, "New password")[0],
             {
                 target: { value: "testing" },
             }
+        );
+        fireEvent.focus(
+            getAllByLabelText(passwordContainer, "Confirm new password")[0]
         );
         fireEvent.change(
             getAllByLabelText(passwordContainer, "Confirm new password")[0],
@@ -77,11 +81,17 @@ describe("<Password/>", () => {
     });
 
     it("Snapshot: wrong root password confirmation", () => {
+        fireEvent.focus(
+            getAllByLabelText(passwordContainer, "New password")[1]
+        );
         fireEvent.change(
             getAllByLabelText(passwordContainer, "New password")[1],
             {
                 target: { value: "testing" },
             }
+        );
+        fireEvent.focus(
+            getAllByLabelText(passwordContainer, "Confirm new password")[1]
         );
         fireEvent.change(
             getAllByLabelText(passwordContainer, "Confirm new password")[1],
@@ -181,7 +191,11 @@ describe("Customized <Password/>", () => {
             fireEvent.click(getAllByText(passwordContainer, "Save")[0]);
             expect(mockAxios.post).toBeCalledWith(
                 "/reforis/api/password",
-                { foris_current_password: "foobar", foris_password: "foobar" },
+                {
+                    foris_current_password: "foobar",
+                    foris_password: "foobar",
+                    root_password: "foobar",
+                },
                 expect.anything()
             );
         });
