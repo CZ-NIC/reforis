@@ -6,7 +6,7 @@
 from flask import current_app, jsonify, request
 from flask_babel import gettext as _
 
-from .utils import _foris_controller_settings_call, APIError
+from .utils import _foris_controller_settings_call, response_to_json_or_error
 
 
 def dns():
@@ -43,24 +43,18 @@ def forwarders():
 def add_forwarder():
     data = request.json
     response = current_app.backend.perform('dns', 'add_forwarder', data)
-    return _response_to_json_or_error(response, _('Can\'t add new DNS forwarder.'))
+    return response_to_json_or_error(response, _('Can\'t add new DNS forwarder.'))
 
 
 def set_forwarder(forwarder_name):
     data = request.json
     response = current_app.backend.perform('dns', 'set_forwarder', {'name': forwarder_name, **data})
-    return _response_to_json_or_error(response, _('Can\'t set DNS forwarder.'))
+    return response_to_json_or_error(response, _('Can\'t set DNS forwarder.'))
 
 
 def delete_forwarder(forwarder_name):
     response = current_app.backend.perform('dns', 'del_forwarder', {'name': forwarder_name})
-    return _response_to_json_or_error(response, _('Can\'t delete DNS forwarder.'))
-
-
-def _response_to_json_or_error(response, error_message):
-    if response['result']:
-        return jsonify(response)
-    raise APIError(error_message)
+    return response_to_json_or_error(response, _('Can\'t delete DNS forwarder.'))
 
 
 # pylint: disable=invalid-name

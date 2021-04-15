@@ -4,8 +4,9 @@
 #  See /LICENSE for more information.
 
 from flask import request, current_app, jsonify
+from flask_babel import _
 
-from .utils import process_dhcp_get, process_dhcp_post
+from .utils import process_dhcp_get, process_dhcp_post, response_to_json_or_error
 
 
 def lan_get():
@@ -44,6 +45,18 @@ def lan_post():
     return jsonify(response)
 
 
+def lan_set_client():
+    """
+    .. http:post:: /api/lan/set_client
+        Set LAN DHCP leases manually.
+        See ``set_dhcp_client`` action in the `foris-controller lan module JSON schema
+        <https://gitlab.nic.cz/turris/foris-controller/foris-controller/blob/master/foris_controller_modules/lan/schema/lan.json>`_.
+    """
+    data = request.json
+    response = current_app.backend.perform('lan', 'set_dhcp_client', data)
+    return response_to_json_or_error(response, _('Can\'t create DHCP lease.'))
+
+
 # pylint: disable=invalid-name
 views = [{
     'rule': '/lan',
@@ -52,5 +65,9 @@ views = [{
 }, {
     'rule': '/lan',
     'view_func': lan_post,
+    'methods': ['POST']
+}, {
+    'rule': '/lan/set_client',
+    'view_func': lan_set_client,
     'methods': ['POST']
 }]
