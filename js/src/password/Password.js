@@ -43,6 +43,12 @@ export default function Password({ postCallback }) {
         getAbout();
     }, [getAbout, getPassword]);
 
+    const customization = !!(
+        getAboutResponse.data &&
+        getAboutResponse.data.customization !== undefined &&
+        getAboutResponse.data.customization === "shield"
+    );
+
     const [formState, onFormChangeHandler, resetFormData] = useForm(validator);
 
     const resetPasswordForm = useCallback(() => {
@@ -159,7 +165,7 @@ export default function Password({ postCallback }) {
                     setFormValue={onFormChangeHandler}
                     postForisPassword={postForisPassword}
                     passwordSet={getPasswordResponse.data.password_set}
-                    deviceDetails={getAboutResponse.data}
+                    customization={customization}
                 />
                 {!formState.data.sameForRoot && (
                     <RootPasswordForm
@@ -169,7 +175,7 @@ export default function Password({ postCallback }) {
                         disabled={isSending}
                         setFormValue={onFormChangeHandler}
                         postRootPassword={postRootPassword}
-                        deviceDetails={getAboutResponse.data}
+                        customization={customization}
                     />
                 )}
             </div>

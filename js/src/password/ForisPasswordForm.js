@@ -34,7 +34,7 @@ ForisPasswordForm.propTypes = {
     setFormValue: PropTypes.func.isRequired,
     postForisPassword: PropTypes.func.isRequired,
     passwordSet: PropTypes.bool.isRequired,
-    deviceDetails: PropTypes.object.isRequired,
+    customization: PropTypes.bool.isRequired,
     disabled: PropTypes.bool,
 };
 
@@ -46,7 +46,7 @@ export default function ForisPasswordForm({
     postForisPassword,
     disabled,
     passwordSet,
-    deviceDetails,
+    customization,
 }) {
     return (
         <>
@@ -85,12 +85,7 @@ export default function ForisPasswordForm({
                     disabled={disabled}
                 />
 
-                {!(
-                    Object.hasOwnProperty.call(
-                        deviceDetails,
-                        "customization"
-                    ) && deviceDetails.customization === "shield"
-                ) && (
+                {!customization && (
                     <CheckBox
                         label={_(
                             "Use the same password for advanced administration (root)"

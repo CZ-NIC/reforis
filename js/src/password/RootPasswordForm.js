@@ -31,7 +31,7 @@ RootPasswordForm.propTypes = {
     }),
     setFormValue: PropTypes.func.isRequired,
     postRootPassword: PropTypes.func.isRequired,
-    deviceDetails: PropTypes.object.isRequired,
+    customization: PropTypes.bool.isRequired,
     disabled: PropTypes.bool,
 };
 
@@ -42,13 +42,9 @@ export default function RootPasswordForm({
     submitButtonState,
     postRootPassword,
     disabled,
-    deviceDetails,
+    customization,
 }) {
-    if (
-        Object.hasOwnProperty.call(deviceDetails, "customization") &&
-        deviceDetails.customization === "shield"
-    )
-        return null;
+    if (customization) return null;
     return (
         <form onSubmit={postRootPassword}>
             <h3>{_("Advanced Administration Password")}</h3>
