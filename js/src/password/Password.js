@@ -115,6 +115,7 @@ export default function Password({ postCallback }) {
             foris_current_password: formState.data.currentForisPassword,
             foris_password: formState.data.newForisPassword,
         };
+        if (customization) data.root_password = formState.data.newForisPassword;
         if (formState.data.sameForRoot)
             data.root_password = formState.data.newForisPassword;
         post({ data });
