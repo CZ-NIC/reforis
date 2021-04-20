@@ -5,7 +5,7 @@
  * See /LICENSE for more information.
  */
 
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 import {
@@ -44,6 +44,7 @@ export default function RootPasswordForm({
     disabled,
     customization,
 }) {
+    const [errorFeedbackRoot, setErrorFeedbackRoot] = useState(false);
     if (customization) return null;
     return (
         <form onSubmit={postRootPassword}>
@@ -64,10 +65,11 @@ through the <a href="%s" target="_blank" rel="noopener noreferrer">LuCI web inte
                 withEye
                 label={_("New password")}
                 value={formData.newRootPassword}
-                error={formErrors.newRootPassword}
+                error={errorFeedbackRoot ? formErrors.newRootPassword : ""}
                 onChange={setFormValue((value) => ({
                     newRootPassword: { $set: value },
                 }))}
+                onFocus={() => setErrorFeedbackRoot(true)}
                 disabled={disabled}
             />
             <PasswordInput
@@ -87,6 +89,7 @@ through the <a href="%s" target="_blank" rel="noopener noreferrer">LuCI web inte
                         !!formErrors.newRootPassword ||
                         !!formErrors.newRootPasswordRepeat
                     }
+                    onClick={() => setErrorFeedbackRoot(false)}
                 />
             </div>
         </form>
