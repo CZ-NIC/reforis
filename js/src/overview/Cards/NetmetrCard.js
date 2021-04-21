@@ -107,7 +107,12 @@ function NetmetrCard({ tests: { performed_tests: tests } }) {
                                                     </span>
                                                 </th>
                                                 <td className="text-right">
-                                                    <span>{lastTest.ping}</span>
+                                                    <span>
+                                                        {lastTest.ping &&
+                                                        lastTest.ping >= 0
+                                                            ? lastTest.ping
+                                                            : _("N/A")}
+                                                    </span>
                                                 </td>
                                             </tr>
                                             <tr>
