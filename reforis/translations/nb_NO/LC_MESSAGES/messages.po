@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-04-27 11:02+0200\n"
-"PO-Revision-Date: 2021-04-27 08:49+0000\n"
+"PO-Revision-Date: 2021-04-29 12:32+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/turris/"
+"reforis/nb_NO/>\n"
 "Language: nb_NO\n"
-"Language-Team: Norwegian Bokmål "
-"<https://hosted.weblate.org/projects/turris/reforis/nb_NO/>\n"
-"Plural-Forms: nplurals=2; plural=n != 1\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.7-dev\n"
 "Generated-By: Babel 2.9.0\n"
 
 #: js/src/about/About.js:23 js/src/main/pages.js:109 js/src/main/pages.js:228
@@ -776,12 +777,17 @@ msgstr ""
 "ytterligere oppsett for å tilpasse enheten til dine behov."
 
 #: js/src/guide/constants.js:92
+#, fuzzy
 msgid ""
 "Your device is now ready to be used. You can tweak the rest of the "
 "setting in the administration interface. Once you finish the guide, your "
 "Shield will try to connect to the Internet, and you will end up in the "
 "administration interface."
 msgstr ""
+"Din enhet er nå klar til bruk. Du kan justere resten av innstillingene i "
+"administrasjonsgrensesnittet. Når du har fullført veiledningen, vil ditt "
+"Sheild prøve å koble til Internett, og du vil ende opp i "
+"administrasjonsgrensesnittet."
 
 #: js/src/guide/constants.js:103
 msgid ""
@@ -1016,7 +1022,7 @@ msgstr ""
 
 #: js/src/hostname/HostnameForm.js:13
 msgid "Rewrite the hostname to set a new one."
-msgstr ""
+msgstr "Skriv inn vertsnavnet på ny for å sette et nytt."
 
 #: js/src/hostname/HostnameForm.js:33
 #, fuzzy
@@ -1217,6 +1223,8 @@ msgid ""
 "Router mode means that this device manages the LAN (acts as a router, can"
 " assign IP addresses, etc.)."
 msgstr ""
+"Rutermodus betyr at enheten håndterer lokalnettverket (fungerer som ruter, "
+"kan tildele IP-adresser, osv.)."
 
 #: js/src/lan/LANForm.js:27
 #, fuzzy
@@ -1578,10 +1586,13 @@ msgid "Test Notification"
 msgstr "Testmerknad"
 
 #: js/src/notificationsSettings/TestNotification.js:112
+#, fuzzy
 msgid ""
 "Here you can verify whether SMTP is configured correctly by sending a "
 "test notification to your email inbox."
 msgstr ""
+"Har kan du bekrefte hvorvidt SMTP er satt opp rett, ved å sende deg selv en "
+"testmerknad til din e-postinnboks."
 
 #: js/src/notificationsSettings/TestNotification.js:123
 msgid "Send test notification"
@@ -1965,9 +1976,8 @@ msgstr ""
 "godkjenne dem manuelt."
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:28
-#, fuzzy
 msgid "Update approval needed"
-msgstr "Oppgraderingsgodkjenning kreves"
+msgstr "Oppgraderingsgodkjenning påkrevd"
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:29
 msgid "You have to approve the updates, otherwise they won't be installed."
@@ -2036,13 +2046,18 @@ msgstr ""
 "aria-expanded=\"false\" aria-controls=\"plan-wrapper\">detaljer</a>"
 
 #: js/src/packageManagement/updates/UpdateApproval.js:79
+#, fuzzy
 msgid ""
 "These updates are not going to be \n"
 "                                    automatically installed before \n"
 "                                    ${toLocaleDateString(delayedTime)}."
 msgstr ""
+"Disse oppgraderingene vil ikke bli \n"
+"                                    automatisk installert før \n"
+"                                    ${toLocaleDateString(delayedTime)}."
 
 #: js/src/packageManagement/updates/UpdateApproval.js:88
+#, fuzzy
 msgid ""
 "If you don't want the updates to be installed at all, go to\n"
 "                                    <a "
@@ -2051,6 +2066,12 @@ msgid ""
 "                                    and choose the option <b>Update "
 "approval needed</b>."
 msgstr ""
+"Hvis du ikke ønsker at oppgraderingene skal installeres i det hele tatt, går "
+"du til\n"
+"                                    <a href=\"${ForisURLs.packageManagement."
+"updateSettings}\">Oppgraderingsinnstillinger</a> \n"
+"                                    og velger <b>Oppgraderingsgodkjennelse "
+"påkrevd</b>."
 
 #: js/src/packageManagement/updates/UpdateApproval.js:106
 #, python-format
@@ -2088,6 +2109,8 @@ msgid ""
 "Here you can find and approve available updates for \n"
 "                    Turris OS and other components."
 msgstr ""
+"Her kan du finne og godta tilgjengelige oppgraderinger for \n"
+"                    Turris OS og andre komponenter."
 
 #: js/src/packageManagement/updates/UpdateManager.js:91
 msgid "You're up to date."
@@ -2581,7 +2604,7 @@ msgstr "MTU"
 
 #: js/src/wan/WAN6Form.js:375
 msgid "Dynamic IPv4 handling"
-msgstr ""
+msgstr "Dynamisk IPv4-håndtering"
 
 #: js/src/wan/WAN6Form.js:419
 msgid "Tunnel ID"
@@ -3078,4 +3101,3 @@ msgstr "500 - Tjenerfeil"
 
 #~ msgid "Go to Connection Settings"
 #~ msgstr "Gå til «Tilkoblingsinnstillinger»"
-
