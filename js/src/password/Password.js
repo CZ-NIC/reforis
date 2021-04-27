@@ -43,6 +43,12 @@ export default function Password({ postCallback }) {
         getAbout();
     }, [getAbout, getPassword]);
 
+    const customization = !!(
+        getAboutResponse.data &&
+        getAboutResponse.data.customization !== undefined &&
+        getAboutResponse.data.customization === "shield"
+    );
+
     const [formState, onFormChangeHandler, resetFormData] = useForm(validator);
 
     const resetPasswordForm = useCallback(() => {
@@ -109,6 +115,7 @@ export default function Password({ postCallback }) {
             foris_current_password: formState.data.currentForisPassword,
             foris_password: formState.data.newForisPassword,
         };
+        if (customization) data.root_password = formState.data.newForisPassword;
         if (formState.data.sameForRoot)
             data.root_password = formState.data.newForisPassword;
         post({ data });
@@ -159,7 +166,7 @@ export default function Password({ postCallback }) {
                     setFormValue={onFormChangeHandler}
                     postForisPassword={postForisPassword}
                     passwordSet={getPasswordResponse.data.password_set}
-                    deviceDetails={getAboutResponse.data}
+                    customization={customization}
                 />
                 {!formState.data.sameForRoot && (
                     <RootPasswordForm
@@ -169,7 +176,7 @@ export default function Password({ postCallback }) {
                         disabled={isSending}
                         setFormValue={onFormChangeHandler}
                         postRootPassword={postRootPassword}
-                        deviceDetails={getAboutResponse.data}
+                        customization={customization}
                     />
                 )}
             </div>
@@ -180,7 +187,8 @@ export default function Password({ postCallback }) {
             <h1>{_("Password")}</h1>
             <p>
                 {_(
-                    `Here you can set passwords for Foris and optionally for advanced features (LuCI and SSH). Make sure to set a secure password which is long and uncommon.`
+                    `Here you can set password for the administration interface.
+Make sure to set a secure password that is long and unique.`
                 )}
             </p>
             {passwordComponent}

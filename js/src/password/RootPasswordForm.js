@@ -5,7 +5,7 @@
  * See /LICENSE for more information.
  */
 
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 import {
@@ -31,7 +31,7 @@ RootPasswordForm.propTypes = {
     }),
     setFormValue: PropTypes.func.isRequired,
     postRootPassword: PropTypes.func.isRequired,
-    deviceDetails: PropTypes.object.isRequired,
+    customization: PropTypes.bool.isRequired,
     disabled: PropTypes.bool,
 };
 
@@ -42,13 +42,10 @@ export default function RootPasswordForm({
     submitButtonState,
     postRootPassword,
     disabled,
-    deviceDetails,
+    customization,
 }) {
-    if (
-        Object.hasOwnProperty.call(deviceDetails, "customization") &&
-        deviceDetails.customization === "shield"
-    )
-        return null;
+    const [errorFeedbackRoot, setErrorFeedbackRoot] = useState(false);
+    if (customization) return null;
     return (
         <form onSubmit={postRootPassword}>
             <h3>{_("Advanced Administration Password")}</h3>
@@ -68,10 +65,11 @@ through the <a href="%s" target="_blank" rel="noopener noreferrer">LuCI web inte
                 withEye
                 label={_("New password")}
                 value={formData.newRootPassword}
-                error={formErrors.newRootPassword}
+                error={errorFeedbackRoot ? formErrors.newRootPassword : ""}
                 onChange={setFormValue((value) => ({
                     newRootPassword: { $set: value },
                 }))}
+                onFocus={() => setErrorFeedbackRoot(true)}
                 disabled={disabled}
             />
             <PasswordInput
@@ -91,6 +89,7 @@ through the <a href="%s" target="_blank" rel="noopener noreferrer">LuCI web inte
                         !!formErrors.newRootPassword ||
                         !!formErrors.newRootPasswordRepeat
                     }
+                    onClick={() => setErrorFeedbackRoot(false)}
                 />
             </div>
         </form>

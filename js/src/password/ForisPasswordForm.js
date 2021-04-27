@@ -5,7 +5,7 @@
  * See /LICENSE for more information.
  */
 
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 import {
@@ -34,7 +34,7 @@ ForisPasswordForm.propTypes = {
     setFormValue: PropTypes.func.isRequired,
     postForisPassword: PropTypes.func.isRequired,
     passwordSet: PropTypes.bool.isRequired,
-    deviceDetails: PropTypes.object.isRequired,
+    customization: PropTypes.bool.isRequired,
     disabled: PropTypes.bool,
 };
 
@@ -46,8 +46,10 @@ export default function ForisPasswordForm({
     postForisPassword,
     disabled,
     passwordSet,
-    deviceDetails,
+    customization,
 }) {
+    const [errorFeedbackNew, setErrorFeedbackNew] = useState(false);
+    const [errorFeedbackConf, setErrorFeedbackConf] = useState(false);
     return (
         <>
             <p>{_("Set your password for this administration interface.")}</p>
@@ -67,10 +69,11 @@ export default function ForisPasswordForm({
                     withEye
                     label={_("New password")}
                     value={formData.newForisPassword}
-                    error={formErrors.newForisPassword}
+                    error={errorFeedbackNew ? formErrors.newForisPassword : ""}
                     onChange={setFormValue((value) => ({
                         newForisPassword: { $set: value },
                     }))}
+                    onFocus={() => setErrorFeedbackNew(true)}
                     disabled={disabled}
                 />
 
@@ -78,19 +81,19 @@ export default function ForisPasswordForm({
                     withEye
                     label={_("Confirm new password")}
                     value={formData.newForisPasswordRepeat}
-                    error={formErrors.newForisPasswordRepeat}
+                    error={
+                        errorFeedbackConf
+                            ? formErrors.newForisPasswordRepeat
+                            : ""
+                    }
                     onChange={setFormValue((value) => ({
                         newForisPasswordRepeat: { $set: value },
                     }))}
+                    onFocus={() => setErrorFeedbackConf(true)}
                     disabled={disabled}
                 />
 
-                {!(
-                    Object.hasOwnProperty.call(
-                        deviceDetails,
-                        "customization"
-                    ) && deviceDetails.customization === "shield"
-                ) && (
+                {!customization && (
                     <CheckBox
                         label={_(
                             "Use the same password for advanced administration (root)"
@@ -115,6 +118,7 @@ export default function ForisPasswordForm({
                             !!formErrors.newForisPassword ||
                             !!formErrors.newForisPasswordRepeat
                         }
+                        onClick={() => setErrorFeedbackNew(false)}
                     />
                 </div>
             </form>
