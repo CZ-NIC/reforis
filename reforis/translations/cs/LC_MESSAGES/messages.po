@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-04-09 14:51+0200\n"
+"POT-Creation-Date: 2021-04-27 11:02+0200\n"
 "PO-Revision-Date: 2021-03-26 22:29+0000\n"
 "Last-Translator: Filip Hron <filip.hron@gmail.com>\n"
 "Language: cs\n"
@@ -331,7 +331,7 @@ msgstr ""
 "o závažný bezpečnostní problém na jeho straně.</p>\n"
 "            "
 
-#: js/src/dns/DNS.js:62 js/src/overview/Overview.js:63 js/src/wan/WAN.js:50
+#: js/src/dns/DNS.js:62 js/src/overview/Overview.js:68 js/src/wan/WAN.js:50
 msgid "Connection Test"
 msgstr "Test připojení"
 
@@ -589,12 +589,12 @@ msgid "Enable QoS"
 msgstr "Zapnout QoS"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:159
-#: js/src/overview/Cards/NetmetrCard.js:65
+#: js/src/overview/Cards/NetmetrCard.js:67
 msgid "Download"
 msgstr "Stahování"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:172
-#: js/src/overview/Cards/NetmetrCard.js:81
+#: js/src/overview/Cards/NetmetrCard.js:83
 msgid "Upload"
 msgstr "Odesílání"
 
@@ -828,7 +828,7 @@ msgstr "Nelze označit průvodce jako dokončený."
 
 #: js/src/guide/steps.js:20 js/src/main/pages.js:76 js/src/main/pages.js:167
 #: js/src/notificationsSettings/SMTPCustomForm.js:114
-#: js/src/password/Password.js:180 reforis/templates/login.html:29
+#: js/src/password/Password.js:187 reforis/templates/login.html:29
 msgid "Password"
 msgstr "Heslo"
 
@@ -938,7 +938,7 @@ msgstr ""
 msgid "Local Server"
 msgstr "Místní server"
 
-#: js/src/guide/GuidePages/WorkflowSelect.js:38 js/src/lan/LANForm.js:29
+#: js/src/guide/GuidePages/WorkflowSelect.js:38 js/src/lan/LANForm.js:39
 msgid "Router"
 msgstr "Router"
 
@@ -1131,6 +1131,7 @@ msgid "Link speed"
 msgstr "Rychlost linky"
 
 #: js/src/interfaces/SelectedInterface.js:112
+#: js/src/overview/Cards/NetmetrCard.js:114
 msgid "N/A"
 msgstr "N/A"
 
@@ -1172,15 +1173,18 @@ msgstr ""
 "ve webovém prohlížeči <b>stránku znovu načíst</b>.\n"
 "            "
 
-#: js/src/lan/LANForm.js:16
+#: js/src/lan/LANForm.js:24
 msgid ""
-"\n"
 "Router mode means that this device manages the LAN (acts as a router, can"
-" assign IP addresses, ...).\n"
-"Computer mode means that this device acts as a client in this network. It"
-" acts in a similar way as WAN, but\n"
-"it has opened ports for configuration interface and other services.\n"
-"        "
+" assign IP addresses, etc.)."
+msgstr ""
+
+#: js/src/lan/LANForm.js:27
+#, fuzzy
+msgid ""
+"Computer mode means that this device acts as a client in this network.\n"
+"It acts similarly to WAN, but it has opened ports for configuration "
+"interfaces and other services."
 msgstr ""
 "\n"
 "Režim Router znamená, že toto zařízení spravuje LAN (slouží jako "
@@ -1190,19 +1194,19 @@ msgstr ""
 "ale má otevřené porty pro své rozhraní pro nastavování a ostatní služby.\n"
 "        "
 
-#: js/src/lan/LANForm.js:30
+#: js/src/lan/LANForm.js:40
 msgid "Computer"
 msgstr "Počítač"
 
-#: js/src/lan/LANForm.js:79
+#: js/src/lan/LANForm.js:52
 msgid "LAN Settings"
 msgstr "Nastavení místní sítě"
 
-#: js/src/lan/LANForm.js:81
+#: js/src/lan/LANForm.js:117
 msgid "LAN mode"
 msgstr "režim místní sítě"
 
-#: js/src/lan/LANForm.js:90
+#: js/src/lan/LANForm.js:133
 msgid "Redirect to 192.168.1.1"
 msgstr "Přesměrovat na 192.168.1.1"
 
@@ -1228,7 +1232,7 @@ msgid "IPv4 protocol"
 msgstr "Protokol IPv4"
 
 #: js/src/main/pages.js:41 js/src/main/pages.js:117
-#: js/src/overview/Overview.js:51
+#: js/src/overview/Overview.js:55
 msgid "Overview"
 msgstr "Přehled"
 
@@ -1305,7 +1309,7 @@ msgid "Reboot Required"
 msgstr "Vyžadován restart"
 
 #: js/src/main/TopBar/rebootDropdown/RebootDropdown.js:63
-#: js/src/overview/Cards/NetmetrCard.js:119
+#: js/src/overview/Cards/NetmetrCard.js:126
 msgid "Details"
 msgstr "Podrobnosti"
 
@@ -1602,10 +1606,6 @@ msgstr "Nejvyšší možný port je 65535."
 msgid "Minimum port is 1."
 msgstr "Nejnižší možný port je 1."
 
-#: js/src/overview/Overview.js:69
-msgid "Go to Connection Settings"
-msgstr "Přejít na Nastavení připojení"
-
 #: js/src/overview/Cards/AutomaticUpdatesCard.js:44
 msgid "Automatic Updates"
 msgstr "Automatické aktualizace"
@@ -1630,36 +1630,36 @@ msgstr "Sběr dat"
 msgid "Dynamic Firewall"
 msgstr "Dynamický Firewall"
 
-#: js/src/overview/Cards/NetmetrCard.js:47
+#: js/src/overview/Cards/NetmetrCard.js:48
 msgid "NetMetr"
 msgstr "NetMetr"
 
-#: js/src/overview/Cards/NetmetrCard.js:53
+#: js/src/overview/Cards/NetmetrCard.js:54
 msgid "Go to NetMetr"
 msgstr "Přejít na NetMetr"
 
-#: js/src/overview/Cards/NetmetrCard.js:68
-#: js/src/overview/Cards/NetmetrCard.js:84
+#: js/src/overview/Cards/NetmetrCard.js:70
+#: js/src/overview/Cards/NetmetrCard.js:86
 msgid "Megabit per second"
 msgstr "Megabity za sekundu"
 
-#: js/src/overview/Cards/NetmetrCard.js:99
+#: js/src/overview/Cards/NetmetrCard.js:101
 msgid "Ping"
 msgstr "Ping"
 
-#: js/src/overview/Cards/NetmetrCard.js:102
+#: js/src/overview/Cards/NetmetrCard.js:104
 msgid "Millisecond"
 msgstr "Milisekundy"
 
-#: js/src/overview/Cards/NetmetrCard.js:112
+#: js/src/overview/Cards/NetmetrCard.js:119
 msgid "Link"
 msgstr "Odkaz"
 
-#: js/src/overview/Cards/NetmetrCard.js:131
+#: js/src/overview/Cards/NetmetrCard.js:139
 msgid "Performed"
 msgstr "Provedeno"
 
-#: js/src/overview/Cards/NetmetrCard.js:139
+#: js/src/overview/Cards/NetmetrCard.js:147
 msgid "No tests have been performed lately."
 msgstr "V poslední době nebyly provedeny žádné testy."
 
@@ -1671,7 +1671,7 @@ msgstr "Klienti OpenVPN"
 msgid "Go to OpenVPN Client Settings"
 msgstr "Přejít na Nastavení klientů OpenVPN"
 
-#: js/src/overview/Cards/OpenVPNClientsCard.js:89
+#: js/src/overview/Cards/OpenVPNClientsCard.js:91
 msgid "There are no clients added yet."
 msgstr "Zatím nejsou přidáni žádní klienti."
 
@@ -2088,29 +2088,29 @@ msgstr ""
 "href=\"${ForisURLs.packageManagement.updateSettings}\">automatické "
 "aktualizace</a>."
 
-#: js/src/password/ForisPasswordForm.js:53
+#: js/src/password/ForisPasswordForm.js:55
 msgid "Set your password for this administration interface."
 msgstr "Nastavte si své heslo do tohoto rozhraní pro správu."
 
-#: js/src/password/ForisPasswordForm.js:58
+#: js/src/password/ForisPasswordForm.js:60
 msgid "Current password"
 msgstr "Stávající heslo"
 
-#: js/src/password/ForisPasswordForm.js:68
-#: js/src/password/RootPasswordForm.js:69
+#: js/src/password/ForisPasswordForm.js:70
+#: js/src/password/RootPasswordForm.js:66
 msgid "New password"
 msgstr "Nové heslo"
 
-#: js/src/password/ForisPasswordForm.js:79
-#: js/src/password/RootPasswordForm.js:79
+#: js/src/password/ForisPasswordForm.js:82
+#: js/src/password/RootPasswordForm.js:77
 msgid "Confirm new password"
 msgstr "Potvrdit nové heslo"
 
-#: js/src/password/ForisPasswordForm.js:95
+#: js/src/password/ForisPasswordForm.js:98
 msgid "Use the same password for advanced administration (root)"
 msgstr "Použít stejné heslo pro pokročilou zprávu (účet root)"
 
-#: js/src/password/ForisPasswordForm.js:98
+#: js/src/password/ForisPasswordForm.js:101
 msgid ""
 "Same password would be used for accessing this administration interface, "
 "for root user in LuCI web interface and for SSH login. Use a strong "
@@ -2124,7 +2124,7 @@ msgstr ""
 "správu zde, budete mít možnost učinit tak později. Do té doby bude účet "
 "root zablokován.)"
 
-#: js/src/password/Password.js:79
+#: js/src/password/Password.js:85
 msgid ""
 "The password you've entered has not been saved. It has been compromised "
 "and appears ${\n"
@@ -2140,45 +2140,45 @@ msgstr ""
 "                            forisPassword.list || rootPassword.list\n"
 "                        }."
 
-#: js/src/password/Password.js:90
+#: js/src/password/Password.js:96
 msgid "Password changed successfully."
 msgstr "Heslo úspěšně změněno."
 
-#: js/src/password/Password.js:153
+#: js/src/password/Password.js:160
 msgid "Password Settings"
 msgstr "Nastavení hesla"
 
-#: js/src/password/Password.js:182
+#: js/src/password/Password.js:189
+#, fuzzy
 msgid ""
-"Here you can set passwords for Foris and optionally for advanced features"
-" (LuCI and SSH). Make sure to set a secure password which is long and "
-"uncommon."
+"Here you can set password for the administration interface.\n"
+"Make sure to set a secure password that is long and unique."
 msgstr ""
 "Zde můžete nastavit hesla pro Foris a volitelně pro pokročilé funkce "
 "(LuCI a SSH). Ujistěte se, že jste nastavili bezpečné heslo, které je "
 "dlouhé a neobvyklé."
 
-#: js/src/password/Password.js:199 js/src/password/Password.js:203
+#: js/src/password/Password.js:207 js/src/password/Password.js:211
 msgid "The password confirmation does not match."
 msgstr "Potvrzení hesla nesouhlasí s heslem."
 
-#: js/src/password/Password.js:218
+#: js/src/password/Password.js:226
 msgid "Password can't be empty."
 msgstr "Heslo nemůže být prázdné."
 
-#: js/src/password/Password.js:220
+#: js/src/password/Password.js:228
 msgid "Password should have min 6 symbols."
 msgstr "Heslo by mělo být alespoň 6 znaků dlouhé."
 
-#: js/src/password/Password.js:223
+#: js/src/password/Password.js:231
 msgid "Password should have max 128 symbols."
 msgstr "Heslo by mělo být nejvýše 128 znaků dlouhé."
 
-#: js/src/password/RootPasswordForm.js:54
+#: js/src/password/RootPasswordForm.js:51
 msgid "Advanced Administration Password"
 msgstr "Heslo pro pokročilou správu"
 
-#: js/src/password/RootPasswordForm.js:58
+#: js/src/password/RootPasswordForm.js:55
 #, python-format
 msgid ""
 "In order to access the advanced configuration options which are not "
@@ -3204,4 +3204,7 @@ msgstr "500 - Server error"
 
 #~ msgid "WAN IPv4"
 #~ msgstr "IPv4 adresa WAN"
+
+#~ msgid "Go to Connection Settings"
+#~ msgstr "Přejít na Nastavení připojení"
 
