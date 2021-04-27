@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-04-09 14:51+0200\n"
+"POT-Creation-Date: 2021-04-27 11:02+0200\n"
 "PO-Revision-Date: 2019-02-19 13:34+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: da\n"
@@ -292,7 +292,7 @@ msgid ""
 "            "
 msgstr ""
 
-#: js/src/dns/DNS.js:62 js/src/overview/Overview.js:63 js/src/wan/WAN.js:50
+#: js/src/dns/DNS.js:62 js/src/overview/Overview.js:68 js/src/wan/WAN.js:50
 msgid "Connection Test"
 msgstr ""
 
@@ -524,12 +524,12 @@ msgid "Enable QoS"
 msgstr ""
 
 #: js/src/guestNetwork/GuestNetworkForm.js:159
-#: js/src/overview/Cards/NetmetrCard.js:65
+#: js/src/overview/Cards/NetmetrCard.js:67
 msgid "Download"
 msgstr ""
 
 #: js/src/guestNetwork/GuestNetworkForm.js:172
-#: js/src/overview/Cards/NetmetrCard.js:81
+#: js/src/overview/Cards/NetmetrCard.js:83
 msgid "Upload"
 msgstr ""
 
@@ -713,7 +713,7 @@ msgstr ""
 
 #: js/src/guide/steps.js:20 js/src/main/pages.js:76 js/src/main/pages.js:167
 #: js/src/notificationsSettings/SMTPCustomForm.js:114
-#: js/src/password/Password.js:180 reforis/templates/login.html:29
+#: js/src/password/Password.js:187 reforis/templates/login.html:29
 msgid "Password"
 msgstr ""
 
@@ -807,7 +807,7 @@ msgstr ""
 msgid "Local Server"
 msgstr ""
 
-#: js/src/guide/GuidePages/WorkflowSelect.js:38 js/src/lan/LANForm.js:29
+#: js/src/guide/GuidePages/WorkflowSelect.js:38 js/src/lan/LANForm.js:39
 msgid "Router"
 msgstr ""
 
@@ -965,6 +965,7 @@ msgid "Link speed"
 msgstr ""
 
 #: js/src/interfaces/SelectedInterface.js:112
+#: js/src/overview/Cards/NetmetrCard.js:114
 msgid "N/A"
 msgstr ""
 
@@ -991,30 +992,32 @@ msgid ""
 "            "
 msgstr ""
 
-#: js/src/lan/LANForm.js:16
+#: js/src/lan/LANForm.js:24
 msgid ""
-"\n"
 "Router mode means that this device manages the LAN (acts as a router, can"
-" assign IP addresses, ...).\n"
-"Computer mode means that this device acts as a client in this network. It"
-" acts in a similar way as WAN, but\n"
-"it has opened ports for configuration interface and other services.\n"
-"        "
+" assign IP addresses, etc.)."
 msgstr ""
 
-#: js/src/lan/LANForm.js:30
+#: js/src/lan/LANForm.js:27
+msgid ""
+"Computer mode means that this device acts as a client in this network.\n"
+"It acts similarly to WAN, but it has opened ports for configuration "
+"interfaces and other services."
+msgstr ""
+
+#: js/src/lan/LANForm.js:40
 msgid "Computer"
 msgstr ""
 
-#: js/src/lan/LANForm.js:79
+#: js/src/lan/LANForm.js:52
 msgid "LAN Settings"
 msgstr ""
 
-#: js/src/lan/LANForm.js:81
+#: js/src/lan/LANForm.js:117
 msgid "LAN mode"
 msgstr ""
 
-#: js/src/lan/LANForm.js:90
+#: js/src/lan/LANForm.js:133
 msgid "Redirect to 192.168.1.1"
 msgstr ""
 
@@ -1040,7 +1043,7 @@ msgid "IPv4 protocol"
 msgstr ""
 
 #: js/src/main/pages.js:41 js/src/main/pages.js:117
-#: js/src/overview/Overview.js:51
+#: js/src/overview/Overview.js:55
 msgid "Overview"
 msgstr ""
 
@@ -1117,7 +1120,7 @@ msgid "Reboot Required"
 msgstr ""
 
 #: js/src/main/TopBar/rebootDropdown/RebootDropdown.js:63
-#: js/src/overview/Cards/NetmetrCard.js:119
+#: js/src/overview/Cards/NetmetrCard.js:126
 msgid "Details"
 msgstr ""
 
@@ -1369,10 +1372,6 @@ msgstr ""
 msgid "Minimum port is 1."
 msgstr ""
 
-#: js/src/overview/Overview.js:69
-msgid "Go to Connection Settings"
-msgstr ""
-
 #: js/src/overview/Cards/AutomaticUpdatesCard.js:44
 msgid "Automatic Updates"
 msgstr ""
@@ -1397,36 +1396,36 @@ msgstr ""
 msgid "Dynamic Firewall"
 msgstr ""
 
-#: js/src/overview/Cards/NetmetrCard.js:47
+#: js/src/overview/Cards/NetmetrCard.js:48
 msgid "NetMetr"
 msgstr ""
 
-#: js/src/overview/Cards/NetmetrCard.js:53
+#: js/src/overview/Cards/NetmetrCard.js:54
 msgid "Go to NetMetr"
 msgstr ""
 
-#: js/src/overview/Cards/NetmetrCard.js:68
-#: js/src/overview/Cards/NetmetrCard.js:84
+#: js/src/overview/Cards/NetmetrCard.js:70
+#: js/src/overview/Cards/NetmetrCard.js:86
 msgid "Megabit per second"
 msgstr ""
 
-#: js/src/overview/Cards/NetmetrCard.js:99
+#: js/src/overview/Cards/NetmetrCard.js:101
 msgid "Ping"
 msgstr ""
 
-#: js/src/overview/Cards/NetmetrCard.js:102
+#: js/src/overview/Cards/NetmetrCard.js:104
 msgid "Millisecond"
 msgstr ""
 
-#: js/src/overview/Cards/NetmetrCard.js:112
+#: js/src/overview/Cards/NetmetrCard.js:119
 msgid "Link"
 msgstr ""
 
-#: js/src/overview/Cards/NetmetrCard.js:131
+#: js/src/overview/Cards/NetmetrCard.js:139
 msgid "Performed"
 msgstr ""
 
-#: js/src/overview/Cards/NetmetrCard.js:139
+#: js/src/overview/Cards/NetmetrCard.js:147
 msgid "No tests have been performed lately."
 msgstr ""
 
@@ -1438,7 +1437,7 @@ msgstr ""
 msgid "Go to OpenVPN Client Settings"
 msgstr ""
 
-#: js/src/overview/Cards/OpenVPNClientsCard.js:89
+#: js/src/overview/Cards/OpenVPNClientsCard.js:91
 msgid "There are no clients added yet."
 msgstr ""
 
@@ -1754,29 +1753,29 @@ msgid ""
 "updates</a> to manage packages and languages."
 msgstr ""
 
-#: js/src/password/ForisPasswordForm.js:53
+#: js/src/password/ForisPasswordForm.js:55
 msgid "Set your password for this administration interface."
 msgstr ""
 
-#: js/src/password/ForisPasswordForm.js:58
+#: js/src/password/ForisPasswordForm.js:60
 msgid "Current password"
 msgstr ""
 
-#: js/src/password/ForisPasswordForm.js:68
-#: js/src/password/RootPasswordForm.js:69
+#: js/src/password/ForisPasswordForm.js:70
+#: js/src/password/RootPasswordForm.js:66
 msgid "New password"
 msgstr ""
 
-#: js/src/password/ForisPasswordForm.js:79
-#: js/src/password/RootPasswordForm.js:79
+#: js/src/password/ForisPasswordForm.js:82
+#: js/src/password/RootPasswordForm.js:77
 msgid "Confirm new password"
 msgstr ""
 
-#: js/src/password/ForisPasswordForm.js:95
+#: js/src/password/ForisPasswordForm.js:98
 msgid "Use the same password for advanced administration (root)"
 msgstr ""
 
-#: js/src/password/ForisPasswordForm.js:98
+#: js/src/password/ForisPasswordForm.js:101
 msgid ""
 "Same password would be used for accessing this administration interface, "
 "for root user in LuCI web interface and for SSH login. Use a strong "
@@ -1785,7 +1784,7 @@ msgid ""
 "the root account will be blocked.)"
 msgstr ""
 
-#: js/src/password/Password.js:79
+#: js/src/password/Password.js:85
 msgid ""
 "The password you've entered has not been saved. It has been compromised "
 "and appears ${\n"
@@ -1796,42 +1795,41 @@ msgid ""
 "password."
 msgstr ""
 
-#: js/src/password/Password.js:90
+#: js/src/password/Password.js:96
 msgid "Password changed successfully."
 msgstr ""
 
-#: js/src/password/Password.js:153
+#: js/src/password/Password.js:160
 msgid "Password Settings"
 msgstr ""
 
-#: js/src/password/Password.js:182
+#: js/src/password/Password.js:189
 msgid ""
-"Here you can set passwords for Foris and optionally for advanced features"
-" (LuCI and SSH). Make sure to set a secure password which is long and "
-"uncommon."
+"Here you can set password for the administration interface.\n"
+"Make sure to set a secure password that is long and unique."
 msgstr ""
 
-#: js/src/password/Password.js:199 js/src/password/Password.js:203
+#: js/src/password/Password.js:207 js/src/password/Password.js:211
 msgid "The password confirmation does not match."
 msgstr ""
 
-#: js/src/password/Password.js:218
+#: js/src/password/Password.js:226
 msgid "Password can't be empty."
 msgstr ""
 
-#: js/src/password/Password.js:220
+#: js/src/password/Password.js:228
 msgid "Password should have min 6 symbols."
 msgstr ""
 
-#: js/src/password/Password.js:223
+#: js/src/password/Password.js:231
 msgid "Password should have max 128 symbols."
 msgstr ""
 
-#: js/src/password/RootPasswordForm.js:54
+#: js/src/password/RootPasswordForm.js:51
 msgid "Advanced Administration Password"
 msgstr ""
 
-#: js/src/password/RootPasswordForm.js:58
+#: js/src/password/RootPasswordForm.js:55
 #, python-format
 msgid ""
 "In order to access the advanced configuration options which are not "
@@ -2674,5 +2672,29 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Testing message was sent, please check your inbox."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\n"
+#~ "Router mode means that this device "
+#~ "manages the LAN (acts as a router,"
+#~ " can assign IP addresses, ...).\n"
+#~ "Computer mode means that this device "
+#~ "acts as a client in this network."
+#~ " It acts in a similar way as"
+#~ " WAN, but\n"
+#~ "it has opened ports for configuration interface and other services.\n"
+#~ "        "
+#~ msgstr ""
+
+#~ msgid "Go to Connection Settings"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Here you can set passwords for "
+#~ "Foris and optionally for advanced "
+#~ "features (LuCI and SSH). Make sure "
+#~ "to set a secure password which is"
+#~ " long and uncommon."
 #~ msgstr ""
 

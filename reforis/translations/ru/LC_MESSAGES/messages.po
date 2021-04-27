@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-04-09 14:51+0200\n"
-"PO-Revision-Date: 2021-03-12 06:02+0000\n"
-"Last-Translator: Artem <KovalevArtem.ru@gmail.com>\n"
+"POT-Creation-Date: 2021-04-27 11:02+0200\n"
+"PO-Revision-Date: 2021-04-27 08:42+0000\n"
+"Last-Translator: Алексей Леньшин <alenshin@gmail.com>\n"
 "Language: ru\n"
 "Language-Team: Russian "
 "<https://hosted.weblate.org/projects/turris/reforis/ru/>\n"
@@ -327,7 +327,7 @@ msgstr ""
 " поскольку это серьезная ошибка с их стороны. </p>\n"
 "            "
 
-#: js/src/dns/DNS.js:62 js/src/overview/Overview.js:63 js/src/wan/WAN.js:50
+#: js/src/dns/DNS.js:62 js/src/overview/Overview.js:68 js/src/wan/WAN.js:50
 msgid "Connection Test"
 msgstr "Проверка соединения"
 
@@ -443,7 +443,7 @@ msgstr "SHA-256 в кодировке Base 64."
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:24
 msgid "\"No TLS\" means that the regular UDP-base DNS protocol is used."
-msgstr ""
+msgstr "«Нет TLS» означает, что используется обычный протокол DNS на основе UDP."
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:49
 #: js/src/packageManagement/updates/UpdateApproval.js:152
@@ -535,11 +535,11 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"Гостевая сеть используется для <a href=\"$ndomForisURLs.wifi "
-"automotive\"> гостевого Wi-Fi </a>. Он отделен от вашей обычной локальной"
-" сети. Устройствам, подключенным к этой сети, разрешен доступ к "
-"Интернету, но не разрешен доступ к интерфейсу конфигурации этого "
-"устройства и устройств в локальной сети.\n"
+"Гостевая сеть используется для <a href=\"${ForisURLs.wifi}\">гостевого "
+"Wi-Fi </a>. Он отделен от вашей обычной локальной сети. Устройствам, "
+"подключенным к этой сети, разрешен доступ к Интернету, но не разрешен "
+"доступ к интерфейсу конфигурации этого устройства и устройств в локальной"
+" сети.\n"
 "        "
 
 #: js/src/guestNetwork/GuestNetworkForm.js:18
@@ -587,12 +587,12 @@ msgid "Enable QoS"
 msgstr "Включить QoS"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:159
-#: js/src/overview/Cards/NetmetrCard.js:65
+#: js/src/overview/Cards/NetmetrCard.js:67
 msgid "Download"
 msgstr "Скачать"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:172
-#: js/src/overview/Cards/NetmetrCard.js:81
+#: js/src/overview/Cards/NetmetrCard.js:83
 msgid "Upload"
 msgstr "Загрузить"
 
@@ -748,6 +748,10 @@ msgid ""
 "Shield will try to connect to the Internet, and you will end up in the "
 "administration interface."
 msgstr ""
+"Теперь ваше устройство готово к использованию. Вы можете настроить "
+"остальные параметры в интерфейсе администрирования. Как только вы "
+"закончите руководство, ваш Shield попытается подключиться к Интернету, и "
+"вы окажетесь в интерфейсе администрирования."
 
 #: js/src/guide/constants.js:103
 msgid ""
@@ -827,7 +831,7 @@ msgstr "Начальная настройка не завершена."
 
 #: js/src/guide/steps.js:20 js/src/main/pages.js:76 js/src/main/pages.js:167
 #: js/src/notificationsSettings/SMTPCustomForm.js:114
-#: js/src/password/Password.js:180 reforis/templates/login.html:29
+#: js/src/password/Password.js:187 reforis/templates/login.html:29
 msgid "Password"
 msgstr "Пароль"
 
@@ -938,7 +942,7 @@ msgstr ""
 msgid "Local Server"
 msgstr "Локальный сервер"
 
-#: js/src/guide/GuidePages/WorkflowSelect.js:38 js/src/lan/LANForm.js:29
+#: js/src/guide/GuidePages/WorkflowSelect.js:38 js/src/lan/LANForm.js:39
 msgid "Router"
 msgstr "Маршрутизатор"
 
@@ -1128,8 +1132,9 @@ msgid "Link speed"
 msgstr "Скорость соединения"
 
 #: js/src/interfaces/SelectedInterface.js:112
+#: js/src/overview/Cards/NetmetrCard.js:114
 msgid "N/A"
-msgstr "Н/Д"
+msgstr "Не доступно"
 
 #: js/src/interfaces/constants.js:12
 msgid "Unassigned"
@@ -1166,37 +1171,40 @@ msgstr ""
 "<b>обновить страницу</b> в браузере.\n"
 "            "
 
-#: js/src/lan/LANForm.js:16
+#: js/src/lan/LANForm.js:24
 msgid ""
-"\n"
 "Router mode means that this device manages the LAN (acts as a router, can"
-" assign IP addresses, ...).\n"
-"Computer mode means that this device acts as a client in this network. It"
-" acts in a similar way as WAN, but\n"
-"it has opened ports for configuration interface and other services.\n"
-"        "
+" assign IP addresses, etc.)."
+msgstr ""
+
+#: js/src/lan/LANForm.js:27
+#, fuzzy
+msgid ""
+"Computer mode means that this device acts as a client in this network.\n"
+"It acts similarly to WAN, but it has opened ports for configuration "
+"interfaces and other services."
 msgstr ""
 "\n"
 "Режим маршрутизатора означает, что это устройство управляет локальной "
-"сетью (действует как маршрутизатор, может назначать IP-адреса и т. Д.). "
+"сетью (действует как маршрутизатор, может назначать IP-адреса и т.д.). "
 "Режим компьютера означает, что это устройство действует как клиент в этой"
 " сети. Он действует аналогично WAN, но имеет открытые порты для "
 "интерфейса конфигурации и других служб.\n"
 "        "
 
-#: js/src/lan/LANForm.js:30
+#: js/src/lan/LANForm.js:40
 msgid "Computer"
 msgstr "Компьютер"
 
-#: js/src/lan/LANForm.js:79
+#: js/src/lan/LANForm.js:52
 msgid "LAN Settings"
 msgstr "Настройки локальной сети"
 
-#: js/src/lan/LANForm.js:81
+#: js/src/lan/LANForm.js:117
 msgid "LAN mode"
 msgstr "Режим локальной сети"
 
-#: js/src/lan/LANForm.js:90
+#: js/src/lan/LANForm.js:133
 msgid "Redirect to 192.168.1.1"
 msgstr "Перенаправление на 192.168.1.1"
 
@@ -1222,7 +1230,7 @@ msgid "IPv4 protocol"
 msgstr "Протокол IPv4"
 
 #: js/src/main/pages.js:41 js/src/main/pages.js:117
-#: js/src/overview/Overview.js:51
+#: js/src/overview/Overview.js:55
 msgid "Overview"
 msgstr "Обзор"
 
@@ -1299,7 +1307,7 @@ msgid "Reboot Required"
 msgstr "Требуется Перезагрузка"
 
 #: js/src/main/TopBar/rebootDropdown/RebootDropdown.js:63
-#: js/src/overview/Cards/NetmetrCard.js:119
+#: js/src/overview/Cards/NetmetrCard.js:126
 msgid "Details"
 msgstr "Подробности"
 
@@ -1594,10 +1602,6 @@ msgstr "Максимальный порт 65535."
 msgid "Minimum port is 1."
 msgstr "Минимальный порт 1."
 
-#: js/src/overview/Overview.js:69
-msgid "Go to Connection Settings"
-msgstr "Зайдите в настройки подключения"
-
 #: js/src/overview/Cards/AutomaticUpdatesCard.js:44
 msgid "Automatic Updates"
 msgstr "Автоматические обновления"
@@ -1622,36 +1626,36 @@ msgstr "Сбор данных"
 msgid "Dynamic Firewall"
 msgstr "Динамический межсетевой экран"
 
-#: js/src/overview/Cards/NetmetrCard.js:47
+#: js/src/overview/Cards/NetmetrCard.js:48
 msgid "NetMetr"
 msgstr "NetMetr"
 
-#: js/src/overview/Cards/NetmetrCard.js:53
+#: js/src/overview/Cards/NetmetrCard.js:54
 msgid "Go to NetMetr"
 msgstr "Перейти в NetMetr"
 
-#: js/src/overview/Cards/NetmetrCard.js:68
-#: js/src/overview/Cards/NetmetrCard.js:84
+#: js/src/overview/Cards/NetmetrCard.js:70
+#: js/src/overview/Cards/NetmetrCard.js:86
 msgid "Megabit per second"
 msgstr "Мегабит в секунду"
 
-#: js/src/overview/Cards/NetmetrCard.js:99
+#: js/src/overview/Cards/NetmetrCard.js:101
 msgid "Ping"
 msgstr "Пинг"
 
-#: js/src/overview/Cards/NetmetrCard.js:102
+#: js/src/overview/Cards/NetmetrCard.js:104
 msgid "Millisecond"
 msgstr "Миллисекунд"
 
-#: js/src/overview/Cards/NetmetrCard.js:112
+#: js/src/overview/Cards/NetmetrCard.js:119
 msgid "Link"
 msgstr "Ссылка"
 
-#: js/src/overview/Cards/NetmetrCard.js:131
+#: js/src/overview/Cards/NetmetrCard.js:139
 msgid "Performed"
 msgstr "Выполнено"
 
-#: js/src/overview/Cards/NetmetrCard.js:139
+#: js/src/overview/Cards/NetmetrCard.js:147
 msgid "No tests have been performed lately."
 msgstr "В последнее время никаких тестов не проводилось."
 
@@ -1663,7 +1667,7 @@ msgstr "Клиенты OpenVPN"
 msgid "Go to OpenVPN Client Settings"
 msgstr "Перейдите в настройки клиента OpenVPN"
 
-#: js/src/overview/Cards/OpenVPNClientsCard.js:89
+#: js/src/overview/Cards/OpenVPNClientsCard.js:91
 msgid "There are no clients added yet."
 msgstr "Еще нет добавленных клиентов."
 
@@ -2055,29 +2059,29 @@ msgstr ""
 "href=\"$‹ForisURLs.packageManagement.updateSettings‹\">автоматические "
 "обновления</a> для управления пакетами и языками."
 
-#: js/src/password/ForisPasswordForm.js:53
+#: js/src/password/ForisPasswordForm.js:55
 msgid "Set your password for this administration interface."
 msgstr "Установите свой пароль для этого интерфейса администрирования."
 
-#: js/src/password/ForisPasswordForm.js:58
+#: js/src/password/ForisPasswordForm.js:60
 msgid "Current password"
 msgstr "Текущий пароль"
 
-#: js/src/password/ForisPasswordForm.js:68
-#: js/src/password/RootPasswordForm.js:69
+#: js/src/password/ForisPasswordForm.js:70
+#: js/src/password/RootPasswordForm.js:66
 msgid "New password"
 msgstr "Новый пароль"
 
-#: js/src/password/ForisPasswordForm.js:79
-#: js/src/password/RootPasswordForm.js:79
+#: js/src/password/ForisPasswordForm.js:82
+#: js/src/password/RootPasswordForm.js:77
 msgid "Confirm new password"
 msgstr "Подтвердите новый пароль"
 
-#: js/src/password/ForisPasswordForm.js:95
+#: js/src/password/ForisPasswordForm.js:98
 msgid "Use the same password for advanced administration (root)"
 msgstr "Использовать тот же пароль для расширенного администрирования (root)"
 
-#: js/src/password/ForisPasswordForm.js:98
+#: js/src/password/ForisPasswordForm.js:101
 msgid ""
 "Same password would be used for accessing this administration interface, "
 "for root user in LuCI web interface and for SSH login. Use a strong "
@@ -2091,7 +2095,7 @@ msgstr ""
 "пароль для расширенной настройки здесь, можно сделать это позднее. До "
 "этого момента аккаунт root будет заблокирован.)"
 
-#: js/src/password/Password.js:79
+#: js/src/password/Password.js:85
 msgid ""
 "The password you've entered has not been saved. It has been compromised "
 "and appears ${\n"
@@ -2108,45 +2112,45 @@ msgstr ""
 " forisPassword.list || rootPassword.list\n"
 " } списке. Пожалуйста, введите другой, более надежный пароль."
 
-#: js/src/password/Password.js:90
+#: js/src/password/Password.js:96
 msgid "Password changed successfully."
 msgstr "Пароль успешно изменен."
 
-#: js/src/password/Password.js:153
+#: js/src/password/Password.js:160
 msgid "Password Settings"
 msgstr "Настройки пароля"
 
-#: js/src/password/Password.js:182
+#: js/src/password/Password.js:189
+#, fuzzy
 msgid ""
-"Here you can set passwords for Foris and optionally for advanced features"
-" (LuCI and SSH). Make sure to set a secure password which is long and "
-"uncommon."
+"Here you can set password for the administration interface.\n"
+"Make sure to set a secure password that is long and unique."
 msgstr ""
 "Здесь вы можете установить пароли для Foris и, при необходимости, для "
 "расширенных функций (LuCI и SSH). Убедитесь, что вы установили надежный "
 "пароль, который является длинным и уникальным."
 
-#: js/src/password/Password.js:199 js/src/password/Password.js:203
+#: js/src/password/Password.js:207 js/src/password/Password.js:211
 msgid "The password confirmation does not match."
 msgstr "Подтверждение пароля не совпадает."
 
-#: js/src/password/Password.js:218
+#: js/src/password/Password.js:226
 msgid "Password can't be empty."
 msgstr "Пароль не может быть пустым."
 
-#: js/src/password/Password.js:220
+#: js/src/password/Password.js:228
 msgid "Password should have min 6 symbols."
 msgstr "Пароль должен содержать не менее 6 символов."
 
-#: js/src/password/Password.js:223
+#: js/src/password/Password.js:231
 msgid "Password should have max 128 symbols."
 msgstr "Пароль должен содержать не более 128 символов."
 
-#: js/src/password/RootPasswordForm.js:54
+#: js/src/password/RootPasswordForm.js:51
 msgid "Advanced Administration Password"
 msgstr "Пароль расширенного администрирования"
 
-#: js/src/password/RootPasswordForm.js:58
+#: js/src/password/RootPasswordForm.js:55
 #, python-format
 msgid ""
 "In order to access the advanced configuration options which are not "
@@ -2176,8 +2180,8 @@ msgid ""
 msgstr ""
 "\n"
 "Для вашего устройства важно установить правильное время. Если время "
-"вашего устройства задерживается, процедура проверки сертификата SSL может"
-" работать некорректно.\n"
+"вашего устройства отстаёт, процедура проверки сертификата SSL может "
+"работать некорректно.\n"
 "        "
 
 #: js/src/regionAndTime/RegionAndTime.js:56
@@ -3060,4 +3064,7 @@ msgstr "500 - Ошибка сервера"
 
 #~ msgid "WAN IPv4"
 #~ msgstr "WAN IPv4"
+
+#~ msgid "Go to Connection Settings"
+#~ msgstr "Зайдите в настройки подключения"
 

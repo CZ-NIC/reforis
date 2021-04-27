@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-04-09 14:51+0200\n"
+"POT-Creation-Date: 2021-04-27 11:02+0200\n"
 "PO-Revision-Date: 2020-11-30 23:29+0000\n"
 "Last-Translator: Johan van de Wetering <mail@jvdwetering.nl>\n"
 "Language: nl\n"
@@ -328,7 +328,7 @@ msgstr ""
 "internetprovider te bespreken en op te lossen.</p>\n"
 "            "
 
-#: js/src/dns/DNS.js:62 js/src/overview/Overview.js:63 js/src/wan/WAN.js:50
+#: js/src/dns/DNS.js:62 js/src/overview/Overview.js:68 js/src/wan/WAN.js:50
 msgid "Connection Test"
 msgstr "Verbindingstest"
 
@@ -593,12 +593,12 @@ msgid "Enable QoS"
 msgstr "QoS inschakelen"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:159
-#: js/src/overview/Cards/NetmetrCard.js:65
+#: js/src/overview/Cards/NetmetrCard.js:67
 msgid "Download"
 msgstr "Download"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:172
-#: js/src/overview/Cards/NetmetrCard.js:81
+#: js/src/overview/Cards/NetmetrCard.js:83
 msgid "Upload"
 msgstr "Upload"
 
@@ -841,7 +841,7 @@ msgstr "Kan het stappenplan niet markeren als afgerond."
 
 #: js/src/guide/steps.js:20 js/src/main/pages.js:76 js/src/main/pages.js:167
 #: js/src/notificationsSettings/SMTPCustomForm.js:114
-#: js/src/password/Password.js:180 reforis/templates/login.html:29
+#: js/src/password/Password.js:187 reforis/templates/login.html:29
 msgid "Password"
 msgstr "Wachtwoord"
 
@@ -952,7 +952,7 @@ msgstr ""
 msgid "Local Server"
 msgstr "Lokale Server"
 
-#: js/src/guide/GuidePages/WorkflowSelect.js:38 js/src/lan/LANForm.js:29
+#: js/src/guide/GuidePages/WorkflowSelect.js:38 js/src/lan/LANForm.js:39
 msgid "Router"
 msgstr "Router"
 
@@ -1153,6 +1153,7 @@ msgid "Link speed"
 msgstr "Verbindingssnelheid"
 
 #: js/src/interfaces/SelectedInterface.js:112
+#: js/src/overview/Cards/NetmetrCard.js:114
 msgid "N/A"
 msgstr "N.v.t."
 
@@ -1196,15 +1197,18 @@ msgstr ""
 "<b>verversen</b>\n"
 "            "
 
-#: js/src/lan/LANForm.js:16
+#: js/src/lan/LANForm.js:24
 msgid ""
-"\n"
 "Router mode means that this device manages the LAN (acts as a router, can"
-" assign IP addresses, ...).\n"
-"Computer mode means that this device acts as a client in this network. It"
-" acts in a similar way as WAN, but\n"
-"it has opened ports for configuration interface and other services.\n"
-"        "
+" assign IP addresses, etc.)."
+msgstr ""
+
+#: js/src/lan/LANForm.js:27
+#, fuzzy
+msgid ""
+"Computer mode means that this device acts as a client in this network.\n"
+"It acts similarly to WAN, but it has opened ports for configuration "
+"interfaces and other services."
 msgstr ""
 "\n"
 "Router mode betekent dat dit apparaat het LAN-netwerk beheert (acteert "
@@ -1215,19 +1219,19 @@ msgstr ""
 "services.\n"
 "        "
 
-#: js/src/lan/LANForm.js:30
+#: js/src/lan/LANForm.js:40
 msgid "Computer"
 msgstr "Computer"
 
-#: js/src/lan/LANForm.js:79
+#: js/src/lan/LANForm.js:52
 msgid "LAN Settings"
 msgstr "LAN-instellingen"
 
-#: js/src/lan/LANForm.js:81
+#: js/src/lan/LANForm.js:117
 msgid "LAN mode"
 msgstr "LAN-mode"
 
-#: js/src/lan/LANForm.js:90
+#: js/src/lan/LANForm.js:133
 msgid "Redirect to 192.168.1.1"
 msgstr "Doorsturen naar 192.168.1.1"
 
@@ -1253,7 +1257,7 @@ msgid "IPv4 protocol"
 msgstr "IPv4-protocol"
 
 #: js/src/main/pages.js:41 js/src/main/pages.js:117
-#: js/src/overview/Overview.js:51
+#: js/src/overview/Overview.js:55
 msgid "Overview"
 msgstr "Overzicht"
 
@@ -1330,7 +1334,7 @@ msgid "Reboot Required"
 msgstr "Herstart vereist"
 
 #: js/src/main/TopBar/rebootDropdown/RebootDropdown.js:63
-#: js/src/overview/Cards/NetmetrCard.js:119
+#: js/src/overview/Cards/NetmetrCard.js:126
 msgid "Details"
 msgstr "Details"
 
@@ -1611,10 +1615,6 @@ msgstr "Maximale poort is 65535."
 msgid "Minimum port is 1."
 msgstr "Minimale poort is 1."
 
-#: js/src/overview/Overview.js:69
-msgid "Go to Connection Settings"
-msgstr "Ga naar Connectie Instellingen"
-
 #: js/src/overview/Cards/AutomaticUpdatesCard.js:44
 msgid "Automatic Updates"
 msgstr "Automatische Updates"
@@ -1639,36 +1639,36 @@ msgstr "Gegevensverzameling"
 msgid "Dynamic Firewall"
 msgstr "Dynamische Firewall"
 
-#: js/src/overview/Cards/NetmetrCard.js:47
+#: js/src/overview/Cards/NetmetrCard.js:48
 msgid "NetMetr"
 msgstr "NetMetr"
 
-#: js/src/overview/Cards/NetmetrCard.js:53
+#: js/src/overview/Cards/NetmetrCard.js:54
 msgid "Go to NetMetr"
 msgstr "Ga naar NetMetr"
 
-#: js/src/overview/Cards/NetmetrCard.js:68
-#: js/src/overview/Cards/NetmetrCard.js:84
+#: js/src/overview/Cards/NetmetrCard.js:70
+#: js/src/overview/Cards/NetmetrCard.js:86
 msgid "Megabit per second"
 msgstr "Megabit per seconde"
 
-#: js/src/overview/Cards/NetmetrCard.js:99
+#: js/src/overview/Cards/NetmetrCard.js:101
 msgid "Ping"
 msgstr "Ping"
 
-#: js/src/overview/Cards/NetmetrCard.js:102
+#: js/src/overview/Cards/NetmetrCard.js:104
 msgid "Millisecond"
 msgstr "Milliseconde"
 
-#: js/src/overview/Cards/NetmetrCard.js:112
+#: js/src/overview/Cards/NetmetrCard.js:119
 msgid "Link"
 msgstr "Link"
 
-#: js/src/overview/Cards/NetmetrCard.js:131
+#: js/src/overview/Cards/NetmetrCard.js:139
 msgid "Performed"
 msgstr "Uitgevoerd"
 
-#: js/src/overview/Cards/NetmetrCard.js:139
+#: js/src/overview/Cards/NetmetrCard.js:147
 msgid "No tests have been performed lately."
 msgstr "Er zijn onlangs geen tests uitgevoerd."
 
@@ -1680,7 +1680,7 @@ msgstr "OpenVPN Clients"
 msgid "Go to OpenVPN Client Settings"
 msgstr "Ga naar OpenVPN Client Instellingen"
 
-#: js/src/overview/Cards/OpenVPNClientsCard.js:89
+#: js/src/overview/Cards/OpenVPNClientsCard.js:91
 msgid "There are no clients added yet."
 msgstr "Er zijn nog geen clients toegevoegd."
 
@@ -2092,33 +2092,33 @@ msgstr ""
 "href=\"${ForisURLs.packageManagement.updateSettings}\">automatische "
 "updates</a> in om pakketten en talen te beheren."
 
-#: js/src/password/ForisPasswordForm.js:53
+#: js/src/password/ForisPasswordForm.js:55
 msgid "Set your password for this administration interface."
 msgstr "Stel uw wachtwoord voor deze beheerinterface in."
 
-#: js/src/password/ForisPasswordForm.js:58
+#: js/src/password/ForisPasswordForm.js:60
 #, fuzzy
 msgid "Current password"
 msgstr "Verkeerd huidig wachtwoord."
 
-#: js/src/password/ForisPasswordForm.js:68
-#: js/src/password/RootPasswordForm.js:69
+#: js/src/password/ForisPasswordForm.js:70
+#: js/src/password/RootPasswordForm.js:66
 #, fuzzy
 msgid "New password"
 msgstr "Verkeerd wachtwoord."
 
-#: js/src/password/ForisPasswordForm.js:79
-#: js/src/password/RootPasswordForm.js:79
+#: js/src/password/ForisPasswordForm.js:82
+#: js/src/password/RootPasswordForm.js:77
 #, fuzzy
 msgid "Confirm new password"
 msgstr "Verkeerd wachtwoord."
 
-#: js/src/password/ForisPasswordForm.js:95
+#: js/src/password/ForisPasswordForm.js:98
 #, fuzzy
 msgid "Use the same password for advanced administration (root)"
 msgstr "Gebruik hetzelfde wachtwoord voor geavanceerd beheer (root)"
 
-#: js/src/password/ForisPasswordForm.js:98
+#: js/src/password/ForisPasswordForm.js:101
 msgid ""
 "Same password would be used for accessing this administration interface, "
 "for root user in LuCI web interface and for SSH login. Use a strong "
@@ -2133,7 +2133,7 @@ msgstr ""
 "heeft u de mogelijkheid om dit later te doen. Tot die tijd wordt het root"
 " account geblokkeerd.)"
 
-#: js/src/password/Password.js:79
+#: js/src/password/Password.js:85
 #, fuzzy
 msgid ""
 "The password you've entered has not been saved. It has been compromised "
@@ -2151,48 +2151,47 @@ msgstr ""
 "                            forisPassword.list || rootPassword.list\n"
 "                        } lijst."
 
-#: js/src/password/Password.js:90
+#: js/src/password/Password.js:96
 msgid "Password changed successfully."
 msgstr "Wachtwoord succesvol gewijzigd."
 
-#: js/src/password/Password.js:153
+#: js/src/password/Password.js:160
 #, fuzzy
 msgid "Password Settings"
 msgstr "Netwerkinstellingen"
 
-#: js/src/password/Password.js:182
+#: js/src/password/Password.js:189
 #, fuzzy
 msgid ""
-"Here you can set passwords for Foris and optionally for advanced features"
-" (LuCI and SSH). Make sure to set a secure password which is long and "
-"uncommon."
+"Here you can set password for the administration interface.\n"
+"Make sure to set a secure password that is long and unique."
 msgstr ""
 "Hier kunt u de wachtwoorden voor Foris en optioneel voor geavanceerde "
 "onderdelen (LuCI en SSH) instellen. Zorg ervoor dat uw wachtwoorden "
 "veilig zijn (lang en willekeurig)."
 
-#: js/src/password/Password.js:199 js/src/password/Password.js:203
+#: js/src/password/Password.js:207 js/src/password/Password.js:211
 msgid "The password confirmation does not match."
 msgstr ""
 
-#: js/src/password/Password.js:218
+#: js/src/password/Password.js:226
 msgid "Password can't be empty."
 msgstr "Wachtwoord mag niet leeg zijn."
 
-#: js/src/password/Password.js:220
+#: js/src/password/Password.js:228
 msgid "Password should have min 6 symbols."
 msgstr "Wachtwoord moet min. 6 tekens hebben."
 
-#: js/src/password/Password.js:223
+#: js/src/password/Password.js:231
 msgid "Password should have max 128 symbols."
 msgstr "Wachtwoord mag max. 128 tekens lang zijn."
 
-#: js/src/password/RootPasswordForm.js:54
+#: js/src/password/RootPasswordForm.js:51
 #, fuzzy
 msgid "Advanced Administration Password"
 msgstr "Nieuw wachtwoord voor geavanceerd beheer"
 
-#: js/src/password/RootPasswordForm.js:58
+#: js/src/password/RootPasswordForm.js:55
 #, python-format
 msgid ""
 "In order to access the advanced configuration options which are not "
@@ -2980,4 +2979,7 @@ msgstr "500 - Serverfout"
 
 #~ msgid "WAN IPv4"
 #~ msgstr "WAN IPv4"
+
+#~ msgid "Go to Connection Settings"
+#~ msgstr "Ga naar Connectie Instellingen"
 

@@ -6,7 +6,7 @@
         "url": "https://gitlab.nic.cz/turris/reforis/reforis.git"
     },
     "license": "GPL-3.0",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "description": "Turris routers web configuration interface.",
     "main": "./src/app.js",
     "dependencies": {
@@ -57,7 +57,7 @@
         "snapshot-diff": "^0.5.1",
         "string-replace-loader": "^2.2.0",
         "style-loader": "^0.23.1",
-        "terser-webpack-plugin": "^2.3.5",
+        "terser-webpack-plugin": "^4.2.3",
         "webpack": "^4.42.0",
         "webpack-cli": "^3.3.11"
     },
