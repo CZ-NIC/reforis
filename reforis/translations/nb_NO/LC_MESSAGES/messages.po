@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-04-09 14:51+0200\n"
-"PO-Revision-Date: 2021-02-07 07:50+0000\n"
+"PO-Revision-Date: 2021-04-27 08:49+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/turris/"
+"reforis/nb_NO/>\n"
 "Language: nb_NO\n"
-"Language-Team: Norwegian Bokmål "
-"<https://hosted.weblate.org/projects/turris/reforis/nb_NO/>\n"
-"Plural-Forms: nplurals=2; plural=n != 1\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.7-dev\n"
 "Generated-By: Babel 2.9.0\n"
 
 #: js/src/about/About.js:23 js/src/main/pages.js:109 js/src/main/pages.js:228
@@ -122,13 +123,15 @@ msgstr "DHCP-vertsnavn"
 
 #: js/src/common/network/DHCPClientsList.js:20
 msgid "DHCP Client List"
-msgstr ""
+msgstr "DHCP-klientliste"
 
 #: js/src/common/network/DHCPClientsList.js:22
 msgid ""
 "This list contains all devices that are connected to the network through "
 "wired or wireless connections."
 msgstr ""
+"Denne listen inneholder alle enheter som er tilkoblet nettverket gjennom "
+"kablede eller trådløse forbindelser."
 
 #: js/src/common/network/DHCPClientsList.js:28
 #, fuzzy
@@ -456,7 +459,7 @@ msgstr "Base 64-kodet SHA-256"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:24
 msgid "\"No TLS\" means that the regular UDP-base DNS protocol is used."
-msgstr ""
+msgstr "«Ingen TLS» betyr at vanlig UDP-basert DNS-protokoll brukes."
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:49
 #: js/src/packageManagement/updates/UpdateApproval.js:152
@@ -2089,13 +2092,17 @@ msgstr ""
 
 #: js/src/packageManagement/updates/UpdateManager.js:91
 msgid "You're up to date."
-msgstr ""
+msgstr "Du er oppdatert."
 
 #: js/src/packageManagement/updates/Updates.js:29
+#, fuzzy
 msgid ""
 "In Turris OS, you decide when and how to get the latest updates\n"
 "                    to keep your device running smoothly and securely."
 msgstr ""
+"I Turris OS, bestemmer du når og hvordan du skal få de seneste "
+"oppgraderingene\n"
+"for å få din enhet til å fungere som den skal, på sikkert vis."
 
 #: js/src/packageManagement/updates/Updates.js:47
 #, fuzzy
@@ -2218,8 +2225,9 @@ msgstr ""
 "langt og uvanlig."
 
 #: js/src/password/Password.js:199 js/src/password/Password.js:203
+#, fuzzy
 msgid "The password confirmation does not match."
-msgstr ""
+msgstr "Passordbekreftelsen samsvarer ikke."
 
 #: js/src/password/Password.js:218
 msgid "Password can't be empty."
@@ -3069,4 +3077,3 @@ msgstr "500 - Tjenerfeil"
 
 #~ msgid "WAN IPv4"
 #~ msgstr "WAN IPv4"
-
