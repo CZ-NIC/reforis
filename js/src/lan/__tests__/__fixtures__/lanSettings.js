@@ -8,7 +8,6 @@
 const lanSettingsFixture = {
     interface_count: 5,
     interface_up_count: 0,
-    lan_redirect: true,
     mode: "unmanaged",
     mode_managed: {
         dhcp: {
@@ -32,4 +31,22 @@ const lanSettingsFixture = {
     },
 };
 
-export default lanSettingsFixture;
+const lanCustomSettingsFixture = {
+    interface_count: 5,
+    interface_up_count: 0,
+    lan_redirect: true,
+    mode: "managed",
+    mode_managed: {
+        dhcp: {
+            clients: [],
+            enabled: false,
+            lease_time: 43200,
+            limit: 150,
+            start: "192.168.1.10",
+        },
+        netmask: "255.255.255.0",
+        router_ip: "192.168.1.4",
+    },
+};
+
+export { lanSettingsFixture, lanCustomSettingsFixture };
