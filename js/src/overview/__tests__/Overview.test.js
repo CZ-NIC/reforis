@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2019-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -22,6 +22,22 @@ import { notificationsFixture } from "../../notifications/__tests__/__fixtures__
 import { render, wait, getByText } from "foris/testUtils/customTestRender";
 
 describe("Overview", () => {
+    beforeEach(() => {
+        global.ForisPlugins = [
+            {
+                name: "NetMetr",
+                weight: 65,
+                path: "/netmetr",
+                icon: "netmetr",
+            },
+            {
+                name: "OpenVPN",
+                weight: 70,
+                path: "/openvpn",
+                icon: "user-shield",
+            },
+        ];
+    });
     let overviewContainer;
 
     it("Snapshot of the whole page", async () => {

@@ -304,93 +304,97 @@ exports[`<Cards/> <NetmetrCard/> Snapshot: contains tests 1`] = `
         <form
           class="mb-4"
         >
-          <table
-            class="table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12"
+          <div
+            class="table-responsive"
           >
-            <tbody>
-              <tr>
-                <th
-                  scope="row"
-                >
-                  Download
-                  <span
-                    class="badge badge-secondary"
-                    title="Megabit per second"
+            <table
+              class="table table-borderless table-hover col-12"
+            >
+              <tbody>
+                <tr>
+                  <th
+                    scope="row"
                   >
-                    Mb/s
-                  </span>
-                </th>
-                <td
-                  class="text-right"
-                >
-                  930
-                </td>
-              </tr>
-              <tr>
-                <th
-                  scope="row"
-                >
-                  Upload
-                  <span
-                    class="badge badge-secondary"
-                    title="Megabit per second"
+                    Download
+                    <span
+                      class="badge badge-secondary"
+                      title="Megabit per second"
+                    >
+                      Mb/s
+                    </span>
+                  </th>
+                  <td
+                    class="text-right"
                   >
-                    Mb/s
-                  </span>
-                </th>
-                <td
-                  class="text-right"
-                >
-                  <span>
                     930
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <th
-                  scope="row"
-                >
-                  Ping
-                  <span
-                    class="badge badge-secondary"
-                    title="Millisecond"
+                  </td>
+                </tr>
+                <tr>
+                  <th
+                    scope="row"
                   >
-                    ms
-                  </span>
-                </th>
-                <td
-                  class="text-right"
-                >
-                  <span>
-                    -1
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <th
-                  scope="row"
-                >
-                  Link
-                </th>
-                <td
-                  class="text-right"
-                >
-                  <a
-                    href="https://www.netmetr.cz/en/detail.html?c7a6f82d-5128-47f3-a3f9-d7e9d9af64bd"
-                    rel="noopener noreferrer"
-                    target="_blank"
+                    Upload
+                    <span
+                      class="badge badge-secondary"
+                      title="Megabit per second"
+                    >
+                      Mb/s
+                    </span>
+                  </th>
+                  <td
+                    class="text-right"
                   >
-                    Details
-                    <sup>
-                      <i
-                        class="fas fa-external-link-alt ml-1"
-                      />
-                    </sup>
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+                    <span>
+                      930
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <th
+                    scope="row"
+                  >
+                    Ping
+                    <span
+                      class="badge badge-secondary"
+                      title="Millisecond"
+                    >
+                      ms
+                    </span>
+                  </th>
+                  <td
+                    class="text-right"
+                  >
+                    <span>
+                      N/A
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <th
+                    scope="row"
+                  >
+                    Link
+                  </th>
+                  <td
+                    class="text-right"
+                  >
+                    <a
+                      href="https://www.netmetr.cz/en/detail.html?c7a6f82d-5128-47f3-a3f9-d7e9d9af64bd"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      Details
+                      <sup>
+                        <i
+                          class="fas fa-external-link-alt fa-sm ml-1"
+                        />
+                      </sup>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </form>
         <p
           class="card-text text-to-bottom"
@@ -471,32 +475,36 @@ exports[`<Cards/> <OpenVPNClientsCard/> Snapshot: contains clients 1`] = `
           </a>
         </h6>
         <form>
-          <table
-            class="table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12"
+          <div
+            class="table-responsive"
           >
-            <tbody>
-              <tr>
-                <th
-                  scope="row"
-                >
-                  <span>
-                    turris
-                  </span>
-                </th>
-                <td
-                  class="text-right"
-                >
-                  <span
-                    class="text-success"
+            <table
+              class="table table-borderless table-hover col-sm-12"
+            >
+              <tbody>
+                <tr>
+                  <th
+                    scope="row"
                   >
-                    <i
-                      class="fas fa-check"
-                    />
-                  </span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+                    <span>
+                      turris
+                    </span>
+                  </th>
+                  <td
+                    class="text-right"
+                  >
+                    <span
+                      class="text-success"
+                    >
+                      <i
+                        class="fas fa-check"
+                      />
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </form>
       </div>
     </div>

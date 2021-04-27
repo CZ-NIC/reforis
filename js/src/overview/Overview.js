@@ -7,7 +7,12 @@
 
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-import { useAPIGet, withSpinnerOnSending, withErrorMessage } from "foris";
+import {
+    useAPIGet,
+    withSpinnerOnSending,
+    withErrorMessage,
+    isPluginInstalled,
+} from "foris";
 import API_URLs from "../common/API";
 import DynamicFirewallCard from "./Cards/DynamicFirewallCard";
 import DataCollectionCard from "./Cards/DataCollectionCard";
@@ -54,7 +59,8 @@ function OverviewCards({ packages, ws }) {
                 <DynamicFirewallCard
                     activated={displayCard(packages, "dynfw")}
                 />
-                {displayCard(packages, "netmetr") ? <NetmetrCard /> : null}
+                {displayCard(packages, "netmetr") &&
+                    isPluginInstalled("NetMetr") && <NetmetrCard />}
                 <div className="col mb-4">
                     <div className="card h-100 user-select-none">
                         <div className="card-body">
@@ -65,9 +71,8 @@ function OverviewCards({ packages, ws }) {
                         </div>
                     </div>
                 </div>
-                {displayCard(packages, "openvpn") ? (
-                    <OpenVPNClientsCard />
-                ) : null}
+                {displayCard(packages, "openvpn") &&
+                    isPluginInstalled("OpenVPN") && <OpenVPNClientsCard />}
             </div>
             <Notifications ws={ws} />
         </>

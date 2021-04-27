@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -55,34 +55,36 @@ function OpenVPNClientsCard({ clients }) {
                     </h6>
                     {typeof clients === "object" && clients.length !== 0 ? (
                         <form>
-                            <table className="table table-borderless table-hover offset-lg-3 col-lg-6 col-sm-12">
-                                <tbody>
-                                    {clients.slice(0, 5).map((client) => (
-                                        <tr key={client.id}>
-                                            <th scope="row">
-                                                <span>{client.id}</span>
-                                            </th>
-                                            <td className="text-right">
-                                                <span
-                                                    className={`text-${
-                                                        client.enabled
-                                                            ? "success"
-                                                            : "danger"
-                                                    }`}
-                                                >
-                                                    <i
-                                                        className={`fas fa-${
+                            <div className="table-responsive">
+                                <table className="table table-borderless table-hover col-sm-12">
+                                    <tbody>
+                                        {clients.slice(0, 5).map((client) => (
+                                            <tr key={client.id}>
+                                                <th scope="row">
+                                                    <span>{client.id}</span>
+                                                </th>
+                                                <td className="text-right">
+                                                    <span
+                                                        className={`text-${
                                                             client.enabled
-                                                                ? "check"
-                                                                : "times"
+                                                                ? "success"
+                                                                : "danger"
                                                         }`}
-                                                    />
-                                                </span>
-                                            </td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
+                                                    >
+                                                        <i
+                                                            className={`fas fa-${
+                                                                client.enabled
+                                                                    ? "check"
+                                                                    : "times"
+                                                            }`}
+                                                        />
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
                         </form>
                     ) : (
                         <p className="text-muted">

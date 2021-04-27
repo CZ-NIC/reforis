@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -11,8 +11,6 @@ import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 
 import smallScreenWidth from "../utils/constants";
-
-import "./NavigationItem.css";
 
 NavigationItem.propTypes = {
     path: PropTypes.string.isRequired,
@@ -36,7 +34,7 @@ export default function NavigationItem({ path, children, isLinkOutside }) {
                 >
                     {children}
                     <sup>
-                        <i className="fas fa-external-link-alt link-outside-icon fa-xs" />
+                        <i className="fas fa-external-link-alt fa-xs ml-1" />
                     </sup>
                 </a>
             </li>
