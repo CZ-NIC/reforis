@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-04-27 11:02+0200\n"
 "PO-Revision-Date: 2021-04-28 11:35+0000\n"
-"Last-Translator: Filip Hron <filip.hron@gmail.com>\n"
+"Last-Translator: Lukas Jelinek <lukas.jelinek@nic.cz>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/turris/reforis/cs/>"
 "\n"
 "Language: cs\n"
@@ -133,9 +133,8 @@ msgstr ""
 "drátová nebo bezdrátová připojení."
 
 #: js/src/common/network/DHCPClientsList.js:28
-#, fuzzy
 msgid "No clients found."
-msgstr "Nenalezeni žádní DHCP klienti."
+msgstr "Nebyli nalezeni žádní DHCP klienti."
 
 #: js/src/common/network/DHCPClientsList.js:35
 msgid "Expires"
@@ -445,7 +444,7 @@ msgstr "SHA-256 v kódování Base64."
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:24
 msgid "\"No TLS\" means that the regular UDP-base DNS protocol is used."
-msgstr ""
+msgstr "„Bez TLS“ znamená, že se použije běžný protokol DNS založený na UDP."
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:49
 #: js/src/packageManagement/updates/UpdateApproval.js:152
@@ -750,6 +749,10 @@ msgid ""
 "Shield will try to connect to the Internet, and you will end up in the "
 "administration interface."
 msgstr ""
+"Vaše zařízení je nyní připraveno k použití. Další nastavení si můžete si "
+"přizpůsobit v administračním rozhraní. Jakmile dokončíte průvodce, váš "
+"Shield se pokusí připojit na Internet a zobrazí se vám administrační "
+"rozhraní."
 
 #: js/src/guide/constants.js:103
 msgid ""
@@ -1179,21 +1182,18 @@ msgid ""
 "Router mode means that this device manages the LAN (acts as a router, can"
 " assign IP addresses, etc.)."
 msgstr ""
+"Režim Router znamená, že toto zařízení spravuje LAN (funguje jako router, "
+"může přiřazovat IP adresy atd.)."
 
 #: js/src/lan/LANForm.js:27
-#, fuzzy
 msgid ""
 "Computer mode means that this device acts as a client in this network.\n"
 "It acts similarly to WAN, but it has opened ports for configuration "
 "interfaces and other services."
 msgstr ""
-"\n"
-"Režim Router znamená, že toto zařízení spravuje LAN (slouží jako "
-"router/směrovač, může přidělovat IP adresy, …).\n"
-"Režim Počítač znamená, že toto zařízení funguje na síti jako klient. "
-"Chová se podobně jako WAN,\n"
-"ale má otevřené porty pro své rozhraní pro nastavování a ostatní služby.\n"
-"        "
+"Režim Počítač znamená, že toto zařízení funguje na síti jako klient. Chová "
+"se podobně jako WAN,\n"
+"ale má otevřené porty pro své konfigurační rozhraní a ostatní služby."
 
 #: js/src/lan/LANForm.js:40
 msgid "Computer"
@@ -2146,14 +2146,12 @@ msgid "Password Settings"
 msgstr "Nastavení hesla"
 
 #: js/src/password/Password.js:189
-#, fuzzy
 msgid ""
 "Here you can set password for the administration interface.\n"
 "Make sure to set a secure password that is long and unique."
 msgstr ""
-"Zde můžete nastavit hesla pro Foris a volitelně pro pokročilé funkce "
-"(LuCI a SSH). Ujistěte se, že jste nastavili bezpečné heslo, které je "
-"dlouhé a neobvyklé."
+"Zde můžete nastavit heslo pro administrační rozhraní.\n"
+"Ujistěte se, že jste nastavili bezpečné heslo, které je dlouhé a neobvyklé."
 
 #: js/src/password/Password.js:207 js/src/password/Password.js:211
 msgid "The password confirmation does not match."
