@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -78,9 +78,9 @@ export default function NotificationsEmailSettingsForm({
 
     return (
         <>
-            <h2>{_("Email Notifications")}</h2>
+            <h2>{_("Notification Settings")}</h2>
             <Switch
-                label={_("Enable email notifications")}
+                label={_("Enable Email Notifications")}
                 checked={formData.enabled}
                 onChange={setFormValue((value) => ({
                     enabled: { $set: value },
