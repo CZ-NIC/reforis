@@ -15,7 +15,6 @@ import {
     AlertContextProvider,
     useAPIGet,
     withSending,
-    withErrorMessage,
 } from "foris";
 
 import Navigation from "navigation/Navigation";
@@ -91,4 +90,4 @@ function MainWrapper({ deviceDetails, ws }) {
 
 const withoutSpinner = withSending(() => null);
 
-const CustomizationWithError = withoutSpinner(withErrorMessage(MainWrapper));
+const CustomizationWithError = withoutSpinner(MainWrapper);
