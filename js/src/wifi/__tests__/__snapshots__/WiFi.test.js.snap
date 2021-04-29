@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<WiFi/> Snapshot 1`] = `
+<DocumentFragment>
+  <h1>
+    Wi-Fi
+  </h1>
+  <p>
+    If you want to use your router as a Wi-Fi access point, enable Wi-Fi here and fill in an SSID (the name of the access point) and a corresponding password. You can then set up your mobile devices using the QR code available within the form.
+  </p>
+  <div
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
+  >
+    <form>
+      <div
+        class="form-group switch"
+      >
+        <div
+          class="custom-control custom-switch custom-control-inline switch-heading"
+        >
+          <input
+            class="custom-control-input"
+            id="1"
+            type="checkbox"
+          />
+          <label
+            class="custom-control-label"
+            for="1"
+          >
+            <h2>
+              Wi-Fi 1
+            </h2>
+          </label>
+        </div>
+      </div>
+      <hr />
+      <div
+        class="form-group switch"
+      >
+        <div
+          class="custom-control custom-switch custom-control-inline switch-heading"
+        >
+          <input
+            class="custom-control-input"
+            id="2"
+            type="checkbox"
+          />
+          <label
+            class="custom-control-label"
+            for="2"
+          >
+            <h2>
+              Wi-Fi 2
+            </h2>
+          </label>
+        </div>
+      </div>
+      <div
+        class="text-right"
+      >
+        <button
+          class="btn btn-primary  col-sm-12 col-md-3 col-lg-2"
+          type="submit"
+        >
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+  <div
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
+  >
+    <h2>
+      Reset Wi-Fi Settings
+    </h2>
+    <p>
+      
+If a number of wireless cards doesn't match, you may try to reset the Wi-Fi settings. Note that this will remove the
+current Wi-Fi configuration and restore the default values.
+        
+    </p>
+    <div
+      class="text-right"
+    >
+      <button
+        class="btn btn-warning col-sm-12 col-md-3 col-lg-2"
+        type="button"
+      >
+        Reset Wi-Fi Settings
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<WiFi/> Snapshot of Alert with a warning when no modules available. 1`] = `
+"Snapshot Diff:
+- First value
++ Second value
+
+@@ -4,67 +4,13 @@
+    </h1>
+    <p>
+      If you want to use your router as a Wi-Fi access point, enable Wi-Fi here and fill in an SSID (the name of the access point) and a corresponding password. You can then set up your mobile devices using the QR code available within the form.
+    </p>
+    <div
+-     class=\\"card p-4 col-sm-12 col-lg-12 p-0 mb-4\\"
+-   >
+-     <form>
+-       <div
+-         class=\\"form-group switch\\"
+-       >
+-         <div
+-           class=\\"custom-control custom-switch custom-control-inline switch-heading\\"
+-         >
+-           <input
+-             class=\\"custom-control-input\\"
+-             id=\\"1\\"
+-             type=\\"checkbox\\"
+-           />
+-           <label
+-             class=\\"custom-control-label\\"
+-             for=\\"1\\"
++     class=\\"alert  alert-warning\\"
+    >
+-             <h2>
+-               Wi-Fi 1
+-             </h2>
+-           </label>
+-         </div>
+-       </div>
+-       <hr />
+-       <div
+-         class=\\"form-group switch\\"
+-       >
+-         <div
+-           class=\\"custom-control custom-switch custom-control-inline switch-heading\\"
+-         >
+-           <input
+-             class=\\"custom-control-input\\"
+-             id=\\"2\\"
+-             type=\\"checkbox\\"
+-           />
+-           <label
+-             class=\\"custom-control-label\\"
+-             for=\\"2\\"
+-           >
+-             <h2>
+-               Wi-Fi 2
+-             </h2>
+-           </label>
+-         </div>
+-       </div>
+-       <div
+-         class=\\"text-right\\"
+-       >
+-         <button
+-           class=\\"btn btn-primary  col-sm-12 col-md-3 col-lg-2\\"
+-           type=\\"submit\\"
+-         >
+-           Save
+-         </button>
+-       </div>
+-     </form>
++     Unfortunately, we were unable to detect any wireless cards in your router.
+    </div>
+    <div
+      class=\\"card p-4 col-sm-12 col-lg-12 p-0 mb-4\\"
+    >
+      <h2>"
+`;
