@@ -36,11 +36,14 @@ export default function Overview({ ws }) {
     }, [getPackageList]);
 
     return (
-        <OverviewWithErrorAndSpinner
-            apiState={packageList.state}
-            packages={packageList.data || {}}
-            ws={ws}
-        />
+        <>
+            <h1>{_("Overview")}</h1>
+            <OverviewWithErrorAndSpinner
+                apiState={packageList.state}
+                packages={packageList.data || {}}
+                ws={ws}
+            />
+        </>
     );
 }
 
@@ -52,7 +55,6 @@ OverviewCards.propTypes = {
 function OverviewCards({ packages, ws }) {
     return (
         <>
-            <h1>{_("Overview")}</h1>
             <div className="row row-cols-1 row-cols-lg-3 mt-4">
                 <AutomaticUpdatesCard />
                 <DataCollectionCard />
