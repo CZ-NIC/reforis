@@ -511,8 +511,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         <small
           class="form-text text-muted"
         >
-          Computer mode means that this device acts as a client in this network.
-It acts similarly to WAN, but it has opened ports for configuration interfaces and other services.
+          Computer mode means that this device acts as a client in this network. It acts similarly to WAN, but it has opened ports for configuration interfaces and other services.
         </small>
       </div>
       <div
@@ -654,8 +653,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         <small
           class="form-text text-muted"
         >
-          Computer mode means that this device acts as a client in this network.
-It acts similarly to WAN, but it has opened ports for configuration interfaces and other services.
+          Computer mode means that this device acts as a client in this network. It acts similarly to WAN, but it has opened ports for configuration interfaces and other services.
         </small>
       </div>
       <div
@@ -773,8 +771,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         <small
           class="form-text text-muted"
         >
-          Computer mode means that this device acts as a client in this network.
-It acts similarly to WAN, but it has opened ports for configuration interfaces and other services.
+          Computer mode means that this device acts as a client in this network. It acts similarly to WAN, but it has opened ports for configuration interfaces and other services.
         </small>
       </div>
       <div

@@ -79,7 +79,7 @@ exports[`<WAN/> Snapshot WAN IPv4 (pppoe). 1`] = `
 +         </div>
 +       </div>
         <h2>
-          IPv6
+          IPv6 Settings
         </h2>
         <div
           class=\\"form-group\\"
@@ -232,7 +232,7 @@ exports[`<WAN/> Snapshot WAN IPv4 (static). 1`] = `
           </small>
         </div>
         <h2>
-          IPv6
+          IPv6 Settings
         </h2>
 @@ -141,10 +240,11 @@
         <div
@@ -350,7 +350,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled. 1`] = `
 +         </small>
 +       </div>
         <h2>
-          MAC
+          MAC Settings
         </h2>
         <div
           class=\\"form-group\\""
@@ -495,7 +495,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
 +         </div>
 +       </div>
         <h2>
-          MAC
+          MAC Settings
         </h2>
         <div
           class=\\"form-group\\"
@@ -549,7 +549,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6to4). 1`] = `
 +         </small>
 +       </div>
         <h2>
-          MAC
+          MAC Settings
         </h2>
         <div
           class=\\"form-group\\""
@@ -591,7 +591,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (dhcpv6). 1`] = `
 +         </small>
 +       </div>
         <h2>
-          MAC
+          MAC Settings
         </h2>
         <div
           class=\\"form-group\\""
@@ -742,7 +742,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
 +         </small>
 +       </div>
         <h2>
-          MAC
+          MAC Settings
         </h2>
         <div
           class=\\"form-group\\"
@@ -830,7 +830,7 @@ router to the network, it is usually not necessary to change this setting.
   >
     <form>
       <h2>
-        IPv4
+        IPv4 Settings
       </h2>
       <div
         class="form-group"
@@ -886,7 +886,7 @@ router to the network, it is usually not necessary to change this setting.
         </small>
       </div>
       <h2>
-        IPv6
+        IPv6 Settings
       </h2>
       <div
         class="form-group"
@@ -928,7 +928,7 @@ router to the network, it is usually not necessary to change this setting.
         </select>
       </div>
       <h2>
-        MAC
+        MAC Settings
       </h2>
       <div
         class="form-group"
