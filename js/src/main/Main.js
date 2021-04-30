@@ -60,7 +60,7 @@ function MainWrapper({ deviceDetails, ws }) {
         deviceDetails.customization !== undefined &&
         deviceDetails.customization === "shield"
     );
-    const pages = getPages(deviceDetails);
+    const pages = getPages(customization);
     // Outer ErrorBoundary catches errors outside content container
     return (
         <ErrorBoundary>
