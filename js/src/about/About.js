@@ -24,7 +24,9 @@ export default function About() {
             <p
                 dangerouslySetInnerHTML={{
                     __html: _(
-                        `Here you can find some information about your device. Please include it into your message if you contact our <a href="mailto:tech.support@turris.cz" target="_blank">customer support</a>.`
+                        `Here you can find some information about your device. \
+Please include it into your message if you contact our \
+<a href="mailto:tech.support@turris.cz" target="_blank">customer support</a>.`
                     ),
                 }}
             />
@@ -76,11 +78,9 @@ function AboutTable({ deviceDetails }) {
                             {_("Turris OS branch")}
                             <i
                                 className="fas fa-question-circle ml-1 help"
-                                data-tip={_(
-                                    `Turris OS is currently released in various branches,
-                                    which have different functions and varying stability
-                                    - you can pick, which branch you want to test.`
-                                )}
+                                data-tip={_(`Turris OS is currently released \
+in various branches, which have different functions and varying stability - \
+you can pick, which branch you want to test.`)}
                                 data-event="click focus"
                                 data-for="branches"
                             />
