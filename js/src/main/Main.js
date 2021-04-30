@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -19,6 +19,7 @@ import {
 
 import Navigation from "navigation/Navigation";
 import ErrorBoundary from "utils/ErrorBoundary";
+import { CustomizationProvider } from "./customizationContext";
 import API_URLs from "../common/API";
 import TopBar from "./TopBar/TopBar";
 import RouteWithSubRoutes from "./routing";
@@ -54,34 +55,41 @@ MainWrapper.propTypes = {
 };
 
 function MainWrapper({ deviceDetails, ws }) {
+    const customization = !!(
+        deviceDetails &&
+        deviceDetails.customization !== undefined &&
+        deviceDetails.customization === "shield"
+    );
     const pages = getPages(deviceDetails);
     // Outer ErrorBoundary catches errors outside content container
     return (
         <ErrorBoundary>
             <BrowserRouter basename={REFORIS_URL_PREFIX}>
                 <AlertContextProvider>
-                    <Portal containerId="navigation-container">
-                        <Navigation pages={pages} />
-                    </Portal>
-                    <Portal containerId="top-bar-container">
-                        <TopBar ws={ws} />
-                    </Portal>
-                    <Portal containerId="scroll-to-top">
-                        <ScrollToTopArrow />
-                    </Portal>
-                    {/* Handle errors and display Navigation and TopBar. */}
-                    <ErrorBoundary>
-                        <Switch>
-                            {pages.map((route) => (
-                                <RouteWithSubRoutes
-                                    key={route}
-                                    ws={ws}
-                                    {...route}
-                                />
-                            ))}
-                            <Redirect to={REDIRECT_404_PAGE} />
-                        </Switch>
-                    </ErrorBoundary>
+                    <CustomizationProvider value={customization}>
+                        <Portal containerId="navigation-container">
+                            <Navigation pages={pages} />
+                        </Portal>
+                        <Portal containerId="top-bar-container">
+                            <TopBar ws={ws} />
+                        </Portal>
+                        <Portal containerId="scroll-to-top">
+                            <ScrollToTopArrow />
+                        </Portal>
+                        {/* Handle errors and display Navigation and TopBar. */}
+                        <ErrorBoundary>
+                            <Switch>
+                                {pages.map((route) => (
+                                    <RouteWithSubRoutes
+                                        key={route}
+                                        ws={ws}
+                                        {...route}
+                                    />
+                                ))}
+                                <Redirect to={REDIRECT_404_PAGE} />
+                            </Switch>
+                        </ErrorBoundary>
+                    </CustomizationProvider>
                 </AlertContextProvider>
             </BrowserRouter>
         </ErrorBoundary>
