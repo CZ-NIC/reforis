@@ -28,6 +28,7 @@ describe("<Guide/> ", () => {
         const { container } = render(<Guide ws={webSockets} />);
 
         mockAxios.mockResponse({ data: guideFixtures });
+        mockAxios.mockResponse({});
         await wait(() => getByText(container, "Network Interfaces"));
 
         mockAxios.mockResponse({ data: "en" });
@@ -46,6 +47,7 @@ describe("<Guide/> ", () => {
     it("Should handle error.", async () => {
         const webSockets = new WebSockets();
         const { container } = render(<Guide ws={webSockets} />);
+        mockJSONError();
         mockJSONError();
         await wait(() =>
             getByText(container, "An error occurred while fetching data.")
