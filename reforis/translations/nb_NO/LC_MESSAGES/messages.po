@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-04-27 11:02+0200\n"
-"PO-Revision-Date: 2021-04-29 12:32+0000\n"
+"PO-Revision-Date: 2021-05-10 07:33+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/turris/"
 "reforis/nb_NO/>\n"
@@ -1227,19 +1227,15 @@ msgstr ""
 "kan tildele IP-adresser, osv.)."
 
 #: js/src/lan/LANForm.js:27
-#, fuzzy
 msgid ""
 "Computer mode means that this device acts as a client in this network.\n"
 "It acts similarly to WAN, but it has opened ports for configuration "
 "interfaces and other services."
 msgstr ""
-"\n"
-"Rutermodus betyr at denne enheten håndterer lokalnett (fungerer som "
-"ruter, kan tildele IP-adresser, …).\n"
 "Datamaskinsmodus betyr at denne enheten fungerer som klient i dette "
-"nettverket. Den fungerer lignende WAN,\n"
-"men har åpne porter for oppsettsgrensesnitt og andre tjenester.\n"
-"        "
+"nettverket.\n"
+"Den fungerer lignende WAN, men har åpne porter for oppsettsgrensesnitt og "
+"andre tjenester."
 
 #: js/src/lan/LANForm.js:40
 msgid "Computer"
@@ -2675,18 +2671,16 @@ msgid "Wrong current password."
 msgstr "Feil nåværende passord."
 
 #: reforis/foris_controller_api/modules/router_notifications.py:117
-#, fuzzy
 msgid ""
 "This is a testing notification.\n"
 "\n"
 "Please note it would be sent to your e-mail address only if you set\n"
 "the importance level to \"Reboot or attention is required\" or higher."
 msgstr ""
+"Dette er en testmerknad.\n"
 "\n"
-"Dett er en testmerknad. Merk at du kun skal motta denne i din "
-"e-postinnboks hvis du setter viktighetsnivået til\n"
-"«Omstart eller foretagende kreves» eller høyere.\n"
-"            "
+"Merk at du kun skal motta denne i din e-postinnboks hvis du setter\n"
+"viktighetsnivået til «Omstart eller foretagende kreves» eller høyere."
 
 #: reforis/foris_controller_api/modules/router_notifications.py:127
 #, fuzzy
