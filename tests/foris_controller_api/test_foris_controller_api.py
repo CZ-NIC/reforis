@@ -68,6 +68,11 @@ def test_api_get_endpoint_foris_controller_calls(client, endpoint, module, actio
 
 @pytest.mark.parametrize(
     'endpoint, module, action, request_data', [
+        ('lan/set_client', 'lan', 'set_dhcp_client', {
+            'ip': '192.168.1.15',
+            'hostname':'whatever',
+            'mac':'aa:7c:8d:62:2e:25'
+        }),
         ('wifi-reset', 'wifi', 'reset', {}),
         ('connection-test', 'wan', 'connection_test_trigger', {}),
         ('dns/test', 'wan', 'connection_test_trigger', {}),

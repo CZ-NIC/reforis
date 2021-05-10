@@ -11,6 +11,12 @@ from flask import request, current_app, jsonify
 from reforis.utils import APIError
 
 
+def response_to_json_or_error(response, error_message):
+    if response['result']:
+        return jsonify(response)
+    raise APIError(error_message)
+
+
 def process_dhcp_get(dhcp, ip, netmask):
     network = ipaddress.IPv4Network(f'{ip}/{netmask}', strict=False)
     start = network.network_address + int(dhcp['start'])
