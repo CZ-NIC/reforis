@@ -5,7 +5,7 @@
  * See /LICENSE for more information.
  */
 
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 
 import {
@@ -22,6 +22,7 @@ import {
 } from "foris";
 
 import API_URLs from "common/API";
+import { CustomizationContext } from "../main/customizationContext";
 
 import ForisPasswordForm from "./ForisPasswordForm";
 import RootPasswordForm from "./RootPasswordForm";
@@ -36,18 +37,10 @@ Password.defaultProps = {
 
 export default function Password({ postCallback }) {
     const [getPasswordResponse, getPassword] = useAPIGet(API_URLs.password);
-    const [getAboutResponse, getAbout] = useAPIGet(API_URLs.about);
-
+    const customization = useContext(CustomizationContext);
     useEffect(() => {
         getPassword();
-        getAbout();
-    }, [getAbout, getPassword]);
-
-    const customization = !!(
-        getAboutResponse.data &&
-        getAboutResponse.data.customization !== undefined &&
-        getAboutResponse.data.customization === "shield"
-    );
+    }, [getPassword]);
 
     const [formState, onFormChangeHandler, resetFormData] = useForm(validator);
 
@@ -82,13 +75,12 @@ export default function Password({ postCallback }) {
                     rootPassword.result === false)
             ) {
                 setAlert(
-                    _(
-                        `The password you've entered has not been saved. It has been compromised and appears ${
-                            forisPassword.count || rootPassword.count
-                        } times in ${
-                            forisPassword.list || rootPassword.list
-                        } list. Please enter another, more secure password.`
-                    ),
+                    _(`The password you've entered has not been saved. It has \
+been compromised and appears ${
+                        forisPassword.count || rootPassword.count
+                    } times in ${
+                        forisPassword.list || rootPassword.list
+                    } list. Please enter another, more secure password.`),
                     ALERT_TYPES.ERROR
                 );
             } else if (postState.state === API_STATE.SUCCESS) {
@@ -136,17 +128,11 @@ export default function Password({ postCallback }) {
         ? SUBMIT_BUTTON_STATES.SAVING
         : SUBMIT_BUTTON_STATES.READY;
 
-    const isPending =
-        getPasswordResponse.state === API_STATE.SENDING ||
-        getAboutResponse.state === API_STATE.SENDING;
+    const isPending = getPasswordResponse.state === API_STATE.SENDING;
 
-    const onError =
-        getPasswordResponse.state === API_STATE.ERROR ||
-        getAboutResponse.state === API_STATE.ERROR;
+    const onError = getPasswordResponse.state === API_STATE.ERROR;
 
-    const onSuccess =
-        getPasswordResponse.state === API_STATE.SUCCESS &&
-        getAboutResponse.state === API_STATE.SUCCESS;
+    const onSuccess = getPasswordResponse.state === API_STATE.SUCCESS;
 
     let passwordComponent;
 
@@ -186,10 +172,8 @@ export default function Password({ postCallback }) {
         <>
             <h1>{_("Password")}</h1>
             <p>
-                {_(
-                    `Here you can set password for the administration interface.
-Make sure to set a secure password that is long and unique.`
-                )}
+                {_(`Here you can set password for the administration \
+interface. Make sure to set a secure password that is long and unique.`)}
             </p>
             {passwordComponent}
         </>
