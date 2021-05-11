@@ -5,28 +5,24 @@
  * See /LICENSE for more information.
  */
 
-import React, { useEffect } from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 
-import {
-    CheckBox,
-    Select,
-    useAPIGet,
-    withSpinnerOnSending,
-    withErrorMessage,
-} from "foris";
-import API_URLs from "../common/API";
+import { CheckBox, Select } from "foris";
 
+import { CustomizationContext } from "../main/customizationContext";
 import LANManagedForm from "./LANManagedForm";
 import LANUnmanagedForm from "./LANUnmanagedForm";
 
 const HELP_TEXTS = {
     managed: _(
-        `Router mode means that this device manages the LAN (acts as a router, can assign IP addresses, etc.).`
+        `Router mode means that this device manages the LAN (acts as a router, \
+can assign IP addresses, etc.).`
     ),
     unmanaged: _(
-        `Computer mode means that this device acts as a client in this network.
-It acts similarly to WAN, but it has opened ports for configuration interfaces and other services.`
+        `Computer mode means that this device acts as a client in this network. \
+It acts similarly to WAN, but it has opened ports for configuration interfaces \
+and other services.`
     ),
 };
 
@@ -40,26 +36,7 @@ const LAN_MOD_CHOICES = {
     unmanaged: _("Computer"),
 };
 
-export default function LANForm({ ...props }) {
-    const [getAboutResponse, getAbout] = useAPIGet(API_URLs.about);
-
-    useEffect(() => {
-        getAbout();
-    }, [getAbout]);
-
-    return (
-        <>
-            <h2>{_("LAN Settings")}</h2>
-            <LANFormWithErrorAndSpinner
-                apiState={getAboutResponse.state}
-                deviceDetails={getAboutResponse.data || {}}
-                {...props}
-            />
-        </>
-    );
-}
-
-LANFormSettings.propTypes = {
+LANForm.propTypes = {
     formData: PropTypes.shape({
         mode: PropTypes.string.isRequired,
         mode_managed: PropTypes.object,
@@ -72,11 +49,9 @@ LANFormSettings.propTypes = {
     }),
     setFormValue: PropTypes.func,
     disabled: PropTypes.bool,
-    deviceDetails: PropTypes.object.isRequired,
 };
 
-export function LANFormSettings({
-    deviceDetails,
+export default function LANForm({
     formData,
     formErrors,
     setFormValue,
@@ -84,11 +59,7 @@ export function LANFormSettings({
 }) {
     const errors = formErrors || {};
     const lanMode = formData.mode;
-    const customization = !!(
-        deviceDetails &&
-        deviceDetails.customization !== undefined &&
-        deviceDetails.customization === "shield"
-    );
+    const customization = useContext(CustomizationContext);
 
     let lanForm = null;
     if (lanMode === LAN_MODES.managed) {
@@ -112,6 +83,7 @@ export function LANFormSettings({
     }
     return (
         <>
+            <h2>{_("LAN Settings")}</h2>
             {!customization && (
                 <Select
                     label={_("LAN mode")}
@@ -142,7 +114,3 @@ export function LANFormSettings({
         </>
     );
 }
-
-const LANFormWithErrorAndSpinner = withSpinnerOnSending(
-    withErrorMessage(LANFormSettings)
-);
