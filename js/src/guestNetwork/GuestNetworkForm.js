@@ -8,11 +8,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Switch, TextInput, NumberInput, undefinedIfEmpty } from "foris";
+import { Switch, TextInput, undefinedIfEmpty } from "foris";
 
 import DHCPServerForm, {
     HELP_TEXT as DHCP_HELP_TEXT,
 } from "common/network/DHCPServerForm";
+
+import QoSForm from "../common/network/QoSForm";
 
 const HELP_TEXTS = {
     router_ip: _("Router's IP address in the guest inner network."),
@@ -111,7 +113,7 @@ export default function GuestNetworkForm({
                             disabled={disabled}
                         />
                     ) : null}
-                    <Switch
+                    {/* <Switch
                         label={_("Enable QoS")}
                         checked={formData.qos.enabled}
                         helpText={HELP_TEXTS.qos.enabled}
@@ -119,22 +121,21 @@ export default function GuestNetworkForm({
                             qos: { enabled: { $set: value } },
                         }))}
                         disabled={disabled}
+                    /> */}
+                    <QoSForm
+                        formData={formData.qos}
+                        formErrors={formErrors.qos}
+                        setFormValue={setFormValue}
+                        disabled={disabled}
+                        helpTexts={HELP_TEXTS.qos}
                     />
-                    {formData.qos.enabled ? (
-                        <QoSForm
-                            formData={formData.qos}
-                            formErrors={formErrors.qos}
-                            setFormValue={setFormValue}
-                            disabled={disabled}
-                        />
-                    ) : null}
                 </>
             ) : null}
         </>
     );
 }
 
-QoSForm.propTypes = {
+/* QoSForm.propTypes = {
     formData: PropTypes.shape({
         download: PropTypes.number,
         upload: PropTypes.number,
@@ -182,7 +183,7 @@ function QoSForm({ formData, formErrors, setFormValue, disabled }) {
             />
         </>
     );
-}
+} */
 
 export function validateQoS(formData) {
     const errors = {};
