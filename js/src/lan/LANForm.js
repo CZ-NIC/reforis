@@ -19,6 +19,7 @@ import API_URLs from "../common/API";
 
 import LANManagedForm from "./LANManagedForm";
 import LANUnmanagedForm from "./LANUnmanagedForm";
+import QoSForm from "../common/network/QoSForm";
 
 const HELP_TEXTS = {
     managed: _(
@@ -28,7 +29,15 @@ const HELP_TEXTS = {
         `Computer mode means that this device acts as a client in this network.
 It acts similarly to WAN, but it has opened ports for configuration interfaces and other services.`
     ),
-};
+    qos: {
+        enabled: _(`This option enables you to set a bandwidth limit for the \
+guest network, so that your main network doesn't get slowed-down by it.`),
+        download: _(
+            "Download speed in guest network (in kilobits per second)."
+        ),
+        upload: _("Upload speed in guest network (in kilobits per second)."),
+    },
+}; //změnit ty texty ještě pak
 
 export const LAN_MODES = {
     managed: "managed",
@@ -139,6 +148,13 @@ export function LANFormSettings({
                 />
             )}
             {lanForm}
+            <QoSForm
+                formData={formData.qos}
+                formErrors={errors.qos}
+                setFormValue={setFormValue}
+                disabled={disabled}
+                helpTexts={HELP_TEXTS.qos}
+            />
         </>
     );
 }

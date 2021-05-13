@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2019-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -82,6 +82,7 @@ function prepDataToSubmit(formData) {
         delete formData.mode_managed.dhcp.clients;
         if (!formData.mode_managed.dhcp.enabled)
             formData.mode_managed.dhcp = { enabled: false };
+        /* if (!formData.qos.enabled) formData.qos = { enabled: false }; */
     } else if (formData.mode === LAN_MODES.unmanaged) {
         delete formData.mode_managed;
         const lanType = formData.mode_unmanaged.lan_type;
