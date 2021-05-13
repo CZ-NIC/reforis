@@ -12,6 +12,7 @@ import API_URLs from "common/API";
 import { ForisForm } from "foris";
 
 import { getDHCPStart } from "common/network/utils";
+import { validateQoS } from "common/network/QoSForm";
 import LANForm, { LAN_MODES } from "./LANForm";
 import { validateManaged } from "./LANManagedForm";
 import { validateUnmanaged } from "./LANUnmanagedForm";
@@ -83,6 +84,7 @@ function prepDataToSubmit(formData) {
         delete formData.mode_managed.dhcp.ipv6clients;
         if (!formData.mode_managed.dhcp.enabled)
             formData.mode_managed.dhcp = { enabled: false };
+        if (!formData.qos.enabled) formData.qos = { enabled: false };
     } else if (formData.mode === LAN_MODES.unmanaged) {
         delete formData.mode_managed;
         const lanType = formData.mode_unmanaged.lan_type;
@@ -102,5 +104,8 @@ function validator(formData) {
     } else if (formData.mode === LAN_MODES.unmanaged) {
         errors.mode_unmanaged = validateUnmanaged(formData.mode_unmanaged);
     }
-    return errors[`mode_${formData.mode}`] ? errors : null;
+    if (formData.qos.enabled) {
+        errors.qos = validateQoS(formData.qos);
+    }
+    return errors[`mode_${formData.mode}`] || errors.qos ? errors : null;
 }

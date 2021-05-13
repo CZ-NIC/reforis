@@ -13,6 +13,7 @@ import { CheckBox, Select } from "foris";
 import { CustomizationContext } from "../main/customizationContext";
 import LANManagedForm from "./LANManagedForm";
 import LANUnmanagedForm from "./LANUnmanagedForm";
+import QoSForm from "../common/network/QoSForm";
 
 const HELP_TEXTS = {
     managed: _(
@@ -24,6 +25,12 @@ can assign IP addresses, etc.).`
 It acts similarly to WAN, but it has opened ports for configuration interfaces \
 and other services.`
     ),
+    qos: {
+        enabled: _(`This option enables you to set a bandwidth limit for your \
+network.`),
+        download: _("Download speed in the network (in kilobits per second)."),
+        upload: _("Upload speed in the network (in kilobits per second)."),
+    },
 };
 
 export const LAN_MODES = {
@@ -42,6 +49,7 @@ LANForm.propTypes = {
         mode_managed: PropTypes.object,
         mode_unmanaged: PropTypes.object,
         lan_redirect: PropTypes.bool,
+        qos: PropTypes.object,
     }),
     formErrors: PropTypes.shape({
         mode_managed: PropTypes.object,
@@ -111,6 +119,13 @@ export default function LANForm({
                 />
             )}
             {lanForm}
+            <QoSForm
+                formData={formData.qos}
+                formErrors={errors.qos}
+                setFormValue={setFormValue}
+                disabled={disabled}
+                helpTexts={HELP_TEXTS.qos}
+            />
         </>
     );
 }
