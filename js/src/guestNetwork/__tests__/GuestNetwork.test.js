@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2019-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -38,7 +38,7 @@ describe("<GuestNetwork/>", () => {
             <GuestNetwork ws={webSockets} setFormValue={jest.fn()} />
         );
         mockAxios.mockResponse({ data: guestNetworkFixture });
-        await wait(() => getByLabelText(container, "Enable"));
+        await wait(() => getByLabelText(container, "Enable Guest Network"));
         guestNetworkContainer = container;
     });
 
@@ -60,18 +60,24 @@ describe("<GuestNetwork/>", () => {
     });
 
     it("Snapshot enabled.", () => {
-        fireEvent.click(getByText(guestNetworkContainer, "Enable"));
+        fireEvent.click(
+            getByText(guestNetworkContainer, "Enable Guest Network")
+        );
         expect(guestNetworkContainer).toMatchSnapshot();
     });
 
     it("Snapshot enabled DHCP.", () => {
-        fireEvent.click(getByText(guestNetworkContainer, "Enable"));
+        fireEvent.click(
+            getByText(guestNetworkContainer, "Enable Guest Network")
+        );
         fireEvent.click(getByText(guestNetworkContainer, "Enable DHCP"));
         expect(guestNetworkContainer).toMatchSnapshot();
     });
 
     it("Snapshot enabled QoS.", () => {
-        fireEvent.click(getByText(guestNetworkContainer, "Enable"));
+        fireEvent.click(
+            getByText(guestNetworkContainer, "Enable Guest Network")
+        );
         fireEvent.click(getByText(guestNetworkContainer, "Enable QoS"));
         expect(guestNetworkContainer).toMatchSnapshot();
     });
@@ -81,7 +87,9 @@ describe("<GuestNetwork/>", () => {
         let changeStart;
 
         beforeEach(() => {
-            fireEvent.click(getByText(guestNetworkContainer, "Enable"));
+            fireEvent.click(
+                getByText(guestNetworkContainer, "Enable Guest Network")
+            );
             fireEvent.click(getByText(guestNetworkContainer, "Enable DHCP"));
             fireEvent.click(getByText(guestNetworkContainer, "Enable QoS"));
 
@@ -320,7 +328,7 @@ describe("Displaying of interface warning messages", () => {
 
     it("No interface & snapshot", async () => {
         mockAxios.mockResponse({ data: noInterfaceFixture });
-        await wait(() => getByLabelText(container, "Enable"));
+        await wait(() => getByLabelText(container, "Enable Guest Network"));
         guestNetworkContainer = container;
         expect(
             guestNetworkContainer.childNodes[1].firstChild.innerHTML
@@ -330,7 +338,7 @@ describe("Displaying of interface warning messages", () => {
 
     it("No interface up & snapshot", async () => {
         mockAxios.mockResponse({ data: noInterfaceUpFixture });
-        await wait(() => getByLabelText(container, "Enable"));
+        await wait(() => getByLabelText(container, "Enable Guest Network"));
         guestNetworkContainer = container;
         expect(
             guestNetworkContainer.childNodes[1].firstChild.innerHTML
@@ -340,7 +348,7 @@ describe("Displaying of interface warning messages", () => {
 
     it("Interface up & snapshot", async () => {
         mockAxios.mockResponse({ data: interfaceUpFixture });
-        await wait(() => getByLabelText(container, "Enable"));
+        await wait(() => getByLabelText(container, "Enable Guest Network"));
         guestNetworkContainer = container;
         expect(guestNetworkContainer.childNodes[1].firstChild).toEqual(null);
         expect(guestNetworkContainer.childNodes[1]).toMatchSnapshot();

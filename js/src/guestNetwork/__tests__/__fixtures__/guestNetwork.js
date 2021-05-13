@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2019-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -53,7 +53,7 @@ const noInterfaceUpFixture = {
         limit: 150,
         start: 100,
     },
-    enabled: false,
+    enabled: true,
     interface_count: 1,
     interface_up_count: 0,
     ip: "10.111.222.1",
@@ -73,7 +73,7 @@ const interfaceUpFixture = {
         limit: 150,
         start: 100,
     },
-    enabled: false,
+    enabled: true,
     interface_count: 1,
     interface_up_count: 1,
     ip: "10.111.222.1",
