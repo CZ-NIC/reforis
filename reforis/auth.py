@@ -37,7 +37,8 @@ def check_password(password):
     :rtype: bool
     """
     decoded_password = _decode_password_to_base64(password)
-    res = current_app.backend.perform('password', 'check', {'password': decoded_password})
+    res = current_app.backend.perform(
+        'password', 'check', {'password': decoded_password})
 
     # Consider unset password as successful auth maybe set some session variable in this case
     return res['status'] in ('unset', 'good')
@@ -66,7 +67,7 @@ def register_login_required(app):
     @app.before_request
     def require_login():
         # Do not delete session when user closes the browser.
-        session.permanent = True
+        session['permanent'] = True
 
         web_data = app.backend.perform('web', 'get_data')
         if not web_data['password_ready']:
