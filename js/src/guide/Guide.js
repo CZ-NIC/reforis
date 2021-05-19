@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -21,16 +21,21 @@ Guide.propTypes = {
 
 export default function Guide({ ws }) {
     const [guideData, getGuideData] = useAPIGet(API_URLs.guide);
+    const [getCustomizationResponse, getCustomization] = useAPIGet(
+        API_URLs.about
+    );
     useEffect(() => {
         getGuideData();
-    }, [getGuideData]);
+        getCustomization();
+    }, [getCustomization, getGuideData]);
 
     return (
         <GuideRouterWithErrorAndSpinner
             ws={ws}
-            apiState={guideData.state}
+            apiState={getCustomizationResponse.state}
             guideData={guideData.data}
             getGuideData={getGuideData}
+            deviceDetails={getCustomizationResponse.data || {}}
         />
     );
 }
