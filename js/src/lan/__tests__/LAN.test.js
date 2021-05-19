@@ -22,6 +22,7 @@ import {
     lanCustomSettingsFixture,
 } from "./__fixtures__/lanSettings";
 
+import { CustomizationProvider } from "../../main/customizationContext";
 import LAN from "../LAN";
 
 describe("<LAN/>", () => {
@@ -29,10 +30,12 @@ describe("<LAN/>", () => {
 
     beforeEach(async () => {
         const webSockets = new WebSockets();
-        const { container } = render(<LAN ws={webSockets} />);
+        const { container } = render(
+            <CustomizationProvider value={false}>
+                <LAN ws={webSockets} />
+            </CustomizationProvider>
+        );
         mockAxios.mockResponse({ data: lanSettingsFixture });
-        await wait(() => getByText(container, "LAN Settings"));
-        mockAxios.mockResponse({ data: {} });
         await wait(() => getByText(container, "LAN mode"));
         lanContainer = container;
     });
@@ -374,10 +377,12 @@ describe("Customized <LAN/>", () => {
 
     beforeEach(async () => {
         const webSockets = new WebSockets();
-        const { container } = render(<LAN ws={webSockets} />);
+        const { container } = render(
+            <CustomizationProvider value={true}>
+                <LAN ws={webSockets} />
+            </CustomizationProvider>
+        );
         mockAxios.mockResponse({ data: lanCustomSettingsFixture });
-        await wait(() => getByText(container, "LAN Settings"));
-        mockAxios.mockResponse({ data: { customization: "shield" } });
         await wait(() => getByText(container, "Router IP address"));
         lanContainer = container;
     });

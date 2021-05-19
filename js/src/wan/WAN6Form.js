@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2019-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -159,7 +159,7 @@ export default function WAN6Form({
 
     return (
         <>
-            <h2>IPv6</h2>
+            <h2>{_("IPv6 Settings")}</h2>
             <Select
                 label={_("IPv6 protocol")}
                 value={wan6Type}

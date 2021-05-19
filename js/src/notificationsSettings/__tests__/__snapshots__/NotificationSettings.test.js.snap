@@ -131,7 +131,7 @@ exports[`<NotificationsSettings/> Disabled 1`] = `
   >
     <form>
       <h2>
-        Email Notifications
+        Notification Settings
       </h2>
       <div
         class="form-group"
@@ -149,7 +149,7 @@ exports[`<NotificationsSettings/> Disabled 1`] = `
             class="custom-control-label"
             for="1"
           >
-            Enable email notifications
+            Enable Email Notifications
           </label>
         </div>
       </div>
@@ -187,7 +187,7 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
   >
     <form>
       <h2>
-        Email Notifications
+        Notification Settings
       </h2>
       <div
         class="form-group"
@@ -205,7 +205,7 @@ exports[`<NotificationsSettings/> Enabled, smtp_type:custom 1`] = `
             class="custom-control-label"
             for="1"
           >
-            Enable email notifications
+            Enable Email Notifications
           </label>
         </div>
       </div>
@@ -628,7 +628,7 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
   >
     <form>
       <h2>
-        Email Notifications
+        Notification Settings
       </h2>
       <div
         class="form-group"
@@ -646,7 +646,7 @@ exports[`<NotificationsSettings/> Enabled,smtp_type:turris 1`] = `
             class="custom-control-label"
             for="1"
           >
-            Enable email notifications
+            Enable Email Notifications
           </label>
         </div>
       </div>

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -48,7 +48,7 @@ export default function MACForm({
     const errors = (formErrors || {}).mac_settings || {};
     return (
         <>
-            <h2>{_("MAC")}</h2>
+            <h2>{_("MAC Settings")}</h2>
             <Switch
                 label={_("Custom MAC address")}
                 checked={macSettings.custom_mac_enabled}

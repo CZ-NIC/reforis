@@ -35,7 +35,7 @@ describe("<WAN/>", () => {
         getByLabelText = renderRes.getByLabelText;
         getByText = renderRes.getByText;
 
-        await waitForElement(() => renderRes.getByText("IPv4"));
+        await waitForElement(() => renderRes.getByText("IPv4 Settings"));
         firstRender = renderRes.asFragment();
     });
 

@@ -30,11 +30,7 @@ import { ForisURLs } from "foris";
 
 import { addWeightsToPages, insert } from "./utils";
 
-export default function getPages(deviceDetails) {
-    const customization =
-        Object.hasOwnProperty.call(deviceDetails, "customization") &&
-        deviceDetails.customization === "shield";
-
+export default function getPages(customization) {
     const PAGES = customization
         ? [
               {

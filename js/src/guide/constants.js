@@ -70,6 +70,12 @@ const HELP_CONTENT_DEFAULTS = {
 
 export const HELP_CONTENT = {
     unset: { ...HELP_CONTENT_DEFAULTS },
+    old: {
+        ...HELP_CONTENT_DEFAULTS,
+        finished: {
+            initial: _("Congratulations! Now your device is ready to be used."),
+        },
+    },
     router: {
         ...HELP_CONTENT_DEFAULTS,
         finished: {

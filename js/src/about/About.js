@@ -9,11 +9,11 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import ReactTooltip from "react-tooltip";
 import { useAPIGet, withSpinnerOnSending, withErrorMessage } from "foris";
+
 import API_URLs from "common/API";
 
 export default function About() {
     const [getAboutResponse, getAbout] = useAPIGet(API_URLs.about);
-
     useEffect(() => {
         getAbout();
     }, [getAbout]);
@@ -24,7 +24,9 @@ export default function About() {
             <p
                 dangerouslySetInnerHTML={{
                     __html: _(
-                        `Here you can find some information about your device. Please include it into your message if you contact our <a href="mailto:tech.support@turris.cz" target="_blank">customer support</a>.`
+                        `Here you can find some information about your device. \
+Please include it into your message if you contact our \
+<a href="mailto:tech.support@turris.cz" target="_blank">customer support</a>.`
                     ),
                 }}
             />
@@ -38,16 +40,26 @@ export default function About() {
 
 AboutTable.propTypes = {
     deviceDetails: PropTypes.object.isRequired,
+    customization: PropTypes.bool,
 };
 
 function AboutTable({ deviceDetails }) {
+    const customization = !!(
+        deviceDetails &&
+        deviceDetails.customization !== undefined &&
+        deviceDetails.customization === "shield"
+    );
     return (
         <div className="card p-4 table-responsive">
             <table className="table table-borderless table-hover mb-0">
                 <tbody>
                     <tr>
                         <th>{_("Device")}</th>
-                        <td>{deviceDetails.model}</td>
+                        <td>
+                            {customization
+                                ? "Turris Shield"
+                                : deviceDetails.model}
+                        </td>
                     </tr>
                     <tr>
                         <th>{_("Serial number")}</th>
@@ -66,11 +78,9 @@ function AboutTable({ deviceDetails }) {
                             {_("Turris OS branch")}
                             <i
                                 className="fas fa-question-circle ml-1 help"
-                                data-tip={_(
-                                    `Turris OS is currently released in various branches,
-                                    which have different functions and varying stability
-                                    - you can pick, which branch you want to test.`
-                                )}
+                                data-tip={_(`Turris OS is currently released \
+in various branches, which have different functions and varying stability - \
+you can pick, which branch you want to test.`)}
                                 data-event="click focus"
                                 data-for="branches"
                             />

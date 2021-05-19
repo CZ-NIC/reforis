@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -16,6 +16,7 @@ import {
     withSpinnerOnSending,
 } from "foris";
 
+import { CustomizationProvider } from "../main/customizationContext";
 import { GUIDE_URL_PREFIX } from "./constants";
 import GuideNavigation from "./GuideNavigation/GuideNavigation";
 import GuidePage from "./GuidePage";
@@ -24,35 +25,43 @@ GuideRouter.propTypes = {
     ws: PropTypes.object.isRequired,
     guideData: PropTypes.object.isRequired,
     getGuideData: PropTypes.func.isRequired,
+    deviceDetails: PropTypes.object.isRequired,
 };
 
-function GuideRouter({ ws, guideData, getGuideData }) {
+function GuideRouter({ ws, guideData, getGuideData, deviceDetails }) {
+    const customization = !!(
+        deviceDetails &&
+        deviceDetails.customization !== undefined &&
+        deviceDetails.customization === "shield"
+    );
     const { workflow_steps, next_step } = guideData;
 
     return (
         <BrowserRouter basename={`${REFORIS_URL_PREFIX}${GUIDE_URL_PREFIX}`}>
             <AlertContextProvider>
-                <Portal containerId="guide-nav-container">
-                    <GuideNavigation {...guideData} />
-                </Portal>
-                <Switch>
-                    {workflow_steps.map((step) => (
-                        <Route
-                            exact
-                            key={step}
-                            path={`/${step}`}
-                            render={() => (
-                                <GuidePage
-                                    ws={ws}
-                                    step={step}
-                                    getGuideData={getGuideData}
-                                    {...guideData}
-                                />
-                            )}
-                        />
-                    ))}
-                    <Redirect to={`/${next_step}`} />
-                </Switch>
+                <CustomizationProvider value={customization}>
+                    <Portal containerId="guide-nav-container">
+                        <GuideNavigation {...guideData} />
+                    </Portal>
+                    <Switch>
+                        {workflow_steps.map((step) => (
+                            <Route
+                                exact
+                                key={step}
+                                path={`/${step}`}
+                                render={() => (
+                                    <GuidePage
+                                        ws={ws}
+                                        step={step}
+                                        getGuideData={getGuideData}
+                                        {...guideData}
+                                    />
+                                )}
+                            />
+                        ))}
+                        <Redirect to={`/${next_step}`} />
+                    </Switch>
+                </CustomizationProvider>
             </AlertContextProvider>
         </BrowserRouter>
     );
