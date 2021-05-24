@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-04-27 11:02+0200\n"
-"PO-Revision-Date: 2021-04-29 12:32+0000\n"
-"Last-Translator: Lukas Jelinek <lukas.jelinek@nic.cz>\n"
+"PO-Revision-Date: 2021-05-25 21:32+0000\n"
+"Last-Translator: Josef Schlehofer <pepe@bloodkings.eu>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/turris/reforis/cs/>"
 "\n"
 "Language: cs\n"
@@ -1205,7 +1205,7 @@ msgstr "Nastavení místní sítě"
 
 #: js/src/lan/LANForm.js:117
 msgid "LAN mode"
-msgstr "režim místní sítě"
+msgstr "Režim místní sítě"
 
 #: js/src/lan/LANForm.js:133
 msgid "Redirect to 192.168.1.1"
