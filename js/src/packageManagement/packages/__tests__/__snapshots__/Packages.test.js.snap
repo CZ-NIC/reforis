@@ -5,7 +5,7 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
 - First value
 + Second value
 
-@@ -12,10 +12,26 @@
+@@ -7,10 +7,26 @@
     </p>
     <div
       class=\\"card p-4 col-sm-12 col-lg-12 p-0 mb-4\\"
@@ -32,7 +32,7 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
           </h2>
           <div
             class=\\"container-fluid\\"
-@@ -33,10 +49,11 @@
+@@ -28,10 +44,11 @@
                     class=\\"custom-control custom-checkbox \\"
                   >
                     <input
@@ -44,7 +44,7 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -61,10 +78,11 @@
+@@ -56,10 +73,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -56,7 +56,7 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -89,10 +107,11 @@
+@@ -84,10 +102,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -68,7 +68,7 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -117,10 +136,11 @@
+@@ -112,10 +131,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -80,7 +80,7 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -145,10 +165,11 @@
+@@ -140,10 +160,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -92,7 +92,7 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -173,10 +194,11 @@
+@@ -168,10 +189,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -104,7 +104,7 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -201,33 +223,34 @@
+@@ -196,33 +218,34 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -142,7 +142,7 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
                       Advanced users
                     </span>
                     <small
-@@ -247,10 +270,11 @@
+@@ -242,10 +265,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -154,7 +154,7 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -412,10 +436,11 @@
+@@ -407,10 +431,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -166,7 +166,7 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -440,10 +465,11 @@
+@@ -435,10 +460,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -178,7 +178,7 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -468,10 +494,11 @@
+@@ -463,10 +489,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -190,7 +190,7 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -496,10 +523,11 @@
+@@ -491,10 +518,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -202,7 +202,7 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -524,10 +552,11 @@
+@@ -519,10 +547,11 @@
                   <div
                     class=\\"custom-control custom-checkbox \\"
                   >
@@ -214,7 +214,7 @@ exports[`<Packages/> Should render: updates disabled. 1`] = `
                     />
                     <label
                       class=\\"custom-control-label\\"
-@@ -543,15 +572,17 @@
+@@ -538,15 +567,17 @@
                   </div>
                 </div>
               </div>
@@ -240,12 +240,7 @@ exports[`<Packages/> Should render: updates enabled. 1`] = `
     Packages
   </h1>
   <p>
-    
-Apart from the standard installation, you can optionally select bundles of additional software that'd be installed on 
-the router. This software can be selected from the following list. Please note that only software that is part of 
-TurrisOS or that has been installed from a package list and not marked as community-supported is actually supported
-by Turris team.
-        
+    Apart from the standard installation, you can optionally select bundles of additional software that'd be installed on the router. This software can be selected from the following list. Please note that only software that is part of TurrisOS or that has been installed from a package list and not marked as community-supported is actually supported by Turris team.
   </p>
   <div
     class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
