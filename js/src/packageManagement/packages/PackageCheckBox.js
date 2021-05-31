@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020-2021 CZ.NIC z.s.p.o. (https://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -49,11 +49,13 @@ export default function PackageCheckBox({
                         target="_blank"
                         rel="noopener noreferrer"
                         href={url}
-                        className="ml-1"
+                        className={`ml-1 ${
+                            disabled ? "text-muted" : ""
+                        }`.trim()}
                         title={_("More details")}
                     >
                         <sup>
-                            <i className="fas fa-external-link-alt" />
+                            <i className="fas fa-external-link-alt fa-xs" />
                         </sup>
                     </a>
                 )}
