@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-04-27 11:02+0200\n"
-"PO-Revision-Date: 2021-04-29 12:32+0000\n"
+"PO-Revision-Date: 2021-06-01 06:32+0000\n"
 "Last-Translator: Алексей Леньшин <alenshin@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/turris/reforis/"
 "ru/>\n"
@@ -85,7 +85,7 @@ msgstr "Предупреждение!"
 
 #: js/src/common/FactoryResetButton.js:68
 msgid "Are you sure you want to reset the router?"
-msgstr "Вы уверены, что хотите перезагрузить маршрутизатор?"
+msgstr "Вы уверены, что хотите сбросить настройки маршрутизатора?"
 
 #: js/src/common/FactoryResetButton.js:71 js/src/common/RebootButton.js:71
 #: js/src/dns/DNSSECDisableModal.js:41
