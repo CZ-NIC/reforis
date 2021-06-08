@@ -19,6 +19,7 @@ from http import HTTPStatus
 import pkg_resources
 from flask import render_template, jsonify
 
+from .auth import is_user_logged
 from .locale import get_translations
 
 
@@ -109,11 +110,11 @@ def create_app(config):
 
 
 def not_found_error(error):
-    return render_template('errors/404.html'), 404
+    return render_template('errors/404.html', user_is_logged={'logged': is_user_logged()}), 404
 
 
 def internal_error(error):
-    return render_template('errors/500.html', error=error), 500
+    return render_template('errors/500.html', error=error, user_is_logged={'logged': is_user_logged()}), 500
 
 
 def foris_controller_error(e):
@@ -132,9 +133,9 @@ def foris_controller_error(e):
     if e.remote_description.startswith('Incorrect input.'):
         # indicates incorrect input, not actually a server error
         # but a client error so we'll return more appropriate status code
-        return render_template('errors/400.html', **error), 400
+        return render_template('errors/400.html', user_is_logged={'logged': is_user_logged()}, **error), 400
 
-    return render_template('errors/500.html', **error), 500
+    return render_template('errors/500.html', user_is_logged={'logged': is_user_logged()}, **error), 500
 
 
 def set_backend(app):

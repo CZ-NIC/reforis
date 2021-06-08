@@ -1,4 +1,4 @@
-#  Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+#  Copyright (C) 2019-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
 #
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
@@ -56,6 +56,15 @@ def logout_from_foris():
     session['logged'] = False
 
 
+def is_user_logged() -> bool:
+    """Determine whether user is logged in"""
+    web_data = current_app.backend.perform('web', 'get_data')
+    if not web_data['password_ready']:
+        session['logged'] = True
+
+    return session.get('logged', False)
+
+
 def register_login_required(app):
     """Add checking ``before_request`` function in order to protect pages from unlogged access. It also performs
     redirects to login page when session is not `logged`.
@@ -69,12 +78,7 @@ def register_login_required(app):
         # Do not delete session when user closes the browser.
         session['permanent'] = True
 
-        web_data = app.backend.perform('web', 'get_data')
-        if not web_data['password_ready']:
-            session['logged'] = True
-
-        # User is logged in.
-        if session.get('logged', False):
+        if is_user_logged():
             return
 
         not_protected_endpoints = [
