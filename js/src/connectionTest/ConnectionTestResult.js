@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2019-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -76,23 +76,27 @@ ConnectionTestIcon.propTypes = {
 function ConnectionTestIcon({ result }) {
     let icon;
     let iconColor;
+    let title;
 
     switch (result) {
         case true:
+            title = _("Connection test successful");
             icon = "check";
             iconColor = "success";
             break;
         case false:
+            title = _("Connection test failed");
             icon = "times";
             iconColor = "danger";
             break;
         default:
+            title = _("Connection test not started");
             icon = "minus";
             iconColor = "secondary";
     }
     return (
-        <div className={`text-${iconColor}`}>
-            <i className={`fas fa-${icon}`} />
-        </div>
+        <span className={`text-${iconColor}`}>
+            <i className={`fas fa-${icon}`} title={title} />
+        </span>
     );
 }
