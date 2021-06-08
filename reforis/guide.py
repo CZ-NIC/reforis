@@ -1,4 +1,4 @@
-#  Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+#  Copyright (C) 2019-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
 #
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
@@ -9,6 +9,8 @@ application can put all required content into that.
 """
 
 from flask import Blueprint, render_template, current_app, redirect, url_for
+
+from .auth import is_user_logged
 
 # pylint: disable=invalid-name
 guide = Blueprint('ForisGuide', __name__, url_prefix='/guide')
@@ -22,4 +24,4 @@ def index(path):
     web_data = current_app.backend.perform('web', 'get_data')
     if not web_data['guide']['enabled']:
         return redirect(url_for('Foris.index'))
-    return render_template('guide.html')
+    return render_template('guide.html', user_is_logged={'logged': is_user_logged()})
