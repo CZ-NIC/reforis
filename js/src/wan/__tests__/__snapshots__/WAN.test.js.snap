@@ -997,13 +997,14 @@ wait for a while before running this test.
             <td
               class="text-right"
             >
-              <div
+              <span
                 class="text-secondary"
               >
                 <i
                   class="fas fa-minus"
+                  title="Connection test not started"
                 />
-              </div>
+              </span>
             </td>
           </tr>
           <tr>
@@ -1015,13 +1016,14 @@ wait for a while before running this test.
             <td
               class="text-right"
             >
-              <div
+              <span
                 class="text-secondary"
               >
                 <i
                   class="fas fa-minus"
+                  title="Connection test not started"
                 />
-              </div>
+              </span>
             </td>
           </tr>
           <tr>
@@ -1033,13 +1035,14 @@ wait for a while before running this test.
             <td
               class="text-right"
             >
-              <div
+              <span
                 class="text-secondary"
               >
                 <i
                   class="fas fa-minus"
+                  title="Connection test not started"
                 />
-              </div>
+              </span>
             </td>
           </tr>
           <tr>
@@ -1051,13 +1054,14 @@ wait for a while before running this test.
             <td
               class="text-right"
             >
-              <div
+              <span
                 class="text-secondary"
               >
                 <i
                   class="fas fa-minus"
+                  title="Connection test not started"
                 />
-              </div>
+              </span>
             </td>
           </tr>
         </tbody>
