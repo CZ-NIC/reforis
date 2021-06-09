@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-04-27 11:02+0200\n"
-"PO-Revision-Date: 2020-09-07 07:36+0000\n"
-"Last-Translator: nautilusx <mail.ka@mailbox.org>\n"
+"PO-Revision-Date: 2021-06-10 12:34+0000\n"
+"Last-Translator: Matthias <matthias.franke@mail.de>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/turris/reforis/de/"
+">\n"
 "Language: de\n"
-"Language-Team: German "
-"<https://hosted.weblate.org/projects/turris/reforis/de/>\n"
-"Plural-Forms: nplurals=2; plural=n != 1\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.7-dev\n"
 "Generated-By: Babel 2.9.0\n"
 
 #: js/src/about/About.js:23 js/src/main/pages.js:109 js/src/main/pages.js:228
@@ -30,6 +31,9 @@ msgid ""
 "href=\"mailto:tech.support@turris.cz\" target=\"_blank\">customer "
 "support</a>."
 msgstr ""
+"Hier finden Sie einige Informationen zu Ihrem Router. Bitte nutzen Sie diese "
+"Informationen wenn Sie unseren <a href=\"mailto:tech.support@turris.cz\" "
+"target=\"_blank\">Support kontaktieren</a>."
 
 #: js/src/about/About.js:49
 msgid "Device"
@@ -41,7 +45,7 @@ msgstr "Seriennummer"
 
 #: js/src/about/About.js:57
 msgid "reForis version"
-msgstr ""
+msgstr "reForis Version"
 
 #: js/src/about/About.js:61
 msgid "Turris OS version"
@@ -59,6 +63,11 @@ msgid ""
 "                                    - you can pick, which branch you want"
 " to test."
 msgstr ""
+"Turris OS wird in verschiedenen Versionen bereitgestellt,\n"
+"                                    die unterschiedliche Funktionen und "
+"unterschiedliche Stabilität haben\n"
+"                                    - Sie können wählen, welchen Version Sie "
+"testen möchten."
 
 #: js/src/about/About.js:97
 msgid "Kernel version"
@@ -66,7 +75,7 @@ msgstr "Kernel-Version"
 
 #: js/src/common/FactoryResetButton.js:51
 msgid "Reset"
-msgstr ""
+msgstr "Zurücksetzen"
 
 #: js/src/common/FactoryResetButton.js:66 js/src/common/RebootButton.js:66
 #: js/src/dns/DNSSECDisableModal.js:30
@@ -75,9 +84,8 @@ msgid "Warning!"
 msgstr "Warnung!"
 
 #: js/src/common/FactoryResetButton.js:68
-#, fuzzy
 msgid "Are you sure you want to reset the router?"
-msgstr "Wollen Sie den Router wirklich neu starten?"
+msgstr "Wollen Sie den Router wirklich zurücksetzen?"
 
 #: js/src/common/FactoryResetButton.js:71 js/src/common/RebootButton.js:71
 #: js/src/dns/DNSSECDisableModal.js:41
@@ -87,7 +95,7 @@ msgstr "Abbrechen"
 
 #: js/src/common/FactoryResetButton.js:73
 msgid "Confirm factory reset"
-msgstr ""
+msgstr "Bestätigen"
 
 #: js/src/common/RebootButton.js:51 js/src/maintenance/Reboot.js:16
 msgid "Reboot"
@@ -103,7 +111,7 @@ msgstr "Neustart bestätigen"
 
 #: js/src/common/ScrollToTopArrow.js:30
 msgid "Go to top"
-msgstr ""
+msgstr "Gehe zum Anfang"
 
 #: js/src/common/network/DHCPClientForm.js:14
 msgid "Hostname which will be provided to DHCP server."
@@ -115,13 +123,15 @@ msgstr "DHCP Hostname"
 
 #: js/src/common/network/DHCPClientsList.js:20
 msgid "DHCP Client List"
-msgstr ""
+msgstr "DHCP Client Liste"
 
 #: js/src/common/network/DHCPClientsList.js:22
 msgid ""
 "This list contains all devices that are connected to the network through "
 "wired or wireless connections."
 msgstr ""
+"Diese Liste enthält alle Geräte, die über LAN oder WLAN mit dem Netzwerk "
+"verbunden sind."
 
 #: js/src/common/network/DHCPClientsList.js:28
 #, fuzzy
@@ -184,29 +194,34 @@ msgstr "Wert muss positiv sein."
 #: js/src/common/network/DHCPValidators.js:87
 msgid "Invalid network settings. DHCP settings can't be validated."
 msgstr ""
+"Ungültige Netzwerkeinstellungen. Die DHCP-Einstellungen können nicht "
+"validiert werden."
 
 #: js/src/common/network/DHCPValidators.js:100
 msgid "Minimum lease time is 1 hour."
 msgstr "Minimale Lease-Zeit beträgt 1 Stunde."
 
 #: js/src/common/network/DHCPValidators.js:116
-#, fuzzy
 msgid "Address is outside current network."
-msgstr "IP-Adresse des Routers im inneren Netzwerk."
+msgstr "Die IP-Adresse liegt außerhalb des aktuellen Netzwerks."
 
 #: js/src/common/network/DHCPValidators.js:120
 msgid "Address is already reserved for other purposes."
-msgstr ""
+msgstr "Die IP-Adresse ist bereits für andere Zwecke reserviert."
 
 #: js/src/common/network/DHCPValidators.js:131
 msgid "Too many addresses requested. Set a lower number or change DHCP start."
 msgstr ""
+"Zu viele Adressen angefordert. Stellen Sie eine niedrigere Zahl ein oder "
+"ändern Sie den DHCP-Start."
 
 #: js/src/common/network/DHCPValidators.js:138
 msgid ""
 "The only DHCP lease is the same as router's address. Increase limit or "
 "change start address."
 msgstr ""
+"Die einzige DHCP-Lease ist die gleiche wie die Adresse des Routers. Erhöhen "
+"Sie das Limit oder ändern Sie die Startadresse."
 
 #: js/src/common/network/StaticIPForm.js:14 js/src/wan/WAN6Form.js:36
 msgid ""
@@ -299,6 +314,26 @@ msgid ""
 "this is a serious flaw on their side.</p>\n"
 "            "
 msgstr ""
+"\n"
+"<p>Der Router Turris verwendet einen eigenen DNS-Resolver mit DNSSEC-"
+"Unterstützung. Er ist in der Lage, unabhängig zu arbeiten, oder er\n"
+"kann Ihre DNS-Anfragen an den DNS-Resolver Ihres Internet Service Providers "
+"weiterleiten.<p/>\n"
+"<p>Die folgende Einstellung bestimmt das Verhalten des DNS-Resolvers. "
+"Normalerweise ist es besser, den Resolver des ISP \n"
+"zu verwenden. Wenn er aus irgendeinem Grund nicht funktioniert, ist es "
+"notwendig, die\n"
+"direkte Auflösen ohne Weiterleitung zu nutzen.<p/>\n"
+"<p>In seltenen Fällen hat der ISP ein nicht korrekt konfiguriertes Netzwerk, "
+"das die DNSSEC-Validierung stört. Wenn \n"
+"Probleme mit dem DNS auftreten, können Sie die DNSSEC "
+"Validierung<b>vorübergehend</b> deaktivieren, um die Quelle des Problems zu "
+"ermitteln. \n"
+"Denken Sie jedoch daran, dass Sie ohne DNSSEC-Validierung anfällig für DNS-"
+"Spoofing\n"
+"Angriffe sind! Daher empfehlen wir, <b>DNSSEC zu aktivieren</b> und das "
+"Problem mit Ihrem ISP zu klären.</p>\n"
+"            "
 
 #: js/src/dns/DNS.js:62 js/src/overview/Overview.js:68 js/src/wan/WAN.js:50
 msgid "Connection Test"
@@ -337,9 +372,8 @@ msgstr ""
 " und der Domäne \"my.lan\" wäre das Ergebnis dann \"android-123.my.lan\"."
 
 #: js/src/dns/DNSForm.js:67
-#, fuzzy
 msgid "DNS Settings"
-msgstr "LAN-Einstellungen"
+msgstr "DNS Einstellungen"
 
 #: js/src/dns/DNSForm.js:84
 msgid "Use forwarding"
@@ -368,6 +402,14 @@ msgid ""
 "\n"
 "Do you still want to continue and stay unprotected?\n"
 msgstr ""
+"\n"
+"DNSSEC ist eine Sicherheitstechnologie, die die DNS-Kommunikation vor "
+"Angriffen auf die DNS-Infrastruktur schützt.\n"
+"Wir empfehlen dringend, die DNSSEC-Validierung aktiviert zu lassen, es sei "
+"denn, Sie wissen, dass sich Ihr Gerät in einem\n"
+"Netzwerk befindet, in dem DNSSEC nicht funktioniert. \n"
+"\n"
+"Wollen Sie trotzdem fortfahren und ungeschützt bleiben?\n"
 
 #: js/src/dns/DNSSECDisableModal.js:50
 msgid "Disable DNSSEC"
@@ -375,20 +417,20 @@ msgstr "DNSSEC deaktivieren"
 
 #: js/src/dns/Forwarders/Forwarders.js:80
 msgid "Edit forwarder"
-msgstr ""
+msgstr "Weiterleitung bearbeiten"
 
 #: js/src/dns/Forwarders/Forwarders.js:81
 #: js/src/dns/Forwarders/Forwarders.js:103
 msgid "Add custom forwarder"
-msgstr ""
+msgstr "Benutzerdefinierte Weiterleitung hinzufügen"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:37
 msgid "Forwarders"
-msgstr ""
+msgstr "Weiterleitungen"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:38
 msgid "Actions"
-msgstr ""
+msgstr "Aktionen"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:45
 msgid "Use provider's DNS resolver"
@@ -396,19 +438,22 @@ msgstr "DNS-Resolver des Providers verwenden"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:142
 msgid "Edit"
-msgstr ""
+msgstr "Bearbeiten"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:150
 msgid "Delete"
 msgstr "Löschen"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:23
+#, fuzzy
 msgid "Base 64 encoded SHA-256."
-msgstr ""
+msgstr "Base 64 verschlüsselung SHA-256."
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:24
 msgid "\"No TLS\" means that the regular UDP-base DNS protocol is used."
 msgstr ""
+"\"Kein TLS\" bedeutet, dass das reguläre DNS-Protokoll auf UDP-Basis "
+"verwendet wird."
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:49
 #: js/src/packageManagement/updates/UpdateApproval.js:152
@@ -417,71 +462,71 @@ msgstr "Name"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:72
 msgid "TLS type"
-msgstr ""
+msgstr "TLS-Typ"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:90
 msgid "TLS hostname"
-msgstr ""
+msgstr "TLS-Hostname"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:102
 msgid "TLS pin"
-msgstr ""
+msgstr "TLS-Pin"
 
 #: js/src/dns/Forwarders/Forwarder/ForwarderForm.js:118
 msgid "Save"
-msgstr ""
+msgstr "Speichern"
 
 #: js/src/dns/Forwarders/Forwarder/IPAddressesForm.js:13
 msgid "IPv4"
-msgstr ""
+msgstr "IPv4"
 
 #: js/src/dns/Forwarders/Forwarder/IPAddressesForm.js:14
 msgid "IPv6"
-msgstr ""
+msgstr "IPv6"
 
 #: js/src/dns/Forwarders/Forwarder/IPAddressesForm.js:51
 msgid "${label} Addresses"
-msgstr ""
+msgstr "${label} Adressen"
 
 #: js/src/dns/Forwarders/Forwarder/IPAddressesForm.js:56
 msgid "${label} #${index + 1}"
-msgstr ""
+msgstr "${label} #${index + 1}"
 
 #: js/src/dns/Forwarders/Forwarder/IPAddressesForm.js:80
 msgid "Add ${label} address"
-msgstr ""
+msgstr "Adressen ${label} hinzufügen"
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:44
 msgid "Forwarder saved successfully."
-msgstr ""
+msgstr "Weiterleitung erfolgreich gespeichert."
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:46
 msgid "Can't save forwarder."
-msgstr ""
+msgstr "Weiterleitung konnte nicht gespeichert werden."
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:53
 msgid "Forwarder added successfully."
-msgstr ""
+msgstr "Weiterleitung erfolgreich hinzugefügt."
 
 #: js/src/dns/Forwarders/Forwarder/hooks.js:55
 msgid "Can't add new forwarder."
-msgstr ""
+msgstr "Es konnte keine neue Weiterleitung hinzugefügt werden."
 
 #: js/src/dns/Forwarders/Forwarder/validator.js:20
 msgid "Forwarder name should have at least one symbol."
-msgstr ""
+msgstr "Der Name der Weiterleitung muss mindestens ein Zeichen enthalten."
 
 #: js/src/dns/Forwarders/Forwarder/validator.js:28
 msgid "Hostname should have at least one symbol."
-msgstr ""
+msgstr "Der Hostname muss mindestens ein Zeichen enthalten."
 
 #: js/src/dns/Forwarders/Forwarder/validator.js:33
 msgid "TLS pin should have at least one symbol."
-msgstr ""
+msgstr "Der TLS-Pin muss mindestens ein Zeichen enthalten."
 
 #: js/src/dns/Forwarders/Forwarder/validator.js:45
 msgid "Define at least one of the IP addresses of the forwarder."
-msgstr ""
+msgstr "Definieren Sie mindestens eine der IP-Adressen der Weiterleitung"
 
 #: js/src/guestNetwork/GuestNetwork.js:37 js/src/interfaces/constants.js:11
 #: js/src/main/pages.js:154
@@ -499,14 +544,21 @@ msgid ""
 "in LAN.\n"
 "        "
 msgstr ""
+"\n"
+"Das Gastnetzwerk wird für <a href=\"${ForisURLs.wifi}\">guest Wi-Fi</a> "
+"verwendet.\n"
+"Es ist von Ihrem normalen Netzwerk getrennt. Geräte, die mit diesem Netzwerk "
+"verbunden sind, können auf das Internet zugreifen, dürfen aber nicht auf den "
+"Router oder anderen Geräte in Ihrem normalen Netzwerk zugreifen.\n"
+"        "
 
 #: js/src/guestNetwork/GuestNetworkForm.js:18
 msgid "Router's IP address in the guest inner network."
-msgstr ""
+msgstr "Die IP-Adresse des Routers im Gastnetzwerk."
 
 #: js/src/guestNetwork/GuestNetworkForm.js:19
 msgid "Network mask of the guest inner network."
-msgstr ""
+msgstr "Netzwerkmaske des Gastnetzwerks."
 
 #: js/src/guestNetwork/GuestNetworkForm.js:22
 msgid ""
@@ -525,9 +577,8 @@ msgid "Upload speed in guest network (in kilobits per second)."
 msgstr "Uploadgeschwindigkeit im Gastnetzwerk (kbit/s)."
 
 #: js/src/guestNetwork/GuestNetworkForm.js:65
-#, fuzzy
 msgid "Guest Network Settings"
-msgstr "Gastnetzwerk"
+msgstr "Gastnetzwerk Einstellungen"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:67
 msgid "Enable"
@@ -543,7 +594,7 @@ msgstr "DHCP aktivieren"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:116
 msgid "Enable QoS"
-msgstr ""
+msgstr "Aktiviere QoS"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:159
 #: js/src/overview/Cards/NetmetrCard.js:67
@@ -553,15 +604,15 @@ msgstr "Herunterladen"
 #: js/src/guestNetwork/GuestNetworkForm.js:172
 #: js/src/overview/Cards/NetmetrCard.js:83
 msgid "Upload"
-msgstr ""
+msgstr "Hochladen"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:191
 msgid "Download speed must be positive"
-msgstr ""
+msgstr "Die Download Geschwindigkeit muss höher sein"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:194
 msgid "Upload speed must be positive"
-msgstr ""
+msgstr "Die Upload Geschwindigkeit muss höher sein"
 
 #: js/src/guestNetwork/GuestNetworkNotification.js:12
 msgid ""
@@ -569,10 +620,13 @@ msgid ""
 "here will become fully functional after you assign a network interface to"
 " this network."
 msgstr ""
+"Dieses Netzwerk enthält derzeit keine Geräte. Die Änderungen, die Sie hier "
+"vornehmen, werden funktionsfähig, nachdem Sie diesem Netzwerk eine "
+"Netzwerkschnittstelle zugewiesen haben."
 
 #: js/src/guestNetwork/GuestNetworkNotification.js:16
 msgid "All network interfaces of this network are currently down."
-msgstr ""
+msgstr "Alle Netzwerkschnittstellen dieses Netzwerks sind derzeit deaktiviert."
 
 #: js/src/guide/constants.js:13
 msgid ""
@@ -588,6 +642,7 @@ msgstr ""
 #: js/src/guide/constants.js:17
 msgid "Your password is set. You may proceed to the next step."
 msgstr ""
+"Ihr Passwort wurde gesetzt. Sie können mit dem nächsten Schritt fortfahren."
 
 #: js/src/guide/constants.js:20
 msgid "The workflow was set. You may proceed to next step."
@@ -626,6 +681,9 @@ msgid ""
 "matches the time on your computer if not try to update it via NTP or "
 "manually."
 msgstr ""
+"Ihre Zeit und Zeitzone wurden gespeichert. Bitte stellen Sie sicher, dass "
+"die Zeit mit der Zeit auf Ihrem Computer übereinstimmt, wenn nicht, "
+"versuchen Sie, sie über NTP oder manuell zu aktualisieren."
 
 #: js/src/guide/constants.js:40
 msgid ""
@@ -2828,4 +2886,3 @@ msgstr ""
 #~ "to set a secure password which is"
 #~ " long and uncommon."
 #~ msgstr ""
-
