@@ -294,13 +294,14 @@ exports[`Overview Snapshot of the whole page 1`] = `
                     <td
                       class="text-right"
                     >
-                      <div
+                      <span
                         class="text-secondary"
                       >
                         <i
                           class="fas fa-minus"
+                          title="Connection test not started"
                         />
-                      </div>
+                      </span>
                     </td>
                   </tr>
                   <tr>
@@ -312,13 +313,14 @@ exports[`Overview Snapshot of the whole page 1`] = `
                     <td
                       class="text-right"
                     >
-                      <div
+                      <span
                         class="text-secondary"
                       >
                         <i
                           class="fas fa-minus"
+                          title="Connection test not started"
                         />
-                      </div>
+                      </span>
                     </td>
                   </tr>
                   <tr>
@@ -330,13 +332,14 @@ exports[`Overview Snapshot of the whole page 1`] = `
                     <td
                       class="text-right"
                     >
-                      <div
+                      <span
                         class="text-secondary"
                       >
                         <i
                           class="fas fa-minus"
+                          title="Connection test not started"
                         />
-                      </div>
+                      </span>
                     </td>
                   </tr>
                   <tr>
@@ -348,13 +351,14 @@ exports[`Overview Snapshot of the whole page 1`] = `
                     <td
                       class="text-right"
                     >
-                      <div
+                      <span
                         class="text-secondary"
                       >
                         <i
                           class="fas fa-minus"
+                          title="Connection test not started"
                         />
-                      </div>
+                      </span>
                     </td>
                   </tr>
                   <tr>
@@ -366,13 +370,14 @@ exports[`Overview Snapshot of the whole page 1`] = `
                     <td
                       class="text-right"
                     >
-                      <div
+                      <span
                         class="text-secondary"
                       >
                         <i
                           class="fas fa-minus"
+                          title="Connection test not started"
                         />
-                      </div>
+                      </span>
                     </td>
                   </tr>
                   <tr>
@@ -384,13 +389,14 @@ exports[`Overview Snapshot of the whole page 1`] = `
                     <td
                       class="text-right"
                     >
-                      <div
+                      <span
                         class="text-secondary"
                       >
                         <i
                           class="fas fa-minus"
+                          title="Connection test not started"
                         />
-                      </div>
+                      </span>
                     </td>
                   </tr>
                 </tbody>

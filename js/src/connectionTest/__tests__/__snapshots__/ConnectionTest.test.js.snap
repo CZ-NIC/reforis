@@ -199,13 +199,14 @@ exports[`<ConnectionTest/> Snapshot before connection test. 1`] = `
             <td
               class="text-right"
             >
-              <div
+              <span
                 class="text-secondary"
               >
                 <i
                   class="fas fa-minus"
+                  title="Connection test not started"
                 />
-              </div>
+              </span>
             </td>
           </tr>
           <tr>
@@ -217,13 +218,14 @@ exports[`<ConnectionTest/> Snapshot before connection test. 1`] = `
             <td
               class="text-right"
             >
-              <div
+              <span
                 class="text-secondary"
               >
                 <i
                   class="fas fa-minus"
+                  title="Connection test not started"
                 />
-              </div>
+              </span>
             </td>
           </tr>
           <tr>
@@ -235,13 +237,14 @@ exports[`<ConnectionTest/> Snapshot before connection test. 1`] = `
             <td
               class="text-right"
             >
-              <div
+              <span
                 class="text-secondary"
               >
                 <i
                   class="fas fa-minus"
+                  title="Connection test not started"
                 />
-              </div>
+              </span>
             </td>
           </tr>
           <tr>
@@ -253,13 +256,14 @@ exports[`<ConnectionTest/> Snapshot before connection test. 1`] = `
             <td
               class="text-right"
             >
-              <div
+              <span
                 class="text-secondary"
               >
                 <i
                   class="fas fa-minus"
+                  title="Connection test not started"
                 />
-              </div>
+              </span>
             </td>
           </tr>
         </tbody>
@@ -298,13 +302,14 @@ exports[`<ConnectionTest/> Snapshots with connection test results. 1`] = `
             <td
               class="text-right"
             >
-              <div
+              <span
                 class="text-success"
               >
                 <i
                   class="fas fa-check"
+                  title="Connection test successful"
                 />
-              </div>
+              </span>
             </td>
           </tr>
           <tr>
@@ -316,13 +321,14 @@ exports[`<ConnectionTest/> Snapshots with connection test results. 1`] = `
             <td
               class="text-right"
             >
-              <div
+              <span
                 class="text-success"
               >
                 <i
                   class="fas fa-check"
+                  title="Connection test successful"
                 />
-              </div>
+              </span>
             </td>
           </tr>
           <tr>
@@ -334,13 +340,14 @@ exports[`<ConnectionTest/> Snapshots with connection test results. 1`] = `
             <td
               class="text-right"
             >
-              <div
+              <span
                 class="text-success"
               >
                 <i
                   class="fas fa-check"
+                  title="Connection test successful"
                 />
-              </div>
+              </span>
             </td>
           </tr>
           <tr>
@@ -352,13 +359,14 @@ exports[`<ConnectionTest/> Snapshots with connection test results. 1`] = `
             <td
               class="text-right"
             >
-              <div
+              <span
                 class="text-success"
               >
                 <i
                   class="fas fa-check"
+                  title="Connection test successful"
                 />
-              </div>
+              </span>
             </td>
           </tr>
         </tbody>
