@@ -17,6 +17,7 @@ const HELP_TEXTS = {
     custom_mac: _(
         "Colon is used as a separator, for example 00:11:22:33:44:55"
     ),
+    current_mac: _("MAC address of the WAN interface."),
 };
 
 MACForm.propTypes = {
@@ -24,6 +25,7 @@ MACForm.propTypes = {
         mac_settings: PropTypes.shape({
             custom_mac_enabled: PropTypes.bool.isRequired,
             custom_mac: PropTypes.string,
+            mac_address: PropTypes.string,
         }),
     }).isRequired,
     formErrors: PropTypes.shape({
@@ -58,19 +60,26 @@ export default function MACForm({
                 }))}
                 disabled={disabled}
             />
-            {macSettings.custom_mac_enabled ? (
-                <TextInput
-                    label={_("MAC address")}
-                    value={macSettings.custom_mac || ""}
-                    helpText={HELP_TEXTS.custom_mac}
-                    error={errors.custom_mac}
-                    required
-                    onChange={setFormValue((value) => ({
-                        mac_settings: { custom_mac: { $set: value } },
-                    }))}
-                    disabled={disabled}
-                />
-            ) : null}
+            {macSettings.custom_mac_enabled && (
+                <>
+                    <TextInput
+                        label={_("Current MAC address")}
+                        value={macSettings.mac_address}
+                        helpText={HELP_TEXTS.current_mac}
+                        disabled
+                    />
+                    <TextInput
+                        label={_("Set the new MAC address")}
+                        helpText={HELP_TEXTS.custom_mac}
+                        error={errors.custom_mac}
+                        required
+                        onChange={setFormValue((value) => ({
+                            mac_settings: { custom_mac: { $set: value } },
+                        }))}
+                        disabled={disabled}
+                    />
+                </>
+            )}
         </>
     );
 }
