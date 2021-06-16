@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-04-27 11:02+0200\n"
-"PO-Revision-Date: 2021-06-16 11:42+0000\n"
+"PO-Revision-Date: 2021-06-17 09:39+0000\n"
 "Last-Translator: Atec <nil.maho@gmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/turris/reforis/sk/"
 ">\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.7-dev\n"
+"X-Generator: Weblate 4.7\n"
 "Generated-By: Babel 2.9.0\n"
 
 #: js/src/about/About.js:23 js/src/main/pages.js:109 js/src/main/pages.js:228
@@ -594,7 +594,7 @@ msgstr "Povoliť QoS"
 #: js/src/guestNetwork/GuestNetworkForm.js:159
 #: js/src/overview/Cards/NetmetrCard.js:67
 msgid "Download"
-msgstr "Sťahovanie"
+msgstr "Stiahnuť"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:172
 #: js/src/overview/Cards/NetmetrCard.js:83
