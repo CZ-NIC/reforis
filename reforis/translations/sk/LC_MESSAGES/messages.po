@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-04-27 11:02+0200\n"
-"PO-Revision-Date: 2021-06-15 22:23+0000\n"
+"PO-Revision-Date: 2021-06-16 11:42+0000\n"
 "Last-Translator: Atec <nil.maho@gmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/turris/reforis/sk/"
 ">\n"
@@ -32,8 +32,8 @@ msgid ""
 "support</a>."
 msgstr ""
 "Tu nájdete niektoré informácie o svojom zariadení. Ak budete kontaktovať "
-"našu <a href=\"mailto:tech.support@turris.cz\" target=\"_blank\">zákaznícku "
-"podporu</a>, priložte ich, prosím, k správe."
+"našu <a href=\"mailto:tech.support@turris.cz\" target=\"_blank\""
+">technickúpodporu</a>, priložte ich, prosím, k správe."
 
 #: js/src/about/About.js:49
 msgid "Device"
@@ -64,8 +64,8 @@ msgid ""
 " to test."
 msgstr ""
 "Turris OS sa aktuálne vydáva v rôznych vetvách,\n"
-"                                    ktoré majú rôzne funkcie a stabilitu\n"
-"                                    – môžete si vybrať, ktorú vetvu chcete "
+"                                    ktoré majú rôzne funkcie a stabilitu.\n"
+"                                    Môžete si vybrať, ktorú vetvu chcete "
 "otestovať."
 
 #: js/src/about/About.js:97
@@ -114,11 +114,11 @@ msgstr "Prejsť na začiatok"
 
 #: js/src/common/network/DHCPClientForm.js:14
 msgid "Hostname which will be provided to DHCP server."
-msgstr "Názov stroja , ktorý sa poskytne DHCP serveru."
+msgstr "Sieťový názov, ktorý sa poskytne DHCP serveru."
 
 #: js/src/common/network/DHCPClientForm.js:38
 msgid "DHCP hostname"
-msgstr "Názov stroja pre DHCP"
+msgstr "Sieťový názov pre DHCP"
 
 #: js/src/common/network/DHCPClientsList.js:20
 msgid "DHCP Client List"
@@ -129,8 +129,8 @@ msgid ""
 "This list contains all devices that are connected to the network through "
 "wired or wireless connections."
 msgstr ""
-"Tento zoznam obsahuje všetky zariadenia pripojené do siete káblovým alebo "
-"bezdrôtovým pripojením."
+"Tento zoznam obsahuje všetky zariadenia pripojené do siete káblom alebo "
+"bezdrôtovo."
 
 #: js/src/common/network/DHCPClientsList.js:28
 msgid "No clients found."
@@ -151,7 +151,7 @@ msgstr "MAC adresa"
 #: js/src/common/network/DHCPClientsList.js:38 js/src/hostname/Hostname.js:21
 #: js/src/main/pages.js:96 js/src/main/pages.js:187
 msgid "Hostname"
-msgstr "Názov stroja"
+msgstr "Sieťový názov"
 
 #: js/src/common/network/DHCPClientsList.js:39
 msgid "Active"
@@ -162,8 +162,8 @@ msgid ""
 "Enable this option to automatically assign IP addresses to the devices "
 "connected to the router."
 msgstr ""
-"Túto voľbu zapnite na automatické prideľovanie IP adries zariadeniam "
-"pripojeným k routeru."
+"Zapnutím tejto voľby sa povoľuje automatické prideľovanie IP adries "
+"zariadeniam pripojeným k routeru."
 
 #: js/src/common/network/DHCPServerForm.js:47
 msgid "DHCP start"
@@ -208,7 +208,7 @@ msgstr "Adresa je už rezervovaná na iné účely."
 #: js/src/common/network/DHCPValidators.js:131
 msgid "Too many addresses requested. Set a lower number or change DHCP start."
 msgstr ""
-"Požaduje sa priveľa adries. Nastavte nižší počet alebo zmeňte začiatok "
+"Je požadovaných priveľa adries. Nastavte nižší počet alebo zmeňte začiatok "
 "rozsahu pre DHCP."
 
 #: js/src/common/network/DHCPValidators.js:138
@@ -224,8 +224,8 @@ msgid ""
 "DNS server address is not required as the built-in DNS resolver is "
 "capable of working without it."
 msgstr ""
-"Adresa DNS servera nie je povinná, pretože zabudovaný DNS prekladač je "
-"schopný pracovať aj bez nej."
+"Adresa DNS servera nie je povinná, zabudovaný DNS prekladač je schopný "
+"pracovať aj bez nej."
 
 #: js/src/common/network/StaticIPForm.js:50
 msgid "IP address"
@@ -311,19 +311,19 @@ msgid ""
 "            "
 msgstr ""
 "\n"
-"<p>Router Turris používa svoj vlastný DNS resolver (prekladač) s podporou "
+"<p>Router Turris používa svoj vlastný DNS prekladač (resolver) s podporou "
 "DNSSEC. Je schopný pracovať nezávisle alebo\n"
-"odovzdávať DNS dopyty resolveru vášho poskytovateľa prístupu na internet "
+"odovzdávať DNS dopyty prekladaču vášho poskytovateľa prístupu na internet "
 "(ISP).<p/>\n"
-"<p>Nasledujúce nastavenia určujú správanie DNS resolvera. Obvykle je lepšie "
-"používať resolver vášho ISP,\n"
-"ak pracuje správne. Ak z nejakých príčin správne nefunguje, je potrebé "
+"<p>Nasledujúce nastavenia určujú správanie DNS prekladača. Obvykle je lepšie "
+"používať prekladač vášho ISP,\n"
+"ak pracuje správne. Ak z nejakých príčin správne nefunguje, je potrebné "
 "použiť priame\n"
 "vyhodnocovanie dopytov bez preposielania.<p/>\n"
-"<p>V ojedinelých prípadoch má ISP nesprávne nakonfigurovanú sieť, ktorá "
-"nefunguje s validáciou DNSSEC.\n"
-"Ak zaznamenávate problémy s DNS, môžete <b>dočasne</b> vypnúť validáciu "
-"DNSSEC, aby ste odhalili\n"
+"<p>V ojedinelých prípadoch má ISP nesprávne nakonfigurovanú sieť a nefunguje "
+"v nej validácia DNSSEC.\n"
+"Ak zaznamenávate problémy s DNS, môžete <b>dočasne</b> validáciu DNSSEC "
+"vypnúť, aby ste odhalili\n"
 "zdroj problémov. Nezabudnite však, že bez validácie DNSSEC budete ohrození "
 "útokmi vo forme podvrhnutej\n"
 "DNS odpovede! Preto <b>odporúčame ponechať DNSSEC zapnuté</b> a situáciu "
@@ -347,7 +347,7 @@ msgstr ""
 "\n"
 "Tu môžete otestovať vaše pripojenie k internetu. Tento test súčasne overí, "
 "či DNS preklad funguje podľa očakávania.\n"
-"Ak ste zmenili nastavenie forwardera (preposielania), nezabudnite kliknúť na "
+"Ak ste zmenili nastavenie preposielania (forwardera), nezabudnite kliknúť na "
 "tlačidlo <b>Uložiť</b>.\n"
 "        "
 
@@ -356,7 +356,8 @@ msgid ""
 "This will enable your DNS resolver to place DHCP client's names among the"
 " local DNS records."
 msgstr ""
-"Zapnutie ukladania názvov DHCP klientov do miestnych záznamov DNS prekladu."
+"Povolene ukladania názvov DHCP klientov do záznamov miestneho DNS prekladača "
+"(resolvera)."
 
 #: js/src/dns/DNSForm.js:20
 msgid ""
@@ -372,7 +373,7 @@ msgstr "Nastavenia DNS"
 
 #: js/src/dns/DNSForm.js:84
 msgid "Use forwarding"
-msgstr "Používať forwarding (preposielanie)"
+msgstr "Používať preposielanie (forwarding)"
 
 #: js/src/dns/DNSForm.js:100
 msgid "Enable DNSSEC"
@@ -400,8 +401,8 @@ msgstr ""
 "\n"
 "DNSSEC je bezpečnostná technológia na ochranu DNS komunikácie proti útokom "
 "na infraštruktúru DNS.\n"
-"Dôrazne odporúčame ponechať overovanie DNSSEC zapnuté s výnimkou situácie, "
-"keď svoje zariadenie vedome pripájate do siete,\n"
+"Dôrazne odporúčame ponechať overovanie DNSSEC zapnuté okrem situácie, keď "
+"svoje zariadenie vedome pripájate do siete,\n"
 "kde validácia DNSSEC nefunguje. \n"
 "\n"
 "Naozaj chcete pokračovať a zostať nechránení?\n"
@@ -412,7 +413,7 @@ msgstr "Vypnúť DNSSEC"
 
 #: js/src/dns/Forwarders/Forwarders.js:80
 msgid "Edit forwarder"
-msgstr "Upraviť preposielanie"
+msgstr "Upraviť preposielanie (forwarder)"
 
 #: js/src/dns/Forwarders/Forwarders.js:81
 #: js/src/dns/Forwarders/Forwarders.js:103
@@ -421,7 +422,7 @@ msgstr "Pridať vlastné preposielanie"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:37
 msgid "Forwarders"
-msgstr "Preposielania"
+msgstr "Preposielania (forwardery)"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:38
 msgid "Actions"
@@ -429,7 +430,7 @@ msgstr "Akcie"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:45
 msgid "Use provider's DNS resolver"
-msgstr "Použiť DNS server poskytovateľa pripojenia"
+msgstr "Použiť DNS prekladač (resolver) poskytovateľa pripojenia"
 
 #: js/src/dns/Forwarders/ForwardersTable.js:142
 msgid "Edit"
@@ -541,7 +542,7 @@ msgstr ""
 "pre hostí</a>.\n"
 "Je oddelená od ostatnej miestnej siete LAN. Zariadenia pripojené do tejto "
 "siete majú povolený prístup\n"
-"do internetu, ale nemôžu sa pripojiť na konfiguračné rozhranie routera ani k "
+"na internet, ale nemôžu sa pripojiť na konfiguračné rozhranie routera ani k "
 "iným zariadeniam\n"
 "v miestej sieti.\n"
 "        "
@@ -560,7 +561,7 @@ msgid ""
 "so that your main network doesn't get slowed-down by it."
 msgstr ""
 "Táto voľba zapne v sieti pre hostí obmedzenie rýchlosti pripojenia, aby "
-"nedošlo k spomaleniu v hlavnej sieti."
+"nedošlo k spomaleniu hlavnej siete."
 
 #: js/src/guestNetwork/GuestNetworkForm.js:25
 msgid "Download speed in guest network (in kilobits per second)."
@@ -576,7 +577,7 @@ msgstr "Nastavenia siete pre hostí"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:67
 msgid "Enable"
-msgstr "Zapnúť"
+msgstr "Povoliť"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:77 js/src/lan/LANManagedForm.js:61
 msgid "Router IP address"
@@ -584,11 +585,11 @@ msgstr "IP adresa routera"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:98 js/src/lan/LANManagedForm.js:82
 msgid "Enable DHCP"
-msgstr "Zapnúť DHCP"
+msgstr "Povoliť DHCP"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:116
 msgid "Enable QoS"
-msgstr "Zapnúť QoS"
+msgstr "Povoliť QoS"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:159
 #: js/src/overview/Cards/NetmetrCard.js:67
@@ -615,7 +616,7 @@ msgid ""
 " this network."
 msgstr ""
 "Táto sieť aktuálne neobsahuje žiadne zariadenia. Vykonané zmeny sa prejavia "
-"až keď tejto sieti priradíte sieťové rozhranie."
+"až po priradení sieťového rozhrania tejto sieti."
 
 #: js/src/guestNetwork/GuestNetworkNotification.js:16
 msgid "All network interfaces of this network are currently down."
@@ -627,9 +628,10 @@ msgid ""
 "device. Firstly it is required to set your password. Note the security of"
 " your home network is in your hands, so try not to use weak passwords."
 msgstr ""
-"Vitajte vo webovom rozhraní Foris. Tento sprievodca vám pomôže nastaviť vaše "
-"zariadenie. Najprv je potrebné nastaviť vaše heslo. Pamätajte, že bezpečnosť "
-"vašej domácej siete je vo vašich rukách, preto nepoužívajte slabé heslá."
+"Vitajte vo webovom rozhraní Foris. Tento sprievodca vám pomôže s nastavením "
+"vášho zariadenia. Najprv je potrebné nastaviť vaše heslo. Pamätajte, že "
+"bezpečnosť vašej domácej siete je vo vašich rukách, preto nepoužívajte slabé "
+"heslá."
 
 #: js/src/guide/constants.js:17
 msgid "Your password is set. You may proceed to the next step."
@@ -652,8 +654,8 @@ msgid ""
 "You've configured your network interfaces. It seems that you didn't break"
 " any crucial network settings so you can safely proceed to the next step."
 msgstr ""
-"Nastavili ste sieťové rozhrania. Zdá sa, že ste nenarušili žiadne zásadné "
-"nastavenie siete, takže môžete bezpečne pokračovať na ďalší krok."
+"Nastavili ste sieťové rozhrania. Zdá sa, že nedošlo k narušeniu žiadnych "
+"zásadných nastavení siete, takže môžete bezpečne pokračovať na ďalší krok."
 
 #: js/src/guide/constants.js:34
 msgid "Now you need to set the time and timezone of your device."
@@ -681,8 +683,8 @@ msgid ""
 "You've updated your DNS configuration. Try to run connection test to see "
 "whether your DNS resolver is properly set."
 msgstr ""
-"Aktualizovani ste konfiguráciu DNS. Teraz spustite test pripojenia, čím "
-"overíte správne nastavenie DNS prekladu."
+"Aktualizovali ste konfiguráciu DNS. Teraz spustite test pripojenia, čím sa "
+"overí správnosť nastavenia DNS prekladu."
 
 #: js/src/guide/constants.js:48
 msgid "In order to access the internet, you need to configure your WAN interface."
@@ -694,7 +696,7 @@ msgid ""
 "whether it is working properly and if so you can safely proceed to the "
 "next step."
 msgstr ""
-"Rozhranie WAN je nastavené. Znovu spustite test pripojenia a overte, že "
+"Rozhranie WAN je nastavené. Znovu spustite test pripojenia na overenie, že "
 "všetko funguje. Potom môžete bezpečne postúpiť na ďalší krok."
 
 #: js/src/guide/constants.js:56
@@ -704,17 +706,17 @@ msgid ""
 "configuration interface unless you restart the network on your current "
 "device."
 msgstr ""
-"Teraz treba nastaviť LAN rozhranie. Pamätajte, že ak zmeníte nastavenia "
+"Teraz treba nastaviť rozhranie LAN. Uvedomte si, že ak zmeníte nastavenia "
 "siete, pravdepodobne sa nebudete môcť pripojiť na konfiguračné rozhranie, "
-"kým nereštartujete sieť na zariadení, z ktorého sa pripájate."
+"kým sa nereštartuje sieť v zariadení, z ktorého sa pripájate."
 
 #: js/src/guide/constants.js:59
 msgid ""
 "You've configured your LAN interface. Try to test whether settings work "
 "properly and if so you can safely proceed to the next step."
 msgstr ""
-"LAN rozhranie je nastavené. Skúste vyskúšať, či všetko funguje a potom "
-"postúpte na ďalší krok."
+"Rozhranie LAN je nastavené. Vyskúšajte, či všetko funguje a potom postúpte "
+"na ďalší krok."
 
 #: js/src/guide/constants.js:64
 msgid "Now you need to configure automatic updates on your device."
@@ -722,7 +724,7 @@ msgstr "Teraz je potrebné nastaviť automatické aktualizácie vášho zariaden
 
 #: js/src/guide/constants.js:67
 msgid "Please wait till the updater finishes its run."
-msgstr "Počkajte, prosím, kým sa automatické aktualizácie nedokončia."
+msgstr "Prosím, počkajte na dokončenie automatických aktualizácií."
 
 #: js/src/guide/constants.js:76
 msgid ""
@@ -737,9 +739,9 @@ msgid ""
 "Minimal device setup is finished. Note that you probably need to perform "
 "some further configuration updates to fit the device to your needs."
 msgstr ""
-"Minimálne nastavenie vášho zariadenia je dokončené. Pripomíname, že na "
-"prispôsobenie zariadenia vašim potrebám bude pravdepodobne potrebné vykonať "
-"v nastaveniach ďalšie zmeny."
+"Minimálne nastavenia vášho zariadenia sú dokončené. Pripomíname, že na úplné "
+"prispôsobenie zariadenia vašim potrebám bude pravdepodobne treba vykonať v "
+"nastaveniach ďalšie zmeny."
 
 #: js/src/guide/constants.js:92
 msgid ""
@@ -758,9 +760,9 @@ msgid ""
 " put any interfaces to your WAN and Guest Network. So it is a good idea "
 "to assign all interfaces to LAN."
 msgstr ""
-"Zvolili ste režim miestneho počítača, takže nemá zmysel umiestňovať "
-"akékoľvek rozhranie do WAN alebo siete pre hostí. Lepší nápad je pridať "
-"všetky rozhrania do LAN."
+"Zvolili ste režim miestneho servera, preto nemá zmysel umiestňovať akékoľvek "
+"rozhranie do WAN alebo do siete pre hostí. Vhodnejšie bude pridať všetky "
+"rozhrania do LAN."
 
 #: js/src/guide/constants.js:110
 msgid ""
@@ -770,8 +772,8 @@ msgid ""
 "<strong>Computer</strong> mode here."
 msgstr ""
 "V režime miestneho servera nie je potrebné spravovať LAN. (Ak ju chcete "
-"spravovať v tomto zariadení, zresetujte sprievodcu a vyberte scenár router.) "
-"Pravdepodobne chcete, aby sa správal ako klient, zvoľte preto režim "
+"spravovať týmto zariadením, zresetujte sprievodcu a zvoľte scenár router.) "
+"Ak chcete, aby sa zariadenie správalo ako klient, zvoľte režim "
 "<strong>Počítač</strong>."
 
 #: js/src/guide/constants.js:113
@@ -780,9 +782,9 @@ msgid ""
 "IP addresses are entered correctly otherwise you won't be able to access "
 "this configuration interface when the new settings are applied."
 msgstr ""
-"Kým potvrdíte nastavenie <strong>statické</strong>, skontrolujte, že IP "
-"adresy sú zadané správne. V opačnom prípade sa po potvrdení nastavení "
-"nebudete schopní pripojiť na toto konfiguračné rozhranie."
+"Pred potvrdením <strong>statického</strong> nastavenia skontrolujte správne "
+"zadanie IP adries. V opačnom prípade po potvrdení nastavení nebude možné "
+"pripojenie na toto konfiguračné rozhranie."
 
 #: js/src/guide/constants.js:116
 msgid ""
@@ -791,17 +793,18 @@ msgid ""
 "server which is managing your LAN. Then you need to connect to the new IP"
 " address to proceed the guide."
 msgstr ""
-"Ak zvolíte metódu <strong>DHCP</strong>, toto zariadenie pravdepodobne získa "
-"novú IP adresu. Zistíte ju z DHCP servera, ktorý spravuje vašu miestnu sieť. "
-"Potom sa pripojte na túto novú IP adresu a dokončite sprievodcu."
+"Ak zvolíte metódu <strong>DHCP</strong>, pravdepodobne budete potrebovať "
+"novú IP adresu tohto zariadenia. Získate ju z DHCP servera, ktorý spravuje "
+"vašu miestnu sieť. Potom sa pripojte na túto novú IP adresu a dokončite "
+"sprievodcu."
 
 #: js/src/guide/constants.js:119
 msgid ""
 "Note that either way you might need to re-plug your ethernet cables after"
 " you update the settings here."
 msgstr ""
-"Upozorňujeme, že v obidvoch prípadoch môže byť po zmene nastavení, ktoré tu "
-"vykonáte, potrebné odpojiť a znovu pripojiť ethernetové káble."
+"Upozorňujeme, že po zmene nastavení, ktoré tu vykonáte, môže byť potrebné "
+"odpojiť a znovu pripojiť sieťové káble."
 
 #: js/src/guide/constants.js:123
 msgid ""
@@ -818,11 +821,11 @@ msgstr ""
 msgid ""
 "Congratulations! Now your device should be able to act as a server on "
 "your local network."
-msgstr "Blahoželáme! Vaše zariadenia teraz funguje ako server v miestnej sieti."
+msgstr "Blahoželáme! Vaše zariadenie teraz funguje ako server v miestnej sieti."
 
 #: js/src/guide/hooks.js:23
 msgid "Cannot mark guide as finished."
-msgstr "Sprievodca sa nedá označiť ako dokončený."
+msgstr "Nie je možné potvrdiť dokončenie sprievodcu."
 
 #: js/src/guide/steps.js:20 js/src/main/pages.js:76 js/src/main/pages.js:167
 #: js/src/notificationsSettings/SMTPCustomForm.js:114
@@ -893,9 +896,9 @@ msgid ""
 "dynamic firewall updates blocking known attackers."
 msgstr ""
 "Ak chcete ešte viac zvýšiť svoje zabezpečenie, zvážte inštaláciu pluginu "
-"Zber dát (prostredníctvom správy balíčkov). Tým sa zapojíte do nášho výskumu "
-"zabezpečenia, ktorý odhaľuje nových útočníkov, a získate tak prístup k "
-"dynamickým aktualizáciám brány firewall, ktorá blokuje odhalených útočníkov."
+"Zber dát (v Správe balíčkov). Zapojíte sa tak do nášho výskumu zabezpečenia, "
+"ktorý odhaľuje nových útočníkov, a získate prístup k dynamickým "
+"aktualizáciám brány firewall, ktorá blokuje odhalených útočníkov."
 
 #: js/src/guide/GuidePages/GuideFinish.js:31
 msgid "Continue"
@@ -909,9 +912,8 @@ msgid ""
 "storage)."
 msgstr ""
 "Tento scenár vám pomôže nastaviť vaše zariadenie do úlohy miestneho servera. "
-"To znamená, že zariadenie bude poskytovať určité druhy služieb ostatným "
-"zariadeniam vo vašej miestnej sieti (napríklad môže fungovať ako sieťové "
-"dátové úložisko)."
+"To znamená, že bude poskytovať určité druhy služieb ostatným zariadeniam vo "
+"vašej miestnej sieti (napríklad môže fungovať ako sieťové dátové úložisko)."
 
 #: js/src/guide/GuidePages/WorkflowSelect.js:28
 msgid ""
@@ -920,14 +922,14 @@ msgid ""
 "standard network setup."
 msgstr ""
 "Po dokončení tohto scenára bude vaše zariadenie fungovať ako plne funkčný "
-"router. Predpokladá sa, že si želáte viac-menej štandardné nastavenie siete."
+"router. Predpokladá sa viac-menej štandardné nastavenie siete."
 
 #: js/src/guide/GuidePages/WorkflowSelect.js:31
 msgid ""
 "Just set your password and you are ready to go. This workflow is aimed to"
 " more advanced users who intend to set everything manually."
 msgstr ""
-"Stačí len nastaviť heslo a ste pripravení. Tento scenár je určený "
+"Stačí len nastaviť heslo a môžete začať. Tento scenár je určený "
 "pokročilejším užívateľom, ktorí chcú všetko nastaviť ručne."
 
 #: js/src/guide/GuidePages/WorkflowSelect.js:37
@@ -1008,15 +1010,15 @@ msgstr ""
 
 #: js/src/interfaces/Interfaces.js:51
 msgid "You have to assign at least one interface to this group."
-msgstr "Tejto skupine musíte priradiť aspoň jedno sieťové rozhranie."
+msgstr "Do tejto skupiny musíte priradiť aspoň jedno sieťové rozhranie."
 
 #: js/src/interfaces/InterfacesForm.js:63
 msgid ""
 "Ports are open on your WAN interface. It's better to reconfigure your "
 "interface settings to avoid security issues."
 msgstr ""
-"Porty na vašom WAN rozhraní sú otvorené. Aby ste sa vyhli problémom, bolo by "
-"lepšie nastaviť rozhranie odznova."
+"Porty na vašom WAN rozhraní sú otvorené. Aby ste sa vyhli bezpečnostným "
+"problémom, bolo by vhodné nastaviť rozhranie odznova."
 
 #: js/src/interfaces/InterfacesForm.js:111
 msgid ""
@@ -1027,8 +1029,8 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"Funguje ako pripojenie do vonkajšee siete a mali by sa tu uplatňovať "
-"pravidlá brány firewall.\n"
+"Funguje ako pripojenie do vonkajšej siete a mali by sa tu použiť pravidlá "
+"brány firewall.\n"
 "Môže obsahovať len jedno rozhranie.\n"
 "        "
 
@@ -1049,8 +1051,8 @@ msgstr ""
 "zariadenia, ktoré máte\n"
 "pod kontrolou a dôverujete im. Tieto zariadenia sa navzájom môžu vidieť a "
 "pristupovať do tohto\n"
-"webového rozhrania. Sieť LAN by mala obsahovať aspoň jedno sieťové rozhranie,"
-"\n"
+"konfiguračného rozhrania. Sieť LAN by mala obsahovať aspoň jedno sieťové "
+"rozhranie,\n"
 "inak stratíte jednoduchý prístup k nastaveniam tohto zariadenia.\n"
 "        "
 
@@ -1068,12 +1070,12 @@ msgid ""
 msgstr ""
 "\n"
 "Funguje ako pripojenie do miestnej siete. Na rozdiel od LAN zariadenia v "
-"sieti pre hostí nemôžu pristupovať\n"
-"ku konfiguračnému rozhraniu tohto zariadenia a majú prístup len na WAN "
+"sieti pre hostí nemajú prístup\n"
+"do konfiguračného rozhrania tohto zariadenia a majú prístup len na WAN "
 "(internet). Táto sieť by sa mala\n"
 "používať pre zariadenia, ktorým nie celkom dôverujete. Pripomíname, že "
 "zariadeniam v sieti pre hostí\n"
-"môžete tiež obmedziť rýchlosť sťahovania/odosielania dát.\n"
+"je možné obmedziť rýchlosť sťahovania/odosielania dát.\n"
 "        "
 
 #: js/src/interfaces/Network.js:42
@@ -1162,11 +1164,12 @@ msgstr ""
 "zariadenia v sieti LAN (zrejme vrátane toho,\n"
 "ktorý práve používate), budú musieť získať <b>nové IP adresy</b>. To sa "
 "však  <b>nestane okamžite</b>.\n"
-"Preto sa po odoslaní vykonaných zmien sa odporúča odpojiť a opäť pripojiť "
-"LAN káble všetkých zariadení, a tak aktualizáciu IP adries vynútiť.\n"
-"Nasledujúca strana sa nenačíta, kým nezískate novú IP adresu z DHCP (ak je "
-"DHCP zapnuté) a možno bude potrebné\n"
-"túto stránku v prehliadači <b>opäť načítať</b>.\n"
+"Preto sa po odoslaní vykonaných zmien odporúča vynútiť aktualizáciu IP "
+"adries tak, že sa odpoja a opäť pripoja\n"
+"sieťové káble všetkých zariadení. Nasledujúca strana sa nenačíta, kým "
+"nezískate novú IP adresu z DHCP\n"
+"(ak je DHCP zapnuté). Možno bude potrebné túto stránku v prehliadači <b>opäť "
+"načítať</b>.\n"
 "            "
 
 #: js/src/lan/LANForm.js:24
@@ -1175,7 +1178,7 @@ msgid ""
 " assign IP addresses, etc.)."
 msgstr ""
 "Režim router znamená, že toto zariadenie spravuje miestnu sieť LAN (funguje "
-"ako router, môže prideľovať IP adresy atď.)."
+"ako smerovač, prideľuje IP adresy atď.)."
 
 #: js/src/lan/LANForm.js:27
 msgid ""
@@ -1343,8 +1346,8 @@ msgid ""
 "    "
 msgstr ""
 "Reset zariadenia Turris do továrenských nastavení odstráni zo zariadenia\n"
-"                všetky nainštalované balíčky vrátane všetkých ich dát. Tým "
-"sa všetky nastavenia\n"
+"                všetky nainštalované balíčky a všetky ich dáta. Tým sa "
+"všetky nastavenia\n"
 "                vrátia do východiskového stavu, ako keď bol router nový.\n"
 "                Získate tak možnosť začať s nastaveniami celkom od začiatku."
 "\n"
@@ -1356,7 +1359,7 @@ msgid ""
 " default settings by performing a factory reset."
 msgstr ""
 "Záložka Údržba vám umožňuje router reštartovať alebo ho vrátiť do "
-"východiskového stavu vykonaním resetu do továrenských nastavení."
+"východiskového stavu resetom do továrenských nastavení."
 
 #: js/src/maintenance/Reboot.js:18
 msgid ""
@@ -1392,11 +1395,11 @@ msgstr ""
 "Táto voľba umožňuje ukladanie systémových záznamov pomocou pluginu Storage. "
 "Záznamy sa ukladajú do priečinku /srv/log/messages. Na povolenie tejto voľby "
 "je najprv potrebné nakonfigurovať externé úložisko pomocou <a href=\""
-"${ForisURLs.storage}\" title=\"Choď na plugin Storage\">pluginu Storage</a>."
+"${ForisURLs.storage}\" title=\"Ísť na plugin Storage\">pluginu Storage</a>."
 
 #: js/src/maintenance/Syslog/SyslogForm.js:38
 msgid "Enable system logs retention"
-msgstr "Povoliť uchovávanie systémových záznamov"
+msgstr "Povoliť ukladanie systémových záznamov"
 
 #: js/src/notificationsSettings/CommonForm.js:17
 msgid "Reboot is required"
@@ -1428,7 +1431,7 @@ msgstr "Turris"
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:24
 msgid "Custom"
-msgstr "Určené užívateľom"
+msgstr "Vlastné"
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:81
 msgid "Email Notifications"
@@ -1449,7 +1452,7 @@ msgid ""
 "settings. When done with configuration, you can test it by pressing Send "
 "test notification."
 msgstr ""
-"Podľa vašich nastavení vám zariadenie môže posielať e-mailové notifikácie o "
+"Podľa vašich nastavení vám zariadenie bude posielať e-mailové notifikácie o "
 "potrebe reštartu, dôležitých udalostiach, nainštalovaných aktualizáciách a "
 "nových funkciách. Po skončení nastavovania môžete notifikáciu vyskúšať "
 "kliknutím na Odoslať testovaciu notifikáciu."
@@ -1510,26 +1513,25 @@ msgid ""
 "\"Reboot or attention is required\" and click \"Save\" button if you want"
 " to get this notification by email."
 msgstr ""
-"S aktuálnym nastavením úrovne dôležitosti skúšobnú notifikáciu do svojej e-"
-"mailovej schránky nedostanete. Ak chcete tieto notifikácie dostávať, zvýšte "
-"dôležitosti aspoň na úroveň „Je potrebný reštart alebo pozornosť“ a kliknite "
-"na „Uložiť“."
+"S aktuálnym nastavením úrovne dôležitosti sa testovacia notifikácia na e-"
+"mail neodošle. Ak chcete tieto notifikácie dostávať, zvýšte dôležitosti "
+"aspoň na úroveň „Je potrebný reštart alebo pozornosť“ a kliknite na „Uložiť“."
 
 #: js/src/notificationsSettings/TestNotification.js:110
 msgid "Test Notification"
-msgstr "Skúšobná notifikácia"
+msgstr "Testovacia notifikácia"
 
 #: js/src/notificationsSettings/TestNotification.js:112
 msgid ""
 "Here you can verify whether SMTP is configured correctly by sending a "
 "test notification to your email inbox."
 msgstr ""
-"Tu môžete overiť správnosť nastavení SMTP odoslaním skúšobnej notifikácie do "
-"vašej e-mailovej schránky."
+"Tu môžete overiť správnosť nastavení SMTP odoslaním testovacej notifikácie "
+"do vašej e-mailovej schránky."
 
 #: js/src/notificationsSettings/TestNotification.js:123
 msgid "Send test notification"
-msgstr "Odoslať skúšobnú notifikáciu"
+msgstr "Odoslať testovaciu notifikáciu"
 
 #: js/src/notificationsSettings/TestNotification.js:153
 msgid "Confirm"
@@ -1544,12 +1546,12 @@ msgid ""
 msgstr ""
 "Ak nastavíte SMTP poskytovateľa na „Turris“, použijú sa servery poskytované "
 "členom projektu Turris. Tieto servery nevyžadujú žiadne ďalšie nastavenia. "
-"Ak chcete použiť vlastný server, vyberte si „Nastavený užívateľom“ a zadajte "
-"požadované nastavenia."
+"Ak chcete použiť vlastný server, vyberte si „Vlastné“ a zadajte požadované "
+"nastavenia."
 
 #: js/src/notificationsSettings/helpTexts.js:15
 msgid "Email address of recipient. Separate multiple addresses by comma."
-msgstr "E-mailová adresa prijímateľa. Viaceré adresy oddeľujte čiarkami."
+msgstr "E-mailová adresa prijímateľa. Viac adries oddeľujte čiarkami."
 
 #: js/src/notificationsSettings/helpTexts.js:18
 msgid "Send emails about new features."
@@ -1568,18 +1570,18 @@ msgstr "Toto je adresa, z ktorej sa odosielajú notifikácie."
 
 #: js/src/notificationsSettings/validator.js:23
 msgid "Can't be empty."
-msgstr "Je potrebné vyplniť."
+msgstr "Nemôže byť prázdne."
 
 #: js/src/notificationsSettings/validator.js:33
 msgid "Sender's name can't be empty."
-msgstr "Meno odosielateľa je potrebné vyplniť."
+msgstr "Meno odosielateľa nemôže byť prázdne."
 
 #: js/src/notificationsSettings/validator.js:37
 msgid ""
 "Sender's name can contain only alphanumeric characters, dots and "
 "underscores."
 msgstr ""
-"Meno odosielateľa môže obsahovať len písmená, čísla, bodku a podčiarknutie."
+"Meno odosielateľa môže obsahovať len písmená, číslice, bodku a podčiarkovník."
 
 #: js/src/notificationsSettings/validator.js:46
 msgid "Port is an number."
@@ -1607,7 +1609,7 @@ msgstr "Aktivované"
 #: js/src/overview/Cards/DataCollectionCard.js:47
 #: js/src/overview/Cards/DynamicFirewallCard.js:27
 msgid "Disabled"
-msgstr "Vypnuté"
+msgstr "Zakázané"
 
 #: js/src/overview/Cards/DataCollectionCard.js:44
 msgid "Data Collection"
@@ -1687,10 +1689,10 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"Okrem štandardnej inštalácie si môžete voliteľne vybrať balíčky ďalšieho "
+"Okrem štandardnej inštalácie si môžete vybrať voliteľné balíčky ďalšieho "
 "softwaru, ktoré sa nainštalujú do routera.\n"
 "Tento software si môžete vybrať z nasledujúceho zoznamu. Upozorňujeme, že "
-"Turris tím podporuje len software,\n"
+"tím Turris podporuje len software,\n"
 "ktorý je súčasťou TurrisOS alebo bol nainštalovaný zo zoznamu balíčkov a nie "
 "je označený ako podporovaný komunitou.\n"
 "        "
@@ -1744,18 +1746,18 @@ msgid ""
 "                    "
 msgstr ""
 "\n"
-"                    <li>Automatické aktualizácie sa vlastníkom Turris "
-"routerov poskytujú bezplatne.</li>\n"
-"                    <li>Aktualizácie prpravuje výlučne CZ.NIC, z. s. p. "
+"                    <li>Automatické aktualizácie sú vlastníkom Turris "
+"routerov poskytované bezplatne.</li>\n"
+"                    <li>Aktualizácie pripravuje výhradne CZ.NIC, z. s. p. "
 "o.</li>\n"
 "                    <li>\n"
 "                        Povolenie automatických aktualizácií je podmienkou "
-"pre ďalšie funckie zabezpečenia\n"
+"ďalších funkcií zabezpečenia\n"
 "                        routera Turris.\n"
 "                    </li>\n"
 "                    <li>\n"
-"                        Automatické aktualizácie sa vykonávajú v okamihu ich "
-"vydania, okamih inštalácie\n"
+"                        Automatické aktualizácie prebiehajú v okamihu ich "
+"vydania, čas inštalácie\n"
 "                        nemôže užívateľ ovplyvniť.\n"
 "                    </li>\n"
 "                    <li>\n"
@@ -1777,7 +1779,7 @@ msgstr ""
 "                        CZ.NIC, z. s. p. o. negarantuje dostupnosť tejto "
 "služby\n"
 "                        a nezodpovedá za žiadne škody spôsobené "
-"automatickými aktualizáciami..\n"
+"automatickými aktualizáciami.\n"
 "                    </li>\n"
 "                    "
 
@@ -1824,12 +1826,12 @@ msgstr ""
 "\n"
 "Jednou z najdôležitejších vlastností routerov Turris je systém automatických "
 "systémových aktualizácií. Vďaka tejto funkcii\n"
-"je software vášho routera stále aktuálny a ponúka lepšiu ochranu proti "
-"útokom z internetu.\n"
+"je software vášho routera stále aktuálny a poskytuje tak lepšiu ochranu "
+"proti útokom z internetu.\n"
 "<br/>\n"
 "<b>Dôrazne odporúčame,</b> aby ste túto funkciu ponechali <b>zapnutú</b>. Ak "
 "sa ju rozhodnete vypnúť,\n"
-"uvedomte si, že môže dôjsť k zníženiu zabezpečenia vášho routera a siete, ak "
+"uvedomte si, že môže dôjsť k zníženiu zabezpečenia vášho routera a siete ak "
 "sa v software vyskytnú bezpečnostné\n"
 "chyby.\n"
 "<br/>\n"
@@ -1843,7 +1845,7 @@ msgstr ""
 msgid ""
 "Number of days that must pass between receiving the request for restart "
 "and the automatic restart itself."
-msgstr "Počet dní od požiadavky na reštart a automatickým reštartom."
+msgstr "Počet dní od požiadavky na reštart do vykonania automatického reštartu."
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:20
 msgid "Time of day of automatic reboot in HH:MM format."
@@ -1871,7 +1873,7 @@ msgstr "Reštart sa môže odložiť o najviac 10 dní"
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:94
 msgid "Delay must be a positive number"
-msgstr "Odklad musí byť kladné číslo"
+msgstr "Odloženie musí byť kladné číslo"
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:16
 msgid "Automatic installation"
@@ -1890,8 +1892,8 @@ msgid ""
 "Updates will be installed with an adjustable delay. You can also approve "
 "them manually."
 msgstr ""
-"Aktualizácie sa nainštalujú s nastaviteľným odkladom. Môžete ich tiež "
-"schvaľovať ručne."
+"Aktualizácie sa nainštalujú s nastaviteľným odložením. Je tiež možné "
+"schvaľovať ich ručne."
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:28
 msgid "Update approval needed"
@@ -1916,7 +1918,7 @@ msgid ""
 "            it will be offered to you again together with the next "
 "package installation."
 msgstr ""
-"Schvaľovanie aktualizácií môže byť užitočné, ak chcete zabezpečiť, aby "
+"Schvaľovanie aktualizácií je vhodné vtedy, ak treba zabezpečiť, aby "
 "aktualizácie nepoškodili\n"
 "            vaše špecifické nastavenia. Aktualizáciu môžete nainštalovať "
 "napríklad až vtedy, keď ste pripravení\n"
@@ -1927,7 +1929,7 @@ msgstr ""
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:79
 msgid "Delayed updates (hours)"
-msgstr "Odloženie aktualizácie (hodiny)"
+msgstr "Odložené aktualizácie (hodiny)"
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:97
 msgid "Updates must be delayed by least 1 hour and at most by 168 hours"
@@ -2107,9 +2109,9 @@ msgid ""
 "the root account will be blocked.)"
 msgstr ""
 "Rovnaké heslo sa použije na prístup do tohoto konfiguračného rozhrania, pre "
-"užívateľa root vo webovom rozhraní LuCI a pre SSH prihlásenie. Použite silné "
-"heslo! (Ak nenastavíte heslo pre pokročilú administráciu, budete to môcť "
-"urobiť neskôr. Účet root zostane dovtedy zablokovaný.)"
+"užívateľa root vo webovom rozhraní LuCI aj pre prihlásenie SSH. Použite "
+"silné heslo! (Ak nenastavíte heslo pre pokročilú administráciu, budete to "
+"môcť urobiť neskôr. Účet root zostane dovtedy zablokovaný.)"
 
 #: js/src/password/Password.js:85
 msgid ""
@@ -2121,7 +2123,7 @@ msgid ""
 "                        } list. Please enter another, more secure "
 "password."
 msgstr ""
-"Zadané heslo nebolo uložené. Bolo prelomené a objavuje sa ${\n"
+"Zadané heslo nebolo uložené. Toto heslo bolo prelomené a nachádza sa ${\n"
 "                            forisPassword.count || rootPassword.count\n"
 "                        } krát v zozname ${\n"
 "                            forisPassword.list || rootPassword.list\n"
@@ -2176,9 +2178,9 @@ msgstr ""
 "Na prístup k pokročilým konfiguračným nastaveniam, ktoré tu nie sú dostupné,"
 "\n"
 "je potrebné nastaviť heslo užívateľa root. Pokročilé možnosti konfigurácie "
-"sú dostupné cez \n"
-"<a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">rozhranie LuCI</"
-"a> alebo cez SSH."
+"sú dostupné \n"
+"<a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">v rozhraní "
+"LuCI</a> alebo cez SSH."
 
 #: js/src/regionAndTime/RegionAndTime.js:30
 msgid "Region and Time"
@@ -2193,7 +2195,7 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"Vaše zariadenie potrebuje na svoje fungovanie správne nastavený čas. Ak sa "
+"Vaše zariadenie potrebuje na svoju činnosť správne nastavenie času. Ak sa "
 "hodiny v zariadení oneskoria,\n"
 "procedúra overovania SSL certifikátu nemusí prebiehať korektne.\n"
 "        "
@@ -2204,15 +2206,15 @@ msgstr "Čas musí byť vo formáte YYY-MM-DD HH:MM:SS."
 
 #: js/src/regionAndTime/RegionForm.js:63
 msgid "Region Settings"
-msgstr "Nastavenia oblasti"
+msgstr "Regionálne nastavenia"
 
 #: js/src/regionAndTime/RegionForm.js:65
 msgid ""
 "Please select the timezone the router is being operated in. Correct "
 "setting is required to display the right time and for related functions."
 msgstr ""
-"Vyberte, prosím, časovú zónu, v ktorej sa router používa. Korektné "
-"nastavenie je potrebné na zobrazenie správneho času a súvisiace funkcie."
+"Prosím, vyberte časovú zónu, v ktorej sa router používa. Korektné nastavenie "
+"je potrebné na zobrazenie správneho času a súvisiace funkcie."
 
 #: js/src/regionAndTime/RegionForm.js:72
 msgid "Continent or ocean"
@@ -2228,7 +2230,7 @@ msgstr "Časová zóna"
 
 #: js/src/regionAndTime/TimeForm.js:27
 msgid "Via NTP"
-msgstr "Prostredníctvom NTP"
+msgstr "Cez NTP"
 
 #: js/src/regionAndTime/TimeForm.js:28
 msgid "Manually"
@@ -2321,7 +2323,7 @@ msgstr "MAC"
 
 #: js/src/wan/MACForm.js:53
 msgid "Custom MAC address"
-msgstr "Užívateľom určená MAC adresa"
+msgstr "Vlastná MAC adresa"
 
 #: js/src/wan/MACForm.js:63
 msgid "MAC address"
@@ -2339,12 +2341,12 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"Tu sa zadávajú nastavenia WAN portu. Obvykle môžete tieto možnosti ponechať "
+"Tu sa zadávajú nastavenia WAN portu. Tieto voľby je zvyčajne možné ponechať "
 "bez zmeny,\n"
 "ak ste od svojho poskytovateľa prístupu na internet nedostali iné inštrukcie."
 "\n"
-"Aj v prípadoch, keď je váš router pripojený do siete cez káblový alebo DSL "
-"modem, nie je obvykle potrebné tieto nastavenia meniť.\n"
+"Tieto nastavenia obvykle nie je potrebné meniť aj v prípade, že je váš "
+"router pripojený do siete cez káblový alebo DSL modem.\n"
 "        "
 
 #: js/src/wan/WAN.js:53
@@ -2360,8 +2362,7 @@ msgstr ""
 "\n"
 "Tu môžete otestovať nastavenia vášho pripojenia. Pred spustením testu "
 "nezabudnite kliknúť ta tlačidlo <b>Uložiť</b>.\n"
-"Inicializácia pripojenia môže občas chvíľu trvať, preto pred spustením "
-"testu\n"
+"Inicializácia pripojenia môže chvíľu trvať, preto pred spustením testu\n"
 "chvíľu počkajte.\n"
 "        "
 
@@ -2374,8 +2375,8 @@ msgid ""
 "IPv6 address and prefix length for WAN interface e.g. "
 "2001:db8:be13:37da::1/64"
 msgstr ""
-"IPv6 adresa a dĺžka predpony pre rozhranie WAN, napríklad "
-"2001:db8:be13:37da::1/64"
+"IPv6 adresa a dĺžka prefixu pre rozhranie WAN, napríklad 2001:db8:be13:37da::"
+"1/64"
 
 #: js/src/wan/WAN6Form.js:33
 msgid "Address range for local network, e.g. 2001:db8:be13:37da::/64"
@@ -2403,8 +2404,7 @@ msgstr "IPv6 adresy, ktoré budú smerované do vašej siete."
 
 #: js/src/wan/WAN6Form.js:53
 msgid "Maximum Transmission Unit in the tunnel (in bytes)."
-msgstr ""
-"Maximálna veľkosti jednotky prenosu (Transmission Unit) v tuneli (v bytoch)."
+msgstr "Maximálna veľkosť jednotky prenosu (MTU) v tuneli (v bytoch)."
 
 #: js/src/wan/WAN6Form.js:56
 msgid ""
@@ -2412,7 +2412,7 @@ msgid ""
 "you need to fill in some extra fields to make it work."
 msgstr ""
 "Niektorí poskytovatelia tunela umožňujú použitie verejnej dynamickej IPv4 "
-"adresy. Aby to fungovalo, je potrebné ešte vyplniť niektoré ďalšie "
+"adresy. Pre správne fungovanie je potrebné ešte vyplniť niektoré ďalšie "
 "nastavenia."
 
 #: js/src/wan/WAN6Form.js:60
@@ -2463,7 +2463,7 @@ msgstr "Adresa"
 
 #: js/src/wan/WAN6Form.js:255
 msgid "Prefix"
-msgstr "Predpona"
+msgstr "Prefix"
 
 #: js/src/wan/WAN6Form.js:304
 msgid "Public IPv4"
@@ -2495,11 +2495,11 @@ msgstr "Kľúč"
 
 #: js/src/wan/WAN6Form.js:527
 msgid "MTU has to be a number in the range of 1280-1480."
-msgstr "MTU musí byť číslo v rozpätí 1280-1480."
+msgstr "MTU musí byť číslo z rozsahu 1280-1480."
 
 #: js/src/wan/WAN6Form.js:529
 msgid "MTU has to be in the range of 1280-1480."
-msgstr "MTU musí byť z rozpätia 1280-1480."
+msgstr "MTU musí byť z rozsahu 1280-1480."
 
 #: js/src/wan/WANForm.js:27
 msgid "PPPoE (for DSL bridges, etc.)"
@@ -2565,7 +2565,7 @@ msgstr ""
 #: reforis/foris_controller_api/modules/router_notifications.py:127
 msgid "The testing message has been sent, please check your inbox."
 msgstr ""
-"Skúšobná notifikácia bola odoslaná. Prosím, skontrolujte si e-mailovú "
+"Testovacia notifikácia bola odoslaná. Prosím, skontrolujte si e-mailovú "
 "schránku."
 
 #: reforis/foris_controller_api/modules/router_notifications.py:130
@@ -2573,7 +2573,7 @@ msgid ""
 "Sending of the testing message failed, your configuration is possibly "
 "wrong."
 msgstr ""
-"Odoslanie skúšobnej notifikácie bolo neúspešné, vaše nastavenie sú "
+"Odoslanie testovacej notifikácie bolo neúspešné, vaše nastavenie sú "
 "pravdepodobne nesprávne."
 
 #: reforis/foris_controller_api/modules/updater.py:65
