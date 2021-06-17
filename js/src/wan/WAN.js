@@ -26,9 +26,9 @@ export default function WAN({ ws }) {
         <>
             <h1>{_("WAN")}</h1>
             <p>
-                {_(`
-Here you specify your WAN port settings. Usually, you can leave these options untouched unless instructed
-otherwise by your internet service provider. Also, in case there is a cable or DSL modem connecting your
+                {_(`Here you specify your WAN port settings. Usually, you can \
+leave these options untouched unless instructed otherwise by your internet \
+service provider. Also, in case there is a cable or DSL modem connecting your \
 router to the network, it is usually not necessary to change this setting.
         `)}
             </p>
@@ -50,10 +50,10 @@ router to the network, it is usually not necessary to change this setting.
             <h2>{_("Connection Test")}</h2>
             <p
                 dangerouslySetInnerHTML={{
-                    __html: _(`
-Here you can test you connection settings. Remember to click on the <b>Save button</b> before running the test.
-Note that sometimes it takes a while before the connection is fully initialized. So it might be useful to
-wait for a while before running this test.
+                    __html: _(`Here you can test you connection settings. \
+Remember to click on the <b>Save button</b> before running the test. Note that \
+sometimes it takes a while before the connection is fully initialized. So it \
+might be useful to wait for a while before running this test.
         `),
                 }}
             />
