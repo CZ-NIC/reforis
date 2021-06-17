@@ -275,11 +275,129 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
       <p>
         This list contains all devices that are connected to the network through wired or wireless connections.
       </p>
-      <p
-        class="text-muted text-center"
+      <div
+        class="table-responsive"
       >
-        No clients found.
+        <table
+          class="table table-hover"
+        >
+          <thead
+            class="thead-light"
+          >
+            <tr
+              class="text-left"
+            >
+              <th>
+                Hostname
+              </th>
+              <th>
+                IPv4 Address
+              </th>
+              <th>
+                MAC Address
+              </th>
+              <th
+                class="text-center"
+              >
+                Expires
+              </th>
+              <th
+                class="text-center"
+              >
+                Active
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              class="text-left"
+            >
+              <td>
+                test-client
+              </td>
+              <td>
+                192.168.1.10
+              </td>
+              <td>
+                8F:31:22:89:64:20
+              </td>
+              <td
+                class="text-center"
+              >
+                2021-03-19 00:52
+              </td>
+              <td
+                class="text-center"
+              >
+                <i
+                  class="fas fa-check text-success"
+                  title="Device is active"
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div
+      class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
+    >
+      <h2>
+        IPv6 DHCP Client List
+      </h2>
+      <p>
+        This list contains all devices that are connected to the network through wired or wireless connections using IPv6.
       </p>
+      <div
+        class="table-responsive"
+      >
+        <table
+          class="table table-hover"
+        >
+          <thead
+            class="thead-light"
+          >
+            <tr
+              class="text-left"
+            >
+              <th>
+                Hostname
+              </th>
+              <th>
+                IPv6 Address
+              </th>
+              <th>
+                DUID
+              </th>
+              <th
+                class="text-center"
+              >
+                Expires
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              class="text-left"
+            >
+              <td>
+                test-client-2
+              </td>
+              <td>
+                7b00:ce2:a17:41f3::w94
+              </td>
+              <td>
+                00098f65rfcee3bndu5221d7e7i743a46546p
+              </td>
+              <td
+                class="text-center"
+              >
+                2021-03-19 00:52
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>
@@ -1194,6 +1312,21 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
       </h2>
       <p>
         This list contains all devices that are connected to the network through wired or wireless connections.
+      </p>
+      <p
+        class="text-muted text-center"
+      >
+        No clients found.
+      </p>
+    </div>
+    <div
+      class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
+    >
+      <h2>
+        IPv6 DHCP Client List
+      </h2>
+      <p>
+        This list contains all devices that are connected to the network through wired or wireless connections using IPv6.
       </p>
       <p
         class="text-muted text-center"

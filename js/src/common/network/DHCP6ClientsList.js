@@ -10,20 +10,20 @@ import PropTypes from "prop-types";
 import moment from "moment";
 import { formFieldsSize } from "foris";
 
-DHCPClientsList.propTypes = {
-    clients: PropTypes.arrayOf(PropTypes.object),
+DHCP6ClientsList.propTypes = {
+    ipv6clients: PropTypes.arrayOf(PropTypes.object),
 };
 
-export default function DHCPClientsList({ clients }) {
+export default function DHCP6ClientsList({ ipv6clients }) {
     return (
         <div className={formFieldsSize}>
-            <h2>{_("DHCP Client List")}</h2>
+            <h2>{_("IPv6 DHCP Client List")}</h2>
             <p>
                 {_(
-                    "This list contains all devices that are connected to the network through wired or wireless connections."
+                    "This list contains all devices that are connected to the network through wired or wireless connections using IPv6."
                 )}
             </p>
-            {clients.length === 0 ? (
+            {ipv6clients.length === 0 ? (
                 <p className="text-muted text-center">
                     {_("No clients found.")}
                 </p>
@@ -33,16 +33,15 @@ export default function DHCPClientsList({ clients }) {
                         <thead className="thead-light">
                             <tr className="text-left">
                                 <th>{_("Hostname")}</th>
-                                <th>{_("IPv4 Address")}</th>
-                                <th>{_("MAC Address")}</th>
+                                <th>{_("IPv6 Address")}</th>
+                                <th>{_("DUID")}</th>
                                 <th className="text-center">{_("Expires")}</th>
-                                <th className="text-center">{_("Active")}</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {clients.map((client) => (
-                                <DHCPClientsListItem
-                                    key={client.ip}
+                            {ipv6clients.map((client) => (
+                                <DHCP6ClientsListItem
+                                    key={client.ipv6}
                                     {...client}
                                 />
                             ))}
@@ -54,34 +53,21 @@ export default function DHCPClientsList({ clients }) {
     );
 }
 
-DHCPClientsListItem.propTypes = {
-    ip: PropTypes.string.isRequired,
+DHCP6ClientsListItem.propTypes = {
+    ipv6: PropTypes.string.isRequired,
     expires: PropTypes.number.isRequired,
-    mac: PropTypes.string.isRequired,
+    duid: PropTypes.string.isRequired,
     hostname: PropTypes.string.isRequired,
-    active: PropTypes.bool.isRequired,
 };
 
-function DHCPClientsListItem({ ip, expires, mac, hostname, active }) {
+function DHCP6ClientsListItem({ ipv6, expires, duid, hostname }) {
     return (
         <tr className="text-left">
             <td>{hostname}</td>
-            <td>{ip}</td>
-            <td>{mac}</td>
+            <td>{ipv6}</td>
+            <td>{duid}</td>
             <td className="text-center">
                 {moment.unix(expires).format("YYYY-MM-DD HH:mm")}
-            </td>
-            <td className="text-center">
-                <i
-                    className={`fas ${
-                        active
-                            ? "fa-check text-success"
-                            : "fa-times text-danger"
-                    }`}
-                    title={
-                        active ? _("Device is active") : _("Device is inactive")
-                    }
-                />
             </td>
         </tr>
     );

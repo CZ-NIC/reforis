@@ -21,31 +21,35 @@ exports[`<DHCPClientsList/> Test with snapshot. 1`] = `
           class="thead-light"
         >
           <tr
-            class="text-center"
+            class="text-left"
           >
-            <th>
-              Expires
-            </th>
-            <th>
-              IP Address
-            </th>
-            <th>
-              MAC Address
-            </th>
             <th>
               Hostname
             </th>
             <th>
+              IPv4 Address
+            </th>
+            <th>
+              MAC Address
+            </th>
+            <th
+              class="text-center"
+            >
+              Expires
+            </th>
+            <th
+              class="text-center"
+            >
               Active
             </th>
           </tr>
         </thead>
         <tbody>
           <tr
-            class="text-center"
+            class="text-left"
           >
             <td>
-              2018-10-12 13:16
+              first
             </td>
             <td>
               192.168.1.1
@@ -53,20 +57,25 @@ exports[`<DHCPClientsList/> Test with snapshot. 1`] = `
             <td>
               11:22:33:44:55:66
             </td>
-            <td>
-              first
+            <td
+              class="text-center"
+            >
+              2018-10-12 13:16
             </td>
-            <td>
+            <td
+              class="text-center"
+            >
               <i
-                class="fas fa-check"
+                class="fas fa-check text-success"
+                title="Device is active"
               />
             </td>
           </tr>
           <tr
-            class="text-center"
+            class="text-left"
           >
             <td>
-              2018-10-12 13:16
+              *
             </td>
             <td>
               192.168.2.1
@@ -74,12 +83,17 @@ exports[`<DHCPClientsList/> Test with snapshot. 1`] = `
             <td>
               99:88:77:66:55:44
             </td>
-            <td>
-              *
+            <td
+              class="text-center"
+            >
+              2018-10-12 13:16
             </td>
-            <td>
+            <td
+              class="text-center"
+            >
               <i
-                class="fas fa-times"
+                class="fas fa-times text-danger"
+                title="Device is inactive"
               />
             </td>
           </tr>
