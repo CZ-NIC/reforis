@@ -18,7 +18,10 @@ import {
 } from "foris/testUtils/customTestRender";
 import { mockJSONError } from "foris/testUtils/network";
 
-import { wanSettingsFixture } from "./__fixtures__/wanSettings";
+import {
+    wanSettingsFixture,
+    customMACFixture,
+} from "./__fixtures__/wanSettings";
 import WAN from "../WAN";
 
 describe("<WAN/>", () => {
@@ -205,5 +208,18 @@ describe("<WAN/>", () => {
         fireEvent.click(getByText("Save"));
         // MAC address value is invalid, button is disabled.
         expect(mockAxios.post).toHaveBeenCalledTimes(0);
+    });
+
+    it("Post: Set new custom MAC address", () => {
+        fireEvent.click(getByText("Custom MAC address"));
+        fireEvent.change(getByLabelText("Set the new MAC address"), {
+            target: { value: "11:11:11:11:11:11" },
+        });
+        fireEvent.click(getByText("Save"));
+        expect(mockAxios.post).toHaveBeenCalledWith(
+            "/reforis/api/wan",
+            customMACFixture(),
+            expect.anything()
+        );
     });
 });
