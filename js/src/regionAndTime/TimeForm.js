@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2019-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -15,9 +15,12 @@ import {
     SpinnerElement,
     Button,
     API_STATE,
+    useAPIPost,
+    useAPIGet,
 } from "foris";
 
-import useNTPDate from "./hooks";
+import API_URLs from "common/API";
+import { useNTPDate, useEditServers } from "./hooks";
 import "./TimeForm.css";
 
 // Foris backend ignore value after "."...
@@ -118,7 +121,10 @@ export default function TimeForm({
                 disabled={disabled}
             />
             {data.how_to_set_time === "ntp" ? (
-                <NTPServersList servers={data.ntp_servers} />
+                <NTPServersList
+                    servers={data.ntp_servers}
+                    formData={formData}
+                />
             ) : null}
             <DataTimeInput
                 label={_("Time")}
@@ -159,8 +165,31 @@ NTPServersList.propTypes = {
     servers: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-function NTPServersList({ servers }) {
+function NTPServersList({ servers, formData }) {
     const [shown, setShown] = useState(false);
+    const [defaultServers, getDefaultServers] = useAPIGet(
+        API_URLs.regionAndTime
+    );
+    const [postState, setToDefault] = useAPIPost(API_URLs.regionAndTime);
+    const [
+        serverList,
+        addServer,
+        removeServer,
+        resetToDefaultList,
+    ] = useEditServers(servers);
+
+    function handleReset() {
+        delete formData.time_settings.ntp_servers;
+        delete formData.time_settings.time;
+        setToDefault({ data: formData });
+    }
+
+    useEffect(() => {
+        if (postState.state === API_STATE.SUCCESS) {
+            getDefaultServers();
+        }
+    }, [postState, getDefaultServers]);
+
     return (
         <>
             <Button
@@ -181,10 +210,18 @@ function NTPServersList({ servers }) {
             <div className="collapse" id="collapseNTPServers">
                 <h5>{_("NTP Servers")}</h5>
                 <div id="ntpServersList">
-                    {servers.map((server) => (
-                        <p key={server}>{server}</p>
+                    {serverList.map((server) => (
+                        <p
+                            key={server}
+                            onClick={(value) =>
+                                removeServer(value.target.innerHTML)
+                            }
+                        >
+                            {server}
+                        </p>
                     ))}
                 </div>
+                <Button onClick={handleReset}>Reset to default servers</Button>
             </div>
         </>
     );

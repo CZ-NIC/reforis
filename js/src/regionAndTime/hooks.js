@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2019-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 import { useAPIPost } from "foris";
 import API_URLs from "common/API";
 
-export default function useNTPDate(ws) {
+export function useNTPDate(ws) {
     const [state, setState] = useState({
         data: null,
         id: null,
@@ -55,4 +55,26 @@ export default function useNTPDate(ws) {
     }, [state.id, ws]);
 
     return [state, trigger];
+}
+
+export function useEditServers(servers) {
+    const [serverList, setServers] = useState(servers);
+
+    function addServer() {
+        //function for adding new server
+    }
+
+    function removeServer(serverToRemove) {
+        setServers((servers) =>
+            servers.filter((server) => {
+                return server !== serverToRemove;
+            })
+        );
+    }
+
+    function resetToDefaultList() {
+        /* setToDefault({ data: postData }); */
+    }
+
+    return [serverList, addServer, removeServer, resetToDefaultList];
 }
