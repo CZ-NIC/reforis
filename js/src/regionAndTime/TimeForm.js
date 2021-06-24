@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2019-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -17,7 +17,7 @@ import {
     API_STATE,
 } from "foris";
 
-import useNTPDate from "./hooks";
+import { useNTPDate, useEditServers } from "./hooks";
 import "./TimeForm.css";
 
 // Foris backend ignore value after "."...
@@ -161,6 +161,12 @@ NTPServersList.propTypes = {
 
 function NTPServersList({ servers }) {
     const [shown, setShown] = useState(false);
+    const [
+        serverList,
+        addServer,
+        removeServer,
+        resetToDefaultList,
+    ] = useEditServers(servers);
     return (
         <>
             <Button
@@ -181,10 +187,20 @@ function NTPServersList({ servers }) {
             <div className="collapse" id="collapseNTPServers">
                 <h5>{_("NTP Servers")}</h5>
                 <div id="ntpServersList">
-                    {servers.map((server) => (
-                        <p key={server}>{server}</p>
+                    {serverList.map((server) => (
+                        <p
+                            key={server}
+                            onClick={(value) =>
+                                removeServer(value.target.innerHTML)
+                            }
+                        >
+                            {server}
+                        </p>
                     ))}
                 </div>
+                <Button onClick={resetToDefaultList}>
+                    Reset to default servers
+                </Button>
             </div>
         </>
     );
