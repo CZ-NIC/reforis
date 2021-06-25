@@ -5,7 +5,7 @@ exports[`<WAN/> Snapshot WAN IPv4 (pppoe). 1`] = `
 - First value
 + Second value
 
-@@ -47,30 +47,69 @@
+@@ -44,30 +44,69 @@
         </div>
         <div
           class=\\"form-group\\"
@@ -83,7 +83,7 @@ exports[`<WAN/> Snapshot WAN IPv4 (pppoe). 1`] = `
         </h2>
         <div
           class=\\"form-group\\"
-@@ -141,10 +180,11 @@
+@@ -138,10 +177,11 @@
         <div
           class=\\"text-right\\"
         >
@@ -102,7 +102,7 @@ exports[`<WAN/> Snapshot WAN IPv4 (static). 1`] = `
 - First value
 + Second value
 
-@@ -47,28 +47,127 @@
+@@ -44,28 +44,127 @@
         </div>
         <div
           class=\\"form-group\\"
@@ -234,7 +234,7 @@ exports[`<WAN/> Snapshot WAN IPv4 (static). 1`] = `
         <h2>
           IPv6 Settings
         </h2>
-@@ -141,10 +240,11 @@
+@@ -138,10 +237,11 @@
         <div
           class=\\"text-right\\"
         >
@@ -253,7 +253,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4), dynamic IPv4 handling enabled. 1`] = `
 - First value
 + Second value
 
-@@ -236,10 +236,100 @@
+@@ -233,10 +233,100 @@
                 Some tunnel providers allow you to have public dynamic IPv4. Note that you need to fill in some extra fields to make it work.
               </small>
             </label>
@@ -361,7 +361,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
 - First value
 + Second value
 
-@@ -109,10 +109,137 @@
+@@ -106,10 +106,137 @@
             >
               Static IP address (manual configuration)
             </option>
@@ -499,7 +499,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6in4). 1`] = `
         </h2>
         <div
           class=\\"form-group\\"
-@@ -141,10 +268,11 @@
+@@ -138,10 +265,11 @@
         <div
           class=\\"text-right\\"
         >
@@ -518,7 +518,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6to4). 1`] = `
 - First value
 + Second value
 
-@@ -109,10 +109,34 @@
+@@ -106,10 +106,34 @@
             >
               Static IP address (manual configuration)
             </option>
@@ -560,7 +560,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (dhcpv6). 1`] = `
 - First value
 + Second value
 
-@@ -109,10 +109,34 @@
+@@ -106,10 +106,34 @@
             >
               Static IP address (manual configuration)
             </option>
@@ -602,7 +602,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
 - First value
 + Second value
 
-@@ -109,10 +109,143 @@
+@@ -106,10 +106,143 @@
             >
               Static IP address (manual configuration)
             </option>
@@ -746,7 +746,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (static). 1`] = `
         </h2>
         <div
           class=\\"form-group\\"
-@@ -141,10 +274,11 @@
+@@ -138,10 +271,11 @@
         <div
           class=\\"text-right\\"
         >
@@ -765,7 +765,7 @@ exports[`<WAN/> Snapshot: MAC enabled 1`] = `
 - First value
 + Second value
 
-@@ -137,14 +137,45 @@
+@@ -134,14 +134,69 @@
               Useful in cases, when a specific MAC address is required by your internet service provider.
             </small>
           </div>
@@ -776,17 +776,41 @@ exports[`<WAN/> Snapshot: MAC enabled 1`] = `
 +         <label
 +           for=\\"9\\"
 +         >
-+           MAC address
++           Current MAC address
++         </label>
++         <div
++           class=\\"input-group\\"
++         >
++           <input
++             class=\\"form-control\\"
++             disabled=\\"\\"
++             id=\\"9\\"
++             type=\\"text\\"
++             value=\\"00:00:00:00:00:00\\"
++           />
++         </div>
++         <small
++           class=\\"form-text text-muted\\"
++         >
++           MAC address of the WAN interface.
++         </small>
++       </div>
++       <div
++         class=\\"form-group\\"
++       >
++         <label
++           for=\\"10\\"
++         >
++           Set the new MAC address
 +         </label>
 +         <div
 +           class=\\"input-group\\"
 +         >
 +           <input
 +             class=\\"form-control  is-invalid\\"
-+             id=\\"9\\"
++             id=\\"10\\"
 +             required=\\"\\"
 +             type=\\"text\\"
-+             value=\\"\\"
 +           />
 +         </div>
 +         <div
@@ -819,10 +843,7 @@ exports[`<WAN/> Snapshot: WAN IPv4 dhcp, WAN IPv6 dhcp, MAC disabled 1`] = `
     WAN
   </h1>
   <p>
-    
-Here you specify your WAN port settings. Usually, you can leave these options untouched unless instructed
-otherwise by your internet service provider. Also, in case there is a cable or DSL modem connecting your
-router to the network, it is usually not necessary to change this setting.
+    Here you specify your WAN port settings. Usually, you can leave these options untouched unless instructed otherwise by your internet service provider. Also, in case there is a cable or DSL modem connecting your router to the network, it is usually not necessary to change this setting.
         
   </p>
   <div
@@ -970,14 +991,11 @@ router to the network, it is usually not necessary to change this setting.
     Connection Test
   </h2>
   <p>
-    
-Here you can test you connection settings. Remember to click on the 
+    Here you can test you connection settings. Remember to click on the 
     <b>
       Save button
     </b>
-     before running the test.
-Note that sometimes it takes a while before the connection is fully initialized. So it might be useful to
-wait for a while before running this test.
+     before running the test. Note that sometimes it takes a while before the connection is fully initialized. So it might be useful to wait for a while before running this test.
         
   </p>
   <div
