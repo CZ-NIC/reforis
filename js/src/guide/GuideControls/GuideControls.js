@@ -25,7 +25,7 @@ export default function GuideControls({ ws, next_step }) {
                 ws={ws}
                 className="guide-controls-button btn-light"
             />
-            <SkipGuideButtonWithRouter />
+            <SkipGuideButtonWithRouter next_step={next_step} />
             <NextStepButtonWithRouter next_step={next_step} />
         </div>
     );
