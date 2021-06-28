@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020-2021 CZ.NIC z.s.p.o. (https://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -13,12 +13,12 @@ import PropTypes from "prop-types";
 import useGuideFinish from "../hooks";
 
 SkipGuideButton.propTypes = {
-    location: PropTypes.object.isRequired,
+    next_step: PropTypes.string.isRequired,
 };
 
-export function SkipGuideButton({ location }) {
+export function SkipGuideButton({ next_step }) {
     const onGuideFinishHandler = useGuideFinish();
-    const disabled = location.pathname === `/password`;
+    const disabled = next_step === "password";
     return (
         <Button
             className={`guide-controls-button btn btn-warning ${
