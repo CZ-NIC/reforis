@@ -12,7 +12,7 @@ which is done in `ForisAPI` Blueprint.
 from flask import Blueprint, current_app, redirect, render_template, request, session, url_for
 from flask_babel import gettext as _
 
-from reforis.auth import login_to_foris, logout_from_foris, is_user_logged
+from .auth import login_to_foris, logout_from_foris, is_user_logged
 
 # pylint: disable=invalid-name
 views = Blueprint('Views', __name__)
