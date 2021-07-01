@@ -7,68 +7,82 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-04-27 11:02+0200\n"
+"POT-Creation-Date: 2021-07-01 11:50+0200\n"
 "PO-Revision-Date: 2021-05-30 18:32+0000\n"
 "Last-Translator: Koli <lukas.koluch@gmail.com>\n"
-"Language-Team: Czech <https://hosted.weblate.org/projects/turris/reforis/cs/>"
-"\n"
 "Language: cs\n"
+"Language-Team: Czech "
+"<https://hosted.weblate.org/projects/turris/reforis/cs/>\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.7-dev\n"
-"Generated-By: Babel 2.9.0\n"
+"Generated-By: Babel 2.9.1\n"
 
-#: js/src/about/About.js:23 js/src/main/pages.js:109 js/src/main/pages.js:228
+#: js/src/about/About.js:23 js/src/main/pages.js:105 js/src/main/pages.js:224
 msgid "About"
 msgstr "O zařízení"
 
 #: js/src/about/About.js:26
 msgid ""
-"Here you can find some information about your device. Please include it "
-"into your message if you contact our <a "
-"href=\"mailto:tech.support@turris.cz\" target=\"_blank\">customer "
-"support</a>."
+"\n"
+"                    ),\n"
+"                }}\n"
+"            />\n"
+"            <AboutTableWithErrorAndSpinner\n"
+"                apiState={getAboutResponse.state}\n"
+"                deviceDetails={getAboutResponse.data || {}}\n"
+"            />\n"
+"        </>\n"
+"    );\n"
+"}\n"
+"\n"
+"AboutTable.propTypes = {\n"
+"    deviceDetails: PropTypes.object.isRequired,\n"
+"    customization: PropTypes.bool,\n"
+"};\n"
+"\n"
+"function AboutTable({ deviceDetails }) {\n"
+"    const customization = !!(\n"
+"        deviceDetails &&\n"
+"        deviceDetails.customization !== undefined &&\n"
+"        deviceDetails.customization === \"shield\"\n"
+"    );\n"
+"    return (\n"
+"        <div className=\"card p-4 table-responsive\">\n"
+"            <table className=\"table table-borderless table-hover mb-0\">"
+"\n"
+"                <tbody>\n"
+"                    <tr>\n"
+"                        <th>{_(\"Device\")}</th>\n"
+"                        <td>\n"
+"                            {customization\n"
+"                                ? \"Turris Shield\"\n"
+"                                : deviceDetails.model}\n"
+"                        </td>\n"
+"                    </tr>\n"
+"                    <tr>\n"
+"                        <th>{_(\"Serial number\")}</th>\n"
+"                        <td>{deviceDetails.serial}</td>\n"
+"                    </tr>\n"
+"                    <tr>\n"
+"                        <th>{_(\"reForis version\")}</th>\n"
+"                        <td>{deviceDetails.reforis_version}</td>\n"
+"                    </tr>\n"
+"                    <tr>\n"
+"                        <th>{_(\"Turris OS version\")}</th>\n"
+"                        <td>{deviceDetails.os_version}</td>\n"
+"                    </tr>\n"
+"                    <tr>\n"
+"                        <th>\n"
+"                            {_(\"Turris OS branch\")}\n"
+"                            <i\n"
+"                                className=\"fas fa-question-circle ml-1 "
+"help\"\n"
+"                                data-tip={_("
 msgstr ""
-"Zde najdete některé informace o svém zařízení. Přiložte je prosím ke své "
-"zprávě, pokud budete kontaktovat naši <a "
-"href=\"mailto:tech.support@turris.cz\" target=\"_blank\">zákaznickou "
-"podporu</a>."
 
-#: js/src/about/About.js:49
-msgid "Device"
-msgstr "Zařízení"
-
-#: js/src/about/About.js:53
-msgid "Serial number"
-msgstr "Sériové číslo"
-
-#: js/src/about/About.js:57
-msgid "reForis version"
-msgstr "Verze reForis"
-
-#: js/src/about/About.js:61
-msgid "Turris OS version"
-msgstr "Verze Turris OS"
-
-#: js/src/about/About.js:66
-msgid "Turris OS branch"
-msgstr "Větev Turris OS"
-
-#: js/src/about/About.js:69
-msgid ""
-"Turris OS is currently released in various branches,\n"
-"                                    which have different functions and "
-"varying stability\n"
-"                                    - you can pick, which branch you want"
-" to test."
-msgstr ""
-"Turris OS je aktuálně vydáván v různých větvích,\n"
-"které mají různé funkce a různou stabilitu – můžete\n"
-"si vybrat, kterou větev chcete otestovat."
-
-#: js/src/about/About.js:97
+#: js/src/about/About.js:107
 msgid "Kernel version"
 msgstr "Verze kernelu"
 
@@ -112,6 +126,45 @@ msgstr "Potvrdit restart"
 msgid "Go to top"
 msgstr "Přejít na začátek"
 
+#: js/src/common/network/DHCP6ClientsList.js:20
+msgid "IPv6 DHCP Client List"
+msgstr ""
+
+#: js/src/common/network/DHCP6ClientsList.js:22
+#, fuzzy
+msgid ""
+"This list contains all devices that are connected to the network through "
+"wired or wireless connections using IPv6."
+msgstr ""
+"Tento seznam obsahuje všechna zařízení, která jsou připojena k síti přes "
+"drátová nebo bezdrátová připojení."
+
+#: js/src/common/network/DHCP6ClientsList.js:28
+#: js/src/common/network/DHCPClientsList.js:28
+msgid "No clients found."
+msgstr "Nebyli nalezeni žádní DHCP klienti."
+
+#: js/src/common/network/DHCP6ClientsList.js:35
+#: js/src/common/network/DHCPClientsList.js:35 js/src/hostname/Hostname.js:21
+#: js/src/main/pages.js:92 js/src/main/pages.js:183
+msgid "Hostname"
+msgstr "Název stroje"
+
+#: js/src/common/network/DHCP6ClientsList.js:36
+#, fuzzy
+msgid "IPv6 Address"
+msgstr "IP adresa"
+
+#: js/src/common/network/DHCP6ClientsList.js:37
+#, fuzzy
+msgid "DUID"
+msgstr "Příručka"
+
+#: js/src/common/network/DHCP6ClientsList.js:38
+#: js/src/common/network/DHCPClientsList.js:38
+msgid "Expires"
+msgstr "Platnost končí"
+
 #: js/src/common/network/DHCPClientForm.js:14
 msgid "Hostname which will be provided to DHCP server."
 msgstr "Název stroje, který bude poskytnut DHCP serveru."
@@ -132,30 +185,27 @@ msgstr ""
 "Tento seznam obsahuje všechna zařízení, která jsou připojena k síti přes "
 "drátová nebo bezdrátová připojení."
 
-#: js/src/common/network/DHCPClientsList.js:28
-msgid "No clients found."
-msgstr "Nebyli nalezeni žádní DHCP klienti."
-
-#: js/src/common/network/DHCPClientsList.js:35
-msgid "Expires"
-msgstr "Platnost končí"
-
 #: js/src/common/network/DHCPClientsList.js:36
-msgid "IP Address"
+#, fuzzy
+msgid "IPv4 Address"
 msgstr "IP adresa"
 
 #: js/src/common/network/DHCPClientsList.js:37
 msgid "MAC Address"
 msgstr "MAC adresa"
 
-#: js/src/common/network/DHCPClientsList.js:38 js/src/hostname/Hostname.js:21
-#: js/src/main/pages.js:96 js/src/main/pages.js:187
-msgid "Hostname"
-msgstr "Název stroje"
-
 #: js/src/common/network/DHCPClientsList.js:39
 msgid "Active"
 msgstr "Aktivní"
+
+#: js/src/common/network/DHCPClientsList.js:82
+msgid "Device is active"
+msgstr ""
+
+#: js/src/common/network/DHCPClientsList.js:82
+#, fuzzy
+msgid "Device is inactive"
+msgstr "Síťový název zařízení"
 
 #: js/src/common/network/DHCPServerForm.js:13
 msgid ""
@@ -232,7 +282,7 @@ msgid "IP address"
 msgstr "IP adresa"
 
 #: js/src/common/network/StaticIPForm.js:60
-#: js/src/guestNetwork/GuestNetworkForm.js:88 js/src/lan/LANManagedForm.js:72
+#: js/src/guestNetwork/GuestNetworkForm.js:87 js/src/lan/LANManagedForm.js:72
 msgid "Network mask"
 msgstr "Maska sítě"
 
@@ -249,7 +299,7 @@ msgid "DNS server 2"
 msgstr "DNS server 2"
 
 #: js/src/common/network/StaticIPForm.js:111
-#: js/src/common/network/validators.js:19 js/src/wan/MACForm.js:83
+#: js/src/common/network/validators.js:19 js/src/wan/MACForm.js:91
 #: js/src/wan/WAN6Form.js:504 js/src/wan/WAN6Form.js:533
 #: js/src/wan/WAN6Form.js:545 js/src/wan/WANForm.js:173
 msgid "This field is required."
@@ -286,6 +336,21 @@ msgstr "IPv6 konektivita"
 #: js/src/connectionTest/ConnectionTestResult.js:17
 msgid "IPv6 gateway connectivity"
 msgstr "Konektivita IPv6 brány"
+
+#: js/src/connectionTest/ConnectionTestResult.js:83
+#, fuzzy
+msgid "Connection test successful"
+msgstr "Test připojení"
+
+#: js/src/connectionTest/ConnectionTestResult.js:88
+#, fuzzy
+msgid "Connection test failed"
+msgstr "Test připojení"
+
+#: js/src/connectionTest/ConnectionTestResult.js:93
+#, fuzzy
+msgid "Connection test not started"
+msgstr "Test připojení"
 
 #: js/src/dns/DNS.js:34
 msgid ""
@@ -331,7 +396,7 @@ msgstr ""
 "o závažný bezpečnostní problém na jeho straně.</p>\n"
 "            "
 
-#: js/src/dns/DNS.js:62 js/src/overview/Overview.js:68 js/src/wan/WAN.js:50
+#: js/src/dns/DNS.js:62 js/src/overview/Overview.js:70
 msgid "Connection Test"
 msgstr "Test připojení"
 
@@ -520,7 +585,7 @@ msgid "Define at least one of the IP addresses of the forwarder."
 msgstr "Zadejte alespoň jednu z IP adres přeposílání."
 
 #: js/src/guestNetwork/GuestNetwork.js:37 js/src/interfaces/constants.js:11
-#: js/src/main/pages.js:154
+#: js/src/main/pages.js:150
 msgid "Guest Network"
 msgstr "Síť pro hosty"
 
@@ -552,68 +617,52 @@ msgstr "IP adresa routeru ve vnitřní síti pro hosty."
 msgid "Network mask of the guest inner network."
 msgstr "Maska sítě vnitřní sítě pro hosty."
 
-#: js/src/guestNetwork/GuestNetworkForm.js:22
-msgid ""
-"This option enables you to set a bandwidth limit for the guest network, "
-"so that your main network doesn't get slowed-down by it."
-msgstr ""
-"Tato volba zapne omezení rychlosti přenosu pro síť hostů, aby "
-"nezpomalovala vaši hlavní síť."
-
-#: js/src/guestNetwork/GuestNetworkForm.js:25
+#: js/src/guestNetwork/GuestNetworkForm.js:24
 msgid "Download speed in guest network (in kilobits per second)."
 msgstr "Rychlost stahování v síti pro hosty (v kilobitech za sekundu)."
 
-#: js/src/guestNetwork/GuestNetworkForm.js:28
+#: js/src/guestNetwork/GuestNetworkForm.js:27
 msgid "Upload speed in guest network (in kilobits per second)."
 msgstr "Rychlost odesílání v síti pro hosty (v kilobitech za sekundu)."
 
-#: js/src/guestNetwork/GuestNetworkForm.js:65
+#: js/src/guestNetwork/GuestNetworkForm.js:64
 msgid "Guest Network Settings"
 msgstr "Nastavení sítě pro hosty"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:67
-msgid "Enable"
-msgstr "Zapnout"
+#: js/src/guestNetwork/GuestNetworkForm.js:66
+#, fuzzy
+msgid "Enable Guest Network"
+msgstr "Síť pro hosty"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:77 js/src/lan/LANManagedForm.js:61
+#: js/src/guestNetwork/GuestNetworkForm.js:76 js/src/lan/LANManagedForm.js:61
 msgid "Router IP address"
 msgstr "IP adresa routeru"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:98 js/src/lan/LANManagedForm.js:82
+#: js/src/guestNetwork/GuestNetworkForm.js:97 js/src/lan/LANManagedForm.js:82
 msgid "Enable DHCP"
 msgstr "Zapnout DHCP"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:116
+#: js/src/guestNetwork/GuestNetworkForm.js:115
 msgid "Enable QoS"
 msgstr "Zapnout QoS"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:159
+#: js/src/guestNetwork/GuestNetworkForm.js:158
 #: js/src/overview/Cards/NetmetrCard.js:67
 msgid "Download"
 msgstr "Stahování"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:172
+#: js/src/guestNetwork/GuestNetworkForm.js:171
 #: js/src/overview/Cards/NetmetrCard.js:83
 msgid "Upload"
 msgstr "Odesílání"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:191
+#: js/src/guestNetwork/GuestNetworkForm.js:190
 msgid "Download speed must be positive"
 msgstr "Je třeba, aby rychlost stahování byla kladná"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:194
+#: js/src/guestNetwork/GuestNetworkForm.js:193
 msgid "Upload speed must be positive"
 msgstr "Je třeba, aby rychlost odesílání byla kladná"
-
-#: js/src/guestNetwork/GuestNetworkNotification.js:12
-msgid ""
-"This network currently doesn't contain any devices. The changes you make "
-"here will become fully functional after you assign a network interface to"
-" this network."
-msgstr ""
-"Tato síť aktuálně neobsahuje žádná zařízení. Změny, které zde provedete, "
-"budou plně funkční poté, co této síti přiřadíte síťové rozhraní."
 
 #: js/src/guestNetwork/GuestNetworkNotification.js:16
 msgid "All network interfaces of this network are currently down."
@@ -726,6 +775,10 @@ msgid "Please wait till the updater finishes its run."
 msgstr "Počkejte prosím, dokud automatické aktualizace nebudou dokončeny."
 
 #: js/src/guide/constants.js:76
+msgid "Congratulations! Now your device is ready to be used."
+msgstr ""
+
+#: js/src/guide/constants.js:82
 msgid ""
 "Congratulations! Now your device is able to act as a router and route "
 "network traffic among LAN, WAN and guest network."
@@ -733,7 +786,7 @@ msgstr ""
 "Gratulujeme! Nyní je vaše zařízení schopné fungovat jako router a "
 "směrovat síťový provoz mezi LAN, WAN a sítí pro hosty."
 
-#: js/src/guide/constants.js:84
+#: js/src/guide/constants.js:90
 msgid ""
 "Minimal device setup is finished. Note that you probably need to perform "
 "some further configuration updates to fit the device to your needs."
@@ -742,7 +795,7 @@ msgstr ""
 "přizpůsobení zařízení vašim potřebám bude nejspíš třeba provést v "
 "nastavení ještě další změny."
 
-#: js/src/guide/constants.js:92
+#: js/src/guide/constants.js:98
 msgid ""
 "Your device is now ready to be used. You can tweak the rest of the "
 "setting in the administration interface. Once you finish the guide, your "
@@ -754,7 +807,7 @@ msgstr ""
 "Shield se pokusí připojit na Internet a zobrazí se vám administrační "
 "rozhraní."
 
-#: js/src/guide/constants.js:103
+#: js/src/guide/constants.js:109
 msgid ""
 "You chose to act as local server this means that it doesn't make sense to"
 " put any interfaces to your WAN and Guest Network. So it is a good idea "
@@ -764,7 +817,7 @@ msgstr ""
 " jakékoli rozhraní do WAN nebo sítě pro hosty. Takže je dobrý nápad "
 "přiřadit veškerá rozhraní do LAN."
 
-#: js/src/guide/constants.js:110
+#: js/src/guide/constants.js:116
 msgid ""
 "To act as a local server, there's no need to manage LAN (if you still "
 "want to manage it reset the guide and choose the Router workflow). You "
@@ -776,7 +829,7 @@ msgstr ""
 "chcete aby fungovalo jako klient a proto vyberte režim "
 "<strong>Počítač</strong>."
 
-#: js/src/guide/constants.js:113
+#: js/src/guide/constants.js:119
 msgid ""
 "If you select the <strong>static</strong> configuration be sure that the "
 "IP addresses are entered correctly otherwise you won't be able to access "
@@ -786,7 +839,7 @@ msgstr ""
 "adresy zadali správně. Jinak po uplatnění tohoto nového nastavení nebude "
 "rozhraní pro nastavování přístupné."
 
-#: js/src/guide/constants.js:116
+#: js/src/guide/constants.js:122
 msgid ""
 "If you select the <strong>DHCP</strong> method you probably you need to "
 "obtain a new IP address of this device. You can obtain it from the DHCP "
@@ -798,7 +851,7 @@ msgstr ""
 "který spravuje vaši síť. Na tuto novou IP adresu se budete potřebovat "
 "připojit pro dokončení průvodce."
 
-#: js/src/guide/constants.js:119
+#: js/src/guide/constants.js:125
 msgid ""
 "Note that either way you might need to re-plug your ethernet cables after"
 " you update the settings here."
@@ -806,7 +859,7 @@ msgstr ""
 "Poznamenejme že v obou případech může po změně nastavení zde být třeba "
 "odpojit a znovu připojit ethernetové kabely."
 
-#: js/src/guide/constants.js:123
+#: js/src/guide/constants.js:129
 msgid ""
 "Please test whether the settings you provided are correctly working. This"
 " means that you can access the configuration interface of your device and"
@@ -818,7 +871,7 @@ msgstr ""
 "schopné přistupovat k Internetu (k tomu je možné využít test připojení "
 "níže)."
 
-#: js/src/guide/constants.js:128
+#: js/src/guide/constants.js:134
 msgid ""
 "Congratulations! Now your device should be able to act as a server on "
 "your local network."
@@ -830,9 +883,9 @@ msgstr ""
 msgid "Cannot mark guide as finished."
 msgstr "Nelze označit průvodce jako dokončený."
 
-#: js/src/guide/steps.js:20 js/src/main/pages.js:76 js/src/main/pages.js:167
+#: js/src/guide/steps.js:20 js/src/main/pages.js:72 js/src/main/pages.js:163
 #: js/src/notificationsSettings/SMTPCustomForm.js:114
-#: js/src/password/Password.js:187 reforis/templates/login.html:29
+#: reforis/templates/login.html:29
 msgid "Password"
 msgstr "Heslo"
 
@@ -840,7 +893,7 @@ msgstr "Heslo"
 msgid "Workflow"
 msgstr "Scénář"
 
-#: js/src/guide/steps.js:28 js/src/main/pages.js:149
+#: js/src/guide/steps.js:28 js/src/main/pages.js:145
 msgid "Interfaces"
 msgstr "Rozhraní"
 
@@ -848,22 +901,22 @@ msgstr "Rozhraní"
 msgid "Time"
 msgstr "Čas"
 
-#: js/src/guide/steps.js:36 js/src/main/pages.js:63 js/src/main/pages.js:144
+#: js/src/guide/steps.js:36 js/src/main/pages.js:59 js/src/main/pages.js:140
 msgid "DNS"
 msgstr "DNS"
 
-#: js/src/guide/steps.js:40 js/src/main/pages.js:200
+#: js/src/guide/steps.js:40 js/src/main/pages.js:196
 #: js/src/packageManagement/updates/Updates.js:27
 msgid "Updates"
 msgstr "Aktualizace"
 
 #: js/src/guide/steps.js:44 js/src/interfaces/constants.js:9
-#: js/src/main/pages.js:53 js/src/main/pages.js:134 js/src/wan/WAN.js:27
+#: js/src/main/pages.js:49 js/src/main/pages.js:130 js/src/wan/WAN.js:27
 msgid "WAN"
 msgstr "WAN"
 
 #: js/src/guide/steps.js:48 js/src/interfaces/constants.js:10
-#: js/src/main/pages.js:58 js/src/main/pages.js:139
+#: js/src/main/pages.js:54 js/src/main/pages.js:135
 msgid "LAN"
 msgstr "LAN"
 
@@ -942,7 +995,7 @@ msgstr ""
 msgid "Local Server"
 msgstr "Místní server"
 
-#: js/src/guide/GuidePages/WorkflowSelect.js:38 js/src/lan/LANForm.js:39
+#: js/src/guide/GuidePages/WorkflowSelect.js:38 js/src/lan/LANForm.js:35
 msgid "Router"
 msgstr "Router"
 
@@ -1177,37 +1230,27 @@ msgstr ""
 "ve webovém prohlížeči <b>stránku znovu načíst</b>.\n"
 "            "
 
-#: js/src/lan/LANForm.js:24
+#: js/src/lan/LANForm.js:19
 msgid ""
-"Router mode means that this device manages the LAN (acts as a router, can"
-" assign IP addresses, etc.)."
+"\n"
+"    ),\n"
+"    unmanaged: _(\n"
+"        "
 msgstr ""
-"Režim Router znamená, že toto zařízení spravuje LAN (funguje jako router, "
-"může přiřazovat IP adresy atd.)."
 
-#: js/src/lan/LANForm.js:27
-msgid ""
-"Computer mode means that this device acts as a client in this network.\n"
-"It acts similarly to WAN, but it has opened ports for configuration "
-"interfaces and other services."
-msgstr ""
-"Režim Počítač znamená, že toto zařízení funguje na síti jako klient. Chová "
-"se podobně jako WAN,\n"
-"ale má otevřené porty pro své konfigurační rozhraní a ostatní služby."
-
-#: js/src/lan/LANForm.js:40
+#: js/src/lan/LANForm.js:36
 msgid "Computer"
 msgstr "Počítač"
 
-#: js/src/lan/LANForm.js:52
+#: js/src/lan/LANForm.js:86
 msgid "LAN Settings"
 msgstr "Nastavení místní sítě"
 
-#: js/src/lan/LANForm.js:117
+#: js/src/lan/LANForm.js:89
 msgid "LAN mode"
 msgstr "Režim místní sítě"
 
-#: js/src/lan/LANForm.js:133
+#: js/src/lan/LANForm.js:105
 msgid "Redirect to 192.168.1.1"
 msgstr "Přesměrovat na 192.168.1.1"
 
@@ -1232,62 +1275,62 @@ msgstr "Nepřipojovat toto zařízení do LAN"
 msgid "IPv4 protocol"
 msgstr "Protokol IPv4"
 
-#: js/src/main/pages.js:41 js/src/main/pages.js:117
-#: js/src/overview/Overview.js:55
+#: js/src/main/pages.js:37 js/src/main/pages.js:113
+#: js/src/overview/Overview.js:40
 msgid "Overview"
 msgstr "Přehled"
 
-#: js/src/main/pages.js:47 js/src/main/pages.js:123
+#: js/src/main/pages.js:43 js/src/main/pages.js:119
 msgid "Network Settings"
 msgstr "Nastavení sítě"
 
-#: js/src/main/pages.js:70 js/src/main/pages.js:161
+#: js/src/main/pages.js:66 js/src/main/pages.js:157
 msgid "Administration"
 msgstr "Správa"
 
-#: js/src/main/pages.js:81 js/src/main/pages.js:172
+#: js/src/main/pages.js:77 js/src/main/pages.js:168
 msgid "Region & Time"
 msgstr "Oblast a čas"
 
 #: js/src/main/TopBar/NotificationsDropdown/NotificationsDropdownMenu.js:76
-#: js/src/main/pages.js:86 js/src/main/pages.js:177
+#: js/src/main/pages.js:82 js/src/main/pages.js:173
 #: js/src/notifications/Notifications/Notifications.js:87
 #: js/src/notificationsSettings/NotificationsSettings.js:25
 msgid "Notifications"
 msgstr "Notifikace"
 
-#: js/src/main/pages.js:91 js/src/main/pages.js:182
+#: js/src/main/pages.js:87 js/src/main/pages.js:178
 #: js/src/maintenance/Maintenance.js:17
 msgid "Maintenance"
 msgstr "Údržba"
 
-#: js/src/main/pages.js:103
+#: js/src/main/pages.js:99
 msgid "Global Threat Statistics"
 msgstr "Globální statistiky hrozeb"
 
-#: js/src/main/pages.js:129 js/src/wifi/WiFi.js:21
+#: js/src/main/pages.js:125 js/src/wifi/WiFi.js:39
 msgid "Wi-Fi"
 msgstr "Wi-Fi"
 
-#: js/src/main/pages.js:194
+#: js/src/main/pages.js:190
 msgid "Package Management"
 msgstr "Správa balíčků"
 
-#: js/src/main/pages.js:205
+#: js/src/main/pages.js:201
 #: js/src/packageManagement/updateSettings/UpdateSettings.js:28
 msgid "Update Settings"
 msgstr "Nastavení aktualizace"
 
-#: js/src/main/pages.js:210 js/src/packageManagement/packages/Packages.js:19
+#: js/src/main/pages.js:206 js/src/packageManagement/packages/Packages.js:19
 msgid "Packages"
 msgstr "Balíčky"
 
 #: js/src/main/TopBar/languagesDropdown/LanguagesDropdown.js:50
-#: js/src/main/pages.js:215 js/src/packageManagement/languages/Languages.js:18
+#: js/src/main/pages.js:211 js/src/packageManagement/languages/Languages.js:18
 msgid "Languages"
 msgstr "Jazyky"
 
-#: js/src/main/pages.js:222
+#: js/src/main/pages.js:218
 msgid "Advanced Administration"
 msgstr "Pokročilá správa"
 
@@ -1442,11 +1485,13 @@ msgid "Custom"
 msgstr "Uživatelsky určené"
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:81
-msgid "Email Notifications"
-msgstr "Oznamování e-mailem"
+#, fuzzy
+msgid "Notification Settings"
+msgstr "Notifikace"
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:83
-msgid "Enable email notifications"
+#, fuzzy
+msgid "Enable Email Notifications"
 msgstr "Zapnout oznamování e-mailem"
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:93
@@ -1761,8 +1806,8 @@ msgstr ""
 "\n"
 "                    <li>Automatické aktualizace jsou vlastníkům routerů "
 "Turris poskytovány zdarma.</li>\n"
-"<li>Aktualizace jsou připravovány výhradně sdružením CZ.NIC, z. s. p. o.</li>"
-"\n"
+"<li>Aktualizace jsou připravovány výhradně sdružením CZ.NIC, z. s. p. "
+"o.</li>\n"
 "<li>\n"
 "Zapnutí automatických aktualizací je podmínkou pro dalších zabezpečovací "
 "funkce\n"
@@ -1774,17 +1819,17 @@ msgstr ""
 "počátek instalace.\n"
 "</li>\n"
 "<li>\n"
-"Zapnutí automatických aktualizací může vést ke zvýšení datového provozu na "
-"vašem\n"
+"Zapnutí automatických aktualizací může vést ke zvýšení datového provozu "
+"na vašem\n"
 "routeru. Náklady spojené s tímto navýšením nesete vy.\n"
 "</li>\n"
 "<li>\n"
-"Automatické aktualizace vás nemohou ochránit před všemi útoky přicházejícími "
-"z Internetu.\n"
-"Nezapomeňte chránit vaše počítače a ostatní zařízení instalací antivirového "
-"softwaru\n"
-"a uvedením členů domácnosti do problematiky bezpečného chování na Internetu."
-"\n"
+"Automatické aktualizace vás nemohou ochránit před všemi útoky "
+"přicházejícími z Internetu.\n"
+"Nezapomeňte chránit vaše počítače a ostatní zařízení instalací "
+"antivirového softwaru\n"
+"a uvedením členů domácnosti do problematiky bezpečného chování na "
+"Internetu.\n"
 "</li>\n"
 "<li>\n"
 "Sdružení CZ.NIC, z. s. p. o. nezaručuje dostupnost této služby a není "
@@ -1808,9 +1853,9 @@ msgstr ""
 "Povolením automatických aktualizací\n"
 "potvrzujete, že jste vlastníkem tohoto routeru\n"
 "Turris, a souhlasíte s úplným zněním\n"
-"<a href=\"https://www.turris.cz/omnia-updater-eula\" target=\"_blank\" rel="
-"\"noopener noreferrer\">licenční smlouvy <sup><i class=\"fas fa-external-"
-"link-alt fa-sm\"></i></sup></a>."
+"<a href=\"https://www.turris.cz/omnia-updater-eula\" target=\"_blank\" "
+"rel=\"noopener noreferrer\">licenční smlouvy <sup><i class=\"fas fa-"
+"external-link-alt fa-sm\"></i></sup></a>."
 
 #: js/src/packageManagement/updateSettings/UpdateSettings.js:31
 msgid ""
@@ -2054,8 +2099,9 @@ msgid ""
 "            approval-requiring updates</a> to review them."
 msgstr ""
 "Automatické aktualizace jsou vypnuté. Pro jejich\n"
-"přehled tedy zapněte <a href=\"${ForisURLs.packageManagement.updateSettings}"
-"\">odložené nebo schválení\n"
+"přehled tedy zapněte <a "
+"href=\"${ForisURLs.packageManagement.updateSettings}\">odložené nebo "
+"schválení\n"
 "vyžadující aktualizace</a>."
 
 #: js/src/packageManagement/updates/Updates.js:62
@@ -2124,53 +2170,13 @@ msgstr ""
 "správu zde, budete mít možnost učinit tak později. Do té doby bude účet "
 "root zablokován.)"
 
-#: js/src/password/Password.js:85
+#: js/src/password/Password.js:78
 msgid ""
-"The password you've entered has not been saved. It has been compromised "
-"and appears ${\n"
-"                            forisPassword.count || rootPassword.count\n"
-"                        } times in ${\n"
-"                            forisPassword.list || rootPassword.list\n"
-"                        } list. Please enter another, more secure "
-"password."
+");\n"
+"\n"
+"    if (password.length > 128)\n"
+"        return _("
 msgstr ""
-"Zadané heslo nebylo uloženo. Bylo prolomeno a objevuje se $\n"
-"                            forisPassword.count || rootPassword.count\n"
-"                        } krát v seznamu $ {\n"
-"                            forisPassword.list || rootPassword.list\n"
-"                        }."
-
-#: js/src/password/Password.js:96
-msgid "Password changed successfully."
-msgstr "Heslo úspěšně změněno."
-
-#: js/src/password/Password.js:160
-msgid "Password Settings"
-msgstr "Nastavení hesla"
-
-#: js/src/password/Password.js:189
-msgid ""
-"Here you can set password for the administration interface.\n"
-"Make sure to set a secure password that is long and unique."
-msgstr ""
-"Zde můžete nastavit heslo pro administrační rozhraní.\n"
-"Ujistěte se, že jste nastavili bezpečné heslo, které je dlouhé a neobvyklé."
-
-#: js/src/password/Password.js:207 js/src/password/Password.js:211
-msgid "The password confirmation does not match."
-msgstr "Potvrzení hesla nesouhlasí s heslem."
-
-#: js/src/password/Password.js:226
-msgid "Password can't be empty."
-msgstr "Heslo nemůže být prázdné."
-
-#: js/src/password/Password.js:228
-msgid "Password should have min 6 symbols."
-msgstr "Heslo by mělo být alespoň 6 znaků dlouhé."
-
-#: js/src/password/Password.js:231
-msgid "Password should have max 128 symbols."
-msgstr "Heslo by mělo být nejvýše 128 znaků dlouhé."
 
 #: js/src/password/RootPasswordForm.js:51
 msgid "Advanced Administration Password"
@@ -2318,66 +2324,31 @@ msgstr ""
 "e-mailu <a "
 "href=\"mailto:tech.support@turris.cz\">tech.support@turris.cz</a>."
 
-#: js/src/wan/MACForm.js:14
-msgid ""
-"Useful in cases, when a specific MAC address is required by your internet"
-" service provider."
-msgstr ""
-"Užitečné v případech, kdy je vaším poskytovatelem připojení k Internetu "
-"vyžadována konkrétní MAC adresa."
-
-#: js/src/wan/MACForm.js:17
+#: js/src/wan/MACForm.js:16
 msgid "Colon is used as a separator, for example 00:11:22:33:44:55"
 msgstr "Jako oddělovač slouží dvojtečka, například 00:11:22:33:44:55"
 
-#: js/src/wan/MACForm.js:51
-msgid "MAC"
-msgstr "MAC"
+#: js/src/wan/MACForm.js:19
+msgid "MAC address of the WAN interface."
+msgstr ""
 
-#: js/src/wan/MACForm.js:53
+#: js/src/wan/MACForm.js:52
+#, fuzzy
+msgid "MAC Settings"
+msgstr "Nastavení času"
+
+#: js/src/wan/MACForm.js:54
 msgid "Custom MAC address"
 msgstr "Uživatelsky určená MAC adresa"
 
-#: js/src/wan/MACForm.js:63
-msgid "MAC address"
-msgstr "MAC adresa"
+#: js/src/wan/MACForm.js:65
+#, fuzzy
+msgid "Current MAC address"
+msgstr "IP adresa routeru"
 
-#: js/src/wan/WAN.js:29
-msgid ""
-"\n"
-"Here you specify your WAN port settings. Usually, you can leave these "
-"options untouched unless instructed\n"
-"otherwise by your internet service provider. Also, in case there is a "
-"cable or DSL modem connecting your\n"
-"router to the network, it is usually not necessary to change this "
-"setting.\n"
-"        "
+#: js/src/wan/MACForm.js:71
+msgid "Set the new MAC address"
 msgstr ""
-"\n"
-"Zde zadáte nastavení portu WAN. Obvykle můžete tyto možnosti nechat "
-"nedotčené, pokud od poskytovatele\n"
-"přístupu k Internetu nedostanete jiné instrukce. Tedy v případě, že je "
-"váš router připojen do sítě přes\n"
-"kabelový nebo DSL modem, obvykle není nutné toto nastavení měnit.\n"
-"        "
-
-#: js/src/wan/WAN.js:53
-msgid ""
-"\n"
-"Here you can test you connection settings. Remember to click on the "
-"<b>Save button</b> before running the test.\n"
-"Note that sometimes it takes a while before the connection is fully "
-"initialized. So it might be useful to\n"
-"wait for a while before running this test.\n"
-"        "
-msgstr ""
-"\n"
-"Zde můžete otestovat nastavení svého připojení. Nezapomeňte před testem "
-"stisknout tlačítko <b>Save</b>.\n"
-"Mějte na paměti, že někdy může chvíli trvat, než je připojení plně "
-"inicializováno. Proto může být užitečné\n"
-"chvíli počkat, než spustíte tento test.\n"
-"        "
 
 #: js/src/wan/WAN6Form.js:26
 msgid "DUID which will be provided to the DHCPv6 server."
@@ -2461,6 +2432,11 @@ msgstr "6to4 (je třeba mít veřejnou IPv4 adresu)"
 msgid "6in4 (public IPv4 address required)"
 msgstr "6in4 (je třeba mít veřejnou IPv4 adresu)"
 
+#: js/src/wan/WAN6Form.js:162
+#, fuzzy
+msgid "IPv6 Settings"
+msgstr "Nastavení času"
+
 #: js/src/wan/WAN6Form.js:164
 msgid "IPv6 protocol"
 msgstr "Protokol IPv6"
@@ -2517,6 +2493,11 @@ msgstr "MTU by mělo být z rozsahu 1280-1480."
 msgid "PPPoE (for DSL bridges, etc.)"
 msgstr "PPPoE (pro DSL v režimu bridge atd.)"
 
+#: js/src/wan/WANForm.js:100
+#, fuzzy
+msgid "IPv4 Settings"
+msgstr "Nastavení času"
+
 #: js/src/wan/WANForm.js:128
 msgid "PAP/CHAP username"
 msgstr "Uživatelské jméno pro PAP/CHAP"
@@ -2525,21 +2506,9 @@ msgstr "Uživatelské jméno pro PAP/CHAP"
 msgid "PAP/CHAP password"
 msgstr "Heslo pro PAP/CHAP"
 
-#: js/src/wifi/WiFi.js:23
-msgid ""
-"\n"
-"If you want to use your router as a Wi-Fi access point, enable Wi-Fi here"
-" and fill in an SSID (the name of the access \n"
-"point) and a corresponding password. You can then set up your mobile "
-"devices, using the QR code available within the form.\n"
-"            "
+#: js/src/wifi/WiFi.js:26
+msgid "Unfortunately, we were unable to detect any wireless cards in your router."
 msgstr ""
-"\n"
-"Pokud chcete použít svůj router jako přístupový bod Wi-Fi, zapněte zde "
-"Wi-Fi a vyplňte SSID (název přístupového\n"
-"bodu) a související heslo. Mobilní zařízení můžete nastavit pomocí QR "
-"kódu, který je k dispozici ve formuláři.\n"
-"            "
 
 #: reforis/views.py:52
 msgid "Wrong password."
@@ -2556,6 +2525,10 @@ msgstr "Nedaří se nastavit DNS přeposílání."
 #: reforis/foris_controller_api/modules/dns.py:57
 msgid "Can't delete DNS forwarder."
 msgstr "Nedaří se smazat DNS přeposílání."
+
+#: reforis/foris_controller_api/modules/lan.py:57
+msgid "Can't create DHCP lease."
+msgstr ""
 
 #: reforis/foris_controller_api/modules/password.py:47
 msgid "Wrong current password."
@@ -3205,3 +3178,223 @@ msgstr "500 - Server error"
 
 #~ msgid "Go to Connection Settings"
 #~ msgstr "Přejít na Nastavení připojení"
+
+#~ msgid ""
+#~ "Here you can find some information "
+#~ "about your device. Please include it "
+#~ "into your message if you contact "
+#~ "our <a href=\"mailto:tech.support@turris.cz\" "
+#~ "target=\"_blank\">customer support</a>."
+#~ msgstr ""
+#~ "Zde najdete některé informace o svém "
+#~ "zařízení. Přiložte je prosím ke své "
+#~ "zprávě, pokud budete kontaktovat naši <a"
+#~ " href=\"mailto:tech.support@turris.cz\" "
+#~ "target=\"_blank\">zákaznickou podporu</a>."
+
+#~ msgid "Device"
+#~ msgstr "Zařízení"
+
+#~ msgid "Serial number"
+#~ msgstr "Sériové číslo"
+
+#~ msgid "reForis version"
+#~ msgstr "Verze reForis"
+
+#~ msgid "Turris OS version"
+#~ msgstr "Verze Turris OS"
+
+#~ msgid "Turris OS branch"
+#~ msgstr "Větev Turris OS"
+
+#~ msgid ""
+#~ "Turris OS is currently released in various branches,\n"
+#~ "                                    which have "
+#~ "different functions and varying stability\n"
+#~ ""
+#~ "                                    - you can "
+#~ "pick, which branch you want to "
+#~ "test."
+#~ msgstr ""
+#~ "Turris OS je aktuálně vydáván v různých větvích,\n"
+#~ "které mají různé funkce a různou stabilitu – můžete\n"
+#~ "si vybrat, kterou větev chcete otestovat."
+
+#~ msgid "IP Address"
+#~ msgstr "IP adresa"
+
+#~ msgid ""
+#~ "This option enables you to set a"
+#~ " bandwidth limit for the guest "
+#~ "network, so that your main network "
+#~ "doesn't get slowed-down by it."
+#~ msgstr ""
+#~ "Tato volba zapne omezení rychlosti "
+#~ "přenosu pro síť hostů, aby nezpomalovala"
+#~ " vaši hlavní síť."
+
+#~ msgid "Enable"
+#~ msgstr "Zapnout"
+
+#~ msgid ""
+#~ "This network currently doesn't contain "
+#~ "any devices. The changes you make "
+#~ "here will become fully functional after"
+#~ " you assign a network interface to"
+#~ " this network."
+#~ msgstr ""
+#~ "Tato síť aktuálně neobsahuje žádná "
+#~ "zařízení. Změny, které zde provedete, "
+#~ "budou plně funkční poté, co této "
+#~ "síti přiřadíte síťové rozhraní."
+
+#~ msgid ""
+#~ "Router mode means that this device "
+#~ "manages the LAN (acts as a router,"
+#~ " can assign IP addresses, etc.)."
+#~ msgstr ""
+#~ "Režim Router znamená, že toto zařízení"
+#~ " spravuje LAN (funguje jako router, "
+#~ "může přiřazovat IP adresy atd.)."
+
+#~ msgid ""
+#~ "Computer mode means that this device "
+#~ "acts as a client in this network."
+#~ "\n"
+#~ "It acts similarly to WAN, but it"
+#~ " has opened ports for configuration "
+#~ "interfaces and other services."
+#~ msgstr ""
+#~ "Režim Počítač znamená, že toto zařízení"
+#~ " funguje na síti jako klient. Chová"
+#~ " se podobně jako WAN,\n"
+#~ "ale má otevřené porty pro své konfigurační rozhraní a ostatní služby."
+
+#~ msgid "Email Notifications"
+#~ msgstr "Oznamování e-mailem"
+
+#~ msgid ""
+#~ "The password you've entered has not "
+#~ "been saved. It has been compromised "
+#~ "and appears ${\n"
+#~ "                            forisPassword.count || rootPassword.count\n"
+#~ "                        } times in ${\n"
+#~ "                            forisPassword.list || rootPassword.list\n"
+#~ "                        } list. Please enter"
+#~ " another, more secure password."
+#~ msgstr ""
+#~ "Zadané heslo nebylo uloženo. Bylo prolomeno a objevuje se $\n"
+#~ "                            forisPassword.count || rootPassword.count\n"
+#~ "                        } krát v seznamu $ {\n"
+#~ "                            forisPassword.list || rootPassword.list\n"
+#~ "                        }."
+
+#~ msgid "Password changed successfully."
+#~ msgstr "Heslo úspěšně změněno."
+
+#~ msgid ""
+#~ "Here you can set password for the administration interface.\n"
+#~ "Make sure to set a secure password that is long and unique."
+#~ msgstr ""
+#~ "Zde můžete nastavit heslo pro administrační rozhraní.\n"
+#~ "Ujistěte se, že jste nastavili bezpečné"
+#~ " heslo, které je dlouhé a neobvyklé."
+
+#~ msgid "The password confirmation does not match."
+#~ msgstr "Potvrzení hesla nesouhlasí s heslem."
+
+#~ msgid "Password can't be empty."
+#~ msgstr "Heslo nemůže být prázdné."
+
+#~ msgid "Password should have min 6 symbols."
+#~ msgstr "Heslo by mělo být alespoň 6 znaků dlouhé."
+
+#~ msgid "Password should have max 128 symbols."
+#~ msgstr "Heslo by mělo být nejvýše 128 znaků dlouhé."
+
+#~ msgid ""
+#~ "Useful in cases, when a specific "
+#~ "MAC address is required by your "
+#~ "internet service provider."
+#~ msgstr ""
+#~ "Užitečné v případech, kdy je vaším "
+#~ "poskytovatelem připojení k Internetu "
+#~ "vyžadována konkrétní MAC adresa."
+
+#~ msgid "MAC"
+#~ msgstr "MAC"
+
+#~ msgid "MAC address"
+#~ msgstr "MAC adresa"
+
+#~ msgid ""
+#~ "\n"
+#~ "Here you specify your WAN port "
+#~ "settings. Usually, you can leave these"
+#~ " options untouched unless instructed\n"
+#~ "otherwise by your internet service "
+#~ "provider. Also, in case there is a"
+#~ " cable or DSL modem connecting your"
+#~ "\n"
+#~ "router to the network, it is "
+#~ "usually not necessary to change this "
+#~ "setting.\n"
+#~ "        "
+#~ msgstr ""
+#~ "\n"
+#~ "Zde zadáte nastavení portu WAN. Obvykle"
+#~ " můžete tyto možnosti nechat nedotčené, "
+#~ "pokud od poskytovatele\n"
+#~ "přístupu k Internetu nedostanete jiné "
+#~ "instrukce. Tedy v případě, že je "
+#~ "váš router připojen do sítě přes\n"
+#~ "kabelový nebo DSL modem, obvykle není nutné toto nastavení měnit.\n"
+#~ "        "
+
+#~ msgid ""
+#~ "\n"
+#~ "Here you can test you connection "
+#~ "settings. Remember to click on the "
+#~ "<b>Save button</b> before running the "
+#~ "test.\n"
+#~ "Note that sometimes it takes a "
+#~ "while before the connection is fully "
+#~ "initialized. So it might be useful "
+#~ "to\n"
+#~ "wait for a while before running this test.\n"
+#~ "        "
+#~ msgstr ""
+#~ "\n"
+#~ "Zde můžete otestovat nastavení svého "
+#~ "připojení. Nezapomeňte před testem stisknout"
+#~ " tlačítko <b>Save</b>.\n"
+#~ "Mějte na paměti, že někdy může "
+#~ "chvíli trvat, než je připojení plně "
+#~ "inicializováno. Proto může být užitečné\n"
+#~ ""
+#~ "chvíli počkat, než spustíte tento test.\n"
+#~ "        "
+
+#~ msgid ""
+#~ "\n"
+#~ "If you want to use your router "
+#~ "as a Wi-Fi access point, enable"
+#~ " Wi-Fi here and fill in an "
+#~ "SSID (the name of the access \n"
+#~ "point) and a corresponding password. You"
+#~ " can then set up your mobile "
+#~ "devices, using the QR code available "
+#~ "within the form.\n"
+#~ "            "
+#~ msgstr ""
+#~ "\n"
+#~ "Pokud chcete použít svůj router jako "
+#~ "přístupový bod Wi-Fi, zapněte zde "
+#~ "Wi-Fi a vyplňte SSID (název "
+#~ "přístupového\n"
+#~ "bodu) a související heslo. Mobilní "
+#~ "zařízení můžete nastavit pomocí QR kódu,"
+#~ " který je k dispozici ve formuláři."
+#~ "\n"
+#~ "            "
+
