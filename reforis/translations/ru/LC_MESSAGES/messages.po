@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-07-01 11:50+0200\n"
-"PO-Revision-Date: 2021-07-02 05:34+0000\n"
+"PO-Revision-Date: 2021-07-03 06:33+0000\n"
 "Last-Translator: Алексей Леньшин <alenshin@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/turris/reforis/"
 "ru/>\n"
@@ -156,9 +156,8 @@ msgid "IPv6 Address"
 msgstr "Адрес IPv6"
 
 #: js/src/common/network/DHCP6ClientsList.js:37
-#, fuzzy
 msgid "DUID"
-msgstr "Руководство"
+msgstr "Уникальный идентификатор DHCP (DUID)"
 
 #: js/src/common/network/DHCP6ClientsList.js:38
 #: js/src/common/network/DHCPClientsList.js:38
@@ -186,9 +185,8 @@ msgstr ""
 "или беспроводные соединения."
 
 #: js/src/common/network/DHCPClientsList.js:36
-#, fuzzy
 msgid "IPv4 Address"
-msgstr "IP-адрес"
+msgstr "Адрес IPv4"
 
 #: js/src/common/network/DHCPClientsList.js:37
 msgid "MAC Address"
@@ -200,12 +198,11 @@ msgstr "Активный"
 
 #: js/src/common/network/DHCPClientsList.js:82
 msgid "Device is active"
-msgstr ""
+msgstr "Устройство активно"
 
 #: js/src/common/network/DHCPClientsList.js:82
-#, fuzzy
 msgid "Device is inactive"
-msgstr "Имя хоста устройства"
+msgstr "Устройство неактивно"
 
 #: js/src/common/network/DHCPServerForm.js:13
 msgid ""
@@ -338,19 +335,16 @@ msgid "IPv6 gateway connectivity"
 msgstr "Работоспособность шлюза IPv6"
 
 #: js/src/connectionTest/ConnectionTestResult.js:83
-#, fuzzy
 msgid "Connection test successful"
-msgstr "Проверка соединения"
+msgstr "Проверка подключения прошла успешно"
 
 #: js/src/connectionTest/ConnectionTestResult.js:88
-#, fuzzy
 msgid "Connection test failed"
-msgstr "Проверка соединения"
+msgstr "Ошибка проверки подключения"
 
 #: js/src/connectionTest/ConnectionTestResult.js:93
-#, fuzzy
 msgid "Connection test not started"
-msgstr "Проверка соединения"
+msgstr "Тест подключения не начат"
 
 #: js/src/dns/DNS.js:34
 msgid ""
@@ -628,9 +622,8 @@ msgid "Guest Network Settings"
 msgstr "Настройки гостевой сети"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:66
-#, fuzzy
 msgid "Enable Guest Network"
-msgstr "Гостевая сеть"
+msgstr "Включить гостевую сеть"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:76 js/src/lan/LANManagedForm.js:61
 msgid "Router IP address"
@@ -774,7 +767,7 @@ msgstr "Подождите, пока сервис обновлений запу�
 
 #: js/src/guide/constants.js:76
 msgid "Congratulations! Now your device is ready to be used."
-msgstr ""
+msgstr "Поздравляем! Теперь ваше устройство готово к использованию."
 
 #: js/src/guide/constants.js:82
 msgid ""
@@ -1476,12 +1469,10 @@ msgid "Custom"
 msgstr "Ручная настройка"
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:81
-#, fuzzy
 msgid "Notification Settings"
-msgstr "Уведомления"
+msgstr "Настройки уведомлений"
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:83
-#, fuzzy
 msgid "Enable Email Notifications"
 msgstr "Включить уведомления по электронной почте"
 
@@ -2296,25 +2287,23 @@ msgstr "Разделяйте двоеточием, например, 00:11:22:33
 
 #: js/src/wan/MACForm.js:19
 msgid "MAC address of the WAN interface."
-msgstr ""
+msgstr "MAC-адрес WAN-интерфейса."
 
 #: js/src/wan/MACForm.js:52
-#, fuzzy
 msgid "MAC Settings"
-msgstr "Настройки Времени"
+msgstr "Настройки MAC-адреса"
 
 #: js/src/wan/MACForm.js:54
 msgid "Custom MAC address"
 msgstr "Пользовательский MAC-адрес"
 
 #: js/src/wan/MACForm.js:65
-#, fuzzy
 msgid "Current MAC address"
-msgstr "IP-адрес маршрутизатора"
+msgstr "Текущий MAC-адрес"
 
 #: js/src/wan/MACForm.js:71
 msgid "Set the new MAC address"
-msgstr ""
+msgstr "Установить новый MAC-адрес"
 
 #: js/src/wan/WAN6Form.js:26
 msgid "DUID which will be provided to the DHCPv6 server."
@@ -2398,9 +2387,8 @@ msgid "6in4 (public IPv4 address required)"
 msgstr "6in4 (требуется публичный IPv4-адрес)"
 
 #: js/src/wan/WAN6Form.js:162
-#, fuzzy
 msgid "IPv6 Settings"
-msgstr "Настройки Времени"
+msgstr "Настройки IPv6"
 
 #: js/src/wan/WAN6Form.js:164
 msgid "IPv6 protocol"
@@ -2459,9 +2447,8 @@ msgid "PPPoE (for DSL bridges, etc.)"
 msgstr "PPPoE (для мостов DSL и т. д.)"
 
 #: js/src/wan/WANForm.js:100
-#, fuzzy
 msgid "IPv4 Settings"
-msgstr "Настройки Времени"
+msgstr "Настройки IPv4"
 
 #: js/src/wan/WANForm.js:128
 msgid "PAP/CHAP username"
@@ -2474,6 +2461,7 @@ msgstr "Пароль PAP/CHAP"
 #: js/src/wifi/WiFi.js:26
 msgid "Unfortunately, we were unable to detect any wireless cards in your router."
 msgstr ""
+"К сожалению, не удалось обнаружить беспроводных карт в вашем маршрутизаторе."
 
 #: reforis/views.py:52
 msgid "Wrong password."
@@ -2493,7 +2481,7 @@ msgstr "Не удается удалить сервер пересылки DNS."
 
 #: reforis/foris_controller_api/modules/lan.py:57
 msgid "Can't create DHCP lease."
-msgstr ""
+msgstr "Невозможно создать аренду DHCP."
 
 #: reforis/foris_controller_api/modules/password.py:47
 msgid "Wrong current password."
