@@ -8,16 +8,17 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-07-01 11:50+0200\n"
-"PO-Revision-Date: 2021-06-01 06:32+0000\n"
+"PO-Revision-Date: 2021-07-02 05:34+0000\n"
 "Last-Translator: Алексей Леньшин <alenshin@gmail.com>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/turris/reforis/"
+"ru/>\n"
 "Language: ru\n"
-"Language-Team: Russian "
-"<https://hosted.weblate.org/projects/turris/reforis/ru/>\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.8-dev\n"
 "Generated-By: Babel 2.9.1\n"
 
 #: js/src/about/About.js:23 js/src/main/pages.js:105 js/src/main/pages.js:224
@@ -129,16 +130,15 @@ msgstr "Наверх"
 
 #: js/src/common/network/DHCP6ClientsList.js:20
 msgid "IPv6 DHCP Client List"
-msgstr ""
+msgstr "Список клиентов DHCP IPv6"
 
 #: js/src/common/network/DHCP6ClientsList.js:22
-#, fuzzy
 msgid ""
 "This list contains all devices that are connected to the network through "
 "wired or wireless connections using IPv6."
 msgstr ""
-"Этот список содержит все устройства, подключенные к сети через проводные "
-"или беспроводные соединения."
+"Этот список содержит все устройства, подключенные к сети через проводные или "
+"беспроводные соединения с использованием IPv6."
 
 #: js/src/common/network/DHCP6ClientsList.js:28
 #: js/src/common/network/DHCPClientsList.js:28
@@ -152,9 +152,8 @@ msgid "Hostname"
 msgstr "Имя хоста"
 
 #: js/src/common/network/DHCP6ClientsList.js:36
-#, fuzzy
 msgid "IPv6 Address"
-msgstr "IP-адрес"
+msgstr "Адрес IPv6"
 
 #: js/src/common/network/DHCP6ClientsList.js:37
 #, fuzzy
@@ -3260,4 +3259,3 @@ msgstr "500 - Ошибка сервера"
 #~ "настроить свои мобильные устройства, используя"
 #~ " QR-код, доступный ниже.\n"
 #~ "            "
-
