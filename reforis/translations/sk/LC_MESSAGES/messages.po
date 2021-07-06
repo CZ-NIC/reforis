@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-07-01 11:50+0200\n"
-"PO-Revision-Date: 2021-06-17 09:39+0000\n"
-"Last-Translator: Atec <nil.maho@gmail.com>\n"
+"PO-Revision-Date: 2021-07-08 07:33+0000\n"
+"Last-Translator: Atec <dr.atec@gmail.com>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/turris/reforis/sk/"
+">\n"
 "Language: sk\n"
-"Language-Team: Slovak "
-"<https://hosted.weblate.org/projects/turris/reforis/sk/>\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 4.8-dev\n"
 "Generated-By: Babel 2.9.1\n"
 
 #: js/src/about/About.js:23 js/src/main/pages.js:105 js/src/main/pages.js:224
@@ -81,6 +82,60 @@ msgid ""
 "help\"\n"
 "                                data-tip={_("
 msgstr ""
+"\n"
+"                    ),\n"
+"                }}\n"
+"            />\n"
+"            <AboutTableWithErrorAndSpinner\n"
+"                apiState={getAboutResponse.state}\n"
+"                deviceDetails={getAboutResponse.data || {}}\n"
+"            />\n"
+"        </>\n"
+"    );\n"
+"}\n"
+"\n"
+"AboutTable.propTypes = {\n"
+"    deviceDetails: PropTypes.object.isRequired,\n"
+"    customization: PropTypes.bool,\n"
+"};\n"
+"\n"
+"function AboutTable({ deviceDetails }) {\n"
+"    const customization = !!(\n"
+"        deviceDetails &&\n"
+"        deviceDetails.customization !== undefined &&\n"
+"        deviceDetails.customization === \"shield\"\n"
+"    );\n"
+"    return (\n"
+"        <div className=\"card p-4 table-responsive\">\n"
+"            <table className=\"table table-borderless table-hover mb-0\">\n"
+"                <tbody>\n"
+"                    <tr>\n"
+"                        <th>{_(\"Device\")}</th>\n"
+"                        <td>\n"
+"                            {customization\n"
+"                                ? \"Turris Shield\"\n"
+"                                : deviceDetails.model}\n"
+"                        </td>\n"
+"                    </tr>\n"
+"                    <tr>\n"
+"                        <th>{_(\"Serial number\")}</th>\n"
+"                        <td>{deviceDetails.serial}</td>\n"
+"                    </tr>\n"
+"                    <tr>\n"
+"                        <th>{_(\"reForis version\")}</th>\n"
+"                        <td>{deviceDetails.reforis_version}</td>\n"
+"                    </tr>\n"
+"                    <tr>\n"
+"                        <th>{_(\"Turris OS version\")}</th>\n"
+"                        <td>{deviceDetails.os_version}</td>\n"
+"                    </tr>\n"
+"                    <tr>\n"
+"                        <th>\n"
+"                            {_(\"Turris OS branch\")}\n"
+"                            <i\n"
+"                                className=\"fas fa-question-circle ml-1 "
+"help\"\n"
+"                                data-tip={_("
 
 #: js/src/about/About.js:107
 msgid "Kernel version"
@@ -128,21 +183,20 @@ msgstr "Prejsť na začiatok"
 
 #: js/src/common/network/DHCP6ClientsList.js:20
 msgid "IPv6 DHCP Client List"
-msgstr ""
+msgstr "Zoznam klientov IPv6 DHCP"
 
 #: js/src/common/network/DHCP6ClientsList.js:22
-#, fuzzy
 msgid ""
 "This list contains all devices that are connected to the network through "
 "wired or wireless connections using IPv6."
 msgstr ""
 "Tento zoznam obsahuje všetky zariadenia pripojené do siete káblom alebo "
-"bezdrôtovo."
+"bezdrôtovo prostredníctvom IPv6."
 
 #: js/src/common/network/DHCP6ClientsList.js:28
 #: js/src/common/network/DHCPClientsList.js:28
 msgid "No clients found."
-msgstr "Nanašli sa žiadni DHCP klienti."
+msgstr "Nanašli sa žiadni klienti."
 
 #: js/src/common/network/DHCP6ClientsList.js:35
 #: js/src/common/network/DHCPClientsList.js:35 js/src/hostname/Hostname.js:21
@@ -151,14 +205,12 @@ msgid "Hostname"
 msgstr "Sieťový názov"
 
 #: js/src/common/network/DHCP6ClientsList.js:36
-#, fuzzy
 msgid "IPv6 Address"
-msgstr "IP adresa"
+msgstr "IPv6 adresa"
 
 #: js/src/common/network/DHCP6ClientsList.js:37
-#, fuzzy
 msgid "DUID"
-msgstr "Sprievodca"
+msgstr "DUID"
 
 #: js/src/common/network/DHCP6ClientsList.js:38
 #: js/src/common/network/DHCPClientsList.js:38
@@ -186,9 +238,8 @@ msgstr ""
 "bezdrôtovo."
 
 #: js/src/common/network/DHCPClientsList.js:36
-#, fuzzy
 msgid "IPv4 Address"
-msgstr "IP adresa"
+msgstr "IPv4 adresa"
 
 #: js/src/common/network/DHCPClientsList.js:37
 msgid "MAC Address"
@@ -200,12 +251,11 @@ msgstr "Aktívny"
 
 #: js/src/common/network/DHCPClientsList.js:82
 msgid "Device is active"
-msgstr ""
+msgstr "Zariadenie je aktívne"
 
 #: js/src/common/network/DHCPClientsList.js:82
-#, fuzzy
 msgid "Device is inactive"
-msgstr "Sieťový názov zariadenia"
+msgstr "Zariadenie nie je aktívne"
 
 #: js/src/common/network/DHCPServerForm.js:13
 msgid ""
@@ -338,19 +388,16 @@ msgid "IPv6 gateway connectivity"
 msgstr "Konektivita IPv6 brány"
 
 #: js/src/connectionTest/ConnectionTestResult.js:83
-#, fuzzy
 msgid "Connection test successful"
-msgstr "Test pripojenia"
+msgstr "Test pripojenia úspešný"
 
 #: js/src/connectionTest/ConnectionTestResult.js:88
-#, fuzzy
 msgid "Connection test failed"
-msgstr "Test pripojenia"
+msgstr "Test pripojenia neúspešný"
 
 #: js/src/connectionTest/ConnectionTestResult.js:93
-#, fuzzy
 msgid "Connection test not started"
-msgstr "Test pripojenia"
+msgstr "Test pripojenia nebol spustený"
 
 #: js/src/dns/DNS.js:34
 msgid ""
@@ -633,9 +680,8 @@ msgid "Guest Network Settings"
 msgstr "Nastavenia siete pre hostí"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:66
-#, fuzzy
 msgid "Enable Guest Network"
-msgstr "Sieť pre hostí"
+msgstr "Povoliť sieť pre hostí"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:76 js/src/lan/LANManagedForm.js:61
 msgid "Router IP address"
@@ -778,7 +824,7 @@ msgstr "Prosím, počkajte na dokončenie automatických aktualizácií."
 
 #: js/src/guide/constants.js:76
 msgid "Congratulations! Now your device is ready to be used."
-msgstr ""
+msgstr "Blahoželáme! Vaše zariadenie je teraz pripravené na používanie."
 
 #: js/src/guide/constants.js:82
 msgid ""
@@ -1236,6 +1282,10 @@ msgid ""
 "    unmanaged: _(\n"
 "        "
 msgstr ""
+"\n"
+"    ),\n"
+"    unmanaged: _(\n"
+"        "
 
 #: js/src/lan/LANForm.js:36
 msgid "Computer"
@@ -1482,12 +1532,10 @@ msgid "Custom"
 msgstr "Vlastné"
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:81
-#, fuzzy
 msgid "Notification Settings"
-msgstr "Notifikácie"
+msgstr "Nastavenia notifikácií"
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:83
-#, fuzzy
 msgid "Enable Email Notifications"
 msgstr "Povoliť notifikácie e-mailom"
 
@@ -2179,6 +2227,10 @@ msgid ""
 "    if (password.length > 128)\n"
 "        return _("
 msgstr ""
+");\n"
+"\n"
+"    if (password.length > 128)\n"
+"        return _("
 
 #: js/src/password/RootPasswordForm.js:51
 msgid "Advanced Administration Password"
@@ -2330,25 +2382,23 @@ msgstr "Ako oddeľovač sa používa dvojbodka, napríklad 00:11:22:33:44:55"
 
 #: js/src/wan/MACForm.js:19
 msgid "MAC address of the WAN interface."
-msgstr ""
+msgstr "MAC adresa rozhrania WAN."
 
 #: js/src/wan/MACForm.js:52
-#, fuzzy
 msgid "MAC Settings"
-msgstr "Nastavenia času"
+msgstr "Nastavenia MAC"
 
 #: js/src/wan/MACForm.js:54
 msgid "Custom MAC address"
 msgstr "Vlastná MAC adresa"
 
 #: js/src/wan/MACForm.js:65
-#, fuzzy
 msgid "Current MAC address"
-msgstr "IP adresa routera"
+msgstr "Aktuálna MAC adresa"
 
 #: js/src/wan/MACForm.js:71
 msgid "Set the new MAC address"
-msgstr ""
+msgstr "Nastaviť novú MAC adresu"
 
 #: js/src/wan/WAN6Form.js:26
 msgid "DUID which will be provided to the DHCPv6 server."
@@ -2434,9 +2484,8 @@ msgid "6in4 (public IPv4 address required)"
 msgstr "6in4 (vyžaduje sa verejná IPv4 adresa)"
 
 #: js/src/wan/WAN6Form.js:162
-#, fuzzy
 msgid "IPv6 Settings"
-msgstr "Nastavenia času"
+msgstr "Nastavenia IPv6"
 
 #: js/src/wan/WAN6Form.js:164
 msgid "IPv6 protocol"
@@ -2495,9 +2544,8 @@ msgid "PPPoE (for DSL bridges, etc.)"
 msgstr "PPPoE (pre DSL modemy v režime bridge, a pod.)"
 
 #: js/src/wan/WANForm.js:100
-#, fuzzy
 msgid "IPv4 Settings"
-msgstr "Nastavenia času"
+msgstr "Nastavenia IPv4"
 
 #: js/src/wan/WANForm.js:128
 msgid "PAP/CHAP username"
@@ -2509,7 +2557,7 @@ msgstr "Heslo pre PAP/CHAP"
 
 #: js/src/wifi/WiFi.js:26
 msgid "Unfortunately, we were unable to detect any wireless cards in your router."
-msgstr ""
+msgstr "Žiaľ, vo vašom routeri nebolo možné zistiť žiadnu Wi-Fi kartu."
 
 #: reforis/views.py:52
 msgid "Wrong password."
@@ -2529,7 +2577,7 @@ msgstr "Nedá sa vymazať DNS preposielanie (forwarder)."
 
 #: reforis/foris_controller_api/modules/lan.py:57
 msgid "Can't create DHCP lease."
-msgstr ""
+msgstr "Nedá sa vytvoriť DHCP zápožička."
 
 #: reforis/foris_controller_api/modules/password.py:47
 msgid "Wrong current password."
@@ -2604,7 +2652,7 @@ msgstr "späť na výber"
 
 #: reforis/templates/errors/400.html:4 reforis/templates/errors/400.html:8
 msgid "400 - Bad Request"
-msgstr "400 - Bad Request"
+msgstr "400 – Bad Request"
 
 #: reforis/templates/errors/400.html:9 reforis/templates/errors/500.html:9
 msgid "Error:"
@@ -2616,7 +2664,7 @@ msgstr "Extra:"
 
 #: reforis/templates/errors/400.html:16 reforis/templates/errors/500.html:16
 msgid "Trace:"
-msgstr "Trace:"
+msgstr "Cesta:"
 
 #: reforis/templates/errors/403.html:4
 msgid "403 - Forbidden"
@@ -2645,7 +2693,7 @@ msgstr "Chyba servera"
 
 #: reforis/templates/errors/500.html:8
 msgid "500 - Server error"
-msgstr "500 - Chyba servera"
+msgstr "500 – Chyba servera"
 
 #~ msgid ""
 #~ "\n"
@@ -3303,4 +3351,3 @@ msgstr "500 - Chyba servera"
 #~ " mobilného zariadenia môžete potom použiť"
 #~ " QR kód dostupný vo formulári.\n"
 #~ "            "
-
