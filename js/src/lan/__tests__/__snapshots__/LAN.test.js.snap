@@ -75,7 +75,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         class="form-group"
       >
         <label
-          for="5"
+          for="6"
         >
           Router IP address
         </label>
@@ -84,7 +84,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         >
           <input
             class="form-control"
-            id="5"
+            id="6"
             required=""
             type="text"
             value="192.168.1.4"
@@ -100,7 +100,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         class="form-group"
       >
         <label
-          for="6"
+          for="7"
         >
           Network mask
         </label>
@@ -109,7 +109,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         >
           <input
             class="form-control"
-            id="6"
+            id="7"
             required=""
             type="text"
             value="255.255.255.0"
@@ -124,12 +124,12 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         >
           <input
             class="custom-control-input"
-            id="7"
+            id="8"
             type="checkbox"
           />
           <label
             class="custom-control-label"
-            for="7"
+            for="8"
           >
             Enable DHCP
           </label>
@@ -144,7 +144,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         class="form-group"
       >
         <label
-          for="12"
+          for="14"
         >
           DHCP start
         </label>
@@ -153,7 +153,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         >
           <input
             class="form-control"
-            id="12"
+            id="14"
             required=""
             type="text"
             value="192.168.1.10"
@@ -164,7 +164,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         class="form-group"
       >
         <label
-          for="13"
+          for="15"
         >
           DHCP max leases
         </label>
@@ -173,7 +173,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         >
           <input
             class="form-control"
-            id="13"
+            id="15"
             min="1"
             required=""
             type="number"
@@ -212,7 +212,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         class="form-group"
       >
         <label
-          for="14"
+          for="16"
         >
           Lease time (hours)
         </label>
@@ -221,7 +221,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         >
           <input
             class="form-control"
-            id="14"
+            id="16"
             min="1"
             required=""
             type="number"
@@ -249,6 +249,30 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
               />
             </button>
           </div>
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
+        <div
+          class="custom-control custom-switch"
+        >
+          <input
+            class="custom-control-input"
+            id="4"
+            type="checkbox"
+          />
+          <label
+            class="custom-control-label"
+            for="4"
+          >
+            Enable QoS
+          </label>
+          <small
+            class="form-text text-muted mt-0 mb-3"
+          >
+            This option enables you to set a bandwidth limit for your network.
+          </small>
         </div>
       </div>
       <div
@@ -478,7 +502,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         class="form-group"
       >
         <label
-          for="5"
+          for="6"
         >
           Router IP address
         </label>
@@ -487,7 +511,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         >
           <input
             class="form-control"
-            id="5"
+            id="6"
             required=""
             type="text"
             value="192.168.1.4"
@@ -503,7 +527,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         class="form-group"
       >
         <label
-          for="6"
+          for="7"
         >
           Network mask
         </label>
@@ -512,7 +536,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         >
           <input
             class="form-control"
-            id="6"
+            id="7"
             required=""
             type="text"
             value="255.255.255.0"
@@ -527,12 +551,12 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         >
           <input
             class="custom-control-input"
-            id="7"
+            id="8"
             type="checkbox"
           />
           <label
             class="custom-control-label"
-            for="7"
+            for="8"
           >
             Enable DHCP
           </label>
@@ -540,6 +564,30 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
             class="form-text text-muted mt-0 mb-3"
           >
             Enable this option to automatically assign IP addresses to the devices connected to the router.
+          </small>
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
+        <div
+          class="custom-control custom-switch"
+        >
+          <input
+            class="custom-control-input"
+            id="4"
+            type="checkbox"
+          />
+          <label
+            class="custom-control-label"
+            for="4"
+          >
+            Enable QoS
+          </label>
+          <small
+            class="form-text text-muted mt-0 mb-3"
+          >
+            This option enables you to set a bandwidth limit for your network.
           </small>
         </div>
       </div>
@@ -686,6 +734,30 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         </small>
       </div>
       <div
+        class="form-group"
+      >
+        <div
+          class="custom-control custom-switch"
+        >
+          <input
+            class="custom-control-input"
+            id="4"
+            type="checkbox"
+          />
+          <label
+            class="custom-control-label"
+            for="4"
+          >
+            Enable QoS
+          </label>
+          <small
+            class="form-text text-muted mt-0 mb-3"
+          >
+            This option enables you to set a bandwidth limit for your network.
+          </small>
+        </div>
+      </div>
+      <div
         class="text-right"
       >
         <button
@@ -802,6 +874,30 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
             Static IP address (manual configuration)
           </option>
         </select>
+      </div>
+      <div
+        class="form-group"
+      >
+        <div
+          class="custom-control custom-switch"
+        >
+          <input
+            class="custom-control-input"
+            id="4"
+            type="checkbox"
+          />
+          <label
+            class="custom-control-label"
+            for="4"
+          >
+            Enable QoS
+          </label>
+          <small
+            class="form-text text-muted mt-0 mb-3"
+          >
+            This option enables you to set a bandwidth limit for your network.
+          </small>
+        </div>
       </div>
       <div
         class="text-right"
@@ -925,7 +1021,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         class="form-group"
       >
         <label
-          for="6"
+          for="7"
         >
           IP address
         </label>
@@ -934,7 +1030,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         >
           <input
             class="form-control"
-            id="6"
+            id="7"
             required=""
             type="text"
             value="192.168.1.4"
@@ -945,7 +1041,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         class="form-group"
       >
         <label
-          for="7"
+          for="8"
         >
           Network mask
         </label>
@@ -954,7 +1050,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         >
           <input
             class="form-control"
-            id="7"
+            id="8"
             required=""
             type="text"
             value="255.255.255.0"
@@ -965,7 +1061,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         class="form-group"
       >
         <label
-          for="8"
+          for="9"
         >
           Gateway
         </label>
@@ -974,7 +1070,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         >
           <input
             class="form-control"
-            id="8"
+            id="9"
             required=""
             type="text"
             value="192.168.1.4"
@@ -985,33 +1081,9 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         class="form-group"
       >
         <label
-          for="9"
-        >
-          DNS server 1
-        </label>
-        <div
-          class="input-group"
-        >
-          <input
-            class="form-control"
-            id="9"
-            type="text"
-            value=""
-          />
-        </div>
-        <small
-          class="form-text text-muted"
-        >
-          DNS server address is not required as the built-in DNS resolver is capable of working without it.
-        </small>
-      </div>
-      <div
-        class="form-group"
-      >
-        <label
           for="10"
         >
-          DNS server 2
+          DNS server 1
         </label>
         <div
           class="input-group"
@@ -1028,6 +1100,54 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         >
           DNS server address is not required as the built-in DNS resolver is capable of working without it.
         </small>
+      </div>
+      <div
+        class="form-group"
+      >
+        <label
+          for="11"
+        >
+          DNS server 2
+        </label>
+        <div
+          class="input-group"
+        >
+          <input
+            class="form-control"
+            id="11"
+            type="text"
+            value=""
+          />
+        </div>
+        <small
+          class="form-text text-muted"
+        >
+          DNS server address is not required as the built-in DNS resolver is capable of working without it.
+        </small>
+      </div>
+      <div
+        class="form-group"
+      >
+        <div
+          class="custom-control custom-switch"
+        >
+          <input
+            class="custom-control-input"
+            id="4"
+            type="checkbox"
+          />
+          <label
+            class="custom-control-label"
+            for="4"
+          >
+            Enable QoS
+          </label>
+          <small
+            class="form-text text-muted mt-0 mb-3"
+          >
+            This option enables you to set a bandwidth limit for your network.
+          </small>
+        </div>
       </div>
       <div
         class="text-right"
@@ -1182,7 +1302,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         class="form-group"
       >
         <label
-          for="9"
+          for="10"
         >
           DHCP start
         </label>
@@ -1191,7 +1311,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         >
           <input
             class="form-control"
-            id="9"
+            id="10"
             required=""
             type="text"
             value="192.168.1.10"
@@ -1202,7 +1322,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         class="form-group"
       >
         <label
-          for="10"
+          for="11"
         >
           DHCP max leases
         </label>
@@ -1211,7 +1331,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         >
           <input
             class="form-control"
-            id="10"
+            id="11"
             min="1"
             required=""
             type="number"
@@ -1250,7 +1370,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         class="form-group"
       >
         <label
-          for="11"
+          for="12"
         >
           Lease time (hours)
         </label>
@@ -1259,7 +1379,7 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
         >
           <input
             class="form-control"
-            id="11"
+            id="12"
             min="1"
             required=""
             type="number"
@@ -1287,6 +1407,30 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
               />
             </button>
           </div>
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
+        <div
+          class="custom-control custom-switch"
+        >
+          <input
+            class="custom-control-input"
+            id="5"
+            type="checkbox"
+          />
+          <label
+            class="custom-control-label"
+            for="5"
+          >
+            Enable QoS
+          </label>
+          <small
+            class="form-text text-muted mt-0 mb-3"
+          >
+            This option enables you to set a bandwidth limit for your network.
+          </small>
         </div>
       </div>
       <div
@@ -1466,6 +1610,30 @@ The next page will not load until you obtain a new IP from DHCP (if DHCP enabled
             class="form-text text-muted mt-0 mb-3"
           >
             Enable this option to automatically assign IP addresses to the devices connected to the router.
+          </small>
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
+        <div
+          class="custom-control custom-switch"
+        >
+          <input
+            class="custom-control-input"
+            id="5"
+            type="checkbox"
+          />
+          <label
+            class="custom-control-label"
+            for="5"
+          >
+            Enable QoS
+          </label>
+          <small
+            class="form-text text-muted mt-0 mb-3"
+          >
+            This option enables you to set a bandwidth limit for your network.
           </small>
         </div>
       </div>
