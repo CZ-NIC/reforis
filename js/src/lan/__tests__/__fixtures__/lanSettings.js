@@ -46,6 +46,11 @@ const lanSettingsFixture = {
         },
         lan_type: "dhcp",
     },
+    qos: {
+        enabled: false,
+        download: 1024,
+        upload: 1021,
+    },
 };
 
 const lanCustomSettingsFixture = {
@@ -64,6 +69,11 @@ const lanCustomSettingsFixture = {
         },
         netmask: "255.255.255.0",
         router_ip: "192.168.1.4",
+    },
+    qos: {
+        enabled: false,
+        download: 1024,
+        upload: 1021,
     },
 };
 
