@@ -83,6 +83,8 @@ function prepDataToSubmit(formData) {
         delete formData.mode_managed.dhcp.ipv6clients;
         if (!formData.mode_managed.dhcp.enabled)
             formData.mode_managed.dhcp = { enabled: false };
+        // Temporary fix for QoS on LAN page until turris/reforis/reforis/-/merge_requests/265 is done
+        if (!formData.qos.enabled) formData.qos = { enabled: false };
     } else if (formData.mode === LAN_MODES.unmanaged) {
         delete formData.mode_managed;
         const lanType = formData.mode_unmanaged.lan_type;
@@ -90,6 +92,8 @@ function prepDataToSubmit(formData) {
             lan_type: lanType,
             [`lan_${lanType}`]: formData.mode_unmanaged[`lan_${lanType}`],
         };
+        // Temporary fix for QoS on LAN page until turris/reforis/reforis/-/merge_requests/265 is done
+        if (!formData.qos.enabled) formData.qos = { enabled: false };
     }
 
     return formData;
