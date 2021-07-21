@@ -90,6 +90,7 @@ describe("<LAN/>", () => {
         const data = {
             mode: "unmanaged",
             mode_unmanaged: { lan_dhcp: {}, lan_type: "dhcp" },
+            qos: { enabled: false },
         };
         expect(mockAxios.post).toHaveBeenCalledWith(
             "/reforis/api/lan",
@@ -114,6 +115,7 @@ describe("<LAN/>", () => {
                     netmask: "255.255.255.0",
                 },
             },
+            qos: { enabled: false },
         };
         expect(mockAxios.post).toHaveBeenCalledWith(
             "/reforis/api/lan",
@@ -131,6 +133,7 @@ describe("<LAN/>", () => {
         const data = {
             mode: "unmanaged",
             mode_unmanaged: { lan_none: undefined, lan_type: "none" },
+            qos: { enabled: false },
         };
         expect(mockAxios.post).toHaveBeenCalledWith(
             "/reforis/api/lan",
@@ -152,6 +155,7 @@ describe("<LAN/>", () => {
                 netmask: "255.255.255.0",
                 router_ip: "192.168.1.4",
             },
+            qos: { enabled: false },
         };
         expect(mockAxios.post).toHaveBeenCalledWith(
             "/reforis/api/lan",
@@ -196,6 +200,7 @@ describe("<LAN/>", () => {
                     netmask: "255.255.255.0",
                     router_ip: "192.168.1.4",
                 },
+                qos: { enabled: false },
             };
             expect(mockAxios.post).toHaveBeenCalledWith(
                 "/reforis/api/lan",

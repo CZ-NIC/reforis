@@ -14,6 +14,10 @@ DHCP6ClientsList.propTypes = {
     ipv6clients: PropTypes.arrayOf(PropTypes.object),
 };
 
+DHCP6ClientsList.defaultProps = {
+    ipv6clients: [],
+};
+
 export default function DHCP6ClientsList({ ipv6clients }) {
     return (
         <div className={formFieldsSize}>
