@@ -1,4 +1,4 @@
-#  Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+#  Copyright (C) 2019-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
 #
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
@@ -22,7 +22,7 @@ BUSES_CONF = {
         'timeout': 30000,
     },
     'ubus': {
-        'path': '/var/run/ubus.sock',
+        'path': '/var/run/ubus/ubus.sock',
         'timeout': 30000
     }
 }
