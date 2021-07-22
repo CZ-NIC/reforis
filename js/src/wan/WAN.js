@@ -21,7 +21,11 @@ WAN.propTypes = {
     ws: PropTypes.object.isRequired,
 };
 
-export default function WAN({ ws }) {
+WAN.propTypes = {
+    postCallback: () => undefined,
+};
+
+export default function WAN({ ws, postCallback }) {
     return (
         <>
             <h1>{_("WAN")}</h1>
@@ -40,6 +44,7 @@ router to the network, it is usually not necessary to change this setting.
                 }}
                 prepData={prepData}
                 prepDataToSubmit={prepDataToSubmit}
+                postCallback={postCallback}
                 validator={validator}
             >
                 <WANForm />

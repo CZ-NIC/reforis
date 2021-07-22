@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2019-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -19,7 +19,11 @@ Interfaces.propTypes = {
     ws: PropTypes.object.isRequired,
 };
 
-export default function Interfaces({ ws }) {
+Interfaces.propTypes = {
+    postCallback: () => undefined,
+};
+
+export default function Interfaces({ ws, postCallback }) {
     return (
         <>
             <h1>{_("Network Interfaces")}</h1>
@@ -36,6 +40,7 @@ network interfaces among networks. If you are unsure what to set here use the de
                     wsModule: "networks",
                 }}
                 prepDataToSubmit={prepDataToSubmit}
+                postCallback={postCallback}
                 validator={validateInterfaces}
             >
                 <InterfacesForm />
