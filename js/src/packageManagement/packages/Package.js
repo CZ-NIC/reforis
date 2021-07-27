@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020-2021 CZ.NIC z.s.p.o. (https://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -39,22 +39,22 @@ export default function Package({
             <PackageCheckBox
                 name={title}
                 labels={labels}
+                url={url}
                 helpText={description}
                 checked={enabled}
                 disabled={disabled}
-                url={url}
                 onChange={setFormValue((value) => ({
                     package_lists: { [index]: { enabled: { $set: value } } },
                 }))}
             />
-            {options && options.length > 0 ? (
+            {options && options.length > 0 && (
                 <UserOptions
                     packageIndex={index}
                     options={options}
                     setFormValue={setFormValue}
                     disabled={disabled || !enabled}
                 />
-            ) : null}
+            )}
         </div>
     );
 }
