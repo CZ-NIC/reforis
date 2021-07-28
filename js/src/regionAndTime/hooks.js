@@ -58,7 +58,7 @@ export function useNTPDate(ws) {
 }
 
 export function useEditServers(servers) {
-    const [serverList, setServers] = useState(servers);
+    const [serverList, setServers] = useState(servers.ntp_extras);
 
     function addServer() {
         //function for adding new server

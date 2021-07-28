@@ -120,12 +120,9 @@ export default function TimeForm({
                 }))}
                 disabled={disabled}
             />
-            {data.how_to_set_time === "ntp" ? (
-                <NTPServersList
-                    servers={data.ntp_servers}
-                    formData={formData}
-                />
-            ) : null}
+            {data.how_to_set_time === "ntp" && (
+                <NTPServersList servers={data} />
+            )}
             <DataTimeInput
                 label={_("Time")}
                 value={
@@ -165,30 +162,17 @@ NTPServersList.propTypes = {
     servers: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-function NTPServersList({ servers, formData }) {
+function NTPServersList({ servers }) {
     const [shown, setShown] = useState(false);
-    const [defaultServers, getDefaultServers] = useAPIGet(
-        API_URLs.regionAndTime
-    );
-    const [postState, setToDefault] = useAPIPost(API_URLs.regionAndTime);
+
+    servers.ntp_extras = ["my first one", "my second one", "my third one"];
+
     const [
         serverList,
         addServer,
         removeServer,
         resetToDefaultList,
     ] = useEditServers(servers);
-
-    function handleReset() {
-        delete formData.time_settings.ntp_servers;
-        delete formData.time_settings.time;
-        setToDefault({ data: formData });
-    }
-
-    useEffect(() => {
-        if (postState.state === API_STATE.SUCCESS) {
-            getDefaultServers();
-        }
-    }, [postState, getDefaultServers]);
 
     return (
         <>
@@ -210,6 +194,12 @@ function NTPServersList({ servers, formData }) {
             <div className="collapse" id="collapseNTPServers">
                 <h5>{_("NTP Servers")}</h5>
                 <div id="ntpServersList">
+                    {servers.ntp_servers.map((server) => (
+                        <p key={server}>{server}</p>
+                    ))}
+                </div>
+                <h5>{_("Custom NTP Servers")}</h5>
+                <div id="ntpServersList">
                     {serverList.map((server) => (
                         <p
                             key={server}
@@ -221,7 +211,6 @@ function NTPServersList({ servers, formData }) {
                         </p>
                     ))}
                 </div>
-                <Button onClick={handleReset}>Reset to default servers</Button>
             </div>
         </>
     );
