@@ -1,4 +1,4 @@
-#  Copyright (C) 2019-2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+#  Copyright (C) 2019-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
 #
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
@@ -12,7 +12,7 @@ which is done in `ForisAPI` Blueprint.
 from flask import Blueprint, current_app, redirect, render_template, request, session, url_for
 from flask_babel import gettext as _
 
-from reforis.auth import login_to_foris, logout_from_foris
+from .auth import login_to_foris, logout_from_foris, is_user_logged
 
 # pylint: disable=invalid-name
 views = Blueprint('Views', __name__)
@@ -23,7 +23,7 @@ views = Blueprint('Views', __name__)
 @views.route('/<path:path>')
 def index(path):
     """Main page."""
-    return render_template('index.html')
+    return render_template('index.html', user_is_logged={'logged': is_user_logged()})
 
 
 @views.route('/login', methods=['GET', 'POST'])
