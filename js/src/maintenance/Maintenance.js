@@ -10,6 +10,8 @@ import { isPluginInstalled } from "foris";
 import Reboot from "./Reboot";
 import FactoryReset from "./FactoryReset";
 import Syslog from "./Syslog/Syslog";
+import ConfigurationBackup from "./BackupRestore/ConfigurationBackup";
+import ConfigurationRestore from "./BackupRestore/ConfigurationRestore";
 
 export default function Maintenance() {
     return (
@@ -23,6 +25,8 @@ export default function Maintenance() {
 
             <Reboot />
             <FactoryReset />
+            <ConfigurationBackup />
+            <ConfigurationRestore />
             {isPluginInstalled("Storage") ? <Syslog /> : null}
         </>
     );
