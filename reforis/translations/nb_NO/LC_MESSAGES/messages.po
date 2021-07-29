@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-07-01 11:50+0200\n"
-"PO-Revision-Date: 2021-07-08 07:33+0000\n"
+"PO-Revision-Date: 2021-07-29 22:50+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/turris/"
 "reforis/nb_NO/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.8-dev\n"
+"X-Generator: Weblate 4.7.2-dev\n"
 "Generated-By: Babel 2.9.1\n"
 
 #: js/src/about/About.js:23 js/src/main/pages.js:105 js/src/main/pages.js:224
@@ -82,6 +82,60 @@ msgid ""
 "help\"\n"
 "                                data-tip={_("
 msgstr ""
+"\n"
+"                    ),\n"
+"                }}\n"
+"            />\n"
+"            <AboutTableWithErrorAndSpinner\n"
+"                apiState={getAboutResponse.state}\n"
+"                deviceDetails={getAboutResponse.data || {}}\n"
+"            />\n"
+"        </>\n"
+"    );\n"
+"}\n"
+"\n"
+"AboutTable.propTypes = {\n"
+"    deviceDetails: PropTypes.object.isRequired,\n"
+"    customization: PropTypes.bool,\n"
+"};\n"
+"\n"
+"function AboutTable({ deviceDetails }) {\n"
+"    const customization = !!(\n"
+"        deviceDetails &&\n"
+"        deviceDetails.customization !== undefined &&\n"
+"        deviceDetails.customization === \"shield\"\n"
+"    );\n"
+"    return (\n"
+"        <div className=\"card p-4 table-responsive\">\n"
+"            <table className=\"table table-borderless table-hover mb-0\">\n"
+"                <tbody>\n"
+"                    <tr>\n"
+"                        <th>{_(\"Enhet\")}</th>\n"
+"                        <td>\n"
+"                            {customization\n"
+"                                ? \"Turris-skjold\"\n"
+"                                : deviceDetails.model}\n"
+"                        </td>\n"
+"                    </tr>\n"
+"                    <tr>\n"
+"                        <th>{_(\"Serienummer\")}</th>\n"
+"                        <td>{deviceDetails.serial}</td>\n"
+"                    </tr>\n"
+"                    <tr>\n"
+"                        <th>{_(\"reForis-versjon\")}</th>\n"
+"                        <td>{deviceDetails.reforis_version}</td>\n"
+"                    </tr>\n"
+"                    <tr>\n"
+"                        <th>{_(\"Turris OS-versjon\")}</th>\n"
+"                        <td>{deviceDetails.os_version}</td>\n"
+"                    </tr>\n"
+"                    <tr>\n"
+"                        <th>\n"
+"                            {_(\"Turris OS-forgrening\")}\n"
+"                            <i\n"
+"                                className=\"fas fa-question-circle ml-1 "
+"help\"\n"
+"                                data-tip={_("
 
 #: js/src/about/About.js:107
 msgid "Kernel version"
@@ -100,7 +154,7 @@ msgstr "Advarsel!"
 #: js/src/common/FactoryResetButton.js:68
 #, fuzzy
 msgid "Are you sure you want to reset the router?"
-msgstr "Er du sikker på at du ønsker å starte ruteren på ny?"
+msgstr "Er du sikker på at du vil tilbakestille ruteren?"
 
 #: js/src/common/FactoryResetButton.js:71 js/src/common/RebootButton.js:71
 #: js/src/dns/DNSSECDisableModal.js:41
@@ -130,7 +184,7 @@ msgstr "Til toppen"
 
 #: js/src/common/network/DHCP6ClientsList.js:20
 msgid "IPv6 DHCP Client List"
-msgstr ""
+msgstr "IPv6-DHCP-klientliste"
 
 #: js/src/common/network/DHCP6ClientsList.js:22
 #, fuzzy
@@ -154,9 +208,8 @@ msgid "Hostname"
 msgstr "Vertsnavn"
 
 #: js/src/common/network/DHCP6ClientsList.js:36
-#, fuzzy
 msgid "IPv6 Address"
-msgstr "IP-adresse"
+msgstr "IPv6-adresse"
 
 #: js/src/common/network/DHCP6ClientsList.js:37
 #, fuzzy
@@ -189,9 +242,8 @@ msgstr ""
 "kablede eller trådløse forbindelser."
 
 #: js/src/common/network/DHCPClientsList.js:36
-#, fuzzy
 msgid "IPv4 Address"
-msgstr "IP-adresse"
+msgstr "IPv4-adresse"
 
 #: js/src/common/network/DHCPClientsList.js:37
 msgid "MAC Address"
@@ -202,13 +254,13 @@ msgid "Active"
 msgstr "Aktiv"
 
 #: js/src/common/network/DHCPClientsList.js:82
+#, fuzzy
 msgid "Device is active"
-msgstr ""
+msgstr "Enheten er aktiv"
 
 #: js/src/common/network/DHCPClientsList.js:82
-#, fuzzy
 msgid "Device is inactive"
-msgstr "TLS-vertsnavn"
+msgstr "Enheten er inaktiv"
 
 #: js/src/common/network/DHCPServerForm.js:13
 msgid ""
@@ -254,9 +306,8 @@ msgid "Minimum lease time is 1 hour."
 msgstr "Minimumsleietid er 1 time."
 
 #: js/src/common/network/DHCPValidators.js:116
-#, fuzzy
 msgid "Address is outside current network."
-msgstr "Ruterens IP-adresse i internnettverket."
+msgstr "Adressen er utenfor nåværende nettverk."
 
 #: js/src/common/network/DHCPValidators.js:120
 #, fuzzy
@@ -351,14 +402,12 @@ msgid "Connection test successful"
 msgstr "Tilkoblingstest"
 
 #: js/src/connectionTest/ConnectionTestResult.js:88
-#, fuzzy
 msgid "Connection test failed"
-msgstr "Tilkoblingstest"
+msgstr "Tilkoblingstesten mislyktes"
 
 #: js/src/connectionTest/ConnectionTestResult.js:93
-#, fuzzy
 msgid "Connection test not started"
-msgstr "Tilkoblingstest"
+msgstr "Tilkoblingstest har ikke startet"
 
 #: js/src/dns/DNS.js:34
 #, fuzzy
@@ -444,9 +493,8 @@ msgstr ""
 "\"android-123.my.lan\"."
 
 #: js/src/dns/DNSForm.js:67
-#, fuzzy
 msgid "DNS Settings"
-msgstr "Oppdateringsinnstillinger"
+msgstr "DNS-innstillinger"
 
 #: js/src/dns/DNSForm.js:84
 msgid "Use forwarding"
@@ -649,14 +697,12 @@ msgid "Upload speed in guest network (in kilobits per second)."
 msgstr "Opplastingshastighet i gjestenettverk (i kilobit per sekund)."
 
 #: js/src/guestNetwork/GuestNetworkForm.js:64
-#, fuzzy
 msgid "Guest Network Settings"
-msgstr "Nettverksinnstillinger"
+msgstr "Gjestenettverksinnstillinger"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:66
-#, fuzzy
 msgid "Enable Guest Network"
-msgstr "Gjestenettverk"
+msgstr "Skru på gjestenettverk"
 
 #: js/src/guestNetwork/GuestNetworkForm.js:76 js/src/lan/LANManagedForm.js:61
 msgid "Router IP address"
@@ -809,7 +855,7 @@ msgstr "Vent til oppdatereren er ferdigkjørt."
 
 #: js/src/guide/constants.js:76
 msgid "Congratulations! Now your device is ready to be used."
-msgstr ""
+msgstr "Gratulerer. Enheten din er nå klar til bruk."
 
 #: js/src/guide/constants.js:82
 msgid ""
@@ -1277,6 +1323,10 @@ msgid ""
 "    unmanaged: _(\n"
 "        "
 msgstr ""
+"\n"
+"    ),\n"
+"    uhåndtert: _(\n"
+"        "
 
 #: js/src/lan/LANForm.js:36
 msgid "Computer"
@@ -1532,9 +1582,8 @@ msgid "Custom"
 msgstr "Tilpasset"
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:81
-#, fuzzy
 msgid "Notification Settings"
-msgstr "Merknader"
+msgstr "Merknadsinnstillinger"
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:83
 #, fuzzy
@@ -1912,9 +1961,10 @@ msgid ""
 "fa-sm\"></i></sup></a>."
 msgstr ""
 "Ved å skru på automatiske oppgraderinger bekrefter du at du eier denne "
-"Turris-ruteren og at du samtykker med hele teksten i <a "
-"href=\"https://www.turris.cz/omnia-updater-eula\" target=\"_blank\" "
-"rel=\"noopener noreferrer\">lisenssamtykket</a>."
+"Turris-ruteren og at du samtykker med hele teksten i <a href=\"https://www."
+"turris.cz/omnia-updater-eula\" target=\"_blank\" rel=\"noopener noreferrer\""
+">lisenssamtykket<sup><i class=\"fas fa-external-link-alt fa-sm\""
+"></i></sup></a>."
 
 #: js/src/packageManagement/updateSettings/UpdateSettings.js:31
 #, fuzzy
@@ -2134,14 +2184,12 @@ msgid "New"
 msgstr "Ny"
 
 #: js/src/packageManagement/updates/UpdateManager.js:73
-#, fuzzy
 msgid "Updates Check"
-msgstr "Oppdateringer"
+msgstr "Oppdateringssjekk"
 
 #: js/src/packageManagement/updates/UpdateManager.js:84
-#, fuzzy
 msgid "Available Updates"
-msgstr "Utsatte oppgraderinger"
+msgstr "Tilgjengelige oppdateringer"
 
 #: js/src/packageManagement/updates/UpdateManager.js:86
 msgid ""
@@ -2173,8 +2221,9 @@ msgid ""
 "href=\"${ForisURLs.packageManagement.updateSettings}\">delayed or \n"
 "            approval-requiring updates</a> to review them."
 msgstr ""
-"Automatiske oppgraderinger er avskrudd. Skru på utsatte eller "
-"godkjennings-påkrevde oppgradering for å vurdere dem."
+"Automatiske oppgraderinger er avskrudd. Skru på\n"
+"<a href=\"${ForisURLs.packageManagement.updateSettings}\">utsatte eller\n"
+"godkjennings-påkrevde oppgradering</a> for å vurdere dem."
 
 #: js/src/packageManagement/updates/Updates.js:62
 msgid "Check and install updates"
@@ -2212,21 +2261,18 @@ msgid "Set your password for this administration interface."
 msgstr "Sett ditt passord for dette administrasjonsgrensesnittet."
 
 #: js/src/password/ForisPasswordForm.js:60
-#, fuzzy
 msgid "Current password"
-msgstr "Feil nåværende passord."
+msgstr "Nåværende passord."
 
 #: js/src/password/ForisPasswordForm.js:70
 #: js/src/password/RootPasswordForm.js:66
-#, fuzzy
 msgid "New password"
-msgstr "Feil passord."
+msgstr "Nytt passord"
 
 #: js/src/password/ForisPasswordForm.js:82
 #: js/src/password/RootPasswordForm.js:77
-#, fuzzy
 msgid "Confirm new password"
-msgstr "Feil passord."
+msgstr "Bekreft nytt passord"
 
 #: js/src/password/ForisPasswordForm.js:98
 #, fuzzy
@@ -2248,17 +2294,22 @@ msgstr ""
 "blokkert.)"
 
 #: js/src/password/Password.js:78
+#, fuzzy
 msgid ""
 ");\n"
 "\n"
 "    if (password.length > 128)\n"
 "        return _("
 msgstr ""
+");\n"
+"\n"
+"    if (password.length > 128)\n"
+"        return _("
 
 #: js/src/password/RootPasswordForm.js:51
 #, fuzzy
 msgid "Advanced Administration Password"
-msgstr "Nytt avansert administrasjonspassord"
+msgstr "Passord for avansert administrasjon"
 
 #: js/src/password/RootPasswordForm.js:55
 #, fuzzy, python-format
@@ -2415,25 +2466,23 @@ msgstr "Kolon brukes som inndeler, for eksempel 00:11:22:33:44:55"
 
 #: js/src/wan/MACForm.js:19
 msgid "MAC address of the WAN interface."
-msgstr ""
+msgstr "MAC-adresse tilhørende WAN-grensesnittet."
 
 #: js/src/wan/MACForm.js:52
-#, fuzzy
 msgid "MAC Settings"
-msgstr "Tidsinnstillinger"
+msgstr "MAC-innstillinger"
 
 #: js/src/wan/MACForm.js:54
 msgid "Custom MAC address"
 msgstr "Egendefinert MAV-adresse"
 
 #: js/src/wan/MACForm.js:65
-#, fuzzy
 msgid "Current MAC address"
-msgstr "Ruterens IP-adresse"
+msgstr "Nåværende MAC-adresse"
 
 #: js/src/wan/MACForm.js:71
 msgid "Set the new MAC address"
-msgstr ""
+msgstr "Sett den nye MAC-adressen"
 
 #: js/src/wan/WAN6Form.js:26
 #, fuzzy
@@ -2525,9 +2574,8 @@ msgid "6in4 (public IPv4 address required)"
 msgstr "6i4 (offentlig IPv4-adresse kreves)"
 
 #: js/src/wan/WAN6Form.js:162
-#, fuzzy
 msgid "IPv6 Settings"
-msgstr "Tidsinnstillinger"
+msgstr "IPv6-innstillinger"
 
 #: js/src/wan/WAN6Form.js:164
 msgid "IPv6 protocol"
@@ -2590,9 +2638,8 @@ msgid "PPPoE (for DSL bridges, etc.)"
 msgstr "PPPoE (for DSL-broer, osv.)"
 
 #: js/src/wan/WANForm.js:100
-#, fuzzy
 msgid "IPv4 Settings"
-msgstr "Tidsinnstillinger"
+msgstr "IPv4-innstillinger"
 
 #: js/src/wan/WANForm.js:128
 msgid "PAP/CHAP username"
@@ -2604,7 +2651,7 @@ msgstr "PAP/CHAP-passord"
 
 #: js/src/wifi/WiFi.js:26
 msgid "Unfortunately, we were unable to detect any wireless cards in your router."
-msgstr ""
+msgstr "Oppdaget ingen trådlåskort i din ruter."
 
 #: reforis/views.py:52
 msgid "Wrong password."
@@ -2623,8 +2670,9 @@ msgid "Can't delete DNS forwarder."
 msgstr "Kan ikke slette DNS-videresender."
 
 #: reforis/foris_controller_api/modules/lan.py:57
+#, fuzzy
 msgid "Can't create DHCP lease."
-msgstr ""
+msgstr "Kan ikke opprette DHCP-tildelingslån."
 
 #: reforis/foris_controller_api/modules/password.py:47
 msgid "Wrong current password."
