@@ -21,6 +21,7 @@ import {
 
 import API_URLs from "common/API";
 import { useNTPDate, useEditServers } from "./hooks";
+import NTPModal from "./NTPModal";
 import "./TimeForm.css";
 
 // Foris backend ignore value after "."...
@@ -164,15 +165,16 @@ NTPServersList.propTypes = {
 
 function NTPServersList({ servers }) {
     const [shown, setShown] = useState(false);
+    const [NTPModalShown, setNTPModalShown] = useState(false);
 
-    servers.ntp_extras = ["my first one", "my second one", "my third one"];
+    servers.ntp_extras = ["my.first.one", "my.second.one", "my.third.one"];
 
-    const [
-        serverList,
-        addServer,
-        removeServer,
-        resetToDefaultList,
-    ] = useEditServers(servers);
+    const [serverList, saveServer, removeServer] = useEditServers(servers);
+
+    function addServer() {
+        //tohle pak přesunout do hooks?
+        setNTPModalShown(true);
+    }
 
     return (
         <>
@@ -211,6 +213,18 @@ function NTPServersList({ servers }) {
                         </p>
                     ))}
                 </div>
+                <Button
+                    className="btn-outline-success btn mb-3 mb-sm-2 mb-md-0"
+                    onClick={addServer}
+                >
+                    {_("Add NTP Server")}
+                </Button>
+                <NTPModal
+                    shown={NTPModalShown}
+                    setShown={setNTPModalShown}
+                    title={_("Add NTP Server")}
+                    servers={servers}
+                />
             </div>
         </>
     );

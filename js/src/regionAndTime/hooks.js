@@ -7,7 +7,7 @@
 
 import { useEffect, useState } from "react";
 
-import { useAPIPost } from "foris";
+import { useAPIPost, useForm } from "foris";
 import API_URLs from "common/API";
 
 export function useNTPDate(ws) {
@@ -58,10 +58,12 @@ export function useNTPDate(ws) {
 }
 
 export function useEditServers(servers) {
-    const [serverList, setServers] = useState(servers.ntp_extras);
+    const [serverList, setServers] = useState(servers.ntp_extras); //rename setServers?
+    const [postState, post] = useAPIPost(API_URLs.regionAndTime);
+    /* const [formState, setFormValue, initForm] = useForm(); */
 
-    function addServer() {
-        //function for adding new server
+    function saveServer() {
+        post();
     }
 
     function removeServer(serverToRemove) {
@@ -72,9 +74,5 @@ export function useEditServers(servers) {
         );
     }
 
-    function resetToDefaultList() {
-        /* setToDefault({ data: postData }); */
-    }
-
-    return [serverList, addServer, removeServer, resetToDefaultList];
+    return [serverList, saveServer, removeServer];
 }
