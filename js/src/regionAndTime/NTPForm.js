@@ -9,12 +9,20 @@
 import { Button, TextInput } from "foris";
 import { useEditServers } from "./hooks";
 
-export default function NTPForm({ servers }) {
-    const [serverList, saveServer, removeServer] = useEditServers(servers);
+export default function NTPForm({ servers, formData }) {
+    const [serverList, setFormValue, saveServer, removeServer] = useEditServers(
+        servers,
+        formData
+    );
 
     return (
         <>
-            <TextInput label={_("NTP Server")} />
+            <TextInput
+                label={_("NTP Server")}
+                /* onChange={setFormValue((value) => ({
+                    ntp_servers: { $push: [value] },
+                }))} */
+            />
             <Button
                 onClick={saveServer}
                 forisFormSize

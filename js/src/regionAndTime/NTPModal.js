@@ -8,12 +8,18 @@
 import { Modal, ModalBody, ModalHeader } from "foris";
 import NTPForm from "./NTPForm";
 
-export default function NTPModal({ shown, setShown, title, servers }) {
+export default function NTPModal({
+    shown,
+    setShown,
+    title,
+    servers,
+    formData,
+}) {
     return (
         <Modal scrollable shown={shown} setShown={setShown}>
             <ModalHeader setShown={setShown} title={title} />
             <ModalBody>
-                <NTPForm servers={servers} />
+                <NTPForm servers={servers} formData={formData} />
             </ModalBody>
         </Modal>
     );

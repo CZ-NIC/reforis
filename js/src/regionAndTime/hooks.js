@@ -57,13 +57,22 @@ export function useNTPDate(ws) {
     return [state, trigger];
 }
 
-export function useEditServers(servers) {
+export function useEditServers(servers, formData) {
+    const [formState, setFormValue, initForm] = useForm();
     const [serverList, setServers] = useState(servers.ntp_extras); //rename setServers?
     const [postState, post] = useAPIPost(API_URLs.regionAndTime);
-    /* const [formState, setFormValue, initForm] = useForm(); */
 
     function saveServer() {
-        post();
+        /* setFormValue(() => ({
+            ntp_servers: { neco: { $push: [""] }},
+        }))}; */
+
+        const data = formState.data;
+        delete data.time_settings.ntp_servers;
+        if (data.time_settings.how_to_set_time === "ntp")
+            delete data.time_settings.time;
+
+        post({ data });
     }
 
     function removeServer(serverToRemove) {
@@ -74,5 +83,5 @@ export function useEditServers(servers) {
         );
     }
 
-    return [serverList, saveServer, removeServer];
+    return [setFormValue, formState, serverList, saveServer, removeServer];
 }

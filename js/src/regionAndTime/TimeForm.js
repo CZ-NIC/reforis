@@ -122,7 +122,7 @@ export default function TimeForm({
                 disabled={disabled}
             />
             {data.how_to_set_time === "ntp" && (
-                <NTPServersList servers={data} />
+                <NTPServersList servers={data} formData={formData} />
             )}
             <DataTimeInput
                 label={_("Time")}
@@ -163,13 +163,12 @@ NTPServersList.propTypes = {
     servers: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-function NTPServersList({ servers }) {
+function NTPServersList({ servers, formData }) {
     const [shown, setShown] = useState(false);
     const [NTPModalShown, setNTPModalShown] = useState(false);
-
-    servers.ntp_extras = ["my.first.one", "my.second.one", "my.third.one"];
-
-    const [serverList, saveServer, removeServer] = useEditServers(servers);
+    const [serverList, setFormValue, saveServer, removeServer] = useEditServers(
+        servers
+    );
 
     function addServer() {
         //tohle pak přesunout do hooks?
@@ -202,7 +201,7 @@ function NTPServersList({ servers }) {
                 </div>
                 <h5>{_("Custom NTP Servers")}</h5>
                 <div id="ntpServersList">
-                    {serverList.map((server) => (
+                    {servers.ntp_extras.map((server) => (
                         <p
                             key={server}
                             onClick={(value) =>
@@ -224,6 +223,7 @@ function NTPServersList({ servers }) {
                     setShown={setNTPModalShown}
                     title={_("Add NTP Server")}
                     servers={servers}
+                    formData={formData}
                 />
             </div>
         </>
