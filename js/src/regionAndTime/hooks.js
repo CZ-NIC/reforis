@@ -58,14 +58,14 @@ export function useNTPDate(ws) {
 }
 
 export function useEditServers(servers, formData) {
-    const [formState, setFormValue, initForm] = useForm();
+    /*  const [formState, setFormValue, initForm] = useForm(); */
     const [serverList, setServers] = useState(servers.ntp_extras); //rename setServers?
     const [postState, post] = useAPIPost(API_URLs.regionAndTime);
 
-    function saveServer() {
-        /* setFormValue(() => ({
+    /* function saveServer() {
+        setFormValue(() => ({
             ntp_servers: { neco: { $push: [""] }},
-        }))}; */
+        }))};
 
         const data = formState.data;
         delete data.time_settings.ntp_servers;
@@ -73,7 +73,7 @@ export function useEditServers(servers, formData) {
             delete data.time_settings.time;
 
         post({ data });
-    }
+    } */
 
     function removeServer(serverToRemove) {
         setServers((servers) =>
@@ -83,5 +83,41 @@ export function useEditServers(servers, formData) {
         );
     }
 
-    return [setFormValue, formState, serverList, saveServer, removeServer];
+    return [
+        /* setFormValue, formState,  */ serverList,
+        /* saveServer, */
+        removeServer,
+    ];
+}
+
+export function useNTPForm(servers) {
+    const [formState, /* setFormValue,  */ initForm] = useForm(validator);
+    console.log("formState", formState.data);
+
+    useEffect(() => {
+        if (servers) {
+            initForm(servers);
+        }
+    }, [servers.ntp_extras]);
+
+    function saveServer() {
+        const data = formState.data;
+
+        /*  setFormValue((value) => ({
+            time_settings: { ntp_extras: { $push: ["něco"] } },
+            time: { $set: value },
+        })); */
+
+        delete data.time_settings.ntp_servers;
+        if (data.time_settings.how_to_set_time === "ntp")
+            delete data.time_settings.time;
+
+        post({ data });
+    }
+    return [formState, /* setFormValue,  */ saveServer];
+}
+
+function validator() {
+    const errors = {};
+    return errors;
 }

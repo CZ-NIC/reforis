@@ -13,13 +13,18 @@ export default function NTPModal({
     setShown,
     title,
     servers,
+    setFormValue,
     formData,
 }) {
     return (
         <Modal scrollable shown={shown} setShown={setShown}>
             <ModalHeader setShown={setShown} title={title} />
             <ModalBody>
-                <NTPForm servers={servers} formData={formData} />
+                <NTPForm
+                    servers={servers}
+                    formData={formData}
+                    setFormValue={setFormValue}
+                />
             </ModalBody>
         </Modal>
     );
