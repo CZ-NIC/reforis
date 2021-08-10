@@ -37,10 +37,10 @@ def test_login_is_open(client):
     assert response.status_code == 200
 
 
-def test_login_403(client):
+def test_login_401(client):
     client.get('/logout')  # Make sure user is logged out.
     response = client.get('/')
-    assert response.status_code == 403
+    assert response.status_code == 401
 
 
 def test_redirect_when_logged(client):

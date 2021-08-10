@@ -94,4 +94,4 @@ def register_login_required(app):
         if not view:
             return
 
-        return render_template('errors/403.html'), 403
+        return render_template('errors/401.html'), 401
