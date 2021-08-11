@@ -90,31 +90,29 @@ export function useEditServers(servers, formData) {
     ];
 }
 
-export function useNTPForm(servers) {
-    const [formState, /* setFormValue,  */ initForm] = useForm(validator);
-    console.log("formState", formState.data);
+export function useNTPForm(formData) {
+    const [formState, setFormValue, initForm] = useForm(validator);
+    const [postState, post] = useAPIPost(API_URLs.regionAndTime);
+    console.log("formState.data", formState.data);
 
     useEffect(() => {
-        if (servers) {
-            initForm(servers);
+        if (formData) {
+            initForm(formData);
         }
-    }, [servers.ntp_extras]);
+    }, [formData]);
 
     function saveServer() {
         const data = formState.data;
 
-        /*  setFormValue((value) => ({
-            time_settings: { ntp_extras: { $push: ["něco"] } },
-            time: { $set: value },
-        })); */
-
+        data.time_settings.ntp_extras.push(data.newServer);
+        delete data.newServer;
         delete data.time_settings.ntp_servers;
         if (data.time_settings.how_to_set_time === "ntp")
             delete data.time_settings.time;
 
         post({ data });
     }
-    return [formState, /* setFormValue,  */ saveServer];
+    return [formState, setFormValue, saveServer];
 }
 
 function validator() {

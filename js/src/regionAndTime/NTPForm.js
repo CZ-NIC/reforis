@@ -9,13 +9,13 @@
 import { Button, TextInput, useForm } from "foris";
 import { useEditServers, useNTPForm } from "./hooks";
 
-export default function NTPForm({ servers, setFormValue, formData }) {
+export default function NTPForm({ servers, /* setFormValue, */ formData }) {
     /*  const [serverList, setFormValue, saveServer, removeServer] = useEditServers(
         servers,
         formData
     ); */
 
-    const [formState, /* setFormValue, */ saveServer] = useNTPForm(servers);
+    const [formState, setFormValue, saveServer] = useNTPForm(formData);
 
     /* const [formState, setFormValue, initForm] = useForm();
 
@@ -36,13 +36,20 @@ export default function NTPForm({ servers, setFormValue, formData }) {
         time_settings: { ntp_extras: { $push: ["něco"] } },
     })); */
 
+    /* function nova() {
+        setFormValue(() => ({
+            time_settings: { ntp_extras: { $push: ["neco"] } },
+        }));
+
+        saveServer();
+    } */
+
     return (
         <>
             <TextInput
                 label={_("NTP Server")}
                 onChange={setFormValue((value) => ({
-                    /* time_settings: { ntp_extras: { $set: [value] } }, */
-                    time: { $set: value },
+                    newServer: { $set: value },
                 }))}
             />
             <Button
