@@ -5,44 +5,14 @@
  * See /LICENSE for more information.
  */
 
-/* import React from "react"; */
-import { Button, TextInput, useForm } from "foris";
-import { useEditServers, useNTPForm } from "./hooks";
+import { Button, TextInput } from "foris";
+import { useNTPForm } from "./hooks";
 
-export default function NTPForm({ servers, /* setFormValue, */ formData }) {
-    /*  const [serverList, setFormValue, saveServer, removeServer] = useEditServers(
-        servers,
-        formData
-    ); */
-
-    const [formState, setFormValue, saveServer] = useNTPForm(formData);
-
-    /* const [formState, setFormValue, initForm] = useForm();
-
-    function saveServer() {
-        setFormValue(() => ({
-            time_settings: { ntp_extras: { $push: ["něco"] } },
-        }));
-
-        const data = formState.data;
-        delete data.time_settings.ntp_servers;
-        if (data.time_settings.how_to_set_time === "ntp")
-            delete data.time_settings.time;
-
-        post({ data });
-    } */
-
-    /* const addS = setFormValue(() => ({
-        time_settings: { ntp_extras: { $push: ["něco"] } },
-    })); */
-
-    /* function nova() {
-        setFormValue(() => ({
-            time_settings: { ntp_extras: { $push: ["neco"] } },
-        }));
-
-        saveServer();
-    } */
+export default function NTPForm({ formData, setShown }) {
+    const [formState, setFormValue, saveServer] = useNTPForm(
+        formData,
+        setShown
+    );
 
     return (
         <>

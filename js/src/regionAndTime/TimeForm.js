@@ -15,12 +15,9 @@ import {
     SpinnerElement,
     Button,
     API_STATE,
-    useAPIPost,
-    useAPIGet,
 } from "foris";
 
-import API_URLs from "common/API";
-import { useNTPDate, useEditServers } from "./hooks";
+import { useNTPDate } from "./hooks";
 import NTPModal from "./NTPModal";
 import "./TimeForm.css";
 
@@ -122,11 +119,7 @@ export default function TimeForm({
                 disabled={disabled}
             />
             {data.how_to_set_time === "ntp" && (
-                <NTPServersList
-                    servers={data}
-                    formData={formData}
-                    setFormValue={setFormValue}
-                />
+                <NTPServersList formData={formData} />
             )}
             <DataTimeInput
                 label={_("Time")}
@@ -167,12 +160,9 @@ NTPServersList.propTypes = {
     servers: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-function NTPServersList({ servers, formData, setFormValue }) {
+function NTPServersList({ formData }) {
     const [shown, setShown] = useState(false);
     const [NTPModalShown, setNTPModalShown] = useState(false);
-    /* const [serverList, setFormValue, saveServer, removeServer] = useEditServers(
-        servers
-    ); */
 
     function addServer() {
         //tohle pak přesunout do hooks?
@@ -199,13 +189,13 @@ function NTPServersList({ servers, formData, setFormValue }) {
             <div className="collapse" id="collapseNTPServers">
                 <h5>{_("NTP Servers")}</h5>
                 <div id="ntpServersList">
-                    {servers.ntp_servers.map((server) => (
+                    {formData.time_settings.ntp_servers.map((server) => (
                         <p key={server}>{server}</p>
                     ))}
                 </div>
                 <h5>{_("Custom NTP Servers")}</h5>
                 <div id="ntpServersList">
-                    {servers.ntp_extras.map((server) => (
+                    {formData.time_settings.ntp_extras.map((server) => (
                         <p
                             key={server}
                             onClick={(value) =>
@@ -226,8 +216,6 @@ function NTPServersList({ servers, formData, setFormValue }) {
                     shown={NTPModalShown}
                     setShown={setNTPModalShown}
                     title={_("Add NTP Server")}
-                    servers={servers}
-                    setFormValue={setFormValue}
                     formData={formData}
                 />
             </div>

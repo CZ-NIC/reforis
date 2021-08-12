@@ -7,7 +7,7 @@
 
 import { useEffect, useState } from "react";
 
-import { useAPIPost, useForm } from "foris";
+import { API_STATE, useAPIPost, useForm } from "foris";
 import API_URLs from "common/API";
 
 export function useNTPDate(ws) {
@@ -57,53 +57,35 @@ export function useNTPDate(ws) {
     return [state, trigger];
 }
 
-export function useEditServers(servers, formData) {
-    /*  const [formState, setFormValue, initForm] = useForm(); */
-    const [serverList, setServers] = useState(servers.ntp_extras); //rename setServers?
-    const [postState, post] = useAPIPost(API_URLs.regionAndTime);
+/* const EMPTY_FORM_DATA = {
+    newServer: "",
+}; */
 
-    /* function saveServer() {
-        setFormValue(() => ({
-            ntp_servers: { neco: { $push: [""] }},
-        }))};
-
-        const data = formState.data;
-        delete data.time_settings.ntp_servers;
-        if (data.time_settings.how_to_set_time === "ntp")
-            delete data.time_settings.time;
-
-        post({ data });
-    } */
-
-    function removeServer(serverToRemove) {
-        setServers((servers) =>
-            servers.filter((server) => {
-                return server !== serverToRemove;
-            })
-        );
-    }
-
-    return [
-        /* setFormValue, formState,  */ serverList,
-        /* saveServer, */
-        removeServer,
-    ];
-}
-
-export function useNTPForm(formData) {
+export function useNTPForm(formData, setShown) {
     const [formState, setFormValue, initForm] = useForm(validator);
     const [postState, post] = useAPIPost(API_URLs.regionAndTime);
-    console.log("formState.data", formState.data);
+    console.log("formState.data", formState.data); //delete then
 
     useEffect(() => {
         if (formData) {
             initForm(formData);
         }
-    }, [formData]);
+    }, [formData, initForm]);
+
+    useEffect(() => {
+        if (postState.state === API_STATE.SUCCESS) {
+            setShown(false);
+        }
+    }, [postState, setShown]);
+
+    /* useEffect(() => {
+        if (postState.state === API_STATE.SUCCESS) {
+            initForm(EMPTY_FORM_DATA);
+        }
+    }, [postState, initForm]); */
 
     function saveServer() {
         const data = formState.data;
-
         data.time_settings.ntp_extras.push(data.newServer);
         delete data.newServer;
         delete data.time_settings.ntp_servers;
@@ -116,6 +98,7 @@ export function useNTPForm(formData) {
 }
 
 function validator() {
+    //make working validator then
     const errors = {};
     return errors;
 }
