@@ -5,16 +5,27 @@
  * See /LICENSE for more information.
  */
 
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import moment from "moment";
-import { formFieldsSize } from "foris";
+import { Button, formFieldsSize } from "foris";
+import StaticLeaseModal from "../../lan/StaticLeaseModal";
 
 DHCPClientsList.propTypes = {
     clients: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default function DHCPClientsList({ clients }) {
+    const [staticLeaseModalShown, setStaticLeaseModalShown] = useState(false);
+
+    function addStaticLease() {
+        setStaticLeaseModalShown(true);
+    }
+
+    function addNewTableItem(newStaticLease) {
+        clients.push(newStaticLease);
+    }
+
     return (
         <div className={formFieldsSize}>
             <h2>{_("DHCP Client List")}</h2>
@@ -50,6 +61,21 @@ export default function DHCPClientsList({ clients }) {
                     </table>
                 </div>
             )}
+            <div className="text-right">
+                <Button
+                    forisFormSize
+                    className="btn-success"
+                    onClick={addStaticLease}
+                >
+                    {_("Add static lease")}
+                </Button>
+            </div>
+            <StaticLeaseModal
+                shown={staticLeaseModalShown}
+                setShown={setStaticLeaseModalShown}
+                title={_("Add static lease")}
+                addNewTableItem={addNewTableItem}
+            />
         </div>
     );
 }
