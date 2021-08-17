@@ -1,53 +1,50 @@
 <!DOCTYPE html>
 <html lang="{{ locale }}">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <link
-            rel="shortcut icon"
-            href="{{ url_for('static', filename='reforis/imgs/favicon.ico') }}"
-        />
 
-        {# CSS #}
-        <link
-            rel="stylesheet"
-            href="{{ url_for('static', filename = 'reforis/css/app.css') | autoversion }}"
-        />
-        {% if user_is_logged %} 
-        <script>window.initialData = {{ user_is_logged | tojson }}</script>
-        {% else %}
-        <script>window.initialData = {'logged': false }</script>
-        {% endif %}
-        <script>FontAwesomeConfig = { autoReplaceSvg: 'nest' }</script>
-        {# JS #} {% include 'includes/locale.html' %} {% include
-        'includes/plugins.html' %}
-        <script
-            type="text/javascript"
-            src="{{ url_for('static', filename = 'reforis/js/app.min.js') }}"
-        ></script>
-        {% block js %}{% endblock %}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='reforis/imgs/favicon.svg') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='reforis/imgs/favicon.png') }}">
 
-        <title>{% block title %}{% endblock %}reForis | Turris</title>
-    </head>
+    {# CSS #}
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'reforis/css/app.css') | autoversion }}" />
+    {% if user_is_logged %}
+    <script>window.initialData = {{ user_is_logged | tojson }}</script>
+    {% else %}
+    <script>window.initialData = { 'logged': false }</script>
+    {% endif %}
+    <script>FontAwesomeConfig = { autoReplaceSvg: 'nest' }</script>
+    {# JS #}
+    {% include 'includes/locale.html' %}
+    {% include 'includes/plugins.html' %}
+    <script type="text/javascript" src="{{ url_for('static', filename = 'reforis/js/app.min.js') }}"></script>
+    {% block js %}{% endblock %}
 
-    <body>
-        <div id="app-container"></div>
-        <div class="wrapper {% block wrapper_class %}{% endblock %}">
-            {% block navigation %}{% include "includes/navigation.html" %}{%
-            endblock %}
-            <div id="content">
-                <div class="col-lg-12 col-sm-12">
-                    <div id="alert-container" class="ml-3 mr-3"></div>
-                    {% include "includes/top-bar.html" %} {% block content %}{%
-                    endblock %}
-                </div>
+    <title>{% block title %}{% endblock %}reForis | Turris</title>
+</head>
+
+<body>
+    <div id="app-container"></div>
+    <div class="wrapper {% block wrapper_class %}{% endblock %}">
+        {% block navigation %}
+        {% include "includes/navigation.html" %}
+        {% endblock %}
+        <div id="content">
+            <div class="col-lg-12 col-sm-12">
+                <div id="alert-container" class="ml-3 mr-3"></div>
+                {% include "includes/top-bar.html" %}
+                {% block content %}
+                {% endblock %}
             </div>
         </div>
+    </div>
 
-        {# Helpers #}
-        <div id="router-state-handler"></div>
-        <div id="scroll-to-top"></div>
-        <div id="modal-container"></div>
-    </body>
+    {# Helpers #}
+    <div id="router-state-handler"></div>
+    <div id="scroll-to-top"></div>
+    <div id="modal-container"></div>
+</body>
+
 </html>
