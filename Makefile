@@ -62,10 +62,10 @@ all:
 deps:
 	# do it only on debian based distros
 	which lsb_base || "lsb_base not found. Please install dependencies manually"
-	# which npm || curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-	# which npm || sudo apt install -y nodejs
-	# which $(PYTHON) || sudo apt install -y $(PYTHON) $(PYTHON)-pip
-	# which virtualenv || sudo $(PYTHON) -m pip install virtualenv
+	which npm || curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+	which npm || sudo apt install -y nodejs
+	which $(PYTHON) || sudo apt install -y $(PYTHON) $(PYTHON)-pip
+	which virtualenv || sudo $(PYTHON) -m pip install virtualenv
 
 prepare-dev:
 	cd $(JS_DIR); npm install
