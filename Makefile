@@ -24,6 +24,8 @@ export FLASK_ENV=development
 REFORIS_STATIC_PATH := $(shell $(PYTHON) -c 'import site; print(site.getsitepackages()[0])')/reforis_static
 
 all:
+	@echo "make deps"
+	@echo "    Install dependencies for Debian based Linux distros"
 	@echo "make prepare-dev"
 	@echo "    Create python virtual environment and install dependencies."
 	@echo "make prepare-docs"
@@ -57,20 +59,24 @@ all:
 	@echo "make clean"
 	@echo "    Remove python artifacts and virtualenv."
 
-prepare-dev:
-	which npm || curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-	which npm || sudo apt install -y nodejs
-	cd $(JS_DIR); npm install
+deps:
+	# do it only on debian based distros
+	which lsb_base || "lsb_base not found. Please install dependencies manually"
+	# which npm || curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+	# which npm || sudo apt install -y nodejs
+	# which $(PYTHON) || sudo apt install -y $(PYTHON) $(PYTHON)-pip
+	# which virtualenv || sudo $(PYTHON) -m pip install virtualenv
 
-	which $(PYTHON) || sudo apt install -y $(PYTHON) $(PYTHON)-pip
-	which virtualenv || sudo $(PYTHON) -m pip install virtualenv
+prepare-dev:
+	cd $(JS_DIR); npm install
 	make venv
+
 prepare-docs:
 	$(VENV_BIN)/$(PYTHON) -m pip install -e .[build]
 
 venv: $(VENV_NAME)/bin/activate
 $(VENV_NAME)/bin/activate: setup.py
-	test -d $(VENV_NAME) || $(PYTHON) -m virtualenv -p $(PYTHON) $(VENV_NAME)
+	test -d $(VENV_NAME) || $(PYTHON) -m venv $(VENV_NAME)
 	# Some problem in latest version of setuptools during extracting translations.
 	$(VENV_BIN)/$(PYTHON) -m pip install -U pip setuptools==39.1.0
 	$(VENV_BIN)/$(PYTHON) -m pip install -e .[devel]

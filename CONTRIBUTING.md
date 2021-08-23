@@ -36,9 +36,26 @@ Before submitting a pull request, please make sure the following is done:
 
 ## Development Setup
 
-You will need [Node.js](http://nodejs.org) at `v10.0.0+` and
-[npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) at
+### Dependencies
+
+You will need
+* [Node.js](http://nodejs.org) at `v10.0.0+`
+* [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) at
 `v6.0.0+`.
+* [pip](https://pypi.org/project/pip/)
+* [virtualenv](https://pypi.org/project/virtualenv)
+
+#### Debian/Ubuntu Linux
+
+You can install these dependencies on Debian based distros by running
+
+```bash
+make deps
+```
+
+#### Generic Linux
+
+Install dependencies by the usuall means of your Linux distribution.
 
 After cloning the repo, you should:
 
@@ -52,7 +69,7 @@ After cloning the repo, you should:
 ### Commonly used scripts
 
 ```bash
-# create python virtual environment and install dependencies
+# create python virtual environment
 make prepare-dev
 
 # install package on router
