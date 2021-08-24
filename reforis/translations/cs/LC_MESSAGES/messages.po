@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-07-01 11:50+0200\n"
-"PO-Revision-Date: 2021-08-18 15:36+0000\n"
+"PO-Revision-Date: 2021-08-25 09:43+0000\n"
 "Last-Translator: Lukas Jelinek <lukas.jelinek@nic.cz>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/turris/reforis/cs/>"
 "\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.8-dev\n"
+"X-Generator: Weblate 4.8.1-dev\n"
 "Generated-By: Babel 2.9.1\n"
 
 #: js/src/about/About.js:23 js/src/main/pages.js:105 js/src/main/pages.js:224
@@ -2202,7 +2202,7 @@ msgstr "Potvrdit nové heslo"
 
 #: js/src/password/ForisPasswordForm.js:98
 msgid "Use the same password for advanced administration (root)"
-msgstr "Použít stejné heslo pro pokročilou zprávu (účet root)"
+msgstr "Použít stejné heslo pro pokročilou správu (účet root)"
 
 #: js/src/password/ForisPasswordForm.js:101
 msgid ""
