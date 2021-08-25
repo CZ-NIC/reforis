@@ -129,6 +129,6 @@ class MQTTBackend(Backend):
 
     @staticmethod
     def _parse_credentials(filepath):
-        with open(filepath, 'r') as file:
+        with open(filepath, 'r', encoding='utf-8') as file:
             line = file.readline()[:-1]
             return tuple(line.split(':'))
