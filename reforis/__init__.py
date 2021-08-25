@@ -120,7 +120,13 @@ def not_found_error(error):
 
 
 def internal_error(error):
-    return render_template('errors/500.html', error=error), 500
+    # return render_template('errors/500.html', error=error), 500
+    # return _wrap_error(dir(error.original_exception.__traceback__), 500)
+    return {
+        'error': 'Error: {!r}'.format(error),
+        'extra': 'Original Error: {!r}'.format(error.original_exception),
+        'status': 500
+        }, 500
 
 
 def foris_controller_error(e):
