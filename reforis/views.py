@@ -12,7 +12,7 @@ which is done in `ForisAPI` Blueprint.
 from flask import Blueprint, current_app, redirect, render_template, request, session, url_for
 from flask_babel import gettext as _
 
-from .auth import login_to_foris, logout_from_foris, is_user_logged
+from .auth import logout_from_foris, is_user_logged
 
 # pylint: disable=invalid-name
 views = Blueprint('Views', __name__)
@@ -24,38 +24,6 @@ views = Blueprint('Views', __name__)
 def index(path):
     """Main page."""
     return render_template('index.html', user_is_logged={'logged': is_user_logged()})
-
-
-@views.route('/login', methods=['GET', 'POST'])
-def login():
-    """
-    .. http:get:: /login
-        Login page
-
-    .. http:post:: /login
-        Perform login.
-
-        **Example request**:
-
-        .. sourcecode:: http
-
-            {"password" : "foris_password"}
-    """
-    error_message = None
-    if session.get('logged', False):
-        return redirect(url_for('Views.index'))
-
-    if request.method == 'POST':
-        password = request.form['password']
-        if login_to_foris(password):
-            return redirect(url_for('Views.index'))
-        error_message = _('Wrong password.')
-
-    # Check if this is turris shield
-    response = current_app.backend.perform('about', 'get')
-    customization = response.get('customization')
-
-    return render_template('login.html', error_message=error_message, customization=customization)
 
 
 @views.route('/logout', methods=['GET'])

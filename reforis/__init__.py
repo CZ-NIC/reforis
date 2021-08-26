@@ -57,9 +57,6 @@ def create_app(config):
     app.register_blueprint(api)
     app.register_blueprint(guide)
 
-    from .auth import register_login_required
-    register_login_required(app)
-
     register_plugins(app)
 
     app.register_error_handler(404, not_found_error)
