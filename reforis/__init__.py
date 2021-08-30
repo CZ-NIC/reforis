@@ -112,7 +112,11 @@ def create_app(config):
 def _wrap_error(error, code):
     if isinstance(error, dict):
         return dict({'status': code}, **error)
-    return {'status': code, 'error': 'Error:{!r}'.format(error)}, code
+    return {
+        'status': code,
+        'error': 'Error:{!r}'.format(error),
+        'logged': is_user_logged()
+    }, code
 
 
 def not_found_error(error):
@@ -120,12 +124,11 @@ def not_found_error(error):
 
 
 def internal_error(error):
-    # return render_template('errors/500.html', error=error), 500
-    # return _wrap_error(dir(error.original_exception.__traceback__), 500)
     return {
         'error': 'Error: {!r}'.format(error),
         'extra': 'Original Error: {!r}'.format(error.original_exception),
-        'status': 500
+        'status': 500,
+        'logged': is_user_logged()
         }, 500
 
 
