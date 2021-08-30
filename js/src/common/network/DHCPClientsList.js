@@ -48,6 +48,7 @@ export default function DHCPClientsList({ clients }) {
                                 <th>{_("MAC Address")}</th>
                                 <th className="text-center">{_("Expires")}</th>
                                 <th className="text-center">{_("Active")}</th>
+                                <th className="text-center"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -89,13 +90,20 @@ DHCPClientsListItem.propTypes = {
 };
 
 function DHCPClientsListItem({ ip, expires, mac, hostname, active }) {
+    const invalidDate = !moment.unix(expires).isValid() || expires === 0;
+
     return (
         <tr className="text-left">
             <td>{hostname}</td>
             <td>{ip}</td>
             <td>{mac}</td>
-            <td className="text-center">
-                {moment.unix(expires).format("YYYY-MM-DD HH:mm")}
+            <td
+                className="text-center"
+                title={invalidDate && "Date is not available"}
+            >
+                {!invalidDate
+                    ? moment.unix(expires).format("YYYY-MM-DD HH:mm")
+                    : "N/A"}
             </td>
             <td className="text-center">
                 <i
@@ -108,6 +116,18 @@ function DHCPClientsListItem({ ip, expires, mac, hostname, active }) {
                         active ? _("Device is active") : _("Device is inactive")
                     }
                 />
+            </td>
+            <td className="text-right">
+                <div className="btn-group btn-group-sm">
+                    <Button className="btn-primary">
+                        <i className="fas fa-edit fa-sm mr-1" />
+                        {_("Edit")}
+                    </Button>
+                    <Button className="btn-danger">
+                        <i className="fas fa-trash fa-sm mr-1" />
+                        {_("Delete")}
+                    </Button>
+                </div>
             </td>
         </tr>
     );
