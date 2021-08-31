@@ -22,6 +22,8 @@ from babel.dates import get_timezone, get_timezone_name
 from flask import json, current_app
 from flask_babel import get_locale
 
+from .utils import TranslationsError
+
 
 def prepare_tz_related_translations() -> dict:
     result = {}
@@ -109,6 +111,9 @@ def _get_translations(domain, with_plugins=False):
         [get_locale()],
         domain
     )
+
+    if not translations.domain:
+        raise TranslationsError(f'Failed to create translations for domain "{domain}"')
 
     if with_plugins:
         for translation in _get_plugins_translations(domain):
