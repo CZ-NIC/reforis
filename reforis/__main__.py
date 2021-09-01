@@ -1,6 +1,6 @@
 #
 # reforis
-# Copyright (C) 2019 CZ.NIC, z.s.p.o. (http://www.nic.cz/)
+# Copyright (C) 2021 CZ.NIC, z.s.p.o. (http://www.nic.cz/)
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -16,8 +16,6 @@
 # along with this program; if not, write to the Free Software Foundation,
 # Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 #
-
-import os
 
 from flup.server.fcgi import WSGIServer
 
@@ -39,7 +37,6 @@ def main():
     WSGIServer(
         app,
         debug=True,
-        bindAddress=os.environ.get('FCGI_SOCKET', '/tmp/fastcgi.reforis.socket-0')
     ).run()
 
 
