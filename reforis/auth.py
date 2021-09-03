@@ -64,34 +64,3 @@ def is_user_logged() -> bool:
 
     return session.get('logged', False)
 
-
-def register_login_required(app):
-    """Add checking ``before_request`` function in order to protect pages from unlogged access. It also performs
-    redirects to login page when session is not `logged`.
-
-    :param app: Flask application
-    """
-
-    # pylint: disable=unused-variable,inconsistent-return-statements
-    @app.before_request
-    def require_login():
-        # Do not delete session when user closes the browser.
-        session['permanent'] = True
-
-        if is_user_logged():
-            return
-
-        not_protected_endpoints = [
-            'static',
-            'Views.login',
-            'reForisAPI.health_check',
-        ]
-        if request.endpoint in not_protected_endpoints:
-            return
-
-        # Not found page is not protected.
-        view = current_app.view_functions.get(request.endpoint)
-        if not view:
-            return
-
-        return render_template('errors/401.html'), 401
