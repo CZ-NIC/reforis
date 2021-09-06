@@ -1,4 +1,4 @@
-#  Copyright (C) 2020-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+#  Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
 #
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
@@ -17,10 +17,6 @@ class APIError(Exception):
         super().__init__(self)
         self.data = data
         self.status_code = status_code
-
-
-class TranslationsError(Exception):
-    """Raised when an error occured during processing translations"""
 
 
 def log_error(message):

@@ -13,6 +13,8 @@ The translations catalog is generated using TranslationsHelper object. It’s a 
 format. Then it is uploaded into JS code with Jinja2 template system.
 """
 
+import typing
+
 from babel import Locale
 from babel.messages.plurals import get_plural
 from babel.support import Translations, NullTranslations
@@ -21,8 +23,6 @@ from babel.dates import get_timezone, get_timezone_name
 
 from flask import json, current_app
 from flask_babel import get_locale
-
-from .utils import TranslationsError
 
 
 def prepare_tz_related_translations() -> dict:
@@ -92,10 +92,24 @@ class TranslationsHelper(Translations):
 
 def get_translations():
     return {
-        'babel_catalog': _get_translations('messages', with_plugins=True).json_catalog,
-        'babel_forisjs_catalog': _get_translations('forisjs').json_catalog,
+        'babel_catalog': _get_babel_catalog('messages', with_plugins=True),
+        'babel_forisjs_catalog': _get_babel_catalog('forisjs'),
         'babel_tzinfo_catalog': prepare_tz_related_translations(),
     }
+
+
+def _get_babel_catalog(domain: str, with_plugins: bool = False) -> typing.Dict[str, str]:
+    """Return babel message catalog or no messages if loading of catalog fails"""
+    translations = _get_translations(domain, with_plugins)
+
+    breakpoint()
+    if hasattr(translations, 'json_catalog'):
+        return translations.json_catalog
+
+    # TODO: log warning?
+    # `translations` is not instance of TranslationsHelper
+    # fallback to no messages (empty dict)
+    return {}
 
 
 def _get_translations(domain, with_plugins=False):
@@ -112,14 +126,11 @@ def _get_translations(domain, with_plugins=False):
         domain
     )
 
-    if not translations.domain:
-        raise TranslationsError(f'Failed to create translations for domain "{domain}"')
-
     if with_plugins:
         for translation in _get_plugins_translations(domain):
             if not isinstance(translation, NullTranslations):
                 translations.add(translation)
-
+    breakpoint()
     return translations
 
 
