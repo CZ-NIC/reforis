@@ -75,7 +75,9 @@ class TranslationsHelper(Translations):
         Change format of plural forms to be accepted by js.
         """
         messages = self._catalog
-        del messages['']
+        if '' in messages.keys():
+            # delete babel header
+            del messages['']
         res = {}
         for message_id, message in messages.items():
             if isinstance(message_id, tuple):
@@ -102,7 +104,6 @@ def _get_babel_catalog(domain: str, with_plugins: bool = False) -> typing.Dict[s
     """Return babel message catalog or no messages if loading of catalog fails"""
     translations = _get_translations(domain, with_plugins)
 
-    breakpoint()
     if hasattr(translations, 'json_catalog'):
         return translations.json_catalog
 
@@ -130,7 +131,6 @@ def _get_translations(domain, with_plugins=False):
         for translation in _get_plugins_translations(domain):
             if not isinstance(translation, NullTranslations):
                 translations.add(translation)
-    breakpoint()
     return translations
 
 
