@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -49,7 +49,7 @@ describe("<Cards/>", () => {
         it("Snapshot: activated", async () => {
             const { container } = render(<DataCollectionCard />);
             mockAxios.mockResponse({ data: dataCollectionCardFixture });
-            await wait(() => getByText(container, "Data Collection"));
+            await wait(() => getByText(container, "Threat Detection"));
 
             expect(container).toMatchSnapshot();
         });
@@ -57,7 +57,7 @@ describe("<Cards/>", () => {
         it("Snapshot: disabled", async () => {
             const { container } = render(<DataCollectionCard />);
             mockAxios.mockResponse({ data: dataCollectionCardFixture2 });
-            await wait(() => getByText(container, "Data Collection"));
+            await wait(() => getByText(container, "Threat Detection"));
 
             expect(container).toMatchSnapshot();
         });

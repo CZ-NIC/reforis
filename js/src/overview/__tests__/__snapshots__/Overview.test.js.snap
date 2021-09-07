@@ -67,7 +67,7 @@ exports[`Overview Snapshot of the whole page 1`] = `
               <h6
                 class="text-uppercase text-muted mb-2"
               >
-                Data Collection
+                Threat Detection
               </h6>
               <span
                 class="status"
