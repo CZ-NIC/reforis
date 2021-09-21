@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-07-01 11:50+0200\n"
-"PO-Revision-Date: 2021-07-08 07:33+0000\n"
+"PO-Revision-Date: 2021-09-22 19:34+0000\n"
 "Last-Translator: Atec <dr.atec@gmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/turris/reforis/sk/"
 ">\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.8-dev\n"
+"X-Generator: Weblate 4.9-dev\n"
 "Generated-By: Babel 2.9.1\n"
 
 #: js/src/about/About.js:23 js/src/main/pages.js:105 js/src/main/pages.js:224
@@ -271,7 +271,7 @@ msgstr "Začiatok rozsahu IP adries pre DHCP"
 
 #: js/src/common/network/DHCPServerForm.js:57
 msgid "DHCP max leases"
-msgstr "Maximum DHCP zápožičiek"
+msgstr "Maximum DHCP výpožičiek"
 
 #: js/src/common/network/DHCPServerForm.js:58
 msgid "Maximum number of addresses available for DHCP clients."
@@ -279,7 +279,7 @@ msgstr "Najvyššie množstvo adries dostupných pre DHCP klientov."
 
 #: js/src/common/network/DHCPServerForm.js:71
 msgid "Lease time (hours)"
-msgstr "Doba zápožičky (hodiny)"
+msgstr "Doba výpožičky (hodiny)"
 
 #: js/src/common/network/DHCPValidators.js:71
 msgid "Value must be a number."
@@ -316,8 +316,8 @@ msgid ""
 "The only DHCP lease is the same as router's address. Increase limit or "
 "change start address."
 msgstr ""
-"Jediná DHCP zápožička je zhodná s adresou routera. Zvýšte limit alebo "
-"zmeňte začiatok rozsahu."
+"Jediná DHCP výpožička je zhodná s adresou routera. Zvýšte limit alebo zmeňte "
+"začiatok rozsahu."
 
 #: js/src/common/network/StaticIPForm.js:14 js/src/wan/WAN6Form.js:36
 msgid ""
@@ -468,7 +468,7 @@ msgid ""
 "This will enable your DNS resolver to place DHCP client's names among the"
 " local DNS records."
 msgstr ""
-"Povolene ukladania názvov DHCP klientov do záznamov miestneho DNS "
+"Povolenie ukladania názvov DHCP klientov do záznamov miestneho DNS "
 "prekladača (resolvera)."
 
 #: js/src/dns/DNSForm.js:20
@@ -511,10 +511,10 @@ msgid ""
 "Do you still want to continue and stay unprotected?\n"
 msgstr ""
 "\n"
-"DNSSEC je bezpečnostná technológia na ochranu DNS komunikácie proti "
-"útokom na infraštruktúru DNS.\n"
-"Dôrazne odporúčame ponechať overovanie DNSSEC zapnuté okrem situácie, keď"
-" svoje zariadenie vedome pripájate do siete,\n"
+"DNSSEC je bezpečnostná technológia na ochranu DNS komunikácie proti útokom "
+"na infraštruktúru DNS.\n"
+"Dôrazne odporúčame ponechať overovanie DNSSEC zapnuté, okrem situácie, keď "
+"svoje zariadenie vedome pripájate do siete,\n"
 "kde validácia DNSSEC nefunguje. \n"
 "\n"
 "Naozaj chcete pokračovať a zostať nechránení?\n"
@@ -723,10 +723,10 @@ msgid ""
 "device. Firstly it is required to set your password. Note the security of"
 " your home network is in your hands, so try not to use weak passwords."
 msgstr ""
-"Vitajte vo webovom rozhraní Foris. Tento sprievodca vám pomôže s "
-"nastavením vášho zariadenia. Najprv je potrebné nastaviť vaše heslo. "
-"Pamätajte, že bezpečnosť vašej domácej siete je vo vašich rukách, preto "
-"nepoužívajte slabé heslá."
+"Vitajte vo webovom rozhraní Foris. Tento sprievodca vám pomôže s nastavením "
+"vášho zariadenia. Najprv je potrebné nastaviť vaše heslo. Nezabudnite, že "
+"bezpečnosť vašej domácej siete je vo vašich rukách, preto nepoužívajte slabé "
+"heslá."
 
 #: js/src/guide/constants.js:17
 msgid "Your password is set. You may proceed to the next step."
@@ -997,10 +997,9 @@ msgid ""
 "dynamic firewall updates blocking known attackers."
 msgstr ""
 "Ak chcete ešte viac zvýšiť svoje zabezpečenie, zvážte inštaláciu pluginu "
-"Zber dát (v Správe balíčkov). Zapojíte sa tak do nášho výskumu "
-"zabezpečenia, ktorý odhaľuje nových útočníkov, a získate prístup k "
-"dynamickým aktualizáciám brány firewall, ktorá blokuje odhalených "
-"útočníkov."
+"Zber dát (v Správe balíčkov). Zapojíte sa tak do nášho výskumu zabezpečenia, "
+"ktorý odhaľuje nových útočníkov a získate prístup k dynamickým aktualizáciám "
+"brány firewall, ktorá blokuje odhalených útočníkov."
 
 #: js/src/guide/GuidePages/GuideFinish.js:31
 msgid "Continue"
@@ -1217,7 +1216,7 @@ msgstr "Slot"
 
 #: js/src/interfaces/SelectedInterface.js:98
 msgid "Interface ID"
-msgstr "Identifikátor rozhrania"
+msgstr "ID rozhrania"
 
 #: js/src/interfaces/SelectedInterface.js:102
 msgid "Type"
@@ -1442,12 +1441,12 @@ msgid ""
 "                giving you a clean slate to start all over again.\n"
 "    "
 msgstr ""
-"Reset zariadenia Turris do továrenských nastavení odstráni zo zariadenia\n"
+"Reset zariadenia Turris do továrenského nastavenia odstráni zo zariadenia\n"
 "                všetky nainštalované balíčky a všetky ich dáta. Tým sa "
 "všetky nastavenia\n"
 "                vrátia do východiskového stavu, ako keď bol router nový.\n"
-"                Získate tak možnosť začať s nastaveniami celkom od "
-"začiatku.\n"
+"                Získate tak možnosť začať s nastaveniami celkom od začiatku."
+"\n"
 "    "
 
 #: js/src/maintenance/Maintenance.js:19
@@ -1474,7 +1473,7 @@ msgstr ""
 
 #: js/src/maintenance/Syslog/Syslog.js:46
 msgid "A drive has to be configured first."
-msgstr "Disk sa musí najprv nakonfigurovať."
+msgstr "Disk sa najprv musí nakonfigurovať."
 
 #: js/src/maintenance/Syslog/SyslogForm.js:29
 msgid "System logs retention"
@@ -1550,10 +1549,10 @@ msgid ""
 "settings. When done with configuration, you can test it by pressing Send "
 "test notification."
 msgstr ""
-"Podľa vašich nastavení vám zariadenie bude posielať e-mailové notifikácie"
-" o potrebe reštartu, dôležitých udalostiach, nainštalovaných "
-"aktualizáciách a nových funkciách. Po skončení nastavovania môžete "
-"notifikáciu vyskúšať kliknutím na Odoslať testovaciu notifikáciu."
+"Podľa vašich nastavení vám zariadenie bude posielať e-mailové notifikácie o "
+"potrebe reštartu, dôležitých udalostiach, nainštalovaných aktualizáciách a "
+"nových funkciách. Po dokončení nastavovania môžete notifikáciu vyskúšať "
+"kliknutím na Odoslať testovaciu notifikáciu."
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:22
 msgid "None"
@@ -1926,21 +1925,21 @@ msgid ""
 "            "
 msgstr ""
 "\n"
-"Jednou z najdôležitejších vlastností routerov Turris je systém "
-"automatických systémových aktualizácií. Vďaka tejto funkcii\n"
+"Jednou z najdôležitejších vlastností routerov Turris je systém automatických "
+"systémových aktualizácií. Vďaka tejto funkcii\n"
 "je software vášho routera stále aktuálny a poskytuje tak lepšiu ochranu "
 "proti útokom z internetu.\n"
 "<br/>\n"
-"<b>Dôrazne odporúčame,</b> aby ste túto funkciu ponechali <b>zapnutú</b>."
-" Ak sa ju rozhodnete vypnúť,\n"
-"uvedomte si, že môže dôjsť k zníženiu zabezpečenia vášho routera a siete "
-"ak sa v software vyskytnú bezpečnostné\n"
+"<b>Dôrazne odporúčame,</b> aby ste túto funkciu ponechali <b>zapnutú</b>. Ak "
+"sa ju rozhodnete vypnúť,\n"
+"uvedomte si, že môže dôjsť k zníženiu zabezpečenia vášho routera a siete, ak "
+"sa v software vyskytnú bezpečnostné\n"
 "chyby.\n"
 "<br/>\n"
 "Povolením automatických aktualizácií súhlasíte s Licenčnou zmluvou tejto "
 "funkcie.\n"
-"Viac informácií nájdete <a href=\"\" data-toggle=\"modal\" data-"
-"target=\"#licenceModal\">tu</a>.\n"
+"Viac informácií nájdete <a href=\"\" data-toggle=\"modal\" data-target=\"#"
+"licenceModal\">tu</a>.\n"
 "            "
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:17
@@ -1987,7 +1986,7 @@ msgstr "Aktualizácie sa nainštalujú bez zásahu užívateľa."
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:21
 msgid "Delayed updates"
-msgstr "Odloženie aktualizácií"
+msgstr "Odložené aktualizácie"
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:22
 msgid ""
@@ -1999,7 +1998,7 @@ msgstr ""
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:28
 msgid "Update approval needed"
-msgstr "Schvaľovanie aktualizácií"
+msgstr "Aktualizácie bude potrebné schváliť"
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:29
 msgid "You have to approve the updates, otherwise they won't be installed."
@@ -2394,7 +2393,7 @@ msgstr "Vlastná MAC adresa"
 
 #: js/src/wan/MACForm.js:65
 msgid "Current MAC address"
-msgstr "Aktuálna MAC adresa"
+msgstr "Súčasná MAC adresa"
 
 #: js/src/wan/MACForm.js:71
 msgid "Set the new MAC address"
@@ -2493,7 +2492,7 @@ msgstr "Protokol IPv6"
 
 #: js/src/wan/WAN6Form.js:197
 msgid "Custom DUID"
-msgstr "Užívateľom určený DUID identifikátor"
+msgstr "Vlastný DUID identifikátor"
 
 #: js/src/wan/WAN6Form.js:232
 msgid "Address"
@@ -2557,7 +2556,7 @@ msgstr "Heslo pre PAP/CHAP"
 
 #: js/src/wifi/WiFi.js:26
 msgid "Unfortunately, we were unable to detect any wireless cards in your router."
-msgstr "Žiaľ, vo vašom routeri nebolo možné zistiť žiadnu Wi-Fi kartu."
+msgstr "Žiaľ, vo vašom routeri nebola zistená žiadna Wi-Fi karta."
 
 #: reforis/views.py:52
 msgid "Wrong password."
@@ -2577,7 +2576,7 @@ msgstr "Nedá sa vymazať DNS preposielanie (forwarder)."
 
 #: reforis/foris_controller_api/modules/lan.py:57
 msgid "Can't create DHCP lease."
-msgstr "Nedá sa vytvoriť DHCP zápožička."
+msgstr "Nedá sa vytvoriť DHCP výpožička."
 
 #: reforis/foris_controller_api/modules/password.py:47
 msgid "Wrong current password."
@@ -2620,7 +2619,7 @@ msgstr "Nedá sa upraviť schvaľovanie aktualizácií."
 
 #: reforis/foris_controller_api/modules/updater.py:84
 msgid "Cannot rollback automatic restart settings."
-msgstr "Nedajú sa vrátiť späť nastavenia automatického reštartu."
+msgstr "Nedajú sa späť vrátiť nastavenia automatického reštartu."
 
 #: reforis/foris_controller_api/modules/updater.py:175
 msgid "Cannot start updater"
