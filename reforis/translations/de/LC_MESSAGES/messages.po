@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-07-01 11:50+0200\n"
-"PO-Revision-Date: 2021-06-10 12:34+0000\n"
-"Last-Translator: Matthias <matthias.franke@mail.de>\n"
+"PO-Revision-Date: 2021-09-24 19:35+0000\n"
+"Last-Translator: CryptKid <CryptKiddie@chaospott.de>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/turris/reforis/de/"
+">\n"
 "Language: de\n"
-"Language-Team: German "
-"<https://hosted.weblate.org/projects/turris/reforis/de/>\n"
-"Plural-Forms: nplurals=2; plural=n != 1\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.9-dev\n"
 "Generated-By: Babel 2.9.1\n"
 
 #: js/src/about/About.js:23 js/src/main/pages.js:105 js/src/main/pages.js:224
@@ -116,7 +117,7 @@ msgstr "Systemneustart"
 
 #: js/src/common/RebootButton.js:68
 msgid "Are you sure you want to restart the router?"
-msgstr "Wollen Sie den Router wirklich neu starten?"
+msgstr "Sind Sie sicher, dass Sie den Router neu starten wollen?"
 
 #: js/src/common/RebootButton.js:73
 msgid "Confirm reboot"
@@ -1563,7 +1564,7 @@ msgstr ""
 #: js/src/overview/Cards/DataCollectionCard.js:47
 #: js/src/overview/Cards/DynamicFirewallCard.js:27
 msgid "Disabled"
-msgstr ""
+msgstr "Deaktiviert"
 
 #: js/src/overview/Cards/DataCollectionCard.js:44
 msgid "Data Collection"
@@ -3069,4 +3070,3 @@ msgstr ""
 #~ "within the form.\n"
 #~ "            "
 #~ msgstr ""
-
