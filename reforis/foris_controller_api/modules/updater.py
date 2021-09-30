@@ -81,7 +81,7 @@ def updates():
             # Go back to initial notification settings
             rollback_result = update_reboot_settings(reboot_settings)
             if rollback_result.get('result') is not True:
-                message = '{} {}'.format(message, _('Cannot rollback automatic restart settings.'))
+                message = f'{message} {_("Cannot rollback automatic restart settings.")}'
             return jsonify(message), HTTPStatus.INTERNAL_SERVER_ERROR
         response = {'result': True}
     return jsonify(response)

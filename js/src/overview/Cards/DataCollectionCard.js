@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -41,7 +41,7 @@ function DataCollectionCard({ details: { eula } }) {
                     <div className="row align-items-center">
                         <div className="col">
                             <h6 className="text-uppercase text-muted mb-2">
-                                {_("Data Collection")}
+                                {_("Threat Detection")}
                             </h6>
                             <span className="status">
                                 {eula === 1 ? _("Activated") : _("Disabled")}

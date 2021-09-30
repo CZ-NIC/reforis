@@ -101,9 +101,9 @@ def create_app(config):
         except pkg_resources.DistributionNotFound:
             version = None
         if version:
-            newfilename = '{0}?v={1}'.format(filename, version)
+            newfilename = f'{filename}?v={version}'
         else:
-            newfilename = '{0}'.format(filename)
+            newfilename = f'{filename}'
         return newfilename
 
     return app
@@ -125,8 +125,8 @@ def foris_controller_error(e):
     :return: rendered template, 500
     """
     error = {
-        'error': 'Remote Exception: %s' % e.remote_description,
-        'extra': '%s' % json.dumps(e.query),
+        'error': f'Remote Exception: {e.remote_description}',
+        'extra': f'{json.dumps(e.query)}',
         'trace': e.remote_stacktrace,
     }
 

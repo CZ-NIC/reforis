@@ -112,7 +112,7 @@ exports[`<Cards/> <DataCollectionCard/> Snapshot: activated 1`] = `
             <h6
               class="text-uppercase text-muted mb-2"
             >
-              Data Collection
+              Threat Detection
             </h6>
             <span
               class="status"
@@ -158,7 +158,7 @@ exports[`<Cards/> <DataCollectionCard/> Snapshot: disabled 1`] = `
             <h6
               class="text-uppercase text-muted mb-2"
             >
-              Data Collection
+              Threat Detection
             </h6>
             <span
               class="status"
