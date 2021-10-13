@@ -5,7 +5,7 @@
  * See /LICENSE for more information.
  */
 
-import React from "react";
+import React, { useState } from "react";
 import update from "immutability-helper";
 import PropTypes from "prop-types";
 
@@ -22,6 +22,8 @@ WAN.propTypes = {
 };
 
 export default function WAN({ ws }) {
+    const [connectionType, setConnectionType] = useState("wan");
+
     return (
         <>
             <h1>{_("WAN")}</h1>
@@ -43,7 +45,7 @@ router to the network, it is usually not necessary to change this setting.
                 validator={validator}
             >
                 <WANForm />
-                <WAN6Form />
+                <WAN6Form setConnectionType={setConnectionType} />
                 <MACForm />
             </ForisForm>
 
@@ -57,7 +59,7 @@ might be useful to wait for a while before running this test.
         `),
                 }}
             />
-            <ConnectionTest ws={ws} type="wan" />
+            <ConnectionTest ws={ws} type={connectionType} />
         </>
     );
 }

@@ -19,6 +19,7 @@ ConnectionTest.propTypes = {
 
 export default function ConnectionTest({ ws, type }) {
     const [state, testResults, triggerTest] = useConnectionTest(ws, type);
+    console.log("testResults", testResults);
 
     function onSubmit(e) {
         e.preventDefault();

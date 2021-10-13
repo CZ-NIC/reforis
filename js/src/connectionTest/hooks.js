@@ -12,6 +12,7 @@ import { useAPIPost, useWSForisModule } from "foris";
 
 const TESTS_TYPES = {
     wan: ["ipv6", "ipv6_gateway", "ipv4", "ipv4_gateway"],
+    IPv6Disabled: ["ipv4", "ipv4_gateway"],
     dns: ["dns", "dnssec"],
     overview: ["ipv6", "ipv6_gateway", "ipv4", "ipv4_gateway", "dns", "dnssec"],
 };
@@ -83,6 +84,7 @@ export default function useConnectionTest(ws, type) {
 }
 
 function filterResults(results, type) {
+    console.log("results", results);
     return Object.keys(results)
         .filter((test) => TESTS_TYPES[type].indexOf(test) !== -1)
         .reduce((res, test) => {

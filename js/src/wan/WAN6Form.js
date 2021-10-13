@@ -108,6 +108,7 @@ export default function WAN6Form({
     formErrors,
     setFormValue,
     disabled,
+    setConnectionType,
 }) {
     /* eslint-disable react/prop-types */
     const wan6Settings = formData.wan6_settings;
@@ -155,6 +156,8 @@ export default function WAN6Form({
                 disabled={disabled}
             />
         );
+    } else if (wan6Type === "none") {
+        setConnectionType("IPv6Disabled");
     }
 
     return (
