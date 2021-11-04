@@ -19,8 +19,9 @@ const HELP_TEXTS = {
     netmask: _("Network mask of the guest inner network."),
     dhcp: DHCP_HELP_TEXT,
     qos: {
-        enabled: _(`This option enables you to set a bandwidth limit for the \
-guest network, so that your main network doesn't get slowed-down by it.`),
+        enabled: _(
+            "This option enables you to set a bandwidth limit for the guest network, so that your main network doesn't get slowed-down by it."
+        ),
         download: _(
             "Download speed in guest network (in kilobits per second)."
         ),

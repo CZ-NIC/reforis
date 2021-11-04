@@ -16,13 +16,10 @@ import LANUnmanagedForm from "./LANUnmanagedForm";
 
 const HELP_TEXTS = {
     managed: _(
-        `Router mode means that this device manages the LAN (acts as a router, \
-can assign IP addresses, etc.).`
+        "Router mode means that this device manages the LAN (acts as a router, can assign IP addresses, etc.)."
     ),
     unmanaged: _(
-        `Computer mode means that this device acts as a client in this network. \
-It acts similarly to WAN, but it has opened ports for configuration interfaces \
-and other services.`
+        "Computer mode means that this device acts as a client in this network. It acts similarly to WAN, but it has opened ports for configuration interfaces and other services."
     ),
 };
 
