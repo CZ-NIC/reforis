@@ -7,17 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-07-01 11:50+0200\n"
+"POT-Creation-Date: 2021-11-08 15:54+0100\n"
 "PO-Revision-Date: 2021-09-22 19:34+0000\n"
 "Last-Translator: Atec <dr.atec@gmail.com>\n"
-"Language-Team: Slovak <https://hosted.weblate.org/projects/turris/reforis/sk/"
-">\n"
 "Language: sk\n"
+"Language-Team: Slovak "
+"<https://hosted.weblate.org/projects/turris/reforis/sk/>\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.9-dev\n"
 "Generated-By: Babel 2.9.1\n"
 
 #: js/src/about/About.js:23 js/src/main/pages.js:105 js/src/main/pages.js:224
@@ -26,118 +25,42 @@ msgstr "O zariadení"
 
 #: js/src/about/About.js:26
 msgid ""
-"\n"
-"                    ),\n"
-"                }}\n"
-"            />\n"
-"            <AboutTableWithErrorAndSpinner\n"
-"                apiState={getAboutResponse.state}\n"
-"                deviceDetails={getAboutResponse.data || {}}\n"
-"            />\n"
-"        </>\n"
-"    );\n"
-"}\n"
-"\n"
-"AboutTable.propTypes = {\n"
-"    deviceDetails: PropTypes.object.isRequired,\n"
-"    customization: PropTypes.bool,\n"
-"};\n"
-"\n"
-"function AboutTable({ deviceDetails }) {\n"
-"    const customization = !!(\n"
-"        deviceDetails &&\n"
-"        deviceDetails.customization !== undefined &&\n"
-"        deviceDetails.customization === \"shield\"\n"
-"    );\n"
-"    return (\n"
-"        <div className=\"card p-4 table-responsive\">\n"
-"            <table className=\"table table-borderless table-hover mb-0\">"
-"\n"
-"                <tbody>\n"
-"                    <tr>\n"
-"                        <th>{_(\"Device\")}</th>\n"
-"                        <td>\n"
-"                            {customization\n"
-"                                ? \"Turris Shield\"\n"
-"                                : deviceDetails.model}\n"
-"                        </td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>{_(\"Serial number\")}</th>\n"
-"                        <td>{deviceDetails.serial}</td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>{_(\"reForis version\")}</th>\n"
-"                        <td>{deviceDetails.reforis_version}</td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>{_(\"Turris OS version\")}</th>\n"
-"                        <td>{deviceDetails.os_version}</td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>\n"
-"                            {_(\"Turris OS branch\")}\n"
-"                            <i\n"
-"                                className=\"fas fa-question-circle ml-1 "
-"help\"\n"
-"                                data-tip={_("
+"Here you can find some information about your device. Please include it "
+"into your message if you contact our <a "
+"href=\"mailto:tech.support@turris.cz\" target=\"_blank\">customer "
+"support</a>."
 msgstr ""
-"\n"
-"                    ),\n"
-"                }}\n"
-"            />\n"
-"            <AboutTableWithErrorAndSpinner\n"
-"                apiState={getAboutResponse.state}\n"
-"                deviceDetails={getAboutResponse.data || {}}\n"
-"            />\n"
-"        </>\n"
-"    );\n"
-"}\n"
-"\n"
-"AboutTable.propTypes = {\n"
-"    deviceDetails: PropTypes.object.isRequired,\n"
-"    customization: PropTypes.bool,\n"
-"};\n"
-"\n"
-"function AboutTable({ deviceDetails }) {\n"
-"    const customization = !!(\n"
-"        deviceDetails &&\n"
-"        deviceDetails.customization !== undefined &&\n"
-"        deviceDetails.customization === \"shield\"\n"
-"    );\n"
-"    return (\n"
-"        <div className=\"card p-4 table-responsive\">\n"
-"            <table className=\"table table-borderless table-hover mb-0\">\n"
-"                <tbody>\n"
-"                    <tr>\n"
-"                        <th>{_(\"Device\")}</th>\n"
-"                        <td>\n"
-"                            {customization\n"
-"                                ? \"Turris Shield\"\n"
-"                                : deviceDetails.model}\n"
-"                        </td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>{_(\"Serial number\")}</th>\n"
-"                        <td>{deviceDetails.serial}</td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>{_(\"reForis version\")}</th>\n"
-"                        <td>{deviceDetails.reforis_version}</td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>{_(\"Turris OS version\")}</th>\n"
-"                        <td>{deviceDetails.os_version}</td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>\n"
-"                            {_(\"Turris OS branch\")}\n"
-"                            <i\n"
-"                                className=\"fas fa-question-circle ml-1 "
-"help\"\n"
-"                                data-tip={_("
 
-#: js/src/about/About.js:107
+#: js/src/about/About.js:55
+msgid "Device"
+msgstr ""
+
+#: js/src/about/About.js:63
+#, fuzzy
+msgid "Serial number"
+msgstr "Port musí byť číslo."
+
+#: js/src/about/About.js:67
+#, fuzzy
+msgid "reForis version"
+msgstr "Verzia kernelu"
+
+#: js/src/about/About.js:71
+msgid "Turris OS version"
+msgstr ""
+
+#: js/src/about/About.js:76
+msgid "Turris OS branch"
+msgstr ""
+
+#: js/src/about/About.js:79
+msgid ""
+"Turris OS is currently released in various branches, which have different"
+" functions and varying stability - you can pick, which branch you want to"
+" test."
+msgstr ""
+
+#: js/src/about/About.js:105
 msgid "Kernel version"
 msgstr "Verzia kernelu"
 
@@ -181,11 +104,11 @@ msgstr "Potvrdiť reštart"
 msgid "Go to top"
 msgstr "Prejsť na začiatok"
 
-#: js/src/common/network/DHCP6ClientsList.js:20
+#: js/src/common/network/DHCP6ClientsList.js:24
 msgid "IPv6 DHCP Client List"
 msgstr "Zoznam klientov IPv6 DHCP"
 
-#: js/src/common/network/DHCP6ClientsList.js:22
+#: js/src/common/network/DHCP6ClientsList.js:26
 msgid ""
 "This list contains all devices that are connected to the network through "
 "wired or wireless connections using IPv6."
@@ -193,26 +116,26 @@ msgstr ""
 "Tento zoznam obsahuje všetky zariadenia pripojené do siete káblom alebo "
 "bezdrôtovo prostredníctvom IPv6."
 
-#: js/src/common/network/DHCP6ClientsList.js:28
+#: js/src/common/network/DHCP6ClientsList.js:32
 #: js/src/common/network/DHCPClientsList.js:28
 msgid "No clients found."
 msgstr "Nanašli sa žiadni klienti."
 
-#: js/src/common/network/DHCP6ClientsList.js:35
+#: js/src/common/network/DHCP6ClientsList.js:39
 #: js/src/common/network/DHCPClientsList.js:35 js/src/hostname/Hostname.js:21
 #: js/src/main/pages.js:92 js/src/main/pages.js:183
 msgid "Hostname"
 msgstr "Sieťový názov"
 
-#: js/src/common/network/DHCP6ClientsList.js:36
+#: js/src/common/network/DHCP6ClientsList.js:40
 msgid "IPv6 Address"
 msgstr "IPv6 adresa"
 
-#: js/src/common/network/DHCP6ClientsList.js:37
+#: js/src/common/network/DHCP6ClientsList.js:41
 msgid "DUID"
 msgstr "DUID"
 
-#: js/src/common/network/DHCP6ClientsList.js:38
+#: js/src/common/network/DHCP6ClientsList.js:42
 #: js/src/common/network/DHCPClientsList.js:38
 msgid "Expires"
 msgstr "Koniec platnosti"
@@ -316,8 +239,8 @@ msgid ""
 "The only DHCP lease is the same as router's address. Increase limit or "
 "change start address."
 msgstr ""
-"Jediná DHCP výpožička je zhodná s adresou routera. Zvýšte limit alebo zmeňte "
-"začiatok rozsahu."
+"Jediná DHCP výpožička je zhodná s adresou routera. Zvýšte limit alebo "
+"zmeňte začiatok rozsahu."
 
 #: js/src/common/network/StaticIPForm.js:14 js/src/wan/WAN6Form.js:36
 msgid ""
@@ -332,7 +255,7 @@ msgid "IP address"
 msgstr "IP adresa"
 
 #: js/src/common/network/StaticIPForm.js:60
-#: js/src/guestNetwork/GuestNetworkForm.js:87 js/src/lan/LANManagedForm.js:72
+#: js/src/guestNetwork/GuestNetworkForm.js:88 js/src/lan/LANManagedForm.js:72
 msgid "Network mask"
 msgstr "Maska siete"
 
@@ -349,7 +272,7 @@ msgid "DNS server 2"
 msgstr "DNS server 2"
 
 #: js/src/common/network/StaticIPForm.js:111
-#: js/src/common/network/validators.js:19 js/src/wan/MACForm.js:91
+#: js/src/common/network/validators.js:19 js/src/wan/MACForm.js:92
 #: js/src/wan/WAN6Form.js:504 js/src/wan/WAN6Form.js:533
 #: js/src/wan/WAN6Form.js:545 js/src/wan/WANForm.js:173
 msgid "This field is required."
@@ -443,7 +366,7 @@ msgstr ""
 "o závažný bezpečnostný problém na jeho strane.</p>\n"
 "            "
 
-#: js/src/dns/DNS.js:62 js/src/overview/Overview.js:70
+#: js/src/dns/DNS.js:62 js/src/overview/Overview.js:70 js/src/wan/WAN.js:48
 msgid "Connection Test"
 msgstr "Test pripojenia"
 
@@ -511,10 +434,10 @@ msgid ""
 "Do you still want to continue and stay unprotected?\n"
 msgstr ""
 "\n"
-"DNSSEC je bezpečnostná technológia na ochranu DNS komunikácie proti útokom "
-"na infraštruktúru DNS.\n"
-"Dôrazne odporúčame ponechať overovanie DNSSEC zapnuté, okrem situácie, keď "
-"svoje zariadenie vedome pripájate do siete,\n"
+"DNSSEC je bezpečnostná technológia na ochranu DNS komunikácie proti "
+"útokom na infraštruktúru DNS.\n"
+"Dôrazne odporúčame ponechať overovanie DNSSEC zapnuté, okrem situácie, "
+"keď svoje zariadenie vedome pripájate do siete,\n"
 "kde validácia DNSSEC nefunguje. \n"
 "\n"
 "Naozaj chcete pokračovať a zostať nechránení?\n"
@@ -667,51 +590,64 @@ msgstr "IP adresa routera vo vnútornej sieti pre hostí."
 msgid "Network mask of the guest inner network."
 msgstr "Maska siete vnútornej siete pre hostí."
 
-#: js/src/guestNetwork/GuestNetworkForm.js:24
+#: js/src/guestNetwork/GuestNetworkForm.js:22
+msgid ""
+"This option enables you to set a bandwidth limit for the guest network, "
+"so that your main network doesn't get slowed-down by it."
+msgstr ""
+
+#: js/src/guestNetwork/GuestNetworkForm.js:25
 msgid "Download speed in guest network (in kilobits per second)."
 msgstr "Rýchlosť sťahovania v sieti pre hostí (v kilobitoch za sekundu)."
 
-#: js/src/guestNetwork/GuestNetworkForm.js:27
+#: js/src/guestNetwork/GuestNetworkForm.js:28
 msgid "Upload speed in guest network (in kilobits per second)."
 msgstr "Rýchlosť odosielania v sieti pre hostí (v kilobitoch za sekundu)."
 
-#: js/src/guestNetwork/GuestNetworkForm.js:64
+#: js/src/guestNetwork/GuestNetworkForm.js:65
 msgid "Guest Network Settings"
 msgstr "Nastavenia siete pre hostí"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:66
+#: js/src/guestNetwork/GuestNetworkForm.js:67
 msgid "Enable Guest Network"
 msgstr "Povoliť sieť pre hostí"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:76 js/src/lan/LANManagedForm.js:61
+#: js/src/guestNetwork/GuestNetworkForm.js:77 js/src/lan/LANManagedForm.js:61
 msgid "Router IP address"
 msgstr "IP adresa routera"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:97 js/src/lan/LANManagedForm.js:82
+#: js/src/guestNetwork/GuestNetworkForm.js:98 js/src/lan/LANManagedForm.js:82
 msgid "Enable DHCP"
 msgstr "Povoliť DHCP"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:115
+#: js/src/guestNetwork/GuestNetworkForm.js:116
 msgid "Enable QoS"
 msgstr "Povoliť QoS"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:158
+#: js/src/guestNetwork/GuestNetworkForm.js:159
 #: js/src/overview/Cards/NetmetrCard.js:67
 msgid "Download"
 msgstr "Stiahnuť"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:171
+#: js/src/guestNetwork/GuestNetworkForm.js:172
 #: js/src/overview/Cards/NetmetrCard.js:83
 msgid "Upload"
 msgstr "Odosielanie"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:190
+#: js/src/guestNetwork/GuestNetworkForm.js:191
 msgid "Download speed must be positive"
 msgstr "Rýchlosť sťahovania musí byť kladná"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:193
+#: js/src/guestNetwork/GuestNetworkForm.js:194
 msgid "Upload speed must be positive"
 msgstr "Rýchlosť odosielania musí byť kladná"
+
+#: js/src/guestNetwork/GuestNetworkNotification.js:12
+msgid ""
+"This network currently doesn't contain any devices. The changes you make "
+"here will become fully functional after you assign a network interface to"
+" this network."
+msgstr ""
 
 #: js/src/guestNetwork/GuestNetworkNotification.js:16
 msgid "All network interfaces of this network are currently down."
@@ -723,10 +659,10 @@ msgid ""
 "device. Firstly it is required to set your password. Note the security of"
 " your home network is in your hands, so try not to use weak passwords."
 msgstr ""
-"Vitajte vo webovom rozhraní Foris. Tento sprievodca vám pomôže s nastavením "
-"vášho zariadenia. Najprv je potrebné nastaviť vaše heslo. Nezabudnite, že "
-"bezpečnosť vašej domácej siete je vo vašich rukách, preto nepoužívajte slabé "
-"heslá."
+"Vitajte vo webovom rozhraní Foris. Tento sprievodca vám pomôže s "
+"nastavením vášho zariadenia. Najprv je potrebné nastaviť vaše heslo. "
+"Nezabudnite, že bezpečnosť vašej domácej siete je vo vašich rukách, preto"
+" nepoužívajte slabé heslá."
 
 #: js/src/guide/constants.js:17
 msgid "Your password is set. You may proceed to the next step."
@@ -930,7 +866,7 @@ msgstr "Nie je možné potvrdiť dokončenie sprievodcu."
 
 #: js/src/guide/steps.js:20 js/src/main/pages.js:72 js/src/main/pages.js:163
 #: js/src/notificationsSettings/SMTPCustomForm.js:114
-#: reforis/templates/login.html:29
+#: js/src/password/Password.js:174 reforis/templates/login.html:30
 msgid "Password"
 msgstr "Heslo"
 
@@ -997,9 +933,10 @@ msgid ""
 "dynamic firewall updates blocking known attackers."
 msgstr ""
 "Ak chcete ešte viac zvýšiť svoje zabezpečenie, zvážte inštaláciu pluginu "
-"Zber dát (v Správe balíčkov). Zapojíte sa tak do nášho výskumu zabezpečenia, "
-"ktorý odhaľuje nových útočníkov a získate prístup k dynamickým aktualizáciám "
-"brány firewall, ktorá blokuje odhalených útočníkov."
+"Zber dát (v Správe balíčkov). Zapojíte sa tak do nášho výskumu "
+"zabezpečenia, ktorý odhaľuje nových útočníkov a získate prístup k "
+"dynamickým aktualizáciám brány firewall, ktorá blokuje odhalených "
+"útočníkov."
 
 #: js/src/guide/GuidePages/GuideFinish.js:31
 msgid "Continue"
@@ -1038,7 +975,7 @@ msgstr ""
 msgid "Local Server"
 msgstr "Miestny server"
 
-#: js/src/guide/GuidePages/WorkflowSelect.js:38 js/src/lan/LANForm.js:35
+#: js/src/guide/GuidePages/WorkflowSelect.js:38 js/src/lan/LANForm.js:32
 msgid "Router"
 msgstr "Router"
 
@@ -1274,31 +1211,32 @@ msgstr ""
 "<b>opäť načítať</b>.\n"
 "            "
 
-#: js/src/lan/LANForm.js:19
+#: js/src/lan/LANForm.js:18
 msgid ""
-"\n"
-"    ),\n"
-"    unmanaged: _(\n"
-"        "
+"Router mode means that this device manages the LAN (acts as a router, can"
+" assign IP addresses, etc.)."
 msgstr ""
-"\n"
-"    ),\n"
-"    unmanaged: _(\n"
-"        "
 
-#: js/src/lan/LANForm.js:36
+#: js/src/lan/LANForm.js:21
+msgid ""
+"Computer mode means that this device acts as a client in this network. It"
+" acts similarly to WAN, but it has opened ports for configuration "
+"interfaces and other services."
+msgstr ""
+
+#: js/src/lan/LANForm.js:33
 msgid "Computer"
 msgstr "Počítač"
 
-#: js/src/lan/LANForm.js:86
+#: js/src/lan/LANForm.js:83
 msgid "LAN Settings"
 msgstr "Nastavenia miestnej siete LAN"
 
-#: js/src/lan/LANForm.js:89
+#: js/src/lan/LANForm.js:86
 msgid "LAN mode"
 msgstr "Režim miestnej siete LAN"
 
-#: js/src/lan/LANForm.js:105
+#: js/src/lan/LANForm.js:102
 msgid "Redirect to 192.168.1.1"
 msgstr "Presmerovať na 192.168.1.1"
 
@@ -1441,12 +1379,13 @@ msgid ""
 "                giving you a clean slate to start all over again.\n"
 "    "
 msgstr ""
-"Reset zariadenia Turris do továrenského nastavenia odstráni zo zariadenia\n"
+"Reset zariadenia Turris do továrenského nastavenia odstráni zo zariadenia"
+"\n"
 "                všetky nainštalované balíčky a všetky ich dáta. Tým sa "
 "všetky nastavenia\n"
 "                vrátia do východiskového stavu, ako keď bol router nový.\n"
-"                Získate tak možnosť začať s nastaveniami celkom od začiatku."
-"\n"
+"                Získate tak možnosť začať s nastaveniami celkom od "
+"začiatku.\n"
 "    "
 
 #: js/src/maintenance/Maintenance.js:19
@@ -1549,10 +1488,10 @@ msgid ""
 "settings. When done with configuration, you can test it by pressing Send "
 "test notification."
 msgstr ""
-"Podľa vašich nastavení vám zariadenie bude posielať e-mailové notifikácie o "
-"potrebe reštartu, dôležitých udalostiach, nainštalovaných aktualizáciách a "
-"nových funkciách. Po dokončení nastavovania môžete notifikáciu vyskúšať "
-"kliknutím na Odoslať testovaciu notifikáciu."
+"Podľa vašich nastavení vám zariadenie bude posielať e-mailové notifikácie"
+" o potrebe reštartu, dôležitých udalostiach, nainštalovaných "
+"aktualizáciách a nových funkciách. Po dokončení nastavovania môžete "
+"notifikáciu vyskúšať kliknutím na Odoslať testovaciu notifikáciu."
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:22
 msgid "None"
@@ -1712,8 +1651,8 @@ msgid "Disabled"
 msgstr "Zakázané"
 
 #: js/src/overview/Cards/DataCollectionCard.js:44
-msgid "Data Collection"
-msgstr "Zber dát"
+msgid "Threat Detection"
+msgstr ""
 
 #: js/src/overview/Cards/DynamicFirewallCard.js:24
 msgid "Dynamic Firewall"
@@ -1772,21 +1711,19 @@ msgstr ""
 "Ak chcete používať iný jazyk ako angličtinu, môžete si vybrať z "
 "nasledujúceho zoznamu:"
 
-#: js/src/packageManagement/packages/PackageCheckBox.js:53
+#: js/src/packageManagement/packages/PackageCheckBox.js:55
 msgid "More details"
 msgstr "Ďalšie podrobnosti"
 
 #: js/src/packageManagement/packages/Packages.js:21
+#, fuzzy
 msgid ""
-"\n"
 "Apart from the standard installation, you can optionally select bundles "
-"of additional software that'd be installed on \n"
-"the router. This software can be selected from the following list. Please"
-" note that only software that is part of \n"
-"TurrisOS or that has been installed from a package list and not marked as"
-" community-supported is actually supported\n"
-"by Turris team.\n"
-"        "
+"of additional software that'd be installed on the router. This software "
+"can be selected from the following list. Please note that only software "
+"that is part of TurrisOS or that has been installed from a package list "
+"and not marked as community-supported is actually supported by Turris "
+"team."
 msgstr ""
 "\n"
 "Okrem štandardnej inštalácie si môžete vybrať voliteľné balíčky ďalšieho "
@@ -1925,21 +1862,21 @@ msgid ""
 "            "
 msgstr ""
 "\n"
-"Jednou z najdôležitejších vlastností routerov Turris je systém automatických "
-"systémových aktualizácií. Vďaka tejto funkcii\n"
+"Jednou z najdôležitejších vlastností routerov Turris je systém "
+"automatických systémových aktualizácií. Vďaka tejto funkcii\n"
 "je software vášho routera stále aktuálny a poskytuje tak lepšiu ochranu "
 "proti útokom z internetu.\n"
 "<br/>\n"
-"<b>Dôrazne odporúčame,</b> aby ste túto funkciu ponechali <b>zapnutú</b>. Ak "
-"sa ju rozhodnete vypnúť,\n"
-"uvedomte si, že môže dôjsť k zníženiu zabezpečenia vášho routera a siete, ak "
-"sa v software vyskytnú bezpečnostné\n"
+"<b>Dôrazne odporúčame,</b> aby ste túto funkciu ponechali <b>zapnutú</b>."
+" Ak sa ju rozhodnete vypnúť,\n"
+"uvedomte si, že môže dôjsť k zníženiu zabezpečenia vášho routera a siete,"
+" ak sa v software vyskytnú bezpečnostné\n"
 "chyby.\n"
 "<br/>\n"
 "Povolením automatických aktualizácií súhlasíte s Licenčnou zmluvou tejto "
 "funkcie.\n"
-"Viac informácií nájdete <a href=\"\" data-toggle=\"modal\" data-target=\"#"
-"licenceModal\">tu</a>.\n"
+"Viac informácií nájdete <a href=\"\" data-toggle=\"modal\" data-"
+"target=\"#licenceModal\">tu</a>.\n"
 "            "
 
 #: js/src/packageManagement/updateSettings/forms/RestartAfterUpdateForm.js:17
@@ -2221,15 +2158,49 @@ msgstr ""
 
 #: js/src/password/Password.js:78
 msgid ""
-");\n"
-"\n"
-"    if (password.length > 128)\n"
-"        return _("
+"The password you've entered has not been saved. It has been compromised "
+"and appears ${\n"
+"                            forisPassword.count || rootPassword.count\n"
+"                        } times in ${\n"
+"                            forisPassword.list || rootPassword.list\n"
+"                        } list. Please enter another, more secure "
+"password."
 msgstr ""
-");\n"
-"\n"
-"    if (password.length > 128)\n"
-"        return _("
+
+#: js/src/password/Password.js:89
+#, fuzzy
+msgid "Password changed successfully."
+msgstr "Nastavenie DNS preposielania bolo uložené."
+
+#: js/src/password/Password.js:147
+#, fuzzy
+msgid "Password Settings"
+msgstr "Nastavenia siete"
+
+#: js/src/password/Password.js:176
+msgid ""
+"Here you can set password for the administration interface. Make sure to "
+"set a secure password that is long and unique."
+msgstr ""
+
+#: js/src/password/Password.js:193 js/src/password/Password.js:197
+msgid "The password confirmation does not match."
+msgstr ""
+
+#: js/src/password/Password.js:212
+#, fuzzy
+msgid "Password can't be empty."
+msgstr "Nemôže byť prázdne."
+
+#: js/src/password/Password.js:214
+#, fuzzy
+msgid "Password should have min 6 symbols."
+msgstr "TLS pin by mal obsahovať aspoň jeden znak."
+
+#: js/src/password/Password.js:217
+#, fuzzy
+msgid "Password should have max 128 symbols."
+msgstr "TLS pin by mal obsahovať aspoň jeden znak."
 
 #: js/src/password/RootPasswordForm.js:51
 msgid "Advanced Administration Password"
@@ -2375,29 +2346,52 @@ msgstr ""
 "Prosím, nahláste túto chybu našej technickej podpore e-mailom na <a "
 "href=\"mailto:tech.support@turris.cz\">tech.support@turris.cz</a>."
 
-#: js/src/wan/MACForm.js:16
+#: js/src/wan/MACForm.js:14
+msgid ""
+"Useful in cases, when a specific MAC address is required by your internet"
+" service provider."
+msgstr ""
+
+#: js/src/wan/MACForm.js:17
 msgid "Colon is used as a separator, for example 00:11:22:33:44:55"
 msgstr "Ako oddeľovač sa používa dvojbodka, napríklad 00:11:22:33:44:55"
 
-#: js/src/wan/MACForm.js:19
+#: js/src/wan/MACForm.js:20
 msgid "MAC address of the WAN interface."
 msgstr "MAC adresa rozhrania WAN."
 
-#: js/src/wan/MACForm.js:52
+#: js/src/wan/MACForm.js:53
 msgid "MAC Settings"
 msgstr "Nastavenia MAC"
 
-#: js/src/wan/MACForm.js:54
+#: js/src/wan/MACForm.js:55
 msgid "Custom MAC address"
 msgstr "Vlastná MAC adresa"
 
-#: js/src/wan/MACForm.js:65
+#: js/src/wan/MACForm.js:66
 msgid "Current MAC address"
 msgstr "Súčasná MAC adresa"
 
-#: js/src/wan/MACForm.js:71
+#: js/src/wan/MACForm.js:72
 msgid "Set the new MAC address"
 msgstr "Nastaviť novú MAC adresu"
+
+#: js/src/wan/WAN.js:29
+msgid ""
+"Here you specify your WAN port settings. Usually, you can leave these "
+"options untouched unless instructed otherwise by your internet service "
+"provider. Also, in case there is a cable or DSL modem connecting your "
+"router to the network, it is usually not necessary to change this "
+"setting."
+msgstr ""
+
+#: js/src/wan/WAN.js:51
+msgid ""
+"Here you can test you connection settings. Remember to click on the "
+"<b>Save button</b> before running the test. Note that sometimes it takes "
+"a while before the connection is fully initialized. So it might be useful"
+" to wait for a while before running this test."
+msgstr ""
 
 #: js/src/wan/WAN6Form.js:26
 msgid "DUID which will be provided to the DHCPv6 server."
@@ -2558,6 +2552,14 @@ msgstr "Heslo pre PAP/CHAP"
 msgid "Unfortunately, we were unable to detect any wireless cards in your router."
 msgstr "Žiaľ, vo vašom routeri nebola zistená žiadna Wi-Fi karta."
 
+#: js/src/wifi/WiFi.js:41
+msgid ""
+"If you want to use your router as a Wi-Fi access point, enable Wi-Fi here"
+" and fill in an SSID (the name of the access point) and a corresponding "
+"password. You can then set up your mobile devices using the QR code "
+"available within the form."
+msgstr ""
+
 #: reforis/views.py:52
 msgid "Wrong password."
 msgstr "Nesprávne heslo."
@@ -2617,10 +2619,6 @@ msgstr "Nedajú sa zmeniť nastavenia automatického reštartu."
 msgid "Cannot update approvals settings."
 msgstr "Nedá sa upraviť schvaľovanie aktualizácií."
 
-#: reforis/foris_controller_api/modules/updater.py:84
-msgid "Cannot rollback automatic restart settings."
-msgstr "Nedajú sa späť vrátiť nastavenia automatického reštartu."
-
 #: reforis/foris_controller_api/modules/updater.py:175
 msgid "Cannot start updater"
 msgstr "Nástroj na aktualizáciu sa nedá spustiť"
@@ -2633,19 +2631,19 @@ msgstr "Pri vypnutých automatických aktualizáciách nie je možné nastaviť.
 msgid "Guide"
 msgstr "Sprievodca"
 
-#: reforis/templates/login.html:32
+#: reforis/templates/login.html:33
 msgid "Log in"
 msgstr "Prihlásiť sa"
 
-#: reforis/templates/login.html:34
+#: reforis/templates/login.html:35
 msgid "Go to LuCI"
 msgstr "Prejsť do rozhrania LuCI"
 
-#: reforis/templates/login.html:34
+#: reforis/templates/login.html:35
 msgid "or"
 msgstr "alebo"
 
-#: reforis/templates/login.html:35
+#: reforis/templates/login.html:36
 msgid "back to select"
 msgstr "späť na výber"
 
@@ -2665,15 +2663,15 @@ msgstr "Extra:"
 msgid "Trace:"
 msgstr "Cesta:"
 
-#: reforis/templates/errors/403.html:4
-msgid "403 - Forbidden"
-msgstr "403 - Prístup zamietnutý"
+#: reforis/templates/errors/401.html:4
+msgid "401 - Unauthorized"
+msgstr ""
 
-#: reforis/templates/errors/403.html:9
-msgid "Forbidden You don't have permission to access"
-msgstr "Zamietnuté – nemáte oprávnenie na prístup"
+#: reforis/templates/errors/401.html:9
+msgid "You have to authenticate first."
+msgstr ""
 
-#: reforis/templates/errors/403.html:10
+#: reforis/templates/errors/401.html:10
 #, python-format
 msgid "Do you want to <a href=\"%(link)s\">log in</a>?"
 msgstr "Chcete sa <a href=\"%(link)s\">prihlásiť</a>?"
@@ -3350,3 +3348,151 @@ msgstr "500 – Chyba servera"
 #~ " mobilného zariadenia môžete potom použiť"
 #~ " QR kód dostupný vo formulári.\n"
 #~ "            "
+
+#~ msgid ""
+#~ "\n"
+#~ "                    ),\n"
+#~ "                }}\n"
+#~ "            />\n"
+#~ "            <AboutTableWithErrorAndSpinner\n"
+#~ "                apiState={getAboutResponse.state}\n"
+#~ "                deviceDetails={getAboutResponse.data || {}}\n"
+#~ "            />\n"
+#~ "        </>\n"
+#~ "    );\n"
+#~ "}\n"
+#~ "\n"
+#~ "AboutTable.propTypes = {\n"
+#~ "    deviceDetails: PropTypes.object.isRequired,\n"
+#~ "    customization: PropTypes.bool,\n"
+#~ "};\n"
+#~ "\n"
+#~ "function AboutTable({ deviceDetails }) {\n"
+#~ "    const customization = !!(\n"
+#~ "        deviceDetails &&\n"
+#~ "        deviceDetails.customization !== undefined &&\n"
+#~ "        deviceDetails.customization === \"shield\"\n"
+#~ "    );\n"
+#~ "    return (\n"
+#~ "        <div className=\"card p-4 table-responsive\">\n"
+#~ "            <table className=\"table table-"
+#~ "borderless table-hover mb-0\">\n"
+#~ "                <tbody>\n"
+#~ "                    <tr>\n"
+#~ "                        <th>{_(\"Device\")}</th>\n"
+#~ "                        <td>\n"
+#~ "                            {customization\n"
+#~ "                                ? \"Turris Shield\"\n"
+#~ "                                : deviceDetails.model}\n"
+#~ "                        </td>\n"
+#~ "                    </tr>\n"
+#~ "                    <tr>\n"
+#~ "                        <th>{_(\"Serial number\")}</th>\n"
+#~ "                        <td>{deviceDetails.serial}</td>\n"
+#~ "                    </tr>\n"
+#~ "                    <tr>\n"
+#~ "                        <th>{_(\"reForis version\")}</th>\n"
+#~ "                        <td>{deviceDetails.reforis_version}</td>\n"
+#~ "                    </tr>\n"
+#~ "                    <tr>\n"
+#~ "                        <th>{_(\"Turris OS version\")}</th>\n"
+#~ "                        <td>{deviceDetails.os_version}</td>\n"
+#~ "                    </tr>\n"
+#~ "                    <tr>\n"
+#~ "                        <th>\n"
+#~ "                            {_(\"Turris OS branch\")}\n"
+#~ "                            <i\n"
+#~ "                                className=\"fas fa-"
+#~ "question-circle ml-1 help\"\n"
+#~ "                                data-tip={_("
+#~ msgstr ""
+#~ "\n"
+#~ "                    ),\n"
+#~ "                }}\n"
+#~ "            />\n"
+#~ "            <AboutTableWithErrorAndSpinner\n"
+#~ "                apiState={getAboutResponse.state}\n"
+#~ "                deviceDetails={getAboutResponse.data || {}}\n"
+#~ "            />\n"
+#~ "        </>\n"
+#~ "    );\n"
+#~ "}\n"
+#~ "\n"
+#~ "AboutTable.propTypes = {\n"
+#~ "    deviceDetails: PropTypes.object.isRequired,\n"
+#~ "    customization: PropTypes.bool,\n"
+#~ "};\n"
+#~ "\n"
+#~ "function AboutTable({ deviceDetails }) {\n"
+#~ "    const customization = !!(\n"
+#~ "        deviceDetails &&\n"
+#~ "        deviceDetails.customization !== undefined &&\n"
+#~ "        deviceDetails.customization === \"shield\"\n"
+#~ "    );\n"
+#~ "    return (\n"
+#~ "        <div className=\"card p-4 table-responsive\">\n"
+#~ "            <table className=\"table table-"
+#~ "borderless table-hover mb-0\">\n"
+#~ "                <tbody>\n"
+#~ "                    <tr>\n"
+#~ "                        <th>{_(\"Device\")}</th>\n"
+#~ "                        <td>\n"
+#~ "                            {customization\n"
+#~ "                                ? \"Turris Shield\"\n"
+#~ "                                : deviceDetails.model}\n"
+#~ "                        </td>\n"
+#~ "                    </tr>\n"
+#~ "                    <tr>\n"
+#~ "                        <th>{_(\"Serial number\")}</th>\n"
+#~ "                        <td>{deviceDetails.serial}</td>\n"
+#~ "                    </tr>\n"
+#~ "                    <tr>\n"
+#~ "                        <th>{_(\"reForis version\")}</th>\n"
+#~ "                        <td>{deviceDetails.reforis_version}</td>\n"
+#~ "                    </tr>\n"
+#~ "                    <tr>\n"
+#~ "                        <th>{_(\"Turris OS version\")}</th>\n"
+#~ "                        <td>{deviceDetails.os_version}</td>\n"
+#~ "                    </tr>\n"
+#~ "                    <tr>\n"
+#~ "                        <th>\n"
+#~ "                            {_(\"Turris OS branch\")}\n"
+#~ "                            <i\n"
+#~ "                                className=\"fas fa-"
+#~ "question-circle ml-1 help\"\n"
+#~ "                                data-tip={_("
+
+#~ msgid ""
+#~ "\n"
+#~ "    ),\n"
+#~ "    unmanaged: _(\n"
+#~ "        "
+#~ msgstr ""
+#~ "\n"
+#~ "    ),\n"
+#~ "    unmanaged: _(\n"
+#~ "        "
+
+#~ msgid "Data Collection"
+#~ msgstr "Zber dát"
+
+#~ msgid ""
+#~ ");\n"
+#~ "\n"
+#~ "    if (password.length > 128)\n"
+#~ "        return _("
+#~ msgstr ""
+#~ ");\n"
+#~ "\n"
+#~ "    if (password.length > 128)\n"
+#~ "        return _("
+
+#~ msgid "Cannot rollback automatic restart settings."
+#~ msgstr "Nedajú sa späť vrátiť nastavenia automatického reštartu."
+
+#~ msgid "403 - Forbidden"
+#~ msgstr "403 - Prístup zamietnutý"
+
+#~ msgid "Forbidden You don't have permission to access"
+#~ msgstr "Zamietnuté – nemáte oprávnenie na prístup"
+

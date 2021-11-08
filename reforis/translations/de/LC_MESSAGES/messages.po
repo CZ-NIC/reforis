@@ -7,17 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-07-01 11:50+0200\n"
+"POT-Creation-Date: 2021-11-08 15:54+0100\n"
 "PO-Revision-Date: 2021-09-24 19:35+0000\n"
 "Last-Translator: CryptKid <CryptKiddie@chaospott.de>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/turris/reforis/de/"
-">\n"
 "Language: de\n"
+"Language-Team: German "
+"<https://hosted.weblate.org/projects/turris/reforis/de/>\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.9-dev\n"
 "Generated-By: Babel 2.9.1\n"
 
 #: js/src/about/About.js:23 js/src/main/pages.js:105 js/src/main/pages.js:224
@@ -26,64 +25,42 @@ msgstr "Info"
 
 #: js/src/about/About.js:26
 msgid ""
-"\n"
-"                    ),\n"
-"                }}\n"
-"            />\n"
-"            <AboutTableWithErrorAndSpinner\n"
-"                apiState={getAboutResponse.state}\n"
-"                deviceDetails={getAboutResponse.data || {}}\n"
-"            />\n"
-"        </>\n"
-"    );\n"
-"}\n"
-"\n"
-"AboutTable.propTypes = {\n"
-"    deviceDetails: PropTypes.object.isRequired,\n"
-"    customization: PropTypes.bool,\n"
-"};\n"
-"\n"
-"function AboutTable({ deviceDetails }) {\n"
-"    const customization = !!(\n"
-"        deviceDetails &&\n"
-"        deviceDetails.customization !== undefined &&\n"
-"        deviceDetails.customization === \"shield\"\n"
-"    );\n"
-"    return (\n"
-"        <div className=\"card p-4 table-responsive\">\n"
-"            <table className=\"table table-borderless table-hover mb-0\">"
-"\n"
-"                <tbody>\n"
-"                    <tr>\n"
-"                        <th>{_(\"Device\")}</th>\n"
-"                        <td>\n"
-"                            {customization\n"
-"                                ? \"Turris Shield\"\n"
-"                                : deviceDetails.model}\n"
-"                        </td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>{_(\"Serial number\")}</th>\n"
-"                        <td>{deviceDetails.serial}</td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>{_(\"reForis version\")}</th>\n"
-"                        <td>{deviceDetails.reforis_version}</td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>{_(\"Turris OS version\")}</th>\n"
-"                        <td>{deviceDetails.os_version}</td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>\n"
-"                            {_(\"Turris OS branch\")}\n"
-"                            <i\n"
-"                                className=\"fas fa-question-circle ml-1 "
-"help\"\n"
-"                                data-tip={_("
+"Here you can find some information about your device. Please include it "
+"into your message if you contact our <a "
+"href=\"mailto:tech.support@turris.cz\" target=\"_blank\">customer "
+"support</a>."
 msgstr ""
 
-#: js/src/about/About.js:107
+#: js/src/about/About.js:55
+msgid "Device"
+msgstr ""
+
+#: js/src/about/About.js:63
+#, fuzzy
+msgid "Serial number"
+msgstr "Port ist eine Zahl."
+
+#: js/src/about/About.js:67
+#, fuzzy
+msgid "reForis version"
+msgstr "Kernel-Version"
+
+#: js/src/about/About.js:71
+msgid "Turris OS version"
+msgstr ""
+
+#: js/src/about/About.js:76
+msgid "Turris OS branch"
+msgstr ""
+
+#: js/src/about/About.js:79
+msgid ""
+"Turris OS is currently released in various branches, which have different"
+" functions and varying stability - you can pick, which branch you want to"
+" test."
+msgstr ""
+
+#: js/src/about/About.js:105
 msgid "Kernel version"
 msgstr "Kernel-Version"
 
@@ -127,11 +104,11 @@ msgstr "Neustart bestätigen"
 msgid "Go to top"
 msgstr "Gehe zum Anfang"
 
-#: js/src/common/network/DHCP6ClientsList.js:20
+#: js/src/common/network/DHCP6ClientsList.js:24
 msgid "IPv6 DHCP Client List"
 msgstr ""
 
-#: js/src/common/network/DHCP6ClientsList.js:22
+#: js/src/common/network/DHCP6ClientsList.js:26
 #, fuzzy
 msgid ""
 "This list contains all devices that are connected to the network through "
@@ -140,28 +117,28 @@ msgstr ""
 "Diese Liste enthält alle Geräte, die über LAN oder WLAN mit dem Netzwerk "
 "verbunden sind."
 
-#: js/src/common/network/DHCP6ClientsList.js:28
+#: js/src/common/network/DHCP6ClientsList.js:32
 #: js/src/common/network/DHCPClientsList.js:28
 #, fuzzy
 msgid "No clients found."
 msgstr "Keine DHCP-Clients gefunden."
 
-#: js/src/common/network/DHCP6ClientsList.js:35
+#: js/src/common/network/DHCP6ClientsList.js:39
 #: js/src/common/network/DHCPClientsList.js:35 js/src/hostname/Hostname.js:21
 #: js/src/main/pages.js:92 js/src/main/pages.js:183
 msgid "Hostname"
 msgstr "Rechnername"
 
-#: js/src/common/network/DHCP6ClientsList.js:36
+#: js/src/common/network/DHCP6ClientsList.js:40
 #, fuzzy
 msgid "IPv6 Address"
 msgstr "IP-Adresse"
 
-#: js/src/common/network/DHCP6ClientsList.js:37
+#: js/src/common/network/DHCP6ClientsList.js:41
 msgid "DUID"
 msgstr ""
 
-#: js/src/common/network/DHCP6ClientsList.js:38
+#: js/src/common/network/DHCP6ClientsList.js:42
 #: js/src/common/network/DHCPClientsList.js:38
 msgid "Expires"
 msgstr "Verfällt"
@@ -285,7 +262,7 @@ msgid "IP address"
 msgstr "IP-Adresse"
 
 #: js/src/common/network/StaticIPForm.js:60
-#: js/src/guestNetwork/GuestNetworkForm.js:87 js/src/lan/LANManagedForm.js:72
+#: js/src/guestNetwork/GuestNetworkForm.js:88 js/src/lan/LANManagedForm.js:72
 msgid "Network mask"
 msgstr "Netzwerkmaske"
 
@@ -302,7 +279,7 @@ msgid "DNS server 2"
 msgstr "DNS-Server 2"
 
 #: js/src/common/network/StaticIPForm.js:111
-#: js/src/common/network/validators.js:19 js/src/wan/MACForm.js:91
+#: js/src/common/network/validators.js:19 js/src/wan/MACForm.js:92
 #: js/src/wan/WAN6Form.js:504 js/src/wan/WAN6Form.js:533
 #: js/src/wan/WAN6Form.js:545 js/src/wan/WANForm.js:173
 msgid "This field is required."
@@ -399,7 +376,7 @@ msgstr ""
 "Problem mit Ihrem ISP zu klären.</p>\n"
 "            "
 
-#: js/src/dns/DNS.js:62 js/src/overview/Overview.js:70
+#: js/src/dns/DNS.js:62 js/src/overview/Overview.js:70 js/src/wan/WAN.js:48
 msgid "Connection Test"
 msgstr "Verbindung prüfen"
 
@@ -625,52 +602,65 @@ msgstr "Die IP-Adresse des Routers im Gastnetzwerk."
 msgid "Network mask of the guest inner network."
 msgstr "Netzwerkmaske des Gastnetzwerks."
 
-#: js/src/guestNetwork/GuestNetworkForm.js:24
+#: js/src/guestNetwork/GuestNetworkForm.js:22
+msgid ""
+"This option enables you to set a bandwidth limit for the guest network, "
+"so that your main network doesn't get slowed-down by it."
+msgstr ""
+
+#: js/src/guestNetwork/GuestNetworkForm.js:25
 msgid "Download speed in guest network (in kilobits per second)."
 msgstr "Downloadgeschwindigkeit im Gastnetzwerk (kbit/s)."
 
-#: js/src/guestNetwork/GuestNetworkForm.js:27
+#: js/src/guestNetwork/GuestNetworkForm.js:28
 msgid "Upload speed in guest network (in kilobits per second)."
 msgstr "Uploadgeschwindigkeit im Gastnetzwerk (kbit/s)."
 
-#: js/src/guestNetwork/GuestNetworkForm.js:64
+#: js/src/guestNetwork/GuestNetworkForm.js:65
 msgid "Guest Network Settings"
 msgstr "Gastnetzwerk Einstellungen"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:66
+#: js/src/guestNetwork/GuestNetworkForm.js:67
 #, fuzzy
 msgid "Enable Guest Network"
 msgstr "Gastnetzwerk"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:76 js/src/lan/LANManagedForm.js:61
+#: js/src/guestNetwork/GuestNetworkForm.js:77 js/src/lan/LANManagedForm.js:61
 msgid "Router IP address"
 msgstr "IP-Adresse des Routers"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:97 js/src/lan/LANManagedForm.js:82
+#: js/src/guestNetwork/GuestNetworkForm.js:98 js/src/lan/LANManagedForm.js:82
 msgid "Enable DHCP"
 msgstr "DHCP aktivieren"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:115
+#: js/src/guestNetwork/GuestNetworkForm.js:116
 msgid "Enable QoS"
 msgstr "Aktiviere QoS"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:158
+#: js/src/guestNetwork/GuestNetworkForm.js:159
 #: js/src/overview/Cards/NetmetrCard.js:67
 msgid "Download"
 msgstr "Herunterladen"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:171
+#: js/src/guestNetwork/GuestNetworkForm.js:172
 #: js/src/overview/Cards/NetmetrCard.js:83
 msgid "Upload"
 msgstr "Hochladen"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:190
+#: js/src/guestNetwork/GuestNetworkForm.js:191
 msgid "Download speed must be positive"
 msgstr "Die Download Geschwindigkeit muss höher sein"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:193
+#: js/src/guestNetwork/GuestNetworkForm.js:194
 msgid "Upload speed must be positive"
 msgstr "Die Upload Geschwindigkeit muss höher sein"
+
+#: js/src/guestNetwork/GuestNetworkNotification.js:12
+msgid ""
+"This network currently doesn't contain any devices. The changes you make "
+"here will become fully functional after you assign a network interface to"
+" this network."
+msgstr ""
 
 #: js/src/guestNetwork/GuestNetworkNotification.js:16
 msgid "All network interfaces of this network are currently down."
@@ -868,7 +858,7 @@ msgstr ""
 
 #: js/src/guide/steps.js:20 js/src/main/pages.js:72 js/src/main/pages.js:163
 #: js/src/notificationsSettings/SMTPCustomForm.js:114
-#: reforis/templates/login.html:29
+#: js/src/password/Password.js:174 reforis/templates/login.html:30
 msgid "Password"
 msgstr "Passwort"
 
@@ -969,7 +959,7 @@ msgstr ""
 msgid "Local Server"
 msgstr "Lokaler Server"
 
-#: js/src/guide/GuidePages/WorkflowSelect.js:38 js/src/lan/LANForm.js:35
+#: js/src/guide/GuidePages/WorkflowSelect.js:38 js/src/lan/LANForm.js:32
 msgid "Router"
 msgstr "Router"
 
@@ -1161,27 +1151,32 @@ msgid ""
 "            "
 msgstr ""
 
-#: js/src/lan/LANForm.js:19
+#: js/src/lan/LANForm.js:18
 msgid ""
-"\n"
-"    ),\n"
-"    unmanaged: _(\n"
-"        "
+"Router mode means that this device manages the LAN (acts as a router, can"
+" assign IP addresses, etc.)."
 msgstr ""
 
-#: js/src/lan/LANForm.js:36
+#: js/src/lan/LANForm.js:21
+msgid ""
+"Computer mode means that this device acts as a client in this network. It"
+" acts similarly to WAN, but it has opened ports for configuration "
+"interfaces and other services."
+msgstr ""
+
+#: js/src/lan/LANForm.js:33
 msgid "Computer"
 msgstr "Computer"
 
-#: js/src/lan/LANForm.js:86
+#: js/src/lan/LANForm.js:83
 msgid "LAN Settings"
 msgstr "LAN-Einstellungen"
 
-#: js/src/lan/LANForm.js:89
+#: js/src/lan/LANForm.js:86
 msgid "LAN mode"
 msgstr "LAN-Modus"
 
-#: js/src/lan/LANForm.js:105
+#: js/src/lan/LANForm.js:102
 msgid "Redirect to 192.168.1.1"
 msgstr ""
 
@@ -1567,7 +1562,7 @@ msgid "Disabled"
 msgstr "Deaktiviert"
 
 #: js/src/overview/Cards/DataCollectionCard.js:44
-msgid "Data Collection"
+msgid "Threat Detection"
 msgstr ""
 
 #: js/src/overview/Cards/DynamicFirewallCard.js:24
@@ -1625,21 +1620,18 @@ msgid ""
 "from the following list:"
 msgstr ""
 
-#: js/src/packageManagement/packages/PackageCheckBox.js:53
+#: js/src/packageManagement/packages/PackageCheckBox.js:55
 msgid "More details"
 msgstr ""
 
 #: js/src/packageManagement/packages/Packages.js:21
 msgid ""
-"\n"
 "Apart from the standard installation, you can optionally select bundles "
-"of additional software that'd be installed on \n"
-"the router. This software can be selected from the following list. Please"
-" note that only software that is part of \n"
-"TurrisOS or that has been installed from a package list and not marked as"
-" community-supported is actually supported\n"
-"by Turris team.\n"
-"        "
+"of additional software that'd be installed on the router. This software "
+"can be selected from the following list. Please note that only software "
+"that is part of TurrisOS or that has been installed from a package list "
+"and not marked as community-supported is actually supported by Turris "
+"team."
 msgstr ""
 
 #: js/src/packageManagement/packages/PackagesForm.js:29
@@ -1972,11 +1964,49 @@ msgstr ""
 
 #: js/src/password/Password.js:78
 msgid ""
-");\n"
-"\n"
-"    if (password.length > 128)\n"
-"        return _("
+"The password you've entered has not been saved. It has been compromised "
+"and appears ${\n"
+"                            forisPassword.count || rootPassword.count\n"
+"                        } times in ${\n"
+"                            forisPassword.list || rootPassword.list\n"
+"                        } list. Please enter another, more secure "
+"password."
 msgstr ""
+
+#: js/src/password/Password.js:89
+#, fuzzy
+msgid "Password changed successfully."
+msgstr "Weiterleitung erfolgreich gespeichert."
+
+#: js/src/password/Password.js:147
+#, fuzzy
+msgid "Password Settings"
+msgstr "Gastnetzwerk Einstellungen"
+
+#: js/src/password/Password.js:176
+msgid ""
+"Here you can set password for the administration interface. Make sure to "
+"set a secure password that is long and unique."
+msgstr ""
+
+#: js/src/password/Password.js:193 js/src/password/Password.js:197
+msgid "The password confirmation does not match."
+msgstr ""
+
+#: js/src/password/Password.js:212
+#, fuzzy
+msgid "Password can't be empty."
+msgstr "Darf nicht leer sein."
+
+#: js/src/password/Password.js:214
+#, fuzzy
+msgid "Password should have min 6 symbols."
+msgstr "Der TLS-Pin muss mindestens ein Zeichen enthalten."
+
+#: js/src/password/Password.js:217
+#, fuzzy
+msgid "Password should have max 128 symbols."
+msgstr "Der TLS-Pin muss mindestens ein Zeichen enthalten."
 
 #: js/src/password/RootPasswordForm.js:51
 #, fuzzy
@@ -2106,30 +2136,53 @@ msgid ""
 "href=\"mailto:tech.support@turris.cz\">tech.support@turris.cz</a>."
 msgstr ""
 
-#: js/src/wan/MACForm.js:16
+#: js/src/wan/MACForm.js:14
+msgid ""
+"Useful in cases, when a specific MAC address is required by your internet"
+" service provider."
+msgstr ""
+
+#: js/src/wan/MACForm.js:17
 msgid "Colon is used as a separator, for example 00:11:22:33:44:55"
 msgstr "Doppelpunkte werden als Trennzeichen verwendet, z.B. 00:11:22:22:33:44:55"
 
-#: js/src/wan/MACForm.js:19
+#: js/src/wan/MACForm.js:20
 msgid "MAC address of the WAN interface."
 msgstr ""
 
-#: js/src/wan/MACForm.js:52
+#: js/src/wan/MACForm.js:53
 #, fuzzy
 msgid "MAC Settings"
 msgstr "LAN-Einstellungen"
 
-#: js/src/wan/MACForm.js:54
+#: js/src/wan/MACForm.js:55
 msgid "Custom MAC address"
 msgstr "Benutzerdefinierte MAC-Adresse"
 
-#: js/src/wan/MACForm.js:65
+#: js/src/wan/MACForm.js:66
 #, fuzzy
 msgid "Current MAC address"
 msgstr "IP-Adresse des Routers"
 
-#: js/src/wan/MACForm.js:71
+#: js/src/wan/MACForm.js:72
 msgid "Set the new MAC address"
+msgstr ""
+
+#: js/src/wan/WAN.js:29
+msgid ""
+"Here you specify your WAN port settings. Usually, you can leave these "
+"options untouched unless instructed otherwise by your internet service "
+"provider. Also, in case there is a cable or DSL modem connecting your "
+"router to the network, it is usually not necessary to change this "
+"setting."
+msgstr ""
+
+#: js/src/wan/WAN.js:51
+msgid ""
+"Here you can test you connection settings. Remember to click on the "
+"<b>Save button</b> before running the test. Note that sometimes it takes "
+"a while before the connection is fully initialized. So it might be useful"
+" to wait for a while before running this test."
 msgstr ""
 
 #: js/src/wan/WAN6Form.js:26
@@ -2292,6 +2345,14 @@ msgstr "PAP/CHAP-Kennwort"
 msgid "Unfortunately, we were unable to detect any wireless cards in your router."
 msgstr ""
 
+#: js/src/wifi/WiFi.js:41
+msgid ""
+"If you want to use your router as a Wi-Fi access point, enable Wi-Fi here"
+" and fill in an SSID (the name of the access point) and a corresponding "
+"password. You can then set up your mobile devices using the QR code "
+"available within the form."
+msgstr ""
+
 #: reforis/views.py:52
 msgid "Wrong password."
 msgstr ""
@@ -2342,10 +2403,6 @@ msgstr ""
 msgid "Cannot update approvals settings."
 msgstr ""
 
-#: reforis/foris_controller_api/modules/updater.py:84
-msgid "Cannot rollback automatic restart settings."
-msgstr ""
-
 #: reforis/foris_controller_api/modules/updater.py:175
 msgid "Cannot start updater"
 msgstr ""
@@ -2358,19 +2415,19 @@ msgstr ""
 msgid "Guide"
 msgstr ""
 
-#: reforis/templates/login.html:32
+#: reforis/templates/login.html:33
 msgid "Log in"
 msgstr ""
 
-#: reforis/templates/login.html:34
+#: reforis/templates/login.html:35
 msgid "Go to LuCI"
 msgstr ""
 
-#: reforis/templates/login.html:34
+#: reforis/templates/login.html:35
 msgid "or"
 msgstr ""
 
-#: reforis/templates/login.html:35
+#: reforis/templates/login.html:36
 msgid "back to select"
 msgstr ""
 
@@ -2390,15 +2447,15 @@ msgstr ""
 msgid "Trace:"
 msgstr ""
 
-#: reforis/templates/errors/403.html:4
-msgid "403 - Forbidden"
+#: reforis/templates/errors/401.html:4
+msgid "401 - Unauthorized"
 msgstr ""
 
-#: reforis/templates/errors/403.html:9
-msgid "Forbidden You don't have permission to access"
+#: reforis/templates/errors/401.html:9
+msgid "You have to authenticate first."
 msgstr ""
 
-#: reforis/templates/errors/403.html:10
+#: reforis/templates/errors/401.html:10
 #, python-format
 msgid "Do you want to <a href=\"%(link)s\">log in</a>?"
 msgstr ""
@@ -3070,3 +3127,106 @@ msgstr ""
 #~ "within the form.\n"
 #~ "            "
 #~ msgstr ""
+
+#~ msgid ""
+#~ "\n"
+#~ "                    ),\n"
+#~ "                }}\n"
+#~ "            />\n"
+#~ "            <AboutTableWithErrorAndSpinner\n"
+#~ "                apiState={getAboutResponse.state}\n"
+#~ "                deviceDetails={getAboutResponse.data || {}}\n"
+#~ "            />\n"
+#~ "        </>\n"
+#~ "    );\n"
+#~ "}\n"
+#~ "\n"
+#~ "AboutTable.propTypes = {\n"
+#~ "    deviceDetails: PropTypes.object.isRequired,\n"
+#~ "    customization: PropTypes.bool,\n"
+#~ "};\n"
+#~ "\n"
+#~ "function AboutTable({ deviceDetails }) {\n"
+#~ "    const customization = !!(\n"
+#~ "        deviceDetails &&\n"
+#~ "        deviceDetails.customization !== undefined &&\n"
+#~ "        deviceDetails.customization === \"shield\"\n"
+#~ "    );\n"
+#~ "    return (\n"
+#~ "        <div className=\"card p-4 table-responsive\">\n"
+#~ "            <table className=\"table table-"
+#~ "borderless table-hover mb-0\">\n"
+#~ "                <tbody>\n"
+#~ "                    <tr>\n"
+#~ "                        <th>{_(\"Device\")}</th>\n"
+#~ "                        <td>\n"
+#~ "                            {customization\n"
+#~ "                                ? \"Turris Shield\"\n"
+#~ "                                : deviceDetails.model}\n"
+#~ "                        </td>\n"
+#~ "                    </tr>\n"
+#~ "                    <tr>\n"
+#~ "                        <th>{_(\"Serial number\")}</th>\n"
+#~ "                        <td>{deviceDetails.serial}</td>\n"
+#~ "                    </tr>\n"
+#~ "                    <tr>\n"
+#~ "                        <th>{_(\"reForis version\")}</th>\n"
+#~ "                        <td>{deviceDetails.reforis_version}</td>\n"
+#~ "                    </tr>\n"
+#~ "                    <tr>\n"
+#~ "                        <th>{_(\"Turris OS version\")}</th>\n"
+#~ "                        <td>{deviceDetails.os_version}</td>\n"
+#~ "                    </tr>\n"
+#~ "                    <tr>\n"
+#~ "                        <th>\n"
+#~ "                            {_(\"Turris OS branch\")}\n"
+#~ "                            <i\n"
+#~ "                                className=\"fas fa-"
+#~ "question-circle ml-1 help\"\n"
+#~ "                                data-tip={_("
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\n"
+#~ "    ),\n"
+#~ "    unmanaged: _(\n"
+#~ "        "
+#~ msgstr ""
+
+#~ msgid "Data Collection"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\n"
+#~ "Apart from the standard installation, "
+#~ "you can optionally select bundles of "
+#~ "additional software that'd be installed "
+#~ "on \n"
+#~ "the router. This software can be "
+#~ "selected from the following list. Please"
+#~ " note that only software that is "
+#~ "part of \n"
+#~ "TurrisOS or that has been installed "
+#~ "from a package list and not marked"
+#~ " as community-supported is actually "
+#~ "supported\n"
+#~ "by Turris team.\n"
+#~ "        "
+#~ msgstr ""
+
+#~ msgid ""
+#~ ");\n"
+#~ "\n"
+#~ "    if (password.length > 128)\n"
+#~ "        return _("
+#~ msgstr ""
+
+#~ msgid "Cannot rollback automatic restart settings."
+#~ msgstr ""
+
+#~ msgid "403 - Forbidden"
+#~ msgstr ""
+
+#~ msgid "Forbidden You don't have permission to access"
+#~ msgstr ""
+

@@ -7,17 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-07-01 11:50+0200\n"
+"POT-Creation-Date: 2021-11-08 15:54+0100\n"
 "PO-Revision-Date: 2021-09-26 04:35+0000\n"
-"Last-Translator: Kristoffer Grundström <swedishsailfishosuser@tutanota.com>\n"
-"Language-Team: Swedish <https://hosted.weblate.org/projects/turris/reforis/"
-"sv/>\n"
+"Last-Translator: Kristoffer Grundström "
+"<swedishsailfishosuser@tutanota.com>\n"
 "Language: sv\n"
+"Language-Team: Swedish "
+"<https://hosted.weblate.org/projects/turris/reforis/sv/>\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.9-dev\n"
 "Generated-By: Babel 2.9.1\n"
 
 #: js/src/about/About.js:23 js/src/main/pages.js:105 js/src/main/pages.js:224
@@ -26,64 +26,42 @@ msgstr "Om"
 
 #: js/src/about/About.js:26
 msgid ""
-"\n"
-"                    ),\n"
-"                }}\n"
-"            />\n"
-"            <AboutTableWithErrorAndSpinner\n"
-"                apiState={getAboutResponse.state}\n"
-"                deviceDetails={getAboutResponse.data || {}}\n"
-"            />\n"
-"        </>\n"
-"    );\n"
-"}\n"
-"\n"
-"AboutTable.propTypes = {\n"
-"    deviceDetails: PropTypes.object.isRequired,\n"
-"    customization: PropTypes.bool,\n"
-"};\n"
-"\n"
-"function AboutTable({ deviceDetails }) {\n"
-"    const customization = !!(\n"
-"        deviceDetails &&\n"
-"        deviceDetails.customization !== undefined &&\n"
-"        deviceDetails.customization === \"shield\"\n"
-"    );\n"
-"    return (\n"
-"        <div className=\"card p-4 table-responsive\">\n"
-"            <table className=\"table table-borderless table-hover mb-0\">"
-"\n"
-"                <tbody>\n"
-"                    <tr>\n"
-"                        <th>{_(\"Device\")}</th>\n"
-"                        <td>\n"
-"                            {customization\n"
-"                                ? \"Turris Shield\"\n"
-"                                : deviceDetails.model}\n"
-"                        </td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>{_(\"Serial number\")}</th>\n"
-"                        <td>{deviceDetails.serial}</td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>{_(\"reForis version\")}</th>\n"
-"                        <td>{deviceDetails.reforis_version}</td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>{_(\"Turris OS version\")}</th>\n"
-"                        <td>{deviceDetails.os_version}</td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>\n"
-"                            {_(\"Turris OS branch\")}\n"
-"                            <i\n"
-"                                className=\"fas fa-question-circle ml-1 "
-"help\"\n"
-"                                data-tip={_("
+"Here you can find some information about your device. Please include it "
+"into your message if you contact our <a "
+"href=\"mailto:tech.support@turris.cz\" target=\"_blank\">customer "
+"support</a>."
 msgstr ""
 
-#: js/src/about/About.js:107
+#: js/src/about/About.js:55
+msgid "Device"
+msgstr ""
+
+#: js/src/about/About.js:63
+#, fuzzy
+msgid "Serial number"
+msgstr "Porten är ett nummer."
+
+#: js/src/about/About.js:67
+#, fuzzy
+msgid "reForis version"
+msgstr "Version av kärna"
+
+#: js/src/about/About.js:71
+msgid "Turris OS version"
+msgstr ""
+
+#: js/src/about/About.js:76
+msgid "Turris OS branch"
+msgstr ""
+
+#: js/src/about/About.js:79
+msgid ""
+"Turris OS is currently released in various branches, which have different"
+" functions and varying stability - you can pick, which branch you want to"
+" test."
+msgstr ""
+
+#: js/src/about/About.js:105
 msgid "Kernel version"
 msgstr "Version av kärna"
 
@@ -127,36 +105,36 @@ msgstr "Bekräfta omstart"
 msgid "Go to top"
 msgstr ""
 
-#: js/src/common/network/DHCP6ClientsList.js:20
+#: js/src/common/network/DHCP6ClientsList.js:24
 msgid "IPv6 DHCP Client List"
 msgstr "DHCP-klientlista för IPv6"
 
-#: js/src/common/network/DHCP6ClientsList.js:22
+#: js/src/common/network/DHCP6ClientsList.js:26
 msgid ""
 "This list contains all devices that are connected to the network through "
 "wired or wireless connections using IPv6."
 msgstr ""
 
-#: js/src/common/network/DHCP6ClientsList.js:28
+#: js/src/common/network/DHCP6ClientsList.js:32
 #: js/src/common/network/DHCPClientsList.js:28
 msgid "No clients found."
 msgstr "Inga klienter hittades."
 
-#: js/src/common/network/DHCP6ClientsList.js:35
+#: js/src/common/network/DHCP6ClientsList.js:39
 #: js/src/common/network/DHCPClientsList.js:35 js/src/hostname/Hostname.js:21
 #: js/src/main/pages.js:92 js/src/main/pages.js:183
 msgid "Hostname"
 msgstr "Värdnamn"
 
-#: js/src/common/network/DHCP6ClientsList.js:36
+#: js/src/common/network/DHCP6ClientsList.js:40
 msgid "IPv6 Address"
 msgstr "IPv6-address"
 
-#: js/src/common/network/DHCP6ClientsList.js:37
+#: js/src/common/network/DHCP6ClientsList.js:41
 msgid "DUID"
 msgstr "DUID"
 
-#: js/src/common/network/DHCP6ClientsList.js:38
+#: js/src/common/network/DHCP6ClientsList.js:42
 #: js/src/common/network/DHCPClientsList.js:38
 msgid "Expires"
 msgstr "Upphör att gälla"
@@ -266,7 +244,7 @@ msgid "IP address"
 msgstr "IP-adress"
 
 #: js/src/common/network/StaticIPForm.js:60
-#: js/src/guestNetwork/GuestNetworkForm.js:87 js/src/lan/LANManagedForm.js:72
+#: js/src/guestNetwork/GuestNetworkForm.js:88 js/src/lan/LANManagedForm.js:72
 msgid "Network mask"
 msgstr "Nätverksmask"
 
@@ -283,7 +261,7 @@ msgid "DNS server 2"
 msgstr "DNS-server 2"
 
 #: js/src/common/network/StaticIPForm.js:111
-#: js/src/common/network/validators.js:19 js/src/wan/MACForm.js:91
+#: js/src/common/network/validators.js:19 js/src/wan/MACForm.js:92
 #: js/src/wan/WAN6Form.js:504 js/src/wan/WAN6Form.js:533
 #: js/src/wan/WAN6Form.js:545 js/src/wan/WANForm.js:173
 msgid "This field is required."
@@ -359,7 +337,7 @@ msgid ""
 "            "
 msgstr ""
 
-#: js/src/dns/DNS.js:62 js/src/overview/Overview.js:70
+#: js/src/dns/DNS.js:62 js/src/overview/Overview.js:70 js/src/wan/WAN.js:48
 msgid "Connection Test"
 msgstr "Anslutningstest"
 
@@ -556,51 +534,64 @@ msgstr "Routerns IP-adress i gästens inre nätverk."
 msgid "Network mask of the guest inner network."
 msgstr ""
 
-#: js/src/guestNetwork/GuestNetworkForm.js:24
+#: js/src/guestNetwork/GuestNetworkForm.js:22
+msgid ""
+"This option enables you to set a bandwidth limit for the guest network, "
+"so that your main network doesn't get slowed-down by it."
+msgstr ""
+
+#: js/src/guestNetwork/GuestNetworkForm.js:25
 msgid "Download speed in guest network (in kilobits per second)."
 msgstr "Nerladdningshastighet i gästnätverket (i kilobits per sekund)."
 
-#: js/src/guestNetwork/GuestNetworkForm.js:27
+#: js/src/guestNetwork/GuestNetworkForm.js:28
 msgid "Upload speed in guest network (in kilobits per second)."
 msgstr "Uppladdningshastighet i gästnätverket (i kilobits per sekund)."
 
-#: js/src/guestNetwork/GuestNetworkForm.js:64
+#: js/src/guestNetwork/GuestNetworkForm.js:65
 msgid "Guest Network Settings"
 msgstr ""
 
-#: js/src/guestNetwork/GuestNetworkForm.js:66
+#: js/src/guestNetwork/GuestNetworkForm.js:67
 msgid "Enable Guest Network"
 msgstr ""
 
-#: js/src/guestNetwork/GuestNetworkForm.js:76 js/src/lan/LANManagedForm.js:61
+#: js/src/guestNetwork/GuestNetworkForm.js:77 js/src/lan/LANManagedForm.js:61
 msgid "Router IP address"
 msgstr "Routerns IP-adress"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:97 js/src/lan/LANManagedForm.js:82
+#: js/src/guestNetwork/GuestNetworkForm.js:98 js/src/lan/LANManagedForm.js:82
 msgid "Enable DHCP"
 msgstr "Aktivera DHCP"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:115
+#: js/src/guestNetwork/GuestNetworkForm.js:116
 msgid "Enable QoS"
 msgstr "Aktivera QoS"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:158
+#: js/src/guestNetwork/GuestNetworkForm.js:159
 #: js/src/overview/Cards/NetmetrCard.js:67
 msgid "Download"
 msgstr ""
 
-#: js/src/guestNetwork/GuestNetworkForm.js:171
+#: js/src/guestNetwork/GuestNetworkForm.js:172
 #: js/src/overview/Cards/NetmetrCard.js:83
 msgid "Upload"
 msgstr ""
 
-#: js/src/guestNetwork/GuestNetworkForm.js:190
+#: js/src/guestNetwork/GuestNetworkForm.js:191
 msgid "Download speed must be positive"
 msgstr "Nerladdningshastigheten måste vara positiv"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:193
+#: js/src/guestNetwork/GuestNetworkForm.js:194
 msgid "Upload speed must be positive"
 msgstr "Uppladdningshastigheten måste vara positiv"
+
+#: js/src/guestNetwork/GuestNetworkNotification.js:12
+msgid ""
+"This network currently doesn't contain any devices. The changes you make "
+"here will become fully functional after you assign a network interface to"
+" this network."
+msgstr ""
 
 #: js/src/guestNetwork/GuestNetworkNotification.js:16
 msgid "All network interfaces of this network are currently down."
@@ -661,7 +652,8 @@ msgstr ""
 #: js/src/guide/constants.js:48
 msgid "In order to access the internet, you need to configure your WAN interface."
 msgstr ""
-"Du behöver konfigurera ditt WAN-gränssnitt för att få åtkomst till internet."
+"Du behöver konfigurera ditt WAN-gränssnitt för att få åtkomst till "
+"internet."
 
 #: js/src/guide/constants.js:51
 msgid ""
@@ -774,7 +766,7 @@ msgstr ""
 
 #: js/src/guide/steps.js:20 js/src/main/pages.js:72 js/src/main/pages.js:163
 #: js/src/notificationsSettings/SMTPCustomForm.js:114
-#: reforis/templates/login.html:29
+#: js/src/password/Password.js:174 reforis/templates/login.html:30
 msgid "Password"
 msgstr "Lösenord"
 
@@ -868,7 +860,7 @@ msgstr ""
 msgid "Local Server"
 msgstr "Lokal server"
 
-#: js/src/guide/GuidePages/WorkflowSelect.js:38 js/src/lan/LANForm.js:35
+#: js/src/guide/GuidePages/WorkflowSelect.js:38 js/src/lan/LANForm.js:32
 msgid "Router"
 msgstr "Router"
 
@@ -1057,27 +1049,32 @@ msgid ""
 "            "
 msgstr ""
 
-#: js/src/lan/LANForm.js:19
+#: js/src/lan/LANForm.js:18
 msgid ""
-"\n"
-"    ),\n"
-"    unmanaged: _(\n"
-"        "
+"Router mode means that this device manages the LAN (acts as a router, can"
+" assign IP addresses, etc.)."
 msgstr ""
 
-#: js/src/lan/LANForm.js:36
+#: js/src/lan/LANForm.js:21
+msgid ""
+"Computer mode means that this device acts as a client in this network. It"
+" acts similarly to WAN, but it has opened ports for configuration "
+"interfaces and other services."
+msgstr ""
+
+#: js/src/lan/LANForm.js:33
 msgid "Computer"
 msgstr "Dator"
 
-#: js/src/lan/LANForm.js:86
+#: js/src/lan/LANForm.js:83
 msgid "LAN Settings"
 msgstr "Inställningar för LAN"
 
-#: js/src/lan/LANForm.js:89
+#: js/src/lan/LANForm.js:86
 msgid "LAN mode"
 msgstr "LAN-läge"
 
-#: js/src/lan/LANForm.js:105
+#: js/src/lan/LANForm.js:102
 msgid "Redirect to 192.168.1.1"
 msgstr "Dirigera om till 192.168.1.1"
 
@@ -1460,8 +1457,8 @@ msgid "Disabled"
 msgstr "Avstängt"
 
 #: js/src/overview/Cards/DataCollectionCard.js:44
-msgid "Data Collection"
-msgstr "Data-insamling"
+msgid "Threat Detection"
+msgstr ""
 
 #: js/src/overview/Cards/DynamicFirewallCard.js:24
 msgid "Dynamic Firewall"
@@ -1518,21 +1515,18 @@ msgid ""
 "from the following list:"
 msgstr ""
 
-#: js/src/packageManagement/packages/PackageCheckBox.js:53
+#: js/src/packageManagement/packages/PackageCheckBox.js:55
 msgid "More details"
 msgstr "Fler detaljer"
 
 #: js/src/packageManagement/packages/Packages.js:21
 msgid ""
-"\n"
 "Apart from the standard installation, you can optionally select bundles "
-"of additional software that'd be installed on \n"
-"the router. This software can be selected from the following list. Please"
-" note that only software that is part of \n"
-"TurrisOS or that has been installed from a package list and not marked as"
-" community-supported is actually supported\n"
-"by Turris team.\n"
-"        "
+"of additional software that'd be installed on the router. This software "
+"can be selected from the following list. Please note that only software "
+"that is part of TurrisOS or that has been installed from a package list "
+"and not marked as community-supported is actually supported by Turris "
+"team."
 msgstr ""
 
 #: js/src/packageManagement/packages/PackagesForm.js:29
@@ -1671,8 +1665,8 @@ msgid ""
 "Updates will be installed with an adjustable delay. You can also approve "
 "them manually."
 msgstr ""
-"Uppdateringar kommer att installeras med en justerbar fördröjning. Du kan "
-"även godkänna dem manuellt."
+"Uppdateringar kommer att installeras med en justerbar fördröjning. Du kan"
+" även godkänna dem manuellt."
 
 #: js/src/packageManagement/updateSettings/forms/UpdateApprovalForm.js:28
 msgid "Update approval needed"
@@ -1865,23 +1859,56 @@ msgid ""
 "the root account will be blocked.)"
 msgstr ""
 "Samma lösenord kommer att användas för åtkomst till detta "
-"administrationsgränssnitt, för root-användaren i webbgränssnittet LuCI och "
-"för SSH-inloggningar. Använd ett starkt lösenord! (Om du väljer att inte "
-"ställa in lösenordet för avancerad konfigurering här så kommer du ha "
-"möjlighet att göra det senare. Root-kontot kommer att vara blockerat tills "
-"dess.)"
+"administrationsgränssnitt, för root-användaren i webbgränssnittet LuCI "
+"och för SSH-inloggningar. Använd ett starkt lösenord! (Om du väljer att "
+"inte ställa in lösenordet för avancerad konfigurering här så kommer du ha"
+" möjlighet att göra det senare. Root-kontot kommer att vara blockerat "
+"tills dess.)"
 
 #: js/src/password/Password.js:78
 msgid ""
-");\n"
-"\n"
-"    if (password.length > 128)\n"
-"        return _("
+"The password you've entered has not been saved. It has been compromised "
+"and appears ${\n"
+"                            forisPassword.count || rootPassword.count\n"
+"                        } times in ${\n"
+"                            forisPassword.list || rootPassword.list\n"
+"                        } list. Please enter another, more secure "
+"password."
 msgstr ""
-");\n"
-"\n"
-"    if (password.length > 128)\n"
-"        return _("
+
+#: js/src/password/Password.js:89
+msgid "Password changed successfully."
+msgstr ""
+
+#: js/src/password/Password.js:147
+#, fuzzy
+msgid "Password Settings"
+msgstr "Nätverksinställningar"
+
+#: js/src/password/Password.js:176
+msgid ""
+"Here you can set password for the administration interface. Make sure to "
+"set a secure password that is long and unique."
+msgstr ""
+
+#: js/src/password/Password.js:193 js/src/password/Password.js:197
+msgid "The password confirmation does not match."
+msgstr ""
+
+#: js/src/password/Password.js:212
+#, fuzzy
+msgid "Password can't be empty."
+msgstr "Kan inte vara tomt."
+
+#: js/src/password/Password.js:214
+#, fuzzy
+msgid "Password should have min 6 symbols."
+msgstr "PIN-kod för TLS bör ha åtminstone en symbol."
+
+#: js/src/password/Password.js:217
+#, fuzzy
+msgid "Password should have max 128 symbols."
+msgstr "PIN-kod för TLS bör ha åtminstone en symbol."
 
 #: js/src/password/RootPasswordForm.js:51
 msgid "Advanced Administration Password"
@@ -1924,8 +1951,8 @@ msgid ""
 "Please select the timezone the router is being operated in. Correct "
 "setting is required to display the right time and for related functions."
 msgstr ""
-"Välj tidszonen som routern används i. Rätt inställning krävs för att visa "
-"den rätta tiden och för relaterade funktioner."
+"Välj tidszonen som routern används i. Rätt inställning krävs för att visa"
+" den rätta tiden och för relaterade funktioner."
 
 #: js/src/regionAndTime/RegionForm.js:72
 msgid "Continent or ocean"
@@ -2013,32 +2040,55 @@ msgid ""
 "Please report this error to our support team via e-mail: <a "
 "href=\"mailto:tech.support@turris.cz\">tech.support@turris.cz</a>."
 msgstr ""
-"Vänligen rapportera det här felet till vårat hjälp-team via e-post: <a href="
-"\"mailto:tech.support@turris.cz\">tech.support@turris.cz</a>."
+"Vänligen rapportera det här felet till vårat hjälp-team via e-post: <a "
+"href=\"mailto:tech.support@turris.cz\">tech.support@turris.cz</a>."
 
-#: js/src/wan/MACForm.js:16
+#: js/src/wan/MACForm.js:14
+msgid ""
+"Useful in cases, when a specific MAC address is required by your internet"
+" service provider."
+msgstr ""
+
+#: js/src/wan/MACForm.js:17
 msgid "Colon is used as a separator, for example 00:11:22:33:44:55"
 msgstr ""
 
-#: js/src/wan/MACForm.js:19
+#: js/src/wan/MACForm.js:20
 msgid "MAC address of the WAN interface."
 msgstr "WAN-gränssnittets MAC-adress."
 
-#: js/src/wan/MACForm.js:52
+#: js/src/wan/MACForm.js:53
 msgid "MAC Settings"
 msgstr "MAC-inställningar"
 
-#: js/src/wan/MACForm.js:54
+#: js/src/wan/MACForm.js:55
 msgid "Custom MAC address"
 msgstr "Anpassad MAC-adress"
 
-#: js/src/wan/MACForm.js:65
+#: js/src/wan/MACForm.js:66
 msgid "Current MAC address"
 msgstr "Nuvarande MAC-adress"
 
-#: js/src/wan/MACForm.js:71
+#: js/src/wan/MACForm.js:72
 msgid "Set the new MAC address"
 msgstr "Ställ in den nya MAC-adressen"
+
+#: js/src/wan/WAN.js:29
+msgid ""
+"Here you specify your WAN port settings. Usually, you can leave these "
+"options untouched unless instructed otherwise by your internet service "
+"provider. Also, in case there is a cable or DSL modem connecting your "
+"router to the network, it is usually not necessary to change this "
+"setting."
+msgstr ""
+
+#: js/src/wan/WAN.js:51
+msgid ""
+"Here you can test you connection settings. Remember to click on the "
+"<b>Save button</b> before running the test. Note that sometimes it takes "
+"a while before the connection is fully initialized. So it might be useful"
+" to wait for a while before running this test."
+msgstr ""
 
 #: js/src/wan/WAN6Form.js:26
 msgid "DUID which will be provided to the DHCPv6 server."
@@ -2080,8 +2130,8 @@ msgid ""
 "Some tunnel providers allow you to have public dynamic IPv4. Note that "
 "you need to fill in some extra fields to make it work."
 msgstr ""
-"En del tunnel-leverantörer tillåter dig att ha publikt dynamisk IPv4. Notera "
-"att du behöver fylla i lite extra fält för att få det att fungera."
+"En del tunnel-leverantörer tillåter dig att ha publikt dynamisk IPv4. "
+"Notera att du behöver fylla i lite extra fält för att få det att fungera."
 
 #: js/src/wan/WAN6Form.js:60
 msgid "ID of your tunnel which was assigned to you by the provider."
@@ -2092,8 +2142,8 @@ msgid ""
 "Username which will be used to provide credentials to your tunnel "
 "provider."
 msgstr ""
-"Användarnamn som kommer att användas för att tillhandahålla uppgifter till "
-"din tunnel-leverantör."
+"Användarnamn som kommer att användas för att tillhandahålla uppgifter "
+"till din tunnel-leverantör."
 
 #: js/src/wan/WAN6Form.js:66
 msgid "Key which will be used to provide credentials to your tunnel provider."
@@ -2193,6 +2243,14 @@ msgstr "Lösenord för PAP/CHAP"
 msgid "Unfortunately, we were unable to detect any wireless cards in your router."
 msgstr "Tyvärr så kunde vi inte upptäcka några trådlösa kort i din router."
 
+#: js/src/wifi/WiFi.js:41
+msgid ""
+"If you want to use your router as a Wi-Fi access point, enable Wi-Fi here"
+" and fill in an SSID (the name of the access point) and a corresponding "
+"password. You can then set up your mobile devices using the QR code "
+"available within the form."
+msgstr ""
+
 #: reforis/views.py:52
 msgid "Wrong password."
 msgstr "Fel lösenord."
@@ -2234,8 +2292,8 @@ msgid ""
 "Sending of the testing message failed, your configuration is possibly "
 "wrong."
 msgstr ""
-"Skickandet av test-meddelandet misslyckades, din konfiguration är troligtvis "
-"fel."
+"Skickandet av test-meddelandet misslyckades, din konfiguration är "
+"troligtvis fel."
 
 #: reforis/foris_controller_api/modules/updater.py:65
 msgid "Cannot change automatic restart settings."
@@ -2244,10 +2302,6 @@ msgstr "Kan inte ändra inställningarna för automatisk omstart."
 #: reforis/foris_controller_api/modules/updater.py:80
 msgid "Cannot update approvals settings."
 msgstr "Kan inte uppdatera inställningarna för godkännanden."
-
-#: reforis/foris_controller_api/modules/updater.py:84
-msgid "Cannot rollback automatic restart settings."
-msgstr "Kan inte rulla tillbaka inställningarna för automatisk omstart."
 
 #: reforis/foris_controller_api/modules/updater.py:175
 msgid "Cannot start updater"
@@ -2261,19 +2315,19 @@ msgstr "Du kan inte ställa in det med automatiska uppdateringar avstängt."
 msgid "Guide"
 msgstr "Guide"
 
-#: reforis/templates/login.html:32
+#: reforis/templates/login.html:33
 msgid "Log in"
 msgstr "Logga in"
 
-#: reforis/templates/login.html:34
+#: reforis/templates/login.html:35
 msgid "Go to LuCI"
 msgstr "Gå till LuCi"
 
-#: reforis/templates/login.html:34
+#: reforis/templates/login.html:35
 msgid "or"
 msgstr "eller"
 
-#: reforis/templates/login.html:35
+#: reforis/templates/login.html:36
 msgid "back to select"
 msgstr "backa för att välja"
 
@@ -2293,15 +2347,15 @@ msgstr "Extra:"
 msgid "Trace:"
 msgstr "Spår:"
 
-#: reforis/templates/errors/403.html:4
-msgid "403 - Forbidden"
-msgstr "403 - Förbjudet"
-
-#: reforis/templates/errors/403.html:9
-msgid "Forbidden You don't have permission to access"
+#: reforis/templates/errors/401.html:4
+msgid "401 - Unauthorized"
 msgstr ""
 
-#: reforis/templates/errors/403.html:10
+#: reforis/templates/errors/401.html:9
+msgid "You have to authenticate first."
+msgstr ""
+
+#: reforis/templates/errors/401.html:10
 #, python-format
 msgid "Do you want to <a href=\"%(link)s\">log in</a>?"
 msgstr "Vill du <a href=\"%(link)s\">logga in</a>?"
@@ -2911,3 +2965,110 @@ msgstr "500 Server-fel"
 #~ "within the form.\n"
 #~ "            "
 #~ msgstr ""
+
+#~ msgid ""
+#~ "\n"
+#~ "                    ),\n"
+#~ "                }}\n"
+#~ "            />\n"
+#~ "            <AboutTableWithErrorAndSpinner\n"
+#~ "                apiState={getAboutResponse.state}\n"
+#~ "                deviceDetails={getAboutResponse.data || {}}\n"
+#~ "            />\n"
+#~ "        </>\n"
+#~ "    );\n"
+#~ "}\n"
+#~ "\n"
+#~ "AboutTable.propTypes = {\n"
+#~ "    deviceDetails: PropTypes.object.isRequired,\n"
+#~ "    customization: PropTypes.bool,\n"
+#~ "};\n"
+#~ "\n"
+#~ "function AboutTable({ deviceDetails }) {\n"
+#~ "    const customization = !!(\n"
+#~ "        deviceDetails &&\n"
+#~ "        deviceDetails.customization !== undefined &&\n"
+#~ "        deviceDetails.customization === \"shield\"\n"
+#~ "    );\n"
+#~ "    return (\n"
+#~ "        <div className=\"card p-4 table-responsive\">\n"
+#~ "            <table className=\"table table-"
+#~ "borderless table-hover mb-0\">\n"
+#~ "                <tbody>\n"
+#~ "                    <tr>\n"
+#~ "                        <th>{_(\"Device\")}</th>\n"
+#~ "                        <td>\n"
+#~ "                            {customization\n"
+#~ "                                ? \"Turris Shield\"\n"
+#~ "                                : deviceDetails.model}\n"
+#~ "                        </td>\n"
+#~ "                    </tr>\n"
+#~ "                    <tr>\n"
+#~ "                        <th>{_(\"Serial number\")}</th>\n"
+#~ "                        <td>{deviceDetails.serial}</td>\n"
+#~ "                    </tr>\n"
+#~ "                    <tr>\n"
+#~ "                        <th>{_(\"reForis version\")}</th>\n"
+#~ "                        <td>{deviceDetails.reforis_version}</td>\n"
+#~ "                    </tr>\n"
+#~ "                    <tr>\n"
+#~ "                        <th>{_(\"Turris OS version\")}</th>\n"
+#~ "                        <td>{deviceDetails.os_version}</td>\n"
+#~ "                    </tr>\n"
+#~ "                    <tr>\n"
+#~ "                        <th>\n"
+#~ "                            {_(\"Turris OS branch\")}\n"
+#~ "                            <i\n"
+#~ "                                className=\"fas fa-"
+#~ "question-circle ml-1 help\"\n"
+#~ "                                data-tip={_("
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\n"
+#~ "    ),\n"
+#~ "    unmanaged: _(\n"
+#~ "        "
+#~ msgstr ""
+
+#~ msgid "Data Collection"
+#~ msgstr "Data-insamling"
+
+#~ msgid ""
+#~ "\n"
+#~ "Apart from the standard installation, "
+#~ "you can optionally select bundles of "
+#~ "additional software that'd be installed "
+#~ "on \n"
+#~ "the router. This software can be "
+#~ "selected from the following list. Please"
+#~ " note that only software that is "
+#~ "part of \n"
+#~ "TurrisOS or that has been installed "
+#~ "from a package list and not marked"
+#~ " as community-supported is actually "
+#~ "supported\n"
+#~ "by Turris team.\n"
+#~ "        "
+#~ msgstr ""
+
+#~ msgid ""
+#~ ");\n"
+#~ "\n"
+#~ "    if (password.length > 128)\n"
+#~ "        return _("
+#~ msgstr ""
+#~ ");\n"
+#~ "\n"
+#~ "    if (password.length > 128)\n"
+#~ "        return _("
+
+#~ msgid "Cannot rollback automatic restart settings."
+#~ msgstr "Kan inte rulla tillbaka inställningarna för automatisk omstart."
+
+#~ msgid "403 - Forbidden"
+#~ msgstr "403 - Förbjudet"
+
+#~ msgid "Forbidden You don't have permission to access"
+#~ msgstr ""
+
