@@ -36,9 +36,8 @@ msgid "Device"
 msgstr ""
 
 #: js/src/about/About.js:63
-#, fuzzy
 msgid "Serial number"
-msgstr "Port is an number."
+msgstr ""
 
 #: js/src/about/About.js:67
 msgid "reForis version"
@@ -89,7 +88,7 @@ msgstr ""
 
 #: js/src/common/RebootButton.js:51 js/src/maintenance/Reboot.js:16
 msgid "Reboot"
-msgstr "Reboot"
+msgstr ""
 
 #: js/src/common/RebootButton.js:68
 msgid "Are you sure you want to restart the router?"
@@ -125,9 +124,8 @@ msgid "Hostname"
 msgstr ""
 
 #: js/src/common/network/DHCP6ClientsList.js:40
-#, fuzzy
 msgid "IPv6 Address"
-msgstr "IP address"
+msgstr ""
 
 #: js/src/common/network/DHCP6ClientsList.js:41
 msgid "DUID"
@@ -140,11 +138,11 @@ msgstr ""
 
 #: js/src/common/network/DHCPClientForm.js:14
 msgid "Hostname which will be provided to DHCP server."
-msgstr "Hostname which will be provided to DHCP server."
+msgstr ""
 
 #: js/src/common/network/DHCPClientForm.js:38
 msgid "DHCP hostname"
-msgstr "DHCP hostname"
+msgstr ""
 
 #: js/src/common/network/DHCPClientsList.js:20
 msgid "DHCP Client List"
@@ -157,9 +155,8 @@ msgid ""
 msgstr ""
 
 #: js/src/common/network/DHCPClientsList.js:36
-#, fuzzy
 msgid "IPv4 Address"
-msgstr "IP address"
+msgstr ""
 
 #: js/src/common/network/DHCPClientsList.js:37
 msgid "MAC Address"
@@ -182,16 +179,14 @@ msgid ""
 "Enable this option to automatically assign IP addresses to the devices "
 "connected to the router."
 msgstr ""
-"Enable this option to automatically assign IP addresses to the devices "
-"connected to the router."
 
 #: js/src/common/network/DHCPServerForm.js:47
 msgid "DHCP start"
-msgstr "DHCP start"
+msgstr ""
 
 #: js/src/common/network/DHCPServerForm.js:57
 msgid "DHCP max leases"
-msgstr "DHCP max leases"
+msgstr ""
 
 #: js/src/common/network/DHCPServerForm.js:58
 msgid "Maximum number of addresses available for DHCP clients."
@@ -199,7 +194,7 @@ msgstr ""
 
 #: js/src/common/network/DHCPServerForm.js:71
 msgid "Lease time (hours)"
-msgstr "Lease time (hours)"
+msgstr ""
 
 #: js/src/common/network/DHCPValidators.js:71
 msgid "Value must be a number."
@@ -240,36 +235,34 @@ msgid ""
 "DNS server address is not required as the built-in DNS resolver is "
 "capable of working without it."
 msgstr ""
-"DNS server address is not required as the built-in DNS resolver is "
-"capable of working without it."
 
 #: js/src/common/network/StaticIPForm.js:50
 msgid "IP address"
-msgstr "IP address"
+msgstr ""
 
 #: js/src/common/network/StaticIPForm.js:60
 #: js/src/guestNetwork/GuestNetworkForm.js:88 js/src/lan/LANManagedForm.js:72
 msgid "Network mask"
-msgstr "Network mask"
+msgstr ""
 
 #: js/src/common/network/StaticIPForm.js:70 js/src/wan/WAN6Form.js:243
 msgid "Gateway"
-msgstr "Gateway"
+msgstr ""
 
 #: js/src/common/network/StaticIPForm.js:80 js/src/wan/WAN6Form.js:268
 msgid "DNS server 1"
-msgstr "DNS server 1"
+msgstr ""
 
 #: js/src/common/network/StaticIPForm.js:90 js/src/wan/WAN6Form.js:278
 msgid "DNS server 2"
-msgstr "DNS server 2"
+msgstr ""
 
 #: js/src/common/network/StaticIPForm.js:111
 #: js/src/common/network/validators.js:19 js/src/wan/MACForm.js:92
 #: js/src/wan/WAN6Form.js:504 js/src/wan/WAN6Form.js:533
 #: js/src/wan/WAN6Form.js:545 js/src/wan/WANForm.js:173
 msgid "This field is required."
-msgstr "This field is required."
+msgstr ""
 
 #: js/src/common/network/validators.js:12
 msgid "This is not a valid network mask."
@@ -277,46 +270,43 @@ msgstr ""
 
 #: js/src/connectionTest/ConnectionTestButton.js:26
 msgid "Test is running..."
-msgstr "Test is running..."
+msgstr ""
 
 #: js/src/connectionTest/ConnectionTestButton.js:29
 msgid "Test connection again"
-msgstr "Test connection again"
+msgstr ""
 
 #: js/src/connectionTest/ConnectionTestButton.js:32
 msgid "Test connection"
-msgstr "Test connection"
+msgstr ""
 
 #: js/src/connectionTest/ConnectionTestResult.js:14
 msgid "IPv4 connectivity"
-msgstr "IPv4 connectivity"
+msgstr ""
 
 #: js/src/connectionTest/ConnectionTestResult.js:15
 msgid "IPv4 gateway connectivity"
-msgstr "IPv4 gateway connectivity"
+msgstr ""
 
 #: js/src/connectionTest/ConnectionTestResult.js:16
 msgid "IPv6 connectivity"
-msgstr "IPv6 connectivity"
+msgstr ""
 
 #: js/src/connectionTest/ConnectionTestResult.js:17
 msgid "IPv6 gateway connectivity"
-msgstr "IPv6 gateway connectivity"
+msgstr ""
 
 #: js/src/connectionTest/ConnectionTestResult.js:83
-#, fuzzy
 msgid "Connection test successful"
-msgstr "Connection Test"
+msgstr ""
 
 #: js/src/connectionTest/ConnectionTestResult.js:88
-#, fuzzy
 msgid "Connection test failed"
-msgstr "Connection Test"
+msgstr ""
 
 #: js/src/connectionTest/ConnectionTestResult.js:93
-#, fuzzy
 msgid "Connection test not started"
-msgstr "Connection Test"
+msgstr ""
 
 #: js/src/dns/DNS.js:34
 msgid ""
@@ -344,7 +334,7 @@ msgstr ""
 
 #: js/src/dns/DNS.js:62 js/src/overview/Overview.js:70 js/src/wan/WAN.js:48
 msgid "Connection Test"
-msgstr "Connection Test"
+msgstr ""
 
 #: js/src/dns/DNS.js:65
 msgid ""
@@ -563,11 +553,11 @@ msgstr ""
 
 #: js/src/guestNetwork/GuestNetworkForm.js:77 js/src/lan/LANManagedForm.js:61
 msgid "Router IP address"
-msgstr "Router IP address"
+msgstr ""
 
 #: js/src/guestNetwork/GuestNetworkForm.js:98 js/src/lan/LANManagedForm.js:82
 msgid "Enable DHCP"
-msgstr "Enable DHCP"
+msgstr ""
 
 #: js/src/guestNetwork/GuestNetworkForm.js:116
 msgid "Enable QoS"
@@ -769,7 +759,7 @@ msgstr ""
 #: js/src/notificationsSettings/SMTPCustomForm.js:114
 #: js/src/password/Password.js:174 reforis/templates/login.html:30
 msgid "Password"
-msgstr "Password"
+msgstr ""
 
 #: js/src/guide/steps.js:24
 msgid "Workflow"
@@ -863,7 +853,7 @@ msgstr ""
 
 #: js/src/guide/GuidePages/WorkflowSelect.js:38 js/src/lan/LANForm.js:32
 msgid "Router"
-msgstr "Router"
+msgstr ""
 
 #: js/src/guide/GuidePages/WorkflowSelect.js:39
 msgid "Minimal"
@@ -1061,15 +1051,15 @@ msgstr ""
 
 #: js/src/lan/LANForm.js:33
 msgid "Computer"
-msgstr "Computer"
+msgstr ""
 
 #: js/src/lan/LANForm.js:83
 msgid "LAN Settings"
-msgstr "LAN Settings"
+msgstr ""
 
 #: js/src/lan/LANForm.js:86
 msgid "LAN mode"
-msgstr "LAN mode"
+msgstr ""
 
 #: js/src/lan/LANForm.js:102
 msgid "Redirect to 192.168.1.1"
@@ -1077,24 +1067,24 @@ msgstr ""
 
 #: js/src/lan/LANManagedForm.js:29
 msgid "Router's IP address in the inner network."
-msgstr "Router's IP address in the inner network."
+msgstr ""
 
 #: js/src/lan/LANUnmanagedForm.js:24 js/src/wan/WANForm.js:25
 msgid "DHCP (automatic configuration)"
-msgstr "DHCP (automatic configuration)"
+msgstr ""
 
 #: js/src/lan/LANUnmanagedForm.js:25 js/src/wan/WAN6Form.js:76
 #: js/src/wan/WANForm.js:26
 msgid "Static IP address (manual configuration)"
-msgstr "Static IP address (manual configuration)"
+msgstr ""
 
 #: js/src/lan/LANUnmanagedForm.js:26
 msgid "Don't connect this device to LAN"
-msgstr "Don't connect this device to LAN"
+msgstr ""
 
 #: js/src/lan/LANUnmanagedForm.js:86 js/src/wan/WANForm.js:102
 msgid "IPv4 protocol"
-msgstr "IPv4 protocol"
+msgstr ""
 
 #: js/src/main/pages.js:37 js/src/main/pages.js:113
 #: js/src/overview/Overview.js:40
@@ -1107,7 +1097,7 @@ msgstr ""
 
 #: js/src/main/pages.js:66 js/src/main/pages.js:157
 msgid "Administration"
-msgstr "Administration"
+msgstr ""
 
 #: js/src/main/pages.js:77 js/src/main/pages.js:168
 msgid "Region & Time"
@@ -1118,7 +1108,7 @@ msgstr ""
 #: js/src/notifications/Notifications/Notifications.js:87
 #: js/src/notificationsSettings/NotificationsSettings.js:25
 msgid "Notifications"
-msgstr "Notifications"
+msgstr ""
 
 #: js/src/main/pages.js:87 js/src/main/pages.js:178
 #: js/src/maintenance/Maintenance.js:17
@@ -1157,17 +1147,17 @@ msgstr ""
 
 #: js/src/main/TopBar/LogoutButton.js:25
 msgid "Logout"
-msgstr "Logout"
+msgstr ""
 
 #: js/src/main/TopBar/NotificationsDropdown/NotificationsDropdownMenu.js:35
 #: js/src/notifications/Notifications/Notifications.js:72
 msgid "No notifications"
-msgstr "No notifications"
+msgstr ""
 
 #: js/src/main/TopBar/NotificationsDropdown/NotificationsDropdownMenu.js:104
 #: js/src/notifications/Notifications/DismissAllButton.js:24
 msgid "Dismiss all"
-msgstr "Dismiss all"
+msgstr ""
 
 #: js/src/main/TopBar/rebootDropdown/RebootDropdown.js:51
 msgid "Reboot Required"
@@ -1251,49 +1241,47 @@ msgstr ""
 
 #: js/src/notificationsSettings/CommonForm.js:17
 msgid "Reboot is required"
-msgstr "Reboot is required"
+msgstr ""
 
 #: js/src/notificationsSettings/CommonForm.js:18
 msgid "Reboot or attention is required"
-msgstr "Reboot or attention is required"
+msgstr ""
 
 #: js/src/notificationsSettings/CommonForm.js:19
 msgid "Reboot or attention is required or update was installed"
-msgstr "Reboot or attention is required or update was installed"
+msgstr ""
 
 #: js/src/notificationsSettings/CommonForm.js:50
 msgid "Recipient's email"
-msgstr "Recipient's email"
+msgstr ""
 
 #: js/src/notificationsSettings/CommonForm.js:61
 msgid "Importance"
-msgstr "Importance"
+msgstr ""
 
 #: js/src/notificationsSettings/CommonForm.js:70
 msgid "Send news"
-msgstr "Send news"
+msgstr ""
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:20
 msgid "Turris"
-msgstr "Turris"
+msgstr ""
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:24
 msgid "Custom"
-msgstr "Custom"
+msgstr ""
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:81
-#, fuzzy
 msgid "Notification Settings"
-msgstr "Notifications"
+msgstr ""
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:83
-#, fuzzy
 msgid "Enable Email Notifications"
-msgstr "Enable email notifications"
+msgstr ""
 
 #: js/src/notificationsSettings/NotificationsEmailSettingsForm.js:93
 msgid "SMTP provider"
-msgstr "SMTP provider"
+msgstr ""
 
 #: js/src/notificationsSettings/NotificationsSettings.js:27
 msgid ""
@@ -1305,15 +1293,15 @@ msgstr ""
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:22
 msgid "None"
-msgstr "None"
+msgstr ""
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:23
 msgid "SSL"
-msgstr "SSL"
+msgstr ""
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:24
 msgid "STARTTLS"
-msgstr "STARTTLS"
+msgstr ""
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:61
 msgid "SMTP Settings"
@@ -1321,28 +1309,28 @@ msgstr ""
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:63
 msgid "Sender address (From)"
-msgstr "Sender address (From)"
+msgstr ""
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:75
 msgid "Server address"
-msgstr "Server address"
+msgstr ""
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:86
 msgid "Server port"
-msgstr "Server port"
+msgstr ""
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:97
 msgid "Security"
-msgstr "Security"
+msgstr ""
 
 #: js/src/notificationsSettings/SMTPCustomForm.js:106
 #: js/src/wan/WAN6Form.js:434
 msgid "Username"
-msgstr "Username"
+msgstr ""
 
 #: js/src/notificationsSettings/SMTPTurrisForm.js:37
 msgid "Sender's name"
-msgstr "Sender's name"
+msgstr ""
 
 #: js/src/notificationsSettings/TestNotification.js:29
 msgid ""
@@ -1383,58 +1371,50 @@ msgid ""
 "additional settings. If you want to set your own SMTP server, please "
 "select \"Custom\" and enter required settings."
 msgstr ""
-"If you set SMTP provider to \"Turris\", the servers provided to members "
-"of the Turris project would be used. These servers do not require any "
-"additional settings. If you want to set your own SMTP server, please "
-"select \"Custom\" and enter required settings."
 
 #: js/src/notificationsSettings/helpTexts.js:15
 msgid "Email address of recipient. Separate multiple addresses by comma."
-msgstr "Email address of recipient. Separate multiple addresses by comma."
+msgstr ""
 
 #: js/src/notificationsSettings/helpTexts.js:18
 msgid "Send emails about new features."
-msgstr "Send emails about new features."
+msgstr ""
 
 #: js/src/notificationsSettings/helpTexts.js:21
 msgid ""
 "Name of the sender - will be used as a part of the sender's email address"
 " before the \"at\" sign."
 msgstr ""
-"Name of the sender - will be used as a part of the sender's email address"
-" before the \"at\" sign."
 
 #: js/src/notificationsSettings/helpTexts.js:26
 msgid "This is the address notifications are send from."
-msgstr "This is the address notifications are send from."
+msgstr ""
 
 #: js/src/notificationsSettings/validator.js:23
 msgid "Can't be empty."
-msgstr "Can't be empty."
+msgstr ""
 
 #: js/src/notificationsSettings/validator.js:33
 msgid "Sender's name can't be empty."
-msgstr "Sender's name can't be empty."
+msgstr ""
 
 #: js/src/notificationsSettings/validator.js:37
 msgid ""
 "Sender's name can contain only alphanumeric characters, dots and "
 "underscores."
 msgstr ""
-"Sender's name can contain only alphanumeric characters, dots and "
-"underscores."
 
 #: js/src/notificationsSettings/validator.js:46
 msgid "Port is an number."
-msgstr "Port is an number."
+msgstr ""
 
 #: js/src/notificationsSettings/validator.js:47
 msgid "Maximum port is 65535."
-msgstr "Maximum port is 65535."
+msgstr ""
 
 #: js/src/notificationsSettings/validator.js:48
 msgid "Minimum port is 1."
-msgstr "Minimum port is 1."
+msgstr ""
 
 #: js/src/overview/Cards/AutomaticUpdatesCard.js:44
 msgid "Automatic Updates"
@@ -1816,7 +1796,7 @@ msgstr ""
 
 #: js/src/password/ForisPasswordForm.js:55
 msgid "Set your password for this administration interface."
-msgstr "Set your password for this administration interface."
+msgstr ""
 
 #: js/src/password/ForisPasswordForm.js:60
 msgid "Current password"
@@ -1844,11 +1824,6 @@ msgid ""
 "configuration here, you will have the option to do so later. Until then, "
 "the root account will be blocked.)"
 msgstr ""
-"Same password would be used for accessing this administration interface, "
-"for root user in LuCI web interface and for SSH login. Use a strong "
-"password! (If you choose not to set the password for advanced "
-"configuration here, you will have the option to do so later. Until then, "
-"the root account will be blocked.)"
 
 #: js/src/password/Password.js:78
 msgid ""
@@ -1880,9 +1855,8 @@ msgid "The password confirmation does not match."
 msgstr ""
 
 #: js/src/password/Password.js:212
-#, fuzzy
 msgid "Password can't be empty."
-msgstr "Can't be empty."
+msgstr ""
 
 #: js/src/password/Password.js:214
 msgid "Password should have min 6 symbols."
@@ -2027,25 +2001,23 @@ msgstr ""
 
 #: js/src/wan/MACForm.js:17
 msgid "Colon is used as a separator, for example 00:11:22:33:44:55"
-msgstr "Colon is used as a separator, for example 00:11:22:33:44:55"
+msgstr ""
 
 #: js/src/wan/MACForm.js:20
 msgid "MAC address of the WAN interface."
 msgstr ""
 
 #: js/src/wan/MACForm.js:53
-#, fuzzy
 msgid "MAC Settings"
-msgstr "LAN Settings"
+msgstr ""
 
 #: js/src/wan/MACForm.js:55
 msgid "Custom MAC address"
-msgstr "Custom MAC address"
+msgstr ""
 
 #: js/src/wan/MACForm.js:66
-#, fuzzy
 msgid "Current MAC address"
-msgstr "Router IP address"
+msgstr ""
 
 #: js/src/wan/MACForm.js:72
 msgid "Set the new MAC address"
@@ -2070,19 +2042,17 @@ msgstr ""
 
 #: js/src/wan/WAN6Form.js:26
 msgid "DUID which will be provided to the DHCPv6 server."
-msgstr "DUID which will be provided to the DHCPv6 server."
+msgstr ""
 
 #: js/src/wan/WAN6Form.js:30
 msgid ""
 "IPv6 address and prefix length for WAN interface e.g. "
 "2001:db8:be13:37da::1/64"
 msgstr ""
-"IPv6 address and prefix length for WAN interface e.g. "
-"2001:db8:be13:37da::1/64"
 
 #: js/src/wan/WAN6Form.js:33
 msgid "Address range for local network, e.g. 2001:db8:be13:37da::/64"
-msgstr "Address range for local network, e.g. 2001:db8:be13:37da::/64"
+msgstr ""
 
 #: js/src/wan/WAN6Form.js:42
 msgid ""
@@ -2090,102 +2060,92 @@ msgid ""
 " address manually (e.g. when your WAN interface has a private address "
 "which is mapped to public IP)."
 msgstr ""
-"In order to use 6to4 protocol, you might need to specify your public IPv4"
-" address manually (e.g. when your WAN interface has a private address "
-"which is mapped to public IP)."
 
 #: js/src/wan/WAN6Form.js:49
 msgid ""
 "This address will be used as a endpoint of the tunnel on the provider's "
 "side."
 msgstr ""
-"This address will be used as a endpoint of the tunnel on the provider's "
-"side."
 
 #: js/src/wan/WAN6Form.js:52
 msgid "IPv6 addresses which will be routed to your network."
-msgstr "IPv6 addresses which will be routed to your network."
+msgstr ""
 
 #: js/src/wan/WAN6Form.js:53
 msgid "Maximum Transmission Unit in the tunnel (in bytes)."
-msgstr "Maximum Transmission Unit in the tunnel (in bytes)."
+msgstr ""
 
 #: js/src/wan/WAN6Form.js:56
 msgid ""
 "Some tunnel providers allow you to have public dynamic IPv4. Note that "
 "you need to fill in some extra fields to make it work."
 msgstr ""
-"Some tunnel providers allow you to have public dynamic IPv4. Note that "
-"you need to fill in some extra fields to make it work."
 
 #: js/src/wan/WAN6Form.js:60
 msgid "ID of your tunnel which was assigned to you by the provider."
-msgstr "ID of your tunnel which was assigned to you by the provider."
+msgstr ""
 
 #: js/src/wan/WAN6Form.js:63
 msgid ""
 "Username which will be used to provide credentials to your tunnel "
 "provider."
 msgstr ""
-"Username which will be used to provide credentials to your tunnel "
-"provider."
 
 #: js/src/wan/WAN6Form.js:66
 msgid "Key which will be used to provide credentials to your tunnel provider."
-msgstr "Key which will be used to provide credentials to your tunnel provider."
+msgstr ""
 
 #: js/src/wan/WAN6Form.js:74
 msgid "Disable IPv6"
-msgstr "Disable IPv6"
+msgstr ""
 
 #: js/src/wan/WAN6Form.js:75
 msgid "DHCPv6 (automatic configuration)"
-msgstr "DHCPv6 (automatic configuration)"
+msgstr ""
 
 #: js/src/wan/WAN6Form.js:77
 msgid "6to4 (public IPv4 address required)"
-msgstr "6to4 (public IPv4 address required)"
+msgstr ""
 
 #: js/src/wan/WAN6Form.js:78
 msgid "6in4 (public IPv4 address required)"
-msgstr "6in4 (public IPv4 address required)"
+msgstr ""
 
 #: js/src/wan/WAN6Form.js:162
-#, fuzzy
 msgid "IPv6 Settings"
-msgstr "LAN Settings"
+msgstr ""
 
 #: js/src/wan/WAN6Form.js:164
 msgid "IPv6 protocol"
-msgstr "IPv6 protocol"
+msgstr ""
 
 #: js/src/wan/WAN6Form.js:197
 msgid "Custom DUID"
-msgstr "Custom DUID"
+msgstr ""
 
 #: js/src/wan/WAN6Form.js:232
 msgid "Address"
-msgstr "Address"
+msgstr ""
 
 #: js/src/wan/WAN6Form.js:255
 msgid "Prefix"
-msgstr "Prefix"
+msgstr ""
 
 #: js/src/wan/WAN6Form.js:304
 msgid "Public IPv4"
-msgstr "Public IPv4"
+msgstr ""
 
 #: js/src/wan/WAN6Form.js:338
 msgid "Provider IPv4"
-msgstr "Provider IPv4"
+msgstr ""
 
 #: js/src/wan/WAN6Form.js:351
 msgid "Routed IPv6 prefix"
-msgstr "Routed IPv6 prefix"
+msgstr ""
 
 #: js/src/wan/WAN6Form.js:363
 msgid "MTU"
-msgstr "MTU"
+msgstr ""
 
 #: js/src/wan/WAN6Form.js:375
 msgid "Dynamic IPv4 handling"
@@ -2193,11 +2153,11 @@ msgstr ""
 
 #: js/src/wan/WAN6Form.js:419
 msgid "Tunnel ID"
-msgstr "Tunnel ID"
+msgstr ""
 
 #: js/src/wan/WAN6Form.js:449
 msgid "Key"
-msgstr "Key"
+msgstr ""
 
 #: js/src/wan/WAN6Form.js:527
 msgid "MTU has to be a number in the range of 1280-1480."
@@ -2212,17 +2172,16 @@ msgid "PPPoE (for DSL bridges, etc.)"
 msgstr ""
 
 #: js/src/wan/WANForm.js:100
-#, fuzzy
 msgid "IPv4 Settings"
-msgstr "LAN Settings"
+msgstr ""
 
 #: js/src/wan/WANForm.js:128
 msgid "PAP/CHAP username"
-msgstr "PAP/CHAP username"
+msgstr ""
 
 #: js/src/wan/WANForm.js:139
 msgid "PAP/CHAP password"
-msgstr "PAP/CHAP password"
+msgstr ""
 
 #: js/src/wifi/WiFi.js:26
 msgid "Unfortunately, we were unable to detect any wireless cards in your router."
@@ -2358,3 +2317,4 @@ msgstr ""
 #: reforis/templates/errors/500.html:8
 msgid "500 - Server error"
 msgstr ""
+
