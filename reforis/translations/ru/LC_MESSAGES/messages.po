@@ -7,18 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-07-01 11:50+0200\n"
-"PO-Revision-Date: 2021-07-08 07:33+0000\n"
-"Last-Translator: Алексей Леньшин <alenshin@gmail.com>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/turris/reforis/"
-"ru/>\n"
+"POT-Creation-Date: 2021-11-08 15:54+0100\n"
+"PO-Revision-Date: 2021-08-15 11:36+0000\n"
+"Last-Translator: Artem <Localizer_in_Russian@protonmail.com>\n"
 "Language: ru\n"
+"Language-Team: Russian "
+"<https://hosted.weblate.org/projects/turris/reforis/ru/>\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.8-dev\n"
 "Generated-By: Babel 2.9.1\n"
 
 #: js/src/about/About.js:23 js/src/main/pages.js:105 js/src/main/pages.js:224
@@ -26,120 +25,43 @@ msgid "About"
 msgstr "Сведения"
 
 #: js/src/about/About.js:26
-#, fuzzy
 msgid ""
-"\n"
-"                    ),\n"
-"                }}\n"
-"            />\n"
-"            <AboutTableWithErrorAndSpinner\n"
-"                apiState={getAboutResponse.state}\n"
-"                deviceDetails={getAboutResponse.data || {}}\n"
-"            />\n"
-"        </>\n"
-"    );\n"
-"}\n"
-"\n"
-"AboutTable.propTypes = {\n"
-"    deviceDetails: PropTypes.object.isRequired,\n"
-"    customization: PropTypes.bool,\n"
-"};\n"
-"\n"
-"function AboutTable({ deviceDetails }) {\n"
-"    const customization = !!(\n"
-"        deviceDetails &&\n"
-"        deviceDetails.customization !== undefined &&\n"
-"        deviceDetails.customization === \"shield\"\n"
-"    );\n"
-"    return (\n"
-"        <div className=\"card p-4 table-responsive\">\n"
-"            <table className=\"table table-borderless table-hover mb-0\">"
-"\n"
-"                <tbody>\n"
-"                    <tr>\n"
-"                        <th>{_(\"Device\")}</th>\n"
-"                        <td>\n"
-"                            {customization\n"
-"                                ? \"Turris Shield\"\n"
-"                                : deviceDetails.model}\n"
-"                        </td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>{_(\"Serial number\")}</th>\n"
-"                        <td>{deviceDetails.serial}</td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>{_(\"reForis version\")}</th>\n"
-"                        <td>{deviceDetails.reforis_version}</td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>{_(\"Turris OS version\")}</th>\n"
-"                        <td>{deviceDetails.os_version}</td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>\n"
-"                            {_(\"Turris OS branch\")}\n"
-"                            <i\n"
-"                                className=\"fas fa-question-circle ml-1 "
-"help\"\n"
-"                                data-tip={_("
+"Here you can find some information about your device. Please include it "
+"into your message if you contact our <a "
+"href=\"mailto:tech.support@turris.cz\" target=\"_blank\">customer "
+"support</a>."
 msgstr ""
-"\n"
-"                    ),\n"
-"                }}\n"
-"            />\n"
-"            <AboutTableWithErrorAndSpinner\n"
-"                apiState={getAboutResponse.state}\n"
-"                deviceDetails={getAboutResponse.data || {}}\n"
-"            />\n"
-"        </>\n"
-"    );\n"
-"}\n"
-"\n"
-"AboutTable.propTypes = {\n"
-"    deviceDetails: PropTypes.object.isRequired,\n"
-"    customization: PropTypes.bool,\n"
-"};\n"
-"\n"
-"function AboutTable({ deviceDetails }) {\n"
-"    const customization = !!(\n"
-"        deviceDetails &&\n"
-"        deviceDetails.customization !== undefined &&\n"
-"        deviceDetails.customization === \"shield\"\n"
-"    );\n"
-"    return (\n"
-"        <div className=\"card p-4 table-responsive\">\n"
-"            <table className=\"table table-borderless table-hover mb-0\">\n"
-"                <tbody>\n"
-"                    <tr>\n"
-"                        <th>{_(\"Device\")}</th>\n"
-"                        <td>\n"
-"                            {customization\n"
-"                                ? \"Turris Shield\"\n"
-"                                : deviceDetails.model}\n"
-"                        </td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>{_(\"Serial number\")}</th>\n"
-"                        <td>{deviceDetails.serial}</td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>{_(\"reForis version\")}</th>\n"
-"                        <td>{deviceDetails.reforis_version}</td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>{_(\"Turris OS version\")}</th>\n"
-"                        <td>{deviceDetails.os_version}</td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>\n"
-"                            {_(\"Turris OS branch\")}\n"
-"                            <i\n"
-"                                className=\"fas fa-question-circle ml-1 "
-"help\"\n"
-"                                data-tip={_("
 
-#: js/src/about/About.js:107
+#: js/src/about/About.js:55
+msgid "Device"
+msgstr ""
+
+#: js/src/about/About.js:63
+#, fuzzy
+msgid "Serial number"
+msgstr "Порт-это номер."
+
+#: js/src/about/About.js:67
+#, fuzzy
+msgid "reForis version"
+msgstr "Версия ядра"
+
+#: js/src/about/About.js:71
+msgid "Turris OS version"
+msgstr ""
+
+#: js/src/about/About.js:76
+msgid "Turris OS branch"
+msgstr ""
+
+#: js/src/about/About.js:79
+msgid ""
+"Turris OS is currently released in various branches, which have different"
+" functions and varying stability - you can pick, which branch you want to"
+" test."
+msgstr ""
+
+#: js/src/about/About.js:105
 msgid "Kernel version"
 msgstr "Версия ядра"
 
@@ -183,38 +105,38 @@ msgstr "Подтвердите перезагрузку"
 msgid "Go to top"
 msgstr "Наверх"
 
-#: js/src/common/network/DHCP6ClientsList.js:20
+#: js/src/common/network/DHCP6ClientsList.js:24
 msgid "IPv6 DHCP Client List"
 msgstr "Список клиентов DHCP IPv6"
 
-#: js/src/common/network/DHCP6ClientsList.js:22
+#: js/src/common/network/DHCP6ClientsList.js:26
 msgid ""
 "This list contains all devices that are connected to the network through "
 "wired or wireless connections using IPv6."
 msgstr ""
-"Этот список содержит все устройства, подключенные к сети через проводные или "
-"беспроводные соединения с использованием IPv6."
+"Этот список содержит все устройства, подключенные к сети через проводные "
+"или беспроводные соединения с использованием IPv6."
 
-#: js/src/common/network/DHCP6ClientsList.js:28
+#: js/src/common/network/DHCP6ClientsList.js:32
 #: js/src/common/network/DHCPClientsList.js:28
 msgid "No clients found."
 msgstr "Клиенты не найдены."
 
-#: js/src/common/network/DHCP6ClientsList.js:35
+#: js/src/common/network/DHCP6ClientsList.js:39
 #: js/src/common/network/DHCPClientsList.js:35 js/src/hostname/Hostname.js:21
 #: js/src/main/pages.js:92 js/src/main/pages.js:183
 msgid "Hostname"
 msgstr "Имя хоста"
 
-#: js/src/common/network/DHCP6ClientsList.js:36
+#: js/src/common/network/DHCP6ClientsList.js:40
 msgid "IPv6 Address"
 msgstr "Адрес IPv6"
 
-#: js/src/common/network/DHCP6ClientsList.js:37
+#: js/src/common/network/DHCP6ClientsList.js:41
 msgid "DUID"
 msgstr "Уникальный идентификатор DHCP (DUID)"
 
-#: js/src/common/network/DHCP6ClientsList.js:38
+#: js/src/common/network/DHCP6ClientsList.js:42
 #: js/src/common/network/DHCPClientsList.js:38
 msgid "Expires"
 msgstr "Истекает"
@@ -334,7 +256,7 @@ msgid "IP address"
 msgstr "IP-адрес"
 
 #: js/src/common/network/StaticIPForm.js:60
-#: js/src/guestNetwork/GuestNetworkForm.js:87 js/src/lan/LANManagedForm.js:72
+#: js/src/guestNetwork/GuestNetworkForm.js:88 js/src/lan/LANManagedForm.js:72
 msgid "Network mask"
 msgstr "Маска подсети"
 
@@ -351,7 +273,7 @@ msgid "DNS server 2"
 msgstr "DNS-сервер 2"
 
 #: js/src/common/network/StaticIPForm.js:111
-#: js/src/common/network/validators.js:19 js/src/wan/MACForm.js:91
+#: js/src/common/network/validators.js:19 js/src/wan/MACForm.js:92
 #: js/src/wan/WAN6Form.js:504 js/src/wan/WAN6Form.js:533
 #: js/src/wan/WAN6Form.js:545 js/src/wan/WANForm.js:173
 msgid "This field is required."
@@ -441,7 +363,7 @@ msgstr ""
 " поскольку это серьезная ошибка с их стороны. </p>\n"
 "            "
 
-#: js/src/dns/DNS.js:62 js/src/overview/Overview.js:70
+#: js/src/dns/DNS.js:62 js/src/overview/Overview.js:70 js/src/wan/WAN.js:48
 msgid "Connection Test"
 msgstr "Проверка соединения"
 
@@ -664,51 +586,64 @@ msgstr "IP-адрес маршрутизатора во внутренней г�
 msgid "Network mask of the guest inner network."
 msgstr "Маска подсети гостевой внутренней сети."
 
-#: js/src/guestNetwork/GuestNetworkForm.js:24
+#: js/src/guestNetwork/GuestNetworkForm.js:22
+msgid ""
+"This option enables you to set a bandwidth limit for the guest network, "
+"so that your main network doesn't get slowed-down by it."
+msgstr ""
+
+#: js/src/guestNetwork/GuestNetworkForm.js:25
 msgid "Download speed in guest network (in kilobits per second)."
 msgstr "Скорость приёма в гостевой сети (в килобитах в секунду)."
 
-#: js/src/guestNetwork/GuestNetworkForm.js:27
+#: js/src/guestNetwork/GuestNetworkForm.js:28
 msgid "Upload speed in guest network (in kilobits per second)."
 msgstr "Скорость передачи в гостевой сети (в килобитах в секунду)."
 
-#: js/src/guestNetwork/GuestNetworkForm.js:64
+#: js/src/guestNetwork/GuestNetworkForm.js:65
 msgid "Guest Network Settings"
 msgstr "Настройки гостевой сети"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:66
+#: js/src/guestNetwork/GuestNetworkForm.js:67
 msgid "Enable Guest Network"
 msgstr "Включить гостевую сеть"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:76 js/src/lan/LANManagedForm.js:61
+#: js/src/guestNetwork/GuestNetworkForm.js:77 js/src/lan/LANManagedForm.js:61
 msgid "Router IP address"
 msgstr "IP-адрес маршрутизатора"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:97 js/src/lan/LANManagedForm.js:82
+#: js/src/guestNetwork/GuestNetworkForm.js:98 js/src/lan/LANManagedForm.js:82
 msgid "Enable DHCP"
 msgstr "Включить DHCP"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:115
+#: js/src/guestNetwork/GuestNetworkForm.js:116
 msgid "Enable QoS"
 msgstr "Включить QoS"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:158
+#: js/src/guestNetwork/GuestNetworkForm.js:159
 #: js/src/overview/Cards/NetmetrCard.js:67
 msgid "Download"
 msgstr "Скачать"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:171
+#: js/src/guestNetwork/GuestNetworkForm.js:172
 #: js/src/overview/Cards/NetmetrCard.js:83
 msgid "Upload"
 msgstr "Загрузить"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:190
+#: js/src/guestNetwork/GuestNetworkForm.js:191
 msgid "Download speed must be positive"
 msgstr "Скорость скачивания должна быть положительной"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:193
+#: js/src/guestNetwork/GuestNetworkForm.js:194
 msgid "Upload speed must be positive"
 msgstr "Скорость загрузки должна быть положительной"
+
+#: js/src/guestNetwork/GuestNetworkNotification.js:12
+msgid ""
+"This network currently doesn't contain any devices. The changes you make "
+"here will become fully functional after you assign a network interface to"
+" this network."
+msgstr ""
 
 #: js/src/guestNetwork/GuestNetworkNotification.js:16
 msgid "All network interfaces of this network are currently down."
@@ -931,7 +866,7 @@ msgstr "Начальная настройка не завершена."
 
 #: js/src/guide/steps.js:20 js/src/main/pages.js:72 js/src/main/pages.js:163
 #: js/src/notificationsSettings/SMTPCustomForm.js:114
-#: reforis/templates/login.html:29
+#: js/src/password/Password.js:174 reforis/templates/login.html:30
 msgid "Password"
 msgstr "Пароль"
 
@@ -1042,7 +977,7 @@ msgstr ""
 msgid "Local Server"
 msgstr "Локальный сервер"
 
-#: js/src/guide/GuidePages/WorkflowSelect.js:38 js/src/lan/LANForm.js:35
+#: js/src/guide/GuidePages/WorkflowSelect.js:38 js/src/lan/LANForm.js:32
 msgid "Router"
 msgstr "Маршрутизатор"
 
@@ -1271,32 +1206,32 @@ msgstr ""
 "<b>обновить страницу</b> в браузере.\n"
 "            "
 
-#: js/src/lan/LANForm.js:19
-#, fuzzy
+#: js/src/lan/LANForm.js:18
 msgid ""
-"\n"
-"    ),\n"
-"    unmanaged: _(\n"
-"        "
+"Router mode means that this device manages the LAN (acts as a router, can"
+" assign IP addresses, etc.)."
 msgstr ""
-"\n"
-"    ),\n"
-"    unmanaged: _(\n"
-"        "
 
-#: js/src/lan/LANForm.js:36
+#: js/src/lan/LANForm.js:21
+msgid ""
+"Computer mode means that this device acts as a client in this network. It"
+" acts similarly to WAN, but it has opened ports for configuration "
+"interfaces and other services."
+msgstr ""
+
+#: js/src/lan/LANForm.js:33
 msgid "Computer"
 msgstr "Компьютер"
 
-#: js/src/lan/LANForm.js:86
+#: js/src/lan/LANForm.js:83
 msgid "LAN Settings"
 msgstr "Настройки локальной сети"
 
-#: js/src/lan/LANForm.js:89
+#: js/src/lan/LANForm.js:86
 msgid "LAN mode"
 msgstr "Режим локальной сети"
 
-#: js/src/lan/LANForm.js:105
+#: js/src/lan/LANForm.js:102
 msgid "Redirect to 192.168.1.1"
 msgstr "Перенаправление на 192.168.1.1"
 
@@ -1711,8 +1646,8 @@ msgid "Disabled"
 msgstr "Отключён"
 
 #: js/src/overview/Cards/DataCollectionCard.js:44
-msgid "Data Collection"
-msgstr "Сбор данных"
+msgid "Threat Detection"
+msgstr ""
 
 #: js/src/overview/Cards/DynamicFirewallCard.js:24
 msgid "Dynamic Firewall"
@@ -1771,21 +1706,19 @@ msgstr ""
 "Если вы хотите использовать другой язык, кроме английского, вы можете "
 "выбрать его из следующего списка:"
 
-#: js/src/packageManagement/packages/PackageCheckBox.js:53
+#: js/src/packageManagement/packages/PackageCheckBox.js:55
 msgid "More details"
 msgstr "Дополнительная информация"
 
 #: js/src/packageManagement/packages/Packages.js:21
+#, fuzzy
 msgid ""
-"\n"
 "Apart from the standard installation, you can optionally select bundles "
-"of additional software that'd be installed on \n"
-"the router. This software can be selected from the following list. Please"
-" note that only software that is part of \n"
-"TurrisOS or that has been installed from a package list and not marked as"
-" community-supported is actually supported\n"
-"by Turris team.\n"
-"        "
+"of additional software that'd be installed on the router. This software "
+"can be selected from the following list. Please note that only software "
+"that is part of TurrisOS or that has been installed from a package list "
+"and not marked as community-supported is actually supported by Turris "
+"team."
 msgstr ""
 "\n"
 "Помимо стандартной установки, вы можете дополнительно выбрать комплекты "
@@ -2188,17 +2121,50 @@ msgstr ""
 "этого момента аккаунт root будет заблокирован.)"
 
 #: js/src/password/Password.js:78
-#, fuzzy
 msgid ""
-");\n"
-"\n"
-"    if (password.length > 128)\n"
-"        return _("
+"The password you've entered has not been saved. It has been compromised "
+"and appears ${\n"
+"                            forisPassword.count || rootPassword.count\n"
+"                        } times in ${\n"
+"                            forisPassword.list || rootPassword.list\n"
+"                        } list. Please enter another, more secure "
+"password."
 msgstr ""
-");\n"
-"\n"
-"    if (password.length > 128)\n"
-"        return _("
+
+#: js/src/password/Password.js:89
+#, fuzzy
+msgid "Password changed successfully."
+msgstr "Сервер пересылки успешно сохранен."
+
+#: js/src/password/Password.js:147
+#, fuzzy
+msgid "Password Settings"
+msgstr "Сетевые настройки"
+
+#: js/src/password/Password.js:176
+msgid ""
+"Here you can set password for the administration interface. Make sure to "
+"set a secure password that is long and unique."
+msgstr ""
+
+#: js/src/password/Password.js:193 js/src/password/Password.js:197
+msgid "The password confirmation does not match."
+msgstr ""
+
+#: js/src/password/Password.js:212
+#, fuzzy
+msgid "Password can't be empty."
+msgstr "Не может быть пустым."
+
+#: js/src/password/Password.js:214
+#, fuzzy
+msgid "Password should have min 6 symbols."
+msgstr "Код TLS должен иметь хотя бы один символ."
+
+#: js/src/password/Password.js:217
+#, fuzzy
+msgid "Password should have max 128 symbols."
+msgstr "Код TLS должен иметь хотя бы один символ."
 
 #: js/src/password/RootPasswordForm.js:51
 msgid "Advanced Administration Password"
@@ -2346,29 +2312,52 @@ msgstr ""
 "электронной почте: <a href=\"mailto:tech.support@turris.cz\"> "
 "tech.support@turris.cz </a>."
 
-#: js/src/wan/MACForm.js:16
+#: js/src/wan/MACForm.js:14
+msgid ""
+"Useful in cases, when a specific MAC address is required by your internet"
+" service provider."
+msgstr ""
+
+#: js/src/wan/MACForm.js:17
 msgid "Colon is used as a separator, for example 00:11:22:33:44:55"
 msgstr "Разделяйте двоеточием, например, 00:11:22:33:44:55"
 
-#: js/src/wan/MACForm.js:19
+#: js/src/wan/MACForm.js:20
 msgid "MAC address of the WAN interface."
 msgstr "MAC-адрес WAN-интерфейса."
 
-#: js/src/wan/MACForm.js:52
+#: js/src/wan/MACForm.js:53
 msgid "MAC Settings"
 msgstr "Настройки MAC-адреса"
 
-#: js/src/wan/MACForm.js:54
+#: js/src/wan/MACForm.js:55
 msgid "Custom MAC address"
 msgstr "Пользовательский MAC-адрес"
 
-#: js/src/wan/MACForm.js:65
+#: js/src/wan/MACForm.js:66
 msgid "Current MAC address"
 msgstr "Текущий MAC-адрес"
 
-#: js/src/wan/MACForm.js:71
+#: js/src/wan/MACForm.js:72
 msgid "Set the new MAC address"
 msgstr "Установить новый MAC-адрес"
+
+#: js/src/wan/WAN.js:29
+msgid ""
+"Here you specify your WAN port settings. Usually, you can leave these "
+"options untouched unless instructed otherwise by your internet service "
+"provider. Also, in case there is a cable or DSL modem connecting your "
+"router to the network, it is usually not necessary to change this "
+"setting."
+msgstr ""
+
+#: js/src/wan/WAN.js:51
+msgid ""
+"Here you can test you connection settings. Remember to click on the "
+"<b>Save button</b> before running the test. Note that sometimes it takes "
+"a while before the connection is fully initialized. So it might be useful"
+" to wait for a while before running this test."
+msgstr ""
 
 #: js/src/wan/WAN6Form.js:26
 msgid "DUID which will be provided to the DHCPv6 server."
@@ -2526,7 +2515,16 @@ msgstr "Пароль PAP/CHAP"
 #: js/src/wifi/WiFi.js:26
 msgid "Unfortunately, we were unable to detect any wireless cards in your router."
 msgstr ""
-"К сожалению, не удалось обнаружить беспроводных карт в вашем маршрутизаторе."
+"К сожалению, не удалось обнаружить беспроводных карт в вашем "
+"маршрутизаторе."
+
+#: js/src/wifi/WiFi.js:41
+msgid ""
+"If you want to use your router as a Wi-Fi access point, enable Wi-Fi here"
+" and fill in an SSID (the name of the access point) and a corresponding "
+"password. You can then set up your mobile devices using the QR code "
+"available within the form."
+msgstr ""
 
 #: reforis/views.py:52
 msgid "Wrong password."
@@ -2581,12 +2579,6 @@ msgstr "Невозможно изменить настройки автомат�
 msgid "Cannot update approvals settings."
 msgstr "Невозможно обновить настройки одобрений."
 
-#: reforis/foris_controller_api/modules/updater.py:84
-msgid "Cannot rollback automatic restart settings."
-msgstr ""
-"Вы не можете устанавливать пакеты с отключенными автоматическими "
-"обновлениями."
-
 #: reforis/foris_controller_api/modules/updater.py:175
 msgid "Cannot start updater"
 msgstr "Не удается запустить Сервис обновлений"
@@ -2599,19 +2591,19 @@ msgstr "Вы не можете установить его с отключенн
 msgid "Guide"
 msgstr "Руководство"
 
-#: reforis/templates/login.html:32
+#: reforis/templates/login.html:33
 msgid "Log in"
 msgstr "Авторизоваться"
 
-#: reforis/templates/login.html:34
+#: reforis/templates/login.html:35
 msgid "Go to LuCI"
 msgstr "Перейти к LuCI"
 
-#: reforis/templates/login.html:34
+#: reforis/templates/login.html:35
 msgid "or"
 msgstr "или"
 
-#: reforis/templates/login.html:35
+#: reforis/templates/login.html:36
 msgid "back to select"
 msgstr "вернуться к выбору"
 
@@ -2631,15 +2623,15 @@ msgstr "Дополнительно:"
 msgid "Trace:"
 msgstr "Трассировка:"
 
-#: reforis/templates/errors/403.html:4
-msgid "403 - Forbidden"
-msgstr "403 - Запрещено"
+#: reforis/templates/errors/401.html:4
+msgid "401 - Unauthorized"
+msgstr ""
 
-#: reforis/templates/errors/403.html:9
-msgid "Forbidden You don't have permission to access"
-msgstr "Запрещено. У вас нет разрешения на доступ"
+#: reforis/templates/errors/401.html:9
+msgid "You have to authenticate first."
+msgstr ""
 
-#: reforis/templates/errors/403.html:10
+#: reforis/templates/errors/401.html:10
 #, python-format
 msgid "Do you want to <a href=\"%(link)s\">log in</a>?"
 msgstr "Хотите <a href=\"%(link)s\"> авторизоваться</a>?"
@@ -2660,655 +2652,3 @@ msgstr "Ошибка сервера"
 msgid "500 - Server error"
 msgstr "500 - Ошибка сервера"
 
-#~ msgid ""
-#~ "\n"
-#~ "You don't have any interface assigned to the LAN network.<br/>\n"
-#~ "Do you want to <strong>open ports "
-#~ "22, 80 and 443 on WAN "
-#~ "network</strong> in order to be able "
-#~ "to access the configuration\n"
-#~ "interface of our device?"
-#~ msgstr ""
-
-#~ msgid "Keep closed"
-#~ msgstr ""
-
-#~ msgid "Open ports"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "In the setup you provided it is"
-#~ " <strong>not possible to access the "
-#~ "administration interface</strong> of your "
-#~ "device.\n"
-#~ "This means that the only way to"
-#~ " configure your device will be via"
-#~ " serial cable or you need to a"
-#~ " perform factory reset.\n"
-#~ "<br/><br/> \n"
-#~ "<p><strong>Is this really what you want?</strong></p>"
-#~ msgstr ""
-
-#~ msgid "No, keep ports open"
-#~ msgstr ""
-
-#~ msgid "Yes, I'm an expert"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "More detailed information is available "
-#~ "in the console of your web browser"
-#~ " (available by pressing F12)."
-#~ msgstr ""
-#~ "\n"
-#~ "        Если вы хотите использовать свой"
-#~ " маршрутизатор в качестве точки доступа "
-#~ "Wi-Fi, включите здесь Wi-Fi и "
-#~ "введите SSID (имя точки доступа) и "
-#~ "соответствующий пароль. Затем вы можете "
-#~ "настроить свои мобильные устройства, используя"
-#~ " QR-код.\n"
-#~ "    "
-
-#~ msgid "Network settings"
-#~ msgstr "Сетевые настройки"
-
-#~ msgid "Guest network"
-#~ msgstr "Гостевая Сеть"
-
-#~ msgid "Local server"
-#~ msgstr "Локальный Сервер"
-
-#~ msgid "Guide workflow"
-#~ msgstr "Руководство Настройки"
-
-#~ msgid "Update settings"
-#~ msgstr "Обновить настройки"
-
-#~ msgid ""
-#~ "\n"
-#~ "Congratulations! You've successfully reached "
-#~ "the end of this guide. Once you"
-#~ " leave this guide you'll be granted"
-#~ " access \n"
-#~ "to the full configuration interface of this device.\n"
-#~ "\n"
-#~ "To further improve your security "
-#~ "consider enabling data collect (start by"
-#~ " selecting it in updater tab).\n"
-#~ "This will allow you to be part "
-#~ "of our security research to discover "
-#~ "new attackers and it will also "
-#~ "give you access to \n"
-#~ "dynamic updates to your firewall to "
-#~ "block all already known attackers.\n"
-#~ "            "
-#~ msgstr ""
-#~ "\n"
-#~ "Поздравляем! Вы успешно достигли конца "
-#~ "этого руководства. После того, как вы"
-#~ " покинете это руководство, вам будет "
-#~ "предоставлен доступ к полному интерфейсу "
-#~ "конфигурации этого устройства. Для дальнейшего"
-#~ " повышения безопасности рассмотрите возможность"
-#~ " сбора данных (начните с выбора на"
-#~ " вкладке Сервиса обновления). Это позволит"
-#~ " вам принять участие в наших "
-#~ "исследованиях в области безопасности, чтобы"
-#~ " обнаружить новых злоумышленников, а также"
-#~ " даст вам доступ к обновлениям "
-#~ "брандмауэра, чтобы заблокировать всех уже "
-#~ "известных злоумышленников.\n"
-#~ "            "
-
-#~ msgid ""
-#~ "The device setup is finished. Now "
-#~ "your device is able to act as "
-#~ "a router and route network traffic "
-#~ "among LAN, WAN and guest network."
-#~ msgstr ""
-#~ "Настройка устройства завершена. Теперь ваше"
-#~ " устройство может работать как "
-#~ "маршрутизатор и управлять сетевым трафиком "
-#~ "между сетью LAN, WAN и гостевой "
-#~ "сетью."
-
-#~ msgid ""
-#~ "The device setup is finished. Now "
-#~ "your device should be able to act"
-#~ " as a server on your local "
-#~ "network."
-#~ msgstr ""
-#~ "Настройка устройства завершена. Теперь ваше"
-#~ " устройство должно работать как сервер "
-#~ "в локальной сети."
-
-#~ msgid ""
-#~ "\n"
-#~ "Router mode means that this devices "
-#~ "manages the LAN (acts as a router,"
-#~ " can assing IP addresses, ...).\n"
-#~ "Computer mode means that this device "
-#~ "acts as a client in this network."
-#~ " It acts in a similar way as"
-#~ " WAN, but\n"
-#~ "it has opened ports for configuration interface and other services.\n"
-#~ "        "
-#~ msgstr ""
-#~ "\n"
-#~ "Режим маршрутизатора означает, что это "
-#~ "устройство управляет локальной сетью "
-#~ "(действует как маршрутизатор, может назначать"
-#~ " IP-адреса, ...). Режим компьютера "
-#~ "означает, что это устройство действует "
-#~ "как клиент в этой сети. Он "
-#~ "действует аналогично WAN, но открыты "
-#~ "порты для интерфейса конфигурации и "
-#~ "других служб.\n"
-#~ "        "
-
-#~ msgid ""
-#~ "If you want to use other language"
-#~ " than English you can select it "
-#~ "from the following list:"
-#~ msgstr ""
-#~ "Если вы хотите использовать другой язык,"
-#~ " помимо английского, выберите его из "
-#~ "следующего списка:"
-
-#~ msgid ""
-#~ "\n"
-#~ "Here you specify your WAN port "
-#~ "settings. Usually, you can leave this"
-#~ " options untouched unless instructed\n"
-#~ "otherwise by your internet service "
-#~ "provider. Also, in case there is a"
-#~ " cable or DSL modem connecting your"
-#~ "\n"
-#~ "router to the network, it is "
-#~ "usually not necessary to change this "
-#~ "setting.\n"
-#~ "        "
-#~ msgstr ""
-#~ "\n"
-#~ "Здесь вы указываете настройки порта WAN."
-#~ " Обычно вы можете оставить эти "
-#~ "параметры без изменений, если ваш "
-#~ "интернет-провайдер не указал иное. Кроме "
-#~ "того, в случае, если есть кабельный "
-#~ "или DSL модем, соединяющий ваш "
-#~ "маршрутизатор с сетью, обычно нет "
-#~ "необходимости изменять этот параметр.\n"
-#~ "        "
-
-#~ msgid "You can't set packages with disabled automatic updates."
-#~ msgstr ""
-#~ "Вы не можете устанавливать пакеты с "
-#~ "отключенными автоматическими обновлениями."
-
-#~ msgid "500 -- Server error"
-#~ msgstr "500 -- Server error"
-
-#~ msgid "Invalid network settings. DHCP settings can't be validated."
-#~ msgstr "Неверные настройки сети. Настройки DHCP не могут быть проверены."
-
-#~ msgid "Address is outside current network."
-#~ msgstr "Адрес находится вне текущей сети."
-
-#~ msgid "Address is already reserved for other purposes."
-#~ msgstr "Адрес уже зарезервирован для других целей."
-
-#~ msgid "Too many addresses requested. Set a lower number or change DHCP start."
-#~ msgstr ""
-#~ "Запрошено слишком много адресов. Установите"
-#~ " меньшее число или измените запуск "
-#~ "DHCP."
-
-#~ msgid ""
-#~ "The only DHCP lease is the same"
-#~ " as router's address. Increase limit "
-#~ "or change start address."
-#~ msgstr ""
-#~ "Единственный адрес DHCP совпадает с "
-#~ "адресом маршрутизатора. Увеличьте лимит или"
-#~ " измените начальный адрес."
-
-#~ msgid ""
-#~ "\n"
-#~ "Router Turris uses its own DNS "
-#~ "resolver with DNSSEC support. It is "
-#~ "capable of working independently or it"
-#~ "\n"
-#~ "can forward your DNS queries your "
-#~ "internet service provider's DNS resolver.\n"
-#~ ""
-#~ "<br/><br/>\n"
-#~ "The following setting determines the "
-#~ "behavior of the DNS resolver. Usually,"
-#~ " it is better to use the ISP's"
-#~ "\n"
-#~ "resolver in networks where it works "
-#~ "properly. If it does not work for"
-#~ " some reason, it is necessary to "
-#~ "use\n"
-#~ "direct resolving without forwarding.\n"
-#~ "<br/><br/>\n"
-#~ "In rare cases ISP's have improperly "
-#~ "configured network which interferes with "
-#~ "DNSSEC validation. If you\n"
-#~ "experience problems with DNS, you can"
-#~ " <b>temporarily</b> disable DNSSEC validation "
-#~ "to determine the source\n"
-#~ "of the problem. However, keep in "
-#~ "mind that without DNSSEC validation, you"
-#~ " are vulnerable to DNS spoofing\n"
-#~ "attacks! Therefore we <b>recommend keeping "
-#~ "DNSSEC turned on</b> and resolving the"
-#~ " situation with your ISP as\n"
-#~ "this is a serious flaw on their side.\n"
-#~ "            "
-#~ msgstr ""
-#~ "\n"
-#~ "Маршрутизатор Turris использует собственный "
-#~ "DNS-резольвер с поддержкой DNSSEC. Он "
-#~ "способен работать независимо или он "
-#~ "может пересылать ваши DNS-запросы вашему  "
-#~ "DNS-резольверу вашего интернет-провайдера.\n"
-#~ "<br/><br/>\n"
-#~ "Следующая настройка определяет поведение  "
-#~ "DNS-резольвер. Обычно лучше использовать "
-#~ "DNS-резольверу вашего интернет-провайдера в "
-#~ "сетях, где он работает должным образом."
-#~ " Если по какой-то причине это не "
-#~ "работает, необходимо использовать прямое "
-#~ "разрешение DNS без пересылки.\n"
-#~ "<br/><br/>\n"
-#~ "В редких случаях у интернет-провайдеров "
-#~ "неправильно настроена сеть, что мешает "
-#~ "проверке DNSSEC. Если у вас возникают"
-#~ " проблемы с DNS, вы можете "
-#~ "<b>временно</b> отключить проверку DNSSEC, "
-#~ "чтобы определить источник проблемы. Однако "
-#~ "имейте в виду, что без проверки "
-#~ "DNSSEC вы уязвимы для атак спуфинга "
-#~ "DNS! Поэтому мы <b>рекомендуем оставить "
-#~ "DNSSEC включенным</b> и разрешить ситуацию "
-#~ "с вашим провайдером, поскольку это "
-#~ "серьезный недостаток с их стороны.\n"
-#~ "            "
-
-#~ msgid "Save forwarder"
-#~ msgstr "Сохранить сервер пересылки"
-
-#~ msgid ""
-#~ "Just set your password and you are"
-#~ " ready to go. This workflow is "
-#~ "aimed to more advanced users who "
-#~ "intend not to use the web GUI."
-#~ msgstr ""
-#~ "Просто установите свой пароль, и "
-#~ "устройство готово к работе. Эта "
-#~ "конфигурация предназначена для опытных "
-#~ "пользователей, которые намерены не "
-#~ "использовать веб-интерфейс."
-
-#~ msgid "Notification Settings"
-#~ msgstr "Настройки уведомлений"
-
-#~ msgid "Notifications Settings"
-#~ msgstr "Настройки Уведомлений"
-
-#~ msgid ""
-#~ "You will not receive the testing "
-#~ "notification to your email inbox with"
-#~ " current importance level. Please raise "
-#~ "the importance level at least to "
-#~ "\"Reboot or attention is required\" and"
-#~ " click \"Save\" button if you want"
-#~ " to get this notification by email."
-#~ msgstr ""
-
-#~ msgid "Send testing notification"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "If you want to use another "
-#~ "language than English you can select "
-#~ "it from the following list:"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "Apart from the standard installation, "
-#~ "you can optionally select bundles of "
-#~ "additional software that'd be installed "
-#~ "on \n"
-#~ "the router. This software can be "
-#~ "selected from the following list. Please"
-#~ " note that only software that is "
-#~ "part of \n"
-#~ "TurrisOS or that has been installed "
-#~ "from a package list is maintained "
-#~ "by automatic updates system. Software "
-#~ "that has \n"
-#~ "been installed manually or using opkg is not affected.\n"
-#~ "        "
-#~ msgstr ""
-#~ "\n"
-#~ "Помимо стандартной установки, вы можете "
-#~ "дополнительно выбрать комплекты дополнительного "
-#~ "программного обеспечения, которое будет "
-#~ "установлено на маршрутизаторе. Это программное"
-#~ " обеспечение может быть выбрано из "
-#~ "следующего списка. Обратите внимание, что "
-#~ "система автоматического обновления поддерживает "
-#~ "только программное обеспечение, которое "
-#~ "является частью TurrisOS или установлено "
-#~ "из списка пакетов. Программное обеспечение,"
-#~ " установленное вручную или с помощью "
-#~ "opkg, не затрагивается.\n"
-#~ "        "
-
-#~ msgid ""
-#~ "By enabling of the automatic updates,"
-#~ " you confirm that you are the "
-#~ "owner of this Turris router and "
-#~ "you agree with the full text of"
-#~ " the <a href=\"https://www.turris.cz/omnia-"
-#~ "updater-eula\">license agreement</a>."
-#~ msgstr ""
-#~ "Включив автоматические обновления, вы "
-#~ "подтверждаете, что являетесь владельцем этого"
-#~ " маршрутизатора Turris, и соглашаетесь с"
-#~ " полным текстом <a href=\"https://www.turris.cz"
-#~ "/omnia-updater-eula\">лицензионного соглашения</a>."
-
-#~ msgid "Password Settings"
-#~ msgstr "Настройки пароля"
-
-#~ msgid ""
-#~ "In order to access the advanced "
-#~ "configuration options which are not "
-#~ "available here, you must\n"
-#~ "set the root user's password. The "
-#~ "advanced configuration options can be "
-#~ "managed either \n"
-#~ "through the <a href=\"%s\">LuCI web interface</a> or via SSH."
-#~ msgstr ""
-#~ "Для доступа к дополнительным параметрам "
-#~ "конфигурации, которые здесь недоступны, "
-#~ "необходимо установить пароль пользователя "
-#~ "root. Расширенные параметры конфигурации можно"
-#~ " управлять либо через <a "
-#~ "href=\"%s\">веб-интерфейс LuCI</a> или через "
-#~ "SSH."
-
-#~ msgid "PPPoE (for DSL bridges, Modem Turris, etc.)"
-#~ msgstr "PPPoE (для мостов DSL, модема Turris и т.д.)"
-
-#~ msgid "Foris"
-#~ msgstr "Foris"
-
-#~ msgid "User"
-#~ msgstr "Пользователь"
-
-#~ msgid "Device Reboot"
-#~ msgstr "Перезагрузка Устройства"
-
-#~ msgid "DHCP Clients"
-#~ msgstr "Клиенты DHCP"
-
-#~ msgid "Ignore"
-#~ msgstr "Игнорировать"
-
-#~ msgid "Foris Password"
-#~ msgstr "Пароль Foris"
-
-#~ msgid "Current Foris password"
-#~ msgstr "Текущий пароль Foris"
-
-#~ msgid "New Foris password"
-#~ msgstr "Новый пароль Foris"
-
-#~ msgid "Advanced Administration (root) Password"
-#~ msgstr "Пароль расширенного администрирования (root)"
-
-#~ msgid "WAN IPv6"
-#~ msgstr "WAN IPv6"
-
-#~ msgid "Public IPv4 address is required."
-#~ msgstr "Требуется публичный IPv4-адрес."
-
-#~ msgid "WAN IPv4"
-#~ msgstr "WAN IPv4"
-
-#~ msgid "Go to Connection Settings"
-#~ msgstr "Зайдите в настройки подключения"
-
-#~ msgid ""
-#~ "Here you can find some information "
-#~ "about your device. Please include it "
-#~ "into your message if you contact "
-#~ "our <a href=\"mailto:tech.support@turris.cz\" "
-#~ "target=\"_blank\">customer support</a>."
-#~ msgstr ""
-#~ "Здесь вы можете найти некоторую "
-#~ "информацию о вашем устройстве. Включите "
-#~ "его в свое сообщение, если вы "
-#~ "обратитесь в нашу <a "
-#~ "href=\"mailto:tech.support@turris.cz\" target=\"_blank\"> "
-#~ "службу поддержки </a>."
-
-#~ msgid "Device"
-#~ msgstr "Устройство"
-
-#~ msgid "Serial number"
-#~ msgstr "Серийный номер"
-
-#~ msgid "reForis version"
-#~ msgstr "Версия reForis"
-
-#~ msgid "Turris OS version"
-#~ msgstr "Версия Turris OS"
-
-#~ msgid "Turris OS branch"
-#~ msgstr "Ветка Turris OS"
-
-#~ msgid ""
-#~ "Turris OS is currently released in various branches,\n"
-#~ "                                    which have "
-#~ "different functions and varying stability\n"
-#~ ""
-#~ "                                    - you can "
-#~ "pick, which branch you want to "
-#~ "test."
-#~ msgstr ""
-#~ "Turris OS в настоящее время выпускается"
-#~ " в различных ветках, которые имеют "
-#~ "разные функции и разную стабильность -"
-#~ " вы можете выбрать, какую ветку "
-#~ "хотите протестировать."
-
-#~ msgid "IP Address"
-#~ msgstr "IP-адрес"
-
-#~ msgid ""
-#~ "This option enables you to set a"
-#~ " bandwidth limit for the guest "
-#~ "network, so that your main network "
-#~ "doesn't get slowed-down by it."
-#~ msgstr ""
-#~ "Эта опция ограничивает пропускную способность"
-#~ " гостевой сети, чтобы не замедлять "
-#~ "основную сеть."
-
-#~ msgid "Enable"
-#~ msgstr "Включить"
-
-#~ msgid ""
-#~ "This network currently doesn't contain "
-#~ "any devices. The changes you make "
-#~ "here will become fully functional after"
-#~ " you assign a network interface to"
-#~ " this network."
-#~ msgstr ""
-#~ "В настоящее время эта сеть не "
-#~ "содержит никаких устройств. Внесенные "
-#~ "изменения станут полностью работоспособными "
-#~ "после назначения сетевого интерфейса к "
-#~ "этой сети."
-
-#~ msgid ""
-#~ "Router mode means that this device "
-#~ "manages the LAN (acts as a router,"
-#~ " can assign IP addresses, etc.)."
-#~ msgstr ""
-#~ "Режим маршрутизатора означает, что это "
-#~ "устройство управляет локальной сетью "
-#~ "(действует как маршрутизатор, может назначать"
-#~ " IP-адреса и т. д.)."
-
-#~ msgid ""
-#~ "Computer mode means that this device "
-#~ "acts as a client in this network."
-#~ "\n"
-#~ "It acts similarly to WAN, but it"
-#~ " has opened ports for configuration "
-#~ "interfaces and other services."
-#~ msgstr ""
-#~ "Режим компьютера означает, что это "
-#~ "устройство действует как клиент в этой"
-#~ " сети. Он действует аналогично WAN, "
-#~ "но имеет открытые порты для интерфейсов"
-#~ " конфигурации и других служб."
-
-#~ msgid "Email Notifications"
-#~ msgstr "Уведомления по Электронной Почте"
-
-#~ msgid ""
-#~ "The password you've entered has not "
-#~ "been saved. It has been compromised "
-#~ "and appears ${\n"
-#~ "                            forisPassword.count || rootPassword.count\n"
-#~ "                        } times in ${\n"
-#~ "                            forisPassword.list || rootPassword.list\n"
-#~ "                        } list. Please enter"
-#~ " another, more secure password."
-#~ msgstr ""
-#~ "Введенный вами пароль не безопасен. Он"
-#~ " был скомпрометирован и встречается $\n"
-#~ ""
-#~ " forisPassword.count || rootPassword.count\n"
-#~ " } раз в $ { \n"
-#~ " forisPassword.list || rootPassword.list\n"
-#~ " } списке. Пожалуйста, введите другой, более надежный пароль."
-
-#~ msgid "Password changed successfully."
-#~ msgstr "Пароль успешно изменен."
-
-#~ msgid ""
-#~ "Here you can set password for the administration interface.\n"
-#~ "Make sure to set a secure password that is long and unique."
-#~ msgstr ""
-#~ "Здесь вы можете установить пароль для"
-#~ " интерфейса администрирования. Убедитесь, что "
-#~ "вы установили надежный, длинный и "
-#~ "уникальный пароль."
-
-#~ msgid "The password confirmation does not match."
-#~ msgstr "Подтверждение пароля не совпадает."
-
-#~ msgid "Password can't be empty."
-#~ msgstr "Пароль не может быть пустым."
-
-#~ msgid "Password should have min 6 symbols."
-#~ msgstr "Пароль должен содержать не менее 6 символов."
-
-#~ msgid "Password should have max 128 symbols."
-#~ msgstr "Пароль должен содержать не более 128 символов."
-
-#~ msgid ""
-#~ "Useful in cases, when a specific "
-#~ "MAC address is required by your "
-#~ "internet service provider."
-#~ msgstr ""
-#~ "Используйте в случаях, когда ваш "
-#~ "интернет-провайдер требует определенный MAC-адрес."
-
-#~ msgid "MAC"
-#~ msgstr "MAC-адрес"
-
-#~ msgid "MAC address"
-#~ msgstr "MAC-адрес"
-
-#~ msgid ""
-#~ "\n"
-#~ "Here you specify your WAN port "
-#~ "settings. Usually, you can leave these"
-#~ " options untouched unless instructed\n"
-#~ "otherwise by your internet service "
-#~ "provider. Also, in case there is a"
-#~ " cable or DSL modem connecting your"
-#~ "\n"
-#~ "router to the network, it is "
-#~ "usually not necessary to change this "
-#~ "setting.\n"
-#~ "        "
-#~ msgstr ""
-#~ "\n"
-#~ "Здесь вы указываете настройки вашего "
-#~ "порта WAN. Обычно вы можете оставить "
-#~ "эти параметры без изменений, если иное"
-#~ " не указано вашим поставщиком "
-#~ "интернет-услуг. Кроме того, если маршрутизатор"
-#~ " подключен к сети с помощью "
-#~ "кабельного или DSL-модема, обычно нет "
-#~ "необходимости изменять этот параметр.\n"
-#~ "        "
-
-#~ msgid ""
-#~ "\n"
-#~ "Here you can test you connection "
-#~ "settings. Remember to click on the "
-#~ "<b>Save button</b> before running the "
-#~ "test.\n"
-#~ "Note that sometimes it takes a "
-#~ "while before the connection is fully "
-#~ "initialized. So it might be useful "
-#~ "to\n"
-#~ "wait for a while before running this test.\n"
-#~ "        "
-#~ msgstr ""
-#~ "\n"
-#~ "Здесь вы можете проверить свои настройки"
-#~ " подключения. Не забудьте нажать кнопку "
-#~ "<b>Сохранить</b> перед запуском теста. "
-#~ "Обратите внимание, что иногда для полной"
-#~ " инициализации соединения требуется некоторое "
-#~ "время. Поэтому может быть полезно "
-#~ "немного подождать, прежде чем запускать "
-#~ "этот тест.\n"
-#~ "        "
-
-#~ msgid ""
-#~ "\n"
-#~ "If you want to use your router "
-#~ "as a Wi-Fi access point, enable"
-#~ " Wi-Fi here and fill in an "
-#~ "SSID (the name of the access \n"
-#~ "point) and a corresponding password. You"
-#~ " can then set up your mobile "
-#~ "devices, using the QR code available "
-#~ "within the form.\n"
-#~ "            "
-#~ msgstr ""
-#~ "\n"
-#~ "Если вы хотите использовать свой "
-#~ "маршрутизатор в качестве точки доступа "
-#~ "Wi-Fi, включите здесь Wi-Fi и "
-#~ "введите SSID (имя доступа пункт) и "
-#~ "соответствующий пароль. Затем вы можете "
-#~ "настроить свои мобильные устройства, используя"
-#~ " QR-код, доступный ниже.\n"
-#~ "            "

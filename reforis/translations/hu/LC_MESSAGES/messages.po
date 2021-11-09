@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-07-01 11:50+0200\n"
+"POT-Creation-Date: 2021-11-08 15:54+0100\n"
 "PO-Revision-Date: 2021-01-08 14:32+0000\n"
 "Last-Translator: Zoli <boritek@gmail.com>\n"
 "Language: hu\n"
@@ -25,64 +25,42 @@ msgstr "Névjegy"
 
 #: js/src/about/About.js:26
 msgid ""
-"\n"
-"                    ),\n"
-"                }}\n"
-"            />\n"
-"            <AboutTableWithErrorAndSpinner\n"
-"                apiState={getAboutResponse.state}\n"
-"                deviceDetails={getAboutResponse.data || {}}\n"
-"            />\n"
-"        </>\n"
-"    );\n"
-"}\n"
-"\n"
-"AboutTable.propTypes = {\n"
-"    deviceDetails: PropTypes.object.isRequired,\n"
-"    customization: PropTypes.bool,\n"
-"};\n"
-"\n"
-"function AboutTable({ deviceDetails }) {\n"
-"    const customization = !!(\n"
-"        deviceDetails &&\n"
-"        deviceDetails.customization !== undefined &&\n"
-"        deviceDetails.customization === \"shield\"\n"
-"    );\n"
-"    return (\n"
-"        <div className=\"card p-4 table-responsive\">\n"
-"            <table className=\"table table-borderless table-hover mb-0\">"
-"\n"
-"                <tbody>\n"
-"                    <tr>\n"
-"                        <th>{_(\"Device\")}</th>\n"
-"                        <td>\n"
-"                            {customization\n"
-"                                ? \"Turris Shield\"\n"
-"                                : deviceDetails.model}\n"
-"                        </td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>{_(\"Serial number\")}</th>\n"
-"                        <td>{deviceDetails.serial}</td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>{_(\"reForis version\")}</th>\n"
-"                        <td>{deviceDetails.reforis_version}</td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>{_(\"Turris OS version\")}</th>\n"
-"                        <td>{deviceDetails.os_version}</td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>\n"
-"                            {_(\"Turris OS branch\")}\n"
-"                            <i\n"
-"                                className=\"fas fa-question-circle ml-1 "
-"help\"\n"
-"                                data-tip={_("
+"Here you can find some information about your device. Please include it "
+"into your message if you contact our <a "
+"href=\"mailto:tech.support@turris.cz\" target=\"_blank\">customer "
+"support</a>."
 msgstr ""
 
-#: js/src/about/About.js:107
+#: js/src/about/About.js:55
+msgid "Device"
+msgstr ""
+
+#: js/src/about/About.js:63
+#, fuzzy
+msgid "Serial number"
+msgstr "A port egy szám."
+
+#: js/src/about/About.js:67
+#, fuzzy
+msgid "reForis version"
+msgstr "Kernel verzió"
+
+#: js/src/about/About.js:71
+msgid "Turris OS version"
+msgstr ""
+
+#: js/src/about/About.js:76
+msgid "Turris OS branch"
+msgstr ""
+
+#: js/src/about/About.js:79
+msgid ""
+"Turris OS is currently released in various branches, which have different"
+" functions and varying stability - you can pick, which branch you want to"
+" test."
+msgstr ""
+
+#: js/src/about/About.js:105
 msgid "Kernel version"
 msgstr "Kernel verzió"
 
@@ -127,39 +105,39 @@ msgstr "Újraindítás megerősítése"
 msgid "Go to top"
 msgstr "Ugrás a tetejére"
 
-#: js/src/common/network/DHCP6ClientsList.js:20
+#: js/src/common/network/DHCP6ClientsList.js:24
 msgid "IPv6 DHCP Client List"
 msgstr ""
 
-#: js/src/common/network/DHCP6ClientsList.js:22
+#: js/src/common/network/DHCP6ClientsList.js:26
 msgid ""
 "This list contains all devices that are connected to the network through "
 "wired or wireless connections using IPv6."
 msgstr ""
 
-#: js/src/common/network/DHCP6ClientsList.js:28
+#: js/src/common/network/DHCP6ClientsList.js:32
 #: js/src/common/network/DHCPClientsList.js:28
 #, fuzzy
 msgid "No clients found."
 msgstr "Nincs DHCP ügyfél."
 
-#: js/src/common/network/DHCP6ClientsList.js:35
+#: js/src/common/network/DHCP6ClientsList.js:39
 #: js/src/common/network/DHCPClientsList.js:35 js/src/hostname/Hostname.js:21
 #: js/src/main/pages.js:92 js/src/main/pages.js:183
 msgid "Hostname"
 msgstr "Gépnév"
 
-#: js/src/common/network/DHCP6ClientsList.js:36
+#: js/src/common/network/DHCP6ClientsList.js:40
 #, fuzzy
 msgid "IPv6 Address"
 msgstr "IP-cím"
 
-#: js/src/common/network/DHCP6ClientsList.js:37
+#: js/src/common/network/DHCP6ClientsList.js:41
 #, fuzzy
 msgid "DUID"
 msgstr "Útmutató"
 
-#: js/src/common/network/DHCP6ClientsList.js:38
+#: js/src/common/network/DHCP6ClientsList.js:42
 #: js/src/common/network/DHCPClientsList.js:38
 msgid "Expires"
 msgstr "Lejárat"
@@ -276,7 +254,7 @@ msgid "IP address"
 msgstr "IP-cím"
 
 #: js/src/common/network/StaticIPForm.js:60
-#: js/src/guestNetwork/GuestNetworkForm.js:87 js/src/lan/LANManagedForm.js:72
+#: js/src/guestNetwork/GuestNetworkForm.js:88 js/src/lan/LANManagedForm.js:72
 msgid "Network mask"
 msgstr "Hálózati maszk"
 
@@ -293,7 +271,7 @@ msgid "DNS server 2"
 msgstr "DNS-kiszolgáló 2"
 
 #: js/src/common/network/StaticIPForm.js:111
-#: js/src/common/network/validators.js:19 js/src/wan/MACForm.js:91
+#: js/src/common/network/validators.js:19 js/src/wan/MACForm.js:92
 #: js/src/wan/WAN6Form.js:504 js/src/wan/WAN6Form.js:533
 #: js/src/wan/WAN6Form.js:545 js/src/wan/WANForm.js:173
 msgid "This field is required."
@@ -390,7 +368,7 @@ msgstr ""
 "mivel ez súlyos hiba az oldalukon. </p>\n"
 "            "
 
-#: js/src/dns/DNS.js:62 js/src/overview/Overview.js:70
+#: js/src/dns/DNS.js:62 js/src/overview/Overview.js:70 js/src/wan/WAN.js:48
 msgid "Connection Test"
 msgstr "Kapcsolat ellenőrzése"
 
@@ -615,53 +593,66 @@ msgstr "Az útválasztó IP-címe a vendég belső hálózatában."
 msgid "Network mask of the guest inner network."
 msgstr "Vendég hálózat hálózati maszkja."
 
-#: js/src/guestNetwork/GuestNetworkForm.js:24
+#: js/src/guestNetwork/GuestNetworkForm.js:22
+msgid ""
+"This option enables you to set a bandwidth limit for the guest network, "
+"so that your main network doesn't get slowed-down by it."
+msgstr ""
+
+#: js/src/guestNetwork/GuestNetworkForm.js:25
 msgid "Download speed in guest network (in kilobits per second)."
 msgstr "Letöltési sebesség vendéghálózatban (kilobit per másodpercben)."
 
-#: js/src/guestNetwork/GuestNetworkForm.js:27
+#: js/src/guestNetwork/GuestNetworkForm.js:28
 msgid "Upload speed in guest network (in kilobits per second)."
 msgstr "Feltöltési sebesség vendéghálózatba (kilobit per másodpercben)."
 
-#: js/src/guestNetwork/GuestNetworkForm.js:64
+#: js/src/guestNetwork/GuestNetworkForm.js:65
 #, fuzzy
 msgid "Guest Network Settings"
 msgstr "Hálózati beállítások"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:66
+#: js/src/guestNetwork/GuestNetworkForm.js:67
 #, fuzzy
 msgid "Enable Guest Network"
 msgstr "Vendég hálózat"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:76 js/src/lan/LANManagedForm.js:61
+#: js/src/guestNetwork/GuestNetworkForm.js:77 js/src/lan/LANManagedForm.js:61
 msgid "Router IP address"
 msgstr "Útválasztó IP-címe"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:97 js/src/lan/LANManagedForm.js:82
+#: js/src/guestNetwork/GuestNetworkForm.js:98 js/src/lan/LANManagedForm.js:82
 msgid "Enable DHCP"
 msgstr "DHCP engedélyezése"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:115
+#: js/src/guestNetwork/GuestNetworkForm.js:116
 msgid "Enable QoS"
 msgstr "QoS engedélyezése"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:158
+#: js/src/guestNetwork/GuestNetworkForm.js:159
 #: js/src/overview/Cards/NetmetrCard.js:67
 msgid "Download"
 msgstr "Letölt"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:171
+#: js/src/guestNetwork/GuestNetworkForm.js:172
 #: js/src/overview/Cards/NetmetrCard.js:83
 msgid "Upload"
 msgstr "Feltöltés"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:190
+#: js/src/guestNetwork/GuestNetworkForm.js:191
 msgid "Download speed must be positive"
 msgstr "A letöltési sebességnek pozitívnak kell lennie"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:193
+#: js/src/guestNetwork/GuestNetworkForm.js:194
 msgid "Upload speed must be positive"
 msgstr "A feltöltési sebességnek pozitívnak kell lennie"
+
+#: js/src/guestNetwork/GuestNetworkNotification.js:12
+msgid ""
+"This network currently doesn't contain any devices. The changes you make "
+"here will become fully functional after you assign a network interface to"
+" this network."
+msgstr ""
 
 #: js/src/guestNetwork/GuestNetworkNotification.js:16
 msgid "All network interfaces of this network are currently down."
@@ -878,7 +869,7 @@ msgstr "Nem lehet az útmutatót készként megjelölni."
 
 #: js/src/guide/steps.js:20 js/src/main/pages.js:72 js/src/main/pages.js:163
 #: js/src/notificationsSettings/SMTPCustomForm.js:114
-#: reforis/templates/login.html:29
+#: js/src/password/Password.js:174 reforis/templates/login.html:30
 msgid "Password"
 msgstr "Jelszó"
 
@@ -989,7 +980,7 @@ msgstr ""
 msgid "Local Server"
 msgstr "Helyi kiszolgáló"
 
-#: js/src/guide/GuidePages/WorkflowSelect.js:38 js/src/lan/LANForm.js:35
+#: js/src/guide/GuidePages/WorkflowSelect.js:38 js/src/lan/LANForm.js:32
 msgid "Router"
 msgstr "Útválasztó"
 
@@ -1228,27 +1219,32 @@ msgstr ""
 "<b>frissítenie kell az oldalt</b> a böngészőben.\n"
 "            "
 
-#: js/src/lan/LANForm.js:19
+#: js/src/lan/LANForm.js:18
 msgid ""
-"\n"
-"    ),\n"
-"    unmanaged: _(\n"
-"        "
+"Router mode means that this device manages the LAN (acts as a router, can"
+" assign IP addresses, etc.)."
 msgstr ""
 
-#: js/src/lan/LANForm.js:36
+#: js/src/lan/LANForm.js:21
+msgid ""
+"Computer mode means that this device acts as a client in this network. It"
+" acts similarly to WAN, but it has opened ports for configuration "
+"interfaces and other services."
+msgstr ""
+
+#: js/src/lan/LANForm.js:33
 msgid "Computer"
 msgstr "Számítógép"
 
-#: js/src/lan/LANForm.js:86
+#: js/src/lan/LANForm.js:83
 msgid "LAN Settings"
 msgstr "LAN-beállítások"
 
-#: js/src/lan/LANForm.js:89
+#: js/src/lan/LANForm.js:86
 msgid "LAN mode"
 msgstr "LAN mód"
 
-#: js/src/lan/LANForm.js:105
+#: js/src/lan/LANForm.js:102
 msgid "Redirect to 192.168.1.1"
 msgstr "Átirányítás a 192.168.1.1-re"
 
@@ -1647,8 +1643,8 @@ msgid "Disabled"
 msgstr "Letiltva"
 
 #: js/src/overview/Cards/DataCollectionCard.js:44
-msgid "Data Collection"
-msgstr "Adatgyűjtés"
+msgid "Threat Detection"
+msgstr ""
 
 #: js/src/overview/Cards/DynamicFirewallCard.js:24
 msgid "Dynamic Firewall"
@@ -1705,21 +1701,19 @@ msgid ""
 "from the following list:"
 msgstr "Angol helyett más nyelv is választható az alábbi listából:"
 
-#: js/src/packageManagement/packages/PackageCheckBox.js:53
+#: js/src/packageManagement/packages/PackageCheckBox.js:55
 msgid "More details"
 msgstr "További részletek"
 
 #: js/src/packageManagement/packages/Packages.js:21
+#, fuzzy
 msgid ""
-"\n"
 "Apart from the standard installation, you can optionally select bundles "
-"of additional software that'd be installed on \n"
-"the router. This software can be selected from the following list. Please"
-" note that only software that is part of \n"
-"TurrisOS or that has been installed from a package list and not marked as"
-" community-supported is actually supported\n"
-"by Turris team.\n"
-"        "
+"of additional software that'd be installed on the router. This software "
+"can be selected from the following list. Please note that only software "
+"that is part of TurrisOS or that has been installed from a package list "
+"and not marked as community-supported is actually supported by Turris "
+"team."
 msgstr ""
 "\n"
 "A szabványos telepítés mellett lehetősége van kiválasztani további "
@@ -2143,11 +2137,49 @@ msgstr ""
 
 #: js/src/password/Password.js:78
 msgid ""
-");\n"
-"\n"
-"    if (password.length > 128)\n"
-"        return _("
+"The password you've entered has not been saved. It has been compromised "
+"and appears ${\n"
+"                            forisPassword.count || rootPassword.count\n"
+"                        } times in ${\n"
+"                            forisPassword.list || rootPassword.list\n"
+"                        } list. Please enter another, more secure "
+"password."
 msgstr ""
+
+#: js/src/password/Password.js:89
+#, fuzzy
+msgid "Password changed successfully."
+msgstr "A továbbító mentése sikeresen megtörtént."
+
+#: js/src/password/Password.js:147
+#, fuzzy
+msgid "Password Settings"
+msgstr "Hálózati beállítások"
+
+#: js/src/password/Password.js:176
+msgid ""
+"Here you can set password for the administration interface. Make sure to "
+"set a secure password that is long and unique."
+msgstr ""
+
+#: js/src/password/Password.js:193 js/src/password/Password.js:197
+msgid "The password confirmation does not match."
+msgstr ""
+
+#: js/src/password/Password.js:212
+#, fuzzy
+msgid "Password can't be empty."
+msgstr "Nem lehet üres."
+
+#: js/src/password/Password.js:214
+#, fuzzy
+msgid "Password should have min 6 symbols."
+msgstr "A TLS-tűnek legalább egy szimbólummal kell rendelkeznie."
+
+#: js/src/password/Password.js:217
+#, fuzzy
+msgid "Password should have max 128 symbols."
+msgstr "A TLS-tűnek legalább egy szimbólummal kell rendelkeznie."
 
 #: js/src/password/RootPasswordForm.js:51
 #, fuzzy
@@ -2298,30 +2330,53 @@ msgstr ""
 "Kérjük, jelentse ezt a hibát ügyfélszolgálatunknak e-mailben: <a "
 "href=\"mailto:tech.support@turris.cz\">tech.support@turris.cz</a>."
 
-#: js/src/wan/MACForm.js:16
+#: js/src/wan/MACForm.js:14
+msgid ""
+"Useful in cases, when a specific MAC address is required by your internet"
+" service provider."
+msgstr ""
+
+#: js/src/wan/MACForm.js:17
 msgid "Colon is used as a separator, for example 00:11:22:33:44:55"
 msgstr "A kettőspont elválasztóként használatos, például 00:11:22:33:44:55"
 
-#: js/src/wan/MACForm.js:19
+#: js/src/wan/MACForm.js:20
 msgid "MAC address of the WAN interface."
 msgstr ""
 
-#: js/src/wan/MACForm.js:52
+#: js/src/wan/MACForm.js:53
 #, fuzzy
 msgid "MAC Settings"
 msgstr "Idő beállítások"
 
-#: js/src/wan/MACForm.js:54
+#: js/src/wan/MACForm.js:55
 msgid "Custom MAC address"
 msgstr "Egyéni MAC-cím"
 
-#: js/src/wan/MACForm.js:65
+#: js/src/wan/MACForm.js:66
 #, fuzzy
 msgid "Current MAC address"
 msgstr "Útválasztó IP-címe"
 
-#: js/src/wan/MACForm.js:71
+#: js/src/wan/MACForm.js:72
 msgid "Set the new MAC address"
+msgstr ""
+
+#: js/src/wan/WAN.js:29
+msgid ""
+"Here you specify your WAN port settings. Usually, you can leave these "
+"options untouched unless instructed otherwise by your internet service "
+"provider. Also, in case there is a cable or DSL modem connecting your "
+"router to the network, it is usually not necessary to change this "
+"setting."
+msgstr ""
+
+#: js/src/wan/WAN.js:51
+msgid ""
+"Here you can test you connection settings. Remember to click on the "
+"<b>Save button</b> before running the test. Note that sometimes it takes "
+"a while before the connection is fully initialized. So it might be useful"
+" to wait for a while before running this test."
 msgstr ""
 
 #: js/src/wan/WAN6Form.js:26
@@ -2482,6 +2537,14 @@ msgstr "PAP/CHAP jelszó"
 msgid "Unfortunately, we were unable to detect any wireless cards in your router."
 msgstr ""
 
+#: js/src/wifi/WiFi.js:41
+msgid ""
+"If you want to use your router as a Wi-Fi access point, enable Wi-Fi here"
+" and fill in an SSID (the name of the access point) and a corresponding "
+"password. You can then set up your mobile devices using the QR code "
+"available within the form."
+msgstr ""
+
 #: reforis/views.py:52
 msgid "Wrong password."
 msgstr "Rossz jelszó."
@@ -2542,10 +2605,6 @@ msgstr "Az automatikus újraindítási beállítások nem módosíthatók."
 msgid "Cannot update approvals settings."
 msgstr "A jóváhagyási beállítások nem frissíthetők."
 
-#: reforis/foris_controller_api/modules/updater.py:84
-msgid "Cannot rollback automatic restart settings."
-msgstr "Az automatikus újraindítási beállítások nem visszaállíthatók."
-
 #: reforis/foris_controller_api/modules/updater.py:175
 msgid "Cannot start updater"
 msgstr "Nem lehet elindítani a Frissítéskezelőt"
@@ -2558,19 +2617,19 @@ msgstr "A letiltott automatikus frissítésekkel nem állítható be."
 msgid "Guide"
 msgstr "Útmutató"
 
-#: reforis/templates/login.html:32
+#: reforis/templates/login.html:33
 msgid "Log in"
 msgstr "Bejelentkezés"
 
-#: reforis/templates/login.html:34
+#: reforis/templates/login.html:35
 msgid "Go to LuCI"
 msgstr "Ugrás a LuCI-ra"
 
-#: reforis/templates/login.html:34
+#: reforis/templates/login.html:35
 msgid "or"
 msgstr "vagy"
 
-#: reforis/templates/login.html:35
+#: reforis/templates/login.html:36
 msgid "back to select"
 msgstr "vissza a kijelöléshez"
 
@@ -2590,15 +2649,15 @@ msgstr "Extra:"
 msgid "Trace:"
 msgstr "Nyomkövetés:"
 
-#: reforis/templates/errors/403.html:4
-msgid "403 - Forbidden"
-msgstr "403 - Tiltott"
+#: reforis/templates/errors/401.html:4
+msgid "401 - Unauthorized"
+msgstr ""
 
-#: reforis/templates/errors/403.html:9
-msgid "Forbidden You don't have permission to access"
-msgstr "Tiltva. Nincs engedélye a hozzáférésre"
+#: reforis/templates/errors/401.html:9
+msgid "You have to authenticate first."
+msgstr ""
 
-#: reforis/templates/errors/403.html:10
+#: reforis/templates/errors/401.html:10
 #, python-format
 msgid "Do you want to <a href=\"%(link)s\">log in</a>?"
 msgstr "Szeretne <a href=\"%(link)s\">bejelentkezni</a>?"
@@ -2618,524 +2677,4 @@ msgstr "Kiszolgálói hiba"
 #: reforis/templates/errors/500.html:8
 msgid "500 - Server error"
 msgstr "500 - Kiszolgálóhiba"
-
-#~ msgid ""
-#~ "\n"
-#~ "You don't have any interface assigned to the LAN network.<br/>\n"
-#~ "Do you want to <strong>open ports "
-#~ "22, 80 and 443 on WAN "
-#~ "network</strong> in order to be able "
-#~ "to access the configuration\n"
-#~ "interface of our device?"
-#~ msgstr ""
-
-#~ msgid "Keep closed"
-#~ msgstr ""
-
-#~ msgid "Open ports"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "In the setup you provided it is"
-#~ " <strong>not possible to access the "
-#~ "administration interface</strong> of your "
-#~ "device.\n"
-#~ "This means that the only way to"
-#~ " configure your device will be via"
-#~ " serial cable or you need to a"
-#~ " perform factory reset.\n"
-#~ "<br/><br/> \n"
-#~ "<p><strong>Is this really what you want?</strong></p>"
-#~ msgstr ""
-
-#~ msgid "No, keep ports open"
-#~ msgstr ""
-
-#~ msgid "Yes, I'm an expert"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "More detailed information is available "
-#~ "in the console of your web browser"
-#~ " (available by pressing F12)."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "Congratulations! You've successfully reached "
-#~ "the end of this guide. Once you"
-#~ " leave this guide you'll be granted"
-#~ " access \n"
-#~ "to the full configuration interface of this device.\n"
-#~ "\n"
-#~ "To further improve your security "
-#~ "consider enabling data collect (start by"
-#~ " selecting it in updater tab).\n"
-#~ "This will allow you to be part "
-#~ "of our security research to discover "
-#~ "new attackers and it will also "
-#~ "give you access to \n"
-#~ "dynamic updates to your firewall to "
-#~ "block all already known attackers.\n"
-#~ "            "
-#~ msgstr ""
-
-#~ msgid ""
-#~ "The device setup is finished. Now "
-#~ "your device is able to act as "
-#~ "a router and route network traffic "
-#~ "among LAN, WAN and guest network."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "The device setup is finished. Now "
-#~ "your device should be able to act"
-#~ " as a server on your local "
-#~ "network."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "Router mode means that this devices "
-#~ "manages the LAN (acts as a router,"
-#~ " can assing IP addresses, ...).\n"
-#~ "Computer mode means that this device "
-#~ "acts as a client in this network."
-#~ " It acts in a similar way as"
-#~ " WAN, but\n"
-#~ "it has opened ports for configuration interface and other services.\n"
-#~ "        "
-#~ msgstr ""
-
-#~ msgid ""
-#~ "If you want to use other language"
-#~ " than English you can select it "
-#~ "from the following list:"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "Here you specify your WAN port "
-#~ "settings. Usually, you can leave this"
-#~ " options untouched unless instructed\n"
-#~ "otherwise by your internet service "
-#~ "provider. Also, in case there is a"
-#~ " cable or DSL modem connecting your"
-#~ "\n"
-#~ "router to the network, it is "
-#~ "usually not necessary to change this "
-#~ "setting.\n"
-#~ "        "
-#~ msgstr ""
-
-#~ msgid "You can't set packages with disabled automatic updates."
-#~ msgstr ""
-
-#~ msgid "500 -- Server error"
-#~ msgstr ""
-
-#~ msgid "Invalid network settings. DHCP settings can't be validated."
-#~ msgstr ""
-
-#~ msgid "Address is outside current network."
-#~ msgstr ""
-
-#~ msgid "Address is already reserved for other purposes."
-#~ msgstr ""
-
-#~ msgid "Too many addresses requested. Set a lower number or change DHCP start."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "The only DHCP lease is the same"
-#~ " as router's address. Increase limit "
-#~ "or change start address."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "Router Turris uses its own DNS "
-#~ "resolver with DNSSEC support. It is "
-#~ "capable of working independently or it"
-#~ "\n"
-#~ "can forward your DNS queries your "
-#~ "internet service provider's DNS resolver.\n"
-#~ ""
-#~ "<br/><br/>\n"
-#~ "The following setting determines the "
-#~ "behavior of the DNS resolver. Usually,"
-#~ " it is better to use the ISP's"
-#~ "\n"
-#~ "resolver in networks where it works "
-#~ "properly. If it does not work for"
-#~ " some reason, it is necessary to "
-#~ "use\n"
-#~ "direct resolving without forwarding.\n"
-#~ "<br/><br/>\n"
-#~ "In rare cases ISP's have improperly "
-#~ "configured network which interferes with "
-#~ "DNSSEC validation. If you\n"
-#~ "experience problems with DNS, you can"
-#~ " <b>temporarily</b> disable DNSSEC validation "
-#~ "to determine the source\n"
-#~ "of the problem. However, keep in "
-#~ "mind that without DNSSEC validation, you"
-#~ " are vulnerable to DNS spoofing\n"
-#~ "attacks! Therefore we <b>recommend keeping "
-#~ "DNSSEC turned on</b> and resolving the"
-#~ " situation with your ISP as\n"
-#~ "this is a serious flaw on their side.\n"
-#~ "            "
-#~ msgstr ""
-
-#~ msgid "Save forwarder"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Just set your password and you are"
-#~ " ready to go. This workflow is "
-#~ "aimed to more advanced users who "
-#~ "intend not to use the web GUI."
-#~ msgstr ""
-
-#~ msgid "Notification Settings"
-#~ msgstr ""
-
-#~ msgid "Notifications Settings"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "You will not receive the testing "
-#~ "notification to your email inbox with"
-#~ " current importance level. Please raise "
-#~ "the importance level at least to "
-#~ "\"Reboot or attention is required\" and"
-#~ " click \"Save\" button if you want"
-#~ " to get this notification by email."
-#~ msgstr ""
-
-#~ msgid "Send testing notification"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "If you want to use another "
-#~ "language than English you can select "
-#~ "it from the following list:"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "Apart from the standard installation, "
-#~ "you can optionally select bundles of "
-#~ "additional software that'd be installed "
-#~ "on \n"
-#~ "the router. This software can be "
-#~ "selected from the following list. Please"
-#~ " note that only software that is "
-#~ "part of \n"
-#~ "TurrisOS or that has been installed "
-#~ "from a package list is maintained "
-#~ "by automatic updates system. Software "
-#~ "that has \n"
-#~ "been installed manually or using opkg is not affected.\n"
-#~ "        "
-#~ msgstr ""
-
-#~ msgid ""
-#~ "By enabling of the automatic updates,"
-#~ " you confirm that you are the "
-#~ "owner of this Turris router and "
-#~ "you agree with the full text of"
-#~ " the <a href=\"https://www.turris.cz/omnia-"
-#~ "updater-eula\">license agreement</a>."
-#~ msgstr ""
-
-#~ msgid "Password Settings"
-#~ msgstr "Hálózati beállítások"
-
-#~ msgid ""
-#~ "In order to access the advanced "
-#~ "configuration options which are not "
-#~ "available here, you must\n"
-#~ "set the root user's password. The "
-#~ "advanced configuration options can be "
-#~ "managed either \n"
-#~ "through the <a href=\"%s\">LuCI web interface</a> or via SSH."
-#~ msgstr ""
-
-#~ msgid "PPPoE (for DSL bridges, Modem Turris, etc.)"
-#~ msgstr ""
-
-#~ msgid "Foris"
-#~ msgstr ""
-
-#~ msgid "User"
-#~ msgstr "Felhasználó"
-
-#~ msgid "Device Reboot"
-#~ msgstr "Készülék újraindítása"
-
-#~ msgid "DHCP Clients"
-#~ msgstr "DHCP-ügyfelek"
-
-#~ msgid "Ignore"
-#~ msgstr "Mellőz"
-
-#~ msgid "Foris Password"
-#~ msgstr "Foris jelszó"
-
-#~ msgid "Current Foris password"
-#~ msgstr "Jelenlegi Foris jelszó"
-
-#~ msgid "New Foris password"
-#~ msgstr "Új Foris jelszó"
-
-#~ msgid "Advanced Administration (root) Password"
-#~ msgstr "Haladó felügyelet (gyökér) jelszó"
-
-#~ msgid "WAN IPv6"
-#~ msgstr "WAN IPv6"
-
-#~ msgid "Public IPv4 address is required."
-#~ msgstr "Nyilvános IPv4-cím szükséges."
-
-#~ msgid "WAN IPv4"
-#~ msgstr "WAN IPv4"
-
-#~ msgid "Go to Connection Settings"
-#~ msgstr "Kapcsolat beállítása"
-
-#~ msgid ""
-#~ "Here you can find some information "
-#~ "about your device. Please include it "
-#~ "into your message if you contact "
-#~ "our <a href=\"mailto:tech.support@turris.cz\" "
-#~ "target=\"_blank\">customer support</a>."
-#~ msgstr ""
-#~ "Itt információkat találhat készülékéről. "
-#~ "Kérjük, illessze be ezt is az "
-#~ "üzenetébe, ha felveszi a kapcsolatot a"
-#~ " <a href=\"mailto:tech.support@turris.cz\" "
-#~ "target=\"_blank\"> ügyfélszolgálatunkkal </a>."
-
-#~ msgid "Device"
-#~ msgstr "Készülék"
-
-#~ msgid "Serial number"
-#~ msgstr "Sorozatszám"
-
-#~ msgid "reForis version"
-#~ msgstr "reForis verzió"
-
-#~ msgid "Turris OS version"
-#~ msgstr "Turris OS verzió"
-
-#~ msgid "Turris OS branch"
-#~ msgstr "Turris OS ág"
-
-#~ msgid ""
-#~ "Turris OS is currently released in various branches,\n"
-#~ "                                    which have "
-#~ "different functions and varying stability\n"
-#~ ""
-#~ "                                    - you can "
-#~ "pick, which branch you want to "
-#~ "test."
-#~ msgstr ""
-#~ "A Turris OS jelenleg különféle ágakban"
-#~ " jelenik meg, amelyek különböző funkciókkal"
-#~ " és változó stabilitással rendelkeznek -"
-#~ " kiválaszthatja, melyik ágat szeretné "
-#~ "tesztelni."
-
-#~ msgid "IP Address"
-#~ msgstr "IP-cím"
-
-#~ msgid ""
-#~ "This option enables you to set a"
-#~ " bandwidth limit for the guest "
-#~ "network, so that your main network "
-#~ "doesn't get slowed-down by it."
-#~ msgstr ""
-#~ "Ez a beállítás lehetővé teszi a "
-#~ "vendéghálózat sávszélesség-korlátjának beállítását,"
-#~ " hogy a fő hálózat ne lassuljon "
-#~ "le."
-
-#~ msgid "Enable"
-#~ msgstr "Engedélyez"
-
-#~ msgid ""
-#~ "This network currently doesn't contain "
-#~ "any devices. The changes you make "
-#~ "here will become fully functional after"
-#~ " you assign a network interface to"
-#~ " this network."
-#~ msgstr ""
-#~ "Ez a hálózat jelenleg nem tartalmaz "
-#~ "eszközöket. Az itt végrehajtott módosítások"
-#~ " azután válnak teljes mértékben "
-#~ "működőképessé, miután hálózati adaptert "
-#~ "rendelt ehhez a hálózathoz."
-
-#~ msgid ""
-#~ "Router mode means that this device "
-#~ "manages the LAN (acts as a router,"
-#~ " can assign IP addresses, etc.)."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Computer mode means that this device "
-#~ "acts as a client in this network."
-#~ "\n"
-#~ "It acts similarly to WAN, but it"
-#~ " has opened ports for configuration "
-#~ "interfaces and other services."
-#~ msgstr ""
-#~ "\n"
-#~ "Az Útválasztó mód azt jelenti, hogy "
-#~ "ez a készülék kezeli a LAN-t "
-#~ "(útválasztóként működik, IP-címeket oszthat"
-#~ " ki ...).\n"
-#~ "A Számítógép mód azt jelenti, hogy "
-#~ "az eszköz ügyfélként működik a "
-#~ "hálózatban. Hasonlóan viselkedik, mint a "
-#~ "WAN, de\n"
-#~ "nyitott portok vannak a konfigurációs "
-#~ "felülethez és más szolgáltatásokhoz.\n"
-#~ "        "
-
-#~ msgid "Email Notifications"
-#~ msgstr "E-mail értesítések"
-
-#~ msgid ""
-#~ "The password you've entered has not "
-#~ "been saved. It has been compromised "
-#~ "and appears ${\n"
-#~ "                            forisPassword.count || rootPassword.count\n"
-#~ "                        } times in ${\n"
-#~ "                            forisPassword.list || rootPassword.list\n"
-#~ "                        } list. Please enter"
-#~ " another, more secure password."
-#~ msgstr ""
-#~ "A megadott jelszó feltörésre került. Úgy tűnik, ${\n"
-#~ "                            forisPassword.count || rootPassword.count\n"
-#~ "                        } alkalommal a(z) ${\n"
-#~ "                            forisPassword.list || rootPassword.list\n"
-#~ "                        } listán."
-
-#~ msgid "Password changed successfully."
-#~ msgstr "A jelszó módosítása sikerült."
-
-#~ msgid ""
-#~ "Here you can set password for the administration interface.\n"
-#~ "Make sure to set a secure password that is long and unique."
-#~ msgstr ""
-#~ "Itt állíthatja be a Foris és a "
-#~ "speciális funkciók (LuCI és SSH) "
-#~ "jelszavait. Győződjön meg róla, hogy "
-#~ "biztonságos jelszót állít be, amely "
-#~ "hosszú és ritka."
-
-#~ msgid "The password confirmation does not match."
-#~ msgstr ""
-
-#~ msgid "Password can't be empty."
-#~ msgstr "A jelszó nem lehet üres."
-
-#~ msgid "Password should have min 6 symbols."
-#~ msgstr "A jelszónak min 6 szimbólummal kell rendelkeznie."
-
-#~ msgid "Password should have max 128 symbols."
-#~ msgstr "A jelszónak maximum 128 szimbólummal lehet rendelkeznie."
-
-#~ msgid ""
-#~ "Useful in cases, when a specific "
-#~ "MAC address is required by your "
-#~ "internet service provider."
-#~ msgstr ""
-#~ "Hasznos olyan esetekben, amikor egy "
-#~ "adott MAC-címet vár el az "
-#~ "internet-szolgáltató."
-
-#~ msgid "MAC"
-#~ msgstr "MAC"
-
-#~ msgid "MAC address"
-#~ msgstr "MAC-cím"
-
-#~ msgid ""
-#~ "\n"
-#~ "Here you specify your WAN port "
-#~ "settings. Usually, you can leave these"
-#~ " options untouched unless instructed\n"
-#~ "otherwise by your internet service "
-#~ "provider. Also, in case there is a"
-#~ " cable or DSL modem connecting your"
-#~ "\n"
-#~ "router to the network, it is "
-#~ "usually not necessary to change this "
-#~ "setting.\n"
-#~ "        "
-#~ msgstr ""
-#~ "\n"
-#~ "Itt adhatja meg a WAN-port "
-#~ "beállításait. Ezeket a beállításokat általában"
-#~ " érintetlenül hagyhatja, hacsak\n"
-#~ "az internetszolgáltatója mást nem mond. "
-#~ "Abban az esetben is, ha kábel vagy"
-#~ " DSL modem csatlakoztatja\n"
-#~ "az útválasztót a hálózatra, általában "
-#~ "nem szükséges megváltoztatni ezt a "
-#~ "beállítást.\n"
-#~ "        "
-
-#~ msgid ""
-#~ "\n"
-#~ "Here you can test you connection "
-#~ "settings. Remember to click on the "
-#~ "<b>Save button</b> before running the "
-#~ "test.\n"
-#~ "Note that sometimes it takes a "
-#~ "while before the connection is fully "
-#~ "initialized. So it might be useful "
-#~ "to\n"
-#~ "wait for a while before running this test.\n"
-#~ "        "
-#~ msgstr ""
-#~ "\n"
-#~ "Itt tesztelheti a csatlakozási beállításokat."
-#~ " Ne felejtsen el a <b>Mentés "
-#~ "gombra</b> kattintani a teszt futtatása "
-#~ "előtt.\n"
-#~ "Ne feledje, hogy néha eltart egy "
-#~ "ideig, amíg a kapcsolat teljesen "
-#~ "inicializálódik. Ezért hasznos lehet, hogy"
-#~ "\n"
-#~ "várjon egy kicsit, mielőtt futtatja ezt a tesztet.\n"
-#~ "        "
-
-#~ msgid ""
-#~ "\n"
-#~ "If you want to use your router "
-#~ "as a Wi-Fi access point, enable"
-#~ " Wi-Fi here and fill in an "
-#~ "SSID (the name of the access \n"
-#~ "point) and a corresponding password. You"
-#~ " can then set up your mobile "
-#~ "devices, using the QR code available "
-#~ "within the form.\n"
-#~ "            "
-#~ msgstr ""
-#~ "\n"
-#~ "Ha az útválasztót Wi-Fi hozzáférési "
-#~ "pontkénr szeretné használni, akkor itt "
-#~ "kell a Wi-Fi-t bekapcsolni és az"
-#~ " SSID-jét (a hozzáférési pont nevét),"
-#~ " \n"
-#~ "illetve megfelelő jelszót kitölteni. Ezután"
-#~ " mobil eszközei is beállíthatók a "
-#~ "mezők melletti QR-kód segítségével.\n"
-#~ "            "
 

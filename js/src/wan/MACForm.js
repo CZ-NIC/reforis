@@ -11,8 +11,9 @@ import PropTypes from "prop-types";
 import { Switch, TextInput, validateMAC } from "foris";
 
 const HELP_TEXTS = {
-    custom_mac_enabled: _(`Useful in cases, when a specific MAC address is \
-required by your internet service provider.`),
+    custom_mac_enabled: _(
+        "Useful in cases, when a specific MAC address is required by your internet service provider."
+    ),
     custom_mac: _(
         "Colon is used as a separator, for example 00:11:22:33:44:55"
     ),

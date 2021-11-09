@@ -7,17 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-07-01 11:50+0200\n"
-"PO-Revision-Date: 2021-07-29 22:50+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
-"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/turris/"
-"reforis/nb_NO/>\n"
+"POT-Creation-Date: 2021-11-08 15:54+0100\n"
+"PO-Revision-Date: 2021-11-05 11:57+0000\n"
+"Last-Translator: Josef Schlehofer <pepe@bloodkings.eu>\n"
 "Language: nb_NO\n"
+"Language-Team: Norwegian Bokmål "
+"<https://hosted.weblate.org/projects/turris/reforis/nb_NO/>\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.7.2-dev\n"
 "Generated-By: Babel 2.9.1\n"
 
 #: js/src/about/About.js:23 js/src/main/pages.js:105 js/src/main/pages.js:224
@@ -26,118 +25,42 @@ msgstr "Om"
 
 #: js/src/about/About.js:26
 msgid ""
-"\n"
-"                    ),\n"
-"                }}\n"
-"            />\n"
-"            <AboutTableWithErrorAndSpinner\n"
-"                apiState={getAboutResponse.state}\n"
-"                deviceDetails={getAboutResponse.data || {}}\n"
-"            />\n"
-"        </>\n"
-"    );\n"
-"}\n"
-"\n"
-"AboutTable.propTypes = {\n"
-"    deviceDetails: PropTypes.object.isRequired,\n"
-"    customization: PropTypes.bool,\n"
-"};\n"
-"\n"
-"function AboutTable({ deviceDetails }) {\n"
-"    const customization = !!(\n"
-"        deviceDetails &&\n"
-"        deviceDetails.customization !== undefined &&\n"
-"        deviceDetails.customization === \"shield\"\n"
-"    );\n"
-"    return (\n"
-"        <div className=\"card p-4 table-responsive\">\n"
-"            <table className=\"table table-borderless table-hover mb-0\">"
-"\n"
-"                <tbody>\n"
-"                    <tr>\n"
-"                        <th>{_(\"Device\")}</th>\n"
-"                        <td>\n"
-"                            {customization\n"
-"                                ? \"Turris Shield\"\n"
-"                                : deviceDetails.model}\n"
-"                        </td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>{_(\"Serial number\")}</th>\n"
-"                        <td>{deviceDetails.serial}</td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>{_(\"reForis version\")}</th>\n"
-"                        <td>{deviceDetails.reforis_version}</td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>{_(\"Turris OS version\")}</th>\n"
-"                        <td>{deviceDetails.os_version}</td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>\n"
-"                            {_(\"Turris OS branch\")}\n"
-"                            <i\n"
-"                                className=\"fas fa-question-circle ml-1 "
-"help\"\n"
-"                                data-tip={_("
+"Here you can find some information about your device. Please include it "
+"into your message if you contact our <a "
+"href=\"mailto:tech.support@turris.cz\" target=\"_blank\">customer "
+"support</a>."
 msgstr ""
-"\n"
-"                    ),\n"
-"                }}\n"
-"            />\n"
-"            <AboutTableWithErrorAndSpinner\n"
-"                apiState={getAboutResponse.state}\n"
-"                deviceDetails={getAboutResponse.data || {}}\n"
-"            />\n"
-"        </>\n"
-"    );\n"
-"}\n"
-"\n"
-"AboutTable.propTypes = {\n"
-"    deviceDetails: PropTypes.object.isRequired,\n"
-"    customization: PropTypes.bool,\n"
-"};\n"
-"\n"
-"function AboutTable({ deviceDetails }) {\n"
-"    const customization = !!(\n"
-"        deviceDetails &&\n"
-"        deviceDetails.customization !== undefined &&\n"
-"        deviceDetails.customization === \"shield\"\n"
-"    );\n"
-"    return (\n"
-"        <div className=\"card p-4 table-responsive\">\n"
-"            <table className=\"table table-borderless table-hover mb-0\">\n"
-"                <tbody>\n"
-"                    <tr>\n"
-"                        <th>{_(\"Enhet\")}</th>\n"
-"                        <td>\n"
-"                            {customization\n"
-"                                ? \"Turris-skjold\"\n"
-"                                : deviceDetails.model}\n"
-"                        </td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>{_(\"Serienummer\")}</th>\n"
-"                        <td>{deviceDetails.serial}</td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>{_(\"reForis-versjon\")}</th>\n"
-"                        <td>{deviceDetails.reforis_version}</td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>{_(\"Turris OS-versjon\")}</th>\n"
-"                        <td>{deviceDetails.os_version}</td>\n"
-"                    </tr>\n"
-"                    <tr>\n"
-"                        <th>\n"
-"                            {_(\"Turris OS-forgrening\")}\n"
-"                            <i\n"
-"                                className=\"fas fa-question-circle ml-1 "
-"help\"\n"
-"                                data-tip={_("
 
-#: js/src/about/About.js:107
+#: js/src/about/About.js:55
+msgid "Device"
+msgstr ""
+
+#: js/src/about/About.js:63
+#, fuzzy
+msgid "Serial number"
+msgstr "Port er et nummer."
+
+#: js/src/about/About.js:67
+#, fuzzy
+msgid "reForis version"
+msgstr "Kjerneversjon"
+
+#: js/src/about/About.js:71
+msgid "Turris OS version"
+msgstr ""
+
+#: js/src/about/About.js:76
+msgid "Turris OS branch"
+msgstr ""
+
+#: js/src/about/About.js:79
+msgid ""
+"Turris OS is currently released in various branches, which have different"
+" functions and varying stability - you can pick, which branch you want to"
+" test."
+msgstr ""
+
+#: js/src/about/About.js:105
 msgid "Kernel version"
 msgstr "Kjerneversjon"
 
@@ -182,11 +105,11 @@ msgstr "Bekreft omstart"
 msgid "Go to top"
 msgstr "Til toppen"
 
-#: js/src/common/network/DHCP6ClientsList.js:20
+#: js/src/common/network/DHCP6ClientsList.js:24
 msgid "IPv6 DHCP Client List"
 msgstr "IPv6-DHCP-klientliste"
 
-#: js/src/common/network/DHCP6ClientsList.js:22
+#: js/src/common/network/DHCP6ClientsList.js:26
 #, fuzzy
 msgid ""
 "This list contains all devices that are connected to the network through "
@@ -195,28 +118,28 @@ msgstr ""
 "Denne listen inneholder alle enheter som er tilkoblet nettverket gjennom "
 "kablede eller trådløse forbindelser."
 
-#: js/src/common/network/DHCP6ClientsList.js:28
+#: js/src/common/network/DHCP6ClientsList.js:32
 #: js/src/common/network/DHCPClientsList.js:28
 #, fuzzy
 msgid "No clients found."
 msgstr "Fant ingen DHCP-klienter."
 
-#: js/src/common/network/DHCP6ClientsList.js:35
+#: js/src/common/network/DHCP6ClientsList.js:39
 #: js/src/common/network/DHCPClientsList.js:35 js/src/hostname/Hostname.js:21
 #: js/src/main/pages.js:92 js/src/main/pages.js:183
 msgid "Hostname"
 msgstr "Vertsnavn"
 
-#: js/src/common/network/DHCP6ClientsList.js:36
+#: js/src/common/network/DHCP6ClientsList.js:40
 msgid "IPv6 Address"
 msgstr "IPv6-adresse"
 
-#: js/src/common/network/DHCP6ClientsList.js:37
+#: js/src/common/network/DHCP6ClientsList.js:41
 #, fuzzy
 msgid "DUID"
 msgstr "Veiledning"
 
-#: js/src/common/network/DHCP6ClientsList.js:38
+#: js/src/common/network/DHCP6ClientsList.js:42
 #: js/src/common/network/DHCPClientsList.js:38
 msgid "Expires"
 msgstr "Utløper"
@@ -340,7 +263,7 @@ msgid "IP address"
 msgstr "IP-adresse"
 
 #: js/src/common/network/StaticIPForm.js:60
-#: js/src/guestNetwork/GuestNetworkForm.js:87 js/src/lan/LANManagedForm.js:72
+#: js/src/guestNetwork/GuestNetworkForm.js:88 js/src/lan/LANManagedForm.js:72
 msgid "Network mask"
 msgstr "Nettverksmaske"
 
@@ -357,7 +280,7 @@ msgid "DNS server 2"
 msgstr "DNS-tjener 2"
 
 #: js/src/common/network/StaticIPForm.js:111
-#: js/src/common/network/validators.js:19 js/src/wan/MACForm.js:91
+#: js/src/common/network/validators.js:19 js/src/wan/MACForm.js:92
 #: js/src/wan/WAN6Form.js:504 js/src/wan/WAN6Form.js:533
 #: js/src/wan/WAN6Form.js:545 js/src/wan/WANForm.js:173
 msgid "This field is required."
@@ -454,7 +377,7 @@ msgstr ""
 "er en alvorlig feil på deres side.</p>\n"
 "            "
 
-#: js/src/dns/DNS.js:62 js/src/overview/Overview.js:70
+#: js/src/dns/DNS.js:62 js/src/overview/Overview.js:70 js/src/wan/WAN.js:48
 msgid "Connection Test"
 msgstr "Tilkoblingstest"
 
@@ -688,51 +611,64 @@ msgstr "Ruterens IP-adresse på det indre gjestenettverket."
 msgid "Network mask of the guest inner network."
 msgstr "Nettverksmaske for det indre gjestenettverket."
 
-#: js/src/guestNetwork/GuestNetworkForm.js:24
+#: js/src/guestNetwork/GuestNetworkForm.js:22
+msgid ""
+"This option enables you to set a bandwidth limit for the guest network, "
+"so that your main network doesn't get slowed-down by it."
+msgstr ""
+
+#: js/src/guestNetwork/GuestNetworkForm.js:25
 msgid "Download speed in guest network (in kilobits per second)."
 msgstr "Nedlastingshastighet i gjestenettverk (i kilobit per sekund)."
 
-#: js/src/guestNetwork/GuestNetworkForm.js:27
+#: js/src/guestNetwork/GuestNetworkForm.js:28
 msgid "Upload speed in guest network (in kilobits per second)."
 msgstr "Opplastingshastighet i gjestenettverk (i kilobit per sekund)."
 
-#: js/src/guestNetwork/GuestNetworkForm.js:64
+#: js/src/guestNetwork/GuestNetworkForm.js:65
 msgid "Guest Network Settings"
 msgstr "Gjestenettverksinnstillinger"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:66
+#: js/src/guestNetwork/GuestNetworkForm.js:67
 msgid "Enable Guest Network"
 msgstr "Skru på gjestenettverk"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:76 js/src/lan/LANManagedForm.js:61
+#: js/src/guestNetwork/GuestNetworkForm.js:77 js/src/lan/LANManagedForm.js:61
 msgid "Router IP address"
 msgstr "Ruterens IP-adresse"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:97 js/src/lan/LANManagedForm.js:82
+#: js/src/guestNetwork/GuestNetworkForm.js:98 js/src/lan/LANManagedForm.js:82
 msgid "Enable DHCP"
 msgstr "Skru på DHCP"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:115
+#: js/src/guestNetwork/GuestNetworkForm.js:116
 msgid "Enable QoS"
 msgstr "Skru på QoS"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:158
+#: js/src/guestNetwork/GuestNetworkForm.js:159
 #: js/src/overview/Cards/NetmetrCard.js:67
 msgid "Download"
 msgstr "Last ned"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:171
+#: js/src/guestNetwork/GuestNetworkForm.js:172
 #: js/src/overview/Cards/NetmetrCard.js:83
 msgid "Upload"
 msgstr "Last opp"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:190
+#: js/src/guestNetwork/GuestNetworkForm.js:191
 msgid "Download speed must be positive"
 msgstr "Nedlastingshastighet må være positiv"
 
-#: js/src/guestNetwork/GuestNetworkForm.js:193
+#: js/src/guestNetwork/GuestNetworkForm.js:194
 msgid "Upload speed must be positive"
 msgstr "Opplastingshastighet må være positiv"
+
+#: js/src/guestNetwork/GuestNetworkNotification.js:12
+msgid ""
+"This network currently doesn't contain any devices. The changes you make "
+"here will become fully functional after you assign a network interface to"
+" this network."
+msgstr ""
 
 #: js/src/guestNetwork/GuestNetworkNotification.js:16
 msgid "All network interfaces of this network are currently down."
@@ -965,7 +901,7 @@ msgstr "Kan ikke markere guide som fullført."
 
 #: js/src/guide/steps.js:20 js/src/main/pages.js:72 js/src/main/pages.js:163
 #: js/src/notificationsSettings/SMTPCustomForm.js:114
-#: reforis/templates/login.html:29
+#: js/src/password/Password.js:174 reforis/templates/login.html:30
 msgid "Password"
 msgstr "Passord"
 
@@ -1076,7 +1012,7 @@ msgstr ""
 msgid "Local Server"
 msgstr "Lokal tjener"
 
-#: js/src/guide/GuidePages/WorkflowSelect.js:38 js/src/lan/LANForm.js:35
+#: js/src/guide/GuidePages/WorkflowSelect.js:38 js/src/lan/LANForm.js:32
 msgid "Router"
 msgstr "Ruter"
 
@@ -1316,31 +1252,32 @@ msgstr ""
 "og du vil måtte <b>gjenoppfriske siden</b> i din nettleser.\n"
 "            "
 
-#: js/src/lan/LANForm.js:19
+#: js/src/lan/LANForm.js:18
 msgid ""
-"\n"
-"    ),\n"
-"    unmanaged: _(\n"
-"        "
+"Router mode means that this device manages the LAN (acts as a router, can"
+" assign IP addresses, etc.)."
 msgstr ""
-"\n"
-"    ),\n"
-"    uhåndtert: _(\n"
-"        "
 
-#: js/src/lan/LANForm.js:36
+#: js/src/lan/LANForm.js:21
+msgid ""
+"Computer mode means that this device acts as a client in this network. It"
+" acts similarly to WAN, but it has opened ports for configuration "
+"interfaces and other services."
+msgstr ""
+
+#: js/src/lan/LANForm.js:33
 msgid "Computer"
 msgstr "Datamaskin"
 
-#: js/src/lan/LANForm.js:86
+#: js/src/lan/LANForm.js:83
 msgid "LAN Settings"
 msgstr "LAN-innstillinger"
 
-#: js/src/lan/LANForm.js:89
+#: js/src/lan/LANForm.js:86
 msgid "LAN mode"
 msgstr "LAN-modus"
 
-#: js/src/lan/LANForm.js:105
+#: js/src/lan/LANForm.js:102
 msgid "Redirect to 192.168.1.1"
 msgstr "Videresend til 192.168.1.1"
 
@@ -1772,8 +1709,8 @@ msgid "Disabled"
 msgstr "Avskrudd"
 
 #: js/src/overview/Cards/DataCollectionCard.js:44
-msgid "Data Collection"
-msgstr "Datainnsamling"
+msgid "Threat Detection"
+msgstr ""
 
 #: js/src/overview/Cards/DynamicFirewallCard.js:24
 msgid "Dynamic Firewall"
@@ -1834,21 +1771,19 @@ msgstr ""
 "Hvis du ønsker å bruke et annet språk enn engelsk kan du velge det i "
 "denne listen:"
 
-#: js/src/packageManagement/packages/PackageCheckBox.js:53
+#: js/src/packageManagement/packages/PackageCheckBox.js:55
 msgid "More details"
 msgstr "Flere detaljer"
 
 #: js/src/packageManagement/packages/Packages.js:21
+#, fuzzy
 msgid ""
-"\n"
 "Apart from the standard installation, you can optionally select bundles "
-"of additional software that'd be installed on \n"
-"the router. This software can be selected from the following list. Please"
-" note that only software that is part of \n"
-"TurrisOS or that has been installed from a package list and not marked as"
-" community-supported is actually supported\n"
-"by Turris team.\n"
-"        "
+"of additional software that'd be installed on the router. This software "
+"can be selected from the following list. Please note that only software "
+"that is part of TurrisOS or that has been installed from a package list "
+"and not marked as community-supported is actually supported by Turris "
+"team."
 msgstr ""
 "\n"
 "Til forskjell fra forvalgsinstallasjonen kan du valgfritt velge "
@@ -1961,10 +1896,10 @@ msgid ""
 "fa-sm\"></i></sup></a>."
 msgstr ""
 "Ved å skru på automatiske oppgraderinger bekrefter du at du eier denne "
-"Turris-ruteren og at du samtykker med hele teksten i <a href=\"https://www."
-"turris.cz/omnia-updater-eula\" target=\"_blank\" rel=\"noopener noreferrer\""
-">lisenssamtykket<sup><i class=\"fas fa-external-link-alt fa-sm\""
-"></i></sup></a>."
+"Turris-ruteren og at du samtykker med hele teksten i <a "
+"href=\"https://www.turris.cz/omnia-updater-eula\" target=\"_blank\" "
+"rel=\"noopener noreferrer\">lisenssamtykket<sup><i class=\"fas fa-"
+"external-link-alt fa-sm\"></i></sup></a>."
 
 #: js/src/packageManagement/updateSettings/UpdateSettings.js:31
 #, fuzzy
@@ -2294,17 +2229,50 @@ msgstr ""
 "blokkert.)"
 
 #: js/src/password/Password.js:78
-#, fuzzy
 msgid ""
-");\n"
-"\n"
-"    if (password.length > 128)\n"
-"        return _("
+"The password you've entered has not been saved. It has been compromised "
+"and appears ${\n"
+"                            forisPassword.count || rootPassword.count\n"
+"                        } times in ${\n"
+"                            forisPassword.list || rootPassword.list\n"
+"                        } list. Please enter another, more secure "
+"password."
 msgstr ""
-");\n"
-"\n"
-"    if (password.length > 128)\n"
-"        return _("
+
+#: js/src/password/Password.js:89
+#, fuzzy
+msgid "Password changed successfully."
+msgstr "Videresender lagret."
+
+#: js/src/password/Password.js:147
+#, fuzzy
+msgid "Password Settings"
+msgstr "Nettverksinnstillinger"
+
+#: js/src/password/Password.js:176
+msgid ""
+"Here you can set password for the administration interface. Make sure to "
+"set a secure password that is long and unique."
+msgstr ""
+
+#: js/src/password/Password.js:193 js/src/password/Password.js:197
+msgid "The password confirmation does not match."
+msgstr ""
+
+#: js/src/password/Password.js:212
+#, fuzzy
+msgid "Password can't be empty."
+msgstr "Kan ikke stå tom."
+
+#: js/src/password/Password.js:214
+#, fuzzy
+msgid "Password should have min 6 symbols."
+msgstr "TLS-tilordning skal ha minst ett symbol."
+
+#: js/src/password/Password.js:217
+#, fuzzy
+msgid "Password should have max 128 symbols."
+msgstr "TLS-tilordning skal ha minst ett symbol."
 
 #: js/src/password/RootPasswordForm.js:51
 #, fuzzy
@@ -2457,32 +2425,55 @@ msgid ""
 "Please report this error to our support team via e-mail: <a "
 "href=\"mailto:tech.support@turris.cz\">tech.support@turris.cz</a>."
 msgstr ""
-"Innrapporter denne feilen til vårt brukerstøttelag via e-post til: <a "
+"Innrapporter denne feilen til brukerstøttelaget via e-post: <a "
 "href=\"mailto:tech.support@turris.cz\">tech.support@turris.cz</a>."
 
-#: js/src/wan/MACForm.js:16
+#: js/src/wan/MACForm.js:14
+msgid ""
+"Useful in cases, when a specific MAC address is required by your internet"
+" service provider."
+msgstr ""
+
+#: js/src/wan/MACForm.js:17
 msgid "Colon is used as a separator, for example 00:11:22:33:44:55"
 msgstr "Kolon brukes som inndeler, for eksempel 00:11:22:33:44:55"
 
-#: js/src/wan/MACForm.js:19
+#: js/src/wan/MACForm.js:20
 msgid "MAC address of the WAN interface."
 msgstr "MAC-adresse tilhørende WAN-grensesnittet."
 
-#: js/src/wan/MACForm.js:52
+#: js/src/wan/MACForm.js:53
 msgid "MAC Settings"
 msgstr "MAC-innstillinger"
 
-#: js/src/wan/MACForm.js:54
+#: js/src/wan/MACForm.js:55
 msgid "Custom MAC address"
 msgstr "Egendefinert MAV-adresse"
 
-#: js/src/wan/MACForm.js:65
+#: js/src/wan/MACForm.js:66
 msgid "Current MAC address"
 msgstr "Nåværende MAC-adresse"
 
-#: js/src/wan/MACForm.js:71
+#: js/src/wan/MACForm.js:72
 msgid "Set the new MAC address"
 msgstr "Sett den nye MAC-adressen"
+
+#: js/src/wan/WAN.js:29
+msgid ""
+"Here you specify your WAN port settings. Usually, you can leave these "
+"options untouched unless instructed otherwise by your internet service "
+"provider. Also, in case there is a cable or DSL modem connecting your "
+"router to the network, it is usually not necessary to change this "
+"setting."
+msgstr ""
+
+#: js/src/wan/WAN.js:51
+msgid ""
+"Here you can test you connection settings. Remember to click on the "
+"<b>Save button</b> before running the test. Note that sometimes it takes "
+"a while before the connection is fully initialized. So it might be useful"
+" to wait for a while before running this test."
+msgstr ""
 
 #: js/src/wan/WAN6Form.js:26
 #, fuzzy
@@ -2653,6 +2644,14 @@ msgstr "PAP/CHAP-passord"
 msgid "Unfortunately, we were unable to detect any wireless cards in your router."
 msgstr "Oppdaget ingen trådlåskort i din ruter."
 
+#: js/src/wifi/WiFi.js:41
+msgid ""
+"If you want to use your router as a Wi-Fi access point, enable Wi-Fi here"
+" and fill in an SSID (the name of the access point) and a corresponding "
+"password. You can then set up your mobile devices using the QR code "
+"available within the form."
+msgstr ""
+
 #: reforis/views.py:52
 msgid "Wrong password."
 msgstr "Feil passord."
@@ -2711,11 +2710,6 @@ msgstr "Kan ikke endre automatiske omstartsinnstillinger."
 msgid "Cannot update approvals settings."
 msgstr "Kan ikke oppdatere godkjenningsinnstillinger."
 
-#: reforis/foris_controller_api/modules/updater.py:84
-#, fuzzy
-msgid "Cannot rollback automatic restart settings."
-msgstr "Kan ikke rulle tilbake automatiske omstartsinnstillinger."
-
 #: reforis/foris_controller_api/modules/updater.py:175
 msgid "Cannot start updater"
 msgstr "Kan ikke starte oppgraderer"
@@ -2729,19 +2723,19 @@ msgstr "Du kan ikke sette det med automatiske oppgraderinger avskrudd."
 msgid "Guide"
 msgstr "Veiledning"
 
-#: reforis/templates/login.html:32
+#: reforis/templates/login.html:33
 msgid "Log in"
 msgstr "Logg inn"
 
-#: reforis/templates/login.html:34
+#: reforis/templates/login.html:35
 msgid "Go to LuCI"
 msgstr "Gå til LuCI"
 
-#: reforis/templates/login.html:34
+#: reforis/templates/login.html:35
 msgid "or"
 msgstr "eller"
 
-#: reforis/templates/login.html:35
+#: reforis/templates/login.html:36
 msgid "back to select"
 msgstr "tilbake til valg"
 
@@ -2761,16 +2755,15 @@ msgstr "Ekstra:"
 msgid "Trace:"
 msgstr "Spor:"
 
-#: reforis/templates/errors/403.html:4
-msgid "403 - Forbidden"
-msgstr "403 - Forbudt"
+#: reforis/templates/errors/401.html:4
+msgid "401 - Unauthorized"
+msgstr ""
 
-#: reforis/templates/errors/403.html:9
-#, fuzzy
-msgid "Forbidden You don't have permission to access"
-msgstr "Forbudt. Du har ikke adgangstilgang"
+#: reforis/templates/errors/401.html:9
+msgid "You have to authenticate first."
+msgstr ""
 
-#: reforis/templates/errors/403.html:10
+#: reforis/templates/errors/401.html:10
 #, python-format
 msgid "Do you want to <a href=\"%(link)s\">log in</a>?"
 msgstr "Ønsker du å <a href=\"%(link)s\">logge inn</a>?"
@@ -2791,547 +2784,3 @@ msgstr "Tjenerfeil"
 msgid "500 - Server error"
 msgstr "500 - Tjenerfeil"
 
-#~ msgid ""
-#~ "\n"
-#~ "You don't have any interface assigned to the LAN network.<br/>\n"
-#~ "Do you want to <strong>open ports "
-#~ "22, 80 and 443 on WAN "
-#~ "network</strong> in order to be able "
-#~ "to access the configuration\n"
-#~ "interface of our device?"
-#~ msgstr ""
-
-#~ msgid "Keep closed"
-#~ msgstr ""
-
-#~ msgid "Open ports"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "In the setup you provided it is"
-#~ " <strong>not possible to access the "
-#~ "administration interface</strong> of your "
-#~ "device.\n"
-#~ "This means that the only way to"
-#~ " configure your device will be via"
-#~ " serial cable or you need to a"
-#~ " perform factory reset.\n"
-#~ "<br/><br/> \n"
-#~ "<p><strong>Is this really what you want?</strong></p>"
-#~ msgstr ""
-
-#~ msgid "No, keep ports open"
-#~ msgstr ""
-
-#~ msgid "Yes, I'm an expert"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "More detailed information is available "
-#~ "in the console of your web browser"
-#~ " (available by pressing F12)."
-#~ msgstr ""
-#~ "\n"
-#~ "        Hvis du ønsker å bruke "
-#~ "ruteren din som Wi-Fi-tilgangspunkt, "
-#~ "skru på Wi-Fi her og fyll "
-#~ "inn SSID (navnet på\n"
-#~ "        tilgangspunktet) og tilhørende "
-#~ "passord. Du kan så sette opp dine"
-#~ " mobile enheter, ved bruk av QR-"
-#~ "kode\n"
-#~ "        tilgjengelig i skjemaet.\n"
-#~ "    "
-
-#~ msgid "Network settings"
-#~ msgstr "Nettverksinnstillinger"
-
-#~ msgid "DHCP start must be positive"
-#~ msgstr "HDCP start må være positiv"
-
-#~ msgid "Email notifications"
-#~ msgstr "E-postmerknader"
-
-#~ msgid "Notifications settings"
-#~ msgstr "Merknadsinnstillinger"
-
-#~ msgid "Packages list"
-#~ msgstr "Pakkeliste"
-
-#~ msgid ""
-#~ "\n"
-#~ "Congratulations! You've successfully reached "
-#~ "the end of this guide. Once you"
-#~ " leave this guide you'll be granted"
-#~ " access \n"
-#~ "to the full configuration interface of this device.\n"
-#~ "\n"
-#~ "To further improve your security "
-#~ "consider enabling data collect (start by"
-#~ " selecting it in updater tab).\n"
-#~ "This will allow you to be part "
-#~ "of our security research to discover "
-#~ "new attackers and it will also "
-#~ "give you access to \n"
-#~ "dynamic updates to your firewall to "
-#~ "block all already known attackers.\n"
-#~ "            "
-#~ msgstr ""
-
-#~ msgid ""
-#~ "The device setup is finished. Now "
-#~ "your device is able to act as "
-#~ "a router and route network traffic "
-#~ "among LAN, WAN and guest network."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "The device setup is finished. Now "
-#~ "your device should be able to act"
-#~ " as a server on your local "
-#~ "network."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "Router mode means that this devices "
-#~ "manages the LAN (acts as a router,"
-#~ " can assing IP addresses, ...).\n"
-#~ "Computer mode means that this device "
-#~ "acts as a client in this network."
-#~ " It acts in a similar way as"
-#~ " WAN, but\n"
-#~ "it has opened ports for configuration interface and other services.\n"
-#~ "        "
-#~ msgstr ""
-
-#~ msgid ""
-#~ "If you want to use other language"
-#~ " than English you can select it "
-#~ "from the following list:"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "Here you specify your WAN port "
-#~ "settings. Usually, you can leave this"
-#~ " options untouched unless instructed\n"
-#~ "otherwise by your internet service "
-#~ "provider. Also, in case there is a"
-#~ " cable or DSL modem connecting your"
-#~ "\n"
-#~ "router to the network, it is "
-#~ "usually not necessary to change this "
-#~ "setting.\n"
-#~ "        "
-#~ msgstr ""
-
-#~ msgid "You can't set packages with disabled automatic updates."
-#~ msgstr ""
-
-#~ msgid "500 -- Server error"
-#~ msgstr "500 -- tjenerfeil"
-
-#~ msgid "Invalid network settings. DHCP settings can't be validated."
-#~ msgstr ""
-
-#~ msgid "Address is outside current network."
-#~ msgstr ""
-
-#~ msgid "Address is already reserved for other purposes."
-#~ msgstr ""
-
-#~ msgid "Too many addresses requested. Set a lower number or change DHCP start."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "The only DHCP lease is the same"
-#~ " as router's address. Increase limit "
-#~ "or change start address."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "Router Turris uses its own DNS "
-#~ "resolver with DNSSEC support. It is "
-#~ "capable of working independently or it"
-#~ "\n"
-#~ "can forward your DNS queries your "
-#~ "internet service provider's DNS resolver.\n"
-#~ ""
-#~ "<br/><br/>\n"
-#~ "The following setting determines the "
-#~ "behavior of the DNS resolver. Usually,"
-#~ " it is better to use the ISP's"
-#~ "\n"
-#~ "resolver in networks where it works "
-#~ "properly. If it does not work for"
-#~ " some reason, it is necessary to "
-#~ "use\n"
-#~ "direct resolving without forwarding.\n"
-#~ "<br/><br/>\n"
-#~ "In rare cases ISP's have improperly "
-#~ "configured network which interferes with "
-#~ "DNSSEC validation. If you\n"
-#~ "experience problems with DNS, you can"
-#~ " <b>temporarily</b> disable DNSSEC validation "
-#~ "to determine the source\n"
-#~ "of the problem. However, keep in "
-#~ "mind that without DNSSEC validation, you"
-#~ " are vulnerable to DNS spoofing\n"
-#~ "attacks! Therefore we <b>recommend keeping "
-#~ "DNSSEC turned on</b> and resolving the"
-#~ " situation with your ISP as\n"
-#~ "this is a serious flaw on their side.\n"
-#~ "            "
-#~ msgstr ""
-
-#~ msgid "Save forwarder"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Just set your password and you are"
-#~ " ready to go. This workflow is "
-#~ "aimed to more advanced users who "
-#~ "intend not to use the web GUI."
-#~ msgstr ""
-
-#~ msgid "Notification Settings"
-#~ msgstr "Merknadsinnstillinger"
-
-#~ msgid "Notifications Settings"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "You will not receive the testing "
-#~ "notification to your email inbox with"
-#~ " current importance level. Please raise "
-#~ "the importance level at least to "
-#~ "\"Reboot or attention is required\" and"
-#~ " click \"Save\" button if you want"
-#~ " to get this notification by email."
-#~ msgstr ""
-
-#~ msgid "Send testing notification"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "If you want to use another "
-#~ "language than English you can select "
-#~ "it from the following list:"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "Apart from the standard installation, "
-#~ "you can optionally select bundles of "
-#~ "additional software that'd be installed "
-#~ "on \n"
-#~ "the router. This software can be "
-#~ "selected from the following list. Please"
-#~ " note that only software that is "
-#~ "part of \n"
-#~ "TurrisOS or that has been installed "
-#~ "from a package list is maintained "
-#~ "by automatic updates system. Software "
-#~ "that has \n"
-#~ "been installed manually or using opkg is not affected.\n"
-#~ "        "
-#~ msgstr ""
-
-#~ msgid ""
-#~ "By enabling of the automatic updates,"
-#~ " you confirm that you are the "
-#~ "owner of this Turris router and "
-#~ "you agree with the full text of"
-#~ " the <a href=\"https://www.turris.cz/omnia-"
-#~ "updater-eula\">license agreement</a>."
-#~ msgstr ""
-
-#~ msgid "Password Settings"
-#~ msgstr "Nettverksinnstillinger"
-
-#~ msgid ""
-#~ "In order to access the advanced "
-#~ "configuration options which are not "
-#~ "available here, you must\n"
-#~ "set the root user's password. The "
-#~ "advanced configuration options can be "
-#~ "managed either \n"
-#~ "through the <a href=\"%s\">LuCI web interface</a> or via SSH."
-#~ msgstr ""
-
-#~ msgid "PPPoE (for DSL bridges, Modem Turris, etc.)"
-#~ msgstr "PPPoE (for DSL-broer, Turris-modem, osv)."
-
-#~ msgid "Foris"
-#~ msgstr "Foris"
-
-#~ msgid "User"
-#~ msgstr "Bruker"
-
-#~ msgid "Device Reboot"
-#~ msgstr "Enhetsomstart"
-
-#~ msgid "DHCP Clients"
-#~ msgstr "DHCP-Klienter"
-
-#~ msgid "Ignore"
-#~ msgstr "Ignorer"
-
-#~ msgid "Foris Password"
-#~ msgstr "Foris-passord"
-
-#~ msgid "Current Foris password"
-#~ msgstr "Nåværende Foris-passord"
-
-#~ msgid "New Foris password"
-#~ msgstr "Nytt Foris-passord"
-
-#~ msgid "Advanced Administration (root) Password"
-#~ msgstr "(Rot-) passord for avansert administrasjon"
-
-#~ msgid "WAN IPv6"
-#~ msgstr "WAN IPv6"
-
-#~ msgid "Public IPv4 address is required."
-#~ msgstr "Offentlig IPv4-adresse kreves."
-
-#~ msgid "WAN IPv4"
-#~ msgstr "WAN IPv4"
-
-#~ msgid "Go to Connection Settings"
-#~ msgstr "Gå til «Tilkoblingsinnstillinger»"
-
-#~ msgid ""
-#~ "Here you can find some information "
-#~ "about your device. Please include it "
-#~ "into your message if you contact "
-#~ "our <a href=\"mailto:tech.support@turris.cz\" "
-#~ "target=\"_blank\">customer support</a>."
-#~ msgstr ""
-#~ "Her kan du finne litt info om "
-#~ "enheten din. Inkluder det i meldingen"
-#~ " hvis du kontakter vår <a "
-#~ "href=\"mailto:tech.support@turris.cz\" "
-#~ "target=\"_blank\">brukerstøtte</a>."
-
-#~ msgid "Device"
-#~ msgstr "Enhet"
-
-#~ msgid "Serial number"
-#~ msgstr "Serienummer"
-
-#~ msgid "reForis version"
-#~ msgstr "reForis-versjon"
-
-#~ msgid "Turris OS version"
-#~ msgstr "Turris OS-versjon"
-
-#~ msgid "Turris OS branch"
-#~ msgstr "Turris OS-forgrening"
-
-#~ msgid ""
-#~ "Turris OS is currently released in various branches,\n"
-#~ "                                    which have "
-#~ "different functions and varying stability\n"
-#~ ""
-#~ "                                    - you can "
-#~ "pick, which branch you want to "
-#~ "test."
-#~ msgstr ""
-#~ "Turris OS gis for tiden ut i "
-#~ "forskjellige grener, noe som betyr at"
-#~ " de har forskjellige funksjoner og "
-#~ "stabilitet. Du kan velge hvilken du "
-#~ "vil teste."
-
-#~ msgid "IP Address"
-#~ msgstr "IP-adresse"
-
-#~ msgid ""
-#~ "This option enables you to set a"
-#~ " bandwidth limit for the guest "
-#~ "network, so that your main network "
-#~ "doesn't get slowed-down by it."
-#~ msgstr ""
-#~ "Dette valget lar deg sette en "
-#~ "båndbreddegrense for gjestenettverket, slik at"
-#~ " hovednevverket ikke blir skadelidende."
-
-#~ msgid "Enable"
-#~ msgstr "Skru på"
-
-#~ msgid ""
-#~ "This network currently doesn't contain "
-#~ "any devices. The changes you make "
-#~ "here will become fully functional after"
-#~ " you assign a network interface to"
-#~ " this network."
-#~ msgstr ""
-#~ "Dette nettverket inneholder foreløpig ingen"
-#~ " enheter. Endringer du gjør her vil"
-#~ " bli funksjonelle etter at du "
-#~ "tildeler et nettverksgrensesnitt til dette "
-#~ "nettverket."
-
-#~ msgid ""
-#~ "Router mode means that this device "
-#~ "manages the LAN (acts as a router,"
-#~ " can assign IP addresses, etc.)."
-#~ msgstr ""
-#~ "Rutermodus betyr at enheten håndterer "
-#~ "lokalnettverket (fungerer som ruter, kan "
-#~ "tildele IP-adresser, osv.)."
-
-#~ msgid ""
-#~ "Computer mode means that this device "
-#~ "acts as a client in this network."
-#~ "\n"
-#~ "It acts similarly to WAN, but it"
-#~ " has opened ports for configuration "
-#~ "interfaces and other services."
-#~ msgstr ""
-#~ "Datamaskinsmodus betyr at denne enheten "
-#~ "fungerer som klient i dette nettverket."
-#~ "\n"
-#~ "Den fungerer lignende WAN, men har "
-#~ "åpne porter for oppsettsgrensesnitt og "
-#~ "andre tjenester."
-
-#~ msgid "Email Notifications"
-#~ msgstr "E-postmerknader"
-
-#~ msgid ""
-#~ "The password you've entered has not "
-#~ "been saved. It has been compromised "
-#~ "and appears ${\n"
-#~ "                            forisPassword.count || rootPassword.count\n"
-#~ "                        } times in ${\n"
-#~ "                            forisPassword.list || rootPassword.list\n"
-#~ "                        } list. Please enter"
-#~ " another, more secure password."
-#~ msgstr ""
-#~ "Passordet du har skrevet inn har "
-#~ "kommet andre i hende. Det later "
-#~ "til at finnes ${\n"
-#~ "                            forisPassword.count || rootPassword.count\n"
-#~ "                        } ganger i ${\n"
-#~ "                            forisPassword.list || rootPassword.list\n"
-#~ "                        } listen."
-
-#~ msgid "Password changed successfully."
-#~ msgstr "Passord endret."
-
-#~ msgid ""
-#~ "Here you can set password for the administration interface.\n"
-#~ "Make sure to set a secure password that is long and unique."
-#~ msgstr ""
-#~ "Her kan du sette passord for Foris"
-#~ " og valgfritt for avanserte funksjoner "
-#~ "(LuCI og SSH). Forsikre deg om at"
-#~ " du setter et sikkert passord som "
-#~ "er langt og uvanlig."
-
-#~ msgid "The password confirmation does not match."
-#~ msgstr "Passordbekreftelsen samsvarer ikke."
-
-#~ msgid "Password can't be empty."
-#~ msgstr "Passordet kan ikke være tomt."
-
-#~ msgid "Password should have min 6 symbols."
-#~ msgstr "Passordet bør ha minst 6 tegn."
-
-#~ msgid "Password should have max 128 symbols."
-#~ msgstr "Passordet bør ha maksimalt 128 tegn."
-
-#~ msgid ""
-#~ "Useful in cases, when a specific "
-#~ "MAC address is required by your "
-#~ "internet service provider."
-#~ msgstr ""
-#~ "Nyttig i fall en spesifikk MAC-"
-#~ "adresse kreves av din "
-#~ "internettjenestetilbyder."
-
-#~ msgid "MAC"
-#~ msgstr "MAC"
-
-#~ msgid "MAC address"
-#~ msgstr "MAC-adresse"
-
-#~ msgid ""
-#~ "\n"
-#~ "Here you specify your WAN port "
-#~ "settings. Usually, you can leave these"
-#~ " options untouched unless instructed\n"
-#~ "otherwise by your internet service "
-#~ "provider. Also, in case there is a"
-#~ " cable or DSL modem connecting your"
-#~ "\n"
-#~ "router to the network, it is "
-#~ "usually not necessary to change this "
-#~ "setting.\n"
-#~ "        "
-#~ msgstr ""
-#~ "\n"
-#~ "Her kan du angi dine WAN-"
-#~ "portinnstillinger. Vanligvis kan du levne "
-#~ "disse innstillingene urørt, med mindre\n"
-#~ "du har fått annen beskjed av din"
-#~ " Internett-tjenestetilbyder. I fall er "
-#~ "det et kabel- eller DSL-modem som"
-#~ "\n"
-#~ "kobler din ruter til nettverket, er "
-#~ "det vanligvis ikke nødvendig å endre "
-#~ "denne innstillingen.\n"
-#~ "        "
-
-#~ msgid ""
-#~ "\n"
-#~ "Here you can test you connection "
-#~ "settings. Remember to click on the "
-#~ "<b>Save button</b> before running the "
-#~ "test.\n"
-#~ "Note that sometimes it takes a "
-#~ "while before the connection is fully "
-#~ "initialized. So it might be useful "
-#~ "to\n"
-#~ "wait for a while before running this test.\n"
-#~ "        "
-#~ msgstr ""
-#~ "\n"
-#~ "Her kan du teste tilkoblingsinnstillinger. "
-#~ "Husk å klikke på <b>Lagre</b>-knappen "
-#~ "før du kjører testen.\n"
-#~ "Merk deg at noen ganger kan det"
-#~ " gå en stund før tilkoblingen er "
-#~ "helt igangsatt. Det kan derfor være "
-#~ "nyttig å\n"
-#~ "vente en stund før du kjører denne testen.\n"
-#~ "        "
-
-#~ msgid ""
-#~ "\n"
-#~ "If you want to use your router "
-#~ "as a Wi-Fi access point, enable"
-#~ " Wi-Fi here and fill in an "
-#~ "SSID (the name of the access \n"
-#~ "point) and a corresponding password. You"
-#~ " can then set up your mobile "
-#~ "devices, using the QR code available "
-#~ "within the form.\n"
-#~ "            "
-#~ msgstr ""
-#~ "\n"
-#~ "Hvis du ønsker å bruke ruteren din"
-#~ " som et Wi-Fi-tilgangspunkt skrur "
-#~ "du på Wi-Fi her og fyller "
-#~ "inn en SSID (navnet på\n"
-#~ "aksesspunktnettet) og et tilegnet passord. "
-#~ "Du kan så sette opp dine "
-#~ "mobilenheter ved bruk av QR-koden "
-#~ "som er å finne i\n"
-#~ "skjemaet..\n"
-#~ "            "

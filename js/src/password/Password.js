@@ -75,12 +75,13 @@ export default function Password({ postCallback }) {
                     rootPassword.result === false)
             ) {
                 setAlert(
-                    _(`The password you've entered has not been saved. It has \
-been compromised and appears ${
-                        forisPassword.count || rootPassword.count
-                    } times in ${
-                        forisPassword.list || rootPassword.list
-                    } list. Please enter another, more secure password.`),
+                    _(
+                        `The password you've entered has not been saved. It has been compromised and appears ${
+                            forisPassword.count || rootPassword.count
+                        } times in ${
+                            forisPassword.list || rootPassword.list
+                        } list. Please enter another, more secure password.`
+                    ),
                     ALERT_TYPES.ERROR
                 );
             } else if (postState.state === API_STATE.SUCCESS) {
@@ -172,8 +173,9 @@ been compromised and appears ${
         <>
             <h1>{_("Password")}</h1>
             <p>
-                {_(`Here you can set password for the administration \
-interface. Make sure to set a secure password that is long and unique.`)}
+                {_(
+                    "Here you can set password for the administration interface. Make sure to set a secure password that is long and unique."
+                )}
             </p>
             {passwordComponent}
         </>
