@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<WAN/> Snapshot WAN IPv4 (pppoe). 1`] = `
+exports[`<WAN/> Snapshot WAN IPv4 (PPPoE). 1`] = `
 "Snapshot Diff:
 - First value
 + Second value
@@ -555,7 +555,7 @@ exports[`<WAN/> Snapshot WAN IPv6 (6to4). 1`] = `
           class=\\"form-group\\""
 `;
 
-exports[`<WAN/> Snapshot WAN IPv6 (dhcpv6). 1`] = `
+exports[`<WAN/> Snapshot WAN IPv6 (DHCPv6). 1`] = `
 "Snapshot Diff:
 - First value
 + Second value
@@ -837,13 +837,13 @@ exports[`<WAN/> Snapshot: MAC enabled 1`] = `
         </div>"
 `;
 
-exports[`<WAN/> Snapshot: WAN IPv4 dhcp, WAN IPv6 dhcp, MAC disabled 1`] = `
+exports[`<WAN/> Snapshot: WAN IPv4 DHCP, WAN IPv6 DHCP, MAC disabled 1`] = `
 <DocumentFragment>
   <h1>
     WAN
   </h1>
   <p>
-    Here you specify your WAN port settings. Usually, you can leave these options untouched unless instructed otherwise by your internet service provider. Also, in case there is a cable or DSL modem connecting your router to the network, it is usually not necessary to change this setting.
+    Here you can specify your WAN port settings if instructed to do so by your internet service provider. Usually, it can be left untouched if your router is connected to the Internet via a cable or DSL modem.
   </p>
   <div
     class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
@@ -990,11 +990,11 @@ exports[`<WAN/> Snapshot: WAN IPv4 dhcp, WAN IPv6 dhcp, MAC disabled 1`] = `
     Connection Test
   </h2>
   <p>
-    Here you can test you connection settings. Remember to click on the 
+    Here you can examine your connection settings. Wait a while to establish the connection. Remember to click the 
     <b>
-      Save button
+      Save
     </b>
-     before running the test. Note that sometimes it takes a while before the connection is fully initialized. So it might be useful to wait for a while before running this test.
+     button after you have tested that it works.
   </p>
   <div
     class="card p-4 mb-3"
