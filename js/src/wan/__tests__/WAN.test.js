@@ -29,6 +29,7 @@ describe("<WAN/>", () => {
     let firstRender;
     let getByLabelText;
     let getByText;
+    let getAllByText;
 
     beforeEach(async () => {
         const webSockets = new WebSockets();
@@ -37,6 +38,7 @@ describe("<WAN/>", () => {
         asFragment = renderRes.asFragment;
         getByLabelText = renderRes.getByLabelText;
         getByText = renderRes.getByText;
+        getAllByText = renderRes.getAllByText;
 
         await waitForElement(() => renderRes.getByText("IPv4 Settings"));
         firstRender = renderRes.asFragment();
@@ -53,7 +55,7 @@ describe("<WAN/>", () => {
         });
     });
 
-    it("Snapshot: WAN IPv4 dhcp, WAN IPv6 dhcp, MAC disabled", () => {
+    it("Snapshot: WAN IPv4 DHCP, WAN IPv6 DHCP, MAC disabled", () => {
         expect(firstRender).toMatchSnapshot();
     });
 
@@ -64,14 +66,14 @@ describe("<WAN/>", () => {
         expect(diffSnapshot(firstRender, asFragment())).toMatchSnapshot();
     });
 
-    it("Snapshot WAN IPv4 (pppoe).", () => {
+    it("Snapshot WAN IPv4 (PPPoE).", () => {
         fireEvent.change(getByLabelText("IPv4 protocol"), {
             target: { value: "pppoe" },
         });
         expect(diffSnapshot(firstRender, asFragment())).toMatchSnapshot();
     });
 
-    it("Snapshot WAN IPv6 (dhcpv6).", () => {
+    it("Snapshot WAN IPv6 (DHCPv6).", () => {
         fireEvent.change(getByLabelText("IPv6 protocol"), {
             target: { value: "dhcpv6" },
         });
@@ -115,8 +117,8 @@ describe("<WAN/>", () => {
     });
 
     // Post form tests:
-    it("Post: WAN IPv4 dhcp, WAN IPv6 dhcp, MAC disabled", () => {
-        fireEvent.click(getByText("Save"));
+    it("Post: WAN IPv4 DHCP, WAN IPv6 DHCP, MAC disabled", () => {
+        fireEvent.click(getAllByText("Save")[0]);
         expect(mockAxios.post).toBeCalled();
         const data = {
             mac_settings: { custom_mac_enabled: false },
@@ -134,25 +136,25 @@ describe("<WAN/>", () => {
         fireEvent.change(getByLabelText("IPv4 protocol"), {
             target: { value: "static" },
         });
-        fireEvent.click(getByText("Save"));
+        fireEvent.click(getAllByText("Save")[0]);
         // IP address value is invalid, button is disabled.
         expect(mockAxios.post).toHaveBeenCalledTimes(0);
     });
 
-    it("Post WAN IPv4 (pppoe).", () => {
+    it("Post WAN IPv4 (PPPoE).", () => {
         fireEvent.change(getByLabelText("IPv4 protocol"), {
             target: { value: "pppoe" },
         });
-        fireEvent.click(getByText("Save"));
+        fireEvent.click(getAllByText("Save")[0]);
         // IP address value is invalid, button is disabled.
         expect(mockAxios.post).toHaveBeenCalledTimes(0);
     });
 
-    it("Post WAN IPv6 (dhcpv6).", () => {
+    it("Post WAN IPv6 (DHCPv6).", () => {
         fireEvent.change(getByLabelText("IPv6 protocol"), {
             target: { value: "dhcpv6" },
         });
-        fireEvent.click(getByText("Save"));
+        fireEvent.click(getAllByText("Save")[0]);
         expect(mockAxios.post).toBeCalled();
         const data = {
             mac_settings: { custom_mac_enabled: false },
@@ -170,7 +172,7 @@ describe("<WAN/>", () => {
         fireEvent.change(getByLabelText("IPv6 protocol"), {
             target: { value: "static" },
         });
-        fireEvent.click(getByText("Save"));
+        fireEvent.click(getAllByText("Save")[0]);
         // IP address value is invalid, button is disabled.
         expect(mockAxios.post).toHaveBeenCalledTimes(0);
     });
@@ -179,7 +181,7 @@ describe("<WAN/>", () => {
         fireEvent.change(getByLabelText("IPv6 protocol"), {
             target: { value: "6to4" },
         });
-        fireEvent.click(getByText("Save"));
+        fireEvent.click(getAllByText("Save")[0]);
 
         expect(mockAxios.post).toHaveBeenCalledTimes(1);
     });
@@ -188,7 +190,7 @@ describe("<WAN/>", () => {
         fireEvent.change(getByLabelText("IPv6 protocol"), {
             target: { value: "6in4" },
         });
-        fireEvent.click(getByText("Save"));
+        fireEvent.click(getAllByText("Save")[0]);
         // Values is invalid, button is disabled.
         expect(mockAxios.post).toHaveBeenCalledTimes(0);
     });
@@ -198,14 +200,14 @@ describe("<WAN/>", () => {
             target: { value: "6in4" },
         });
         fireEvent.click(getByText("Dynamic IPv4 handling"));
-        fireEvent.click(getByText("Save"));
+        fireEvent.click(getAllByText("Save")[0]);
         // IP address value is invalid, button is disabled.
         expect(mockAxios.post).toHaveBeenCalledTimes(0);
     });
 
     it("Post: MAC enabled", () => {
         fireEvent.click(getByText("Custom MAC address"));
-        fireEvent.click(getByText("Save"));
+        fireEvent.click(getAllByText("Save")[0]);
         // MAC address value is invalid, button is disabled.
         expect(mockAxios.post).toHaveBeenCalledTimes(0);
     });
@@ -215,7 +217,7 @@ describe("<WAN/>", () => {
         fireEvent.change(getByLabelText("Set the new MAC address"), {
             target: { value: "11:11:11:11:11:11" },
         });
-        fireEvent.click(getByText("Save"));
+        fireEvent.click(getAllByText("Save")[0]);
         expect(mockAxios.post).toHaveBeenCalledWith(
             "/reforis/api/wan",
             customMACFixture(),
