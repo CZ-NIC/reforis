@@ -71,7 +71,9 @@ function DHCP6ClientsListItem({ ipv6, expires, duid, hostname }) {
             <td>{ipv6}</td>
             <td>{duid}</td>
             <td className="text-center">
-                {moment.unix(expires).format("YYYY-MM-DD HH:mm")}
+                {expires
+                    ? moment.unix(expires).format("YYYY-MM-DD HH:mm")
+                    : _("Never")}
             </td>
         </tr>
     );

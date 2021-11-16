@@ -69,7 +69,9 @@ function DHCPClientsListItem({ ip, expires, mac, hostname, active }) {
             <td>{ip}</td>
             <td>{mac}</td>
             <td className="text-center">
-                {moment.unix(expires).format("YYYY-MM-DD HH:mm")}
+                {expires
+                    ? moment.unix(expires).format("YYYY-MM-DD HH:mm")
+                    : _("Never")}
             </td>
             <td className="text-center">
                 <i
